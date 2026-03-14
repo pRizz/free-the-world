@@ -4,6 +4,9 @@ export const companyMetricIds = [
   "profitability",
   "peRatio",
   "marketCap",
+  "ipoMarketCap",
+  "ipoReturnMultiplier",
+  "ipoAnnualizedGrowthRate",
   "freedCapitalPotential",
 ] as const;
 
@@ -18,12 +21,13 @@ export const alternativeMetricIds = [
 
 export type AlternativeMetricId = (typeof alternativeMetricIds)[number];
 
-export type MetricValueType = "score" | "currency" | "ratio";
+export type MetricValueType = "score" | "currency" | "ratio" | "percentage";
 export type EvidenceKind =
   | "investor-relations"
   | "annual-report"
   | "product-page"
   | "market-data"
+  | "regulatory-filing"
   | "open-source-project"
   | "technical-docs"
   | "analysis";
@@ -50,6 +54,12 @@ export interface MetricAssessment {
   sourceIds: string[];
   confidence: ConfidenceLevel;
   lastReviewedOn: string;
+}
+
+export interface CompanyIpo {
+  date: string;
+  dateSourceIds: string[];
+  marketCap: MetricAssessment;
 }
 
 export interface MetricDefinition<TMetricId extends string> {
@@ -100,6 +110,7 @@ export interface Company {
   ticker: string;
   rankApprox: number;
   snapshotNote: string;
+  maybeIpo: CompanyIpo | null;
   regionId: string;
   indexIds: string[];
   sectorId: string;
@@ -112,7 +123,7 @@ export interface Company {
   productSlugs: string[];
   sourceIds: string[];
   technologyWaveIds: string[];
-  metrics: Record<CompanyMetricId, MetricAssessment>;
+  metrics: Partial<Record<CompanyMetricId, MetricAssessment>>;
 }
 
 export interface Product {

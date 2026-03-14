@@ -5,6 +5,7 @@ import { PageHeader } from "~/components/blocks/page-header";
 import { CompanyTable } from "~/components/company-table";
 import { CompanyTableToolbar } from "~/components/company-table-toolbar";
 import { companies } from "~/lib/content/companies";
+import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
 import { industries, sectors } from "~/lib/content/sectors";
 import { getIndustryLabel, getSectorLabel } from "~/lib/domain/selectors";
 import { defaultCompanyTableState } from "~/lib/domain/table-state";
@@ -21,29 +22,25 @@ export default function CompaniesPage() {
   const filteredCompanies = createMemo(() => {
     const term = search().trim().toLowerCase();
 
-    return [...companies]
-      .filter(company => {
-        const searchHaystack = [
-          company.name,
-          company.ticker,
-          company.description,
-          getSectorLabel(company.sectorId),
-          getIndustryLabel(company.industryId),
-        ]
-          .join(" ")
-          .toLowerCase();
+    const matchingCompanies = companies.filter(company => {
+      const searchHaystack = [
+        company.name,
+        company.ticker,
+        company.description,
+        getSectorLabel(company.sectorId),
+        getIndustryLabel(company.industryId),
+      ]
+        .join(" ")
+        .toLowerCase();
 
-        const matchesTerm = !term || searchHaystack.includes(term);
-        const matchesSector = sectorId() === "all" || company.sectorId === sectorId();
-        const matchesIndustry = industryId() === "all" || company.industryId === industryId();
+      const matchesTerm = !term || searchHaystack.includes(term);
+      const matchesSector = sectorId() === "all" || company.sectorId === sectorId();
+      const matchesIndustry = industryId() === "all" || company.industryId === industryId();
 
-        return matchesTerm && matchesSector && matchesIndustry;
-      })
-      .sort((left, right) => {
-        const leftValue = left.metrics[sortMetricId()].value;
-        const rightValue = right.metrics[sortMetricId()].value;
-        return sortDirection() === "desc" ? rightValue - leftValue : leftValue - rightValue;
-      });
+      return matchesTerm && matchesSector && matchesIndustry;
+    });
+
+    return sortCompaniesByMetric(matchingCompanies, sortMetricId(), sortDirection());
   });
 
   function toggleMetric(metricId: CompanyMetricId) {

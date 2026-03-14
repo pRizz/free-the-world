@@ -22,6 +22,25 @@ Completion review:
 Residual risks:
 - Nitro still logs pre-existing prerender `Invalid URL` errors during `bun run build`. The export step still produces `.output/public`, but that issue is outside this refactor and should be fixed separately.
 
+# IPO-Derived Market Cap Metrics
+
+- [x] Add IPO metadata and derived IPO finance metrics to the canonical company model.
+  Verification: `bun run typecheck`
+- [x] Wire IPO metrics into formatting, registry sorting, and missing-value rendering.
+  Verification: `bun run typecheck`, targeted registry assertions
+- [x] Add unit tests for IPO math and synthetic missing-metric sorting behavior.
+  Verification: `bun test src/lib/domain/ipo.test.ts src/lib/domain/company-metrics.test.ts`
+- [x] Add targeted Playwright coverage for the new registry columns and sample rendered values.
+  Verification: `CI=1 bun run test:e2e --grep "IPO|company detail page renders the Apple overview|registry search filters the company table"`
+
+Completion review:
+- Added `maybeIpo` metadata, three IPO-derived company metrics, and a pure IPO math helper so the registry can compute and render IPO market cap, return multiplier, and IPO CAGR without introducing a second data path.
+- Populated IPO data for all seeded companies with auditable IPO references where available, and left Berkshire Hathaway explicitly `null` so missing future/private-company IPO data is handled cleanly.
+- Updated registry sorting/formatting to keep missing values at the bottom and added unit plus Playwright coverage for the new metrics.
+
+Residual risks:
+- The existing `bun run build` path still emits the repo's pre-existing Nitro `Invalid URL` prerender warnings before static export completes. Targeted Playwright coverage still passes against the exported output, and that warning remains outside this feature.
+
 # Basic Playwright Coverage
 
 - [x] Add Playwright dependency, scripts, config, and static-server test wiring.

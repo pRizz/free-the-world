@@ -38,6 +38,7 @@ function ToolbarSelect<T extends string>(props: {
   onChange: (value: T) => void;
 }) {
   const selectedOption = () => props.options.find(option => option.value === props.value) ?? props.options[0] ?? null;
+  const testId = `toolbar-select-${props.label.toLowerCase().replaceAll(/[^a-z0-9]+/g, "-").replaceAll(/^-|-$/g, "")}`;
 
   return (
     <SelectField>
@@ -55,7 +56,7 @@ function ToolbarSelect<T extends string>(props: {
       >
         <SelectLabel>{props.label}</SelectLabel>
         <SelectHidden />
-        <SelectTrigger>
+        <SelectTrigger data-testid={testId}>
           <SelectValue<SelectOption<T>>>{(state: any) => state.selectedOption()?.label ?? ""}</SelectValue>
           <SelectIcon />
         </SelectTrigger>

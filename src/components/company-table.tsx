@@ -50,9 +50,13 @@ export function CompanyTable(props: { companies: Company[]; visibleMetricIds: Co
                     <TableCell class="font-medium text-foreground">
                       <div class="space-y-2">
                         <p>{formatCompanyMetric(metricId, company.metrics[metricId])}</p>
-                        <p class="max-w-[13rem] text-xs leading-6 text-muted-foreground">
-                          {company.metrics[metricId].rationale}
-                        </p>
+                        {company.metrics[metricId] ? (
+                          <p class="max-w-[13rem] text-xs leading-6 text-muted-foreground">
+                            {company.metrics[metricId]!.rationale}
+                          </p>
+                        ) : (
+                          <p class="max-w-[13rem] text-xs leading-6 text-muted-foreground">Not available.</p>
+                        )}
                       </div>
                     </TableCell>
                   )}

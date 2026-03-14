@@ -29,8 +29,19 @@ export function formatMetricValue(value: number, valueType: MetricValueType, pre
     return compactCurrencyFormatter.format(value);
   }
 
+  if (valueType === "percentage") {
+    return new Intl.NumberFormat("en-US", {
+      style: "percent",
+      maximumFractionDigits: precision,
+      minimumFractionDigits: precision,
+    }).format(value);
+  }
+
   if (valueType === "ratio") {
-    return `${value.toFixed(precision)}x`;
+    return `${new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: precision,
+      minimumFractionDigits: precision,
+    }).format(value)}x`;
   }
 
   return `${value.toFixed(precision)}/10`;
@@ -48,7 +59,11 @@ export function formatMoneyRange(value: number) {
   return preciseCurrencyFormatter.format(value);
 }
 
-export function formatCompanyMetric(metricId: CompanyMetricId, assessment: MetricAssessment) {
+export function formatCompanyMetric(metricId: CompanyMetricId, assessment?: MetricAssessment) {
+  if (!assessment) {
+    return "—";
+  }
+
   const definition = companyMetricDefinitions[metricId];
   return formatMetricValue(assessment.value, definition.valueType, definition.precision);
 }

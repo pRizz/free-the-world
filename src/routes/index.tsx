@@ -9,16 +9,13 @@ import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
 import { companies } from "~/lib/content/companies";
 import { withBasePath } from "~/lib/config";
+import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
 import { formatCompanyMetric } from "~/lib/domain/formatters";
 import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
 
 export default function Home() {
-  const mostDecentralizable = [...companies].sort(
-    (left, right) => right.metrics.decentralizability.value - left.metrics.decentralizability.value
-  )[0];
-  const mostCapitalAtRisk = [...companies].sort(
-    (left, right) => right.metrics.freedCapitalPotential.value - left.metrics.freedCapitalPotential.value
-  )[0];
+  const mostDecentralizable = sortCompaniesByMetric(companies, "decentralizability", "desc")[0]!;
+  const mostCapitalAtRisk = sortCompaniesByMetric(companies, "freedCapitalPotential", "desc")[0]!;
 
   return (
     <>
@@ -72,7 +69,7 @@ export default function Home() {
                 class="[&>p:first-child]:tracking-[0.22em]"
               >
                 {formatCompanyMetric("decentralizability", mostDecentralizable.metrics.decentralizability)} —{" "}
-                {mostDecentralizable.metrics.decentralizability.rationale}
+                {mostDecentralizable.metrics.decentralizability!.rationale}
               </MetricCard>
               <MetricCard
                 label="Largest implied capital release opportunity"
@@ -80,7 +77,7 @@ export default function Home() {
                 class="[&>p:first-child]:tracking-[0.22em]"
               >
                 {formatCompanyMetric("freedCapitalPotential", mostCapitalAtRisk.metrics.freedCapitalPotential)} —{" "}
-                {mostCapitalAtRisk.metrics.freedCapitalPotential.rationale}
+                {mostCapitalAtRisk.metrics.freedCapitalPotential!.rationale}
               </MetricCard>
             </div>
           </ContentCard>
