@@ -1,6 +1,6 @@
 # Free The World
 
-Free The World is a dark-mode-first SolidJS research site that tracks which large companies still capture massive value from products and services that are becoming easier to replace with open, automated, federated, or Bitcoin-native alternatives.
+Free The World is a SolidJS research site that tracks which large companies still capture massive value from products and services that are becoming easier to replace with open, automated, federated, or Bitcoin-native alternatives.
 
 ## Stack
 
