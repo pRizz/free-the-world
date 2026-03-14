@@ -1,5 +1,6 @@
 import { A } from "@solidjs/router";
 import { For } from "solid-js";
+import { withBasePath } from "~/lib/config";
 import { companyMetricDefinitions } from "~/lib/domain/metrics";
 import { formatAlternativeMetric, formatCompanyMetric } from "~/lib/domain/formatters";
 import type { Alternative, Company, Product, SourceCitation, TechnologyWave } from "~/lib/domain/types";
@@ -87,7 +88,11 @@ export function CompanyProductsPanel(props: { company: Company; products: Produc
                   <p class="text-sm uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">{product.category}</p>
                   <p class="max-w-3xl text-sm leading-7 text-[var(--color-muted-foreground)]">{product.summary}</p>
                 </div>
-                <Button as="a" href={`/companies/${props.company.slug}/products/${product.slug}`} variant="secondary">
+                <Button
+                  as="a"
+                  href={withBasePath(`/companies/${props.company.slug}/products/${product.slug}`)}
+                  variant="secondary"
+                >
                   Open analysis
                 </Button>
               </div>
@@ -195,7 +200,7 @@ export function ProductOverviewPanel(props: { product: Product; company: Company
           <Button as="a" href={props.product.homepageUrl} target="_blank" rel="noreferrer" variant="secondary">
             Product homepage
           </Button>
-          <Button as="a" href={`/companies/${props.company.slug}/products`} variant="ghost">
+          <Button as="a" href={withBasePath(`/companies/${props.company.slug}/products`)} variant="ghost">
             Back to {props.company.name} products
           </Button>
         </div>

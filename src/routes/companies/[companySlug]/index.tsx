@@ -8,6 +8,7 @@ import {
 } from "~/components/company-panels";
 import { SourceList } from "~/components/source-list";
 import { Badge, Button, Card, SectionHeading } from "~/components/ui";
+import { withBasePath } from "~/lib/config";
 import {
   getCompanyBySlug,
   getProductsForCompany,
@@ -24,7 +25,7 @@ export default function CompanyPage() {
     return (
       <Card class="space-y-4">
         <SectionHeading title="Company not found" description="The requested company slug does not exist in the current registry snapshot." />
-        <Button as="a" href="/companies" variant="secondary">
+        <Button as="a" href={withBasePath("/companies")} variant="secondary">
           Back to registry
         </Button>
       </Card>
@@ -56,7 +57,7 @@ export default function CompanyPage() {
             <Button as="a" href={companyData.companiesMarketCapUrl} target="_blank" rel="noreferrer" variant="secondary">
               CompaniesMarketCap
             </Button>
-            <Button as="a" href={`/companies/${companyData.slug}/products`}>
+            <Button as="a" href={withBasePath(`/companies/${companyData.slug}/products`)}>
               Product analyses
             </Button>
           </div>

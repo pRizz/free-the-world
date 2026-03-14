@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import { Card, SectionHeading } from "~/components/ui";
 
-export default function NotFound() {
+export default function NotFoundPage() {
   return (
     <Card class="space-y-4">
       <SectionHeading

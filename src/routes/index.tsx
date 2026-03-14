@@ -3,6 +3,7 @@ import { A } from "@solidjs/router";
 import { NewsletterSignup } from "~/components/newsletter-signup";
 import { companies } from "~/lib/content/companies";
 import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
+import { withBasePath } from "~/lib/config";
 import { Badge, Button, Card, SectionHeading } from "~/components/ui";
 import { formatCompanyMetric } from "~/lib/domain/formatters";
 
@@ -44,10 +45,10 @@ export default function Home() {
             </div>
 
             <div class="flex flex-wrap gap-3">
-              <Button as="a" href="/companies">
+              <Button as="a" href={withBasePath("/companies")}>
                 Explore the registry
               </Button>
-              <Button as="a" href="/methodology" variant="secondary">
+              <Button as="a" href={withBasePath("/methodology")} variant="secondary">
                 Read the methodology
               </Button>
             </div>

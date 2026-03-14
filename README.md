@@ -1,32 +1,81 @@
-# SolidStart
+# Free The World
 
-Everything you need to build a Solid project, powered by [`solid-start`](https://start.solidjs.com);
+Free The World is a dark-mode-first SolidJS research site that tracks which large companies still capture massive value from products and services that are becoming easier to replace with open, automated, federated, or Bitcoin-native alternatives.
 
-## Creating a project
+## Stack
 
-```bash
-# create a new project in the current directory
-npm init solid@latest
+- SolidStart
+- Bun
+- Tailwind CSS
+- shadcn-style UI patterns with typed utility components
+- Static export for GitHub Pages
 
-# create a new project in my-app
-npm init solid@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Local development
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+bun install
+bun run dev
 ```
 
-## Building
+## Build
 
-Solid apps are built with _presets_, which optimise your project for deployment to different environments.
+```bash
+bun run build
+```
 
-By default, `npm run build` will generate a Node app that you can run with `npm start`. To use a different preset, add it to the `devDependencies` in `package.json` and specify in your `app.config.js`.
+The build pipeline:
 
-## This project was created with the [Solid CLI](https://github.com/solidjs-community/solid-cli)
+1. builds the Solid app
+2. renders static HTML for all seeded routes
+3. writes the deployable artifact to `.output/public`
+4. creates `.nojekyll` for GitHub Pages compatibility
+
+## GitHub Pages deployment
+
+Pushes to `main` trigger `.github/workflows/deploy.yml`, which:
+
+1. installs dependencies with Bun
+2. builds the site with a repository-aware `SITE_BASE_PATH`
+3. uploads `.output/public`
+4. deploys through GitHub Pages
+
+## Data model
+
+Canonical site data lives under `src/lib/content/` and is strongly typed via `src/lib/domain/types.ts`.
+
+The current launch snapshot includes:
+
+- top 10 S&P 500 companies by market cap (curated early-2026 snapshot)
+- sectors and industries as first-class metadata
+- visible source breadcrumbs
+- product and alternative analyses
+- technology-wave assumptions used in scoring
+
+## Research workflow
+
+The repository separates published content from draft research:
+
+- `src/lib/content/` → canonical typed site data
+- `research/` → notes and generated research artifacts
+- `prompts/` → reusable prompt templates
+- `scripts/ralph-loop.ts` → repeatable AI prompt loop
+
+### Ralph loop
+
+Generate prompt artifacts for one company and task:
+
+```bash
+bun run loop --company=microsoft --task=moat-analysis
+```
+
+Generate prompt artifacts for every seeded company:
+
+```bash
+bun run loop
+```
+
+The loop is designed around Claude CLI and Codex CLI, but it degrades gracefully when those binaries are not available. It never writes directly into canonical site content.
+
+## Theme
+
+Theme tokens live in `src/lib/theme.ts` and CSS variables in `src/app.css`. The default accent is dark indigo, but the token layer is meant to keep that swappable.
