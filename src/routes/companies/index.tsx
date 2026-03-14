@@ -85,7 +85,9 @@ export default function CompaniesPage() {
         <ContentCard class="space-y-4">
           <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
-              <p class="text-sm font-medium text-foreground">{filteredCompanies().length} companies shown</p>
+              <p aria-live="polite" role="status" class="text-sm font-medium text-foreground">
+                {filteredCompanies().length} companies shown
+              </p>
               <p class="text-sm text-muted-foreground">
                 Sorted by {sortMetricId()} ({sortDirection()})
               </p>

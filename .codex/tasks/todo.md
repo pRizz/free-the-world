@@ -22,6 +22,23 @@ Completion review:
 Residual risks:
 - Nitro still logs pre-existing prerender `Invalid URL` errors during `bun run build`. The export step still produces `.output/public`, but that issue is outside this refactor and should be fixed separately.
 
+# Basic Playwright Coverage
+
+- [x] Add Playwright dependency, scripts, config, and static-server test wiring.
+  Verification: `bun install`, `bun run test:e2e:install`
+- [x] Add basic e2e specs for route smoke coverage, company detail smoke coverage, and registry search filtering.
+  Verification: `bun run test:e2e`
+- [x] Add CI workflow and finish a full verification pass.
+  Verification: `bun run typecheck`, `bun run test:e2e`, workflow review
+
+Completion review:
+- Added a Chromium-only `@playwright/test` setup that builds the app, serves `.output/public` over a local static server, and covers top-level route smoke checks plus registry search and nested company/product route smoke checks.
+- Added a dedicated GitHub Actions workflow for Playwright and ignored generated Playwright artifacts.
+- Improved the registry count with a `role="status"` live region so the count assertion is accessible, and switched `scripts/export-static.ts` to a typed dynamic import so `bun run typecheck` succeeds before and after builds.
+
+Residual risks:
+- `bun run build` still logs the repo's pre-existing Nitro prerender `Invalid URL` errors before the custom export script writes the static output. The Playwright suite passes against the exported site, but that build-time warning remains unresolved.
+
 # Table Edge Overflow Hint
 
 - [x] Add animated left/right overflow hints to the shared table primitive.

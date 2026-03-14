@@ -1,9 +1,13 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import entryServer from "../dist/server/entry-server.js";
 import { companies } from "../src/lib/content/companies";
 import { products } from "../src/lib/content/products";
+
+const entryServerModulePath = "../dist/server/entry-server.js";
+const { default: entryServer } = (await import(entryServerModulePath)) as {
+  default: { fetch(request: Request): Promise<Response> };
+};
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const outputDir = path.join(rootDir, ".output", "public");
