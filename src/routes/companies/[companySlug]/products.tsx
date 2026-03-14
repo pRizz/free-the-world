@@ -1,0 +1,55 @@
+import { Title } from "@solidjs/meta";
+import { A, useParams } from "@solidjs/router";
+import { CompanyProductsPanel } from "~/components/company-panels";
+import { SourceList } from "~/components/source-list";
+import { Badge, Card, SectionHeading } from "~/components/ui";
+import { getCompanyBySlug, getProductsForCompany, getSourcesByIds } from "~/lib/domain/selectors";
+
+export default function CompanyProductsPage() {
+  const params = useParams();
+  const companySlug = () => params.companySlug ?? "";
+  const company = () => getCompanyBySlug(companySlug());
+
+  if (!company()) {
+    return (
+      <Card class="space-y-4">
+        <SectionHeading title="Company not found" description="The requested company slug does not exist in the current registry snapshot." />
+      </Card>
+    );
+  }
+
+  const companyData = company()!;
+  const productRecords = getProductsForCompany(companyData.slug);
+  const sources = getSourcesByIds(companyData.sourceIds);
+
+  return (
+    <>
+      <Title>{companyData.name} products · Free The World</Title>
+
+      <div class="space-y-8">
+        <section class="space-y-4">
+          <div class="flex flex-wrap gap-2">
+            <Badge tone="accent">Products</Badge>
+            <Badge tone="muted">{companyData.name}</Badge>
+          </div>
+          <div class="space-y-3">
+            <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{companyData.name} product analyses</h1>
+            <p class="max-w-4xl text-base leading-8 text-[var(--color-muted-foreground)] sm:text-lg">
+              A tighter look at the products that matter most to {companyData.name}, along with the free, open,
+              decentralized, or cooperative alternatives already creating pricing pressure.
+            </p>
+          </div>
+        </section>
+
+        <CompanyProductsPanel company={companyData} products={productRecords} />
+        <SourceList title="Company-level source stack" sources={sources} />
+
+        <div class="text-sm text-[var(--color-muted-foreground)]">
+          <A href={`/companies/${companyData.slug}`} class="hover:text-[var(--color-accent)]">
+            ← Back to {companyData.name}
+          </A>
+        </div>
+      </div>
+    </>
+  );
+}
