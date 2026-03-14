@@ -4,6 +4,7 @@
   color-scheme: dark;
   --background: hsl(261, 12%, 4%);
   --foreground: hsl(0, 0%, 94%);
+  --title-foreground: hsl(0, 0%, 83%);
   --card: hsl(262, 14%, 6%);
   --card-foreground: hsl(0, 0%, 94%);
   --popover: hsl(262, 14%, 6%);
@@ -32,6 +33,7 @@
 @theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-title-foreground: var(--title-foreground);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-popover: var(--popover);
@@ -100,6 +102,10 @@ a {
 ::selection {
   background: color-mix(in hsl, var(--primary), white 15%);
   color: var(--primary-foreground);
+}
+
+h1, h2, h3 {
+  color: var(--title-foreground);
 }
 
 .prose-block p {

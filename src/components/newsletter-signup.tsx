@@ -27,11 +27,12 @@ export function NewsletterSignup() {
         </Button>
       </div>
 
-      <div class="rounded-2xl border border-border bg-card p-3 shadow-inner shadow-black/10">
+      <div class="flex min-h-[320px] items-center justify-center rounded-2xl bg-card p-3 shadow-inner shadow-black/10">
         <iframe
           src={newsletterContent.embedUrl}
           title="Free The World newsletter signup"
-          class="min-h-[320px] w-full rounded-xl border border-white/10 bg-white"
+          class="h-[320px] w-full max-w-[480px] rounded-xl border border-white/10 bg-card"
+          loading="lazy"
         />
       </div>
     </Card>

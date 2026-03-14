@@ -128,7 +128,7 @@ export const SectionHeading: Component<{
       </p>
     ) : null}
     <div class="space-y-2">
-      <h2 class="text-2xl font-semibold tracking-tight text-foreground sm:text-3xl">
+      <h2 class="text-2xl font-semibold tracking-tight text-title-foreground sm:text-3xl">
         {props.title}
       </h2>
       {props.description ? (
