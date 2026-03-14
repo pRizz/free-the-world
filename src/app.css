@@ -122,3 +122,35 @@ h1, h2, h3 {
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
+
+.collapsible-content[data-expanded] {
+  animation: collapsible-down 180ms ease-out;
+}
+
+.collapsible-content[data-closed] {
+  animation: collapsible-up 180ms ease-out;
+}
+
+@keyframes collapsible-down {
+  from {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes collapsible-up {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-0.25rem);
+  }
+}

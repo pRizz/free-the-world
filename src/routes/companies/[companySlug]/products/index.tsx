@@ -1,8 +1,10 @@
 import { Title } from "@solidjs/meta";
 import { A, useParams } from "@solidjs/router";
+import { EmptyState } from "~/components/blocks/empty-state";
 import { CompanyProductsPanel } from "~/components/company-panels";
 import { SourceList } from "~/components/source-list";
-import { Badge, Card, SectionHeading } from "~/components/ui";
+import { Badge } from "~/components/ui/badge";
+import { withBasePath } from "~/lib/config";
 import { getCompanyBySlug, getProductsForCompany, getSourcesByIds } from "~/lib/domain/selectors";
 
 export default function CompanyProductsPage() {
@@ -12,9 +14,12 @@ export default function CompanyProductsPage() {
 
   if (!company()) {
     return (
-      <Card class="space-y-4">
-        <SectionHeading title="Company not found" description="The requested company slug does not exist in the current registry snapshot." />
-      </Card>
+      <EmptyState
+        title="Company not found"
+        description="The requested company slug does not exist in the current registry snapshot."
+        actionLabel="Back to registry"
+        actionHref={withBasePath("/companies")}
+      />
     );
   }
 

@@ -1,10 +1,11 @@
 import type { SourceCitation } from "~/lib/domain/types";
-import { Card, SectionHeading } from "~/components/ui";
+import { ContentCard } from "~/components/blocks/content-card";
+import { PageHeader } from "~/components/blocks/page-header";
 
 export function SourceList(props: { title?: string; description?: string; sources: SourceCitation[] }) {
   return (
-    <Card class="space-y-5">
-      <SectionHeading
+    <ContentCard class="space-y-5">
+      <PageHeader
         eyebrow="Paper trail"
         title={props.title ?? "Visible evidence trail"}
         description={
@@ -38,6 +39,6 @@ export function SourceList(props: { title?: string; description?: string; source
           </article>
         ))}
       </div>
-    </Card>
+    </ContentCard>
   );
 }

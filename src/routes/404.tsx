@@ -1,14 +1,13 @@
 import { A } from "@solidjs/router";
-import { Card, SectionHeading } from "~/components/ui";
+import { EmptyState } from "~/components/blocks/empty-state";
 
 export default function NotFoundPage() {
   return (
-    <Card class="space-y-4">
-      <SectionHeading
-        eyebrow="404"
-        title="That page does not exist"
-        description="The route you requested is not part of the current static snapshot. The future may be decentralized, but this URL is still unfortunately absent."
-      />
+    <EmptyState
+      eyebrow="404"
+      title="That page does not exist"
+      description="The route you requested is not part of the current static snapshot. The future may be decentralized, but this URL is still unfortunately absent."
+    >
       <div class="flex flex-wrap gap-4 text-sm text-muted-foreground">
         <A href="/" class="hover:text-accent-foreground">
           Home
@@ -20,6 +19,6 @@ export default function NotFoundPage() {
           Methodology
         </A>
       </div>
-    </Card>
+    </EmptyState>
   );
 }

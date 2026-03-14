@@ -1,11 +1,16 @@
 import { Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
+import { ContentCard } from "~/components/blocks/content-card";
+import { MetricCard } from "~/components/blocks/metric-card";
+import { PageHeader } from "~/components/blocks/page-header";
 import { NewsletterSignup } from "~/components/newsletter-signup";
+import { Badge } from "~/components/ui/badge";
+import { Button } from "~/components/ui/button";
+import { Card } from "~/components/ui/card";
 import { companies } from "~/lib/content/companies";
-import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
 import { withBasePath } from "~/lib/config";
-import { Badge, Button, Card, SectionHeading } from "~/components/ui";
 import { formatCompanyMetric } from "~/lib/domain/formatters";
+import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
 
 export default function Home() {
   const mostDecentralizable = [...companies].sort(
@@ -54,40 +59,36 @@ export default function Home() {
             </div>
           </Card>
 
-          <Card class="space-y-5">
-            <SectionHeading
+          <ContentCard class="space-y-5">
+            <PageHeader
               eyebrow="Snapshot highlights"
               title="A few early signals"
               description="The point is not to predict a single date when incumbents lose. The point is to notice which categories are already becoming harder to justify at current prices."
             />
             <div class="space-y-4">
-              <article class="rounded-2xl border border-border bg-card p-4">
-                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  Most decentralizable large-cap in the launch set
-                </p>
-                <p class="mt-2 text-xl font-semibold">{mostDecentralizable.name}</p>
-                <p class="mt-2 text-sm leading-7 text-muted-foreground">
-                  {formatCompanyMetric("decentralizability", mostDecentralizable.metrics.decentralizability)} —{" "}
-                  {mostDecentralizable.metrics.decentralizability.rationale}
-                </p>
-              </article>
-              <article class="rounded-2xl border border-border bg-card p-4">
-                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  Largest implied capital release opportunity
-                </p>
-                <p class="mt-2 text-xl font-semibold">{mostCapitalAtRisk.name}</p>
-                <p class="mt-2 text-sm leading-7 text-muted-foreground">
-                  {formatCompanyMetric("freedCapitalPotential", mostCapitalAtRisk.metrics.freedCapitalPotential)} —{" "}
-                  {mostCapitalAtRisk.metrics.freedCapitalPotential.rationale}
-                </p>
-              </article>
+              <MetricCard
+                label="Most decentralizable large-cap in the launch set"
+                value={mostDecentralizable.name}
+                class="[&>p:first-child]:tracking-[0.22em]"
+              >
+                {formatCompanyMetric("decentralizability", mostDecentralizable.metrics.decentralizability)} —{" "}
+                {mostDecentralizable.metrics.decentralizability.rationale}
+              </MetricCard>
+              <MetricCard
+                label="Largest implied capital release opportunity"
+                value={mostCapitalAtRisk.name}
+                class="[&>p:first-child]:tracking-[0.22em]"
+              >
+                {formatCompanyMetric("freedCapitalPotential", mostCapitalAtRisk.metrics.freedCapitalPotential)} —{" "}
+                {mostCapitalAtRisk.metrics.freedCapitalPotential.rationale}
+              </MetricCard>
             </div>
-          </Card>
+          </ContentCard>
         </section>
 
         <section class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-          <Card class="space-y-5">
-            <SectionHeading
+          <ContentCard class="space-y-5">
+            <PageHeader
               eyebrow="Motivation"
               title="The thesis in one page"
               description="Many digital products still charge like scarcity is real. Many physical products still charge like production must remain giant, centralized, and slow. Both assumptions are under pressure."
@@ -103,10 +104,10 @@ export default function Home() {
                 expect to defend prices that become less philosophically persuasive and less economically durable.
               </p>
             </div>
-          </Card>
+          </ContentCard>
 
-          <Card class="space-y-5">
-            <SectionHeading
+          <ContentCard class="space-y-5">
+            <PageHeader
               eyebrow="Operating rules"
               title="How the registry thinks"
               description="The methodology is explicit so readers can audit the assumptions instead of pretending a clean table appeared from the heavens."
@@ -118,7 +119,7 @@ export default function Home() {
                 </article>
               ))}
             </div>
-          </Card>
+          </ContentCard>
         </section>
 
         <NewsletterSignup />

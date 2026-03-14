@@ -1,7 +1,11 @@
 import { Title } from "@solidjs/meta";
 import { A, useParams } from "@solidjs/router";
+import { ContentCard } from "~/components/blocks/content-card";
+import { EmptyState } from "~/components/blocks/empty-state";
+import { PageHeader } from "~/components/blocks/page-header";
 import { AlternativeTable, ProductOverviewPanel, SourceSummaryCard, TechnologyWavePanel } from "~/components/company-panels";
-import { Badge, Card, SectionHeading } from "~/components/ui";
+import { Badge } from "~/components/ui/badge";
+import { withBasePath } from "~/lib/config";
 import {
   getAlternativesForProduct,
   getCompanyBySlug,
@@ -19,9 +23,12 @@ export default function ProductPage() {
 
   if (!company() || !product() || product()!.companySlug !== company()!.slug) {
     return (
-      <Card class="space-y-4">
-        <SectionHeading title="Product not found" description="The requested company or product slug does not exist in the current registry snapshot." />
-      </Card>
+      <EmptyState
+        title="Product not found"
+        description="The requested company or product slug does not exist in the current registry snapshot."
+        actionLabel="Back to registry"
+        actionHref={withBasePath("/companies")}
+      />
     );
   }
 
@@ -54,14 +61,14 @@ export default function ProductPage() {
 
         <ProductOverviewPanel product={productData} company={companyData} />
 
-        <Card class="space-y-5">
-          <SectionHeading
+        <ContentCard class="space-y-5">
+          <PageHeader
             eyebrow="Alternatives"
             title="Replacement landscape"
             description="These alternatives are not always drop-in replacements. They do, however, show where the incumbent's pricing power starts facing open pressure."
           />
           <AlternativeTable alternatives={productAlternatives} />
-        </Card>
+        </ContentCard>
 
         <TechnologyWavePanel waves={waveData} />
         <SourceSummaryCard title="Product research sources" sources={productSources} />

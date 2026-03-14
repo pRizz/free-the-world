@@ -1,13 +1,14 @@
 import { Title } from "@solidjs/meta";
 import { createMemo, createSignal } from "solid-js";
+import { ContentCard } from "~/components/blocks/content-card";
+import { PageHeader } from "~/components/blocks/page-header";
 import { CompanyTable } from "~/components/company-table";
 import { CompanyTableToolbar } from "~/components/company-table-toolbar";
-import { Card, SectionHeading } from "~/components/ui";
 import { companies } from "~/lib/content/companies";
 import { industries, sectors } from "~/lib/content/sectors";
+import { getIndustryLabel, getSectorLabel } from "~/lib/domain/selectors";
 import { defaultCompanyTableState } from "~/lib/domain/table-state";
 import type { CompanyMetricId } from "~/lib/domain/types";
-import { getIndustryLabel, getSectorLabel } from "~/lib/domain/selectors";
 
 export default function CompaniesPage() {
   const [search, setSearch] = createSignal(defaultCompanyTableState.search);
@@ -58,7 +59,7 @@ export default function CompaniesPage() {
       <Title>Company Registry · Free The World</Title>
 
       <div class="space-y-8">
-        <SectionHeading
+        <PageHeader
           eyebrow="Registry"
           title="Top 10 S&P 500 companies"
           description="A curated launch set focused on the largest companies in the index. The architecture is designed to absorb more indices, regions, and private companies later without turning the data layer into soup."
@@ -81,7 +82,7 @@ export default function CompaniesPage() {
           onToggleMetric={toggleMetric}
         />
 
-        <Card class="space-y-4">
+        <ContentCard class="space-y-4">
           <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p class="text-sm font-medium text-foreground">{filteredCompanies().length} companies shown</p>
@@ -94,7 +95,7 @@ export default function CompaniesPage() {
             </p>
           </div>
           <CompanyTable companies={filteredCompanies()} visibleMetricIds={visibleMetricIds()} />
-        </Card>
+        </ContentCard>
       </div>
     </>
   );

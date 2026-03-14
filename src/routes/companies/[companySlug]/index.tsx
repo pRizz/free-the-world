@@ -1,5 +1,9 @@
 import { Title } from "@solidjs/meta";
 import { A, useParams } from "@solidjs/router";
+import { ActionRow } from "~/components/blocks/action-row";
+import { ContentCard } from "~/components/blocks/content-card";
+import { EmptyState } from "~/components/blocks/empty-state";
+import { PageHeader } from "~/components/blocks/page-header";
 import {
   CompanyMetadataPanel,
   CompanyMetricsPanel,
@@ -7,14 +11,10 @@ import {
   TechnologyWavePanel,
 } from "~/components/company-panels";
 import { SourceList } from "~/components/source-list";
-import { Badge, Button, Card, SectionHeading } from "~/components/ui";
+import { Badge } from "~/components/ui/badge";
+import { Button } from "~/components/ui/button";
 import { withBasePath } from "~/lib/config";
-import {
-  getCompanyBySlug,
-  getProductsForCompany,
-  getSourcesByIds,
-  getTechnologyWavesByIds,
-} from "~/lib/domain/selectors";
+import { getCompanyBySlug, getProductsForCompany, getSourcesByIds, getTechnologyWavesByIds } from "~/lib/domain/selectors";
 
 export default function CompanyPage() {
   const params = useParams();
@@ -23,12 +23,12 @@ export default function CompanyPage() {
 
   if (!company()) {
     return (
-      <Card class="space-y-4">
-        <SectionHeading title="Company not found" description="The requested company slug does not exist in the current registry snapshot." />
-        <Button as="a" href={withBasePath("/companies")} variant="secondary">
-          Back to registry
-        </Button>
-      </Card>
+      <EmptyState
+        title="Company not found"
+        description="The requested company slug does not exist in the current registry snapshot."
+        actionLabel="Back to registry"
+        actionHref={withBasePath("/companies")}
+      />
     );
   }
 
@@ -53,14 +53,14 @@ export default function CompanyPage() {
               {companyData.description}
             </p>
           </div>
-          <div class="flex flex-wrap gap-3">
+          <ActionRow>
             <Button as="a" href={companyData.companiesMarketCapUrl} target="_blank" rel="noreferrer" variant="secondary">
               CompaniesMarketCap
             </Button>
             <Button as="a" href={withBasePath(`/companies/${companyData.slug}/products`)}>
               Product analyses
             </Button>
-          </div>
+          </ActionRow>
         </section>
 
         <section class="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
@@ -68,8 +68,8 @@ export default function CompanyPage() {
           <CompanyMetricsPanel company={companyData} />
         </section>
 
-        <Card class="space-y-6">
-          <SectionHeading
+        <ContentCard class="space-y-6">
+          <PageHeader
             eyebrow="Narrative"
             title="Why the company matters"
             description="A short editorial overview plus the current thesis on moat strength and decentralization pressure."
@@ -102,7 +102,7 @@ export default function CompanyPage() {
               </article>
             </div>
           </div>
-        </Card>
+        </ContentCard>
 
         <CompanyProductsPanel company={companyData} products={relatedProducts} />
         <TechnologyWavePanel waves={waves} />

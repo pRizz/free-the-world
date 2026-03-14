@@ -2,7 +2,7 @@ import { A, useLocation } from "@solidjs/router";
 import type { ParentProps } from "solid-js";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
-import { Badge, Button } from "~/components/ui";
+import { Button } from "~/components/ui/button";
 
 const navigation = [
   { href: "/", label: "Home" },
