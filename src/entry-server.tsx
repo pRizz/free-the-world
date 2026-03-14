@@ -9,7 +9,7 @@ export default createHandler(() => (
         <head>
           <meta charset="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
-          <meta name="theme-color" content="#4f46e5" />
+          <meta name="theme-color" content="#0a011a" />
           <meta name="description" content={siteConfig.description} />
           {assets}
         </head>

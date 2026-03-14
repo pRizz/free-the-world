@@ -78,4 +78,4 @@ The loop is designed around Claude CLI and Codex CLI, but it degrades gracefully
 
 ## Theme
 
-Theme tokens live in `src/lib/theme.ts` and CSS variables in `src/app.css`. The default accent is dark indigo, but the token layer is meant to keep that swappable.
+Theme tokens live in `src/lib/theme.ts` and CSS variables in `src/app.css`. The default palette uses near-black violet backgrounds with deep-indigo accents, but the token layer is meant to keep that swappable.
