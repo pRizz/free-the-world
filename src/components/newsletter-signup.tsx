@@ -11,7 +11,7 @@ export function NewsletterSignup() {
           description={newsletterContent.description}
         />
 
-        <div class="space-y-3 text-sm leading-7 text-[var(--color-muted-foreground)]">
+        <div class="space-y-3 text-sm leading-7 text-muted-foreground">
           <p>
             The embed is intentionally simple for v1 because Substack's native iframe does not offer much styling
             control. That felt preferable to pretending a bespoke funnel is somehow the urgent bottleneck here.
@@ -27,7 +27,7 @@ export function NewsletterSignup() {
         </Button>
       </div>
 
-      <div class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-3 shadow-inner shadow-black/10">
+      <div class="rounded-2xl border border-border bg-card p-3 shadow-inner shadow-black/10">
         <iframe
           src={newsletterContent.embedUrl}
           title="Free The World newsletter signup"

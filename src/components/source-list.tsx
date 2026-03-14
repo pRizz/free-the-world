@@ -15,23 +15,23 @@ export function SourceList(props: { title?: string; description?: string; source
 
       <div class="space-y-4">
         {props.sources.map(source => (
-          <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
+          <article class="rounded-2xl border border-border bg-card p-4">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div class="space-y-2">
                 <a
                   href={source.url}
                   target="_blank"
                   rel="noreferrer"
-                  class="text-base font-medium text-[var(--color-foreground)] hover:text-[var(--color-accent)]"
+                  class="text-base font-medium text-foreground hover:text-accent-foreground"
                 >
                   {source.title}
                 </a>
-                <p class="text-sm text-[var(--color-muted-foreground)]">
+                <p class="text-sm text-muted-foreground">
                   {source.publisher} · {source.kind.replaceAll("-", " ")}
                 </p>
-                <p class="text-sm leading-7 text-[var(--color-muted-foreground)]">{source.note}</p>
+                <p class="text-sm leading-7 text-muted-foreground">{source.note}</p>
               </div>
-              <p class="shrink-0 text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">
+              <p class="shrink-0 text-xs uppercase tracking-[0.24em] text-muted-foreground">
                 Reviewed {source.accessedOn}
               </p>
             </div>

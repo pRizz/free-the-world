@@ -20,7 +20,7 @@ export default function MethodologyPage() {
           <h2 class="text-2xl font-semibold tracking-tight">Core principles</h2>
           <div class="space-y-3">
             {methodologyPrinciples.map(principle => (
-              <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4 text-sm leading-7 text-[var(--color-muted-foreground)]">
+              <article class="rounded-2xl border border-border bg-card p-4 text-sm leading-7 text-muted-foreground">
                 {principle}
               </article>
             ))}
@@ -31,10 +31,10 @@ export default function MethodologyPage() {
           <h2 class="text-2xl font-semibold tracking-tight">Metric definitions</h2>
           <div class="grid gap-4 lg:grid-cols-2">
             {Object.values(companyMetricDefinitions).map(metric => (
-              <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
-                <p class="text-xs uppercase tracking-[0.24em] text-[var(--color-accent)]">{metric.shortLabel}</p>
+              <article class="rounded-2xl border border-border bg-card p-4">
+                <p class="text-xs uppercase tracking-[0.24em] text-accent-foreground">{metric.shortLabel}</p>
                 <h3 class="mt-2 text-lg font-medium">{metric.label}</h3>
-                <p class="mt-3 text-sm leading-7 text-[var(--color-muted-foreground)]">{metric.description}</p>
+                <p class="mt-3 text-sm leading-7 text-muted-foreground">{metric.description}</p>
               </article>
             ))}
           </div>
@@ -42,16 +42,16 @@ export default function MethodologyPage() {
 
         <Card class="space-y-5">
           <h2 class="text-2xl font-semibold tracking-tight">Technology-wave assumptions</h2>
-          <p class="text-sm leading-7 text-[var(--color-muted-foreground)]">
+          <p class="text-sm leading-7 text-muted-foreground">
             These are the repo's declared biases. They prevent the writing from quietly smuggling in a static-world
             worldview while pretending to evaluate decentralization objectively.
           </p>
           <div class="space-y-4">
             {technologyWaves.map(wave => (
-              <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
+              <article class="rounded-2xl border border-border bg-card p-4">
                 <h3 class="text-lg font-medium">{wave.label}</h3>
-                <p class="mt-2 text-sm leading-7 text-[var(--color-muted-foreground)]">{wave.summary}</p>
-                <ul class="mt-3 space-y-2 text-sm leading-7 text-[var(--color-muted-foreground)]">
+                <p class="mt-2 text-sm leading-7 text-muted-foreground">{wave.summary}</p>
+                <ul class="mt-3 space-y-2 text-sm leading-7 text-muted-foreground">
                   {wave.implications.map(implication => (
                     <li>• {implication}</li>
                   ))}

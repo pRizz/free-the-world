@@ -34,7 +34,7 @@ export default function CompanyProductsPage() {
           </div>
           <div class="space-y-3">
             <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{companyData.name} product analyses</h1>
-            <p class="max-w-4xl text-base leading-8 text-[var(--color-muted-foreground)] sm:text-lg">
+            <p class="max-w-4xl text-base leading-8 text-muted-foreground sm:text-lg">
               A tighter look at the products that matter most to {companyData.name}, along with the free, open,
               decentralized, or cooperative alternatives already creating pricing pressure.
             </p>
@@ -44,8 +44,8 @@ export default function CompanyProductsPage() {
         <CompanyProductsPanel company={companyData} products={productRecords} />
         <SourceList title="Company-level source stack" sources={sources} />
 
-        <div class="text-sm text-[var(--color-muted-foreground)]">
-          <A href={`/companies/${companyData.slug}`} class="hover:text-[var(--color-accent)]">
+        <div class="text-sm text-muted-foreground">
+          <A href={`/companies/${companyData.slug}`} class="hover:text-accent-foreground">
             ← Back to {companyData.name}
           </A>
         </div>

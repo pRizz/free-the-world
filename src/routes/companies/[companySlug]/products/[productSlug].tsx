@@ -45,7 +45,7 @@ export default function ProductPage() {
           </div>
           <div class="space-y-3">
             <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{productData.name}</h1>
-            <p class="max-w-4xl text-base leading-8 text-[var(--color-muted-foreground)] sm:text-lg">
+            <p class="max-w-4xl text-base leading-8 text-muted-foreground sm:text-lg">
               The question here is simple: which parts of this product are genuinely hard, and which parts are mostly
               a very profitable coordination habit?
             </p>
@@ -66,8 +66,8 @@ export default function ProductPage() {
         <TechnologyWavePanel waves={waveData} />
         <SourceSummaryCard title="Product research sources" sources={productSources} />
 
-        <div class="text-sm text-[var(--color-muted-foreground)]">
-          <A href={`/companies/${companyData.slug}/products`} class="hover:text-[var(--color-accent)]">
+        <div class="text-sm text-muted-foreground">
+          <A href={`/companies/${companyData.slug}/products`} class="hover:text-accent-foreground">
             ← Back to {companyData.name} products
           </A>
         </div>

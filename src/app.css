@@ -2,21 +2,68 @@
 
 :root {
   color-scheme: dark;
-  --color-background: rgb(5 0 14);
-  --color-surface: rgb(7 0 18);
-  --color-surface-elevated: rgb(9 1 22);
-  --color-border: rgb(22, 8, 44);
-  --color-foreground: oklch(0.92 0.01 270);
-  --color-muted-foreground: oklch(0.68 0.03 278);
-  --color-accent: rgb(22 5 55);
-  --color-accent-soft: rgb(15 3 38);
-  --color-accent-foreground: oklch(0.93 0.01 270);
-  --color-accent-shadow: color-mix(in oklab, var(--color-accent), transparent 70%);
-  --color-success: oklch(0.62 0.14 150);
-  --color-warning: oklch(0.68 0.16 80);
+  --background: hsl(261, 50%, 4%);
+  --foreground: hsl(0, 0%, 94%);
+  --card: hsl(262, 91%, 5%);
+  --card-foreground: hsl(0, 0%, 94%);
+  --popover: hsl(262, 91%, 5%);
+  --popover-foreground: hsl(0, 0%, 94%);
+  --primary: hsl(264, 83%, 12%);
+  --primary-foreground: hsl(0, 0%, 96%);
+  --secondary: hsl(265, 85%, 8%);
+  --secondary-foreground: hsl(0, 0%, 94%);
+  --muted: hsl(265, 85%, 8%);
+  --muted-foreground: hsl(0, 0%, 58%);
+  --accent: hsl(265, 85%, 8%);
+  --accent-foreground: hsl(220, 25%, 72%);
+  --destructive: hsl(0, 62%, 50%);
+  --destructive-foreground: hsl(0, 0%, 96%);
+  --border: hsl(263, 25%, 20%);
+  --input: hsl(263, 25%, 20%);
+  --ring: hsl(264, 83%, 12%);
+  --primary-shadow: color-mix(in hsl, var(--primary), transparent 70%);
+  --radius: 1rem;
+  --success: hsl(150, 45%, 42%);
+  --success-foreground: hsl(0, 0%, 96%);
+  --warning: hsl(80, 55%, 50%);
+  --warning-foreground: hsl(261, 50%, 4%);
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-primary-shadow: var(--primary-shadow);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --radius-sm: calc(var(--radius) - 0.25rem);
+  --radius-md: calc(var(--radius) - 0.125rem);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 0.25rem);
+}
+
+:root {
   --page-gradient:
-    radial-gradient(circle at top, color-mix(in oklab, var(--color-accent), transparent 83%) 0%, transparent 40%),
-    linear-gradient(180deg, color-mix(in oklab, var(--color-background), black 4%) 0%, var(--color-background) 100%);
+    radial-gradient(circle at top, color-mix(in hsl, var(--primary), transparent 83%) 0%, transparent 40%),
+    linear-gradient(180deg, color-mix(in hsl, var(--background), black 4%) 0%, var(--background) 100%);
 }
 
 * {
@@ -31,9 +78,9 @@ body {
   margin: 0;
   min-height: 100vh;
   background:
-    linear-gradient(180deg, transparent, color-mix(in oklab, var(--color-background), black 10%)),
+    linear-gradient(180deg, transparent, color-mix(in hsl, var(--background), black 10%)),
     var(--page-gradient);
-  color: var(--color-foreground);
+  color: var(--foreground);
   font-family:
     Inter,
     ui-sans-serif,
@@ -51,12 +98,12 @@ a {
 }
 
 ::selection {
-  background: color-mix(in oklab, var(--color-accent), white 15%);
-  color: var(--color-accent-foreground);
+  background: color-mix(in hsl, var(--primary), white 15%);
+  color: var(--primary-foreground);
 }
 
 .prose-block p {
-  color: var(--color-muted-foreground);
+  color: var(--muted-foreground);
   line-height: 1.85;
 }
 

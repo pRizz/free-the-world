@@ -49,7 +49,7 @@ export default function CompanyPage() {
           </div>
           <div class="space-y-4">
             <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{companyData.name}</h1>
-            <p class="max-w-4xl text-base leading-8 text-[var(--color-muted-foreground)] sm:text-lg">
+            <p class="max-w-4xl text-base leading-8 text-muted-foreground sm:text-lg">
               {companyData.description}
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function CompanyPage() {
               </article>
             ))}
             <div class="grid gap-5 lg:grid-cols-2">
-              <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-5">
+              <article class="rounded-2xl border border-border bg-card p-5">
                 <h3 class="text-lg font-medium">Moat reading</h3>
                 <div class="mt-3 prose-block">
                   {companyData.moatNarrative.map(paragraph => (
@@ -92,7 +92,7 @@ export default function CompanyPage() {
                   ))}
                 </div>
               </article>
-              <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-5">
+              <article class="rounded-2xl border border-border bg-card p-5">
                 <h3 class="text-lg font-medium">Decentralization reading</h3>
                 <div class="mt-3 prose-block">
                   {companyData.decentralizationNarrative.map(paragraph => (
@@ -108,8 +108,8 @@ export default function CompanyPage() {
         <TechnologyWavePanel waves={waves} />
         <SourceList sources={companySources} />
 
-        <div class="text-sm text-[var(--color-muted-foreground)]">
-          <A href="/companies" class="hover:text-[var(--color-accent)]">
+        <div class="text-sm text-muted-foreground">
+          <A href="/companies" class="hover:text-accent-foreground">
             ← Back to registry
           </A>
         </div>

@@ -13,27 +13,27 @@ export function CompanyMetadataPanel(props: { company: Company }) {
       <SectionHeading eyebrow="Metadata" title="Where this company sits" />
       <dl class="grid gap-4 sm:grid-cols-2">
         <div>
-          <dt class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">Ticker</dt>
+          <dt class="text-xs uppercase tracking-[0.24em] text-muted-foreground">Ticker</dt>
           <dd class="mt-2 text-base font-medium">{props.company.ticker}</dd>
         </div>
         <div>
-          <dt class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">Rank snapshot</dt>
+          <dt class="text-xs uppercase tracking-[0.24em] text-muted-foreground">Rank snapshot</dt>
           <dd class="mt-2 text-base font-medium">≈ {props.company.rankApprox}</dd>
         </div>
         <div>
-          <dt class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">Sector</dt>
+          <dt class="text-xs uppercase tracking-[0.24em] text-muted-foreground">Sector</dt>
           <dd class="mt-2 text-base font-medium">{getSectorLabel(props.company.sectorId)}</dd>
         </div>
         <div>
-          <dt class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">Industry</dt>
+          <dt class="text-xs uppercase tracking-[0.24em] text-muted-foreground">Industry</dt>
           <dd class="mt-2 text-base font-medium">{getIndustryLabel(props.company.industryId)}</dd>
         </div>
         <div>
-          <dt class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">Region</dt>
+          <dt class="text-xs uppercase tracking-[0.24em] text-muted-foreground">Region</dt>
           <dd class="mt-2 text-base font-medium">{getRegionLabel(props.company.regionId)}</dd>
         </div>
         <div>
-          <dt class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">Index</dt>
+          <dt class="text-xs uppercase tracking-[0.24em] text-muted-foreground">Index</dt>
           <dd class="mt-2 text-base font-medium">{getIndexLabels(props.company.indexIds).join(", ")}</dd>
         </div>
       </dl>
@@ -52,14 +52,14 @@ export function CompanyMetricsPanel(props: { company: Company }) {
       <div class="metric-grid">
         <For each={Object.entries(props.company.metrics)}>
           {([metricId, assessment]) => (
-            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
-              <p class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">
+            <article class="rounded-2xl border border-border bg-card p-4">
+              <p class="text-xs uppercase tracking-[0.24em] text-muted-foreground">
                 {companyMetricDefinitions[metricId as keyof typeof companyMetricDefinitions].label}
               </p>
               <p class="mt-2 text-2xl font-semibold">
                 {formatCompanyMetric(metricId as keyof typeof companyMetricDefinitions, assessment)}
               </p>
-              <p class="mt-3 text-sm leading-7 text-[var(--color-muted-foreground)]">{assessment.rationale}</p>
+              <p class="mt-3 text-sm leading-7 text-muted-foreground">{assessment.rationale}</p>
             </article>
           )}
         </For>
@@ -79,14 +79,14 @@ export function CompanyProductsPanel(props: { company: Company; products: Produc
       <div class="space-y-4">
         <For each={props.products}>
           {product => (
-            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
+            <article class="rounded-2xl border border-border bg-card p-4">
               <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                 <div class="space-y-2">
-                  <A href={`/companies/${props.company.slug}/products/${product.slug}`} class="text-lg font-medium hover:text-[var(--color-accent)]">
+                  <A href={`/companies/${props.company.slug}/products/${product.slug}`} class="text-lg font-medium hover:text-accent-foreground">
                     {product.name}
                   </A>
-                  <p class="text-sm uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">{product.category}</p>
-                  <p class="max-w-3xl text-sm leading-7 text-[var(--color-muted-foreground)]">{product.summary}</p>
+                  <p class="text-sm uppercase tracking-[0.22em] text-muted-foreground">{product.category}</p>
+                  <p class="max-w-3xl text-sm leading-7 text-muted-foreground">{product.summary}</p>
                 </div>
                 <Button
                   as="a"
@@ -115,13 +115,13 @@ export function TechnologyWavePanel(props: { waves: TechnologyWave[] }) {
       <div class="space-y-4">
         <For each={props.waves}>
           {wave => (
-            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
+            <article class="rounded-2xl border border-border bg-card p-4">
               <div class="space-y-3">
                 <div class="flex flex-wrap gap-2">
                   <Badge tone="accent">{wave.label}</Badge>
                 </div>
-                <p class="text-sm leading-7 text-[var(--color-muted-foreground)]">{wave.summary}</p>
-                <ul class="space-y-2 text-sm leading-7 text-[var(--color-muted-foreground)]">
+                <p class="text-sm leading-7 text-muted-foreground">{wave.summary}</p>
+                <ul class="space-y-2 text-sm leading-7 text-muted-foreground">
                   <For each={wave.implications}>{implication => <li>• {implication}</li>}</For>
                 </ul>
               </div>
@@ -136,7 +136,7 @@ export function TechnologyWavePanel(props: { waves: TechnologyWave[] }) {
 export function AlternativeTable(props: { alternatives: Alternative[] }) {
   return (
     <Table>
-      <thead class="bg-[var(--color-surface-elevated)] text-xs uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
+      <thead class="bg-card text-xs uppercase tracking-[0.22em] text-muted-foreground">
         <tr>
           <th class="px-4 py-4 font-medium">Alternative</th>
           <th class="px-4 py-4 font-medium">Type</th>
@@ -150,12 +150,12 @@ export function AlternativeTable(props: { alternatives: Alternative[] }) {
       <tbody>
         <For each={props.alternatives}>
           {alternative => (
-            <tr class="border-t border-[var(--color-border)] align-top">
+            <tr class="border-t border-border align-top">
               <td class="space-y-2 px-4 py-4">
                 <p class="font-semibold">{alternative.name}</p>
-                <p class="max-w-sm text-sm leading-7 text-[var(--color-muted-foreground)]">{alternative.summary}</p>
+                <p class="max-w-sm text-sm leading-7 text-muted-foreground">{alternative.summary}</p>
               </td>
-              <td class="px-4 py-4 text-sm text-[var(--color-muted-foreground)]">{alternative.kind}</td>
+              <td class="px-4 py-4 text-sm text-muted-foreground">{alternative.kind}</td>
               <td class="px-4 py-4 text-sm">{formatAlternativeMetric("openness", alternative.metrics.openness)}</td>
               <td class="px-4 py-4 text-sm">
                 {formatAlternativeMetric("decentralizationFit", alternative.metrics.decentralizationFit)}
@@ -165,12 +165,12 @@ export function AlternativeTable(props: { alternatives: Alternative[] }) {
               <td class="px-4 py-4 text-sm">
                 <div class="flex flex-col gap-2">
                   {alternative.homepageUrl ? (
-                    <a href={alternative.homepageUrl} target="_blank" rel="noreferrer" class="hover:text-[var(--color-accent)]">
+                    <a href={alternative.homepageUrl} target="_blank" rel="noreferrer" class="hover:text-accent-foreground">
                       Homepage
                     </a>
                   ) : null}
                   {alternative.repoUrl ? (
-                    <a href={alternative.repoUrl} target="_blank" rel="noreferrer" class="hover:text-[var(--color-accent)]">
+                    <a href={alternative.repoUrl} target="_blank" rel="noreferrer" class="hover:text-accent-foreground">
                       Repository
                     </a>
                   ) : null}
@@ -191,8 +191,8 @@ export function ProductOverviewPanel(props: { product: Product; company: Company
       <div class="space-y-4 prose-block">
         <p>{props.product.whyItMatters}</p>
         <div>
-          <p class="text-xs uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">Replacement sketch</p>
-          <ul class="mt-3 space-y-2 text-sm leading-7 text-[var(--color-muted-foreground)]">
+          <p class="text-xs uppercase tracking-[0.24em] text-muted-foreground">Replacement sketch</p>
+          <ul class="mt-3 space-y-2 text-sm leading-7 text-muted-foreground">
             <For each={props.product.replacementSketch}>{paragraph => <li>• {paragraph}</li>}</For>
           </ul>
         </div>
@@ -216,11 +216,11 @@ export function SourceSummaryCard(props: { title: string; sources: SourceCitatio
       <div class="space-y-3">
         <For each={props.sources}>
           {source => (
-            <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
-              <a href={source.url} target="_blank" rel="noreferrer" class="font-medium hover:text-[var(--color-accent)]">
+            <article class="rounded-2xl border border-border bg-card p-4">
+              <a href={source.url} target="_blank" rel="noreferrer" class="font-medium hover:text-accent-foreground">
                 {source.title}
               </a>
-              <p class="mt-2 text-sm leading-7 text-[var(--color-muted-foreground)]">{source.note}</p>
+              <p class="mt-2 text-sm leading-7 text-muted-foreground">{source.note}</p>
             </article>
           )}
         </For>

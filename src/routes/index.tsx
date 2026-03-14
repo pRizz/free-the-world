@@ -28,7 +28,7 @@ export default function Home() {
                 <h1 class="max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
                   Price the moat honestly. Then imagine what happens when more of the world becomes free.
                 </h1>
-                <p class="max-w-3xl text-base leading-8 text-[var(--color-muted-foreground)] sm:text-lg">
+                <p class="max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
                   Free The World is a research-driven registry of major public companies and the products they still
                   monetize as if AI, open source, Bitcoin-native coordination, and distributed manufacturing were
                   optional side quests instead of the main plot.
@@ -38,7 +38,7 @@ export default function Home() {
 
             <div class="grid gap-3 sm:grid-cols-3">
               {landingHighlights.map(highlight => (
-                <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4 text-sm leading-7 text-[var(--color-muted-foreground)]">
+                <article class="rounded-2xl border border-border bg-card p-4 text-sm leading-7 text-muted-foreground">
                   {highlight}
                 </article>
               ))}
@@ -61,22 +61,22 @@ export default function Home() {
               description="The point is not to predict a single date when incumbents lose. The point is to notice which categories are already becoming harder to justify at current prices."
             />
             <div class="space-y-4">
-              <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
-                <p class="text-xs uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
+              <article class="rounded-2xl border border-border bg-card p-4">
+                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                   Most decentralizable large-cap in the launch set
                 </p>
                 <p class="mt-2 text-xl font-semibold">{mostDecentralizable.name}</p>
-                <p class="mt-2 text-sm leading-7 text-[var(--color-muted-foreground)]">
+                <p class="mt-2 text-sm leading-7 text-muted-foreground">
                   {formatCompanyMetric("decentralizability", mostDecentralizable.metrics.decentralizability)} —{" "}
                   {mostDecentralizable.metrics.decentralizability.rationale}
                 </p>
               </article>
-              <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
-                <p class="text-xs uppercase tracking-[0.22em] text-[var(--color-muted-foreground)]">
+              <article class="rounded-2xl border border-border bg-card p-4">
+                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">
                   Largest implied capital release opportunity
                 </p>
                 <p class="mt-2 text-xl font-semibold">{mostCapitalAtRisk.name}</p>
-                <p class="mt-2 text-sm leading-7 text-[var(--color-muted-foreground)]">
+                <p class="mt-2 text-sm leading-7 text-muted-foreground">
                   {formatCompanyMetric("freedCapitalPotential", mostCapitalAtRisk.metrics.freedCapitalPotential)} —{" "}
                   {mostCapitalAtRisk.metrics.freedCapitalPotential.rationale}
                 </p>
@@ -113,7 +113,7 @@ export default function Home() {
             />
             <div class="space-y-3">
               {methodologyPrinciples.map(principle => (
-                <article class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4 text-sm leading-7 text-[var(--color-muted-foreground)]">
+                <article class="rounded-2xl border border-border bg-card p-4 text-sm leading-7 text-muted-foreground">
                   {principle}
                 </article>
               ))}
@@ -123,7 +123,7 @@ export default function Home() {
 
         <NewsletterSignup />
 
-        <section class="rounded-3xl border border-[var(--color-border)] bg-[var(--color-surface)] p-6">
+        <section class="rounded-3xl border border-border bg-card p-6">
           <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div class="space-y-3">
               <Badge tone="muted">Professional with a light satirical aftertaste</Badge>
@@ -132,7 +132,7 @@ export default function Home() {
                 just not necessarily an eternal one.
               </h2>
             </div>
-            <A href="/companies" class="text-sm font-medium text-[var(--color-accent)] hover:underline">
+            <A href="/companies" class="text-sm font-medium text-accent-foreground hover:underline">
               Go to the company registry →
             </A>
           </div>

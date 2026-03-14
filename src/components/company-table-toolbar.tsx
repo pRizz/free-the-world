@@ -26,7 +26,7 @@ export function CompanyTableToolbar(props: ToolbarProps) {
     <Card class="space-y-5">
       <div class="flex flex-col gap-4 lg:flex-row lg:items-end">
         <div class="flex-1 space-y-2">
-          <label class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">
+          <label class="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
             Search companies
           </label>
           <Input
@@ -37,7 +37,7 @@ export function CompanyTableToolbar(props: ToolbarProps) {
         </div>
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">
+            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
               Sector
             </label>
             <Select value={props.sectorId} onChange={event => props.onSector(event.currentTarget.value)}>
@@ -46,7 +46,7 @@ export function CompanyTableToolbar(props: ToolbarProps) {
             </Select>
           </div>
           <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">
+            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
               Industry
             </label>
             <Select value={props.industryId} onChange={event => props.onIndustry(event.currentTarget.value)}>
@@ -55,7 +55,7 @@ export function CompanyTableToolbar(props: ToolbarProps) {
             </Select>
           </div>
           <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">
+            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
               Sort metric
             </label>
             <Select
@@ -68,7 +68,7 @@ export function CompanyTableToolbar(props: ToolbarProps) {
             </Select>
           </div>
           <div class="space-y-2">
-            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-[var(--color-muted-foreground)]">
+            <label class="text-xs font-semibold uppercase tracking-[0.24em] text-muted-foreground">
               Direction
             </label>
             <Select
@@ -82,8 +82,8 @@ export function CompanyTableToolbar(props: ToolbarProps) {
         </div>
       </div>
 
-      <details class="rounded-2xl border border-[var(--color-border)] bg-[var(--color-surface-elevated)] p-4">
-        <summary class="cursor-pointer list-none text-sm font-medium text-[var(--color-foreground)]">
+      <details class="rounded-2xl border border-border bg-card p-4">
+        <summary class="cursor-pointer list-none text-sm font-medium text-foreground">
           Toggle visible columns
         </summary>
         <div class="mt-4 flex flex-wrap gap-2">
