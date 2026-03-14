@@ -21,3 +21,28 @@ Completion review:
 
 Residual risks:
 - Nitro still logs pre-existing prerender `Invalid URL` errors during `bun run build`. The export step still produces `.output/public`, but that issue is outside this refactor and should be fixed separately.
+
+# Table Edge Overflow Hint
+
+- [x] Add animated left/right overflow hints to the shared table primitive.
+  Verification: `src/components/ui/table.tsx` now tracks horizontal overflow and renders edge overlays by default, with `edgeFade={false}` available as an opt-out.
+- [x] Add shared CSS for the subtle blur/fade edge treatment.
+  Verification: `src/app.css` now defines the edge overlay visuals and opacity transition.
+- [x] Verify overflow and non-overflow states.
+  Verification: `bun run typecheck`, `bun run build`, and Playwright checks confirmed the registry table reports `left=false/right=true` at start, `true/true` mid-scroll, `true/false` at the far right, and the alternatives table reports `false/false` when fully fitting. Overlay DOM also reports `pointer-events: none` and `aria-hidden="true"`.
+
+# Table Edge Blur Production Fix
+
+- [x] Move the table edge blur off CSS and onto the overlay elements so export/build output keeps the blur in Chrome.
+  Verification: `src/components/ui/table.tsx` now applies inline blur styles directly to both overlays, and `src/app.css` keeps only layout/transition/gradient behavior with an explicit overlay `z-index`.
+
+# Table Edge Blur Polish
+
+- [x] Taper the blur itself toward the table interior and overscan the overlay geometry so the shell edge is fully covered.
+  Verification: `src/components/ui/table.tsx` now applies left/right mask images inline, and `src/app.css` overscans the overlay past the shell bounds while keeping the tint falloff aligned with the blur taper.
+- [x] Extend the blur reach about 40% farther into the table without changing the overflow logic or mask behavior.
+  Verification: `src/app.css` now uses a wider shared edge width token for the table fade overlay.
+- [x] Reduce the table edge tint opacity substantially while keeping the same blur width and taper.
+  Verification: `src/app.css` now uses much lighter `color-mix(...)` stops for both left and right edge gradients.
+- [x] Disable the table edge tint entirely and leave only the blur treatment active.
+  Verification: `src/app.css` now uses transparent backgrounds for both edge overlays while `src/components/ui/table.tsx` continues to provide the blur and mask taper.

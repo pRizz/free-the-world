@@ -123,6 +123,33 @@ h1, h2, h3 {
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
 }
 
+.table-edge-fade {
+  --table-edge-overscan: 6px;
+  --table-edge-width: clamp(3.85rem, 8.4vw, 5.95rem);
+  position: absolute;
+  top: calc(var(--table-edge-overscan) * -1);
+  bottom: calc(var(--table-edge-overscan) * -1);
+  z-index: 1;
+  width: calc(var(--table-edge-width) + var(--table-edge-overscan));
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.table-edge-fade[data-visible="true"] {
+  opacity: 1;
+}
+
+.table-edge-fade--left {
+  left: calc(var(--table-edge-overscan) * -1);
+  background: transparent;
+}
+
+.table-edge-fade--right {
+  right: calc(var(--table-edge-overscan) * -1);
+  background: transparent;
+}
+
 .collapsible-content[data-expanded] {
   animation: collapsible-down 180ms ease-out;
 }
