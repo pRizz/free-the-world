@@ -41,7 +41,7 @@ export function SiteShell(props: ParentProps) {
           <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             <div class="space-y-2">
               <A href="/" class="inline-flex items-center gap-3">
-                <Badge tone="accent">Dark mode by default</Badge>
+                <Badge tone="accent">Research registry</Badge>
                 <span class="text-lg font-semibold tracking-[0.18em] uppercase">{siteConfig.name}</span>
               </A>
               <p class="max-w-xl text-sm text-[var(--color-muted-foreground)]">
