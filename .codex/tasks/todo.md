@@ -82,3 +82,22 @@ Residual risks:
   Verification: `src/app.css` now uses much lighter `color-mix(...)` stops for both left and right edge gradients.
 - [x] Disable the table edge tint entirely and leave only the blur treatment active.
   Verification: `src/app.css` now uses transparent backgrounds for both edge overlays while `src/components/ui/table.tsx` continues to provide the blur and mask taper.
+
+# Compact Sticky Shell Refactor
+
+- [x] Refactor the shared shell header into a compact sticky nav across breakpoints.
+  Verification: `src/components/site-shell.tsx` contains only brand, nav, and newsletter CTA in the sticky shell, with no global explanatory paragraph.
+- [x] Add a collapsible mobile navigation that stays closed by default and closes on route changes.
+  Verification: mobile shell exposes a menu toggle and collapses its nav panel after navigation.
+- [x] Extend Playwright coverage for the shell behavior on mobile and desktop.
+  Verification: `tests/e2e/smoke.spec.ts` covers collapsed mobile state, menu open/close behavior, route-change close behavior, desktop inline nav, and mobile header compactness.
+- [x] Run final verification and review for unintended side effects.
+  Verification: `bun run typecheck`, `bun run test:e2e`, diff review.
+
+Completion review:
+- Replaced the sticky multi-row explainer card with a tighter shell-level nav that keeps the brand, primary links, and newsletter CTA while dropping the global descriptive copy from the header.
+- Added a collapsible mobile menu using the shared collapsible primitive and tied it to route changes so the panel closes after navigation instead of lingering open across pages.
+- Extended Playwright smoke coverage to assert the compact mobile default state, menu expansion, route-change close behavior, and desktop inline navigation visibility.
+
+Residual risks:
+- `bun run test:e2e` still logs the repo's pre-existing Nitro prerender `Invalid URL` errors during the build step before serving the exported site. The suite passes against the generated static output, but that separate build warning remains unresolved.

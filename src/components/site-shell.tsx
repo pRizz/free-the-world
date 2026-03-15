@@ -1,8 +1,9 @@
 import { A, useLocation } from "@solidjs/router";
-import type { ParentProps } from "solid-js";
+import { createEffect, createSignal, type ParentProps } from "solid-js";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
 import { Button } from "~/components/ui/button";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "~/components/ui/collapsible";
 
 const navigation = [
   { href: "/", label: "Home" },
@@ -11,7 +12,7 @@ const navigation = [
   { href: "/about", label: "About" },
 ] as const;
 
-function NavLink(props: { href: string; label: string }) {
+function NavLink(props: { href: string; label: string; class?: string }) {
   const location = useLocation();
   const isActive = () =>
     props.href === "/"
@@ -22,10 +23,11 @@ function NavLink(props: { href: string; label: string }) {
     <A
       href={props.href}
       class={cn(
-        "rounded-full px-4 py-2 text-sm transition",
+        "rounded-full px-3 py-2 text-sm font-medium transition",
         isActive()
           ? "bg-secondary text-foreground"
-          : "text-muted-foreground hover:text-foreground"
+          : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground",
+        props.class
       )}
     >
       {props.label}
@@ -33,36 +35,83 @@ function NavLink(props: { href: string; label: string }) {
   );
 }
 
+function SiteNav(props: { ariaLabel: string; class?: string; linkClass?: string }) {
+  return (
+    <nav aria-label={props.ariaLabel} class={cn("flex items-center gap-1.5", props.class)}>
+      {navigation.map(item => (
+        <NavLink href={item.href} label={item.label} class={props.linkClass} />
+      ))}
+    </nav>
+  );
+}
+
 export function SiteShell(props: ParentProps) {
+  const location = useLocation();
+  const [isMobileNavOpen, setIsMobileNavOpen] = createSignal(false);
+
+  createEffect(() => {
+    location.pathname;
+    setIsMobileNavOpen(false);
+  });
+
   return (
     <div class="min-h-screen bg-background text-foreground">
       <div class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pb-10 sm:px-6 lg:px-8">
-        <header class="sticky top-0 z-20 mt-4 border border-border bg-[color-mix(in_hsl,var(--background),transparent_10%)]/90 px-4 py-4 backdrop-blur sm:px-6 rounded-2xl">
-          <div class="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
-            <div class="space-y-2">
-              <A href="/" class="inline-flex items-center gap-3">
-                <span class="text-lg font-semibold tracking-[0.18em] uppercase">{siteConfig.name}</span>
+        <header class="sticky top-3 z-20 mt-3 rounded-xl border border-border bg-[color-mix(in_hsl,var(--background),transparent_10%)]/92 px-3 py-3 shadow-xl shadow-black/15 backdrop-blur sm:px-4 lg:px-5">
+          <Collapsible open={isMobileNavOpen()} onOpenChange={setIsMobileNavOpen}>
+            <div class="flex items-center justify-between gap-3">
+              <A href="/" class="min-w-0">
+                <span class="block whitespace-nowrap text-sm font-semibold tracking-[0.22em] uppercase text-title-foreground sm:text-base lg:text-lg">
+                  {siteConfig.name}
+                </span>
               </A>
-              <p class="max-w-xl text-sm text-muted-foreground">
-                A running ledger of corporate moats, decentralizability, and the capital still trapped
-                inside products that insist on charging rent for what should soon be free.
-              </p>
+
+              <div class="hidden items-center gap-2 lg:flex">
+                <SiteNav ariaLabel="Primary" />
+                <Button
+                  as="a"
+                  href={siteConfig.publicationUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  variant="secondary"
+                  size="sm"
+                  class="shrink-0"
+                >
+                  Newsletter on Substack
+                </Button>
+              </div>
+
+              <CollapsibleTrigger
+                class="w-auto shrink-0 rounded-full border border-border bg-card px-3 py-2 text-xs uppercase tracking-[0.22em] text-muted-foreground hover:border-accent-foreground hover:text-foreground lg:hidden"
+                aria-label="Toggle navigation menu"
+              >
+                Menu
+              </CollapsibleTrigger>
             </div>
 
-            <div class="flex flex-col gap-3 lg:items-end">
-              <nav class="flex flex-wrap items-center gap-2">
-                {navigation.map(item => (
-                  <NavLink href={item.href} label={item.label} />
-                ))}
-              </nav>
-              <Button as="a" href={siteConfig.publicationUrl} target="_blank" rel="noreferrer" variant="secondary">
-                Newsletter on Substack
-              </Button>
-            </div>
-          </div>
+            <CollapsibleContent class="lg:hidden">
+              <div class="mt-4 border-t border-border pt-4">
+                <SiteNav
+                  ariaLabel="Mobile menu"
+                  class="flex-col items-stretch gap-2"
+                  linkClass="block rounded-2xl px-4 py-3 text-left text-base"
+                />
+                <Button
+                  as="a"
+                  href={siteConfig.publicationUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  variant="secondary"
+                  class="mt-3 w-full"
+                >
+                  Newsletter on Substack
+                </Button>
+              </div>
+            </CollapsibleContent>
+          </Collapsible>
         </header>
 
-        <main class="flex-1 py-10">{props.children}</main>
+        <main class="flex-1 py-8 sm:py-10">{props.children}</main>
 
         <footer class="mt-8 rounded-2xl border border-border bg-card px-5 py-6">
           <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
