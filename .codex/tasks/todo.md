@@ -1,5 +1,28 @@
 # UI Standardization Refactor
 
+# SolidStart Stable Migration And Hydration Fix
+
+- [x] Migrate the repo from `@solidjs/start@2.0.0-alpha.2` + Nitro V2 config to stable SolidStart/Vinxi config.
+  Verification: `bun run typecheck`, `bun run build`
+- [x] Replace the custom static export path with framework prerendered output and update local/CI static serving accordingly.
+  Verification: `bun run build`, targeted output inspection, `bun run test:e2e`
+- [x] Add a local `source-map-js` browser shim so the SolidStart dev overlay can resolve `SourceMapConsumer`.
+  Verification: `bun run test:e2e:dev`
+- [x] Add hydration/dev-overlay regression coverage for initial load plus first scroll on `/` and `/companies`.
+  Verification: `bun run test:e2e:dev`
+- [x] Re-test the shell after the framework migration and only apply a shell fallback if the same hydration key remains.
+  Verification: targeted dev repro check, diff review
+
+Completion review:
+- Migrated the app to stable `@solidjs/start@1.3.2` plus `vinxi`, replaced the alpha-era `vite.config.ts` flow with `app.config.ts`, and updated the client entry plus runtime base-path handling for the new server config shape.
+- Added a local `source-map-js` ESM shim and a dedicated dev Playwright config/spec that loads `/` and `/companies`, scrolls after hydration, and fails on `Hydration Mismatch`, `SourceMapConsumer`, or `get-source-map`.
+- Stable Vinxi still emits prerendered static output to `.output/public`, so the repo keeps that authoritative output path and uses a small post-build finalizer for `.nojekyll` and root `404.html` instead of forcing a `dist` migration.
+
+Residual risks:
+- Stable Vinxi still uses `.output/public`, so build, local static serving, and deploy assumptions remain coupled to that output layout unless the project adopts a custom output relocation later.
+- Upstream dependency warnings remain during verification (`NO_COLOR` vs `FORCE_COLOR`, unused `mergeRefs` in a dependency), but they are non-blocking and unrelated to the hydration/runtime fix.
+- The shell fallback was intentionally skipped because the migrated dev runtime no longer reproduced the original mobile-menu hydration key; if the issue resurfaces in a user profile, re-check `src/components/site-shell.tsx` before broadening the fix.
+
 - [x] Bootstrap dependencies and capture the current verification baseline.
   Verification: `bun install`, `bun run typecheck`, `bun run build`
   Notes: `typecheck` already fails in `scripts/export-static.ts` due to a generated import; `build` emits output but Nitro logs pre-existing prerender `Invalid URL` errors.

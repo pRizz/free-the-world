@@ -1,7 +1,7 @@
 import { theme } from "~/lib/theme";
 
 const publicationUrl = "https://peter.ryszkiewicz.us/";
-const rawBasePath = import.meta.env.BASE_URL ?? "/";
+const rawBasePath = import.meta.env.SERVER_BASE_URL || "/";
 const normalizedBasePath = rawBasePath === "/" ? "/" : rawBasePath.replace(/\/$/, "");
 
 export const siteConfig = {
