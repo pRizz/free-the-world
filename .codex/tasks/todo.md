@@ -180,6 +180,26 @@ Residual risks:
 - The queue path is intentionally manual-reference only; there is no automatic skill discovery or UI around queued entries yet.
 - Live provider execution was not needed for this feature, so the intake flow is verified locally up through queue/promotion/build/test rather than through a full live `sync:company` publish cycle in this task.
 
+# Top-20 S&P 500 Intake And Loop Support
+
+- [x] Expand taxonomy and align the canonical top-10 manifests/bundles for a new `sp500-top20` index.
+  Verification: `bun run content:validate`, `bun run content:compile`
+- [x] Queue the missing top-20 companies using the reverified March 13, 2026 company-level roster.
+  Verification: `bun run company:queue ... --batch-id=sp500-top20-2026-03-15`, queue file review
+- [x] Extend `bun run loop` to support queued batch targets and manifest-only canonical targets with source-aware run metadata.
+  Verification: `bun run typecheck`, `bun test tests/unit/content/ralph.test.ts tests/unit/content/ralph-loop.test.ts`
+- [x] Improve loop troubleshooting and preserve provider-config-based execution behavior.
+  Verification: targeted error-path assertions in `tests/unit/content/ralph-loop.test.ts` plus dry-run CLI checks
+
+Completion review:
+- Added `sp500-top20`, filled the missing taxonomy needed by the newly queued companies, and kept canonical bundle/manifests aligned so the compiler accepts the new index cleanly.
+- Reverified the roster against FinanceCharts’ March 13, 2026 company-level S&P 500 market-cap screener and queued the 10 missing companies: Eli Lilly, JPMorgan Chase, Exxon Mobil, Visa, Johnson & Johnson, Micron Technology, Costco, Oracle, Mastercard, and Netflix.
+- Extended the low-level Ralph loop so queued batches and manifest-only canonical targets can generate prompts under `research/runs/` before promotion, while preserving the separate `sync:company` path and improving provider-config troubleshooting.
+
+Residual risks:
+- The queued manifests are intentionally lightweight. They are ready for low-level prompt generation, but they still need promotion and full `sync:company` work before they become canonical published content.
+- The batch roster is pinned to the March 13, 2026 FinanceCharts snapshot. A later run should reverify the roster again instead of assuming it remains stable.
+
 # GitHub Pages Deploy Failure Fix
 
 - [x] Inspect the latest failed GitHub Pages deployment run and reproduce the failing step locally.

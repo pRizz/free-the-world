@@ -36,6 +36,7 @@ export type RalphProviderId = "claude" | "codex";
 export type RalphProviderPreference = RalphProviderId | "auto" | "both";
 export type RalphSyncMode = "dry-run" | "publish";
 export type ManifestQueueStatus = "queued";
+export type ResearchTargetSource = "canonical" | "queued";
 
 export interface CompanyManifest {
   schemaVersion: 1;
@@ -63,6 +64,14 @@ export interface ManifestQueueEntry {
   groupLabel?: string;
   requestNotes?: string;
   manifest: CompanyManifest;
+}
+
+export interface ResearchLoopTarget {
+  companySlug: string;
+  targetSource: ResearchTargetSource;
+  batchId?: string;
+  manifest: CompanyManifest;
+  queueEntry?: ManifestQueueEntry;
 }
 
 export interface RawAlternativeRecord extends Omit<Alternative, "productSlug"> {}
@@ -117,6 +126,8 @@ export interface ResearchRunManifest {
   schemaVersion: 1;
   runId: string;
   companySlug: string;
+  targetSource?: ResearchTargetSource;
+  batchId?: string;
   mode: RalphSyncMode;
   requestedProvider: RalphProviderPreference;
   resolvedProviders: RalphProviderId[];

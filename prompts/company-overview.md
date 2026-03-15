@@ -6,13 +6,13 @@ Sector: {{sectorId}}
 Industry: {{industryId}}
 Snapshot note: {{snapshotNote}}
 
-Current products in the registry:
+Known products from repo context:
 {{productNames}}
 
 Relevant technology waves:
 {{technologyWaves}}
 
-Canonical site data for context:
+Available repo context:
 ```json
 {{companyDataJson}}
 ```

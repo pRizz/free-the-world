@@ -15,6 +15,12 @@ export const contentGraph: ContentGraph = {
       "label": "S&P 500 · Top 10 by market cap",
       "regionId": "us",
       "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
     }
   ],
   "sectors": [
@@ -37,6 +43,14 @@ export const contentGraph: ContentGraph = {
     {
       "id": "consumer-staples",
       "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
     }
   ],
   "industries": [
@@ -79,6 +93,41 @@ export const contentGraph: ContentGraph = {
       "id": "consumer-staples-retail",
       "sectorId": "consumer-staples",
       "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
     }
   ],
   "technologyWaves": [
@@ -156,7 +205,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "information-technology",
       "industryId": "semiconductors",
@@ -307,7 +357,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "information-technology",
       "industryId": "technology-hardware",
@@ -462,7 +513,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "information-technology",
       "industryId": "software-cloud",
@@ -617,7 +669,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "communication-services",
       "industryId": "interactive-media-services",
@@ -769,7 +822,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "consumer-discretionary",
       "industryId": "broadline-retail",
@@ -926,7 +980,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "communication-services",
       "industryId": "interactive-media-services",
@@ -1085,7 +1140,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "information-technology",
       "industryId": "semiconductors",
@@ -1237,7 +1293,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "consumer-discretionary",
       "industryId": "automobile-manufacturers",
@@ -1379,7 +1436,8 @@ export const contentGraph: ContentGraph = {
       "maybeIpo": null,
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "financials",
       "industryId": "multi-sector-holdings",
@@ -1503,7 +1561,8 @@ export const contentGraph: ContentGraph = {
       },
       "regionId": "us",
       "indexIds": [
-        "sp500-top10"
+        "sp500-top10",
+        "sp500-top20"
       ],
       "sectorId": "consumer-staples",
       "industryId": "consumer-staples-retail",

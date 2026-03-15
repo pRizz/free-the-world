@@ -4,13 +4,13 @@ Company: {{companyName}} ({{ticker}})
 Slug: {{companySlug}}
 Description: {{description}}
 
-Products currently mapped:
+Known products from repo context:
 {{productNames}}
 
 Relevant technology waves:
 {{technologyWaves}}
 
-Canonical site data for context:
+Available repo context:
 ```json
 {{companyDataJson}}
 ```

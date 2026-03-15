@@ -1,6 +1,6 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import type { CompanyManifest } from "../../../src/lib/domain/content-types";
+import type { CompanyManifest, ManifestQueueEntry, ResearchTaskId } from "../../../src/lib/domain/content-types";
 
 export async function writeMinimalFixture(
   root: string,
@@ -14,6 +14,7 @@ export async function writeMinimalFixture(
   await mkdir(path.join(root, "manifests", "queue"), { recursive: true });
   await mkdir(path.join(root, "companies", "fixtureco"), { recursive: true });
   await mkdir(path.join(root, "sources"), { recursive: true });
+  await mkdir(path.join(root, "prompts"), { recursive: true });
 
   await writeJson(path.join(root, "taxonomy", "regions.json"), [{ id: "us", label: "United States" }]);
   await writeJson(path.join(root, "taxonomy", "indices.json"), [
@@ -23,16 +24,66 @@ export async function writeMinimalFixture(
       regionId: "us",
       description: "Fixture index",
     },
+    {
+      id: "sp500-top20",
+      label: "S&P 500 · Top 20 by market cap",
+      regionId: "us",
+      description: "Fixture top 20 index",
+    },
   ]);
   await writeJson(path.join(root, "taxonomy", "sectors.json"), [
     { id: "information-technology", label: "Information Technology" },
     { id: "consumer-staples", label: "Consumer Staples" },
+    { id: "financials", label: "Financials" },
+    { id: "health-care", label: "Health Care" },
+    { id: "energy", label: "Energy" },
+    { id: "communication-services", label: "Communication Services" },
   ]);
   await writeJson(path.join(root, "taxonomy", "industries.json"), [
     {
       id: "software-cloud",
       sectorId: "information-technology",
       label: "Software & Cloud Platforms",
+    },
+    {
+      id: "semiconductors",
+      sectorId: "information-technology",
+      label: "Semiconductors",
+    },
+    {
+      id: "diversified-banks",
+      sectorId: "financials",
+      label: "Diversified Banks",
+    },
+    {
+      id: "pharmaceuticals",
+      sectorId: "health-care",
+      label: "Pharmaceuticals",
+    },
+    {
+      id: "payment-networks",
+      sectorId: "financials",
+      label: "Payment Networks",
+    },
+    {
+      id: "warehouse-clubs",
+      sectorId: "consumer-staples",
+      label: "Warehouse Clubs",
+    },
+    {
+      id: "integrated-oil-gas",
+      sectorId: "energy",
+      label: "Integrated Oil & Gas",
+    },
+    {
+      id: "streaming-video",
+      sectorId: "communication-services",
+      label: "Streaming Video",
+    },
+    {
+      id: "pharma-medtech",
+      sectorId: "health-care",
+      label: "Pharma & MedTech",
     },
   ]);
   await writeJson(path.join(root, "taxonomy", "technology-waves.json"), [
@@ -55,6 +106,7 @@ export async function writeMinimalFixture(
   });
 
   await writeJson(path.join(root, "manifests", "companies", "fixtureco.json"), buildManifest(overrides.manifest));
+  await writeLoopPromptFixtures(root);
 
   await writeJson(path.join(root, "companies", "fixtureco", "bundle.json"), {
     schemaVersion: 1,
@@ -140,8 +192,49 @@ export function buildManifest(overrides: Partial<CompanyManifest> = {}): Company
   };
 }
 
+export function buildQueueEntry(
+  manifest: CompanyManifest,
+  overrides: Partial<ManifestQueueEntry> = {}
+): ManifestQueueEntry {
+  return {
+    schemaVersion: 1,
+    status: "queued",
+    createdOn: "2026-03-15T00:00:00.000Z",
+    batchId: "sp500-top20-2026-03-15",
+    groupLabel: "S&P 500 Top 20 by market cap",
+    requestNotes: "Fixture queued entry",
+    manifest,
+    ...overrides,
+  };
+}
+
 export async function writeJson(targetFile: string, value: unknown) {
   await writeFile(targetFile, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+}
+
+async function writeLoopPromptFixtures(root: string) {
+  const promptContents: Record<Exclude<ResearchTaskId, "company-sync">, string> = {
+    "company-overview": "Company {{companyName}} ({{ticker}})\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "moat-analysis": "Moat {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "decentralization-analysis":
+      "Decentralization {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "product-alternatives":
+      "Alternatives {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "source-gathering": "Sources {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+  };
+
+  const promptFiles: Array<[string, string]> = [
+    ["company-overview.md", promptContents["company-overview"]],
+    ["moat-analysis.md", promptContents["moat-analysis"]],
+    ["decentralization-analysis.md", promptContents["decentralization-analysis"]],
+    ["product-alternatives.md", promptContents["product-alternatives"]],
+    ["source-gathering.md", promptContents["source-gathering"]],
+    ["company-sync.md", "Sync {{companySlug}}\n{{companyManifestJson}}\n{{taxonomyJson}}\n"],
+  ];
+
+  for (const [fileName, fileContents] of promptFiles) {
+    await writeFile(path.join(root, "prompts", fileName), fileContents, "utf8");
+  }
 }
 
 function metric(value: number) {

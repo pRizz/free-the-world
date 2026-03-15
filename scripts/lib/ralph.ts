@@ -4,6 +4,7 @@ import path from "node:path";
 import { spawnSync } from "node:child_process";
 import type {
   CompanyManifest,
+  ResearchLoopTarget,
   CompanySyncPayload,
   RalphProviderId,
   RalphProviderPreference,
@@ -98,6 +99,22 @@ export interface SyncCompanyResult {
   runManifest: ResearchRunManifest;
 }
 
+interface LoopPromptContext {
+  companyName: string;
+  ticker: string;
+  sectorId: string;
+  industryId: string;
+  description: string;
+  snapshotNote: string;
+  productNames: string;
+  technologyWaves: string;
+  companyDataJson: string;
+  companyManifestJson: string;
+  currentBundleJson: string;
+  currentSourcesJson: string;
+  taxonomyJson: string;
+}
+
 export function parseArgs(rawArgs: string[]) {
   const parsed: Record<string, string> = {};
 
@@ -109,7 +126,9 @@ export function parseArgs(rawArgs: string[]) {
 
     const trimmedArg = currentArg.slice(2);
     if (trimmedArg.includes("=")) {
-      const [key, value = "true"] = trimmedArg.split("=");
+      const separatorIndex = trimmedArg.indexOf("=");
+      const key = trimmedArg.slice(0, separatorIndex);
+      const value = trimmedArg.slice(separatorIndex + 1) || "true";
       parsed[key] = value;
       continue;
     }
@@ -159,7 +178,12 @@ export async function loadProviderConfig(): Promise<RalphProvidersFile> {
     }
   }
 
-  throw new Error("No Ralph provider config found.");
+  throw new Error(
+    [
+      "No Ralph provider config found.",
+      `Fix: copy ${path.relative(rootDir, exampleProviderConfigFile)} to ${path.relative(rootDir, localProviderConfigFile)} for local overrides, or add a provider config at one of those paths.`,
+    ].join("\n")
+  );
 }
 
 export function detectProviderAvailability(providerConfig: RalphProvidersFile) {
@@ -175,10 +199,17 @@ export function resolveProviders(
 ): RalphProviderId[] {
   const availability = detectProviderAvailability(providerConfig);
   const orderedProviders = providerConfig.defaultProviderOrder.filter(provider => availability[provider]);
+  const configGuidance = `Check ${path.relative(rootDir, exampleProviderConfigFile)} and ${path.relative(rootDir, localProviderConfigFile)}.`;
 
   if (providerPreference === "auto") {
     if (orderedProviders.length === 0) {
-      throw new Error("No configured Ralph providers are available.");
+      throw new Error(
+        [
+          "No configured Ralph providers are available.",
+          `Configured commands: codex=${providerConfig.providers.codex.command} (available=${availability.codex}), claude=${providerConfig.providers.claude.command} (available=${availability.claude}).`,
+          `Fix: install one of the configured provider commands or update the provider config. ${configGuidance}`,
+        ].join("\n")
+      );
     }
 
     return [orderedProviders[0]];
@@ -187,7 +218,10 @@ export function resolveProviders(
   if (providerPreference === "both") {
     if (!availability.codex || !availability.claude) {
       throw new Error(
-        `Provider preference "both" requires both providers to be available. codex=${availability.codex}, claude=${availability.claude}`
+        [
+          `Provider preference "both" requires both providers to be available. codex=${availability.codex}, claude=${availability.claude}.`,
+          `Fix: install the missing provider command(s) or update the provider config. ${configGuidance}`,
+        ].join("\n")
       );
     }
 
@@ -195,7 +229,13 @@ export function resolveProviders(
   }
 
   if (!availability[providerPreference]) {
-    throw new Error(`Requested provider ${providerPreference} is not available.`);
+    throw new Error(
+      [
+        `Requested provider ${providerPreference} is not available.`,
+        `Configured command: ${providerConfig.providers[providerPreference].command}.`,
+        `Fix: install that command or point ${providerPreference} to an installed binary. ${configGuidance}`,
+      ].join("\n")
+    );
   }
 
   return [providerPreference];
@@ -291,7 +331,7 @@ export function extractJsonPayload(rawOutput: string) {
 }
 
 export async function runLoopTask(options: {
-  companySlug: string;
+  target: ResearchLoopTarget;
   taskId: ResearchTaskId;
   providerPreference: RalphProviderPreference;
   execute: boolean;
@@ -302,47 +342,25 @@ export async function runLoopTask(options: {
     throw new Error(`Unknown Ralph task: ${options.taskId}`);
   }
 
-  const providerConfig = await loadProviderConfig();
-  const providers = options.execute ? resolveProviders(options.providerPreference, providerConfig) : [];
   const { graph, raw } = await compileContent();
-  const company = graph.companies.find(entry => entry.slug === options.companySlug);
-  const bundle = raw.bundles.find(entry => entry.company.slug === options.companySlug) ?? null;
-
-  if (!company && task.id !== "company-sync") {
-    throw new Error(`Company ${options.companySlug} does not have a compiled bundle yet.`);
-  }
-
-  const context = await buildCompanyContext(options.companySlug);
-  const currentProducts = graph.products.filter(product => product.companySlug === options.companySlug);
-  const currentWaves = graph.technologyWaves.filter(wave => context.manifest.technologyWaveIds.includes(wave.id));
+  const context = buildLoopPromptContext(options.target, raw, graph);
+  const providerConfig = options.execute ? await loadProviderConfig() : null;
+  const providers = providerConfig ? resolveProviders(options.providerPreference, providerConfig) : [];
 
   const prompt = await renderPrompt(task.templateFile, {
-    companyName: company?.name ?? context.manifest.name,
-    companySlug: context.manifest.slug,
-    ticker: company?.ticker ?? context.manifest.ticker,
-    sectorId: company?.sectorId ?? context.manifest.sectorId,
-    industryId: company?.industryId ?? context.manifest.industryId,
-    description: company?.description ?? context.manifest.description,
-    snapshotNote: company?.snapshotNote ?? "Pending first structured sync.",
-    productNames: currentProducts.map(product => product.name).join(", "),
-    technologyWaves: currentWaves.map(wave => `- ${wave.label}: ${wave.summary}`).join("\n"),
-    companyDataJson: JSON.stringify(
-      company
-        ? {
-            company,
-            products: currentProducts,
-            technologyWaves: currentWaves,
-          }
-        : {
-            manifest: context.manifest,
-            currentBundle: bundle,
-          },
-      null,
-      2
-    ),
-    companyManifestJson: JSON.stringify(context.manifest, null, 2),
-    currentBundleJson: JSON.stringify(context.currentBundle, null, 2),
-    currentSourcesJson: JSON.stringify(context.currentSources, null, 2),
+    companyName: context.companyName,
+    companySlug: options.target.companySlug,
+    ticker: context.ticker,
+    sectorId: context.sectorId,
+    industryId: context.industryId,
+    description: context.description,
+    snapshotNote: context.snapshotNote,
+    productNames: context.productNames,
+    technologyWaves: context.technologyWaves,
+    companyDataJson: context.companyDataJson,
+    companyManifestJson: context.companyManifestJson,
+    currentBundleJson: context.currentBundleJson,
+    currentSourcesJson: context.currentSourcesJson,
     taxonomyJson: context.taxonomyJson,
   });
 
@@ -370,10 +388,10 @@ export async function runLoopTask(options: {
 
     const execution = await executeProvider(provider, prompt, {
       rootDir,
-      companySlug: options.companySlug,
+      companySlug: options.target.companySlug,
       taskId: task.id,
       runDir: options.runDir,
-    }, providerConfig);
+    }, providerConfig!);
 
     await writeFile(rawOutputFile, execution.rawOutput, "utf8");
     if (execution.stderr) {
@@ -596,6 +614,70 @@ export function collectSyncTargets(raw: Awaited<ReturnType<typeof loadRawContent
     });
 }
 
+function buildLoopPromptContext(
+  target: ResearchLoopTarget,
+  raw: Awaited<ReturnType<typeof loadRawContent>>,
+  graph: Awaited<ReturnType<typeof compileContent>>["graph"]
+): LoopPromptContext {
+  const company = graph.companies.find(entry => entry.slug === target.companySlug) ?? null;
+  const currentBundle = raw.bundles.find(entry => entry.company.slug === target.companySlug) ?? null;
+  const currentSources = currentBundle ? getReferencedSources(currentBundle, raw.sources) : [];
+  const currentProducts = graph.products.filter(product => product.companySlug === target.companySlug);
+  const currentTechnologyWaves = graph.technologyWaves.filter(wave =>
+    target.manifest.technologyWaveIds.includes(wave.id)
+  );
+  const knownProductNames =
+    currentProducts.length > 0 ? currentProducts.map(product => product.name) : target.manifest.seedProductNames ?? [];
+
+  return {
+    companyName: company?.name ?? target.manifest.name,
+    ticker: company?.ticker ?? target.manifest.ticker,
+    sectorId: company?.sectorId ?? target.manifest.sectorId,
+    industryId: company?.industryId ?? target.manifest.industryId,
+    description: company?.description ?? target.manifest.description,
+    snapshotNote: company?.snapshotNote ?? "Pending first structured sync.",
+    productNames: formatPromptList(knownProductNames, "None yet in repo context."),
+    technologyWaves: formatPromptBulletList(
+      currentTechnologyWaves.map(wave => `${wave.label}: ${wave.summary}`),
+      "None mapped yet in repo context."
+    ),
+    companyDataJson: JSON.stringify(
+      {
+        target: {
+          source: target.targetSource,
+          batchId: target.batchId ?? null,
+          createdOn: target.queueEntry?.createdOn ?? null,
+          groupLabel: target.queueEntry?.groupLabel ?? null,
+          requestNotes: target.queueEntry?.requestNotes ?? null,
+        },
+        manifest: target.manifest,
+        company,
+        currentBundle,
+        currentSources,
+        knownProducts: knownProductNames.map(name => ({ name })),
+        knownSourceUrls: target.manifest.seedSourceUrls ?? [],
+        technologyWaves: currentTechnologyWaves,
+      },
+      null,
+      2
+    ),
+    companyManifestJson: JSON.stringify(target.manifest, null, 2),
+    currentBundleJson: JSON.stringify(currentBundle, null, 2),
+    currentSourcesJson: JSON.stringify(currentSources, null, 2),
+    taxonomyJson: JSON.stringify(
+      {
+        regions: raw.regions,
+        indices: raw.indices,
+        sectors: raw.sectors,
+        industries: raw.industries,
+        technologyWaves: raw.technologyWaves,
+      },
+      null,
+      2
+    ),
+  };
+}
+
 export function deriveManifestFromBundle(
   bundle: CompanyBundle,
   sources: SourceCitation[],
@@ -807,6 +889,14 @@ function commandExists(commandName: string) {
     .split(path.delimiter)
     .filter(Boolean)
     .some(entry => isExecutableFile(path.join(entry, commandName)));
+}
+
+function formatPromptList(values: string[], fallback: string) {
+  return values.length > 0 ? values.join(", ") : fallback;
+}
+
+function formatPromptBulletList(values: string[], fallback: string) {
+  return values.length > 0 ? values.map(value => `- ${value}`).join("\n") : fallback;
 }
 
 function applyTemplate(template: string, variables: Record<string, string>) {

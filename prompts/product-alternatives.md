@@ -3,13 +3,13 @@ You are preparing a structured product-alternatives draft for the Free The World
 Company: {{companyName}} ({{ticker}})
 Slug: {{companySlug}}
 
-Products currently mapped:
+Known products from repo context:
 {{productNames}}
 
 Relevant technology waves:
 {{technologyWaves}}
 
-Canonical site data for context:
+Available repo context:
 ```json
 {{companyDataJson}}
 ```

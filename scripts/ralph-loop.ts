@@ -1,34 +1,45 @@
 import type { RalphProviderPreference, ResearchRunManifest, ResearchTaskId } from "../src/lib/domain/content-types";
-import { loadRawContent, writeJsonFile } from "./lib/content";
+import { writeJsonFile } from "./lib/content";
+import { collectLoopTargets } from "./lib/ralph-loop-targets";
 import { ensureRunDir, parseArgs, parseList, promptTasks, runLoopTask } from "./lib/ralph";
 
 const args = parseArgs(process.argv.slice(2));
 
 if (args.help === "true") {
   console.log(
-    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--provider=auto|codex|claude|both] [--execute=true]"
+    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--batch-id=<id>] [--provider=auto|codex|claude|both] [--execute=true]"
   );
   process.exit(0);
 }
 
 const requestedCompanySlugs = parseList(args.company ?? args.companies);
 const requestedTaskIds = parseList(args.task ?? args.tasks) as ResearchTaskId[];
+const batchId = args["batch-id"]?.trim() || undefined;
 const providerPreference = (args.provider ?? "auto") as RalphProviderPreference;
 const shouldExecute = args.execute === "true" || args.execute === "1";
-
-const raw = await loadRawContent();
-const companySlugs =
-  requestedCompanySlugs.length > 0 ? requestedCompanySlugs : raw.bundles.map(bundle => bundle.company.slug);
 const taskIds =
   requestedTaskIds.length > 0 ? requestedTaskIds : promptTasks.filter(task => task.id !== "company-sync").map(task => task.id);
+const targets = await collectLoopTargets({
+  requestedCompanySlugs,
+  batchId,
+});
 
-for (const companySlug of companySlugs) {
-  const { runDir, runId } = await ensureRunDir(companySlug);
+if (batchId && taskIds.includes("company-sync")) {
+  throw new Error(
+    [
+      "Queued batch runs only support low-level Ralph loop tasks.",
+      "Fix: remove --task=company-sync from the batch run, or promote the manifest first and use bun run sync:company --company=<slug>.",
+    ].join("\n")
+  );
+}
+
+for (const target of targets) {
+  const { runDir, runId } = await ensureRunDir(target.companySlug);
   const taskResults = [];
 
   for (const taskId of taskIds) {
     const results = await runLoopTask({
-      companySlug,
+      target,
       taskId,
       providerPreference,
       execute: shouldExecute,
@@ -40,7 +51,9 @@ for (const companySlug of companySlugs) {
   const runManifest: ResearchRunManifest = {
     schemaVersion: 1,
     runId,
-    companySlug,
+    companySlug: target.companySlug,
+    targetSource: target.targetSource,
+    batchId: target.batchId,
     mode: "dry-run",
     requestedProvider: providerPreference,
     resolvedProviders: shouldExecute ? [...new Set(taskResults.map(result => result.provider))] : [],
@@ -51,4 +64,4 @@ for (const companySlug of companySlugs) {
   await writeJsonFile(`${runDir}/run.manifest.json`, runManifest);
 }
 
-console.log(`Prepared ${companySlugs.length * taskIds.length} Ralph loop job(s) in research/runs.`);
+console.log(`Prepared ${targets.length * taskIds.length} Ralph loop job(s) in research/runs.`);
