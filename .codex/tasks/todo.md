@@ -101,3 +101,20 @@ Completion review:
 
 Residual risks:
 - `bun run test:e2e` still logs the repo's pre-existing Nitro prerender `Invalid URL` errors during the build step before serving the exported site. The suite passes against the generated static output, but that separate build warning remains unresolved.
+
+# Mobile Table Edge Blur Tuning
+
+- [x] Keep the shared table blur strength unchanged while narrowing the mobile edge overlay width.
+  Verification: `src/components/ui/table.tsx` keeps `blur(10px)` for both blur declarations, and `src/app.css` narrows only `--table-edge-width` at `@media (max-width: 639px)`.
+- [x] Add a Playwright regression covering the mobile registry table fade.
+  Verification: `tests/e2e/registry-mobile.spec.ts` asserts horizontal overflow, unchanged `10px` blur strength, and a fade width narrower than the desktop baseline at `390x844`.
+- [x] Run verification and review the diff for unintended side effects.
+  Verification: `bun run typecheck`, `bunx playwright test tests/e2e/registry-mobile.spec.ts tests/e2e/registry-ipo.spec.ts --workers=1`, diff review.
+
+Completion review:
+- The shared table fade keeps the same 10px blur strength across breakpoints, so the visual treatment stays consistent while the mobile overlay gets narrower.
+- Narrow viewports now reduce only the edge overlay width, which reveals more content near the table edges without changing the blur intensity.
+- Added a mobile registry Playwright regression that confirms horizontal overflow still exists at `390x844`, the blur remains `10px`, and the overlay is narrower than the desktop baseline.
+
+Residual risks:
+- The repo still emits pre-existing Nitro prerender `Invalid URL` warnings during the Playwright build/export step.
