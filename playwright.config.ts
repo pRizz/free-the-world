@@ -24,7 +24,7 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: `bun run build && python3 -m http.server ${port} --bind 127.0.0.1 --directory .output/public`,
+    command: `bun run build && bun run scripts/serve-static.ts --port=${port}`,
     url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

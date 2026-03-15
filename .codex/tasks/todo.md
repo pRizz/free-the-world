@@ -179,3 +179,22 @@ Completion review:
 Residual risks:
 - The queue path is intentionally manual-reference only; there is no automatic skill discovery or UI around queued entries yet.
 - Live provider execution was not needed for this feature, so the intake flow is verified locally up through queue/promotion/build/test rather than through a full live `sync:company` publish cycle in this task.
+
+# GitHub Pages Deploy Failure Fix
+
+- [x] Inspect the latest failed GitHub Pages deployment run and reproduce the failing step locally.
+  Verification: `gh run view 23113292879 --log-failed`, `SITE_BASE_PATH=/free-the-world/ bun run test:e2e`
+- [x] Fix Playwright's local static serving so GitHub Pages base-path asset requests resolve during CI.
+  Verification: `SITE_BASE_PATH=/free-the-world/ bun run test:e2e`
+- [x] Make e2e navigation base-path aware and stabilize the registry assertions against the actual rendered semantics.
+  Verification: `SITE_BASE_PATH=/free-the-world/ bun run test:e2e`
+- [x] Re-run the workflow-equivalent validation/build/test commands before publish.
+  Verification: `bun run content:validate`, `bun run typecheck`, `bun run test`, `SITE_BASE_PATH=/free-the-world/ bun run build`, `SITE_BASE_PATH=/free-the-world/ bun run test:e2e`
+
+Completion review:
+- The latest failed deploy was not a build/export failure; it was the CI Playwright step serving `.output/public` from `/` while the built site requested assets under `/free-the-world/`.
+- Replaced the bare Python test server with a base-path-aware static server, and updated e2e navigation so tests visit the same base-path URLs that GitHub Pages uses.
+- Tightened the registry tests to use the actual search input semantics and added a delayed table edge-fade resync so the mobile overlay state settles reliably after late layout work.
+
+Residual risks:
+- The Playwright run still emits benign `NO_COLOR` warnings from the worker environment and a third-party `mergeRefs` unused-import warning during build; neither blocks build, tests, or deploy.

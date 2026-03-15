@@ -1,8 +1,9 @@
 import { expect, test } from "@playwright/test";
+import { gotoRoute } from "./support";
 
 test("registry narrows the edge blur treatment on mobile", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/companies");
+  await gotoRoute(page, "/companies");
 
   const viewport = page.locator(".table-viewport");
   const rightFade = page.locator(".table-edge-fade--right");

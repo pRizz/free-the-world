@@ -59,6 +59,7 @@ export function Table(props: TableProps) {
   let contentObserver: ResizeObserver | undefined;
   let viewportObserver: ResizeObserver | undefined;
   let rafId: number | undefined;
+  let delayedSyncId: number | undefined;
   const [local, rest] = splitProps(props, ["class", "children", "edgeFade", "onScroll"]);
   const [showLeftFade, setShowLeftFade] = createSignal(false);
   const [showRightFade, setShowRightFade] = createSignal(false);
@@ -127,6 +128,12 @@ export function Table(props: TableProps) {
     }
 
     scheduleSync();
+    if (typeof window !== "undefined") {
+      delayedSyncId = window.setTimeout(() => {
+        delayedSyncId = undefined;
+        syncEdgeFade();
+      }, 120);
+    }
 
     onCleanup(() => {
       viewportRef?.removeEventListener("scroll", handleScroll);
@@ -134,6 +141,9 @@ export function Table(props: TableProps) {
       contentObserver?.disconnect();
       if (rafId !== undefined && typeof window !== "undefined") {
         window.cancelAnimationFrame(rafId);
+      }
+      if (delayedSyncId !== undefined && typeof window !== "undefined") {
+        window.clearTimeout(delayedSyncId);
       }
     });
   });

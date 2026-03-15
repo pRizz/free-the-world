@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
+import { gotoRoute } from "./support";
 
 test("home page renders shell and hero content", async ({ page }) => {
-  await page.goto("/");
+  await gotoRoute(page, "/");
 
   await expect(page).toHaveURL(/\/$/);
   await expect(page.getByRole("link", { name: "Free The World" }).first()).toBeVisible();
@@ -14,14 +15,14 @@ test("home page renders shell and hero content", async ({ page }) => {
 });
 
 test("about page renders the main explainer heading", async ({ page }) => {
-  await page.goto("/about");
+  await gotoRoute(page, "/about");
 
   await expect(page).toHaveURL(/\/about\/?$/);
   await expect(page.getByRole("heading", { name: /A registry for the slowly free future/i })).toBeVisible();
 });
 
 test("methodology page renders the methodology heading", async ({ page }) => {
-  await page.goto("/methodology");
+  await gotoRoute(page, "/methodology");
 
   await expect(page).toHaveURL(/\/methodology\/?$/);
   await expect(page.getByRole("heading", { name: /How the scores are produced/i })).toBeVisible();
@@ -29,7 +30,7 @@ test("methodology page renders the methodology heading", async ({ page }) => {
 
 test("mobile shell stays compact and expands navigation on demand", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await gotoRoute(page, "/");
 
   const banner = page.getByRole("banner");
   const mobileToggle = banner.getByRole("button", { name: "Toggle navigation menu" });
@@ -57,7 +58,7 @@ test("mobile shell stays compact and expands navigation on demand", async ({ pag
 
 test("mobile menu closes after route navigation", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.goto("/");
+  await gotoRoute(page, "/");
 
   const banner = page.getByRole("banner");
   const mobileToggle = banner.getByRole("button", { name: "Toggle navigation menu" });
@@ -76,7 +77,7 @@ test("mobile menu closes after route navigation", async ({ page }) => {
 
 test("desktop shell keeps inline navigation and hides the mobile toggle", async ({ page }) => {
   await page.setViewportSize({ width: 1280, height: 800 });
-  await page.goto("/");
+  await gotoRoute(page, "/");
 
   const banner = page.getByRole("banner");
 

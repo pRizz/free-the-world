@@ -1,7 +1,8 @@
 import { expect, test } from "@playwright/test";
+import { gotoRoute } from "./support";
 
 test("registry shows the IPO columns by default and renders Apple's IPO metrics", async ({ page }) => {
-  await page.goto("/companies");
+  await gotoRoute(page, "/companies");
   await page.locator(".table-viewport").evaluate(element => {
     element.scrollLeft = element.scrollWidth;
   });
@@ -17,8 +18,8 @@ test("registry shows the IPO columns by default and renders Apple's IPO metrics"
 });
 
 test("registry renders missing IPO metrics as dashes for Berkshire Hathaway", async ({ page }) => {
-  await page.goto("/companies");
-  await page.getByRole("textbox", { name: "Search companies" }).fill("Berkshire Hathaway");
+  await gotoRoute(page, "/companies");
+  await page.getByPlaceholder("Search by name, ticker, sector, or thesis").fill("Berkshire Hathaway");
 
   const berkshireRow = page.getByRole("row", { name: /Berkshire Hathaway/i });
   await expect(berkshireRow).toContainText("Berkshire Hathaway");
