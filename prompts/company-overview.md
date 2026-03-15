@@ -1,4 +1,4 @@
-You are preparing draft research for the Free The World registry.
+You are preparing structured draft research for the Free The World registry.
 
 Company: {{companyName}} ({{ticker}})
 Slug: {{companySlug}}
@@ -17,17 +17,29 @@ Canonical site data for context:
 {{companyDataJson}}
 ```
 
-Task:
-Write a structured company overview draft that includes:
-1. A concise description of what the company actually does.
-2. Why the company has real value.
-3. Why part of its pricing power may be less durable than consensus assumes.
-4. A professional tone with a restrained satirical edge.
-5. 5-8 source suggestions suitable for visible evidence breadcrumbs.
+Return pure JSON only. Do not wrap it in markdown fences.
 
-Output format:
-- Executive summary
-- Value creation
-- Where the moat lives
-- Where open/decentralized pressure could grow
-- Source suggestions
+JSON schema:
+{
+  "schemaVersion": 1,
+  "taskId": "company-overview",
+  "description": "one-sentence company description",
+  "overview": [
+    {
+      "title": "section title",
+      "paragraphs": ["paragraph one", "paragraph two"]
+    }
+  ],
+  "sourceSuggestions": [
+    {
+      "title": "source title",
+      "url": "https://example.com",
+      "whyItMatters": "short note"
+    }
+  ]
+}
+
+Requirements:
+- Use a professional tone with restrained satire.
+- Keep overview sections concise and publication-ready.
+- Return 5-8 source suggestions.

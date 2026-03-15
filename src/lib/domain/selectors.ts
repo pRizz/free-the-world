@@ -1,8 +1,4 @@
-import { alternatives, products } from "~/lib/content/products";
-import { companies } from "~/lib/content/companies";
-import { industries, indices, regions, sectors } from "~/lib/content/sectors";
-import { sources } from "~/lib/content/sources";
-import { technologyWaves } from "~/lib/content/technology-waves";
+import { alternatives, companies, industries, indices, products, regions, sectors, sources, technologyWaves } from "~/lib/content-graph";
 
 export function getCompanyBySlug(companySlug: string) {
   return companies.find(company => company.slug === companySlug);
@@ -21,15 +17,23 @@ export function getAlternativesForProduct(productSlug: string) {
 }
 
 export function getSourcesByIds(sourceIds: string[]) {
-  return sourceIds
-    .map(sourceId => sources.find(source => source.id === sourceId))
-    .filter((source): source is (typeof sources)[number] => Boolean(source));
+  return sourceIds.map(sourceId => {
+    const maybeSource = sources.find(source => source.id === sourceId);
+    if (!maybeSource) {
+      throw new Error(`Unknown source id: ${sourceId}`);
+    }
+    return maybeSource;
+  });
 }
 
 export function getTechnologyWavesByIds(waveIds: string[]) {
-  return waveIds
-    .map(waveId => technologyWaves.find(wave => wave.id === waveId))
-    .filter((wave): wave is (typeof technologyWaves)[number] => Boolean(wave));
+  return waveIds.map(waveId => {
+    const maybeWave = technologyWaves.find(wave => wave.id === waveId);
+    if (!maybeWave) {
+      throw new Error(`Unknown technology wave id: ${waveId}`);
+    }
+    return maybeWave;
+  });
 }
 
 export function getSectorLabel(sectorId: string) {

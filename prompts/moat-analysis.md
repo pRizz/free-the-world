@@ -1,4 +1,4 @@
-You are preparing a moat-analysis draft for the Free The World registry.
+You are preparing a structured moat-analysis draft for the Free The World registry.
 
 Company: {{companyName}} ({{ticker}})
 Slug: {{companySlug}}
@@ -17,17 +17,26 @@ Canonical site data for context:
 {{companyDataJson}}
 ```
 
-Task:
-Produce a moat analysis that:
-1. Identifies the company's strongest control points.
-2. Separates durable infrastructure moats from softer habit/distribution moats.
-3. Notes what could weaken over 3-10 years.
-4. Includes a recommended moat score from 0-10 with explanation.
-5. Suggests source breadcrumbs.
+Return pure JSON only. Do not wrap it in markdown fences.
 
-Output format:
-- Control points
-- Durable moat elements
-- Fragile moat elements
-- Score recommendation
-- Source suggestions
+JSON schema:
+{
+  "schemaVersion": 1,
+  "taskId": "moat-analysis",
+  "controlPoints": ["..."],
+  "durableMoatElements": ["..."],
+  "fragileMoatElements": ["..."],
+  "recommendedMetric": {
+    "value": 0,
+    "rationale": "why this moat score fits",
+    "confidence": "high"
+  },
+  "narrative": ["paragraph one", "paragraph two"],
+  "sourceSuggestions": [
+    {
+      "title": "source title",
+      "url": "https://example.com",
+      "whyItMatters": "short note"
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-You are preparing a decentralization-analysis draft for the Free The World registry.
+You are preparing a structured decentralization-analysis draft for the Free The World registry.
 
 Company: {{companyName}} ({{ticker}})
 Slug: {{companySlug}}
@@ -17,17 +17,26 @@ Canonical site data for context:
 {{companyDataJson}}
 ```
 
-Task:
-Produce a decentralizability and disruptability analysis that:
-1. Identifies which company functions are software-like and which remain physical/regulatory.
-2. Explains how open source, federated systems, Bitcoin/Lightning, and distributed manufacturing might erode pricing power.
-3. Distinguishes near-term disruption from long-term structural pressure.
-4. Recommends a decentralizability score from 0-10 with explanation.
-5. Suggests source breadcrumbs.
+Return pure JSON only. Do not wrap it in markdown fences.
 
-Output format:
-- Replaceable layers
-- Hard-to-replace layers
-- Technology-wave implications
-- Score recommendation
-- Source suggestions
+JSON schema:
+{
+  "schemaVersion": 1,
+  "taskId": "decentralization-analysis",
+  "replaceableLayers": ["..."],
+  "hardToReplaceLayers": ["..."],
+  "technologyWaveImplications": ["..."],
+  "recommendedMetric": {
+    "value": 0,
+    "rationale": "why this decentralizability score fits",
+    "confidence": "high"
+  },
+  "narrative": ["paragraph one", "paragraph two"],
+  "sourceSuggestions": [
+    {
+      "title": "source title",
+      "url": "https://example.com",
+      "whyItMatters": "short note"
+    }
+  ]
+}

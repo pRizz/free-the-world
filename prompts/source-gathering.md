@@ -1,4 +1,4 @@
-You are preparing a source-gathering draft for the Free The World registry.
+You are preparing a structured source-gathering draft for the Free The World registry.
 
 Company: {{companyName}} ({{ticker}})
 Slug: {{companySlug}}
@@ -15,21 +15,28 @@ Canonical site data for context:
 {{companyDataJson}}
 ```
 
-Task:
-Produce a bibliography-style draft for the company.
+Return pure JSON only. Do not wrap it in markdown fences.
+
+JSON schema:
+{
+  "schemaVersion": 1,
+  "taskId": "source-gathering",
+  "groups": [
+    {
+      "label": "company overview",
+      "sources": [
+        {
+          "title": "source title",
+          "url": "https://example.com",
+          "kind": "investor-relations",
+          "publisher": "publisher name",
+          "whyItMatters": "short note"
+        }
+      ]
+    }
+  ]
+}
 
 Requirements:
-1. Prefer official company pages, investor relations, annual reports, companiesmarketcap, product pages, technical docs, and reputable open-source project homepages/repos.
-2. Group sources by what they support:
-   - company overview
-   - moat argument
-   - decentralization argument
-   - product/alternative pages
-3. Include short note snippets explaining why each source matters.
-4. Avoid fluff and avoid fabricated citations.
-
-Output format:
-- Company overview sources
-- Moat sources
-- Decentralization sources
-- Product and alternative sources
+- Prefer official company pages, investor relations, annual reports, companiesmarketcap, product pages, technical docs, and reputable open-source project homepages/repos.
+- Avoid fabricated citations.

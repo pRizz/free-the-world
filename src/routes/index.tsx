@@ -7,7 +7,7 @@ import { NewsletterSignup } from "~/components/newsletter-signup";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
-import { companies } from "~/lib/content/companies";
+import { companies } from "~/lib/content-graph";
 import { withBasePath } from "~/lib/config";
 import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
 import { formatCompanyMetric } from "~/lib/domain/formatters";

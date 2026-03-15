@@ -37,13 +37,15 @@ Nitro is only used to build the server runtime and client assets that power the 
 Pushes to `main` trigger `.github/workflows/deploy.yml`, which:
 
 1. installs dependencies with Bun
-2. builds the site with a repository-aware `SITE_BASE_PATH`
-3. uploads `.output/public`
-4. deploys through GitHub Pages
+2. validates the JSON content graph
+3. runs `typecheck`, unit tests, and Playwright
+4. builds the site with a repository-aware `SITE_BASE_PATH`
+5. uploads `.output/public`
+6. deploys through GitHub Pages
 
 ## Data model
 
-Canonical site data lives under `src/lib/content/` and is strongly typed via `src/lib/domain/types.ts`.
+Canonical editorial data lives under `content/` as validated JSON and is compiled into `src/lib/generated/content-graph.ts` for app/runtime use. UI-domain types still live under `src/lib/domain/types.ts`.
 
 The current launch snapshot includes:
 
@@ -57,10 +59,49 @@ The current launch snapshot includes:
 
 The repository separates published content from draft research:
 
-- `src/lib/content/` → canonical typed site data
-- `research/` → notes and generated research artifacts
+- `content/` → canonical JSON content and taxonomy
+- `src/lib/generated/content-graph.ts` → generated runtime graph for the app
+- `research/` → notes and tracked research run artifacts
 - `prompts/` → reusable prompt templates
-- `scripts/ralph-loop.ts` → repeatable AI prompt loop
+- `scripts/compile-content.ts` → validator/compiler for raw content
+- `scripts/ralph-loop.ts` → low-level repeatable AI prompt loop
+- `scripts/sync-company.ts` / `scripts/sync-all.ts` → structured research-to-publish commands
+
+Core content commands:
+
+```bash
+bun run migrate:content
+bun run content:validate
+bun run content:compile
+```
+
+### Company intake
+
+Repo-local manifest intake guidance lives in `.codex/skills/company-manifest-queue/SKILL.md`.
+
+Queue a net-new company from a draft manifest file:
+
+```bash
+bun run company:queue --manifest=./drafts/some-company.json
+```
+
+Promote a queued manifest into the canonical manifest set:
+
+```bash
+bun run company:init --queued=some-company
+```
+
+If you need to bypass the queue and promote a manifest file directly:
+
+```bash
+bun run company:init --manifest=./some-company.json
+```
+
+After promotion, run the normal Ralph sync:
+
+```bash
+bun run sync:company --company=some-company --provider=auto --mode=dry-run
+```
 
 ### Ralph loop
 
@@ -70,13 +111,25 @@ Generate prompt artifacts for one company and task:
 bun run loop --company=microsoft --task=moat-analysis
 ```
 
-Generate prompt artifacts for every seeded company:
+Execute the low-level loop with a configured provider:
+
+```bash
+bun run loop --company=microsoft --task=moat-analysis --provider=auto --execute=true
+```
+
+Run the full structured sync pipeline for one company:
+
+```bash
+bun run sync:company --company=microsoft --provider=auto --mode=dry-run
+```
+
+Generate low-level loop artifacts for every seeded company:
 
 ```bash
 bun run loop
 ```
 
-The loop is designed around Claude CLI and Codex CLI, but it degrades gracefully when those binaries are not available. It never writes directly into canonical site content.
+Provider defaults live in `config/ralph.providers.example.json`. Machine-local overrides belong in `.codex/ralph.providers.local.json`.
 
 ## Theme
 

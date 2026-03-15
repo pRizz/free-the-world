@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "broadcom",
+    "name": "Broadcom",
+    "ticker": "AVGO",
+    "rankApprox": 7,
+    "maybeIpo": {
+      "date": "2009-08-06",
+      "dateSourceIds": [
+        "broadcom-ipo-prospectus"
+      ],
+      "marketCap": {
+        "value": 3538323045,
+        "rationale": "Computed from Avago's $15.00 IPO price and 235,888,203 shares outstanding immediately after the offering in the final prospectus.",
+        "sourceIds": [
+          "broadcom-ipo-prospectus"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-14"
+      }
+    },
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top10"
+    ],
+    "sectorId": "information-technology",
+    "industryId": "semiconductors",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/broadcom/marketcap/",
+    "description": "Semiconductor and infrastructure software consolidator with critical exposure to networking and virtualization.",
+    "overview": [
+      {
+        "title": "Where chips meet enterprise rent extraction",
+        "paragraphs": [
+          "Broadcom is an awkwardly elegant example of two different moat types living under one roof: hard-to-replicate semiconductor supply chains and highly monetizable enterprise software lock-in.",
+          "That split makes Broadcom less decentralizable than software vendors but more vulnerable than a pure semiconductor titan in specific categories like VMware-era virtualization."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Broadcom's moat comes from custom silicon relationships, networking relevance, and a willingness to monetize mission-critical software with all the tenderness of a spreadsheet.",
+      "Customers may dislike the pricing; they also tend to dislike downtime, which is usually what preserves the margin."
+    ],
+    "decentralizationNarrative": [
+      "The software side is replaceable in pockets. The semiconductor side is much less so.",
+      "That makes Broadcom a mixed case: some value capture looks structurally durable, while some looks like a generous invitation for Proxmox and friends."
+    ],
+    "sourceIds": [
+      "broadcom-investor",
+      "vmware",
+      "broadcom-home",
+      "broadcom-marketcap",
+      "broadcom-ipo-prospectus",
+      "proxmox",
+      "openstack"
+    ],
+    "technologyWaveIds": [
+      "printed-electronics"
+    ],
+    "snapshotNote": "Curated early-2026 public-source snapshot. Exact ordering can drift with the tape.",
+    "inputMetrics": {
+      "moat": {
+        "value": 8.6,
+        "rationale": "Broadcom combines hard-to-replicate hardware supply with entrenched enterprise software footprints.",
+        "sourceIds": [
+          "broadcom-investor",
+          "vmware"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "decentralizability": {
+        "value": 3.8,
+        "rationale": "Virtualization can be displaced more readily than Broadcom's semiconductor relevance.",
+        "sourceIds": [
+          "proxmox",
+          "openstack"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "profitability": {
+        "value": 8.9,
+        "rationale": "The company has both pricing power and critical infrastructure exposure.",
+        "sourceIds": [
+          "broadcom-investor"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "peRatio": {
+        "value": 50,
+        "rationale": "Approximate valuation snapshot reflecting AI and infrastructure enthusiasm.",
+        "sourceIds": [
+          "broadcom-marketcap"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "marketCap": {
+        "value": 1100000000000,
+        "rationale": "Approximate market cap snapshot from public market trackers.",
+        "sourceIds": [
+          "broadcom-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-14"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "vmware-vsphere",
+      "name": "VMware virtualization stack",
+      "category": "Enterprise infrastructure software",
+      "homepageUrl": "https://www.broadcom.com/products/software/vmware",
+      "summary": "Virtualization and private cloud control plane software.",
+      "whyItMatters": "This is one of Broadcom's most obviously replaceable rent-heavy layers.",
+      "replacementSketch": [
+        "Open virtualization stacks already exist and are increasingly production-worthy.",
+        "Incumbent pricing pressure often does half the adoption work for the alternatives."
+      ],
+      "sourceIds": [
+        "vmware",
+        "proxmox",
+        "openstack"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "proxmox-ve",
+          "name": "Proxmox VE",
+          "kind": "open-source",
+          "homepageUrl": "https://www.proxmox.com/en/proxmox-virtual-environment",
+          "summary": "Open-source virtualization stack with increasing enterprise appeal.",
+          "metrics": {
+            "openness": {
+              "value": 9.1,
+              "rationale": "Open and operator-controlled.",
+              "sourceIds": [
+                "proxmox"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "Makes self-operated infrastructure more attractive.",
+              "sourceIds": [
+                "proxmox"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "readiness": {
+              "value": 8.3,
+              "rationale": "Now credible for a wide range of production workloads.",
+              "sourceIds": [
+                "proxmox"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "costLeverage": {
+              "value": 8.7,
+              "rationale": "Directly compresses premium VMware pricing logic.",
+              "sourceIds": [
+                "proxmox"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-14"
+            }
+          },
+          "sourceIds": [
+            "proxmox"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "broadcom-networking",
+      "name": "Broadcom networking silicon",
+      "category": "Semiconductor infrastructure",
+      "homepageUrl": "https://www.broadcom.com/",
+      "summary": "Critical chips and connectivity layers for data-center and telecom infrastructure.",
+      "whyItMatters": "This is the part of Broadcom that remains stubbornly physical, capital-intensive, and supply-chain bound.",
+      "replacementSketch": [
+        "Open networking software matters, but replacing the silicon layer itself is much slower and more capital-intensive.",
+        "Localized electronics tooling may erode some hardware rents over time, but not overnight and not at frontier scale."
+      ],
+      "sourceIds": [
+        "broadcom-home",
+        "broadcom-investor"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics"
+      ],
+      "alternatives": [
+        {
+          "slug": "open-networking-stack",
+          "name": "Open networking software stacks",
+          "kind": "hybrid",
+          "homepageUrl": "https://opennetlinux.org/",
+          "summary": "Open switching and control plane efforts that erode some software-side networking lock-in.",
+          "metrics": {
+            "openness": {
+              "value": 8.2,
+              "rationale": "Moves some value away from closed control surfaces.",
+              "sourceIds": [
+                "broadcom-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "decentralizationFit": {
+              "value": 5.6,
+              "rationale": "Helpful, but the silicon supply chain remains stubbornly concentrated.",
+              "sourceIds": [
+                "broadcom-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "readiness": {
+              "value": 6.1,
+              "rationale": "Useful in pockets, still far from replacing the entire incumbent stack.",
+              "sourceIds": [
+                "broadcom-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "costLeverage": {
+              "value": 5.9,
+              "rationale": "Reduces some premium capture without overturning the hardware layer.",
+              "sourceIds": [
+                "broadcom-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            }
+          },
+          "sourceIds": [
+            "broadcom-home"
+          ]
+        }
+      ]
+    }
+  ]
+}

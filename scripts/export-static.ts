@@ -1,8 +1,7 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { companies } from "../src/lib/content/companies";
-import { products } from "../src/lib/content/products";
+import { companies, products } from "../src/lib/generated/content-graph";
 
 const entryServerModulePath = "../dist/server/entry-server.js";
 const { default: entryServer } = (await import(entryServerModulePath)) as {

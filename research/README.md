@@ -1,23 +1,23 @@
 # Research workspace
 
-This directory separates **draft research artifacts** from the typed data shipped to the site.
+This directory separates **draft research artifacts** from the JSON content shipped to the site.
 
 ## Conventions
 
 - `technology-waves.md` stores the thesis-level assumptions that should keep showing up in scoring and editorial copy.
-- `generated/<company-slug>/` is reserved for repeatable AI prompt-loop outputs.
-- Generated artifacts are drafts, not canonical truth.
-- Canonical site data lives under `src/lib/content/`.
+- `runs/<company-slug>/<run-id>/` is reserved for repeatable AI prompt-loop and sync outputs.
+- Run artifacts are drafts plus validation/publish traces, not canonical truth by themselves.
+- Canonical site data lives under `content/`.
 
 ## Ralph loop
 
-The repo includes a basic prompt-loop runner:
+The repo includes a low-level prompt-loop runner:
 
 ```bash
 bun run loop --company=microsoft --task=moat-analysis
 ```
 
-That command writes prompt and manifest files to `research/generated/microsoft/`.
+That command writes prompt and manifest files to `research/runs/microsoft/<run-id>/`.
 
 To request actual CLI execution when local providers are available:
 
@@ -25,16 +25,15 @@ To request actual CLI execution when local providers are available:
 bun run loop --company=microsoft --task=moat-analysis --provider=auto --execute=true
 ```
 
-For safety and portability, provider execution requires environment-specific command templates:
+For the main structured publish flow:
 
-- `RALPH_LOOP_CLAUDE_COMMAND_TEMPLATE`
-- `RALPH_LOOP_CODEX_COMMAND_TEMPLATE`
+```bash
+bun run sync:company --company=microsoft --provider=auto --mode=dry-run
+```
 
-Templates can use:
+Provider execution uses JSON config files instead of shell-string templates:
 
-- `{{promptFile}}`
-- `{{outputFile}}`
-- `{{companySlug}}`
-- `{{taskId}}`
+- `config/ralph.providers.example.json`
+- `.codex/ralph.providers.local.json`
 
-This keeps the workflow adaptable across local machines without hard-coding a single CLI syntax into the repo.
+The sync pipeline expects pure JSON responses, validates them against the content compiler, and only publishes canonical JSON content when validation passes.

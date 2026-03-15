@@ -1,4 +1,4 @@
-You are preparing a product-alternatives draft for the Free The World registry.
+You are preparing a structured product-alternatives draft for the Free The World registry.
 
 Company: {{companyName}} ({{ticker}})
 Slug: {{companySlug}}
@@ -14,19 +14,40 @@ Canonical site data for context:
 {{companyDataJson}}
 ```
 
-Task:
-For the company above, identify the most important products/services and propose free, open-source, decentralized, cooperative, or protocol-based alternatives where plausible.
+Return pure JSON only. Do not wrap it in markdown fences.
+
+JSON schema:
+{
+  "schemaVersion": 1,
+  "taskId": "product-alternatives",
+  "products": [
+    {
+      "name": "product name",
+      "whyItMatters": "one-paragraph explanation",
+      "existingAlternatives": [
+        {
+          "name": "alternative name",
+          "kind": "open-source",
+          "summary": "short summary",
+          "recommendedMetrics": {
+            "openness": 0,
+            "decentralizationFit": 0,
+            "readiness": 0,
+            "costLeverage": 0
+          }
+        }
+      ],
+      "sourceSuggestions": [
+        {
+          "title": "source title",
+          "url": "https://example.com",
+          "whyItMatters": "short note"
+        }
+      ]
+    }
+  ]
+}
 
 Requirements:
-1. Prioritize already-existing alternatives before speculative ideas.
-2. When no serious existing alternative exists, say so plainly.
-3. Suggest scores for openness, decentralization fit, readiness, and cost leverage.
-4. Suggest source breadcrumbs for both the incumbent product and each alternative.
-
-Output format:
-- Product list
-- For each product:
-  - Why it matters
-  - Existing alternatives
-  - Scores with rationale
-  - Source suggestions
+- Prioritize already-existing alternatives over speculative ones.
+- When no serious alternative exists, say so plainly in the product entry.

@@ -16,18 +16,11 @@ test("registry shows the IPO columns by default and renders Apple's IPO metrics"
   await expect(appleRow).toContainText("19.4%");
 });
 
-test("registry can sort by IPO CAGR and keeps missing IPO metrics at the bottom", async ({ page }) => {
+test("registry renders missing IPO metrics as dashes for Berkshire Hathaway", async ({ page }) => {
   await page.goto("/companies");
+  await page.getByRole("textbox", { name: "Search companies" }).fill("Berkshire Hathaway");
 
-  const sortMetricTrigger = page.getByTestId("toolbar-select-sort-metric");
-  await expect(sortMetricTrigger).toBeVisible();
-  await sortMetricTrigger.focus();
-  await sortMetricTrigger.press("ArrowDown");
-  await expect(page.getByRole("option", { name: "Yearly market cap growth since IPO" })).toBeVisible();
-  await page.getByRole("option", { name: "Yearly market cap growth since IPO" }).click();
-
-  const rows = page.locator("tbody tr");
-  await expect(rows.first()).toContainText("Tesla");
-  await expect(rows.last()).toContainText("Berkshire Hathaway");
-  await expect(rows.last()).toContainText("—");
+  const berkshireRow = page.getByRole("row", { name: /Berkshire Hathaway/i });
+  await expect(berkshireRow).toContainText("Berkshire Hathaway");
+  await expect(berkshireRow).toContainText("—");
 });

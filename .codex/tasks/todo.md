@@ -135,3 +135,47 @@ Completion review:
 
 Residual risks:
 - The default parallel `bun run test:e2e` command still intermittently fails in `tests/e2e/registry-ipo.spec.ts` because the IPO sort option is not always visible after keyboard opening. That race is separate from the Nitro warning fix and still needs a dedicated test-stability pass.
+
+# Content-First Ralph Pipeline Refactor
+
+- [x] Add raw JSON content/taxonomy storage plus migration/compile scripts.
+  Verification: `bun run migrate:content`, `bun run content:validate`, `bun run content:compile`
+- [x] Switch app/runtime/export code from hand-authored TS arrays to the compiled content graph.
+  Verification: `bun run typecheck`, `bun run build`
+- [x] Replace the Ralph loop with structured run artifacts, provider config, and sync/company init commands.
+  Verification: `bun run loop --company=microsoft --task=moat-analysis`, `bun run company:init --help`, `bun run sync:company --help`, `bun run sync:all --help`, `bun run sync:company --company=microsoft --provider=codex --mode=dry-run` via a temporary local replay provider
+- [x] Add regression/unit/e2e coverage for schema validation, compiler integrity, and fixture-driven JSON content rendering.
+  Verification: `bun test`, `bun run test:e2e`
+- [x] Gate deploy/publish on validation and test/build checks, then review for residual risks.
+  Verification: workflow review, `bun run content:validate`, `bun run typecheck`, `bun run build`, `bun test`, `bun run test:e2e`
+
+Completion review:
+- Editorial and taxonomy data now live under `content/` JSON, compile into `src/lib/generated/content-graph.ts`, and feed the runtime through a single graph accessor instead of hand-authored TS arrays.
+- The Ralph tooling now supports manifest-driven onboarding, structured run artifacts under `research/runs/`, JSON-only sync payloads, validator-backed publish checks, and non-shell provider configs with argv-based execution.
+- CI now gates GitHub Pages deploys on content validation, typecheck, unit tests, Playwright, and build; selector lookups now fail fast on broken references instead of silently dropping them.
+
+Residual risks:
+- The legacy TS content modules still exist as migration input and historical fallback, even though the runtime no longer reads them. A later cleanup can archive or delete them once the migration utility is no longer needed.
+- End-to-end provider verification used a temporary local replay provider instead of live Codex or Claude CLI calls, so the repo-level pipeline is verified without external spend but not against live provider behavior in this session.
+
+# Repo-Local Company Intake Skill and Queue
+
+- [x] Add queued manifest storage and raw queue types without changing the canonical manifest contract.
+  Verification: `bun run typecheck`, `bun run content:validate`
+- [x] Add queue/promotion helpers and extend the intake CLI with `company:queue` and `company:init --queued`.
+  Verification: `bun run company:queue --help`, `bun run company:init --help`, `bun test tests/unit/content/company-intake.test.ts`
+- [x] Keep queued drafts out of normal compile/runtime paths and cover the behavior with regression tests.
+  Verification: `bun test`, `bun run content:validate`, `bun run build`
+- [x] Add a repo-local intake skill plus repo docs that describe the queue -> promote -> sync flow.
+  Verification: doc review of `AGENTS.md`, `.codex/skills/company-manifest-queue/SKILL.md`, and `README.md`
+- [x] Run the final verification pass and review for unintended side effects.
+  Verification: `bun run typecheck`, `bun test`, `bun run content:validate`, `bun run build`, `bun run test:e2e`
+
+Completion review:
+- Added `content/manifests/queue/` as a tracked staging layer where queued entries wrap `CompanyManifest` with queue metadata instead of changing the canonical manifest schema.
+- Added `company:queue` to validate and enqueue draft manifests, and extended `company:init` so queued manifests can be promoted into canonical manifests and removed from the queue atomically.
+- Added a repo-local intake skill and repo-level docs so single-company and batch manifest drafting have a documented, manual entry point before the existing Ralph sync flow.
+
+Residual risks:
+- The queue path is intentionally manual-reference only; there is no automatic skill discovery or UI around queued entries yet.
+- Live provider execution was not needed for this feature, so the intake flow is verified locally up through queue/promotion/build/test rather than through a full live `sync:company` publish cycle in this task.

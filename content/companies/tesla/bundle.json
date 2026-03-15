@@ -1,0 +1,350 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "tesla",
+    "name": "Tesla",
+    "ticker": "TSLA",
+    "rankApprox": 8,
+    "maybeIpo": {
+      "date": "2010-06-29",
+      "dateSourceIds": [
+        "tesla-ipo-prospectus"
+      ],
+      "marketCap": {
+        "value": 1582859681,
+        "rationale": "Computed from Tesla's $17.00 IPO price and 93,109,393 shares outstanding after the offering and concurrent private placement in the final prospectus.",
+        "sourceIds": [
+          "tesla-ipo-prospectus"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-14"
+      }
+    },
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top10"
+    ],
+    "sectorId": "consumer-discretionary",
+    "industryId": "automobile-manufacturers",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/tesla/marketcap/",
+    "description": "EV, charging, energy storage, and autonomy company that sells both products and future narratives.",
+    "overview": [
+      {
+        "title": "A car company, an energy company, and occasionally a mood board",
+        "paragraphs": [
+          "Tesla deserves credit for forcing the auto industry to move faster. It also benefits from investors repeatedly pricing future software leverage into a business that still has to weld metal and navigate regulators.",
+          "That mix keeps Tesla in the middle of the decentralizability spectrum. Open charging, home energy management, and driver-assistance tooling can nibble at the software/control layer. Car manufacturing remains stubbornly physical and regulated."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Tesla's moat rests on brand, battery and manufacturing iteration speed, charging infrastructure, and the promise of software differentiation.",
+      "Some of that moat is hard industrial reality. Some of it is narrative premium, which is not the same thing but does occasionally pay just as well."
+    ],
+    "decentralizationNarrative": [
+      "Charging standards, energy management, and autonomy-adjacent tooling are much more openable than vehicle manufacturing itself.",
+      "Distributed energy tech also matters here: if household and community energy stacks become more modular, Tesla's control surface may narrow."
+    ],
+    "sourceIds": [
+      "tesla-investor",
+      "tesla-modely",
+      "tesla-energy",
+      "tesla-marketcap",
+      "tesla-ipo-prospectus",
+      "openpilot",
+      "openevse",
+      "openems"
+    ],
+    "technologyWaveIds": [
+      "distributed-energy",
+      "microfactories"
+    ],
+    "snapshotNote": "Curated early-2026 public-source snapshot. Exact ordering can drift with the tape.",
+    "inputMetrics": {
+      "moat": {
+        "value": 7.4,
+        "rationale": "Tesla has brand and infrastructure advantages, but much of the category remains contestable.",
+        "sourceIds": [
+          "tesla-investor",
+          "tesla-energy"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "decentralizability": {
+        "value": 5.9,
+        "rationale": "Charging and energy layers are openable, while vehicle manufacturing remains centralized.",
+        "sourceIds": [
+          "openevse",
+          "openems",
+          "openpilot"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "profitability": {
+        "value": 5.8,
+        "rationale": "Tesla is profitable but less predictably so than the platform-heavy names above it.",
+        "sourceIds": [
+          "tesla-investor"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "peRatio": {
+        "value": 70,
+        "rationale": "Approximate valuation snapshot reflecting very high future expectations.",
+        "sourceIds": [
+          "tesla-marketcap"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-03-14"
+      },
+      "marketCap": {
+        "value": 1000000000000,
+        "rationale": "Approximate market cap snapshot from public market trackers.",
+        "sourceIds": [
+          "tesla-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-14"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "tesla-supercharger",
+      "name": "Supercharger network",
+      "category": "Charging infrastructure",
+      "homepageUrl": "https://www.tesla.com/supercharger",
+      "summary": "Tesla's branded fast-charging network and related ecosystem control surface.",
+      "whyItMatters": "Charging infrastructure deepens customer lock-in and brand trust.",
+      "replacementSketch": [
+        "Open charging standards and independently operated networks can erode brand-tied infrastructure advantage.",
+        "Localized energy production makes charging less dependent on a vertically integrated stack."
+      ],
+      "sourceIds": [
+        "tesla-energy",
+        "openevse"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "alternatives": [
+        {
+          "slug": "openevse-charging",
+          "name": "OpenEVSE",
+          "kind": "open-source",
+          "homepageUrl": "https://openevse.com/",
+          "summary": "Open EV charging hardware and control stack.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "A genuinely open answer to proprietary charging stacks.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "decentralizationFit": {
+              "value": 8.7,
+              "rationale": "Charging can be deployed locally without a single network landlord.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "readiness": {
+              "value": 7.4,
+              "rationale": "Strong for DIY and semi-professional deployments, less turnkey than Tesla's network.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "costLeverage": {
+              "value": 7.6,
+              "rationale": "Useful where openness matters more than brand convenience.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            }
+          },
+          "sourceIds": [
+            "openevse"
+          ]
+        },
+        {
+          "slug": "ocpp-ecosystem",
+          "name": "OCPP-based charging ecosystem",
+          "kind": "protocol",
+          "homepageUrl": "https://openchargealliance.org/protocols/ocpp-protocols/",
+          "summary": "Open Charge Point Protocol ecosystem for interoperable EV charging infrastructure.",
+          "metrics": {
+            "openness": {
+              "value": 8.4,
+              "rationale": "Open protocol lowers proprietary lock-in.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "Interoperability allows more operators to participate.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "readiness": {
+              "value": 8.1,
+              "rationale": "Already meaningful in real charging deployments.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "costLeverage": {
+              "value": 7.2,
+              "rationale": "Undercuts the assumption that fast charging must live inside one branded network.",
+              "sourceIds": [
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            }
+          },
+          "sourceIds": [
+            "openevse"
+          ]
+        }
+      ]
+    },
+    {
+      "slug": "tesla-energy-stack",
+      "name": "Powerwall and Megapack",
+      "category": "Distributed energy",
+      "homepageUrl": "https://www.tesla.com/energy",
+      "summary": "Energy storage products and software for homes and grids.",
+      "whyItMatters": "This is where Tesla's software and hardware story merges with the broader energy transition.",
+      "replacementSketch": [
+        "Open energy management layers can reduce how much value one vendor captures from the full stack.",
+        "Printable solar, better local storage economics, and microgrid tooling could make the category much more modular."
+      ],
+      "sourceIds": [
+        "tesla-energy",
+        "openems"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "alternatives": [
+        {
+          "slug": "openems-energy",
+          "name": "OpenEMS",
+          "kind": "open-source",
+          "homepageUrl": "https://openems.io/",
+          "summary": "Open energy management platform for distributed energy systems.",
+          "metrics": {
+            "openness": {
+              "value": 9.1,
+              "rationale": "Open control plane for energy orchestration.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "decentralizationFit": {
+              "value": 8.9,
+              "rationale": "Designed for distributed energy control.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "readiness": {
+              "value": 7.1,
+              "rationale": "Good technical base, still less consumer-friendly than integrated vendor stacks.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "costLeverage": {
+              "value": 7.5,
+              "rationale": "Useful as energy hardware becomes more modular and software-defined.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            }
+          },
+          "sourceIds": [
+            "openems"
+          ]
+        },
+        {
+          "slug": "home-assistant-energy",
+          "name": "Home Assistant Energy",
+          "kind": "open-source",
+          "homepageUrl": "https://www.home-assistant.io/",
+          "summary": "Open home automation platform with growing energy monitoring and control capabilities.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "Strong open-source home control model.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "decentralizationFit": {
+              "value": 8.3,
+              "rationale": "Local-first automation fits distributed energy well.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "Already widely used by technically comfortable households.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "Reduces dependence on vertically integrated smart-home energy stacks.",
+              "sourceIds": [
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-14"
+            }
+          },
+          "sourceIds": [
+            "openems"
+          ]
+        }
+      ]
+    }
+  ]
+}

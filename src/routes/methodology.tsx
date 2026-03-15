@@ -2,7 +2,7 @@ import { Title } from "@solidjs/meta";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
 import { PageHeader } from "~/components/blocks/page-header";
-import { technologyWaves } from "~/lib/content/technology-waves";
+import { technologyWaves } from "~/lib/content-graph";
 import { methodologyPrinciples } from "~/lib/content/site";
 import { companyMetricDefinitions } from "~/lib/domain/metrics";
 

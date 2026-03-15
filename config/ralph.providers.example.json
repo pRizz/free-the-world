@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "defaultProviderOrder": ["codex", "claude"],
+  "providers": {
+    "codex": {
+      "command": "codex",
+      "args": ["exec", "--search", "-s", "read-only", "-C", "{{rootDir}}", "-"]
+    },
+    "claude": {
+      "command": "claude",
+      "args": ["-p", "--permission-mode", "dontAsk", "--output-format", "text"]
+    }
+  }
+}
