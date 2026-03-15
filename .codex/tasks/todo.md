@@ -210,7 +210,8 @@ Residual risks:
 
 Completion review:
 - The warning came from `actions/upload-pages-artifact`, which still pins `actions/upload-artifact@v4.x` internally.
-- Replaced that wrapper with an explicit tar step plus `actions/upload-artifact@v7`, and set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` at the workflow level so GitHub-hosted JavaScript actions run on Node 24 now instead of waiting for the forced platform switch.
+- Replaced that wrapper with an explicit tar step plus `actions/upload-artifact@v7`.
+- Confirmed the remaining warning moved to `actions/deploy-pages@v4`, then replaced that action with direct Pages deployment API calls plus status polling so the workflow no longer depends on any Node 20 Pages action.
 
 Residual risks:
-- `actions/deploy-pages@v4` is still the latest deploy action release today, so future GitHub Pages action changes should still be watched even though the current deprecation warning path is removed.
+- The deploy job now owns the Pages API interaction directly, so if GitHub changes the deployment payload or status contract, the workflow script will need to be adjusted instead of relying on an upstream action update.
