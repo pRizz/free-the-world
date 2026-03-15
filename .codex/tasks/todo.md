@@ -198,3 +198,19 @@ Completion review:
 
 Residual risks:
 - The Playwright run still emits benign `NO_COLOR` warnings from the worker environment and a third-party `mergeRefs` unused-import warning during build; neither blocks build, tests, or deploy.
+
+# GitHub Actions Node 20 Warning Removal
+
+- [x] Inspect the Pages workflow warning source and confirm the current upstream action versions.
+  Verification: `gh api repos/actions/upload-pages-artifact/releases/latest --jq .tag_name`, `gh api repos/actions/upload-artifact/releases/latest --jq .tag_name`, workflow/action metadata review
+- [x] Replace the deprecated artifact upload path and opt the workflow into Node 24 for JavaScript actions.
+  Verification: workflow diff review in `.github/workflows/deploy.yml`
+- [x] Re-run the local validation/build checks that the Pages workflow depends on.
+  Verification: `bun run content:validate`, `bun run typecheck`, `bun run test`, `SITE_BASE_PATH=/free-the-world/ bun run build`
+
+Completion review:
+- The warning came from `actions/upload-pages-artifact`, which still pins `actions/upload-artifact@v4.x` internally.
+- Replaced that wrapper with an explicit tar step plus `actions/upload-artifact@v7`, and set `FORCE_JAVASCRIPT_ACTIONS_TO_NODE24=true` at the workflow level so GitHub-hosted JavaScript actions run on Node 24 now instead of waiting for the forced platform switch.
+
+Residual risks:
+- `actions/deploy-pages@v4` is still the latest deploy action release today, so future GitHub Pages action changes should still be watched even though the current deprecation warning path is removed.
