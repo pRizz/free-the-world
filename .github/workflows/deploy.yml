@@ -61,15 +61,7 @@ jobs:
         run: bun run build
 
       - name: Archive Pages artifact
-        run: |
-          tar \
-            --dereference --hard-dereference \
-            --directory .output/public \
-            -cvf "$RUNNER_TEMP/artifact.tar" \
-            --exclude=.git \
-            --exclude=.github \
-            --exclude=".[^/]*" \
-            .
+        run: bash scripts/ci/archive-pages-artifact.sh .output/public "$RUNNER_TEMP/artifact.tar"
 
       - name: Upload Pages artifact
         id: upload-pages-artifact
@@ -92,71 +84,10 @@ jobs:
         env:
           ARTIFACT_ID: ${{ needs.build.outputs.artifact-id }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-
-          oidc_token="$(
-            curl --fail-with-body --silent --show-error \
-              -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" \
-              "$ACTIONS_ID_TOKEN_REQUEST_URL" | jq -r '.value'
-          )"
-
-          response="$(
-            jq -cn \
-              --arg artifact_id "$ARTIFACT_ID" \
-              --arg build_version "$GITHUB_SHA" \
-              --arg oidc_token "$oidc_token" \
-              '{artifact_id: ($artifact_id | tonumber), pages_build_version: $build_version, oidc_token: $oidc_token}' \
-              | curl --fail-with-body --silent --show-error \
-                  -X POST \
-                  -H "Authorization: Bearer $GITHUB_TOKEN" \
-                  -H "Accept: application/vnd.github+json" \
-                  -H "X-GitHub-Api-Version: 2022-11-28" \
-                  -d @- \
-                  "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/deployments"
-          )"
-
-          deployment_id="$(echo "$response" | jq -r '.id // (.status_url | split("/") | last)')"
-          page_url="$(echo "$response" | jq -r '.page_url // empty')"
-
-          echo "deployment_id=$deployment_id" >> "$GITHUB_OUTPUT"
-          echo "page_url=$page_url" >> "$GITHUB_OUTPUT"
+        run: bun run scripts/ci/create-pages-deployment.ts
 
       - name: Wait for Pages deployment
         env:
           DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
           GITHUB_TOKEN: ${{ github.token }}
-        run: |
-          set -euo pipefail
-
-          deadline="$(( $(date +%s) + 600 ))"
-
-          while true; do
-            response="$(
-              curl --fail-with-body --silent --show-error \
-                -H "Authorization: Bearer $GITHUB_TOKEN" \
-                -H "Accept: application/vnd.github+json" \
-                -H "X-GitHub-Api-Version: 2022-11-28" \
-                "https://api.github.com/repos/${GITHUB_REPOSITORY}/pages/deployments/${DEPLOYMENT_ID}"
-            )"
-
-            status="$(echo "$response" | jq -r '.status')"
-
-            case "$status" in
-              succeed)
-                exit 0
-                ;;
-              deployment_failed|deployment_perms_error|deployment_content_failed|deployment_cancelled|deployment_lost)
-                echo "$response"
-                exit 1
-                ;;
-              *)
-                if [ "$(date +%s)" -ge "$deadline" ]; then
-                  echo "Timed out waiting for Pages deployment ${DEPLOYMENT_ID}."
-                  echo "$response"
-                  exit 1
-                fi
-                sleep 5
-                ;;
-            esac
-          done
+        run: bun run scripts/ci/wait-for-pages-deployment.ts

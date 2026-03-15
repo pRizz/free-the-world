@@ -215,3 +215,20 @@ Completion review:
 
 Residual risks:
 - The deploy job now owns the Pages API interaction directly, so if GitHub changes the deployment payload or status contract, the workflow script will need to be adjusted instead of relying on an upstream action update.
+
+# GitHub Actions Inline Script Extraction
+
+- [x] Extract the multiline archive and Pages deployment workflow logic into standalone files under `scripts/ci/`.
+  Verification: `.github/workflows/deploy.yml` calls the new script entrypoints and preserves existing step names/env wiring.
+- [x] Add pure helper coverage for GitHub Pages env parsing, deployment response parsing, and deployment status classification.
+  Verification: `bun test tests/unit/scripts/github-pages.test.ts`
+- [x] Add a smoke test for the archive helper and run the workflow-equivalent verification pass.
+  Verification: `bun test tests/unit/scripts/archive-pages-artifact.test.ts`, `bun run typecheck`, `bun run test`, `SITE_BASE_PATH=/free-the-world/ bun run build`, local archive smoke check against `.output/public`
+
+Completion review:
+- Moved the three multiline deploy workflow blocks into `scripts/ci/`, with a typed GitHub Pages helper under `scripts/lib/github-pages.ts` so the deployment parsing and status logic is unit-tested instead of embedded in YAML.
+- Kept the workflow behavior intact while making the archive helper portable: GNU tar still uses the original dereference/exclude flags in CI, and BSD tar falls back to archiving only top-level visible entries so the local smoke test can exercise the same effective output.
+- Verified the refactor with targeted helper tests, the full Bun unit suite, `content:validate`, `typecheck`, a `SITE_BASE_PATH=/free-the-world/` production build, and a real archive smoke check against `.output/public`.
+
+Residual risks:
+- The Pages API scripts still depend on GitHub’s current deployment response shape and status names, just as the prior inline shell did. If GitHub changes that contract, `scripts/lib/github-pages.ts` will need to be updated.
