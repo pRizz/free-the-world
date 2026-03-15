@@ -118,3 +118,20 @@ Completion review:
 
 Residual risks:
 - The repo still emits pre-existing Nitro prerender `Invalid URL` warnings during the Playwright build/export step.
+
+# Nitro Prerender Warning Removal
+
+- [x] Stop Nitro from prerendering during `vite build` and keep the custom exporter as the only static HTML generator.
+  Verification: `vite.config.ts` now uses `preset: "node-server"` with no Nitro `prerender` config, while `scripts/export-static.ts` still owns static HTML generation.
+- [x] Document the build/export split so future config changes do not reintroduce redundant Nitro prerendering.
+  Verification: `README.md` now explicitly states static HTML comes from `scripts/export-static.ts`, not Nitro prerender.
+- [x] Verify the warning is gone and the exported site contract is unchanged.
+  Verification: `bun run typecheck`, `bun run build`, `bun run build > /tmp/free-the-world-build.log 2>&1 && rg -n 'Invalid URL|\\[500\\]|Internal Server Error|prerender' /tmp/free-the-world-build.log`, `bunx playwright test --workers=1`, and file spot-checks under `.output/public`.
+
+Completion review:
+- Nitro no longer runs the GitHub Pages static prerender path during `vite build`, so the custom exporter is the single source of static HTML and the old `Invalid URL` / `[500]` build noise is gone.
+- The build still writes the deployable site to `.output/public`, and spot checks confirmed `index.html`, `about/index.html`, `methodology/index.html`, `companies/index.html`, `companies/apple/index.html`, `companies/apple/products/apple-icloud/index.html`, and `404.html` are all present.
+- `bun run typecheck` passed, `bun run build` passed, and a serial `bunx playwright test --workers=1` passed all 12 tests without the Nitro prerender warnings appearing during Playwright startup.
+
+Residual risks:
+- The default parallel `bun run test:e2e` command still intermittently fails in `tests/e2e/registry-ipo.spec.ts` because the IPO sort option is not always visible after keyboard opening. That race is separate from the Nitro warning fix and still needs a dedicated test-stability pass.

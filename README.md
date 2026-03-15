@@ -26,9 +26,11 @@ bun run build
 The build pipeline:
 
 1. builds the Solid app
-2. renders static HTML for all seeded routes
+2. uses `scripts/export-static.ts` to render static HTML for all seeded routes
 3. writes the deployable artifact to `.output/public`
 4. creates `.nojekyll` for GitHub Pages compatibility
+
+Nitro is only used to build the server runtime and client assets that power the custom exporter. Static HTML generation in this repo comes from `scripts/export-static.ts`, not Nitro prerender.
 
 ## GitHub Pages deployment
 

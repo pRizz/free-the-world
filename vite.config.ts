@@ -10,12 +10,6 @@ export default defineConfig({
   plugins: [
     solidStart(),
     tailwindcss(),
-    nitro({
-      preset: "github_pages",
-      prerender: {
-        routes: ["/", "/about", "/methodology", "/companies"],
-        crawlLinks: true,
-      },
-    }),
+    nitro({ preset: "node-server" }),
   ],
 });
