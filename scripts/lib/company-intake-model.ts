@@ -1,4 +1,7 @@
-import type { UnverifiedCompanyRequest } from "../../src/lib/domain/content-types";
+import type {
+  CompanyIntakeAlreadyResearchedMode,
+  UnverifiedCompanyRequest,
+} from "../../src/lib/domain/content-types";
 import { createRunId } from "./ralph";
 
 export function parseRawCompanyItems(rawInput: string) {
@@ -24,6 +27,7 @@ export function createUnverifiedCompanyRequest(options: {
   requestId?: string;
   batchId?: string;
   groupLabel?: string;
+  alreadyResearchedMode?: CompanyIntakeAlreadyResearchedMode;
   requestNotes?: string;
 }): UnverifiedCompanyRequest {
   const requestId = options.requestId ?? `company-intake-${createRunId()}`;
@@ -38,6 +42,7 @@ export function createUnverifiedCompanyRequest(options: {
     rawItems: options.rawItems,
     batchId: options.batchId?.trim() || requestId,
     groupLabel: options.groupLabel?.trim() || defaultGroupLabel(options.rawItems),
+    alreadyResearchedMode: options.alreadyResearchedMode ?? "skip",
     requestNotes: normalizeOptional(options.requestNotes),
     preparedCandidates: [],
     skippedItems: [],

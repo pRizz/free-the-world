@@ -80,10 +80,11 @@ describe("company intake funnel", () => {
     // Assert
     expect(persistedRequest.batchId).toBe("fixture-batch");
     expect(persistedRequest.groupLabel).toBe("Fixture batch");
+    expect(persistedRequest.alreadyResearchedMode).toBe("skip");
     expect(persistedRequest.status).toBe("completed");
   });
 
-  test("skips duplicate raw items plus canonical and queued companies before provider work", async () => {
+  test("skips duplicate raw items plus published and queued companies before provider work", async () => {
     await writeJson(
       path.join(tempRoot, "manifests", "queue", "queuedco.json"),
       buildQueueEntry(
@@ -113,10 +114,40 @@ describe("company intake funnel", () => {
     expect(result.status).toBe(0);
     expect(request.status).toBe("failed");
     expect(request.skippedItems.map((issue) => issue.code).sort()).toEqual([
-      "already-canonical",
       "already-queued",
+      "already-researched",
       "duplicate-input",
     ]);
+  });
+
+  test("treats canonical unpublished companies as prepared candidates without requeueing them", async () => {
+    await writeJson(
+      path.join(tempRoot, "manifests", "companies", "secondco.json"),
+      buildManifest({
+        slug: "secondco",
+        name: "SecondCo",
+        ticker: "SEC",
+        indexIds: ["sp500-top20"],
+        sectorId: "consumer-staples",
+        industryId: "warehouse-clubs",
+        companiesMarketCapUrl: "https://example.com/secondco",
+        description: "Second company",
+        technologyWaveIds: [],
+      }),
+    );
+
+    // Act
+    const result = runCli(["company:intake", "--raw=SecondCo", "--provider=auto"]);
+    const request = await readSingleRequest();
+
+    // Assert
+    expect(result.status).toBe(0);
+    expect(request.status).toBe("prepared");
+    expect(request.preparedCandidates.map((candidate) => candidate.slug)).toEqual(["secondco"]);
+    expect(request.queuedSlugs).toEqual([]);
+    await expect(
+      readFile(path.join(tempRoot, "manifests", "queue", "secondco.json"), "utf8"),
+    ).rejects.toThrow();
   });
 
   test("records ambiguous and invalid provider issues during prepare", async () => {
@@ -218,6 +249,133 @@ describe("company intake funnel", () => {
     const events = await readProviderEvents(providerLogFile);
     expect(events.some((event) => event.phase === "resolve")).toBe(true);
     expect(events.some((event) => event.phase === "draft")).toBe(true);
+  });
+
+  test("processes mixed canonical and new companies in one dry-run intake", async () => {
+    await writeJson(
+      path.join(tempRoot, "manifests", "companies", "secondco.json"),
+      buildManifest({
+        slug: "secondco",
+        name: "SecondCo",
+        ticker: "SEC",
+        indexIds: ["sp500-top20"],
+        sectorId: "consumer-staples",
+        industryId: "warehouse-clubs",
+        companiesMarketCapUrl: "https://example.com/secondco",
+        description: "Second company",
+        technologyWaveIds: [],
+      }),
+    );
+    const providerLogFile = await writeFakeIntakeProvider(tempRoot, {
+      resolve: {
+        resolved: [
+          {
+            sourceItem: "NewCo",
+            slug: "newco",
+            name: "NewCo",
+            ticker: "NEW",
+          },
+        ],
+        issues: [],
+      },
+      draft: {
+        drafts: [
+          {
+            sourceItem: "NewCo",
+            manifest: buildManifest({
+              slug: "newco",
+              name: "NewCo",
+              ticker: "NEW",
+              indexIds: ["sp500-top20"],
+              sectorId: "consumer-staples",
+              industryId: "warehouse-clubs",
+              companiesMarketCapUrl: "https://example.com/newco",
+              description: "New company",
+              technologyWaveIds: [],
+            }),
+          },
+        ],
+        issues: [],
+      },
+      syncPayloads: {
+        newco: buildSyncPayload({ slug: "newco", companyName: "NewCo", ticker: "NEW" }),
+        secondco: buildSyncPayload({
+          slug: "secondco",
+          companyName: "SecondCo",
+          ticker: "SEC",
+        }),
+      },
+    });
+
+    // Act
+    const result = runCli([
+      "company:intake",
+      "--raw=SecondCo\nNewCo",
+      "--mode=dry-run",
+      "--provider=auto",
+    ]);
+    const request = await readSingleRequest();
+
+    // Assert
+    expect(result.status).toBe(0);
+    expect(request.status).toBe("completed");
+    const preparedSlugs = request.preparedCandidates.map((candidate) => candidate.slug).sort();
+    expect(preparedSlugs).toEqual(["newco", "secondco"]);
+    const events = await readProviderEvents(providerLogFile);
+    expect(
+      events.filter((event) => event.phase === "resolve" && event.event === "start").length,
+    ).toBe(1);
+    expect(
+      events.filter((event) => event.phase === "draft" && event.event === "start").length,
+    ).toBe(1);
+    expect(events.filter((event) => event.phase === "loop" && event.event === "start").length).toBe(
+      2,
+    );
+    expect(events.filter((event) => event.phase === "sync" && event.event === "start").length).toBe(
+      2,
+    );
+  });
+
+  test("refreshes already researched companies when requested", async () => {
+    const providerLogFile = await writeFakeIntakeProvider(tempRoot, {
+      resolve: {
+        resolved: [],
+        issues: [],
+      },
+      draft: {
+        drafts: [],
+        issues: [],
+      },
+      syncPayloads: {
+        fixtureco: buildSyncPayload({
+          slug: "fixtureco",
+          companyName: "FixtureCo",
+          ticker: "FIX",
+        }),
+      },
+    });
+
+    // Act
+    const result = runCli([
+      "company:intake",
+      "--raw=FixtureCo",
+      "--mode=dry-run",
+      "--already-researched=refresh",
+      "--provider=auto",
+    ]);
+    const request = await readSingleRequest();
+
+    // Assert
+    expect(result.status).toBe(0);
+    expect(request.status).toBe("completed");
+    expect(request.alreadyResearchedMode).toBe("refresh");
+    expect(request.preparedCandidates.map((candidate) => candidate.slug)).toEqual(["fixtureco"]);
+    expect(request.skippedItems).toEqual([]);
+    const events = await readProviderEvents(providerLogFile);
+    expect(events.some((event) => event.phase === "resolve")).toBe(false);
+    expect(events.some((event) => event.phase === "draft")).toBe(false);
+    expect(events.some((event) => event.phase === "loop")).toBe(true);
+    expect(events.some((event) => event.phase === "sync")).toBe(true);
   });
 
   test("resumes a prepared request by id and skips re-running prepare stages during dry-run", async () => {
@@ -410,9 +568,12 @@ async function readSingleRequest() {
   return JSON.parse(
     await readFile(path.join(tempRoot, "manifests", "unverified", entries[0]), "utf8"),
   ) as {
+    alreadyResearchedMode: string;
+    preparedCandidates: Array<{ slug: string }>;
+    queuedSlugs: string[];
     requestId: string;
-    status: string;
     skippedItems: Array<{ code: string }>;
+    status: string;
   };
 }
 

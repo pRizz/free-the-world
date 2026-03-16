@@ -10,9 +10,13 @@ export async function readUnverifiedCompanyRequest(
   requestId: string,
   manifestDir = unverifiedManifestsDir,
 ) {
-  const request = await readJsonFile<UnverifiedCompanyRequest>(
+  const rawRequest = await readJsonFile<Partial<UnverifiedCompanyRequest>>(
     getUnverifiedRequestFile(requestId, manifestDir),
   );
+  const request = {
+    alreadyResearchedMode: "skip",
+    ...rawRequest,
+  } as UnverifiedCompanyRequest;
   validateUnverifiedCompanyRequest(request, requestId);
   return request;
 }

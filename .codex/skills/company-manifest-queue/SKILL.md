@@ -63,6 +63,7 @@ Do not queue ambiguous candidates without confirmation.
 - Write plain `CompanyManifest` draft JSON first.
 - Stage drafts with `bun run company:queue --manifest=...`.
 - For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
 - In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
 - If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
 - If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
@@ -71,11 +72,12 @@ Do not queue ambiguous candidates without confirmation.
 
 After a `company:intake --mode=prepare` run, the normal inline follow-up is:
 
+- already researched: skip or refresh
 - queue/prepared only
 - research dry-run
 - publish website
 
-If the user already requested dry-run or publish in the original prompt, skip that follow-up and honor the requested end state directly.
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
 
 ## Guardrails
 

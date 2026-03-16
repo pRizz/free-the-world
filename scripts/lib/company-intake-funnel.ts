@@ -1,6 +1,7 @@
 import { appendFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type {
+  CompanyIntakeAlreadyResearchedMode,
   CompanyManifest,
   PreparedCompanyCandidate,
   RalphProviderId,
@@ -45,6 +46,7 @@ export interface CompanyIntakeOptions {
   requestId?: string;
   batchId?: string;
   groupLabel?: string;
+  alreadyResearchedMode?: CompanyIntakeAlreadyResearchedMode;
   requestNotes?: string;
   providerPreference: RalphProviderPreference;
   concurrencyLimit: number;
@@ -63,8 +65,10 @@ export interface CompanyIntakeResult {
 }
 
 interface ExistingCompanyMatch {
+  name: string;
+  ticker: string;
   slug: string;
-  state: "canonical" | "queued";
+  state: "canonical-unpublished" | "published" | "queued";
 }
 
 interface ExistingCompanyLookup {
@@ -249,6 +253,7 @@ async function resolveRequest(options: CompanyIntakeOptions) {
     rawItems,
     batchId: options.batchId,
     groupLabel: options.groupLabel,
+    alreadyResearchedMode: options.alreadyResearchedMode,
     requestNotes: options.requestNotes,
   });
   await writeUnverifiedCompanyRequest(request);
@@ -276,6 +281,7 @@ async function prepareUnverifiedRequest(
   const queueEntries = await loadManifestQueueEntries(contentDir);
   const existingLookup = buildExistingCompanyLookup(raw, queueEntries);
   const unresolvedItems: string[] = [];
+  const directCandidates: PreparedCompanyCandidate[] = [];
   const skippedItems: UnverifiedCompanyIssue[] = [];
   const seenInputs = new Set<string>();
 
@@ -295,14 +301,13 @@ async function prepareUnverifiedRequest(
 
     const maybeExisting = findExistingCompanyMatch(rawItem, existingLookup);
     if (maybeExisting) {
-      skippedItems.push(
-        buildIssue(
-          rawItem,
-          maybeExisting.state === "canonical" ? "already-canonical" : "already-queued",
-          `${rawItem} already exists in the ${maybeExisting.state} manifest set as ${maybeExisting.slug}.`,
-          maybeExisting.slug,
-        ),
-      );
+      handleExistingMatch({
+        sourceItem: rawItem,
+        match: maybeExisting,
+        alreadyResearchedMode: request.alreadyResearchedMode,
+        directCandidates,
+        skippedItems,
+      });
       continue;
     }
 
@@ -310,18 +315,23 @@ async function prepareUnverifiedRequest(
   }
 
   if (unresolvedItems.length === 0) {
+    const preparedCandidates = dedupePreparedCandidates(directCandidates);
     await run.addBreadcrumb({
       step: "prepare",
-      status: "failed",
-      detail: "No unresolved intake items remained after duplicate/existing-company filtering",
+      status: preparedCandidates.length > 0 ? "passed" : "failed",
+      detail:
+        preparedCandidates.length > 0
+          ? "All intake items mapped to already-known companies without requiring new manifests"
+          : "No unresolved intake items remained after duplicate/existing-company filtering",
       data: {
         skippedCount: skippedItems.length,
+        directCompanySlugs: preparedCandidates.map((candidate) => candidate.slug),
       },
     });
     return updateRequest(request, {
-      status: "failed",
+      status: preparedCandidates.length > 0 ? "prepared" : "failed",
       skippedItems,
-      preparedCandidates: [],
+      preparedCandidates,
       queuedSlugs: [],
       lastLoopRunDirs: [],
       lastSyncRunDirs: [],
@@ -385,13 +395,16 @@ async function prepareUnverifiedRequest(
 
   skippedItems.push(...candidateStage.output.issues);
   const dedupedCandidates = dedupeResolvedCandidates(candidateStage.output.resolved, skippedItems);
-  const candidateLookup = dedupeCandidatesAgainstExisting(
-    dedupedCandidates,
-    existingLookup,
-    skippedItems,
-  );
+  const { draftCandidates, directCandidates: resolvedDirectCandidates } =
+    partitionCandidatesAgainstExisting(
+      dedupedCandidates,
+      existingLookup,
+      request.alreadyResearchedMode,
+      skippedItems,
+    );
+  directCandidates.push(...resolvedDirectCandidates);
 
-  if (candidateLookup.length === 0) {
+  if (draftCandidates.length === 0 && directCandidates.length === 0) {
     await run.addBreadcrumb({
       step: "candidate-resolution",
       status: "failed",
@@ -410,62 +423,86 @@ async function prepareUnverifiedRequest(
     });
   }
 
-  let manifestStage: ProviderStageResult<IntakeManifestStageOutput>;
-  try {
-    manifestStage = await runProviderStage<IntakeManifestStageOutput>({
-      request,
-      stageId: "company-intake-manifests",
-      templateFile: "company-intake-manifests.md",
-      providerPreference: options.providerPreference,
-      runDirectory,
-      run,
-      variables: {
-        requestId: request.requestId,
-        batchId: request.batchId,
-        groupLabel: request.groupLabel,
-        requestNotes: request.requestNotes ?? "",
-        resolvedCandidatesJson: JSON.stringify(candidateLookup, null, 2),
-        taxonomyJson: JSON.stringify(
-          {
-            regions: raw.regions,
-            indices: raw.indices,
-            sectors: raw.sectors,
-            industries: raw.industries,
-            technologyWaves: raw.technologyWaves,
-          },
-          null,
-          2,
+  let queuedPreparedCandidates: PreparedCompanyCandidate[] = [];
+  let queuedSlugs: string[] = [];
+  let selectedManifestProvider: RalphProviderId | null = null;
+
+  if (draftCandidates.length > 0) {
+    let manifestStage: ProviderStageResult<IntakeManifestStageOutput>;
+    try {
+      manifestStage = await runProviderStage<IntakeManifestStageOutput>({
+        request,
+        stageId: "company-intake-manifests",
+        templateFile: "company-intake-manifests.md",
+        providerPreference: options.providerPreference,
+        runDirectory,
+        run,
+        variables: {
+          requestId: request.requestId,
+          batchId: request.batchId,
+          groupLabel: request.groupLabel,
+          requestNotes: request.requestNotes ?? "",
+          resolvedCandidatesJson: JSON.stringify(draftCandidates, null, 2),
+          taxonomyJson: JSON.stringify(
+            {
+              regions: raw.regions,
+              indices: raw.indices,
+              sectors: raw.sectors,
+              industries: raw.industries,
+              technologyWaves: raw.technologyWaves,
+            },
+            null,
+            2,
+          ),
+          manifestExamplesJson: JSON.stringify(raw.manifests.slice(0, 3), null, 2),
+        },
+        validate: validateManifestStageOutput,
+      });
+      selectedManifestProvider = manifestStage.provider;
+    } catch (error) {
+      skippedItems.push(
+        ...buildProviderFailureIssues(
+          draftCandidates.map((candidate) => candidate.sourceItem),
+          error instanceof Error ? error.message : String(error),
         ),
-        manifestExamplesJson: JSON.stringify(raw.manifests.slice(0, 3), null, 2),
-      },
-      validate: validateManifestStageOutput,
-    });
-  } catch (error) {
-    skippedItems.push(
-      ...buildProviderFailureIssues(
-        candidateLookup.map((candidate) => candidate.sourceItem),
-        error instanceof Error ? error.message : String(error),
-      ),
-    );
-    return updateRequest(request, {
-      status: "failed",
+      );
+      const preparedCandidates = dedupePreparedCandidates(directCandidates);
+      return updateRequest(request, {
+        status: preparedCandidates.length > 0 ? "prepared" : "failed",
+        skippedItems,
+        preparedCandidates,
+        queuedSlugs: [],
+        lastLoopRunDirs: [],
+        lastSyncRunDirs: [],
+      });
+    }
+
+    skippedItems.push(...manifestStage.output.issues);
+    const queuedResult = await queueDraftedManifests({
+      candidateLookup: draftCandidates,
+      drafts: manifestStage.output.drafts,
+      request,
       skippedItems,
-      preparedCandidates: [],
-      queuedSlugs: [],
-      lastLoopRunDirs: [],
-      lastSyncRunDirs: [],
+    });
+    queuedPreparedCandidates = queuedResult.preparedCandidates;
+    queuedSlugs = queuedResult.queuedSlugs;
+  } else {
+    await run.addBreadcrumb({
+      step: "company-intake-manifests",
+      status: "skipped",
+      detail: "All resolved candidates already had canonical manifests; skipping manifest drafting",
+      data: {
+        directCompanySlugs: directCandidates.map((candidate) => candidate.slug),
+      },
     });
   }
 
-  skippedItems.push(...manifestStage.output.issues);
-  const { preparedCandidates, queuedSlugs } = await queueDraftedManifests({
-    candidateLookup,
-    drafts: manifestStage.output.drafts,
-    request,
-    skippedItems,
-  });
-
-  const nextStatus: UnverifiedCompanyRequestStatus = queuedSlugs.length > 0 ? "prepared" : "failed";
+  const preparedCandidates = dedupePreparedCandidates([
+    ...directCandidates,
+    ...queuedPreparedCandidates,
+  ]);
+  const nextStatus: UnverifiedCompanyRequestStatus =
+    preparedCandidates.length > 0 ? "prepared" : "failed";
 
   await run.addBreadcrumb({
     step: "prepare",
@@ -477,8 +514,9 @@ async function prepareUnverifiedRequest(
     data: {
       selectedProvider: {
         candidates: candidateStage.provider,
-        manifests: manifestStage.provider,
+        manifests: selectedManifestProvider,
       },
+      directCompanySlugs: directCandidates.map((candidate) => candidate.slug),
       queuedSlugs,
       skippedCount: skippedItems.length,
     },
@@ -643,21 +681,16 @@ async function queueDraftedManifests(options: {
 
 function buildPipelineSelectors(request: UnverifiedCompanyRequest) {
   const queuedSlugs = dedupe(request.queuedSlugs);
-  if (queuedSlugs.length > 0) {
-    return {
-      queuedSlugs,
-      companySlugs: [] as string[],
-    };
-  }
-
   const companySlugs = dedupe(
     request.completedCompanySlugs.length > 0
       ? request.completedCompanySlugs
-      : request.preparedCandidates.map((candidate) => candidate.slug),
+      : request.preparedCandidates
+          .map((candidate) => candidate.slug)
+          .filter((slug) => !queuedSlugs.includes(slug)),
   );
 
   return {
-    queuedSlugs: [] as string[],
+    queuedSlugs,
     companySlugs,
   };
 }
@@ -677,6 +710,7 @@ async function persistSummary(
       rawItems: request.rawItems,
       batchId: request.batchId,
       groupLabel: request.groupLabel,
+      alreadyResearchedMode: request.alreadyResearchedMode,
       requestNotes: request.requestNotes,
       preparedCandidates: request.preparedCandidates,
       skippedItems: request.skippedItems,
@@ -755,27 +789,35 @@ function dedupeResolvedCandidates(
   return deduped;
 }
 
-function dedupeCandidatesAgainstExisting(
+function partitionCandidatesAgainstExisting(
   candidates: PreparedCompanyCandidate[],
   existingLookup: ExistingCompanyLookup,
+  alreadyResearchedMode: CompanyIntakeAlreadyResearchedMode,
   skippedItems: UnverifiedCompanyIssue[],
 ) {
-  return candidates.filter((candidate) => {
+  const draftCandidates: PreparedCompanyCandidate[] = [];
+  const directCandidates: PreparedCompanyCandidate[] = [];
+
+  for (const candidate of candidates) {
     const maybeExisting = findExistingCompanyMatch(candidate.slug, existingLookup, candidate);
     if (!maybeExisting) {
-      return true;
+      draftCandidates.push(candidate);
+      continue;
     }
 
-    skippedItems.push(
-      buildIssue(
-        candidate.sourceItem,
-        maybeExisting.state === "canonical" ? "already-canonical" : "already-queued",
-        `${candidate.name} already exists in the ${maybeExisting.state} manifest set as ${maybeExisting.slug}.`,
-        maybeExisting.slug,
-      ),
-    );
-    return false;
-  });
+    handleExistingMatch({
+      sourceItem: candidate.sourceItem,
+      match: maybeExisting,
+      alreadyResearchedMode,
+      directCandidates,
+      skippedItems,
+    });
+  }
+
+  return {
+    draftCandidates,
+    directCandidates: dedupePreparedCandidates(directCandidates),
+  };
 }
 
 async function runProviderStage<T>(options: {
@@ -924,6 +966,8 @@ function buildExistingCompanyLookup(
     manifest: Pick<CompanyManifest, "slug" | "name" | "ticker">,
   ) => {
     const entry = {
+      name: manifest.name,
+      ticker: manifest.ticker,
       slug: manifest.slug,
       state,
     } satisfies ExistingCompanyMatch;
@@ -933,8 +977,9 @@ function buildExistingCompanyLookup(
     lookup.byTicker.set(normalizeTicker(manifest.ticker), entry);
   };
 
+  const publishedSlugs = new Set(raw.bundles.map((bundle) => bundle.company.slug));
   for (const manifest of raw.manifests) {
-    addEntry("canonical", manifest);
+    addEntry(publishedSlugs.has(manifest.slug) ? "published" : "canonical-unpublished", manifest);
   }
 
   for (const queueEntry of queueEntries) {
@@ -1080,6 +1125,56 @@ function buildIssue(
     detail,
     maybeCandidateSlug,
   };
+}
+
+function handleExistingMatch(options: {
+  sourceItem: string;
+  match: ExistingCompanyMatch;
+  alreadyResearchedMode: CompanyIntakeAlreadyResearchedMode;
+  directCandidates: PreparedCompanyCandidate[];
+  skippedItems: UnverifiedCompanyIssue[];
+}) {
+  if (options.match.state === "queued") {
+    options.skippedItems.push(
+      buildIssue(
+        options.sourceItem,
+        "already-queued",
+        `${options.match.name} is already queued as ${options.match.slug}.`,
+        options.match.slug,
+      ),
+    );
+    return;
+  }
+
+  if (options.match.state === "published" && options.alreadyResearchedMode === "skip") {
+    options.skippedItems.push(
+      buildIssue(
+        options.sourceItem,
+        "already-researched",
+        `${options.match.name} already has published research as ${options.match.slug}.`,
+        options.match.slug,
+      ),
+    );
+    return;
+  }
+
+  options.directCandidates.push({
+    sourceItem: options.sourceItem,
+    slug: options.match.slug,
+    name: options.match.name,
+    ticker: options.match.ticker,
+  });
+}
+
+function dedupePreparedCandidates(candidates: PreparedCompanyCandidate[]) {
+  const seen = new Set<string>();
+  return candidates.filter((candidate) => {
+    if (seen.has(candidate.slug)) {
+      return false;
+    }
+    seen.add(candidate.slug);
+    return true;
+  });
 }
 
 function buildProviderFailureIssues(sourceItems: string[], detail: string) {

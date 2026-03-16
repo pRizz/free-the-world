@@ -1,6 +1,7 @@
 import { appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import type {
+  CompanyIntakeAlreadyResearchedMode,
   PreparedCompanyCandidate,
   RalphSyncMode,
   UnverifiedCompanyIssue,
@@ -34,6 +35,7 @@ export interface CompanyIntakeSummary {
   rawItems: string[];
   batchId: string;
   groupLabel: string;
+  alreadyResearchedMode: CompanyIntakeAlreadyResearchedMode;
   requestNotes?: string;
   preparedCandidates: PreparedCompanyCandidate[];
   skippedItems: UnverifiedCompanyIssue[];
@@ -223,6 +225,7 @@ function renderSummaryMarkdown(summary: CompanyIntakeSummary) {
     `- Status: \`${summary.status}\``,
     `- Batch: \`${summary.batchId}\``,
     `- Group label: ${summary.groupLabel}`,
+    `- Already researched: \`${summary.alreadyResearchedMode}\``,
     summary.requestNotes ? `- Request notes: ${summary.requestNotes}` : null,
     summary.timing
       ? [

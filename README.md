@@ -103,6 +103,8 @@ bun run company:intake --raw="Visa, Oracle, next 10 S&P 500 companies" --mode=pr
 
 `company:intake` writes repo-tracked unverified requests to `content/manifests/unverified/` and
 local run summaries to `.codex/logs/company-intake/<request-id>/summary.{json,md}`.
+Use `--already-researched=refresh` when you want companies with published bundles to be re-run
+through the research pipeline instead of being skipped.
 
 Resume a prepared request and run research without publishing:
 
@@ -122,6 +124,7 @@ bun run company:intake --request=<request-id> --mode=publish --provider=auto --n
 - `--provider=auto`
 - `--loop-tasks=company-overview`
 - `--concurrency=5`
+- `--already-researched=skip`
 - `--no-commit=true`
 
 Queue a net-new company from a draft manifest file:

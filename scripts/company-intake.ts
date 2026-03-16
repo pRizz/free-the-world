@@ -1,5 +1,9 @@
 import path from "node:path";
-import type { RalphProviderPreference, RalphSyncMode } from "../src/lib/domain/content-types";
+import type {
+  CompanyIntakeAlreadyResearchedMode,
+  RalphProviderPreference,
+  RalphSyncMode,
+} from "../src/lib/domain/content-types";
 import { parseRawCompanyItems, runCompanyIntake } from "./lib/company-intake-funnel";
 import { resolvePipelineLoopTaskIds } from "./lib/company-pipeline";
 import { rootDir } from "./lib/content";
@@ -9,7 +13,7 @@ import { parseLoopConcurrencyLimit } from "./lib/ralph-loop-runner";
 const args = parseArgs(process.argv.slice(2));
 
 const usage =
-  "Usage: bun run company:intake [--raw=<text> | --items-file=<path> | --request=<id>] [--mode=prepare|dry-run|publish] [--batch-id=<id>] [--group-label=<label>] [--request-notes=<text>] [--loop-tasks=<task[,task]>|all] [--concurrency=<n>] [--provider=auto|codex|claude|both] [--no-commit=true|false]";
+  "Usage: bun run company:intake [--raw=<text> | --items-file=<path> | --request=<id>] [--mode=prepare|dry-run|publish] [--batch-id=<id>] [--group-label=<label>] [--already-researched=skip|refresh] [--request-notes=<text>] [--loop-tasks=<task[,task]>|all] [--concurrency=<n>] [--provider=auto|codex|claude|both] [--no-commit=true|false]";
 
 if (args.help === "true") {
   console.log(usage);
@@ -21,6 +25,7 @@ const providerPreference = (args.provider ?? "auto") as RalphProviderPreference;
 const noCommit = args["no-commit"] !== "false" && args["no-commit"] !== "0";
 const concurrencyLimit = parseLoopConcurrencyLimit(args.concurrency);
 const requestId = normalizeOptional(args.request);
+const alreadyResearchedMode = normalizeAlreadyResearchedMode(args["already-researched"]);
 
 const rawInput =
   normalizeOptional(args.raw) ?? (await maybeReadItemsFile(args["items-file"] ?? args.items));
@@ -34,12 +39,19 @@ if (requestId && rawInput) {
   throw new Error("Use either a new raw request or --request=<id>, not both in the same command.");
 }
 
+if (requestId && alreadyResearchedMode) {
+  throw new Error(
+    "Use --already-researched=... only on a new raw intake request. Resume existing requests by id without overriding that choice.",
+  );
+}
+
 const result = await runCompanyIntake({
   mode,
   rawInput,
   requestId,
   batchId: normalizeOptional(args["batch-id"]),
   groupLabel: normalizeOptional(args["group-label"]),
+  alreadyResearchedMode,
   requestNotes: normalizeOptional(args["request-notes"]),
   providerPreference,
   concurrencyLimit,
@@ -70,6 +82,21 @@ if (mode === "prepare") {
 function normalizeOptional(value?: string) {
   const trimmedValue = value?.trim();
   return trimmedValue ? trimmedValue : undefined;
+}
+
+function normalizeAlreadyResearchedMode(
+  value?: string,
+): CompanyIntakeAlreadyResearchedMode | undefined {
+  const trimmedValue = normalizeOptional(value);
+  if (!trimmedValue) {
+    return undefined;
+  }
+
+  if (trimmedValue === "skip" || trimmedValue === "refresh") {
+    return trimmedValue;
+  }
+
+  throw new Error("Unsupported --already-researched value. Use skip or refresh.");
 }
 
 async function maybeReadItemsFile(maybeFile: string | undefined) {

@@ -38,9 +38,10 @@ export type RalphSyncMode = "dry-run" | "publish";
 export type ManifestQueueStatus = "queued";
 export type ResearchTargetSource = "canonical" | "queued";
 export type UnverifiedCompanyRequestStatus = "pending" | "prepared" | "completed" | "failed";
+export type CompanyIntakeAlreadyResearchedMode = "skip" | "refresh";
 export type UnverifiedCompanyIssueCode =
-  | "already-canonical"
   | "already-queued"
+  | "already-researched"
   | "ambiguous"
   | "draft-validation-failed"
   | "duplicate-candidate"
@@ -100,6 +101,7 @@ export interface UnverifiedCompanyRequest {
   rawItems: string[];
   batchId: string;
   groupLabel: string;
+  alreadyResearchedMode: CompanyIntakeAlreadyResearchedMode;
   requestNotes?: string;
   preparedCandidates: PreparedCompanyCandidate[];
   skippedItems: UnverifiedCompanyIssue[];
