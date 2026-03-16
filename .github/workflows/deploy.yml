@@ -61,6 +61,7 @@ jobs:
         with:
           name: deploy-aws-site
           path: .artifacts/deploy/aws
+          include-hidden-files: true
           retention-days: 1
           if-no-files-found: error
 
@@ -69,6 +70,7 @@ jobs:
         with:
           name: deploy-pages-site
           path: .artifacts/deploy/github-pages
+          include-hidden-files: true
           retention-days: 1
           if-no-files-found: error
 

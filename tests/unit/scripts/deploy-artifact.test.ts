@@ -1,5 +1,13 @@
+import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
 import { expect, test } from "bun:test";
-import { classifyArtifactPath, diffDeployManifests, getInvalidationPaths } from "../../../scripts/lib/deploy-artifact";
+import {
+  assertDeployArtifactIntegrity,
+  classifyArtifactPath,
+  diffDeployManifests,
+  getInvalidationPaths,
+} from "../../../scripts/lib/deploy-artifact";
 import type { DeployManifest } from "../../../scripts/lib/deploy-artifact";
 
 test("classifyArtifactPath marks hashed build assets immutable", () => {
@@ -48,4 +56,37 @@ test("getInvalidationPaths expands pretty URLs and skips immutable assets", () =
     "/index.html",
     "/robots.txt",
   ]);
+});
+
+test("assertDeployArtifactIntegrity fails when manifest-listed files are missing", async () => {
+  const artifactDir = await mkdtemp(path.join(tmpdir(), "deploy-artifact-"));
+
+  try {
+    // Arrange
+    await mkdir(path.join(artifactDir, "_build", "assets"), { recursive: true });
+    await writeFile(path.join(artifactDir, "index.html"), "<!doctype html>", "utf8");
+
+    const manifest: DeployManifest = {
+      artifactHash: "artifact",
+      basePath: "/",
+      canonicalOrigin: "https://free-the-world.com",
+      files: [
+        { cacheClass: "html", path: "index.html", sha256: "one", size: 1 },
+        { cacheClass: "metadata", path: ".nojekyll", sha256: "two", size: 2 },
+        { cacheClass: "asset", path: "_build/.vite/manifest.json", sha256: "three", size: 3 },
+      ],
+      publicOrigin: "https://free-the-world.com",
+      routes: ["/"],
+      target: "aws",
+      version: 1,
+    };
+
+    // Act
+    const result = assertDeployArtifactIntegrity(artifactDir, manifest);
+
+    // Assert
+    await expect(result).rejects.toThrow(/missing 2 file\(s\).*\.nojekyll.*_build\/\.vite\/manifest\.json/s);
+  } finally {
+    await rm(artifactDir, { force: true, recursive: true });
+  }
 });

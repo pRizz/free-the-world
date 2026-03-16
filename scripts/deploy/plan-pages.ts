@@ -1,6 +1,6 @@
 import { appendFile } from "node:fs/promises";
 import path from "node:path";
-import { diffDeployManifests, readDeployManifest, type DeployManifest } from "../lib/deploy-artifact";
+import { assertDeployArtifactIntegrity, diffDeployManifests, readDeployManifest, type DeployManifest } from "../lib/deploy-artifact";
 import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
 import { deploymentConfig } from "../../src/lib/deployment-config";
 
@@ -18,6 +18,8 @@ const run = await createDeployRun({
 if (localManifest.target !== "github-pages") {
   throw new Error(`Expected a GitHub Pages deploy manifest, received target ${localManifest.target}.`);
 }
+
+await assertDeployArtifactIntegrity(artifactDir, localManifest);
 
 await run.addBreadcrumb({
   detail: `Loaded GitHub Pages artifact manifest ${localManifest.artifactHash} from ${artifactDir}.`,

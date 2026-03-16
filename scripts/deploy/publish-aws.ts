@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import { ensureAwsCliAvailable, loadAwsCallerIdentity, loadStackState } from "../lib/aws-deploy";
 import { runCommand } from "../lib/command";
 import {
+  assertDeployArtifactIntegrity,
   diffDeployManifests,
   getCacheControlForArtifactPath,
   getInvalidationPaths,
@@ -28,6 +29,8 @@ const run = await createDeployRun({
 if (localManifest.target !== "aws") {
   throw new Error(`Expected an AWS deploy manifest, received target ${localManifest.target}.`);
 }
+
+await assertDeployArtifactIntegrity(artifactDir, localManifest);
 
 await run.addBreadcrumb({
   detail: `Loaded AWS artifact manifest ${localManifest.artifactHash} from ${artifactDir}.`,

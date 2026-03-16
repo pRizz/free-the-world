@@ -42,6 +42,20 @@ Residual risks:
 - The new setup scripts depend on live GitHub and AWS credentials and were not applied in this session, so the real create/update paths still need one authenticated `--apply` pass.
 - The GitHub setup flow uses an environment-scoped digest variable to decide whether the `AWS_DEPLOY_ROLE_ARN` secret needs to be updated. If someone changes the secret manually without updating the digest variable, the next check will treat the digest as source of truth and skip the secret update.
 
+# Deploy Artifact Integrity Guard
+
+- [x] Preserve hidden files in the CI handoff for the AWS and GitHub Pages deploy artifacts.
+  Verification: workflow review of `.github/workflows/deploy.yml`
+- [x] Add a shared artifact-integrity preflight for deploy consumers and cover the missing-hidden-files failure mode with a unit test.
+  Verification: `bun test tests/unit/scripts/deploy-artifact.test.ts`, `bun run deploy:build`
+
+Completion review:
+- The deploy workflow now uploads the built artifacts with hidden files included, so `_build/.vite/manifest.json` and `.nojekyll` survive the build-to-deploy job handoff.
+- Both `deploy:aws:publish` and `deploy:pages:plan` now validate that every file listed in `deploy-manifest.json` is actually present before they attempt publish or mirror-planning work.
+
+Residual risks:
+- The new integrity guard catches incomplete artifacts early, but it cannot repair them. If a future CI/storage step strips files again, the workflow will still fail until that step preserves the artifact correctly.
+
 # UI Standardization Refactor
 
 # SolidStart Stable Migration And Hydration Fix

@@ -89,6 +89,30 @@ export async function readDeployManifest(manifestPath: string) {
   return JSON.parse(content) as DeployManifest;
 }
 
+export async function assertDeployArtifactIntegrity(outputDir: string, manifest: DeployManifest) {
+  const missingPaths: string[] = [];
+
+  for (const file of manifest.files) {
+    try {
+      await access(path.join(outputDir, file.path));
+    } catch {
+      missingPaths.push(file.path);
+    }
+  }
+
+  if (missingPaths.length === 0) {
+    return;
+  }
+
+  const samplePaths = missingPaths.slice(0, 3).join(", ");
+  const remainder = missingPaths.length > 3 ? ", ..." : "";
+  throw new Error(
+    `Artifact directory ${outputDir} is missing ${missingPaths.length} file(s) listed in deploy-manifest.json: ` +
+      `${samplePaths}${remainder}. This usually means the artifact was archived or uploaded without hidden files. ` +
+      "Rebuild the artifact or preserve hidden files during upload and download."
+  );
+}
+
 export async function collectArtifactFiles(outputDir: string) {
   const relativePaths = await listRelativeFiles(outputDir);
   const deployablePaths = relativePaths.filter(relativePath => relativePath !== "deploy-manifest.json");
