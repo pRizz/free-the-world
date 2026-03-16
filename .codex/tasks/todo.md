@@ -377,7 +377,7 @@ Residual risks:
   Verification: draft manifests created for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble` under `.codex/tmp/sp500-top25-drafts/`; structural `jq` checks passed.
 - [x] Queue the new manifests with a shared batch id and request notes.
   Verification: queued manifests now exist for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble`; `bun run content:validate` and `bun run content:compile` both passed after queueing.
-- [ ] Promote the queued manifests into canonical manifests.
-  Verification: `bun run company:init --queued=<slug>` succeeds for each new company and the queue entries are removed.
+- [x] Promote the queued manifests into canonical manifests.
+  Verification: `bun run company:init --queued=<slug>` succeeded for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble`; canonical manifests now exist under `content/manifests/companies/` and the corresponding queue entries were removed.
 - [ ] Run Ralph sync for each promoted company.
   Verification: `bun run sync:company --company=<slug> --provider=auto --mode=dry-run` succeeds for each new company.

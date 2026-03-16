@@ -1,7 +1,7 @@
-import { access, mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { accessSync, constants as fsConstants } from "node:fs";
 import path from "node:path";
-import { spawnSync } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import type {
   CompanyManifest,
   ResearchLoopTarget,
@@ -71,6 +71,7 @@ const exampleProviderConfigFile = path.join(rootDir, "config", "ralph.providers.
 const promptsDir = path.join(rootDir, "prompts");
 const researchRunsDir = path.join(rootDir, "research", "runs");
 const staleAfterDays = 30;
+const providerHeartbeatIntervalMs = 15_000;
 
 export interface ProviderExecutionResult {
   provider: RalphProviderId;
@@ -98,6 +99,8 @@ export interface SyncCompanyResult {
   runDir: string;
   runManifest: ResearchRunManifest;
 }
+
+type RalphTraceLogger = (event: string, details?: Record<string, unknown>) => Promise<void>;
 
 interface LoopPromptContext {
   companyName: string;
@@ -165,6 +168,31 @@ export async function ensureRunDir(companySlug: string, runId = createRunId()) {
   const runDir = path.join(researchRunsDir, companySlug, runId);
   await mkdir(runDir, { recursive: true });
   return { runDir, runId };
+}
+
+function createTraceLogger(runDir: string, scope: string): RalphTraceLogger {
+  const traceFile = path.join(runDir, "trace.log");
+
+  return async (event, details = {}) => {
+    const payload = {
+      ts: new Date().toISOString(),
+      scope,
+      event,
+      details,
+    };
+    const line = JSON.stringify(payload);
+    console.log(`[ralph] ${scope} ${event}${Object.keys(details).length > 0 ? ` ${JSON.stringify(details)}` : ""}`);
+    await appendFile(traceFile, `${line}\n`, "utf8");
+  };
+}
+
+function tailPreview(value: string, maxLength = 240) {
+  const compact = value.replaceAll(/\s+/g, " ").trim();
+  if (compact.length <= maxLength) {
+    return compact;
+  }
+
+  return compact.slice(-maxLength);
 }
 
 export async function loadProviderConfig(): Promise<RalphProvidersFile> {
@@ -280,23 +308,119 @@ export async function executeProvider(
   provider: RalphProviderId,
   prompt: string,
   variables: Record<string, string>,
-  providerConfig: RalphProvidersFile
+  providerConfig: RalphProvidersFile,
+  trace?: RalphTraceLogger
 ): Promise<ProviderExecutionResult> {
   const config = providerConfig.providers[provider];
   const args = config.args.map(arg => applyTemplate(arg, variables));
-  const result = spawnSync(config.command, args, {
-    cwd: rootDir,
-    encoding: "utf8",
-    input: prompt,
-    maxBuffer: 10 * 1024 * 1024,
+  const startedAt = Date.now();
+  await trace?.("provider:start", {
+    provider,
+    command: config.command,
+    args,
   });
 
-  return {
-    provider,
-    rawOutput: result.stdout ?? "",
-    stderr: result.stderr ?? "",
-    exitCode: result.status ?? 1,
-  };
+  return new Promise(resolve => {
+    const child = spawn(config.command, args, {
+      cwd: rootDir,
+      stdio: ["pipe", "pipe", "pipe"],
+      env: process.env,
+    });
+
+    let rawOutput = "";
+    let stderr = "";
+    let stdoutChunkCount = 0;
+    let stderrChunkCount = 0;
+    let settled = false;
+
+    child.stdout.setEncoding("utf8");
+    child.stderr.setEncoding("utf8");
+
+    child.stdout.on("data", chunk => {
+      rawOutput += chunk;
+      stdoutChunkCount += 1;
+      if (stdoutChunkCount <= 3) {
+        void trace?.("provider:stdout-chunk", {
+          provider,
+          chunkBytes: chunk.length,
+          preview: tailPreview(chunk),
+        });
+      }
+    });
+
+    child.stderr.on("data", chunk => {
+      stderr += chunk;
+      stderrChunkCount += 1;
+      if (stderrChunkCount <= 5) {
+        void trace?.("provider:stderr-chunk", {
+          provider,
+          chunkBytes: chunk.length,
+          preview: tailPreview(chunk),
+        });
+      }
+    });
+
+    const heartbeat = setInterval(() => {
+      void trace?.("provider:heartbeat", {
+        provider,
+        pid: child.pid ?? null,
+        elapsedMs: Date.now() - startedAt,
+        stdoutBytes: rawOutput.length,
+        stderrBytes: stderr.length,
+        stdoutTail: tailPreview(rawOutput),
+        stderrTail: tailPreview(stderr),
+      });
+    }, providerHeartbeatIntervalMs);
+
+    const finish = async (exitCode: number) => {
+      if (settled) {
+        return;
+      }
+      settled = true;
+      clearInterval(heartbeat);
+      await trace?.("provider:finish", {
+        provider,
+        pid: child.pid ?? null,
+        exitCode,
+        elapsedMs: Date.now() - startedAt,
+        stdoutBytes: rawOutput.length,
+        stderrBytes: stderr.length,
+      });
+      resolve({
+        provider,
+        rawOutput,
+        stderr,
+        exitCode,
+      });
+    };
+
+    child.on("error", error => {
+      const nextStderr = `${stderr}${stderr ? "\n" : ""}${error instanceof Error ? error.message : String(error)}`;
+      stderr = nextStderr;
+      void trace?.("provider:error", {
+        provider,
+        pid: child.pid ?? null,
+        elapsedMs: Date.now() - startedAt,
+        error: error instanceof Error ? error.message : String(error),
+      });
+      void finish(1);
+    });
+
+    child.on("close", code => {
+      void finish(code ?? 1);
+    });
+
+    child.stdin.on("error", error => {
+      void trace?.("provider:stdin-error", {
+        provider,
+        pid: child.pid ?? null,
+        elapsedMs: Date.now() - startedAt,
+        error: error instanceof Error ? error.message : String(error),
+      });
+    });
+
+    child.stdin.end(prompt);
+  });
 }
 
 export function extractJsonPayload(rawOutput: string) {
@@ -342,6 +466,14 @@ export async function runLoopTask(options: {
     throw new Error(`Unknown Ralph task: ${options.taskId}`);
   }
 
+  const trace = createTraceLogger(options.runDir, `loop:${options.target.companySlug}:${options.taskId}`);
+  await trace("task:start", {
+    execute: options.execute,
+    providerPreference: options.providerPreference,
+    targetSource: options.target.targetSource,
+    batchId: options.target.batchId ?? null,
+  });
+
   const { graph, raw } = await compileContent();
   const context = buildLoopPromptContext(options.target, raw, graph);
   const providerConfig = options.execute ? await loadProviderConfig() : null;
@@ -366,9 +498,19 @@ export async function runLoopTask(options: {
 
   const promptFile = path.join(options.runDir, `${task.outputSuffix}.prompt.md`);
   await writeFile(promptFile, prompt, "utf8");
+  await trace("prompt:written", {
+    promptFile: path.relative(rootDir, promptFile),
+    promptBytes: prompt.length,
+  });
+  await trace("providers:resolved", {
+    providers,
+  });
 
   const taskResults: ResearchTaskResult[] = [];
   if (!options.execute) {
+    await trace("task:prepared-only", {
+      provider: "codex",
+    });
     taskResults.push({
       taskId: task.id,
       provider: "codex",
@@ -391,7 +533,7 @@ export async function runLoopTask(options: {
       companySlug: options.target.companySlug,
       taskId: task.id,
       runDir: options.runDir,
-    }, providerConfig!);
+    }, providerConfig!, trace);
 
     await writeFile(rawOutputFile, execution.rawOutput, "utf8");
     if (execution.stderr) {
@@ -413,6 +555,10 @@ export async function runLoopTask(options: {
           ...validationSummary,
           validJson: true,
         };
+        await trace("validation:success", {
+          provider,
+          normalizedFile: path.relative(rootDir, normalizedFile),
+        });
       } catch (error) {
         success = false;
         validationSummary = {
@@ -420,6 +566,10 @@ export async function runLoopTask(options: {
           validJson: false,
           error: error instanceof Error ? error.message : String(error),
         };
+        await trace("validation:failure", {
+          provider,
+          error: error instanceof Error ? error.message : String(error),
+        });
       }
     } else {
       validationSummary = {
@@ -427,6 +577,10 @@ export async function runLoopTask(options: {
         validJson: false,
         error: execution.stderr || "Provider command failed.",
       };
+      await trace("provider:nonzero-exit", {
+        provider,
+        exitCode: execution.exitCode,
+      });
     }
 
     await writeJsonFile(validationFile, validationSummary);
@@ -452,6 +606,20 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
   const raw = await loadRawContent();
   const context = await buildCompanyContext(options.companySlug);
   const { runDir, runId } = await ensureRunDir(options.companySlug);
+  const trace = createTraceLogger(runDir, `sync:${options.companySlug}`);
+  await trace("sync:start", {
+    mode: options.mode,
+    providerPreference: options.providerPreference,
+    noCommit: options.noCommit,
+  });
+  await trace("providers:resolved", {
+    providers,
+  });
+  await trace("context:loaded", {
+    hasCurrentBundle: Boolean(context.currentBundle),
+    currentSourceCount: context.currentSources.length,
+    technologyWaveCount: context.currentTechnologyWaves.length,
+  });
   const taskResults: ResearchTaskResult[] = [];
   const candidatePayloads = new Map<RalphProviderId, CompanySyncPayload>();
 
@@ -465,6 +633,10 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
 
   const promptFile = path.join(runDir, "company-sync.prompt.md");
   await writeFile(promptFile, prompt, "utf8");
+  await trace("prompt:written", {
+    promptFile: path.relative(rootDir, promptFile),
+    promptBytes: prompt.length,
+  });
 
   for (const provider of providers) {
     const execution = await executeProvider(provider, prompt, {
@@ -472,7 +644,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
       companySlug: options.companySlug,
       taskId: "company-sync",
       runDir,
-    }, providerConfig);
+    }, providerConfig, trace);
 
     const rawOutputFile = path.join(runDir, `company-sync.${provider}.raw.txt`);
     const normalizedFile = path.join(runDir, `company-sync.${provider}.normalized.json`);
@@ -498,12 +670,21 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
           bundleFile: path.relative(rootDir, validatedCandidate.bundleFile),
         });
         candidatePayloads.set(provider, payload);
+        await trace("validation:success", {
+          provider,
+          normalizedFile: path.relative(rootDir, normalizedFile),
+          bundleFile: path.relative(rootDir, validatedCandidate.bundleFile),
+        });
       } catch (error) {
         success = false;
         await writeJsonFile(validationFile, {
           ...validationSummary,
           validJson: false,
           validContent: false,
+          error: error instanceof Error ? error.message : String(error),
+        });
+        await trace("validation:failure", {
+          provider,
           error: error instanceof Error ? error.message : String(error),
         });
       }
@@ -513,6 +694,10 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
         validJson: false,
         validContent: false,
         error: execution.stderr || "Provider command failed.",
+      });
+      await trace("provider:nonzero-exit", {
+        provider,
+        exitCode: execution.exitCode,
       });
     }
 
@@ -532,6 +717,14 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
 
   const selectedProvider = providerConfig.defaultProviderOrder.find(provider => candidatePayloads.has(provider));
   if (!selectedProvider) {
+    await trace("sync:no-valid-payload", {
+      providers,
+      taskResults: taskResults.map(result => ({
+        provider: result.provider,
+        exitCode: result.exitCode,
+        success: result.success,
+      })),
+    });
     const runManifest: ResearchRunManifest = {
       schemaVersion: 1,
       runId,
@@ -549,6 +742,10 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
 
   const selectedPayload = candidatePayloads.get(selectedProvider)!;
   const validatedCandidate = validateSyncPayload(selectedPayload, raw, context.manifest);
+  await trace("candidate:selected", {
+    provider: selectedProvider,
+    bundleFile: path.relative(rootDir, validatedCandidate.bundleFile),
+  });
   await writeJsonFile(path.join(runDir, "candidate.bundle.json"), selectedPayload.bundle);
   await writeJsonFile(path.join(runDir, "candidate.manifest.json"), validatedCandidate.manifest);
   await writeJsonFile(path.join(runDir, "candidate.sources.json"), selectedPayload.sources);
@@ -558,11 +755,17 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
 
   let commitSha: string | undefined;
   if (options.mode === "publish") {
+    await trace("publish:persist:start");
     await persistCandidate(validatedCandidate);
-    await runPublishChecks();
+    await trace("publish:persist:finish");
+    await runPublishChecks(trace);
 
     if (!options.noCommit) {
+      await trace("publish:git:start");
       commitSha = commitAndPush(options.companySlug);
+      await trace("publish:git:finish", {
+        commitSha,
+      });
     }
   }
 
@@ -581,6 +784,10 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
   };
 
   await writeJsonFile(path.join(runDir, "run.manifest.json"), runManifest);
+  await trace("sync:complete", {
+    runManifest: path.relative(rootDir, path.join(runDir, "run.manifest.json")),
+    publishedBundleFile: runManifest.publishedBundleFile ?? null,
+  });
   return { runDir, runManifest };
 }
 
@@ -750,12 +957,28 @@ async function persistCandidate(candidate: ReturnType<typeof validateSyncPayload
   }
 }
 
-async function runPublishChecks() {
-  runCommand("bun", ["run", "content:validate"]);
-  runCommand("bun", ["run", "typecheck"]);
-  runCommand("bun", ["run", "test"]);
-  runCommand("bun", ["run", "build"]);
-  runCommand("bun", ["run", "test:e2e"]);
+async function runPublishChecks(trace?: RalphTraceLogger) {
+  const checks: Array<[string, string[]]> = [
+    ["bun", ["run", "content:validate"]],
+    ["bun", ["run", "typecheck"]],
+    ["bun", ["run", "test"]],
+    ["bun", ["run", "build"]],
+    ["bun", ["run", "test:e2e"]],
+  ];
+
+  for (const [command, args] of checks) {
+    const startedAt = Date.now();
+    await trace?.("publish-check:start", {
+      command,
+      args,
+    });
+    runCommand(command, args);
+    await trace?.("publish-check:finish", {
+      command,
+      args,
+      elapsedMs: Date.now() - startedAt,
+    });
+  }
 }
 
 function commitAndPush(companySlug: string) {
