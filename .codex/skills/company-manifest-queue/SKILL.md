@@ -61,7 +61,8 @@ Do not queue ambiguous candidates without confirmation.
 - Write plain `CompanyManifest` draft JSON first.
 - Stage drafts with `bun run company:queue --manifest=...`.
 - In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
-- End by telling the user the next command: `bun run company:init --queued=<slug>`.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
 - Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
 
 ## Guardrails

@@ -100,6 +100,20 @@ Queue a net-new company from a draft manifest file:
 bun run company:queue --manifest=./drafts/some-company.json
 ```
 
+Queue, promote, run a lightweight Ralph loop, and kick off structured sync in one command:
+
+```bash
+bun run company:pipeline --manifest=./drafts/some-company.json --batch-id=top25-refresh --group-label="S&P 500 Top 25 refresh" --request-notes="Frozen market-cap snapshot." --provider=auto
+```
+
+`company:pipeline` defaults to:
+
+- `--loop-tasks=company-overview`
+- `--mode=dry-run`
+- `--no-commit=true`
+
+Use `--batch-id=<id>` by itself to process an already queued batch, and `--mode=publish --no-commit=false` only when you are ready to persist website content and push it.
+
 Promote a queued manifest into the canonical manifest set:
 
 ```bash

@@ -1,3 +1,20 @@
+# Company Intake Pipeline
+
+- [x] Add a repo-level `company:pipeline` command that composes queueing, promotion, Ralph loop research, and structured sync with safe defaults.
+  Verification: targeted CLI test covers queue -> promote -> loop -> sync in a temp fixture repo.
+- [x] Document the new pipeline command in repo docs and company-intake guidance.
+  Verification: README and `.codex/skills/company-manifest-queue/SKILL.md` both describe when to use `bun run company:pipeline`.
+- [x] Run the repo verification pass and review the diff for unintended side effects.
+  Verification: `bun run format`, `bun run lint`, `bun run typecheck`, `bun run test`
+
+Completion review:
+- Added `bun run company:pipeline`, backed by a reusable helper in `scripts/lib/company-pipeline.ts`, so the repo now has one command that can queue draft manifests, promote queued entries, run a low-level Ralph loop, and then kick off structured sync.
+- Added integration-style CLI coverage with a fake provider to prove the command works end-to-end in a temp fixture repo without depending on live Claude or Codex access.
+- Updated README guidance and the existing company-manifest queue skill so the end-to-end path is discoverable where intake work already starts.
+
+Residual risks:
+- The command intentionally defaults the low-level loop to `company-overview` plus `mode=dry-run` and `no-commit=true` to keep the bulk path safe. Teams that want heavier pre-sync research still need to opt into `--loop-tasks=all` or a custom task list.
+
 # Mirrors Page
 
 - [x] Add a repo-owned helper in `src/lib/deployment-config.ts` that exposes normalized canonical, mirror, and redirect host metadata for UI use.
