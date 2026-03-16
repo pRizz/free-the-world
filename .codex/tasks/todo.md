@@ -367,3 +367,17 @@ Completion review:
 
 Residual risks:
 - The Pages API scripts still depend on GitHub’s current deployment response shape and status names, just as the prior inline shell did. If GitHub changes that contract, `scripts/lib/github-pages.ts` will need to be updated.
+# S&P 500 Top 25 Intake
+
+- [x] Freeze the exact S&P 500 top-25 company snapshot and identify the missing slugs versus the 10 canonical plus 10 queued manifests.
+  Verification: FinanceCharts S&P 500 screener snapshot dated March 13, 2026 matches ranks 1-20 already present in canonical plus queued manifests, leaving Chevron, AbbVie, Palantir Technologies, Procter & Gamble, and Home Depot as the missing top-25 batch.
+- [x] Add taxonomy support for the expanded batch, including `sp500-top25` and any missing sector or industry ids required by the confirmed companies.
+  Verification: added `sp500-top25`, `home-improvement-retail`, and `household-products`; `bun run content:validate` passed.
+- [x] Draft one manifest per missing company using valid taxonomy ids and queue them with a shared batch id and request notes.
+  Verification: draft manifests created for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble` under `.codex/tmp/sp500-top25-drafts/`; structural `jq` checks passed.
+- [x] Queue the new manifests with a shared batch id and request notes.
+  Verification: queued manifests now exist for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble`; `bun run content:validate` and `bun run content:compile` both passed after queueing.
+- [ ] Promote the queued manifests into canonical manifests.
+  Verification: `bun run company:init --queued=<slug>` succeeds for each new company and the queue entries are removed.
+- [ ] Run Ralph sync for each promoted company.
+  Verification: `bun run sync:company --company=<slug> --provider=auto --mode=dry-run` succeeds for each new company.

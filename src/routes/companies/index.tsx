@@ -17,6 +17,8 @@ export default function CompaniesPage() {
   const [sortMetricId, setSortMetricId] = createSignal<CompanyMetricId>(defaultCompanyTableState.sortMetricId);
   const [sortDirection, setSortDirection] = createSignal(defaultCompanyTableState.sortDirection);
   const [visibleMetricIds, setVisibleMetricIds] = createSignal(defaultCompanyTableState.visibleMetricIds);
+  const registryDescription =
+    "A growing registry of major public companies, starting with the largest S&P 500 names and expanding over time without turning the data layer into soup.";
 
   const filteredCompanies = createMemo(() => {
     const term = search().trim().toLowerCase();
@@ -54,15 +56,15 @@ export default function CompaniesPage() {
     <>
       <Seo
         title="Company Registry · Free The World"
-        description="A curated launch set focused on the largest companies in the index. The architecture is designed to absorb more indices, regions, and private companies later without turning the data layer into soup."
+        description={registryDescription}
         route="/companies"
       />
 
       <div class="space-y-8">
         <PageHeader
           eyebrow="Registry"
-          title="Top 10 S&P 500 companies"
-          description="A curated launch set focused on the largest companies in the index. The architecture is designed to absorb more indices, regions, and private companies later without turning the data layer into soup."
+          title="Company Registry"
+          description={registryDescription}
         />
 
         <CompanyTableToolbar
@@ -89,7 +91,8 @@ export default function CompaniesPage() {
                 {filteredCompanies().length} companies shown
               </p>
               <p class="text-sm text-muted-foreground">
-                Sorted by {sortMetricId()} ({sortDirection()})
+                Currently showing {filteredCompanies().length} of {companies.length} published companies. Sorted by{" "}
+                {sortMetricId()} ({sortDirection()})
               </p>
             </div>
             <p class="text-sm text-muted-foreground">

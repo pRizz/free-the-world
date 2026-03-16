@@ -21,6 +21,12 @@ export const contentGraph: ContentGraph = {
       "label": "S&P 500 · Top 20 by market cap",
       "regionId": "us",
       "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
     }
   ],
   "sectors": [
@@ -85,6 +91,11 @@ export const contentGraph: ContentGraph = {
       "label": "Automobile Manufacturers"
     },
     {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
       "id": "multi-sector-holdings",
       "sectorId": "financials",
       "label": "Multi-Sector Holdings"
@@ -113,6 +124,11 @@ export const contentGraph: ContentGraph = {
       "id": "warehouse-clubs",
       "sectorId": "consumer-staples",
       "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
     },
     {
       "id": "integrated-oil-gas",
