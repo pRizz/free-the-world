@@ -141,15 +141,15 @@ export function buildSiteBucketName(accountId: string) {
 
 export function assessAwsDomainReadiness() {
   const entries = getHostedZoneSpecs().map((spec) => {
-    const zoneId = maybeResolveHostedZoneId(spec.domain);
+    const zone = maybeResolveHostedZone(spec.domain);
 
     return {
       ...spec,
-      blocker: zoneId
+      blocker: zone
         ? undefined
-        : `Public Route 53 hosted zone for ${spec.domain} was not found. ACM validation and alias records for this host are still blocked until registration and delegation finish.`,
-      ready: zoneId !== null,
-      zoneId: zoneId ?? undefined,
+        : `No public Route 53 hosted zone covers ${spec.domain}. ACM validation and alias records for this host are still blocked until registration, delegation, or hosted-zone setup finishes.`,
+      ready: zone !== null,
+      zoneId: zone?.id,
     } satisfies HostedZoneReadinessEntry;
   });
 
@@ -482,7 +482,20 @@ function getHostedZoneSpecs() {
   ] satisfies HostedZoneSpec[];
 }
 
-function maybeResolveHostedZoneId(domain: string) {
+function maybeResolveHostedZone(domain: string) {
+  const candidates = buildHostedZoneCandidates(domain);
+
+  for (const candidate of candidates) {
+    const zone = maybeResolveHostedZoneByName(candidate);
+    if (zone) {
+      return zone;
+    }
+  }
+
+  return null;
+}
+
+function maybeResolveHostedZoneByName(domain: string) {
   const response = runJsonCommand<ListHostedZonesResponse>("aws", [
     "route53",
     "list-hosted-zones-by-name",
@@ -499,7 +512,23 @@ function maybeResolveHostedZoneId(domain: string) {
     (zone) => zone.Name === expectedZoneName && zone.Config?.PrivateZone !== true,
   );
 
-  return maybeZone ? maybeZone.Id.replace("/hostedzone/", "") : null;
+  return maybeZone
+    ? {
+        id: maybeZone.Id.replace("/hostedzone/", ""),
+        name: maybeZone.Name,
+      }
+    : null;
+}
+
+function buildHostedZoneCandidates(domain: string) {
+  const labels = domain.split(".");
+  const candidates: string[] = [];
+
+  for (let index = 0; index < labels.length - 1; index += 1) {
+    candidates.push(labels.slice(index).join("."));
+  }
+
+  return candidates;
 }
 
 function assertExpectedDomainLayout(

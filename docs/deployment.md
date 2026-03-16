@@ -98,7 +98,7 @@ The repo changes for the `.ai` cutover can land before `freetheworld.ai` is full
 
 1. Merge the repo changes.
 2. Run `bun run deploy:setup` and `bun run deploy:aws:bootstrap` in check mode while the domain is still pending.
-3. Wait until Route 53 has a public hosted zone for `freetheworld.ai` and `www.freetheworld.ai`.
+3. Wait until Route 53 has a public hosted zone for `freetheworld.ai` and the registrar has delegated the domain publicly.
 4. Re-run `bun run deploy:setup --apply`, `bun run deploy:aws:bootstrap --apply`, and `bun run deploy:verify`.
 
 When `.ai` is not ready yet:
@@ -129,11 +129,11 @@ bun run deploy:github:dispatch --apply
 - AWS CLI installed and authenticated.
 - Route 53 public hosted zones exist for:
   - `freetheworld.ai`
-  - `www.freetheworld.ai`
   - `free-the-world.com`
   - `free-the-world.us`
   - `ftwfreetheworld.com`
   - `ftwfreetheworld.us`
+- `www.freetheworld.ai` should normally be a record inside the `freetheworld.ai` hosted zone, not a separate hosted zone.
 - If the new `.ai` domain is still pending registration or delegation, the repo changes can still be merged, but AWS apply steps must wait until those hosted zones exist.
 - IAM permissions to create or update:
   - the GitHub OIDC provider in the target AWS account

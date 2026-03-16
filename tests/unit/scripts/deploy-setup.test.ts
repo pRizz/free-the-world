@@ -134,7 +134,7 @@ test("domain readiness messaging explains missing Route 53 blockers for pending 
   const assessment = buildDomainReadinessAssessment([
     {
       blocker:
-        "Public Route 53 hosted zone for freetheworld.ai was not found. ACM validation and alias records for this host are still blocked until registration and delegation finish.",
+        "No public Route 53 hosted zone covers freetheworld.ai. ACM validation and alias records for this host are still blocked until registration, delegation, or hosted-zone setup finishes.",
       domain: "freetheworld.ai",
       kind: "canonical",
       label: "primary canonical host",
@@ -149,7 +149,7 @@ test("domain readiness messaging explains missing Route 53 blockers for pending 
     },
     {
       blocker:
-        "Public Route 53 hosted zone for www.freetheworld.ai was not found. ACM validation and alias records for this host are still blocked until registration and delegation finish.",
+        "No public Route 53 hosted zone covers www.freetheworld.ai. ACM validation and alias records for this host are still blocked until registration, delegation, or hosted-zone setup finishes.",
       domain: "www.freetheworld.ai",
       kind: "redirect",
       label: "redirect host 1",
@@ -163,7 +163,7 @@ test("domain readiness messaging explains missing Route 53 blockers for pending 
     "AWS domain readiness is still pending for the freetheworld.ai rollout.",
   );
   expect(formatDomainReadinessMessage(assessment)).toContain(
-    "Public Route 53 hosted zone for freetheworld.ai was not found.",
+    "No public Route 53 hosted zone covers freetheworld.ai.",
   );
 });
 
