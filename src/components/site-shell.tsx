@@ -49,6 +49,8 @@ function SiteNav(props: { ariaLabel: string; class?: string; linkClass?: string 
 export function SiteShell(props: ParentProps) {
   const location = useLocation();
   const [isMobileNavOpen, setIsMobileNavOpen] = createSignal(false);
+  const buildInfo = siteConfig.buildInfo;
+  const shortCommitSha = buildInfo?.commitSha.slice(0, 7);
 
   createEffect(() => {
     location.pathname;
@@ -123,9 +125,27 @@ export function SiteShell(props: ParentProps) {
                 manufacturing steadily make legacy pricing models look like an elaborate historical accident.
               </p>
             </div>
-            <p class="text-xs uppercase tracking-[0.28em] text-muted-foreground">
-              {siteConfig.snapshotLabel}
-            </p>
+            <div class="space-y-1 sm:text-right">
+              <p class="text-xs uppercase tracking-[0.28em] text-muted-foreground">{siteConfig.snapshotLabel}</p>
+              {buildInfo && shortCommitSha ? (
+                <p class="text-xs text-muted-foreground">
+                  Commit{" "}
+                  <a
+                    href={buildInfo.commitUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="font-mono text-foreground underline decoration-border underline-offset-4 transition hover:text-accent-foreground"
+                    title={buildInfo.commitSha}
+                  >
+                    {shortCommitSha}
+                  </a>{" "}
+                  {"·"}{" "}
+                  <time dateTime={buildInfo.commitTimestamp} title={buildInfo.commitTimestamp}>
+                    {buildInfo.commitTimestampLabel}
+                  </time>
+                </p>
+              ) : null}
+            </div>
           </div>
         </footer>
       </div>

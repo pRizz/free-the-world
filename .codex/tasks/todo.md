@@ -76,6 +76,25 @@ Residual risks:
 - The new setup scripts depend on live GitHub and AWS credentials and were not applied in this session, so the real create/update paths still need one authenticated `--apply` pass.
 - The GitHub setup flow uses an environment-scoped digest variable to decide whether the `AWS_DEPLOY_ROLE_ARN` secret needs to be updated. If someone changes the secret manually without updating the digest variable, the next check will treat the digest as source of truth and skip the secret update.
 
+# Git Provenance Metadata
+
+- [x] Add a shared build-metadata resolver plus repo-slug helper so local builds and deploy builds can derive a commit SHA, commit URL, ISO timestamp, and fixed UTC label from git without hardcoding the repo URL.
+  Verification: `bun test tests/unit/scripts/build-metadata.test.ts`, `bun run typecheck`
+- [x] Propagate provenance env vars through the build pipeline and expose them through site config for app use.
+  Verification: `bun run build`, `bun run typecheck`
+- [x] Render compact commit provenance in the global footer and a fuller metadata card on the About page.
+  Verification: `bunx playwright test tests/e2e/smoke.e2e.ts --workers=1`
+- [x] Tighten deploy artifact assertions so external GitHub commit links do not false-positive as GitHub Pages base-path leaks.
+  Verification: `bun test tests/unit/scripts/deploy-artifact.test.ts`, `bun run build`
+
+Completion review:
+- Added script-layer helpers that resolve build provenance once and feed the same commit metadata into deploy builds, while still letting plain `bun run build` self-resolve from the local git checkout.
+- The footer now shows `Commit <short-sha> · <UTC timestamp>` on every page, and the About page exposes a dedicated build-metadata section with the linked short SHA plus the full ISO commit timestamp.
+- Tightened the AWS artifact guard so it only rejects root-relative GitHub Pages path leaks, not external GitHub commit URLs that happen to include the repo name.
+
+Residual risks:
+- Local dev via `bun run dev` still omits provenance because that path does not go through `scripts/build-site.ts`; the metadata is present on static/exported builds, which is the publish path exercised here.
+
 # Deploy Artifact Integrity Guard
 
 - [x] Preserve hidden files in the CI handoff for the AWS and GitHub Pages deploy artifacts.

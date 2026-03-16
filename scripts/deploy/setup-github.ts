@@ -1,8 +1,9 @@
 import { deploymentConfig } from "../../src/lib/deployment-config";
 import { ensureAwsCliAvailable, loadAwsCallerIdentity } from "../lib/aws-deploy";
 import { runCommand, runJsonCommand } from "../lib/command";
-import { parseGitHubRepositorySlug, planGitHubPagesSite, type GitHubPagesSiteState, computeDigest } from "../lib/deploy-setup";
+import { planGitHubPagesSite, type GitHubPagesSiteState, computeDigest } from "../lib/deploy-setup";
 import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
+import { resolveGitHubRepositorySlug } from "../lib/github-repository";
 
 interface GitHubEnvironmentResponse {
   html_url?: string;
@@ -37,7 +38,7 @@ await run.addBreadcrumb({
 ensureGitHubCliAvailable();
 ensureGitHubAuthentication();
 
-const repositorySlug = resolveRepositorySlug(args.repo);
+const repositorySlug = resolveGitHubRepositorySlug(args.repo);
 const productionEnvironment = deploymentConfig.githubProductionEnvironmentName;
 const pagesEnvironment = deploymentConfig.githubPagesEnvironmentName;
 const roleArn = resolveRoleArn(args["role-arn"]);
@@ -245,19 +246,6 @@ function ensureGitHubCliAvailable() {
 
 function ensureGitHubAuthentication() {
   runCommand("gh", ["auth", "status"]);
-}
-
-function resolveRepositorySlug(maybeRepository: string | undefined) {
-  if (maybeRepository) {
-    return parseGitHubRepositorySlug(maybeRepository);
-  }
-
-  if (process.env.GITHUB_REPOSITORY) {
-    return parseGitHubRepositorySlug(process.env.GITHUB_REPOSITORY);
-  }
-
-  const remoteUrl = runCommand("git", ["remote", "get-url", "origin"]).stdout.trim();
-  return parseGitHubRepositorySlug(remoteUrl);
 }
 
 function resolveRoleArn(maybeRoleArn: string | undefined) {

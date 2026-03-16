@@ -1,6 +1,7 @@
 import path from "node:path";
 import { cp, mkdir, rm } from "node:fs/promises";
 import { getDeployTargetConfig, parseDeployTarget, type DeployTarget } from "../../src/lib/deployment-config";
+import { buildMetadataToEnv, resolveBuildMetadata } from "../lib/build-metadata";
 import { assertArtifactMatchesTarget, readDeployManifest } from "../lib/deploy-artifact";
 import { runCommand } from "../lib/command";
 import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
@@ -17,6 +18,8 @@ const run = await createDeployRun({
   target: requestedTarget ?? "all",
 });
 const builtArtifacts: Array<{ artifactHash: string; destinationDir: string; target: DeployTarget }> = [];
+const buildMetadata = resolveBuildMetadata();
+const buildEnv = buildMetadata ? buildMetadataToEnv(buildMetadata) : {};
 
 await run.addBreadcrumb({
   data: { targets },
@@ -38,6 +41,7 @@ for (const target of targets) {
 
   runCommand("bun", ["run", "scripts/build-site.ts"], {
     env: {
+      ...buildEnv,
       SITE_BASE_PATH: targetConfig.basePath,
       SITE_DEPLOY_TARGET: target,
       SKIP_CONTENT_COMPILE: "true",

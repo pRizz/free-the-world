@@ -12,6 +12,8 @@ test("home page renders shell and hero content", async ({ page }) => {
       name: /Price the moat honestly\. Then imagine what happens when more of the world becomes free\./i,
     })
   ).toBeVisible();
+  await expect(page.getByRole("contentinfo").getByRole("link", { name: /^[0-9a-f]{7}$/i })).toBeVisible();
+  await expect(page.getByRole("contentinfo").locator("time")).toContainText(/UTC$/);
 });
 
 test("about page renders the main explainer heading", async ({ page }) => {
@@ -19,6 +21,9 @@ test("about page renders the main explainer heading", async ({ page }) => {
 
   await expect(page).toHaveURL(/\/about\/?$/);
   await expect(page.getByRole("heading", { name: /A registry for the slowly free future/i })).toBeVisible();
+  await expect(page.getByRole("region", { name: "Build metadata" })).toBeVisible();
+  await expect(page.getByRole("region", { name: "Build metadata" }).getByRole("link", { name: /^[0-9a-f]{7}$/i })).toBeVisible();
+  await expect(page.getByRole("region", { name: "Build metadata" }).locator("time")).toContainText(/T\d{2}:\d{2}:\d{2}/);
 });
 
 test("methodology page renders the methodology heading", async ({ page }) => {

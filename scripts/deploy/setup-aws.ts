@@ -15,9 +15,9 @@ import {
   buildGithubOidcTrustPolicy,
   githubOidcThumbprint,
   normalizePolicyDocument,
-  parseGitHubRepositorySlug,
 } from "../lib/deploy-setup";
 import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
+import { resolveGitHubRepositorySlug } from "../lib/github-repository";
 
 interface OpenIdConnectProviderListResponse {
   OpenIDConnectProviderList?: Array<{
@@ -88,7 +88,7 @@ await run.addBreadcrumb({
 ensureAwsCliAvailable();
 
 const identity = loadAwsCallerIdentity();
-const repositorySlug = resolveRepositorySlug(args.repo);
+const repositorySlug = resolveGitHubRepositorySlug(args.repo);
 const hostedZones = resolveHostedZones();
 const siteBucketName = buildSiteBucketName(identity.Account);
 const desiredTrustPolicy = buildGithubOidcTrustPolicy(identity.Account, repositorySlug);
@@ -618,19 +618,6 @@ async function withTempJsonFile(prefix: string, value: unknown, callback: (fileP
   } finally {
     await rm(tempDirectory, { force: true, recursive: true });
   }
-}
-
-function resolveRepositorySlug(maybeRepository: string | undefined) {
-  if (maybeRepository) {
-    return parseGitHubRepositorySlug(maybeRepository);
-  }
-
-  if (process.env.GITHUB_REPOSITORY) {
-    return parseGitHubRepositorySlug(process.env.GITHUB_REPOSITORY);
-  }
-
-  const remoteUrl = runCommand("git", ["remote", "get-url", "origin"]).stdout.trim();
-  return parseGitHubRepositorySlug(remoteUrl);
 }
 
 function isMissingAwsResource(stderr: string, stdout: string) {

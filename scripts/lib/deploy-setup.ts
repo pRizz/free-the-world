@@ -161,26 +161,6 @@ export function normalizePolicyDocument(policyDocument: unknown): string {
   return stableJsonStringify(normalizedPolicyDocument);
 }
 
-export function parseGitHubRepositorySlug(input: string) {
-  const normalizedInput = input.trim();
-
-  if (/^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+(?:\.git)?$/.test(normalizedInput)) {
-    return normalizedInput.replace(/\.git$/, "");
-  }
-
-  const sshMatch = normalizedInput.match(/^git@github\.com:(.+?)\/(.+?)(?:\.git)?$/i);
-  if (sshMatch) {
-    return `${sshMatch[1]}/${sshMatch[2]}`;
-  }
-
-  const httpsMatch = normalizedInput.match(/^https:\/\/github\.com\/(.+?)\/(.+?)(?:\.git)?$/i);
-  if (httpsMatch) {
-    return `${httpsMatch[1]}/${httpsMatch[2]}`;
-  }
-
-  throw new Error(`Could not parse a GitHub repository slug from: ${input}`);
-}
-
 export function planGitHubPagesSite(state: GitHubPagesSiteState) {
   if (!state.exists) {
     return {

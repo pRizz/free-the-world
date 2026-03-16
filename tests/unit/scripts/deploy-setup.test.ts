@@ -1,5 +1,6 @@
 import { expect, test } from "bun:test";
-import { buildAwsDeployPolicy, buildGithubOidcTrustPolicy, normalizePolicyDocument, parseGitHubRepositorySlug, planGitHubPagesSite } from "../../../scripts/lib/deploy-setup";
+import { buildAwsDeployPolicy, buildGithubOidcTrustPolicy, normalizePolicyDocument, planGitHubPagesSite } from "../../../scripts/lib/deploy-setup";
+import { parseGitHubRepositorySlug } from "../../../scripts/lib/github-repository";
 
 test("parseGitHubRepositorySlug supports ssh, https, and bare owner/repo formats", () => {
   expect(parseGitHubRepositorySlug("git@github.com:pRizz/free-the-world.git")).toBe("pRizz/free-the-world");

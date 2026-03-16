@@ -7,11 +7,19 @@ import {
   parseDeployTarget,
 } from "~/lib/deployment-config";
 
+export interface SiteBuildInfo {
+  commitSha: string;
+  commitTimestamp: string;
+  commitTimestampLabel: string;
+  commitUrl: string;
+}
+
 const publicationUrl = "https://peter.ryszkiewicz.us/";
 const deployTarget = parseDeployTarget(import.meta.env.VITE_SITE_DEPLOY_TARGET);
 const rawBasePath = import.meta.env.SERVER_BASE_URL || getDeployTargetConfig(deployTarget).basePath;
 const normalizedBasePath = normalizeBasePath(rawBasePath);
 const publicOrigin = import.meta.env.VITE_SITE_PUBLIC_ORIGIN || getDeployTargetConfig(deployTarget).publicOrigin;
+const buildInfo = readSiteBuildInfo();
 
 export const siteConfig = {
   name: "Free The World",
@@ -29,6 +37,7 @@ export const siteConfig = {
   publicationUrl,
   substackEmbedUrl: `${publicationUrl}embed`,
   snapshotLabel: "Early-2026 public-source snapshot",
+  buildInfo,
 } as const;
 
 export function withBasePath(route: string) {
@@ -43,4 +52,27 @@ export function withBasePath(route: string) {
   }
 
   return `${siteConfig.basePath}${normalizedRoute}`;
+}
+
+function readSiteBuildInfo(): SiteBuildInfo | null {
+  const commitSha = normalizeBuildInfoValue(import.meta.env.VITE_SITE_GIT_COMMIT_SHA);
+  const commitTimestamp = normalizeBuildInfoValue(import.meta.env.VITE_SITE_GIT_COMMIT_TIMESTAMP);
+  const commitTimestampLabel = normalizeBuildInfoValue(import.meta.env.VITE_SITE_GIT_COMMIT_TIMESTAMP_LABEL);
+  const commitUrl = normalizeBuildInfoValue(import.meta.env.VITE_SITE_GIT_COMMIT_URL);
+
+  if (!commitSha || !commitTimestamp || !commitTimestampLabel || !commitUrl) {
+    return null;
+  }
+
+  return {
+    commitSha,
+    commitTimestamp,
+    commitTimestampLabel,
+    commitUrl,
+  };
+}
+
+function normalizeBuildInfoValue(value: string | undefined) {
+  const trimmedValue = value?.trim();
+  return trimmedValue ? trimmedValue : null;
 }

@@ -298,6 +298,9 @@ export async function assertArtifactMatchesTarget(outputDir: string, rawTarget?:
   const target = parseDeployTarget(rawTarget);
   const htmlFilePaths = (await listRelativeFiles(outputDir)).filter(relativePath => relativePath.endsWith(".html"));
   const assetPrefix = getExpectedAssetPrefix(target);
+  const githubPagesBasePathPattern = new RegExp(
+    `(?:href|src|content)="${escapeRegExp(deploymentConfig.githubPagesBasePath)}(?:/|")`
+  );
 
   for (const relativePath of htmlFilePaths) {
     const html = await readFile(path.join(outputDir, relativePath), "utf8");
@@ -306,7 +309,7 @@ export async function assertArtifactMatchesTarget(outputDir: string, rawTarget?:
       throw new Error(`Artifact ${relativePath} did not contain the expected asset prefix ${assetPrefix}.`);
     }
 
-    if (target === "aws" && html.includes(`${deploymentConfig.githubPagesBasePath}/`)) {
+    if (target === "aws" && githubPagesBasePathPattern.test(html)) {
       throw new Error(`Artifact ${relativePath} still contains the GitHub Pages base path.`);
     }
 
@@ -336,6 +339,10 @@ function buildSitemapXml() {
     "</urlset>",
     "",
   ].join("\n");
+}
+
+function escapeRegExp(value: string) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
 function escapeXml(value: string) {

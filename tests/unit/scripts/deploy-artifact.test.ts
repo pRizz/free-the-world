@@ -3,6 +3,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { expect, test } from "bun:test";
 import {
+  assertArtifactMatchesTarget,
   assertDeployArtifactIntegrity,
   classifyArtifactPath,
   diffDeployManifests,
@@ -86,6 +87,31 @@ test("assertDeployArtifactIntegrity fails when manifest-listed files are missing
 
     // Assert
     await expect(result).rejects.toThrow(/missing 2 file\(s\).*\.nojekyll.*_build\/\.vite\/manifest\.json/s);
+  } finally {
+    await rm(artifactDir, { force: true, recursive: true });
+  }
+});
+
+test("assertArtifactMatchesTarget allows external GitHub commit links on aws artifacts", async () => {
+  const artifactDir = await mkdtemp(path.join(tmpdir(), "deploy-artifact-"));
+
+  try {
+    // Arrange
+    await writeFile(
+      path.join(artifactDir, "index.html"),
+      [
+        "<!doctype html>",
+        '<link rel="modulepreload" href="/_build/assets/app.js">',
+        '<a href="https://github.com/pRizz/free-the-world/commit/0123456789abcdef">Commit</a>',
+      ].join(""),
+      "utf8"
+    );
+
+    // Act
+    const result = assertArtifactMatchesTarget(artifactDir, "aws");
+
+    // Assert
+    await expect(result).resolves.toBeUndefined();
   } finally {
     await rm(artifactDir, { force: true, recursive: true });
   }

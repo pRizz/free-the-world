@@ -1,9 +1,14 @@
 import { ContentCard } from "~/components/blocks/content-card";
+import { MetadataGrid } from "~/components/blocks/metadata-grid";
 import { PageHeader } from "~/components/blocks/page-header";
 import { Seo } from "~/components/seo";
 import { aboutSections } from "~/lib/content/site";
+import { siteConfig } from "~/lib/config";
 
 export default function About() {
+  const buildInfo = siteConfig.buildInfo;
+  const shortCommitSha = buildInfo?.commitSha.slice(0, 7);
+
   return (
     <>
       <Seo
@@ -18,6 +23,52 @@ export default function About() {
           title="A registry for the slowly free future"
           description="Free The World is opinionated research, not a worship service for incumbents or a promise that every protocol immediately wins. The goal is to study where the pricing power looks more fragile than consensus admits."
         />
+
+        {buildInfo && shortCommitSha ? (
+          <ContentCard class="space-y-4">
+            <section aria-labelledby="build-metadata-title" class="space-y-4">
+              <div class="space-y-2">
+                <h2 id="build-metadata-title" class="text-2xl font-semibold tracking-tight">
+                  Build metadata
+                </h2>
+                <p class="max-w-2xl text-sm text-muted-foreground">
+                  This static artifact is tied to a specific git revision so the published site can be traced back to
+                  the exact source snapshot.
+                </p>
+              </div>
+
+              <MetadataGrid
+                items={[
+                  {
+                    label: "Commit",
+                    value: (
+                      <a
+                        href={buildInfo.commitUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        class="font-mono text-sm text-accent-foreground underline decoration-border underline-offset-4 transition hover:text-foreground sm:text-base"
+                        title={buildInfo.commitSha}
+                      >
+                        {shortCommitSha}
+                      </a>
+                    ),
+                  },
+                  {
+                    label: "Commit timestamp",
+                    value: (
+                      <time
+                        dateTime={buildInfo.commitTimestamp}
+                        class="block break-all font-mono text-sm text-foreground sm:text-base"
+                      >
+                        {buildInfo.commitTimestamp}
+                      </time>
+                    ),
+                  },
+                ]}
+              />
+            </section>
+          </ContentCard>
+        ) : null}
 
         {aboutSections.map(section => (
           <ContentCard class="space-y-4">
