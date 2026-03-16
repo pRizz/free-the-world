@@ -1,0 +1,202 @@
+OpenAI Codex v0.114.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/.codex/worktrees/62e8/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 019cf652-b99f-74a2-a493-79185a39661a
+--------
+user
+You are preparing structured draft research for the Free The World registry.
+
+Company: Costco (COST)
+Slug: costco
+Sector: consumer-staples
+Industry: warehouse-clubs
+Snapshot note: Pending first structured sync.
+
+Known products from repo context:
+Warehouse clubs, Kirkland Signature
+
+Relevant technology waves:
+- Microfactories and automated mini-home production: Small, software-defined manufacturing cells could make localized production less eccentric and more default.
+
+Available repo context:
+```json
+{
+  "target": {
+    "source": "queued",
+    "batchId": "sp500-top20-2026-03-15",
+    "createdOn": "2026-03-15T19:27:06.526Z",
+    "groupLabel": "S&P 500 Top 20 by market cap",
+    "requestNotes": "FinanceCharts screener \"Biggest companies in S&P 500 by market cap\" (https://financecharts.com/screener/biggest-companies-in-sp500?view=market_cap), company-level snapshot updated 2026-03-13 and accessed 2026-03-15."
+  },
+  "manifest": {
+    "schemaVersion": 1,
+    "slug": "costco",
+    "name": "Costco",
+    "ticker": "COST",
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top20"
+    ],
+    "sectorId": "consumer-staples",
+    "industryId": "warehouse-clubs",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/costco/marketcap/",
+    "description": "Membership warehouse retailer combining bulk merchandising, private-label products, and disciplined operations.",
+    "technologyWaveIds": [
+      "microfactories"
+    ],
+    "seedProductNames": [
+      "Warehouse clubs",
+      "Kirkland Signature"
+    ],
+    "seedSourceUrls": [
+      "https://investor.costco.com/",
+      "https://companiesmarketcap.com/costco/marketcap/"
+    ],
+    "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+  },
+  "company": null,
+  "currentBundle": null,
+  "currentSources": [],
+  "knownProducts": [
+    {
+      "name": "Warehouse clubs"
+    },
+    {
+      "name": "Kirkland Signature"
+    }
+  ],
+  "knownSourceUrls": [
+    "https://investor.costco.com/",
+    "https://companiesmarketcap.com/costco/marketcap/"
+  ],
+  "technologyWaves": [
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+JSON schema:
+{
+  "schemaVersion": 1,
+  "taskId": "company-overview",
+  "description": "one-sentence company description",
+  "overview": [
+    {
+      "title": "section title",
+      "paragraphs": ["paragraph one", "paragraph two"]
+    }
+  ],
+  "sourceSuggestions": [
+    {
+      "title": "source title",
+      "url": "https://example.com",
+      "whyItMatters": "short note"
+    }
+  ]
+}
+
+Requirements:
+- Use a professional tone with restrained satire.
+- Keep overview sections concise and publication-ready.
+- Return 5-8 source suggestions.
+
+mcp: lsp starting
+mcp: playwright starting
+2026-03-16T11:05:42.775375Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 36781: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-16T11:05:43.245471Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 36782: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+2026-03-16T11:05:43.592089Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019cf652-b99f-74a2-a493-79185a39661a.tmp-1773659142567066000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+codex
+Preparing a concise company-overview draft for Costco and checking the repo’s task artifacts plus current primary sources so the JSON reflects the actual business, not stale memory.
+exec
+/bin/zsh -lc "rg --files -g 'lessons.md' -g 'todo.md' . .codex tasks" in /Users/peterryszkiewicz/.codex/worktrees/62e8/free-the-world exited 2 in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+rg: tasks: No such file or directory (os error 2)
+.codex/tasks/lessons.md
+.codex/tasks/todo.md
+Plan update
+This is non-trivial because it needs source selection and publication-ready synthesis. I’m checking local task artifacts first, then validating current primary sources, then I’ll assemble the JSON output.
+  → Review relevant repo task artifacts and lessons for this project
+  • Gather current primary-source context on Costco’s business, products, and operating model
+  • Draft the required JSON with concise overview sections and source suggestions
+codex
+The repo uses `.codex/tasks/`; I’m reading the current lessons and todo notes before pulling source material, then I’ll synthesize against Costco’s latest filings and investor pages.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/tasks/todo.md" in /Users/peterryszkiewicz/.codex/worktrees/62e8/free-the-worldexec
+/bin/zsh -lc "sed -n '1,220p' .codex/tasks/lessons.md" in /Users/peterryszkiewicz/.codex/worktrees/62e8/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+# Lessons
+
+## 2026-03-15
+- What went wrong: I interpreted "reduce the table blur on the edges" as lowering blur strength, when the user meant reducing the blur region width on narrow devices.
+- Preventive rule: For visual tuning requests that mention blur, confirm whether the user means blur intensity, blur area/width, or both before changing multiple dimensions of the effect.
+- Trigger signal to catch it earlier: The request referenced "on narrow devices" and "on the edges", which points more strongly to overlay geometry than blur radius.
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+# Mirrors Page
+
+- [x] Add a repo-owned helper in `src/lib/deployment-config.ts` that exposes normalized canonical, mirror, and redirect host metadata for UI use.
+  Verification: helper returns canonical first, includes the GitHub Pages mirror as noindex, and maps all redirect domains back to the canonical target in `tests/unit/scripts/deploy-config.test.ts`.
+- [x] Add the `/mirrors` route and wire it into shared navigation plus static route export.
+  Verification: `/mirrors` appears in `src/lib/site-routes.ts`, `src/components/site-shell.tsx`, and renders the mirror inventory plus Tor notice.
+- [x] Extend automated coverage for the new mirrors page and navigation affordances.
+  Verification: `tests/e2e/smoke.e2e.ts` covers `/mirrors`, the Tor notice, and the `Mirrors` nav item on mobile and desktop.
+
+Completion review:
+- Added a deployment-config helper that exposes the canonical AWS host, the GitHub Pages mirror, and all redirect-only domains in a single ordered UI-facing list.
+- Added a new `/mirrors` route plus shared navigation and static-route registration so the page ships with the rest of the exported site.
+- Extended unit and e2e coverage around both the helper output and the new route/navigation affordances.
+
+Residual risks:
+- The page intentionally reflects only repo-configured hosts. If future mirror types such as Tor `.onion` addresses are added outside `src/lib/deployment-config.ts`, this page will not show them until that source of truth is extended.
+
+# Multi-Domain Static Deployment
+🌐 Searching the web...
+🌐 Searched: Costco investor relations annual report 2025 Costco Wholesale Form 10-K 2025
+🌐 Searching the web...
+🌐 Searched: site:investor.costco.com annual report 2025 pdf Costco
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm
+🌐 Searching the web...
+🌐 Searched: 'We operate membership warehouses' in https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm
+🌐 Searching the web...
+🌐 Searched: 'Membership fees' in https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm
+🌐 Searching the web...
+🌐 Searched: 'Food and Sundries' in https://www.sec.gov/Archives/edgar/data/909832/000090983225000101/cost-20250831.htm
+🌐 Searching the web...
+🌐 Searched: site:investor.costco.com Costco March 2026 sales results operating results
+🌐 Searching the web...
+🌐 Searched: site:costco.com/about-us Costco corporate about us official
+🌐 Searching the web...
+🌐 Searched: site:investor.costco.com Costco sustainability commitment report 2025
+🌐 Searching the web...
+🌐 Searched: site:costco.com supplier requirements costco official
+🌐 Searching the web...
+🌐 Searched: https://www.costco.com/f/-/kirkland-signature-sustainability
+🌐 Searching the web...
+🌐 Searched: 'In-Country Production' in https://www.costco.com/f/-/kirkland-signature-sustainability
+🌐 Searching the web...
+🌐 Searched: https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Second-Quarter-and-Year-to-Date-Operating-Results-for-Fiscal-2026-and-February-Sales-Results/default.aspx
+🌐 Searching the web...

@@ -1,4 +1,4 @@
-import { access, appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
+import { access, appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
 import { accessSync, constants as fsConstants } from "node:fs";
 import path from "node:path";
 import { spawn, spawnSync, type ChildProcessWithoutNullStreams } from "node:child_process";
@@ -112,6 +112,14 @@ interface ProviderExecutionPlan {
   args: string[];
   timeoutMs: number;
   maybeOutputFile: string | null;
+}
+
+interface CodexSessionSnapshot {
+  sessionId: string;
+  sessionFile: string | null;
+  bytes: number | null;
+  lastEventTs: string | null;
+  tailPreview: string | null;
 }
 
 interface LoopPromptContext {
@@ -376,9 +384,35 @@ export async function executeProvider(
     let stderrChunkCount = 0;
     let settled = false;
     let timedOut = false;
+    let maybeCodexSessionId: string | null = null;
+    let maybeCodexSessionFile: string | null = null;
+    let hasLoggedCodexSessionFile = false;
 
     child.stdout.setEncoding("utf8");
     child.stderr.setEncoding("utf8");
+
+    const captureCodexSessionSnapshot = async () => {
+      if (provider !== "codex" || !maybeCodexSessionId) {
+        return null;
+      }
+
+      const snapshot = await loadCodexSessionSnapshot(maybeCodexSessionId, maybeCodexSessionFile);
+      if (snapshot.sessionFile) {
+        maybeCodexSessionFile = snapshot.sessionFile;
+        if (!hasLoggedCodexSessionFile) {
+          hasLoggedCodexSessionFile = true;
+          await trace?.("provider:session-file", {
+            provider,
+            sessionId: snapshot.sessionId,
+            sessionFile: snapshot.sessionFile,
+            sessionLastEventTs: snapshot.lastEventTs,
+            sessionTail: snapshot.tailPreview,
+          });
+        }
+      }
+
+      return snapshot;
+    };
 
     child.stdout.on("data", chunk => {
       stdoutBuffer += chunk;
@@ -402,18 +436,38 @@ export async function executeProvider(
           preview: tailPreview(chunk),
         });
       }
+
+      if (provider === "codex" && !maybeCodexSessionId) {
+        const detectedSessionId = extractCodexSessionId(stderr);
+        if (detectedSessionId) {
+          maybeCodexSessionId = detectedSessionId;
+          void trace?.("provider:session-detected", {
+            provider,
+            sessionId: detectedSessionId,
+          });
+          void captureCodexSessionSnapshot();
+        }
+      }
     });
 
     const heartbeat = setInterval(() => {
-      void trace?.("provider:heartbeat", {
-        provider,
-        pid: child.pid ?? null,
-        elapsedMs: Date.now() - startedAt,
-        stdoutBytes: stdoutBuffer.length,
-        stderrBytes: stderr.length,
-        stdoutTail: tailPreview(stdoutBuffer),
-        stderrTail: tailPreview(stderr),
-      });
+      void (async () => {
+        const sessionSnapshot = await captureCodexSessionSnapshot();
+        await trace?.("provider:heartbeat", {
+          provider,
+          pid: child.pid ?? null,
+          elapsedMs: Date.now() - startedAt,
+          stdoutBytes: stdoutBuffer.length,
+          stderrBytes: stderr.length,
+          stdoutTail: tailPreview(stdoutBuffer),
+          stderrTail: tailPreview(stderr),
+          sessionId: sessionSnapshot?.sessionId ?? maybeCodexSessionId,
+          sessionFile: sessionSnapshot?.sessionFile ?? maybeCodexSessionFile,
+          sessionBytes: sessionSnapshot?.bytes ?? null,
+          sessionLastEventTs: sessionSnapshot?.lastEventTs ?? null,
+          sessionTail: sessionSnapshot?.tailPreview ?? null,
+        });
+      })();
     }, providerHeartbeatIntervalMs);
 
     let timeoutEscalation: ReturnType<typeof setTimeout> | null = null;
@@ -463,6 +517,7 @@ export async function executeProvider(
       if (timeoutEscalation) {
         clearTimeout(timeoutEscalation);
       }
+      const sessionSnapshot = await captureCodexSessionSnapshot();
       const { rawOutput, outputSource } = await resolveProviderOutput(stdoutBuffer, plan.maybeOutputFile);
       await trace?.("provider:output-captured", {
         provider,
@@ -479,6 +534,9 @@ export async function executeProvider(
         elapsedMs: Date.now() - startedAt,
         stdoutBytes: stdoutBuffer.length,
         stderrBytes: stderr.length,
+        sessionId: sessionSnapshot?.sessionId ?? maybeCodexSessionId,
+        sessionFile: sessionSnapshot?.sessionFile ?? maybeCodexSessionFile,
+        sessionLastEventTs: sessionSnapshot?.lastEventTs ?? null,
       });
       resolve({
         provider,
@@ -1239,6 +1297,90 @@ function appendDiagnosticLine(currentValue: string, message: string) {
   return `${currentValue}${currentValue ? "\n" : ""}${message}`;
 }
 
+export function extractCodexSessionId(stderr: string) {
+  const maybeMatch = stderr.match(/session id:\s*([0-9a-f-]+)/i);
+  return maybeMatch?.[1] ?? null;
+}
+
+export async function findCodexSessionFile(sessionId: string) {
+  const maybeCodexHome = resolveCodexHomeDir();
+  if (!maybeCodexHome) {
+    return null;
+  }
+
+  const sessionsDir = path.join(maybeCodexHome, "sessions");
+
+  try {
+    for (const yearEntry of await listDirectoryDescending(sessionsDir)) {
+      if (!yearEntry.isDirectory()) {
+        continue;
+      }
+
+      const yearDir = path.join(sessionsDir, yearEntry.name);
+      for (const monthEntry of await listDirectoryDescending(yearDir)) {
+        if (!monthEntry.isDirectory()) {
+          continue;
+        }
+
+        const monthDir = path.join(yearDir, monthEntry.name);
+        for (const dayEntry of await listDirectoryDescending(monthDir)) {
+          if (!dayEntry.isDirectory()) {
+            continue;
+          }
+
+          const dayDir = path.join(monthDir, dayEntry.name);
+          const maybeSessionFile = (await listDirectoryDescending(dayDir)).find(
+            entry => entry.isFile() && entry.name.endsWith(".jsonl") && entry.name.includes(sessionId)
+          );
+          if (maybeSessionFile) {
+            return path.join(dayDir, maybeSessionFile.name);
+          }
+        }
+      }
+    }
+  } catch {
+    return null;
+  }
+
+  return null;
+}
+
+async function loadCodexSessionSnapshot(
+  sessionId: string,
+  maybeKnownSessionFile: string | null
+): Promise<CodexSessionSnapshot> {
+  const sessionFile = maybeKnownSessionFile ?? (await findCodexSessionFile(sessionId));
+  if (!sessionFile) {
+    return {
+      sessionId,
+      sessionFile: null,
+      bytes: null,
+      lastEventTs: null,
+      tailPreview: null,
+    };
+  }
+
+  try {
+    const sessionText = await readFile(sessionFile, "utf8");
+    const summary = summarizeCodexSessionJsonl(sessionText);
+    return {
+      sessionId,
+      sessionFile,
+      bytes: Buffer.byteLength(sessionText, "utf8"),
+      lastEventTs: summary.lastEventTs,
+      tailPreview: summary.tailPreview,
+    };
+  } catch {
+    return {
+      sessionId,
+      sessionFile,
+      bytes: null,
+      lastEventTs: null,
+      tailPreview: null,
+    };
+  }
+}
+
 function terminateProvider(child: ChildProcessWithoutNullStreams, signal: NodeJS.Signals) {
   if (child.pid == null) {
     return "missing-pid";
@@ -1281,6 +1423,23 @@ function commandExists(commandName: string) {
     .some(entry => isExecutableFile(path.join(entry, commandName)));
 }
 
+async function listDirectoryDescending(directory: string) {
+  const entries = await readdir(directory, { withFileTypes: true });
+  return entries.sort((left, right) => right.name.localeCompare(left.name));
+}
+
+function resolveCodexHomeDir() {
+  if (process.env.CODEX_HOME?.trim()) {
+    return process.env.CODEX_HOME.trim();
+  }
+
+  if (process.env.HOME?.trim()) {
+    return path.join(process.env.HOME.trim(), ".codex");
+  }
+
+  return null;
+}
+
 function formatPromptList(values: string[], fallback: string) {
   return values.length > 0 ? values.join(", ") : fallback;
 }
@@ -1301,6 +1460,113 @@ function tryParseJson(value: string) {
   } catch {
     return null;
   }
+}
+
+function summarizeCodexSessionJsonl(sessionText: string) {
+  const lines = sessionText
+    .split("\n")
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  for (let index = lines.length - 1; index >= 0 && index >= lines.length - 20; index -= 1) {
+    const maybeEntry = tryParseJson(lines[index]);
+    const maybePreview = describeCodexSessionEntry(maybeEntry);
+    if (maybePreview) {
+      return {
+        lastEventTs: isRecord(maybeEntry) && typeof maybeEntry.timestamp === "string" ? maybeEntry.timestamp : null,
+        tailPreview: maybePreview,
+      };
+    }
+  }
+
+  return {
+    lastEventTs: null,
+    tailPreview: tailPreview(sessionText),
+  };
+}
+
+function describeCodexSessionEntry(entry: unknown) {
+  if (!isRecord(entry) || !isRecord(entry.payload) || typeof entry.type !== "string") {
+    return null;
+  }
+
+  if (entry.type === "response_item") {
+    if (entry.payload.type === "message" && typeof entry.payload.role === "string") {
+      const maybeMessageText = extractCodexMessageText(entry.payload.content);
+      if (maybeMessageText) {
+        return `${entry.payload.role}: ${maybeMessageText}`;
+      }
+    }
+
+    if (entry.payload.type === "function_call" && typeof entry.payload.name === "string") {
+      return `function_call: ${entry.payload.name}`;
+    }
+
+    if (typeof entry.payload.type === "string" && entry.payload.type !== "reasoning") {
+      const maybeAction = describeCodexSessionAction(entry.payload.action);
+      if (maybeAction) {
+        return `${entry.payload.type}: ${maybeAction}`;
+      }
+
+      if (typeof entry.payload.status === "string") {
+        return `${entry.payload.type}: ${entry.payload.status}`;
+      }
+
+      return `response: ${entry.payload.type}`;
+    }
+  }
+
+  if (entry.type === "event_msg" && typeof entry.payload.type === "string" && entry.payload.type !== "token_count") {
+    return `event: ${entry.payload.type}`;
+  }
+
+  return null;
+}
+
+function extractCodexMessageText(content: unknown) {
+  if (!Array.isArray(content)) {
+    return null;
+  }
+
+  for (const item of content) {
+    if (!isRecord(item)) {
+      continue;
+    }
+
+    if ((item.type === "input_text" || item.type === "output_text") && typeof item.text === "string") {
+      return tailPreview(item.text, 160);
+    }
+
+    if (typeof item.text === "string") {
+      return tailPreview(item.text, 160);
+    }
+  }
+
+  return null;
+}
+
+function describeCodexSessionAction(action: unknown) {
+  if (!isRecord(action) || typeof action.type !== "string") {
+    return null;
+  }
+
+  if (typeof action.query === "string") {
+    return `${action.type} ${tailPreview(action.query, 120)}`;
+  }
+
+  if (typeof action.pattern === "string") {
+    return `${action.type} ${tailPreview(action.pattern, 80)}`;
+  }
+
+  if (typeof action.url === "string") {
+    return `${action.type} ${tailPreview(action.url, 120)}`;
+  }
+
+  return action.type;
+}
+
+function isRecord(value: unknown): value is Record<string, any> {
+  return typeof value === "object" && value !== null;
 }
 
 function isExecutableFile(targetFile: string) {

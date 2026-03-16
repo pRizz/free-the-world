@@ -1,10 +1,12 @@
 import { expect, test } from "bun:test";
-import { mkdtemp } from "node:fs/promises";
+import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
   executeProvider,
+  extractCodexSessionId,
   extractJsonPayload,
+  findCodexSessionFile,
   isBundleStale,
   resolveProviderExecutionPlan,
   resolveProviders,
@@ -18,6 +20,40 @@ test("extractJsonPayload parses raw JSON and fenced JSON", () => {
 
 test("extractJsonPayload rejects empty output", () => {
   expect(() => extractJsonPayload("   ")).toThrow(/empty output/i);
+});
+
+test("extractCodexSessionId parses the session id from provider stderr", () => {
+  expect(extractCodexSessionId("OpenAI Codex\nsession id: 019cf64a-910f-7b61-aebe-c2ead2b0a0b4\n")).toBe(
+    "019cf64a-910f-7b61-aebe-c2ead2b0a0b4"
+  );
+  expect(extractCodexSessionId("no session here")).toBeNull();
+});
+
+test("findCodexSessionFile resolves nested session logs under CODEX_HOME", async () => {
+  const codexHomeDir = await mkdtemp(path.join(tmpdir(), "ftw-codex-home-"));
+  const sessionFile = path.join(
+    codexHomeDir,
+    "sessions",
+    "2026",
+    "03",
+    "16",
+    "rollout-2026-03-16T05-56-47-019cf64a-910f-7b61-aebe-c2ead2b0a0b4.jsonl"
+  );
+  const previousCodexHome = process.env.CODEX_HOME;
+
+  try {
+    process.env.CODEX_HOME = codexHomeDir;
+    await mkdir(path.dirname(sessionFile), { recursive: true });
+    await writeFile(sessionFile, '{"timestamp":"2026-03-16T10:56:49.945Z","type":"event_msg","payload":{"type":"task_complete"}}\n');
+
+    expect(await findCodexSessionFile("019cf64a-910f-7b61-aebe-c2ead2b0a0b4")).toBe(sessionFile);
+  } finally {
+    if (previousCodexHome === undefined) {
+      delete process.env.CODEX_HOME;
+    } else {
+      process.env.CODEX_HOME = previousCodexHome;
+    }
+  }
 });
 
 test("resolveProviders honors provider availability and auto fallback order", () => {
