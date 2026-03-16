@@ -1,4 +1,5 @@
 export type DeployTarget = "aws" | "github-pages";
+export type SiteAccessKind = "canonical" | "mirror" | "redirect";
 
 export interface DeployTargetConfig {
   id: DeployTarget;
@@ -6,6 +7,15 @@ export interface DeployTargetConfig {
   basePath: string;
   publicOrigin: string;
   shouldIndex: boolean;
+}
+
+export interface SiteAccessEntry {
+  label: string;
+  url: string;
+  kind: SiteAccessKind;
+  description: string;
+  shouldIndex: boolean;
+  redirectTarget?: string;
 }
 
 const githubPagesOwner = "prizz";
@@ -79,6 +89,35 @@ export function getDeployTargetConfig(target: DeployTarget) {
 
 export function getHostedDomains() {
   return [deploymentConfig.canonicalDomain, ...deploymentConfig.redirectDomains];
+}
+
+export function getSiteAccessEntries(): SiteAccessEntry[] {
+  const canonicalUrl = deployTargets.aws.publicOrigin;
+
+  return [
+    {
+      label: deployTargets.aws.label,
+      url: canonicalUrl,
+      kind: "canonical",
+      description: "Primary production host for the site. Search engines should index this host.",
+      shouldIndex: deployTargets.aws.shouldIndex,
+    },
+    {
+      label: deployTargets["github-pages"].label,
+      url: deployTargets["github-pages"].publicOrigin,
+      kind: "mirror",
+      description: "Public mirror that serves the same site but stays noindexed and canonicalizes to the .com host.",
+      shouldIndex: deployTargets["github-pages"].shouldIndex,
+    },
+    ...deploymentConfig.redirectDomains.map(domain => ({
+      label: `${domain} redirect`,
+      url: `https://${domain}`,
+      kind: "redirect" as const,
+      description: "Alias domain that responds with a 301 redirect to the canonical .com host instead of serving independent content.",
+      shouldIndex: false,
+      redirectTarget: canonicalUrl,
+    })),
+  ];
 }
 
 export function getCanonicalUrl(route: string) {

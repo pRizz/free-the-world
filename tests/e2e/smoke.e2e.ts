@@ -28,6 +28,15 @@ test("methodology page renders the methodology heading", async ({ page }) => {
   await expect(page.getByRole("heading", { name: /How the scores are produced/i })).toBeVisible();
 });
 
+test("mirrors page renders the configured hosts and tor notice", async ({ page }) => {
+  await gotoRoute(page, "/mirrors");
+
+  await expect(page).toHaveURL(/\/mirrors\/?$/);
+  await expect(page.getByRole("heading", { name: /Where Free The World is currently reachable/i })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "GitHub Pages mirror" })).toBeVisible();
+  await expect(page.getByText(/Tor-based mirrors are coming soon/i)).toBeVisible();
+});
+
 test("mobile shell stays compact and expands navigation on demand", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await gotoRoute(page, "/");
@@ -51,6 +60,7 @@ test("mobile shell stays compact and expands navigation on demand", async ({ pag
   await expect(page.getByRole("navigation", { name: "Mobile menu" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Home" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Registry" })).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Mirrors" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Methodology" })).toBeVisible();
   await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "About" })).toBeVisible();
   await expect(banner.getByRole("link", { name: "Newsletter on Substack" })).toBeVisible();
@@ -82,6 +92,7 @@ test("desktop shell keeps inline navigation and hides the mobile toggle", async 
   const banner = page.getByRole("banner");
 
   await expect(banner.getByRole("navigation", { name: "Primary" })).toBeVisible();
+  await expect(banner.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Mirrors" })).toBeVisible();
   await expect(banner.getByRole("link", { name: "Newsletter on Substack" })).toBeVisible();
   await expect(banner.getByRole("button", { name: "Toggle navigation menu", includeHidden: true })).toBeHidden();
 });

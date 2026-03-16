@@ -1,3 +1,20 @@
+# Mirrors Page
+
+- [x] Add a repo-owned helper in `src/lib/deployment-config.ts` that exposes normalized canonical, mirror, and redirect host metadata for UI use.
+  Verification: helper returns canonical first, includes the GitHub Pages mirror as noindex, and maps all redirect domains back to the canonical target in `tests/unit/scripts/deploy-config.test.ts`.
+- [x] Add the `/mirrors` route and wire it into shared navigation plus static route export.
+  Verification: `/mirrors` appears in `src/lib/site-routes.ts`, `src/components/site-shell.tsx`, and renders the mirror inventory plus Tor notice.
+- [x] Extend automated coverage for the new mirrors page and navigation affordances.
+  Verification: `tests/e2e/smoke.e2e.ts` covers `/mirrors`, the Tor notice, and the `Mirrors` nav item on mobile and desktop.
+
+Completion review:
+- Added a deployment-config helper that exposes the canonical AWS host, the GitHub Pages mirror, and all redirect-only domains in a single ordered UI-facing list.
+- Added a new `/mirrors` route plus shared navigation and static-route registration so the page ships with the rest of the exported site.
+- Extended unit and e2e coverage around both the helper output and the new route/navigation affordances.
+
+Residual risks:
+- The page intentionally reflects only repo-configured hosts. If future mirror types such as Tor `.onion` addresses are added outside `src/lib/deployment-config.ts`, this page will not show them until that source of truth is extended.
+
 # Multi-Domain Static Deployment
 
 - [x] Add centralized deployment config, gitignored deploy logs, and target-aware build outputs for AWS and GitHub Pages.

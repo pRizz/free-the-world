@@ -8,6 +8,7 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "~/component
 const navigation = [
   { href: "/", label: "Home" },
   { href: "/companies", label: "Registry" },
+  { href: "/mirrors", label: "Mirrors" },
   { href: "/methodology", label: "Methodology" },
   { href: "/about", label: "About" },
 ] as const;

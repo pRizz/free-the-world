@@ -5,6 +5,7 @@ const rawRoutes = [
   "/404",
   "/about",
   "/companies",
+  "/mirrors",
   "/methodology",
   ...companies.flatMap(company => [`/companies/${company.slug}`, `/companies/${company.slug}/products`]),
   ...products.map(product => `/companies/${product.companySlug}/products/${product.slug}`),
