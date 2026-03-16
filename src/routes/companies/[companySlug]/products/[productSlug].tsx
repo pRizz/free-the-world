@@ -1,9 +1,9 @@
-import { Title } from "@solidjs/meta";
 import { A, useParams } from "@solidjs/router";
 import { ContentCard } from "~/components/blocks/content-card";
 import { EmptyState } from "~/components/blocks/empty-state";
 import { PageHeader } from "~/components/blocks/page-header";
 import { AlternativeTable, ProductOverviewPanel, SourceSummaryCard, TechnologyWavePanel } from "~/components/company-panels";
+import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
 import { withBasePath } from "~/lib/config";
 import {
@@ -23,12 +23,20 @@ export default function ProductPage() {
 
   if (!company() || !product() || product()!.companySlug !== company()!.slug) {
     return (
-      <EmptyState
-        title="Product not found"
-        description="The requested company or product slug does not exist in the current registry snapshot."
-        actionLabel="Back to registry"
-        actionHref={withBasePath("/companies")}
-      />
+      <>
+        <Seo
+          title="Product not found · Free The World"
+          description="The requested company or product slug does not exist in the current registry snapshot."
+          route="/404"
+          maybeNoIndex={true}
+        />
+        <EmptyState
+          title="Product not found"
+          description="The requested company or product slug does not exist in the current registry snapshot."
+          actionLabel="Back to registry"
+          actionHref={withBasePath("/companies")}
+        />
+      </>
     );
   }
 
@@ -40,9 +48,11 @@ export default function ProductPage() {
 
   return (
     <>
-      <Title>
-        {productData.name} · {companyData.name} · Free The World
-      </Title>
+      <Seo
+        title={`${productData.name} · ${companyData.name} · Free The World`}
+        description={productData.summary}
+        route={`/companies/${companyData.slug}/products/${productData.slug}`}
+      />
 
       <div class="space-y-8">
         <section class="space-y-4">

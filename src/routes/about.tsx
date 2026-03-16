@@ -1,12 +1,16 @@
-import { Title } from "@solidjs/meta";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import { Seo } from "~/components/seo";
 import { aboutSections } from "~/lib/content/site";
 
 export default function About() {
   return (
     <>
-      <Title>About · Free The World</Title>
+      <Seo
+        title="About · Free The World"
+        description="Free The World is opinionated research, not a worship service for incumbents or a promise that every protocol immediately wins. The goal is to study where the pricing power looks more fragile than consensus admits."
+        route="/about"
+      />
 
       <div class="space-y-8">
         <PageHeader

@@ -153,6 +153,8 @@ function getContentType(filePath: string) {
       return "text/plain; charset=utf-8";
     case ".webp":
       return "image/webp";
+    case ".xml":
+      return "application/xml; charset=utf-8";
     default:
       return "application/octet-stream";
   }

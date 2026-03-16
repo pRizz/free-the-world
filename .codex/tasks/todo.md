@@ -1,3 +1,27 @@
+# Multi-Domain Static Deployment
+
+- [x] Add centralized deployment config, gitignored deploy logs, and target-aware build outputs for AWS and GitHub Pages.
+  Verification: `bun run typecheck`, `bun run deploy:build`
+- [x] Add canonical/meta/robots/sitemap handling plus deterministic deploy manifests and artifact assertions.
+  Verification: `bun test`, `bun run deploy:build`, `bun run test:e2e`
+- [x] Add repo-managed AWS infrastructure plus idempotent bootstrap and publish scripts with summary logging.
+  Verification: `bun run typecheck`, unit coverage for deploy helpers, script review of `infra/aws/static-site.yaml`, `scripts/deploy/bootstrap-aws.ts`, and `scripts/deploy/publish-aws.ts`
+- [x] Add GitHub Pages mirror planning, CI workflow updates, deployment docs, and a repo-local deployment skill.
+  Verification: workflow/doc/skill review of `.github/workflows/deploy.yml`, `docs/deployment.md`, and `.codex/skills/static-multi-domain-deploy/SKILL.md`
+- [x] Run the final local verification pass and review the diff for unintended regressions.
+  Verification: `bun run typecheck`, `bun test`, `bun run deploy:build`, `bun run test:e2e`
+
+Completion review:
+- Added a single deployment config surface that now drives canonical domain metadata, GitHub Pages mirror behavior, cache policy classes, and target-specific build settings.
+- Reworked the build so the repo emits `.artifacts/deploy/aws` and `.artifacts/deploy/github-pages`, each with `robots.txt`, `sitemap.xml`, `deploy-manifest.json`, and artifact assertions that fail on mixed root/repo-path URLs.
+- Added repo-owned AWS infrastructure in `infra/aws/static-site.yaml` plus idempotent `deploy:aws:bootstrap` and `deploy:aws:publish` scripts that inspect remote state first, default to check mode, and write summaries under `.codex/logs/deploy/`.
+- Added `deploy:pages:plan` and `deploy:verify`, updated the production workflow to build once then deploy AWS and Pages separately, and documented the process in `docs/deployment.md` and the new repo skill.
+
+Residual risks:
+- Live AWS behavior is not exercised in this session because no AWS credentials or hosted-zone access were available locally. The CloudFormation stack, OIDC workflow wiring, redirects, and S3/CloudFront publish path still need a real `--apply` run plus `bun run deploy:verify` in CI or an authenticated local shell.
+- The GitHub Pages mirror gating compares against the live Pages `deploy-manifest.json`. If the Pages site is temporarily unreachable, the planner intentionally treats that as “deploy needed” rather than blocking the workflow.
+- CloudFront URL rewriting and host redirection live inside the inline CloudFront Function in `infra/aws/static-site.yaml`; if AWS changes Function event-field behavior, that template may need a small follow-up after the first live deployment.
+
 # UI Standardization Refactor
 
 # SolidStart Stable Migration And Hydration Fix

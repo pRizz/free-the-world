@@ -1,8 +1,17 @@
 import { theme } from "~/lib/theme";
+import {
+  deploymentConfig,
+  getDeployTargetConfig,
+  getRobotsMetaContent,
+  normalizeBasePath,
+  parseDeployTarget,
+} from "~/lib/deployment-config";
 
 const publicationUrl = "https://peter.ryszkiewicz.us/";
-const rawBasePath = import.meta.env.SERVER_BASE_URL || "/";
-const normalizedBasePath = rawBasePath === "/" ? "/" : rawBasePath.replace(/\/$/, "");
+const deployTarget = parseDeployTarget(import.meta.env.VITE_SITE_DEPLOY_TARGET);
+const rawBasePath = import.meta.env.SERVER_BASE_URL || getDeployTargetConfig(deployTarget).basePath;
+const normalizedBasePath = normalizeBasePath(rawBasePath);
+const publicOrigin = import.meta.env.VITE_SITE_PUBLIC_ORIGIN || getDeployTargetConfig(deployTarget).publicOrigin;
 
 export const siteConfig = {
   name: "Free The World",
@@ -11,6 +20,11 @@ export const siteConfig = {
   shortDescription:
     "Tracking which large companies still charge heavily for things that are drifting toward free, open, and decentralized alternatives.",
   basePath: normalizedBasePath,
+  publicOrigin,
+  canonicalOrigin: deploymentConfig.canonicalOrigin,
+  deployTarget,
+  robotsMetaContent: getRobotsMetaContent(deployTarget),
+  shouldIndex: getDeployTargetConfig(deployTarget).shouldIndex,
   accentName: theme.accentName,
   publicationUrl,
   substackEmbedUrl: `${publicationUrl}embed`,

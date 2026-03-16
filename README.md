@@ -39,9 +39,11 @@ Pushes to `main` trigger `.github/workflows/deploy.yml`, which:
 1. installs dependencies with Bun
 2. validates the JSON content graph
 3. runs `typecheck`, unit tests, and Playwright
-4. builds the site with a repository-aware `SITE_BASE_PATH`
-5. uploads `.output/public`
-6. deploys through GitHub Pages
+4. builds two target-specific artifacts under `.artifacts/deploy/`
+5. deploys the canonical root-path build to AWS/CloudFront
+6. deploys the repo-path mirror to GitHub Pages only when the live Pages manifest has changed
+
+Deployment runbook: `docs/deployment.md`
 
 ## Data model
 

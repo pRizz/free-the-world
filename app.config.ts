@@ -1,29 +1,25 @@
 import path from "node:path";
 import { defineConfig } from "@solidjs/start/config";
 import tailwindcss from "@tailwindcss/vite";
-import { companies, products } from "./src/lib/generated/content-graph";
+import { deploymentConfig, getDeployTargetConfig, normalizeBasePath, parseDeployTarget } from "./src/lib/deployment-config";
+import { staticRoutes } from "./src/lib/site-routes";
 
-const siteBasePath = process.env.SITE_BASE_PATH ?? "/";
+const deployTarget = parseDeployTarget(process.env.SITE_DEPLOY_TARGET);
+const targetConfig = getDeployTargetConfig(deployTarget);
+const siteBasePath = normalizeBasePath(process.env.SITE_BASE_PATH ?? targetConfig.basePath);
 const serverBasePath = siteBasePath === "/" ? undefined : siteBasePath;
 const sourceMapShimPath = path.resolve("./src/shims/source-map-js.ts");
 
-const staticRoutes = Array.from(
-  new Set([
-    "/",
-    "/404",
-    "/about",
-    "/companies",
-    "/methodology",
-    ...companies.flatMap(company => [`/companies/${company.slug}`, `/companies/${company.slug}/products`]),
-    ...products.map(product => `/companies/${product.companySlug}/products/${product.slug}`),
-  ])
-);
+process.env.VITE_SITE_DEPLOY_TARGET ??= deployTarget;
+process.env.VITE_SITE_CANONICAL_ORIGIN ??= deploymentConfig.canonicalOrigin;
+process.env.VITE_SITE_PUBLIC_ORIGIN ??= targetConfig.publicOrigin;
 
 export default defineConfig({
   server: {
     baseURL: serverBasePath,
     preset: "static",
     prerender: {
+      crawlLinks: false,
       routes: staticRoutes,
     },
   },

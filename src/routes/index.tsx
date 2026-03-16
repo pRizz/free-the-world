@@ -1,14 +1,14 @@
-import { Title } from "@solidjs/meta";
 import { A } from "@solidjs/router";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
 import { PageHeader } from "~/components/blocks/page-header";
 import { NewsletterSignup } from "~/components/newsletter-signup";
+import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
 import { companies } from "~/lib/content-graph";
-import { withBasePath } from "~/lib/config";
+import { siteConfig, withBasePath } from "~/lib/config";
 import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
 import { formatCompanyMetric } from "~/lib/domain/formatters";
 import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <>
-      <Title>Free The World</Title>
+      <Seo title="Free The World" description={siteConfig.shortDescription} route="/" />
 
       <div class="space-y-10">
         <section class="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">

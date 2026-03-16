@@ -9,4 +9,4 @@ export {
   sectors,
   sources,
   technologyWaves,
-} from "~/lib/generated/content-graph";
+} from "./generated/content-graph";

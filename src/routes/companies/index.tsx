@@ -1,9 +1,9 @@
-import { Title } from "@solidjs/meta";
 import { createMemo, createSignal } from "solid-js";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
 import { CompanyTable } from "~/components/company-table";
 import { CompanyTableToolbar } from "~/components/company-table-toolbar";
+import { Seo } from "~/components/seo";
 import { companies, industries, sectors } from "~/lib/content-graph";
 import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
 import { getIndustryLabel, getSectorLabel } from "~/lib/domain/selectors";
@@ -52,7 +52,11 @@ export default function CompaniesPage() {
 
   return (
     <>
-      <Title>Company Registry · Free The World</Title>
+      <Seo
+        title="Company Registry · Free The World"
+        description="A curated launch set focused on the largest companies in the index. The architecture is designed to absorb more indices, regions, and private companies later without turning the data layer into soup."
+        route="/companies"
+      />
 
       <div class="space-y-8">
         <PageHeader

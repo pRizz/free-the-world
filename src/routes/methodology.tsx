@@ -1,7 +1,7 @@
-import { Title } from "@solidjs/meta";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import { Seo } from "~/components/seo";
 import { technologyWaves } from "~/lib/content-graph";
 import { methodologyPrinciples } from "~/lib/content/site";
 import { companyMetricDefinitions } from "~/lib/domain/metrics";
@@ -9,7 +9,11 @@ import { companyMetricDefinitions } from "~/lib/domain/metrics";
 export default function MethodologyPage() {
   return (
     <>
-      <Title>Methodology · Free The World</Title>
+      <Seo
+        title="Methodology · Free The World"
+        description="The registry mixes structured research, directional valuation context, and a deliberately explicit technology thesis. The goal is not sterile objectivity. The goal is auditable judgment."
+        route="/methodology"
+      />
 
       <div class="space-y-8">
         <PageHeader

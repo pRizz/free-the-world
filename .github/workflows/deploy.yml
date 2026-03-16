@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Deploy Website
 
 on:
   push:
@@ -15,16 +15,12 @@ permissions:
   id-token: write
 
 concurrency:
-  group: github-pages
+  group: free-the-world-production
   cancel-in-progress: true
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      artifact-id: ${{ steps.upload-pages-artifact.outputs.artifact-id }}
-    env:
-      SITE_BASE_PATH: "/${{ github.event.repository.name }}/"
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -57,25 +53,63 @@ jobs:
       - name: Run Playwright tests
         run: bun run test:e2e
 
-      - name: Build static site
-        run: bun run build
+      - name: Build deploy artifacts
+        run: bun run deploy:build
 
-      - name: Archive Pages artifact
-        run: bash scripts/ci/archive-pages-artifact.sh .output/public "$RUNNER_TEMP/artifact.tar"
-
-      - name: Upload Pages artifact
-        id: upload-pages-artifact
-        uses: actions/upload-artifact@v7
+      - name: Upload AWS artifact
+        uses: actions/upload-artifact@v4
         with:
-          name: github-pages
-          path: ${{ runner.temp }}/artifact.tar
+          name: deploy-aws-site
+          path: .artifacts/deploy/aws
           retention-days: 1
           if-no-files-found: error
 
-  deploy:
+      - name: Upload Pages artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: deploy-pages-site
+          path: .artifacts/deploy/github-pages
+          retention-days: 1
+          if-no-files-found: error
+
+  aws:
+    environment:
+      name: production
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Download AWS artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: deploy-aws-site
+          path: .artifacts/deploy/aws
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-region: us-east-1
+          role-to-assume: ${{ secrets.AWS_DEPLOY_ROLE_ARN }}
+
+      - name: Bootstrap AWS infrastructure
+        run: bun run deploy:aws:bootstrap --apply
+
+      - name: Publish AWS artifact
+        run: bun run deploy:aws:publish --artifact=.artifacts/deploy/aws --apply
+
+  pages:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     needs: build
     steps:
@@ -87,15 +121,58 @@ jobs:
         with:
           bun-version: latest
 
+      - name: Download Pages artifact
+        uses: actions/download-artifact@v5
+        with:
+          name: deploy-pages-site
+          path: .artifacts/deploy/github-pages
+
+      - name: Plan Pages deployment
+        id: pages_plan
+        run: bun run deploy:pages:plan --artifact=.artifacts/deploy/github-pages
+
+      - name: Archive Pages artifact
+        if: steps.pages_plan.outputs.pages_changed == 'true'
+        run: bash scripts/ci/archive-pages-artifact.sh .artifacts/deploy/github-pages "$RUNNER_TEMP/artifact.tar"
+
+      - name: Upload Pages deployment artifact
+        if: steps.pages_plan.outputs.pages_changed == 'true'
+        id: upload_pages_artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: github-pages
+          path: ${{ runner.temp }}/artifact.tar
+          retention-days: 1
+          if-no-files-found: error
+
       - name: Create Pages deployment
+        if: steps.pages_plan.outputs.pages_changed == 'true'
         id: deployment
         env:
-          ARTIFACT_ID: ${{ needs.build.outputs.artifact-id }}
+          ARTIFACT_ID: ${{ steps.upload_pages_artifact.outputs.artifact-id }}
           GITHUB_TOKEN: ${{ github.token }}
         run: bun run scripts/ci/create-pages-deployment.ts
 
       - name: Wait for Pages deployment
+        if: steps.pages_plan.outputs.pages_changed == 'true'
         env:
           DEPLOYMENT_ID: ${{ steps.deployment.outputs.deployment_id }}
           GITHUB_TOKEN: ${{ github.token }}
         run: bun run scripts/ci/wait-for-pages-deployment.ts
+
+  verify:
+    runs-on: ubuntu-latest
+    needs:
+      - aws
+      - pages
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Verify production deployment
+        run: bun run deploy:verify

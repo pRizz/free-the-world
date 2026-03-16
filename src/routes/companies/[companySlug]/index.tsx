@@ -1,4 +1,3 @@
-import { Title } from "@solidjs/meta";
 import { A, useParams } from "@solidjs/router";
 import { ActionRow } from "~/components/blocks/action-row";
 import { ContentCard } from "~/components/blocks/content-card";
@@ -10,6 +9,7 @@ import {
   CompanyProductsPanel,
   TechnologyWavePanel,
 } from "~/components/company-panels";
+import { Seo } from "~/components/seo";
 import { SourceList } from "~/components/source-list";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
@@ -23,12 +23,20 @@ export default function CompanyPage() {
 
   if (!company()) {
     return (
-      <EmptyState
-        title="Company not found"
-        description="The requested company slug does not exist in the current registry snapshot."
-        actionLabel="Back to registry"
-        actionHref={withBasePath("/companies")}
-      />
+      <>
+        <Seo
+          title="Company not found · Free The World"
+          description="The requested company slug does not exist in the current registry snapshot."
+          route="/404"
+          maybeNoIndex={true}
+        />
+        <EmptyState
+          title="Company not found"
+          description="The requested company slug does not exist in the current registry snapshot."
+          actionLabel="Back to registry"
+          actionHref={withBasePath("/companies")}
+        />
+      </>
     );
   }
 
@@ -39,7 +47,7 @@ export default function CompanyPage() {
 
   return (
     <>
-      <Title>{companyData.name} · Free The World</Title>
+      <Seo title={`${companyData.name} · Free The World`} description={companyData.description} route={`/companies/${companyData.slug}`} />
 
       <div class="space-y-8">
         <section class="space-y-4">
