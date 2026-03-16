@@ -3,7 +3,7 @@ import type {
   ManifestQueueEntry,
   ResearchLoopTarget,
 } from "../../src/lib/domain/content-types";
-import { loadManifestQueueEntries, loadRawContent, type LoadedRawContent } from "./content";
+import { type LoadedRawContent, loadManifestQueueEntries, loadRawContent } from "./content";
 
 export async function collectLoopTargets(options: {
   requestedCompanySlugs: string[];
@@ -29,25 +29,30 @@ export function resolveLoopTargets(options: {
   const { raw, queueEntries, requestedCompanySlugs, batchId } = options;
   return batchId
     ? resolveQueuedLoopTargets(batchId, requestedCompanySlugs, queueEntries)
-    : resolveCanonicalLoopTargets(raw.manifests, raw.bundles.map(bundle => bundle.company.slug), requestedCompanySlugs);
+    : resolveCanonicalLoopTargets(
+        raw.manifests,
+        raw.bundles.map((bundle) => bundle.company.slug),
+        requestedCompanySlugs,
+      );
 }
 
 function resolveCanonicalLoopTargets(
   manifests: CompanyManifest[],
   bundledCompanySlugs: string[],
-  requestedCompanySlugs: string[]
+  requestedCompanySlugs: string[],
 ) {
-  const manifestBySlug = new Map(manifests.map(manifest => [manifest.slug, manifest]));
-  const selectedSlugs = requestedCompanySlugs.length > 0 ? requestedCompanySlugs : bundledCompanySlugs;
+  const manifestBySlug = new Map(manifests.map((manifest) => [manifest.slug, manifest]));
+  const selectedSlugs =
+    requestedCompanySlugs.length > 0 ? requestedCompanySlugs : bundledCompanySlugs;
 
-  return selectedSlugs.map<ResearchLoopTarget>(companySlug => {
+  return selectedSlugs.map<ResearchLoopTarget>((companySlug) => {
     const maybeManifest = manifestBySlug.get(companySlug);
     if (!maybeManifest) {
       throw new Error(
         [
           `Unknown canonical company slug: ${companySlug}.`,
           "Fix: use a slug from content/manifests/companies/, or queue a draft with bun run company:queue --manifest=... --batch-id=....",
-        ].join("\n")
+        ].join("\n"),
       );
     }
 
@@ -62,17 +67,17 @@ function resolveCanonicalLoopTargets(
 function resolveQueuedLoopTargets(
   batchId: string,
   requestedCompanySlugs: string[],
-  queueEntries: ManifestQueueEntry[]
+  queueEntries: ManifestQueueEntry[],
 ) {
   const validatedEntries = queueEntries.map(validateQueueEntryForLoop);
-  const batchEntries = validatedEntries.filter(entry => entry.batchId === batchId);
+  const batchEntries = validatedEntries.filter((entry) => entry.batchId === batchId);
 
   if (batchEntries.length === 0) {
     throw new Error(
       [
         `No queued manifests found for batch ${batchId}.`,
         `Fix: queue draft manifests with bun run company:queue --manifest=... --batch-id=${batchId}.`,
-      ].join("\n")
+      ].join("\n"),
     );
   }
 
@@ -84,23 +89,23 @@ function resolveQueuedLoopTargets(
         [
           `Queued batch ${batchId} contains duplicate manifest slug ${slug}.`,
           "Fix: remove or rename the duplicate queue entry so each slug appears once per batch.",
-        ].join("\n")
+        ].join("\n"),
       );
     }
     seenSlugs.add(slug);
   }
 
-  const entryBySlug = new Map(batchEntries.map(entry => [entry.manifest.slug, entry]));
+  const entryBySlug = new Map(batchEntries.map((entry) => [entry.manifest.slug, entry]));
   const selectedEntries =
     requestedCompanySlugs.length > 0
-      ? requestedCompanySlugs.map(companySlug => {
+      ? requestedCompanySlugs.map((companySlug) => {
           const maybeEntry = entryBySlug.get(companySlug);
           if (!maybeEntry) {
             throw new Error(
               [
                 `Queued batch ${batchId} does not contain company slug ${companySlug}.`,
                 `Fix: use one of the queued batch slugs (${[...entryBySlug.keys()].sort().join(", ")}), or queue ${companySlug} into batch ${batchId}.`,
-              ].join("\n")
+              ].join("\n"),
             );
           }
 
@@ -108,7 +113,7 @@ function resolveQueuedLoopTargets(
         })
       : batchEntries;
 
-  return selectedEntries.map<ResearchLoopTarget>(entry => ({
+  return selectedEntries.map<ResearchLoopTarget>((entry) => ({
     companySlug: entry.manifest.slug,
     targetSource: "queued",
     batchId: entry.batchId,
@@ -125,7 +130,7 @@ function validateQueueEntryForLoop(entry: ManifestQueueEntry) {
       [
         `Queued manifest ${slug} has unsupported schemaVersion ${String(entry.schemaVersion)}.`,
         "Fix: requeue the manifest with bun run company:queue so it is rewritten in the supported format.",
-      ].join("\n")
+      ].join("\n"),
     );
   }
 
@@ -134,7 +139,7 @@ function validateQueueEntryForLoop(entry: ManifestQueueEntry) {
       [
         `Queued manifest ${slug} has unsupported status ${String(entry.status)}.`,
         "Fix: replace the malformed queue file by rerunning bun run company:queue --manifest=....",
-      ].join("\n")
+      ].join("\n"),
     );
   }
 
@@ -143,7 +148,7 @@ function validateQueueEntryForLoop(entry: ManifestQueueEntry) {
       [
         `Queued manifest ${slug} is missing createdOn.`,
         "Fix: replace the malformed queue file by rerunning bun run company:queue --manifest=....",
-      ].join("\n")
+      ].join("\n"),
     );
   }
 
@@ -152,7 +157,7 @@ function validateQueueEntryForLoop(entry: ManifestQueueEntry) {
       [
         `Queued entry ${slug} is missing nested manifest data.`,
         "Fix: replace the malformed queue file by rerunning bun run company:queue --manifest=....",
-      ].join("\n")
+      ].join("\n"),
     );
   }
 

@@ -1,26 +1,30 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
 import { gotoRoute } from "./support";
 
-const blockedRuntimeErrorPatterns = [/Hydration Mismatch/i, /SourceMapConsumer/i, /get-source-map/i];
+const blockedRuntimeErrorPatterns = [
+  /Hydration Mismatch/i,
+  /SourceMapConsumer/i,
+  /get-source-map/i,
+];
 
 function collectRuntimeFailures(page: Page) {
   const failures: string[] = [];
 
-  page.on("console", message => {
+  page.on("console", (message) => {
     const text = message.text();
 
     if (
       (message.type() === "error" || message.type() === "warning") &&
-      blockedRuntimeErrorPatterns.some(pattern => pattern.test(text))
+      blockedRuntimeErrorPatterns.some((pattern) => pattern.test(text))
     ) {
       failures.push(`[console:${message.type()}] ${text}`);
     }
   });
 
-  page.on("pageerror", error => {
+  page.on("pageerror", (error) => {
     const text = error.stack ?? error.message;
 
-    if (blockedRuntimeErrorPatterns.some(pattern => pattern.test(text))) {
+    if (blockedRuntimeErrorPatterns.some((pattern) => pattern.test(text))) {
       failures.push(`[pageerror] ${text}`);
     }
   });

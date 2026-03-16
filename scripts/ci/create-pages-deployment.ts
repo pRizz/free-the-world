@@ -15,7 +15,7 @@ const { value: oidcTokenResponse } = await fetchJson<Record<string, unknown>>(
       Authorization: `bearer ${env.actionsIdTokenRequestToken}`,
     },
   },
-  "OIDC token request"
+  "OIDC token request",
 );
 
 const oidcToken = getOidcToken(oidcTokenResponse);
@@ -36,7 +36,7 @@ const { value: deploymentResponse } = await fetchJson<Record<string, unknown>>(
       oidc_token: oidcToken,
     }),
   },
-  "Pages deployment request"
+  "Pages deployment request",
 );
 
 const { deploymentId, maybePageUrl } = parsePagesDeploymentResponse(deploymentResponse);
@@ -46,13 +46,15 @@ await appendFile(env.githubOutput, `deployment_id=${deploymentId}\npage_url=${ma
 async function fetchJson<T>(
   url: string,
   init: RequestInit,
-  description: string
+  description: string,
 ): Promise<JsonResponseResult<T>> {
   const response = await fetch(url, init);
   const rawText = await response.text();
 
   if (!response.ok) {
-    throw new Error(`${description} failed (${response.status} ${response.statusText}): ${rawText}`);
+    throw new Error(
+      `${description} failed (${response.status} ${response.statusText}): ${rawText}`,
+    );
   }
 
   try {

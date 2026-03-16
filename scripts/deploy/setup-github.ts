@@ -1,8 +1,12 @@
 import { deploymentConfig } from "../../src/lib/deployment-config";
 import { ensureAwsCliAvailable, loadAwsCallerIdentity } from "../lib/aws-deploy";
 import { runCommand, runJsonCommand } from "../lib/command";
-import { planGitHubPagesSite, type GitHubPagesSiteState, computeDigest } from "../lib/deploy-setup";
-import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
+import {
+  createDeployRun,
+  type DeployVerificationResult,
+  writeDeploySummary,
+} from "../lib/deploy-log";
+import { computeDigest, type GitHubPagesSiteState, planGitHubPagesSite } from "../lib/deploy-setup";
 import { resolveGitHubRepositorySlug } from "../lib/github-repository";
 
 interface GitHubEnvironmentResponse {
@@ -64,12 +68,20 @@ const currentProductionEnvironment = loadEnvironmentState(repositorySlug, produc
 const currentPagesEnvironment = loadEnvironmentState(repositorySlug, pagesEnvironment);
 const currentPagesSite = loadPagesSiteState(repositorySlug);
 const currentDigest = currentProductionEnvironment
-  ? loadEnvironmentVariable(repositorySlug, productionEnvironment, deploymentConfig.githubRoleArnDigestVariableName)
+  ? loadEnvironmentVariable(
+      repositorySlug,
+      productionEnvironment,
+      deploymentConfig.githubRoleArnDigestVariableName,
+    )
   : null;
 
 const environmentPlans = {
-  [productionEnvironment]: currentProductionEnvironment ? { action: "none" as const } : { action: "create" as const },
-  [pagesEnvironment]: currentPagesEnvironment ? { action: "none" as const } : { action: "create" as const },
+  [productionEnvironment]: currentProductionEnvironment
+    ? { action: "none" as const }
+    : { action: "create" as const },
+  [pagesEnvironment]: currentPagesEnvironment
+    ? { action: "none" as const }
+    : { action: "create" as const },
 };
 const pagesPlan = planGitHubPagesSite(currentPagesSite);
 const secretPlan =
@@ -107,7 +119,9 @@ const verificationResults: DeployVerificationResult[] = [
 ];
 
 if (allPlansAreNoOps(environmentPlans, pagesPlan, secretPlan)) {
-  skippedReasons.push("The production environment, github-pages environment, Pages workflow mode, and deploy role secret already match the desired state.");
+  skippedReasons.push(
+    "The production environment, github-pages environment, Pages workflow mode, and deploy role secret already match the desired state.",
+  );
   await run.addBreadcrumb({
     detail: "Remote GitHub repository settings already match the desired state.",
     status: "skipped",
@@ -160,10 +174,24 @@ if (allPlansAreNoOps(environmentPlans, pagesPlan, secretPlan)) {
   }
 
   if (secretPlan.action === "set") {
-    setEnvironmentVariable(repositorySlug, productionEnvironment, deploymentConfig.githubRoleArnDigestVariableName, roleArnDigest);
-    setEnvironmentSecret(repositorySlug, productionEnvironment, deploymentConfig.githubRoleArnSecretName, roleArn);
-    appliedChanges.push(`Updated ${productionEnvironment} environment variable ${deploymentConfig.githubRoleArnDigestVariableName}.`);
-    appliedChanges.push(`Updated ${productionEnvironment} environment secret ${deploymentConfig.githubRoleArnSecretName}.`);
+    setEnvironmentVariable(
+      repositorySlug,
+      productionEnvironment,
+      deploymentConfig.githubRoleArnDigestVariableName,
+      roleArnDigest,
+    );
+    setEnvironmentSecret(
+      repositorySlug,
+      productionEnvironment,
+      deploymentConfig.githubRoleArnSecretName,
+      roleArn,
+    );
+    appliedChanges.push(
+      `Updated ${productionEnvironment} environment variable ${deploymentConfig.githubRoleArnDigestVariableName}.`,
+    );
+    appliedChanges.push(
+      `Updated ${productionEnvironment} environment secret ${deploymentConfig.githubRoleArnSecretName}.`,
+    );
     await run.addBreadcrumb({
       detail: `Updated ${productionEnvironment} environment digest variable and deploy role secret.`,
       status: "passed",
@@ -176,12 +204,26 @@ const finalProductionEnvironment = loadEnvironmentState(repositorySlug, producti
 const finalPagesEnvironment = loadEnvironmentState(repositorySlug, pagesEnvironment);
 const finalPagesSite = loadPagesSiteState(repositorySlug);
 const finalDigest = finalProductionEnvironment
-  ? loadEnvironmentVariable(repositorySlug, productionEnvironment, deploymentConfig.githubRoleArnDigestVariableName)
+  ? loadEnvironmentVariable(
+      repositorySlug,
+      productionEnvironment,
+      deploymentConfig.githubRoleArnDigestVariableName,
+    )
   : null;
 
 verificationResults.push(
-  buildEnvironmentVerificationResult("production environment", productionEnvironment, finalProductionEnvironment !== null, mode),
-  buildEnvironmentVerificationResult("github-pages environment", pagesEnvironment, finalPagesEnvironment !== null, mode),
+  buildEnvironmentVerificationResult(
+    "production environment",
+    productionEnvironment,
+    finalProductionEnvironment !== null,
+    mode,
+  ),
+  buildEnvironmentVerificationResult(
+    "github-pages environment",
+    pagesEnvironment,
+    finalPagesEnvironment !== null,
+    mode,
+  ),
   buildPagesVerificationResult(finalPagesSite, mode),
   {
     detail:
@@ -190,7 +232,7 @@ verificationResults.push(
         : `${productionEnvironment} environment digest did not match the desired deploy role ARN.`,
     name: "deploy role secret digest",
     status: finalDigest === roleArnDigest ? "passed" : mode === "check" ? "skipped" : "failed",
-  }
+  },
 );
 
 const summary = {
@@ -225,7 +267,7 @@ const summary = {
 
 const { runDirectory } = await writeDeploySummary(summary, { runDirectory: run.runDirectory });
 
-const maybeFailure = verificationResults.find(result => result.status === "failed");
+const maybeFailure = verificationResults.find((result) => result.status === "failed");
 if (maybeFailure) {
   throw new Error(`${maybeFailure.name} verification failed. See ${runDirectory} for details.`);
 }
@@ -235,9 +277,13 @@ console.log(`GitHub setup ${mode} complete. Summary: ${runDirectory}`);
 function allPlansAreNoOps(
   environmentPlans: Record<string, { action: "create" | "none" }>,
   pagesPlan: ReturnType<typeof planGitHubPagesSite>,
-  secretPlan: { action: "none" | "set"; reason: string }
+  secretPlan: { action: "none" | "set"; reason: string },
 ) {
-  return Object.values(environmentPlans).every(plan => plan.action === "none") && pagesPlan.action === "none" && secretPlan.action === "none";
+  return (
+    Object.values(environmentPlans).every((plan) => plan.action === "none") &&
+    pagesPlan.action === "none" &&
+    secretPlan.action === "none"
+  );
 }
 
 function ensureGitHubCliAvailable() {
@@ -263,23 +309,33 @@ function resolveRoleArn(maybeRoleArn: string | undefined) {
 }
 
 function loadEnvironmentState(repositorySlug: string, environmentName: string) {
-  const result = runCommand("gh", buildGitHubApiArgs("GET", `repos/${repositorySlug}/environments/${environmentName}`), {
-    allowFailure: true,
-  });
+  const result = runCommand(
+    "gh",
+    buildGitHubApiArgs("GET", `repos/${repositorySlug}/environments/${environmentName}`),
+    {
+      allowFailure: true,
+    },
+  );
 
   if (result.status !== 0) {
     if (isMissingGitHubResource(result.stderr, result.stdout)) {
       return null;
     }
 
-    throw new Error(result.stderr || result.stdout || `Failed to inspect environment ${environmentName}.`);
+    throw new Error(
+      result.stderr || result.stdout || `Failed to inspect environment ${environmentName}.`,
+    );
   }
 
   return JSON.parse(result.stdout) as GitHubEnvironmentResponse;
 }
 
 function createEnvironment(repositorySlug: string, environmentName: string) {
-  runGitHubApiJson<GitHubEnvironmentResponse>("PUT", `repos/${repositorySlug}/environments/${environmentName}`, { wait_timer: 0 });
+  runGitHubApiJson<GitHubEnvironmentResponse>(
+    "PUT",
+    `repos/${repositorySlug}/environments/${environmentName}`,
+    { wait_timer: 0 },
+  );
 }
 
 function loadPagesSiteState(repositorySlug: string): GitHubPagesSiteState {
@@ -295,7 +351,9 @@ function loadPagesSiteState(repositorySlug: string): GitHubPagesSiteState {
       };
     }
 
-    throw new Error(result.stderr || result.stdout || `Failed to inspect GitHub Pages for ${repositorySlug}.`);
+    throw new Error(
+      result.stderr || result.stdout || `Failed to inspect GitHub Pages for ${repositorySlug}.`,
+    );
   }
 
   const response = JSON.parse(result.stdout) as GitHubPagesResponse;
@@ -309,10 +367,16 @@ function loadPagesSiteState(repositorySlug: string): GitHubPagesSiteState {
 }
 
 function updatePagesSite(repositorySlug: string, method: "POST" | "PUT") {
-  runGitHubApiJson<GitHubPagesResponse>(method, `repos/${repositorySlug}/pages`, { build_type: "workflow" });
+  runGitHubApiJson<GitHubPagesResponse>(method, `repos/${repositorySlug}/pages`, {
+    build_type: "workflow",
+  });
 }
 
-function loadEnvironmentVariable(repositorySlug: string, environmentName: string, variableName: string) {
+function loadEnvironmentVariable(
+  repositorySlug: string,
+  environmentName: string,
+  variableName: string,
+) {
   const response = runJsonCommand<Array<{ name: string; value?: string }>>("gh", [
     "variable",
     "list",
@@ -324,10 +388,15 @@ function loadEnvironmentVariable(repositorySlug: string, environmentName: string
     "name,value",
   ]);
 
-  return response.find(variable => variable.name === variableName)?.value ?? null;
+  return response.find((variable) => variable.name === variableName)?.value ?? null;
 }
 
-function setEnvironmentVariable(repositorySlug: string, environmentName: string, variableName: string, value: string) {
+function setEnvironmentVariable(
+  repositorySlug: string,
+  environmentName: string,
+  variableName: string,
+  value: string,
+) {
   runCommand("gh", [
     "variable",
     "set",
@@ -341,7 +410,12 @@ function setEnvironmentVariable(repositorySlug: string, environmentName: string,
   ]);
 }
 
-function setEnvironmentSecret(repositorySlug: string, environmentName: string, secretName: string, value: string) {
+function setEnvironmentSecret(
+  repositorySlug: string,
+  environmentName: string,
+  secretName: string,
+  value: string,
+) {
   runCommand("gh", [
     "secret",
     "set",
@@ -355,7 +429,12 @@ function setEnvironmentSecret(repositorySlug: string, environmentName: string, s
   ]);
 }
 
-function buildEnvironmentVerificationResult(name: string, environmentName: string, exists: boolean, mode: "apply" | "check"): DeployVerificationResult {
+function buildEnvironmentVerificationResult(
+  name: string,
+  environmentName: string,
+  exists: boolean,
+  mode: "apply" | "check",
+): DeployVerificationResult {
   return {
     detail: exists ? `${environmentName} exists.` : `${environmentName} does not exist yet.`,
     name,
@@ -363,7 +442,10 @@ function buildEnvironmentVerificationResult(name: string, environmentName: strin
   };
 }
 
-function buildPagesVerificationResult(state: GitHubPagesSiteState, mode: "apply" | "check"): DeployVerificationResult {
+function buildPagesVerificationResult(
+  state: GitHubPagesSiteState,
+  mode: "apply" | "check",
+): DeployVerificationResult {
   const configured = state.exists && state.buildType === "workflow";
 
   return {
@@ -377,7 +459,11 @@ function buildPagesVerificationResult(state: GitHubPagesSiteState, mode: "apply"
   };
 }
 
-function buildGitHubApiArgs(method: "GET" | "POST" | "PUT", endpoint: string, body?: Record<string, unknown>) {
+function buildGitHubApiArgs(
+  method: "GET" | "POST" | "PUT",
+  endpoint: string,
+  body?: Record<string, unknown>,
+) {
   const args = [
     "api",
     "--method",
@@ -397,7 +483,11 @@ function buildGitHubApiArgs(method: "GET" | "POST" | "PUT", endpoint: string, bo
   return args;
 }
 
-function runGitHubApiJson<T>(method: "GET" | "POST" | "PUT", endpoint: string, body?: Record<string, unknown>) {
+function runGitHubApiJson<T>(
+  method: "GET" | "POST" | "PUT",
+  endpoint: string,
+  body?: Record<string, unknown>,
+) {
   return runJsonCommand<T>("gh", buildGitHubApiArgs(method, endpoint, body), {
     stdin: body ? JSON.stringify(body) : undefined,
   });

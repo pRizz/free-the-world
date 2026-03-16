@@ -17,6 +17,19 @@ bun install
 bun run dev
 ```
 
+## Local verification
+
+```bash
+bun run lint
+bun run typecheck
+bun run test
+bun run build
+```
+
+The initial Biome rollout is intentionally code-scoped. It covers the TypeScript/TSX app, scripts,
+tests, and root config files, while leaving editorial content under `content/`, generated runtime
+data under `src/lib/generated/`, and build/deploy artifacts outside the lint baseline for now.
+
 ## Build
 
 ```bash

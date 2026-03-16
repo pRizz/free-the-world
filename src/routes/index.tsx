@@ -7,15 +7,26 @@ import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
-import { companies } from "~/lib/content-graph";
 import { siteConfig, withBasePath } from "~/lib/config";
+import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
+import { companies } from "~/lib/content-graph";
 import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
 import { formatCompanyMetric } from "~/lib/domain/formatters";
-import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
 
 export default function Home() {
-  const mostDecentralizable = sortCompaniesByMetric(companies, "decentralizability", "desc")[0]!;
-  const mostCapitalAtRisk = sortCompaniesByMetric(companies, "freedCapitalPotential", "desc")[0]!;
+  const [mostDecentralizable] = sortCompaniesByMetric(companies, "decentralizability", "desc");
+  const [mostCapitalAtRisk] = sortCompaniesByMetric(companies, "freedCapitalPotential", "desc");
+
+  if (!mostDecentralizable || !mostCapitalAtRisk) {
+    throw new Error("Expected at least one company in the registry.");
+  }
+
+  const decentralizabilityMetric = mostDecentralizable.metrics.decentralizability;
+  const freedCapitalMetric = mostCapitalAtRisk.metrics.freedCapitalPotential;
+
+  if (!decentralizabilityMetric || !freedCapitalMetric) {
+    throw new Error("Expected landing-page spotlight metrics to be available.");
+  }
 
   return (
     <>
@@ -28,18 +39,19 @@ export default function Home() {
               <Badge tone="accent">Top 10 S&amp;P 500 snapshot</Badge>
               <div class="space-y-4">
                 <h1 class="max-w-4xl text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-                  Price the moat honestly. Then imagine what happens when more of the world becomes free.
+                  Price the moat honestly. Then imagine what happens when more of the world becomes
+                  free.
                 </h1>
                 <p class="max-w-3xl text-base leading-8 text-muted-foreground sm:text-lg">
-                  Free The World is a research-driven registry of major public companies and the products they still
-                  monetize as if AI, open source, Bitcoin-native coordination, and distributed manufacturing were
-                  optional side quests instead of the main plot.
+                  Free The World is a research-driven registry of major public companies and the
+                  products they still monetize as if AI, open source, Bitcoin-native coordination,
+                  and distributed manufacturing were optional side quests instead of the main plot.
                 </p>
               </div>
             </div>
 
             <div class="grid gap-3 sm:grid-cols-3">
-              {landingHighlights.map(highlight => (
+              {landingHighlights.map((highlight) => (
                 <article class="rounded-2xl border border-border bg-card p-4 text-sm leading-7 text-muted-foreground">
                   {highlight}
                 </article>
@@ -68,16 +80,22 @@ export default function Home() {
                 value={mostDecentralizable.name}
                 class="[&>p:first-child]:tracking-[0.22em]"
               >
-                {formatCompanyMetric("decentralizability", mostDecentralizable.metrics.decentralizability)} —{" "}
-                {mostDecentralizable.metrics.decentralizability!.rationale}
+                {formatCompanyMetric(
+                  "decentralizability",
+                  mostDecentralizable.metrics.decentralizability,
+                )}{" "}
+                — {decentralizabilityMetric.rationale}
               </MetricCard>
               <MetricCard
                 label="Largest implied capital release opportunity"
                 value={mostCapitalAtRisk.name}
                 class="[&>p:first-child]:tracking-[0.22em]"
               >
-                {formatCompanyMetric("freedCapitalPotential", mostCapitalAtRisk.metrics.freedCapitalPotential)} —{" "}
-                {mostCapitalAtRisk.metrics.freedCapitalPotential!.rationale}
+                {formatCompanyMetric(
+                  "freedCapitalPotential",
+                  mostCapitalAtRisk.metrics.freedCapitalPotential,
+                )}{" "}
+                — {freedCapitalMetric.rationale}
               </MetricCard>
             </div>
           </ContentCard>
@@ -92,13 +110,15 @@ export default function Home() {
             />
             <div class="space-y-4 prose-block">
               <p>
-                AI keeps compressing expertise. Open source keeps compressing software margins. Bitcoin and Lightning
-                offer payment and anti-spam primitives that make more permissionless systems viable. Distributed
-                manufacturing keeps moving the minimum useful factory closer to local, automated, and weirdly compact.
+                AI keeps compressing expertise. Open source keeps compressing software margins.
+                Bitcoin and Lightning offer payment and anti-spam primitives that make more
+                permissionless systems viable. Distributed manufacturing keeps moving the minimum
+                useful factory closer to local, automated, and weirdly compact.
               </p>
               <p>
-                The result is not that every incumbent disappears. It is that a growing share of incumbents should
-                expect to defend prices that become less philosophically persuasive and less economically durable.
+                The result is not that every incumbent disappears. It is that a growing share of
+                incumbents should expect to defend prices that become less philosophically
+                persuasive and less economically durable.
               </p>
             </div>
           </ContentCard>
@@ -110,7 +130,7 @@ export default function Home() {
               description="The methodology is explicit so readers can audit the assumptions instead of pretending a clean table appeared from the heavens."
             />
             <div class="space-y-3">
-              {methodologyPrinciples.map(principle => (
+              {methodologyPrinciples.map((principle) => (
                 <article class="rounded-2xl border border-border bg-card p-4 text-sm leading-7 text-muted-foreground">
                   {principle}
                 </article>
@@ -126,8 +146,8 @@ export default function Home() {
             <div class="space-y-3">
               <Badge tone="muted">Professional with a light satirical aftertaste</Badge>
               <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-                If a trillion-dollar company is mostly monetizing convenience and inertia, that is still a moat. It is
-                just not necessarily an eternal one.
+                If a trillion-dollar company is mostly monetizing convenience and inertia, that is
+                still a moat. It is just not necessarily an eternal one.
               </h2>
             </div>
             <A href="/companies" class="text-sm font-medium text-accent-foreground hover:underline">

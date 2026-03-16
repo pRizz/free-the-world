@@ -42,7 +42,10 @@ export function getQueuedManifestFile(slug: string) {
   return path.join(queueManifestsDir, `${slug}.json`);
 }
 
-export async function queueManifestFromFile(manifestPath: string, options: Omit<QueueManifestOptions, "manifest"> = {}) {
+export async function queueManifestFromFile(
+  manifestPath: string,
+  options: Omit<QueueManifestOptions, "manifest"> = {},
+) {
   const manifest = await readJsonFile<CompanyManifest>(manifestPath);
   return queueManifest({ manifest, ...options });
 }
@@ -83,11 +86,13 @@ export async function readQueuedManifestEntry(slug: string) {
 export async function promoteQueuedManifest(slug: string): Promise<PromoteQueuedManifestResult> {
   const queueEntry = await readQueuedManifestEntry(slug);
   if (queueEntry.manifest.slug !== slug) {
-    throw new Error(`Queued manifest ${slug} does not match nested manifest slug ${queueEntry.manifest.slug}.`);
+    throw new Error(
+      `Queued manifest ${slug} does not match nested manifest slug ${queueEntry.manifest.slug}.`,
+    );
   }
 
   const raw = await loadRawContent();
-  if (raw.manifests.some(manifest => manifest.slug === slug)) {
+  if (raw.manifests.some((manifest) => manifest.slug === slug)) {
     throw new Error(`Canonical manifest ${slug} already exists.`);
   }
 
@@ -111,7 +116,7 @@ export async function promoteManifest(manifest: CompanyManifest): Promise<Promot
 
   validateAndCompile({
     ...raw,
-    manifests: [...raw.manifests.filter(entry => entry.slug !== manifest.slug), manifest],
+    manifests: [...raw.manifests.filter((entry) => entry.slug !== manifest.slug), manifest],
   });
 
   const targetFile = getManifestFile(manifest.slug);
@@ -122,24 +127,28 @@ export async function promoteManifest(manifest: CompanyManifest): Promise<Promot
 function assertQueueCandidateIsAvailable(
   slug: string,
   canonicalManifests: CompanyManifest[],
-  queuedEntries: ManifestQueueEntry[]
+  queuedEntries: ManifestQueueEntry[],
 ) {
-  if (canonicalManifests.some(manifest => manifest.slug === slug)) {
+  if (canonicalManifests.some((manifest) => manifest.slug === slug)) {
     throw new Error(`Canonical manifest ${slug} already exists.`);
   }
 
-  if (queuedEntries.some(entry => entry.manifest.slug === slug)) {
+  if (queuedEntries.some((entry) => entry.manifest.slug === slug)) {
     throw new Error(`Queued manifest ${slug} already exists.`);
   }
 }
 
 function validateQueueEntry(queueEntry: ManifestQueueEntry, expectedSlug: string) {
   if (queueEntry.schemaVersion !== 1) {
-    throw new Error(`Queued manifest ${expectedSlug} has unsupported schemaVersion ${String(queueEntry.schemaVersion)}.`);
+    throw new Error(
+      `Queued manifest ${expectedSlug} has unsupported schemaVersion ${String(queueEntry.schemaVersion)}.`,
+    );
   }
 
   if (queueEntry.status !== "queued") {
-    throw new Error(`Queued manifest ${expectedSlug} has unsupported status ${String(queueEntry.status)}.`);
+    throw new Error(
+      `Queued manifest ${expectedSlug} has unsupported status ${String(queueEntry.status)}.`,
+    );
   }
 
   if (!queueEntry.createdOn) {

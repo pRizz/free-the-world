@@ -13,7 +13,12 @@ function parseIsoDate(value: string) {
 }
 
 export function calculateIpoReturnMultiplier(currentMarketCap: number, ipoMarketCap: number) {
-  if (!Number.isFinite(currentMarketCap) || !Number.isFinite(ipoMarketCap) || currentMarketCap <= 0 || ipoMarketCap <= 0) {
+  if (
+    !Number.isFinite(currentMarketCap) ||
+    !Number.isFinite(ipoMarketCap) ||
+    currentMarketCap <= 0 ||
+    ipoMarketCap <= 0
+  ) {
     return null;
   }
 
@@ -37,22 +42,35 @@ export function calculateYearsSinceIpo(ipoDate: string, snapshotDate: string) {
 }
 
 export function calculateIpoAnnualizedGrowthRate(returnMultiplier: number, yearsSinceIpo: number) {
-  if (!Number.isFinite(returnMultiplier) || !Number.isFinite(yearsSinceIpo) || returnMultiplier <= 0 || yearsSinceIpo <= 0) {
+  if (
+    !Number.isFinite(returnMultiplier) ||
+    !Number.isFinite(yearsSinceIpo) ||
+    returnMultiplier <= 0 ||
+    yearsSinceIpo <= 0
+  ) {
     return null;
   }
 
-  return Math.pow(returnMultiplier, 1 / yearsSinceIpo) - 1;
+  return returnMultiplier ** (1 / yearsSinceIpo) - 1;
 }
 
 export function deriveIpoMetrics(
   maybeIpo: CompanyIpo | null,
-  currentMarketCap: MetricAssessment
-): Partial<Record<Extract<CompanyMetricId, "ipoMarketCap" | "ipoReturnMultiplier" | "ipoAnnualizedGrowthRate">, MetricAssessment>> {
+  currentMarketCap: MetricAssessment,
+): Partial<
+  Record<
+    Extract<CompanyMetricId, "ipoMarketCap" | "ipoReturnMultiplier" | "ipoAnnualizedGrowthRate">,
+    MetricAssessment
+  >
+> {
   if (!maybeIpo) {
     return {};
   }
 
-  const returnMultiplier = calculateIpoReturnMultiplier(currentMarketCap.value, maybeIpo.marketCap.value);
+  const returnMultiplier = calculateIpoReturnMultiplier(
+    currentMarketCap.value,
+    maybeIpo.marketCap.value,
+  );
   const yearsSinceIpo = calculateYearsSinceIpo(maybeIpo.date, currentMarketCap.lastReviewedOn);
 
   if (returnMultiplier === null || yearsSinceIpo === null) {

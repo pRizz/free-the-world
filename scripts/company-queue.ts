@@ -1,6 +1,6 @@
 import path from "node:path";
-import { rootDir } from "./lib/content";
 import { queueManifestFromFile } from "./lib/company-intake";
+import { rootDir } from "./lib/content";
 import { parseArgs } from "./lib/ralph";
 
 const args = parseArgs(process.argv.slice(2));
@@ -26,7 +26,7 @@ const queueEntry = await queueManifestFromFile(manifestPath, {
 });
 
 console.log(
-  `Queued manifest ${queueEntry.manifest.slug} at content/manifests/queue/${queueEntry.manifest.slug}.json`
+  `Queued manifest ${queueEntry.manifest.slug} at content/manifests/queue/${queueEntry.manifest.slug}.json`,
 );
 
 function normalizeOptional(value?: string) {

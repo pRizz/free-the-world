@@ -4,7 +4,8 @@ export const technologyWaves: TechnologyWave[] = [
   {
     id: "additive-manufacturing",
     label: "Additive manufacturing",
-    summary: "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+    summary:
+      "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
     implications: [
       "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
       "Localized production improves resilience for niche components and repair ecosystems.",
@@ -14,7 +15,8 @@ export const technologyWaves: TechnologyWave[] = [
   {
     id: "printed-electronics",
     label: "Printed electronics and PCB tooling",
-    summary: "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+    summary:
+      "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
     implications: [
       "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
       "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
@@ -24,7 +26,8 @@ export const technologyWaves: TechnologyWave[] = [
   {
     id: "microfactories",
     label: "Microfactories and automated mini-home production",
-    summary: "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+    summary:
+      "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
     implications: [
       "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
       "Logistics moats still matter, but their margin for arrogance should narrow.",
@@ -34,7 +37,8 @@ export const technologyWaves: TechnologyWave[] = [
   {
     id: "distributed-energy",
     label: "Printable solar, localized wind, and home energy stacks",
-    summary: "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+    summary:
+      "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
     implications: [
       "Energy-related products should be viewed through interoperability and open-control surfaces.",
       "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
@@ -44,7 +48,8 @@ export const technologyWaves: TechnologyWave[] = [
   {
     id: "bitcoin-native-coordination",
     label: "Bitcoin and Lightning as coordination rails",
-    summary: "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+    summary:
+      "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
     implications: [
       "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
       "Micropayments can replace some ad-funded or subscription-heavy distribution models.",

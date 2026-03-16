@@ -1,7 +1,8 @@
-import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { expect, test } from "bun:test";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { expect, test } from "bun:test";
+import type { DeployManifest } from "../../../scripts/lib/deploy-artifact";
 import {
   assertArtifactMatchesTarget,
   assertDeployArtifactIntegrity,
@@ -9,7 +10,6 @@ import {
   diffDeployManifests,
   getInvalidationPaths,
 } from "../../../scripts/lib/deploy-artifact";
-import type { DeployManifest } from "../../../scripts/lib/deploy-artifact";
 
 test("classifyArtifactPath marks hashed build assets immutable", () => {
   expect(classifyArtifactPath("_build/assets/app-abcdef12.js")).toBe("immutable");
@@ -44,19 +44,19 @@ test("diffDeployManifests identifies uploads and deletes", () => {
   const diff = diffDeployManifests(localManifest, remoteManifest);
 
   expect(diff.changed).toBe(true);
-  expect(diff.uploads.map(file => file.path)).toEqual(["index.html", "robots.txt"]);
+  expect(diff.uploads.map((file) => file.path)).toEqual(["index.html", "robots.txt"]);
   expect(diff.deletes).toEqual(["_build/assets/app-abcdef12.js"]);
 });
 
 test("getInvalidationPaths expands pretty URLs and skips immutable assets", () => {
-  expect(getInvalidationPaths(["index.html", "about/index.html", "robots.txt", "_build/assets/app-abcdef12.js"])).toEqual([
-    "/",
-    "/about",
-    "/about/",
-    "/about/index.html",
-    "/index.html",
-    "/robots.txt",
-  ]);
+  expect(
+    getInvalidationPaths([
+      "index.html",
+      "about/index.html",
+      "robots.txt",
+      "_build/assets/app-abcdef12.js",
+    ]),
+  ).toEqual(["/", "/about", "/about/", "/about/index.html", "/index.html", "/robots.txt"]);
 });
 
 test("assertDeployArtifactIntegrity fails when manifest-listed files are missing", async () => {
@@ -86,7 +86,9 @@ test("assertDeployArtifactIntegrity fails when manifest-listed files are missing
     const result = assertDeployArtifactIntegrity(artifactDir, manifest);
 
     // Assert
-    await expect(result).rejects.toThrow(/missing 2 file\(s\).*\.nojekyll.*_build\/\.vite\/manifest\.json/s);
+    await expect(result).rejects.toThrow(
+      /missing 2 file\(s\).*\.nojekyll.*_build\/\.vite\/manifest\.json/s,
+    );
   } finally {
     await rm(artifactDir, { force: true, recursive: true });
   }
@@ -104,7 +106,7 @@ test("assertArtifactMatchesTarget allows external GitHub commit links on aws art
         '<link rel="modulepreload" href="/_build/assets/app.js">',
         '<a href="https://github.com/pRizz/free-the-world/commit/0123456789abcdef">Commit</a>',
       ].join(""),
-      "utf8"
+      "utf8",
     );
 
     // Act

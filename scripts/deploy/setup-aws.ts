@@ -7,16 +7,19 @@ import {
   ensureAwsCliAvailable,
   loadAwsCallerIdentity,
   resolveHostedZones,
-  type ResolvedHostedZones,
 } from "../lib/aws-deploy";
 import { runCommand, runJsonCommand } from "../lib/command";
+import {
+  createDeployRun,
+  type DeployVerificationResult,
+  writeDeploySummary,
+} from "../lib/deploy-log";
 import {
   buildAwsDeployPolicy,
   buildGithubOidcTrustPolicy,
   githubOidcThumbprint,
   normalizePolicyDocument,
 } from "../lib/deploy-setup";
-import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
 import { resolveGitHubRepositorySlug } from "../lib/github-repository";
 
 interface OpenIdConnectProviderListResponse {
@@ -145,7 +148,9 @@ const verificationResults: DeployVerificationResult[] = [
 ];
 
 if (allPlansAreNoOps(oidcPlan, managedPolicyPlan, rolePlan, attachmentPlan)) {
-  skippedReasons.push("The GitHub OIDC provider, deploy role, managed policy, and role attachment already match the desired state.");
+  skippedReasons.push(
+    "The GitHub OIDC provider, deploy role, managed policy, and role attachment already match the desired state.",
+  );
   await run.addBreadcrumb({
     detail: "Remote AWS setup already matches the desired state.",
     status: "skipped",
@@ -161,7 +166,9 @@ if (allPlansAreNoOps(oidcPlan, managedPolicyPlan, rolePlan, attachmentPlan)) {
 } else {
   if (oidcPlan.action === "create") {
     applyCreateOidcProvider();
-    appliedChanges.push(`Created the GitHub Actions OIDC provider ${deploymentConfig.awsGithubOidcProviderUrl}.`);
+    appliedChanges.push(
+      `Created the GitHub Actions OIDC provider ${deploymentConfig.awsGithubOidcProviderUrl}.`,
+    );
     await run.addBreadcrumb({
       detail: "Created the GitHub Actions OIDC provider.",
       status: "passed",
@@ -188,7 +195,9 @@ if (allPlansAreNoOps(oidcPlan, managedPolicyPlan, rolePlan, attachmentPlan)) {
   } else if (managedPolicyPlan.action === "update-version") {
     if (managedPolicyPlan.deleteVersionId) {
       deleteManagedPolicyVersion(desiredPolicyArn, managedPolicyPlan.deleteVersionId);
-      appliedChanges.push(`Deleted non-default policy version ${managedPolicyPlan.deleteVersionId} from ${desiredPolicyArn}.`);
+      appliedChanges.push(
+        `Deleted non-default policy version ${managedPolicyPlan.deleteVersionId} from ${desiredPolicyArn}.`,
+      );
       await run.addBreadcrumb({
         detail: `Deleted non-default policy version ${managedPolicyPlan.deleteVersionId} before publishing a new default version.`,
         status: "passed",
@@ -244,7 +253,11 @@ verificationResults.push(
       ? `OIDC provider ${finalOidcProvider.arn} includes client ID ${deploymentConfig.awsGithubOidcAudience}.`
       : "GitHub Actions OIDC provider is still missing after the run.",
     name: "OIDC provider",
-    status: finalOidcProvider?.clientIds.includes(deploymentConfig.awsGithubOidcAudience) ? "passed" : mode === "check" ? "skipped" : "failed",
+    status: finalOidcProvider?.clientIds.includes(deploymentConfig.awsGithubOidcAudience)
+      ? "passed"
+      : mode === "check"
+        ? "skipped"
+        : "failed",
   },
   {
     detail: finalManagedPolicy
@@ -252,14 +265,18 @@ verificationResults.push(
       : "Managed policy is missing after the run.",
     name: "managed policy",
     status:
-      finalManagedPolicy && normalizePolicyDocument(finalManagedPolicy.document) === normalizePolicyDocument(desiredManagedPolicy)
+      finalManagedPolicy &&
+      normalizePolicyDocument(finalManagedPolicy.document) ===
+        normalizePolicyDocument(desiredManagedPolicy)
         ? "passed"
         : mode === "check"
           ? "skipped"
           : "failed",
   },
   {
-    detail: finalRoleState ? `IAM role ${desiredRoleArn} is present.` : "Deploy IAM role is missing after the run.",
+    detail: finalRoleState
+      ? `IAM role ${desiredRoleArn} is present.`
+      : "Deploy IAM role is missing after the run.",
     name: "deploy role",
     status: finalRoleState ? "passed" : mode === "check" ? "skipped" : "failed",
   },
@@ -268,8 +285,12 @@ verificationResults.push(
       ? `Managed policy ${desiredPolicyArn} is attached to ${desiredRoleArn}.`
       : `Managed policy ${desiredPolicyArn} is not attached to ${desiredRoleArn}.`,
     name: "role attachment",
-    status: finalRoleState?.attachedPolicyArns.includes(desiredPolicyArn) ? "passed" : mode === "check" ? "skipped" : "failed",
-  }
+    status: finalRoleState?.attachedPolicyArns.includes(desiredPolicyArn)
+      ? "passed"
+      : mode === "check"
+        ? "skipped"
+        : "failed",
+  },
 );
 
 const summary = {
@@ -309,25 +330,37 @@ function allPlansAreNoOps(
   oidcPlan: ReturnType<typeof planOidcProvider>,
   managedPolicyPlan: ReturnType<typeof planManagedPolicy>,
   rolePlan: ReturnType<typeof planRole>,
-  attachmentPlan: ReturnType<typeof planRoleAttachment>
+  attachmentPlan: ReturnType<typeof planRoleAttachment>,
 ) {
-  return oidcPlan.action === "none" && managedPolicyPlan.action === "none" && rolePlan.action === "none" && attachmentPlan.action === "none";
+  return (
+    oidcPlan.action === "none" &&
+    managedPolicyPlan.action === "none" &&
+    rolePlan.action === "none" &&
+    attachmentPlan.action === "none"
+  );
 }
 
 function loadGithubOidcProviderState() {
-  const response = runJsonCommand<OpenIdConnectProviderListResponse>("aws", ["iam", "list-open-id-connect-providers", "--output", "json"]);
-  const providerArn = response.OpenIDConnectProviderList?.map(provider => provider.Arn).find(arn => {
-    const details = runJsonCommand<OpenIdConnectProviderResponse>("aws", [
-      "iam",
-      "get-open-id-connect-provider",
-      "--open-id-connect-provider-arn",
-      arn,
-      "--output",
-      "json",
-    ]);
+  const response = runJsonCommand<OpenIdConnectProviderListResponse>("aws", [
+    "iam",
+    "list-open-id-connect-providers",
+    "--output",
+    "json",
+  ]);
+  const providerArn = response.OpenIDConnectProviderList?.map((provider) => provider.Arn).find(
+    (arn) => {
+      const details = runJsonCommand<OpenIdConnectProviderResponse>("aws", [
+        "iam",
+        "get-open-id-connect-provider",
+        "--open-id-connect-provider-arn",
+        arn,
+        "--output",
+        "json",
+      ]);
 
-    return details.Url === deploymentConfig.awsGithubOidcProviderUrl.replace("https://", "");
-  });
+      return details.Url === deploymentConfig.awsGithubOidcProviderUrl.replace("https://", "");
+    },
+  );
 
   if (!providerArn) {
     return null;
@@ -345,7 +378,9 @@ function loadGithubOidcProviderState() {
   return {
     arn: providerArn,
     clientIds: [...(details.ClientIDList ?? [])].sort((left, right) => left.localeCompare(right)),
-    thumbprints: [...(details.ThumbprintList ?? [])].sort((left, right) => left.localeCompare(right)),
+    thumbprints: [...(details.ThumbprintList ?? [])].sort((left, right) =>
+      left.localeCompare(right),
+    ),
     url: details.Url ?? "",
   };
 }
@@ -398,11 +433,17 @@ function applyAddOidcClientId(providerArn: string, clientId: string) {
 }
 
 function loadManagedPolicyState(policyArn: string) {
-  const policyResult = runCommand("aws", ["iam", "get-policy", "--policy-arn", policyArn, "--output", "json"], { allowFailure: true });
+  const policyResult = runCommand(
+    "aws",
+    ["iam", "get-policy", "--policy-arn", policyArn, "--output", "json"],
+    { allowFailure: true },
+  );
 
   if (policyResult.status !== 0) {
     if (!isMissingAwsResource(policyResult.stderr, policyResult.stdout)) {
-      throw new Error(policyResult.stderr || policyResult.stdout || `Failed to inspect policy ${policyArn}.`);
+      throw new Error(
+        policyResult.stderr || policyResult.stdout || `Failed to inspect policy ${policyArn}.`,
+      );
     }
 
     return null;
@@ -425,14 +466,21 @@ function loadManagedPolicyState(policyArn: string) {
     "--output",
     "json",
   ]);
-  const versions = runJsonCommand<ListPolicyVersionsResponse>("aws", ["iam", "list-policy-versions", "--policy-arn", policyArn, "--output", "json"]);
+  const versions = runJsonCommand<ListPolicyVersionsResponse>("aws", [
+    "iam",
+    "list-policy-versions",
+    "--policy-arn",
+    policyArn,
+    "--output",
+    "json",
+  ]);
 
   return {
     arn: policy.Arn,
     defaultVersionId: policy.DefaultVersionId,
     document: version.PolicyVersion?.Document ?? null,
     versions:
-      versions.Versions?.map(versionRecord => ({
+      versions.Versions?.map((versionRecord) => ({
         createdAt: versionRecord.CreateDate ?? "",
         isDefault: versionRecord.IsDefaultVersion === true,
         versionId: versionRecord.VersionId ?? "",
@@ -440,7 +488,10 @@ function loadManagedPolicyState(policyArn: string) {
   };
 }
 
-function planManagedPolicy(currentState: ReturnType<typeof loadManagedPolicyState>, desiredPolicy: ReturnType<typeof buildAwsDeployPolicy>) {
+function planManagedPolicy(
+  currentState: ReturnType<typeof loadManagedPolicyState>,
+  desiredPolicy: ReturnType<typeof buildAwsDeployPolicy>,
+) {
   if (!currentState) {
     return {
       action: "create" as const,
@@ -454,7 +505,11 @@ function planManagedPolicy(currentState: ReturnType<typeof loadManagedPolicyStat
   }
 
   const maybeVersionToDelete =
-    currentState.versions.length >= 5 ? currentState.versions.find(versionRecord => !versionRecord.isDefault && versionRecord.versionId) : undefined;
+    currentState.versions.length >= 5
+      ? currentState.versions.find(
+          (versionRecord) => !versionRecord.isDefault && versionRecord.versionId,
+        )
+      : undefined;
 
   return {
     action: "update-version" as const,
@@ -462,8 +517,11 @@ function planManagedPolicy(currentState: ReturnType<typeof loadManagedPolicyStat
   };
 }
 
-async function applyCreateManagedPolicy(policyArn: string, policyDocument: ReturnType<typeof buildAwsDeployPolicy>) {
-  await withTempJsonFile("policy", policyDocument, filePath => {
+async function applyCreateManagedPolicy(
+  policyArn: string,
+  policyDocument: ReturnType<typeof buildAwsDeployPolicy>,
+) {
+  await withTempJsonFile("policy", policyDocument, (filePath) => {
     runCommand("aws", [
       "iam",
       "create-policy",
@@ -484,8 +542,11 @@ async function applyCreateManagedPolicy(policyArn: string, policyDocument: Retur
   }
 }
 
-async function applyUpdateManagedPolicy(policyArn: string, policyDocument: ReturnType<typeof buildAwsDeployPolicy>) {
-  await withTempJsonFile("policy", policyDocument, filePath => {
+async function applyUpdateManagedPolicy(
+  policyArn: string,
+  policyDocument: ReturnType<typeof buildAwsDeployPolicy>,
+) {
+  await withTempJsonFile("policy", policyDocument, (filePath) => {
     runCommand("aws", [
       "iam",
       "create-policy-version",
@@ -501,17 +562,32 @@ async function applyUpdateManagedPolicy(policyArn: string, policyDocument: Retur
 }
 
 function deleteManagedPolicyVersion(policyArn: string, versionId: string) {
-  runCommand("aws", ["iam", "delete-policy-version", "--policy-arn", policyArn, "--version-id", versionId]);
+  runCommand("aws", [
+    "iam",
+    "delete-policy-version",
+    "--policy-arn",
+    policyArn,
+    "--version-id",
+    versionId,
+  ]);
 }
 
 function loadRoleState(roleArn: string) {
-  const roleResult = runCommand("aws", ["iam", "get-role", "--role-name", deploymentConfig.awsDeployRoleName, "--output", "json"], {
-    allowFailure: true,
-  });
+  const roleResult = runCommand(
+    "aws",
+    ["iam", "get-role", "--role-name", deploymentConfig.awsDeployRoleName, "--output", "json"],
+    {
+      allowFailure: true,
+    },
+  );
 
   if (roleResult.status !== 0) {
     if (!isMissingAwsResource(roleResult.stderr, roleResult.stdout)) {
-      throw new Error(roleResult.stderr || roleResult.stdout || `Failed to inspect role ${deploymentConfig.awsDeployRoleName}.`);
+      throw new Error(
+        roleResult.stderr ||
+          roleResult.stdout ||
+          `Failed to inspect role ${deploymentConfig.awsDeployRoleName}.`,
+      );
     }
 
     return null;
@@ -530,20 +606,28 @@ function loadRoleState(roleArn: string) {
   return {
     arn: response.Role?.Arn ?? roleArn,
     attachedPolicyArns:
-      attachedPolicies.AttachedPolicies?.map(policy => policy.PolicyArn).filter((policyArn): policyArn is string => Boolean(policyArn)).sort() ?? [],
+      attachedPolicies.AttachedPolicies?.map((policy) => policy.PolicyArn)
+        .filter((policyArn): policyArn is string => Boolean(policyArn))
+        .sort() ?? [],
     assumeRolePolicyDocument: response.Role?.AssumeRolePolicyDocument ?? null,
     roleName: response.Role?.RoleName ?? deploymentConfig.awsDeployRoleName,
   };
 }
 
-function planRole(currentState: ReturnType<typeof loadRoleState>, desiredTrustPolicy: ReturnType<typeof buildGithubOidcTrustPolicy>) {
+function planRole(
+  currentState: ReturnType<typeof loadRoleState>,
+  desiredTrustPolicy: ReturnType<typeof buildGithubOidcTrustPolicy>,
+) {
   if (!currentState) {
     return {
       action: "create" as const,
     };
   }
 
-  if (normalizePolicyDocument(currentState.assumeRolePolicyDocument) === normalizePolicyDocument(desiredTrustPolicy)) {
+  if (
+    normalizePolicyDocument(currentState.assumeRolePolicyDocument) ===
+    normalizePolicyDocument(desiredTrustPolicy)
+  ) {
     return {
       action: "none" as const,
     };
@@ -555,7 +639,7 @@ function planRole(currentState: ReturnType<typeof loadRoleState>, desiredTrustPo
 }
 
 async function applyCreateRole(trustPolicy: ReturnType<typeof buildGithubOidcTrustPolicy>) {
-  await withTempJsonFile("trust-policy", trustPolicy, filePath => {
+  await withTempJsonFile("trust-policy", trustPolicy, (filePath) => {
     runCommand("aws", [
       "iam",
       "create-role",
@@ -571,8 +655,10 @@ async function applyCreateRole(trustPolicy: ReturnType<typeof buildGithubOidcTru
   });
 }
 
-async function applyUpdateRoleTrustPolicy(trustPolicy: ReturnType<typeof buildGithubOidcTrustPolicy>) {
-  await withTempJsonFile("trust-policy", trustPolicy, filePath => {
+async function applyUpdateRoleTrustPolicy(
+  trustPolicy: ReturnType<typeof buildGithubOidcTrustPolicy>,
+) {
+  await withTempJsonFile("trust-policy", trustPolicy, (filePath) => {
     runCommand("aws", [
       "iam",
       "update-assume-role-policy",
@@ -584,7 +670,10 @@ async function applyUpdateRoleTrustPolicy(trustPolicy: ReturnType<typeof buildGi
   });
 }
 
-function planRoleAttachment(currentState: ReturnType<typeof loadRoleState>, desiredPolicyArn: string) {
+function planRoleAttachment(
+  currentState: ReturnType<typeof loadRoleState>,
+  desiredPolicyArn: string,
+) {
   if (!currentState || !currentState.attachedPolicyArns.includes(desiredPolicyArn)) {
     return {
       action: "attach" as const,
@@ -607,7 +696,11 @@ function attachManagedPolicy(policyArn: string) {
   ]);
 }
 
-async function withTempJsonFile(prefix: string, value: unknown, callback: (filePath: string) => void | Promise<void>) {
+async function withTempJsonFile(
+  prefix: string,
+  value: unknown,
+  callback: (filePath: string) => void | Promise<void>,
+) {
   const tempDirectory = await mkdtemp(path.join(os.tmpdir(), `free-the-world-${prefix}-`));
   const filePath = path.join(tempDirectory, `${prefix}.json`);
 
@@ -621,7 +714,9 @@ async function withTempJsonFile(prefix: string, value: unknown, callback: (fileP
 }
 
 function isMissingAwsResource(stderr: string, stdout: string) {
-  return /(no such entity|nosuchentity|cannot find|cannot be found|not found|does not exist)/i.test(`${stderr}\n${stdout}`);
+  return /(no such entity|nosuchentity|cannot find|cannot be found|not found|does not exist)/i.test(
+    `${stderr}\n${stdout}`,
+  );
 }
 
 function parseArgs(rawArgs: string[]) {

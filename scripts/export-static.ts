@@ -17,11 +17,11 @@ const staticRoutes = [
   "/about",
   "/methodology",
   "/companies",
-  ...companies.flatMap(company => [
+  ...companies.flatMap((company) => [
     `/companies/${company.slug}`,
     `/companies/${company.slug}/products`,
   ]),
-  ...products.map(product => `/companies/${product.companySlug}/products/${product.slug}`),
+  ...products.map((product) => `/companies/${product.companySlug}/products/${product.slug}`),
 ];
 
 await Promise.all(staticRoutes.map(renderRoute));
@@ -34,7 +34,8 @@ async function renderRoute(route: string) {
   const requestUrl = new URL(withBasePath(route), "https://free-the-world.local");
   const response = await entryServer.fetch(new Request(requestUrl));
   const html = applySiteBasePath(await response.text());
-  const outputFile = route === "/" ? path.join(outputDir, "index.html") : path.join(outputDir, route, "index.html");
+  const outputFile =
+    route === "/" ? path.join(outputDir, "index.html") : path.join(outputDir, route, "index.html");
 
   await mkdir(path.dirname(outputFile), { recursive: true });
   await writeFile(outputFile, html, "utf8");

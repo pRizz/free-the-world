@@ -1,5 +1,9 @@
-import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
 import { runCommand } from "../lib/command";
+import {
+  createDeployRun,
+  type DeployVerificationResult,
+  writeDeploySummary,
+} from "../lib/deploy-log";
 
 const args = parseArgs(process.argv.slice(2));
 const mode: "apply" | "check" = args.apply === "true" ? "apply" : "check";
@@ -22,7 +26,12 @@ await run.addBreadcrumb({
   step: "plan",
 });
 
-const discoveredRemoteState: Array<{ command: string; stderr: string; status: number; stdout: string }> = [];
+const discoveredRemoteState: Array<{
+  command: string;
+  stderr: string;
+  status: number;
+  stdout: string;
+}> = [];
 const appliedChanges: string[] = [];
 const skippedReasons: string[] = [];
 const verificationResults: DeployVerificationResult[] = [];
@@ -34,7 +43,8 @@ for (const childCommand of childCommands) {
     step: "child command",
   });
 
-  const result = runCommand(childCommand.command[0]!, childCommand.command.slice(1), {
+  const [command, ...commandArgs] = childCommand.command;
+  const result = runCommand(command, commandArgs, {
     allowFailure: true,
   });
 
@@ -47,7 +57,8 @@ for (const childCommand of childCommands) {
 
   if (result.status !== 0) {
     verificationResults.push({
-      detail: result.stderr.trim() || result.stdout.trim() || `${childCommand.command.join(" ")} failed.`,
+      detail:
+        result.stderr.trim() || result.stdout.trim() || `${childCommand.command.join(" ")} failed.`,
       name: childCommand.label,
       status: "failed",
     });
@@ -72,7 +83,7 @@ for (const childCommand of childCommands) {
         target: "deploy-setup",
         verificationResults,
       },
-      { runDirectory: run.runDirectory }
+      { runDirectory: run.runDirectory },
     );
 
     throw new Error(`${childCommand.label} failed. See ${runDirectory} for details.`);
@@ -112,13 +123,17 @@ const { runDirectory } = await writeDeploySummary(
     target: "deploy-setup",
     verificationResults,
   },
-  { runDirectory: run.runDirectory }
+  { runDirectory: run.runDirectory },
 );
 
 console.log(`Deployment setup ${mode} complete. Summary: ${runDirectory}`);
 
-function buildChildCommand(scriptPath: string, args: Record<string, string>, mode: "apply" | "check") {
-  const command = ["bun", "run", scriptPath];
+function buildChildCommand(
+  scriptPath: string,
+  args: Record<string, string>,
+  mode: "apply" | "check",
+) {
+  const command: [string, ...string[]] = ["bun", "run", scriptPath];
 
   if (mode === "apply") {
     command.push("--apply");

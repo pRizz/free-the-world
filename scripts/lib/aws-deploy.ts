@@ -85,7 +85,12 @@ export function getAwsTemplatePath() {
 }
 
 export function loadAwsCallerIdentity() {
-  return runJsonCommand<AwsCallerIdentity>("aws", ["sts", "get-caller-identity", "--output", "json"]);
+  return runJsonCommand<AwsCallerIdentity>("aws", [
+    "sts",
+    "get-caller-identity",
+    "--output",
+    "json",
+  ]);
 }
 
 export function buildSiteBucketName(accountId: string) {
@@ -94,13 +99,18 @@ export function buildSiteBucketName(accountId: string) {
 
 export function resolveHostedZones() {
   const [canonicalDomain, ...redirectDomains] = getHostedDomains();
+  const [firstRedirectDomain, secondRedirectDomain, thirdRedirectDomain] = redirectDomains;
+
+  if (!firstRedirectDomain || !secondRedirectDomain || !thirdRedirectDomain) {
+    throw new Error("Expected exactly three redirect domains in the deployment config.");
+  }
 
   return {
     canonical: resolveHostedZoneId(canonicalDomain),
     redirects: [
-      resolveHostedZoneId(redirectDomains[0]!),
-      resolveHostedZoneId(redirectDomains[1]!),
-      resolveHostedZoneId(redirectDomains[2]!),
+      resolveHostedZoneId(firstRedirectDomain),
+      resolveHostedZoneId(secondRedirectDomain),
+      resolveHostedZoneId(thirdRedirectDomain),
     ],
   } satisfies ResolvedHostedZones;
 }
@@ -121,8 +131,17 @@ export function validateAwsTemplate(templatePath = getAwsTemplatePath()) {
 export function loadStackState(stackName = deploymentConfig.awsStackName): AwsStackState {
   const result = runCommand(
     "aws",
-    ["cloudformation", "describe-stacks", "--region", deploymentConfig.awsRegion, "--stack-name", stackName, "--output", "json"],
-    { allowFailure: true }
+    [
+      "cloudformation",
+      "describe-stacks",
+      "--region",
+      deploymentConfig.awsRegion,
+      "--stack-name",
+      stackName,
+      "--output",
+      "json",
+    ],
+    { allowFailure: true },
   );
 
   if (result.status !== 0) {
@@ -134,7 +153,9 @@ export function loadStackState(stackName = deploymentConfig.awsStackName): AwsSt
       };
     }
 
-    throw new Error(result.stderr || result.stdout || `Failed to load stack state for ${stackName}.`);
+    throw new Error(
+      result.stderr || result.stdout || `Failed to load stack state for ${stackName}.`,
+    );
   }
 
   const response = JSON.parse(result.stdout) as DescribeStacksResponse;
@@ -151,8 +172,11 @@ export function loadStackState(stackName = deploymentConfig.awsStackName): AwsSt
     exists: true,
     outputs: Object.fromEntries(
       (stack.Outputs ?? [])
-        .filter((output): output is Required<Pick<StackOutputRecord, "OutputKey" | "OutputValue">> => Boolean(output.OutputKey && output.OutputValue))
-        .map(output => [output.OutputKey, output.OutputValue])
+        .filter(
+          (output): output is Required<Pick<StackOutputRecord, "OutputKey" | "OutputValue">> =>
+            Boolean(output.OutputKey && output.OutputValue),
+        )
+        .map((output) => [output.OutputKey, output.OutputValue]),
     ),
     stackId: stack.StackId,
     stackName: stack.StackName,
@@ -160,7 +184,11 @@ export function loadStackState(stackName = deploymentConfig.awsStackName): AwsSt
   };
 }
 
-export function createStackChangeSet(hostedZones: ResolvedHostedZones, bucketName: string, stackExists: boolean) {
+export function createStackChangeSet(
+  hostedZones: ResolvedHostedZones,
+  bucketName: string,
+  stackExists: boolean,
+) {
   const changeSetType: "CREATE" | "UPDATE" = stackExists ? "UPDATE" : "CREATE";
   const changeSetName = `${deploymentConfig.awsStackName}-${Date.now()}`;
   const redirectDomains = deploymentConfig.redirectDomains;
@@ -223,7 +251,7 @@ export function waitForChangeSet(changeSetName: string, changeSetType: "CREATE" 
         changeSetName,
         changeSetType,
         changes:
-          response.Changes?.map(change => ({
+          response.Changes?.map((change) => ({
             action: change.ResourceChange?.Action ?? "Unknown",
             logicalResourceId: change.ResourceChange?.LogicalResourceId ?? "Unknown",
             replacement: change.ResourceChange?.Replacement ?? "Unknown",
@@ -237,7 +265,7 @@ export function waitForChangeSet(changeSetName: string, changeSetType: "CREATE" 
 
     if (status === "FAILED") {
       const noChangePatterns = [/didn'?t contain changes/i, /no updates are to be performed/i];
-      const isEmpty = noChangePatterns.some(pattern => pattern.test(statusReason));
+      const isEmpty = noChangePatterns.some((pattern) => pattern.test(statusReason));
 
       if (!isEmpty) {
         throw new Error(`Change set ${changeSetName} failed: ${statusReason}`);
@@ -272,7 +300,15 @@ export function executeChangeSet(changeSetName: string, changeSetType: "CREATE" 
   ]);
 
   const waiter = changeSetType === "CREATE" ? "stack-create-complete" : "stack-update-complete";
-  runCommand("aws", ["cloudformation", "wait", waiter, "--region", deploymentConfig.awsRegion, "--stack-name", deploymentConfig.awsStackName]);
+  runCommand("aws", [
+    "cloudformation",
+    "wait",
+    waiter,
+    "--region",
+    deploymentConfig.awsRegion,
+    "--stack-name",
+    deploymentConfig.awsStackName,
+  ]);
 }
 
 export function deleteChangeSet(changeSetName: string) {
@@ -288,7 +324,7 @@ export function deleteChangeSet(changeSetName: string) {
       "--change-set-name",
       changeSetName,
     ],
-    { allowFailure: true }
+    { allowFailure: true },
   );
 }
 
@@ -305,7 +341,9 @@ function resolveHostedZoneId(domain: string) {
   ]);
 
   const expectedZoneName = `${domain}.`;
-  const maybeZone = response.HostedZones.find(zone => zone.Name === expectedZoneName && zone.Config?.PrivateZone !== true);
+  const maybeZone = response.HostedZones.find(
+    (zone) => zone.Name === expectedZoneName && zone.Config?.PrivateZone !== true,
+  );
 
   if (!maybeZone) {
     throw new Error(`Could not find a public Route 53 hosted zone for ${domain}.`);

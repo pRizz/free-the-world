@@ -20,29 +20,37 @@ test("writeDeploySummary writes markdown and json summaries under the gitignored
       step: "plan",
     });
 
-    const result = await writeDeploySummary({
-      appliedChanges: ["Uploaded index.html"],
-      artifactDir: ".artifacts/deploy/aws",
-      artifactHash: "abc123",
-      command: "deploy:aws:publish",
-      discoveredRemoteState: { bucket: "example-bucket" },
-      mode: "check",
-      plannedChanges: { uploads: ["index.html"] },
-      resultingUrls: ["https://free-the-world.com/"],
-      skippedReasons: ["Check mode only"],
-      target: "aws",
-      verificationResults: [
-        {
-          detail: "Manifest comparison completed.",
-          name: "manifest",
-          status: "passed",
-        },
-      ],
-    }, { runDirectory: run.runDirectory });
+    const result = await writeDeploySummary(
+      {
+        appliedChanges: ["Uploaded index.html"],
+        artifactDir: ".artifacts/deploy/aws",
+        artifactHash: "abc123",
+        command: "deploy:aws:publish",
+        discoveredRemoteState: { bucket: "example-bucket" },
+        mode: "check",
+        plannedChanges: { uploads: ["index.html"] },
+        resultingUrls: ["https://free-the-world.com/"],
+        skippedReasons: ["Check mode only"],
+        target: "aws",
+        verificationResults: [
+          {
+            detail: "Manifest comparison completed.",
+            name: "manifest",
+            status: "passed",
+          },
+        ],
+      },
+      { runDirectory: run.runDirectory },
+    );
 
     const jsonContent = await readFile(result.jsonPath, "utf8");
     const summaryJson = JSON.parse(jsonContent) as {
-      breadcrumbs?: Array<{ durationMs?: number; elapsedMs?: number; startedAt?: string; step: string }>;
+      breadcrumbs?: Array<{
+        durationMs?: number;
+        elapsedMs?: number;
+        startedAt?: string;
+        step: string;
+      }>;
       command: string;
       timing?: { completedAt: string; durationMs: number; startedAt: string };
     };

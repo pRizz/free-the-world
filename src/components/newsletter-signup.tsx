@@ -1,7 +1,7 @@
-import { newsletterContent } from "~/lib/content/newsletter";
 import { PageHeader } from "~/components/blocks/page-header";
 import { Button } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
+import { newsletterContent } from "~/lib/content/newsletter";
 
 export function NewsletterSignup() {
   return (
@@ -15,16 +15,23 @@ export function NewsletterSignup() {
 
         <div class="hidden space-y-3 text-sm leading-7 text-muted-foreground">
           <p>
-            The embed is intentionally simple for v1 because Substack's native iframe does not offer much styling
-            control. That felt preferable to pretending a bespoke funnel is somehow the urgent bottleneck here.
+            The embed is intentionally simple for v1 because Substack's native iframe does not offer
+            much styling control. That felt preferable to pretending a bespoke funnel is somehow the
+            urgent bottleneck here.
           </p>
           <p>
-            If the embed ever becomes too rigid, the integration is isolated so the signup flow can be replaced
-            without rebuilding the site around it.
+            If the embed ever becomes too rigid, the integration is isolated so the signup flow can
+            be replaced without rebuilding the site around it.
           </p>
         </div>
 
-        <Button as="a" href={newsletterContent.publicationUrl} target="_blank" rel="noreferrer" variant="secondary">
+        <Button
+          as="a"
+          href={newsletterContent.publicationUrl}
+          target="_blank"
+          rel="noreferrer"
+          variant="secondary"
+        >
           Open publication in a new tab
         </Button>
       </div>

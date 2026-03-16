@@ -400,3 +400,21 @@ Residual risks:
   Verification: `bun run company:init --queued=<slug>` succeeded for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble`; canonical manifests now exist under `content/manifests/companies/` and the corresponding queue entries were removed.
 - [ ] Run Ralph sync for each promoted company.
   Verification: `bun run sync:company --company=<slug> --provider=auto --mode=dry-run` succeeds for each new company.
+
+# Standard Bun Linting With Biome
+
+- [x] Add Biome as a dev dependency, expose `lint` / `lint:fix` / `format` Bun scripts, and add a scoped root `biome.json`.
+  Verification: `bun run lint --help` resolves via package scripts and `biome.json` excludes generated/content/build paths.
+- [x] Run the initial Biome cleanup across scoped code/config files and fix any remaining diagnostics without broad rule disablement.
+  Verification: `bun run lint` passes cleanly and ignored paths such as `src/lib/generated/content-graph.ts` and `content/` are not reported.
+- [x] Update developer docs for the new local lint workflow and complete the core verification pass.
+  Verification: `bun run lint`, `bun run typecheck`, `bun run test`, and `bun run build`
+
+Completion review:
+- Added Biome 2.4.7 as the repo’s lint/format tool, exposed it through `bun run lint`, `bun run lint:fix`, and `bun run format`, and committed a root `biome.json` that scopes linting to app/script/test/config code.
+- Ran the initial formatter/import-order cleanup across the scoped files, then fixed the remaining typed/runtime diagnostics directly and used one narrow `biome-ignore` for the shared `Label` primitive’s caller-associated accessibility contract.
+- Updated the README with a local verification section and an explicit note that editorial content, generated runtime data, and build artifacts are intentionally outside the v1 lint baseline.
+
+Residual risks:
+- This first adoption rewrote a large number of existing source files to establish a Biome baseline, so future reviews should expect one large normalization diff before subsequent lint-only changes get smaller again.
+- Linting is still local-first in this pass. GitHub Actions does not enforce `bun run lint` yet, so CI gating remains a follow-up rather than part of this rollout.

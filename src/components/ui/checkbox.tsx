@@ -7,14 +7,16 @@ import { cn } from "~/lib/utils";
 export const Checkbox = KCheckbox.Root;
 export const CheckboxInput = KCheckbox.Input;
 
-export function CheckboxControl(props: ParentProps<KCheckbox.CheckboxControlProps & { class?: string }>) {
+export function CheckboxControl(
+  props: ParentProps<KCheckbox.CheckboxControlProps & { class?: string }>,
+) {
   const [local, rest] = splitProps(props, ["class", "children"]);
 
   return (
     <KCheckbox.Control
       class={cn(
         "flex h-4 w-4 shrink-0 items-center justify-center rounded border border-border bg-card text-primary-foreground transition data-[checked]:border-primary data-[checked]:bg-primary",
-        local.class
+        local.class,
       )}
       {...rest}
     >
@@ -32,7 +34,9 @@ export function CheckboxIndicator(props: KCheckbox.CheckboxIndicatorProps & { cl
   );
 }
 
-export function CheckboxLabel(props: ParentProps<KCheckbox.CheckboxLabelProps & { class?: string }>) {
+export function CheckboxLabel(
+  props: ParentProps<KCheckbox.CheckboxLabelProps & { class?: string }>,
+) {
   const [local, rest] = splitProps(props, ["class", "children"]);
   return (
     <KCheckbox.Label class={cn("text-sm text-foreground", local.class)} {...rest}>

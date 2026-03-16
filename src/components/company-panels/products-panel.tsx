@@ -17,18 +17,27 @@ export function CompanyProductsPanel(props: { company: Company; products: Produc
       />
       <div class="space-y-4">
         <For each={props.products}>
-          {product => (
+          {(product) => (
             <article class="rounded-2xl border border-border bg-card p-4">
               <div class="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
                 <div class="space-y-2">
-                  <A href={`/companies/${props.company.slug}/products/${product.slug}`} class="text-lg font-medium hover:text-accent-foreground">
+                  <A
+                    href={`/companies/${props.company.slug}/products/${product.slug}`}
+                    class="text-lg font-medium hover:text-accent-foreground"
+                  >
                     {product.name}
                   </A>
-                  <p class="text-sm uppercase tracking-[0.22em] text-muted-foreground">{product.category}</p>
+                  <p class="text-sm uppercase tracking-[0.22em] text-muted-foreground">
+                    {product.category}
+                  </p>
                   <p class="max-w-3xl text-sm leading-7 text-muted-foreground">{product.summary}</p>
                 </div>
                 <ActionRow class="shrink-0">
-                  <Button as="a" href={withBasePath(`/companies/${props.company.slug}/products/${product.slug}`)} variant="secondary">
+                  <Button
+                    as="a"
+                    href={withBasePath(`/companies/${props.company.slug}/products/${product.slug}`)}
+                    variant="secondary"
+                  >
                     Open analysis
                   </Button>
                 </ActionRow>

@@ -2,8 +2,8 @@ import { ContentCard } from "~/components/blocks/content-card";
 import { MetadataGrid } from "~/components/blocks/metadata-grid";
 import { PageHeader } from "~/components/blocks/page-header";
 import { Seo } from "~/components/seo";
-import { aboutSections } from "~/lib/content/site";
 import { siteConfig } from "~/lib/config";
+import { aboutSections } from "~/lib/content/site";
 
 export default function About() {
   const buildInfo = siteConfig.buildInfo;
@@ -32,8 +32,8 @@ export default function About() {
                   Build metadata
                 </h2>
                 <p class="max-w-2xl text-sm text-muted-foreground">
-                  This static artifact is tied to a specific git revision so the published site can be traced back to
-                  the exact source snapshot.
+                  This static artifact is tied to a specific git revision so the published site can
+                  be traced back to the exact source snapshot.
                 </p>
               </div>
 
@@ -70,11 +70,11 @@ export default function About() {
           </ContentCard>
         ) : null}
 
-        {aboutSections.map(section => (
+        {aboutSections.map((section) => (
           <ContentCard class="space-y-4">
             <h2 class="text-2xl font-semibold tracking-tight">{section.title}</h2>
             <div class="prose-block">
-              {section.paragraphs.map(paragraph => (
+              {section.paragraphs.map((paragraph) => (
                 <p>{paragraph}</p>
               ))}
             </div>

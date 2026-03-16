@@ -1,10 +1,12 @@
 import { expect, test } from "@playwright/test";
 import { gotoRoute } from "./support";
 
-test("registry shows the IPO columns by default and renders Apple's IPO metrics", async ({ page }) => {
+test("registry shows the IPO columns by default and renders Apple's IPO metrics", async ({
+  page,
+}) => {
   await gotoRoute(page, "/companies");
   await page.getByPlaceholder("Search by name, ticker, sector, or thesis").fill("Apple");
-  await page.locator(".table-viewport").evaluate(element => {
+  await page.locator(".table-viewport").evaluate((element) => {
     element.scrollLeft = element.scrollWidth;
   });
 
@@ -24,8 +26,10 @@ test("registry shows the IPO columns by default and renders Apple's IPO metrics"
 
 test("registry renders missing IPO metrics as dashes for Berkshire Hathaway", async ({ page }) => {
   await gotoRoute(page, "/companies");
-  await page.getByPlaceholder("Search by name, ticker, sector, or thesis").fill("Berkshire Hathaway");
-  await page.locator(".table-viewport").evaluate(element => {
+  await page
+    .getByPlaceholder("Search by name, ticker, sector, or thesis")
+    .fill("Berkshire Hathaway");
+  await page.locator(".table-viewport").evaluate((element) => {
     element.scrollLeft = element.scrollWidth;
   });
 

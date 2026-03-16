@@ -1,13 +1,17 @@
-import type { RalphProviderPreference, ResearchRunManifest, ResearchTaskId } from "../src/lib/domain/content-types";
+import type {
+  RalphProviderPreference,
+  ResearchRunManifest,
+  ResearchTaskId,
+} from "../src/lib/domain/content-types";
 import { writeJsonFile } from "./lib/content";
-import { collectLoopTargets } from "./lib/ralph-loop-targets";
 import { ensureRunDir, parseArgs, parseList, promptTasks, runLoopTask } from "./lib/ralph";
+import { collectLoopTargets } from "./lib/ralph-loop-targets";
 
 const args = parseArgs(process.argv.slice(2));
 
 if (args.help === "true") {
   console.log(
-    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--batch-id=<id>] [--provider=auto|codex|claude|both] [--execute=true]"
+    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--batch-id=<id>] [--provider=auto|codex|claude|both] [--execute=true]",
   );
   process.exit(0);
 }
@@ -18,7 +22,9 @@ const batchId = args["batch-id"]?.trim() || undefined;
 const providerPreference = (args.provider ?? "auto") as RalphProviderPreference;
 const shouldExecute = args.execute === "true" || args.execute === "1";
 const taskIds =
-  requestedTaskIds.length > 0 ? requestedTaskIds : promptTasks.filter(task => task.id !== "company-sync").map(task => task.id);
+  requestedTaskIds.length > 0
+    ? requestedTaskIds
+    : promptTasks.filter((task) => task.id !== "company-sync").map((task) => task.id);
 const targets = await collectLoopTargets({
   requestedCompanySlugs,
   batchId,
@@ -29,7 +35,7 @@ if (batchId && taskIds.includes("company-sync")) {
     [
       "Queued batch runs only support low-level Ralph loop tasks.",
       "Fix: remove --task=company-sync from the batch run, or promote the manifest first and use bun run sync:company --company=<slug>.",
-    ].join("\n")
+    ].join("\n"),
   );
 }
 
@@ -56,7 +62,9 @@ for (const target of targets) {
     batchId: target.batchId,
     mode: "dry-run",
     requestedProvider: providerPreference,
-    resolvedProviders: shouldExecute ? [...new Set(taskResults.map(result => result.provider))] : [],
+    resolvedProviders: shouldExecute
+      ? [...new Set(taskResults.map((result) => result.provider))]
+      : [],
     taskResults,
     generatedOn: new Date().toISOString(),
   };

@@ -5,6 +5,9 @@
     "dev": "bun run content:compile && vinxi dev",
     "dev:test": "bun run content:compile && vinxi dev --port=4173 --host",
     "build": "bun run scripts/build-site.ts",
+    "format": "biome format --write .",
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
     "start": "bun run scripts/serve-static.ts",
     "preview": "bun run start",
     "deploy:build": "bun run scripts/deploy/build.ts",
@@ -46,6 +49,7 @@
     "vinxi": "^0.5.11"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.4.7",
     "@playwright/test": "^1.58.2",
     "@tailwindcss/vite": "^4.0.7",
     "@types/bun": "^1.3.10",

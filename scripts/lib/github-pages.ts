@@ -24,7 +24,9 @@ export interface WaitForPagesDeploymentEnv {
 
 export type PagesDeploymentPhase = "success" | "failure" | "pending";
 
-export function loadCreatePagesDeploymentEnv(env: Record<string, string | undefined>): CreatePagesDeploymentEnv {
+export function loadCreatePagesDeploymentEnv(
+  env: Record<string, string | undefined>,
+): CreatePagesDeploymentEnv {
   return {
     artifactId: getRequiredIntegerEnv(env, "ARTIFACT_ID"),
     githubOutput: getRequiredEnv(env, "GITHUB_OUTPUT"),
@@ -36,7 +38,9 @@ export function loadCreatePagesDeploymentEnv(env: Record<string, string | undefi
   };
 }
 
-export function loadWaitForPagesDeploymentEnv(env: Record<string, string | undefined>): WaitForPagesDeploymentEnv {
+export function loadWaitForPagesDeploymentEnv(
+  env: Record<string, string | undefined>,
+): WaitForPagesDeploymentEnv {
   return {
     deploymentId: getRequiredEnv(env, "DEPLOYMENT_ID"),
     githubRepository: getRequiredEnv(env, "GITHUB_REPOSITORY"),

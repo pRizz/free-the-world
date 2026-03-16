@@ -1,13 +1,17 @@
 import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
-import type { CompanyManifest, ManifestQueueEntry, ResearchTaskId } from "../../../src/lib/domain/content-types";
+import type {
+  CompanyManifest,
+  ManifestQueueEntry,
+  ResearchTaskId,
+} from "../../../src/lib/domain/content-types";
 
 export async function writeMinimalFixture(
   root: string,
   overrides: {
     companySourceIds?: string[];
     manifest?: Partial<CompanyManifest>;
-  } = {}
+  } = {},
 ) {
   await mkdir(path.join(root, "taxonomy"), { recursive: true });
   await mkdir(path.join(root, "manifests", "companies"), { recursive: true });
@@ -16,7 +20,9 @@ export async function writeMinimalFixture(
   await mkdir(path.join(root, "sources"), { recursive: true });
   await mkdir(path.join(root, "prompts"), { recursive: true });
 
-  await writeJson(path.join(root, "taxonomy", "regions.json"), [{ id: "us", label: "United States" }]);
+  await writeJson(path.join(root, "taxonomy", "regions.json"), [
+    { id: "us", label: "United States" },
+  ]);
   await writeJson(path.join(root, "taxonomy", "indices.json"), [
     {
       id: "sp500-top10",
@@ -105,7 +111,10 @@ export async function writeMinimalFixture(
     accessedOn: "2026-03-14",
   });
 
-  await writeJson(path.join(root, "manifests", "companies", "fixtureco.json"), buildManifest(overrides.manifest));
+  await writeJson(
+    path.join(root, "manifests", "companies", "fixtureco.json"),
+    buildManifest(overrides.manifest),
+  );
   await writeLoopPromptFixtures(root);
 
   await writeJson(path.join(root, "companies", "fixtureco", "bundle.json"), {
@@ -129,7 +138,10 @@ export async function writeMinimalFixture(
         },
       ],
       moatNarrative: ["Moat paragraph one", "Moat paragraph two"],
-      decentralizationNarrative: ["Decentralization paragraph one", "Decentralization paragraph two"],
+      decentralizationNarrative: [
+        "Decentralization paragraph one",
+        "Decentralization paragraph two",
+      ],
       sourceIds: overrides.companySourceIds ?? ["fixture-source"],
       technologyWaveIds: ["bitcoin-native-coordination"],
       snapshotNote: "Fixture snapshot",
@@ -194,7 +206,7 @@ export function buildManifest(overrides: Partial<CompanyManifest> = {}): Company
 
 export function buildQueueEntry(
   manifest: CompanyManifest,
-  overrides: Partial<ManifestQueueEntry> = {}
+  overrides: Partial<ManifestQueueEntry> = {},
 ): ManifestQueueEntry {
   return {
     schemaVersion: 1,
@@ -214,13 +226,16 @@ export async function writeJson(targetFile: string, value: unknown) {
 
 async function writeLoopPromptFixtures(root: string) {
   const promptContents: Record<Exclude<ResearchTaskId, "company-sync">, string> = {
-    "company-overview": "Company {{companyName}} ({{ticker}})\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
-    "moat-analysis": "Moat {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "company-overview":
+      "Company {{companyName}} ({{ticker}})\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "moat-analysis":
+      "Moat {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
     "decentralization-analysis":
       "Decentralization {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
     "product-alternatives":
       "Alternatives {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
-    "source-gathering": "Sources {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "source-gathering":
+      "Sources {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
   };
 
   const promptFiles: Array<[string, string]> = [

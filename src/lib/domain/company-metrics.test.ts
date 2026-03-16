@@ -12,7 +12,10 @@ function makeAssessment(value: number): MetricAssessment {
   };
 }
 
-function makeCompany(slug: string, metrics: Partial<Record<CompanyMetricId, MetricAssessment>>): Company {
+function makeCompany(
+  slug: string,
+  metrics: Partial<Record<CompanyMetricId, MetricAssessment>>,
+): Company {
   return {
     slug,
     name: slug,
@@ -48,7 +51,7 @@ test("sortCompaniesByMetric keeps missing values at the bottom when sorting desc
   const sortedCompanies = sortCompaniesByMetric(companies, "ipoAnnualizedGrowthRate", "desc");
 
   // Assert
-  expect(sortedCompanies.map(company => company.slug)).toEqual(["high", "low", "missing"]);
+  expect(sortedCompanies.map((company) => company.slug)).toEqual(["high", "low", "missing"]);
 });
 
 test("sortCompaniesByMetric keeps missing values at the bottom when sorting ascending", () => {
@@ -63,5 +66,5 @@ test("sortCompaniesByMetric keeps missing values at the bottom when sorting asce
   const sortedCompanies = sortCompaniesByMetric(companies, "ipoAnnualizedGrowthRate", "asc");
 
   // Assert
-  expect(sortedCompanies.map(company => company.slug)).toEqual(["low", "high", "missing"]);
+  expect(sortedCompanies.map((company) => company.slug)).toEqual(["low", "high", "missing"]);
 });

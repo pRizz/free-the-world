@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { mkdtemp, mkdir, readFile, rm } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
+import { mkdir, mkdtemp, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -34,7 +34,7 @@ test("company:queue accepts a valid manifest draft and preserves batch metadata"
       ticker: "NEW",
       companiesMarketCapUrl: "https://example.com/newco",
       description: "New company",
-    })
+    }),
   );
 
   const result = runCli([
@@ -48,7 +48,7 @@ test("company:queue accepts a valid manifest draft and preserves batch metadata"
   expect(result.status).toBe(0);
 
   const queuedEntry = JSON.parse(
-    await readFile(path.join(tempRoot, "manifests", "queue", "newco.json"), "utf8")
+    await readFile(path.join(tempRoot, "manifests", "queue", "newco.json"), "utf8"),
   ) as {
     status: string;
     createdOn: string;
@@ -76,7 +76,9 @@ test("company:queue rejects canonical slug collisions", async () => {
   const result = runCli(["company:queue", `--manifest=${manifestFile}`]);
 
   expect(result.status).not.toBe(0);
-  expect(`${result.stdout}\n${result.stderr}`).toContain("Canonical manifest fixtureco already exists.");
+  expect(`${result.stdout}\n${result.stderr}`).toContain(
+    "Canonical manifest fixtureco already exists.",
+  );
 });
 
 test("company:queue rejects queued slug collisions", async () => {
@@ -92,14 +94,16 @@ test("company:queue rejects queued slug collisions", async () => {
       ticker: "NEW",
       companiesMarketCapUrl: "https://example.com/newco",
       description: "New company",
-    })
+    }),
   );
 
   expect(runCli(["company:queue", `--manifest=${manifestFile}`]).status).toBe(0);
 
   const duplicateResult = runCli(["company:queue", `--manifest=${manifestFile}`]);
   expect(duplicateResult.status).not.toBe(0);
-  expect(`${duplicateResult.stdout}\n${duplicateResult.stderr}`).toContain("Queued manifest newco already exists.");
+  expect(`${duplicateResult.stdout}\n${duplicateResult.stderr}`).toContain(
+    "Queued manifest newco already exists.",
+  );
 });
 
 test("company:init --queued promotes a queued manifest and removes the queue entry", async () => {
@@ -115,7 +119,7 @@ test("company:init --queued promotes a queued manifest and removes the queue ent
       ticker: "NEW",
       companiesMarketCapUrl: "https://example.com/newco",
       description: "New company",
-    })
+    }),
   );
 
   expect(runCli(["company:queue", `--manifest=${manifestFile}`]).status).toBe(0);
@@ -124,11 +128,13 @@ test("company:init --queued promotes a queued manifest and removes the queue ent
   expect(promotionResult.status).toBe(0);
 
   const canonicalManifest = JSON.parse(
-    await readFile(path.join(tempRoot, "manifests", "companies", "newco.json"), "utf8")
+    await readFile(path.join(tempRoot, "manifests", "companies", "newco.json"), "utf8"),
   ) as { slug: string };
   expect(canonicalManifest.slug).toBe("newco");
 
-  await expect(readFile(path.join(tempRoot, "manifests", "queue", "newco.json"), "utf8")).rejects.toThrow();
+  await expect(
+    readFile(path.join(tempRoot, "manifests", "queue", "newco.json"), "utf8"),
+  ).rejects.toThrow();
 });
 
 test("company:init --manifest continues to promote a direct manifest file", async () => {
@@ -144,14 +150,14 @@ test("company:init --manifest continues to promote a direct manifest file", asyn
       ticker: "NEW",
       companiesMarketCapUrl: "https://example.com/newco",
       description: "New company",
-    })
+    }),
   );
 
   const result = runCli(["company:init", `--manifest=${manifestFile}`]);
   expect(result.status).toBe(0);
 
   const canonicalManifest = JSON.parse(
-    await readFile(path.join(tempRoot, "manifests", "companies", "newco.json"), "utf8")
+    await readFile(path.join(tempRoot, "manifests", "companies", "newco.json"), "utf8"),
   ) as { slug: string };
   expect(canonicalManifest.slug).toBe("newco");
 });

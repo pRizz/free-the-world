@@ -1,7 +1,7 @@
 import { For } from "solid-js";
-import { Badge } from "~/components/ui/badge";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import { Badge } from "~/components/ui/badge";
 import type { TechnologyWave } from "~/lib/domain/types";
 
 export function TechnologyWavePanel(props: { waves: TechnologyWave[] }) {
@@ -14,7 +14,7 @@ export function TechnologyWavePanel(props: { waves: TechnologyWave[] }) {
       />
       <div class="space-y-4">
         <For each={props.waves}>
-          {wave => (
+          {(wave) => (
             <article class="rounded-2xl border border-border bg-card p-4">
               <div class="space-y-3">
                 <div class="flex flex-wrap gap-2">
@@ -22,7 +22,7 @@ export function TechnologyWavePanel(props: { waves: TechnologyWave[] }) {
                 </div>
                 <p class="text-sm leading-7 text-muted-foreground">{wave.summary}</p>
                 <ul class="space-y-2 text-sm leading-7 text-muted-foreground">
-                  <For each={wave.implications}>{implication => <li>• {implication}</li>}</For>
+                  <For each={wave.implications}>{(implication) => <li>• {implication}</li>}</For>
                 </ul>
               </div>
             </article>

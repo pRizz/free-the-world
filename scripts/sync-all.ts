@@ -6,7 +6,7 @@ const args = parseArgs(process.argv.slice(2));
 
 if (args.help === "true") {
   console.log(
-    "Usage: bun run sync:all [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--stale-only=true] [--no-commit=true]"
+    "Usage: bun run sync:all [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--stale-only=true] [--no-commit=true]",
   );
   process.exit(0);
 }

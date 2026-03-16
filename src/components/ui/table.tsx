@@ -1,20 +1,22 @@
 import {
+  type ComponentProps,
   createSignal,
+  type JSX,
   onCleanup,
   onMount,
-  splitProps,
-  type ComponentProps,
-  type JSX,
   type ParentProps,
+  splitProps,
   type ValidComponent,
 } from "solid-js";
 import { Dynamic } from "solid-js/web";
 import { cn } from "~/lib/utils";
 
-type PrimitiveProps<T extends ValidComponent = "div"> = ParentProps<{
-  as?: T;
-  class?: string;
-} & ComponentProps<T>>;
+type PrimitiveProps<T extends ValidComponent = "div"> = ParentProps<
+  {
+    as?: T;
+    class?: string;
+  } & ComponentProps<T>
+>;
 
 type TableProps = ParentProps<
   ComponentProps<"div"> & {
@@ -30,14 +32,16 @@ const edgeFadeBlurStyle: JSX.CSSProperties = {
 
 const leftEdgeFadeStyle: JSX.CSSProperties = {
   ...edgeFadeBlurStyle,
-  "mask-image": "linear-gradient(90deg, rgb(0 0 0 / 1) 0%, rgb(0 0 0 / 1) 40%, rgb(0 0 0 / 0.72) 62%, transparent 100%)",
+  "mask-image":
+    "linear-gradient(90deg, rgb(0 0 0 / 1) 0%, rgb(0 0 0 / 1) 40%, rgb(0 0 0 / 0.72) 62%, transparent 100%)",
   "-webkit-mask-image":
     "linear-gradient(90deg, rgb(0 0 0 / 1) 0%, rgb(0 0 0 / 1) 40%, rgb(0 0 0 / 0.72) 62%, transparent 100%)",
 };
 
 const rightEdgeFadeStyle: JSX.CSSProperties = {
   ...edgeFadeBlurStyle,
-  "mask-image": "linear-gradient(270deg, rgb(0 0 0 / 1) 0%, rgb(0 0 0 / 1) 40%, rgb(0 0 0 / 0.72) 62%, transparent 100%)",
+  "mask-image":
+    "linear-gradient(270deg, rgb(0 0 0 / 1) 0%, rgb(0 0 0 / 1) 40%, rgb(0 0 0 / 0.72) 62%, transparent 100%)",
   "-webkit-mask-image":
     "linear-gradient(270deg, rgb(0 0 0 / 1) 0%, rgb(0 0 0 / 1) 40%, rgb(0 0 0 / 0.72) 62%, transparent 100%)",
 };
@@ -149,9 +153,15 @@ export function Table(props: TableProps) {
   });
 
   return (
-    <div class={cn("table-shell relative overflow-hidden rounded-2xl border border-border", local.class)} {...rest}>
+    <div
+      class={cn(
+        "table-shell relative overflow-hidden rounded-2xl border border-border",
+        local.class,
+      )}
+      {...rest}
+    >
       <div
-        ref={element => {
+        ref={(element) => {
           viewportRef = element;
         }}
         class="table-viewport overflow-x-auto"
@@ -181,7 +191,10 @@ export function Table(props: TableProps) {
 }
 
 export const TableElement = primitive("table", "min-w-full border-collapse text-left text-sm");
-export const TableHeader = primitive("thead", "bg-card text-xs uppercase tracking-[0.24em] text-muted-foreground");
+export const TableHeader = primitive(
+  "thead",
+  "bg-card text-xs uppercase tracking-[0.24em] text-muted-foreground",
+);
 export const TableBody = primitive("tbody", "");
 export const TableRow = primitive("tr", "border-t border-border align-top");
 export const TableHead = primitive("th", "px-4 py-4 font-medium");

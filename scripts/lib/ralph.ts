@@ -1,22 +1,23 @@
-import { access, appendFile, mkdir, readFile, readdir, writeFile } from "node:fs/promises";
+import { type ChildProcessWithoutNullStreams, spawn, spawnSync } from "node:child_process";
 import { accessSync, constants as fsConstants } from "node:fs";
+import { access, appendFile, mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { spawn, spawnSync, type ChildProcessWithoutNullStreams } from "node:child_process";
 import type {
+  CompanyBundle,
   CompanyManifest,
-  ResearchLoopTarget,
   CompanySyncPayload,
   RalphProviderId,
   RalphProviderPreference,
   RalphProvidersFile,
   RalphSyncMode,
+  ResearchLoopTarget,
   ResearchRunManifest,
   ResearchTaskDefinition,
   ResearchTaskId,
   ResearchTaskResult,
 } from "../../src/lib/domain/content-types";
-import { type CompanyBundle } from "../../src/lib/domain/content-types";
 import type { SourceCitation, TechnologyWave } from "../../src/lib/domain/types";
+import { getManifestFile } from "./company-intake";
 import {
   compileContent,
   contentDir,
@@ -25,7 +26,6 @@ import {
   validateAndCompile,
   writeJsonFile,
 } from "./content";
-import { getManifestFile } from "./company-intake";
 
 export const promptTasks: ResearchTaskDefinition[] = [
   {
@@ -194,7 +194,7 @@ export function parseList(value?: string) {
 
   return value
     .split(",")
-    .map(entry => entry.trim())
+    .map((entry) => entry.trim())
     .filter(Boolean);
 }
 
@@ -219,7 +219,9 @@ function createTraceLogger(runDir: string, scope: string): RalphTraceLogger {
       details,
     };
     const line = JSON.stringify(payload);
-    console.log(`[ralph] ${scope} ${event}${Object.keys(details).length > 0 ? ` ${JSON.stringify(details)}` : ""}`);
+    console.log(
+      `[ralph] ${scope} ${event}${Object.keys(details).length > 0 ? ` ${JSON.stringify(details)}` : ""}`,
+    );
     await appendFile(traceFile, `${line}\n`, "utf8");
   };
 }
@@ -239,16 +241,14 @@ export async function loadProviderConfig(): Promise<RalphProvidersFile> {
       await access(providerConfigFile, fsConstants.F_OK);
       const rawText = await readFile(providerConfigFile, "utf8");
       return JSON.parse(rawText) as RalphProvidersFile;
-    } catch {
-      continue;
-    }
+    } catch {}
   }
 
   throw new Error(
     [
       "No Ralph provider config found.",
       `Fix: copy ${path.relative(rootDir, exampleProviderConfigFile)} to ${path.relative(rootDir, localProviderConfigFile)} for local overrides, or add a provider config at one of those paths.`,
-    ].join("\n")
+    ].join("\n"),
   );
 }
 
@@ -261,10 +261,12 @@ export function detectProviderAvailability(providerConfig: RalphProvidersFile) {
 
 export function resolveProviders(
   providerPreference: RalphProviderPreference,
-  providerConfig: RalphProvidersFile
+  providerConfig: RalphProvidersFile,
 ): RalphProviderId[] {
   const availability = detectProviderAvailability(providerConfig);
-  const orderedProviders = providerConfig.defaultProviderOrder.filter(provider => availability[provider]);
+  const orderedProviders = providerConfig.defaultProviderOrder.filter(
+    (provider) => availability[provider],
+  );
   const configGuidance = `Check ${path.relative(rootDir, exampleProviderConfigFile)} and ${path.relative(rootDir, localProviderConfigFile)}.`;
 
   if (providerPreference === "auto") {
@@ -274,7 +276,7 @@ export function resolveProviders(
           "No configured Ralph providers are available.",
           `Configured commands: codex=${providerConfig.providers.codex.command} (available=${availability.codex}), claude=${providerConfig.providers.claude.command} (available=${availability.claude}).`,
           `Fix: install one of the configured provider commands or update the provider config. ${configGuidance}`,
-        ].join("\n")
+        ].join("\n"),
       );
     }
 
@@ -287,7 +289,7 @@ export function resolveProviders(
         [
           `Provider preference "both" requires both providers to be available. codex=${availability.codex}, claude=${availability.claude}.`,
           `Fix: install the missing provider command(s) or update the provider config. ${configGuidance}`,
-        ].join("\n")
+        ].join("\n"),
       );
     }
 
@@ -300,7 +302,7 @@ export function resolveProviders(
         `Requested provider ${providerPreference} is not available.`,
         `Configured command: ${providerConfig.providers[providerPreference].command}.`,
         `Fix: install that command or point ${providerPreference} to an installed binary. ${configGuidance}`,
-      ].join("\n")
+      ].join("\n"),
     );
   }
 
@@ -314,14 +316,16 @@ export async function renderPrompt(templateFile: string, variables: Record<strin
 
 export async function buildCompanyContext(companySlug: string): Promise<CompanyContext> {
   const { raw } = await compileContent(contentDir);
-  const maybeManifest = raw.manifests.find(manifest => manifest.slug === companySlug);
+  const maybeManifest = raw.manifests.find((manifest) => manifest.slug === companySlug);
   if (!maybeManifest) {
     throw new Error(`Unknown company manifest: ${companySlug}`);
   }
 
-  const currentBundle = raw.bundles.find(bundle => bundle.company.slug === companySlug) ?? null;
+  const currentBundle = raw.bundles.find((bundle) => bundle.company.slug === companySlug) ?? null;
   const currentSources = currentBundle ? getReferencedSources(currentBundle, raw.sources) : [];
-  const currentTechnologyWaves = raw.technologyWaves.filter(wave => maybeManifest.technologyWaveIds.includes(wave.id));
+  const currentTechnologyWaves = raw.technologyWaves.filter((wave) =>
+    maybeManifest.technologyWaveIds.includes(wave.id),
+  );
 
   return {
     manifest: maybeManifest,
@@ -337,7 +341,7 @@ export async function buildCompanyContext(companySlug: string): Promise<CompanyC
         technologyWaves: raw.technologyWaves,
       },
       null,
-      2
+      2,
     ),
   };
 }
@@ -345,15 +349,18 @@ export async function buildCompanyContext(companySlug: string): Promise<CompanyC
 export function resolveProviderExecutionPlan(
   provider: RalphProviderId,
   variables: Record<string, string>,
-  providerConfig: RalphProvidersFile
+  providerConfig: RalphProvidersFile,
 ): ProviderExecutionPlan {
   const config = providerConfig.providers[provider];
   const templatedVariables = {
     ...variables,
-    lastMessageFile: path.join(variables.runDir, `${variables.taskId}.${provider}.last-message.txt`),
+    lastMessageFile: path.join(
+      variables.runDir,
+      `${variables.taskId}.${provider}.last-message.txt`,
+    ),
     debugFile: path.join(variables.runDir, `${variables.taskId}.${provider}.debug.log`),
   };
-  let args = config.args.map(arg => applyTemplate(arg, templatedVariables));
+  let args = config.args.map((arg) => applyTemplate(arg, templatedVariables));
 
   if (provider === "codex" && !hasOutputLastMessageFlag(args)) {
     const stdinPromptIndex = args.lastIndexOf("-");
@@ -377,7 +384,8 @@ export function resolveProviderExecutionPlan(
   return {
     command: config.command,
     args,
-    timeoutMs: config.timeoutMs && config.timeoutMs > 0 ? config.timeoutMs : defaultProviderTimeoutMs,
+    timeoutMs:
+      config.timeoutMs && config.timeoutMs > 0 ? config.timeoutMs : defaultProviderTimeoutMs,
     maybeOutputFile: resolveOutputLastMessageFile(args),
     maybeDebugFile: resolveOptionValue(args, "--debug-file"),
     outputFormat: resolveOptionValue(args, "--output-format"),
@@ -389,7 +397,7 @@ export async function executeProvider(
   prompt: string,
   variables: Record<string, string>,
   providerConfig: RalphProvidersFile,
-  trace?: RalphTraceLogger
+  trace?: RalphTraceLogger,
 ): Promise<ProviderExecutionResult> {
   const plan = resolveProviderExecutionPlan(provider, variables, providerConfig);
   const startedAt = Date.now();
@@ -403,7 +411,7 @@ export async function executeProvider(
     outputFormat: plan.outputFormat,
   });
 
-  return new Promise(resolve => {
+  return new Promise((resolve) => {
     const child = spawn(plan.command, plan.args, {
       cwd: rootDir,
       stdio: ["pipe", "pipe", "pipe"],
@@ -463,7 +471,7 @@ export async function executeProvider(
       return snapshot;
     };
 
-    child.stdout.on("data", chunk => {
+    child.stdout.on("data", (chunk) => {
       stdoutBuffer += chunk;
       stdoutChunkCount += 1;
       if (stdoutChunkCount <= 3) {
@@ -475,7 +483,7 @@ export async function executeProvider(
       }
     });
 
-    child.stderr.on("data", chunk => {
+    child.stderr.on("data", (chunk) => {
       stderr += chunk;
       stderrChunkCount += 1;
       if (stderrChunkCount <= 5) {
@@ -531,7 +539,10 @@ export async function executeProvider(
       }
 
       timedOut = true;
-      stderr = appendDiagnosticLine(stderr, `Provider ${provider} timed out after ${plan.timeoutMs}ms.`);
+      stderr = appendDiagnosticLine(
+        stderr,
+        `Provider ${provider} timed out after ${plan.timeoutMs}ms.`,
+      );
       const terminationTarget = terminateProvider(child, "SIGTERM");
       void trace?.("provider:timeout", {
         provider,
@@ -548,7 +559,7 @@ export async function executeProvider(
 
         stderr = appendDiagnosticLine(
           stderr,
-          `Provider ${provider} did not exit after SIGTERM; sending SIGKILL after ${providerKillGracePeriodMs}ms.`
+          `Provider ${provider} did not exit after SIGTERM; sending SIGKILL after ${providerKillGracePeriodMs}ms.`,
         );
         const escalationTarget = terminateProvider(child, "SIGKILL");
         void trace?.("provider:timeout-escalated", {
@@ -577,7 +588,7 @@ export async function executeProvider(
         provider,
         stdoutBuffer,
         plan.maybeOutputFile,
-        plan.outputFormat
+        plan.outputFormat,
       );
       await trace?.("provider:output-captured", {
         provider,
@@ -612,7 +623,7 @@ export async function executeProvider(
       });
     };
 
-    child.on("error", error => {
+    child.on("error", (error) => {
       stderr = appendDiagnosticLine(stderr, error instanceof Error ? error.message : String(error));
       void trace?.("provider:error", {
         provider,
@@ -624,11 +635,11 @@ export async function executeProvider(
     });
 
     child.on("close", (code, signal) => {
-      const normalizedExitCode = timedOut ? providerTimeoutExitCode : code ?? 1;
+      const normalizedExitCode = timedOut ? providerTimeoutExitCode : (code ?? 1);
       void finish(normalizedExitCode, signal);
     });
 
-    child.stdin.on("error", error => {
+    child.stdin.on("error", (error) => {
       void trace?.("provider:stdin-error", {
         provider,
         pid: child.pid ?? null,
@@ -652,7 +663,8 @@ export function extractJsonPayload(rawOutput: string) {
     return directParse;
   }
 
-  const fencedMatch = trimmedOutput.match(/```json\s*([\s\S]*?)```/i) ?? trimmedOutput.match(/```\s*([\s\S]*?)```/);
+  const fencedMatch =
+    trimmedOutput.match(/```json\s*([\s\S]*?)```/i) ?? trimmedOutput.match(/```\s*([\s\S]*?)```/);
   if (fencedMatch) {
     const fencedParse = tryParseJson(fencedMatch[1].trim());
     if (fencedParse !== null) {
@@ -679,12 +691,15 @@ export async function runLoopTask(options: {
   execute: boolean;
   runDir: string;
 }) {
-  const task = promptTasks.find(entry => entry.id === options.taskId);
+  const task = promptTasks.find((entry) => entry.id === options.taskId);
   if (!task) {
     throw new Error(`Unknown Ralph task: ${options.taskId}`);
   }
 
-  const trace = createTraceLogger(options.runDir, `loop:${options.target.companySlug}:${options.taskId}`);
+  const trace = createTraceLogger(
+    options.runDir,
+    `loop:${options.target.companySlug}:${options.taskId}`,
+  );
   await trace("task:start", {
     execute: options.execute,
     providerPreference: options.providerPreference,
@@ -695,7 +710,9 @@ export async function runLoopTask(options: {
   const { graph, raw } = await compileContent();
   const context = buildLoopPromptContext(options.target, raw, graph);
   const providerConfig = options.execute ? await loadProviderConfig() : null;
-  const providers = providerConfig ? resolveProviders(options.providerPreference, providerConfig) : [];
+  const providers = providerConfig
+    ? resolveProviders(options.providerPreference, providerConfig)
+    : [];
 
   const prompt = await renderPrompt(task.templateFile, {
     companyName: context.companyName,
@@ -741,21 +758,41 @@ export async function runLoopTask(options: {
     return taskResults;
   }
 
+  if (!providerConfig) {
+    throw new Error("Provider configuration is required when execute=true.");
+  }
+
   for (const provider of providers) {
     const rawOutputFile = path.join(options.runDir, `${task.outputSuffix}.${provider}.raw.txt`);
-    const normalizedFile = path.join(options.runDir, `${task.outputSuffix}.${provider}.normalized.json`);
-    const validationFile = path.join(options.runDir, `${task.outputSuffix}.${provider}.validation.json`);
+    const normalizedFile = path.join(
+      options.runDir,
+      `${task.outputSuffix}.${provider}.normalized.json`,
+    );
+    const validationFile = path.join(
+      options.runDir,
+      `${task.outputSuffix}.${provider}.validation.json`,
+    );
 
-    const execution = await executeProvider(provider, prompt, {
-      rootDir,
-      companySlug: options.target.companySlug,
-      taskId: task.id,
-      runDir: options.runDir,
-    }, providerConfig!, trace);
+    const execution = await executeProvider(
+      provider,
+      prompt,
+      {
+        rootDir,
+        companySlug: options.target.companySlug,
+        taskId: task.id,
+        runDir: options.runDir,
+      },
+      providerConfig,
+      trace,
+    );
 
     await writeFile(rawOutputFile, execution.rawOutput, "utf8");
     if (execution.stderr) {
-      await writeFile(path.join(options.runDir, `${task.outputSuffix}.${provider}.stderr.txt`), execution.stderr, "utf8");
+      await writeFile(
+        path.join(options.runDir, `${task.outputSuffix}.${provider}.stderr.txt`),
+        execution.stderr,
+        "utf8",
+      );
     }
 
     let success = execution.exitCode === 0;
@@ -861,12 +898,18 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
   });
 
   for (const provider of providers) {
-    const execution = await executeProvider(provider, prompt, {
-      rootDir,
-      companySlug: options.companySlug,
-      taskId: "company-sync",
-      runDir,
-    }, providerConfig, trace);
+    const execution = await executeProvider(
+      provider,
+      prompt,
+      {
+        rootDir,
+        companySlug: options.companySlug,
+        taskId: "company-sync",
+        runDir,
+      },
+      providerConfig,
+      trace,
+    );
 
     const rawOutputFile = path.join(runDir, `company-sync.${provider}.raw.txt`);
     const normalizedFile = path.join(runDir, `company-sync.${provider}.normalized.json`);
@@ -874,11 +917,15 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
 
     await writeFile(rawOutputFile, execution.rawOutput, "utf8");
     if (execution.stderr) {
-      await writeFile(path.join(runDir, `company-sync.${provider}.stderr.txt`), execution.stderr, "utf8");
+      await writeFile(
+        path.join(runDir, `company-sync.${provider}.stderr.txt`),
+        execution.stderr,
+        "utf8",
+      );
     }
 
     let success = execution.exitCode === 0;
-    let validationSummary: Record<string, unknown> = { provider, exitCode: execution.exitCode };
+    const validationSummary: Record<string, unknown> = { provider, exitCode: execution.exitCode };
     if (success) {
       try {
         const payload = extractJsonPayload(execution.rawOutput) as CompanySyncPayload;
@@ -931,7 +978,9 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
       provider,
       promptFile: path.relative(rootDir, promptFile),
       rawOutputFile: path.relative(rootDir, rawOutputFile),
-      normalizedFile: candidatePayloads.has(provider) ? path.relative(rootDir, normalizedFile) : undefined,
+      normalizedFile: candidatePayloads.has(provider)
+        ? path.relative(rootDir, normalizedFile)
+        : undefined,
       validationFile: path.relative(rootDir, validationFile),
       notesFile: undefined,
       exitCode: execution.exitCode,
@@ -941,11 +990,13 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     });
   }
 
-  const selectedProvider = providerConfig.defaultProviderOrder.find(provider => candidatePayloads.has(provider));
+  const selectedProvider = providerConfig.defaultProviderOrder.find((provider) =>
+    candidatePayloads.has(provider),
+  );
   if (!selectedProvider) {
     await trace("sync:no-valid-payload", {
       providers,
-      taskResults: taskResults.map(result => ({
+      taskResults: taskResults.map((result) => ({
         provider: result.provider,
         exitCode: result.exitCode,
         success: result.success,
@@ -966,7 +1017,11 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     throw new Error(`No valid sync payload produced for company ${options.companySlug}.`);
   }
 
-  const selectedPayload = candidatePayloads.get(selectedProvider)!;
+  const selectedPayload = candidatePayloads.get(selectedProvider);
+  if (!selectedPayload) {
+    throw new Error(`Selected provider ${selectedProvider} did not produce a candidate payload.`);
+  }
+
   const validatedCandidate = validateSyncPayload(selectedPayload, raw, context.manifest);
   await trace("candidate:selected", {
     provider: selectedProvider,
@@ -1004,8 +1059,11 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     resolvedProviders: providers,
     taskResults,
     generatedOn: new Date().toISOString(),
-    publishedBundleFile: options.mode === "publish" ? path.relative(rootDir, validatedCandidate.bundleFile) : undefined,
-    publishedSourceIds: selectedPayload.sources.map(source => source.id),
+    publishedBundleFile:
+      options.mode === "publish"
+        ? path.relative(rootDir, validatedCandidate.bundleFile)
+        : undefined,
+    publishedSourceIds: selectedPayload.sources.map((source) => source.id),
     commitSha,
   };
 
@@ -1018,7 +1076,9 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
 }
 
 export function isBundleStale(bundle: CompanyBundle, now = new Date()) {
-  const reviewDates = Object.values(bundle.company.inputMetrics).map(metric => metric.lastReviewedOn);
+  const reviewDates = Object.values(bundle.company.inputMetrics).map(
+    (metric) => metric.lastReviewedOn,
+  );
   const latestReviewDate = reviewDates.sort().at(-1);
   if (!latestReviewDate) {
     return true;
@@ -1029,15 +1089,18 @@ export function isBundleStale(bundle: CompanyBundle, now = new Date()) {
   return ageInDays >= staleAfterDays;
 }
 
-export function collectSyncTargets(raw: Awaited<ReturnType<typeof loadRawContent>>, staleOnly: boolean) {
+export function collectSyncTargets(
+  raw: Awaited<ReturnType<typeof loadRawContent>>,
+  staleOnly: boolean,
+) {
   if (!staleOnly) {
-    return raw.manifests.map(manifest => manifest.slug);
+    return raw.manifests.map((manifest) => manifest.slug);
   }
 
-  const bundleBySlug = new Map(raw.bundles.map(bundle => [bundle.company.slug, bundle]));
+  const bundleBySlug = new Map(raw.bundles.map((bundle) => [bundle.company.slug, bundle]));
   return raw.manifests
-    .map(manifest => manifest.slug)
-    .filter(slug => {
+    .map((manifest) => manifest.slug)
+    .filter((slug) => {
       const maybeBundle = bundleBySlug.get(slug);
       if (!maybeBundle) {
         return true;
@@ -1050,17 +1113,22 @@ export function collectSyncTargets(raw: Awaited<ReturnType<typeof loadRawContent
 function buildLoopPromptContext(
   target: ResearchLoopTarget,
   raw: Awaited<ReturnType<typeof loadRawContent>>,
-  graph: Awaited<ReturnType<typeof compileContent>>["graph"]
+  graph: Awaited<ReturnType<typeof compileContent>>["graph"],
 ): LoopPromptContext {
-  const company = graph.companies.find(entry => entry.slug === target.companySlug) ?? null;
-  const currentBundle = raw.bundles.find(entry => entry.company.slug === target.companySlug) ?? null;
+  const company = graph.companies.find((entry) => entry.slug === target.companySlug) ?? null;
+  const currentBundle =
+    raw.bundles.find((entry) => entry.company.slug === target.companySlug) ?? null;
   const currentSources = currentBundle ? getReferencedSources(currentBundle, raw.sources) : [];
-  const currentProducts = graph.products.filter(product => product.companySlug === target.companySlug);
-  const currentTechnologyWaves = graph.technologyWaves.filter(wave =>
-    target.manifest.technologyWaveIds.includes(wave.id)
+  const currentProducts = graph.products.filter(
+    (product) => product.companySlug === target.companySlug,
+  );
+  const currentTechnologyWaves = graph.technologyWaves.filter((wave) =>
+    target.manifest.technologyWaveIds.includes(wave.id),
   );
   const knownProductNames =
-    currentProducts.length > 0 ? currentProducts.map(product => product.name) : target.manifest.seedProductNames ?? [];
+    currentProducts.length > 0
+      ? currentProducts.map((product) => product.name)
+      : (target.manifest.seedProductNames ?? []);
 
   return {
     companyName: company?.name ?? target.manifest.name,
@@ -1071,8 +1139,8 @@ function buildLoopPromptContext(
     snapshotNote: company?.snapshotNote ?? "Pending first structured sync.",
     productNames: formatPromptList(knownProductNames, "None yet in repo context."),
     technologyWaves: formatPromptBulletList(
-      currentTechnologyWaves.map(wave => `${wave.label}: ${wave.summary}`),
-      "None mapped yet in repo context."
+      currentTechnologyWaves.map((wave) => `${wave.label}: ${wave.summary}`),
+      "None mapped yet in repo context.",
     ),
     companyDataJson: JSON.stringify(
       {
@@ -1087,12 +1155,12 @@ function buildLoopPromptContext(
         company,
         currentBundle,
         currentSources,
-        knownProducts: knownProductNames.map(name => ({ name })),
+        knownProducts: knownProductNames.map((name) => ({ name })),
         knownSourceUrls: target.manifest.seedSourceUrls ?? [],
         technologyWaves: currentTechnologyWaves,
       },
       null,
-      2
+      2,
     ),
     companyManifestJson: JSON.stringify(target.manifest, null, 2),
     currentBundleJson: JSON.stringify(currentBundle, null, 2),
@@ -1106,7 +1174,7 @@ function buildLoopPromptContext(
         technologyWaves: raw.technologyWaves,
       },
       null,
-      2
+      2,
     ),
   };
 }
@@ -1114,9 +1182,9 @@ function buildLoopPromptContext(
 export function deriveManifestFromBundle(
   bundle: CompanyBundle,
   sources: SourceCitation[],
-  existingManifest: CompanyManifest | null
+  existingManifest: CompanyManifest | null,
 ): CompanyManifest {
-  const sourceById = new Map(sources.map(source => [source.id, source]));
+  const sourceById = new Map(sources.map((source) => [source.id, source]));
   return {
     schemaVersion: 1,
     slug: bundle.company.slug,
@@ -1130,9 +1198,9 @@ export function deriveManifestFromBundle(
     description: bundle.company.description,
     technologyWaveIds: bundle.company.technologyWaveIds,
     maybeIpo: bundle.company.maybeIpo,
-    seedProductNames: bundle.products.map(product => product.name),
+    seedProductNames: bundle.products.map((product) => product.name),
     seedSourceUrls: bundle.company.sourceIds
-      .map(sourceId => sourceById.get(sourceId)?.url)
+      .map((sourceId) => sourceById.get(sourceId)?.url)
       .filter((url): url is string => Boolean(url)),
     notes: existingManifest?.notes ?? "Managed by the Ralph sync pipeline.",
   };
@@ -1141,7 +1209,7 @@ export function deriveManifestFromBundle(
 function validateSyncPayload(
   payload: CompanySyncPayload,
   raw: Awaited<ReturnType<typeof loadRawContent>>,
-  existingManifest: CompanyManifest
+  existingManifest: CompanyManifest,
 ) {
   if (payload.schemaVersion !== 1) {
     throw new Error(`Unsupported payload schemaVersion ${String(payload.schemaVersion)}.`);
@@ -1152,15 +1220,23 @@ function validateSyncPayload(
   }
 
   if (payload.bundle.company.slug !== existingManifest.slug) {
-    throw new Error(`Payload company slug ${payload.bundle.company.slug} does not match manifest ${existingManifest.slug}.`);
+    throw new Error(
+      `Payload company slug ${payload.bundle.company.slug} does not match manifest ${existingManifest.slug}.`,
+    );
   }
 
   const manifest = deriveManifestFromBundle(payload.bundle, payload.sources, existingManifest);
   const mergedSources = mergeSources(raw.sources, payload.sources);
   const nextRaw = {
     ...raw,
-    manifests: [...raw.manifests.filter(manifestEntry => manifestEntry.slug !== manifest.slug), manifest],
-    bundles: [...raw.bundles.filter(bundle => bundle.company.slug !== payload.bundle.company.slug), payload.bundle],
+    manifests: [
+      ...raw.manifests.filter((manifestEntry) => manifestEntry.slug !== manifest.slug),
+      manifest,
+    ],
+    bundles: [
+      ...raw.bundles.filter((bundle) => bundle.company.slug !== payload.bundle.company.slug),
+      payload.bundle,
+    ],
     sources: mergedSources,
   };
   validateAndCompile(nextRaw);
@@ -1211,7 +1287,9 @@ function commitAndPush(companySlug: string) {
   const defaultBranch = getDefaultBranch();
   const currentBranch = runGit(["rev-parse", "--abbrev-ref", "HEAD"]).trim();
   if (currentBranch !== defaultBranch) {
-    throw new Error(`Publish mode requires the default branch ${defaultBranch}, but current branch is ${currentBranch}.`);
+    throw new Error(
+      `Publish mode requires the default branch ${defaultBranch}, but current branch is ${currentBranch}.`,
+    );
   }
 
   runGit(["add", "content", "research/runs", "src/lib/generated/content-graph.ts"]);
@@ -1265,7 +1343,7 @@ function runCommand(command: string, args: string[]) {
 }
 
 function mergeSources(existingSources: SourceCitation[], nextSources: SourceCitation[]) {
-  const sourceById = new Map(existingSources.map(source => [source.id, source]));
+  const sourceById = new Map(existingSources.map((source) => [source.id, source]));
   for (const source of nextSources) {
     sourceById.set(source.id, source);
   }
@@ -1274,8 +1352,10 @@ function mergeSources(existingSources: SourceCitation[], nextSources: SourceCita
 
 function getReferencedSources(bundle: CompanyBundle, allSources: SourceCitation[]) {
   const referencedIds = collectBundleSourceIds(bundle);
-  const sourceById = new Map(allSources.map(source => [source.id, source]));
-  return referencedIds.map(sourceId => sourceById.get(sourceId)).filter((source): source is SourceCitation => Boolean(source));
+  const sourceById = new Map(allSources.map((source) => [source.id, source]));
+  return referencedIds
+    .map((sourceId) => sourceById.get(sourceId))
+    .filter((source): source is SourceCitation => Boolean(source));
 }
 
 function collectBundleSourceIds(bundle: CompanyBundle) {
@@ -1338,8 +1418,12 @@ async function resolveProviderOutput(
   provider: RalphProviderId,
   stdoutBuffer: string,
   maybeOutputFile: string | null,
-  maybeOutputFormat: string | null
-): Promise<{ rawOutput: string; outputSource: ProviderOutputSource; metadata?: ProviderOutputMetadata }> {
+  maybeOutputFormat: string | null,
+): Promise<{
+  rawOutput: string;
+  outputSource: ProviderOutputSource;
+  metadata?: ProviderOutputMetadata;
+}> {
   const resolvedText = await resolveProviderOutputText(stdoutBuffer, maybeOutputFile);
   if (provider === "claude") {
     const maybeClaudeResult = extractClaudeCliResult(resolvedText.rawOutput, maybeOutputFormat);
@@ -1357,7 +1441,7 @@ async function resolveProviderOutput(
 
 async function resolveProviderOutputText(
   stdoutBuffer: string,
-  maybeOutputFile: string | null
+  maybeOutputFile: string | null,
 ): Promise<{ rawOutput: string; outputSource: ProviderOutputSource }> {
   if (!maybeOutputFile) {
     return {
@@ -1410,7 +1494,9 @@ export function extractClaudeCliResult(rawOutput: string, maybeOutputFormat: str
       totalCostUsd: typeof parsed.total_cost_usd === "number" ? parsed.total_cost_usd : undefined,
       numTurns: typeof parsed.num_turns === "number" ? parsed.num_turns : undefined,
       stopReason:
-        typeof parsed.stop_reason === "string" || parsed.stop_reason === null ? parsed.stop_reason : undefined,
+        typeof parsed.stop_reason === "string" || parsed.stop_reason === null
+          ? parsed.stop_reason
+          : undefined,
     } satisfies ProviderOutputMetadata,
   };
 }
@@ -1429,7 +1515,7 @@ async function loadTextLogSnapshot(maybeFile: string | null): Promise<TextLogSna
     const text = await readFile(maybeFile, "utf8");
     const lines = text
       .split("\n")
-      .map(line => line.trim())
+      .map((line) => line.trim())
       .filter(Boolean);
     const lastLine = lines.at(-1) ?? null;
     return {
@@ -1471,7 +1557,8 @@ export async function findCodexSessionFile(sessionId: string) {
 
           const dayDir = path.join(monthDir, dayEntry.name);
           const maybeSessionFile = (await listDirectoryDescending(dayDir)).find(
-            entry => entry.isFile() && entry.name.endsWith(".jsonl") && entry.name.includes(sessionId)
+            (entry) =>
+              entry.isFile() && entry.name.endsWith(".jsonl") && entry.name.includes(sessionId),
           );
           if (maybeSessionFile) {
             return path.join(dayDir, maybeSessionFile.name);
@@ -1488,7 +1575,7 @@ export async function findCodexSessionFile(sessionId: string) {
 
 async function loadCodexSessionSnapshot(
   sessionId: string,
-  maybeKnownSessionFile: string | null
+  maybeKnownSessionFile: string | null,
 ): Promise<CodexSessionSnapshot> {
   const sessionFile = maybeKnownSessionFile ?? (await findCodexSessionFile(sessionId));
   if (!sessionFile) {
@@ -1561,7 +1648,7 @@ function commandExists(commandName: string) {
   return searchPath
     .split(path.delimiter)
     .filter(Boolean)
-    .some(entry => isExecutableFile(path.join(entry, commandName)));
+    .some((entry) => isExecutableFile(path.join(entry, commandName)));
 }
 
 async function listDirectoryDescending(directory: string) {
@@ -1590,7 +1677,7 @@ function formatPromptList(values: string[], fallback: string) {
 }
 
 function formatPromptBulletList(values: string[], fallback: string) {
-  return values.length > 0 ? values.map(value => `- ${value}`).join("\n") : fallback;
+  return values.length > 0 ? values.map((value) => `- ${value}`).join("\n") : fallback;
 }
 
 function applyTemplate(template: string, variables: Record<string, string>) {
@@ -1624,7 +1711,7 @@ function tryParseJson(value: string) {
 function summarizeCodexSessionJsonl(sessionText: string) {
   const lines = sessionText
     .split("\n")
-    .map(line => line.trim())
+    .map((line) => line.trim())
     .filter(Boolean);
 
   for (let index = lines.length - 1; index >= 0 && index >= lines.length - 20; index -= 1) {
@@ -1632,7 +1719,10 @@ function summarizeCodexSessionJsonl(sessionText: string) {
     const maybePreview = describeCodexSessionEntry(maybeEntry);
     if (maybePreview) {
       return {
-        lastEventTs: isRecord(maybeEntry) && typeof maybeEntry.timestamp === "string" ? maybeEntry.timestamp : null,
+        lastEventTs:
+          isRecord(maybeEntry) && typeof maybeEntry.timestamp === "string"
+            ? maybeEntry.timestamp
+            : null,
         tailPreview: maybePreview,
       };
     }
@@ -1675,7 +1765,11 @@ function describeCodexSessionEntry(entry: unknown) {
     }
   }
 
-  if (entry.type === "event_msg" && typeof entry.payload.type === "string" && entry.payload.type !== "token_count") {
+  if (
+    entry.type === "event_msg" &&
+    typeof entry.payload.type === "string" &&
+    entry.payload.type !== "token_count"
+  ) {
     return `event: ${entry.payload.type}`;
   }
 
@@ -1692,7 +1786,10 @@ function extractCodexMessageText(content: unknown) {
       continue;
     }
 
-    if ((item.type === "input_text" || item.type === "output_text") && typeof item.text === "string") {
+    if (
+      (item.type === "input_text" || item.type === "output_text") &&
+      typeof item.text === "string"
+    ) {
       return tailPreview(item.text, 160);
     }
 
@@ -1733,7 +1830,7 @@ function extractTimestampPrefix(value: string | null) {
   return maybeMatch?.[1] ?? null;
 }
 
-function isRecord(value: unknown): value is Record<string, any> {
+function isRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === "object" && value !== null;
 }
 

@@ -1,9 +1,14 @@
 import { mkdtemp, readFile, rm } from "node:fs/promises";
 import os from "node:os";
 import path from "node:path";
+import {
+  deploymentConfig,
+  getCanonicalUrl,
+  getHostedDomains,
+  getPublicUrl,
+} from "../../src/lib/deployment-config";
 import { runCommand } from "../lib/command";
 import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
-import { deploymentConfig, getCanonicalUrl, getHostedDomains, getPublicUrl } from "../../src/lib/deployment-config";
 
 interface VerificationHttpResponse {
   body: string;
@@ -39,7 +44,7 @@ const canonicalAboutHtml = canonicalAboutResponse.body;
 assert(canonicalAboutResponse.ok, `Expected ${canonicalAboutUrl} to return 200.`);
 assert(
   canonicalAboutHtml.includes('rel="canonical" href="https://free-the-world.com/about"'),
-  `Expected ${canonicalAboutUrl} to include a canonical link to https://free-the-world.com/about.`
+  `Expected ${canonicalAboutUrl} to include a canonical link to https://free-the-world.com/about.`,
 );
 
 verificationResults.push({
@@ -59,7 +64,10 @@ for (const redirectDomain of deploymentConfig.redirectDomains) {
   const location = response.headers.get("location") ?? null;
 
   assert(response.status === 301, `Expected ${redirectUrl} to return a 301 redirect.`);
-  assert(location === `${canonicalAboutUrl}?from=verify`, `Expected ${redirectUrl} to redirect to ${canonicalAboutUrl}?from=verify.`);
+  assert(
+    location === `${canonicalAboutUrl}?from=verify`,
+    `Expected ${redirectUrl} to redirect to ${canonicalAboutUrl}?from=verify.`,
+  );
 
   verificationResults.push({
     detail: `${redirectUrl} returned 301 via ${response.source} to ${location}.`,
@@ -80,11 +88,11 @@ const pagesAboutHtml = pagesAboutResponse.body;
 assert(pagesAboutResponse.ok, `Expected ${pagesAboutUrl} to return 200.`);
 assert(
   pagesAboutHtml.includes('name="robots" content="noindex, nofollow"'),
-  `Expected ${pagesAboutUrl} to include a noindex robots meta tag.`
+  `Expected ${pagesAboutUrl} to include a noindex robots meta tag.`,
 );
 assert(
   pagesAboutHtml.includes('rel="canonical" href="https://free-the-world.com/about"'),
-  `Expected ${pagesAboutUrl} to canonicalize to https://free-the-world.com/about.`
+  `Expected ${pagesAboutUrl} to canonicalize to https://free-the-world.com/about.`,
 );
 
 verificationResults.push({
@@ -117,7 +125,12 @@ const summary = {
 const { runDirectory } = await writeDeploySummary(summary, { runDirectory: run.runDirectory });
 console.log(`Deployment verification complete. Summary: ${runDirectory}`);
 
-async function requestWithRetries(url: string, retries: number, delayMs: number, redirect: RequestRedirect = "follow") {
+async function requestWithRetries(
+  url: string,
+  retries: number,
+  delayMs: number,
+  redirect: RequestRedirect = "follow",
+) {
   let lastError: Error | null = null;
 
   for (let attempt = 1; attempt <= retries; attempt += 1) {
@@ -208,7 +221,10 @@ async function requestWithCurlResolve(url: string, redirect: RequestRedirect, ip
       return null;
     }
 
-    const headerBlocks = (await readFile(headersPath, "utf8")).trim().split(/\r?\n\r?\n/).filter(Boolean);
+    const headerBlocks = (await readFile(headersPath, "utf8"))
+      .trim()
+      .split(/\r?\n\r?\n/)
+      .filter(Boolean);
     const selectedHeaderBlock = headerBlocks.at(-1) ?? "";
     const body = redirect === "manual" ? "" : await readFile(bodyPath, "utf8");
 
@@ -230,11 +246,13 @@ function resolvePublicIpv4(hostname: string) {
   const ipAddresses = new Set<string>();
 
   for (const resolver of publicResolvers) {
-    const result = runCommand("dig", [`@${resolver}`, hostname, "A", "+short"], { allowFailure: true });
+    const result = runCommand("dig", [`@${resolver}`, hostname, "A", "+short"], {
+      allowFailure: true,
+    });
     const parsedIpAddresses = result.stdout
       .split(/\r?\n/)
-      .map(line => line.trim())
-      .filter(line => /^\d{1,3}(?:\.\d{1,3}){3}$/.test(line));
+      .map((line) => line.trim())
+      .filter((line) => /^\d{1,3}(?:\.\d{1,3}){3}$/.test(line));
 
     for (const ipAddress of parsedIpAddresses) {
       ipAddresses.add(ipAddress);
@@ -274,7 +292,7 @@ function parseCurlHeaders(rawHeaders: string) {
 
 function assert(condition: boolean, message: string) {
   if (!condition) {
-      throw new Error(message);
+    throw new Error(message);
   }
 }
 

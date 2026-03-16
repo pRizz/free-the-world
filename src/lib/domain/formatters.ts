@@ -1,10 +1,10 @@
-import {
-  type AlternativeMetricId,
-  type CompanyMetricId,
-  type MetricAssessment,
-  type MetricValueType,
-} from "~/lib/domain/types";
 import { alternativeMetricDefinitions, companyMetricDefinitions } from "~/lib/domain/metrics";
+import type {
+  AlternativeMetricId,
+  CompanyMetricId,
+  MetricAssessment,
+  MetricValueType,
+} from "~/lib/domain/types";
 
 const compactCurrencyFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -68,7 +68,10 @@ export function formatCompanyMetric(metricId: CompanyMetricId, assessment?: Metr
   return formatMetricValue(assessment.value, definition.valueType, definition.precision);
 }
 
-export function formatAlternativeMetric(metricId: AlternativeMetricId, assessment: MetricAssessment) {
+export function formatAlternativeMetric(
+  metricId: AlternativeMetricId,
+  assessment: MetricAssessment,
+) {
   const definition = alternativeMetricDefinitions[metricId];
   return formatMetricValue(assessment.value, definition.valueType, definition.precision);
 }

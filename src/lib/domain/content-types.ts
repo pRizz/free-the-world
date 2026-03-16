@@ -2,14 +2,14 @@ import type {
   Alternative,
   Company,
   CompanyIpo,
-  Industry,
   IndexDefinition,
+  Industry,
   MetricAssessment,
+  Product,
   Region,
   Sector,
   SourceCitation,
   TechnologyWave,
-  Product,
 } from "~/lib/domain/types";
 
 export const companyInputMetricIds = [

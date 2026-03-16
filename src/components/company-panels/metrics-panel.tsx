@@ -2,8 +2,8 @@ import { For } from "solid-js";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
 import { PageHeader } from "~/components/blocks/page-header";
-import { companyMetricDefinitions } from "~/lib/domain/metrics";
 import { formatCompanyMetric } from "~/lib/domain/formatters";
+import { companyMetricDefinitions } from "~/lib/domain/metrics";
 import type { Company } from "~/lib/domain/types";
 
 export function CompanyMetricsPanel(props: { company: Company }) {
@@ -18,8 +18,13 @@ export function CompanyMetricsPanel(props: { company: Company }) {
         <For each={Object.entries(props.company.metrics)}>
           {([metricId, assessment]) => (
             <MetricCard
-              label={companyMetricDefinitions[metricId as keyof typeof companyMetricDefinitions].label}
-              value={formatCompanyMetric(metricId as keyof typeof companyMetricDefinitions, assessment)}
+              label={
+                companyMetricDefinitions[metricId as keyof typeof companyMetricDefinitions].label
+              }
+              value={formatCompanyMetric(
+                metricId as keyof typeof companyMetricDefinitions,
+                assessment,
+              )}
             >
               {assessment.rationale}
             </MetricCard>

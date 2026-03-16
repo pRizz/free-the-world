@@ -19,7 +19,9 @@ export const defaultCompanyTableState: CompanyTableState = {
   visibleMetricIds: [...defaultVisibleCompanyMetrics],
 };
 
-export const companyTableMetricOptions = Object.values(companyMetricDefinitions).map(definition => ({
-  id: definition.id,
-  label: definition.label,
-}));
+export const companyTableMetricOptions = Object.values(companyMetricDefinitions).map(
+  (definition) => ({
+    id: definition.id,
+    label: definition.label,
+  }),
+);

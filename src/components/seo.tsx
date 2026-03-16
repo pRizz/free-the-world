@@ -1,6 +1,6 @@
 import { Link, Meta, Title } from "@solidjs/meta";
-import { getCanonicalUrl } from "~/lib/deployment-config";
 import { siteConfig } from "~/lib/config";
+import { getCanonicalUrl } from "~/lib/deployment-config";
 
 interface SeoProps {
   title: string;

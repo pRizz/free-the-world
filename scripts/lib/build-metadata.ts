@@ -57,7 +57,9 @@ export function resolveBuildMetadata(options: ResolveBuildMetadataOptions = {}) 
       env,
       runCommandImpl,
     });
-    const commitTimestamp = normalizeValue(runCommandImpl("git", ["show", "-s", "--format=%cI", commitSha]).stdout);
+    const commitTimestamp = normalizeValue(
+      runCommandImpl("git", ["show", "-s", "--format=%cI", commitSha]).stdout,
+    );
     if (!commitTimestamp) {
       return null;
     }

@@ -1,8 +1,12 @@
-import type { SourceCitation } from "~/lib/domain/types";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import type { SourceCitation } from "~/lib/domain/types";
 
-export function SourceList(props: { title?: string; description?: string; sources: SourceCitation[] }) {
+export function SourceList(props: {
+  title?: string;
+  description?: string;
+  sources: SourceCitation[];
+}) {
   return (
     <ContentCard class="space-y-5">
       <PageHeader
@@ -15,7 +19,7 @@ export function SourceList(props: { title?: string; description?: string; source
       />
 
       <div class="space-y-4">
-        {props.sources.map(source => (
+        {props.sources.map((source) => (
           <article class="rounded-2xl border border-border bg-card p-4">
             <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
               <div class="space-y-2">

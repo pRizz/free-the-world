@@ -1,18 +1,28 @@
 import { mkdir, rm } from "node:fs/promises";
 import path from "node:path";
 import { companies as legacyCompanies } from "../src/lib/content/companies";
-import { alternatives as legacyAlternatives, products as legacyProducts } from "../src/lib/content/products";
-import { industries, indices, regions, sectors } from "../src/lib/content/sectors";
+import {
+  alternatives as legacyAlternatives,
+  products as legacyProducts,
+} from "../src/lib/content/products";
+import { indices, industries, regions, sectors } from "../src/lib/content/sectors";
 import { sources as legacySources } from "../src/lib/content/sources";
 import { technologyWaves } from "../src/lib/content/technology-waves";
-import type { Alternative, Company, Product, SourceCitation } from "../src/lib/domain/types";
 import {
-  companyInputMetricIds,
   type CompanyBundle,
   type CompanyInputMetricId,
   type CompanyManifest,
+  companyInputMetricIds,
 } from "../src/lib/domain/content-types";
-import { companiesDir, contentDir, manifestsDir, sourcesDir, taxonomyDir, writeJsonFile } from "./lib/content";
+import type { Alternative, Company, Product, SourceCitation } from "../src/lib/domain/types";
+import {
+  companiesDir,
+  contentDir,
+  manifestsDir,
+  sourcesDir,
+  taxonomyDir,
+  writeJsonFile,
+} from "./lib/content";
 
 await rm(contentDir, { recursive: true, force: true });
 await mkdir(taxonomyDir, { recursive: true });
@@ -28,7 +38,7 @@ await Promise.all([
   writeJsonFile(path.join(taxonomyDir, "technology-waves.json"), technologyWaves),
 ]);
 
-const sourceById = new Map(legacySources.map(source => [source.id, source]));
+const sourceById = new Map(legacySources.map((source) => [source.id, source]));
 for (const source of legacySources) {
   await writeJsonFile(path.join(sourcesDir, `${source.id}.json`), source);
 }
@@ -57,24 +67,36 @@ function buildManifest(company: Company, sourceById: Map<string, SourceCitation>
     description: company.description,
     technologyWaveIds: company.technologyWaveIds,
     maybeIpo: company.maybeIpo,
-    seedProductNames: legacyProducts.filter(product => product.companySlug === company.slug).map(product => product.name),
-    seedSourceUrls: company.sourceIds.map(sourceId => sourceById.get(sourceId)?.url).filter((url): url is string => Boolean(url)),
+    seedProductNames: legacyProducts
+      .filter((product) => product.companySlug === company.slug)
+      .map((product) => product.name),
+    seedSourceUrls: company.sourceIds
+      .map((sourceId) => sourceById.get(sourceId)?.url)
+      .filter((url): url is string => Boolean(url)),
     notes: "Migrated from the legacy TypeScript content snapshot.",
   };
 }
 
-function buildBundle(company: Company, products: Product[], alternatives: Alternative[]): CompanyBundle {
+function buildBundle(
+  company: Company,
+  products: Product[],
+  alternatives: Alternative[],
+): CompanyBundle {
   const companyProducts = products
-    .filter(product => product.companySlug === company.slug)
-    .map(product => {
+    .filter((product) => product.companySlug === company.slug)
+    .map((product) => {
       const productAlternatives = alternatives
-        .filter(alternative => alternative.productSlug === product.slug)
-        .map(alternative => {
+        .filter((alternative) => alternative.productSlug === product.slug)
+        .map((alternative) => {
           const { productSlug: _productSlug, ...alternativeFields } = alternative;
           return alternativeFields;
         });
 
-      const { companySlug: _companySlug, alternativeSlugs: _alternativeSlugs, ...productFields } = product;
+      const {
+        companySlug: _companySlug,
+        alternativeSlugs: _alternativeSlugs,
+        ...productFields
+      } = product;
       return {
         ...productFields,
         alternatives: productAlternatives,
@@ -82,9 +104,14 @@ function buildBundle(company: Company, products: Product[], alternatives: Altern
     });
 
   const inputMetrics = Object.fromEntries(
-    companyInputMetricIds.map(metricId => [metricId, company.metrics[metricId]])
+    companyInputMetricIds.map((metricId) => [metricId, company.metrics[metricId]]),
   ) as Record<CompanyInputMetricId, NonNullable<Company["metrics"][CompanyInputMetricId]>>;
-  const { productSlugs: _productSlugs, metrics: _metrics, baseMetrics: _baseMetrics, ...companyFields } = company as Company & {
+  const {
+    productSlugs: _productSlugs,
+    metrics: _metrics,
+    baseMetrics: _baseMetrics,
+    ...companyFields
+  } = company as Company & {
     baseMetrics?: unknown;
   };
   void _baseMetrics;

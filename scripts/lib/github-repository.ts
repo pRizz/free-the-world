@@ -29,7 +29,7 @@ export function parseGitHubRepositorySlug(input: string) {
 
 export function resolveGitHubRepositorySlug(
   maybeRepository: string | undefined,
-  options: ResolveGitHubRepositorySlugOptions = {}
+  options: ResolveGitHubRepositorySlugOptions = {},
 ) {
   const env = options.env ?? process.env;
   const runCommandImpl = options.runCommandImpl ?? runCommand;

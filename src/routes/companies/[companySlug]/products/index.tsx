@@ -11,8 +11,9 @@ export default function CompanyProductsPage() {
   const params = useParams();
   const companySlug = () => params.companySlug ?? "";
   const company = () => getCompanyBySlug(companySlug());
+  const maybeCompany = company();
 
-  if (!company()) {
+  if (!maybeCompany) {
     return (
       <>
         <Seo
@@ -31,7 +32,7 @@ export default function CompanyProductsPage() {
     );
   }
 
-  const companyData = company()!;
+  const companyData = maybeCompany;
   const productRecords = getProductsForCompany(companyData.slug);
   const sources = getSourcesByIds(companyData.sourceIds);
 
@@ -50,10 +51,13 @@ export default function CompanyProductsPage() {
             <Badge tone="muted">{companyData.name}</Badge>
           </div>
           <div class="space-y-3">
-            <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{companyData.name} product analyses</h1>
+            <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">
+              {companyData.name} product analyses
+            </h1>
             <p class="max-w-4xl text-base leading-8 text-muted-foreground sm:text-lg">
-              A tighter look at the products that matter most to {companyData.name}, along with the free, open,
-              decentralized, or cooperative alternatives already creating pricing pressure.
+              A tighter look at the products that matter most to {companyData.name}, along with the
+              free, open, decentralized, or cooperative alternatives already creating pricing
+              pressure.
             </p>
           </div>
         </section>

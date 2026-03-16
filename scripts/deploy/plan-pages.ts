@@ -1,8 +1,13 @@
 import { appendFile } from "node:fs/promises";
 import path from "node:path";
-import { assertDeployArtifactIntegrity, diffDeployManifests, readDeployManifest, type DeployManifest } from "../lib/deploy-artifact";
-import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
 import { deploymentConfig } from "../../src/lib/deployment-config";
+import {
+  assertDeployArtifactIntegrity,
+  type DeployManifest,
+  diffDeployManifests,
+  readDeployManifest,
+} from "../lib/deploy-artifact";
+import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
 
 const args = parseArgs(process.argv.slice(2));
 const artifactDir = path.resolve(args.artifact ?? ".artifacts/deploy/github-pages");
@@ -16,7 +21,9 @@ const run = await createDeployRun({
 });
 
 if (localManifest.target !== "github-pages") {
-  throw new Error(`Expected a GitHub Pages deploy manifest, received target ${localManifest.target}.`);
+  throw new Error(
+    `Expected a GitHub Pages deploy manifest, received target ${localManifest.target}.`,
+  );
 }
 
 await assertDeployArtifactIntegrity(artifactDir, localManifest);
@@ -34,7 +41,7 @@ await run.addBreadcrumb({
   data: {
     changed: diff.changed,
     deletes: diff.deletes,
-    uploads: diff.uploads.map(file => file.path),
+    uploads: diff.uploads.map((file) => file.path),
   },
   detail: "Compared the local Pages artifact manifest to the live mirror manifest.",
   status: "planned",
@@ -44,7 +51,7 @@ await run.addBreadcrumb({
 if (process.env.GITHUB_OUTPUT) {
   await appendFile(
     process.env.GITHUB_OUTPUT,
-    `pages_changed=${diff.changed}\npages_artifact_hash=${localManifest.artifactHash}\npages_artifact_dir=${artifactDir}\n`
+    `pages_changed=${diff.changed}\npages_artifact_hash=${localManifest.artifactHash}\npages_artifact_dir=${artifactDir}\n`,
   );
 }
 
@@ -60,10 +67,14 @@ const summary = {
   mode: "check" as const,
   plannedChanges: {
     deletes: diff.deletes,
-    uploads: diff.uploads.map(file => file.path).concat(diff.changed ? ["deploy-manifest.json"] : []),
+    uploads: diff.uploads
+      .map((file) => file.path)
+      .concat(diff.changed ? ["deploy-manifest.json"] : []),
   },
   resultingUrls: [localManifest.publicOrigin, deploymentConfig.canonicalOrigin],
-  skippedReasons: diff.changed ? [] : ["The live GitHub Pages deploy manifest already matches the built Pages artifact."],
+  skippedReasons: diff.changed
+    ? []
+    : ["The live GitHub Pages deploy manifest already matches the built Pages artifact."],
   target: "github-pages",
   verificationResults: [
     {

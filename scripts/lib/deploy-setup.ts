@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
-import { buildSiteBucketName, type ResolvedHostedZones } from "./aws-deploy";
 import { deploymentConfig } from "../../src/lib/deployment-config";
+import { buildSiteBucketName, type ResolvedHostedZones } from "./aws-deploy";
 
 export interface GitHubPagesSiteState {
   buildType: string | null;
@@ -15,7 +15,7 @@ export const githubOidcThumbprint = "6938fd4d98bab03faadb97b34396831e3780aea1";
 export function buildGithubOidcTrustPolicy(
   accountId: string,
   repositorySlug: string,
-  environmentName = deploymentConfig.githubProductionEnvironmentName
+  environmentName = deploymentConfig.githubProductionEnvironmentName,
 ) {
   return {
     Version: "2012-10-17",
@@ -40,7 +40,9 @@ export function buildGithubOidcTrustPolicy(
 
 export function buildAwsDeployPolicy(accountId: string, hostedZones: ResolvedHostedZones) {
   const bucketName = buildSiteBucketName(accountId);
-  const hostedZoneArns = [hostedZones.canonical, ...hostedZones.redirects].map(hostedZoneId => `arn:aws:route53:::hostedzone/${hostedZoneId}`);
+  const hostedZoneArns = [hostedZones.canonical, ...hostedZones.redirects].map(
+    (hostedZoneId) => `arn:aws:route53:::hostedzone/${hostedZoneId}`,
+  );
 
   return {
     Version: "2012-10-17",
@@ -192,11 +194,16 @@ function maybeDecodeURIComponent(value: string) {
 
 function stableJsonStringify(value: unknown): string {
   if (Array.isArray(value)) {
-    return `[${value.map(item => stableJsonStringify(item)).sort((left, right) => left.localeCompare(right)).join(",")}]`;
+    return `[${value
+      .map((item) => stableJsonStringify(item))
+      .sort((left, right) => left.localeCompare(right))
+      .join(",")}]`;
   }
 
   if (value && typeof value === "object") {
-    const entries = Object.entries(value as Record<string, unknown>).sort(([leftKey], [rightKey]) => leftKey.localeCompare(rightKey));
+    const entries = Object.entries(value as Record<string, unknown>).sort(([leftKey], [rightKey]) =>
+      leftKey.localeCompare(rightKey),
+    );
     return `{${entries.map(([key, item]) => `${JSON.stringify(key)}:${stableJsonStringify(item)}`).join(",")}}`;
   }
 

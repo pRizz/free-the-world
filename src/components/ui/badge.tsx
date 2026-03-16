@@ -7,13 +7,15 @@ const badgeToneClasses = {
   muted: "border-border bg-card text-muted-foreground",
 } as const;
 
-export function Badge(props: ParentProps<{ class?: string; tone?: keyof typeof badgeToneClasses }>) {
+export function Badge(
+  props: ParentProps<{ class?: string; tone?: keyof typeof badgeToneClasses }>,
+) {
   return (
     <span
       class={cn(
         "inline-flex items-center rounded-full border px-3 py-1 text-xs font-medium uppercase tracking-[0.22em]",
         badgeToneClasses[props.tone ?? "default"],
-        props.class
+        props.class,
       )}
     >
       {props.children}

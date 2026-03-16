@@ -1,5 +1,9 @@
 import { expect, test } from "bun:test";
-import { formatUtcTimestampLabel, readBuildMetadataFromEnv, resolveBuildMetadata } from "../../../scripts/lib/build-metadata";
+import {
+  formatUtcTimestampLabel,
+  readBuildMetadataFromEnv,
+  resolveBuildMetadata,
+} from "../../../scripts/lib/build-metadata";
 import type { CommandOptions, CommandResult } from "../../../scripts/lib/command";
 
 type CommandRunner = (command: string, args: string[], options?: CommandOptions) => CommandResult;
@@ -8,7 +12,8 @@ test("resolveBuildMetadata prefers GitHub env metadata when available", () => {
   // Arrange
   const runCommandImpl = createCommandRunner({
     "git rev-parse abc123": "0123456789abcdef0123456789abcdef01234567\n",
-    "git show -s --format=%cI 0123456789abcdef0123456789abcdef01234567": "2026-03-15T22:33:29-05:00\n",
+    "git show -s --format=%cI 0123456789abcdef0123456789abcdef01234567":
+      "2026-03-15T22:33:29-05:00\n",
   });
 
   // Act
@@ -25,7 +30,8 @@ test("resolveBuildMetadata prefers GitHub env metadata when available", () => {
     commitSha: "0123456789abcdef0123456789abcdef01234567",
     commitTimestamp: "2026-03-15T22:33:29-05:00",
     commitTimestampLabel: "2026-03-16 03:33 UTC",
-    commitUrl: "https://github.com/pRizz/free-the-world/commit/0123456789abcdef0123456789abcdef01234567",
+    commitUrl:
+      "https://github.com/pRizz/free-the-world/commit/0123456789abcdef0123456789abcdef01234567",
   });
 });
 
@@ -34,7 +40,8 @@ test("resolveBuildMetadata falls back to local git commands and normalizes ssh r
   const runCommandImpl = createCommandRunner({
     "git rev-parse HEAD": "fedcba9876543210fedcba9876543210fedcba98\n",
     "git remote get-url origin": "git@github.com:pRizz/free-the-world.git\n",
-    "git show -s --format=%cI fedcba9876543210fedcba9876543210fedcba98": "2026-03-14T12:00:00+02:00\n",
+    "git show -s --format=%cI fedcba9876543210fedcba9876543210fedcba98":
+      "2026-03-14T12:00:00+02:00\n",
   });
 
   // Act
@@ -48,7 +55,8 @@ test("resolveBuildMetadata falls back to local git commands and normalizes ssh r
     commitSha: "fedcba9876543210fedcba9876543210fedcba98",
     commitTimestamp: "2026-03-14T12:00:00+02:00",
     commitTimestampLabel: "2026-03-14 10:00 UTC",
-    commitUrl: "https://github.com/pRizz/free-the-world/commit/fedcba9876543210fedcba9876543210fedcba98",
+    commitUrl:
+      "https://github.com/pRizz/free-the-world/commit/fedcba9876543210fedcba9876543210fedcba98",
   });
 });
 
@@ -67,7 +75,9 @@ test("resolveBuildMetadata normalizes https remotes into a GitHub commit URL", (
   });
 
   // Assert
-  expect(metadata?.commitUrl).toBe("https://github.com/pRizz/free-the-world/commit/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+  expect(metadata?.commitUrl).toBe(
+    "https://github.com/pRizz/free-the-world/commit/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  );
 });
 
 test("resolveBuildMetadata returns null when required git metadata cannot be resolved", () => {

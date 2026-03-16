@@ -11,7 +11,7 @@ export function calculateFreedCapitalPotential(
   marketCap: number,
   moatScore: number,
   decentralizabilityScore: number,
-  profitabilityScore: number
+  profitabilityScore: number,
 ) {
   const decentralizationFactor = decentralizabilityScore / 10;
   const moatResistance = 1 - moatScore / 12;

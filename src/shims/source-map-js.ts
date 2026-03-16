@@ -1,6 +1,11 @@
 import sourceMapJsModule from "source-map-js/source-map.js";
 
-const sourceMapJs = (sourceMapJsModule as any).default ?? sourceMapJsModule;
+type SourceMapJsModule = typeof import("source-map-js/source-map.js");
+
+const maybeDefaultSourceMapJs = sourceMapJsModule as SourceMapJsModule & {
+  default?: SourceMapJsModule;
+};
+const sourceMapJs = maybeDefaultSourceMapJs.default ?? maybeDefaultSourceMapJs;
 
 export const SourceMapConsumer = sourceMapJs.SourceMapConsumer;
 export const SourceMapGenerator = sourceMapJs.SourceMapGenerator;

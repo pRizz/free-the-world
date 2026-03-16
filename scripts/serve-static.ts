@@ -49,13 +49,17 @@ async function resolvePublicFile(relativePath: string) {
     return directFile;
   }
 
-  const maybeDirectoryIndex = ensureInsidePublicDir(path.resolve(publicDir, `.${normalizedRelativePath}`, "index.html"));
+  const maybeDirectoryIndex = ensureInsidePublicDir(
+    path.resolve(publicDir, `.${normalizedRelativePath}`, "index.html"),
+  );
   if (maybeDirectoryIndex && (await isFile(maybeDirectoryIndex))) {
     return maybeDirectoryIndex;
   }
 
   if (!path.extname(directFile)) {
-    const maybeHtmlFile = ensureInsidePublicDir(path.resolve(publicDir, `.${normalizedRelativePath}.html`));
+    const maybeHtmlFile = ensureInsidePublicDir(
+      path.resolve(publicDir, `.${normalizedRelativePath}.html`),
+    );
     if (maybeHtmlFile && (await isFile(maybeHtmlFile))) {
       return maybeHtmlFile;
     }

@@ -40,14 +40,15 @@ export default function MirrorsPage() {
           <div class="space-y-3">
             <h2 class="text-2xl font-semibold tracking-tight">Configured site access points</h2>
             <p class="max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
-              The canonical AWS host is the source of truth. The GitHub Pages host is a public mirror that stays
-              noindexed. The additional domains below are redirect aliases, not separate mirrors.
+              The canonical AWS host is the source of truth. The GitHub Pages host is a public
+              mirror that stays noindexed. The additional domains below are redirect aliases, not
+              separate mirrors.
             </p>
           </div>
 
           <div class="grid gap-4 lg:grid-cols-2">
             <For each={siteAccessEntries}>
-              {entry => (
+              {(entry) => (
                 <article class="space-y-4 rounded-2xl border border-border bg-card p-5">
                   <div class="flex flex-wrap items-center gap-2">
                     <Badge tone={kindBadgeTone[entry.kind]}>{kindLabel[entry.kind]}</Badge>
@@ -81,8 +82,8 @@ export default function MirrorsPage() {
           <div class="space-y-2">
             <h2 class="text-2xl font-semibold tracking-tight">Tor access</h2>
             <p class="text-sm leading-7 text-muted-foreground sm:text-base">
-              Tor-based mirrors are coming soon. They are not configured in this repo yet, so there is no `.onion`
-              address to publish or verify today.
+              Tor-based mirrors are coming soon. They are not configured in this repo yet, so there
+              is no `.onion` address to publish or verify today.
             </p>
           </div>
         </ContentCard>

@@ -14,14 +14,20 @@ import { SourceList } from "~/components/source-list";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
 import { withBasePath } from "~/lib/config";
-import { getCompanyBySlug, getProductsForCompany, getSourcesByIds, getTechnologyWavesByIds } from "~/lib/domain/selectors";
+import {
+  getCompanyBySlug,
+  getProductsForCompany,
+  getSourcesByIds,
+  getTechnologyWavesByIds,
+} from "~/lib/domain/selectors";
 
 export default function CompanyPage() {
   const params = useParams();
   const companySlug = () => params.companySlug ?? "";
   const company = () => getCompanyBySlug(companySlug());
+  const maybeCompany = company();
 
-  if (!company()) {
+  if (!maybeCompany) {
     return (
       <>
         <Seo
@@ -40,14 +46,18 @@ export default function CompanyPage() {
     );
   }
 
-  const companyData = company()!;
+  const companyData = maybeCompany;
   const relatedProducts = getProductsForCompany(companyData.slug);
   const companySources = getSourcesByIds(companyData.sourceIds);
   const waves = getTechnologyWavesByIds(companyData.technologyWaveIds);
 
   return (
     <>
-      <Seo title={`${companyData.name} · Free The World`} description={companyData.description} route={`/companies/${companyData.slug}`} />
+      <Seo
+        title={`${companyData.name} · Free The World`}
+        description={companyData.description}
+        route={`/companies/${companyData.slug}`}
+      />
 
       <div class="space-y-8">
         <section class="space-y-4">
@@ -62,7 +72,13 @@ export default function CompanyPage() {
             </p>
           </div>
           <ActionRow>
-            <Button as="a" href={companyData.companiesMarketCapUrl} target="_blank" rel="noreferrer" variant="secondary">
+            <Button
+              as="a"
+              href={companyData.companiesMarketCapUrl}
+              target="_blank"
+              rel="noreferrer"
+              variant="secondary"
+            >
               CompaniesMarketCap
             </Button>
             <Button as="a" href={withBasePath(`/companies/${companyData.slug}/products`)}>
@@ -83,10 +99,10 @@ export default function CompanyPage() {
             description="A short editorial overview plus the current thesis on moat strength and decentralization pressure."
           />
           <div class="space-y-6">
-            {companyData.overview.map(section => (
+            {companyData.overview.map((section) => (
               <article class="space-y-3 prose-block">
                 <h2 class="text-2xl font-semibold tracking-tight">{section.title}</h2>
-                {section.paragraphs.map(paragraph => (
+                {section.paragraphs.map((paragraph) => (
                   <p>{paragraph}</p>
                 ))}
               </article>
@@ -95,7 +111,7 @@ export default function CompanyPage() {
               <article class="rounded-2xl border border-border bg-card p-5">
                 <h3 class="text-lg font-medium">Moat reading</h3>
                 <div class="mt-3 prose-block">
-                  {companyData.moatNarrative.map(paragraph => (
+                  {companyData.moatNarrative.map((paragraph) => (
                     <p>{paragraph}</p>
                   ))}
                 </div>
@@ -103,7 +119,7 @@ export default function CompanyPage() {
               <article class="rounded-2xl border border-border bg-card p-5">
                 <h3 class="text-lg font-medium">Decentralization reading</h3>
                 <div class="mt-3 prose-block">
-                  {companyData.decentralizationNarrative.map(paragraph => (
+                  {companyData.decentralizationNarrative.map((paragraph) => (
                     <p>{paragraph}</p>
                   ))}
                 </div>

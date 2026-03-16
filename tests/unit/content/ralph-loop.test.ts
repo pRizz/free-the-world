@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, test } from "bun:test";
-import { mkdir, mkdtemp, readFile, readdir, rm } from "node:fs/promises";
 import { spawnSync } from "node:child_process";
+import { mkdtemp, readdir, readFile, rm } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -33,7 +33,7 @@ describe("resolveLoopTargets", () => {
       requestedCompanySlugs: [],
     });
 
-    expect(targets.map(target => target.companySlug)).toEqual(["fixtureco"]);
+    expect(targets.map((target) => target.companySlug)).toEqual(["fixtureco"]);
     expect(targets[0]?.targetSource).toBe("canonical");
   });
 
@@ -51,7 +51,7 @@ describe("resolveLoopTargets", () => {
         companiesMarketCapUrl: "https://example.com/manifest-only",
         description: "Manifest-only company",
         technologyWaveIds: ["bitcoin-native-coordination"],
-      })
+      }),
     );
     const raw = await loadRawContent(tempRoot);
 
@@ -80,7 +80,7 @@ describe("resolveLoopTargets", () => {
         companiesMarketCapUrl: "https://example.com/queuedco",
         description: "Queued company",
         technologyWaveIds: [],
-      })
+      }),
     );
 
     const targets = resolveLoopTargets({
@@ -105,7 +105,7 @@ describe("resolveLoopTargets", () => {
         queueEntries: [],
         requestedCompanySlugs: [],
         batchId: "missing-batch",
-      })
+      }),
     ).toThrow(/company:queue/);
   });
 
@@ -123,7 +123,7 @@ describe("resolveLoopTargets", () => {
         companiesMarketCapUrl: "https://example.com/queuedco",
         description: "Queued company",
         technologyWaveIds: [],
-      })
+      }),
     );
 
     expect(() =>
@@ -132,7 +132,7 @@ describe("resolveLoopTargets", () => {
         queueEntries: [queuedEntry],
         requestedCompanySlugs: ["missingco"],
         batchId: "sp500-top20-2026-03-15",
-      })
+      }),
     ).toThrow(/does not contain company slug missingco/i);
   });
 
@@ -151,7 +151,7 @@ describe("resolveLoopTargets", () => {
           companiesMarketCapUrl: "https://example.com/queuedco",
           description: "Queued company",
           technologyWaveIds: [],
-        })
+        }),
       ),
       status: "draft",
     };
@@ -162,7 +162,7 @@ describe("resolveLoopTargets", () => {
         queueEntries: [malformedEntry as never],
         requestedCompanySlugs: [],
         batchId: "sp500-top20-2026-03-15",
-      })
+      }),
     ).toThrow(/unsupported status/i);
   });
 
@@ -180,7 +180,7 @@ describe("resolveLoopTargets", () => {
         companiesMarketCapUrl: "https://example.com/queuedco",
         description: "Queued company",
         technologyWaveIds: [],
-      })
+      }),
     );
     const duplicateEntry = buildQueueEntry(
       buildManifest({
@@ -194,7 +194,7 @@ describe("resolveLoopTargets", () => {
         description: "Duplicate queued company",
         technologyWaveIds: ["bitcoin-native-coordination"],
       }),
-      { createdOn: "2026-03-15T01:00:00.000Z" }
+      { createdOn: "2026-03-15T01:00:00.000Z" },
     );
 
     expect(() =>
@@ -203,7 +203,7 @@ describe("resolveLoopTargets", () => {
         queueEntries: [firstEntry, duplicateEntry],
         requestedCompanySlugs: [],
         batchId: "sp500-top20-2026-03-15",
-      })
+      }),
     ).toThrow(/duplicate manifest slug/i);
   });
 });
@@ -226,21 +226,19 @@ describe("bun run loop", () => {
           technologyWaveIds: [],
           seedProductNames: ["Queued Product"],
           seedSourceUrls: ["https://example.com/queuedco"],
-        })
-      )
+        }),
+      ),
     );
 
-    const result = runCli([
-      "loop",
-      "--batch-id=sp500-top20-2026-03-15",
-      "--task=company-overview",
-    ]);
+    const result = runCli(["loop", "--batch-id=sp500-top20-2026-03-15", "--task=company-overview"]);
 
     expect(result.status).toBe(0);
 
     const runDir = await readOnlyRunDir("queuedco");
     const promptText = await readFile(path.join(runDir, "overview.prompt.md"), "utf8");
-    const runManifest = JSON.parse(await readFile(path.join(runDir, "run.manifest.json"), "utf8")) as {
+    const runManifest = JSON.parse(
+      await readFile(path.join(runDir, "run.manifest.json"), "utf8"),
+    ) as {
       companySlug: string;
       targetSource?: string;
       batchId?: string;
@@ -268,8 +266,8 @@ describe("bun run loop", () => {
           companiesMarketCapUrl: "https://example.com/queuedco",
           description: "Queued company",
           technologyWaveIds: [],
-        })
-      )
+        }),
+      ),
     );
     await writeJsonFile(
       path.join(tempRoot, "manifests", "queue", "queuedco-two.json"),
@@ -285,8 +283,8 @@ describe("bun run loop", () => {
           description: "Second queued company",
           technologyWaveIds: ["bitcoin-native-coordination"],
         }),
-        { createdOn: "2026-03-15T01:00:00.000Z" }
-      )
+        { createdOn: "2026-03-15T01:00:00.000Z" },
+      ),
     );
 
     const result = runCli([
@@ -320,5 +318,11 @@ async function readOnlyRunDir(companySlug: string) {
   const companyRunRoot = path.join(tempRoot, "research", "runs", companySlug);
   const runDirs = await readdir(companyRunRoot);
   expect(runDirs).toHaveLength(1);
-  return path.join(companyRunRoot, runDirs[0]!);
+  const [runDir] = runDirs;
+
+  if (!runDir) {
+    throw new Error(`Expected one run directory for ${companySlug}.`);
+  }
+
+  return path.join(companyRunRoot, runDir);
 }

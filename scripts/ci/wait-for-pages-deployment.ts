@@ -20,7 +20,7 @@ while (true) {
         "X-GitHub-Api-Version": "2022-11-28",
       },
     },
-    "Pages deployment status request"
+    "Pages deployment status request",
   );
 
   const phase = classifyPagesDeploymentStatus(deploymentResponse.status);
@@ -45,13 +45,15 @@ while (true) {
 async function fetchJson<T>(
   url: string,
   init: RequestInit,
-  description: string
+  description: string,
 ): Promise<JsonResponseResult<T>> {
   const response = await fetch(url, init);
   const rawText = await response.text();
 
   if (!response.ok) {
-    throw new Error(`${description} failed (${response.status} ${response.statusText}): ${rawText}`);
+    throw new Error(
+      `${description} failed (${response.status} ${response.statusText}): ${rawText}`,
+    );
   }
 
   try {

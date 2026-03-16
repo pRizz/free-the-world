@@ -1,7 +1,7 @@
 import type { ParentProps } from "solid-js";
+import { PageHeader } from "~/components/blocks/page-header";
 import { Button } from "~/components/ui/button";
 import { Card, CardFooter } from "~/components/ui/card";
-import { PageHeader } from "~/components/blocks/page-header";
 
 export function EmptyState(
   props: ParentProps<{
@@ -11,7 +11,7 @@ export function EmptyState(
     actionLabel?: string;
     actionHref?: string;
     class?: string;
-  }>
+  }>,
 ) {
   return (
     <Card class={props.class}>

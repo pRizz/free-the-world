@@ -1,15 +1,14 @@
-import type { Industry, IndexDefinition, Region, Sector } from "~/lib/domain/types";
+import type { IndexDefinition, Industry, Region, Sector } from "~/lib/domain/types";
 
-export const regions: Region[] = [
-  { id: "us", label: "United States" },
-];
+export const regions: Region[] = [{ id: "us", label: "United States" }];
 
 export const indices: IndexDefinition[] = [
   {
     id: "sp500-top10",
     label: "S&P 500 · Top 10 by market cap",
     regionId: "us",
-    description: "A curated snapshot of the ten largest S&P 500 constituents by market capitalization.",
+    description:
+      "A curated snapshot of the ten largest S&P 500 constituents by market capitalization.",
   },
 ];
 

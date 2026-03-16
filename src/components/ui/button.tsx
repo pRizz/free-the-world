@@ -25,7 +25,7 @@ export const buttonVariants = cva(
       variant: "primary",
       size: "md",
     },
-  }
+  },
 );
 
 type ButtonProps<T extends ValidComponent = "button"> = ParentProps<
@@ -37,7 +37,13 @@ type ButtonProps<T extends ValidComponent = "button"> = ParentProps<
 >;
 
 export function Button<T extends ValidComponent = "button">(props: ButtonProps<T>) {
-  const [local, rest] = splitProps(props as ButtonProps, ["as", "class", "variant", "size", "children"]);
+  const [local, rest] = splitProps(props as ButtonProps, [
+    "as",
+    "class",
+    "variant",
+    "size",
+    "children",
+  ]);
 
   return (
     <Dynamic

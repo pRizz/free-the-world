@@ -1,7 +1,7 @@
 import path from "node:path";
 import type { CompanyManifest } from "../src/lib/domain/content-types";
-import { readJsonFile, rootDir } from "./lib/content";
 import { promoteManifest, promoteQueuedManifest } from "./lib/company-intake";
+import { readJsonFile, rootDir } from "./lib/content";
 import { parseArgs } from "./lib/ralph";
 
 const args = parseArgs(process.argv.slice(2));
@@ -31,5 +31,5 @@ if (args.manifest) {
 const result = await promoteQueuedManifest(args.queued);
 
 console.log(
-  `Promoted queued manifest ${result.manifest.slug} to ${path.relative(rootDir, result.targetFile)} and removed ${path.relative(rootDir, result.queueFile)}`
+  `Promoted queued manifest ${result.manifest.slug} to ${path.relative(rootDir, result.targetFile)} and removed ${path.relative(rootDir, result.queueFile)}`,
 );

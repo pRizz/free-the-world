@@ -2,8 +2,8 @@ import { MetaProvider } from "@solidjs/meta";
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
-import { siteConfig } from "~/lib/config";
 import { SiteShell } from "~/components/site-shell";
+import { siteConfig } from "~/lib/config";
 import "./app.css";
 
 export default function App() {
@@ -11,7 +11,7 @@ export default function App() {
     <MetaProvider>
       <Router
         base={siteConfig.basePath}
-        root={props => (
+        root={(props) => (
           <SiteShell>
             <Suspense>{props.children}</Suspense>
           </SiteShell>

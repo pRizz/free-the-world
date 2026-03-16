@@ -1,13 +1,21 @@
 import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { calculateFreedCapitalPotential } from "../../src/lib/domain/scoring";
+import {
+  type CompanyBundle,
+  type CompanyInputMetricId,
+  type CompanyManifest,
+  type ContentGraph,
+  companyInputMetricIds,
+  type ManifestQueueEntry,
+} from "../../src/lib/domain/content-types";
 import { deriveIpoMetrics } from "../../src/lib/domain/ipo";
+import { calculateFreedCapitalPotential } from "../../src/lib/domain/scoring";
 import type {
   Alternative,
   Company,
-  Industry,
   IndexDefinition,
+  Industry,
   MetricAssessment,
   Product,
   Region,
@@ -16,19 +24,15 @@ import type {
   TechnologyWave,
 } from "../../src/lib/domain/types";
 import { alternativeMetricIds } from "../../src/lib/domain/types";
-import {
-  companyInputMetricIds,
-  type CompanyBundle,
-  type CompanyInputMetricId,
-  type CompanyManifest,
-  type ContentGraph,
-  type ManifestQueueEntry,
-} from "../../src/lib/domain/content-types";
 
 const defaultRootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
-export const rootDir = process.env.FTW_ROOT_DIR ? path.resolve(process.env.FTW_ROOT_DIR) : defaultRootDir;
-export const contentDir = process.env.FTW_CONTENT_DIR ? path.resolve(process.env.FTW_CONTENT_DIR) : path.join(rootDir, "content");
+export const rootDir = process.env.FTW_ROOT_DIR
+  ? path.resolve(process.env.FTW_ROOT_DIR)
+  : defaultRootDir;
+export const contentDir = process.env.FTW_CONTENT_DIR
+  ? path.resolve(process.env.FTW_CONTENT_DIR)
+  : path.join(rootDir, "content");
 export const taxonomyDir = path.join(contentDir, "taxonomy");
 export const manifestsDir = path.join(contentDir, "manifests", "companies");
 export const queueManifestsDir = path.join(contentDir, "manifests", "queue");
@@ -67,16 +71,17 @@ export async function loadRawContent(contentRoot = contentDir): Promise<LoadedRa
   const companiesRoot = path.join(contentRoot, "companies");
   const sourcesRoot = path.join(contentRoot, "sources");
 
-  const [regions, indices, sectors, industries, technologyWaves, manifests, sources, bundles] = await Promise.all([
-    readJsonFile<Region[]>(path.join(taxonomyRoot, "regions.json")),
-    readJsonFile<IndexDefinition[]>(path.join(taxonomyRoot, "indices.json")),
-    readJsonFile<Sector[]>(path.join(taxonomyRoot, "sectors.json")),
-    readJsonFile<Industry[]>(path.join(taxonomyRoot, "industries.json")),
-    readJsonFile<TechnologyWave[]>(path.join(taxonomyRoot, "technology-waves.json")),
-    readJsonDirectory<CompanyManifest>(manifestsRoot),
-    readJsonDirectory<SourceCitation>(sourcesRoot),
-    readCompanyBundles(companiesRoot),
-  ]);
+  const [regions, indices, sectors, industries, technologyWaves, manifests, sources, bundles] =
+    await Promise.all([
+      readJsonFile<Region[]>(path.join(taxonomyRoot, "regions.json")),
+      readJsonFile<IndexDefinition[]>(path.join(taxonomyRoot, "indices.json")),
+      readJsonFile<Sector[]>(path.join(taxonomyRoot, "sectors.json")),
+      readJsonFile<Industry[]>(path.join(taxonomyRoot, "industries.json")),
+      readJsonFile<TechnologyWave[]>(path.join(taxonomyRoot, "technology-waves.json")),
+      readJsonDirectory<CompanyManifest>(manifestsRoot),
+      readJsonDirectory<SourceCitation>(sourcesRoot),
+      readCompanyBundles(companiesRoot),
+    ]);
 
   return {
     regions,
@@ -90,8 +95,12 @@ export async function loadRawContent(contentRoot = contentDir): Promise<LoadedRa
   };
 }
 
-export async function loadManifestQueueEntries(contentRoot = contentDir): Promise<ManifestQueueEntry[]> {
-  return readJsonDirectoryIfExists<ManifestQueueEntry>(path.join(contentRoot, "manifests", "queue"));
+export async function loadManifestQueueEntries(
+  contentRoot = contentDir,
+): Promise<ManifestQueueEntry[]> {
+  return readJsonDirectoryIfExists<ManifestQueueEntry>(
+    path.join(contentRoot, "manifests", "queue"),
+  );
 }
 
 export async function compileContent(contentRoot = contentDir): Promise<CompiledContentResult> {
@@ -103,31 +112,67 @@ export async function compileContent(contentRoot = contentDir): Promise<Compiled
 export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
   const issues: string[] = [];
 
-  assertUnique(raw.regions.map(region => region.id), "region", issues);
-  assertUnique(raw.indices.map(index => index.id), "index", issues);
-  assertUnique(raw.sectors.map(sector => sector.id), "sector", issues);
-  assertUnique(raw.industries.map(industry => industry.id), "industry", issues);
-  assertUnique(raw.technologyWaves.map(wave => wave.id), "technology wave", issues);
-  assertUnique(raw.manifests.map(manifest => manifest.slug), "company manifest", issues);
-  assertUnique(raw.sources.map(source => source.id), "source", issues);
-  assertUnique(raw.bundles.map(bundle => bundle.company.slug), "company bundle", issues);
+  assertUnique(
+    raw.regions.map((region) => region.id),
+    "region",
+    issues,
+  );
+  assertUnique(
+    raw.indices.map((index) => index.id),
+    "index",
+    issues,
+  );
+  assertUnique(
+    raw.sectors.map((sector) => sector.id),
+    "sector",
+    issues,
+  );
+  assertUnique(
+    raw.industries.map((industry) => industry.id),
+    "industry",
+    issues,
+  );
+  assertUnique(
+    raw.technologyWaves.map((wave) => wave.id),
+    "technology wave",
+    issues,
+  );
+  assertUnique(
+    raw.manifests.map((manifest) => manifest.slug),
+    "company manifest",
+    issues,
+  );
+  assertUnique(
+    raw.sources.map((source) => source.id),
+    "source",
+    issues,
+  );
+  assertUnique(
+    raw.bundles.map((bundle) => bundle.company.slug),
+    "company bundle",
+    issues,
+  );
 
-  const regionIds = new Set(raw.regions.map(region => region.id));
-  const indexById = new Map(raw.indices.map(index => [index.id, index]));
-  const sectorIds = new Set(raw.sectors.map(sector => sector.id));
-  const industryById = new Map(raw.industries.map(industry => [industry.id, industry]));
-  const waveIds = new Set(raw.technologyWaves.map(wave => wave.id));
-  const sourceById = new Map(raw.sources.map(source => [source.id, source]));
-  const manifestBySlug = new Map(raw.manifests.map(manifest => [manifest.slug, manifest]));
+  const regionIds = new Set(raw.regions.map((region) => region.id));
+  const indexById = new Map(raw.indices.map((index) => [index.id, index]));
+  const sectorIds = new Set(raw.sectors.map((sector) => sector.id));
+  const industryById = new Map(raw.industries.map((industry) => [industry.id, industry]));
+  const waveIds = new Set(raw.technologyWaves.map((wave) => wave.id));
+  const sourceById = new Map(raw.sources.map((source) => [source.id, source]));
+  const manifestBySlug = new Map(raw.manifests.map((manifest) => [manifest.slug, manifest]));
 
   for (const manifest of raw.manifests) {
-    validateManifest(manifest, {
-      regionIds,
-      indexById,
-      sectorIds,
-      industryById,
-      waveIds,
-    }, issues);
+    validateManifest(
+      manifest,
+      {
+        regionIds,
+        indexById,
+        sectorIds,
+        industryById,
+        waveIds,
+      },
+      issues,
+    );
   }
 
   const companies: Company[] = [];
@@ -138,7 +183,9 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
 
   for (const bundle of raw.bundles) {
     if (bundle.schemaVersion !== 1) {
-      issues.push(`Company bundle ${bundle.company.slug} has unsupported schemaVersion ${String(bundle.schemaVersion)}.`);
+      issues.push(
+        `Company bundle ${bundle.company.slug} has unsupported schemaVersion ${String(bundle.schemaVersion)}.`,
+      );
     }
 
     const maybeManifest = manifestBySlug.get(bundle.company.slug);
@@ -148,21 +195,30 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
       validateManifestAlignment(maybeManifest, bundle.company, issues);
     }
 
-    validateCompanyRecord(bundle.company, {
-      regionIds,
-      indexById,
-      sectorIds,
-      industryById,
-      waveIds,
-      sourceById,
-    }, issues);
+    validateCompanyRecord(
+      bundle.company,
+      {
+        regionIds,
+        indexById,
+        sectorIds,
+        industryById,
+        waveIds,
+        sourceById,
+      },
+      issues,
+    );
 
     const companyProductSlugs: string[] = [];
     for (const productRecord of bundle.products) {
-      validateProductRecord(bundle.company.slug, productRecord, {
-        waveIds,
-        sourceById,
-      }, issues);
+      validateProductRecord(
+        bundle.company.slug,
+        productRecord,
+        {
+          waveIds,
+          sourceById,
+        },
+        issues,
+      );
 
       if (productSlugSet.has(productRecord.slug)) {
         issues.push(`Duplicate product slug ${productRecord.slug}.`);
@@ -215,14 +271,19 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
     sectors: raw.sectors,
     industries: raw.industries,
     technologyWaves: raw.technologyWaves,
-    companies: companies.sort((left, right) => left.rankApprox - right.rankApprox || left.name.localeCompare(right.name)),
+    companies: companies.sort(
+      (left, right) => left.rankApprox - right.rankApprox || left.name.localeCompare(right.name),
+    ),
     products,
     alternatives,
     sources: [...raw.sources].sort((left, right) => left.id.localeCompare(right.id)),
   };
 }
 
-export async function writeGeneratedContentGraph(graph: ContentGraph, outputFile = generatedGraphFile) {
+export async function writeGeneratedContentGraph(
+  graph: ContentGraph,
+  outputFile = generatedGraphFile,
+) {
   await mkdir(path.dirname(outputFile), { recursive: true });
 
   const moduleSource = [
@@ -259,10 +320,10 @@ export async function readJsonFile<T>(targetFile: string): Promise<T> {
 
 async function readJsonDirectory<T>(targetDir: string): Promise<T[]> {
   const entries = (await readdir(targetDir, { withFileTypes: true }))
-    .filter(entry => entry.isFile() && entry.name.endsWith(".json"))
+    .filter((entry) => entry.isFile() && entry.name.endsWith(".json"))
     .sort((left, right) => left.name.localeCompare(right.name));
 
-  return Promise.all(entries.map(entry => readJsonFile<T>(path.join(targetDir, entry.name))));
+  return Promise.all(entries.map((entry) => readJsonFile<T>(path.join(targetDir, entry.name))));
 }
 
 async function readJsonDirectoryIfExists<T>(targetDir: string): Promise<T[]> {
@@ -278,10 +339,14 @@ async function readJsonDirectoryIfExists<T>(targetDir: string): Promise<T[]> {
 
 async function readCompanyBundles(targetDir: string): Promise<CompanyBundle[]> {
   const entries = (await readdir(targetDir, { withFileTypes: true }))
-    .filter(entry => entry.isDirectory())
+    .filter((entry) => entry.isDirectory())
     .sort((left, right) => left.name.localeCompare(right.name));
 
-  return Promise.all(entries.map(entry => readJsonFile<CompanyBundle>(path.join(targetDir, entry.name, "bundle.json"))));
+  return Promise.all(
+    entries.map((entry) =>
+      readJsonFile<CompanyBundle>(path.join(targetDir, entry.name, "bundle.json")),
+    ),
+  );
 }
 
 function validateManifest(
@@ -293,10 +358,12 @@ function validateManifest(
     industryById: Map<string, Industry>;
     waveIds: Set<string>;
   },
-  issues: string[]
+  issues: string[],
 ) {
   if (manifest.schemaVersion !== 1) {
-    issues.push(`Manifest ${manifest.slug} has unsupported schemaVersion ${String(manifest.schemaVersion)}.`);
+    issues.push(
+      `Manifest ${manifest.slug} has unsupported schemaVersion ${String(manifest.schemaVersion)}.`,
+    );
   }
 
   if (!lookup.regionIds.has(manifest.regionId)) {
@@ -317,7 +384,9 @@ function validateManifest(
   if (!maybeIndustry) {
     issues.push(`Manifest ${manifest.slug} references unknown industry ${manifest.industryId}.`);
   } else if (maybeIndustry.sectorId !== manifest.sectorId) {
-    issues.push(`Manifest ${manifest.slug} uses industry ${manifest.industryId} outside sector ${manifest.sectorId}.`);
+    issues.push(
+      `Manifest ${manifest.slug} uses industry ${manifest.industryId} outside sector ${manifest.sectorId}.`,
+    );
   }
 
   for (const waveId of manifest.technologyWaveIds) {
@@ -327,7 +396,11 @@ function validateManifest(
   }
 }
 
-function validateManifestAlignment(manifest: CompanyManifest, company: CompanyBundle["company"], issues: string[]) {
+function validateManifestAlignment(
+  manifest: CompanyManifest,
+  company: CompanyBundle["company"],
+  issues: string[],
+) {
   const alignedFields: Array<keyof CompanyManifest & keyof CompanyBundle["company"]> = [
     "slug",
     "name",
@@ -356,7 +429,7 @@ function validateCompanyRecord(
     waveIds: Set<string>;
     sourceById: Map<string, SourceCitation>;
   },
-  issues: string[]
+  issues: string[],
 ) {
   if (!lookup.regionIds.has(company.regionId)) {
     issues.push(`Company ${company.slug} references unknown region ${company.regionId}.`);
@@ -376,7 +449,9 @@ function validateCompanyRecord(
   if (!maybeIndustry) {
     issues.push(`Company ${company.slug} references unknown industry ${company.industryId}.`);
   } else if (maybeIndustry.sectorId !== company.sectorId) {
-    issues.push(`Company ${company.slug} uses industry ${company.industryId} outside sector ${company.sectorId}.`);
+    issues.push(
+      `Company ${company.slug} uses industry ${company.industryId} outside sector ${company.sectorId}.`,
+    );
   }
 
   for (const waveId of company.technologyWaveIds) {
@@ -392,7 +467,7 @@ function validateCompanyRecord(
 function validateCompanyInputMetrics(
   company: CompanyBundle["company"],
   sourceById: Map<string, SourceCitation>,
-  issues: string[]
+  issues: string[],
 ) {
   const metricIds = new Set(Object.keys(company.inputMetrics));
 
@@ -402,7 +477,12 @@ function validateCompanyInputMetrics(
       continue;
     }
 
-    validateMetricAssessment(`Company ${company.slug} metric ${metricId}`, company.inputMetrics[metricId], sourceById, issues);
+    validateMetricAssessment(
+      `Company ${company.slug} metric ${metricId}`,
+      company.inputMetrics[metricId],
+      sourceById,
+      issues,
+    );
   }
 
   for (const metricId of metricIds) {
@@ -412,8 +492,18 @@ function validateCompanyInputMetrics(
   }
 
   if (company.maybeIpo) {
-    validateSourceReferences(`Company ${company.slug} IPO date`, company.maybeIpo.dateSourceIds, sourceById, issues);
-    validateMetricAssessment(`Company ${company.slug} IPO market cap`, company.maybeIpo.marketCap, sourceById, issues);
+    validateSourceReferences(
+      `Company ${company.slug} IPO date`,
+      company.maybeIpo.dateSourceIds,
+      sourceById,
+      issues,
+    );
+    validateMetricAssessment(
+      `Company ${company.slug} IPO market cap`,
+      company.maybeIpo.marketCap,
+      sourceById,
+      issues,
+    );
   }
 }
 
@@ -424,7 +514,7 @@ function validateProductRecord(
     waveIds: Set<string>;
     sourceById: Map<string, SourceCitation>;
   },
-  issues: string[]
+  issues: string[],
 ) {
   validateSourceReferences(`Product ${product.slug}`, product.sourceIds, lookup.sourceById, issues);
 
@@ -445,22 +535,31 @@ function validateAlternativeRecord(
   lookup: {
     sourceById: Map<string, SourceCitation>;
   },
-  issues: string[]
+  issues: string[],
 ) {
   if (!alternative.slug || !alternative.name) {
     issues.push(`Product ${productSlug} has an alternative with missing slug or name.`);
   }
 
-  validateSourceReferences(`Alternative ${alternative.slug}`, alternative.sourceIds, lookup.sourceById, issues);
+  validateSourceReferences(
+    `Alternative ${alternative.slug}`,
+    alternative.sourceIds,
+    lookup.sourceById,
+    issues,
+  );
   const metricIds = new Set(Object.keys(alternative.metrics));
   for (const metricId of alternativeMetricIds) {
     if (!metricIds.has(metricId)) {
       issues.push(`Alternative ${alternative.slug} is missing metric ${metricId}.`);
-      continue;
     }
   }
   for (const [metricId, metric] of Object.entries(alternative.metrics)) {
-    validateMetricAssessment(`Alternative ${alternative.slug} metric ${metricId}`, metric, lookup.sourceById, issues);
+    validateMetricAssessment(
+      `Alternative ${alternative.slug} metric ${metricId}`,
+      metric,
+      lookup.sourceById,
+      issues,
+    );
   }
 }
 
@@ -468,7 +567,7 @@ function validateMetricAssessment(
   label: string,
   metric: MetricAssessment,
   sourceById: Map<string, SourceCitation>,
-  issues: string[]
+  issues: string[],
 ) {
   if (!Number.isFinite(metric.value)) {
     issues.push(`${label} has a non-finite value.`);
@@ -489,7 +588,7 @@ function validateSourceReferences(
   label: string,
   sourceIds: string[],
   sourceById: Map<string, SourceCitation>,
-  issues: string[]
+  issues: string[],
 ) {
   assertUnique(sourceIds, `${label} source reference`, issues);
 
@@ -511,7 +610,7 @@ function compileCompanyMetrics(company: CompanyBundle["company"]) {
     marketCap.value,
     company.inputMetrics.moat.value,
     company.inputMetrics.decentralizability.value,
-    company.inputMetrics.profitability.value
+    company.inputMetrics.profitability.value,
   );
 
   return {
@@ -520,7 +619,10 @@ function compileCompanyMetrics(company: CompanyBundle["company"]) {
       value: freedCapitalPotential,
       rationale:
         "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
-      sourceIds: uniqueSourceIds(company.inputMetrics.marketCap.sourceIds, company.inputMetrics.decentralizability.sourceIds),
+      sourceIds: uniqueSourceIds(
+        company.inputMetrics.marketCap.sourceIds,
+        company.inputMetrics.decentralizability.sourceIds,
+      ),
       confidence: "speculative" as const,
       lastReviewedOn: marketCap.lastReviewedOn,
     },

@@ -1,6 +1,10 @@
 import { deploymentConfig } from "../../src/lib/deployment-config";
 import { runCommand, runJsonCommand } from "../lib/command";
-import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
+import {
+  createDeployRun,
+  type DeployVerificationResult,
+  writeDeploySummary,
+} from "../lib/deploy-log";
 import { resolveGitHubRepositorySlug } from "../lib/github-repository";
 
 interface WorkflowRunsResponse {
@@ -40,7 +44,10 @@ const ref = resolveRef(args.ref);
 const headSha = runCommand("git", ["rev-parse", ref]).stdout.trim();
 const workflowFile = args.workflow ?? deploymentConfig.githubWorkflowFileName;
 const workflowRuns = loadWorkflowRuns(repositorySlug, workflowFile, ref);
-const existingRun = workflowRuns.workflow_runs?.find(runRecord => runRecord.head_sha === headSha && isReusableRun(runRecord.conclusion, runRecord.status));
+const existingRun = workflowRuns.workflow_runs?.find(
+  (runRecord) =>
+    runRecord.head_sha === headSha && isReusableRun(runRecord.conclusion, runRecord.status),
+);
 const actionsUrl = `https://github.com/${repositorySlug}/actions/workflows/${workflowFile}`;
 
 await run.addBreadcrumb({
@@ -63,7 +70,7 @@ const verificationResults: DeployVerificationResult[] = [];
 
 if (existingRun) {
   skippedReasons.push(
-    `A reusable workflow run already exists for ${ref}@${headSha}: ${existingRun.html_url ?? existingRun.id ?? existingRun.display_title ?? "existing run"}.`
+    `A reusable workflow run already exists for ${ref}@${headSha}: ${existingRun.html_url ?? existingRun.id ?? existingRun.display_title ?? "existing run"}.`,
   );
   await run.addBreadcrumb({
     detail: `Skipped dispatch because a reusable run already exists for ${ref}@${headSha}.`,
@@ -71,12 +78,16 @@ if (existingRun) {
     step: "dispatch",
   });
   verificationResults.push({
-    detail: existingRun.html_url ?? `Run ${existingRun.id ?? "unknown"} already covers ${ref}@${headSha}.`,
+    detail:
+      existingRun.html_url ??
+      `Run ${existingRun.id ?? "unknown"} already covers ${ref}@${headSha}.`,
     name: "existing workflow run",
     status: "passed",
   });
 } else if (mode === "check") {
-  skippedReasons.push(`Check mode only. Workflow ${workflowFile} was not dispatched for ${ref}@${headSha}.`);
+  skippedReasons.push(
+    `Check mode only. Workflow ${workflowFile} was not dispatched for ${ref}@${headSha}.`,
+  );
   await run.addBreadcrumb({
     detail: `Check mode prevented dispatch for ${ref}@${headSha}.`,
     status: "skipped",
@@ -106,7 +117,7 @@ if (existingRun) {
     ],
     {
       stdin: JSON.stringify({ ref }),
-    }
+    },
   );
 
   appliedChanges.push(`Dispatched ${workflowFile} for ${ref}@${headSha}.`);
@@ -147,7 +158,7 @@ const { runDirectory } = await writeDeploySummary(
     target: "github-workflow-dispatch",
     verificationResults,
   },
-  { runDirectory: run.runDirectory }
+  { runDirectory: run.runDirectory },
 );
 
 console.log(`GitHub workflow dispatch ${mode} complete. Summary: ${runDirectory}`);
@@ -175,7 +186,12 @@ function loadWorkflowRuns(repositorySlug: string, workflowFile: string, ref: str
 }
 
 function isReusableRun(conclusion: string | null | undefined, status: string | undefined) {
-  if (status === "queued" || status === "in_progress" || status === "requested" || status === "waiting") {
+  if (
+    status === "queued" ||
+    status === "in_progress" ||
+    status === "requested" ||
+    status === "waiting"
+  ) {
     return true;
   }
 

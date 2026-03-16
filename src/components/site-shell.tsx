@@ -1,9 +1,9 @@
 import { A, useLocation } from "@solidjs/router";
 import { createEffect, createSignal, type ParentProps } from "solid-js";
-import { siteConfig } from "~/lib/config";
-import { cn } from "~/lib/utils";
 import { Button } from "~/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "~/components/ui/collapsible";
+import { siteConfig } from "~/lib/config";
+import { cn } from "~/lib/utils";
 
 const navigation = [
   { href: "/", label: "Home" },
@@ -28,7 +28,7 @@ function NavLink(props: { href: string; label: string; class?: string }) {
         isActive()
           ? "bg-secondary text-foreground"
           : "text-muted-foreground hover:bg-secondary/70 hover:text-foreground",
-        props.class
+        props.class,
       )}
     >
       {props.label}
@@ -39,7 +39,7 @@ function NavLink(props: { href: string; label: string; class?: string }) {
 function SiteNav(props: { ariaLabel: string; class?: string; linkClass?: string }) {
   return (
     <nav aria-label={props.ariaLabel} class={cn("flex items-center gap-1.5", props.class)}>
-      {navigation.map(item => (
+      {navigation.map((item) => (
         <NavLink href={item.href} label={item.label} class={props.linkClass} />
       ))}
     </nav>
@@ -121,12 +121,15 @@ export function SiteShell(props: ParentProps) {
             <div class="space-y-2">
               <p class="text-sm font-medium">{siteConfig.name}</p>
               <p class="max-w-2xl text-sm text-muted-foreground">
-                Built as a research surface for tracking how AI, open source, Bitcoin rails, and distributed
-                manufacturing steadily make legacy pricing models look like an elaborate historical accident.
+                Built as a research surface for tracking how AI, open source, Bitcoin rails, and
+                distributed manufacturing steadily make legacy pricing models look like an elaborate
+                historical accident.
               </p>
             </div>
             <div class="space-y-1 sm:text-right">
-              <p class="text-xs uppercase tracking-[0.28em] text-muted-foreground">{siteConfig.snapshotLabel}</p>
+              <p class="text-xs uppercase tracking-[0.28em] text-muted-foreground">
+                {siteConfig.snapshotLabel}
+              </p>
               {buildInfo && shortCommitSha ? (
                 <p class="text-xs text-muted-foreground">
                   Commit{" "}

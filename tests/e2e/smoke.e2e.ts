@@ -10,9 +10,11 @@ test("home page renders shell and hero content", async ({ page }) => {
     page.getByRole("heading", {
       level: 1,
       name: /Price the moat honestly\. Then imagine what happens when more of the world becomes free\./i,
-    })
+    }),
   ).toBeVisible();
-  await expect(page.getByRole("contentinfo").getByRole("link", { name: /^[0-9a-f]{7}$/i })).toBeVisible();
+  await expect(
+    page.getByRole("contentinfo").getByRole("link", { name: /^[0-9a-f]{7}$/i }),
+  ).toBeVisible();
   await expect(page.getByRole("contentinfo").locator("time")).toContainText(/UTC$/);
 });
 
@@ -20,10 +22,18 @@ test("about page renders the main explainer heading", async ({ page }) => {
   await gotoRoute(page, "/about");
 
   await expect(page).toHaveURL(/\/about\/?$/);
-  await expect(page.getByRole("heading", { name: /A registry for the slowly free future/i })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /A registry for the slowly free future/i }),
+  ).toBeVisible();
   await expect(page.getByRole("region", { name: "Build metadata" })).toBeVisible();
-  await expect(page.getByRole("region", { name: "Build metadata" }).getByRole("link", { name: /^[0-9a-f]{7}$/i })).toBeVisible();
-  await expect(page.getByRole("region", { name: "Build metadata" }).locator("time")).toContainText(/T\d{2}:\d{2}:\d{2}/);
+  await expect(
+    page
+      .getByRole("region", { name: "Build metadata" })
+      .getByRole("link", { name: /^[0-9a-f]{7}$/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("region", { name: "Build metadata" }).locator("time")).toContainText(
+    /T\d{2}:\d{2}:\d{2}/,
+  );
 });
 
 test("methodology page renders the methodology heading", async ({ page }) => {
@@ -37,7 +47,9 @@ test("mirrors page renders the configured hosts and tor notice", async ({ page }
   await gotoRoute(page, "/mirrors");
 
   await expect(page).toHaveURL(/\/mirrors\/?$/);
-  await expect(page.getByRole("heading", { name: /Where Free The World is currently reachable/i })).toBeVisible();
+  await expect(
+    page.getByRole("heading", { name: /Where Free The World is currently reachable/i }),
+  ).toBeVisible();
   await expect(page.getByRole("heading", { name: "GitHub Pages mirror" })).toBeVisible();
   await expect(page.getByText(/Tor-based mirrors are coming soon/i)).toBeVisible();
 });
@@ -56,18 +68,30 @@ test("mobile shell stays compact and expands navigation on demand", async ({ pag
   await expect(mobileNav).toBeHidden();
   await expect(page.getByText(/A running ledger of corporate moats/i)).toHaveCount(0);
 
-  const headerHeight = await banner.evaluate(element => element.getBoundingClientRect().height);
+  const headerHeight = await banner.evaluate((element) => element.getBoundingClientRect().height);
   expect(headerHeight).toBeLessThan(110);
 
   await mobileToggle.click();
 
   await expect(mobileToggle).toHaveAttribute("aria-expanded", "true");
   await expect(page.getByRole("navigation", { name: "Mobile menu" })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Home" })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Registry" })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Mirrors" })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Methodology" })).toBeVisible();
-  await expect(page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "About" })).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Home" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Registry" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Mirrors" }),
+  ).toBeVisible();
+  await expect(
+    page
+      .getByRole("navigation", { name: "Mobile menu" })
+      .getByRole("link", { name: "Methodology" }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "About" }),
+  ).toBeVisible();
   await expect(banner.getByRole("link", { name: "Newsletter on Substack" })).toBeVisible();
 });
 
@@ -79,15 +103,21 @@ test("mobile menu closes after route navigation", async ({ page }) => {
   const mobileToggle = banner.getByRole("button", { name: "Toggle navigation menu" });
 
   await mobileToggle.click();
-  await page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "About" }).click();
+  await page
+    .getByRole("navigation", { name: "Mobile menu" })
+    .getByRole("link", { name: "About" })
+    .click();
 
   await expect(page).toHaveURL(/\/about\/?$/);
-  await expect(page.getByRole("heading", { name: /A registry for the slowly free future/i })).toBeVisible();
-  await expect(page.getByRole("banner").getByRole("button", { name: "Toggle navigation menu" })).toHaveAttribute(
-    "aria-expanded",
-    "false"
-  );
-  await expect(page.getByRole("navigation", { name: "Mobile menu", includeHidden: true })).toBeHidden();
+  await expect(
+    page.getByRole("heading", { name: /A registry for the slowly free future/i }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("banner").getByRole("button", { name: "Toggle navigation menu" }),
+  ).toHaveAttribute("aria-expanded", "false");
+  await expect(
+    page.getByRole("navigation", { name: "Mobile menu", includeHidden: true }),
+  ).toBeHidden();
 });
 
 test("desktop shell keeps inline navigation and hides the mobile toggle", async ({ page }) => {
@@ -97,7 +127,11 @@ test("desktop shell keeps inline navigation and hides the mobile toggle", async 
   const banner = page.getByRole("banner");
 
   await expect(banner.getByRole("navigation", { name: "Primary" })).toBeVisible();
-  await expect(banner.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Mirrors" })).toBeVisible();
+  await expect(
+    banner.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Mirrors" }),
+  ).toBeVisible();
   await expect(banner.getByRole("link", { name: "Newsletter on Substack" })).toBeVisible();
-  await expect(banner.getByRole("button", { name: "Toggle navigation menu", includeHidden: true })).toBeHidden();
+  await expect(
+    banner.getByRole("button", { name: "Toggle navigation menu", includeHidden: true }),
+  ).toBeHidden();
 });

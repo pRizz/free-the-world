@@ -6,12 +6,16 @@ import {
   type MetricDefinition,
 } from "~/lib/domain/types";
 
-export const companyMetricDefinitions: Record<CompanyMetricId, MetricDefinition<CompanyMetricId>> = {
+export const companyMetricDefinitions: Record<
+  CompanyMetricId,
+  MetricDefinition<CompanyMetricId>
+> = {
   moat: {
     id: "moat",
     label: "Moat",
     shortLabel: "Moat",
-    description: "How difficult the company is to dislodge with product, distribution, or regulatory pressure.",
+    description:
+      "How difficult the company is to dislodge with product, distribution, or regulatory pressure.",
     valueType: "score",
     precision: 1,
     defaultVisible: true,
@@ -32,7 +36,8 @@ export const companyMetricDefinitions: Record<CompanyMetricId, MetricDefinition<
     id: "profitability",
     label: "Profitability",
     shortLabel: "Profit",
-    description: "Editorial score for profit quality and staying power rather than a single accounting ratio.",
+    description:
+      "Editorial score for profit quality and staying power rather than a single accounting ratio.",
     valueType: "score",
     precision: 1,
     defaultVisible: true,
@@ -42,7 +47,8 @@ export const companyMetricDefinitions: Record<CompanyMetricId, MetricDefinition<
     id: "peRatio",
     label: "Price / Earnings",
     shortLabel: "P/E",
-    description: "Approximate forward or blended price-to-earnings snapshot for context, not a precise valuation service.",
+    description:
+      "Approximate forward or blended price-to-earnings snapshot for context, not a precise valuation service.",
     valueType: "ratio",
     precision: 1,
     defaultVisible: true,
@@ -62,7 +68,8 @@ export const companyMetricDefinitions: Record<CompanyMetricId, MetricDefinition<
     id: "ipoMarketCap",
     label: "IPO market cap",
     shortLabel: "IPO cap",
-    description: "Approximate equity value implied at the IPO using the offer price and post-offering share count.",
+    description:
+      "Approximate equity value implied at the IPO using the offer price and post-offering share count.",
     valueType: "currency",
     precision: 0,
     defaultVisible: true,
@@ -82,7 +89,8 @@ export const companyMetricDefinitions: Record<CompanyMetricId, MetricDefinition<
     id: "ipoAnnualizedGrowthRate",
     label: "Yearly market cap growth since IPO",
     shortLabel: "IPO CAGR",
-    description: "Compound annual growth rate of market cap from the IPO date through the current market cap snapshot.",
+    description:
+      "Compound annual growth rate of market cap from the IPO date through the current market cap snapshot.",
     valueType: "percentage",
     precision: 1,
     defaultVisible: true,
@@ -148,9 +156,9 @@ export const alternativeMetricDefinitions: Record<
 };
 
 export const defaultVisibleCompanyMetrics = companyMetricIds.filter(
-  metricId => companyMetricDefinitions[metricId].defaultVisible
+  (metricId) => companyMetricDefinitions[metricId].defaultVisible,
 );
 
 export const defaultVisibleAlternativeMetrics = alternativeMetricIds.filter(
-  metricId => alternativeMetricDefinitions[metricId].defaultVisible
+  (metricId) => alternativeMetricDefinitions[metricId].defaultVisible,
 );

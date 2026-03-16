@@ -2,7 +2,12 @@ import { A, useParams } from "@solidjs/router";
 import { ContentCard } from "~/components/blocks/content-card";
 import { EmptyState } from "~/components/blocks/empty-state";
 import { PageHeader } from "~/components/blocks/page-header";
-import { AlternativeTable, ProductOverviewPanel, SourceSummaryCard, TechnologyWavePanel } from "~/components/company-panels";
+import {
+  AlternativeTable,
+  ProductOverviewPanel,
+  SourceSummaryCard,
+  TechnologyWavePanel,
+} from "~/components/company-panels";
 import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
 import { withBasePath } from "~/lib/config";
@@ -20,8 +25,10 @@ export default function ProductPage() {
   const productSlug = () => params.productSlug ?? "";
   const company = () => getCompanyBySlug(companySlug());
   const product = () => getProductBySlug(productSlug());
+  const maybeCompany = company();
+  const maybeProduct = product();
 
-  if (!company() || !product() || product()!.companySlug !== company()!.slug) {
+  if (!maybeCompany || !maybeProduct || maybeProduct.companySlug !== maybeCompany.slug) {
     return (
       <>
         <Seo
@@ -40,8 +47,8 @@ export default function ProductPage() {
     );
   }
 
-  const companyData = company()!;
-  const productData = product()!;
+  const companyData = maybeCompany;
+  const productData = maybeProduct;
   const productAlternatives = getAlternativesForProduct(productData.slug);
   const productSources = getSourcesByIds(productData.sourceIds);
   const waveData = getTechnologyWavesByIds(productData.technologyWaveIds);
@@ -63,8 +70,8 @@ export default function ProductPage() {
           <div class="space-y-3">
             <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">{productData.name}</h1>
             <p class="max-w-4xl text-base leading-8 text-muted-foreground sm:text-lg">
-              The question here is simple: which parts of this product are genuinely hard, and which parts are mostly
-              a very profitable coordination habit?
+              The question here is simple: which parts of this product are genuinely hard, and which
+              parts are mostly a very profitable coordination habit?
             </p>
           </div>
         </section>

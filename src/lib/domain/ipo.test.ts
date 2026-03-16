@@ -1,5 +1,10 @@
 import { expect, test } from "bun:test";
-import { calculateIpoAnnualizedGrowthRate, calculateIpoReturnMultiplier, calculateYearsSinceIpo, deriveIpoMetrics } from "~/lib/domain/ipo";
+import {
+  calculateIpoAnnualizedGrowthRate,
+  calculateIpoReturnMultiplier,
+  calculateYearsSinceIpo,
+  deriveIpoMetrics,
+} from "~/lib/domain/ipo";
 import type { CompanyIpo, MetricAssessment } from "~/lib/domain/types";
 
 function makeAssessment(value: number, lastReviewedOn = "2026-03-14"): MetricAssessment {

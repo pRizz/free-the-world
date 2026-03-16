@@ -1,9 +1,9 @@
+import { expect, test } from "bun:test";
 import { spawnSync } from "node:child_process";
-import { mkdtemp, mkdir, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { expect, test } from "bun:test";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 const archiveScript = path.join(rootDir, "scripts", "ci", "archive-pages-artifact.sh");
@@ -43,15 +43,15 @@ test("archive-pages-artifact.sh excludes hidden entries and keeps site files", a
 
     const entries = listResult.stdout
       .split("\n")
-      .map(entry => entry.trim())
+      .map((entry) => entry.trim())
       .filter(Boolean);
-    const normalizedEntries = entries.map(entry => entry.replace(/^\.\//, "").replace(/\/$/, ""));
+    const normalizedEntries = entries.map((entry) => entry.replace(/^\.\//, "").replace(/\/$/, ""));
 
     expect(normalizedEntries).toContain("index.html");
     expect(normalizedEntries).toContain("assets/app.js");
-    expect(normalizedEntries.some(entry => entry.includes(".git"))).toBe(false);
-    expect(normalizedEntries.some(entry => entry.includes(".github"))).toBe(false);
-    expect(normalizedEntries.some(entry => entry.includes(".hidden"))).toBe(false);
+    expect(normalizedEntries.some((entry) => entry.includes(".git"))).toBe(false);
+    expect(normalizedEntries.some((entry) => entry.includes(".github"))).toBe(false);
+    expect(normalizedEntries.some((entry) => entry.includes(".hidden"))).toBe(false);
   } finally {
     await rm(tempRoot, { recursive: true, force: true });
   }

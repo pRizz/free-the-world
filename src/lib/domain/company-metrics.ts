@@ -8,7 +8,7 @@ export function compareCompaniesByMetric(
   left: Company,
   right: Company,
   metricId: CompanyMetricId,
-  direction: "asc" | "desc"
+  direction: "asc" | "desc",
 ) {
   const leftValue = getCompanyMetricValue(left, metricId);
   const rightValue = getCompanyMetricValue(right, metricId);
@@ -28,6 +28,12 @@ export function compareCompaniesByMetric(
   return direction === "desc" ? rightValue - leftValue : leftValue - rightValue;
 }
 
-export function sortCompaniesByMetric(companies: Company[], metricId: CompanyMetricId, direction: "asc" | "desc") {
-  return [...companies].sort((left, right) => compareCompaniesByMetric(left, right, metricId, direction));
+export function sortCompaniesByMetric(
+  companies: Company[],
+  metricId: CompanyMetricId,
+  direction: "asc" | "desc",
+) {
+  return [...companies].sort((left, right) =>
+    compareCompaniesByMetric(left, right, metricId, direction),
+  );
 }

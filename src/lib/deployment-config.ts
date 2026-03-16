@@ -106,14 +106,16 @@ export function getSiteAccessEntries(): SiteAccessEntry[] {
       label: deployTargets["github-pages"].label,
       url: deployTargets["github-pages"].publicOrigin,
       kind: "mirror",
-      description: "Public mirror that serves the same site but stays noindexed and canonicalizes to the .com host.",
+      description:
+        "Public mirror that serves the same site but stays noindexed and canonicalizes to the .com host.",
       shouldIndex: deployTargets["github-pages"].shouldIndex,
     },
-    ...deploymentConfig.redirectDomains.map(domain => ({
+    ...deploymentConfig.redirectDomains.map((domain) => ({
       label: `${domain} redirect`,
       url: `https://${domain}`,
       kind: "redirect" as const,
-      description: "Alias domain that responds with a 301 redirect to the canonical .com host instead of serving independent content.",
+      description:
+        "Alias domain that responds with a 301 redirect to the canonical .com host instead of serving independent content.",
       shouldIndex: false,
       redirectTarget: canonicalUrl,
     })),
@@ -139,12 +141,9 @@ export function getRobotsMetaContent(target: DeployTarget, maybeNoIndex = false)
 export function getRobotsTxt(target: DeployTarget) {
   const directives = getDeployTargetConfig(target).shouldIndex ? ["Allow: /"] : ["Disallow: /"];
 
-  return [
-    "User-agent: *",
-    ...directives,
-    `Sitemap: ${getCanonicalUrl("/sitemap.xml")}`,
-    "",
-  ].join("\n");
+  return ["User-agent: *", ...directives, `Sitemap: ${getCanonicalUrl("/sitemap.xml")}`, ""].join(
+    "\n",
+  );
 }
 
 export function getExpectedAssetPrefix(target: DeployTarget) {

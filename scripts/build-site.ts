@@ -1,4 +1,8 @@
-import { buildMetadataToEnv, readBuildMetadataFromEnv, resolveBuildMetadata } from "./lib/build-metadata";
+import {
+  buildMetadataToEnv,
+  readBuildMetadataFromEnv,
+  resolveBuildMetadata,
+} from "./lib/build-metadata";
 import { runCommand } from "./lib/command";
 
 if (process.env.SKIP_CONTENT_COMPILE !== "true") {

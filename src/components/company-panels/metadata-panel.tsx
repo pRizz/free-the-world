@@ -1,8 +1,13 @@
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetadataGrid } from "~/components/blocks/metadata-grid";
 import { PageHeader } from "~/components/blocks/page-header";
+import {
+  getIndexLabels,
+  getIndustryLabel,
+  getRegionLabel,
+  getSectorLabel,
+} from "~/lib/domain/selectors";
 import type { Company } from "~/lib/domain/types";
-import { getIndustryLabel, getIndexLabels, getRegionLabel, getSectorLabel } from "~/lib/domain/selectors";
 
 export function CompanyMetadataPanel(props: { company: Company }) {
   return (

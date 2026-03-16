@@ -58,7 +58,11 @@ export interface DeployRunContext {
   target: string;
 }
 
-export async function createDeployRun(options: { command: string; mode: "apply" | "check"; target: string }): Promise<DeployRunContext> {
+export async function createDeployRun(options: {
+  command: string;
+  mode: "apply" | "check";
+  target: string;
+}): Promise<DeployRunContext> {
   const runDirectory = await ensureRunDirectory(options.command, options.target);
   const breadcrumbsJsonlPath = path.join(runDirectory, "breadcrumbs.jsonl");
   const breadcrumbsMarkdownPath = path.join(runDirectory, "breadcrumbs.md");
@@ -79,16 +83,16 @@ export async function createDeployRun(options: { command: string; mode: "apply" 
       `- Started at: \`${startedAt}\``,
       "",
     ].join("\n"),
-    "utf8"
+    "utf8",
   );
   await writeFile(
     runMetadataPath,
     `${JSON.stringify({ ...options, startedAt } satisfies PersistedDeployRunMetadata, null, 2)}\n`,
-    "utf8"
+    "utf8",
   );
 
   return {
-    addBreadcrumb: async breadcrumb => {
+    addBreadcrumb: async (breadcrumb) => {
       const completedAtMs = resolveTimestampMs(breadcrumb.at, Date.now());
       const completedAt = new Date(completedAtMs).toISOString();
       const breadcrumbStartedAtMs =
@@ -97,11 +101,14 @@ export async function createDeployRun(options: { command: string; mode: "apply" 
           : breadcrumb.durationMs !== undefined
             ? completedAtMs - breadcrumb.durationMs
             : lastBreadcrumbAtMs;
-      const normalizedStartedAtMs = Math.min(completedAtMs, Math.max(startedAtMs, breadcrumbStartedAtMs));
+      const normalizedStartedAtMs = Math.min(
+        completedAtMs,
+        Math.max(startedAtMs, breadcrumbStartedAtMs),
+      );
       const entry = {
         ...breadcrumb,
         at: completedAt,
-        durationMs: Math.max(0, breadcrumb.durationMs ?? (completedAtMs - normalizedStartedAtMs)),
+        durationMs: Math.max(0, breadcrumb.durationMs ?? completedAtMs - normalizedStartedAtMs),
         elapsedMs: Math.max(0, completedAtMs - startedAtMs),
         startedAt: new Date(normalizedStartedAtMs).toISOString(),
       };
@@ -115,12 +122,14 @@ export async function createDeployRun(options: { command: string; mode: "apply" 
           `  - Started at: \`${entry.startedAt}\``,
           `  - Duration: \`${formatDurationVerbose(entry.durationMs)}\``,
           `  - Elapsed: \`${formatDurationVerbose(entry.elapsedMs)}\``,
-          entry.data === undefined ? null : `  \`\`\`json\n  ${JSON.stringify(entry.data, null, 2).replaceAll("\n", "\n  ")}\n  \`\`\``,
+          entry.data === undefined
+            ? null
+            : `  \`\`\`json\n  ${JSON.stringify(entry.data, null, 2).replaceAll("\n", "\n  ")}\n  \`\`\``,
           "",
         ]
           .filter((line): line is string => line !== null)
           .join("\n"),
-        "utf8"
+        "utf8",
       );
     },
     breadcrumbsJsonlPath,
@@ -133,8 +142,12 @@ export async function createDeployRun(options: { command: string; mode: "apply" 
   };
 }
 
-export async function writeDeploySummary(summary: DeploySummary, options: { runDirectory?: string } = {}) {
-  const runDirectory = options.runDirectory ?? (await ensureRunDirectory(summary.command, summary.target));
+export async function writeDeploySummary(
+  summary: DeploySummary,
+  options: { runDirectory?: string } = {},
+) {
+  const runDirectory =
+    options.runDirectory ?? (await ensureRunDirectory(summary.command, summary.target));
   const runMetadata = await loadPersistedRunMetadata(runDirectory);
   const breadcrumbs = await loadPersistedBreadcrumbs(runDirectory);
   const completedAt = new Date().toISOString();
@@ -168,7 +181,9 @@ function renderSummaryMarkdown(summary: DeploySummary) {
     `- Mode: \`${summary.mode}\``,
     summary.artifactDir ? `- Artifact directory: \`${summary.artifactDir}\`` : null,
     summary.artifactHash ? `- Artifact hash: \`${summary.artifactHash}\`` : null,
-    summary.resultingUrls.length > 0 ? `- Result URLs: ${summary.resultingUrls.map(url => `\`${url}\``).join(", ")}` : null,
+    summary.resultingUrls.length > 0
+      ? `- Result URLs: ${summary.resultingUrls.map((url) => `\`${url}\``).join(", ")}`
+      : null,
     summary.timing
       ? [
           "",
@@ -183,14 +198,20 @@ function renderSummaryMarkdown(summary: DeploySummary) {
       : null,
     "",
     "## Skips",
-    summary.skippedReasons.length > 0 ? summary.skippedReasons.map(reason => `- ${reason}`).join("\n") : "- None",
+    summary.skippedReasons.length > 0
+      ? summary.skippedReasons.map((reason) => `- ${reason}`).join("\n")
+      : "- None",
     "",
     "## Applied Changes",
-    summary.appliedChanges.length > 0 ? summary.appliedChanges.map(change => `- ${change}`).join("\n") : "- None",
+    summary.appliedChanges.length > 0
+      ? summary.appliedChanges.map((change) => `- ${change}`).join("\n")
+      : "- None",
     "",
     "## Verification",
     summary.verificationResults.length > 0
-      ? summary.verificationResults.map(result => `- [${result.status}] ${result.name}: ${result.detail}`).join("\n")
+      ? summary.verificationResults
+          .map((result) => `- [${result.status}] ${result.name}: ${result.detail}`)
+          .join("\n")
       : "- None",
     "",
     "## Planned Changes",
@@ -213,7 +234,11 @@ async function appendGitHubStepSummary(summary: DeploySummary) {
     return;
   }
 
-  await appendFile(process.env.GITHUB_STEP_SUMMARY, `${renderGitHubStepSummary(summary)}\n`, "utf8");
+  await appendFile(
+    process.env.GITHUB_STEP_SUMMARY,
+    `${renderGitHubStepSummary(summary)}\n`,
+    "utf8",
+  );
 }
 
 function renderGitHubStepSummary(summary: DeploySummary) {
@@ -224,23 +249,38 @@ function renderGitHubStepSummary(summary: DeploySummary) {
     `- Mode: \`${summary.mode}\``,
     summary.artifactHash ? `- Artifact hash: \`${summary.artifactHash}\`` : null,
     summary.artifactDir ? `- Artifact directory: \`${summary.artifactDir}\`` : null,
-    summary.resultingUrls.length > 0 ? `- Result URLs: ${summary.resultingUrls.map(url => `[${url}](${url})`).join(", ")}` : null,
+    summary.resultingUrls.length > 0
+      ? `- Result URLs: ${summary.resultingUrls.map((url) => `[${url}](${url})`).join(", ")}`
+      : null,
     summary.timing
       ? `- Timing: started \`${summary.timing.startedAt}\`, completed \`${summary.timing.completedAt}\`, duration \`${formatDurationVerbose(summary.timing.durationMs)}\``
       : null,
     "",
     "### Outcome",
-    summary.appliedChanges.length > 0 ? summary.appliedChanges.map(change => `- ${change}`).join("\n") : "- No applied changes",
+    summary.appliedChanges.length > 0
+      ? summary.appliedChanges.map((change) => `- ${change}`).join("\n")
+      : "- No applied changes",
     "",
     "### Skips",
-    summary.skippedReasons.length > 0 ? summary.skippedReasons.map(reason => `- ${reason}`).join("\n") : "- None",
+    summary.skippedReasons.length > 0
+      ? summary.skippedReasons.map((reason) => `- ${reason}`).join("\n")
+      : "- None",
     "",
     "### Verification",
     summary.verificationResults.length > 0
-      ? summary.verificationResults.map(result => `- [${result.status}] ${result.name}: ${result.detail}`).join("\n")
+      ? summary.verificationResults
+          .map((result) => `- [${result.status}] ${result.name}: ${result.detail}`)
+          .join("\n")
       : "- None",
     summary.breadcrumbs && summary.breadcrumbs.length > 0
-      ? ["", `<details><summary>Action timeline (${summary.breadcrumbs.length} entries)</summary>`, "", renderBreadcrumbTable(summary.breadcrumbs), "", "</details>"].join("\n")
+      ? [
+          "",
+          `<details><summary>Action timeline (${summary.breadcrumbs.length} entries)</summary>`,
+          "",
+          renderBreadcrumbTable(summary.breadcrumbs),
+          "",
+          "</details>",
+        ].join("\n")
       : null,
     "",
   ];
@@ -253,8 +293,8 @@ function renderBreadcrumbTable(breadcrumbs: DeployBreadcrumb[]) {
     "| Started (UTC) | Completed (UTC) | Duration | Elapsed | Status | Step | Detail |",
     "| --- | --- | --- | --- | --- | --- | --- |",
     ...breadcrumbs.map(
-      breadcrumb =>
-        `| ${escapeTableCell(breadcrumb.startedAt ?? "")} | ${escapeTableCell(breadcrumb.at ?? "")} | ${escapeTableCell(formatDurationCompact(breadcrumb.durationMs))} | ${escapeTableCell(formatDurationCompact(breadcrumb.elapsedMs))} | ${escapeTableCell(breadcrumb.status)} | ${escapeTableCell(breadcrumb.step)} | ${escapeTableCell(breadcrumb.detail)} |`
+      (breadcrumb) =>
+        `| ${escapeTableCell(breadcrumb.startedAt ?? "")} | ${escapeTableCell(breadcrumb.at ?? "")} | ${escapeTableCell(formatDurationCompact(breadcrumb.durationMs))} | ${escapeTableCell(formatDurationCompact(breadcrumb.elapsedMs))} | ${escapeTableCell(breadcrumb.status)} | ${escapeTableCell(breadcrumb.step)} | ${escapeTableCell(breadcrumb.detail)} |`,
     ),
   ].join("\n");
 }
@@ -333,7 +373,7 @@ async function loadPersistedBreadcrumbs(runDirectory: string) {
     return rawBreadcrumbs
       .split(/\r?\n/)
       .filter(Boolean)
-      .map(line => JSON.parse(line) as DeployBreadcrumb);
+      .map((line) => JSON.parse(line) as DeployBreadcrumb);
   } catch {
     return [];
   }
@@ -359,7 +399,7 @@ async function ensureRunDirectory(command: string, target: string) {
     ".codex",
     "logs",
     "deploy",
-    `${timestamp}-${sanitizePathSegment(command)}-${sanitizePathSegment(target)}`
+    `${timestamp}-${sanitizePathSegment(command)}-${sanitizePathSegment(target)}`,
   );
 
   await mkdir(runDirectory, { recursive: true });

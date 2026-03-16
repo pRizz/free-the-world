@@ -5,14 +5,14 @@ const args = parseArgs(process.argv.slice(2));
 
 if (args.help === "true") {
   console.log(
-    "Usage: bun run sync:company --company=<slug> [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--no-commit=true]"
+    "Usage: bun run sync:company --company=<slug> [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--no-commit=true]",
   );
   process.exit(0);
 }
 
 if (!args.company) {
   console.log(
-    "Usage: bun run sync:company --company=<slug> [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--no-commit=true]"
+    "Usage: bun run sync:company --company=<slug> [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--no-commit=true]",
   );
   process.exit(1);
 }

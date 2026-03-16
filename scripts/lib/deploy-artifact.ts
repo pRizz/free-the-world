@@ -1,17 +1,15 @@
 import { createHash } from "node:crypto";
-import { access, copyFile, cp, mkdir, readFile, readdir, rm, writeFile } from "node:fs/promises";
+import { access, copyFile, cp, mkdir, readdir, readFile, rm, writeFile } from "node:fs/promises";
 import path from "node:path";
 import {
+  type DeployTarget,
   deploymentConfig,
   getCanonicalUrl,
   getDeployTargetConfig,
   getExpectedAssetPrefix,
-  getHostedDomains,
   getRobotsTxt,
   normalizeBasePath,
-  normalizeRoutePath,
   parseDeployTarget,
-  type DeployTarget,
 } from "../../src/lib/deployment-config";
 import { indexableRoutes } from "../../src/lib/site-routes";
 
@@ -64,12 +62,17 @@ export async function writeDeployManifest(outputDir: string, rawTarget?: string)
   return manifest;
 }
 
-export async function createDeployManifest(outputDir: string, target: DeployTarget): Promise<DeployManifest> {
+export async function createDeployManifest(
+  outputDir: string,
+  target: DeployTarget,
+): Promise<DeployManifest> {
   const files = await collectArtifactFiles(outputDir);
   const targetConfig = getDeployTargetConfig(target);
   const basePath = normalizeBasePath(targetConfig.basePath);
   const artifactHash = createHash("sha256")
-    .update(files.map(file => `${file.path}:${file.sha256}:${file.size}:${file.cacheClass}`).join("\n"))
+    .update(
+      files.map((file) => `${file.path}:${file.sha256}:${file.size}:${file.cacheClass}`).join("\n"),
+    )
     .digest("hex");
 
   return {
@@ -109,15 +112,17 @@ export async function assertDeployArtifactIntegrity(outputDir: string, manifest:
   throw new Error(
     `Artifact directory ${outputDir} is missing ${missingPaths.length} file(s) listed in deploy-manifest.json: ` +
       `${samplePaths}${remainder}. This usually means the artifact was archived or uploaded without hidden files. ` +
-      "Rebuild the artifact or preserve hidden files during upload and download."
+      "Rebuild the artifact or preserve hidden files during upload and download.",
   );
 }
 
 export async function collectArtifactFiles(outputDir: string) {
   const relativePaths = await listRelativeFiles(outputDir);
-  const deployablePaths = relativePaths.filter(relativePath => relativePath !== "deploy-manifest.json");
+  const deployablePaths = relativePaths.filter(
+    (relativePath) => relativePath !== "deploy-manifest.json",
+  );
   const files = await Promise.all(
-    deployablePaths.map(async relativePath => {
+    deployablePaths.map(async (relativePath) => {
       const filePath = path.join(outputDir, relativePath);
       const content = await readFile(filePath);
 
@@ -127,13 +132,16 @@ export async function collectArtifactFiles(outputDir: string) {
         sha256: createHash("sha256").update(content).digest("hex"),
         size: content.byteLength,
       } satisfies DeployManifestFile;
-    })
+    }),
   );
 
   return files.sort((left, right) => left.path.localeCompare(right.path));
 }
 
-export function diffDeployManifests(localManifest: DeployManifest, maybeRemoteManifest: DeployManifest | null) {
+export function diffDeployManifests(
+  localManifest: DeployManifest,
+  maybeRemoteManifest: DeployManifest | null,
+) {
   if (!maybeRemoteManifest) {
     return {
       changed: true,
@@ -143,15 +151,19 @@ export function diffDeployManifests(localManifest: DeployManifest, maybeRemoteMa
     } satisfies DeployManifestDiff;
   }
 
-  const remoteFiles = new Map(maybeRemoteManifest.files.map(file => [file.path, file]));
-  const localFiles = new Map(localManifest.files.map(file => [file.path, file]));
+  const remoteFiles = new Map(maybeRemoteManifest.files.map((file) => [file.path, file]));
+  const localFiles = new Map(localManifest.files.map((file) => [file.path, file]));
   const uploads: DeployManifestFile[] = [];
   const unchanged: string[] = [];
 
   for (const localFile of localManifest.files) {
     const maybeRemoteFile = remoteFiles.get(localFile.path);
 
-    if (!maybeRemoteFile || maybeRemoteFile.sha256 !== localFile.sha256 || maybeRemoteFile.cacheClass !== localFile.cacheClass) {
+    if (
+      !maybeRemoteFile ||
+      maybeRemoteFile.sha256 !== localFile.sha256 ||
+      maybeRemoteFile.cacheClass !== localFile.cacheClass
+    ) {
       uploads.push(localFile);
       continue;
     }
@@ -160,8 +172,8 @@ export function diffDeployManifests(localManifest: DeployManifest, maybeRemoteMa
   }
 
   const deletes = maybeRemoteManifest.files
-    .filter(remoteFile => !localFiles.has(remoteFile.path))
-    .map(remoteFile => remoteFile.path)
+    .filter((remoteFile) => !localFiles.has(remoteFile.path))
+    .map((remoteFile) => remoteFile.path)
     .sort((left, right) => left.localeCompare(right));
 
   return {
@@ -296,17 +308,21 @@ export async function copyArtifact(sourceDir: string, destinationDir: string) {
 
 export async function assertArtifactMatchesTarget(outputDir: string, rawTarget?: string) {
   const target = parseDeployTarget(rawTarget);
-  const htmlFilePaths = (await listRelativeFiles(outputDir)).filter(relativePath => relativePath.endsWith(".html"));
+  const htmlFilePaths = (await listRelativeFiles(outputDir)).filter((relativePath) =>
+    relativePath.endsWith(".html"),
+  );
   const assetPrefix = getExpectedAssetPrefix(target);
   const githubPagesBasePathPattern = new RegExp(
-    `(?:href|src|content)="${escapeRegExp(deploymentConfig.githubPagesBasePath)}(?:/|")`
+    `(?:href|src|content)="${escapeRegExp(deploymentConfig.githubPagesBasePath)}(?:/|")`,
   );
 
   for (const relativePath of htmlFilePaths) {
     const html = await readFile(path.join(outputDir, relativePath), "utf8");
 
     if (!html.includes(assetPrefix)) {
-      throw new Error(`Artifact ${relativePath} did not contain the expected asset prefix ${assetPrefix}.`);
+      throw new Error(
+        `Artifact ${relativePath} did not contain the expected asset prefix ${assetPrefix}.`,
+      );
     }
 
     if (target === "aws" && githubPagesBasePathPattern.test(html)) {
@@ -314,9 +330,13 @@ export async function assertArtifactMatchesTarget(outputDir: string, rawTarget?:
     }
 
     if (target === "github-pages") {
-      const maybeUnprefixedReference = html.match(/(?:href|src|content)="\/(?!free-the-world(?:\/|"))/);
+      const maybeUnprefixedReference = html.match(
+        /(?:href|src|content)="\/(?!free-the-world(?:\/|"))/,
+      );
       if (maybeUnprefixedReference) {
-        throw new Error(`Artifact ${relativePath} still contains an unprefixed root reference: ${maybeUnprefixedReference[0]}`);
+        throw new Error(
+          `Artifact ${relativePath} still contains an unprefixed root reference: ${maybeUnprefixedReference[0]}`,
+        );
       }
     }
   }
@@ -329,7 +349,7 @@ async function writeSiteMetadataFiles(outputDir: string, target: DeployTarget) {
 
 function buildSitemapXml() {
   const urls = indexableRoutes
-    .map(route => `  <url><loc>${escapeXml(getCanonicalUrl(route))}</loc></url>`)
+    .map((route) => `  <url><loc>${escapeXml(getCanonicalUrl(route))}</loc></url>`)
     .join("\n");
 
   return [
@@ -373,7 +393,7 @@ async function ensureRootNotFoundFile(outputDir: string) {
 async function listRelativeFiles(rootDir: string, currentDir = rootDir): Promise<string[]> {
   const entries = await readdir(currentDir, { withFileTypes: true });
   const files = await Promise.all(
-    entries.map(async entry => {
+    entries.map(async (entry) => {
       const fullPath = path.join(currentDir, entry.name);
 
       if (entry.isDirectory()) {
@@ -385,7 +405,7 @@ async function listRelativeFiles(rootDir: string, currentDir = rootDir): Promise
       }
 
       return [];
-    })
+    }),
   );
 
   return files.flat().sort((left, right) => left.localeCompare(right));

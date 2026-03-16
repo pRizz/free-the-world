@@ -1,7 +1,12 @@
 import path from "node:path";
 import { defineConfig } from "@solidjs/start/config";
 import tailwindcss from "@tailwindcss/vite";
-import { deploymentConfig, getDeployTargetConfig, normalizeBasePath, parseDeployTarget } from "./src/lib/deployment-config";
+import {
+  deploymentConfig,
+  getDeployTargetConfig,
+  normalizeBasePath,
+  parseDeployTarget,
+} from "./src/lib/deployment-config";
 import { staticRoutes } from "./src/lib/site-routes";
 
 const deployTarget = parseDeployTarget(process.env.SITE_DEPLOY_TARGET);

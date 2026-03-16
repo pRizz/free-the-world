@@ -1,18 +1,24 @@
-import path from "node:path";
 import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ensureAwsCliAvailable, loadAwsCallerIdentity, loadStackState } from "../lib/aws-deploy";
 import { runCommand } from "../lib/command";
 import {
   assertDeployArtifactIntegrity,
+  type DeployManifest,
   diffDeployManifests,
   getCacheControlForArtifactPath,
   getInvalidationPaths,
   getS3ContentEncoding,
   getS3ContentType,
   readDeployManifest,
-  type DeployManifest,
 } from "../lib/deploy-artifact";
-import { createDeployRun, writeDeploySummary, type DeployBreadcrumb, type DeployRunContext, type DeployVerificationResult } from "../lib/deploy-log";
+import {
+  createDeployRun,
+  type DeployBreadcrumb,
+  type DeployRunContext,
+  type DeployVerificationResult,
+  writeDeploySummary,
+} from "../lib/deploy-log";
 
 const args = parseArgs(process.argv.slice(2));
 const mode: "apply" | "check" = args.apply === "true" ? "apply" : "check";
@@ -35,37 +41,53 @@ await run.addBreadcrumb({
   status: "info",
   step: "initialize",
 });
-await recordTimedAction(run, {
-  detail: `Verified deploy artifact integrity for ${artifactDir}.`,
-  status: "passed",
-  step: "artifact integrity",
-}, () => assertDeployArtifactIntegrity(artifactDir, localManifest));
-await recordTimedAction(run, {
-  detail: "Validated AWS CLI access.",
-  status: "passed",
-  step: "aws cli",
-}, () => ensureAwsCliAvailable());
+await recordTimedAction(
+  run,
+  {
+    detail: `Verified deploy artifact integrity for ${artifactDir}.`,
+    status: "passed",
+    step: "artifact integrity",
+  },
+  () => assertDeployArtifactIntegrity(artifactDir, localManifest),
+);
+await recordTimedAction(
+  run,
+  {
+    detail: "Validated AWS CLI access.",
+    status: "passed",
+    step: "aws cli",
+  },
+  () => ensureAwsCliAvailable(),
+);
 
-const identity = await recordTimedAction(run, {
-  data: (currentIdentity: ReturnType<typeof loadAwsCallerIdentity>) => ({
-    accountId: currentIdentity.Account,
-    arn: currentIdentity.Arn,
-    userId: currentIdentity.UserId,
-  }),
-  detail: "Loaded the active AWS caller identity.",
-  status: "passed",
-  step: "caller identity",
-}, () => loadAwsCallerIdentity());
-const stackState = await recordTimedAction(run, {
-  data: (currentStackState: ReturnType<typeof loadStackState>) => ({
-    exists: currentStackState.exists,
-    stackId: currentStackState.stackId,
-    stackStatus: currentStackState.stackStatus,
-  }),
-  detail: "Loaded the current CloudFormation stack outputs.",
-  status: "passed",
-  step: "stack state",
-}, () => loadStackState());
+const identity = await recordTimedAction(
+  run,
+  {
+    data: (currentIdentity: ReturnType<typeof loadAwsCallerIdentity>) => ({
+      accountId: currentIdentity.Account,
+      arn: currentIdentity.Arn,
+      userId: currentIdentity.UserId,
+    }),
+    detail: "Loaded the active AWS caller identity.",
+    status: "passed",
+    step: "caller identity",
+  },
+  () => loadAwsCallerIdentity(),
+);
+const stackState = await recordTimedAction(
+  run,
+  {
+    data: (currentStackState: ReturnType<typeof loadStackState>) => ({
+      exists: currentStackState.exists,
+      stackId: currentStackState.stackId,
+      stackStatus: currentStackState.stackStatus,
+    }),
+    detail: "Loaded the current CloudFormation stack outputs.",
+    status: "passed",
+    step: "stack state",
+  },
+  () => loadStackState(),
+);
 
 if (!stackState.exists) {
   throw new Error("AWS stack does not exist. Run deploy:aws:bootstrap before publishing.");
@@ -78,17 +100,21 @@ if (!bucketName || !distributionId) {
   throw new Error("AWS stack outputs did not include SiteBucketName and DistributionId.");
 }
 
-const maybeRemoteManifest = await recordTimedAction(run, {
-  data: (remoteManifest: Awaited<ReturnType<typeof loadRemoteManifest>>) => ({
-    artifactHash: remoteManifest?.artifactHash ?? null,
-    publicOrigin: remoteManifest?.publicOrigin ?? null,
-  }),
-  detail: `Loaded the remote deploy manifest from s3://${bucketName}/deploy-manifest.json.`,
-  status: "passed",
-  step: "remote manifest",
-}, () => loadRemoteManifest(bucketName));
+const maybeRemoteManifest = await recordTimedAction(
+  run,
+  {
+    data: (remoteManifest: Awaited<ReturnType<typeof loadRemoteManifest>>) => ({
+      artifactHash: remoteManifest?.artifactHash ?? null,
+      publicOrigin: remoteManifest?.publicOrigin ?? null,
+    }),
+    detail: `Loaded the remote deploy manifest from s3://${bucketName}/deploy-manifest.json.`,
+    status: "passed",
+    step: "remote manifest",
+  },
+  () => loadRemoteManifest(bucketName),
+);
 const diff = diffDeployManifests(localManifest, maybeRemoteManifest);
-const uploads = [...diff.uploads.map(file => file.path)];
+const uploads = [...diff.uploads.map((file) => file.path)];
 
 if (diff.changed) {
   uploads.push("deploy-manifest.json");
@@ -125,7 +151,9 @@ if (!diff.changed) {
     step: "apply",
   });
 } else if (mode === "check") {
-  skippedReasons.push("Check mode only. No S3 uploads, deletes, or CloudFront invalidations were executed.");
+  skippedReasons.push(
+    "Check mode only. No S3 uploads, deletes, or CloudFront invalidations were executed.",
+  );
   await run.addBreadcrumb({
     detail: "Check mode prevented S3 uploads, deletes, and CloudFront invalidations.",
     status: "skipped",
@@ -182,7 +210,9 @@ if (!diff.changed) {
       step: "invalidation",
     });
   } else {
-    skippedReasons.push("Only immutable assets changed, so no CloudFront invalidation was required.");
+    skippedReasons.push(
+      "Only immutable assets changed, so no CloudFront invalidation was required.",
+    );
     await run.addBreadcrumb({
       detail: "Skipped CloudFront invalidation because only immutable assets changed.",
       status: "skipped",
@@ -190,16 +220,23 @@ if (!diff.changed) {
     });
   }
 
-  const maybeUpdatedRemoteManifest = await recordTimedAction(run, {
-    data: (remoteManifest: Awaited<ReturnType<typeof loadRemoteManifest>>) => ({
-      artifactHash: remoteManifest?.artifactHash ?? null,
-      publicOrigin: remoteManifest?.publicOrigin ?? null,
-    }),
-    detail: `Reloaded the remote deploy manifest from s3://${bucketName}/deploy-manifest.json after publish.`,
-    status: "passed",
-    step: "remote manifest verify",
-  }, () => loadRemoteManifest(bucketName));
-  if (!maybeUpdatedRemoteManifest || maybeUpdatedRemoteManifest.artifactHash !== localManifest.artifactHash) {
+  const maybeUpdatedRemoteManifest = await recordTimedAction(
+    run,
+    {
+      data: (remoteManifest: Awaited<ReturnType<typeof loadRemoteManifest>>) => ({
+        artifactHash: remoteManifest?.artifactHash ?? null,
+        publicOrigin: remoteManifest?.publicOrigin ?? null,
+      }),
+      detail: `Reloaded the remote deploy manifest from s3://${bucketName}/deploy-manifest.json after publish.`,
+      status: "passed",
+      step: "remote manifest verify",
+    },
+    () => loadRemoteManifest(bucketName),
+  );
+  if (
+    !maybeUpdatedRemoteManifest ||
+    maybeUpdatedRemoteManifest.artifactHash !== localManifest.artifactHash
+  ) {
     verificationResults.push({
       detail: "The uploaded deploy manifest does not match the local artifact hash.",
       name: "remote manifest",
@@ -241,9 +278,13 @@ const { runDirectory } = await writeDeploySummary(summary, { runDirectory: run.r
 console.log(`AWS publish ${mode} complete. Summary: ${runDirectory}`);
 
 async function loadRemoteManifest(bucketName: string) {
-  const result = runCommand("aws", ["s3", "cp", `s3://${bucketName}/deploy-manifest.json`, "-", "--only-show-errors"], {
-    allowFailure: true,
-  });
+  const result = runCommand(
+    "aws",
+    ["s3", "cp", `s3://${bucketName}/deploy-manifest.json`, "-", "--only-show-errors"],
+    {
+      allowFailure: true,
+    },
+  );
 
   if (result.status !== 0) {
     return null;
@@ -294,7 +335,7 @@ async function recordTimedAction<T>(
     data?: unknown | ((result: T) => unknown);
     failureDetail?: string | ((error: Error) => string);
   },
-  action: () => Promise<T> | T
+  action: () => Promise<T> | T,
 ) {
   const startedAtMs = Date.now();
   const startedAt = new Date(startedAtMs).toISOString();
@@ -314,7 +355,7 @@ async function recordTimedAction<T>(
       detail:
         typeof breadcrumb.failureDetail === "function"
           ? breadcrumb.failureDetail(error instanceof Error ? error : new Error(errorDetail))
-          : breadcrumb.failureDetail ?? `${breadcrumb.detail} Failed: ${errorDetail}`,
+          : (breadcrumb.failureDetail ?? `${breadcrumb.detail} Failed: ${errorDetail}`),
       durationMs: Date.now() - startedAtMs,
       startedAt,
       status: "failed",

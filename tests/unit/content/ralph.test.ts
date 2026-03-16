@@ -16,7 +16,7 @@ import type { CompanyBundle, RalphProvidersFile } from "../../../src/lib/domain/
 
 test("extractJsonPayload parses raw JSON and fenced JSON", () => {
   expect(extractJsonPayload('{"ok":true}')).toEqual({ ok: true });
-  expect(extractJsonPayload("```json\n{\"ok\":true}\n```")).toEqual({ ok: true });
+  expect(extractJsonPayload('```json\n{"ok":true}\n```')).toEqual({ ok: true });
 });
 
 test("extractJsonPayload rejects empty output", () => {
@@ -28,17 +28,17 @@ test("extractClaudeCliResult unwraps Claude JSON output metadata", () => {
     extractClaudeCliResult(
       JSON.stringify({
         type: "result",
-        result: "{\"ok\":true}",
+        result: '{"ok":true}',
         session_id: "session-123",
         duration_ms: 2500,
         total_cost_usd: 0.12,
         num_turns: 1,
         stop_reason: null,
       }),
-      "json"
-    )
+      "json",
+    ),
   ).toEqual({
-    rawOutput: "{\"ok\":true}",
+    rawOutput: '{"ok":true}',
     metadata: {
       sessionId: "session-123",
       durationMs: 2500,
@@ -51,9 +51,9 @@ test("extractClaudeCliResult unwraps Claude JSON output metadata", () => {
 });
 
 test("extractCodexSessionId parses the session id from provider stderr", () => {
-  expect(extractCodexSessionId("OpenAI Codex\nsession id: 019cf64a-910f-7b61-aebe-c2ead2b0a0b4\n")).toBe(
-    "019cf64a-910f-7b61-aebe-c2ead2b0a0b4"
-  );
+  expect(
+    extractCodexSessionId("OpenAI Codex\nsession id: 019cf64a-910f-7b61-aebe-c2ead2b0a0b4\n"),
+  ).toBe("019cf64a-910f-7b61-aebe-c2ead2b0a0b4");
   expect(extractCodexSessionId("no session here")).toBeNull();
 });
 
@@ -65,14 +65,17 @@ test("findCodexSessionFile resolves nested session logs under CODEX_HOME", async
     "2026",
     "03",
     "16",
-    "rollout-2026-03-16T05-56-47-019cf64a-910f-7b61-aebe-c2ead2b0a0b4.jsonl"
+    "rollout-2026-03-16T05-56-47-019cf64a-910f-7b61-aebe-c2ead2b0a0b4.jsonl",
   );
   const previousCodexHome = process.env.CODEX_HOME;
 
   try {
     process.env.CODEX_HOME = codexHomeDir;
     await mkdir(path.dirname(sessionFile), { recursive: true });
-    await writeFile(sessionFile, '{"timestamp":"2026-03-16T10:56:49.945Z","type":"event_msg","payload":{"type":"task_complete"}}\n');
+    await writeFile(
+      sessionFile,
+      '{"timestamp":"2026-03-16T10:56:49.945Z","type":"event_msg","payload":{"type":"task_complete"}}\n',
+    );
 
     expect(await findCodexSessionFile("019cf64a-910f-7b61-aebe-c2ead2b0a0b4")).toBe(sessionFile);
   } finally {
@@ -129,7 +132,7 @@ test("resolveProviderExecutionPlan injects codex last-message capture before std
       taskId: "company-sync",
       runDir,
     },
-    providerConfig
+    providerConfig,
   );
 
   expect(plan.timeoutMs).toBe(600000);
@@ -163,7 +166,7 @@ test("resolveProviderExecutionPlan injects claude debug-file and default json ou
       taskId: "company-overview",
       runDir,
     },
-    providerConfig
+    providerConfig,
   );
 
   expect(plan.args).toContain("--debug-file");
@@ -182,7 +185,7 @@ test("executeProvider unwraps Claude JSON output envelopes", async () => {
         command: "bash",
         args: [
           "-lc",
-          "cat >/dev/null; printf '%s' '{\"type\":\"result\",\"result\":\"{\\\"ok\\\":true}\",\"session_id\":\"session-123\",\"duration_ms\":42,\"total_cost_usd\":0.5,\"num_turns\":1,\"stop_reason\":null}'",
+          'cat >/dev/null; printf \'%s\' \'{"type":"result","result":"{\\"ok\\":true}","session_id":"session-123","duration_ms":42,"total_cost_usd":0.5,"num_turns":1,"stop_reason":null}\'',
           "--output-format",
           "json",
         ],
@@ -203,11 +206,11 @@ test("executeProvider unwraps Claude JSON output envelopes", async () => {
       taskId: "company-overview",
       runDir,
     },
-    providerConfig
+    providerConfig,
   );
 
   expect(execution.exitCode).toBe(0);
-  expect(execution.rawOutput).toBe("{\"ok\":true}");
+  expect(execution.rawOutput).toBe('{"ok":true}');
   expect(execution.metadata).toEqual({
     sessionId: "session-123",
     durationMs: 42,
@@ -244,7 +247,7 @@ test("executeProvider terminates long-running commands after the configured time
       taskId: "company-sync",
       runDir,
     },
-    providerConfig
+    providerConfig,
   );
 
   expect(execution.exitCode).toBe(124);

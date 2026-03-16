@@ -7,12 +7,15 @@ const rawRoutes = [
   "/companies",
   "/mirrors",
   "/methodology",
-  ...companies.flatMap(company => [`/companies/${company.slug}`, `/companies/${company.slug}/products`]),
-  ...products.map(product => `/companies/${product.companySlug}/products/${product.slug}`),
+  ...companies.flatMap((company) => [
+    `/companies/${company.slug}`,
+    `/companies/${company.slug}/products`,
+  ]),
+  ...products.map((product) => `/companies/${product.companySlug}/products/${product.slug}`),
 ];
 
 export const staticRoutes = Array.from(new Set(rawRoutes)).sort(compareRoutes);
-export const indexableRoutes = staticRoutes.filter(route => route !== "/404");
+export const indexableRoutes = staticRoutes.filter((route) => route !== "/404");
 
 function compareRoutes(left: string, right: string) {
   if (left === "/") {

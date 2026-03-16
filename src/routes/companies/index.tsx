@@ -14,16 +14,20 @@ export default function CompaniesPage() {
   const [search, setSearch] = createSignal(defaultCompanyTableState.search);
   const [sectorId, setSectorId] = createSignal(defaultCompanyTableState.sectorId);
   const [industryId, setIndustryId] = createSignal(defaultCompanyTableState.industryId);
-  const [sortMetricId, setSortMetricId] = createSignal<CompanyMetricId>(defaultCompanyTableState.sortMetricId);
+  const [sortMetricId, setSortMetricId] = createSignal<CompanyMetricId>(
+    defaultCompanyTableState.sortMetricId,
+  );
   const [sortDirection, setSortDirection] = createSignal(defaultCompanyTableState.sortDirection);
-  const [visibleMetricIds, setVisibleMetricIds] = createSignal(defaultCompanyTableState.visibleMetricIds);
+  const [visibleMetricIds, setVisibleMetricIds] = createSignal(
+    defaultCompanyTableState.visibleMetricIds,
+  );
   const registryDescription =
     "A growing registry of major public companies, starting with the largest S&P 500 names and expanding over time without turning the data layer into soup.";
 
   const filteredCompanies = createMemo(() => {
     const term = search().trim().toLowerCase();
 
-    const matchingCompanies = companies.filter(company => {
+    const matchingCompanies = companies.filter((company) => {
       const searchHaystack = [
         company.name,
         company.ticker,
@@ -49,10 +53,10 @@ export default function CompaniesPage() {
   });
 
   function toggleMetric(metricId: CompanyMetricId) {
-    setVisibleMetricIds(currentMetricIds =>
+    setVisibleMetricIds((currentMetricIds) =>
       currentMetricIds.includes(metricId)
-        ? currentMetricIds.filter(id => id !== metricId)
-        : [...currentMetricIds, metricId]
+        ? currentMetricIds.filter((id) => id !== metricId)
+        : [...currentMetricIds, metricId],
     );
   }
 
@@ -65,11 +69,7 @@ export default function CompaniesPage() {
       />
 
       <div class="space-y-8">
-        <PageHeader
-          eyebrow="Registry"
-          title="Company Registry"
-          description={registryDescription}
-        />
+        <PageHeader eyebrow="Registry" title="Company Registry" description={registryDescription} />
 
         <CompanyTableToolbar
           search={search()}
@@ -95,8 +95,8 @@ export default function CompaniesPage() {
                 {companyCountLabel()}
               </p>
               <p class="text-sm text-muted-foreground">
-                Currently showing {filteredCompanies().length} of {companies.length} published companies. Sorted by{" "}
-                {sortMetricId()} ({sortDirection()})
+                Currently showing {filteredCompanies().length} of {companies.length} published
+                companies. Sorted by {sortMetricId()} ({sortDirection()})
               </p>
             </div>
             <p class="text-sm text-muted-foreground">
