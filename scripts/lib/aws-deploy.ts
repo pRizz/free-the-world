@@ -34,6 +34,18 @@ interface DescribeStacksResponse {
   }>;
 }
 
+interface StackEventRecord {
+  LogicalResourceId?: string;
+  ResourceStatus?: string;
+  ResourceStatusReason?: string;
+  ResourceType?: string;
+  Timestamp?: string;
+}
+
+interface DescribeStackEventsResponse {
+  StackEvents?: StackEventRecord[];
+}
+
 interface ChangeSetResponse {
   Changes?: Array<{
     ResourceChange?: {
@@ -50,6 +62,7 @@ interface ChangeSetResponse {
 }
 
 export type AwsHostedDomainKind = "canonical" | "live" | "redirect";
+export type StackReadinessState = "blocked" | "ready" | "waiting";
 
 export interface AwsStackState {
   exists: boolean;
@@ -91,6 +104,70 @@ export interface DomainReadinessAssessment {
   redirects: HostedZoneReadinessEntry[];
 }
 
+export interface StackFailureEvent {
+  logicalResourceId: string;
+  resourceStatus: string;
+  resourceStatusReason?: string;
+  resourceType: string;
+  timestamp: string;
+}
+
+export interface StackReadinessAssessment {
+  detail: string;
+  exists: boolean;
+  recentFailureEvents: StackFailureEvent[];
+  stackName: string;
+  stackState: AwsStackState;
+  stackStatus?: string;
+  state: StackReadinessState;
+  waitedMs: number;
+}
+
+export interface StackOperationCompletion {
+  finalStackState: AwsStackState;
+  recentFailureEvents: StackFailureEvent[];
+  waitedMs: number;
+}
+
+export interface ChangeSetPlanChange {
+  action: string;
+  logicalResourceId: string;
+  replacement: string;
+  resourceType: string;
+}
+
+export interface ChangeSetRisk {
+  action: string;
+  logicalResourceId: string;
+  reason: string;
+  replacement: string;
+  resourceType: string;
+}
+
+export interface ChangeSetRiskSummary {
+  blockedRoute53Replacements: ChangeSetRisk[];
+  hasBlockingRisk: boolean;
+}
+
+export interface ChangeSetPlan {
+  changeSetName: string;
+  changeSetType: "CREATE" | "UPDATE";
+  changes: ChangeSetPlanChange[];
+  isEmpty: boolean;
+  rawStatus: string;
+  rawStatusReason: string;
+  riskSummary: ChangeSetRiskSummary;
+}
+
+export interface AwsDomainCompatibilityLayout {
+  CanonicalDomain: ResolvedHostedZoneEntry;
+  PrimaryDomain: ResolvedHostedZoneEntry;
+  RedirectDomainFour: ResolvedHostedZoneEntry;
+  RedirectDomainOne: ResolvedHostedZoneEntry;
+  RedirectDomainThree: ResolvedHostedZoneEntry;
+  RedirectDomainTwo: ResolvedHostedZoneEntry;
+}
+
 export class DomainReadinessError extends Error {
   constructor(readonly assessment: DomainReadinessAssessment) {
     super(formatDomainReadinessMessage(assessment));
@@ -98,18 +175,22 @@ export class DomainReadinessError extends Error {
   }
 }
 
-export interface ChangeSetPlan {
-  changeSetName: string;
-  changeSetType: "CREATE" | "UPDATE";
-  changes: Array<{
-    action: string;
-    logicalResourceId: string;
-    replacement: string;
-    resourceType: string;
-  }>;
-  isEmpty: boolean;
-  rawStatus: string;
-  rawStatusReason: string;
+export class StackReadinessError extends Error {
+  constructor(readonly assessment: StackReadinessAssessment) {
+    super(formatStackReadinessMessage(assessment));
+    this.name = "StackReadinessError";
+  }
+}
+
+export class StackOperationError extends Error {
+  constructor(
+    readonly finalStackState: AwsStackState,
+    readonly recentFailureEvents: StackFailureEvent[],
+    message: string,
+  ) {
+    super(message);
+    this.name = "StackOperationError";
+  }
 }
 
 interface HostedZoneSpec {
@@ -117,6 +198,54 @@ interface HostedZoneSpec {
   kind: AwsHostedDomainKind;
   label: string;
 }
+
+interface WaitForStackReadinessOptions {
+  initialState?: AwsStackState;
+  loadCurrentState?: () => AwsStackState;
+  loadFailureEvents?: () => StackFailureEvent[];
+  maxWaitMs?: number;
+  pollIntervalMs?: number;
+  sleepFn?: (milliseconds: number) => void;
+  stackName?: string;
+}
+
+interface WaitForStackOperationOptions {
+  loadCurrentState?: () => AwsStackState;
+  loadFailureEvents?: () => StackFailureEvent[];
+  maxWaitMs?: number;
+  pollIntervalMs?: number;
+  sleepFn?: (milliseconds: number) => void;
+  stackName?: string;
+}
+
+const mutableStackStatuses = new Set([
+  "CREATE_COMPLETE",
+  "IMPORT_COMPLETE",
+  "UPDATE_COMPLETE",
+  "UPDATE_ROLLBACK_COMPLETE",
+]);
+
+const blockedStackStatuses = new Set([
+  "CREATE_FAILED",
+  "DELETE_FAILED",
+  "DELETE_IN_PROGRESS",
+  "IMPORT_ROLLBACK_COMPLETE",
+  "IMPORT_ROLLBACK_FAILED",
+  "ROLLBACK_COMPLETE",
+  "ROLLBACK_FAILED",
+  "UPDATE_ROLLBACK_FAILED",
+]);
+
+const protectedLegacyRoute53LogicalIds = new Set([
+  "CanonicalDomainARecord",
+  "CanonicalDomainAAAARecord",
+  "RedirectDomainOneARecord",
+  "RedirectDomainOneAAAARecord",
+  "RedirectDomainTwoARecord",
+  "RedirectDomainTwoAAAARecord",
+  "RedirectDomainThreeARecord",
+  "RedirectDomainThreeAAAARecord",
+]);
 
 export function ensureAwsCliAvailable() {
   runCommand("aws", ["--version"]);
@@ -233,7 +362,7 @@ export function validateAwsTemplate(templatePath = getAwsTemplatePath()) {
   ]);
 }
 
-export function loadStackState(stackName = deploymentConfig.awsStackName): AwsStackState {
+export function loadStackState(stackName: string = deploymentConfig.awsStackName): AwsStackState {
   const result = runCommand(
     "aws",
     [
@@ -250,8 +379,7 @@ export function loadStackState(stackName = deploymentConfig.awsStackName): AwsSt
   );
 
   if (result.status !== 0) {
-    const stackMissingPattern = /does not exist/i;
-    if (stackMissingPattern.test(result.stderr) || stackMissingPattern.test(result.stdout)) {
+    if (isMissingStackResponse(result.stdout, result.stderr)) {
       return {
         exists: false,
         outputs: {},
@@ -289,6 +417,176 @@ export function loadStackState(stackName = deploymentConfig.awsStackName): AwsSt
   };
 }
 
+export function loadRecentStackFailureEvents(
+  stackName: string = deploymentConfig.awsStackName,
+  maxItems = 10,
+) {
+  const result = runCommand(
+    "aws",
+    [
+      "cloudformation",
+      "describe-stack-events",
+      "--region",
+      deploymentConfig.awsRegion,
+      "--stack-name",
+      stackName,
+      "--max-items",
+      String(maxItems),
+      "--output",
+      "json",
+    ],
+    { allowFailure: true },
+  );
+
+  if (result.status !== 0) {
+    if (isMissingStackResponse(result.stdout, result.stderr)) {
+      return [];
+    }
+
+    throw new Error(
+      result.stderr || result.stdout || `Failed to load stack events for ${stackName}.`,
+    );
+  }
+
+  const response = JSON.parse(result.stdout) as DescribeStackEventsResponse;
+
+  return (response.StackEvents ?? [])
+    .filter((event) => (event.ResourceStatus ?? "").includes("FAILED"))
+    .map((event) => ({
+      logicalResourceId: event.LogicalResourceId ?? "Unknown",
+      resourceStatus: event.ResourceStatus ?? "UNKNOWN",
+      resourceStatusReason: event.ResourceStatusReason,
+      resourceType: event.ResourceType ?? "Unknown",
+      timestamp: event.Timestamp ?? new Date(0).toISOString(),
+    }))
+    .slice(0, maxItems);
+}
+
+export function assessStackReadiness(
+  stackState: AwsStackState,
+  recentFailureEvents: StackFailureEvent[] = [],
+  stackName: string = deploymentConfig.awsStackName,
+) {
+  let state: StackReadinessState;
+  let detail: string;
+
+  if (!stackState.exists) {
+    state = "ready";
+    detail = `Stack ${stackName} does not exist yet. CloudFormation can create it.`;
+  } else if (mutableStackStatuses.has(stackState.stackStatus ?? "")) {
+    state = "ready";
+    detail = `Stack ${stackName} is currently ${stackState.stackStatus} and can accept a new change set.`;
+  } else if (isWaitingStackStatus(stackState.stackStatus)) {
+    state = "waiting";
+    detail = `Stack ${stackName} is currently ${stackState.stackStatus}. Waiting for the existing CloudFormation rollout to finish before continuing.`;
+  } else {
+    state = "blocked";
+    detail = buildBlockedStackMessage(stackName, stackState.stackStatus, recentFailureEvents);
+  }
+
+  return {
+    detail,
+    exists: stackState.exists,
+    recentFailureEvents,
+    stackName,
+    stackState,
+    stackStatus: stackState.stackStatus,
+    state,
+    waitedMs: 0,
+  } satisfies StackReadinessAssessment;
+}
+
+export function formatStackReadinessMessage(assessment: StackReadinessAssessment) {
+  return assessment.detail;
+}
+
+export function waitForStackReadiness(options: WaitForStackReadinessOptions = {}) {
+  const stackName = options.stackName ?? deploymentConfig.awsStackName;
+  const loadCurrentState = options.loadCurrentState ?? (() => loadStackState(stackName));
+  const loadFailureEvents =
+    options.loadFailureEvents ?? (() => loadRecentStackFailureEvents(stackName));
+  const maxWaitMs = options.maxWaitMs ?? 30 * 60 * 1000;
+  const pollIntervalMs = options.pollIntervalMs ?? 10_000;
+  const sleepFn = options.sleepFn ?? sleep;
+  const startedAt = Date.now();
+  let stackState = options.initialState ?? loadCurrentState();
+
+  while (true) {
+    const assessment = assessStackReadiness(stackState, [], stackName);
+    const waitedMs = Date.now() - startedAt;
+
+    if (assessment.state === "ready") {
+      return {
+        ...assessment,
+        waitedMs,
+      } satisfies StackReadinessAssessment;
+    }
+
+    if (assessment.state === "blocked") {
+      const failures = stackState.exists ? loadFailureEvents() : [];
+      throw new StackReadinessError({
+        ...assessStackReadiness(stackState, failures, stackName),
+        waitedMs,
+      });
+    }
+
+    if (waitedMs >= maxWaitMs) {
+      const failures = stackState.exists ? loadFailureEvents() : [];
+      throw new StackReadinessError({
+        ...assessStackReadiness(stackState, failures, stackName),
+        detail: [
+          `Timed out after ${formatDuration(maxWaitMs)} waiting for stack ${stackName} to leave ${stackState.stackStatus ?? "UNKNOWN"} and become mutable.`,
+          ...(failures.length > 0
+            ? ["Recent failed stack events:", ...formatFailureEventLines(failures)]
+            : []),
+        ].join("\n"),
+        waitedMs,
+      });
+    }
+
+    sleepFn(pollIntervalMs);
+    stackState = loadCurrentState();
+  }
+}
+
+export function buildAwsDomainCompatibilityLayout(
+  hostedZones: ResolvedHostedZones,
+): AwsDomainCompatibilityLayout {
+  const expectedDomains = getCompatibilityDomainMapping();
+
+  return {
+    CanonicalDomain: requireHostedZoneEntry(hostedZones.all, expectedDomains.CanonicalDomain),
+    PrimaryDomain: requireHostedZoneEntry(hostedZones.all, expectedDomains.PrimaryDomain),
+    RedirectDomainFour: requireHostedZoneEntry(hostedZones.all, expectedDomains.RedirectDomainFour),
+    RedirectDomainOne: requireHostedZoneEntry(hostedZones.all, expectedDomains.RedirectDomainOne),
+    RedirectDomainThree: requireHostedZoneEntry(
+      hostedZones.all,
+      expectedDomains.RedirectDomainThree,
+    ),
+    RedirectDomainTwo: requireHostedZoneEntry(hostedZones.all, expectedDomains.RedirectDomainTwo),
+  };
+}
+
+export function buildAwsStackParameters(hostedZones: ResolvedHostedZones, bucketName: string) {
+  const layout = buildAwsDomainCompatibilityLayout(hostedZones);
+
+  return [
+    formatCloudFormationParameter("SiteBucketName", bucketName),
+    formatCloudFormationParameter("PrimaryDomain", layout.PrimaryDomain.domain),
+    formatCloudFormationParameter("PrimaryHostedZoneId", layout.PrimaryDomain.zoneId),
+    formatCloudFormationParameter("CanonicalDomain", layout.CanonicalDomain.domain),
+    formatCloudFormationParameter("CanonicalHostedZoneId", layout.CanonicalDomain.zoneId),
+    formatCloudFormationParameter("RedirectDomainOne", layout.RedirectDomainOne.domain),
+    formatCloudFormationParameter("RedirectHostedZoneIdOne", layout.RedirectDomainOne.zoneId),
+    formatCloudFormationParameter("RedirectDomainTwo", layout.RedirectDomainTwo.domain),
+    formatCloudFormationParameter("RedirectHostedZoneIdTwo", layout.RedirectDomainTwo.zoneId),
+    formatCloudFormationParameter("RedirectDomainThree", layout.RedirectDomainThree.domain),
+    formatCloudFormationParameter("RedirectHostedZoneIdThree", layout.RedirectDomainThree.zoneId),
+    formatCloudFormationParameter("RedirectDomainFour", layout.RedirectDomainFour.domain),
+    formatCloudFormationParameter("RedirectHostedZoneIdFour", layout.RedirectDomainFour.zoneId),
+  ];
+}
+
 export function createStackChangeSet(
   hostedZones: ResolvedHostedZones,
   bucketName: string,
@@ -296,29 +594,7 @@ export function createStackChangeSet(
 ) {
   const changeSetType: "CREATE" | "UPDATE" = stackExists ? "UPDATE" : "CREATE";
   const changeSetName = `${deploymentConfig.awsStackName}-${Date.now()}`;
-  const [secondaryLiveDomain] = deploymentConfig.secondaryLiveDomains;
-  const [secondaryLiveHostedZone] = hostedZones.live;
-  const [redirectDomainOne, redirectDomainTwo, redirectDomainThree, redirectDomainFour] =
-    deploymentConfig.redirectDomains;
-  const [
-    redirectHostedZoneOne,
-    redirectHostedZoneTwo,
-    redirectHostedZoneThree,
-    redirectHostedZoneFour,
-  ] = hostedZones.redirects;
-
-  assertExpectedDomainLayout(
-    secondaryLiveDomain,
-    secondaryLiveHostedZone,
-    redirectDomainOne,
-    redirectDomainTwo,
-    redirectDomainThree,
-    redirectDomainFour,
-    redirectHostedZoneOne,
-    redirectHostedZoneTwo,
-    redirectHostedZoneThree,
-    redirectHostedZoneFour,
-  );
+  const parameters = buildAwsStackParameters(hostedZones, bucketName);
 
   runCommand("aws", [
     "cloudformation",
@@ -334,19 +610,7 @@ export function createStackChangeSet(
     "--template-body",
     `file://${getAwsTemplatePath()}`,
     "--parameters",
-    formatCloudFormationParameter("SiteBucketName", bucketName),
-    formatCloudFormationParameter("PrimaryDomain", deploymentConfig.primaryCanonicalDomain),
-    formatCloudFormationParameter("PrimaryHostedZoneId", hostedZones.canonical.zoneId),
-    formatCloudFormationParameter("SecondaryLiveDomainOne", secondaryLiveDomain),
-    formatCloudFormationParameter("SecondaryLiveHostedZoneIdOne", secondaryLiveHostedZone.zoneId),
-    formatCloudFormationParameter("RedirectDomainOne", redirectDomainOne),
-    formatCloudFormationParameter("RedirectHostedZoneIdOne", redirectHostedZoneOne.zoneId),
-    formatCloudFormationParameter("RedirectDomainTwo", redirectDomainTwo),
-    formatCloudFormationParameter("RedirectHostedZoneIdTwo", redirectHostedZoneTwo.zoneId),
-    formatCloudFormationParameter("RedirectDomainThree", redirectDomainThree),
-    formatCloudFormationParameter("RedirectHostedZoneIdThree", redirectHostedZoneThree.zoneId),
-    formatCloudFormationParameter("RedirectDomainFour", redirectDomainFour),
-    formatCloudFormationParameter("RedirectHostedZoneIdFour", redirectHostedZoneFour.zoneId),
+    ...parameters,
     "--output",
     "json",
   ]);
@@ -355,6 +619,53 @@ export function createStackChangeSet(
     changeSetName,
     changeSetType,
   };
+}
+
+export function classifyChangeSetPlanRisks(changes: ChangeSetPlanChange[]) {
+  const blockedRoute53Replacements = changes.flatMap((change) => {
+    if (change.resourceType !== "AWS::Route53::RecordSet") {
+      return [];
+    }
+
+    if (!protectedLegacyRoute53LogicalIds.has(change.logicalResourceId)) {
+      return [];
+    }
+
+    const shouldBlock =
+      change.action === "Remove" ||
+      (change.action !== "Add" && !["False", "Never"].includes(change.replacement));
+
+    if (!shouldBlock) {
+      return [];
+    }
+
+    return [
+      {
+        ...change,
+        reason:
+          "Legacy Route 53 records must stay attached to their existing logical IDs so CloudFormation can update them in place instead of colliding with already-existing DNS records.",
+      } satisfies ChangeSetRisk,
+    ];
+  });
+
+  return {
+    blockedRoute53Replacements,
+    hasBlockingRisk: blockedRoute53Replacements.length > 0,
+  } satisfies ChangeSetRiskSummary;
+}
+
+export function formatChangeSetRiskMessage(riskSummary: ChangeSetRiskSummary) {
+  if (!riskSummary.hasBlockingRisk) {
+    return "The CloudFormation change set does not contain blocked legacy Route 53 record replacements.";
+  }
+
+  return [
+    "Blocked CloudFormation change set because it would replace or remove legacy Route 53 records that must be updated in place:",
+    ...riskSummary.blockedRoute53Replacements.map(
+      (risk) =>
+        `- ${risk.logicalResourceId} (${risk.resourceType}, action=${risk.action}, replacement=${risk.replacement}): ${risk.reason}`,
+    ),
+  ].join("\n");
 }
 
 export function waitForChangeSet(changeSetName: string, changeSetType: "CREATE" | "UPDATE") {
@@ -376,21 +687,23 @@ export function waitForChangeSet(changeSetName: string, changeSetType: "CREATE" 
 
     const status = response.Status ?? "";
     const statusReason = response.StatusReason ?? "";
+    const changes =
+      response.Changes?.map((change) => ({
+        action: change.ResourceChange?.Action ?? "Unknown",
+        logicalResourceId: change.ResourceChange?.LogicalResourceId ?? "Unknown",
+        replacement: change.ResourceChange?.Replacement ?? "Unknown",
+        resourceType: change.ResourceChange?.ResourceType ?? "Unknown",
+      })) ?? [];
 
     if (status === "CREATE_COMPLETE") {
       return {
         changeSetName,
         changeSetType,
-        changes:
-          response.Changes?.map((change) => ({
-            action: change.ResourceChange?.Action ?? "Unknown",
-            logicalResourceId: change.ResourceChange?.LogicalResourceId ?? "Unknown",
-            replacement: change.ResourceChange?.Replacement ?? "Unknown",
-            resourceType: change.ResourceChange?.ResourceType ?? "Unknown",
-          })) ?? [],
+        changes,
         isEmpty: false,
         rawStatus: status,
         rawStatusReason: statusReason,
+        riskSummary: classifyChangeSetPlanRisks(changes),
       } satisfies ChangeSetPlan;
     }
 
@@ -409,6 +722,7 @@ export function waitForChangeSet(changeSetName: string, changeSetType: "CREATE" 
         isEmpty,
         rawStatus: status,
         rawStatusReason: statusReason,
+        riskSummary: classifyChangeSetPlanRisks([]),
       } satisfies ChangeSetPlan;
     }
 
@@ -418,7 +732,11 @@ export function waitForChangeSet(changeSetName: string, changeSetType: "CREATE" 
   throw new Error(`Timed out waiting for change set ${changeSetName}.`);
 }
 
-export function executeChangeSet(changeSetName: string, changeSetType: "CREATE" | "UPDATE") {
+export function executeChangeSet(
+  changeSetName: string,
+  changeSetType: "CREATE" | "UPDATE",
+  options: WaitForStackOperationOptions = {},
+) {
   runCommand("aws", [
     "cloudformation",
     "execute-change-set",
@@ -430,16 +748,7 @@ export function executeChangeSet(changeSetName: string, changeSetType: "CREATE" 
     changeSetName,
   ]);
 
-  const waiter = changeSetType === "CREATE" ? "stack-create-complete" : "stack-update-complete";
-  runCommand("aws", [
-    "cloudformation",
-    "wait",
-    waiter,
-    "--region",
-    deploymentConfig.awsRegion,
-    "--stack-name",
-    deploymentConfig.awsStackName,
-  ]);
+  return waitForStackOperation(changeSetType, options);
 }
 
 export function deleteChangeSet(changeSetName: string) {
@@ -457,6 +766,70 @@ export function deleteChangeSet(changeSetName: string) {
     ],
     { allowFailure: true },
   );
+}
+
+function waitForStackOperation(
+  changeSetType: "CREATE" | "UPDATE",
+  options: WaitForStackOperationOptions,
+) {
+  const stackName = options.stackName ?? deploymentConfig.awsStackName;
+  const loadCurrentState = options.loadCurrentState ?? (() => loadStackState(stackName));
+  const loadFailureEvents =
+    options.loadFailureEvents ?? (() => loadRecentStackFailureEvents(stackName));
+  const maxWaitMs = options.maxWaitMs ?? 30 * 60 * 1000;
+  const pollIntervalMs = options.pollIntervalMs ?? 10_000;
+  const sleepFn = options.sleepFn ?? sleep;
+  const startedAt = Date.now();
+  const successStatuses = new Set(
+    changeSetType === "CREATE" ? ["CREATE_COMPLETE"] : ["UPDATE_COMPLETE"],
+  );
+
+  while (true) {
+    const stackState = loadCurrentState();
+    const waitedMs = Date.now() - startedAt;
+    const stackStatus = stackState.stackStatus ?? "UNKNOWN";
+
+    if (successStatuses.has(stackStatus)) {
+      return {
+        finalStackState: stackState,
+        recentFailureEvents: [],
+        waitedMs,
+      } satisfies StackOperationCompletion;
+    }
+
+    if (isWaitingStackStatus(stackStatus) || stackStatus === "REVIEW_IN_PROGRESS") {
+      if (waitedMs >= maxWaitMs) {
+        const recentFailureEvents = stackState.exists ? loadFailureEvents() : [];
+        throw new StackOperationError(
+          stackState,
+          recentFailureEvents,
+          [
+            `Timed out after ${formatDuration(maxWaitMs)} waiting for stack ${stackName} to finish the ${changeSetType.toLowerCase()} change set.`,
+            `Current stack status: ${stackStatus}.`,
+            ...(recentFailureEvents.length > 0
+              ? ["Recent failed stack events:", ...formatFailureEventLines(recentFailureEvents)]
+              : []),
+          ].join("\n"),
+        );
+      }
+
+      sleepFn(pollIntervalMs);
+      continue;
+    }
+
+    const recentFailureEvents = stackState.exists ? loadFailureEvents() : [];
+
+    throw new StackOperationError(
+      stackState,
+      recentFailureEvents,
+      [
+        `Stack ${stackName} ended in ${stackStatus} while waiting for the ${changeSetType.toLowerCase()} change set to finish.`,
+        ...(recentFailureEvents.length > 0
+          ? ["Recent failed stack events:", ...formatFailureEventLines(recentFailureEvents)]
+          : []),
+      ].join("\n"),
+    );
+  }
 }
 
 function getHostedZoneSpecs() {
@@ -520,6 +893,82 @@ function maybeResolveHostedZoneByName(domain: string) {
     : null;
 }
 
+function getCompatibilityDomainMapping() {
+  const [secondaryLiveDomain] = deploymentConfig.secondaryLiveDomains;
+
+  if (!secondaryLiveDomain) {
+    throw new Error("Expected one secondary live domain in the deployment config.");
+  }
+
+  return {
+    CanonicalDomain: secondaryLiveDomain,
+    PrimaryDomain: deploymentConfig.primaryCanonicalDomain,
+    RedirectDomainFour: requireConfiguredRedirectDomain("www.freetheworld.ai"),
+    RedirectDomainOne: requireConfiguredRedirectDomain("free-the-world.us"),
+    RedirectDomainThree: requireConfiguredRedirectDomain("ftwfreetheworld.us"),
+    RedirectDomainTwo: requireConfiguredRedirectDomain("ftwfreetheworld.com"),
+  } as const;
+}
+
+function requireConfiguredRedirectDomain(domain: string) {
+  if (!(deploymentConfig.redirectDomains as readonly string[]).includes(domain)) {
+    throw new Error(`Expected redirect domain ${domain} in the deployment config.`);
+  }
+
+  return domain;
+}
+
+function requireHostedZoneEntry(allEntries: ResolvedHostedZoneEntry[], domain: string) {
+  const entry = allEntries.find((candidate) => candidate.domain === domain);
+
+  if (!entry) {
+    throw new Error(`Expected hosted-zone resolution for ${domain}.`);
+  }
+
+  return entry;
+}
+
+function isMissingStackResponse(stdout: string, stderr: string) {
+  const stackMissingPattern = /does not exist/i;
+  return stackMissingPattern.test(stderr) || stackMissingPattern.test(stdout);
+}
+
+function isWaitingStackStatus(stackStatus?: string) {
+  if (!stackStatus) {
+    return false;
+  }
+
+  if (blockedStackStatuses.has(stackStatus)) {
+    return false;
+  }
+
+  return (
+    stackStatus === "REVIEW_IN_PROGRESS" ||
+    stackStatus.endsWith("_IN_PROGRESS") ||
+    stackStatus.endsWith("_CLEANUP_IN_PROGRESS")
+  );
+}
+
+function buildBlockedStackMessage(
+  stackName: string,
+  stackStatus: string | undefined,
+  recentFailureEvents: StackFailureEvent[],
+) {
+  return [
+    `Stack ${stackName} is currently ${stackStatus ?? "UNKNOWN"}. Manual CloudFormation recovery is required before another deploy can continue.`,
+    ...(recentFailureEvents.length > 0
+      ? ["Recent failed stack events:", ...formatFailureEventLines(recentFailureEvents)]
+      : []),
+  ].join("\n");
+}
+
+function formatFailureEventLines(events: StackFailureEvent[]) {
+  return events.map((event) => {
+    const reasonSuffix = event.resourceStatusReason ? `: ${event.resourceStatusReason}` : "";
+    return `- ${event.timestamp} ${event.logicalResourceId} (${event.resourceType}) ${event.resourceStatus}${reasonSuffix}`;
+  });
+}
+
 function buildHostedZoneCandidates(domain: string) {
   const labels = domain.split(".");
   const candidates: string[] = [];
@@ -531,38 +980,19 @@ function buildHostedZoneCandidates(domain: string) {
   return candidates;
 }
 
-function assertExpectedDomainLayout(
-  secondaryLiveDomain: string | undefined,
-  secondaryLiveHostedZone: ResolvedHostedZoneEntry | undefined,
-  redirectDomainOne: string | undefined,
-  redirectDomainTwo: string | undefined,
-  redirectDomainThree: string | undefined,
-  redirectDomainFour: string | undefined,
-  redirectHostedZoneOne: ResolvedHostedZoneEntry | undefined,
-  redirectHostedZoneTwo: ResolvedHostedZoneEntry | undefined,
-  redirectHostedZoneThree: ResolvedHostedZoneEntry | undefined,
-  redirectHostedZoneFour: ResolvedHostedZoneEntry | undefined,
-) {
-  if (
-    !secondaryLiveDomain ||
-    !secondaryLiveHostedZone ||
-    !redirectDomainOne ||
-    !redirectDomainTwo ||
-    !redirectDomainThree ||
-    !redirectDomainFour ||
-    !redirectHostedZoneOne ||
-    !redirectHostedZoneTwo ||
-    !redirectHostedZoneThree ||
-    !redirectHostedZoneFour
-  ) {
-    throw new Error(
-      "Expected one secondary live domain and four redirect domains in the deployment config and hosted-zone state.",
-    );
-  }
-}
-
 function formatCloudFormationParameter(key: string, value: string) {
   return `ParameterKey=${key},ParameterValue=${value}`;
+}
+
+function formatDuration(milliseconds: number) {
+  const roundedMilliseconds = Math.max(0, Math.round(milliseconds));
+  if (roundedMilliseconds < 60_000) {
+    return `${Math.round(roundedMilliseconds / 1_000)}s`;
+  }
+
+  const wholeMinutes = Math.floor(roundedMilliseconds / 60_000);
+  const wholeSeconds = Math.round((roundedMilliseconds % 60_000) / 1_000);
+  return wholeSeconds === 0 ? `${wholeMinutes}m` : `${wholeMinutes}m ${wholeSeconds}s`;
 }
 
 function sleep(milliseconds: number) {

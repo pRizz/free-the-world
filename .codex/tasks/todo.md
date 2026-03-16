@@ -1,3 +1,21 @@
+# AWS Bootstrap Durability
+
+- [x] Preserve CloudFormation ownership of existing Route 53 records while adding the new `.ai` records and aliases.
+  Verification: `bun test tests/unit/scripts/aws-deploy.test.ts`
+- [x] Add stack-readiness waiting/blocking guards plus bootstrap risk classification for unsafe record replacements.
+  Verification: `bun test tests/unit/scripts/aws-deploy.test.ts`
+- [x] Wire the new safeguards into bootstrap/publish flows and update deployment docs.
+  Verification: `bun run typecheck`, `bun test tests/unit/scripts/aws-deploy.test.ts tests/unit/scripts/deploy-setup.test.ts tests/unit/scripts/deploy-config.test.ts tests/unit/scripts/deploy-artifact.test.ts`, `bun run deploy:build`
+
+Completion review:
+- Reworked the CloudFormation template and AWS parameter mapping so the legacy Route 53 logical IDs continue owning `free-the-world.com`, `free-the-world.us`, `ftwfreetheworld.com`, and `ftwfreetheworld.us`, while `freetheworld.ai` and `www.freetheworld.ai` are added with new logical resources.
+- Added shared stack-readiness polling plus change-set risk classification in the AWS deploy helper layer, and wired both bootstrap and publish through that guard so they wait through safe in-progress stack states and stop with explicit recovery guidance for blocked rollback states.
+- Added deploy-focused unit coverage for compatibility mapping, stack-state handling, and blocked legacy DNS replacements, and validated the real AWS account in check mode: bootstrap now plans additive `.ai` records with in-place updates for the legacy records instead of another create-before-delete collision.
+
+Residual risks:
+- I did not run `bun run deploy:aws:bootstrap --apply` or `bun run deploy:aws:publish --apply` from this workspace, so production still needs one live apply to move the CloudFormation stack from the rolled-back `.com` model to the repaired `.ai` model.
+- The safe AWS publish check still sees a large artifact diff, which is expected until the repaired infrastructure rollout is applied and a new AWS artifact is actually published.
+
 # Primary Canonical Domain Switch
 
 - [x] Refactor deployment config and UI metadata so `freetheworld.ai` is the primary canonical host, `free-the-world.com` stays a live secondary AWS host, and the remaining domains are modeled as redirect-only.

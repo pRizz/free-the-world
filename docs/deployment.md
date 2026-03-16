@@ -68,6 +68,8 @@ Apply AWS infrastructure changes:
 bun run deploy:aws:bootstrap --apply
 ```
 
+The bootstrap command now waits for safe in-progress CloudFormation states for up to 30 minutes before creating a change set. It still fails fast when the stack needs manual recovery, such as `UPDATE_ROLLBACK_FAILED`, `ROLLBACK_COMPLETE`, or delete-in-progress states.
+
 Check AWS content publish without mutating:
 
 ```bash
@@ -119,6 +121,9 @@ bun run deploy:github:dispatch --apply
 - Mutating scripts default to check mode.
 - Pass `--apply` to allow mutation.
 - Every mutating script validates prerequisites, reads remote state, computes a plan, writes a summary, and skips when there is no effective change.
+- `deploy:aws:bootstrap` preserves the legacy Route 53 logical-resource ownership for `free-the-world.com`, `free-the-world.us`, `ftwfreetheworld.com`, and `ftwfreetheworld.us`, and adds `.ai` records with new logical IDs instead of trying to replace already-existing DNS records.
+- `deploy:aws:bootstrap` blocks apply mode if the change set would replace or remove those legacy Route 53 records, because CloudFormation would otherwise collide with existing record sets during create-before-delete replacement.
+- `deploy:aws:bootstrap` and `deploy:aws:publish` now wait for a mutable stack state when another rollout is already in progress, then continue automatically.
 - Every deployment run writes `summary.md` and `summary.json` under `.codex/logs/deploy/`.
 - Every deployment run also writes `breadcrumbs.md` and `breadcrumbs.jsonl` in the same timestamped run directory.
 - Deploy summaries now include run start/completion timestamps, total duration, and an action timeline with per-step elapsed/duration data.
