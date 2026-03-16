@@ -82,6 +82,7 @@ export interface ProviderExecutionResult {
   stderr: string;
   exitCode: number;
   timedOut: boolean;
+  metadata?: ProviderOutputMetadata;
 }
 
 export interface CompanyContext {
@@ -112,11 +113,28 @@ interface ProviderExecutionPlan {
   args: string[];
   timeoutMs: number;
   maybeOutputFile: string | null;
+  maybeDebugFile: string | null;
+  outputFormat: string | null;
+}
+
+interface ProviderOutputMetadata {
+  sessionId?: string;
+  durationMs?: number;
+  totalCostUsd?: number;
+  numTurns?: number;
+  stopReason?: string | null;
 }
 
 interface CodexSessionSnapshot {
   sessionId: string;
   sessionFile: string | null;
+  bytes: number | null;
+  lastEventTs: string | null;
+  tailPreview: string | null;
+}
+
+interface TextLogSnapshot {
+  file: string | null;
   bytes: number | null;
   lastEventTs: string | null;
   tailPreview: string | null;
@@ -333,6 +351,7 @@ export function resolveProviderExecutionPlan(
   const templatedVariables = {
     ...variables,
     lastMessageFile: path.join(variables.runDir, `${variables.taskId}.${provider}.last-message.txt`),
+    debugFile: path.join(variables.runDir, `${variables.taskId}.${provider}.debug.log`),
   };
   let args = config.args.map(arg => applyTemplate(arg, templatedVariables));
 
@@ -345,11 +364,23 @@ export function resolveProviderExecutionPlan(
         : [...args, ...injectedArgs];
   }
 
+  if (provider === "claude" && isClaudeCommand(config.command)) {
+    if (!hasOptionFlag(args, "--debug-file")) {
+      args = [...args, "--debug-file", templatedVariables.debugFile];
+    }
+
+    if (!resolveOptionValue(args, "--output-format")) {
+      args = [...args, "--output-format", "json"];
+    }
+  }
+
   return {
     command: config.command,
     args,
     timeoutMs: config.timeoutMs && config.timeoutMs > 0 ? config.timeoutMs : defaultProviderTimeoutMs,
     maybeOutputFile: resolveOutputLastMessageFile(args),
+    maybeDebugFile: resolveOptionValue(args, "--debug-file"),
+    outputFormat: resolveOptionValue(args, "--output-format"),
   };
 }
 
@@ -368,6 +399,8 @@ export async function executeProvider(
     args: plan.args,
     timeoutMs: plan.timeoutMs,
     outputFile: plan.maybeOutputFile ? path.relative(rootDir, plan.maybeOutputFile) : null,
+    debugFile: plan.maybeDebugFile ? path.relative(rootDir, plan.maybeDebugFile) : null,
+    outputFormat: plan.outputFormat,
   });
 
   return new Promise(resolve => {
@@ -387,6 +420,7 @@ export async function executeProvider(
     let maybeCodexSessionId: string | null = null;
     let maybeCodexSessionFile: string | null = null;
     let hasLoggedCodexSessionFile = false;
+    let hasLoggedDebugFile = false;
 
     child.stdout.setEncoding("utf8");
     child.stderr.setEncoding("utf8");
@@ -409,6 +443,21 @@ export async function executeProvider(
             sessionTail: snapshot.tailPreview,
           });
         }
+      }
+
+      return snapshot;
+    };
+
+    const captureDebugSnapshot = async () => {
+      const snapshot = await loadTextLogSnapshot(plan.maybeDebugFile);
+      if (snapshot?.file && !hasLoggedDebugFile) {
+        hasLoggedDebugFile = true;
+        await trace?.("provider:debug-file", {
+          provider,
+          debugFile: path.relative(rootDir, snapshot.file),
+          debugLastEventTs: snapshot.lastEventTs,
+          debugTail: snapshot.tailPreview,
+        });
       }
 
       return snapshot;
@@ -453,6 +502,7 @@ export async function executeProvider(
     const heartbeat = setInterval(() => {
       void (async () => {
         const sessionSnapshot = await captureCodexSessionSnapshot();
+        const debugSnapshot = await captureDebugSnapshot();
         await trace?.("provider:heartbeat", {
           provider,
           pid: child.pid ?? null,
@@ -466,6 +516,10 @@ export async function executeProvider(
           sessionBytes: sessionSnapshot?.bytes ?? null,
           sessionLastEventTs: sessionSnapshot?.lastEventTs ?? null,
           sessionTail: sessionSnapshot?.tailPreview ?? null,
+          debugFile: debugSnapshot?.file ? path.relative(rootDir, debugSnapshot.file) : null,
+          debugBytes: debugSnapshot?.bytes ?? null,
+          debugLastEventTs: debugSnapshot?.lastEventTs ?? null,
+          debugTail: debugSnapshot?.tailPreview ?? null,
         });
       })();
     }, providerHeartbeatIntervalMs);
@@ -518,12 +572,19 @@ export async function executeProvider(
         clearTimeout(timeoutEscalation);
       }
       const sessionSnapshot = await captureCodexSessionSnapshot();
-      const { rawOutput, outputSource } = await resolveProviderOutput(stdoutBuffer, plan.maybeOutputFile);
+      const debugSnapshot = await captureDebugSnapshot();
+      const { rawOutput, outputSource, metadata } = await resolveProviderOutput(
+        provider,
+        stdoutBuffer,
+        plan.maybeOutputFile,
+        plan.outputFormat
+      );
       await trace?.("provider:output-captured", {
         provider,
         outputSource,
         outputBytes: rawOutput.length,
         stdoutBytes: stdoutBuffer.length,
+        metadata,
       });
       await trace?.("provider:finish", {
         provider,
@@ -534,9 +595,12 @@ export async function executeProvider(
         elapsedMs: Date.now() - startedAt,
         stdoutBytes: stdoutBuffer.length,
         stderrBytes: stderr.length,
-        sessionId: sessionSnapshot?.sessionId ?? maybeCodexSessionId,
+        sessionId: sessionSnapshot?.sessionId ?? metadata?.sessionId ?? maybeCodexSessionId,
         sessionFile: sessionSnapshot?.sessionFile ?? maybeCodexSessionFile,
         sessionLastEventTs: sessionSnapshot?.lastEventTs ?? null,
+        debugFile: debugSnapshot?.file ? path.relative(rootDir, debugSnapshot.file) : null,
+        debugLastEventTs: debugSnapshot?.lastEventTs ?? null,
+        providerMetadata: metadata ?? null,
       });
       resolve({
         provider,
@@ -544,6 +608,7 @@ export async function executeProvider(
         stderr,
         exitCode,
         timedOut,
+        metadata,
       });
     };
 
@@ -1270,6 +1335,27 @@ function resolveOutputLastMessageFile(args: string[]) {
 }
 
 async function resolveProviderOutput(
+  provider: RalphProviderId,
+  stdoutBuffer: string,
+  maybeOutputFile: string | null,
+  maybeOutputFormat: string | null
+): Promise<{ rawOutput: string; outputSource: ProviderOutputSource; metadata?: ProviderOutputMetadata }> {
+  const resolvedText = await resolveProviderOutputText(stdoutBuffer, maybeOutputFile);
+  if (provider === "claude") {
+    const maybeClaudeResult = extractClaudeCliResult(resolvedText.rawOutput, maybeOutputFormat);
+    if (maybeClaudeResult) {
+      return {
+        rawOutput: maybeClaudeResult.rawOutput,
+        outputSource: resolvedText.outputSource,
+        metadata: maybeClaudeResult.metadata,
+      };
+    }
+  }
+
+  return resolvedText;
+}
+
+async function resolveProviderOutputText(
   stdoutBuffer: string,
   maybeOutputFile: string | null
 ): Promise<{ rawOutput: string; outputSource: ProviderOutputSource }> {
@@ -1297,9 +1383,64 @@ function appendDiagnosticLine(currentValue: string, message: string) {
   return `${currentValue}${currentValue ? "\n" : ""}${message}`;
 }
 
+export function extractClaudeCliResult(rawOutput: string, maybeOutputFormat: string | null = null) {
+  if (maybeOutputFormat && maybeOutputFormat !== "json") {
+    return null;
+  }
+
+  const trimmedOutput = rawOutput.trim();
+  let parsed = tryParseJson(trimmedOutput);
+  if (parsed === null) {
+    const firstBrace = trimmedOutput.indexOf("{");
+    const lastBrace = trimmedOutput.lastIndexOf("}");
+    if (firstBrace >= 0 && lastBrace > firstBrace) {
+      parsed = tryParseJson(trimmedOutput.slice(firstBrace, lastBrace + 1));
+    }
+  }
+
+  if (!isRecord(parsed) || parsed.type !== "result" || typeof parsed.result !== "string") {
+    return null;
+  }
+
+  return {
+    rawOutput: parsed.result,
+    metadata: {
+      sessionId: typeof parsed.session_id === "string" ? parsed.session_id : undefined,
+      durationMs: typeof parsed.duration_ms === "number" ? parsed.duration_ms : undefined,
+      totalCostUsd: typeof parsed.total_cost_usd === "number" ? parsed.total_cost_usd : undefined,
+      numTurns: typeof parsed.num_turns === "number" ? parsed.num_turns : undefined,
+      stopReason:
+        typeof parsed.stop_reason === "string" || parsed.stop_reason === null ? parsed.stop_reason : undefined,
+    } satisfies ProviderOutputMetadata,
+  };
+}
+
 export function extractCodexSessionId(stderr: string) {
   const maybeMatch = stderr.match(/session id:\s*([0-9a-f-]+)/i);
   return maybeMatch?.[1] ?? null;
+}
+
+async function loadTextLogSnapshot(maybeFile: string | null): Promise<TextLogSnapshot | null> {
+  if (!maybeFile) {
+    return null;
+  }
+
+  try {
+    const text = await readFile(maybeFile, "utf8");
+    const lines = text
+      .split("\n")
+      .map(line => line.trim())
+      .filter(Boolean);
+    const lastLine = lines.at(-1) ?? null;
+    return {
+      file: maybeFile,
+      bytes: Buffer.byteLength(text, "utf8"),
+      lastEventTs: extractTimestampPrefix(lastLine),
+      tailPreview: lastLine ? tailPreview(lastLine) : null,
+    };
+  } catch {
+    return null;
+  }
 }
 
 export async function findCodexSessionFile(sessionId: string) {
@@ -1440,6 +1581,10 @@ function resolveCodexHomeDir() {
   return null;
 }
 
+function isClaudeCommand(commandName: string) {
+  return path.basename(commandName).toLowerCase() === "claude";
+}
+
 function formatPromptList(values: string[], fallback: string) {
   return values.length > 0 ? values.join(", ") : fallback;
 }
@@ -1452,6 +1597,20 @@ function applyTemplate(template: string, variables: Record<string, string>) {
   return Object.entries(variables).reduce((resolvedTemplate, [key, value]) => {
     return resolvedTemplate.replaceAll(`{{${key}}}`, value);
   }, template);
+}
+
+function hasOptionFlag(args: string[], flag: string) {
+  return args.includes(flag);
+}
+
+function resolveOptionValue(args: string[], flag: string) {
+  for (let index = 0; index < args.length - 1; index += 1) {
+    if (args[index] === flag) {
+      return args[index + 1] ?? null;
+    }
+  }
+
+  return null;
 }
 
 function tryParseJson(value: string) {
@@ -1563,6 +1722,15 @@ function describeCodexSessionAction(action: unknown) {
   }
 
   return action.type;
+}
+
+function extractTimestampPrefix(value: string | null) {
+  if (!value) {
+    return null;
+  }
+
+  const maybeMatch = value.match(/^(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z)/);
+  return maybeMatch?.[1] ?? null;
 }
 
 function isRecord(value: unknown): value is Record<string, any> {

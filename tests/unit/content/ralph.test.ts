@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import {
   executeProvider,
+  extractClaudeCliResult,
   extractCodexSessionId,
   extractJsonPayload,
   findCodexSessionFile,
@@ -20,6 +21,33 @@ test("extractJsonPayload parses raw JSON and fenced JSON", () => {
 
 test("extractJsonPayload rejects empty output", () => {
   expect(() => extractJsonPayload("   ")).toThrow(/empty output/i);
+});
+
+test("extractClaudeCliResult unwraps Claude JSON output metadata", () => {
+  expect(
+    extractClaudeCliResult(
+      JSON.stringify({
+        type: "result",
+        result: "{\"ok\":true}",
+        session_id: "session-123",
+        duration_ms: 2500,
+        total_cost_usd: 0.12,
+        num_turns: 1,
+        stop_reason: null,
+      }),
+      "json"
+    )
+  ).toEqual({
+    rawOutput: "{\"ok\":true}",
+    metadata: {
+      sessionId: "session-123",
+      durationMs: 2500,
+      totalCostUsd: 0.12,
+      numTurns: 1,
+      stopReason: null,
+    },
+  });
+  expect(extractClaudeCliResult("Hello!", "text")).toBeNull();
 });
 
 test("extractCodexSessionId parses the session id from provider stderr", () => {
@@ -108,6 +136,85 @@ test("resolveProviderExecutionPlan injects codex last-message capture before std
   expect(plan.args).toContain("--output-last-message");
   expect(plan.args.at(-1)).toBe("-");
   expect(plan.maybeOutputFile).toBe(path.join(runDir, "company-sync.codex.last-message.txt"));
+});
+
+test("resolveProviderExecutionPlan injects claude debug-file and default json output", async () => {
+  const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-claude-provider-"));
+  const providerConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["claude", "codex"],
+    providers: {
+      claude: {
+        command: "claude",
+        args: ["-p", "--permission-mode", "dontAsk"],
+      },
+      codex: {
+        command: "codex",
+        args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
+      },
+    },
+  };
+
+  const plan = resolveProviderExecutionPlan(
+    "claude",
+    {
+      rootDir: "/repo/root",
+      companySlug: "fixtureco",
+      taskId: "company-overview",
+      runDir,
+    },
+    providerConfig
+  );
+
+  expect(plan.args).toContain("--debug-file");
+  expect(plan.args).toContain("--output-format");
+  expect(plan.outputFormat).toBe("json");
+  expect(plan.maybeDebugFile).toBe(path.join(runDir, "company-overview.claude.debug.log"));
+});
+
+test("executeProvider unwraps Claude JSON output envelopes", async () => {
+  const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-claude-json-"));
+  const providerConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["claude", "codex"],
+    providers: {
+      claude: {
+        command: "bash",
+        args: [
+          "-lc",
+          "cat >/dev/null; printf '%s' '{\"type\":\"result\",\"result\":\"{\\\"ok\\\":true}\",\"session_id\":\"session-123\",\"duration_ms\":42,\"total_cost_usd\":0.5,\"num_turns\":1,\"stop_reason\":null}'",
+          "--output-format",
+          "json",
+        ],
+      },
+      codex: {
+        command: "codex",
+        args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
+      },
+    },
+  };
+
+  const execution = await executeProvider(
+    "claude",
+    "ignored",
+    {
+      rootDir: "/repo/root",
+      companySlug: "fixtureco",
+      taskId: "company-overview",
+      runDir,
+    },
+    providerConfig
+  );
+
+  expect(execution.exitCode).toBe(0);
+  expect(execution.rawOutput).toBe("{\"ok\":true}");
+  expect(execution.metadata).toEqual({
+    sessionId: "session-123",
+    durationMs: 42,
+    totalCostUsd: 0.5,
+    numTurns: 1,
+    stopReason: null,
+  });
 });
 
 test("executeProvider terminates long-running commands after the configured timeout", async () => {
