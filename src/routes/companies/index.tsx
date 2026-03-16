@@ -43,6 +43,10 @@ export default function CompaniesPage() {
 
     return sortCompaniesByMetric(matchingCompanies, sortMetricId(), sortDirection());
   });
+  const companyCountLabel = createMemo(() => {
+    const count = filteredCompanies().length;
+    return `${count} ${count === 1 ? "company" : "companies"} shown`;
+  });
 
   function toggleMetric(metricId: CompanyMetricId) {
     setVisibleMetricIds(currentMetricIds =>
@@ -88,7 +92,7 @@ export default function CompaniesPage() {
           <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
             <div>
               <p aria-live="polite" role="status" class="text-sm font-medium text-foreground">
-                {filteredCompanies().length} companies shown
+                {companyCountLabel()}
               </p>
               <p class="text-sm text-muted-foreground">
                 Currently showing {filteredCompanies().length} of {companies.length} published companies. Sorted by{" "}

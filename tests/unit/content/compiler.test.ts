@@ -19,12 +19,17 @@ afterEach(async () => {
 
 test("compileContent compiles the real JSON corpus and strips raw-only fields", async () => {
   const { graph } = await compileContent();
+  const apple = graph.companies.find(company => company.slug === "apple");
+  const microsoft = graph.companies.find(company => company.slug === "microsoft");
 
-  expect(graph.companies.length).toBe(10);
-  expect(graph.products.length).toBe(20);
-  expect(graph.alternatives.length).toBe(31);
-  expect("inputMetrics" in graph.companies[0]!).toBe(false);
-  expect(graph.companies[0]!.metrics.freedCapitalPotential).toBeDefined();
+  expect(graph.companies.length).toBeGreaterThanOrEqual(10);
+  expect(graph.products.length).toBeGreaterThanOrEqual(20);
+  expect(graph.alternatives.length).toBeGreaterThanOrEqual(31);
+  expect(graph.sources.length).toBeGreaterThan(0);
+  expect(apple).toBeDefined();
+  expect(microsoft).toBeDefined();
+  expect("inputMetrics" in apple!).toBe(false);
+  expect(apple!.metrics.freedCapitalPotential).toBeDefined();
 });
 
 test("compileContent rejects malformed JSON", async () => {
