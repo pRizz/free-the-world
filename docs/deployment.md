@@ -102,6 +102,8 @@ bun run deploy:github:dispatch --apply
 - Every mutating script validates prerequisites, reads remote state, computes a plan, writes a summary, and skips when there is no effective change.
 - Every deployment run writes `summary.md` and `summary.json` under `.codex/logs/deploy/`.
 - Every deployment run also writes `breadcrumbs.md` and `breadcrumbs.jsonl` in the same timestamped run directory.
+- Deploy summaries now include run start/completion timestamps, total duration, and an action timeline with per-step elapsed/duration data.
+- When a deploy script runs inside GitHub Actions, it also appends that timing-rich summary to the job step summary via `GITHUB_STEP_SUMMARY`.
 
 ## AWS Prerequisites
 

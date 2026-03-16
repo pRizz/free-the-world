@@ -17,6 +17,23 @@ Residual risks:
 
 # Multi-Domain Static Deployment
 
+# AWS Deployment Summary Timing
+
+- [x] Add run-level timing metadata to deploy summaries and expose it in GitHub Actions step summaries.
+  Verification: `bun test tests/unit/scripts/deploy-log.test.ts`
+- [x] Instrument AWS bootstrap and publish scripts with finer-grained timed breadcrumbs for each scripted action.
+  Verification: script review of `scripts/deploy/bootstrap-aws.ts` and `scripts/deploy/publish-aws.ts`, plus `bun test tests/unit/scripts/deploy-log.test.ts`
+- [x] Document the timing-rich summary behavior and review the diff for unintended workflow changes.
+  Verification: `bun run typecheck`, doc review of `docs/deployment.md`, diff review
+
+Completion review:
+- Deploy summaries now persist run start/end timing plus a breadcrumb timeline, and the same markdown is appended into `GITHUB_STEP_SUMMARY` when the scripts run in GitHub Actions.
+- The AWS bootstrap and publish scripts now emit more granular breadcrumbs around identity lookup, hosted-zone/stack inspection, change-set work, artifact integrity checks, remote manifest reads, uploads, deletes, invalidations, and post-run verification.
+- Added unit coverage for the richer summary contract and confirmed the changed scripts still typecheck.
+
+Residual risks:
+- This session did not execute a live GitHub Actions deployment, so the rendered GitHub job summary still needs one real workflow run to confirm the final presentation in the Actions UI.
+
 - [x] Add centralized deployment config, gitignored deploy logs, and target-aware build outputs for AWS and GitHub Pages.
   Verification: `bun run typecheck`, `bun run deploy:build`
 - [x] Add canonical/meta/robots/sitemap handling plus deterministic deploy manifests and artifact assertions.

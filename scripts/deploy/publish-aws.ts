@@ -12,7 +12,7 @@ import {
   readDeployManifest,
   type DeployManifest,
 } from "../lib/deploy-artifact";
-import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
+import { createDeployRun, writeDeploySummary, type DeployBreadcrumb, type DeployRunContext, type DeployVerificationResult } from "../lib/deploy-log";
 
 const args = parseArgs(process.argv.slice(2));
 const mode: "apply" | "check" = args.apply === "true" ? "apply" : "check";
@@ -30,18 +30,42 @@ if (localManifest.target !== "aws") {
   throw new Error(`Expected an AWS deploy manifest, received target ${localManifest.target}.`);
 }
 
-await assertDeployArtifactIntegrity(artifactDir, localManifest);
-
 await run.addBreadcrumb({
   detail: `Loaded AWS artifact manifest ${localManifest.artifactHash} from ${artifactDir}.`,
   status: "info",
   step: "initialize",
 });
+await recordTimedAction(run, {
+  detail: `Verified deploy artifact integrity for ${artifactDir}.`,
+  status: "passed",
+  step: "artifact integrity",
+}, () => assertDeployArtifactIntegrity(artifactDir, localManifest));
+await recordTimedAction(run, {
+  detail: "Validated AWS CLI access.",
+  status: "passed",
+  step: "aws cli",
+}, () => ensureAwsCliAvailable());
 
-ensureAwsCliAvailable();
-
-const identity = loadAwsCallerIdentity();
-const stackState = loadStackState();
+const identity = await recordTimedAction(run, {
+  data: (currentIdentity: ReturnType<typeof loadAwsCallerIdentity>) => ({
+    accountId: currentIdentity.Account,
+    arn: currentIdentity.Arn,
+    userId: currentIdentity.UserId,
+  }),
+  detail: "Loaded the active AWS caller identity.",
+  status: "passed",
+  step: "caller identity",
+}, () => loadAwsCallerIdentity());
+const stackState = await recordTimedAction(run, {
+  data: (currentStackState: ReturnType<typeof loadStackState>) => ({
+    exists: currentStackState.exists,
+    stackId: currentStackState.stackId,
+    stackStatus: currentStackState.stackStatus,
+  }),
+  detail: "Loaded the current CloudFormation stack outputs.",
+  status: "passed",
+  step: "stack state",
+}, () => loadStackState());
 
 if (!stackState.exists) {
   throw new Error("AWS stack does not exist. Run deploy:aws:bootstrap before publishing.");
@@ -54,7 +78,15 @@ if (!bucketName || !distributionId) {
   throw new Error("AWS stack outputs did not include SiteBucketName and DistributionId.");
 }
 
-const maybeRemoteManifest = await loadRemoteManifest(bucketName);
+const maybeRemoteManifest = await recordTimedAction(run, {
+  data: (remoteManifest: Awaited<ReturnType<typeof loadRemoteManifest>>) => ({
+    artifactHash: remoteManifest?.artifactHash ?? null,
+    publicOrigin: remoteManifest?.publicOrigin ?? null,
+  }),
+  detail: `Loaded the remote deploy manifest from s3://${bucketName}/deploy-manifest.json.`,
+  status: "passed",
+  step: "remote manifest",
+}, () => loadRemoteManifest(bucketName));
 const diff = diffDeployManifests(localManifest, maybeRemoteManifest);
 const uploads = [...diff.uploads.map(file => file.path)];
 
@@ -101,26 +133,36 @@ if (!diff.changed) {
   });
 } else {
   for (const relativePath of uploads) {
+    const uploadStartedAtMs = Date.now();
+    const uploadStartedAt = new Date(uploadStartedAtMs).toISOString();
     await uploadFile(bucketName, artifactDir, relativePath);
     appliedChanges.push(`Uploaded ${relativePath}`);
     await run.addBreadcrumb({
+      durationMs: Date.now() - uploadStartedAtMs,
       detail: `Uploaded ${relativePath} to s3://${bucketName}/${relativePath}.`,
+      startedAt: uploadStartedAt,
       status: "passed",
       step: "upload",
     });
   }
 
   for (const relativePath of diff.deletes) {
+    const deleteStartedAtMs = Date.now();
+    const deleteStartedAt = new Date(deleteStartedAtMs).toISOString();
     runCommand("aws", ["s3", "rm", `s3://${bucketName}/${relativePath}`, "--only-show-errors"]);
     appliedChanges.push(`Deleted ${relativePath}`);
     await run.addBreadcrumb({
+      durationMs: Date.now() - deleteStartedAtMs,
       detail: `Deleted s3://${bucketName}/${relativePath}.`,
+      startedAt: deleteStartedAt,
       status: "passed",
       step: "delete",
     });
   }
 
   if (invalidationPaths.length > 0) {
+    const invalidationStartedAtMs = Date.now();
+    const invalidationStartedAt = new Date(invalidationStartedAtMs).toISOString();
     runCommand("aws", [
       "cloudfront",
       "create-invalidation",
@@ -133,7 +175,9 @@ if (!diff.changed) {
     ]);
     appliedChanges.push(`Created CloudFront invalidation for ${invalidationPaths.length} path(s).`);
     await run.addBreadcrumb({
+      durationMs: Date.now() - invalidationStartedAtMs,
       detail: `Created a CloudFront invalidation for ${invalidationPaths.length} path(s).`,
+      startedAt: invalidationStartedAt,
       status: "passed",
       step: "invalidation",
     });
@@ -146,7 +190,15 @@ if (!diff.changed) {
     });
   }
 
-  const maybeUpdatedRemoteManifest = await loadRemoteManifest(bucketName);
+  const maybeUpdatedRemoteManifest = await recordTimedAction(run, {
+    data: (remoteManifest: Awaited<ReturnType<typeof loadRemoteManifest>>) => ({
+      artifactHash: remoteManifest?.artifactHash ?? null,
+      publicOrigin: remoteManifest?.publicOrigin ?? null,
+    }),
+    detail: `Reloaded the remote deploy manifest from s3://${bucketName}/deploy-manifest.json after publish.`,
+    status: "passed",
+    step: "remote manifest verify",
+  }, () => loadRemoteManifest(bucketName));
   if (!maybeUpdatedRemoteManifest || maybeUpdatedRemoteManifest.artifactHash !== localManifest.artifactHash) {
     verificationResults.push({
       detail: "The uploaded deploy manifest does not match the local artifact hash.",
@@ -234,4 +286,40 @@ function parseArgs(rawArgs: string[]) {
     accumulator[key] = value;
     return accumulator;
   }, {});
+}
+
+async function recordTimedAction<T>(
+  run: DeployRunContext,
+  breadcrumb: Omit<DeployBreadcrumb, "at" | "durationMs" | "startedAt"> & {
+    data?: unknown | ((result: T) => unknown);
+    failureDetail?: string | ((error: Error) => string);
+  },
+  action: () => Promise<T> | T
+) {
+  const startedAtMs = Date.now();
+  const startedAt = new Date(startedAtMs).toISOString();
+
+  try {
+    const result = await action();
+    await run.addBreadcrumb({
+      ...breadcrumb,
+      data: typeof breadcrumb.data === "function" ? breadcrumb.data(result) : breadcrumb.data,
+      durationMs: Date.now() - startedAtMs,
+      startedAt,
+    });
+    return result;
+  } catch (error) {
+    const errorDetail = error instanceof Error ? error.message : String(error);
+    await run.addBreadcrumb({
+      detail:
+        typeof breadcrumb.failureDetail === "function"
+          ? breadcrumb.failureDetail(error instanceof Error ? error : new Error(errorDetail))
+          : breadcrumb.failureDetail ?? `${breadcrumb.detail} Failed: ${errorDetail}`,
+      durationMs: Date.now() - startedAtMs,
+      startedAt,
+      status: "failed",
+      step: breadcrumb.step,
+    });
+    throw error;
+  }
 }
