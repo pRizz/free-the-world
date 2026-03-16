@@ -27,6 +27,12 @@ export const contentGraph: ContentGraph = {
       "label": "S&P 500 · Top 25 by market cap",
       "regionId": "us",
       "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
     }
   ],
   "sectors": [
@@ -57,6 +63,10 @@ export const contentGraph: ContentGraph = {
     {
       "id": "energy",
       "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
     }
   ],
   "industries": [
@@ -144,6 +154,36 @@ export const contentGraph: ContentGraph = {
       "id": "pharma-medtech",
       "sectorId": "health-care",
       "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
     }
   ],
   "technologyWaves": [

@@ -1,3 +1,12 @@
+# S&P 500 Next 10 Intake
+
+- [ ] Add the next 10 missing S&P 500 companies from a frozen market-cap snapshot, including any required taxonomy updates.
+  Verification: manifests resolve against valid taxonomy IDs and match the March 13, 2026 FinanceCharts ranks 26-35 snapshot.
+- [ ] Run the intake pipeline on the new batch with the default provider order and company-level concurrency.
+  Verification: `bun run company:pipeline --batch-id=sp500-top35-2026-03-13 --provider=auto --concurrency=5` completes without failed queue, promotion, loop, or sync steps.
+- [ ] Run post-intake verification and review the diff for unintended side effects.
+  Verification: `bun run content:validate`, `bun run content:compile`, `bun run build`
+
 # Company Pipeline Concurrency
 
 - [x] Add configurable company-level concurrency to `bun run company:pipeline` for the loop phase and dry-run syncs, while keeping publish syncs serial.

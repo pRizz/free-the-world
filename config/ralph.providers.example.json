@@ -9,7 +9,20 @@
     },
     "claude": {
       "command": "claude",
-      "args": ["-p", "--permission-mode", "dontAsk", "--output-format", "json", "--debug-file", "{{debugFile}}"],
+      "args": [
+        "-p",
+        "--disable-slash-commands",
+        "--setting-sources",
+        "project,local",
+        "--permission-mode",
+        "dontAsk",
+        "--allowedTools",
+        "Read,Grep,Glob,WebSearch,WebFetch",
+        "--output-format",
+        "json",
+        "--debug-file",
+        "{{debugFile}}"
+      ],
       "timeoutMs": 600000
     }
   }
