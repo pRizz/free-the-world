@@ -7,6 +7,7 @@ This directory separates **draft research artifacts** from the JSON content ship
 - `technology-waves.md` stores the thesis-level assumptions that should keep showing up in scoring and editorial copy.
 - `runs/<company-slug>/<run-id>/` is reserved for repeatable AI prompt-loop and sync outputs.
 - Run artifacts are drafts plus validation/publish traces, not canonical truth by themselves.
+- Provider-native debug exhaust such as `*.debug.log`, `*.stderr.txt`, `*.last-message.txt`, and `latest` symlinks is treated as local troubleshooting output and is gitignored.
 - Canonical site data lives under `content/`.
 
 ## Ralph loop

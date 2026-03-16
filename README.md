@@ -146,6 +146,12 @@ Execute the low-level loop with a configured provider:
 bun run loop --company=microsoft --task=moat-analysis --provider=auto --execute=true
 ```
 
+The loop runs up to 5 companies in parallel by default. Override that with `--concurrency=<n>` when you want a lower or higher provider fan-out:
+
+```bash
+bun run loop --batch-id=top25-refresh --task=company-overview --provider=auto --execute=true --concurrency=10
+```
+
 Run the full structured sync pipeline for one company:
 
 ```bash

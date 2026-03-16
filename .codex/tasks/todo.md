@@ -1,3 +1,20 @@
+# Ralph Loop Concurrency
+
+- [x] Add configurable company-level concurrency to `bun run loop` with a safe default of 5.
+  Verification: unit coverage proves the pool caps active work, and CLI coverage accepts `--concurrency`.
+- [x] Document the new concurrency flag in the Ralph loop docs.
+  Verification: README loop usage mentions `--concurrency` and the default.
+- [x] Run targeted verification and review the diff for unintended side effects.
+  Verification: `bun run format`, `bun run lint`, `bun run typecheck`, `bun run test`, `bun run build`
+
+Completion review:
+- Added a small bounded worker-pool helper and wired `bun run loop` to process multiple company targets in parallel while keeping each company's task sequence isolated.
+- Added `--concurrency=<n>` parsing with a default of 5 and validation that rejects non-positive values.
+- Extended unit and CLI coverage so the concurrency limit is enforced in code and accepted in the low-level loop interface.
+
+Residual risks:
+- The new pool only parallelizes across companies. A run with many selected tasks per company still executes those tasks sequentially inside each company worker, which keeps per-company traces simple but limits maximum throughput for multi-task runs.
+
 # Company Intake Pipeline
 
 - [x] Add a repo-level `company:pipeline` command that composes queueing, promotion, Ralph loop research, and structured sync with safe defaults.

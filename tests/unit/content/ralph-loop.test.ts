@@ -5,6 +5,10 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { loadRawContent, writeJsonFile } from "../../../scripts/lib/content";
+import {
+  parseLoopConcurrencyLimit,
+  runWithConcurrencyLimit,
+} from "../../../scripts/lib/ralph-loop-runner";
 import { resolveLoopTargets } from "../../../scripts/lib/ralph-loop-targets";
 import { buildManifest, buildQueueEntry, writeMinimalFixture } from "./fixtures";
 
@@ -208,6 +212,34 @@ describe("resolveLoopTargets", () => {
   });
 });
 
+describe("loop concurrency", () => {
+  test("parseLoopConcurrencyLimit defaults to 5 and rejects invalid values", () => {
+    expect(parseLoopConcurrencyLimit()).toBe(5);
+    expect(parseLoopConcurrencyLimit("10")).toBe(10);
+    expect(() => parseLoopConcurrencyLimit("0")).toThrow(/positive integer/i);
+    expect(() => parseLoopConcurrencyLimit("abc")).toThrow(/positive integer/i);
+  });
+
+  test("runWithConcurrencyLimit caps active workers", async () => {
+    const activeItems: number[] = [];
+    let activeCount = 0;
+    let maxActiveCount = 0;
+
+    await runWithConcurrencyLimit([1, 2, 3, 4, 5], 2, async (item) => {
+      activeItems.push(item);
+      activeCount += 1;
+      maxActiveCount = Math.max(maxActiveCount, activeCount);
+
+      await new Promise((resolve) => setTimeout(resolve, 10));
+
+      activeCount -= 1;
+    });
+
+    expect(maxActiveCount).toBe(2);
+    expect(activeItems.sort((left, right) => left - right)).toEqual([1, 2, 3, 4, 5]);
+  });
+});
+
 describe("bun run loop", () => {
   test("writes prompts and run manifests for a queued batch", async () => {
     await writeMinimalFixture(tempRoot);
@@ -299,6 +331,57 @@ describe("bun run loop", () => {
     const researchRunsDir = path.join(tempRoot, "research", "runs");
     const runCompanies = (await readdir(researchRunsDir)).sort();
     expect(runCompanies).toEqual(["queuedco-two"]);
+  });
+
+  test("accepts an explicit concurrency limit for multi-company batch runs", async () => {
+    await writeMinimalFixture(tempRoot);
+    await writeJsonFile(
+      path.join(tempRoot, "manifests", "queue", "queuedco.json"),
+      buildQueueEntry(
+        buildManifest({
+          slug: "queuedco",
+          name: "QueuedCo",
+          ticker: "QUE",
+          indexIds: ["sp500-top20"],
+          sectorId: "health-care",
+          industryId: "pharmaceuticals",
+          companiesMarketCapUrl: "https://example.com/queuedco",
+          description: "Queued company",
+          technologyWaveIds: [],
+        }),
+      ),
+    );
+    await writeJsonFile(
+      path.join(tempRoot, "manifests", "queue", "queuedco-two.json"),
+      buildQueueEntry(
+        buildManifest({
+          slug: "queuedco-two",
+          name: "QueuedCo Two",
+          ticker: "QUT",
+          indexIds: ["sp500-top20"],
+          sectorId: "financials",
+          industryId: "payment-networks",
+          companiesMarketCapUrl: "https://example.com/queuedco-two",
+          description: "Second queued company",
+          technologyWaveIds: ["bitcoin-native-coordination"],
+        }),
+        { createdOn: "2026-03-15T01:00:00.000Z" },
+      ),
+    );
+
+    const result = runCli([
+      "loop",
+      "--batch-id=sp500-top20-2026-03-15",
+      "--task=company-overview",
+      "--concurrency=2",
+    ]);
+
+    expect(result.status).toBe(0);
+    expect(result.stdout).toContain("concurrency 2");
+
+    const researchRunsDir = path.join(tempRoot, "research", "runs");
+    const runCompanies = (await readdir(researchRunsDir)).sort();
+    expect(runCompanies).toEqual(["queuedco", "queuedco-two"]);
   });
 });
 

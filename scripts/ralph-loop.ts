@@ -5,13 +5,14 @@ import type {
 } from "../src/lib/domain/content-types";
 import { writeJsonFile } from "./lib/content";
 import { ensureRunDir, parseArgs, parseList, promptTasks, runLoopTask } from "./lib/ralph";
+import { parseLoopConcurrencyLimit, runWithConcurrencyLimit } from "./lib/ralph-loop-runner";
 import { collectLoopTargets } from "./lib/ralph-loop-targets";
 
 const args = parseArgs(process.argv.slice(2));
 
 if (args.help === "true") {
   console.log(
-    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--batch-id=<id>] [--provider=auto|codex|claude|both] [--execute=true]",
+    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--batch-id=<id>] [--provider=auto|codex|claude|both] [--execute=true] [--concurrency=<n>]",
   );
   process.exit(0);
 }
@@ -21,6 +22,7 @@ const requestedTaskIds = parseList(args.task ?? args.tasks) as ResearchTaskId[];
 const batchId = args["batch-id"]?.trim() || undefined;
 const providerPreference = (args.provider ?? "auto") as RalphProviderPreference;
 const shouldExecute = args.execute === "true" || args.execute === "1";
+const concurrencyLimit = parseLoopConcurrencyLimit(args.concurrency);
 const taskIds =
   requestedTaskIds.length > 0
     ? requestedTaskIds
@@ -39,7 +41,7 @@ if (batchId && taskIds.includes("company-sync")) {
   );
 }
 
-for (const target of targets) {
+await runWithConcurrencyLimit(targets, concurrencyLimit, async (target) => {
   const { runDir, runId } = await ensureRunDir(target.companySlug);
   const taskResults = [];
 
@@ -70,6 +72,8 @@ for (const target of targets) {
   };
 
   await writeJsonFile(`${runDir}/run.manifest.json`, runManifest);
-}
+});
 
-console.log(`Prepared ${targets.length * taskIds.length} Ralph loop job(s) in research/runs.`);
+console.log(
+  `Prepared ${targets.length * taskIds.length} Ralph loop job(s) in research/runs with concurrency ${Math.min(concurrencyLimit, Math.max(targets.length, 1))}.`,
+);
