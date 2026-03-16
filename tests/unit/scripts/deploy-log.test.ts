@@ -29,7 +29,7 @@ test("writeDeploySummary writes markdown and json summaries under the gitignored
         discoveredRemoteState: { bucket: "example-bucket" },
         mode: "check",
         plannedChanges: { uploads: ["index.html"] },
-        resultingUrls: ["https://free-the-world.com/"],
+        resultingUrls: ["https://freetheworld.ai/"],
         skippedReasons: ["Check mode only"],
         target: "aws",
         verificationResults: [

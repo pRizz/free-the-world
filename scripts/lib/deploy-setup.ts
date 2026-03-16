@@ -40,8 +40,8 @@ export function buildGithubOidcTrustPolicy(
 
 export function buildAwsDeployPolicy(accountId: string, hostedZones: ResolvedHostedZones) {
   const bucketName = buildSiteBucketName(accountId);
-  const hostedZoneArns = [hostedZones.canonical, ...hostedZones.redirects].map(
-    (hostedZoneId) => `arn:aws:route53:::hostedzone/${hostedZoneId}`,
+  const hostedZoneArns = hostedZones.all.map(
+    (hostedZone) => `arn:aws:route53:::hostedzone/${hostedZone.zoneId}`,
   );
 
   return {

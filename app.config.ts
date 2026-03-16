@@ -16,7 +16,7 @@ const serverBasePath = siteBasePath === "/" ? undefined : siteBasePath;
 const sourceMapShimPath = path.resolve("./src/shims/source-map-js.ts");
 
 process.env.VITE_SITE_DEPLOY_TARGET ??= deployTarget;
-process.env.VITE_SITE_CANONICAL_ORIGIN ??= deploymentConfig.canonicalOrigin;
+process.env.VITE_SITE_CANONICAL_ORIGIN ??= deploymentConfig.primaryCanonicalOrigin;
 process.env.VITE_SITE_PUBLIC_ORIGIN ??= targetConfig.publicOrigin;
 
 export default defineConfig({

@@ -71,7 +71,7 @@ const summary = {
       .map((file) => file.path)
       .concat(diff.changed ? ["deploy-manifest.json"] : []),
   },
-  resultingUrls: [localManifest.publicOrigin, deploymentConfig.canonicalOrigin],
+  resultingUrls: [localManifest.publicOrigin, deploymentConfig.primaryCanonicalOrigin],
   skippedReasons: diff.changed
     ? []
     : ["The live GitHub Pages deploy manifest already matches the built Pages artifact."],

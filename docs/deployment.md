@@ -2,14 +2,18 @@
 
 Free The World now ships two static artifacts from the same app:
 
-- AWS canonical site: `https://free-the-world.com`
+- AWS primary canonical site: `https://freetheworld.ai`
+- AWS secondary live site: `https://free-the-world.com`
 - GitHub Pages mirror: `https://prizz.github.io/free-the-world/`
 
-The three additional AWS domains redirect to the canonical `.com` host:
+The four additional AWS domains redirect to the primary `.ai` host:
 
+- `https://www.freetheworld.ai`
 - `https://free-the-world.us`
 - `https://ftwfreetheworld.com`
 - `https://ftwfreetheworld.us`
+
+The `.com` host stays live on the same CloudFront distribution, but its HTML canonical tags, sitemap, and Open Graph URLs all point to `https://freetheworld.ai`.
 
 ## Commands
 
@@ -88,6 +92,21 @@ Verify the canonical host, redirects, and Pages mirror:
 bun run deploy:verify
 ```
 
+## Staged Rollout
+
+The repo changes for the `.ai` cutover can land before `freetheworld.ai` is fully registered or delegated in Route 53.
+
+1. Merge the repo changes.
+2. Run `bun run deploy:setup` and `bun run deploy:aws:bootstrap` in check mode while the domain is still pending.
+3. Wait until Route 53 has a public hosted zone for `freetheworld.ai` and `www.freetheworld.ai`.
+4. Re-run `bun run deploy:setup --apply`, `bun run deploy:aws:bootstrap --apply`, and `bun run deploy:verify`.
+
+When `.ai` is not ready yet:
+
+- `deploy:setup:aws` reports a domain-readiness blocker in check mode and refuses to mutate IAM/OIDC state in apply mode.
+- `deploy:aws:bootstrap` reports the blocker in check mode and refuses to execute CloudFormation in apply mode.
+- `deploy:verify` reports a DNS/readiness blocker instead of a generic fetch failure if the new `.ai` hosts do not resolve publicly yet.
+
 Dispatch the production workflow only when the current ref does not already have a reusable run:
 
 ```bash
@@ -108,7 +127,14 @@ bun run deploy:github:dispatch --apply
 ## AWS Prerequisites
 
 - AWS CLI installed and authenticated.
-- Route 53 public hosted zones exist for all four domains.
+- Route 53 public hosted zones exist for:
+  - `freetheworld.ai`
+  - `www.freetheworld.ai`
+  - `free-the-world.com`
+  - `free-the-world.us`
+  - `ftwfreetheworld.com`
+  - `ftwfreetheworld.us`
+- If the new `.ai` domain is still pending registration or delegation, the repo changes can still be merged, but AWS apply steps must wait until those hosted zones exist.
 - IAM permissions to create or update:
   - the GitHub OIDC provider in the target AWS account
   - the `free-the-world-github-deploy` IAM role

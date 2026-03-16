@@ -78,7 +78,7 @@ export async function createDeployManifest(
   return {
     artifactHash,
     basePath,
-    canonicalOrigin: deploymentConfig.canonicalOrigin,
+    canonicalOrigin: deploymentConfig.primaryCanonicalOrigin,
     files,
     publicOrigin: targetConfig.publicOrigin,
     routes: [...indexableRoutes],

@@ -1,10 +1,12 @@
 import { deploymentConfig } from "../../src/lib/deployment-config";
 import {
+  assessAwsDomainReadiness,
   buildSiteBucketName,
   createStackChangeSet,
   deleteChangeSet,
   ensureAwsCliAvailable,
   executeChangeSet,
+  formatDomainReadinessMessage,
   loadAwsCallerIdentity,
   loadStackState,
   resolveHostedZones,
@@ -57,15 +59,15 @@ const identity = await recordTimedAction(
   },
   () => loadAwsCallerIdentity(),
 );
-const hostedZones = await recordTimedAction(
+const domainReadiness = await recordTimedAction(
   run,
   {
-    data: (resolvedHostedZones: ReturnType<typeof resolveHostedZones>) => resolvedHostedZones,
-    detail: "Resolved the canonical and redirect Route 53 hosted zones.",
+    data: (assessment: ReturnType<typeof assessAwsDomainReadiness>) => assessment,
+    detail: "Loaded AWS domain readiness for the primary, live, and redirect hosts.",
     status: "passed",
-    step: "hosted zones",
+    step: "domain readiness",
   },
-  () => resolveHostedZones(),
+  () => assessAwsDomainReadiness(),
 );
 const bucketName = buildSiteBucketName(identity.Account);
 const templateValidation = await recordTimedAction(
@@ -90,6 +92,78 @@ const currentStackState = await recordTimedAction(
     step: "stack state",
   },
   () => loadStackState(),
+);
+
+if (!domainReadiness.ready) {
+  const blockerDetail = formatDomainReadinessMessage(domainReadiness);
+  const verificationResults: DeployVerificationResult[] = [
+    {
+      detail: `Validated ${deploymentConfig.awsStackName} CloudFormation template.`,
+      name: "template",
+      status: "passed",
+    },
+    {
+      detail: blockerDetail,
+      name: "domain readiness",
+      status: mode === "check" ? "skipped" : "failed",
+    },
+  ];
+  const skippedReasons =
+    mode === "check"
+      ? [blockerDetail]
+      : [
+          "Apply mode stopped before CloudFormation mutations because freetheworld.ai is not fully ready in Route 53 yet.",
+        ];
+
+  await run.addBreadcrumb({
+    detail: blockerDetail,
+    status: mode === "check" ? "skipped" : "failed",
+    step: "plan",
+  });
+
+  const { runDirectory } = await writeDeploySummary(
+    {
+      appliedChanges: [],
+      artifactDir: undefined,
+      artifactHash: undefined,
+      command: commandName,
+      discoveredRemoteState: {
+        currentStackState,
+        domainReadiness,
+        identity,
+        templateValidation,
+      },
+      mode,
+      plannedChanges: {
+        blockedBy: "domain readiness",
+      },
+      resultingUrls: [deploymentConfig.primaryCanonicalOrigin],
+      skippedReasons,
+      target: "aws",
+      verificationResults,
+    },
+    { runDirectory: run.runDirectory },
+  );
+
+  if (mode === "check") {
+    console.log(`AWS bootstrap ${mode} blocked by domain readiness. Summary: ${runDirectory}`);
+    process.exit(0);
+  }
+
+  throw new Error(
+    `AWS bootstrap apply blocked until freetheworld.ai is ready. See ${runDirectory}.`,
+  );
+}
+
+const hostedZones = await recordTimedAction(
+  run,
+  {
+    data: (resolvedHostedZones: ReturnType<typeof resolveHostedZones>) => resolvedHostedZones,
+    detail: "Resolved the primary, live, and redirect Route 53 hosted zones.",
+    status: "passed",
+    step: "hosted zones",
+  },
+  () => resolveHostedZones(),
 );
 const { changeSetName, changeSetType } = await recordTimedAction(
   run,
@@ -220,7 +294,7 @@ const summary = {
   mode,
   plannedChanges: changeSetPlan,
   resultingUrls: [
-    deploymentConfig.canonicalOrigin,
+    deploymentConfig.primaryCanonicalOrigin,
     ...(finalStackState.outputs.DistributionDomainName
       ? [`https://${finalStackState.outputs.DistributionDomainName}`]
       : []),

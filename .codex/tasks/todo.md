@@ -1,3 +1,23 @@
+# Primary Canonical Domain Switch
+
+- [x] Refactor deployment config and UI metadata so `freetheworld.ai` is the primary canonical host, `free-the-world.com` stays a live secondary AWS host, and the remaining domains are modeled as redirect-only.
+  Verification: `bun test tests/unit/scripts/deploy-config.test.ts`
+- [x] Generalize AWS deployment helpers and CloudFormation for 2 live AWS hosts plus 4 redirect hosts, with readiness gating for the pending `freetheworld.ai` Route 53 setup.
+  Verification: `bun test tests/unit/scripts/deploy-setup.test.ts`
+- [x] Update deployment verification, docs, and artifact metadata to canonicalize to `.ai` while reporting pending-domain blockers clearly.
+  Verification: `bun test tests/unit/scripts/deploy-artifact.test.ts` and `bun run test tests/unit/scripts/deploy-config.test.ts tests/unit/scripts/deploy-setup.test.ts tests/unit/scripts/deploy-artifact.test.ts`
+- [x] Run final verification and review the diff for unintended side effects.
+  Verification: `bun run typecheck`, `bun test tests/unit/scripts/deploy-config.test.ts tests/unit/scripts/deploy-setup.test.ts tests/unit/scripts/deploy-artifact.test.ts`, `bun run test:e2e --grep mirrors`
+
+Completion review:
+- Reworked the deployment model so `freetheworld.ai` is the sole canonical origin, `free-the-world.com` remains a live AWS-served secondary host, GitHub Pages stays a noindex mirror, and `www.freetheworld.ai` joins the legacy `.us` and `ftw*` domains as redirect-only aliases.
+- Generalized the AWS deploy/setup/bootstrap code and CloudFormation template from the previous one-canonical-plus-three-redirect assumption to one canonical host, one secondary live host, and four redirect hosts, with explicit Route 53 readiness assessment before any apply-mode IAM or CloudFormation mutation.
+- Updated `deploy:verify`, artifact metadata, the mirrors UI, docs, and tests so canonical tags, sitemaps, and Pages all point to `.ai`, while missing `.ai` DNS now produces a direct domain-readiness blocker instead of a generic fetch failure.
+
+Residual risks:
+- The code path is ready, but `bun run deploy:setup --apply`, `bun run deploy:aws:bootstrap --apply`, and `bun run deploy:verify` will remain intentionally blocked until Route 53 finishes the `freetheworld.ai` and `www.freetheworld.ai` hosted-zone/delegation path.
+- I validated the repo locally with typecheck, lint, targeted deploy unit tests, a mirrors Playwright smoke test, and `bun run deploy:build`, but I did not run live AWS mutations from this workspace.
+
 # S&P 500 Next 10 Intake
 
 - [ ] Add the next 10 missing S&P 500 companies from a frozen market-cap snapshot, including any required taxonomy updates.

@@ -21,12 +21,12 @@ test("diffDeployManifests identifies uploads and deletes", () => {
   const remoteManifest: DeployManifest = {
     artifactHash: "remote",
     basePath: "/",
-    canonicalOrigin: "https://free-the-world.com",
+    canonicalOrigin: "https://freetheworld.ai",
     files: [
       { cacheClass: "html", path: "index.html", sha256: "one", size: 1 },
       { cacheClass: "immutable", path: "_build/assets/app-abcdef12.js", sha256: "two", size: 2 },
     ],
-    publicOrigin: "https://free-the-world.com",
+    publicOrigin: "https://freetheworld.ai",
     routes: ["/"],
     target: "aws",
     version: 1,
@@ -70,13 +70,13 @@ test("assertDeployArtifactIntegrity fails when manifest-listed files are missing
     const manifest: DeployManifest = {
       artifactHash: "artifact",
       basePath: "/",
-      canonicalOrigin: "https://free-the-world.com",
+      canonicalOrigin: "https://freetheworld.ai",
       files: [
         { cacheClass: "html", path: "index.html", sha256: "one", size: 1 },
         { cacheClass: "metadata", path: ".nojekyll", sha256: "two", size: 2 },
         { cacheClass: "asset", path: "_build/.vite/manifest.json", sha256: "three", size: 3 },
       ],
-      publicOrigin: "https://free-the-world.com",
+      publicOrigin: "https://freetheworld.ai",
       routes: ["/"],
       target: "aws",
       version: 1,

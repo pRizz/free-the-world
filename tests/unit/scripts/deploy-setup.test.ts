@@ -1,5 +1,9 @@
 import { expect, test } from "bun:test";
 import {
+  buildDomainReadinessAssessment,
+  formatDomainReadinessMessage,
+} from "../../../scripts/lib/aws-deploy";
+import {
   buildAwsDeployPolicy,
   buildGithubOidcTrustPolicy,
   normalizePolicyDocument,
@@ -30,8 +34,84 @@ test("buildGithubOidcTrustPolicy scopes the role to the production environment s
 
 test("buildAwsDeployPolicy scopes Route 53 and S3 resources to the deployment account", () => {
   const policy = buildAwsDeployPolicy("123456789012", {
-    canonical: "ZCANONICAL",
-    redirects: ["ZREDIRECT1", "ZREDIRECT2", "ZREDIRECT3"],
+    all: [
+      {
+        domain: "freetheworld.ai",
+        kind: "canonical",
+        label: "primary canonical host",
+        zoneId: "ZCANONICAL",
+      },
+      {
+        domain: "free-the-world.com",
+        kind: "live",
+        label: "secondary live host 1",
+        zoneId: "ZLIVE1",
+      },
+      {
+        domain: "www.freetheworld.ai",
+        kind: "redirect",
+        label: "redirect host 1",
+        zoneId: "ZREDIRECT1",
+      },
+      {
+        domain: "free-the-world.us",
+        kind: "redirect",
+        label: "redirect host 2",
+        zoneId: "ZREDIRECT2",
+      },
+      {
+        domain: "ftwfreetheworld.com",
+        kind: "redirect",
+        label: "redirect host 3",
+        zoneId: "ZREDIRECT3",
+      },
+      {
+        domain: "ftwfreetheworld.us",
+        kind: "redirect",
+        label: "redirect host 4",
+        zoneId: "ZREDIRECT4",
+      },
+    ],
+    canonical: {
+      domain: "freetheworld.ai",
+      kind: "canonical",
+      label: "primary canonical host",
+      zoneId: "ZCANONICAL",
+    },
+    live: [
+      {
+        domain: "free-the-world.com",
+        kind: "live",
+        label: "secondary live host 1",
+        zoneId: "ZLIVE1",
+      },
+    ],
+    redirects: [
+      {
+        domain: "www.freetheworld.ai",
+        kind: "redirect",
+        label: "redirect host 1",
+        zoneId: "ZREDIRECT1",
+      },
+      {
+        domain: "free-the-world.us",
+        kind: "redirect",
+        label: "redirect host 2",
+        zoneId: "ZREDIRECT2",
+      },
+      {
+        domain: "ftwfreetheworld.com",
+        kind: "redirect",
+        label: "redirect host 3",
+        zoneId: "ZREDIRECT3",
+      },
+      {
+        domain: "ftwfreetheworld.us",
+        kind: "redirect",
+        label: "redirect host 4",
+        zoneId: "ZREDIRECT4",
+      },
+    ],
   });
 
   const route53Statement = policy.Statement.find(
@@ -41,11 +121,50 @@ test("buildAwsDeployPolicy scopes Route 53 and S3 resources to the deployment ac
 
   expect(route53Statement?.Resource).toEqual([
     "arn:aws:route53:::hostedzone/ZCANONICAL",
+    "arn:aws:route53:::hostedzone/ZLIVE1",
     "arn:aws:route53:::hostedzone/ZREDIRECT1",
     "arn:aws:route53:::hostedzone/ZREDIRECT2",
     "arn:aws:route53:::hostedzone/ZREDIRECT3",
+    "arn:aws:route53:::hostedzone/ZREDIRECT4",
   ]);
   expect(s3Statement?.Resource).toBe("arn:aws:s3:::free-the-world-site-123456789012/*");
+});
+
+test("domain readiness messaging explains missing Route 53 blockers for pending hosts", () => {
+  const assessment = buildDomainReadinessAssessment([
+    {
+      blocker:
+        "Public Route 53 hosted zone for freetheworld.ai was not found. ACM validation and alias records for this host are still blocked until registration and delegation finish.",
+      domain: "freetheworld.ai",
+      kind: "canonical",
+      label: "primary canonical host",
+      ready: false,
+    },
+    {
+      domain: "free-the-world.com",
+      kind: "live",
+      label: "secondary live host 1",
+      ready: true,
+      zoneId: "ZLIVE1",
+    },
+    {
+      blocker:
+        "Public Route 53 hosted zone for www.freetheworld.ai was not found. ACM validation and alias records for this host are still blocked until registration and delegation finish.",
+      domain: "www.freetheworld.ai",
+      kind: "redirect",
+      label: "redirect host 1",
+      ready: false,
+    },
+  ]);
+
+  expect(assessment.ready).toBe(false);
+  expect(assessment.blockers).toHaveLength(2);
+  expect(formatDomainReadinessMessage(assessment)).toContain(
+    "AWS domain readiness is still pending for the freetheworld.ai rollout.",
+  );
+  expect(formatDomainReadinessMessage(assessment)).toContain(
+    "Public Route 53 hosted zone for freetheworld.ai was not found.",
+  );
 });
 
 test("normalizePolicyDocument treats encoded and unordered JSON policy documents as equal", () => {

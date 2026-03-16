@@ -3,8 +3,10 @@ import os from "node:os";
 import path from "node:path";
 import { deploymentConfig } from "../../src/lib/deployment-config";
 import {
+  assessAwsDomainReadiness,
   buildSiteBucketName,
   ensureAwsCliAvailable,
+  formatDomainReadinessMessage,
   loadAwsCallerIdentity,
   resolveHostedZones,
 } from "../lib/aws-deploy";
@@ -92,24 +94,85 @@ ensureAwsCliAvailable();
 
 const identity = loadAwsCallerIdentity();
 const repositorySlug = resolveGitHubRepositorySlug(args.repo);
-const hostedZones = resolveHostedZones();
 const siteBucketName = buildSiteBucketName(identity.Account);
 const desiredTrustPolicy = buildGithubOidcTrustPolicy(identity.Account, repositorySlug);
-const desiredManagedPolicy = buildAwsDeployPolicy(identity.Account, hostedZones);
 const desiredRoleArn = `arn:aws:iam::${identity.Account}:role/${deploymentConfig.awsDeployRoleName}`;
 const desiredPolicyArn = `arn:aws:iam::${identity.Account}:policy/${deploymentConfig.awsDeployPolicyName}`;
+const domainReadiness = assessAwsDomainReadiness();
 
 await run.addBreadcrumb({
   data: {
     accountId: identity.Account,
-    hostedZones,
+    domainReadiness,
     repositorySlug,
     siteBucketName,
   },
-  detail: "Resolved account identity, hosted zones, and repository slug.",
+  detail: "Resolved account identity, repository slug, and AWS domain readiness state.",
   status: "passed",
   step: "context",
 });
+
+if (!domainReadiness.ready) {
+  const blockerDetail = formatDomainReadinessMessage(domainReadiness);
+  const verificationResults: DeployVerificationResult[] = [
+    {
+      detail: blockerDetail,
+      name: "domain readiness",
+      status: mode === "check" ? "skipped" : "failed",
+    },
+    {
+      detail: `Resolved repository slug ${repositorySlug} for the GitHub OIDC trust policy.`,
+      name: "repository slug",
+      status: "passed",
+    },
+  ];
+  const skippedReasons =
+    mode === "check"
+      ? [blockerDetail]
+      : [
+          "Apply mode stopped before IAM/OIDC mutations because freetheworld.ai is not fully ready in Route 53 yet.",
+        ];
+
+  await run.addBreadcrumb({
+    detail: blockerDetail,
+    status: mode === "check" ? "skipped" : "failed",
+    step: "domain readiness",
+  });
+
+  const { runDirectory } = await writeDeploySummary(
+    {
+      appliedChanges: [],
+      artifactDir: undefined,
+      artifactHash: undefined,
+      command: commandName,
+      discoveredRemoteState: {
+        domainReadiness,
+        identity,
+        repositorySlug,
+        siteBucketName,
+      },
+      mode,
+      plannedChanges: {
+        blockedBy: "domain readiness",
+      },
+      resultingUrls: [],
+      skippedReasons,
+      target: "aws-setup",
+      verificationResults,
+    },
+    { runDirectory: run.runDirectory },
+  );
+
+  if (mode === "check") {
+    console.log(`AWS setup ${mode} blocked by domain readiness. Summary: ${runDirectory}`);
+    process.exit(0);
+  }
+
+  throw new Error(`AWS setup apply blocked until freetheworld.ai is ready. See ${runDirectory}.`);
+}
+
+const hostedZones = resolveHostedZones();
+const desiredManagedPolicy = buildAwsDeployPolicy(identity.Account, hostedZones);
 
 const currentOidcProvider = loadGithubOidcProviderState();
 const currentManagedPolicy = loadManagedPolicyState(desiredPolicyArn);
@@ -136,7 +199,8 @@ const skippedReasons: string[] = [];
 const appliedChanges: string[] = [];
 const verificationResults: DeployVerificationResult[] = [
   {
-    detail: `Resolved Route 53 hosted zones for ${deploymentConfig.canonicalDomain} and the three redirect domains.`,
+    detail:
+      "Resolved Route 53 hosted zones for freetheworld.ai, free-the-world.com, and the four redirect hosts.",
     name: "hosted zones",
     status: "passed",
   },

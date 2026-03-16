@@ -10,12 +10,14 @@ const siteAccessEntries = getSiteAccessEntries();
 
 const kindBadgeTone: Record<SiteAccessEntry["kind"], "accent" | "default" | "muted"> = {
   canonical: "accent",
+  live: "default",
   mirror: "default",
   redirect: "muted",
 };
 
 const kindLabel: Record<SiteAccessEntry["kind"], string> = {
   canonical: "Canonical",
+  live: "Live",
   mirror: "Mirror",
   redirect: "Redirect",
 };
@@ -25,7 +27,7 @@ export default function MirrorsPage() {
     <>
       <Seo
         title="Mirrors · Free The World"
-        description="Find the canonical Free The World host, the public GitHub Pages mirror, and the redirect-only domains currently configured in this repo."
+        description="Find the primary canonical Free The World host, the live secondary .com host, the public GitHub Pages mirror, and the redirect-only domains currently configured in this repo."
         route="/mirrors"
       />
 
@@ -33,15 +35,16 @@ export default function MirrorsPage() {
         <PageHeader
           eyebrow="Mirrors"
           title="Where Free The World is currently reachable"
-          description="The repo currently defines one canonical site, one public mirror, and several redirect-only domains. Each host is labeled so readers can tell which URLs serve content and which ones simply point back to the primary .com origin."
+          description="The repo currently defines one primary canonical site, one secondary live site, one public mirror, and several redirect-only domains. Each host is labeled so readers can tell which URLs serve content and which ones simply point back to the primary .ai origin."
         />
 
         <ContentCard class="space-y-5">
           <div class="space-y-3">
             <h2 class="text-2xl font-semibold tracking-tight">Configured site access points</h2>
             <p class="max-w-3xl text-sm leading-7 text-muted-foreground sm:text-base">
-              The canonical AWS host is the source of truth. The GitHub Pages host is a public
-              mirror that stays noindexed. The additional domains below are redirect aliases, not
+              The primary `.ai` AWS host is the canonical source of truth. The `.com` host stays
+              live on the same production stack but canonicalizes back to `.ai`. GitHub Pages
+              remains a noindex mirror. The additional domains below are redirect aliases, not
               separate mirrors.
             </p>
           </div>

@@ -3,9 +3,11 @@ import os from "node:os";
 import path from "node:path";
 import {
   deploymentConfig,
+  getAwsRedirectDomains,
   getCanonicalUrl,
   getHostedDomains,
   getPublicUrl,
+  getUrlForDomain,
 } from "../../src/lib/deployment-config";
 import { runCommand } from "../lib/command";
 import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
@@ -43,8 +45,10 @@ const canonicalAboutHtml = canonicalAboutResponse.body;
 
 assert(canonicalAboutResponse.ok, `Expected ${canonicalAboutUrl} to return 200.`);
 assert(
-  canonicalAboutHtml.includes('rel="canonical" href="https://free-the-world.com/about"'),
-  `Expected ${canonicalAboutUrl} to include a canonical link to https://free-the-world.com/about.`,
+  canonicalAboutHtml.includes(
+    `rel="canonical" href="${getCanonicalUrl("/about").replaceAll('"', "&quot;")}"`,
+  ),
+  `Expected ${canonicalAboutUrl} to include a canonical link to ${getCanonicalUrl("/about")}.`,
 );
 
 verificationResults.push({
@@ -58,7 +62,39 @@ await run.addBreadcrumb({
   step: "canonical host",
 });
 
-for (const redirectDomain of deploymentConfig.redirectDomains) {
+const [secondaryLiveDomain] = deploymentConfig.secondaryLiveDomains;
+if (!secondaryLiveDomain) {
+  throw new Error("Expected one configured secondary live domain for deployment verification.");
+}
+
+const secondaryLiveAboutUrl = getUrlForDomain(secondaryLiveDomain, "/about");
+const secondaryLiveAboutResponse = await requestWithRetries(
+  secondaryLiveAboutUrl,
+  retries,
+  delayMs,
+);
+const secondaryLiveAboutHtml = secondaryLiveAboutResponse.body;
+
+assert(secondaryLiveAboutResponse.ok, `Expected ${secondaryLiveAboutUrl} to return 200.`);
+assert(
+  secondaryLiveAboutHtml.includes(
+    `rel="canonical" href="${getCanonicalUrl("/about").replaceAll('"', "&quot;")}"`,
+  ),
+  `Expected ${secondaryLiveAboutUrl} to canonicalize to ${getCanonicalUrl("/about")}.`,
+);
+
+verificationResults.push({
+  detail: `${secondaryLiveAboutUrl} returned ${secondaryLiveAboutResponse.status} via ${secondaryLiveAboutResponse.source} and canonicalized to the .ai host.`,
+  name: "secondary live host",
+  status: "passed" as const,
+});
+await run.addBreadcrumb({
+  detail: `Verified secondary live host response for ${secondaryLiveAboutUrl}.`,
+  status: "passed",
+  step: "secondary live host",
+});
+
+for (const redirectDomain of getAwsRedirectDomains()) {
   const redirectUrl = `https://${redirectDomain}/about?from=verify`;
   const response = await requestWithRetries(redirectUrl, retries, delayMs, "manual");
   const location = response.headers.get("location") ?? null;
@@ -91,12 +127,14 @@ assert(
   `Expected ${pagesAboutUrl} to include a noindex robots meta tag.`,
 );
 assert(
-  pagesAboutHtml.includes('rel="canonical" href="https://free-the-world.com/about"'),
-  `Expected ${pagesAboutUrl} to canonicalize to https://free-the-world.com/about.`,
+  pagesAboutHtml.includes(
+    `rel="canonical" href="${getCanonicalUrl("/about").replaceAll('"', "&quot;")}"`,
+  ),
+  `Expected ${pagesAboutUrl} to canonicalize to ${getCanonicalUrl("/about")}.`,
 );
 
 verificationResults.push({
-  detail: `${pagesAboutUrl} returned ${pagesAboutResponse.status} via ${pagesAboutResponse.source}, noindexed the mirror, and pointed at the canonical .com URL.`,
+  detail: `${pagesAboutUrl} returned ${pagesAboutResponse.status} via ${pagesAboutResponse.source}, noindexed the mirror, and pointed at the canonical .ai URL.`,
   name: "GitHub Pages mirror",
   status: "passed" as const,
 });
@@ -116,7 +154,11 @@ const summary = {
   },
   mode: "check" as const,
   plannedChanges: {},
-  resultingUrls: [deploymentConfig.canonicalOrigin, getPublicUrl("github-pages", "/")],
+  resultingUrls: [
+    deploymentConfig.primaryCanonicalOrigin,
+    getUrlForDomain(secondaryLiveDomain, "/"),
+    getPublicUrl("github-pages", "/"),
+  ],
   skippedReasons: [] as string[],
   target: "verification",
   verificationResults,
@@ -159,6 +201,14 @@ async function requestWithRetries(
   const fallbackResponse = await requestWithResolvedCurl(url, redirect);
   if (fallbackResponse) {
     return fallbackResponse;
+  }
+
+  const hostname = new URL(url).hostname;
+  const hostedDomains = new Set<string>(getHostedDomains());
+  if (hostedDomains.has(hostname) && resolvePublicIpv4(hostname).length === 0) {
+    throw new Error(
+      `Domain readiness blocker: ${hostname} does not resolve publicly yet. Wait for Route 53 registration, delegation, and DNS propagation before rerunning deploy:verify.`,
+    );
   }
 
   throw lastError ?? new Error(`Failed to fetch ${url} after ${retries} attempts.`);

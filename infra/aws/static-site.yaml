@@ -4,9 +4,13 @@ Description: Free The World static site hosting on CloudFront with a private S3 
 Parameters:
   SiteBucketName:
     Type: String
-  CanonicalDomain:
+  PrimaryDomain:
     Type: String
-  CanonicalHostedZoneId:
+  PrimaryHostedZoneId:
+    Type: String
+  SecondaryLiveDomainOne:
+    Type: String
+  SecondaryLiveHostedZoneIdOne:
     Type: String
   RedirectDomainOne:
     Type: String
@@ -19,6 +23,10 @@ Parameters:
   RedirectDomainThree:
     Type: String
   RedirectHostedZoneIdThree:
+    Type: String
+  RedirectDomainFour:
+    Type: String
+  RedirectHostedZoneIdFour:
     Type: String
   PriceClass:
     Type: String
@@ -57,21 +65,27 @@ Resources:
   SiteCertificate:
     Type: AWS::CertificateManager::Certificate
     Properties:
-      DomainName: !Ref CanonicalDomain
+      DomainName: !Ref PrimaryDomain
       SubjectAlternativeNames:
+        - !Ref SecondaryLiveDomainOne
         - !Ref RedirectDomainOne
         - !Ref RedirectDomainTwo
         - !Ref RedirectDomainThree
+        - !Ref RedirectDomainFour
       ValidationMethod: DNS
       DomainValidationOptions:
-        - DomainName: !Ref CanonicalDomain
-          HostedZoneId: !Ref CanonicalHostedZoneId
+        - DomainName: !Ref PrimaryDomain
+          HostedZoneId: !Ref PrimaryHostedZoneId
+        - DomainName: !Ref SecondaryLiveDomainOne
+          HostedZoneId: !Ref SecondaryLiveHostedZoneIdOne
         - DomainName: !Ref RedirectDomainOne
           HostedZoneId: !Ref RedirectHostedZoneIdOne
         - DomainName: !Ref RedirectDomainTwo
           HostedZoneId: !Ref RedirectHostedZoneIdTwo
         - DomainName: !Ref RedirectDomainThree
           HostedZoneId: !Ref RedirectHostedZoneIdThree
+        - DomainName: !Ref RedirectDomainFour
+          HostedZoneId: !Ref RedirectHostedZoneIdFour
 
   RequestRouterFunction:
     Type: AWS::CloudFront::Function
@@ -113,13 +127,27 @@ Resources:
           return parts.join("&");
         }
 
+        function listContains(list, value) {
+          return list.indexOf(value) !== -1;
+        }
+
         function handler(event) {
           var request = event.request;
           var headers = request.headers || {};
           var hostHeader = headers.host && headers.host.value ? headers.host.value.toLowerCase() : "";
-          var canonicalHost = "${CanonicalDomain}";
+          var primaryHost = "${PrimaryDomain}";
+          var liveHosts = [
+            primaryHost,
+            "${SecondaryLiveDomainOne}"
+          ];
+          var redirectHosts = [
+            "${RedirectDomainOne}",
+            "${RedirectDomainTwo}",
+            "${RedirectDomainThree}",
+            "${RedirectDomainFour}"
+          ];
 
-          if (hostHeader && hostHeader !== canonicalHost) {
+          if (hostHeader && listContains(redirectHosts, hostHeader)) {
             var querystring = serializeQuerystring(request.querystring);
             var querySuffix = querystring ? "?" + querystring : "";
 
@@ -128,7 +156,7 @@ Resources:
               statusDescription: "Moved Permanently",
               headers: {
                 location: {
-                  value: "https://" + canonicalHost + request.uri + querySuffix
+                  value: "https://" + primaryHost + request.uri + querySuffix
                 },
                 "cache-control": {
                   value: "public, max-age=3600"
@@ -160,10 +188,12 @@ Resources:
     Properties:
       DistributionConfig:
         Aliases:
-          - !Ref CanonicalDomain
+          - !Ref PrimaryDomain
+          - !Ref SecondaryLiveDomainOne
           - !Ref RedirectDomainOne
           - !Ref RedirectDomainTwo
           - !Ref RedirectDomainThree
+          - !Ref RedirectDomainFour
         Comment: !Sub ${AWS::StackName} static site distribution
         CustomErrorResponses:
           - ErrorCode: 403
@@ -220,21 +250,41 @@ Resources:
               StringEquals:
                 AWS:SourceArn: !Sub arn:${AWS::Partition}:cloudfront::${AWS::AccountId}:distribution/${SiteDistribution}
 
-  CanonicalDomainARecord:
+  PrimaryDomainARecord:
     Type: AWS::Route53::RecordSet
     Properties:
-      HostedZoneId: !Ref CanonicalHostedZoneId
-      Name: !Ref CanonicalDomain
+      HostedZoneId: !Ref PrimaryHostedZoneId
+      Name: !Ref PrimaryDomain
       Type: A
       AliasTarget:
         DNSName: !GetAtt SiteDistribution.DomainName
         HostedZoneId: Z2FDTNDATAQYW2
 
-  CanonicalDomainAAAARecord:
+  PrimaryDomainAAAARecord:
     Type: AWS::Route53::RecordSet
     Properties:
-      HostedZoneId: !Ref CanonicalHostedZoneId
-      Name: !Ref CanonicalDomain
+      HostedZoneId: !Ref PrimaryHostedZoneId
+      Name: !Ref PrimaryDomain
+      Type: AAAA
+      AliasTarget:
+        DNSName: !GetAtt SiteDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+
+  SecondaryLiveDomainOneARecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref SecondaryLiveHostedZoneIdOne
+      Name: !Ref SecondaryLiveDomainOne
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt SiteDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+
+  SecondaryLiveDomainOneAAAARecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref SecondaryLiveHostedZoneIdOne
+      Name: !Ref SecondaryLiveDomainOne
       Type: AAAA
       AliasTarget:
         DNSName: !GetAtt SiteDistribution.DomainName
@@ -300,6 +350,26 @@ Resources:
         DNSName: !GetAtt SiteDistribution.DomainName
         HostedZoneId: Z2FDTNDATAQYW2
 
+  RedirectDomainFourARecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref RedirectHostedZoneIdFour
+      Name: !Ref RedirectDomainFour
+      Type: A
+      AliasTarget:
+        DNSName: !GetAtt SiteDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+
+  RedirectDomainFourAAAARecord:
+    Type: AWS::Route53::RecordSet
+    Properties:
+      HostedZoneId: !Ref RedirectHostedZoneIdFour
+      Name: !Ref RedirectDomainFour
+      Type: AAAA
+      AliasTarget:
+        DNSName: !GetAtt SiteDistribution.DomainName
+        HostedZoneId: Z2FDTNDATAQYW2
+
 Outputs:
   SiteBucketName:
     Value: !Ref SiteBucket
@@ -307,5 +377,7 @@ Outputs:
     Value: !Ref SiteDistribution
   DistributionDomainName:
     Value: !GetAtt SiteDistribution.DomainName
-  CanonicalOrigin:
-    Value: !Sub https://${CanonicalDomain}
+  PrimaryOrigin:
+    Value: !Sub https://${PrimaryDomain}
+  SecondaryLiveOriginOne:
+    Value: !Sub https://${SecondaryLiveDomainOne}

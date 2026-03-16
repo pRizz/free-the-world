@@ -50,6 +50,8 @@ test("mirrors page renders the configured hosts and tor notice", async ({ page }
   await expect(
     page.getByRole("heading", { name: /Where Free The World is currently reachable/i }),
   ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Primary canonical site" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Secondary live host (.com)" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "GitHub Pages mirror" })).toBeVisible();
   await expect(page.getByText(/Tor-based mirrors are coming soon/i)).toBeVisible();
 });

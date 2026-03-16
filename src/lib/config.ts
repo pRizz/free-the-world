@@ -30,7 +30,7 @@ export const siteConfig = {
     "Tracking which large companies still charge heavily for things that are drifting toward free, open, and decentralized alternatives.",
   basePath: normalizedBasePath,
   publicOrigin,
-  canonicalOrigin: deploymentConfig.canonicalOrigin,
+  canonicalOrigin: deploymentConfig.primaryCanonicalOrigin,
   deployTarget,
   robotsMetaContent: getRobotsMetaContent(deployTarget),
   shouldIndex: getDeployTargetConfig(deployTarget).shouldIndex,

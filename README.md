@@ -53,10 +53,12 @@ Pushes to `main` trigger `.github/workflows/deploy.yml`, which:
 2. validates the JSON content graph
 3. runs `typecheck`, unit tests, and Playwright
 4. builds two target-specific artifacts under `.artifacts/deploy/`
-5. deploys the canonical root-path build to AWS/CloudFront
+5. deploys the primary canonical `https://freetheworld.ai` root-path build to AWS/CloudFront while keeping `https://free-the-world.com` live on the same stack
 6. deploys the repo-path mirror to GitHub Pages only when the live Pages manifest has changed
 
 Deployment runbook: `docs/deployment.md`
+
+The `.ai` domain rollout is staged so repo changes can land before Route 53 registration or delegation finishes. Until the new hosted zones exist, the AWS setup/bootstrap scripts stay in report-only mode and the verification command surfaces a domain-readiness blocker instead of a generic fetch error.
 
 ## Data model
 
