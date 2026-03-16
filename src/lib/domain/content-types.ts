@@ -119,6 +119,7 @@ export interface ResearchTaskResult {
   notesFile?: string;
   exitCode: number;
   success: boolean;
+  timedOut?: boolean;
   generatedOn: string;
 }
 
@@ -141,6 +142,7 @@ export interface ResearchRunManifest {
 export interface RalphProviderConfig {
   command: string;
   args: string[];
+  timeoutMs?: number;
 }
 
 export interface RalphProvidersFile {

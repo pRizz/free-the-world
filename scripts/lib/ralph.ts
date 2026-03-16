@@ -1,7 +1,7 @@
 import { access, appendFile, mkdir, readFile, writeFile } from "node:fs/promises";
 import { accessSync, constants as fsConstants } from "node:fs";
 import path from "node:path";
-import { spawn, spawnSync } from "node:child_process";
+import { spawn, spawnSync, type ChildProcessWithoutNullStreams } from "node:child_process";
 import type {
   CompanyManifest,
   ResearchLoopTarget,
@@ -72,12 +72,16 @@ const promptsDir = path.join(rootDir, "prompts");
 const researchRunsDir = path.join(rootDir, "research", "runs");
 const staleAfterDays = 30;
 const providerHeartbeatIntervalMs = 15_000;
+const defaultProviderTimeoutMs = 10 * 60 * 1000;
+const providerKillGracePeriodMs = 5_000;
+const providerTimeoutExitCode = 124;
 
 export interface ProviderExecutionResult {
   provider: RalphProviderId;
   rawOutput: string;
   stderr: string;
   exitCode: number;
+  timedOut: boolean;
 }
 
 export interface CompanyContext {
@@ -101,6 +105,14 @@ export interface SyncCompanyResult {
 }
 
 type RalphTraceLogger = (event: string, details?: Record<string, unknown>) => Promise<void>;
+type ProviderOutputSource = "stdout" | "last-message-file";
+
+interface ProviderExecutionPlan {
+  command: string;
+  args: string[];
+  timeoutMs: number;
+  maybeOutputFile: string | null;
+}
 
 interface LoopPromptContext {
   companyName: string;
@@ -304,6 +316,35 @@ export async function buildCompanyContext(companySlug: string): Promise<CompanyC
   };
 }
 
+export function resolveProviderExecutionPlan(
+  provider: RalphProviderId,
+  variables: Record<string, string>,
+  providerConfig: RalphProvidersFile
+): ProviderExecutionPlan {
+  const config = providerConfig.providers[provider];
+  const templatedVariables = {
+    ...variables,
+    lastMessageFile: path.join(variables.runDir, `${variables.taskId}.${provider}.last-message.txt`),
+  };
+  let args = config.args.map(arg => applyTemplate(arg, templatedVariables));
+
+  if (provider === "codex" && !hasOutputLastMessageFlag(args)) {
+    const stdinPromptIndex = args.lastIndexOf("-");
+    const injectedArgs = ["--output-last-message", templatedVariables.lastMessageFile];
+    args =
+      stdinPromptIndex >= 0
+        ? [...args.slice(0, stdinPromptIndex), ...injectedArgs, ...args.slice(stdinPromptIndex)]
+        : [...args, ...injectedArgs];
+  }
+
+  return {
+    command: config.command,
+    args,
+    timeoutMs: config.timeoutMs && config.timeoutMs > 0 ? config.timeoutMs : defaultProviderTimeoutMs,
+    maybeOutputFile: resolveOutputLastMessageFile(args),
+  };
+}
+
 export async function executeProvider(
   provider: RalphProviderId,
   prompt: string,
@@ -311,33 +352,36 @@ export async function executeProvider(
   providerConfig: RalphProvidersFile,
   trace?: RalphTraceLogger
 ): Promise<ProviderExecutionResult> {
-  const config = providerConfig.providers[provider];
-  const args = config.args.map(arg => applyTemplate(arg, variables));
+  const plan = resolveProviderExecutionPlan(provider, variables, providerConfig);
   const startedAt = Date.now();
   await trace?.("provider:start", {
     provider,
-    command: config.command,
-    args,
+    command: plan.command,
+    args: plan.args,
+    timeoutMs: plan.timeoutMs,
+    outputFile: plan.maybeOutputFile ? path.relative(rootDir, plan.maybeOutputFile) : null,
   });
 
   return new Promise(resolve => {
-    const child = spawn(config.command, args, {
+    const child = spawn(plan.command, plan.args, {
       cwd: rootDir,
       stdio: ["pipe", "pipe", "pipe"],
       env: process.env,
+      detached: process.platform !== "win32",
     });
 
-    let rawOutput = "";
+    let stdoutBuffer = "";
     let stderr = "";
     let stdoutChunkCount = 0;
     let stderrChunkCount = 0;
     let settled = false;
+    let timedOut = false;
 
     child.stdout.setEncoding("utf8");
     child.stderr.setEncoding("utf8");
 
     child.stdout.on("data", chunk => {
-      rawOutput += chunk;
+      stdoutBuffer += chunk;
       stdoutChunkCount += 1;
       if (stdoutChunkCount <= 3) {
         void trace?.("provider:stdout-chunk", {
@@ -365,25 +409,75 @@ export async function executeProvider(
         provider,
         pid: child.pid ?? null,
         elapsedMs: Date.now() - startedAt,
-        stdoutBytes: rawOutput.length,
+        stdoutBytes: stdoutBuffer.length,
         stderrBytes: stderr.length,
-        stdoutTail: tailPreview(rawOutput),
+        stdoutTail: tailPreview(stdoutBuffer),
         stderrTail: tailPreview(stderr),
       });
     }, providerHeartbeatIntervalMs);
 
-    const finish = async (exitCode: number) => {
+    let timeoutEscalation: ReturnType<typeof setTimeout> | null = null;
+    const timeout = setTimeout(() => {
+      if (settled) {
+        return;
+      }
+
+      timedOut = true;
+      stderr = appendDiagnosticLine(stderr, `Provider ${provider} timed out after ${plan.timeoutMs}ms.`);
+      const terminationTarget = terminateProvider(child, "SIGTERM");
+      void trace?.("provider:timeout", {
+        provider,
+        pid: child.pid ?? null,
+        elapsedMs: Date.now() - startedAt,
+        timeoutMs: plan.timeoutMs,
+        terminationTarget,
+      });
+
+      timeoutEscalation = setTimeout(() => {
+        if (settled) {
+          return;
+        }
+
+        stderr = appendDiagnosticLine(
+          stderr,
+          `Provider ${provider} did not exit after SIGTERM; sending SIGKILL after ${providerKillGracePeriodMs}ms.`
+        );
+        const escalationTarget = terminateProvider(child, "SIGKILL");
+        void trace?.("provider:timeout-escalated", {
+          provider,
+          pid: child.pid ?? null,
+          elapsedMs: Date.now() - startedAt,
+          graceMs: providerKillGracePeriodMs,
+          terminationTarget: escalationTarget,
+        });
+      }, providerKillGracePeriodMs);
+    }, plan.timeoutMs);
+
+    const finish = async (exitCode: number, signal: NodeJS.Signals | null) => {
       if (settled) {
         return;
       }
       settled = true;
       clearInterval(heartbeat);
+      clearTimeout(timeout);
+      if (timeoutEscalation) {
+        clearTimeout(timeoutEscalation);
+      }
+      const { rawOutput, outputSource } = await resolveProviderOutput(stdoutBuffer, plan.maybeOutputFile);
+      await trace?.("provider:output-captured", {
+        provider,
+        outputSource,
+        outputBytes: rawOutput.length,
+        stdoutBytes: stdoutBuffer.length,
+      });
       await trace?.("provider:finish", {
         provider,
         pid: child.pid ?? null,
         exitCode,
+        signal,
+        timedOut,
         elapsedMs: Date.now() - startedAt,
-        stdoutBytes: rawOutput.length,
+        stdoutBytes: stdoutBuffer.length,
         stderrBytes: stderr.length,
       });
       resolve({
@@ -391,23 +485,24 @@ export async function executeProvider(
         rawOutput,
         stderr,
         exitCode,
+        timedOut,
       });
     };
 
     child.on("error", error => {
-      const nextStderr = `${stderr}${stderr ? "\n" : ""}${error instanceof Error ? error.message : String(error)}`;
-      stderr = nextStderr;
+      stderr = appendDiagnosticLine(stderr, error instanceof Error ? error.message : String(error));
       void trace?.("provider:error", {
         provider,
         pid: child.pid ?? null,
         elapsedMs: Date.now() - startedAt,
         error: error instanceof Error ? error.message : String(error),
       });
-      void finish(1);
+      void finish(1, null);
     });
 
-    child.on("close", code => {
-      void finish(code ?? 1);
+    child.on("close", (code, signal) => {
+      const normalizedExitCode = timedOut ? providerTimeoutExitCode : code ?? 1;
+      void finish(normalizedExitCode, signal);
     });
 
     child.stdin.on("error", error => {
@@ -553,6 +648,7 @@ export async function runLoopTask(options: {
         await writeJsonFile(normalizedFile, normalizedValue);
         validationSummary = {
           ...validationSummary,
+          timedOut: execution.timedOut,
           validJson: true,
         };
         await trace("validation:success", {
@@ -563,6 +659,7 @@ export async function runLoopTask(options: {
         success = false;
         validationSummary = {
           ...validationSummary,
+          timedOut: execution.timedOut,
           validJson: false,
           error: error instanceof Error ? error.message : String(error),
         };
@@ -574,6 +671,7 @@ export async function runLoopTask(options: {
     } else {
       validationSummary = {
         ...validationSummary,
+        timedOut: execution.timedOut,
         validJson: false,
         error: execution.stderr || "Provider command failed.",
       };
@@ -593,6 +691,7 @@ export async function runLoopTask(options: {
       validationFile: path.relative(rootDir, validationFile),
       exitCode: execution.exitCode,
       success,
+      timedOut: execution.timedOut,
       generatedOn: new Date().toISOString(),
     });
   }
@@ -664,6 +763,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
         await writeJsonFile(normalizedFile, payload);
         await writeJsonFile(validationFile, {
           ...validationSummary,
+          timedOut: execution.timedOut,
           validJson: true,
           validContent: true,
           manifestFile: path.relative(rootDir, validatedCandidate.manifestFile),
@@ -679,6 +779,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
         success = false;
         await writeJsonFile(validationFile, {
           ...validationSummary,
+          timedOut: execution.timedOut,
           validJson: false,
           validContent: false,
           error: error instanceof Error ? error.message : String(error),
@@ -691,6 +792,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     } else {
       await writeJsonFile(validationFile, {
         ...validationSummary,
+        timedOut: execution.timedOut,
         validJson: false,
         validContent: false,
         error: execution.stderr || "Provider command failed.",
@@ -711,6 +813,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
       notesFile: undefined,
       exitCode: execution.exitCode,
       success,
+      timedOut: execution.timedOut,
       generatedOn: new Date().toISOString(),
     });
   }
@@ -1092,6 +1195,70 @@ function collectBundleSourceIds(bundle: CompanyBundle) {
   }
 
   return [...collectedIds].sort((left, right) => left.localeCompare(right));
+}
+
+function hasOutputLastMessageFlag(args: string[]) {
+  return args.includes("--output-last-message") || args.includes("-o");
+}
+
+function resolveOutputLastMessageFile(args: string[]) {
+  for (let index = 0; index < args.length - 1; index += 1) {
+    if (args[index] === "--output-last-message" || args[index] === "-o") {
+      return path.resolve(rootDir, args[index + 1] ?? "");
+    }
+  }
+
+  return null;
+}
+
+async function resolveProviderOutput(
+  stdoutBuffer: string,
+  maybeOutputFile: string | null
+): Promise<{ rawOutput: string; outputSource: ProviderOutputSource }> {
+  if (!maybeOutputFile) {
+    return {
+      rawOutput: stdoutBuffer,
+      outputSource: "stdout",
+    };
+  }
+
+  try {
+    return {
+      rawOutput: await readFile(maybeOutputFile, "utf8"),
+      outputSource: "last-message-file",
+    };
+  } catch {
+    return {
+      rawOutput: stdoutBuffer,
+      outputSource: "stdout",
+    };
+  }
+}
+
+function appendDiagnosticLine(currentValue: string, message: string) {
+  return `${currentValue}${currentValue ? "\n" : ""}${message}`;
+}
+
+function terminateProvider(child: ChildProcessWithoutNullStreams, signal: NodeJS.Signals) {
+  if (child.pid == null) {
+    return "missing-pid";
+  }
+
+  if (process.platform !== "win32") {
+    try {
+      process.kill(-child.pid, signal);
+      return "process-group";
+    } catch {
+      // Fall back to signaling the child directly when process-group signaling is unavailable.
+    }
+  }
+
+  try {
+    child.kill(signal);
+    return "child";
+  } catch {
+    return "failed";
+  }
 }
 
 function commandExists(commandName: string) {

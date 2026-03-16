@@ -4,11 +4,13 @@
   "providers": {
     "codex": {
       "command": "codex",
-      "args": ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"]
+      "args": ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-o", "{{lastMessageFile}}", "-"],
+      "timeoutMs": 600000
     },
     "claude": {
       "command": "claude",
-      "args": ["-p", "--permission-mode", "dontAsk", "--output-format", "text"]
+      "args": ["-p", "--permission-mode", "dontAsk", "--output-format", "text"],
+      "timeoutMs": 600000
     }
   }
 }

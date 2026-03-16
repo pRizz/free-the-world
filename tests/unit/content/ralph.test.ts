@@ -1,5 +1,14 @@
 import { expect, test } from "bun:test";
-import { extractJsonPayload, isBundleStale, resolveProviders } from "../../../scripts/lib/ralph";
+import { mkdtemp } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import {
+  executeProvider,
+  extractJsonPayload,
+  isBundleStale,
+  resolveProviderExecutionPlan,
+  resolveProviders,
+} from "../../../scripts/lib/ralph";
 import type { CompanyBundle, RalphProvidersFile } from "../../../src/lib/domain/content-types";
 
 test("extractJsonPayload parses raw JSON and fenced JSON", () => {
@@ -29,6 +38,75 @@ test("resolveProviders honors provider availability and auto fallback order", ()
 
   expect(resolveProviders("auto", providerConfig)).toEqual(["claude"]);
   expect(() => resolveProviders("both", providerConfig)).toThrow(/requires both providers/i);
+});
+
+test("resolveProviderExecutionPlan injects codex last-message capture before stdin prompt", async () => {
+  const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-provider-"));
+  const providerConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["codex", "claude"],
+    providers: {
+      codex: {
+        command: "codex",
+        args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
+      },
+      claude: {
+        command: "claude",
+        args: ["-p"],
+      },
+    },
+  };
+
+  const plan = resolveProviderExecutionPlan(
+    "codex",
+    {
+      rootDir: "/repo/root",
+      companySlug: "fixtureco",
+      taskId: "company-sync",
+      runDir,
+    },
+    providerConfig
+  );
+
+  expect(plan.timeoutMs).toBe(600000);
+  expect(plan.args).toContain("--output-last-message");
+  expect(plan.args.at(-1)).toBe("-");
+  expect(plan.maybeOutputFile).toBe(path.join(runDir, "company-sync.codex.last-message.txt"));
+});
+
+test("executeProvider terminates long-running commands after the configured timeout", async () => {
+  const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-timeout-"));
+  const providerConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["claude", "codex"],
+    providers: {
+      claude: {
+        command: "bash",
+        args: ["-lc", "sleep 5"],
+        timeoutMs: 100,
+      },
+      codex: {
+        command: "codex",
+        args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
+      },
+    },
+  };
+
+  const execution = await executeProvider(
+    "claude",
+    "ignored",
+    {
+      rootDir: "/repo/root",
+      companySlug: "fixtureco",
+      taskId: "company-sync",
+      runDir,
+    },
+    providerConfig
+  );
+
+  expect(execution.exitCode).toBe(124);
+  expect(execution.timedOut).toBe(true);
+  expect(execution.stderr).toContain("timed out");
 });
 
 test("isBundleStale flags aged bundles and keeps fresh bundles current", () => {
