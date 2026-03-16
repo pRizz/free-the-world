@@ -99,9 +99,6 @@ export default function CompaniesPage() {
                 companies. Sorted by {sortMetricId()} ({sortDirection()})
               </p>
             </div>
-            <p class="text-sm text-muted-foreground">
-              Column toggles let the table stay dense without becoming unreadable.
-            </p>
           </div>
           <CompanyTable companies={filteredCompanies()} visibleMetricIds={visibleMetricIds()} />
         </ContentCard>
