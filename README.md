@@ -94,6 +94,36 @@ bun run content:compile
 
 Repo-local manifest intake guidance lives in `.codex/skills/company-manifest-queue/SKILL.md`.
 
+Start from raw names, tickers, or group phrases and let the repo create an unverified request,
+prepare validated queue entries, and optionally hand off to the full pipeline:
+
+```bash
+bun run company:intake --raw="Visa, Oracle, next 10 S&P 500 companies" --mode=prepare --provider=auto
+```
+
+`company:intake` writes repo-tracked unverified requests to `content/manifests/unverified/` and
+local run summaries to `.codex/logs/company-intake/<request-id>/summary.{json,md}`.
+
+Resume a prepared request and run research without publishing:
+
+```bash
+bun run company:intake --request=<request-id> --mode=dry-run --provider=auto
+```
+
+Resume a prepared request and publish website content:
+
+```bash
+bun run company:intake --request=<request-id> --mode=publish --provider=auto --no-commit=true
+```
+
+`company:intake` defaults to:
+
+- `--mode=prepare`
+- `--provider=auto`
+- `--loop-tasks=company-overview`
+- `--concurrency=5`
+- `--no-commit=true`
+
 Queue a net-new company from a draft manifest file:
 
 ```bash

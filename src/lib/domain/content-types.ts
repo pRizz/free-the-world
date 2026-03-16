@@ -37,6 +37,16 @@ export type RalphProviderPreference = RalphProviderId | "auto" | "both";
 export type RalphSyncMode = "dry-run" | "publish";
 export type ManifestQueueStatus = "queued";
 export type ResearchTargetSource = "canonical" | "queued";
+export type UnverifiedCompanyRequestStatus = "pending" | "prepared" | "completed" | "failed";
+export type UnverifiedCompanyIssueCode =
+  | "already-canonical"
+  | "already-queued"
+  | "ambiguous"
+  | "draft-validation-failed"
+  | "duplicate-candidate"
+  | "duplicate-input"
+  | "invalid"
+  | "provider-failure";
 
 export interface CompanyManifest {
   schemaVersion: 1;
@@ -64,6 +74,42 @@ export interface ManifestQueueEntry {
   groupLabel?: string;
   requestNotes?: string;
   manifest: CompanyManifest;
+}
+
+export interface UnverifiedCompanyIssue {
+  sourceItem: string;
+  code: UnverifiedCompanyIssueCode;
+  detail: string;
+  maybeCandidateSlug?: string;
+}
+
+export interface PreparedCompanyCandidate {
+  sourceItem: string;
+  slug: string;
+  name: string;
+  ticker: string;
+}
+
+export interface UnverifiedCompanyRequest {
+  schemaVersion: 1;
+  requestId: string;
+  status: UnverifiedCompanyRequestStatus;
+  createdOn: string;
+  updatedOn: string;
+  rawInput: string;
+  rawItems: string[];
+  batchId: string;
+  groupLabel: string;
+  requestNotes?: string;
+  preparedCandidates: PreparedCompanyCandidate[];
+  skippedItems: UnverifiedCompanyIssue[];
+  queuedSlugs: string[];
+  promotedSlugs: string[];
+  completedCompanySlugs: string[];
+  lastSummaryJson?: string;
+  lastSummaryMarkdown?: string;
+  lastLoopRunDirs: string[];
+  lastSyncRunDirs: string[];
 }
 
 export interface ResearchLoopTarget {

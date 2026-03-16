@@ -16,6 +16,7 @@ export async function writeMinimalFixture(
   await mkdir(path.join(root, "taxonomy"), { recursive: true });
   await mkdir(path.join(root, "manifests", "companies"), { recursive: true });
   await mkdir(path.join(root, "manifests", "queue"), { recursive: true });
+  await mkdir(path.join(root, "manifests", "unverified"), { recursive: true });
   await mkdir(path.join(root, "companies", "fixtureco"), { recursive: true });
   await mkdir(path.join(root, "sources"), { recursive: true });
   await mkdir(path.join(root, "prompts"), { recursive: true });
@@ -245,6 +246,14 @@ async function writeLoopPromptFixtures(root: string) {
     ["product-alternatives.md", promptContents["product-alternatives"]],
     ["source-gathering.md", promptContents["source-gathering"]],
     ["company-sync.md", "Sync {{companySlug}}\n{{companyManifestJson}}\n{{taxonomyJson}}\n"],
+    [
+      "company-intake-candidates.md",
+      "Resolve company intake candidates.\n{{rawItemsJson}}\n{{canonicalCompaniesJson}}\n{{queuedCompaniesJson}}\n",
+    ],
+    [
+      "company-intake-manifests.md",
+      "Draft company intake manifests.\n{{resolvedCandidatesJson}}\n{{taxonomyJson}}\n",
+    ],
   ];
 
   for (const [fileName, fileContents] of promptFiles) {

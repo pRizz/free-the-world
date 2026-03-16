@@ -8,6 +8,7 @@ import {
   type ContentGraph,
   companyInputMetricIds,
   type ManifestQueueEntry,
+  type UnverifiedCompanyRequest,
 } from "../../src/lib/domain/content-types";
 import { deriveIpoMetrics } from "../../src/lib/domain/ipo";
 import { calculateFreedCapitalPotential } from "../../src/lib/domain/scoring";
@@ -36,6 +37,7 @@ export const contentDir = process.env.FTW_CONTENT_DIR
 export const taxonomyDir = path.join(contentDir, "taxonomy");
 export const manifestsDir = path.join(contentDir, "manifests", "companies");
 export const queueManifestsDir = path.join(contentDir, "manifests", "queue");
+export const unverifiedManifestsDir = path.join(contentDir, "manifests", "unverified");
 export const companiesDir = path.join(contentDir, "companies");
 export const sourcesDir = path.join(contentDir, "sources");
 export const generatedGraphFile = path.join(rootDir, "src", "lib", "generated", "content-graph.ts");
@@ -100,6 +102,14 @@ export async function loadManifestQueueEntries(
 ): Promise<ManifestQueueEntry[]> {
   return readJsonDirectoryIfExists<ManifestQueueEntry>(
     path.join(contentRoot, "manifests", "queue"),
+  );
+}
+
+export async function loadUnverifiedCompanyRequests(
+  contentRoot = contentDir,
+): Promise<UnverifiedCompanyRequest[]> {
+  return readJsonDirectoryIfExists<UnverifiedCompanyRequest>(
+    path.join(contentRoot, "manifests", "unverified"),
   );
 }
 
