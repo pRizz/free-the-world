@@ -5,6 +5,7 @@ import path from "node:path";
 import {
   executeProvider,
   extractClaudeCliResult,
+  extractClaudeDebugDiagnostics,
   extractCodexSessionId,
   extractJsonPayload,
   findCodexSessionFile,
@@ -150,6 +151,10 @@ test("resolveProviderExecutionPlan injects claude debug-file and default json ou
       claude: {
         command: "claude",
         args: ["-p", "--permission-mode", "dontAsk"],
+        env: {
+          CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1",
+          CLAUDE_RUN_DIR: "{{runDir}}",
+        },
       },
       codex: {
         command: "codex",
@@ -171,8 +176,37 @@ test("resolveProviderExecutionPlan injects claude debug-file and default json ou
 
   expect(plan.args).toContain("--debug-file");
   expect(plan.args).toContain("--output-format");
+  expect(plan.env).toEqual({
+    CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC: "1",
+    CLAUDE_RUN_DIR: runDir,
+  });
   expect(plan.outputFormat).toBe("json");
   expect(plan.maybeDebugFile).toBe(path.join(runDir, "company-overview.claude.debug.log"));
+});
+
+test("extractClaudeDebugDiagnostics classifies marketplace and auth failures", () => {
+  const diagnostics = extractClaudeDebugDiagnostics(
+    [
+      "[WARN] Cache corrupted or missing for marketplace claude-plugins-official, re-fetching from source: Invalid schema: /Users/example/.claude/plugins/marketplaces/claude-plugins-official/.claude-plugin/marketplace.json plugins.56.source: Invalid input",
+      '[ERROR] "Failed to refresh marketplace claude-plugins-official: The marketplace.json file is no longer present in this repository."',
+      '[WARN] "git pull failed, will re-clone: error: cannot pull with rebase: You have unstaged changes."',
+      "[DEBUG] Stream started - received first chunk",
+    ].join("\n"),
+    "Not logged in · Please run /login",
+    "Could not resolve authentication method",
+  );
+
+  expect(diagnostics.issueCodes).toEqual([
+    "deprecated-marketplace",
+    "marketplace-schema-invalid",
+    "marketplace-git-conflict",
+    "missing-auth",
+    "not-logged-in",
+  ]);
+  expect(diagnostics.streamStarted).toBe(true);
+  expect(diagnostics.remediationSteps).toContain(
+    'Run `claude plugin marketplace remove "claude-plugins-official"` and retry the Ralph command.',
+  );
 });
 
 test("executeProvider unwraps Claude JSON output envelopes", async () => {
@@ -218,6 +252,42 @@ test("executeProvider unwraps Claude JSON output envelopes", async () => {
     numTurns: 1,
     stopReason: null,
   });
+});
+
+test("executeProvider applies provider-specific environment overrides", async () => {
+  const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-claude-env-"));
+  const providerConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["claude", "codex"],
+    providers: {
+      claude: {
+        command: "bash",
+        args: ["-c", 'cat >/dev/null; printf "%s" "$CLAUDE_TEST_FLAG"'],
+        env: {
+          CLAUDE_TEST_FLAG: "applied",
+        },
+      },
+      codex: {
+        command: "codex",
+        args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
+      },
+    },
+  };
+
+  const execution = await executeProvider(
+    "claude",
+    "ignored",
+    {
+      rootDir: "/repo/root",
+      companySlug: "fixtureco",
+      taskId: "company-overview",
+      runDir,
+    },
+    providerConfig,
+  );
+
+  expect(execution.exitCode).toBe(0);
+  expect(execution.rawOutput).toBe("applied");
 });
 
 test("executeProvider terminates long-running commands after the configured timeout", async () => {

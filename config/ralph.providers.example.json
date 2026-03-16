@@ -13,7 +13,7 @@
         "-p",
         "--disable-slash-commands",
         "--setting-sources",
-        "project,local",
+        "local",
         "--permission-mode",
         "dontAsk",
         "--allowedTools",
@@ -23,6 +23,10 @@
         "--debug-file",
         "{{debugFile}}"
       ],
+      "env": {
+        "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+        "CLAUDE_CODE_DISABLE_OFFICIAL_MARKETPLACE_AUTOINSTALL": "1"
+      },
       "timeoutMs": 600000
     }
   }

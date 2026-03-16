@@ -111,6 +111,7 @@ type ProviderOutputSource = "stdout" | "last-message-file";
 interface ProviderExecutionPlan {
   command: string;
   args: string[];
+  env: Record<string, string>;
   timeoutMs: number;
   maybeOutputFile: string | null;
   maybeDebugFile: string | null;
@@ -138,6 +139,20 @@ interface TextLogSnapshot {
   bytes: number | null;
   lastEventTs: string | null;
   tailPreview: string | null;
+}
+
+type ClaudeIssueCode =
+  | "deprecated-marketplace"
+  | "marketplace-schema-invalid"
+  | "marketplace-git-conflict"
+  | "missing-auth"
+  | "not-logged-in";
+
+interface ClaudeDiagnostics {
+  issueCodes: ClaudeIssueCode[];
+  issueSummaries: string[];
+  remediationSteps: string[];
+  streamStarted: boolean;
 }
 
 interface LoopPromptContext {
@@ -361,6 +376,12 @@ export function resolveProviderExecutionPlan(
     debugFile: path.join(variables.runDir, `${variables.taskId}.${provider}.debug.log`),
   };
   let args = config.args.map((arg) => applyTemplate(arg, templatedVariables));
+  const env = Object.fromEntries(
+    Object.entries(config.env ?? {}).map(([key, value]) => [
+      key,
+      applyTemplate(value, templatedVariables),
+    ]),
+  );
 
   if (provider === "codex" && !hasOutputLastMessageFlag(args)) {
     const stdinPromptIndex = args.lastIndexOf("-");
@@ -384,6 +405,7 @@ export function resolveProviderExecutionPlan(
   return {
     command: config.command,
     args,
+    env,
     timeoutMs:
       config.timeoutMs && config.timeoutMs > 0 ? config.timeoutMs : defaultProviderTimeoutMs,
     maybeOutputFile: resolveOutputLastMessageFile(args),
@@ -405,6 +427,7 @@ export async function executeProvider(
     provider,
     command: plan.command,
     args: plan.args,
+    envOverrides: plan.env,
     timeoutMs: plan.timeoutMs,
     outputFile: plan.maybeOutputFile ? path.relative(rootDir, plan.maybeOutputFile) : null,
     debugFile: plan.maybeDebugFile ? path.relative(rootDir, plan.maybeDebugFile) : null,
@@ -415,7 +438,10 @@ export async function executeProvider(
     const child = spawn(plan.command, plan.args, {
       cwd: rootDir,
       stdio: ["pipe", "pipe", "pipe"],
-      env: process.env,
+      env: {
+        ...process.env,
+        ...plan.env,
+      },
       detached: process.platform !== "win32",
     });
 
@@ -590,12 +616,33 @@ export async function executeProvider(
         plan.maybeOutputFile,
         plan.outputFormat,
       );
+      const debugText = await loadTextLogText(plan.maybeDebugFile);
+      const claudeDiagnostics =
+        provider === "claude" ? extractClaudeDebugDiagnostics(debugText, rawOutput, stderr) : null;
+      if (claudeDiagnostics && claudeDiagnostics.issueCodes.length > 0) {
+        await trace?.("provider:claude-diagnostics", {
+          provider,
+          issueCodes: claudeDiagnostics.issueCodes,
+          issueSummaries: claudeDiagnostics.issueSummaries,
+          remediationSteps: claudeDiagnostics.remediationSteps,
+          streamStarted: claudeDiagnostics.streamStarted,
+        });
+      }
+      if (
+        provider === "claude" &&
+        claudeDiagnostics &&
+        claudeDiagnostics.issueCodes.length > 0 &&
+        (exitCode !== 0 || !rawOutput.trim())
+      ) {
+        stderr = appendClaudeDiagnosticLines(stderr, claudeDiagnostics);
+      }
       await trace?.("provider:output-captured", {
         provider,
         outputSource,
         outputBytes: rawOutput.length,
         stdoutBytes: stdoutBuffer.length,
         metadata,
+        claudeIssueCodes: claudeDiagnostics?.issueCodes ?? [],
       });
       await trace?.("provider:finish", {
         provider,
@@ -611,6 +658,7 @@ export async function executeProvider(
         sessionLastEventTs: sessionSnapshot?.lastEventTs ?? null,
         debugFile: debugSnapshot?.file ? path.relative(rootDir, debugSnapshot.file) : null,
         debugLastEventTs: debugSnapshot?.lastEventTs ?? null,
+        claudeIssueCodes: claudeDiagnostics?.issueCodes ?? [],
         providerMetadata: metadata ?? null,
       });
       resolve({
@@ -1467,6 +1515,95 @@ function appendDiagnosticLine(currentValue: string, message: string) {
   return `${currentValue}${currentValue ? "\n" : ""}${message}`;
 }
 
+function appendClaudeDiagnosticLines(currentValue: string, diagnostics: ClaudeDiagnostics) {
+  let nextValue = appendDiagnosticLine(
+    currentValue,
+    `Claude diagnostics: ${diagnostics.issueCodes.join(", ")}.`,
+  );
+
+  for (const summary of diagnostics.issueSummaries) {
+    nextValue = appendDiagnosticLine(nextValue, summary);
+  }
+
+  for (const remediationStep of diagnostics.remediationSteps) {
+    nextValue = appendDiagnosticLine(nextValue, `Fix: ${remediationStep}`);
+  }
+
+  return nextValue;
+}
+
+export function extractClaudeDebugDiagnostics(
+  debugLogText: string | null,
+  rawOutput: string,
+  stderr: string,
+): ClaudeDiagnostics {
+  const combinedText = [debugLogText ?? "", rawOutput, stderr].filter(Boolean).join("\n");
+  const issueCodes: ClaudeIssueCode[] = [];
+  const issueSummaries: string[] = [];
+  const remediationSteps: string[] = [];
+  const addIssue = (issueCode: ClaudeIssueCode, summary: string, remediationStep: string) => {
+    if (!issueCodes.includes(issueCode)) {
+      issueCodes.push(issueCode);
+    }
+    if (!issueSummaries.includes(summary)) {
+      issueSummaries.push(summary);
+    }
+    if (!remediationSteps.includes(remediationStep)) {
+      remediationSteps.push(remediationStep);
+    }
+  };
+
+  if (/marketplace\.json file is no longer present in this repository/i.test(combinedText)) {
+    addIssue(
+      "deprecated-marketplace",
+      "Claude is configured with a deprecated plugin marketplace entry.",
+      'Run `claude plugin marketplace remove "claude-plugins-official"` and retry the Ralph command.',
+    );
+  }
+
+  if (/Invalid schema: .*marketplace\.json/i.test(combinedText)) {
+    addIssue(
+      "marketplace-schema-invalid",
+      "Claude's cached plugin marketplace metadata is schema-incompatible with the installed CLI.",
+      "Clear the stale marketplace cache under `~/.claude/plugins/marketplaces/` after removing the deprecated marketplace, then retry.",
+    );
+  }
+
+  if (/git pull failed, will re-clone:.*unstaged changes/i.test(combinedText)) {
+    addIssue(
+      "marketplace-git-conflict",
+      "Claude's plugin marketplace refresh is mutating a dirty local marketplace checkout during startup.",
+      "Remove the deprecated marketplace entry so headless Ralph runs stop touching the local marketplace clone.",
+    );
+  }
+
+  if (
+    /Could not resolve authentication method/i.test(combinedText) ||
+    /No auth available/i.test(combinedText)
+  ) {
+    addIssue(
+      "missing-auth",
+      "Claude could not resolve authentication for a headless CLI run.",
+      "Re-authenticate Claude locally, then retry. If the problem persists, verify the same shell can complete a simple `claude -p` prompt outside Ralph.",
+    );
+  }
+
+  if (/Not logged in .*\/login/i.test(combinedText)) {
+    addIssue(
+      "not-logged-in",
+      "Claude reported that the CLI session is not logged in.",
+      "Open Claude CLI interactively and run `/login`, then retry the Ralph command.",
+    );
+  }
+
+  return {
+    issueCodes,
+    issueSummaries,
+    remediationSteps,
+    streamStarted: /Stream started - received first chunk/i.test(debugLogText ?? ""),
+  };
+}
+
 export function extractClaudeCliResult(rawOutput: string, maybeOutputFormat: string | null = null) {
   if (maybeOutputFormat && maybeOutputFormat !== "json") {
     return null;
@@ -1504,6 +1641,18 @@ export function extractClaudeCliResult(rawOutput: string, maybeOutputFormat: str
 export function extractCodexSessionId(stderr: string) {
   const maybeMatch = stderr.match(/session id:\s*([0-9a-f-]+)/i);
   return maybeMatch?.[1] ?? null;
+}
+
+async function loadTextLogText(maybeFile: string | null): Promise<string | null> {
+  if (!maybeFile) {
+    return null;
+  }
+
+  try {
+    return await readFile(maybeFile, "utf8");
+  } catch {
+    return null;
+  }
 }
 
 async function loadTextLogSnapshot(maybeFile: string | null): Promise<TextLogSnapshot | null> {

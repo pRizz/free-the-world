@@ -168,6 +168,7 @@ bun run loop
 ```
 
 Provider defaults live in `config/ralph.providers.example.json`. Machine-local overrides belong in `.codex/ralph.providers.local.json`.
+Claude provider entries can also set `env` overrides; the default profile now disables nonessential traffic and official marketplace autoinstall so Ralph runs are less exposed to local Claude plugin state.
 
 ## Theme
 

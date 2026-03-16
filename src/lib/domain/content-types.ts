@@ -142,6 +142,7 @@ export interface ResearchRunManifest {
 export interface RalphProviderConfig {
   command: string;
   args: string[];
+  env?: Record<string, string>;
   timeoutMs?: number;
 }
 
