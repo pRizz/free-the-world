@@ -4,6 +4,7 @@ import { chmod, mkdir, mkdtemp, readdir, readFile, rm, writeFile } from "node:fs
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { resolvePipelineSyncConcurrencyLimit } from "../../../scripts/lib/company-pipeline";
 import { buildManifest, buildQueueEntry, writeJson, writeMinimalFixture } from "./fixtures";
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
@@ -21,9 +22,20 @@ afterEach(async () => {
 });
 
 describe("bun run company:pipeline", () => {
+  test("resolvePipelineSyncConcurrencyLimit keeps dry-run parallel and forces publish serial", () => {
+    expect(resolvePipelineSyncConcurrencyLimit("dry-run", 5)).toBe(5);
+    expect(resolvePipelineSyncConcurrencyLimit("publish", 5)).toBe(1);
+  });
+
   test("queues, promotes, loops, and syncs a manifest draft with safe defaults", async () => {
     await writeMinimalFixture(tempRoot);
-    await writeFakeProvider(tempRoot, "newco");
+    await writeFakeProvider(tempRoot, [
+      {
+        slug: "newco",
+        companyName: "NewCo",
+        ticker: "NEW",
+      },
+    ]);
 
     const manifestFile = path.join(tempRoot, "drafts", "newco.json");
     await mkdir(path.dirname(manifestFile), { recursive: true });
@@ -144,6 +156,54 @@ describe("bun run company:pipeline", () => {
       readFile(path.join(tempRoot, "manifests", "queue", "queuedco.json"), "utf8"),
     ).rejects.toThrow();
   });
+
+  test("runs dry-run loop and sync work concurrently when concurrency is greater than 1", async () => {
+    await writeMinimalFixture(tempRoot);
+    const providerLogFile = await writeFakeProvider(
+      tempRoot,
+      [
+        {
+          slug: "fixtureco",
+          companyName: "FixtureCo",
+          ticker: "FIX",
+        },
+        {
+          slug: "secondco",
+          companyName: "SecondCo",
+          ticker: "SEC",
+        },
+      ],
+      { delayMs: 150 },
+    );
+
+    await writeJson(
+      path.join(tempRoot, "manifests", "companies", "secondco.json"),
+      buildManifest({
+        slug: "secondco",
+        name: "SecondCo",
+        ticker: "SEC",
+        indexIds: ["sp500-top20"],
+        sectorId: "consumer-staples",
+        industryId: "warehouse-clubs",
+        companiesMarketCapUrl: "https://example.com/secondco",
+        description: "Second company",
+        technologyWaveIds: [],
+      }),
+    );
+
+    const result = runCli([
+      "company:pipeline",
+      "--company=fixtureco,secondco",
+      "--provider=auto",
+      "--concurrency=2",
+    ]);
+
+    expect(result.status).toBe(0);
+
+    const providerEvents = await readProviderEvents(providerLogFile);
+    expect(countStartsBeforeFirstEnd(providerEvents, "loop")).toBe(2);
+    expect(countStartsBeforeFirstEnd(providerEvents, "sync")).toBe(2);
+  });
 });
 
 function runCli(args: string[]) {
@@ -158,25 +218,59 @@ function runCli(args: string[]) {
   });
 }
 
-async function writeFakeProvider(root: string, companySlug: string) {
+async function writeFakeProvider(
+  root: string,
+  companies: Array<{ slug: string; companyName: string; ticker: string }>,
+  options: { delayMs?: number } = {},
+) {
   const dotCodexDir = path.join(root, ".codex");
-  const scriptFile = path.join(root, "fake-provider.sh");
-  const payloadFile = path.join(root, "fake-sync-payload.json");
+  const scriptFile = path.join(root, "fake-provider.cjs");
+  const payloadFile = path.join(root, "fake-sync-payloads.json");
+  const logFile = path.join(root, "fake-provider.log");
+  const delayMs = options.delayMs ?? 0;
 
   await mkdir(dotCodexDir, { recursive: true });
-  await writeJson(payloadFile, buildSyncPayload(companySlug));
+  await writeJson(
+    payloadFile,
+    Object.fromEntries(
+      companies.map(({ slug, companyName, ticker }) => [
+        slug,
+        buildSyncPayload({ slug, companyName, ticker }),
+      ]),
+    ),
+  );
   await writeFile(
     scriptFile,
     [
-      "#!/usr/bin/env bash",
-      "set -euo pipefail",
-      'prompt="$(cat)"',
-      'if printf "%s" "$prompt" | grep -q "^Sync "; then',
-      `  cat ${JSON.stringify(payloadFile)}`,
-      "else",
-      `  printf '%s' '${JSON.stringify({ ok: true })}'`,
-      "fi",
-      "",
+      "#!/usr/bin/env node",
+      "const fs = require('node:fs');",
+      "const { stdin, stdout } = process;",
+      "(async () => {",
+      "  let prompt = '';",
+      "  stdin.setEncoding('utf8');",
+      "  for await (const chunk of stdin) {",
+      "    prompt += chunk;",
+      "  }",
+      "  const firstLine = prompt.split(/\\r?\\n/, 1)[0] ?? '';",
+      "  const isSync = firstLine.startsWith('Sync ');",
+      "  const phase = isSync ? 'sync' : 'loop';",
+      "  const label = firstLine;",
+      `  const logFile = ${JSON.stringify(logFile)};`,
+      "  const append = (event) => fs.appendFileSync(logFile, JSON.stringify({ event, phase, label, ts: Date.now() }) + '\\n');",
+      "  append('start');",
+      `  await new Promise((resolve) => setTimeout(resolve, ${delayMs}));`,
+      "  if (isSync) {",
+      `    const payloads = JSON.parse(fs.readFileSync(${JSON.stringify(payloadFile)}, 'utf8'));`,
+      "    const slug = firstLine.slice('Sync '.length).trim();",
+      "    stdout.write(JSON.stringify(payloads[slug]));",
+      "  } else {",
+      `    stdout.write(${JSON.stringify(JSON.stringify({ ok: true }))});`,
+      "  }",
+      "  append('end');",
+      "})().catch((error) => {",
+      "  console.error(error);",
+      "  process.exit(1);",
+      "});",
     ].join("\n"),
     "utf8",
   );
@@ -198,25 +292,29 @@ async function writeFakeProvider(root: string, companySlug: string) {
       },
     },
   });
+
+  return logFile;
 }
 
-function buildSyncPayload(companySlug: string) {
+function buildSyncPayload(options: { slug: string; companyName: string; ticker: string }) {
+  const sourceId = `${options.slug}-source`;
+
   return {
     schemaVersion: 1,
     bundle: {
       schemaVersion: 1,
       company: {
-        slug: companySlug,
-        name: "NewCo",
-        ticker: "NEW",
+        slug: options.slug,
+        name: options.companyName,
+        ticker: options.ticker,
         rankApprox: 11,
         maybeIpo: null,
         regionId: "us",
         indexIds: ["sp500-top20"],
         sectorId: "consumer-staples",
         industryId: "warehouse-clubs",
-        companiesMarketCapUrl: "https://example.com/newco",
-        description: "New company",
+        companiesMarketCapUrl: `https://example.com/${options.slug}`,
+        description: `${options.companyName} company`,
         overview: [
           {
             title: "Overview",
@@ -225,43 +323,43 @@ function buildSyncPayload(companySlug: string) {
         ],
         moatNarrative: ["Moat paragraph"],
         decentralizationNarrative: ["Decentralization paragraph"],
-        sourceIds: ["newco-source"],
+        sourceIds: [sourceId],
         technologyWaveIds: [],
         snapshotNote: "Fixture snapshot",
         inputMetrics: {
-          moat: metric(8.1),
-          decentralizability: metric(6.2),
-          profitability: metric(7.4),
-          peRatio: metric(21),
-          marketCap: metric(1230000000),
+          moat: metric(8.1, sourceId),
+          decentralizability: metric(6.2, sourceId),
+          profitability: metric(7.4, sourceId),
+          peRatio: metric(21, sourceId),
+          marketCap: metric(1230000000, sourceId),
         },
       },
       products: [
         {
-          slug: "newco-membership",
-          name: "NewCo Membership",
+          slug: `${options.slug}-membership`,
+          name: `${options.companyName} Membership`,
           category: "Retail",
-          homepageUrl: "https://example.com/newco/membership",
+          homepageUrl: `https://example.com/${options.slug}/membership`,
           summary: "Membership program",
           whyItMatters: "Important product",
           replacementSketch: ["Replacement sketch"],
-          sourceIds: ["newco-source"],
+          sourceIds: [sourceId],
           technologyWaveIds: [],
           alternatives: [
             {
-              slug: "newco-open",
-              name: "Open Wholesale",
+              slug: `${options.slug}-open`,
+              name: `${options.companyName} Open`,
               kind: "open-source",
-              homepageUrl: "https://example.com/open-wholesale",
-              repoUrl: "https://example.com/open-wholesale/repo",
+              homepageUrl: `https://example.com/${options.slug}/open`,
+              repoUrl: `https://example.com/${options.slug}/open/repo`,
               summary: "Open alternative",
               metrics: {
-                openness: metric(9),
-                decentralizationFit: metric(8),
-                readiness: metric(7),
-                costLeverage: metric(6),
+                openness: metric(9, sourceId),
+                decentralizationFit: metric(8, sourceId),
+                readiness: metric(7, sourceId),
+                costLeverage: metric(6, sourceId),
               },
-              sourceIds: ["newco-source"],
+              sourceIds: [sourceId],
             },
           ],
         },
@@ -269,9 +367,9 @@ function buildSyncPayload(companySlug: string) {
     },
     sources: [
       {
-        id: "newco-source",
-        title: "NewCo source",
-        url: "https://example.com/newco/source",
+        id: sourceId,
+        title: `${options.companyName} source`,
+        url: `https://example.com/${options.slug}/source`,
         kind: "analysis",
         publisher: "Fixture",
         note: "Fixture note",
@@ -282,12 +380,34 @@ function buildSyncPayload(companySlug: string) {
   };
 }
 
-function metric(value: number) {
+function metric(value: number, sourceId: string) {
   return {
     value,
     rationale: "Fixture metric rationale",
-    sourceIds: ["newco-source"],
+    sourceIds: [sourceId],
     confidence: "high" as const,
     lastReviewedOn: "2026-03-16",
   };
+}
+
+async function readProviderEvents(logFile: string) {
+  const rawLog = await readFile(logFile, "utf8");
+  return rawLog
+    .trim()
+    .split("\n")
+    .filter(Boolean)
+    .map(
+      (line) =>
+        JSON.parse(line) as { event: "start" | "end"; phase: string; label: string; ts: number },
+    );
+}
+
+function countStartsBeforeFirstEnd(
+  events: Array<{ event: "start" | "end"; phase: string; label: string; ts: number }>,
+  phase: string,
+) {
+  const phaseEvents = events.filter((event) => event.phase === phase);
+  const firstEnd = phaseEvents.find((event) => event.event === "end");
+  const cutoffTs = firstEnd?.ts ?? Number.POSITIVE_INFINITY;
+  return phaseEvents.filter((event) => event.event === "start" && event.ts <= cutoffTs).length;
 }

@@ -16,6 +16,7 @@ import {
   type SyncCompanyResult,
   syncCompany,
 } from "./ralph";
+import { parseLoopConcurrencyLimit, runWithConcurrencyLimit } from "./ralph-loop-runner";
 import { collectLoopTargets } from "./ralph-loop-targets";
 
 const defaultLoopTaskIds: ResearchTaskId[] = ["company-overview"];
@@ -36,6 +37,7 @@ export interface CompanyPipelineOptions {
   skipLoop: boolean;
   skipSync: boolean;
   executeLoop: boolean;
+  concurrencyLimit: number;
   loopTaskIds: ResearchTaskId[];
   onProgress?: (message: string) => void;
 }
@@ -71,6 +73,13 @@ export function resolvePipelineLoopTaskIds(rawValue?: string): ResearchTaskId[] 
   }
 
   return requestedTaskIds as ResearchTaskId[];
+}
+
+export function resolvePipelineSyncConcurrencyLimit(
+  mode: RalphSyncMode,
+  requestedConcurrencyLimit: number,
+) {
+  return mode === "publish" ? 1 : parseLoopConcurrencyLimit(String(requestedConcurrencyLimit));
 }
 
 export async function runCompanyPipeline(
@@ -149,7 +158,7 @@ export async function runCompanyPipeline(
       requestedCompanySlugs: canonicalCompanySlugs,
     });
 
-    for (const target of targets) {
+    await runWithConcurrencyLimit(targets, options.concurrencyLimit, async (target, index) => {
       options.onProgress?.(
         `Running Ralph loop for ${target.companySlug} (${options.loopTaskIds.join(", ")})`,
       );
@@ -183,22 +192,34 @@ export async function runCompanyPipeline(
       };
 
       await writeJsonFile(path.join(runDir, "run.manifest.json"), runManifest);
-      loopRunDirs.push(runDir);
-    }
+      loopRunDirs[index] = runDir;
+    });
   }
 
   const syncRuns: SyncCompanyResult[] = [];
   if (!options.skipSync) {
-    for (const companySlug of canonicalCompanySlugs) {
-      options.onProgress?.(`Syncing ${companySlug} in ${options.mode} mode`);
-      const result = await syncCompany({
-        companySlug,
-        providerPreference: options.providerPreference,
-        mode: options.mode,
-        noCommit: options.noCommit,
-      });
-      syncRuns.push(result);
+    const syncConcurrencyLimit = resolvePipelineSyncConcurrencyLimit(
+      options.mode,
+      options.concurrencyLimit,
+    );
+    if (options.mode === "publish" && options.concurrencyLimit > 1) {
+      options.onProgress?.("Publish mode forces sync concurrency to 1");
     }
+
+    await runWithConcurrencyLimit(
+      canonicalCompanySlugs,
+      syncConcurrencyLimit,
+      async (companySlug, index) => {
+        options.onProgress?.(`Syncing ${companySlug} in ${options.mode} mode`);
+        const result = await syncCompany({
+          companySlug,
+          providerPreference: options.providerPreference,
+          mode: options.mode,
+          noCommit: options.noCommit,
+        });
+        syncRuns[index] = result;
+      },
+    );
   }
 
   return {

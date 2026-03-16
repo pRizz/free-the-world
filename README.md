@@ -109,10 +109,13 @@ bun run company:pipeline --manifest=./drafts/some-company.json --batch-id=top25-
 `company:pipeline` defaults to:
 
 - `--loop-tasks=company-overview`
+- `--concurrency=5`
 - `--mode=dry-run`
 - `--no-commit=true`
 
-Use `--batch-id=<id>` by itself to process an already queued batch, and `--mode=publish --no-commit=false` only when you are ready to persist website content and push it.
+Use `--batch-id=<id>` by itself to process an already queued batch. `--concurrency=<n>` applies to the low-level loop phase and to `dry-run` syncs; `publish` syncs still run serially even if you request a higher concurrency.
+
+Use `--mode=publish --no-commit=false` only when you are ready to persist website content and push it.
 
 Promote a queued manifest into the canonical manifest set:
 

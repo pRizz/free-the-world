@@ -1,3 +1,20 @@
+# Company Pipeline Concurrency
+
+- [x] Add configurable company-level concurrency to `bun run company:pipeline` for the loop phase and dry-run syncs, while keeping publish syncs serial.
+  Verification: pipeline coverage proves overlapping dry-run work with `--concurrency=2`, and unit coverage locks publish sync concurrency to 1.
+- [x] Document the new pipeline concurrency flag and publish-mode serial guardrail.
+  Verification: README company-pipeline guidance mentions `--concurrency` and the publish-mode behavior.
+- [x] Run verification and review the diff for unintended side effects.
+  Verification: `bun run format`, `bun run lint`, `bun run typecheck`, `bun run test`, `bun run build`
+
+Completion review:
+- `company:pipeline` now accepts the same company-level concurrency control as the low-level `loop` command, with a default of 5.
+- The pipeline runs its low-level loop phase and `dry-run` sync phase through the shared bounded worker pool, while `publish` syncs are explicitly forced back to concurrency 1.
+- Added regression coverage that proves overlapping `dry-run` loop and sync work with `--concurrency=2`, plus a helper-level guard for publish mode.
+
+Residual risks:
+- Parallel `dry-run` syncs still execute separate model runs against the same current canonical content snapshot, so they do not validate interactions between multiple unpublished candidate payloads in one combined graph. That is acceptable for independent dry-runs, but publish mode remains serial for this reason.
+
 # Ralph Loop Concurrency
 
 - [x] Add configurable company-level concurrency to `bun run loop` with a safe default of 5.
