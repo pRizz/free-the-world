@@ -1,10 +1,23 @@
-import { writeDeploySummary } from "../lib/deploy-log";
+import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
 import { deploymentConfig, getCanonicalUrl, getHostedDomains, getPublicUrl } from "../../src/lib/deployment-config";
 
 const args = parseArgs(process.argv.slice(2));
 const retries = Number(args.retries ?? "12");
 const delayMs = Number(args["delay-ms"] ?? "5000");
 const verificationResults = [];
+const commandName = "deploy:verify";
+const run = await createDeployRun({
+  command: commandName,
+  mode: "check",
+  target: "verification",
+});
+
+await run.addBreadcrumb({
+  data: { delayMs, retries },
+  detail: "Starting production verification checks.",
+  status: "info",
+  step: "initialize",
+});
 
 const canonicalAboutUrl = getCanonicalUrl("/about");
 const canonicalAboutResponse = await fetchWithRetries(canonicalAboutUrl, retries, delayMs);
@@ -21,6 +34,11 @@ verificationResults.push({
   name: "canonical host",
   status: "passed" as const,
 });
+await run.addBreadcrumb({
+  detail: `Verified canonical host response for ${canonicalAboutUrl}.`,
+  status: "passed",
+  step: "canonical host",
+});
 
 for (const redirectDomain of deploymentConfig.redirectDomains) {
   const redirectUrl = `https://${redirectDomain}/about?from=verify`;
@@ -34,6 +52,11 @@ for (const redirectDomain of deploymentConfig.redirectDomains) {
     detail: `${redirectUrl} returned 301 to ${location}.`,
     name: `redirect ${redirectDomain}`,
     status: "passed" as const,
+  });
+  await run.addBreadcrumb({
+    detail: `Verified redirect ${redirectUrl} -> ${location}.`,
+    status: "passed",
+    step: "redirect",
   });
 }
 
@@ -56,12 +79,17 @@ verificationResults.push({
   name: "GitHub Pages mirror",
   status: "passed" as const,
 });
+await run.addBreadcrumb({
+  detail: `Verified the GitHub Pages mirror at ${pagesAboutUrl}.`,
+  status: "passed",
+  step: "pages mirror",
+});
 
 const summary = {
   appliedChanges: [] as string[],
   artifactDir: undefined,
   artifactHash: undefined,
-  command: "deploy:verify",
+  command: commandName,
   discoveredRemoteState: {
     hostedDomains: getHostedDomains(),
   },
@@ -73,7 +101,7 @@ const summary = {
   verificationResults,
 };
 
-const { runDirectory } = await writeDeploySummary(summary);
+const { runDirectory } = await writeDeploySummary(summary, { runDirectory: run.runDirectory });
 console.log(`Deployment verification complete. Summary: ${runDirectory}`);
 
 async function fetchWithRetries(url: string, retries: number, delayMs: number, redirect: RequestRedirect = "follow") {

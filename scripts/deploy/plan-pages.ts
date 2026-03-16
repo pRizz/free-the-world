@@ -1,20 +1,43 @@
 import { appendFile } from "node:fs/promises";
 import path from "node:path";
 import { diffDeployManifests, readDeployManifest, type DeployManifest } from "../lib/deploy-artifact";
-import { writeDeploySummary } from "../lib/deploy-log";
+import { createDeployRun, writeDeploySummary } from "../lib/deploy-log";
 import { deploymentConfig } from "../../src/lib/deployment-config";
 
 const args = parseArgs(process.argv.slice(2));
 const artifactDir = path.resolve(args.artifact ?? ".artifacts/deploy/github-pages");
 const manifestPath = path.join(artifactDir, "deploy-manifest.json");
 const localManifest = await readDeployManifest(manifestPath);
+const commandName = "deploy:pages:plan";
+const run = await createDeployRun({
+  command: commandName,
+  mode: "check",
+  target: "github-pages",
+});
 
 if (localManifest.target !== "github-pages") {
   throw new Error(`Expected a GitHub Pages deploy manifest, received target ${localManifest.target}.`);
 }
 
+await run.addBreadcrumb({
+  detail: `Loaded GitHub Pages artifact manifest ${localManifest.artifactHash} from ${artifactDir}.`,
+  status: "info",
+  step: "initialize",
+});
+
 const maybeRemoteManifest = await loadRemoteManifest(localManifest.publicOrigin);
 const diff = diffDeployManifests(localManifest, maybeRemoteManifest);
+
+await run.addBreadcrumb({
+  data: {
+    changed: diff.changed,
+    deletes: diff.deletes,
+    uploads: diff.uploads.map(file => file.path),
+  },
+  detail: "Compared the local Pages artifact manifest to the live mirror manifest.",
+  status: "planned",
+  step: "plan",
+});
 
 if (process.env.GITHUB_OUTPUT) {
   await appendFile(
@@ -27,7 +50,7 @@ const summary = {
   appliedChanges: [] as string[],
   artifactDir,
   artifactHash: localManifest.artifactHash,
-  command: "deploy:pages:plan",
+  command: commandName,
   discoveredRemoteState: {
     maybeRemoteManifest,
     publicOrigin: localManifest.publicOrigin,
@@ -51,7 +74,7 @@ const summary = {
   ],
 };
 
-const { runDirectory } = await writeDeploySummary(summary);
+const { runDirectory } = await writeDeploySummary(summary, { runDirectory: run.runDirectory });
 console.log(`GitHub Pages plan complete. Changed=${diff.changed}. Summary: ${runDirectory}`);
 
 async function loadRemoteManifest(publicOrigin: string) {

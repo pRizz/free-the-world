@@ -22,6 +22,26 @@ Residual risks:
 - The GitHub Pages mirror gating compares against the live Pages `deploy-manifest.json`. If the Pages site is temporarily unreachable, the planner intentionally treats that as “deploy needed” rather than blocking the workflow.
 - CloudFront URL rewriting and host redirection live inside the inline CloudFront Function in `infra/aws/static-site.yaml`; if AWS changes Function event-field behavior, that template may need a small follow-up after the first live deployment.
 
+# Deployment Setup Automation
+
+- [x] Extend the deploy log contract so each deployment command writes summary files plus breadcrumb traces.
+  Verification: `bun test tests/unit/scripts/deploy-log.test.ts`, `bun run deploy:build`, `bun run deploy:pages:plan --artifact=.artifacts/deploy/github-pages`
+- [x] Add idempotent AWS setup automation for the GitHub OIDC provider, deploy role, and managed policy.
+  Verification: `bun run typecheck`, `bun test tests/unit/scripts/deploy-setup.test.ts`, live check pass pending `bun run deploy:setup:aws`
+- [x] Add idempotent GitHub setup automation for environments, Pages workflow mode, and the deploy role secret digest.
+  Verification: `bun run typecheck`, `bun test tests/unit/scripts/deploy-setup.test.ts`, live check pass pending `bun run deploy:setup:github`
+- [x] Add wrapper commands and docs for setup and workflow dispatch.
+  Verification: package/doc/skill review of `package.json`, `docs/deployment.md`, and `.codex/skills/static-multi-domain-deploy/SKILL.md`
+
+Completion review:
+- Added repo-owned setup commands for AWS IAM/OIDC and GitHub repo configuration, so the production deployment prerequisites can be checked and applied from the workspace instead of a manual checklist.
+- Extended the deployment logging contract to emit append-only breadcrumb traces alongside the existing JSON and Markdown summaries for build, setup, planning, publish, and verification runs.
+- Added an idempotent workflow-dispatch helper so the repo can skip redundant manual dispatches when the current ref already has a reusable deployment run.
+
+Residual risks:
+- The new setup scripts depend on live GitHub and AWS credentials and were not applied in this session, so the real create/update paths still need one authenticated `--apply` pass.
+- The GitHub setup flow uses an environment-scoped digest variable to decide whether the `AWS_DEPLOY_ROLE_ARN` secret needs to be updated. If someone changes the secret manually without updating the digest variable, the next check will treat the digest as source of truth and skip the secret update.
+
 # UI Standardization Refactor
 
 # SolidStart Stable Migration And Hydration Fix

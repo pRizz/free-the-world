@@ -13,6 +13,32 @@ The three additional AWS domains redirect to the canonical `.com` host:
 
 ## Commands
 
+Bootstrap the GitHub and AWS deployment prerequisites without mutating:
+
+```bash
+bun run deploy:setup
+```
+
+Apply the GitHub and AWS deployment prerequisites:
+
+```bash
+bun run deploy:setup --apply
+```
+
+Run only the AWS IAM/OIDC setup:
+
+```bash
+bun run deploy:setup:aws
+bun run deploy:setup:aws --apply
+```
+
+Run only the GitHub repo/environment setup:
+
+```bash
+bun run deploy:setup:github
+bun run deploy:setup:github --apply
+```
+
 Build both deployable artifacts:
 
 ```bash
@@ -62,17 +88,29 @@ Verify the canonical host, redirects, and Pages mirror:
 bun run deploy:verify
 ```
 
+Dispatch the production workflow only when the current ref does not already have a reusable run:
+
+```bash
+bun run deploy:github:dispatch
+bun run deploy:github:dispatch --apply
+```
+
 ## Idempotency Contract
 
 - Mutating scripts default to check mode.
 - Pass `--apply` to allow mutation.
 - Every mutating script validates prerequisites, reads remote state, computes a plan, writes a summary, and skips when there is no effective change.
 - Every deployment run writes `summary.md` and `summary.json` under `.codex/logs/deploy/`.
+- Every deployment run also writes `breadcrumbs.md` and `breadcrumbs.jsonl` in the same timestamped run directory.
 
 ## AWS Prerequisites
 
 - AWS CLI installed and authenticated.
 - Route 53 public hosted zones exist for all four domains.
+- IAM permissions to create or update:
+  - the GitHub OIDC provider in the target AWS account
+  - the `free-the-world-github-deploy` IAM role
+  - the `free-the-world-github-deploy` managed IAM policy
 - The deploy role used by CI can create/update:
   - CloudFormation stacks in `us-east-1`
   - ACM certificates in `us-east-1`
@@ -84,5 +122,6 @@ bun run deploy:verify
 
 - The GitHub Actions workflow builds both artifacts once.
 - The AWS job uses OIDC via `aws-actions/configure-aws-credentials`.
+- `bun run deploy:setup --apply` creates the GitHub OIDC provider, deploy role, managed policy, GitHub environments, GitHub Pages workflow mode, and the `AWS_DEPLOY_ROLE_ARN` environment secret plus digest variable.
 - The Pages job compares the new artifact to the live Pages deploy manifest and skips the Pages publish when unchanged.
 - The AWS publish job compares the local artifact manifest to the manifest already in S3 and skips upload/invalidation when unchanged.

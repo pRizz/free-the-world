@@ -11,17 +11,29 @@ import {
   readDeployManifest,
   type DeployManifest,
 } from "../lib/deploy-artifact";
-import { writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
+import { createDeployRun, writeDeploySummary, type DeployVerificationResult } from "../lib/deploy-log";
 
 const args = parseArgs(process.argv.slice(2));
 const mode: "apply" | "check" = args.apply === "true" ? "apply" : "check";
 const artifactDir = path.resolve(args.artifact ?? ".artifacts/deploy/aws");
 const manifestPath = path.join(artifactDir, "deploy-manifest.json");
 const localManifest = await readDeployManifest(manifestPath);
+const commandName = "deploy:aws:publish";
+const run = await createDeployRun({
+  command: commandName,
+  mode,
+  target: "aws",
+});
 
 if (localManifest.target !== "aws") {
   throw new Error(`Expected an AWS deploy manifest, received target ${localManifest.target}.`);
 }
+
+await run.addBreadcrumb({
+  detail: `Loaded AWS artifact manifest ${localManifest.artifactHash} from ${artifactDir}.`,
+  status: "info",
+  step: "initialize",
+});
 
 ensureAwsCliAvailable();
 
@@ -48,6 +60,18 @@ if (diff.changed) {
 }
 
 const invalidationPaths = getInvalidationPaths(uploads.concat(diff.deletes));
+await run.addBreadcrumb({
+  data: {
+    bucketName,
+    deletes: diff.deletes,
+    distributionId,
+    invalidationPaths,
+    uploads,
+  },
+  detail: "Computed the S3 and CloudFront publish plan.",
+  status: "planned",
+  step: "plan",
+});
 const skippedReasons: string[] = [];
 const appliedChanges: string[] = [];
 const verificationResults: DeployVerificationResult[] = [
@@ -60,17 +84,37 @@ const verificationResults: DeployVerificationResult[] = [
 
 if (!diff.changed) {
   skippedReasons.push("The local deploy manifest matches the remote AWS deploy manifest.");
+  await run.addBreadcrumb({
+    detail: "Remote deploy manifest already matches the local artifact hash.",
+    status: "skipped",
+    step: "apply",
+  });
 } else if (mode === "check") {
   skippedReasons.push("Check mode only. No S3 uploads, deletes, or CloudFront invalidations were executed.");
+  await run.addBreadcrumb({
+    detail: "Check mode prevented S3 uploads, deletes, and CloudFront invalidations.",
+    status: "skipped",
+    step: "apply",
+  });
 } else {
   for (const relativePath of uploads) {
     await uploadFile(bucketName, artifactDir, relativePath);
     appliedChanges.push(`Uploaded ${relativePath}`);
+    await run.addBreadcrumb({
+      detail: `Uploaded ${relativePath} to s3://${bucketName}/${relativePath}.`,
+      status: "passed",
+      step: "upload",
+    });
   }
 
   for (const relativePath of diff.deletes) {
     runCommand("aws", ["s3", "rm", `s3://${bucketName}/${relativePath}`, "--only-show-errors"]);
     appliedChanges.push(`Deleted ${relativePath}`);
+    await run.addBreadcrumb({
+      detail: `Deleted s3://${bucketName}/${relativePath}.`,
+      status: "passed",
+      step: "delete",
+    });
   }
 
   if (invalidationPaths.length > 0) {
@@ -85,8 +129,18 @@ if (!diff.changed) {
       "json",
     ]);
     appliedChanges.push(`Created CloudFront invalidation for ${invalidationPaths.length} path(s).`);
+    await run.addBreadcrumb({
+      detail: `Created a CloudFront invalidation for ${invalidationPaths.length} path(s).`,
+      status: "passed",
+      step: "invalidation",
+    });
   } else {
     skippedReasons.push("Only immutable assets changed, so no CloudFront invalidation was required.");
+    await run.addBreadcrumb({
+      detail: "Skipped CloudFront invalidation because only immutable assets changed.",
+      status: "skipped",
+      step: "invalidation",
+    });
   }
 
   const maybeUpdatedRemoteManifest = await loadRemoteManifest(bucketName);
@@ -110,7 +164,7 @@ const summary = {
   appliedChanges,
   artifactDir,
   artifactHash: localManifest.artifactHash,
-  command: "deploy:aws:publish",
+  command: commandName,
   discoveredRemoteState: {
     identity,
     maybeRemoteManifest,
@@ -128,7 +182,7 @@ const summary = {
   verificationResults,
 };
 
-const { runDirectory } = await writeDeploySummary(summary);
+const { runDirectory } = await writeDeploySummary(summary, { runDirectory: run.runDirectory });
 console.log(`AWS publish ${mode} complete. Summary: ${runDirectory}`);
 
 async function loadRemoteManifest(bucketName: string) {
