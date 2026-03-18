@@ -498,6 +498,7 @@ Residual risks:
   Verification: `bun run company:init --queued=<slug>` succeeded for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble`; canonical manifests now exist under `content/manifests/companies/` and the corresponding queue entries were removed.
 - [ ] Run Ralph sync for each promoted company.
   Verification: `bun run sync:company --company=<slug> --provider=auto --mode=dry-run` succeeds for each new company.
+  Progress note (2026-03-18): the stricter default Claude CLI args regressed headless syncs. After simplifying `config/ralph.providers.example.json` back to the minimal Claude JSON/debug invocation, `bun run sync:company --company=abbvie --provider=auto --mode=dry-run` succeeded and validated `content/companies/abbvie/bundle.json` via `research/runs/abbvie/2026-03-18T09-53-31-446Z/`. Earlier failed evidence remains in `research/runs/abbvie/2026-03-18T09-33-28-955Z/`, `research/runs/abbvie/2026-03-18T09-38-16-126Z/`, and `research/runs/chevron/2026-03-18T09-48-16-181Z/`. Remaining pending reruns: `chevron`, `home-depot`, `palantir-technologies`, `procter-gamble`.
 
 # Standard Bun Linting With Biome
 
