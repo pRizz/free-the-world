@@ -1,0 +1,1148 @@
+2026-03-18T09:38:16.820167Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.820402Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.829189Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.114.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 019d004f-666f-7123-ac0a-28230a129c4b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: abbvie
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "abbvie",
+  "name": "AbbVie",
+  "ticker": "ABBV",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top25"
+  ],
+  "sectorId": "health-care",
+  "industryId": "pharmaceuticals",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/abbvie/marketcap/",
+  "description": "Biopharmaceutical company focused on immunology, oncology, neuroscience, aesthetics, and specialty therapies.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Skyrizi",
+    "Rinvoq"
+  ],
+  "seedSourceUrls": [
+    "https://investors.abbvie.com/",
+    "https://www.abbvie.com/",
+    "https://companiesmarketcap.com/abbvie/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-25 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": null,
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: playwright starting
+mcp: lsp starting
+2026-03-18T09:38:16.865602Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:16.866510Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.888350Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:16.889240Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.913410Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:16.914148Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.937910Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:16.938692Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.963104Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:16.963855Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.986831Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:16.987447Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:16.994081Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 26473: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-18T09:38:17.012326Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.012921Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.034903Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.059121Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.059765Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.080567Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.081228Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.102672Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.103252Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.124943Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.125520Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.148833Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.149564Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.172737Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.173426Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.195284Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.195901Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.219000Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.219626Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.242327Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.242964Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.264595Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.265311Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.288470Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.289190Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.311563Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.312211Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.335051Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.335607Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.358356Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.358938Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.379774Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.380453Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 19 was previously applied but is missing in the resolved migrations
+2026-03-18T09:38:17.400907Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-18T09:38:17.610526Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 26475: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+2026-03-18T09:38:17.794725Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d004f-666f-7123-ac0a-28230a129c4b.tmp-1773826696822056000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+codex
+I’m assembling the AbbVie refresh as a publishable bundle, starting by checking the repo’s existing company bundle patterns and then verifying current company facts against primary sources.
+Plan update
+  → Inspect existing registry bundle examples and any local company-refresh conventions
+  • Verify AbbVie facts and product/source candidates from primary/current sources
+  • Assemble final JSON bundle with consistent metrics, narratives, products, alternatives, and sources
+exec
+/bin/zsh -lc "rg --files . | rg 'AGENTS\\.md"'$|SKILL'"\\.md"'$|company.*json$'"'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "rg --files . | rg '("'^|/)(bundles|companies|content)/.*(abbvie|amgen|pfizer|johnson|eli-lilly|merck).*'"\\.json"'$'"'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+./content/manifests/companies/abbvie.json
+./content/manifests/companies/eli-lilly.json
+./content/manifests/companies/johnson-johnson.json
+./content/manifests/companies/merck-co.json
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+./AGENTS.md
+./research/runs/bank-of-america/2026-03-16T13-08-48-022Z/company-sync.claude.normalized.json
+./research/runs/bank-of-america/2026-03-16T13-08-48-022Z/company-sync.claude.validation.json
+./research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json
+./research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.validation.json
+./research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.codex.validation.json
+./research/runs/costco/2026-03-16T12-01-43-410Z/company-sync.claude.normalized.json
+./research/runs/costco/2026-03-16T12-01-43-410Z/company-sync.claude.validation.json
+./research/runs/abbvie/2026-03-16T10-04-25-174Z/company-sync.claude.validation.json
+exec
+/bin/zsh -lc "rg -n 'summaryMarkdown|moatNarrative|decentralizationNarrative|inputMetrics|replacementSketch' ." in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+./src/routes/companies/[companySlug]/index.tsx:114:                  {companyData.moatNarrative.map((paragraph) => (
+./src/routes/companies/[companySlug]/index.tsx:122:                  {companyData.decentralizationNarrative.map((paragraph) => (
+./src/lib/domain/company-metrics.test.ts:33:    moatNarrative: [],
+./src/lib/domain/company-metrics.test.ts:34:    decentralizationNarrative: [],
+./content/companies/meta-platforms/bundle.json:42:    "moatNarrative": [
+./content/companies/meta-platforms/bundle.json:46:    "decentralizationNarrative": [
+./content/companies/meta-platforms/bundle.json:65:    "inputMetrics": {
+./content/companies/meta-platforms/bundle.json:124:      "replacementSketch": [
+./content/companies/meta-platforms/bundle.json:242:      "replacementSketch": [
+./content/companies/berkshire-hathaway/bundle.json:27:    "moatNarrative": [
+./content/companies/berkshire-hathaway/bundle.json:31:    "decentralizationNarrative": [
+./content/companies/berkshire-hathaway/bundle.json:47:    "inputMetrics": {
+./content/companies/berkshire-hathaway/bundle.json:106:      "replacementSketch": [
+./content/companies/berkshire-hathaway/bundle.json:176:      "replacementSketch": [
+./scripts/migrate-content.ts:106:  const inputMetrics = Object.fromEntries(
+./scripts/migrate-content.ts:123:      inputMetrics,
+./content/companies/nvidia/bundle.json:41:    "moatNarrative": [
+./content/companies/nvidia/bundle.json:45:    "decentralizationNarrative": [
+codex
+I found prior AbbVie research artifacts in the repo, so I’m pulling those alongside a couple of published bundle examples to match the house style before I synthesize the final JSON.
+exec
+/bin/zsh -lc "sed -n '1,260p' content/companies/eli-lilly/bundle.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "sed -n '1,260p' research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.codex.validation.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world exited 1 in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+sed: content/companies/eli-lilly/bundle.json: No such file or directory
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "provider": "codex",
+  "exitCode": 2,
+  "validJson": false,
+  "validContent": false,
+  "error": "error: unexpected argument '--search' found\n\n  tip: to pass '--search' as a value, use '-- --search'\n\nUsage: codex exec [OPTIONS] [PROMPT] [COMMAND]\n\nFor more information, try '--help'.\n"
+}
+exec
+/bin/zsh -lc "sed -n '1,260p' content/manifests/companies/abbvie.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "slug": "abbvie",
+  "name": "AbbVie",
+  "ticker": "ABBV",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top25"
+  ],
+  "sectorId": "health-care",
+  "industryId": "pharmaceuticals",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/abbvie/marketcap/",
+  "description": "Biopharmaceutical company focused on immunology, oncology, neuroscience, aesthetics, and specialty therapies.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Skyrizi",
+    "Rinvoq"
+  ],
+exec
+/bin/zsh -lc 'find research/runs/abbvie -maxdepth 2 -type f | sort' in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.codex.raw.txt
+research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.codex.validation.json
+research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.prompt.md
+research/runs/abbvie/2026-03-16T10-03-59-735Z/run.manifest.json
+research/runs/abbvie/2026-03-16T10-04-25-174Z/company-sync.claude.raw.txt
+research/runs/abbvie/2026-03-16T10-04-25-174Z/company-sync.claude.validation.json
+research/runs/abbvie/2026-03-16T10-04-25-174Z/company-sync.prompt.md
+research/runs/abbvie/2026-03-16T10-04-25-174Z/run.manifest.json
+research/runs/abbvie/2026-03-16T10-06-41-100Z/company-sync.prompt.md
+research/runs/abbvie/2026-03-16T10-18-57-991Z/company-sync.prompt.md
+research/runs/abbvie/2026-03-16T10-18-57-991Z/trace.log
+research/runs/abbvie/2026-03-16T10-20-33-292Z/company-sync.prompt.md
+research/runs/abbvie/2026-03-16T10-20-33-292Z/trace.log
+research/runs/abbvie/2026-03-16T10-22-34-438Z/company-sync.prompt.md
+research/runs/abbvie/2026-03-16T10-22-34-438Z/trace.log
+research/runs/abbvie/2026-03-18T09-33-28-955Z/company-sync.claude.debug.log
+research/runs/abbvie/2026-03-18T09-33-28-955Z/company-sync.prompt.md
+research/runs/abbvie/2026-03-18T09-33-28-955Z/trace.log
+exec
+/bin/zsh -lc "rg --files content/companies | rg '(eli|abbvie|lilly|johnson|merck|pfizer)'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world exited 1 in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+exec
+/bin/zsh -lc "sed -n '1,260p' prompts/company-sync.md" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: {{companySlug}}
+
+Manifest:
+```json
+{{companyManifestJson}}
+```
+
+Current bundle (may be null for new companies):
+```json
+{{currentBundleJson}}
+```
+
+Current referenced sources:
+```json
+{{currentSourcesJson}}
+```
+exec
+/bin/zsh -lc "sed -n '1,260p' research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.codex.raw.txt" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "sed -n '1,260p' content/companies/meta-platforms/bundle.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "meta-platforms",
+    "name": "Meta Platforms",
+    "ticker": "META",
+    "rankApprox": 6,
+    "maybeIpo": {
+      "date": "2012-05-18",
+      "dateSourceIds": [
+        "meta-ipo-prospectus"
+      ],
+      "marketCap": {
+        "value": 81247231406,
+        "rationale": "Computed from Meta's $38.00 IPO price in the final prospectus and 2,138,085,037 total Class A and Class B shares outstanding after the IPO in Amendment No. 8 to the registration statement.",
+        "sourceIds": [
+          "meta-ipo-prospectus",
+          "meta-ipo-registration"
+exec
+/bin/zsh -lc "find content/companies -maxdepth 2 -name 'bundle.json' | sed -n '1,80p'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+content/companies/apple/bundle.json
+content/companies/amazon/bundle.json
+content/companies/microsoft/bundle.json
+content/companies/broadcom/bundle.json
+content/companies/tesla/bundle.json
+content/companies/alphabet/bundle.json
+content/companies/walmart/bundle.json
+content/companies/nvidia/bundle.json
+content/companies/berkshire-hathaway/bundle.json
+content/companies/meta-platforms/bundle.json
+exec
+/bin/zsh -lc 'wc -c research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.codex.raw.txt' in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "sed -n '1,260p' research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+       0 research/runs/abbvie/2026-03-16T10-03-59-735Z/company-sync.codex.raw.txt
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "eli-lilly",
+      "name": "Eli Lilly",
+      "ticker": "LLY",
+      "rankApprox": 11,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top20"
+      ],
+      "sectorId": "health-care",
+      "industryId": "pharmaceuticals",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/eli-lilly/marketcap/",
+      "description": "Pharmaceutical company centered on diabetes, obesity, oncology, immunology, and neuroscience therapies.",
+codex
+I’ve got a prior normalized AbbVie-style output from the Lilly run, which confirms the expected tone and scoring patterns. Next I’m verifying AbbVie’s current ranking, financials, and product-level source coverage so the refresh is grounded rather than templated.
+Plan update
+  ✓ Inspect existing registry bundle examples and any local company-refresh conventions
+  → Verify AbbVie facts and product/source candidates from primary/current sources
+  • Assemble final JSON bundle with consistent metrics, narratives, products, alternatives, and sources
+exec
+/bin/zsh -lc "sed -n '1,260p' research/runs/abbvie/2026-03-18T09-33-28-955Z/company-sync.prompt.md" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "sed -n '1,260p' research/runs/abbvie/2026-03-18T09-33-28-955Z/company-sync.claude.debug.log" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: abbvie
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "abbvie",
+  "name": "AbbVie",
+  "ticker": "ABBV",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top25"
+  ],
+  "sectorId": "health-care",
+  "industryId": "pharmaceuticals",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/abbvie/marketcap/",
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+2026-03-18T09:33:29.365Z [DEBUG] detectFileEncoding failed for expected reason: ENOENT
+2026-03-18T09:33:29.366Z [DEBUG] MDM settings load completed in 12ms
+2026-03-18T09:33:29.426Z [DEBUG] [init] configureGlobalMTLS starting
+2026-03-18T09:33:29.426Z [DEBUG] [init] configureGlobalMTLS complete
+2026-03-18T09:33:29.426Z [DEBUG] [init] configureGlobalAgents starting
+2026-03-18T09:33:29.426Z [DEBUG] [init] configureGlobalAgents complete
+2026-03-18T09:33:29.428Z [DEBUG] [STARTUP] Loading MCP configs...
+2026-03-18T09:33:29.432Z [DEBUG] Loaded 4 installed plugins from /Users/peterryszkiewicz/.claude/plugins/installed_plugins.json
+2026-03-18T09:33:29.432Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2026-03-18T09:33:29.432Z [DEBUG] [claudeai-mcp] Checking gate (cached)...
+2026-03-18T09:33:29.432Z [DEBUG] [claudeai-mcp] Gate returned: false
+2026-03-18T09:33:29.432Z [DEBUG] [claudeai-mcp] Disabled via gate
+2026-03-18T09:33:29.433Z [DEBUG] [ToolSearch:optimistic] mode=tst-auto, ENABLE_TOOL_SEARCH=undefined, result=true
+2026-03-18T09:33:29.434Z [DEBUG] [STARTUP] Running setup()...
+2026-03-18T09:33:29.434Z [DEBUG] Loading skills from: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/peterryszkiewicz/.claude/skills, project=[]
+2026-03-18T09:33:29.434Z [DEBUG] Error log sink initialized
+2026-03-18T09:33:29.435Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2026-03-18T09:33:29.435Z [DEBUG] Total plugin skills loaded: 0
+exec
+/bin/zsh -lc "sed -n '1,220p' src/lib/domain/types.ts" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "sed -n '1,240p' src/lib/domain/content-types.ts" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+export const companyMetricIds = [
+  "moat",
+  "decentralizability",
+  "profitability",
+  "peRatio",
+  "marketCap",
+  "ipoMarketCap",
+  "ipoReturnMultiplier",
+  "ipoAnnualizedGrowthRate",
+  "freedCapitalPotential",
+] as const;
+
+export type CompanyMetricId = (typeof companyMetricIds)[number];
+
+export const alternativeMetricIds = [
+  "openness",
+  "decentralizationFit",
+  "readiness",
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+import type {
+  Alternative,
+  Company,
+  CompanyIpo,
+  IndexDefinition,
+  Industry,
+  MetricAssessment,
+  Product,
+  Region,
+  Sector,
+  SourceCitation,
+  TechnologyWave,
+} from "~/lib/domain/types";
+
+export const companyInputMetricIds = [
+  "moat",
+  "decentralizability",
+  "profitability",
+exec
+/bin/zsh -lc "rg -n 'marketCap|peRatio|ipoMarketCap' src/lib -g'*.ts'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+src/lib/domain/types.ts:5:  "peRatio",
+src/lib/domain/types.ts:6:  "marketCap",
+src/lib/domain/types.ts:7:  "ipoMarketCap",
+src/lib/domain/types.ts:62:  marketCap: MetricAssessment;
+src/lib/domain/content-types.ts:19:  "peRatio",
+src/lib/domain/content-types.ts:20:  "marketCap",
+src/lib/domain/metrics.ts:46:  peRatio: {
+src/lib/domain/metrics.ts:47:    id: "peRatio",
+src/lib/domain/metrics.ts:57:  marketCap: {
+src/lib/domain/metrics.ts:58:    id: "marketCap",
+src/lib/domain/metrics.ts:67:  ipoMarketCap: {
+src/lib/domain/metrics.ts:68:    id: "ipoMarketCap",
+src/lib/domain/scoring.ts:11:  marketCap: number,
+src/lib/domain/scoring.ts:20:  return Math.max(0, marketCap * decentralizationFactor * moatResistance * profitElasticity);
+src/lib/domain/ipo.ts:15:export function calculateIpoReturnMultiplier(currentMarketCap: number, ipoMarketCap: number) {
+src/lib/domain/ipo.ts:18:    !Number.isFinite(ipoMarketCap) ||
+src/lib/domain/ipo.ts:20:    ipoMarketCap <= 0
+src/lib/domain/ipo.ts:25:  return currentMarketCap / ipoMarketCap;
+exec
+/bin/zsh -lc "sed -n '1,120p' src/lib/domain/metrics.ts" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "sed -n '130,180p' src/lib/content/companies.ts" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+import {
+  type AlternativeMetricId,
+  alternativeMetricIds,
+  type CompanyMetricId,
+  companyMetricIds,
+  type MetricDefinition,
+} from "~/lib/domain/types";
+
+export const companyMetricDefinitions: Record<
+  CompanyMetricId,
+  MetricDefinition<CompanyMetricId>
+> = {
+  moat: {
+    id: "moat",
+    label: "Moat",
+    shortLabel: "Moat",
+    description:
+      "How difficult the company is to dislodge with product, distribution, or regulatory pressure.",
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+      moat: assessment(
+        9.6,
+        "CUDA lock-in plus premium hardware and ecosystem depth make NVIDIA unusually hard to dislodge.",
+        ["nvidia-cuda", "nvidia-data-center"],
+        "high",
+      ),
+      decentralizability: assessment(
+        2.5,
+        "Alternative compute stacks exist, but cutting-edge GPU supply is still profoundly centralized.",
+        ["amd-rocm", "nvidia-data-center"],
+        "medium",
+      ),
+      profitability: assessment(
+        9.7,
+        "NVIDIA's profit power is elite because demand is intense and supply remains constrained.",
+        ["nvidia-investor"],
+        "medium",
+      ),
+exec
+/bin/zsh -lc "sed -n '1,80p' src/lib/domain/formatters.test.ts" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+import { expect, test } from "bun:test";
+import { formatCompanyMetric } from "~/lib/domain/formatters";
+import type { MetricAssessment } from "~/lib/domain/types";
+
+function assessment(value: number): MetricAssessment {
+  return {
+    value,
+    rationale: "test",
+    sourceIds: ["test-source"],
+    confidence: "high",
+    lastReviewedOn: "2026-03-16",
+  };
+}
+
+test("formatCompanyMetric renders IPO metrics with the expected display format", () => {
+  expect(formatCompanyMetric("ipoMarketCap", assessment(1_200_000_000))).toBe("$1.2B");
+  expect(formatCompanyMetric("ipoReturnMultiplier", assessment(3102.1))).toBe("3,102.1x");
+  expect(formatCompanyMetric("ipoAnnualizedGrowthRate", assessment(0.194))).toBe("19.4%");
+exec
+/bin/zsh -lc "rg -n 'open-insulin-project|Open Insulin|M4K|Open Source Pharma|DNDi|open-source pharmaceutical|biosimilar' research content src/lib/generated/content-graph.ts" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+research/runs/merck-co/2026-03-16T12-42-50-556Z/overview.claude.raw.txt:18:        "Keytruda's dominance has also made it a strategic liability. Core composition-of-matter patents expire around 2028, and biosimilar entry in the U.S. is expected by the early 2030s. Merck is pursuing a subcutaneous formulation of Keytruda (co-developed with Alteogen) and exploring fixed-dose combinations to extend commercial exclusivity and patient convenience—strategies that buy time while the pipeline is meant to provide the longer-term answer."
+research/runs/merck-co/2026-03-16T12-42-50-556Z/overview.claude.normalized.json:17:        "Keytruda's dominance has also made it a strategic liability. Core composition-of-matter patents expire around 2028, and biosimilar entry in the U.S. is expected by the early 2030s. Merck is pursuing a subcutaneous formulation of Keytruda (co-developed with Alteogen) and exploring fixed-dose combinations to extend commercial exclusivity and patient convenience—strategies that buy time while the pipeline is meant to provide the longer-term answer."
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:55:        "The most credible vector of decentralization in pharmaceuticals is patent expiry and generic competition, which eventually allows multiple manufacturers to produce the same compound at dramatically lower cost. For tirzepatide, that window opens in the 2030s. Compounding pharmacies produced GLP-1 analogs at scale during supply shortage periods, but FDA moved to curtail this pathway as branded supply normalized. Open-source drug synthesis initiatives like the Open Insulin Project exist and are philosophically significant, but even they require centralized lab infrastructure and regulatory compliance—they shift ownership of the synthesis, not the structural requirements for safe production. No technology wave in the current horizon materially changes this calculus for GLP-1 therapies or biologics."
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:183:            "slug": "open-insulin-project",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:184:            "name": "Open Insulin Project",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:194:                  "open-insulin-project"
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:203:                  "open-insulin-project"
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:210:                "rationale": "The Open Insulin Project remains at early research stage for insulin; GLP-1 therapies like tirzepatide are significantly more complex. No open-source GLP-1 synthesis protocol is at clinical-readiness stage.",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:212:                  "open-insulin-project"
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:219:                "rationale": "If open-source pharmaceutical synthesis matures, it could collapse costs of essential medicines dramatically. The theoretical leverage is very high even though near-term readiness is low.",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:221:                  "open-insulin-project"
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:228:              "open-insulin-project"
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:495:      "id": "open-insulin-project",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:496:      "title": "Open Insulin Project",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:499:      "publisher": "Open Insulin Foundation",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.normalized.json:500:      "note": "Community-driven open-source pharmaceutical manufacturing initiative; reference for the open-synthesis alternative vector in the metabolic disease product analysis.",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/candidate.sources.json:57:    "id": "open-insulin-project",
+research/runs/eli-lilly/2026-03-16T12-04-55-171Z/candidate.sources.json:58:    "title": "Open Insulin Project",
+exec
+/bin/zsh -lc "find research -type f | rg 'sp500|top25|snapshot|rank'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world exited 1 in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+exec
+/bin/zsh -lc "rg -n 'abbvie|ABBV|sp500-top25|March 13, 2026' content research .codex scripts src | sed -n '1,200p'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+research/runs/ge-aerospace/2026-03-16T12-42-50-262Z/overview.prompt.md:48:    "notes": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35."
+research/runs/exxon-mobil/2026-03-16T11-54-42-517Z/overview.prompt.md:49:    "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+content/manifests/companies/home-depot.json:8:    "sp500-top25"
+content/manifests/companies/home-depot.json:24:  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-25 market-cap snapshot."
+research/runs/exxon-mobil/2026-03-16T12-10-20-833Z/company-sync.prompt.md:31:  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+research/runs/exxon-mobil/2026-03-16T12-10-20-833Z/company-sync.prompt.md:68:      "id": "sp500-top25",
+content/manifests/companies/abbvie.json:3:  "slug": "abbvie",
+content/manifests/companies/abbvie.json:5:  "ticker": "ABBV",
+content/manifests/companies/abbvie.json:8:    "sp500-top25"
+content/manifests/companies/abbvie.json:12:  "companiesMarketCapUrl": "https://companiesmarketcap.com/abbvie/marketcap/",
+content/manifests/companies/abbvie.json:20:    "https://investors.abbvie.com/",
+content/manifests/companies/abbvie.json:21:    "https://www.abbvie.com/",
+content/manifests/companies/abbvie.json:22:    "https://companiesmarketcap.com/abbvie/marketcap/"
+content/manifests/companies/abbvie.json:24:  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-25 market-cap snapshot."
+content/manifests/companies/eli-lilly.json:23:  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+research/runs/exxon-mobil/2026-03-16T11-27-36-966Z/overview.prompt.md:49:    "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+content/manifests/companies/johnson-johnson.json:23:  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+research/runs/micron-technology/2026-03-16T11-30-58-103Z/overview.prompt.md:49:    "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com/abbvie/marketcap AbbVie market cap CompaniesMarketCap
+🌐 Searching the web...
+🌐 Searched: site:financecharts.com/screener/s&p-500-companies-by-market-cap March 13 2026 AbbVie rank
+exec
+/bin/zsh -lc "sed -n '485,500p' .codex/tasks/todo.md" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+Residual risks:
+- The Pages API scripts still depend on GitHub’s current deployment response shape and status names, just as the prior inline shell did. If GitHub changes that contract, `scripts/lib/github-pages.ts` will need to be updated.
+# S&P 500 Top 25 Intake
+
+- [x] Freeze the exact S&P 500 top-25 company snapshot and identify the missing slugs versus the 10 canonical plus 10 queued manifests.
+  Verification: FinanceCharts S&P 500 screener snapshot dated March 13, 2026 matches ranks 1-20 already present in canonical plus queued manifests, leaving Chevron, AbbVie, Palantir Technologies, Procter & Gamble, and Home Depot as the missing top-25 batch.
+- [x] Add taxonomy support for the expanded batch, including `sp500-top25` and any missing sector or industry ids required by the confirmed companies.
+  Verification: added `sp500-top25`, `home-improvement-retail`, and `household-products`; `bun run content:validate` passed.
+- [x] Draft one manifest per missing company using valid taxonomy ids and queue them with a shared batch id and request notes.
+  Verification: draft manifests created for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble` under `.codex/tmp/sp500-top25-drafts/`; structural `jq` checks passed.
+- [x] Queue the new manifests with a shared batch id and request notes.
+  Verification: queued manifests now exist for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble`; `bun run content:validate` and `bun run content:compile` both passed after queueing.
+- [x] Promote the queued manifests into canonical manifests.
+  Verification: `bun run company:init --queued=<slug>` succeeded for `abbvie`, `chevron`, `home-depot`, `palantir-technologies`, and `procter-gamble`; canonical manifests now exist under `content/manifests/companies/` and the corresponding queue entries were removed.
+- [ ] Run Ralph sync for each promoted company.
+  Verification: `bun run sync:company --company=<slug> --provider=auto --mode=dry-run` succeeds for each new company.
+🌐 Searching the web...
+🌐 Searched: AbbVie market cap CompaniesMarketCap March 2026
+🌐 Searching the web...
+🌐 Searched: AbbVie market cap
+🌐 Searching the web...
+🌐 Searched: site:investors.abbvie.com annual report 2025 AbbVie pdf
+🌐 Searching the web...
+🌐 Searched: site:sec.gov AbbVie 10-K 2026 2025 annual report
+🌐 Searching the web...
+🌐 Searched: site:abbvie.com Skyrizi official AbbVie
+🌐 Searching the web...
+🌐 Searched: Skyrizi official site
+🌐 Searching the web...
+🌐 Searched: site:rinvoq.com official Rinvoq patient site
+🌐 Searching the web...
+🌐 Searched: https://www.rinvoq.com/
+🌐 Searching the web...
+🌐 Searched: https://www.skyrizi.com/
+🌐 Searching the web...
+🌐 Searched: https://openinsulin.org/
+🌐 Searching the web...
+🌐 Searched: open source pharma foundation official
+exec
+/bin/zsh -lc "rg -n 'repoUrl' content/companies | sed -n '1,120p'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+content/companies/alphabet/bundle.json:137:          "repoUrl": "https://github.com/searxng/searxng",
+exec
+/bin/zsh -lc "sed -n '110,190p' content/companies/alphabet/bundle.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+    }
+  },
+  "products": [
+    {
+      "slug": "google-search",
+      "name": "Google Search",
+      "category": "Search engine",
+      "homepageUrl": "https://www.google.com/",
+      "summary": "Alphabet's flagship query and ad-distribution surface.",
+      "whyItMatters": "Search still funds a startling amount of Google's empire.",
+      "replacementSketch": [
+        "Open metasearch and smaller search providers can disaggregate parts of the search experience.",
+        "Agentic AI may move value from traditional ranked pages toward multi-source synthesis layers."
+      ],
+      "sourceIds": [
+        "google-products",
+        "searxng"
+      ],
+🌐 Searching the web...
+🌐 Searched: Open Insulin GitHub
+🌐 Searching the web...
+🌐 Searched: https://www.ospfound.org/
+🌐 Searching the web...
+🌐 Searched: https://www.linkedin.com/company/open-insulin-project
+🌐 Searching the web...
+🌐 Searched: site:investors.abbvie.com AbbVie reports fourth-quarter and full-year 2025 financial results
+🌐 Searching the web...
+🌐 Searched: site:investors.abbvie.com Feb 2026 AbbVie fourth quarter 2025 financial results
+🌐 Searching the web...
+🌐 Searched: AbbVie 10-K Feb 20 2026 sec 2025 revenue
+🌐 Searching the web...
+🌐 Searched: https://news.abbvie.com/2026-02-04-AbbVie-Reports-Full-Year-and-Fourth-Quarter-2025-Financial-Results
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: 'Net revenues were $61.160 billion' in https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: 'Net earnings attributable to AbbVie' in https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: site:abbvie.com/about-abbvie AbbVie company overview immunology oncology neuroscience aesthetics
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/abbvie/marketcap/
+🌐 Searching the web...
+🌐 Searched: 'The PE ratio as of March 2026' in https://companiesmarketcap.com/abbvie/pe-ratio/
+exec
+/bin/zsh -lc "jq '.company.rankApprox' content/companies/walmart/bundle.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-worldexec
+/bin/zsh -lc "jq '.company.rankApprox' content/companies/berkshire-hathaway/bundle.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+10
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+9
+exec
+/bin/zsh -lc "jq '.company.rankApprox' content/companies/broadcom/bundle.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+7
+🌐 Searching the web...
+🌐 Searched: 'Skyrizi net revenues were'
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: site:investors.abbvie.com AbbVie reports fourth-quarter and full-year 2025 financial results Skyrizi Rinvoq
+🌐 Searching the web...
+🌐 Searched: 'Skyrizi net revenues were' in https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: '11,718' in https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/abbvie/marketcap/
+🌐 Searching the web...
+🌐 Searched: site:github.com "Open Source Pharma"
+exec
+/bin/zsh -lc "rg -n '\"kind\":|\"name\":' research/runs/*/candidate.bundle.json content/companies/*/bundle.json | rg 'ecosystem|pathway|project|foundation|network|protocol'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world exited 1 in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+zsh:1: no matches found: research/runs/*/candidate.bundle.json
+exec
+/bin/zsh -lc "rg -n 'ecosystem|pathway|project|foundation|protocol' content/companies research/runs -g 'candidate.bundle.json' -g 'bundle.json'" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+research/runs/bank-of-america/2026-03-16T13-08-48-022Z/candidate.bundle.json:53:      "Wealth management and institutional services are structurally harder to disintermediate. SIPC protections, SEC custody rules, and fiduciary frameworks create genuine consumer safeguards that decentralized alternatives have not yet replicated at scale. DeFi lending protocols (Aave, Compound, Sky) offer non-custodial credit markets, but smart-contract risk, liquidation mechanics, and UX friction limit mainstream substitution. Investment banking advisory and capital-markets execution remain deeply reliant on regulatory relationships, legal documentation networks, and balance-sheet capacity. The decentralization trajectory for banking runs payments first, consumer lending second, institutional services last—and over a long time horizon."
+research/runs/bank-of-america/2026-03-16T13-08-48-022Z/candidate.bundle.json:78:        "rationale": "Consumer payments and basic deposit functions face credible Bitcoin/Lightning and neobank alternatives today. Consumer lending is increasingly addressable by online lenders and DeFi protocols. Wealth advisory and institutional capital markets remain difficult to disintermediate due to regulatory custody requirements, balance-sheet needs, and documentation complexity.",
+research/runs/bank-of-america/2026-03-16T13-08-48-022Z/candidate.bundle.json:124:        "Payments are the most tractable layer: Bitcoin and the Lightning Network already offer permissionless, near-instant settlement with fees measured in fractions of a cent, replacing wire transfers, ACH delays, and card-network interchange for willing users. Stablecoins on open networks add dollar-denominated programmability that could substitute for checking accounts for those comfortable with self-custody. The primary barrier is FDIC deposit insurance, which protocol-native alternatives cannot replicate without legislative change.",
+research/runs/bank-of-america/2026-03-16T13-08-48-022Z/candidate.bundle.json:125:        "Deposit and lending functions are increasingly addressed by credit unions (member-owned, non-profit, with competitive rates), online banks (Ally, SoFi) with no-fee checking and higher savings yields, and DeFi lending protocols for collateralized credit. None of these fully replicate the integrated convenience of a universal bank, but each erodes a specific revenue pocket—overdraft fees, wire fees, savings margin—that BofA relies on."
+research/runs/bank-of-america/2026-03-16T13-08-48-022Z/candidate.bundle.json:145:              "rationale": "Fully open-source protocol stack with no central issuer or gatekeeper; anyone can run a node, open payment channels, or build applications on top of the protocol.",
+research/runs/bank-of-america/2026-03-16T13-08-48-022Z/candidate.bundle.json:410:        "Equity and debt underwriting, M&A advisory, and structured credit remain deeply entrenched in regulatory frameworks, legal documentation networks, and relationship capital that protocol-native alternatives cannot replicate in the foreseeable future. Independent boutique advisory firms—Lazard, Evercore, Centerview—compete on alignment and independence within traditional structures, offering a focused alternative for M&A and restructuring mandates that do not require BofA's balance sheet."
+content/companies/meta-platforms/bundle.json:38:          "That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time."
+content/companies/meta-platforms/bundle.json:78:        "rationale": "Federated social and open messaging create unusually clear alternative pathways.",
+content/companies/meta-platforms/bundle.json:190:          "summary": "Federated social network and a visible proof that large-scale social publishing can use open protocols.",
+content/companies/meta-platforms/bundle.json:194:              "rationale": "Open-source and protocol-friendly.",
+content/companies/meta-platforms/bundle.json:243:        "Open messaging protocols and encrypted self-hosted tooling make proprietary messaging less inevitable.",
+content/companies/meta-platforms/bundle.json:244:        "Micropayments and protocol-native spam resistance could create healthier open messaging economics."
+content/companies/meta-platforms/bundle.json:257:          "kind": "protocol",
+content/companies/meta-platforms/bundle.json:259:          "summary": "Open messaging protocol with self-hosting and federation.",
+content/companies/meta-platforms/bundle.json:311:              "rationale": "Strong protocol and software openness, though not fully decentralized.",
+content/companies/tesla/bundle.json:121:      "summary": "Tesla's branded fast-charging network and related ecosystem control surface.",
+content/companies/tesla/bundle.json:184:          "slug": "ocpp-ecosystem",
+content/companies/tesla/bundle.json:185:          "name": "OCPP-based charging ecosystem",
+exec
+/bin/zsh -lc "sed -n '300,360p' research/runs/eli-lilly/2026-03-16T12-04-55-171Z/candidate.bundle.json" in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+      "slug": "verzenio",
+      "name": "Verzenio (abemaciclib)",
+      "category": "Prescription Medication — Oncology",
+      "homepageUrl": "https://www.verzenio.com",
+      "summary": "CDK4/6 inhibitor approved for HR+/HER2- breast cancer in both early and metastatic settings; generates approximately $4–5 billion in annual revenue and is part of standard-of-care treatment guidelines.",
+      "whyItMatters": "Verzenio's approval in the early-stage adjuvant setting (monarchE trial) opened a significantly larger patient population than the metastatic-only indication of competing CDK4/6 inhibitors. Its continuous dosing schedule and demonstrated invasive disease-free survival benefit have established it as a preferred option in guidelines and made it a durable multi-billion revenue contributor.",
+      "replacementSketch": [
+        "The CDK4/6 inhibitor class includes Pfizer's palbociclib (Ibrance) and Novartis's ribociclib (Kisqali). Ibrance's core patents have been challenged and generic palbociclib is entering the U.S. market, providing a cost-competitive CDK4/6 option—though abemaciclib has distinct pharmacology and the only early-stage approval.",
+        "When abemaciclib patents expire in the mid-2030s, generics will enter and pricing will fall dramatically. However, the clinical differentiation of abemaciclib—particularly its continuous dosing protocol and early-stage indication—has driven guidelines-based adoption that generic entrants would inherit. Patients currently on Verzenio who cannot afford it have limited equivalent alternatives in the early-stage setting."
+      ],
+      "sourceIds": [
+        "lilly-ir",
+        "lilly-10k-2024"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "palbociclib-generic",
+exec
+/bin/zsh -lc 'cat research/runs/eli-lilly/2026-03-16T12-04-55-171Z/company-sync.claude.validation.json' in /Users/peterryszkiewicz/.codex/worktrees/15b5/free-the-world succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "provider": "claude",
+  "exitCode": 0,
+  "timedOut": false,
+  "validJson": true,
+  "validContent": true,
+  "manifestFile": "content/manifests/companies/eli-lilly.json",
+  "bundleFile": "content/companies/eli-lilly/bundle.json"
+}
+🌐 Searching the web...
+🌐 Searched: site:abbvie.com Rinvoq settlement generic drugmakers 2037 official
+🌐 Searching the web...
+🌐 Searched: 'risankizumab'
+🌐 Searching the web...
+🌐 Searched: site:sec.gov AbbVie 2025 10-k upadacitinib expected to expire in 2033 risankizumab
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: 'expected to expire in 2033' in https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: site:fda.gov biosimilar development and approval FDA
+🌐 Searching the web...
+🌐 Searched: site:abbvie.com/about-abbvie/ who we are AbbVie immunology oncology neuroscience aesthetics
+🌐 Searching the web...
+🌐 Searched: site:fda.gov review and approval of biosimilar products FDA
+🌐 Searching the web...
+🌐 Searched the web
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+🌐 Searching the web...
+🌐 Searched: https://news.abbvie.com/2025-09-30-AbbVie-Begins-Construction-on-70-Million-Expansion-to-Further-Increase-Biologics-Manufacturing-and-R-D-Presence-in-the-U-S
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/1551152/000155115226000008/abbv-20251231.htm
+
+Provider codex timed out after 600000ms.
