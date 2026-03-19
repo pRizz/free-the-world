@@ -84,6 +84,9 @@ test("mobile shell stays compact and expands navigation on demand", async ({ pag
     page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Registry" }),
   ).toBeVisible();
   await expect(
+    page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Insights" }),
+  ).toBeVisible();
+  await expect(
     page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Mirrors" }),
   ).toBeVisible();
   await expect(
@@ -129,6 +132,9 @@ test("desktop shell keeps inline navigation and hides the mobile toggle", async 
   const banner = page.getByRole("banner");
 
   await expect(banner.getByRole("navigation", { name: "Primary" })).toBeVisible();
+  await expect(
+    banner.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Insights" }),
+  ).toBeVisible();
   await expect(
     banner.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Mirrors" }),
   ).toBeVisible();
