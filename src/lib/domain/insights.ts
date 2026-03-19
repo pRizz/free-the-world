@@ -77,7 +77,10 @@ export interface AlternativePressureDataset {
   averagePressureScore: number | null;
 }
 
-export function calculateResidualMarketCap(currentMarketCap: number, freedCapitalPotential: number) {
+export function calculateResidualMarketCap(
+  currentMarketCap: number,
+  freedCapitalPotential: number,
+) {
   return Math.max(0, currentMarketCap - freedCapitalPotential);
 }
 
@@ -155,9 +158,7 @@ export function getPostBubbleDataset(inputCompanies: Company[] = companies): Pos
     totalFreedCapitalPotential,
     totalResidualMarketCap,
     averageIpoReturnMultiplier: average(sortedRows.map((row) => row.ipoReturnMultiplier)),
-    averageIpoAnnualizedGrowthRate: average(
-      sortedRows.map((row) => row.ipoAnnualizedGrowthRate),
-    ),
+    averageIpoAnnualizedGrowthRate: average(sortedRows.map((row) => row.ipoAnnualizedGrowthRate)),
   };
 }
 
@@ -225,12 +226,14 @@ export function getAlternativeMetricAverages(
   }
 
   return {
-    openness: average(inputAlternatives.map((alternative) => alternative.metrics.openness.value)) ?? 0,
+    openness:
+      average(inputAlternatives.map((alternative) => alternative.metrics.openness.value)) ?? 0,
     decentralizationFit:
       average(
         inputAlternatives.map((alternative) => alternative.metrics.decentralizationFit.value),
       ) ?? 0,
-    readiness: average(inputAlternatives.map((alternative) => alternative.metrics.readiness.value)) ?? 0,
+    readiness:
+      average(inputAlternatives.map((alternative) => alternative.metrics.readiness.value)) ?? 0,
     costLeverage:
       average(inputAlternatives.map((alternative) => alternative.metrics.costLeverage.value)) ?? 0,
   };
@@ -296,7 +299,9 @@ export function getAlternativePressureDataset(
   const companyRows = inputCompanies
     .map((company) => {
       const companyProductRows = productRowsByCompanySlug.get(company.slug) ?? [];
-      const documentedProductRows = companyProductRows.filter((row) => row.hasDocumentedAlternatives);
+      const documentedProductRows = companyProductRows.filter(
+        (row) => row.hasDocumentedAlternatives,
+      );
       const companyAlternatives = documentedProductRows.flatMap((row) =>
         (alternativesByProductSlug.get(row.product.slug) ?? []).map((alternative) => alternative),
       );

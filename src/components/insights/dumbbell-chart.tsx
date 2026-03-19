@@ -2,7 +2,10 @@ import { For } from "solid-js";
 import { formatMoneyRange } from "~/lib/domain/formatters";
 import type { PostBubbleRow } from "~/lib/domain/insights";
 
-const axisTicks = [10_000_000, 100_000_000, 1_000_000_000, 10_000_000_000, 100_000_000_000, 1_000_000_000_000, 10_000_000_000_000];
+const axisTicks = [
+  10_000_000, 100_000_000, 1_000_000_000, 10_000_000_000, 100_000_000_000, 1_000_000_000_000,
+  10_000_000_000_000,
+];
 
 export function DumbbellChart(props: { rows: PostBubbleRow[] }) {
   const viewBoxWidth = 860;
@@ -75,12 +78,7 @@ export function DumbbellChart(props: { rows: PostBubbleRow[] }) {
                   stroke="rgb(148 163 184 / 0.15)"
                   stroke-width="1"
                 />
-                <text
-                  x={x}
-                  y={48}
-                  class="fill-muted-foreground text-[11px]"
-                  text-anchor="middle"
-                >
+                <text x={x} y={48} class="fill-muted-foreground text-[11px]" text-anchor="middle">
                   {formatMoneyRange(tick)}
                 </text>
               </g>
@@ -100,10 +98,20 @@ export function DumbbellChart(props: { rows: PostBubbleRow[] }) {
                 <title>
                   {`${row.company.name}: IPO ${formatMoneyRange(row.ipoMarketCap)}, residual ${formatMoneyRange(row.residualMarketCap)}, current ${formatMoneyRange(row.currentMarketCap)}`}
                 </title>
-                <text x={labelWidth} y={y - 7} class="fill-title-foreground text-[14px]" text-anchor="end">
+                <text
+                  x={labelWidth}
+                  y={y - 7}
+                  class="fill-title-foreground text-[14px]"
+                  text-anchor="end"
+                >
                   {row.company.name}
                 </text>
-                <text x={labelWidth} y={y + 11} class="fill-muted-foreground text-[11px]" text-anchor="end">
+                <text
+                  x={labelWidth}
+                  y={y + 11}
+                  class="fill-muted-foreground text-[11px]"
+                  text-anchor="end"
+                >
                   {row.company.ticker} · {Math.round(row.capitalAtRiskShare * 100)}% challenged
                 </text>
 

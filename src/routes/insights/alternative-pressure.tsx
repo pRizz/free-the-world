@@ -52,7 +52,9 @@ export default function AlternativePressurePage() {
             {
               label: "Highest-pressure product",
               value: topProduct?.product.name ?? "—",
-              note: topProduct ? `${formatScore(topProduct.pressureScore)} pressure score.` : "No products available.",
+              note: topProduct
+                ? `${formatScore(topProduct.pressureScore)} pressure score.`
+                : "No products available.",
             },
           ]}
         />

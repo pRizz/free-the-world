@@ -45,7 +45,10 @@ export function BarComparisonChart(props: {
                 </div>
 
                 <div class="rounded-2xl border border-border/70 bg-background/55 p-3">
-                  <div class="h-4 rounded-full bg-secondary/85" style={{ width: `${widthPercent}%` }}>
+                  <div
+                    class="h-4 rounded-full bg-secondary/85"
+                    style={{ width: `${widthPercent}%` }}
+                  >
                     <div
                       class="flex h-full overflow-hidden rounded-full"
                       title={`${row.company.name}: residual ${formatMoneyRange(row.residualMarketCap)}, at risk ${formatMoneyRange(row.freedCapitalPotential)}`}

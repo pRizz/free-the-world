@@ -55,11 +55,7 @@ function makeCompany(
   };
 }
 
-function makeProduct(
-  slug: string,
-  companySlug: string,
-  overrides: Partial<Product> = {},
-): Product {
+function makeProduct(slug: string, companySlug: string, overrides: Partial<Product> = {}): Product {
   return {
     slug,
     companySlug,
@@ -198,31 +194,16 @@ test("getAlternativeMetricAverages returns null for an empty alternative set", (
 
 test("getAlternativePressureDataset ranks documented products ahead of undocumented ones", () => {
   // Arrange
-  const companies = [
-    makeCompany("alpha", {}),
-    makeCompany("beta", {}),
-  ];
+  const companies = [makeCompany("alpha", {}), makeCompany("beta", {})];
   const products = [
     makeProduct("alpha-doc", "alpha", { name: "Documented product" }),
     makeProduct("alpha-undoc", "alpha", { name: "Undocumented product" }),
     makeProduct("beta-doc", "beta", { name: "Runner-up product" }),
   ];
   const alternatives = [
-    makeAlternative(
-      "alpha-alt-1",
-      "alpha-doc",
-      makeAlternativeMetricRecord(9, 8, 8.5, 8),
-    ),
-    makeAlternative(
-      "alpha-alt-2",
-      "alpha-doc",
-      makeAlternativeMetricRecord(8.5, 8, 8, 8.5),
-    ),
-    makeAlternative(
-      "beta-alt-1",
-      "beta-doc",
-      makeAlternativeMetricRecord(7, 7, 6.5, 6),
-    ),
+    makeAlternative("alpha-alt-1", "alpha-doc", makeAlternativeMetricRecord(9, 8, 8.5, 8)),
+    makeAlternative("alpha-alt-2", "alpha-doc", makeAlternativeMetricRecord(8.5, 8, 8, 8.5)),
+    makeAlternative("beta-alt-1", "beta-doc", makeAlternativeMetricRecord(7, 7, 6.5, 6)),
   ];
 
   // Act

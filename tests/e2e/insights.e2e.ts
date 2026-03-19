@@ -21,7 +21,7 @@ test("post-bubble page renders the comparison charts and company table", async (
     page.getByRole("heading", { name: /How big is the business after the rent gets repriced\?/i }),
   ).toBeVisible();
   await expect(page.getByText(/Then, now, and after the unwind/i)).toBeVisible();
-  await expect(page.getByText("NVIDIA")).toBeVisible();
+  await expect(page.getByRole("table").getByText("NVIDIA", { exact: true })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "IPO cap" })).toBeVisible();
 });
 
@@ -32,9 +32,11 @@ test("capital release atlas renders the moat map and ranked exposures", async ({
   await expect(
     page.getByRole("heading", { name: /Where the largest repricing arguments live/i }),
   ).toBeVisible();
-  await expect(page.getByText(/Moat on the vertical, decentralizability on the horizontal/i)).toBeVisible();
+  await expect(
+    page.getByText(/Moat on the vertical, decentralizability on the horizontal/i),
+  ).toBeVisible();
   await expect(page.getByText(/Who matters most if the rents compress\?/i)).toBeVisible();
-  await expect(page.getByText("Microsoft")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Microsoft", exact: true }).first()).toBeVisible();
 });
 
 test("alternative pressure index renders company rankings and the product heatmap", async ({
@@ -48,5 +50,5 @@ test("alternative pressure index renders company rankings and the product heatma
   ).toBeVisible();
   await expect(page.getByText(/Product heatmap/i)).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "Pressure" })).toBeVisible();
-  await expect(page.getByText("Microsoft 365")).toBeVisible();
+  await expect(page.getByRole("table").getByText("Microsoft 365", { exact: true })).toBeVisible();
 });

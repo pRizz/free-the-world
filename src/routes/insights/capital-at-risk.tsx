@@ -6,8 +6,8 @@ import { ChartLegend } from "~/components/insights/chart-legend";
 import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
 import { QuadrantChart } from "~/components/insights/quadrant-chart";
 import { Seo } from "~/components/seo";
-import { getCapitalAtRiskDataset } from "~/lib/domain/insights";
 import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
+import { getCapitalAtRiskDataset } from "~/lib/domain/insights";
 
 const dataset = getCapitalAtRiskDataset();
 
@@ -72,7 +72,10 @@ export default function CapitalAtRiskPage() {
             />
             <ChartLegend
               items={[
-                { label: "Bubble position = moat and decentralizability", swatchClass: "bg-sky-300/90" },
+                {
+                  label: "Bubble position = moat and decentralizability",
+                  swatchClass: "bg-sky-300/90",
+                },
                 { label: "Bubble size = current market cap", swatchClass: "bg-slate-400/80" },
               ]}
             />

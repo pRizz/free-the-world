@@ -8,7 +8,10 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table";
-import type { AlternativeMetricAverages, AlternativePressureProductRow } from "~/lib/domain/insights";
+import type {
+  AlternativeMetricAverages,
+  AlternativePressureProductRow,
+} from "~/lib/domain/insights";
 
 function formatScore(value: number) {
   return `${value.toFixed(1)}/10`;

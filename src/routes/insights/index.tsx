@@ -5,12 +5,12 @@ import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
 import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
 import { Button } from "~/components/ui/button";
+import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
 import {
   getAlternativePressureDataset,
   getCapitalAtRiskDataset,
   getPostBubbleDataset,
 } from "~/lib/domain/insights";
-import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
 
 const postBubbleDataset = getPostBubbleDataset();
 const capitalAtRiskDataset = getCapitalAtRiskDataset();

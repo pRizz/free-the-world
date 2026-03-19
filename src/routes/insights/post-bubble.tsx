@@ -15,8 +15,8 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table";
-import { getPostBubbleDataset } from "~/lib/domain/insights";
 import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
+import { getPostBubbleDataset } from "~/lib/domain/insights";
 
 const dataset = getPostBubbleDataset();
 
@@ -136,7 +136,9 @@ export default function PostBubblePage() {
                           </p>
                         </div>
                       </TableCell>
-                      <TableCell>{formatMetricValue(row.ipoReturnMultiplier, "ratio", 1)}</TableCell>
+                      <TableCell>
+                        {formatMetricValue(row.ipoReturnMultiplier, "ratio", 1)}
+                      </TableCell>
                       <TableCell>
                         {formatMetricValue(row.ipoAnnualizedGrowthRate, "percentage", 1)}
                       </TableCell>
