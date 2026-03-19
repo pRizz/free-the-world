@@ -103,7 +103,7 @@ export function getPostBubbleDataset(inputCompanies: Company[] = companies): Pos
     const maybeIpoReturnMultiplier = company.metrics.ipoReturnMultiplier?.value;
     const maybeIpoAnnualizedGrowthRate = company.metrics.ipoAnnualizedGrowthRate?.value;
     const maybeCapitalAtRiskShare =
-      maybeCurrentMarketCap && maybeFreedCapitalPotential
+      maybeCurrentMarketCap !== undefined && maybeFreedCapitalPotential !== undefined
         ? calculateCapitalAtRiskShare(maybeCurrentMarketCap, maybeFreedCapitalPotential)
         : null;
 
@@ -173,7 +173,7 @@ export function getCapitalAtRiskDataset(
       const maybeMarketCap = company.metrics.marketCap?.value;
       const maybeFreedCapitalPotential = company.metrics.freedCapitalPotential?.value;
       const maybeCapitalAtRiskShare =
-        maybeMarketCap && maybeFreedCapitalPotential
+        maybeMarketCap !== undefined && maybeFreedCapitalPotential !== undefined
           ? calculateCapitalAtRiskShare(maybeMarketCap, maybeFreedCapitalPotential)
           : null;
 
