@@ -5,6 +5,10 @@ const rawRoutes = [
   "/404",
   "/about",
   "/companies",
+  "/insights",
+  "/insights/alternative-pressure",
+  "/insights/capital-at-risk",
+  "/insights/post-bubble",
   "/mirrors",
   "/methodology",
   ...companies.flatMap((company) => [

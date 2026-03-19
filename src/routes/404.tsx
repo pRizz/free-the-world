@@ -24,6 +24,9 @@ export default function NotFoundPage() {
           <A href="/companies" class="hover:text-accent-foreground">
             Registry
           </A>
+          <A href="/insights" class="hover:text-accent-foreground">
+            Insights
+          </A>
           <A href="/methodology" class="hover:text-accent-foreground">
             Methodology
           </A>
