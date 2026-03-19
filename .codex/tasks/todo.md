@@ -38,10 +38,10 @@ Residual risks:
 
 # S&P 500 Next 10 Intake
 
-- [ ] Add the next 10 missing S&P 500 companies from a frozen market-cap snapshot, including any required taxonomy updates.
-  Verification: manifests resolve against valid taxonomy IDs and match the March 13, 2026 FinanceCharts ranks 26-35 snapshot.
-- [ ] Run the intake pipeline on the new batch with the default provider order and company-level concurrency.
-  Verification: `bun run company:pipeline --batch-id=sp500-top35-2026-03-13 --provider=auto --concurrency=5` completes without failed queue, promotion, loop, or sync steps.
+- [x] Add the next 10 missing S&P 500 companies from a frozen market-cap snapshot, including any required taxonomy updates.
+  Verification: the canonical manifests in `content/manifests/companies/` match the March 13, 2026 FinanceCharts ranks 26-35 snapshot and resolve against valid taxonomy IDs.
+- [ ] Run dry-run syncs for the canonical `sp500-top35` batch and verify provider stability across the unresolved companies.
+  Verification: `applied-materials`, `bank-of-america`, `caterpillar`, and `coca-cola` completed dry-run sync successfully; `advanced-micro-devices`, `cisco-systems`, `ge-aerospace`, `merck-co`, `philip-morris-international`, and `rtx` currently fail under `--provider=auto` because Claude returns no valid payload. A focused Codex fallback test on `merck-co` also failed after a long run with empty output, so the remaining work is provider tuning or prompt/runtime debugging rather than queue/pipeline execution.
 - [ ] Run post-intake verification and review the diff for unintended side effects.
   Verification: `bun run content:validate`, `bun run content:compile`, `bun run build`
 
