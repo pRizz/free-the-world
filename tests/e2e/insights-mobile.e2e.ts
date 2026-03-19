@@ -1,7 +1,7 @@
-import { expect, test } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
 import { gotoRoute } from "./support";
 
-async function expectNoPageLevelHorizontalOverflow(page: Parameters<typeof test>[0]["page"]) {
+async function expectNoPageLevelHorizontalOverflow(page: Page) {
   const maybeHasOverflow = await page.evaluate(() => {
     const root = document.documentElement;
     return root.scrollWidth > root.clientWidth;
@@ -45,7 +45,7 @@ test("capital release atlas shows ranked mobile cards without the quadrant chart
     page.getByText(/On phones, the key reading is the ranked exposure list below/i),
   ).toBeVisible();
   await expect(page.getByRole("heading", { name: "Microsoft", exact: true }).first()).toBeVisible();
-  await expect(page.getByLabel(/Quadrant chart plotting company moat/i)).toHaveCount(0);
+  await expect(page.getByLabel(/Quadrant chart plotting company moat/i)).toBeHidden();
   await expectNoPageLevelHorizontalOverflow(page);
 });
 

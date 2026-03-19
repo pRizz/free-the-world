@@ -76,8 +76,8 @@ export default function PostBubblePage() {
           />
           <div class="space-y-3 md:hidden">
             <p class="text-sm leading-7 text-muted-foreground">
-              On mobile, the main story is presented as ranked cards first so you do not have to
-              pan across the full comparison chart to understand the page.
+              On mobile, the main story is presented as ranked cards first so you do not have to pan
+              across the full comparison chart to understand the page.
             </p>
             <PostBubbleMobileList rows={dataset.rows} />
           </div>

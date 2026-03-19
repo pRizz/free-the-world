@@ -65,9 +65,7 @@ export function AlternativePressureMobileCards(props: { rows: AlternativePressur
               <div class="rounded-2xl border border-border bg-background/55 p-3">
                 <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">Status</p>
                 <p class="mt-2 text-base font-medium">
-                  {row.hasDocumentedAlternatives
-                    ? "Documented pressure"
-                    : "Research gap"}
+                  {row.hasDocumentedAlternatives ? "Documented pressure" : "Research gap"}
                 </p>
               </div>
             </div>

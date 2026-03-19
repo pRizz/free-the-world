@@ -1,8 +1,8 @@
 import { For } from "solid-js";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
-import { CapitalAtRiskMobileList } from "~/components/insights/capital-at-risk-mobile-list";
 import { PageHeader } from "~/components/blocks/page-header";
+import { CapitalAtRiskMobileList } from "~/components/insights/capital-at-risk-mobile-list";
 import { ChartLegend } from "~/components/insights/chart-legend";
 import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
 import { QuadrantChart } from "~/components/insights/quadrant-chart";

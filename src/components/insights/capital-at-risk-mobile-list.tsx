@@ -32,7 +32,10 @@ export function CapitalAtRiskMobileList(props: { points: CapitalAtRiskPoint[] })
                   <span class="font-medium text-foreground">{point.moat.toFixed(1)}/10</span>
                 </div>
                 <div class="mt-2 h-2 rounded-full bg-secondary/85">
-                  <div class="h-full rounded-full bg-sky-300/85" style={{ width: scoreBarWidth(point.moat) }} />
+                  <div
+                    class="h-full rounded-full bg-sky-300/85"
+                    style={{ width: scoreBarWidth(point.moat) }}
+                  />
                 </div>
               </div>
               <div>
@@ -53,9 +56,7 @@ export function CapitalAtRiskMobileList(props: { points: CapitalAtRiskPoint[] })
 
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
               <div class="rounded-2xl border border-border bg-background/55 p-3">
-                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  Current cap
-                </p>
+                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">Current cap</p>
                 <p class="mt-2 text-base font-medium">{formatMoneyRange(point.marketCap)}</p>
               </div>
               <div class="rounded-2xl border border-border bg-background/55 p-3">

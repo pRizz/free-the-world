@@ -1,8 +1,8 @@
 import { For } from "solid-js";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
-import { AlternativePressureMobileCards } from "~/components/insights/alternative-pressure-mobile-cards";
 import { PageHeader } from "~/components/blocks/page-header";
+import { AlternativePressureMobileCards } from "~/components/insights/alternative-pressure-mobile-cards";
 import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
 import { PressureHeatmap } from "~/components/insights/pressure-heatmap";
 import { Seo } from "~/components/seo";

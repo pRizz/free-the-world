@@ -24,9 +24,7 @@ export function PostBubbleMobileList(props: { rows: PostBubbleRow[] }) {
                 <p class="mt-2 text-lg font-semibold">{formatMoneyRange(row.ipoMarketCap)}</p>
               </div>
               <div class="rounded-2xl border border-border bg-background/55 p-3">
-                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                  Current cap
-                </p>
+                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">Current cap</p>
                 <p class="mt-2 text-lg font-semibold">{formatMoneyRange(row.currentMarketCap)}</p>
               </div>
               <div class="rounded-2xl border border-border bg-background/55 p-3">
