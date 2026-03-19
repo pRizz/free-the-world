@@ -1,6 +1,7 @@
 import { For } from "solid-js";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
+import { CapitalAtRiskMobileList } from "~/components/insights/capital-at-risk-mobile-list";
 import { PageHeader } from "~/components/blocks/page-header";
 import { ChartLegend } from "~/components/insights/chart-legend";
 import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
@@ -70,16 +71,25 @@ export default function CapitalAtRiskPage() {
               title="Moat on the vertical, decentralizability on the horizontal"
               description="Upper-right is the danger zone for a consensus that still assumes the moat is immortal. Bubble size tracks current market cap rather than thesis intensity."
             />
-            <ChartLegend
-              items={[
-                {
-                  label: "Bubble position = moat and decentralizability",
-                  swatchClass: "bg-sky-300/90",
-                },
-                { label: "Bubble size = current market cap", swatchClass: "bg-slate-400/80" },
-              ]}
-            />
-            <QuadrantChart points={dataset.points} />
+            <div class="space-y-3 md:hidden">
+              <p class="text-sm leading-7 text-muted-foreground">
+                On phones, the key reading is the ranked exposure list below. The desktop quadrant
+                chart returns on larger screens where the bubble map can breathe.
+              </p>
+              <CapitalAtRiskMobileList points={dataset.points} />
+            </div>
+            <div class="hidden space-y-5 md:block">
+              <ChartLegend
+                items={[
+                  {
+                    label: "Bubble position = moat and decentralizability",
+                    swatchClass: "bg-sky-300/90",
+                  },
+                  { label: "Bubble size = current market cap", swatchClass: "bg-slate-400/80" },
+                ]}
+              />
+              <QuadrantChart points={dataset.points} />
+            </div>
           </ContentCard>
 
           <ContentCard class="space-y-4">

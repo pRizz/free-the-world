@@ -1,6 +1,7 @@
 import { For } from "solid-js";
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
+import { AlternativePressureMobileCards } from "~/components/insights/alternative-pressure-mobile-cards";
 import { PageHeader } from "~/components/blocks/page-header";
 import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
 import { PressureHeatmap } from "~/components/insights/pressure-heatmap";
@@ -102,7 +103,12 @@ export default function AlternativePressurePage() {
               title="Where the substitute story is already concrete"
               description="Rows with dashes are not low-pressure rows. They are simply products whose alternatives have not yet been documented in the published bundle set."
             />
-            <PressureHeatmap rows={dataset.productRows} />
+            <div class="md:hidden">
+              <AlternativePressureMobileCards rows={dataset.productRows} />
+            </div>
+            <div class="hidden md:block">
+              <PressureHeatmap rows={dataset.productRows} />
+            </div>
           </ContentCard>
         </div>
 

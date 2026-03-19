@@ -9,12 +9,12 @@ export interface InsightKpiItem {
 
 export function InsightKpiStrip(props: { items: InsightKpiItem[]; class?: string }) {
   return (
-    <div class={cn("grid gap-4 md:grid-cols-2 xl:grid-cols-4", props.class)}>
+    <div class={cn("grid gap-3 sm:gap-4 md:grid-cols-2 xl:grid-cols-4", props.class)}>
       <For each={props.items}>
         {(item) => (
-          <article class="rounded-2xl border border-border bg-card/85 p-4 shadow-lg shadow-black/10">
+          <article class="rounded-2xl border border-border bg-card/85 p-4 shadow-lg shadow-black/10 sm:p-4">
             <p class="text-xs uppercase tracking-[0.24em] text-muted-foreground">{item.label}</p>
-            <p class="mt-2 text-2xl font-semibold tracking-tight text-title-foreground">
+            <p class="mt-2 text-xl font-semibold tracking-tight text-title-foreground sm:text-2xl">
               {item.value}
             </p>
             {item.note ? (

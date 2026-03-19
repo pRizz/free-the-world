@@ -5,6 +5,7 @@ import { BarComparisonChart } from "~/components/insights/bar-comparison-chart";
 import { ChartLegend } from "~/components/insights/chart-legend";
 import { DumbbellChart } from "~/components/insights/dumbbell-chart";
 import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
+import { PostBubbleMobileList } from "~/components/insights/post-bubble-mobile-list";
 import { Seo } from "~/components/seo";
 import {
   Table,
@@ -73,14 +74,23 @@ export default function PostBubblePage() {
             title="Then, now, and after the unwind"
             description="The chart uses a log scale so tiny IPO-era caps do not collapse into decorative dust beside today's trillion-dollar values."
           />
-          <ChartLegend
-            items={[
-              { label: "IPO market cap", swatchClass: "bg-slate-400/80" },
-              { label: "Illustrative residual cap", swatchClass: "bg-success/80" },
-              { label: "Current market cap", swatchClass: "bg-sky-300/90" },
-            ]}
-          />
-          <DumbbellChart rows={dataset.rows} />
+          <div class="space-y-3 md:hidden">
+            <p class="text-sm leading-7 text-muted-foreground">
+              On mobile, the main story is presented as ranked cards first so you do not have to
+              pan across the full comparison chart to understand the page.
+            </p>
+            <PostBubbleMobileList rows={dataset.rows} />
+          </div>
+          <div class="hidden space-y-5 md:block">
+            <ChartLegend
+              items={[
+                { label: "IPO market cap", swatchClass: "bg-slate-400/80" },
+                { label: "Illustrative residual cap", swatchClass: "bg-success/80" },
+                { label: "Current market cap", swatchClass: "bg-sky-300/90" },
+              ]}
+            />
+            <DumbbellChart rows={dataset.rows} />
+          </div>
         </ContentCard>
 
         <ContentCard class="space-y-5">
@@ -98,7 +108,7 @@ export default function PostBubblePage() {
           <BarComparisonChart rows={dataset.rows} />
         </ContentCard>
 
-        <ContentCard class="space-y-5">
+        <ContentCard class="hidden space-y-5 md:block">
           <PageHeader
             eyebrow="Reference table"
             title="Published company comparisons"

@@ -8,7 +8,7 @@ export interface ChartLegendItem {
 
 export function ChartLegend(props: { items: ChartLegendItem[]; class?: string }) {
   return (
-    <div class={cn("flex flex-wrap gap-3", props.class)}>
+    <div class={cn("flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-3", props.class)}>
       <For each={props.items}>
         {(item) => (
           <div class="flex items-center gap-2 text-xs text-muted-foreground sm:text-sm">
