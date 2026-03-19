@@ -2,6 +2,11 @@
 
 Free The World is a SolidJS research site that tracks which large companies still capture massive value from products and services that are becoming easier to replace with open, automated, federated, or Bitcoin-native alternatives.
 
+## Live sites
+
+- Primary site: [freetheworld.ai](https://freetheworld.ai)
+- GitHub Pages mirror: [prizz.github.io/free-the-world](https://prizz.github.io/free-the-world/)
+
 ## Stack
 
 - SolidStart
