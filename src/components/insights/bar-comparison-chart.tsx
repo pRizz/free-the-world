@@ -1,5 +1,5 @@
 import { For } from "solid-js";
-import { formatMoneyRange } from "~/lib/domain/formatters";
+import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
 import type { PostBubbleRow } from "~/lib/domain/insights";
 
 export function BarComparisonChart(props: {
@@ -35,8 +35,13 @@ export function BarComparisonChart(props: {
                   <div>
                     <p class="font-medium text-foreground">{row.company.name}</p>
                     <p class="text-sm text-muted-foreground">
-                      Residual {formatMoneyRange(row.residualMarketCap)} · At risk{" "}
-                      {formatMoneyRange(row.freedCapitalPotential)}
+                      <span>Residual {formatMoneyRange(row.residualMarketCap)}</span>
+                      <span aria-hidden="true"> · </span>
+                      <span>At risk {formatMoneyRange(row.freedCapitalPotential)}</span>
+                      <span aria-hidden="true"> · </span>
+                      <span class="text-destructive">
+                        -{formatMetricValue(row.capitalAtRiskShare, "percentage", 1)}
+                      </span>
                     </p>
                   </div>
                   <p class="text-sm text-muted-foreground">

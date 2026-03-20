@@ -1,3 +1,18 @@
+# Post-Bubble Downside Label
+
+- [x] Add the downside percentage token to the capital-split row subtitle in the post-bubble bar chart.
+  Verification: `bun run lint`, `bun run typecheck`
+- [x] Cover the new `At risk $... · -X%` label in post-bubble E2E verification and rerun mobile overflow coverage.
+  Verification: `bun test src tests/unit`, `bun run build`, `bun run test:e2e --grep "post-bubble"`
+
+Completion review:
+- Updated the post-bubble capital-split bar rows to render the downside as `Residual $... · At risk $... · -X%`, with the downside percentage isolated in `text-destructive` while the rest of the subtitle stays muted.
+- Reused the existing `capitalAtRiskShare` metric, so the change stays presentation-only and does not alter the dataset or any public interfaces.
+- Added desktop Playwright coverage for the new inline label and revalidated the existing mobile post-bubble path to confirm the page still renders cleanly without table overflow regressions.
+
+Residual risks:
+- The new label assumes the current-cap risk share is an acceptable proxy for share-price downside, which matches the agreed scope for this view.
+
 # AWS Bootstrap Durability
 
 - [x] Preserve CloudFormation ownership of existing Route 53 records while adding the new `.ai` records and aliases.

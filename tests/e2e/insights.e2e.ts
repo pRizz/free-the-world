@@ -26,6 +26,9 @@ test("post-bubble page renders the comparison charts and company table", async (
       /Post-bubble comparison chart showing thesis-adjusted residual cap and current market cap on a log scale\./i,
     ),
   ).toBeVisible();
+  await expect(
+    page.getByText(/At risk \$[0-9.,]+(?:T|B)? · -[0-9]+\.[0-9]%/).first(),
+  ).toBeVisible();
   await expect(page.getByRole("table").getByText("NVIDIA", { exact: true })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "IPO cap" })).toBeVisible();
 });
