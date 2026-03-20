@@ -118,3 +118,55 @@ test("assertArtifactMatchesTarget allows external GitHub commit links on aws art
     await rm(artifactDir, { force: true, recursive: true });
   }
 });
+
+test("assertArtifactMatchesTarget rejects unprefixed root references on github pages artifacts", async () => {
+  const artifactDir = await mkdtemp(path.join(tmpdir(), "deploy-artifact-"));
+
+  try {
+    // Arrange
+    await writeFile(
+      path.join(artifactDir, "insights.html"),
+      [
+        "<!doctype html>",
+        '<link rel="modulepreload" href="/free-the-world/_build/assets/app.js">',
+        '<a href="/insights/post-bubble">Open the post-bubble view</a>',
+      ].join(""),
+      "utf8",
+    );
+
+    // Act
+    const result = assertArtifactMatchesTarget(artifactDir, "github-pages");
+
+    // Assert
+    await expect(result).rejects.toThrow(
+      /insights\.html still contains an unprefixed root reference: href="\//,
+    );
+  } finally {
+    await rm(artifactDir, { force: true, recursive: true });
+  }
+});
+
+test("assertArtifactMatchesTarget allows prefixed root references on github pages artifacts", async () => {
+  const artifactDir = await mkdtemp(path.join(tmpdir(), "deploy-artifact-"));
+
+  try {
+    // Arrange
+    await writeFile(
+      path.join(artifactDir, "insights.html"),
+      [
+        "<!doctype html>",
+        '<link rel="modulepreload" href="/free-the-world/_build/assets/app.js">',
+        '<a href="/free-the-world/insights/post-bubble">Open the post-bubble view</a>',
+      ].join(""),
+      "utf8",
+    );
+
+    // Act
+    const result = assertArtifactMatchesTarget(artifactDir, "github-pages");
+
+    // Assert
+    await expect(result).resolves.toBeUndefined();
+  } finally {
+    await rm(artifactDir, { force: true, recursive: true });
+  }
+});

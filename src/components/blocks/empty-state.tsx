@@ -1,6 +1,6 @@
 import type { ParentProps } from "solid-js";
 import { PageHeader } from "~/components/blocks/page-header";
-import { Button } from "~/components/ui/button";
+import { ButtonLink } from "~/components/ui/button";
 import { Card, CardFooter } from "~/components/ui/card";
 
 export function EmptyState(
@@ -9,7 +9,7 @@ export function EmptyState(
     description?: string;
     eyebrow?: string;
     actionLabel?: string;
-    actionHref?: string;
+    actionRoute?: string;
     class?: string;
   }>,
 ) {
@@ -18,11 +18,11 @@ export function EmptyState(
       <div class="space-y-4">
         <PageHeader eyebrow={props.eyebrow} title={props.title} description={props.description} />
         {props.children}
-        {props.actionLabel && props.actionHref ? (
+        {props.actionLabel && props.actionRoute ? (
           <CardFooter>
-            <Button as="a" href={props.actionHref} variant="secondary">
+            <ButtonLink href={props.actionRoute} variant="secondary">
               {props.actionLabel}
-            </Button>
+            </ButtonLink>
           </CardFooter>
         ) : null}
       </div>

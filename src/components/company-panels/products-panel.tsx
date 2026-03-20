@@ -3,8 +3,7 @@ import { For } from "solid-js";
 import { ActionRow } from "~/components/blocks/action-row";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
-import { Button } from "~/components/ui/button";
-import { withBasePath } from "~/lib/config";
+import { ButtonLink } from "~/components/ui/button";
 import type { Company, Product } from "~/lib/domain/types";
 
 export function CompanyProductsPanel(props: { company: Company; products: Product[] }) {
@@ -33,13 +32,12 @@ export function CompanyProductsPanel(props: { company: Company; products: Produc
                   <p class="max-w-3xl text-sm leading-7 text-muted-foreground">{product.summary}</p>
                 </div>
                 <ActionRow class="shrink-0">
-                  <Button
-                    as="a"
-                    href={withBasePath(`/companies/${props.company.slug}/products/${product.slug}`)}
+                  <ButtonLink
+                    href={`/companies/${props.company.slug}/products/${product.slug}`}
                     variant="secondary"
                   >
                     Open analysis
-                  </Button>
+                  </ButtonLink>
                 </ActionRow>
               </div>
             </article>

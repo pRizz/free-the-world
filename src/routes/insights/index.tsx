@@ -4,7 +4,7 @@ import { PageHeader } from "~/components/blocks/page-header";
 import { InsightKpiStrip } from "~/components/insights/insight-kpi-strip";
 import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
+import { ButtonLink } from "~/components/ui/button";
 import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
 import {
   getAlternativePressureDataset,
@@ -96,9 +96,7 @@ export default function InsightsPage() {
                   : "No companies available."}
               </p>
             </div>
-            <Button as="a" href="/insights/post-bubble">
-              Open the post-bubble view
-            </Button>
+            <ButtonLink href="/insights/post-bubble">Open the post-bubble view</ButtonLink>
           </ContentCard>
 
           <ContentCard class="space-y-5">
@@ -126,9 +124,7 @@ export default function InsightsPage() {
                   : "No companies available."}
               </p>
             </div>
-            <Button as="a" href="/insights/capital-at-risk">
-              Open the atlas
-            </Button>
+            <ButtonLink href="/insights/capital-at-risk">Open the atlas</ButtonLink>
           </ContentCard>
 
           <ContentCard class="space-y-5">
@@ -157,9 +153,7 @@ export default function InsightsPage() {
                   : "No alternatives documented yet."}
               </p>
             </div>
-            <Button as="a" href="/insights/alternative-pressure">
-              Open the pressure index
-            </Button>
+            <ButtonLink href="/insights/alternative-pressure">Open the pressure index</ButtonLink>
           </ContentCard>
         </div>
 

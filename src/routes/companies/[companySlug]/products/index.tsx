@@ -4,7 +4,6 @@ import { CompanyProductsPanel } from "~/components/company-panels";
 import { Seo } from "~/components/seo";
 import { SourceList } from "~/components/source-list";
 import { Badge } from "~/components/ui/badge";
-import { withBasePath } from "~/lib/config";
 import { getCompanyBySlug, getProductsForCompany, getSourcesByIds } from "~/lib/domain/selectors";
 
 export default function CompanyProductsPage() {
@@ -26,7 +25,7 @@ export default function CompanyProductsPage() {
           title="Company not found"
           description="The requested company slug does not exist in the current registry snapshot."
           actionLabel="Back to registry"
-          actionHref={withBasePath("/companies")}
+          actionRoute="/companies"
         />
       </>
     );

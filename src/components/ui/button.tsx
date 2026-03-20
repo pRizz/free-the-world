@@ -1,3 +1,4 @@
+import { A } from "@solidjs/router";
 import { cva, type VariantProps } from "class-variance-authority";
 import type { ComponentProps, ParentProps, ValidComponent } from "solid-js";
 import { splitProps } from "solid-js";
@@ -36,6 +37,14 @@ type ButtonProps<T extends ValidComponent = "button"> = ParentProps<
     ComponentProps<T>
 >;
 
+type ButtonLinkProps = ParentProps<
+  {
+    class?: string;
+    href: string;
+  } & VariantProps<typeof buttonVariants> &
+    Omit<ComponentProps<typeof A>, "class" | "href">
+>;
+
 export function Button<T extends ValidComponent = "button">(props: ButtonProps<T>) {
   const [local, rest] = splitProps(props as ButtonProps, [
     "as",
@@ -53,5 +62,18 @@ export function Button<T extends ValidComponent = "button">(props: ButtonProps<T
     >
       {local.children}
     </Dynamic>
+  );
+}
+
+export function ButtonLink(props: ButtonLinkProps) {
+  const [local, rest] = splitProps(props, ["class", "variant", "size", "children"]);
+
+  return (
+    <A
+      class={cn(buttonVariants({ variant: local.variant, size: local.size }), local.class)}
+      {...rest}
+    >
+      {local.children}
+    </A>
   );
 }

@@ -12,8 +12,7 @@ import {
 import { Seo } from "~/components/seo";
 import { SourceList } from "~/components/source-list";
 import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
-import { withBasePath } from "~/lib/config";
+import { Button, ButtonLink } from "~/components/ui/button";
 import {
   getCompanyBySlug,
   getProductsForCompany,
@@ -40,7 +39,7 @@ export default function CompanyPage() {
           title="Company not found"
           description="The requested company slug does not exist in the current registry snapshot."
           actionLabel="Back to registry"
-          actionHref={withBasePath("/companies")}
+          actionRoute="/companies"
         />
       </>
     );
@@ -81,9 +80,9 @@ export default function CompanyPage() {
             >
               CompaniesMarketCap
             </Button>
-            <Button as="a" href={withBasePath(`/companies/${companyData.slug}/products`)}>
+            <ButtonLink href={`/companies/${companyData.slug}/products`}>
               Product analyses
-            </Button>
+            </ButtonLink>
           </ActionRow>
         </section>
 

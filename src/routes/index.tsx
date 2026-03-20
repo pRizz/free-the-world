@@ -5,9 +5,9 @@ import { PageHeader } from "~/components/blocks/page-header";
 import { NewsletterSignup } from "~/components/newsletter-signup";
 import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
-import { Button } from "~/components/ui/button";
+import { ButtonLink } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
-import { siteConfig, withBasePath } from "~/lib/config";
+import { siteConfig } from "~/lib/config";
 import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
 import { companies } from "~/lib/content-graph";
 import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
@@ -59,12 +59,10 @@ export default function Home() {
             </div>
 
             <div class="flex flex-wrap gap-3">
-              <Button as="a" href={withBasePath("/companies")}>
-                Explore the registry
-              </Button>
-              <Button as="a" href={withBasePath("/methodology")} variant="secondary">
+              <ButtonLink href="/companies">Explore the registry</ButtonLink>
+              <ButtonLink href="/methodology" variant="secondary">
                 Read the methodology
-              </Button>
+              </ButtonLink>
             </div>
           </Card>
 

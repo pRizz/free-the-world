@@ -10,7 +10,6 @@ import {
 } from "~/components/company-panels";
 import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
-import { withBasePath } from "~/lib/config";
 import {
   getAlternativesForProduct,
   getCompanyBySlug,
@@ -41,7 +40,7 @@ export default function ProductPage() {
           title="Product not found"
           description="The requested company or product slug does not exist in the current registry snapshot."
           actionLabel="Back to registry"
-          actionHref={withBasePath("/companies")}
+          actionRoute="/companies"
         />
       </>
     );

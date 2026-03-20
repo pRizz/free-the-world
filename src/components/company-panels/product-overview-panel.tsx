@@ -2,8 +2,7 @@ import { For } from "solid-js";
 import { ActionRow } from "~/components/blocks/action-row";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
-import { Button } from "~/components/ui/button";
-import { withBasePath } from "~/lib/config";
+import { Button, ButtonLink } from "~/components/ui/button";
 import type { Company, Product } from "~/lib/domain/types";
 
 export function ProductOverviewPanel(props: { product: Product; company: Company }) {
@@ -36,13 +35,9 @@ export function ProductOverviewPanel(props: { product: Product; company: Company
           >
             Product homepage
           </Button>
-          <Button
-            as="a"
-            href={withBasePath(`/companies/${props.company.slug}/products`)}
-            variant="ghost"
-          >
+          <ButtonLink href={`/companies/${props.company.slug}/products`} variant="ghost">
             Back to {props.company.name} products
-          </Button>
+          </ButtonLink>
         </ActionRow>
       </div>
     </ContentCard>
