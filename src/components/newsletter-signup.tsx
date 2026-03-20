@@ -13,18 +13,6 @@ export function NewsletterSignup() {
           description={newsletterContent.description}
         />
 
-        <div class="hidden space-y-3 text-sm leading-7 text-muted-foreground">
-          <p>
-            The embed is intentionally simple for v1 because Substack's native iframe does not offer
-            much styling control. That felt preferable to pretending a bespoke funnel is somehow the
-            urgent bottleneck here.
-          </p>
-          <p>
-            If the embed ever becomes too rigid, the integration is isolated so the signup flow can
-            be replaced without rebuilding the site around it.
-          </p>
-        </div>
-
         <Button
           as="a"
           href={newsletterContent.publicationUrl}
