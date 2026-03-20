@@ -71,8 +71,8 @@ export default function PostBubblePage() {
         <ContentCard class="space-y-5">
           <PageHeader
             eyebrow="Log-scale comparison"
-            title="Then, now, and after the unwind"
-            description="The chart uses a log scale so tiny IPO-era caps do not collapse into decorative dust beside today's trillion-dollar values."
+            title="Now, and after the unwind"
+            description="The chart compares each company's current market cap with an illustrative residual cap after subtracting the site's directional freed-capital estimate. The log scale keeps smaller residual values legible beside today's giants."
           />
           <div class="space-y-3 md:hidden">
             <p class="text-sm leading-7 text-muted-foreground">
@@ -84,7 +84,6 @@ export default function PostBubblePage() {
           <div class="hidden space-y-5 md:block">
             <ChartLegend
               items={[
-                { label: "IPO market cap", swatchClass: "bg-slate-400/80" },
                 { label: "Illustrative residual cap", swatchClass: "bg-success/80" },
                 { label: "Current market cap", swatchClass: "bg-sky-300/90" },
               ]}

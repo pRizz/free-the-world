@@ -20,7 +20,12 @@ test("post-bubble page renders the comparison charts and company table", async (
   await expect(
     page.getByRole("heading", { name: /How big is the business after the rent gets repriced\?/i }),
   ).toBeVisible();
-  await expect(page.getByText(/Then, now, and after the unwind/i)).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Now, and after the unwind" })).toBeVisible();
+  await expect(
+    page.getByLabel(
+      /Post-bubble comparison chart showing thesis-adjusted residual cap and current market cap on a log scale\./i,
+    ),
+  ).toBeVisible();
   await expect(page.getByRole("table").getByText("NVIDIA", { exact: true })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "IPO cap" })).toBeVisible();
 });

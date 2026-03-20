@@ -31,11 +31,11 @@ export function DumbbellChart(props: { rows: PostBubbleRow[] }) {
         viewBox={`0 0 ${viewBoxWidth} ${viewBoxHeight}`}
         class="min-w-[780px]"
         role="img"
-        aria-label="Post-bubble comparison chart showing IPO market cap, thesis-adjusted residual cap, and current market cap on a log scale."
+        aria-label="Post-bubble comparison chart showing thesis-adjusted residual cap and current market cap on a log scale."
       >
         <defs>
           <linearGradient id="post-bubble-line" x1="0%" x2="100%" y1="0%" y2="0%">
-            <stop offset="0%" stop-color="rgb(148 163 184 / 0.65)" />
+            <stop offset="0%" stop-color="hsl(150 45% 42%)" />
             <stop offset="100%" stop-color="rgb(125 211 252 / 0.85)" />
           </linearGradient>
         </defs>
@@ -89,14 +89,13 @@ export function DumbbellChart(props: { rows: PostBubbleRow[] }) {
         <For each={props.rows}>
           {(row, index) => {
             const y = index() * 58 + 88;
-            const ipoX = scale(row.ipoMarketCap);
             const residualX = scale(row.residualMarketCap);
             const currentX = scale(row.currentMarketCap);
 
             return (
               <g>
                 <title>
-                  {`${row.company.name}: IPO ${formatMoneyRange(row.ipoMarketCap)}, residual ${formatMoneyRange(row.residualMarketCap)}, current ${formatMoneyRange(row.currentMarketCap)}`}
+                  {`${row.company.name}: residual ${formatMoneyRange(row.residualMarketCap)}, current ${formatMoneyRange(row.currentMarketCap)}`}
                 </title>
                 <text
                   x={labelWidth}
@@ -124,7 +123,7 @@ export function DumbbellChart(props: { rows: PostBubbleRow[] }) {
                   stroke-width="2"
                 />
                 <line
-                  x1={ipoX}
+                  x1={residualX}
                   x2={currentX}
                   y1={y}
                   y2={y}
@@ -132,7 +131,6 @@ export function DumbbellChart(props: { rows: PostBubbleRow[] }) {
                   stroke-width="3"
                   stroke-linecap="round"
                 />
-                <circle cx={ipoX} cy={y} r="5" fill="rgb(148 163 184 / 0.85)" />
                 <circle cx={residualX} cy={y} r="7" fill="hsl(150 45% 42%)" />
                 <circle cx={currentX} cy={y} r="8" fill="rgb(125 211 252 / 0.95)" />
                 <text

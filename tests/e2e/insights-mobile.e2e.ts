@@ -26,11 +26,21 @@ test("insights landing page stacks cleanly on mobile", async ({ page }) => {
 test("post-bubble page shows mobile cards instead of the desktop table", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await gotoRoute(page, "/insights/post-bubble");
+  const nvidiaCard = page
+    .locator("article")
+    .filter({ has: page.getByRole("heading", { name: "NVIDIA", exact: true }) });
 
+  await expect(page.getByRole("heading", { name: "Now, and after the unwind" })).toBeVisible();
   await expect(
     page.getByText(/On mobile, the main story is presented as ranked cards first/i),
   ).toBeVisible();
   await expect(page.getByRole("heading", { name: "NVIDIA", exact: true })).toBeVisible();
+  await expect(nvidiaCard.getByText("Current cap")).toBeVisible();
+  await expect(nvidiaCard.getByText("Residual cap")).toBeVisible();
+  await expect(nvidiaCard.getByText("At risk")).toBeVisible();
+  await expect(nvidiaCard.getByText("IPO cap")).toHaveCount(0);
+  await expect(nvidiaCard.getByText("IPO x")).toHaveCount(0);
+  await expect(nvidiaCard.getByText("IPO CAGR")).toHaveCount(0);
   await expect(page.getByRole("table")).toHaveCount(0);
   await expectNoPageLevelHorizontalOverflow(page);
 });

@@ -20,10 +20,6 @@ export function PostBubbleMobileList(props: { rows: PostBubbleRow[] }) {
 
             <div class="mt-4 grid gap-3 sm:grid-cols-2">
               <div class="rounded-2xl border border-border bg-background/55 p-3">
-                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">IPO cap</p>
-                <p class="mt-2 text-lg font-semibold">{formatMoneyRange(row.ipoMarketCap)}</p>
-              </div>
-              <div class="rounded-2xl border border-border bg-background/55 p-3">
                 <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">Current cap</p>
                 <p class="mt-2 text-lg font-semibold">{formatMoneyRange(row.currentMarketCap)}</p>
               </div>
@@ -37,21 +33,6 @@ export function PostBubbleMobileList(props: { rows: PostBubbleRow[] }) {
                 <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">At risk</p>
                 <p class="mt-2 text-lg font-semibold">
                   {formatMoneyRange(row.freedCapitalPotential)}
-                </p>
-              </div>
-            </div>
-
-            <div class="mt-4 grid gap-3 sm:grid-cols-2">
-              <div class="rounded-2xl border border-border bg-background/55 p-3">
-                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">IPO x</p>
-                <p class="mt-2 text-base font-medium">
-                  {formatMetricValue(row.ipoReturnMultiplier, "ratio", 1)}
-                </p>
-              </div>
-              <div class="rounded-2xl border border-border bg-background/55 p-3">
-                <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">IPO CAGR</p>
-                <p class="mt-2 text-base font-medium">
-                  {formatMetricValue(row.ipoAnnualizedGrowthRate, "percentage", 1)}
                 </p>
               </div>
             </div>
