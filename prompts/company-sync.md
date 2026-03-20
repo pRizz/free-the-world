@@ -162,7 +162,13 @@ Return a JSON object matching this schema exactly:
 Rules:
 - Use only taxonomy IDs from the provided taxonomy JSON.
 - Use source IDs consistently across the bundle and the sources array.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
 - Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
 - Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
 - Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
 - Return valid JSON and nothing else.

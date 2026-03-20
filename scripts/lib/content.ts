@@ -24,7 +24,7 @@ import type {
   SourceCitation,
   TechnologyWave,
 } from "../../src/lib/domain/types";
-import { alternativeMetricIds } from "../../src/lib/domain/types";
+import { alternativeKinds, alternativeMetricIds, evidenceKinds } from "../../src/lib/domain/types";
 
 const defaultRootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -170,6 +170,10 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
   const waveIds = new Set(raw.technologyWaves.map((wave) => wave.id));
   const sourceById = new Map(raw.sources.map((source) => [source.id, source]));
   const manifestBySlug = new Map(raw.manifests.map((manifest) => [manifest.slug, manifest]));
+
+  for (const source of raw.sources) {
+    validateSourceCitation(source, issues);
+  }
 
   for (const manifest of raw.manifests) {
     validateManifest(
@@ -551,6 +555,16 @@ function validateAlternativeRecord(
     issues.push(`Product ${productSlug} has an alternative with missing slug or name.`);
   }
 
+  if (!alternativeKinds.includes(alternative.kind)) {
+    issues.push(
+      `Alternative ${alternative.slug} has unsupported kind ${String(alternative.kind)}.`,
+    );
+  }
+
+  if ("repoUrl" in alternative && alternative.repoUrl === null) {
+    issues.push(`Alternative ${alternative.slug} must omit repoUrl instead of setting it to null.`);
+  }
+
   validateSourceReferences(
     `Alternative ${alternative.slug}`,
     alternative.sourceIds,
@@ -570,6 +584,12 @@ function validateAlternativeRecord(
       lookup.sourceById,
       issues,
     );
+  }
+}
+
+function validateSourceCitation(source: SourceCitation, issues: string[]) {
+  if (!evidenceKinds.includes(source.kind)) {
+    issues.push(`Source ${source.id} has unsupported kind ${String(source.kind)}.`);
   }
 }
 

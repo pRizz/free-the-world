@@ -1751,6 +1751,502 @@ export const contentGraph: ContentGraph = {
           "lastReviewedOn": "2026-03-14"
         }
       }
+    },
+    {
+      "slug": "coca-cola",
+      "name": "Coca-Cola",
+      "ticker": "KO",
+      "rankApprox": 28,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top35"
+      ],
+      "sectorId": "consumer-staples",
+      "industryId": "nonalcoholic-beverages",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/coca-cola/marketcap/",
+      "description": "Global beverage company spanning sparkling soft drinks, water, juice, coffee, tea, and sports drinks.",
+      "overview": [
+        {
+          "title": "Business Model",
+          "paragraphs": [
+            "Coca-Cola operates an asset-light franchise model: the company manufactures and sells beverage concentrates and syrups to approximately 225 independent bottling partners worldwide, who handle local manufacturing, packaging, and distribution. This structure keeps Coca-Cola's capital requirements low while giving it extraordinary reach across 200+ countries and territories.",
+            "Revenue flows primarily from concentrate sales, finished goods sold through company-owned operations, and equity income from strategic stakes in publicly traded bottlers such as Coca-Cola Europacific Partners and Coca-Cola FEMSA. The franchise model lets Coca-Cola capture the high-margin branding and recipe layer while externalizing capital-intensive bottling and logistics."
+          ]
+        },
+        {
+          "title": "Brand Portfolio",
+          "paragraphs": [
+            "Coca-Cola owns or licenses more than 200 brands across virtually every non-alcoholic beverage category. Flagship carbonated soft drinks (Coca-Cola, Sprite, Fanta, Schweppes) account for roughly 60-65% of unit case volume. The remainder spans water (Dasani, Smartwater, Topo Chico), sports drinks (Powerade, Body Armor), juices (Minute Maid, Simply), tea and coffee (Gold Peak, Fuze Tea, Costa Coffee), and dairy and nutrition (Fairlife).",
+            "The Coca-Cola brand has ranked among the top ten most valuable global brands for decades per Interbrand and BrandZ, carrying immense cultural resonance built over 130+ years of continuous marketing investment. Annual marketing spend consistently exceeds $4 billion."
+          ]
+        },
+        {
+          "title": "Financial Profile",
+          "paragraphs": [
+            "Coca-Cola generated approximately $47 billion in net revenues in fiscal year 2024. Comparable operating margins consistently run in the 28-32% range, reflecting the concentrate model's economics where most manufacturing cost sits at the bottler level. Net income is further supported by equity earnings from bottling affiliates and gains on portfolio refranchising.",
+            "The company has raised its dividend for more than 60 consecutive years, qualifying it as a Dividend King. This track record of yield growth, combined with pricing power demonstrated during the 2022-2024 inflationary period — where average selling prices rose 8-12% — makes KO a core holding in income and defensive portfolios globally."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Coca-Cola's moat is among the widest in global consumer goods, built on three self-reinforcing pillars: brand, distribution, and cold-drink infrastructure. The brand delivers pricing power and consumer preference that has proven resilient across more than a century of competition, regulatory pressure, and shifting taste trends. Consumers pay a meaningful premium for the Coca-Cola experience over generic or private-label substitutes.",
+        "The franchise bottling network — spanning ~225 partners and millions of retail touch points — is effectively irreplicable at equivalent scale. Paired with hundreds of thousands of proprietary coolers and fountain dispensing units placed in retail and foodservice locations, Coca-Cola locks in shelf presence in a way that makes displacement by any single challenger extremely difficult. Portfolio breadth adds a third layer: a consumer trying to avoid Coca-Cola's CSD brands may still end up buying Dasani water, Powerade, or a Fairlife protein shake, meaning no single category disruption threatens the full relationship."
+      ],
+      "decentralizationNarrative": [
+        "Beverages are physical goods whose production and distribution depend on large-scale infrastructure, cold chains, and regulated food-safety processes — factors that inherently centralize the supply chain. There is no meaningful decentralized alternative to Coca-Cola's commercial beverage network at anything approaching its price point, convenience, or availability.",
+        "Home fermentation (kombucha, water kefir, craft soda) and open-source cola recipes such as OpenCola represent the most concrete decentralized analogues, allowing households to produce flavored beverages locally with low-cost commodity inputs. These are meaningful at the individual or community level but do not challenge Coca-Cola's commercial scale. The category scores very low on decentralizability because the physical logistics moat is as durable as the brand moat, and neither can be replicated through software or protocol alone."
+      ],
+      "sourceIds": [
+        "ko-ir-2024",
+        "ko-company-site",
+        "ko-marketcap-site"
+      ],
+      "technologyWaveIds": [],
+      "snapshotNote": "Added in the March 2026 registry expansion covering S&P 500 ranks 26-35 by market cap.",
+      "productSlugs": [
+        "coca-cola-classic",
+        "fairlife"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "Coca-Cola holds one of the world's strongest consumer brand moats, reinforced by a global franchise bottling network, cold-drink infrastructure lock-in, and a 200+ brand portfolio spanning every non-alcoholic beverage category. The brand has demonstrated durable pricing power and competitive resilience for 130+ years.",
+          "sourceIds": [
+            "ko-ir-2024",
+            "ko-company-site"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizability": {
+          "value": 2,
+          "rationale": "Physical beverage production and cold-chain distribution are inherently centralized. Home brewing and open-source recipes (OpenCola) exist but do not constitute viable commercial alternatives at scale. Brand equity is even harder to replicate outside centralized marketing infrastructure. Score reflects near-zero disruption risk from decentralized technology waves.",
+          "sourceIds": [
+            "ko-company-site"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Comparable operating margins of 28-32%; reported net profit margins approximately 22-24% on ~$47B in FY 2024 revenues. The asset-light concentrate model and pricing power sustain industry-leading margins for a consumer staples company. Dividend raised for 60+ consecutive years signals sustained free cash flow generation.",
+          "sourceIds": [
+            "ko-ir-2024"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "peRatio": {
+          "value": 24,
+          "rationale": "Trailing P/E estimated at approximately 22-26x as of early 2026, consistent with Coca-Cola's historical premium valuation as a Dividend King defensive staples holding. Midpoint of 24 used; verify current figure via companiesmarketcap.com or financial data providers.",
+          "sourceIds": [
+            "ko-marketcap-site"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "marketCap": {
+          "value": 260,
+          "rationale": "Market capitalization estimated at approximately $255-265 billion USD as of early 2026, placing KO in the S&P 500 ranks 26-35. Value in billions USD; verify current figure at companiesmarketcap.com.",
+          "sourceIds": [
+            "ko-marketcap-site"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "freedCapitalPotential": {
+          "value": 12.350000000000001,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "ko-marketcap-site",
+            "ko-company-site"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-19"
+        }
+      }
+    },
+    {
+      "slug": "bank-of-america",
+      "name": "Bank of America",
+      "ticker": "BAC",
+      "rankApprox": 30,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top35"
+      ],
+      "sectorId": "financials",
+      "industryId": "diversified-banks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/bank-of-america/marketcap/",
+      "description": "One of the world's largest financial institutions offering consumer banking, wealth management through Merrill, and global banking and markets services.",
+      "overview": [
+        {
+          "title": "Business Overview",
+          "paragraphs": [
+            "Bank of America (BAC) is one of the largest US financial institutions by assets, serving approximately 69 million consumer and small-business clients through four main segments: Consumer Banking, Global Wealth & Investment Management (Merrill Lynch and Bank of America Private Bank), Global Banking, and Global Markets.",
+            "The company operates around 3,900 retail financial centers and approximately 15,000 ATMs across the United States. Digital engagement has grown substantially, with over 58 million verified digital users and roughly 47 million active mobile banking users as of late 2024."
+          ]
+        },
+        {
+          "title": "Revenue Mix",
+          "paragraphs": [
+            "Consumer Banking generates revenue primarily through net interest income on deposits and loans, card fees, and service charges. Global Wealth & Investment Management earns asset management and advisory fees from Merrill Edge and Merrill Lynch advisors overseeing trillions in client assets. Global Banking provides corporate and investment banking services, treasury management, and loan syndication. Global Markets engages in sales, trading, and risk management across fixed income, currencies, and equities.",
+            "Net interest income is the largest single revenue component, making Bank of America highly sensitive to interest rate cycles. Rising rate environments expand net interest margin, while falling rates compress it, creating cyclical dynamics that distinguish diversified banks from pure-fee businesses."
+          ]
+        },
+        {
+          "title": "Scale and Competitive Position",
+          "paragraphs": [
+            "Bank of America competes primarily with JPMorgan Chase, Wells Fargo, Citigroup, and Goldman Sachs. Its Merrill Lynch franchise, acquired during the 2008–2009 financial crisis, established it as one of the largest wealth management platforms in the world by client assets. The bank's scale enables sustained investment in technology, compliance infrastructure, and brand that smaller competitors find difficult to match.",
+            "Regulatory capital requirements and federal banking licenses create high barriers to entry in core banking. Existing relationships — checking accounts, mortgages, retirement accounts — carry meaningful switching costs that anchor customers through economic cycles."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Bank of America's moat rests on four interlocking advantages: switching costs, network scale, regulatory barriers, and brand trust. Consumer banking relationships are highly sticky — the friction of changing direct deposits, bill payments, and linked accounts keeps most customers in place for years or decades. The massive branch and ATM network creates a convenient presence that purely digital banks cannot fully replicate for cash handling and in-person advisory needs.",
+        "Federal banking licenses, Basel III capital requirements, and compliance infrastructure represent enormous sunk costs that form a regulatory moat competitors cannot easily cross. Merrill Lynch's ~18,000-advisor network and long-established institutional relationships in Global Banking add further durability. While fintech challengers have eroded fee income at the margin, they have not materially dislodged core deposit relationships at scale."
+      ],
+      "decentralizationNarrative": [
+        "Banking as a function — value storage, transfer, credit — is in principle highly decentralizable. Bitcoin and the Lightning Network already offer self-custodied savings and near-instant global payments with no intermediary. Decentralized lending protocols and stablecoins demonstrate that credit and stable-value transfer can be managed without a chartered bank. However, these alternatives require technical sophistication that most consumers lack in 2026.",
+        "The practical ceiling on decentralization is set by regulatory constraints (KYC/AML requirements), user experience gaps, and the absence of deposit insurance equivalents in on-chain systems. Wealth management is more decentralizable through low-cost index funds and self-directed brokerage — forces that have already eroded advisory fee margins significantly. Investment banking and institutional markets remain very hard to decentralize near-term due to legal, counterparty, and settlement complexity. Net decentralizability is low today but could rise meaningfully over a 10–20 year horizon if Bitcoin self-custody UX matures and stablecoin regulatory clarity improves."
+      ],
+      "sourceIds": [
+        "bac-investor-relations",
+        "bac-homepage",
+        "bac-annual-report-2024",
+        "bac-q4-2024-earnings",
+        "companies-market-cap-bac"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Metrics reflect data available as of March 2026, primarily drawn from the 2024 annual report and Q4 2024 earnings release.",
+      "productSlugs": [
+        "consumer-banking",
+        "merrill-wealth-management",
+        "global-banking-markets"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Deep switching costs from embedded consumer relationships, massive branch and ATM network, regulatory licensing barriers, and the Merrill Lynch wealth management franchise create a durable multi-layered moat. Fintech competition has pressured fee income but not dislodged core deposits at scale.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-investor-relations"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Core banking functions (savings, payments, lending) are theoretically replaceable by Bitcoin, Lightning, and DeFi protocols, but regulatory requirements and UX gaps keep adoption limited. Wealth management faces more near-term disruption from low-cost index funds and robo-advisors. Investment banking is very hard to decentralize. Overall decentralizability is low today but non-trivial over a decade.",
+          "sourceIds": [
+            "bac-investor-relations"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Bank of America reported net income of approximately $27 billion in 2024 with a return on tangible common equity (ROTCE) around 12–14%. Profitability is solid but cyclically sensitive to interest rate moves and credit-loss cycles.",
+          "sourceIds": [
+            "bac-q4-2024-earnings",
+            "bac-annual-report-2024"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "peRatio": {
+          "value": 14,
+          "rationale": "Banks typically trade at lower P/E multiples reflecting cyclicality and regulatory capital constraints. BAC traded at roughly 13–15x trailing earnings as of early 2026, in line with large-cap diversified bank peers.",
+          "sourceIds": [
+            "companies-market-cap-bac"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "marketCap": {
+          "value": 320,
+          "rationale": "Bank of America's market cap was approximately $300–340 billion as of March 2026, placing it roughly in the 28–32 range among S&P 500 constituents by market cap.",
+          "sourceIds": [
+            "companies-market-cap-bac"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "freedCapitalPotential": {
+          "value": 28.8,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "companies-market-cap-bac",
+            "bac-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-19"
+        }
+      }
+    },
+    {
+      "slug": "caterpillar",
+      "name": "Caterpillar",
+      "ticker": "CAT",
+      "rankApprox": 30,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top35"
+      ],
+      "sectorId": "industrials",
+      "industryId": "construction-machinery",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/caterpillar/marketcap/",
+      "description": "World's leading manufacturer of construction and mining equipment, diesel and natural gas engines, and industrial gas turbines, supported by Cat Financial's global equipment financing.",
+      "overview": [
+        {
+          "title": "Business Overview",
+          "paragraphs": [
+            "Founded in 1925 from the merger of Holt Manufacturing and C.L. Best Tractor Co., Caterpillar has spent a century building and supporting the machines that move earth, extract ore, and generate power in the most demanding environments on the planet. Headquartered in Irving, Texas, the company reported roughly $67 billion in revenue in 2023—a record—before settling back to approximately $64–65 billion in 2024 as construction end-markets cooled.",
+            "Three reportable segments divide the business: Construction Industries (wheel loaders, excavators, dozers, and compactors for building and infrastructure work), Resource Industries (ultra-class mining trucks, hydraulic shovels, and draglines for extractive industries), and Energy & Transportation (Cat and Perkins engines, Solar Turbines gas turbines, and generator sets for oil and gas, power generation, and rail customers). Financial Products—the Cat Financial captive lender—finances the equipment that the rest of the company builds."
+          ]
+        },
+        {
+          "title": "Products and Scale",
+          "paragraphs": [
+            "The Cat product range spans a breadth that is nearly impossible for a competitor to replicate: from one-ton mini excavators to the 400-ton-payload 797F mining truck, and from 6-kilowatt standby generators to 22-megawatt Solar Turbines gas turbines. The Perkins brand extends Cat's engine reach into agricultural and lighter industrial applications. This range allows Cat to supply an entire job site—earthmoving, compaction, material handling, and on-site power—from a single vendor, which is a meaningful procurement convenience for large capital project operators.",
+            "The aftermarket parts and service business is the crown jewel. Cat's global installed base generates a durable annuity of replacement parts, Cat Certified Rebuild services, and dealer labor revenue that is structurally higher-margin than new equipment sales. Cat has publicly targeted growing total services revenues to $28 billion by 2026, up from roughly $20 billion in 2019—a strategy that smooths the cyclical volatility inherent in capital equipment manufacturing."
+          ]
+        },
+        {
+          "title": "The Dealer Network as Competitive Moat",
+          "paragraphs": [
+            "Caterpillar sells through approximately 160 independent but Cat-exclusive dealers operating roughly 2,800 branches worldwide. Dealers provide local parts availability—often with a 24-hour delivery guarantee—as well as financing, rental fleets, and field service. Because dealers carry only Cat product lines, their commercial incentives are perfectly aligned with the manufacturer's, creating a distribution and service network that a new entrant would need decades to replicate.",
+            "The dealer relationship also generates proprietary customer data: utilization hours, service histories, financing behavior, and trade-in cycles flow back to Cat's systems, informing product development and digital platform ambitions. More machines in the field means more data, better diagnostics, stickier customer relationships, and stronger resistance to competitive displacement."
+          ]
+        },
+        {
+          "title": "Autonomy and the Mine of the Future",
+          "paragraphs": [
+            "Caterpillar has been deploying autonomous haulage systems in large open-pit mines since the early 2010s, accumulating a fleet that has surpassed one billion tonnes hauled without a human driver. Its MineStar Command platform dispatches, monitors, and controls fleets of 793 and 797 series trucks at iron ore, copper, and oil sands operations for customers including BHP, Rio Tinto, and Codelco. Autonomous trucks operate around the clock without fatigue, with tighter path adherence and reduced tire and brake wear.",
+            "Cat's accumulated operational dataset from millions of connected machine-hours is a proprietary training corpus for autonomous control systems and predictive maintenance models. The autonomy platform is expanding beyond mining into autonomous compaction and machine control on construction sites, extending the moat into Cat's largest segment."
+          ]
+        },
+        {
+          "title": "Financial Profile",
+          "paragraphs": [
+            "Caterpillar's 2023 adjusted operating profit margin reached approximately 22–23%, a record reflecting disciplined pricing power exercised through the post-pandemic equipment supercycle. The company generated over $7 billion in free cash flow that year, supporting buybacks and dividend increases uninterrupted for more than 30 consecutive years—qualifying Cat as a Dividend Aristocrat. Adjusted earnings per share exceeded $21 in 2023.",
+            "Revenue is geographically diversified, with North America comprising roughly half of sales and the balance spread across Europe, Middle East, Africa, Asia-Pacific, and Latin America. The AI data center buildout is driving incremental orders for Cat standby and prime power generators, partially offsetting softness in construction end-markets in 2024."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Caterpillar's competitive moat is one of the most durable in heavy industry, built on five interlocking pillars. The most important is the exclusive dealer network: approximately 160 independent dealers operating roughly 2,800 branches worldwide, carrying only Cat products, offering 24-hour parts availability and field service. A competitor would require decades and billions of dollars to replicate this infrastructure. Dealer economic alignment—single-brand exclusivity—is a structural advantage no other OEM fully replicates at this scale.",
+        "The second pillar is the aftermarket annuity: Cat equipment has a 20–40-year working life, and every machine sold generates decades of replacement parts, Cat Certified Rebuild services, and dealer labor revenue at margins structurally above new equipment sales. The third is the autonomy and data flywheel: MineStar Command's 1+ billion tonnes of autonomous haulage data is a proprietary training corpus that compounds as the fleet grows. The fourth is brand trust—in markets where equipment failure means mine shutdowns costing millions of dollars per day, the Cat brand carries a genuine risk premium. The fifth is product breadth: Cat can supply an entire job site from a single OEM, simplifying procurement and training for large capital project operators."
+      ],
+      "decentralizationNarrative": [
+        "Caterpillar's core businesses are among the least susceptible to decentralizing technology waves of any S&P 500 company. A 400-ton mining truck cannot be manufactured in a microfactory; the materials science, hydraulic systems, electronics integration, safety certifications, and supply chain required to build large earthmoving equipment represent profound barriers to distributed production. The dealer service network is a physical, relationship-based moat that cannot be disrupted by a digital platform or open-source design.",
+        "The most developed open-source alternative—Open Source Ecology's Global Village Construction Set—includes conceptual bulldozer and tractor designs but targets small community applications at a fraction of Cat's machine capability. Additive manufacturing could gradually erode the aftermarket parts margin for long-tail specialty components over a 10–20-year horizon, but structural components at mining scale cannot be 3D-printed. Distributed solar and battery storage pose a very long-term displacement risk for Cat's generator sets in grid-connected applications; however, the current AI data center buildout is amplifying rather than reducing demand for Cat's power systems."
+      ],
+      "sourceIds": [
+        "cat-investor-relations",
+        "cat-corporate-website",
+        "cat-market-cap",
+        "cat-sec-edgar",
+        "cat-autonomy",
+        "cat-minestar",
+        "cat-sustainability"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "distributed-energy"
+      ],
+      "snapshotNote": "Financial metrics reflect Caterpillar's 2023 record results and 2024 moderation. Market cap and P/E are approximate estimates based on the March 2026 S&P 500 ranks 26–35 snapshot; verify current values at companiesmarketcap.com.",
+      "productSlugs": [
+        "cat-construction-equipment",
+        "cat-mining-trucks-minestar",
+        "cat-generator-sets-power-systems",
+        "cat-financial"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8.5,
+          "rationale": "Exclusive dealer network (~160 dealers, ~2,800 branches, 24-hr parts guarantee), multi-decade aftermarket annuity, MineStar autonomy data flywheel with 1B+ tonnes hauled, century-old brand trust premium, and product breadth enabling single-OEM job site supply. No competitor has fully replicated this combination.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-corporate-website",
+            "cat-autonomy"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizability": {
+          "value": 2,
+          "rationale": "Large mining trucks and construction equipment cannot be manufactured in microfactories; safety regulations, materials requirements, and service infrastructure requirements make distributed production practically impossible at commercial scale. Open Source Ecology's GVCS is the most developed open-source alternative but covers only small-scale, low-capability machines.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "ose-website"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "2023 adjusted operating margin ~22–23% (record), free cash flow >$7B, 30+ consecutive dividend increases qualifying Cat as a Dividend Aristocrat, A/A2 credit rating. 2024 moderated as construction markets softened but Energy & Transportation remained resilient.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-sec-edgar"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "peRatio": {
+          "value": 17,
+          "rationale": "Approximate trailing P/E in the 15–20x range, reflecting cyclical industrial valuation after the 2023 earnings peak; verify current ratio at investors.caterpillar.com.",
+          "sourceIds": [
+            "cat-market-cap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "marketCap": {
+          "value": 150,
+          "rationale": "Approximate market cap of ~$145–160 billion based on the March 2026 S&P 500 ranks 26–35 snapshot; verify current value at companiesmarketcap.com/caterpillar/marketcap/.",
+          "sourceIds": [
+            "cat-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "freedCapitalPotential": {
+          "value": 8.312499999999998,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "cat-market-cap",
+            "cat-corporate-website",
+            "ose-website"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-19"
+        }
+      }
+    },
+    {
+      "slug": "applied-materials",
+      "name": "Applied Materials",
+      "ticker": "AMAT",
+      "rankApprox": 31,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top35"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "semiconductor-equipment",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/applied-materials/marketcap/",
+      "description": "Applied Materials is the world's largest supplier of semiconductor and display manufacturing equipment, enabling chipmakers globally to fabricate integrated circuits and flat-panel displays.",
+      "overview": [
+        {
+          "title": "Business Model",
+          "paragraphs": [
+            "Applied Materials generates revenue through three segments: Semiconductor Systems (~75% of revenue), Applied Global Services (~20%), and Display and Adjacent Markets (~5%). The Semiconductor Systems segment sells capital equipment for depositing, removing, and inspecting thin films on silicon wafers—processes central to every modern chip. Applied Global Services provides spare parts, service contracts, remote diagnostics, and refurbished systems that extend the life of the installed base. Display sells similar deposition and etch systems configured for large-format glass substrates used in OLED and LCD screens.",
+            "Equipment sales are inherently lumpy because chipmakers invest in waves tied to technology node transitions and demand cycles. Services revenue provides a recurring, higher-margin counterbalance. Applied earns roughly 25–28 cents of net income per dollar of revenue, making it one of the most profitable capital-equipment companies in the world."
+          ]
+        },
+        {
+          "title": "Market Position",
+          "paragraphs": [
+            "Applied Materials competes in a global semiconductor equipment market worth roughly $100 billion annually, alongside ASML (lithography), Lam Research (etch and deposition), KLA (inspection and metrology), and Tokyo Electron. Applied holds leading positions in chemical vapor deposition (CVD), physical vapor deposition (PVD), chemical mechanical planarization (CMP), and atomic-layer deposition (ALD). Its breadth across process steps is unique among its peers.",
+            "Customers include TSMC, Samsung, Intel, SK Hynix, and Micron—companies that collectively account for the vast majority of global chip output. TSMC alone typically represents 15–20% of Applied's revenue in any given year."
+          ]
+        },
+        {
+          "title": "Growth Drivers",
+          "paragraphs": [
+            "Three structural tailwinds drive Applied's medium-term outlook: AI-driven demand for leading-edge logic and high-bandwidth memory, the transition to gate-all-around (GAA) transistor architectures starting with the 2nm node class (which requires significantly more deposition and etch steps per wafer), and the buildout of geopolitically diversified fab capacity in the US, Europe, Japan, and India.",
+            "Advanced packaging—stacking or bonding multiple chiplets together—is an additional vector. Packaging steps use Applied's CVD, PVD, and CMP equipment and are growing faster than wafer-start volume, creating incremental equipment content per wafer even as leading-edge lithography tightens."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Applied Materials' moat rests on four reinforcing pillars. First, equipment qualification is a multi-year process: chipmakers run tens of thousands of test wafers to prove that a new tool meets yield, uniformity, and reliability specifications before it enters production. Once qualified, incumbent equipment is almost never displaced mid-generation because the cost of re-qualification—measured in engineering years and foregone yield—exceeds any plausible savings from switching.",
+        "Second, Applied holds a dense patent portfolio accumulated over six decades of R&D. Process chemistry, chamber geometry, plasma control, and wafer-handling mechanisms are each protected by overlapping IP that forces competitors to develop non-infringing implementations. Third, process recipes—the precise gas flows, temperatures, and timing sequences that produce a desired film—are co-developed with customers and become deeply intertwined with their overall process integration. Switching to a competitor tool would require re-qualifying not just the tool but every downstream step that interacts with its output. Fourth, the talent and institutional knowledge required to design and support this equipment is highly specialized, limiting the pool of credible new entrants."
+      ],
+      "decentralizationNarrative": [
+        "Semiconductor manufacturing equipment sits at the opposite end of the decentralization spectrum from software or financial protocols. A single CVD chamber requires tolerances measured in angstroms, ultra-high vacuum systems, corrosive gas handling, and plasma physics tuned by engineers who spent careers in the field. The capital cost of a modern fab ranges from $10 billion to $25 billion, and no garage workshop or even a well-funded university lab can replicate leading-edge processes.",
+        "The most meaningful decentralization vector is not at the equipment layer but at the design and older-node manufacturing layer. Open-source EDA tools like OpenROAD and open process design kits like SkyWater's SKY130 PDK enable anyone to design and fabricate chips at 130nm—sufficient for microcontrollers, sensors, and analog circuits that power most embedded systems. FPGA toolchains such as IceStorm further reduce the need for custom ASIC tape-outs for a wide class of embedded applications. The chiplet disaggregation trend and open packaging standards like UCIe could over time allow mixing of dies from older, more accessible nodes—extending the life of installed equipment and spreading manufacturing across a broader geography."
+      ],
+      "sourceIds": [
+        "amat-ir",
+        "amat-10k-2025",
+        "amat-homepage",
+        "companiesmarketcap-amat"
+      ],
+      "technologyWaveIds": [],
+      "snapshotNote": "Data captured March 2026; market cap and valuation multiples reflect early-2026 trading conditions. FY2025 financials ended October 2025.",
+      "productSlugs": [
+        "centura-semiconductor-platform",
+        "applied-global-services",
+        "display-manufacturing-equipment"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "Multi-year equipment qualification cycles, a dense 60-year IP portfolio, and process recipe lock-in embedded in customers' overall fab integration create near-impenetrable switching costs. Only four to five global peers can compete on leading-edge deposition and etch.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizability": {
+          "value": 1,
+          "rationale": "Leading-edge chip fab equipment requires billion-dollar clean rooms, angstrom-level tolerances, and decades of accumulated IP. No open-source or community-scale equivalent exists or is plausibly near-term. The design layer has meaningful open alternatives; the physical equipment layer does not.",
+          "sourceIds": [
+            "amat-ir"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Applied Materials consistently earns 25–28% net margins and 30%+ operating margins in up-cycles. FY2025 revenue was approximately $27 billion with net income near $7 billion. The services segment provides recurring margin cushion during equipment down-cycles.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "peRatio": {
+          "value": 20,
+          "rationale": "AMAT traded at approximately 18–22x forward earnings in early 2026, reflecting AI-driven capex tailwinds offset by cyclicality concerns and geopolitical export restrictions on China sales.",
+          "sourceIds": [
+            "companiesmarketcap-amat"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "marketCap": {
+          "value": 140,
+          "rationale": "Approximate market capitalization of $135–145 billion as of early March 2026, placing AMAT among the 30–35 largest S&P 500 companies by market cap.",
+          "sourceIds": [
+            "companiesmarketcap-amat"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "freedCapitalPotential": {
+          "value": 3.325,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "companiesmarketcap-amat",
+            "amat-ir"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-19"
+        }
+      }
     }
   ],
   "products": [
@@ -1897,6 +2393,136 @@ export const contentGraph: ContentGraph = {
       ]
     },
     {
+      "slug": "centura-semiconductor-platform",
+      "name": "Centura Integrated Processing System",
+      "category": "Semiconductor Fabrication Equipment",
+      "homepageUrl": "https://www.appliedmaterials.com/semiconductor/products",
+      "summary": "Multi-chamber cluster tool platform for CVD, PVD, etch, and atomic-layer deposition processes used across logic and memory chip manufacturing at every leading-edge node.",
+      "whyItMatters": "The Centura platform and its sister platforms (Endura for PVD, Producer for CVD) process wafers at virtually every major technology node and are present in essentially every leading-edge fab worldwide. Their modularity allows chipmakers to configure chambers for different process steps on the same base platform, reducing floor space and integration complexity. As transistor geometries shrink below 3nm, the number of deposition and etch steps per wafer multiplies, increasing Applied's revenue content per wafer start even without new customer wins.",
+      "replacementSketch": [
+        "There is no open-source or community-built equivalent to Applied's deposition and etch platforms for leading-edge chip manufacturing. The closest decentralization path operates at the design level rather than the equipment level: open PDKs such as SkyWater SKY130 enable chip designers to target established 130nm processes that use older, more widely distributed equipment—reducing the fraction of design work that requires leading-edge Applied Materials tools.",
+        "For digital logic implemented in FPGAs rather than custom ASICs, open toolchains like IceStorm (for Lattice ice40 FPGAs) or nextpnr eliminate the need for a foundry tape-out altogether, bypassing Applied's tools entirely for a wide class of embedded applications. The chiplet trend and UCIe open interconnect standard may over time allow leading-edge die functions to be replaced by combinations of more accessible older-node chiplets, gradually redistributing equipment demand."
+      ],
+      "sourceIds": [
+        "amat-homepage",
+        "amat-10k-2025"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "applied-materials",
+      "alternativeSlugs": [
+        "openroad-eda",
+        "sky130-pdk",
+        "icestorm-fpga-toolchain"
+      ]
+    },
+    {
+      "slug": "applied-global-services",
+      "name": "Applied Global Services",
+      "category": "Equipment Services & Support",
+      "homepageUrl": "https://www.appliedmaterials.com/services",
+      "summary": "Lifecycle services for Applied Materials equipment including spare parts, service contracts, remote diagnostics, and refurbished system sales.",
+      "whyItMatters": "Services revenue (~$6B annually) provides recurring, higher-margin income that smooths Applied's equipment revenue cycle. As the installed base of Applied equipment has grown over decades, the services segment has become a structural annuity. For chipmakers, unplanned downtime costs thousands of dollars per wafer-hour lost, creating strong incentive to maintain OEM service agreements rather than source third-party support.",
+      "replacementSketch": [
+        "Third-party maintenance providers offer alternative service for some Applied equipment categories, primarily older tools outside warranty. However, proprietary diagnostic software, encrypted calibration routines, and OEM-controlled spare parts pricing limit third-party effectiveness on newer systems.",
+        "The most meaningful decentralization path for equipment services is through right-to-repair regulation and open diagnostic standards. If calibration data and diagnostic APIs were mandated to be accessible, third-party and in-house maintenance could become significantly more viable, reducing Applied's services lock-in without requiring any change to the underlying equipment technology."
+      ],
+      "sourceIds": [
+        "amat-10k-2025",
+        "amat-ir"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "applied-materials",
+      "alternativeSlugs": []
+    },
+    {
+      "slug": "display-manufacturing-equipment",
+      "name": "Display Manufacturing Equipment",
+      "category": "Display Fabrication Equipment",
+      "homepageUrl": "https://www.appliedmaterials.com/display",
+      "summary": "PVD, CVD, and etch systems adapted for large-format glass substrates used in manufacturing OLED and LCD flat-panel displays.",
+      "whyItMatters": "Applied's display segment supplies equipment to panel makers including Samsung Display, LG Display, and BOE. As OLED transitions from smartphone panels to laptop and automotive displays, and as microLED enters the roadmap, the deposition processes Applied supplies remain central to display manufacturing. Display represents roughly 5% of Applied's revenue but has strategic importance as a bridgehead for emerging display technologies.",
+      "replacementSketch": [
+        "Display panel manufacturing shares many process steps with semiconductor manufacturing and carries similar capital intensity, qualification barriers, and geographic concentration. There is no open-source or community-scale path to producing leading-edge OLED or LCD panels.",
+        "The decentralization angle for displays operates further downstream: open-source display driver ICs targeting open PDKs, open-source firmware for display controllers, and e-ink displays (which use simpler, lower-energy processes) reduce dependence on leading-edge OLED supply chains for some applications. For information display needs that can tolerate lower refresh rates and narrower color gamuts, e-ink and bistable displays are increasingly capable alternatives to OLED."
+      ],
+      "sourceIds": [
+        "amat-homepage",
+        "amat-10k-2025"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "applied-materials",
+      "alternativeSlugs": [
+        "eink-open-display"
+      ]
+    },
+    {
+      "slug": "consumer-banking",
+      "name": "Consumer Banking",
+      "category": "Retail Banking",
+      "homepageUrl": "https://www.bankofamerica.com/",
+      "summary": "Checking and savings accounts, debit and credit cards, consumer loans, auto financing, home mortgages, and digital banking for approximately 69 million consumer and small-business clients.",
+      "whyItMatters": "Consumer Banking is BofA's largest segment by client count and a primary source of low-cost deposit funding. It anchors cross-sell into mortgages, credit cards, and investment accounts, and the sticky nature of everyday banking relationships provides stable recurring revenue across economic cycles.",
+      "replacementSketch": [
+        "A person seeking alternatives to Bank of America's consumer banking can open a fee-free account at a neobank and receive direct deposit, debit card, and FDIC-insured savings at lower or zero cost. Bitcoin held in a self-custodied wallet (e.g., Phoenix, Muun) combined with Lightning Network channels provides a censorship-resistant savings and payment layer with no intermediary or monthly fees.",
+        "The practical path to full replacement requires solving for: (1) credit access — personal loans and mortgages still depend on chartered banks or licensed lenders; (2) cash handling — ATM infrastructure neobanks rely on third-party networks; (3) regulatory portability — direct deposits and ACH rails remain bank-controlled. A combination of a neobank for day-to-day banking plus a Bitcoin wallet for long-term savings and global transfers captures the core value while materially reducing dependency on legacy banking infrastructure."
+      ],
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "bac-homepage"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "bank-of-america",
+      "alternativeSlugs": [
+        "bitcoin-lightning-wallet"
+      ]
+    },
+    {
+      "slug": "merrill-wealth-management",
+      "name": "Merrill Wealth Management",
+      "category": "Wealth Management",
+      "homepageUrl": "https://www.merrilledge.com/",
+      "summary": "Full-service and self-directed investment advisory platform offering brokerage, financial planning, retirement accounts, and access to approximately 18,000 Merrill Lynch financial advisors for retail and high-net-worth clients.",
+      "whyItMatters": "Merrill manages over $3 trillion in client balances and is a top-three US wealth manager by assets. It anchors the Global Wealth & Investment Management segment, contributed approximately $21 billion in revenue in 2024, and provides long-term stickiness through advisor relationships and integrated banking cross-sell.",
+      "replacementSketch": [
+        "Self-directed investors can replicate much of Merrill's core portfolio management with a Vanguard or Fidelity brokerage account combined with low-cost index ETFs, at a fraction of traditional advisory fees. Open-source tools like Ghostfolio offer portfolio tracking, asset allocation analysis, and performance attribution without any platform dependency or ongoing SaaS cost.",
+        "For the advisory relationship itself, robo-advisors automate rebalancing and tax-loss harvesting at 0.25% annually versus typical full-service advisory fees of 0.75–1.25%. High-net-worth clients needing estate planning, complex trust structures, or alternative investments will find fewer ready substitutes near-term, preserving Merrill's premium franchise at the top of the wealth spectrum."
+      ],
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "merrill-edge-homepage"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "bank-of-america",
+      "alternativeSlugs": [
+        "ghostfolio"
+      ]
+    },
+    {
+      "slug": "global-banking-markets",
+      "name": "Global Banking & Markets",
+      "category": "Investment Banking & Capital Markets",
+      "homepageUrl": "https://business.bofa.com/en-us/content/global-banking.html",
+      "summary": "Corporate and investment banking services including loan syndication, debt and equity underwriting, M&A advisory, treasury services, and institutional sales and trading across fixed income, currencies, commodities, and equities.",
+      "whyItMatters": "Global Banking & Markets is one of the highest-margin segments and is critical to BofA's institutional relevance. Revenue from capital markets, advisory, and trading contributes meaningfully to total earnings and requires vast balance sheet capacity, global relationships, and regulatory capital that are extremely difficult to replicate.",
+      "replacementSketch": [
+        "Investment banking and institutional capital markets are among the hardest financial functions to decentralize. Advisory and syndication functions depend on trust, long-term relationships, and legal frameworks that have no near-term open-source equivalent. Corporate treasury management services — cash pooling, FX hedging, trade finance — similarly rely on global banking networks and bilateral credit lines built over decades.",
+        "At the margin, Bitcoin already replaces some cross-border wire and FX functions for corporate treasury operations requiring instant, permissionless settlement. However, the counterparty vetting, legal recourse, and credit structuring that define institutional banking remain deeply relational and regulatory in nature. Meaningful decentralization pressure in this segment is minimal over the next 5–10 years."
+      ],
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "bac-investor-relations"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "bank-of-america",
+      "alternativeSlugs": [
+        "bitcoin-protocol"
+      ]
+    },
+    {
       "slug": "geico-insurance",
       "name": "GEICO insurance",
       "category": "Insurance",
@@ -1987,6 +2613,143 @@ export const contentGraph: ContentGraph = {
       "companySlug": "broadcom",
       "alternativeSlugs": [
         "open-networking-stack"
+      ]
+    },
+    {
+      "slug": "cat-construction-equipment",
+      "name": "Cat Construction Equipment",
+      "category": "Heavy Earthmoving & Construction Machinery",
+      "homepageUrl": "https://www.caterpillar.com/en/brands/cat.html",
+      "summary": "Wheel loaders, track-type tractors (dozers), excavators, backhoe loaders, motor graders, compactors, and skid steer loaders for building construction, infrastructure, and road building—the core of Cat's revenue.",
+      "whyItMatters": "Cat sets the global standard for large earthmoving on infrastructure, commercial real estate, and transportation projects. The Cat brand and dealer network's 24-hour parts guarantee make it the risk-minimizing choice for large capital projects worldwide, where equipment downtime costs millions of dollars per day.",
+      "replacementSketch": [
+        "Open-source alternatives remain far from commercial scale. Open Source Ecology's Global Village Construction Set provides open CAD designs for small-scale dozers and tractors suited for community and agricultural use; these machines are not commercially viable at construction project scale but represent the philosophical foundation for a decentralized future of locally fabricated machinery.",
+        "Additive manufacturing offers a partial long-horizon path: 3D-printing of wear parts and low-stress components could reduce aftermarket lock-in at the tail end of Cat's parts catalog. Full machine decentralization requires advances in structural-component printing, open-source drivetrain certification, and community-scale safety validation that do not yet exist at commercial readiness."
+      ],
+      "sourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations",
+        "ose-website"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "microfactories"
+      ],
+      "companySlug": "caterpillar",
+      "alternativeSlugs": [
+        "ose-gvcs"
+      ]
+    },
+    {
+      "slug": "cat-mining-trucks-minestar",
+      "name": "Cat Mining Trucks & MineStar Autonomy",
+      "category": "Surface Mining Haul Trucks & Fleet Autonomy Software",
+      "homepageUrl": "https://www.caterpillar.com/en/industries/mining.html",
+      "summary": "Ultra-class surface mining haul trucks (793 and 797 series, up to 400-ton payload) combined with MineStar Command for autonomous haulage, MineStar Health for predictive maintenance, and MineStar Fleet for dispatch optimization at large open-pit mining operations.",
+      "whyItMatters": "Cat's autonomous mining fleet has surpassed 1 billion tonnes hauled without a human driver, representing a productivity and safety transformation for large open-pit mines. The data advantage compounds: accumulated operational data from millions of machine-hours is a proprietary corpus that newcomers cannot replicate. Customers including BHP, Rio Tinto, and Codelco depend on this infrastructure for their most critical operations.",
+      "replacementSketch": [
+        "No open-source or decentralized alternative exists or is plausible for ultra-class mining trucks at any foreseeable timeframe. The physics of 400-ton vehicles, safety certification requirements, materials science demands, and capital intensity of mine operations preclude community or distributed production alternatives.",
+        "Cooperative mine ownership (worker-owned or community-owned operations) can shift the economic benefit of extraction without changing the equipment supply chain. Over a multi-decade horizon, open robotics platforms could provide a pathway to vendor-agnostic fleet management software, reducing software lock-in even if the underlying machines remain centrally manufactured."
+      ],
+      "sourceIds": [
+        "cat-autonomy",
+        "cat-minestar",
+        "cat-investor-relations"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "caterpillar",
+      "alternativeSlugs": []
+    },
+    {
+      "slug": "cat-generator-sets-power-systems",
+      "name": "Cat Generator Sets & Power Systems",
+      "category": "Standby, Prime & Continuous Power Generation",
+      "homepageUrl": "https://www.caterpillar.com/en/products/caterpillar-products/power.html",
+      "summary": "Cat diesel and natural gas generator sets for standby, prime, and continuous power applications in data centers, hospitals, oil and gas facilities, and remote sites; supplemented by Solar Turbines industrial gas turbines (6 kW–22 MW) for pipeline compression and distributed power.",
+      "whyItMatters": "AI infrastructure buildout has created a secular tailwind for Cat's generator and power systems business. Data center operators require high-reliability backup and prime power that distributed renewables alone cannot yet provide, placing Cat as a direct beneficiary of the AI compute buildout. This segment partially offsets the cyclicality of Cat's construction end-markets.",
+      "replacementSketch": [
+        "Distributed solar-plus-storage systems provide economic alternatives for off-grid and microgrid applications, particularly in sunlight-rich regions. As battery and inverter costs continue falling, the economic case for diesel genset backups weakens for many non-critical applications. Open-source energy management platforms (OpenEnergyMonitor, OpenEMS) enable self-custodied monitoring and dispatch without vendor lock-in.",
+        "For high-reliability data center backup power requiring instantaneous failover, battery systems still complement rather than replace Cat generators in most deployments. The AI data center buildout is currently amplifying diesel generator demand, but longer-run trends favor distributed renewables for grid-connected standby applications."
+      ],
+      "sourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations",
+        "cat-sustainability",
+        "open-energy-monitor"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "companySlug": "caterpillar",
+      "alternativeSlugs": [
+        "distributed-solar-battery-storage"
+      ]
+    },
+    {
+      "slug": "cat-financial",
+      "name": "Cat Financial",
+      "category": "Captive Equipment Finance & Insurance",
+      "homepageUrl": "https://www.catfinancial.com/",
+      "summary": "Cat Financial is Caterpillar's captive finance arm, providing retail and wholesale financing, leasing, and insurance to customers and dealers purchasing Cat equipment, keeping buyers within the Cat ecosystem while generating stable recurring revenue.",
+      "whyItMatters": "Cat Financial removes financing friction from equipment purchases and dealer floor plans, effectively subsidizing the adoption of Cat machines over competitors. It generates a recurring revenue stream that partially offsets the cyclicality of equipment manufacturing, and customer data flows back into Cat's installed base tracking and service revenue optimization.",
+      "replacementSketch": [
+        "Member-owned agricultural lending cooperatives—most prominently the Farm Credit System in the United States—offer equipment financing structures where borrower-members own the institution and receive patronage dividends from its earnings, materially reducing the margin extracted by a captive vendor finance arm.",
+        "No decentralized financing alternative exists at scale for multi-million-dollar, multi-year heavy equipment transactions. Bitcoin-native payment rails and Lightning network micropayments are not architecturally suited to the credit underwriting and collateral management that define Cat Financial's business; the cooperative lending model is the most practical available alternative."
+      ],
+      "sourceIds": [
+        "cat-investor-relations",
+        "cat-corporate-website",
+        "farm-credit-network"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "caterpillar",
+      "alternativeSlugs": [
+        "farm-credit-system"
+      ]
+    },
+    {
+      "slug": "coca-cola-classic",
+      "name": "Coca-Cola",
+      "category": "Carbonated Soft Drinks",
+      "homepageUrl": "https://www.coca-cola.com/",
+      "summary": "The world's best-selling carbonated soft drink, available in Classic, Zero Sugar, Diet, and dozens of regional and limited-edition variants across 200+ countries.",
+      "whyItMatters": "Coca-Cola Classic is the single most recognized consumer product on Earth and the cornerstone of the company's revenue, brand equity, and bottling network relationships. Its cultural reach and distribution depth make it the definitive example of a consumer brand moat — and the product most insulated from decentralized disruption.",
+      "replacementSketch": [
+        "At the household level, OpenCola's open-source cola syrup recipe allows anyone to brew a passable cola at home using widely available commodity ingredients. Brewing yields a beverage at a fraction of the retail cost, though without the brand experience, carbonation consistency, or convenience of commercial distribution.",
+        "At the community scale, craft soda producers and home fermentation networks — particularly kombucha, water kefir, and ginger beer — offer flavored, naturally carbonated beverages with local supply chains and lower sugar content. These alternatives require ingredient sourcing and basic equipment but remove all dependency on centralized cold-chain distribution."
+      ],
+      "sourceIds": [
+        "ko-company-site",
+        "opencola-wikipedia"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "companySlug": "coca-cola",
+      "alternativeSlugs": [
+        "opencola",
+        "home-fermented-kombucha"
+      ]
+    },
+    {
+      "slug": "fairlife",
+      "name": "Fairlife",
+      "category": "Dairy & Nutrition",
+      "homepageUrl": "https://fairlife.com/",
+      "summary": "Ultra-filtered milk and high-protein nutrition products — including Core Power protein shakes, flavored milk, and lactose-free ultra-filtered milk — offering higher protein, lower sugar, and reduced lactose versus conventional dairy.",
+      "whyItMatters": "Fairlife has been Coca-Cola's fastest-growing brand and represents its expansion into premium nutrition and functional beverages. Core Power competes directly in the protein supplement market, and the ultra-filtered milk line commands a significant retail premium over conventional dairy, demonstrating Coca-Cola's ability to extend brand leverage into adjacent categories.",
+      "replacementSketch": [
+        "Community-supported agriculture (CSA) dairy programs and local dairy cooperatives offer an alternative supply chain for milk that bypasses centralized industrial dairy processing. While these do not replicate ultra-filtration, they provide fresher, locally sourced milk with transparent, short supply chains at lower brand premiums.",
+        "Plant-based milk alternatives — especially oat milk and soy milk — can be produced at home from commodity ingredients with standard kitchen equipment, eliminating the Fairlife premium entirely for many use cases. These alternatives also sidestep the industrial dairy supply chain and its associated land and water footprint."
+      ],
+      "sourceIds": [
+        "fairlife-site",
+        "ko-ir-2024"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "coca-cola",
+      "alternativeSlugs": [
+        "homemade-oat-milk"
       ]
     },
     {
@@ -2632,6 +3395,356 @@ export const contentGraph: ContentGraph = {
       "productSlug": "apple-app-store"
     },
     {
+      "slug": "openroad-eda",
+      "name": "OpenROAD",
+      "kind": "open-source",
+      "homepageUrl": "https://theopenroadproject.org",
+      "repoUrl": "https://github.com/The-OpenROAD-Project/OpenROAD",
+      "summary": "Open-source RTL-to-GDSII chip implementation tool that enables chip design targeting open PDKs without proprietary EDA licenses, reducing the total cost and access barrier for custom silicon.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "BSD-licensed, fully open-source, developed collaboratively by DARPA, university labs, and the Linux Foundation.",
+          "sourceIds": [
+            "openroad-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 6,
+          "rationale": "Lowers the design barrier for open-source silicon significantly; combined with open PDKs, any team can produce a manufacturable GDSII. Still requires a foundry for physical fabrication.",
+          "sourceIds": [
+            "openroad-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 7,
+          "rationale": "Actively used in production tape-outs via the Google/SkyWater MPW program. Mature enough for real chips at 130nm; less battle-tested at advanced nodes.",
+          "sourceIds": [
+            "openroad-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Eliminates six- and seven-figure EDA license fees from Cadence and Synopsys for qualifying designs, dramatically lowering chip design costs for small teams and open-source projects.",
+          "sourceIds": [
+            "openroad-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "openroad-project"
+      ],
+      "productSlug": "centura-semiconductor-platform"
+    },
+    {
+      "slug": "sky130-pdk",
+      "name": "SkyWater SKY130 Open PDK",
+      "kind": "open-source",
+      "homepageUrl": "https://skywater-pdk.readthedocs.io",
+      "repoUrl": "https://github.com/google/skywater-pdk",
+      "summary": "Fully open-source 130nm process design kit from SkyWater Technology, enabling community chip design and fabrication through Google's Multi-Project Wafer program without licensing fees.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "First fully open-source commercial foundry PDK; Apache 2.0 licensed, all process files and design rules publicly available.",
+          "sourceIds": [
+            "sky130-pdk-source"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "Allows any individual or team to design and manufacture real chips via the Google MPW shuttle program. Creates a pathway for open hardware that bypasses proprietary PDK lock-in, though fabrication still requires a physical foundry.",
+          "sourceIds": [
+            "sky130-pdk-source"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 7,
+          "rationale": "Hundreds of open-source chips have taped out on SKY130. The node is mature and suitable for analog, mixed-signal, and many digital applications; not suitable for leading-edge AI compute or memory.",
+          "sourceIds": [
+            "sky130-pdk-source"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 9,
+          "rationale": "Google MPW shuttles have offered effectively zero-cost small-volume chip fabrication for open-source projects, compared to multi-million-dollar NRE costs for proprietary node tape-outs.",
+          "sourceIds": [
+            "sky130-pdk-source"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "sky130-pdk-source"
+      ],
+      "productSlug": "centura-semiconductor-platform"
+    },
+    {
+      "slug": "icestorm-fpga-toolchain",
+      "name": "IceStorm / nextpnr",
+      "kind": "open-source",
+      "homepageUrl": "https://clifford.at/icestorm",
+      "repoUrl": "https://github.com/YosysHQ/nextpnr",
+      "summary": "Open-source FPGA synthesis and place-and-route toolchain for Lattice ice40 (and other) FPGAs, enabling programmable logic without proprietary EDA tools or custom ASIC tape-outs.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "ISC-licensed; the entire toolchain from Yosys synthesis through place-and-route to bitstream generation is open-source and community-maintained.",
+          "sourceIds": [
+            "icestorm-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "Enables fully open hardware designs reproducible by anyone with commodity FPGA hardware; no foundry access needed. Practical for embedded controllers, sensor hubs, and custom peripherals.",
+          "sourceIds": [
+            "icestorm-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "Mature, stable toolchain used in production open hardware projects including the iCEBreaker and ButterStick boards. Well-documented and actively maintained by the YosysHQ community.",
+          "sourceIds": [
+            "icestorm-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 9,
+          "rationale": "Lattice ice40 FPGAs cost a few dollars each; the entire open toolchain is free. Eliminates the need for a custom ASIC tape-out (typically $1M–$5M+ at advanced nodes) for many embedded use cases.",
+          "sourceIds": [
+            "icestorm-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "icestorm-project"
+      ],
+      "productSlug": "centura-semiconductor-platform"
+    },
+    {
+      "slug": "eink-open-display",
+      "name": "E-ink / E-paper Displays",
+      "kind": "open-source",
+      "homepageUrl": "https://www.zephyrproject.org",
+      "repoUrl": "https://github.com/zephyrproject-rtos/zephyr",
+      "summary": "Bistable electrophoretic displays with open driver support in embedded ecosystems (Zephyr RTOS, Linux epaper frameworks), requiring no active refresh power and manufactured through simpler, lower-cost processes than OLED.",
+      "metrics": {
+        "openness": {
+          "value": 6,
+          "rationale": "Display panels themselves are proprietary (E Ink Holdings), but driver ICs and firmware are largely open-source in the Zephyr and Linux ecosystems; hardware designs for e-paper peripherals are openly published.",
+          "sourceIds": [
+            "zephyr-epaper"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 6,
+          "rationale": "Lower power and simpler manufacturing than OLED reduce dependence on leading-edge fab equipment. Supply is more distributed across multiple manufacturers. Not a full replacement for high-refresh-rate or color-critical use cases.",
+          "sourceIds": [
+            "zephyr-epaper"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "E-paper is mature and widely deployed in e-readers, retail price tags, signage, and wearables. Open driver support in Zephyr and Linux is stable and well-maintained.",
+          "sourceIds": [
+            "zephyr-epaper"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 7,
+          "rationale": "E-paper modules cost significantly less than OLED panels of equivalent size and consume orders of magnitude less power in static display applications, enabling longer-lived devices without charging infrastructure.",
+          "sourceIds": [
+            "zephyr-epaper"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "zephyr-epaper"
+      ],
+      "productSlug": "display-manufacturing-equipment"
+    },
+    {
+      "slug": "bitcoin-lightning-wallet",
+      "name": "Bitcoin + Lightning Network",
+      "kind": "open-source",
+      "homepageUrl": "https://lightning.network/",
+      "repoUrl": "https://github.com/lightningnetwork/lnd",
+      "summary": "Self-custodied Bitcoin wallets combined with Lightning Network channels provide instant, near-zero-fee global payments and a hard-money savings layer with no counterparty or custodial risk.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "Bitcoin Core and major Lightning implementations (LND, Core Lightning, Eclair) are fully open-source under MIT/Apache-2 licenses. Protocol rules are consensus-enforced with no single controlling entity.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "Bitcoin is the canonical decentralized value layer — no issuer, no custodian, no AML gatekeeper for self-custodied wallets. Lightning enables micropayments and daily commerce without any bank intermediary.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 4,
+          "rationale": "UX for self-custody Lightning wallets has improved substantially but still requires understanding seed phrases, channel liquidity, and on-chain fees. Mass-market readiness for replacing a checking account is limited in 2026. Credit and mortgage functions are not replaceable.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 9,
+          "rationale": "Lightning payments settle in seconds for sub-cent fees regardless of amount or geography. Bitcoin on-chain has variable fees but no ongoing custodial or account maintenance charges.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "lightning-network-homepage"
+      ],
+      "productSlug": "consumer-banking"
+    },
+    {
+      "slug": "ghostfolio",
+      "name": "Ghostfolio",
+      "kind": "open-source",
+      "homepageUrl": "https://ghostfolio.dev/",
+      "repoUrl": "https://github.com/ghostfolio/ghostfolio",
+      "summary": "Open-source self-hosted wealth management and portfolio tracking application supporting multi-broker aggregation, asset allocation analysis, performance attribution, and FIRE planning with no ongoing SaaS fees.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "Ghostfolio is fully open-source under AGPL-3 license with an active community and self-hostable architecture. No vendor lock-in or proprietary data dependency.",
+          "sourceIds": [
+            "ghostfolio-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "Self-hosted deployment means no platform dependency for portfolio tracking and analysis. Combined with direct broker custody, it eliminates the wealth manager intermediary for tracking and reporting functions.",
+          "sourceIds": [
+            "ghostfolio-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 6,
+          "rationale": "Ghostfolio is production-quality for tracking and analysis but does not execute trades, manage rebalancing automatically, or provide regulated financial advice. It is a tool layer, not a full wealth management replacement.",
+          "sourceIds": [
+            "ghostfolio-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 10,
+          "rationale": "Free to self-host; eliminates all advisory and platform fees for the tracking and planning functions. Requires minimal hosting infrastructure (~$5–10/month on a VPS) but saves hundreds to thousands annually versus managed wealth platforms.",
+          "sourceIds": [
+            "ghostfolio-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "ghostfolio-github"
+      ],
+      "productSlug": "merrill-wealth-management"
+    },
+    {
+      "slug": "bitcoin-protocol",
+      "name": "Bitcoin",
+      "kind": "protocol",
+      "homepageUrl": "https://bitcoin.org/",
+      "repoUrl": "https://github.com/bitcoin/bitcoin",
+      "summary": "The Bitcoin protocol provides a permissionless, censorship-resistant settlement layer for cross-border value transfer, offering corporate treasury teams a self-custodied alternative to correspondent banking rails for international payments and value storage.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "Bitcoin is fully open-source (MIT license) with consensus rules enforced by a globally distributed node network. No single entity controls protocol upgrades or transaction validity.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "Bitcoin eliminates correspondent bank intermediaries for cross-border settlement entirely. No custodian, no counterparty risk beyond wallet custody, and no KYC gate for self-custodied on-chain transfers.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 3,
+          "rationale": "Bitcoin on-chain settlement is production-ready for treasury reserve and cross-border transfer, but cannot replace M&A advisory, loan syndication, underwriting, or derivatives structuring. Institutional adoption is growing but narrow in scope.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 7,
+          "rationale": "Bitcoin on-chain settlement eliminates correspondent banking fees (typically 0.1–2% of transfer value) and multi-day settlement delays for cross-border payments, though on-chain fees can spike during congestion.",
+          "sourceIds": [
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "lightning-network-homepage"
+      ],
+      "productSlug": "global-banking-markets"
+    },
+    {
       "slug": "mutual-insurance-models",
       "name": "Mutual and cooperative insurance models",
       "kind": "cooperative",
@@ -2826,6 +3939,303 @@ export const contentGraph: ContentGraph = {
         "broadcom-home"
       ],
       "productSlug": "broadcom-networking"
+    },
+    {
+      "slug": "ose-gvcs",
+      "name": "Open Source Ecology – Global Village Construction Set",
+      "kind": "open-source",
+      "homepageUrl": "https://www.opensourceecology.org/",
+      "repoUrl": "https://github.com/opensourceecology",
+      "summary": "An open-source library of ~50 industrial machine designs—including a bulldozer, backhoe, and tractor—intended for local fabrication from flat-cut steel and off-the-shelf components. Designed for small farming communities and low-income rural settings, not commercial construction.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "Fully open-source CAD files, build instructions, and design philosophy; freely licensed for anyone to build and modify.",
+          "sourceIds": [
+            "ose-website"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "Designed specifically for local fabrication, community resilience, and self-sufficiency; embodies the decentralized production ethos.",
+          "sourceIds": [
+            "ose-website"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 2,
+          "rationale": "Machines are functional at small scale and have been built by volunteers, but lack the reliability, safety certification, and performance required for commercial construction projects.",
+          "sourceIds": [
+            "ose-website"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 7,
+          "rationale": "Materials and fabrication cost for a GVCS machine can be a fraction of a commercial Cat equivalent if a community has welding and machining skills, though the time investment and capability gap are substantial.",
+          "sourceIds": [
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "ose-website"
+      ],
+      "productSlug": "cat-construction-equipment"
+    },
+    {
+      "slug": "distributed-solar-battery-storage",
+      "name": "Distributed Solar + Battery Storage",
+      "kind": "decentralized",
+      "homepageUrl": "https://openenergymonitor.org/",
+      "repoUrl": "https://github.com/openenergymonitor",
+      "summary": "Community-scale and commercial solar-plus-battery installations provide an increasingly cost-effective alternative for off-grid and microgrid power, with open-source monitoring and management tools (OpenEnergyMonitor, OpenEMS) enabling self-custodied energy management without vendor lock-in.",
+      "metrics": {
+        "openness": {
+          "value": 6,
+          "rationale": "Open-source inverter firmware and energy management software (OpenEMS, OpenEnergyMonitor) exist; commercial deployments typically use proprietary hardware from Tesla, Enphase, SolarEdge, etc., but protocol-level openness is improving.",
+          "sourceIds": [
+            "open-energy-monitor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "Distributed energy generation is the canonical example of decentralized infrastructure; directly aligned with the distributed-energy technology wave and energy self-sovereignty.",
+          "sourceIds": [
+            "open-energy-monitor"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 5,
+          "rationale": "Ready for off-grid and microgrid applications; not yet a complete replacement for high-reliability data center standby power requiring instantaneous failover. AI data center demand is currently amplifying diesel generator orders.",
+          "sourceIds": [
+            "open-energy-monitor",
+            "cat-sustainability"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 7,
+          "rationale": "Levelized cost of solar-plus-storage has fallen dramatically and is often lower than diesel in sunlight-rich locations with moderate load profiles; significant cost leverage in applicable contexts.",
+          "sourceIds": [
+            "open-energy-monitor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "open-energy-monitor"
+      ],
+      "productSlug": "cat-generator-sets-power-systems"
+    },
+    {
+      "slug": "farm-credit-system",
+      "name": "Farm Credit System",
+      "kind": "cooperative",
+      "homepageUrl": "https://www.farmcreditnetwork.com/",
+      "summary": "A federally chartered network of borrower-owned lending cooperatives providing credit, leasing, and crop insurance to U.S. agricultural and rural businesses—including equipment financing—where earnings flow back to member-borrowers as patronage dividends rather than to external shareholders.",
+      "metrics": {
+        "openness": {
+          "value": 6,
+          "rationale": "Borrower-owned cooperative structure with transparent governance, mandatory audited financials, and democratic member control; not open-source but structurally open to its members in a way no captive vendor finance arm is.",
+          "sourceIds": [
+            "farm-credit-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 6,
+          "rationale": "Cooperative ownership distributes profits back to borrower-members and removes the conflict of interest embedded in captive OEM financing. Limited to eligible agricultural and rural applicants in the US.",
+          "sourceIds": [
+            "farm-credit-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 7,
+          "rationale": "Fully operational with over $300B in loan volume; widely used for farm equipment financing. Applicable only to eligible rural and agricultural borrowers, which excludes most large construction fleet operators.",
+          "sourceIds": [
+            "farm-credit-network"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 5,
+          "rationale": "Cooperative structure returns earnings to members as patronage dividends, resulting in effectively lower net borrowing costs than commercial or captive lenders; savings depend on membership equity and patronage program participation.",
+          "sourceIds": [
+            "farm-credit-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "farm-credit-network"
+      ],
+      "productSlug": "cat-financial"
+    },
+    {
+      "slug": "opencola",
+      "name": "OpenCola",
+      "kind": "open-source",
+      "homepageUrl": "https://en.wikipedia.org/wiki/OpenCola_(drink)",
+      "summary": "An open-source cola syrup formula originally released under the GNU GPL, allowing anyone to brew a cola-flavored carbonated beverage at home using publicly documented ingredients and process instructions.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "Recipe is publicly documented under a free license; all ingredients are commodity items available through food supply chains globally. No proprietary lock-in of any kind.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "Production can occur at household or small-batch community scale without centralized facilities. Eliminates dependence on commercial bottling and cold-chain distribution networks entirely, though sourcing phosphoric acid and natural flavor extracts adds a supply chain dependency.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 5,
+          "rationale": "The recipe works and has been verified by many home brewers, but requires sourcing specialty ingredients (phosphoric acid, natural flavor extracts) and careful calibration of ratios. Not a consumer-ready drop-in replacement without meaningful effort and ingredient procurement.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 7,
+          "rationale": "Raw ingredient costs for a home-brewed batch are a small fraction of retail cola pricing. The majority of Coca-Cola's retail price covers brand, distribution, packaging, and marketing rather than the syrup itself.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "opencola-wikipedia"
+      ],
+      "productSlug": "coca-cola-classic"
+    },
+    {
+      "slug": "home-fermented-kombucha",
+      "name": "Home-Fermented Kombucha",
+      "kind": "open-source",
+      "homepageUrl": "https://en.wikipedia.org/wiki/Kombucha",
+      "summary": "Open fermentation process for producing a naturally carbonated, probiotic-rich beverage at home using tea, sugar, and a SCOBY starter culture freely shared within community fermentation networks.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "Starter cultures (SCOBYs) are freely shared within fermentation communities; recipes are fully open and documented across community forums, books, and instructional videos with no proprietary elements.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "Entirely household-scale production requiring only basic kitchen equipment, tea, sugar, and a starter culture. Eliminates all commercial supply chain dependencies for flavored carbonated beverages; SCOBY perpetuates itself indefinitely.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 7,
+          "rationale": "Millions of households globally brew kombucha at home; starter cultures are widely available for purchase or community sharing; basic process is well-documented and beginner-accessible within a two-week first-batch cycle.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Ongoing cost per liter of home-brewed kombucha is dramatically lower than commercial carbonated beverages. Tea and sugar are globally available commodity inputs; the self-perpetuating SCOBY eliminates recurring starter costs after initial acquisition.",
+          "sourceIds": [
+            "opencola-wikipedia"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "opencola-wikipedia"
+      ],
+      "productSlug": "coca-cola-classic"
+    },
+    {
+      "slug": "homemade-oat-milk",
+      "name": "Home-Made Oat Milk",
+      "kind": "open-source",
+      "homepageUrl": "https://en.wikipedia.org/wiki/Oat_milk",
+      "summary": "Plant-based milk alternative produced at home by blending rolled oats with water and straining, yielding a lactose-free, dairy-free beverage at a fraction of the cost of commercial branded alternatives.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "Process is fully open; rolled oats and water are globally available commodity inputs; hundreds of open recipes exist with no proprietary elements. Variations (barista oat milk, flavored) are also freely documented.",
+          "sourceIds": [
+            "fairlife-site"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "Entirely household-scalable with standard kitchen equipment (blender, strainer bag); no cold-chain dependency for inputs; oats are globally available commodity grains with long shelf life suitable for distributed storage.",
+          "sourceIds": [
+            "fairlife-site"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "readiness": {
+          "value": 9,
+          "rationale": "Mature, widely practiced home technique requiring no special equipment. Process takes under 5 minutes; millions of households produce oat milk at home globally; process is documented across countless accessible recipes and video guides.",
+          "sourceIds": [
+            "fairlife-site"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        },
+        "costLeverage": {
+          "value": 9,
+          "rationale": "Home-produced oat milk costs pennies per liter in ingredient inputs versus $6-10 per liter retail for Fairlife ultra-filtered milk products. Premium packaging, brand, and distribution represent the vast majority of the Fairlife retail price.",
+          "sourceIds": [
+            "fairlife-site"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-19"
+        }
+      },
+      "sourceIds": [
+        "fairlife-site"
+      ],
+      "productSlug": "fairlife"
     },
     {
       "slug": "pixelfed-social",
@@ -3796,6 +5206,33 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "amat-10k-2025",
+      "title": "Applied Materials Annual Report FY2025 (Form 10-K)",
+      "url": "https://ir.appliedmaterials.com/financial-information/sec-filings",
+      "kind": "annual-report",
+      "publisher": "Applied Materials / SEC",
+      "note": "Fiscal year 2025 (ended October 2025) 10-K filing; basis for segment revenue, operating margins, business description, and risk factors.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "amat-homepage",
+      "title": "Applied Materials Corporate Website",
+      "url": "https://www.appliedmaterials.com/",
+      "kind": "product-page",
+      "publisher": "Applied Materials",
+      "note": "Product descriptions, segment overviews, and technology roadmap materials for semiconductor and display equipment.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "amat-ir",
+      "title": "Applied Materials Investor Relations",
+      "url": "https://ir.appliedmaterials.com/",
+      "kind": "investor-relations",
+      "publisher": "Applied Materials",
+      "note": "Primary source for earnings releases, segment financials, guidance, and capital allocation history.",
+      "accessedOn": "2026-03-19"
+    },
+    {
       "id": "amazon-investor",
       "title": "Amazon Investor Relations",
       "url": "https://ir.aboutamazon.com/",
@@ -3904,6 +5341,42 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "bac-annual-report-2024",
+      "title": "Bank of America 2024 Annual Report and 10-K",
+      "url": "https://investor.bankofamerica.com/annual-reports-and-proxy-statements",
+      "kind": "annual-report",
+      "publisher": "Bank of America Corporation",
+      "note": "Audited financials, segment results, and management discussion for fiscal year 2024.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "bac-homepage",
+      "title": "Bank of America Official Website",
+      "url": "https://www.bankofamerica.com/",
+      "kind": "product-page",
+      "publisher": "Bank of America Corporation",
+      "note": "Product descriptions, service offerings, and consumer-facing information.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "bac-investor-relations",
+      "title": "Bank of America Investor Relations",
+      "url": "https://investor.bankofamerica.com/",
+      "kind": "investor-relations",
+      "publisher": "Bank of America Corporation",
+      "note": "Primary source for SEC filings, earnings reports, and shareholder communications.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "bac-q4-2024-earnings",
+      "title": "Bank of America Q4 2024 Earnings Release",
+      "url": "https://investor.bankofamerica.com/press-releases",
+      "kind": "investor-relations",
+      "publisher": "Bank of America Corporation",
+      "note": "Most recent quarterly earnings data including net income, revenue mix, and return metrics.",
+      "accessedOn": "2026-03-19"
+    },
+    {
       "id": "berkshire-home",
       "title": "Berkshire Hathaway",
       "url": "https://www.berkshirehathaway.com/",
@@ -3976,6 +5449,105 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "cat-autonomy",
+      "title": "Cat Autonomy Program",
+      "url": "https://www.caterpillar.com/en/brands/cat/autonomy.html",
+      "kind": "product-page",
+      "publisher": "Caterpillar Inc.",
+      "note": "Details on autonomous haulage milestones, MineStar Command for hauling and drilling platforms, and current fleet deployment scale.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "cat-corporate-website",
+      "title": "Caterpillar Corporate Website",
+      "url": "https://www.caterpillar.com/",
+      "kind": "product-page",
+      "publisher": "Caterpillar Inc.",
+      "note": "Product catalog, brand and sustainability messaging, Cat Autonomy program descriptions, and dealer network information.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "cat-investor-relations",
+      "title": "Caterpillar Investor Relations",
+      "url": "https://investors.caterpillar.com/",
+      "kind": "investor-relations",
+      "publisher": "Caterpillar Inc.",
+      "note": "Primary source for 10-K and 10-Q filings, segment revenue tables, earnings call transcripts, and the services growth strategy details.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "cat-market-cap",
+      "title": "Caterpillar Market Cap History",
+      "url": "https://companiesmarketcap.com/caterpillar/marketcap/",
+      "kind": "market-data",
+      "publisher": "companiesmarketcap.com",
+      "note": "Historical market capitalization data for valuation context and S&P 500 ranking verification.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "cat-minestar",
+      "title": "MineStar Fleet Management & Autonomous Dispatch",
+      "url": "https://www.minestar.com/",
+      "kind": "product-page",
+      "publisher": "Caterpillar Inc.",
+      "note": "Product-level detail on MineStar Command, Health, and Fleet systems—the software stack underlying Cat's mining autonomy and digital services revenue.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "cat-sec-edgar",
+      "title": "Caterpillar SEC Filings – EDGAR",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000018230&type=10-K&dateb=&owner=include&count=10",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Authoritative source for audited financials, segment disclosures, risk factors, and management discussion of competitive conditions.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "cat-sustainability",
+      "title": "Caterpillar Sustainability Report",
+      "url": "https://www.caterpillar.com/en/company/sustainability.html",
+      "kind": "product-page",
+      "publisher": "Caterpillar Inc.",
+      "note": "Electrification roadmap, Scope 1/2/3 emissions targets, battery-electric and hydrogen R&D disclosures, and customer emissions reduction commitments.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "companies-market-cap-bac",
+      "title": "Bank of America Market Cap History — CompaniesMarketCap",
+      "url": "https://companiesmarketcap.com/bank-of-america/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Historical and current market capitalization data used for rank and valuation estimates.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "companiesmarketcap-amat",
+      "title": "Applied Materials Market Cap — companiesmarketcap.com",
+      "url": "https://companiesmarketcap.com/applied-materials/marketcap/",
+      "kind": "market-data",
+      "publisher": "companiesmarketcap.com",
+      "note": "Historical and current market capitalization data for AMAT used for rank approximation and valuation context.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "fairlife-site",
+      "title": "Fairlife – Official Website",
+      "url": "https://fairlife.com/",
+      "kind": "product-page",
+      "publisher": "fairlife, LLC (a Coca-Cola company)",
+      "note": "Product range, nutritional positioning, and brand overview for the Fairlife ultra-filtered dairy and nutrition sub-brand.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "farm-credit-network",
+      "title": "Farm Credit Network",
+      "url": "https://www.farmcreditnetwork.com/",
+      "kind": "product-page",
+      "publisher": "Farm Credit System",
+      "note": "The borrower-owned cooperative lending network serving U.S. agriculture and rural communities; the most established cooperative alternative to captive OEM equipment financing like Cat Financial.",
+      "accessedOn": "2026-03-19"
+    },
+    {
       "id": "geico",
       "title": "GEICO",
       "url": "https://www.geico.com/",
@@ -3983,6 +5555,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "GEICO",
       "note": "Insurance operating business reference.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "ghostfolio-github",
+      "title": "Ghostfolio — Open-Source Portfolio Tracker",
+      "url": "https://github.com/ghostfolio/ghostfolio",
+      "kind": "open-source-project",
+      "publisher": "Ghostfolio Contributors",
+      "note": "Source repository and documentation for the self-hosted wealth management platform.",
+      "accessedOn": "2026-03-19"
     },
     {
       "id": "gitea",
@@ -4021,6 +5602,42 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "icestorm-project",
+      "title": "Project IceStorm — Open-source Lattice iCE40 FPGA Tools",
+      "url": "https://clifford.at/icestorm",
+      "kind": "open-source-project",
+      "publisher": "Clifford Wolf / YosysHQ",
+      "note": "Reference for the open FPGA toolchain enabling programmable logic without proprietary EDA tools or custom ASIC tape-outs.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "ko-company-site",
+      "title": "The Coca-Cola Company – Official Website",
+      "url": "https://www.coca-colacompany.com/",
+      "kind": "product-page",
+      "publisher": "The Coca-Cola Company",
+      "note": "Brand portfolio overview, business model description, sustainability reporting, and global operations context.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "ko-ir-2024",
+      "title": "The Coca-Cola Company Investor Relations – Annual Reports & Filings",
+      "url": "https://investors.coca-colacompany.com/",
+      "kind": "investor-relations",
+      "publisher": "The Coca-Cola Company",
+      "note": "Primary source for revenue figures, operating margins, geographic segment breakdowns, and shareholder return history.",
+      "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "ko-marketcap-site",
+      "title": "Coca-Cola Market Capitalization – companiesmarketcap.com",
+      "url": "https://companiesmarketcap.com/coca-cola/marketcap/",
+      "kind": "market-data",
+      "publisher": "companiesmarketcap.com",
+      "note": "Historical and current market capitalization data used for market cap estimate and S&P 500 relative rank.",
+      "accessedOn": "2026-03-19"
+    },
+    {
       "id": "libreoffice",
       "title": "LibreOffice",
       "url": "https://www.libreoffice.org/",
@@ -4028,6 +5645,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "The Document Foundation",
       "note": "A durable open-source anchor for productivity-suite alternatives.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "lightning-network-homepage",
+      "title": "Lightning Network",
+      "url": "https://lightning.network/",
+      "kind": "technical-docs",
+      "publisher": "Lightning Network Developers",
+      "note": "Protocol overview and specification for the Bitcoin Lightning payment network.",
+      "accessedOn": "2026-03-19"
     },
     {
       "id": "mastodon",
@@ -4046,6 +5672,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Matrix.org Foundation",
       "note": "Open messaging protocol alternative.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "merrill-edge-homepage",
+      "title": "Merrill Edge — Merrill Lynch Wealth Management",
+      "url": "https://www.merrilledge.com/",
+      "kind": "product-page",
+      "publisher": "Merrill Lynch, Pierce, Fenner & Smith Incorporated",
+      "note": "Product page for Merrill's self-directed and advisory investment platforms.",
+      "accessedOn": "2026-03-19"
     },
     {
       "id": "meta-investor",
@@ -4192,6 +5827,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "open-energy-monitor",
+      "title": "OpenEnergyMonitor – Open Source Energy Monitoring",
+      "url": "https://openenergymonitor.org/",
+      "kind": "open-source-project",
+      "publisher": "OpenEnergyMonitor",
+      "note": "Open-source hardware and software platform for energy monitoring and management; representative of the decentralized solar-plus-storage ecosystem that competes with Cat generator sets in off-grid and microgrid applications.",
+      "accessedOn": "2026-03-19"
+    },
+    {
       "id": "open-food-network",
       "title": "Open Food Network",
       "url": "https://www.openfoodnetwork.org/",
@@ -4199,6 +5843,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Open Food Network",
       "note": "Open, cooperative marketplace infrastructure relevant to retail decentralization.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "opencola-wikipedia",
+      "title": "OpenCola (drink) – Wikipedia",
+      "url": "https://en.wikipedia.org/wiki/OpenCola_(drink)",
+      "kind": "analysis",
+      "publisher": "Wikipedia",
+      "note": "Documents the open-source cola syrup recipe originally released under the GNU GPL; primary reference for the OpenCola alternative and home fermentation alternatives to carbonated soft drinks.",
+      "accessedOn": "2026-03-19"
     },
     {
       "id": "openems",
@@ -4228,6 +5881,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "openroad-project",
+      "title": "The OpenROAD Project",
+      "url": "https://theopenroadproject.org",
+      "kind": "open-source-project",
+      "publisher": "The OpenROAD Project / Linux Foundation",
+      "note": "Open-source RTL-to-GDSII tool; primary reference for capabilities, licensing, and adoption in open-source silicon workflows.",
+      "accessedOn": "2026-03-19"
+    },
+    {
       "id": "openstack",
       "title": "OpenStack",
       "url": "https://www.openstack.org/",
@@ -4235,6 +5897,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "OpenInfra Foundation",
       "note": "Canonical open cloud infrastructure reference.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "ose-website",
+      "title": "Open Source Ecology – Global Village Construction Set",
+      "url": "https://www.opensourceecology.org/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "The most developed open-source alternative in the construction machinery space; GVCS includes bulldozer and tractor designs for small-scale community use.",
+      "accessedOn": "2026-03-19"
     },
     {
       "id": "peertube",
@@ -4271,6 +5942,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "SearXNG contributors",
       "note": "Open metasearch alternative relevant to search decentralization arguments.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "sky130-pdk-source",
+      "title": "SkyWater SKY130 Open Source PDK",
+      "url": "https://skywater-pdk.readthedocs.io",
+      "kind": "open-source-project",
+      "publisher": "SkyWater Technology / Google",
+      "note": "Documentation and specification for the first fully open-source commercial foundry PDK enabling community chip fabrication.",
+      "accessedOn": "2026-03-19"
     },
     {
       "id": "syncthing",
@@ -4397,6 +6077,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Meta",
       "note": "Messaging footprint and scale context.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "zephyr-epaper",
+      "title": "Zephyr RTOS Display Driver Documentation",
+      "url": "https://docs.zephyrproject.org/latest/hardware/peripherals/display/index.html",
+      "kind": "technical-docs",
+      "publisher": "Zephyr Project / Linux Foundation",
+      "note": "Open-source e-paper driver support as evidence of open ecosystem for bistable display alternatives to OLED.",
+      "accessedOn": "2026-03-19"
     }
   ]
 };

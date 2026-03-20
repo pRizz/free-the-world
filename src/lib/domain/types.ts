@@ -22,16 +22,27 @@ export const alternativeMetricIds = [
 export type AlternativeMetricId = (typeof alternativeMetricIds)[number];
 
 export type MetricValueType = "score" | "currency" | "ratio" | "percentage";
-export type EvidenceKind =
-  | "investor-relations"
-  | "annual-report"
-  | "product-page"
-  | "market-data"
-  | "regulatory-filing"
-  | "open-source-project"
-  | "technical-docs"
-  | "analysis";
+export const evidenceKinds = [
+  "investor-relations",
+  "annual-report",
+  "product-page",
+  "market-data",
+  "regulatory-filing",
+  "open-source-project",
+  "technical-docs",
+  "analysis",
+] as const;
+
+export type EvidenceKind = (typeof evidenceKinds)[number];
 export type ConfidenceLevel = "high" | "medium" | "speculative";
+export const alternativeKinds = [
+  "open-source",
+  "decentralized",
+  "cooperative",
+  "protocol",
+  "hybrid",
+] as const;
+export type AlternativeKind = (typeof alternativeKinds)[number];
 
 export interface NarrativeSection {
   title: string;
@@ -144,7 +155,7 @@ export interface Alternative {
   slug: string;
   productSlug: string;
   name: string;
-  kind: "open-source" | "decentralized" | "cooperative" | "protocol" | "hybrid";
+  kind: AlternativeKind;
   homepageUrl?: string;
   repoUrl?: string;
   summary: string;

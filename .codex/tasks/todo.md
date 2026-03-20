@@ -40,10 +40,12 @@ Residual risks:
 
 - [x] Add the next 10 missing S&P 500 companies from a frozen market-cap snapshot, including any required taxonomy updates.
   Verification: the canonical manifests in `content/manifests/companies/` match the March 13, 2026 FinanceCharts ranks 26-35 snapshot and resolve against valid taxonomy IDs.
-- [ ] Run dry-run syncs for the canonical `sp500-top35` batch and verify provider stability across the unresolved companies.
-  Verification: `applied-materials`, `bank-of-america`, `caterpillar`, and `coca-cola` completed dry-run sync successfully; `advanced-micro-devices`, `cisco-systems`, `ge-aerospace`, `merck-co`, `philip-morris-international`, and `rtx` currently fail under `--provider=auto` because Claude returns no valid payload. A focused Codex fallback test on `merck-co` also failed after a long run with empty output, so the remaining work is provider tuning or prompt/runtime debugging rather than queue/pipeline execution.
-- [ ] Run post-intake verification and review the diff for unintended side effects.
-  Verification: `bun run content:validate`, `bun run content:compile`, `bun run build`
+- [x] Run the viable `sp500-top35` companies through real publish-mode sync and tighten the sync guardrails based on the failures encountered.
+  Verification: `applied-materials`, `bank-of-america`, `caterpillar`, and `coca-cola` completed publish-mode sync with `--no-commit=true`, and the sync guardrails now reject unsupported source kinds, unsupported alternative kinds, and `null` optional `repoUrl` values before publish persistence.
+- [ ] Unblock the remaining provider-stalled `sp500-top35` companies.
+  Verification: `advanced-micro-devices`, `cisco-systems`, `ge-aerospace`, `merck-co`, `philip-morris-international`, and `rtx` complete publish-mode sync without Claude/Codex empty-payload failures.
+- [x] Run post-intake verification and review the diff for unintended side effects.
+  Verification: `bun run content:validate`, `bun run typecheck`, `bun run test`, `bun run build`, and the publish-mode `bun run test:e2e` checks passed against the 14-company state.
 
 # Company Pipeline Concurrency
 

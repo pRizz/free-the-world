@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { ContentValidationError, compileContent } from "../../../scripts/lib/content";
@@ -65,6 +65,50 @@ test("compileContent rejects duplicate source ids", async () => {
 
   const error = await getValidationError(() => compileContent(tempRoot));
   expect(error.issues).toContain("Duplicate source id fixture-source.");
+});
+
+test("compileContent rejects unsupported source kinds", async () => {
+  await writeMinimalFixture(tempRoot);
+  await writeJson(path.join(tempRoot, "sources", "fixture-source.json"), {
+    id: "fixture-source",
+    title: "Fixture source",
+    url: "https://example.com/source",
+    kind: "sec-filing",
+    publisher: "Fixture",
+    note: "Fixture note",
+    accessedOn: "2026-03-14",
+  });
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(error.issues).toContain("Source fixture-source has unsupported kind sec-filing.");
+});
+
+test("compileContent rejects unsupported alternative kinds", async () => {
+  await writeMinimalFixture(tempRoot);
+  const bundleFile = path.join(tempRoot, "companies", "fixtureco", "bundle.json");
+  const bundle = JSON.parse(await readFile(bundleFile, "utf8")) as {
+    products: Array<{ alternatives: Array<{ kind: string }> }>;
+  };
+  bundle.products[0].alternatives[0].kind = "commercial";
+  await writeJson(bundleFile, bundle);
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(error.issues).toContain("Alternative fixture-open has unsupported kind commercial.");
+});
+
+test("compileContent rejects null repoUrl on alternatives", async () => {
+  await writeMinimalFixture(tempRoot);
+  const bundleFile = path.join(tempRoot, "companies", "fixtureco", "bundle.json");
+  const bundle = JSON.parse(await readFile(bundleFile, "utf8")) as {
+    products: Array<{ alternatives: Array<{ repoUrl?: string | null }> }>;
+  };
+  bundle.products[0].alternatives[0].repoUrl = null;
+  await writeJson(bundleFile, bundle);
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(error.issues).toContain(
+    "Alternative fixture-open must omit repoUrl instead of setting it to null.",
+  );
 });
 
 test("compileContent rejects bad manifest taxonomy alignment", async () => {
