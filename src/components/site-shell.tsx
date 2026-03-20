@@ -1,5 +1,6 @@
 import { A, useLocation } from "@solidjs/router";
 import { createEffect, createSignal, type ParentProps } from "solid-js";
+import { RepositoryLink } from "~/components/repository-link";
 import { Button } from "~/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "~/components/ui/collapsible";
 import { siteConfig } from "~/lib/config";
@@ -72,6 +73,7 @@ export function SiteShell(props: ParentProps) {
 
               <div class="hidden items-center gap-2 lg:flex">
                 <SiteNav ariaLabel="Primary" />
+                <RepositoryLink size="sm" class="shrink-0" />
                 <Button
                   as="a"
                   href={siteConfig.publicationUrl}
@@ -110,6 +112,7 @@ export function SiteShell(props: ParentProps) {
                 >
                   Newsletter on Substack
                 </Button>
+                <RepositoryLink class="mt-2 w-full" />
               </div>
             </CollapsibleContent>
           </Collapsible>
@@ -131,6 +134,10 @@ export function SiteShell(props: ParentProps) {
               <p class="text-xs uppercase tracking-[0.28em] text-muted-foreground">
                 {siteConfig.snapshotLabel}
               </p>
+              <RepositoryLink
+                tone="inline"
+                class="justify-start text-xs text-muted-foreground hover:text-foreground sm:justify-end"
+              />
               {buildInfo && shortCommitSha ? (
                 <p class="text-xs text-muted-foreground">
                   Commit{" "}

@@ -1,6 +1,7 @@
 import { ContentCard } from "~/components/blocks/content-card";
 import { MetadataGrid } from "~/components/blocks/metadata-grid";
 import { PageHeader } from "~/components/blocks/page-header";
+import { RepositoryLink } from "~/components/repository-link";
 import { Seo } from "~/components/seo";
 import { siteConfig } from "~/lib/config";
 import { aboutSections } from "~/lib/content/site";
@@ -38,6 +39,7 @@ export default function About() {
               </div>
 
               <MetadataGrid
+                class="lg:grid-cols-3"
                 items={[
                   {
                     label: "Commit",
@@ -62,6 +64,15 @@ export default function About() {
                       >
                         {buildInfo.commitTimestamp}
                       </time>
+                    ),
+                  },
+                  {
+                    label: "Repository",
+                    value: (
+                      <RepositoryLink
+                        tone="inline"
+                        class="text-sm text-accent-foreground hover:text-foreground sm:text-base"
+                      />
                     ),
                   },
                 ]}

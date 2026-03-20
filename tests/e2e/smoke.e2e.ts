@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 import { gotoRoute } from "./support";
 
+const repositoryUrl = "https://github.com/pRizz/free-the-world";
+
 test("home page renders shell and hero content", async ({ page }) => {
   await gotoRoute(page, "/");
 
@@ -12,6 +14,12 @@ test("home page renders shell and hero content", async ({ page }) => {
       name: /Price the moat honestly\. Then imagine what happens when more of the world becomes free\./i,
     }),
   ).toBeVisible();
+  await expect(
+    page.getByRole("main").getByRole("link", { name: "Inspect or contribute on GitHub" }),
+  ).toHaveAttribute("href", repositoryUrl);
+  await expect(
+    page.getByRole("contentinfo").getByRole("link", { name: "Open source on GitHub" }),
+  ).toHaveAttribute("href", repositoryUrl);
   await expect(
     page.getByRole("contentinfo").getByRole("link", { name: /^[0-9a-f]{7}$/i }),
   ).toBeVisible();
@@ -31,6 +39,11 @@ test("about page renders the main explainer heading", async ({ page }) => {
       .getByRole("region", { name: "Build metadata" })
       .getByRole("link", { name: /^[0-9a-f]{7}$/i }),
   ).toBeVisible();
+  await expect(
+    page
+      .getByRole("region", { name: "Build metadata" })
+      .getByRole("link", { name: "Open source on GitHub" }),
+  ).toHaveAttribute("href", repositoryUrl);
   await expect(page.getByRole("region", { name: "Build metadata" }).locator("time")).toContainText(
     /T\d{2}:\d{2}:\d{2}/,
   );
@@ -98,6 +111,10 @@ test("mobile shell stays compact and expands navigation on demand", async ({ pag
     page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "About" }),
   ).toBeVisible();
   await expect(banner.getByRole("link", { name: "Newsletter on Substack" })).toBeVisible();
+  await expect(banner.getByRole("link", { name: "Open source on GitHub" })).toHaveAttribute(
+    "href",
+    repositoryUrl,
+  );
 });
 
 test("mobile menu closes after route navigation", async ({ page }) => {
@@ -138,6 +155,10 @@ test("desktop shell keeps inline navigation and hides the mobile toggle", async 
   await expect(
     banner.getByRole("navigation", { name: "Primary" }).getByRole("link", { name: "Mirrors" }),
   ).toBeVisible();
+  await expect(banner.getByRole("link", { name: "Open source on GitHub" })).toHaveAttribute(
+    "href",
+    repositoryUrl,
+  );
   await expect(banner.getByRole("link", { name: "Newsletter on Substack" })).toBeVisible();
   await expect(
     banner.getByRole("button", { name: "Toggle navigation menu", includeHidden: true }),

@@ -15,6 +15,7 @@ export interface SiteBuildInfo {
 }
 
 const publicationUrl = "https://peter.ryszkiewicz.us/";
+const repositoryUrl = "https://github.com/pRizz/free-the-world";
 const deployTarget = parseDeployTarget(import.meta.env.VITE_SITE_DEPLOY_TARGET);
 const rawBasePath = import.meta.env.SERVER_BASE_URL || getDeployTargetConfig(deployTarget).basePath;
 const normalizedBasePath = normalizeBasePath(rawBasePath);
@@ -37,6 +38,13 @@ export const siteConfig = {
   accentName: theme.accentName,
   publicationUrl,
   substackEmbedUrl: `${publicationUrl}embed`,
+  repository: {
+    url: repositoryUrl,
+    labels: {
+      compact: "Open source on GitHub",
+      cta: "Inspect or contribute on GitHub",
+    },
+  },
   snapshotLabel: "Early-2026 public-source snapshot",
   buildInfo,
 } as const;

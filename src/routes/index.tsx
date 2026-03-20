@@ -3,6 +3,7 @@ import { ContentCard } from "~/components/blocks/content-card";
 import { MetricCard } from "~/components/blocks/metric-card";
 import { PageHeader } from "~/components/blocks/page-header";
 import { NewsletterSignup } from "~/components/newsletter-signup";
+import { RepositoryLink } from "~/components/repository-link";
 import { Seo } from "~/components/seo";
 import { Badge } from "~/components/ui/badge";
 import { ButtonLink } from "~/components/ui/button";
@@ -63,6 +64,7 @@ export default function Home() {
               <ButtonLink href="/methodology" variant="secondary">
                 Read the methodology
               </ButtonLink>
+              <RepositoryLink labelVariant="cta" />
             </div>
           </Card>
 

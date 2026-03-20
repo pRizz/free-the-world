@@ -1,5 +1,6 @@
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import { RepositoryLink } from "~/components/repository-link";
 import type { SourceCitation } from "~/lib/domain/types";
 
 export function SourceList(props: {
@@ -16,6 +17,7 @@ export function SourceList(props: {
           props.description ??
           "These sources shaped the scoring and writing. The site is opinionated, but it should not behave like it is improvising facts in a dark room."
         }
+        actions={<RepositoryLink size="sm" class="w-full sm:w-auto" />}
       />
 
       <div class="space-y-4">
