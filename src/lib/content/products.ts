@@ -1,6 +1,7 @@
 import type { Alternative, MetricAssessment, Product } from "~/lib/domain/types";
 
 const reviewedOn = "2026-03-14";
+type LegacyProduct = Omit<Product, "disruptionConceptSlugs" | "maybeDisruptionException">;
 
 function metric(
   value: number,
@@ -17,7 +18,7 @@ function metric(
   };
 }
 
-export const products: Product[] = [
+const rawProducts: LegacyProduct[] = [
   {
     slug: "nvidia-cuda",
     companySlug: "nvidia",
@@ -347,6 +348,12 @@ export const products: Product[] = [
     technologyWaveIds: ["microfactories", "additive-manufacturing"],
   },
 ];
+
+export const products: Product[] = rawProducts.map((product) => ({
+  ...product,
+  disruptionConceptSlugs: [],
+  maybeDisruptionException: null,
+}));
 
 export const alternatives: Alternative[] = [
   {

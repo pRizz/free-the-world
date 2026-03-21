@@ -39,7 +39,7 @@ export default function CompanyProductsPage() {
     <>
       <Seo
         title={`${companyData.name} products · Free The World`}
-        description={`A tighter look at the products that matter most to ${companyData.name}, along with the free, open, decentralized, or cooperative alternatives already creating pricing pressure.`}
+        description={`A tighter look at the products that matter most to ${companyData.name}, along with documented alternatives and original disruption concepts.`}
         route={`/companies/${companyData.slug}/products`}
       />
 
@@ -56,7 +56,7 @@ export default function CompanyProductsPage() {
             <p class="max-w-4xl text-base leading-8 text-muted-foreground sm:text-lg">
               A tighter look at the products that matter most to {companyData.name}, along with the
               free, open, decentralized, or cooperative alternatives already creating pricing
-              pressure.
+              pressure and the original disruption concepts that could widen that pressure further.
             </p>
           </div>
         </section>

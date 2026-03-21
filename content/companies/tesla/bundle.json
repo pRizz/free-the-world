@@ -228,6 +228,165 @@
             "openevse"
           ]
         }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "tesla-supercharger-concept",
+          "name": "Open EV Charging Federation",
+          "summary": "A charging network where stations, payment rails, availability data, and loyalty layers are interoperable instead of tied to one branded network.",
+          "angleIds": [
+            "lightning",
+            "federation",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "Break charging lock-in by making roaming, billing, and uptime competition portable across many station operators.",
+          "bitcoinOrDecentralizationRole": "Lightning enables instant roaming settlement between drivers, station owners, and software operators with low overhead.",
+          "coordinationMechanism": "Independent chargers publish availability and pricing while routing apps and fleet services compose them into user-facing experiences.",
+          "verificationOrTrustModel": "Signed charger status, metered energy proofs, and random uptime audits reduce fake availability and billing disputes.",
+          "failureModes": [
+            "Hardware reliability still matters more than protocol elegance",
+            "Drivers heavily prefer dependable defaults"
+          ],
+          "adoptionPath": [
+            "Start with fleets and regional roaming partners",
+            "Expand into mainstream driver routing once uptime reporting is consistently trusted"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "tesla-energy",
+            "openevse"
+          ],
+          "enablerSourceIds": [
+            "openevse"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.5,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "tesla-energy",
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.6,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "tesla-energy",
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 7.2,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "tesla-energy",
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.7,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "tesla-energy",
+                "openevse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "tesla-supercharger-community-energy-stop-kits",
+          "name": "Community Energy Stop Kits",
+          "summary": "Local businesses, municipalities, and property owners assemble charging stops from open chargers, local storage, and solar canopies instead of depending on a single branded network footprint.",
+          "angleIds": [
+            "open-energy-hardware",
+            "distributed-energy-generation",
+            "solar-manufacturing",
+            "microgrid-coordination"
+          ],
+          "thesis": "Unlike the first concept's charging federation, this one attacks the site-build and equipment stack that creates network concentration in the first place.",
+          "bitcoinOrDecentralizationRole": "Open energy hardware makes more of the charging stop buildout modular and locally sourceable.",
+          "coordinationMechanism": "Site hosts combine open charger kits, local power assets, and service contracts while federated software still keeps discovery interoperable.",
+          "verificationOrTrustModel": "Charger uptime logs, payment receipts, and site power telemetry prove whether a stop is actually usable and economic.",
+          "failureModes": [
+            "Permitting and grid interconnection still slow deployment",
+            "Drivers may still prefer the brand they already trust on long trips"
+          ],
+          "adoptionPath": [
+            "Start with destination charging and municipal sites",
+            "Expand to corridor charging as reliability data compounds"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "tesla-energy",
+            "tesla-investor"
+          ],
+          "enablerSourceIds": [
+            "openevse",
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "openems"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.5,
+              "rationale": "This concept decentralizes charging-stop hardware and local power supply into many site owners instead of one branded network builder.",
+              "sourceIds": [
+                "openevse",
+                "libre-solar",
+                "nrel-perovskite-solar",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 6.9,
+              "rationale": "The coordination loop is credible because site hosts can combine open chargers, storage, and software while still sharing discovery metadata.",
+              "sourceIds": [
+                "tesla-energy",
+                "tesla-investor",
+                "openevse",
+                "libre-solar",
+                "nrel-perovskite-solar",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.2,
+              "rationale": "Most primitives already exist; the equipment exists now, though interconnection and service consistency still need work.",
+              "sourceIds": [
+                "openevse",
+                "libre-solar",
+                "nrel-perovskite-solar",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.8,
+              "rationale": "If it scales, it pressures Tesla's advantage in proprietary charging-site deployment and bundled energy hardware.",
+              "sourceIds": [
+                "tesla-energy",
+                "tesla-investor"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
       ]
     },
     {
@@ -344,6 +503,166 @@
           "sourceIds": [
             "openems"
           ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "tesla-energy-stack-concept",
+          "name": "Household Energy Swarm",
+          "summary": "A network where homes, batteries, installers, and grid-service operators coordinate through open software rather than one vertically integrated battery brand.",
+          "angleIds": [
+            "lightning",
+            "federation",
+            "decentralized-coordination",
+            "cooperative-production"
+          ],
+          "thesis": "Move energy storage value toward open coordination and installer ecosystems instead of a single brand stack.",
+          "bitcoinOrDecentralizationRole": "Lightning can settle grid services and peer energy transactions while open protocols let hardware brands compete on equal terms.",
+          "coordinationMechanism": "Installers, homeowners, and local grid-service operators mix hardware and software under shared dispatch rules.",
+          "verificationOrTrustModel": "Metered dispatch logs, inverter attestations, and settlement records make delivered flexibility auditable.",
+          "failureModes": [
+            "Policy and utility rules still shape the market heavily",
+            "Hardware interoperability can be messy"
+          ],
+          "adoptionPath": [
+            "Start where virtual power plants already make sense",
+            "Broaden as open inverter and battery control standards improve"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "tesla-energy",
+            "openems"
+          ],
+          "enablerSourceIds": [
+            "openems"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.4,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "tesla-energy",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.5,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "tesla-energy",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 7,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "tesla-energy",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.6,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "tesla-energy",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "tesla-energy-stack-open-solar-appliance-microfactory",
+          "name": "Open Solar Appliance Microfactory",
+          "summary": "Open solar, storage, inverter, and small-wind modules become configurable home energy appliances that households or local shops can assemble, upgrade, and repair instead of buying a fixed vendor stack.",
+          "angleIds": [
+            "solar-manufacturing",
+            "wind-manufacturing",
+            "home-microfactory",
+            "open-energy-hardware",
+            "distributed-energy-generation"
+          ],
+          "thesis": "Unlike the first concept's swarm coordination, this one attacks Tesla's hardware bundle by making more of the home energy system locally buildable.",
+          "bitcoinOrDecentralizationRole": "Printable solar research, open power electronics, and small wind hardware widen the range of components that can be assembled outside a closed vendor channel.",
+          "coordinationMechanism": "Design maintainers, local assemblers, and installers share validated hardware recipes while households buy interoperable modules over time.",
+          "verificationOrTrustModel": "Output telemetry, safety tests, and commissioning checklists keep locally assembled systems tied to measurable performance.",
+          "failureModes": [
+            "Too much of the stack is still technically or regulatorily hard for household assembly",
+            "Warranty and safety expectations could keep buyers in closed systems"
+          ],
+          "adoptionPath": [
+            "Start with controllers, racks, and replaceable power modules",
+            "Move deeper into generation hardware only as the open stack proves itself"
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "tesla-energy",
+            "tesla-investor"
+          ],
+          "enablerSourceIds": [
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "windkit",
+            "reprap"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 9,
+              "rationale": "This concept decentralizes home energy hardware into interoperable locally assembled modules instead of one closed vendor stack.",
+              "sourceIds": [
+                "libre-solar",
+                "nrel-perovskite-solar",
+                "windkit",
+                "reprap"
+              ],
+              "confidence": "speculative",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 6.9,
+              "rationale": "The coordination loop is credible because validated hardware recipes let many assemblers and installers serve the same modular system.",
+              "sourceIds": [
+                "tesla-energy",
+                "tesla-investor",
+                "libre-solar",
+                "nrel-perovskite-solar",
+                "windkit",
+                "reprap"
+              ],
+              "confidence": "speculative",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 5.1,
+              "rationale": "The enabling pieces exist, but controllers and power modules are real today, but truly local generation hardware is still early.",
+              "sourceIds": [
+                "libre-solar",
+                "nrel-perovskite-solar",
+                "windkit",
+                "reprap"
+              ],
+              "confidence": "speculative",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 8.4,
+              "rationale": "If it scales, it pressures Tesla Energy's bundled hardware margins and ecosystem lock-in.",
+              "sourceIds": [
+                "tesla-energy",
+                "tesla-investor"
+              ],
+              "confidence": "speculative",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
         }
       ]
     }

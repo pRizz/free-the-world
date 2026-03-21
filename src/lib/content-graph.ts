@@ -1,7 +1,9 @@
 export {
   alternatives,
   companies,
+  conceptAngles,
   contentGraph,
+  disruptionConcepts,
   indices,
   industries,
   products,

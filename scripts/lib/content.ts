@@ -15,6 +15,9 @@ import { calculateFreedCapitalPotential } from "../../src/lib/domain/scoring";
 import type {
   Alternative,
   Company,
+  ConceptAngle,
+  ConceptMetricId,
+  DisruptionConcept,
   IndexDefinition,
   Industry,
   MetricAssessment,
@@ -24,7 +27,12 @@ import type {
   SourceCitation,
   TechnologyWave,
 } from "../../src/lib/domain/types";
-import { alternativeKinds, alternativeMetricIds, evidenceKinds } from "../../src/lib/domain/types";
+import {
+  alternativeKinds,
+  alternativeMetricIds,
+  conceptMetricIds,
+  evidenceKinds,
+} from "../../src/lib/domain/types";
 
 const defaultRootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -48,6 +56,7 @@ export interface LoadedRawContent {
   sectors: Sector[];
   industries: Industry[];
   technologyWaves: TechnologyWave[];
+  conceptAngles: ConceptAngle[];
   manifests: CompanyManifest[];
   bundles: CompanyBundle[];
   sources: SourceCitation[];
@@ -73,17 +82,27 @@ export async function loadRawContent(contentRoot = contentDir): Promise<LoadedRa
   const companiesRoot = path.join(contentRoot, "companies");
   const sourcesRoot = path.join(contentRoot, "sources");
 
-  const [regions, indices, sectors, industries, technologyWaves, manifests, sources, bundles] =
-    await Promise.all([
-      readJsonFile<Region[]>(path.join(taxonomyRoot, "regions.json")),
-      readJsonFile<IndexDefinition[]>(path.join(taxonomyRoot, "indices.json")),
-      readJsonFile<Sector[]>(path.join(taxonomyRoot, "sectors.json")),
-      readJsonFile<Industry[]>(path.join(taxonomyRoot, "industries.json")),
-      readJsonFile<TechnologyWave[]>(path.join(taxonomyRoot, "technology-waves.json")),
-      readJsonDirectory<CompanyManifest>(manifestsRoot),
-      readJsonDirectory<SourceCitation>(sourcesRoot),
-      readCompanyBundles(companiesRoot),
-    ]);
+  const [
+    regions,
+    indices,
+    sectors,
+    industries,
+    technologyWaves,
+    conceptAngles,
+    manifests,
+    sources,
+    bundles,
+  ] = await Promise.all([
+    readJsonFile<Region[]>(path.join(taxonomyRoot, "regions.json")),
+    readJsonFile<IndexDefinition[]>(path.join(taxonomyRoot, "indices.json")),
+    readJsonFile<Sector[]>(path.join(taxonomyRoot, "sectors.json")),
+    readJsonFile<Industry[]>(path.join(taxonomyRoot, "industries.json")),
+    readJsonFile<TechnologyWave[]>(path.join(taxonomyRoot, "technology-waves.json")),
+    readJsonFile<ConceptAngle[]>(path.join(taxonomyRoot, "concept-angles.json")),
+    readJsonDirectory<CompanyManifest>(manifestsRoot),
+    readJsonDirectory<SourceCitation>(sourcesRoot),
+    readCompanyBundles(companiesRoot),
+  ]);
 
   return {
     regions,
@@ -91,6 +110,7 @@ export async function loadRawContent(contentRoot = contentDir): Promise<LoadedRa
     sectors,
     industries,
     technologyWaves,
+    conceptAngles,
     manifests,
     bundles,
     sources,
@@ -148,6 +168,11 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
     issues,
   );
   assertUnique(
+    raw.conceptAngles.map((conceptAngle) => conceptAngle.id),
+    "concept angle",
+    issues,
+  );
+  assertUnique(
     raw.manifests.map((manifest) => manifest.slug),
     "company manifest",
     issues,
@@ -168,6 +193,7 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
   const sectorIds = new Set(raw.sectors.map((sector) => sector.id));
   const industryById = new Map(raw.industries.map((industry) => [industry.id, industry]));
   const waveIds = new Set(raw.technologyWaves.map((wave) => wave.id));
+  const conceptAngleIds = new Set(raw.conceptAngles.map((conceptAngle) => conceptAngle.id));
   const sourceById = new Map(raw.sources.map((source) => [source.id, source]));
   const manifestBySlug = new Map(raw.manifests.map((manifest) => [manifest.slug, manifest]));
 
@@ -192,8 +218,10 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
   const companies: Company[] = [];
   const products: Product[] = [];
   const alternatives: Alternative[] = [];
+  const disruptionConcepts: DisruptionConcept[] = [];
   const productSlugSet = new Set<string>();
   const alternativeSlugSet = new Set<string>();
+  const disruptionConceptSlugSet = new Set<string>();
 
   for (const bundle of raw.bundles) {
     if (bundle.schemaVersion !== 1) {
@@ -229,6 +257,7 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
         productRecord,
         {
           waveIds,
+          conceptAngleIds,
           sourceById,
         },
         issues,
@@ -241,6 +270,7 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
       companyProductSlugs.push(productRecord.slug);
 
       const productAlternativeSlugs: string[] = [];
+      const productDisruptionConceptSlugs: string[] = [];
       for (const alternativeRecord of productRecord.alternatives) {
         validateAlternativeRecord(productRecord.slug, alternativeRecord, { sourceById }, issues);
 
@@ -256,12 +286,45 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
         });
       }
 
-      const { alternatives: nestedAlternatives, ...productFields } = productRecord;
+      for (const disruptionConceptRecord of productRecord.disruptionConcepts) {
+        validateDisruptionConceptRecord(
+          productRecord.slug,
+          disruptionConceptRecord,
+          { conceptAngleIds, sourceById },
+          issues,
+        );
+
+        if (disruptionConceptSlugSet.has(disruptionConceptRecord.slug)) {
+          issues.push(`Duplicate disruption concept slug ${disruptionConceptRecord.slug}.`);
+        }
+        disruptionConceptSlugSet.add(disruptionConceptRecord.slug);
+        productDisruptionConceptSlugs.push(disruptionConceptRecord.slug);
+
+        disruptionConcepts.push({
+          ...disruptionConceptRecord,
+          productSlug: productRecord.slug,
+          sourceIds: uniqueSourceIds(
+            disruptionConceptRecord.problemSourceIds,
+            disruptionConceptRecord.enablerSourceIds,
+            ...Object.values(disruptionConceptRecord.metrics).map((metric) => metric.sourceIds),
+          ),
+        });
+      }
+
+      const {
+        alternatives: nestedAlternatives,
+        disruptionConcepts: nestedDisruptionConcepts,
+        maybeDisruptionException,
+        ...productFields
+      } = productRecord;
       void nestedAlternatives;
+      void nestedDisruptionConcepts;
       products.push({
         ...productFields,
         companySlug: bundle.company.slug,
         alternativeSlugs: productAlternativeSlugs,
+        disruptionConceptSlugs: productDisruptionConceptSlugs,
+        maybeDisruptionException: maybeDisruptionException ?? null,
       });
     }
 
@@ -285,11 +348,13 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
     sectors: raw.sectors,
     industries: raw.industries,
     technologyWaves: raw.technologyWaves,
+    conceptAngles: raw.conceptAngles,
     companies: companies.sort(
       (left, right) => left.rankApprox - right.rankApprox || left.name.localeCompare(right.name),
     ),
     products,
     alternatives,
+    disruptionConcepts,
     sources: [...raw.sources].sort((left, right) => left.id.localeCompare(right.id)),
   };
 }
@@ -312,9 +377,11 @@ export async function writeGeneratedContentGraph(
     "export const sectors = contentGraph.sectors;",
     "export const industries = contentGraph.industries;",
     "export const technologyWaves = contentGraph.technologyWaves;",
+    "export const conceptAngles = contentGraph.conceptAngles;",
     "export const companies = contentGraph.companies;",
     "export const products = contentGraph.products;",
     "export const alternatives = contentGraph.alternatives;",
+    "export const disruptionConcepts = contentGraph.disruptionConcepts;",
     "export const sources = contentGraph.sources;",
     "",
   ].join("\n");
@@ -526,6 +593,7 @@ function validateProductRecord(
   product: CompanyBundle["products"][number],
   lookup: {
     waveIds: Set<string>;
+    conceptAngleIds: Set<string>;
     sourceById: Map<string, SourceCitation>;
   },
   issues: string[],
@@ -540,6 +608,31 @@ function validateProductRecord(
 
   if (!product.slug || !product.name) {
     issues.push(`Company ${companySlug} has a product with missing slug or name.`);
+  }
+
+  if (product.disruptionConcepts.length === 0 && !product.maybeDisruptionException) {
+    issues.push(
+      `Product ${product.slug} must define 1-2 disruption concepts or a documented exception.`,
+    );
+  }
+
+  if (product.disruptionConcepts.length > 2) {
+    issues.push(`Product ${product.slug} exceeds the maximum of 2 disruption concepts.`);
+  }
+
+  if (product.disruptionConcepts.length > 0 && product.maybeDisruptionException) {
+    issues.push(
+      `Product ${product.slug} cannot define disruption concepts and a disruption exception together.`,
+    );
+  }
+
+  if (product.maybeDisruptionException) {
+    validateDisruptionException(
+      `Product ${product.slug}`,
+      product.maybeDisruptionException,
+      lookup.sourceById,
+      issues,
+    );
   }
 }
 
@@ -580,6 +673,99 @@ function validateAlternativeRecord(
   for (const [metricId, metric] of Object.entries(alternative.metrics)) {
     validateMetricAssessment(
       `Alternative ${alternative.slug} metric ${metricId}`,
+      metric,
+      lookup.sourceById,
+      issues,
+    );
+  }
+}
+
+function validateDisruptionException(
+  label: string,
+  disruptionException: NonNullable<CompanyBundle["products"][number]["maybeDisruptionException"]>,
+  sourceById: Map<string, SourceCitation>,
+  issues: string[],
+) {
+  if (!disruptionException.reason.trim()) {
+    issues.push(`${label} disruption exception is missing a reason.`);
+  }
+
+  if (!disruptionException.lastReviewedOn) {
+    issues.push(`${label} disruption exception is missing lastReviewedOn.`);
+  }
+
+  validateSourceReferences(
+    `${label} disruption exception`,
+    disruptionException.sourceIds,
+    sourceById,
+    issues,
+  );
+}
+
+function validateDisruptionConceptRecord(
+  productSlug: string,
+  disruptionConcept: CompanyBundle["products"][number]["disruptionConcepts"][number],
+  lookup: {
+    conceptAngleIds: Set<string>;
+    sourceById: Map<string, SourceCitation>;
+  },
+  issues: string[],
+) {
+  if (!disruptionConcept.slug || !disruptionConcept.name) {
+    issues.push(`Product ${productSlug} has a disruption concept with missing slug or name.`);
+  }
+
+  if (disruptionConcept.angleIds.length === 0) {
+    issues.push(
+      `Disruption concept ${disruptionConcept.slug} must reference at least one concept angle.`,
+    );
+  }
+
+  for (const angleId of disruptionConcept.angleIds) {
+    if (!lookup.conceptAngleIds.has(angleId)) {
+      issues.push(
+        `Disruption concept ${disruptionConcept.slug} references unknown concept angle ${angleId}.`,
+      );
+    }
+  }
+
+  validateSourceReferences(
+    `Disruption concept ${disruptionConcept.slug} problem sources`,
+    disruptionConcept.problemSourceIds,
+    lookup.sourceById,
+    issues,
+  );
+  validateSourceReferences(
+    `Disruption concept ${disruptionConcept.slug} enabler sources`,
+    disruptionConcept.enablerSourceIds,
+    lookup.sourceById,
+    issues,
+  );
+
+  if (disruptionConcept.problemSourceIds.length === 0) {
+    issues.push(
+      `Disruption concept ${disruptionConcept.slug} must reference at least one problem source.`,
+    );
+  }
+
+  if (disruptionConcept.enablerSourceIds.length === 0) {
+    issues.push(
+      `Disruption concept ${disruptionConcept.slug} must reference at least one enabler source.`,
+    );
+  }
+
+  const metricIds = new Set(Object.keys(disruptionConcept.metrics));
+  for (const metricId of conceptMetricIds) {
+    if (!metricIds.has(metricId)) {
+      issues.push(`Disruption concept ${disruptionConcept.slug} is missing metric ${metricId}.`);
+    }
+  }
+
+  for (const [metricId, metric] of Object.entries(disruptionConcept.metrics) as Array<
+    [ConceptMetricId, MetricAssessment]
+  >) {
+    validateMetricAssessment(
+      `Disruption concept ${disruptionConcept.slug} metric ${metricId}`,
       metric,
       lookup.sourceById,
       issues,

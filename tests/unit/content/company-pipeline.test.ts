@@ -116,6 +116,20 @@ describe("bun run company:pipeline", () => {
     expect(loopManifest?.taskResults.every((result) => result.success)).toBe(true);
     expect(syncManifest?.mode).toBe("dry-run");
     expect(syncManifest?.taskResults.every((result) => result.success)).toBe(true);
+
+    const syncRunDirName = runDirEntries.find((entryName) =>
+      runManifests.find(
+        (runManifest, index) =>
+          runDirEntries[index] === entryName &&
+          runManifest.taskResults.some((result) => result.taskId === "company-sync"),
+      ),
+    );
+    const summaryMarkdown = await readFile(
+      path.join(tempRoot, "research", "runs", "newco", syncRunDirName ?? "", "summary.md"),
+      "utf8",
+    );
+    expect(summaryMarkdown).toContain("## Concept Review Checklist");
+    expect(summaryMarkdown).toContain("Products that still need a second concept");
   });
 
   test("promotes every queued manifest in a batch when batch-id is provided alone", async () => {
@@ -360,6 +374,30 @@ function buildSyncPayload(options: { slug: string; companyName: string; ticker: 
                 costLeverage: metric(6, sourceId),
               },
               sourceIds: [sourceId],
+            },
+          ],
+          disruptionConcepts: [
+            {
+              slug: `${options.slug}-market`,
+              name: `${options.companyName} Open Market`,
+              summary: "Structured concept",
+              angleIds: ["lightning", "decentralized-coordination"],
+              thesis: "Open the product to independent operators.",
+              bitcoinOrDecentralizationRole:
+                "Lightning settles small recurring payments between participants.",
+              coordinationMechanism: "Independent operators join a shared marketplace.",
+              verificationOrTrustModel: "Proof of fulfillment and random audits discourage fraud.",
+              failureModes: ["Collusion", "Weak early liquidity"],
+              adoptionPath: ["Pilot with niche users", "Expand after reliability improves"],
+              confidence: "medium",
+              problemSourceIds: [sourceId],
+              enablerSourceIds: [sourceId],
+              metrics: {
+                decentralizationFit: metric(8, sourceId),
+                coordinationCredibility: metric(7, sourceId),
+                implementationFeasibility: metric(6.5, sourceId),
+                incumbentPressure: metric(6, sourceId),
+              },
             },
           ],
         },

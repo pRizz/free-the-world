@@ -1,4 +1,5 @@
 export { AlternativeTable } from "./alternative-table";
+export { DisruptionConceptsPanel } from "./disruption-concepts-panel";
 export { CompanyMetadataPanel } from "./metadata-panel";
 export { CompanyMetricsPanel } from "./metrics-panel";
 export { ProductOverviewPanel } from "./product-overview-panel";

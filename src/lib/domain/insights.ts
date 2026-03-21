@@ -1,5 +1,5 @@
-import { alternatives, companies, products } from "~/lib/content-graph";
-import type { Alternative, Company, Product } from "~/lib/domain/types";
+import { alternatives, companies, disruptionConcepts, products } from "~/lib/content-graph";
+import type { Alternative, Company, DisruptionConcept, Product } from "~/lib/domain/types";
 
 export interface PostBubbleRow {
   company: Company;
@@ -75,6 +75,46 @@ export interface AlternativePressureDataset {
   undocumentedProductCount: number;
   totalAlternativeCount: number;
   averagePressureScore: number | null;
+}
+
+export interface DisruptionConceptMetricAverages {
+  decentralizationFit: number;
+  coordinationCredibility: number;
+  implementationFeasibility: number;
+  incumbentPressure: number;
+}
+
+export interface DisruptionConceptProductRow {
+  company: Company;
+  product: Product;
+  conceptCount: number;
+  conceptNames: string[];
+  hasDocumentedConcepts: boolean;
+  hasDocumentedException: boolean;
+  exceptionReason: string | null;
+  averages: DisruptionConceptMetricAverages | null;
+  conceptScore: number | null;
+}
+
+export interface DisruptionConceptCompanyRow {
+  company: Company;
+  productCount: number;
+  productsWithConcepts: number;
+  productsWithExceptions: number;
+  conceptCount: number;
+  averages: DisruptionConceptMetricAverages | null;
+  conceptScore: number | null;
+  highestScoringProduct: DisruptionConceptProductRow | null;
+  hasDocumentedConcepts: boolean;
+}
+
+export interface DisruptionConceptDataset {
+  productRows: DisruptionConceptProductRow[];
+  companyRows: DisruptionConceptCompanyRow[];
+  productsWithConcepts: number;
+  productsWithExceptions: number;
+  totalConceptCount: number;
+  averageConceptScore: number | null;
 }
 
 export function calculateResidualMarketCap(
@@ -239,6 +279,39 @@ export function getAlternativeMetricAverages(
   };
 }
 
+export function getDisruptionConceptMetricAverages(
+  inputConcepts: DisruptionConcept[],
+): DisruptionConceptMetricAverages | null {
+  if (inputConcepts.length === 0) {
+    return null;
+  }
+
+  return {
+    decentralizationFit:
+      average(
+        inputConcepts.map(
+          (disruptionConcept) => disruptionConcept.metrics.decentralizationFit.value,
+        ),
+      ) ?? 0,
+    coordinationCredibility:
+      average(
+        inputConcepts.map(
+          (disruptionConcept) => disruptionConcept.metrics.coordinationCredibility.value,
+        ),
+      ) ?? 0,
+    implementationFeasibility:
+      average(
+        inputConcepts.map(
+          (disruptionConcept) => disruptionConcept.metrics.implementationFeasibility.value,
+        ),
+      ) ?? 0,
+    incumbentPressure:
+      average(
+        inputConcepts.map((disruptionConcept) => disruptionConcept.metrics.incumbentPressure.value),
+      ) ?? 0,
+  };
+}
+
 /**
  * We weight readiness and cost leverage more heavily because "pressure" is most useful when a
  * substitute is both deployable and capable of changing the incumbent's pricing conversation.
@@ -249,6 +322,15 @@ export function calculateAlternativePressureScore(averages: AlternativeMetricAve
     averages.costLeverage * 0.35 +
     averages.openness * 0.15 +
     averages.decentralizationFit * 0.15
+  );
+}
+
+export function calculateDisruptionConceptScore(averages: DisruptionConceptMetricAverages) {
+  return (
+    averages.implementationFeasibility * 0.35 +
+    averages.incumbentPressure * 0.35 +
+    averages.coordinationCredibility * 0.2 +
+    averages.decentralizationFit * 0.1
   );
 }
 
@@ -348,6 +430,104 @@ export function getAlternativePressureDataset(
   };
 }
 
+export function getDisruptionConceptDataset(
+  inputCompanies: Company[] = companies,
+  inputProducts: Product[] = products,
+  inputConcepts: DisruptionConcept[] = disruptionConcepts,
+): DisruptionConceptDataset {
+  const companyBySlug = new Map(inputCompanies.map((company) => [company.slug, company]));
+  const conceptsByProductSlug = new Map<string, DisruptionConcept[]>();
+
+  for (const disruptionConcept of inputConcepts) {
+    const existingConcepts = conceptsByProductSlug.get(disruptionConcept.productSlug) ?? [];
+    existingConcepts.push(disruptionConcept);
+    conceptsByProductSlug.set(disruptionConcept.productSlug, existingConcepts);
+  }
+
+  const productRows = inputProducts
+    .map((product) => {
+      const company = companyBySlug.get(product.companySlug);
+      if (!company) {
+        return null;
+      }
+
+      const productConcepts = conceptsByProductSlug.get(product.slug) ?? [];
+      const averages = getDisruptionConceptMetricAverages(productConcepts);
+
+      return {
+        company,
+        product,
+        conceptCount: productConcepts.length,
+        conceptNames: productConcepts.map((disruptionConcept) => disruptionConcept.name),
+        hasDocumentedConcepts: productConcepts.length > 0,
+        hasDocumentedException: product.maybeDisruptionException !== null,
+        exceptionReason: product.maybeDisruptionException?.reason ?? null,
+        averages,
+        conceptScore: averages ? calculateDisruptionConceptScore(averages) : null,
+      } satisfies DisruptionConceptProductRow;
+    })
+    .filter((row): row is DisruptionConceptProductRow => row !== null)
+    .sort(compareDisruptionConceptRows);
+
+  const productRowsByCompanySlug = new Map<string, DisruptionConceptProductRow[]>();
+  for (const row of productRows) {
+    const existingRows = productRowsByCompanySlug.get(row.company.slug) ?? [];
+    existingRows.push(row);
+    productRowsByCompanySlug.set(row.company.slug, existingRows);
+  }
+
+  const companyRows = inputCompanies
+    .map((company) => {
+      const companyProductRows = productRowsByCompanySlug.get(company.slug) ?? [];
+      const conceptProductRows = companyProductRows.filter((row) => row.hasDocumentedConcepts);
+      const companyConcepts = conceptProductRows.flatMap(
+        (row) => conceptsByProductSlug.get(row.product.slug) ?? [],
+      );
+      const averages = getDisruptionConceptMetricAverages(companyConcepts);
+
+      return {
+        company,
+        productCount: companyProductRows.length,
+        productsWithConcepts: conceptProductRows.length,
+        productsWithExceptions: companyProductRows.filter((row) => row.hasDocumentedException)
+          .length,
+        conceptCount: companyConcepts.length,
+        averages,
+        conceptScore: averages ? calculateDisruptionConceptScore(averages) : null,
+        highestScoringProduct: conceptProductRows[0] ?? null,
+        hasDocumentedConcepts: conceptProductRows.length > 0,
+      } satisfies DisruptionConceptCompanyRow;
+    })
+    .sort((left, right) => {
+      if (left.hasDocumentedConcepts !== right.hasDocumentedConcepts) {
+        return left.hasDocumentedConcepts ? -1 : 1;
+      }
+
+      if (left.conceptScore !== null && right.conceptScore !== null) {
+        if (right.conceptScore !== left.conceptScore) {
+          return right.conceptScore - left.conceptScore;
+        }
+      }
+
+      return left.company.name.localeCompare(right.company.name);
+    });
+
+  const documentedProductRows = productRows.filter((row) => row.hasDocumentedConcepts);
+
+  return {
+    productRows,
+    companyRows,
+    productsWithConcepts: documentedProductRows.length,
+    productsWithExceptions: productRows.filter((row) => row.hasDocumentedException).length,
+    totalConceptCount: inputConcepts.length,
+    averageConceptScore: average(
+      documentedProductRows
+        .map((row) => row.conceptScore)
+        .filter((score): score is number => score !== null),
+    ),
+  };
+}
+
 function compareAlternativePressureRows(
   left: AlternativePressureProductRow,
   right: AlternativePressureProductRow,
@@ -364,6 +544,33 @@ function compareAlternativePressureRows(
 
   if (right.alternativeCount !== left.alternativeCount) {
     return right.alternativeCount - left.alternativeCount;
+  }
+
+  return `${left.company.name} ${left.product.name}`.localeCompare(
+    `${right.company.name} ${right.product.name}`,
+  );
+}
+
+function compareDisruptionConceptRows(
+  left: DisruptionConceptProductRow,
+  right: DisruptionConceptProductRow,
+) {
+  if (left.hasDocumentedConcepts !== right.hasDocumentedConcepts) {
+    return left.hasDocumentedConcepts ? -1 : 1;
+  }
+
+  if (left.conceptScore !== null && right.conceptScore !== null) {
+    if (right.conceptScore !== left.conceptScore) {
+      return right.conceptScore - left.conceptScore;
+    }
+  }
+
+  if (right.conceptCount !== left.conceptCount) {
+    return right.conceptCount - left.conceptCount;
+  }
+
+  if (left.hasDocumentedException !== right.hasDocumentedException) {
+    return left.hasDocumentedException ? -1 : 1;
   }
 
   return `${left.company.name} ${left.product.name}`.localeCompare(

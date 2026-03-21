@@ -15,6 +15,7 @@ import type {
   ResearchTaskDefinition,
   ResearchTaskId,
   ResearchTaskResult,
+  SyncBatchTargetId,
 } from "../../src/lib/domain/content-types";
 import type { SourceCitation, TechnologyWave } from "../../src/lib/domain/types";
 import { getManifestFile } from "./company-intake";
@@ -354,6 +355,7 @@ export async function buildCompanyContext(companySlug: string): Promise<CompanyC
         sectors: raw.sectors,
         industries: raw.industries,
         technologyWaves: raw.technologyWaves,
+        conceptAngles: raw.conceptAngles,
       },
       null,
       2,
@@ -1075,11 +1077,15 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     provider: selectedProvider,
     bundleFile: path.relative(rootDir, validatedCandidate.bundleFile),
   });
+  const summaryMarkdown = buildSyncSummaryMarkdown(
+    selectedPayload.bundle,
+    selectedPayload.summaryMarkdown,
+  );
   await writeJsonFile(path.join(runDir, "candidate.bundle.json"), selectedPayload.bundle);
   await writeJsonFile(path.join(runDir, "candidate.manifest.json"), validatedCandidate.manifest);
   await writeJsonFile(path.join(runDir, "candidate.sources.json"), selectedPayload.sources);
-  if (selectedPayload.summaryMarkdown) {
-    await writeFile(path.join(runDir, "summary.md"), selectedPayload.summaryMarkdown, "utf8");
+  if (summaryMarkdown) {
+    await writeFile(path.join(runDir, "summary.md"), summaryMarkdown, "utf8");
   }
 
   let commitSha: string | undefined;
@@ -1139,9 +1145,13 @@ export function isBundleStale(bundle: CompanyBundle, now = new Date()) {
 
 export function collectSyncTargets(
   raw: Awaited<ReturnType<typeof loadRawContent>>,
-  staleOnly: boolean,
+  target: SyncBatchTargetId,
 ) {
-  if (!staleOnly) {
+  if (target === "published") {
+    return raw.bundles.map((bundle) => bundle.company.slug);
+  }
+
+  if (target === "all") {
     return raw.manifests.map((manifest) => manifest.slug);
   }
 
@@ -1220,6 +1230,7 @@ function buildLoopPromptContext(
         sectors: raw.sectors,
         industries: raw.industries,
         technologyWaves: raw.technologyWaves,
+        conceptAngles: raw.conceptAngles,
       },
       null,
       2,
@@ -1433,6 +1444,12 @@ function collectBundleSourceIds(bundle: CompanyBundle) {
       collectedIds.add(sourceId);
     }
 
+    if (product.maybeDisruptionException) {
+      for (const sourceId of product.maybeDisruptionException.sourceIds) {
+        collectedIds.add(sourceId);
+      }
+    }
+
     for (const alternative of product.alternatives) {
       for (const sourceId of alternative.sourceIds) {
         collectedIds.add(sourceId);
@@ -1443,9 +1460,84 @@ function collectBundleSourceIds(bundle: CompanyBundle) {
         }
       }
     }
+
+    for (const disruptionConcept of product.disruptionConcepts) {
+      for (const sourceId of disruptionConcept.problemSourceIds) {
+        collectedIds.add(sourceId);
+      }
+      for (const sourceId of disruptionConcept.enablerSourceIds) {
+        collectedIds.add(sourceId);
+      }
+      for (const metric of Object.values(disruptionConcept.metrics)) {
+        for (const sourceId of metric.sourceIds) {
+          collectedIds.add(sourceId);
+        }
+      }
+    }
   }
 
   return [...collectedIds].sort((left, right) => left.localeCompare(right));
+}
+
+function buildSyncSummaryMarkdown(bundle: CompanyBundle, maybeProviderSummaryMarkdown?: string) {
+  const reviewLines = renderConceptReviewChecklist(bundle);
+  const trimmedProviderSummary = maybeProviderSummaryMarkdown?.trim();
+  if (!trimmedProviderSummary) {
+    return reviewLines;
+  }
+
+  return `${trimmedProviderSummary}\n\n${reviewLines}`;
+}
+
+function renderConceptReviewChecklist(bundle: CompanyBundle) {
+  const productLines = bundle.products.map((product) => {
+    const speculativeConceptCount = product.disruptionConcepts.filter(
+      (disruptionConcept) => disruptionConcept.confidence === "speculative",
+    ).length;
+    const exceptionLabel = product.maybeDisruptionException ? "exception" : "concepts";
+    const highRiskLabel =
+      speculativeConceptCount > 0 ? ` · ${speculativeConceptCount} speculative` : "";
+    return `- ${product.name}: ${product.disruptionConcepts.length} ${exceptionLabel}${highRiskLabel}`;
+  });
+
+  const exceptionProducts = bundle.products.filter((product) => product.maybeDisruptionException);
+  const speculativeConcepts = bundle.products.flatMap((product) =>
+    product.disruptionConcepts
+      .filter((disruptionConcept) => disruptionConcept.confidence === "speculative")
+      .map((disruptionConcept) => `${product.name} · ${disruptionConcept.name}`),
+  );
+  const productsNeedingSecondConcept = bundle.products
+    .filter((product) => !product.maybeDisruptionException && product.disruptionConcepts.length < 2)
+    .map((product) => product.name);
+
+  return [
+    "## Concept Review Checklist",
+    "",
+    `- Products reviewed: ${bundle.products.length}`,
+    `- Disruption concepts drafted: ${bundle.products.reduce((total, product) => total + product.disruptionConcepts.length, 0)}`,
+    `- Documented exceptions: ${exceptionProducts.length}`,
+    `- Speculative concepts: ${speculativeConcepts.length}`,
+    "",
+    "### Coverage by product",
+    ...productLines,
+    "",
+    "### Exception count",
+    ...(exceptionProducts.length > 0
+      ? exceptionProducts.map(
+          (product) => `- ${product.name}: ${product.maybeDisruptionException?.reason}`,
+        )
+      : ["- None"]),
+    "",
+    "### Speculative or high-risk concepts",
+    ...(speculativeConcepts.length > 0
+      ? speculativeConcepts.map((concept) => `- ${concept}`)
+      : ["- None"]),
+    "",
+    "### Products that still need a second concept",
+    ...(productsNeedingSecondConcept.length > 0
+      ? productsNeedingSecondConcept.map((productName) => `- ${productName}`)
+      : ["- None"]),
+  ].join("\n");
 }
 
 function hasOutputLastMessageFlag(args: string[]) {

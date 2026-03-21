@@ -26,6 +26,9 @@ test("product detail page renders the product thesis and alternatives section", 
   await expect(page).toHaveURL(/\/companies\/apple\/products\/apple-icloud\/?$/);
   await expect(page.getByRole("heading", { level: 1, name: "iCloud" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Replacement landscape" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Original attack vectors" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "User-Owned Cloud Mesh" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Home Vault Appliance Grid" })).toBeVisible();
   await expect(
     page
       .locator("section")

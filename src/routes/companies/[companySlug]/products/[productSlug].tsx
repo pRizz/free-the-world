@@ -4,6 +4,7 @@ import { EmptyState } from "~/components/blocks/empty-state";
 import { PageHeader } from "~/components/blocks/page-header";
 import {
   AlternativeTable,
+  DisruptionConceptsPanel,
   ProductOverviewPanel,
   SourceSummaryCard,
   TechnologyWavePanel,
@@ -13,6 +14,7 @@ import { Badge } from "~/components/ui/badge";
 import {
   getAlternativesForProduct,
   getCompanyBySlug,
+  getDisruptionConceptsForProduct,
   getProductBySlug,
   getSourcesByIds,
   getTechnologyWavesByIds,
@@ -49,6 +51,7 @@ export default function ProductPage() {
   const companyData = maybeCompany;
   const productData = maybeProduct;
   const productAlternatives = getAlternativesForProduct(productData.slug);
+  const productDisruptionConcepts = getDisruptionConceptsForProduct(productData.slug);
   const productSources = getSourcesByIds(productData.sourceIds);
   const waveData = getTechnologyWavesByIds(productData.technologyWaveIds);
 
@@ -85,6 +88,11 @@ export default function ProductPage() {
           />
           <AlternativeTable alternatives={productAlternatives} />
         </ContentCard>
+
+        <DisruptionConceptsPanel
+          concepts={productDisruptionConcepts}
+          maybeException={productData.maybeDisruptionException}
+        />
 
         <TechnologyWavePanel waves={waveData} />
         <SourceSummaryCard title="Product research sources" sources={productSources} />

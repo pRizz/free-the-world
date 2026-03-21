@@ -8,6 +8,7 @@ const rawRoutes = [
   "/insights",
   "/insights/alternative-pressure",
   "/insights/capital-at-risk",
+  "/insights/disruption-concepts",
   "/insights/post-bubble",
   "/mirrors",
   "/methodology",

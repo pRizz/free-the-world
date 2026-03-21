@@ -1,10 +1,13 @@
 import { expect, test } from "bun:test";
 import {
   calculateAlternativePressureScore,
+  calculateDisruptionConceptScore,
   calculateResidualMarketCap,
   getAlternativeMetricAverages,
   getAlternativePressureDataset,
   getCapitalAtRiskDataset,
+  getDisruptionConceptDataset,
+  getDisruptionConceptMetricAverages,
   getPostBubbleDataset,
 } from "~/lib/domain/insights";
 import type {
@@ -12,6 +15,8 @@ import type {
   AlternativeMetricId,
   Company,
   CompanyMetricId,
+  ConceptMetricId,
+  DisruptionConcept,
   MetricAssessment,
   Product,
 } from "~/lib/domain/types";
@@ -66,9 +71,50 @@ function makeProduct(slug: string, companySlug: string, overrides: Partial<Produ
     whyItMatters: "test",
     replacementSketch: [],
     alternativeSlugs: [],
+    disruptionConceptSlugs: [],
+    maybeDisruptionException: null,
     sourceIds: [],
     technologyWaveIds: [],
     ...overrides,
+  };
+}
+
+function makeConceptMetricRecord(
+  decentralizationFit: number,
+  coordinationCredibility: number,
+  implementationFeasibility: number,
+  incumbentPressure: number,
+): Record<ConceptMetricId, MetricAssessment> {
+  return {
+    decentralizationFit: makeAssessment(decentralizationFit),
+    coordinationCredibility: makeAssessment(coordinationCredibility),
+    implementationFeasibility: makeAssessment(implementationFeasibility),
+    incumbentPressure: makeAssessment(incumbentPressure),
+  };
+}
+
+function makeDisruptionConcept(
+  slug: string,
+  productSlug: string,
+  metrics = makeConceptMetricRecord(8, 7, 6, 5),
+): DisruptionConcept {
+  return {
+    slug,
+    productSlug,
+    name: slug,
+    summary: "test",
+    angleIds: ["lightning"],
+    thesis: "test thesis",
+    bitcoinOrDecentralizationRole: "test role",
+    coordinationMechanism: "test coordination",
+    verificationOrTrustModel: "test trust model",
+    failureModes: ["test failure"],
+    adoptionPath: ["test adoption"],
+    confidence: "medium",
+    problemSourceIds: ["test-source"],
+    enablerSourceIds: ["test-source"],
+    sourceIds: ["test-source"],
+    metrics,
   };
 }
 
@@ -237,6 +283,89 @@ test("calculateAlternativePressureScore emphasizes readiness and cost leverage",
     decentralizationFit: 8,
     readiness: 9,
     costLeverage: 9,
+  });
+
+  // Assert
+  expect(score).toBeLessThan(strongerExecutionScore);
+});
+
+test("getDisruptionConceptMetricAverages returns null for an empty concept set", () => {
+  // Arrange
+  const concepts: DisruptionConcept[] = [];
+
+  // Act
+  const averages = getDisruptionConceptMetricAverages(concepts);
+
+  // Assert
+  expect(averages).toBeNull();
+});
+
+test("getDisruptionConceptDataset ranks documented concepts ahead of exceptions", () => {
+  // Arrange
+  const companies = [makeCompany("alpha", {}), makeCompany("beta", {})];
+  const products = [
+    makeProduct("alpha-concept", "alpha", {
+      name: "Concept product",
+      disruptionConceptSlugs: ["alpha-concept-1", "alpha-concept-2"],
+    }),
+    makeProduct("alpha-exception", "alpha", {
+      name: "Exception product",
+      maybeDisruptionException: {
+        reason: "Physical bottleneck",
+        sourceIds: ["test-source"],
+        lastReviewedOn: "2026-03-21",
+      },
+    }),
+    makeProduct("beta-concept", "beta", {
+      name: "Runner-up product",
+      disruptionConceptSlugs: ["beta-concept-1"],
+    }),
+  ];
+  const concepts = [
+    makeDisruptionConcept(
+      "alpha-concept-1",
+      "alpha-concept",
+      makeConceptMetricRecord(9, 8, 8.5, 8),
+    ),
+    makeDisruptionConcept(
+      "alpha-concept-2",
+      "alpha-concept",
+      makeConceptMetricRecord(8.5, 8, 8, 8.5),
+    ),
+    makeDisruptionConcept("beta-concept-1", "beta-concept", makeConceptMetricRecord(7, 7, 6.5, 6)),
+  ];
+
+  // Act
+  const dataset = getDisruptionConceptDataset(companies, products, concepts);
+
+  // Assert
+  expect(dataset.productRows.map((row) => row.product.slug)).toEqual([
+    "alpha-concept",
+    "beta-concept",
+    "alpha-exception",
+  ]);
+  expect(dataset.companyRows.map((row) => row.company.slug)).toEqual(["alpha", "beta"]);
+  expect(dataset.productsWithConcepts).toBe(2);
+  expect(dataset.productsWithExceptions).toBe(1);
+  expect(dataset.totalConceptCount).toBe(3);
+  expect(dataset.companyRows[0]?.highestScoringProduct?.product.slug).toBe("alpha-concept");
+});
+
+test("calculateDisruptionConceptScore emphasizes feasibility and pressure", () => {
+  // Arrange
+  const score = calculateDisruptionConceptScore({
+    decentralizationFit: 10,
+    coordinationCredibility: 10,
+    implementationFeasibility: 4,
+    incumbentPressure: 4,
+  });
+
+  // Act
+  const strongerExecutionScore = calculateDisruptionConceptScore({
+    decentralizationFit: 8,
+    coordinationCredibility: 8,
+    implementationFeasibility: 9,
+    incumbentPressure: 9,
   });
 
   // Assert

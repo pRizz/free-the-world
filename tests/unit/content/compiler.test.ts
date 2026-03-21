@@ -25,6 +25,7 @@ test("compileContent compiles the real JSON corpus and strips raw-only fields", 
   expect(graph.companies.length).toBeGreaterThanOrEqual(10);
   expect(graph.products.length).toBeGreaterThanOrEqual(20);
   expect(graph.alternatives.length).toBeGreaterThanOrEqual(31);
+  expect(graph.disruptionConcepts).toHaveLength(64);
   expect(graph.sources.length).toBeGreaterThan(0);
   expect(apple).toBeDefined();
   expect(microsoft).toBeDefined();
@@ -33,6 +34,18 @@ test("compileContent compiles the real JSON corpus and strips raw-only fields", 
   }
   expect("inputMetrics" in apple).toBe(false);
   expect(apple.metrics.freedCapitalPotential).toBeDefined();
+  expect(graph.conceptAngles.length).toBeGreaterThanOrEqual(18);
+  expect(graph.conceptAngles.some((angle) => angle.id === "distributed-energy-generation")).toBe(
+    true,
+  );
+  expect(graph.conceptAngles.some((angle) => angle.id === "solar-manufacturing")).toBe(true);
+  expect(graph.conceptAngles.some((angle) => angle.id === "wind-manufacturing")).toBe(true);
+  expect(
+    graph.products.every(
+      (product) =>
+        product.maybeDisruptionException !== null || product.disruptionConceptSlugs.length === 2,
+    ),
+  ).toBe(true);
 });
 
 test("compileContent rejects malformed JSON", async () => {
@@ -121,6 +134,109 @@ test("compileContent rejects bad manifest taxonomy alignment", async () => {
 
   const error = await getValidationError(() => compileContent(tempRoot));
   expect(error.issues.some((issue) => issue.includes("outside sector"))).toBe(true);
+});
+
+test("compileContent accepts a documented disruption exception in place of concepts", async () => {
+  await writeMinimalFixture(tempRoot);
+  const bundleFile = path.join(tempRoot, "companies", "fixtureco", "bundle.json");
+  const bundle = JSON.parse(await readFile(bundleFile, "utf8")) as {
+    products: Array<{
+      disruptionConcepts: unknown[];
+      maybeDisruptionException?: {
+        reason: string;
+        sourceIds: string[];
+        lastReviewedOn: string;
+      };
+    }>;
+  };
+  bundle.products[0].disruptionConcepts = [];
+  bundle.products[0].maybeDisruptionException = {
+    reason: "Hardware bottleneck remains too severe.",
+    sourceIds: ["fixture-source"],
+    lastReviewedOn: "2026-03-21",
+  };
+  await writeJson(bundleFile, bundle);
+
+  const { graph } = await compileContent(tempRoot);
+
+  expect(graph.products[0]?.maybeDisruptionException?.reason).toContain("Hardware bottleneck");
+  expect(graph.disruptionConcepts).toHaveLength(0);
+});
+
+test("compileContent rejects products without concepts or exceptions", async () => {
+  await writeMinimalFixture(tempRoot);
+  const bundleFile = path.join(tempRoot, "companies", "fixtureco", "bundle.json");
+  const bundle = JSON.parse(await readFile(bundleFile, "utf8")) as {
+    products: Array<{
+      disruptionConcepts: unknown[];
+      maybeDisruptionException?: unknown;
+    }>;
+  };
+  bundle.products[0].disruptionConcepts = [];
+  delete bundle.products[0].maybeDisruptionException;
+  await writeJson(bundleFile, bundle);
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(
+    error.issues.some((issue) =>
+      issue.includes("must define 1-2 disruption concepts or a documented exception"),
+    ),
+  ).toBe(true);
+});
+
+test("compileContent rejects products with more than two disruption concepts", async () => {
+  await writeMinimalFixture(tempRoot);
+  const bundleFile = path.join(tempRoot, "companies", "fixtureco", "bundle.json");
+  const bundle = JSON.parse(await readFile(bundleFile, "utf8")) as {
+    products: Array<{
+      disruptionConcepts: Array<Record<string, unknown>>;
+    }>;
+  };
+  bundle.products[0].disruptionConcepts.push({
+    ...bundle.products[0].disruptionConcepts[0],
+    slug: "fixtureco-third-concept",
+    name: "Third concept",
+  });
+  bundle.products[0].disruptionConcepts.push({
+    ...bundle.products[0].disruptionConcepts[0],
+    slug: "fixtureco-fourth-concept",
+    name: "Fourth concept",
+  });
+  await writeJson(bundleFile, bundle);
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(error.issues).toContain(
+    "Product fixtureco-core exceeds the maximum of 2 disruption concepts.",
+  );
+});
+
+test("compileContent rejects disruption concepts without angles or source layers", async () => {
+  await writeMinimalFixture(tempRoot);
+  const bundleFile = path.join(tempRoot, "companies", "fixtureco", "bundle.json");
+  const bundle = JSON.parse(await readFile(bundleFile, "utf8")) as {
+    products: Array<{
+      disruptionConcepts: Array<{
+        angleIds: string[];
+        problemSourceIds: string[];
+        enablerSourceIds: string[];
+      }>;
+    }>;
+  };
+  bundle.products[0].disruptionConcepts[0].angleIds = [];
+  bundle.products[0].disruptionConcepts[0].problemSourceIds = [];
+  bundle.products[0].disruptionConcepts[0].enablerSourceIds = [];
+  await writeJson(bundleFile, bundle);
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(
+    error.issues.some((issue) => issue.includes("must reference at least one concept angle")),
+  ).toBe(true);
+  expect(
+    error.issues.some((issue) => issue.includes("must reference at least one problem source")),
+  ).toBe(true);
+  expect(
+    error.issues.some((issue) => issue.includes("must reference at least one enabler source")),
+  ).toBe(true);
 });
 
 async function getValidationError(action: () => Promise<unknown>) {

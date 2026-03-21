@@ -101,6 +101,18 @@ export async function writeMinimalFixture(
       implications: ["Fixture implication"],
     },
   ]);
+  await writeJson(path.join(root, "taxonomy", "concept-angles.json"), [
+    {
+      id: "lightning",
+      label: "Lightning",
+      summary: "Fixture Lightning angle",
+    },
+    {
+      id: "decentralized-coordination",
+      label: "Decentralized Coordination",
+      summary: "Fixture coordination angle",
+    },
+  ]);
 
   await writeJson(path.join(root, "sources", "fixture-source.json"), {
     id: "fixture-source",
@@ -180,6 +192,35 @@ export async function writeMinimalFixture(
               costLeverage: metric(6),
             },
             sourceIds: ["fixture-source"],
+          },
+        ],
+        disruptionConcepts: [
+          {
+            slug: "fixtureco-lightning-market",
+            name: "Fixture Lightning Market",
+            summary: "Open coordination layer for the fixture product.",
+            angleIds: ["lightning", "decentralized-coordination"],
+            thesis: "Turn the product into an open market instead of a controlled workflow.",
+            bitcoinOrDecentralizationRole:
+              "Lightning handles low-fee settlement while independent operators join or leave freely.",
+            coordinationMechanism:
+              "Participants publish offers and fulfill work without a central permission gate.",
+            verificationOrTrustModel:
+              "Proof of delivery and small recurring checks reduce cheap fake participation.",
+            failureModes: ["Operator collusion", "Weak supply bootstrapping"],
+            adoptionPath: [
+              "Start with niche operators",
+              "Expand once settlement reliability is proven",
+            ],
+            confidence: "medium",
+            problemSourceIds: ["fixture-source"],
+            enablerSourceIds: ["fixture-source"],
+            metrics: {
+              decentralizationFit: metric(8.5),
+              coordinationCredibility: metric(7.5),
+              implementationFeasibility: metric(7),
+              incumbentPressure: metric(6.5),
+            },
           },
         ],
       },

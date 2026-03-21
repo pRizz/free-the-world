@@ -226,6 +226,161 @@
             "akash"
           ]
         }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "nvidia-cuda-concept",
+          "name": "Open Accelerator Bounty Market",
+          "summary": "A market where framework authors, hardware vendors, and compute operators pay for open compatibility work that weakens one-vendor software lock-in.",
+          "angleIds": [
+            "lightning",
+            "peer-to-peer-marketplace",
+            "decentralized-coordination"
+          ],
+          "thesis": "Shift part of the CUDA moat from proprietary ecosystem gravity toward an open compatibility labor market.",
+          "bitcoinOrDecentralizationRole": "Lightning is useful for tiny bounties, regression payouts, and cross-org compatibility rewards that would otherwise be too awkward to coordinate.",
+          "coordinationMechanism": "Hardware vendors, labs, and developers post compatibility work, fund ports, and reward proof that workloads actually run elsewhere.",
+          "verificationOrTrustModel": "Reproducible benchmark suites and verified upstream merges make fake compatibility claims harder to sell.",
+          "failureModes": [
+            "Hardware scarcity still preserves NVIDIA leverage",
+            "Bounty markets can reward shallow fixes"
+          ],
+          "adoptionPath": [
+            "Begin with high-value frameworks and model-serving paths",
+            "Expand as open toolchains prove stable enough for serious production work"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "nvidia-cuda",
+            "amd-rocm"
+          ],
+          "enablerSourceIds": [
+            "amd-rocm",
+            "akash"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7.8,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "nvidia-cuda",
+                "amd-rocm"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.2,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "nvidia-cuda",
+                "amd-rocm"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.3,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "nvidia-cuda",
+                "amd-rocm"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.2,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "nvidia-cuda",
+                "amd-rocm"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "nvidia-cuda-open-runtime-certification-market",
+          "name": "Open Runtime Certification Market",
+          "summary": "Independent labs and operators publish verified compatibility and benchmark results across open runtimes so developers trust portable accelerator targets without depending on NVIDIA's certification aura.",
+          "angleIds": [
+            "lightning",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace",
+            "proof-of-work"
+          ],
+          "thesis": "Unlike the first concept's bounty market for missing software, this one attacks CUDA's trust moat around compatibility and performance claims.",
+          "bitcoinOrDecentralizationRole": "Open certification markets and small recurring payouts make conformance data portable across hardware vendors.",
+          "coordinationMechanism": "Operators run benchmark suites and conformance tests while framework maintainers and users subscribe to the resulting compatibility records.",
+          "verificationOrTrustModel": "Signed benchmark traces, reproducible test harnesses, and challenge reruns reduce fake performance reporting.",
+          "failureModes": [
+            "Benchmark gaming is a persistent risk",
+            "Developers may still default to NVIDIA because that path has the fewest surprises"
+          ],
+          "adoptionPath": [
+            "Start with model runtimes already targeting multiple backends",
+            "Expand as compatibility data becomes better than vendor marketing"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "nvidia-cuda",
+            "nvidia-investor"
+          ],
+          "enablerSourceIds": [
+            "amd-rocm",
+            "akash",
+            "lightning-network-homepage"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.1,
+              "rationale": "This concept decentralizes compatibility and performance trust across many runtime and hardware combinations instead of one vendor narrative.",
+              "sourceIds": [
+                "amd-rocm",
+                "akash",
+                "lightning-network-homepage"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.2,
+              "rationale": "The coordination loop is credible because benchmarking and certification can be offered as repeatable services with comparable outputs.",
+              "sourceIds": [
+                "nvidia-cuda",
+                "nvidia-investor",
+                "amd-rocm",
+                "akash",
+                "lightning-network-homepage"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.9,
+              "rationale": "Most primitives already exist; the testing primitives are real, but keeping the benchmarks honest remains a permanent challenge.",
+              "sourceIds": [
+                "amd-rocm",
+                "akash",
+                "lightning-network-homepage"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.6,
+              "rationale": "If it scales, it pressures CUDA's certification aura and developer trust moat.",
+              "sourceIds": [
+                "nvidia-cuda",
+                "nvidia-investor"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
       ]
     },
     {
@@ -343,6 +498,162 @@
           "sourceIds": [
             "minio"
           ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "nvidia-dgx-concept",
+          "name": "Federated AI Cluster Exchange",
+          "summary": "A market that aggregates independent GPU clusters, bare-metal operators, and storage providers into a more open alternative to premium integrated AI systems.",
+          "angleIds": [
+            "lightning",
+            "peer-to-peer-marketplace",
+            "decentralized-coordination",
+            "federation"
+          ],
+          "thesis": "Compete with integrated AI infrastructure bundles by making heterogeneous cluster capacity easier to buy and schedule.",
+          "bitcoinOrDecentralizationRole": "Lightning settles short compute jobs, storage bursts, and operator-side reliability rebates without one central allocator.",
+          "coordinationMechanism": "Cluster operators publish capability profiles, schedulers compose capacity, and buyers choose blends of performance and price.",
+          "verificationOrTrustModel": "Benchmark attestations, signed job receipts, and random capacity checks reduce fake GPU availability and inflated performance claims.",
+          "failureModes": [
+            "High-end networking and support remain hard",
+            "Buyers still fear heterogeneous environments"
+          ],
+          "adoptionPath": [
+            "Start with inference, burst training, and overflow demand",
+            "Add enterprise-grade support only after routing and proof systems stabilize"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "nvidia-data-center",
+            "openstack"
+          ],
+          "enablerSourceIds": [
+            "openstack",
+            "minio"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "nvidia-data-center",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "nvidia-data-center",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.1,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "nvidia-data-center",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.4,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "nvidia-data-center",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "nvidia-dgx-waste-heat-ai-microdatacenter-network",
+          "name": "Waste-Heat AI Microdatacenter Network",
+          "summary": "AI compute moves into smaller sites that pair open rack designs with local power, cooling reuse, and standardized cluster software instead of concentrating every serious training workload in giant vendor-controlled campuses.",
+          "angleIds": [
+            "distributed-energy-generation",
+            "open-energy-hardware",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "Unlike the first concept's cluster exchange, this one changes where the physical clusters live and who can host them.",
+          "bitcoinOrDecentralizationRole": "Open compute and local energy coordination lower the barrier to fielding smaller AI facilities outside hyperscaler campuses.",
+          "coordinationMechanism": "Site operators expose standardized cluster offers tied to power, cooling, and locality constraints, and buyers route jobs accordingly.",
+          "verificationOrTrustModel": "Attested hardware manifests, power telemetry, and completed job proofs tie revenue to real compute delivery.",
+          "failureModes": [
+            "Operations quality and GPU supply may still concentrate the market",
+            "Many training buyers will continue to prefer hyperscale procurement simplicity"
+          ],
+          "adoptionPath": [
+            "Begin with inference, fine-tuning, and sovereignty-driven workloads",
+            "Expand only where smaller sites can prove cost and reliability"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "nvidia-data-center",
+            "nvidia-investor"
+          ],
+          "enablerSourceIds": [
+            "open-compute-project",
+            "openems",
+            "akash"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "This concept decentralizes AI facility ownership across smaller locally powered sites instead of only hyperscale campuses.",
+              "sourceIds": [
+                "open-compute-project",
+                "openems",
+                "akash"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 6.8,
+              "rationale": "The coordination loop is credible because cluster offers can be standardized around power, locality, and delivered jobs.",
+              "sourceIds": [
+                "nvidia-data-center",
+                "nvidia-investor",
+                "open-compute-project",
+                "openems",
+                "akash"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "Most primitives already exist; cluster software and hardware designs exist, but procurement and operations discipline still matter.",
+              "sourceIds": [
+                "open-compute-project",
+                "openems",
+                "akash"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.5,
+              "rationale": "If it scales, it pressures DGX-style concentration in AI facility buildout and hosted cluster economics.",
+              "sourceIds": [
+                "nvidia-data-center",
+                "nvidia-investor"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
         }
       ]
     }

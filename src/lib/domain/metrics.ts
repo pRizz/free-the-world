@@ -2,7 +2,9 @@ import {
   type AlternativeMetricId,
   alternativeMetricIds,
   type CompanyMetricId,
+  type ConceptMetricId,
   companyMetricIds,
+  conceptMetricIds,
   type MetricDefinition,
 } from "~/lib/domain/types";
 
@@ -155,10 +157,61 @@ export const alternativeMetricDefinitions: Record<
   },
 };
 
+export const conceptMetricDefinitions: Record<
+  ConceptMetricId,
+  MetricDefinition<ConceptMetricId>
+> = {
+  decentralizationFit: {
+    id: "decentralizationFit",
+    label: "Decentralization fit",
+    shortLabel: "Decent.",
+    description: "How naturally the concept fits open, distributed, or locally controlled systems.",
+    valueType: "score",
+    precision: 1,
+    defaultVisible: true,
+    category: "concepts",
+  },
+  coordinationCredibility: {
+    id: "coordinationCredibility",
+    label: "Coordination credibility",
+    shortLabel: "Coord.",
+    description: "How believable the incentive design and trust model are in the real world.",
+    valueType: "score",
+    precision: 1,
+    defaultVisible: true,
+    category: "concepts",
+  },
+  implementationFeasibility: {
+    id: "implementationFeasibility",
+    label: "Implementation feasibility",
+    shortLabel: "Feasible",
+    description:
+      "How realistically the concept can be built and deployed without magical assumptions.",
+    valueType: "score",
+    precision: 1,
+    defaultVisible: true,
+    category: "concepts",
+  },
+  incumbentPressure: {
+    id: "incumbentPressure",
+    label: "Incumbent pressure",
+    shortLabel: "Pressure",
+    description: "How much pricing or strategic pressure the concept could impose if adopted.",
+    valueType: "score",
+    precision: 1,
+    defaultVisible: true,
+    category: "concepts",
+  },
+};
+
 export const defaultVisibleCompanyMetrics = companyMetricIds.filter(
   (metricId) => companyMetricDefinitions[metricId].defaultVisible,
 );
 
 export const defaultVisibleAlternativeMetrics = alternativeMetricIds.filter(
   (metricId) => alternativeMetricDefinitions[metricId].defaultVisible,
+);
+
+export const defaultVisibleConceptMetrics = conceptMetricIds.filter(
+  (metricId) => conceptMetricDefinitions[metricId].defaultVisible,
 );

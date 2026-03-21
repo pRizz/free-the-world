@@ -238,6 +238,98 @@ export const contentGraph: ContentGraph = {
       ]
     }
   ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ],
   "companies": [
     {
       "slug": "nvidia",
@@ -2272,7 +2364,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "searxng-search",
         "yacy-search"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "google-search-concept",
+        "google-search-proof-of-placement-ad-commons"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "youtube",
@@ -2296,7 +2393,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "peertube-video",
         "nostr-video"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "youtube-concept",
+        "youtube-edge-cache-and-transcode-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "aws-platform",
@@ -2319,7 +2421,12 @@ export const contentGraph: ContentGraph = {
         "bitcoin-native-coordination"
       ],
       "companySlug": "amazon",
-      "alternativeSlugs": []
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [
+        "aws-platform-concept",
+        "aws-platform-waste-heat-microdatacenter-guild"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "amazon-marketplace",
@@ -2341,7 +2448,12 @@ export const contentGraph: ContentGraph = {
         "additive-manufacturing"
       ],
       "companySlug": "amazon",
-      "alternativeSlugs": []
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [
+        "amazon-marketplace-concept",
+        "amazon-marketplace-local-fabrication-catalog"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "apple-icloud",
@@ -2366,7 +2478,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "nextcloud-platform",
         "syncthing-network"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "apple-icloud-concept",
+        "apple-icloud-home-vault-appliance-grid"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "apple-app-store",
@@ -2390,7 +2507,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "f-droid",
         "web-app-stack"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "apple-app-store-concept",
+        "apple-app-store-direct-license-wallet-rail"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "centura-semiconductor-platform",
@@ -2413,7 +2535,12 @@ export const contentGraph: ContentGraph = {
         "openroad-eda",
         "sky130-pdk",
         "icestorm-fpga-toolchain"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "centura-semiconductor-platform-concept",
+        "centura-semiconductor-platform-refurbished-process-module-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "applied-global-services",
@@ -2432,7 +2559,12 @@ export const contentGraph: ContentGraph = {
       ],
       "technologyWaveIds": [],
       "companySlug": "applied-materials",
-      "alternativeSlugs": []
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [
+        "applied-global-services-concept",
+        "applied-global-services-fab-spare-parts-microfactory"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "display-manufacturing-equipment",
@@ -2453,7 +2585,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "applied-materials",
       "alternativeSlugs": [
         "eink-open-display"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "display-manufacturing-equipment-concept",
+        "display-manufacturing-equipment-printable-thin-film-line-commons"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "consumer-banking",
@@ -2476,7 +2613,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "bank-of-america",
       "alternativeSlugs": [
         "bitcoin-lightning-wallet"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "consumer-banking-concept",
+        "consumer-banking-fedimint-community-treasury-network"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "merrill-wealth-management",
@@ -2497,7 +2639,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "bank-of-america",
       "alternativeSlugs": [
         "ghostfolio"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "merrill-wealth-management-concept",
+        "merrill-wealth-management-productive-asset-syndication-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "global-banking-markets",
@@ -2520,7 +2667,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "bank-of-america",
       "alternativeSlugs": [
         "bitcoin-protocol"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "global-banking-markets-concept",
+        "global-banking-markets-proof-of-delivery-trade-finance-mesh"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "geico-insurance",
@@ -2543,7 +2695,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "berkshire-hathaway",
       "alternativeSlugs": [
         "mutual-insurance-models"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "geico-insurance-concept",
+        "geico-insurance-open-claims-and-repair-guild"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "berkshire-energy",
@@ -2566,7 +2723,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "berkshire-hathaway",
       "alternativeSlugs": [
         "community-microgrids"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "berkshire-energy-concept",
+        "berkshire-energy-printable-solar-and-storage-commons"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "vmware-vsphere",
@@ -2590,7 +2752,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "broadcom",
       "alternativeSlugs": [
         "proxmox-ve"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "vmware-vsphere-concept",
+        "vmware-vsphere-proof-of-availability-capacity-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "broadcom-networking",
@@ -2613,7 +2780,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "broadcom",
       "alternativeSlugs": [
         "open-networking-stack"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "broadcom-networking-concept",
+        "broadcom-networking-refurbished-network-appliance-microfactory"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "cat-construction-equipment",
@@ -2638,7 +2810,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "caterpillar",
       "alternativeSlugs": [
         "ose-gvcs"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "cat-construction-equipment-concept",
+        "cat-construction-equipment-open-attachment-microfactory-network"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "cat-mining-trucks-minestar",
@@ -2658,7 +2835,12 @@ export const contentGraph: ContentGraph = {
       ],
       "technologyWaveIds": [],
       "companySlug": "caterpillar",
-      "alternativeSlugs": []
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [
+        "cat-mining-trucks-minestar-concept",
+        "cat-mining-trucks-minestar-retrofit-autonomy-kit-bazaar"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "cat-generator-sets-power-systems",
@@ -2683,7 +2865,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "caterpillar",
       "alternativeSlugs": [
         "distributed-solar-battery-storage"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "cat-generator-sets-power-systems-concept",
+        "cat-generator-sets-power-systems-open-resilience-power-kit-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "cat-financial",
@@ -2705,7 +2892,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "caterpillar",
       "alternativeSlugs": [
         "farm-credit-system"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "cat-financial-concept",
+        "cat-financial-proof-of-utilization-lease-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "coca-cola-classic",
@@ -2729,7 +2921,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "opencola",
         "home-fermented-kombucha"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "coca-cola-classic-concept",
+        "coca-cola-classic-open-refill-and-syrup-commons"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "fairlife",
@@ -2750,7 +2947,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "coca-cola",
       "alternativeSlugs": [
         "homemade-oat-milk"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "fairlife-concept",
+        "fairlife-ingredient-traceability-and-refill-network"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "instagram",
@@ -2775,7 +2977,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "pixelfed-social",
         "mastodon-social"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "instagram-concept",
+        "instagram-portable-reputation-and-sponsorship-ledger"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "whatsapp-platform",
@@ -2799,7 +3006,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "matrix-messaging",
         "signal-messaging"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "whatsapp-platform-concept",
+        "whatsapp-platform-federated-identity-and-contact-relay"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "microsoft-365-suite",
@@ -2824,7 +3036,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "libreoffice-suite",
         "nextcloud-collaboration"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "microsoft-365-suite-concept",
+        "microsoft-365-suite-office-appliance-cooperative"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "microsoft-github",
@@ -2848,7 +3065,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "gitea-forge",
         "self-hosted-git"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "microsoft-github-concept",
+        "microsoft-github-attested-build-artifact-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "nvidia-cuda",
@@ -2874,7 +3096,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "rocm",
         "akash-network"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "nvidia-cuda-concept",
+        "nvidia-cuda-open-runtime-certification-market"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "nvidia-dgx",
@@ -2899,7 +3126,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "openstack-cloud",
         "minio-object-storage"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "nvidia-dgx-concept",
+        "nvidia-dgx-waste-heat-ai-microdatacenter-network"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "tesla-supercharger",
@@ -2923,7 +3155,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "openevse-charging",
         "ocpp-ecosystem"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "tesla-supercharger-concept",
+        "tesla-supercharger-community-energy-stop-kits"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "tesla-energy-stack",
@@ -2947,7 +3184,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "openems-energy",
         "home-assistant-energy"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "tesla-energy-stack-concept",
+        "tesla-energy-stack-open-solar-appliance-microfactory"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "walmart-marketplace",
@@ -2972,7 +3214,12 @@ export const contentGraph: ContentGraph = {
       "alternativeSlugs": [
         "open-food-network-marketplace",
         "saleor-commerce"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "walmart-marketplace-concept",
+        "walmart-marketplace-local-fabrication-pickup-network"
+      ],
+      "maybeDisruptionException": null
     },
     {
       "slug": "walmart-grocery",
@@ -2997,7 +3244,12 @@ export const contentGraph: ContentGraph = {
       "companySlug": "walmart",
       "alternativeSlugs": [
         "community-grocery-coops"
-      ]
+      ],
+      "disruptionConceptSlugs": [
+        "walmart-grocery-concept",
+        "walmart-grocery-neighborhood-cold-chain-cooperative"
+      ],
+      "maybeDisruptionException": null
     }
   ],
   "alternatives": [
@@ -5168,6 +5420,5340 @@ export const contentGraph: ContentGraph = {
       "productSlug": "walmart-grocery"
     }
   ],
+  "disruptionConcepts": [
+    {
+      "slug": "google-search-concept",
+      "name": "Lightning Search Syndicate",
+      "summary": "An open search market where interfaces, indexers, advertisers, and verifier nodes transact directly instead of routing all value through one search giant.",
+      "angleIds": [
+        "lightning",
+        "proof-of-work",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Split search into competing indexers, interfaces, and ad buyers so discovery and monetization no longer require one company to own the whole stack.",
+      "bitcoinOrDecentralizationRole": "Lightning pays indexers, publishers, and verifiers in tiny increments, while proof-of-work style pricing can make spammy crawling and fake participation expensive.",
+      "coordinationMechanism": "Interfaces buy query coverage, ad inventory, and freshness guarantees from independent operators in an open market.",
+      "verificationOrTrustModel": "Rotating signed ad nonces, randomized verifier pools, and challenge fetches across many nodes make fake impressions and fake indexing harder to sustain.",
+      "failureModes": [
+        "Verifier collusion with publishers",
+        "Thin advertiser liquidity against Google defaults"
+      ],
+      "adoptionPath": [
+        "Launch with vertical search communities and independent publishers",
+        "Expand after verifier payouts and ad reporting look trustworthy"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "google-products",
+        "searxng"
+      ],
+      "enablerSourceIds": [
+        "searxng"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.4,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "google-products",
+            "searxng"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "google-products",
+            "searxng"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.4,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "google-products",
+            "searxng"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8.2,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "google-products",
+            "searxng"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "google-search",
+      "sourceIds": [
+        "google-products",
+        "searxng"
+      ]
+    },
+    {
+      "slug": "google-search-proof-of-placement-ad-commons",
+      "name": "Proof-of-Placement Ad Commons",
+      "summary": "An open ad market for search and publisher inventory where creatives carry rotating signed challenges and payout clears only after independent verifiers confirm the placement.",
+      "angleIds": [
+        "lightning",
+        "proof-of-work",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Unlike the first concept, which decentralizes indexing and query routing, this one attacks Google's monetization layer by making ad reporting and settlement portable.",
+      "bitcoinOrDecentralizationRole": "Lightning pays publishers and verifier nodes per completed challenge, while cheap proof-of-work or bonded entry makes sybil verification more expensive.",
+      "coordinationMechanism": "Advertisers post campaigns, publishers accept placements, and verifier nodes draw randomized audit jobs from a public queue.",
+      "verificationOrTrustModel": "Each ad response carries a rotating signed nonce and render challenge; randomized verifiers fetch from shifting networks and only matching proofs release payout.",
+      "failureModes": [
+        "Thin advertiser liquidity could leave the market too small to matter",
+        "Publishers and verifier nodes can still collude when audit diversity is weak"
+      ],
+      "adoptionPath": [
+        "Start with independent publishers that already distrust ad-tech concentration",
+        "Expand once buyers can compare verifier-backed reporting against incumbent dashboards"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "alphabet-investor",
+        "google-products"
+      ],
+      "enablerSourceIds": [
+        "lightning-network-homepage",
+        "searxng"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.4,
+          "rationale": "This concept decentralizes ad verification, payout, and placement reporting across many independent publishers.",
+          "sourceIds": [
+            "lightning-network-homepage",
+            "searxng"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The coordination loop is credible because advertisers, publishers, and verifier nodes can transact around discrete campaigns and audits.",
+          "sourceIds": [
+            "alphabet-investor",
+            "google-products",
+            "lightning-network-homepage",
+            "searxng"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Most primitives already exist; bootstrapping honest verifier depth and buyer trust is still the hard part.",
+          "sourceIds": [
+            "lightning-network-homepage",
+            "searxng"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8.4,
+          "rationale": "If it scales, it pressures Google's measurement moat and ad reporting lock-in.",
+          "sourceIds": [
+            "alphabet-investor",
+            "google-products"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "google-search",
+      "sourceIds": [
+        "alphabet-investor",
+        "google-products",
+        "lightning-network-homepage",
+        "searxng"
+      ]
+    },
+    {
+      "slug": "youtube-concept",
+      "name": "Federated Video Cooperatives",
+      "summary": "A federated video network where creators own audience relationships, split revenue directly, and use open moderation and discovery services instead of a single platform monopoly.",
+      "angleIds": [
+        "lightning",
+        "federation",
+        "decentralized-coordination",
+        "cooperative-production"
+      ],
+      "thesis": "Break video publishing into open hosting, discovery, moderation, and payout layers so creators can move without losing their business.",
+      "bitcoinOrDecentralizationRole": "Lightning enables direct creator splits, fan micropayments, and machine-scale settlement between hosts, moderators, and recommendation services.",
+      "coordinationMechanism": "Creators choose hosts, discovery providers compete for attention, and cooperative moderation pools sell safety services into the network.",
+      "verificationOrTrustModel": "Signed playback proofs, mirrored manifests, and cross-host receipts reduce the chance that hosts overstate views or suppress contracted payouts.",
+      "failureModes": [
+        "Moderation quality can fragment",
+        "Discovery quality may lag incumbent recommendation systems"
+      ],
+      "adoptionPath": [
+        "Start with creator niches that already dislike platform dependency",
+        "Add better tooling for clips, subscriptions, and payouts"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "google-products",
+        "peertube"
+      ],
+      "enablerSourceIds": [
+        "peertube",
+        "matrix"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.5,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "google-products",
+            "peertube"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.4,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "google-products",
+            "peertube"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "google-products",
+            "peertube"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "google-products",
+            "peertube"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "youtube",
+      "sourceIds": [
+        "google-products",
+        "peertube",
+        "matrix"
+      ]
+    },
+    {
+      "slug": "youtube-edge-cache-and-transcode-market",
+      "name": "Edge Cache and Transcode Market",
+      "summary": "Independent operators earn for caching, transcoding, and serving video segments so creators do not need one platform to own the delivery stack as well as the audience relationship.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "federation"
+      ],
+      "thesis": "Unlike the first concept's focus on federated ownership, this concept breaks YouTube's delivery economics by turning video infrastructure itself into a competitive market.",
+      "bitcoinOrDecentralizationRole": "Lightning clears tiny payouts for storage, egress, and transcode work without requiring creators to pre-negotiate with one CDN.",
+      "coordinationMechanism": "Creators or cooperatives publish storage and bitrate jobs while edge operators compete on price, geography, and reliability.",
+      "verificationOrTrustModel": "Segment hashes, retrieval challenges, and randomized playback probes prove that files were stored and served instead of merely promised.",
+      "failureModes": [
+        "Creator UX can collapse if multi-operator delivery feels less reliable than YouTube",
+        "Bandwidth sellers may game probes unless challenge diversity stays high"
+      ],
+      "adoptionPath": [
+        "Launch with creator cooperatives already publishing to PeerTube",
+        "Add live and high-bitrate markets after retrieval proof looks dependable"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "alphabet-investor",
+        "google-products"
+      ],
+      "enablerSourceIds": [
+        "peertube",
+        "akash"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.8,
+          "rationale": "This concept decentralizes video delivery and storage work across many independent operators.",
+          "sourceIds": [
+            "peertube",
+            "akash"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.9,
+          "rationale": "The coordination loop is credible because video caching, transcoding, and serving can be priced as discrete units of infrastructure work.",
+          "sourceIds": [
+            "alphabet-investor",
+            "google-products",
+            "peertube",
+            "akash"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.1,
+          "rationale": "Most primitives already exist; the software pieces exist, though creator tooling and QoS discipline still need work.",
+          "sourceIds": [
+            "peertube",
+            "akash"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.7,
+          "rationale": "If it scales, it pressures YouTube's infrastructure margin and bundled delivery advantage.",
+          "sourceIds": [
+            "alphabet-investor",
+            "google-products"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "youtube",
+      "sourceIds": [
+        "alphabet-investor",
+        "google-products",
+        "peertube",
+        "akash"
+      ]
+    },
+    {
+      "slug": "aws-platform-concept",
+      "name": "Federated Workload Exchange",
+      "summary": "A market that lets operators sell compute, storage, and managed capacity through open contracts rather than forcing buyers onto one hyperscaler control plane.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "federation"
+      ],
+      "thesis": "Pull cloud value away from hyperscaler bundling by making capacity, orchestration, and escrow portable across many operators.",
+      "bitcoinOrDecentralizationRole": "Lightning settles burst workloads, storage commitments, and reliability rebates without a central bill-collection layer.",
+      "coordinationMechanism": "Independent operators publish price and SLA offers, schedulers route jobs, and buyers select blends of cost, geography, and trust.",
+      "verificationOrTrustModel": "Remote attestation, replicated job receipts, and random settlement challenges reduce the chance of fake capacity or underdelivery.",
+      "failureModes": [
+        "Enterprise buyers may still prefer one throat to choke",
+        "Heterogeneous infrastructure complicates support"
+      ],
+      "adoptionPath": [
+        "Win on edge, batch, and overflow workloads first",
+        "Layer better migration tooling on top of existing Kubernetes habits"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "aws",
+        "openstack"
+      ],
+      "enablerSourceIds": [
+        "aws"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "aws",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "aws",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.2,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "aws",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.9,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "aws",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "aws-platform",
+      "sourceIds": [
+        "aws",
+        "openstack"
+      ]
+    },
+    {
+      "slug": "aws-platform-waste-heat-microdatacenter-guild",
+      "name": "Waste-Heat Microdatacenter Guild",
+      "summary": "Community or small-business microdatacenters pair open racks with local power and heat reuse, selling standard compute capacity without needing hyperscale campus economics.",
+      "angleIds": [
+        "distributed-energy-generation",
+        "open-energy-hardware",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Unlike the first concept's workload exchange, this one changes the physical supply base by making more of the cloud live in modular local infrastructure.",
+      "bitcoinOrDecentralizationRole": "Open compute designs and energy hardware reduce capex per site while market coordination lets local operators sell spare capacity into common pools.",
+      "coordinationMechanism": "Operators publish standard capacity offers tied to location, power profile, and heat-reuse characteristics, and buyers place workloads through open schedulers.",
+      "verificationOrTrustModel": "Attested host inventories, metered uptime, and settlement against delivered capacity keep the market tied to real hardware instead of paper promises.",
+      "failureModes": [
+        "Operations quality may vary too much across small sites",
+        "Local energy and cooling advantages may not offset AWS scale in core regions"
+      ],
+      "adoptionPath": [
+        "Start with edge workloads, sovereignty-sensitive customers, and heat-reuse sites",
+        "Expand after standard rack kits and billing metadata are widely interoperable"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "amazon-investor",
+        "aws"
+      ],
+      "enablerSourceIds": [
+        "open-compute-project",
+        "openstack",
+        "openems"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.7,
+          "rationale": "This concept decentralizes cloud supply across smaller operators with local power and thermal advantages.",
+          "sourceIds": [
+            "open-compute-project",
+            "openstack",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "The coordination loop is credible because capacity can be standardized well enough for buyers to compare location, uptime, and price across operators.",
+          "sourceIds": [
+            "amazon-investor",
+            "aws",
+            "open-compute-project",
+            "openstack",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.3,
+          "rationale": "Most primitives already exist; site operations and customer trust remain harder than assembling the software stack.",
+          "sourceIds": [
+            "open-compute-project",
+            "openstack",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7,
+          "rationale": "If it scales, it pressures AWS's physical scale advantage at the edge and in sovereignty-sensitive workloads.",
+          "sourceIds": [
+            "amazon-investor",
+            "aws"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "aws-platform",
+      "sourceIds": [
+        "amazon-investor",
+        "aws",
+        "open-compute-project",
+        "openstack",
+        "openems"
+      ]
+    },
+    {
+      "slug": "amazon-marketplace-concept",
+      "name": "Merchant-Owned Commerce Mesh",
+      "summary": "A seller-first marketplace network where storefronts, fulfillment partners, and reputation providers interoperate instead of renting access from Amazon.",
+      "angleIds": [
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination",
+        "cooperative-production"
+      ],
+      "thesis": "Move the marketplace from a centralized demand tollbooth toward an open merchant and logistics network.",
+      "bitcoinOrDecentralizationRole": "Lightning supports escrow, affiliate payouts, dispute bonds, and fulfillment settlement without a dominant payments operator.",
+      "coordinationMechanism": "Merchants publish inventory, logistics firms compete for delivery legs, and discovery layers aggregate catalogs without owning the merchant relationship.",
+      "verificationOrTrustModel": "Order proofs, shipment attestations, and bonded dispute resolution make fake inventory and fake delivery harder to monetize.",
+      "failureModes": [
+        "Buyers trust incumbent defaults",
+        "Fraud and returns still demand careful arbitration"
+      ],
+      "adoptionPath": [
+        "Begin with vertical merchant communities and repeat-buy categories",
+        "Expand as logistics and reputation layers become reusable"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "amazon-store",
+        "open-food-network"
+      ],
+      "enablerSourceIds": [
+        "amazon-store"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.6,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "amazon-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.1,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "amazon-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.7,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "amazon-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8.4,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "amazon-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "amazon-marketplace",
+      "sourceIds": [
+        "amazon-store",
+        "open-food-network"
+      ]
+    },
+    {
+      "slug": "amazon-marketplace-local-fabrication-catalog",
+      "name": "Local Fabrication Catalog",
+      "summary": "An open catalog of product designs, bills of materials, and fulfillment recipes lets nearby fabrication cells produce common goods on demand instead of routing everything through giant centralized inventory systems.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "home-microfactory",
+        "3d-printing",
+        "recycling-and-reuse"
+      ],
+      "thesis": "Unlike the first concept's merchant-owned marketplace, this one attacks Amazon's inventory and logistics advantage by localizing production itself.",
+      "bitcoinOrDecentralizationRole": "Distributed fabrication tools and local materials recovery shrink minimum efficient scale for many generic goods.",
+      "coordinationMechanism": "Design owners publish recipes, local shops accept jobs, and pickup or delivery nodes compete on turnaround time and trust.",
+      "verificationOrTrustModel": "Shared BOM checks, photo evidence, dimensional tests, and buyer reputation make it harder to pass off low-quality local production as equivalent goods.",
+      "failureModes": [
+        "Quality variance could scare buyers back toward branded centralized supply",
+        "Many categories will remain uneconomical for local fabrication"
+      ],
+      "adoptionPath": [
+        "Begin with repair parts, fixtures, and commodity household goods",
+        "Layer in pickup partnerships once repeatable specs and reviews emerge"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "amazon-store",
+        "amazon-investor"
+      ],
+      "enablerSourceIds": [
+        "reprap",
+        "precious-plastic",
+        "ose-website"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.5,
+          "rationale": "This concept decentralizes production and fulfillment for commodity goods across local workshops instead of centralized inventory nodes.",
+          "sourceIds": [
+            "reprap",
+            "precious-plastic",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination loop is credible because design files, jobs, and local pickup can be matched as repeatable marketplace transactions.",
+          "sourceIds": [
+            "amazon-store",
+            "amazon-investor",
+            "reprap",
+            "precious-plastic",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.4,
+          "rationale": "Most primitives already exist; many categories are still hard to localize, but the fabrication primitives already exist.",
+          "sourceIds": [
+            "reprap",
+            "precious-plastic",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "If it scales, it pressures Amazon's inventory depth and national fulfillment leverage in generic categories.",
+          "sourceIds": [
+            "amazon-store",
+            "amazon-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "amazon-marketplace",
+      "sourceIds": [
+        "amazon-store",
+        "amazon-investor",
+        "reprap",
+        "precious-plastic",
+        "ose-website"
+      ]
+    },
+    {
+      "slug": "apple-icloud-concept",
+      "name": "User-Owned Cloud Mesh",
+      "summary": "A personal cloud fabric that combines self-hosted nodes, trusted relays, and interoperable sync services so convenience no longer requires Apple custody.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination",
+        "lightning"
+      ],
+      "thesis": "Turn sync, backup, and device continuity into a portable service mesh instead of an ecosystem lock-in feature.",
+      "bitcoinOrDecentralizationRole": "Lightning pays relay operators and backup hosts in tiny recurring amounts without bundling everything into one subscription.",
+      "coordinationMechanism": "Users mix home nodes, friendly operators, and commercial relays under one interoperable data model.",
+      "verificationOrTrustModel": "End-to-end encryption, signed replication logs, and periodic restore drills reduce the risk of silent data loss or dishonest storage claims.",
+      "failureModes": [
+        "Consumer setup remains harder than iCloud",
+        "Mobile OS restrictions can blunt the experience"
+      ],
+      "adoptionPath": [
+        "Start with privacy-sensitive families and power users",
+        "Improve migration, restore, and mobile onboarding until switching feels normal"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "apple-services",
+        "nextcloud"
+      ],
+      "enablerSourceIds": [
+        "nextcloud",
+        "syncthing"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.8,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "apple-services",
+            "nextcloud"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.5,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "apple-services",
+            "nextcloud"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "apple-services",
+            "nextcloud"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "apple-services",
+            "nextcloud"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "apple-icloud",
+      "sourceIds": [
+        "apple-services",
+        "nextcloud",
+        "syncthing"
+      ]
+    },
+    {
+      "slug": "apple-icloud-home-vault-appliance-grid",
+      "name": "Home Vault Appliance Grid",
+      "summary": "A market of repairable home storage appliances gives households a simple local default for backups, sync, and family file sharing instead of renting the whole relationship from Apple's cloud.",
+      "angleIds": [
+        "open-hardware",
+        "home-microfactory",
+        "decentralized-coordination",
+        "3d-printing"
+      ],
+      "thesis": "Unlike the first concept's software mesh, this one treats the replacement as a consumer hardware category that households can buy, repair, and even locally assemble.",
+      "bitcoinOrDecentralizationRole": "Open hardware and small-scale fabrication make appliance vendors interchangeable while open sync software keeps data portable.",
+      "coordinationMechanism": "Appliance makers compete on reliability and UX while users still sync across common open protocols.",
+      "verificationOrTrustModel": "Signed backup tests, restore drills, and device health attestations prove that an appliance is actually protecting data instead of silently failing.",
+      "failureModes": [
+        "Consumers may still prefer Apple's seamless defaults",
+        "Hardware support and backup reliability are unforgiving consumer requirements"
+      ],
+      "adoptionPath": [
+        "Sell through privacy-focused and prosumer channels first",
+        "Broaden after restore testing and mobile onboarding become routine"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "apple-services",
+        "apple-iphone"
+      ],
+      "enablerSourceIds": [
+        "nextcloud",
+        "syncthing",
+        "reprap"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "This concept decentralizes consumer cloud ownership into repairable local appliances and open sync layers.",
+          "sourceIds": [
+            "nextcloud",
+            "syncthing",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The coordination loop is credible because appliance vendors and open sync providers can interoperate without one cloud operator controlling the account.",
+          "sourceIds": [
+            "apple-services",
+            "apple-iphone",
+            "nextcloud",
+            "syncthing",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "Most primitives already exist; consumer polish and failure-proof backup behavior still need to be excellent.",
+          "sourceIds": [
+            "nextcloud",
+            "syncthing",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.7,
+          "rationale": "If it scales, it pressures iCloud's subscription lock-in and default consumer storage position.",
+          "sourceIds": [
+            "apple-services",
+            "apple-iphone"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "apple-icloud",
+      "sourceIds": [
+        "apple-services",
+        "apple-iphone",
+        "nextcloud",
+        "syncthing",
+        "reprap"
+      ]
+    },
+    {
+      "slug": "apple-app-store-concept",
+      "name": "Signed App Federation",
+      "summary": "An app distribution network where software, payments, review reputation, and discovery are portable services rather than one controlled store.",
+      "angleIds": [
+        "lightning",
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "Unbundle software trust, payment rails, and discovery so Apple cannot charge rent on the entire mobile distribution path.",
+      "bitcoinOrDecentralizationRole": "Lightning enables direct software purchases, subscriptions, and refund bonds outside a single payment gatekeeper.",
+      "coordinationMechanism": "Developers publish signed packages, reputation providers audit safety, and client devices subscribe to trusted catalogs.",
+      "verificationOrTrustModel": "Package signatures, reproducible builds, and stake-backed review services reduce the chance of malware, fake reviews, and spoofed app provenance.",
+      "failureModes": [
+        "Platform restrictions still matter",
+        "Users may prefer incumbent safety narratives"
+      ],
+      "adoptionPath": [
+        "Win first on web apps, alternative OSes, and enterprise sideloading",
+        "Expand as portable identity and payment trust improves"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "apple-services",
+        "grapheneos"
+      ],
+      "enablerSourceIds": [
+        "grapheneos"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "apple-services",
+            "grapheneos"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.3,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "apple-services",
+            "grapheneos"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "apple-services",
+            "grapheneos"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "apple-services",
+            "grapheneos"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "apple-app-store",
+      "sourceIds": [
+        "apple-services",
+        "grapheneos"
+      ]
+    },
+    {
+      "slug": "apple-app-store-direct-license-wallet-rail",
+      "name": "Direct License Wallet Rail",
+      "summary": "Developers sell installation rights, subscriptions, and updates directly through wallet-backed licenses that devices can verify without a single storefront owning the payment rail.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "decentralized-coordination",
+        "federation"
+      ],
+      "thesis": "Unlike the first concept's federated stores, this one unbundles discovery from payment and entitlement so Apple's toll booth loses its choke point.",
+      "bitcoinOrDecentralizationRole": "Bitcoin and Lightning carry direct payment and subscription renewal, while federated mint or wallet models reduce dependence on card rails.",
+      "coordinationMechanism": "Developers publish signed app manifests and pricing terms; discovery sites and device tools can compete without controlling settlement.",
+      "verificationOrTrustModel": "Devices verify signed manifests, revocation state, and proof of payment before install or update, limiting fake storefronts and replayed licenses.",
+      "failureModes": [
+        "Apple platform rules can still suppress direct install flows",
+        "Consumers may resist managing wallets or trust new payment paths"
+      ],
+      "adoptionPath": [
+        "Start with jurisdictions or device segments where sideloading is already viable",
+        "Use higher-margin professional apps before mass consumer categories"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "apple-services",
+        "apple-iphone"
+      ],
+      "enablerSourceIds": [
+        "grapheneos",
+        "lightning-network-homepage",
+        "fedimint"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "This concept decentralizes app payment and entitlement control away from a single storefront.",
+          "sourceIds": [
+            "grapheneos",
+            "lightning-network-homepage",
+            "fedimint"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.4,
+          "rationale": "The coordination loop is credible because developers, discovery layers, and devices can coordinate around signed manifests and direct settlement.",
+          "sourceIds": [
+            "apple-services",
+            "apple-iphone",
+            "grapheneos",
+            "lightning-network-homepage",
+            "fedimint"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.1,
+          "rationale": "Most primitives already exist; the hardest blockers are platform policy and user trust, not basic payment or signature primitives.",
+          "sourceIds": [
+            "grapheneos",
+            "lightning-network-homepage",
+            "fedimint"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8,
+          "rationale": "If it scales, it pressures App Store take rates and Apple's control over software commerce.",
+          "sourceIds": [
+            "apple-services",
+            "apple-iphone"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "apple-app-store",
+      "sourceIds": [
+        "apple-services",
+        "apple-iphone",
+        "grapheneos",
+        "lightning-network-homepage",
+        "fedimint"
+      ]
+    },
+    {
+      "slug": "centura-semiconductor-platform-concept",
+      "name": "Open Mature-Node Tooling Consortium",
+      "summary": "A shared design, refurbishment, and process-knowledge network for older-node semiconductor equipment that lowers dependence on proprietary service silos.",
+      "angleIds": [
+        "open-hardware",
+        "cooperative-production",
+        "decentralized-manufacturing"
+      ],
+      "thesis": "Attack the installed-base moat by opening the service, documentation, and retrofit layer for mature-node fab tools rather than pretending leading-edge fabs are easy to decentralize.",
+      "bitcoinOrDecentralizationRole": "The decentralization role is in open documentation, shared refurb workflows, and multi-party process knowledge instead of a Bitcoin payment story.",
+      "coordinationMechanism": "Independent refurb shops, fabs, and engineering guilds share chamber recipes, spares, and retrofit know-how under open governance.",
+      "verificationOrTrustModel": "Process test lots, published maintenance logs, and repeatable metrology benchmarks create evidence that retrofits actually work.",
+      "failureModes": [
+        "Leading-edge processes remain out of reach",
+        "IP and safety constraints limit openness"
+      ],
+      "adoptionPath": [
+        "Start with mature-node, legacy, and educational fabs",
+        "Expand into secondary markets for parts, recipes, and refurb services"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "amat-homepage",
+        "amat-10k-2025"
+      ],
+      "enablerSourceIds": [
+        "openroad-project",
+        "sky130-pdk-source"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 6.4,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.2,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 4.7,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 5.8,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "centura-semiconductor-platform",
+      "sourceIds": [
+        "amat-homepage",
+        "amat-10k-2025",
+        "openroad-project",
+        "sky130-pdk-source"
+      ]
+    },
+    {
+      "slug": "centura-semiconductor-platform-refurbished-process-module-market",
+      "name": "Refurbished Process Module Market",
+      "summary": "Independent refurbishers trade refurbished process modules, fixtures, and validated retrofit packages so older fabs can extend tool life without relying on a single OEM service funnel.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "local-materials-processing",
+        "recycling-and-reuse",
+        "cooperative-production"
+      ],
+      "thesis": "Unlike the first concept's consortium for new open tools, this one attacks the aftermarket by opening refurbishment and upgrade capacity around the installed base.",
+      "bitcoinOrDecentralizationRole": "Distributed manufacturing and local materials work lower the cost of refurbishing and customizing mature-node equipment.",
+      "coordinationMechanism": "Refurbishers publish available modules and retrofit recipes while fabs source upgrades from a competitive aftermarket.",
+      "verificationOrTrustModel": "Performance baselines, metrology logs, and installation audits tie each refurbished module to observable process outcomes.",
+      "failureModes": [
+        "Semiconductor buyers may only trust OEM-backed service on critical tools",
+        "Tight tolerances make many parts unsuitable for decentralized refurbishment"
+      ],
+      "adoptionPath": [
+        "Begin with non-critical mature-node modules and fixtures",
+        "Expand once a record of successful retrofits reduces perceived risk"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "amat-10k-2025",
+        "amat-homepage"
+      ],
+      "enablerSourceIds": [
+        "ose-website",
+        "reprap",
+        "openroad-project"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.5,
+          "rationale": "This concept decentralizes tool refurbishment and retrofit work across a distributed industrial aftermarket.",
+          "sourceIds": [
+            "ose-website",
+            "reprap",
+            "openroad-project"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.3,
+          "rationale": "The coordination loop is credible because refurbishment jobs and retrofit packages can be compared around measurable module performance.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-homepage",
+            "ose-website",
+            "reprap",
+            "openroad-project"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.2,
+          "rationale": "The enabling pieces exist, but semiconductor tolerances and buyer caution still sharply limit how much of the stack can decentralize.",
+          "sourceIds": [
+            "ose-website",
+            "reprap",
+            "openroad-project"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.9,
+          "rationale": "If it scales, it pressures Applied's high-margin service and upgrade funnel on the installed base.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-homepage"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "centura-semiconductor-platform",
+      "sourceIds": [
+        "amat-10k-2025",
+        "amat-homepage",
+        "ose-website",
+        "reprap",
+        "openroad-project"
+      ]
+    },
+    {
+      "slug": "applied-global-services-concept",
+      "name": "Open Fab Service Guild",
+      "summary": "A service marketplace for semiconductor maintenance, training, spare-parts intelligence, and refurb coordination that chips away at OEM service dependence.",
+      "angleIds": [
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "cooperative-production"
+      ],
+      "thesis": "Disrupt the annuity value in fab services by letting third-party experts and tool owners coordinate openly around uptime.",
+      "bitcoinOrDecentralizationRole": "The decentralization value comes from shared service intelligence, open documentation, and operator competition rather than a proprietary service queue.",
+      "coordinationMechanism": "Engineers, spare-part suppliers, and fabs match on open maintenance jobs, documentation, and uptime commitments.",
+      "verificationOrTrustModel": "Signed maintenance logs, tool telemetry snapshots, and escrowed milestone payouts reduce fake service claims.",
+      "failureModes": [
+        "OEMs still control many critical parts and manuals",
+        "Fabs are conservative about risk"
+      ],
+      "adoptionPath": [
+        "Start with noncritical legacy tools and training services",
+        "Expand as independent service quality proves reliable"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "amat-10k-2025",
+        "amat-ir"
+      ],
+      "enablerSourceIds": [
+        "amat-10k-2025"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.1,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.9,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.8,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.3,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "applied-global-services",
+      "sourceIds": [
+        "amat-10k-2025",
+        "amat-ir"
+      ]
+    },
+    {
+      "slug": "applied-global-services-fab-spare-parts-microfactory",
+      "name": "Fab Spare Parts Microfactory",
+      "summary": "Local parts shops and refurbishers produce or recover selected spares, fixtures, and consumables so service independence grows around the fab instead of staying captive to OEM channels.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "3d-printing",
+        "local-materials-processing",
+        "recycling-and-reuse"
+      ],
+      "thesis": "Unlike the first concept's service-labor guild, this one breaks dependence on the spare-parts and consumables bottleneck.",
+      "bitcoinOrDecentralizationRole": "3D printing and local materials processing make a subset of spares manufacturable or recoverable closer to the fab.",
+      "coordinationMechanism": "Service teams request validated parts specs, local shops quote production or recovery jobs, and buyers compare lead time against OEM queues.",
+      "verificationOrTrustModel": "Traceable part histories, fit checks, and post-installation performance logs screen out low-quality substitutes.",
+      "failureModes": [
+        "Only a narrow slice of parts may be realistically localizable",
+        "Liability concerns can push fabs back toward OEM bundles"
+      ],
+      "adoptionPath": [
+        "Target high-delay, lower-risk spares first",
+        "Layer in refurbishment marketplaces once test data accumulates"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "amat-10k-2025",
+        "amat-ir"
+      ],
+      "enablerSourceIds": [
+        "reprap",
+        "ose-website",
+        "precious-plastic"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "This concept decentralizes spare-part and consumable production into local fabrication and recovery loops.",
+          "sourceIds": [
+            "reprap",
+            "ose-website",
+            "precious-plastic"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.7,
+          "rationale": "The coordination loop is credible because buyers can compare local lead time, price, and validated fit on narrowly defined spare-part jobs.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir",
+            "reprap",
+            "ose-website",
+            "precious-plastic"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.6,
+          "rationale": "The enabling pieces exist, but the reachable part set is still narrow and requires disciplined validation.",
+          "sourceIds": [
+            "reprap",
+            "ose-website",
+            "precious-plastic"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.2,
+          "rationale": "If it scales, it pressures Applied Global Services' parts margin and response-time advantage.",
+          "sourceIds": [
+            "amat-10k-2025",
+            "amat-ir"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "applied-global-services",
+      "sourceIds": [
+        "amat-10k-2025",
+        "amat-ir",
+        "reprap",
+        "ose-website",
+        "precious-plastic"
+      ]
+    },
+    {
+      "slug": "display-manufacturing-equipment-concept",
+      "name": "Open Display Microfactory Stack",
+      "summary": "An open-hardware manufacturing stack focused on simpler displays such as e-paper and low-power signage, shifting some display value toward distributed production.",
+      "angleIds": [
+        "open-hardware",
+        "decentralized-manufacturing",
+        "3d-printing"
+      ],
+      "thesis": "Compete downstream of premium OLED dominance by making simpler display classes manufacturable by far smaller operators.",
+      "bitcoinOrDecentralizationRole": "The disruptive angle is decentralized manufacturing and open hardware, not forcing Bitcoin into a place where fabrication physics are the real constraint.",
+      "coordinationMechanism": "Tool builders, controller designers, and local assemblers share BOMs, jigs, and process improvements in an open ecosystem.",
+      "verificationOrTrustModel": "Open test fixtures, yield reporting, and repeatable controller benchmarks show whether local production actually meets spec.",
+      "failureModes": [
+        "Cannot replace high-end OLED quickly",
+        "Yield and materials science remain difficult"
+      ],
+      "adoptionPath": [
+        "Start with e-paper, signage, and industrial low-refresh applications",
+        "Broaden only after repeatable quality and repair economics are proven"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "amat-homepage",
+        "amat-10k-2025"
+      ],
+      "enablerSourceIds": [
+        "zephyr-epaper"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.4,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.1,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 4.9,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 5.6,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "display-manufacturing-equipment",
+      "sourceIds": [
+        "amat-homepage",
+        "amat-10k-2025",
+        "zephyr-epaper"
+      ]
+    },
+    {
+      "slug": "display-manufacturing-equipment-printable-thin-film-line-commons",
+      "name": "Printable Thin-Film Line Commons",
+      "summary": "Open recipes for printable thin films, deposition steps, and small-line tooling create a path toward smaller display and sensor production lines outside a few giant equipment vendors.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "solar-manufacturing",
+        "local-materials-processing",
+        "open-hardware"
+      ],
+      "thesis": "Unlike the first concept's full microfactory stack, this one concentrates on printable process knowledge that can leak volume away from massive bespoke display lines.",
+      "bitcoinOrDecentralizationRole": "Printable photovoltaic and thin-film manufacturing research suggests more of the process stack can become modular and lower-capital over time.",
+      "coordinationMechanism": "Process developers publish recipes and equipment modules while smaller producers assemble line configurations matched to their product niche.",
+      "verificationOrTrustModel": "Yield samples, test coupons, and standardized process logs let buyers compare recipe claims against measured output.",
+      "failureModes": [
+        "Yield and materials science could keep the economics confined to labs",
+        "Large-panel production may remain far beyond small-line capabilities"
+      ],
+      "adoptionPath": [
+        "Start with specialty sensors, low-power displays, and pilot lines",
+        "Expand only if reproducible thin-film processes become cheap enough to share"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "amat-homepage",
+        "amat-10k-2025"
+      ],
+      "enablerSourceIds": [
+        "nrel-perovskite-solar",
+        "zephyr-epaper",
+        "reprap"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "This concept decentralizes thin-film process knowledge and small-line tooling instead of only giant bespoke display lines.",
+          "sourceIds": [
+            "nrel-perovskite-solar",
+            "zephyr-epaper",
+            "reprap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.1,
+          "rationale": "The coordination loop is credible because recipes, test coupons, and modular line components can be shared and compared across smaller producers.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025",
+            "nrel-perovskite-solar",
+            "zephyr-epaper",
+            "reprap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 4.9,
+          "rationale": "The enabling pieces exist, but materials stability and yield still make this more plausible for niches than mainstream panel volume.",
+          "sourceIds": [
+            "nrel-perovskite-solar",
+            "zephyr-epaper",
+            "reprap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7,
+          "rationale": "If it scales, it pressures Applied's control over bespoke display equipment and process know-how.",
+          "sourceIds": [
+            "amat-homepage",
+            "amat-10k-2025"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "display-manufacturing-equipment",
+      "sourceIds": [
+        "amat-homepage",
+        "amat-10k-2025",
+        "nrel-perovskite-solar",
+        "zephyr-epaper",
+        "reprap"
+      ]
+    },
+    {
+      "slug": "consumer-banking-concept",
+      "name": "Federated Cash Management Stack",
+      "summary": "A mix of community banks, self-custody tools, and Lightning-enabled payment services that recreates everyday money movement without one giant universal bank interface.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "Break consumer banking into savings custody, payment routing, credit underwriting, and cash access layers so one megabank no longer owns the customer relationship.",
+      "bitcoinOrDecentralizationRole": "Bitcoin and Lightning give users an exit hatch for settlement and savings while open APIs let smaller institutions plug into a broader experience layer.",
+      "coordinationMechanism": "Community institutions, wallet providers, and bill-pay services interoperate around a shared user identity and money-routing layer.",
+      "verificationOrTrustModel": "Auditable reserves, signed payment receipts, and provable transaction histories reduce the trust premium of a single giant bank portal.",
+      "failureModes": [
+        "Regulation and FDIC expectations still shape user behavior",
+        "Credit products remain hard to decentralize cleanly"
+      ],
+      "adoptionPath": [
+        "Start with budgeting, savings, and payment routing overlays",
+        "Add lending and payroll features only after core flows feel boring and reliable"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "bac-annual-report-2024",
+        "bac-homepage"
+      ],
+      "enablerSourceIds": [
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.3,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.5,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "consumer-banking",
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "bac-homepage",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "consumer-banking-fedimint-community-treasury-network",
+      "name": "Fedimint Community Treasury Network",
+      "summary": "Communities operate federated savings and payments nodes so deposit-like services, pooled liquidity, and local cash management no longer require a giant bank balance sheet.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "federation",
+        "cooperative-production"
+      ],
+      "thesis": "Unlike the first concept's open banking interface stack, this one replaces the core treasury layer with small federated custody and settlement communities.",
+      "bitcoinOrDecentralizationRole": "Bitcoin, Lightning, and federated custody let local groups run shared treasury services without rebuilding a national bank from scratch.",
+      "coordinationMechanism": "Communities, businesses, and service providers join small federations that set reserve policies and service terms while staying interoperable on open rails.",
+      "verificationOrTrustModel": "Shared key control, public reserve rules, and settlement audit trails constrain unilateral misuse of pooled funds.",
+      "failureModes": [
+        "Users may still prefer regulated bank brands and deposit insurance",
+        "Operational failures in small federations could destroy trust quickly"
+      ],
+      "adoptionPath": [
+        "Start with communities already using self-custody and Lightning",
+        "Expand into payroll and treasury services once operations mature"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "bac-annual-report-2024",
+        "bac-homepage"
+      ],
+      "enablerSourceIds": [
+        "fedimint",
+        "lightning-network-homepage",
+        "ghostfolio-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.6,
+          "rationale": "This concept decentralizes retail treasury and savings services across small federated communities instead of one bank balance sheet.",
+          "sourceIds": [
+            "fedimint",
+            "lightning-network-homepage",
+            "ghostfolio-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.3,
+          "rationale": "The coordination loop is credible because reserve rules, custody roles, and payment flows can be made explicit inside smaller federations.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-homepage",
+            "fedimint",
+            "lightning-network-homepage",
+            "ghostfolio-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Most primitives already exist; regulatory fit and user trust are harder than the software primitives.",
+          "sourceIds": [
+            "fedimint",
+            "lightning-network-homepage",
+            "ghostfolio-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.5,
+          "rationale": "If it scales, it pressures Bank of America's deposit franchise and treasury relationship moat.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "consumer-banking",
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "bac-homepage",
+        "fedimint",
+        "lightning-network-homepage",
+        "ghostfolio-github"
+      ]
+    },
+    {
+      "slug": "merrill-wealth-management-concept",
+      "name": "Self-Custody Advisor Market",
+      "summary": "A wealth layer where advisors, planning tools, and portfolio reporting plug into client-controlled custody instead of forcing assets into one broker relationship.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination"
+      ],
+      "thesis": "Unbundle trust, custody, and advice so investors can hire expertise without surrendering the entire distribution stack to one institution.",
+      "bitcoinOrDecentralizationRole": "Bitcoin-native custody and Lightning-based billing make direct advisor-client relationships more practical at smaller account sizes.",
+      "coordinationMechanism": "Advisors sell planning, execution guidance, and reporting into an open client wallet and reporting environment.",
+      "verificationOrTrustModel": "Read-only proofs of holdings, signed advisory logs, and portable performance history reduce the need for blind faith in one wealth platform.",
+      "failureModes": [
+        "High-net-worth clients still value incumbency and handholding",
+        "Regulatory compliance adds friction"
+      ],
+      "adoptionPath": [
+        "Start with crypto-native and self-directed investors",
+        "Expand toward hybrid custody once reporting and compliance tooling matures"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "bac-annual-report-2024",
+        "merrill-edge-homepage"
+      ],
+      "enablerSourceIds": [
+        "ghostfolio-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "merrill-edge-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "merrill-edge-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.5,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "merrill-edge-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.8,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "merrill-edge-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "merrill-wealth-management",
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "merrill-edge-homepage",
+        "ghostfolio-github"
+      ]
+    },
+    {
+      "slug": "merrill-wealth-management-productive-asset-syndication-market",
+      "name": "Productive Asset Syndication Market",
+      "summary": "Instead of packaging wealth products inside a large advisory wrapper, investors directly syndicate into local energy, food, and fabrication assets with transparent cash flows and service data.",
+      "angleIds": [
+        "peer-to-peer-marketplace",
+        "cooperative-production",
+        "distributed-energy-generation",
+        "open-energy-hardware"
+      ],
+      "thesis": "Unlike the first concept's advisor marketplace, this one shifts wealth management toward direct ownership of productive local infrastructure.",
+      "bitcoinOrDecentralizationRole": "Open coordination and open hardware broaden the investable set beyond financial wrappers into smaller productive assets.",
+      "coordinationMechanism": "Project sponsors publish operating metrics and capital needs while investors subscribe to tranches that fund specific productive systems.",
+      "verificationOrTrustModel": "Project cash flow, uptime, and output data are reported against shared templates so sponsors cannot hide behind opaque product wrappers.",
+      "failureModes": [
+        "Investors may not want the illiquidity and diligence burden",
+        "Local projects can be too small or uneven to replace conventional portfolios"
+      ],
+      "adoptionPath": [
+        "Begin with accredited or high-conviction communities",
+        "Broaden after standardized underwriting and reporting reduce diligence costs"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "bac-q4-2024-earnings",
+        "merrill-edge-homepage"
+      ],
+      "enablerSourceIds": [
+        "openems",
+        "libre-solar",
+        "ose-website"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.9,
+          "rationale": "This concept decentralizes wealth allocation into smaller productive assets with open operating data.",
+          "sourceIds": [
+            "openems",
+            "libre-solar",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.6,
+          "rationale": "The coordination loop is credible because capital, service providers, and project operators can coordinate around project-specific metrics and tranches.",
+          "sourceIds": [
+            "bac-q4-2024-earnings",
+            "merrill-edge-homepage",
+            "openems",
+            "libre-solar",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6,
+          "rationale": "Most primitives already exist; the structure is possible now, though diligence and liquidity remain meaningful friction.",
+          "sourceIds": [
+            "openems",
+            "libre-solar",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.9,
+          "rationale": "If it scales, it pressures Merrill's product wrapper economics and advisor-controlled distribution.",
+          "sourceIds": [
+            "bac-q4-2024-earnings",
+            "merrill-edge-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "merrill-wealth-management",
+      "sourceIds": [
+        "bac-q4-2024-earnings",
+        "merrill-edge-homepage",
+        "openems",
+        "libre-solar",
+        "ose-website"
+      ]
+    },
+    {
+      "slug": "global-banking-markets-concept",
+      "name": "Open Treasury and Trade Settlement Mesh",
+      "summary": "A network for cross-border treasury, collateral visibility, and trade settlement that reduces dependence on giant bank balance-sheet intermediaries.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Move part of global banking value from relationship-heavy bank infrastructure toward open settlement, collateral, and liquidity coordination rails.",
+      "bitcoinOrDecentralizationRole": "Bitcoin and Lightning are useful for fast settlement edges, while the deeper disruption comes from shared collateral visibility and programmable coordination.",
+      "coordinationMechanism": "Treasury desks, funds, and regional liquidity providers match around open collateral and settlement standards instead of proprietary bank pipes.",
+      "verificationOrTrustModel": "Multi-party attestations, collateral proofs, and settlement finality receipts reduce fake inventory and settlement ambiguity.",
+      "failureModes": [
+        "Large regulated institutions still dominate prime relationships",
+        "Jurisdictional fragmentation can slow adoption"
+      ],
+      "adoptionPath": [
+        "Begin with narrow corridors and treasury overflow cases",
+        "Grow into broader collateral and trade-finance workflows once standards harden"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "bac-annual-report-2024",
+        "bac-investor-relations"
+      ],
+      "enablerSourceIds": [
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.7,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.4,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.2,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.7,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "global-banking-markets",
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "bac-investor-relations",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "global-banking-markets-proof-of-delivery-trade-finance-mesh",
+      "name": "Proof-of-Delivery Trade Finance Mesh",
+      "summary": "Trade and working-capital finance clear through open counterparties that price receivables against real shipment and delivery proofs instead of proprietary bank balance-sheet relationships.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "cooperative-production"
+      ],
+      "thesis": "Unlike the first concept's settlement focus, this one opens the underwriting and verification layer of trade finance itself.",
+      "bitcoinOrDecentralizationRole": "Lightning-ready settlement shortens cash cycles while open counterparties can price discrete delivery events instead of bundling everything inside one bank.",
+      "coordinationMechanism": "Suppliers, buyers, carriers, and capital providers publish funding requests and fulfillment milestones to a shared marketplace.",
+      "verificationOrTrustModel": "Bills of lading, warehouse events, and buyer acceptance milestones release funding in stages so capital tracks delivered goods rather than unverifiable promises.",
+      "failureModes": [
+        "Fraud risk remains high in weak-documentation corridors",
+        "Large buyers may still prefer incumbent balance-sheet guarantees"
+      ],
+      "adoptionPath": [
+        "Start with narrower corridors and repeat counterparties",
+        "Expand after proof formats and dispute processes become trustworthy"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "bac-annual-report-2024",
+        "bac-investor-relations"
+      ],
+      "enablerSourceIds": [
+        "lightning-network-homepage",
+        "open-food-network"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "This concept decentralizes trade finance underwriting around open delivery proofs instead of one bank relationship.",
+          "sourceIds": [
+            "lightning-network-homepage",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.1,
+          "rationale": "The coordination loop is credible because milestone-based funding can be matched around documented shipment and delivery events.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-investor-relations",
+            "lightning-network-homepage",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.5,
+          "rationale": "Most primitives already exist; documentation quality and dispute resolution are the main bottlenecks.",
+          "sourceIds": [
+            "lightning-network-homepage",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "If it scales, it pressures Bank of America's trade-finance and working-capital intermediation rents.",
+          "sourceIds": [
+            "bac-annual-report-2024",
+            "bac-investor-relations"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "global-banking-markets",
+      "sourceIds": [
+        "bac-annual-report-2024",
+        "bac-investor-relations",
+        "lightning-network-homepage",
+        "open-food-network"
+      ]
+    },
+    {
+      "slug": "geico-insurance-concept",
+      "name": "Mutual Driving Cooperative",
+      "summary": "A member-owned insurance structure that combines open telematics, transparent risk pools, and direct surplus sharing instead of centralized insurance extraction.",
+      "angleIds": [
+        "cooperative-production",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Attack insurer float capture by turning policyholders into members of a transparent risk and surplus pool.",
+      "bitcoinOrDecentralizationRole": "The decentralization story is cooperative pooling and open risk data, not forcing a blockchain where actuarial trust and regulation matter more.",
+      "coordinationMechanism": "Drivers join transparent pools, choose risk-sharing terms, and buy compliance and claims services from competing operators.",
+      "verificationOrTrustModel": "Open telematics data, published reserve rules, and third-party claims audits reduce hidden pricing and abusive denial incentives.",
+      "failureModes": [
+        "State regulation is heavy",
+        "Catastrophic claims still demand deep capital buffers"
+      ],
+      "adoptionPath": [
+        "Start with niche driver pools and commercial fleets",
+        "Expand once claims handling and reserve transparency prove durable"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "geico",
+        "berkshire-reports"
+      ],
+      "enablerSourceIds": [
+        "geico",
+        "berkshire-reports"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.5,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "geico",
+            "berkshire-reports"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "geico",
+            "berkshire-reports"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.9,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "geico",
+            "berkshire-reports"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.8,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "geico",
+            "berkshire-reports"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "geico-insurance",
+      "sourceIds": [
+        "geico",
+        "berkshire-reports"
+      ]
+    },
+    {
+      "slug": "geico-insurance-open-claims-and-repair-guild",
+      "name": "Open Claims and Repair Guild",
+      "summary": "Claims handling and repair sourcing move into an open network where drivers, shops, parts suppliers, and telemetry providers compete instead of routing every incident through one insurer-controlled workflow.",
+      "angleIds": [
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "recycling-and-reuse",
+        "cooperative-production"
+      ],
+      "thesis": "Unlike the first concept's mutual risk pool, this one attacks GEICO's operating cost stack by decentralizing claims and repair execution.",
+      "bitcoinOrDecentralizationRole": "Open vehicle data and repair markets make the post-accident workflow less dependent on one insurer's preferred network.",
+      "coordinationMechanism": "Drivers or cooperatives request inspections, repair quotes, and parts through open marketplaces with shared documentation standards.",
+      "verificationOrTrustModel": "Telemetry snapshots, photo sets, repair checklists, and peer-reviewed invoices reduce fake claims and inflated work orders.",
+      "failureModes": [
+        "Fraud control is hard when many parties touch the claim",
+        "Insurers may still dominate because they control the risk capital"
+      ],
+      "adoptionPath": [
+        "Start as a repair and claims-administration network alongside existing insurance",
+        "Move upstream into risk pricing once data quality improves"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "geico",
+        "berkshire-reports"
+      ],
+      "enablerSourceIds": [
+        "openpilot",
+        "precious-plastic",
+        "ose-website"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.7,
+          "rationale": "This concept decentralizes claims handling and repair execution across open service markets instead of one insurer workflow.",
+          "sourceIds": [
+            "openpilot",
+            "precious-plastic",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination loop is credible because inspection, repair, and parts sourcing are already modular jobs that many shops can price.",
+          "sourceIds": [
+            "geico",
+            "berkshire-reports",
+            "openpilot",
+            "precious-plastic",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.7,
+          "rationale": "Most primitives already exist; fraud controls and risk capital remain outside the easiest part of the stack.",
+          "sourceIds": [
+            "openpilot",
+            "precious-plastic",
+            "ose-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.1,
+          "rationale": "If it scales, it pressures GEICO's claims-cost discipline and preferred-network control.",
+          "sourceIds": [
+            "geico",
+            "berkshire-reports"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "geico-insurance",
+      "sourceIds": [
+        "geico",
+        "berkshire-reports",
+        "openpilot",
+        "precious-plastic",
+        "ose-website"
+      ]
+    },
+    {
+      "slug": "berkshire-energy-concept",
+      "name": "Community Microgrid Federation",
+      "summary": "A federation of local generation, storage, and billing cooperatives that captures more utility value at the community edge.",
+      "angleIds": [
+        "cooperative-production",
+        "federation",
+        "decentralized-coordination",
+        "lightning"
+      ],
+      "thesis": "Take portions of utility value away from giant regulated monopolies by coordinating local production, storage, and settlement.",
+      "bitcoinOrDecentralizationRole": "Lightning can settle tiny grid services and energy trades, while federation lets many local operators share standards without one owner.",
+      "coordinationMechanism": "Homes, businesses, and local operators coordinate storage, demand response, and resilience services across shared market rules.",
+      "verificationOrTrustModel": "Smart-meter attestations, open dispatch logs, and local reserve audits make energy claims and payouts auditable.",
+      "failureModes": [
+        "Grid interconnection rules remain political",
+        "Reliability expectations are unforgiving"
+      ],
+      "adoptionPath": [
+        "Start with campuses, industrial parks, and resilience-first communities",
+        "Expand where storage and solar economics already work"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "berkshire-reports",
+        "openems"
+      ],
+      "enablerSourceIds": [
+        "openems"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "berkshire-reports",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.4,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "berkshire-reports",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "berkshire-reports",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.7,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "berkshire-reports",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "berkshire-energy",
+      "sourceIds": [
+        "berkshire-reports",
+        "openems"
+      ]
+    },
+    {
+      "slug": "berkshire-energy-printable-solar-and-storage-commons",
+      "name": "Printable Solar and Storage Commons",
+      "summary": "Open solar, storage, and controller designs let households or local shops assemble more of the generation stack themselves instead of buying only utility-scale or tightly bundled vendor systems.",
+      "angleIds": [
+        "distributed-energy-generation",
+        "solar-manufacturing",
+        "open-energy-hardware",
+        "home-microfactory",
+        "microgrid-coordination"
+      ],
+      "thesis": "Unlike the first concept's microgrid federation, this one changes the hardware supply chain by making energy equipment itself more locally manufacturable.",
+      "bitcoinOrDecentralizationRole": "Open energy hardware, printable solar research, and local fabrication lower the barrier to assembling small generation systems outside incumbent utility channels.",
+      "coordinationMechanism": "Design maintainers publish validated hardware recipes while installers and households source modules, parts, and assembly help from many vendors.",
+      "verificationOrTrustModel": "Output measurements, inverter logs, and standardized commissioning tests confirm that locally assembled systems are producing what they claim.",
+      "failureModes": [
+        "Printable solar and household assembly remain technically immature",
+        "Safety and permitting could limit how local the hardware stack can become"
+      ],
+      "adoptionPath": [
+        "Begin with open controllers, racks, and balance-of-system components",
+        "Add more locally manufactured generation pieces as the hardware proves itself"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "berkshire-reports",
+        "berkshire-home"
+      ],
+      "enablerSourceIds": [
+        "libre-solar",
+        "nrel-perovskite-solar",
+        "reprap",
+        "openems"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.9,
+          "rationale": "This concept decentralizes energy hardware supply into smaller assemblers and households instead of a few centralized utilities and OEMs.",
+          "sourceIds": [
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "reprap",
+            "openems"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "The coordination loop is credible because validated hardware recipes and commissioning tests give many installers a common operating language.",
+          "sourceIds": [
+            "berkshire-reports",
+            "berkshire-home",
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "reprap",
+            "openems"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 4.8,
+          "rationale": "The enabling pieces exist, but the open control stack is here, but truly local solar manufacturing is still early.",
+          "sourceIds": [
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "reprap",
+            "openems"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8.1,
+          "rationale": "If it scales, it pressures Berkshire Hathaway Energy's advantage in centralized buildout and bundled utility supply.",
+          "sourceIds": [
+            "berkshire-reports",
+            "berkshire-home"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "berkshire-energy",
+      "sourceIds": [
+        "berkshire-reports",
+        "berkshire-home",
+        "libre-solar",
+        "nrel-perovskite-solar",
+        "reprap",
+        "openems"
+      ]
+    },
+    {
+      "slug": "vmware-vsphere-concept",
+      "name": "Open Workload Portability Guild",
+      "summary": "A federation of migration, orchestration, and support operators that makes leaving proprietary virtualization less operationally terrifying.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Disrupt VMware lock-in by turning migration, support, and workload portability into competitive services rather than a vendor tax.",
+      "bitcoinOrDecentralizationRole": "The decentralization angle is open workload portability and interoperable migration services instead of a single vendor support funnel.",
+      "coordinationMechanism": "Operators sell migration packages, managed support, and portability guarantees atop open virtualization stacks.",
+      "verificationOrTrustModel": "Signed migration reports, workload rollback checkpoints, and escrowed success milestones reduce fake migration claims.",
+      "failureModes": [
+        "Enterprises fear downtime more than license bills",
+        "Support quality must be consistently high"
+      ],
+      "adoptionPath": [
+        "Start with cost-sensitive VMware refugees",
+        "Scale through repeatable migration playbooks and audited support guarantees"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "vmware",
+        "proxmox"
+      ],
+      "enablerSourceIds": [
+        "proxmox"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.9,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "vmware",
+            "proxmox"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.6,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "vmware",
+            "proxmox"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.4,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "vmware",
+            "proxmox"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8.3,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "vmware",
+            "proxmox"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "vmware-vsphere",
+      "sourceIds": [
+        "vmware",
+        "proxmox"
+      ]
+    },
+    {
+      "slug": "vmware-vsphere-proof-of-availability-capacity-market",
+      "name": "Proof-of-Availability Capacity Market",
+      "summary": "Compute operators sell verified spare capacity through open contracts that price uptime, migration readiness, and failure penalties instead of relying on one vendor's license moat.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "federation"
+      ],
+      "thesis": "Unlike the first concept's portability guild, this one turns enterprise capacity itself into a metered commodity market.",
+      "bitcoinOrDecentralizationRole": "Lightning-style settlement and open virtualization stacks make it easier to pay only for delivered availability.",
+      "coordinationMechanism": "Operators expose cluster offers with explicit SLAs, and buyers route workloads toward the best price and redundancy mix.",
+      "verificationOrTrustModel": "Continuous health attestations, failover drills, and payout penalties tie revenue to real delivered availability.",
+      "failureModes": [
+        "Enterprise buyers may still prefer single-vendor accountability",
+        "Attestation and billing complexity can overwhelm the price advantage"
+      ],
+      "adoptionPath": [
+        "Start with burst capacity and disaster-recovery workloads",
+        "Expand after migration and uptime proofs become routine"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "vmware",
+        "broadcom-investor"
+      ],
+      "enablerSourceIds": [
+        "openstack",
+        "proxmox",
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "This concept decentralizes enterprise capacity and uptime commitments across many operators rather than one licensed platform vendor.",
+          "sourceIds": [
+            "openstack",
+            "proxmox",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.4,
+          "rationale": "The coordination loop is credible because availability can be sold as a discrete service with explicit failover and penalty terms.",
+          "sourceIds": [
+            "vmware",
+            "broadcom-investor",
+            "openstack",
+            "proxmox",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.2,
+          "rationale": "Most primitives already exist; the platform pieces are available, though attestation and buyer trust are still heavy lifts.",
+          "sourceIds": [
+            "openstack",
+            "proxmox",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.2,
+          "rationale": "If it scales, it pressures VMware licensing power and Broadcom's ability to reprice existing virtualization estates.",
+          "sourceIds": [
+            "vmware",
+            "broadcom-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "vmware-vsphere",
+      "sourceIds": [
+        "vmware",
+        "broadcom-investor",
+        "openstack",
+        "proxmox",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "broadcom-networking-concept",
+      "name": "Open Switch Design Commons",
+      "summary": "A white-box networking ecosystem with open switch designs, firmware, and integration services that erodes dependence on proprietary silicon bundles.",
+      "angleIds": [
+        "open-hardware",
+        "decentralized-manufacturing",
+        "cooperative-production"
+      ],
+      "thesis": "Attack proprietary networking margins by opening the design and integration layer around white-box hardware.",
+      "bitcoinOrDecentralizationRole": "The disruptive angle is open hardware and shared design knowledge, because silicon economics matter more here than Bitcoin-native settlement.",
+      "coordinationMechanism": "Hardware designers, firmware teams, and integrators coordinate around open switch references and shared certification suites.",
+      "verificationOrTrustModel": "Interoperability labs, open test fixtures, and published throughput benchmarks reduce fake performance claims.",
+      "failureModes": [
+        "Leading-edge silicon design remains expensive",
+        "Large buyers still prefer proven integrated support"
+      ],
+      "adoptionPath": [
+        "Start in labs, edge deployments, and cost-sensitive data centers",
+        "Expand with stronger certification and support ecosystems"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "broadcom-home",
+        "broadcom-investor"
+      ],
+      "enablerSourceIds": [
+        "broadcom-home"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "broadcom-home",
+            "broadcom-investor"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.4,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "broadcom-home",
+            "broadcom-investor"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "broadcom-home",
+            "broadcom-investor"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.1,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "broadcom-home",
+            "broadcom-investor"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "broadcom-networking",
+      "sourceIds": [
+        "broadcom-home",
+        "broadcom-investor"
+      ]
+    },
+    {
+      "slug": "broadcom-networking-refurbished-network-appliance-microfactory",
+      "name": "Refurbished Network Appliance Microfactory",
+      "summary": "Local shops refurbish, re-case, and modularize switch and network appliance hardware so buyers can keep more infrastructure in service instead of rebuying closed vendor boxes on vendor timelines.",
+      "angleIds": [
+        "open-hardware",
+        "decentralized-manufacturing",
+        "recycling-and-reuse",
+        "local-materials-processing"
+      ],
+      "thesis": "Unlike the first concept's open new-design push, this one attacks replacement cycles through refurbishment and modular reuse.",
+      "bitcoinOrDecentralizationRole": "Open hardware interfaces and local recovery loops keep value in reused components instead of mandatory full-box replacement.",
+      "coordinationMechanism": "Buyers source refurbished chassis, controllers, and spares from competing local or regional shops with published specs.",
+      "verificationOrTrustModel": "Port tests, burn-in logs, and component provenance records make refurbished gear comparable enough to trust.",
+      "failureModes": [
+        "Warranty expectations and support burdens can push buyers back to incumbents",
+        "High-end networking reliability demands may exceed what small shops can guarantee"
+      ],
+      "adoptionPath": [
+        "Begin with lab, edge, and secondary network environments",
+        "Move upward only where modular test coverage earns trust"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "broadcom-home",
+        "broadcom-investor"
+      ],
+      "enablerSourceIds": [
+        "open-compute-project",
+        "reprap",
+        "precious-plastic"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.8,
+          "rationale": "This concept decentralizes network appliance life-cycle work into refurbishment and local modular assembly.",
+          "sourceIds": [
+            "open-compute-project",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.2,
+          "rationale": "The coordination loop is credible because burn-in data and modular specs let buyers compare refurbished hardware from many shops.",
+          "sourceIds": [
+            "broadcom-home",
+            "broadcom-investor",
+            "open-compute-project",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.4,
+          "rationale": "The enabling pieces exist, but reuse loops are real, but enterprise-grade reliability and support still constrain the addressable share.",
+          "sourceIds": [
+            "open-compute-project",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.8,
+          "rationale": "If it scales, it pressures Broadcom's replacement-cycle leverage and proprietary infrastructure packaging.",
+          "sourceIds": [
+            "broadcom-home",
+            "broadcom-investor"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "broadcom-networking",
+      "sourceIds": [
+        "broadcom-home",
+        "broadcom-investor",
+        "open-compute-project",
+        "reprap",
+        "precious-plastic"
+      ]
+    },
+    {
+      "slug": "cat-construction-equipment-concept",
+      "name": "Open Construction Fleet Commons",
+      "summary": "A shared ecosystem of modular equipment designs, refurbishment shops, and Lightning-settled equipment leasing that reduces dependence on one OEM and dealer network.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "open-hardware",
+        "3d-printing",
+        "lightning"
+      ],
+      "thesis": "Chip away at the dealer moat by opening parts, maintenance intelligence, and smaller-scale machine production.",
+      "bitcoinOrDecentralizationRole": "Lightning supports equipment rentals, service calls, and parts procurement, while open hardware reduces dealer lock-in over time.",
+      "coordinationMechanism": "Local fabricators, refurb shops, operators, and rental pools coordinate around open parts libraries and service exchanges.",
+      "verificationOrTrustModel": "Telemetry-backed maintenance logs, open fitment specs, and usage-bonded rental settlement reduce fake uptime or service claims.",
+      "failureModes": [
+        "Heavy equipment safety and durability remain hard",
+        "Large buyers still value dealer certainty"
+      ],
+      "adoptionPath": [
+        "Start with attachments, smaller machines, and independent rental fleets",
+        "Push upward only where open parts and service ecosystems become reliable"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations"
+      ],
+      "enablerSourceIds": [
+        "ose-website"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.4,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.3,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.2,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.4,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-construction-equipment",
+      "sourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations",
+        "ose-website"
+      ]
+    },
+    {
+      "slug": "cat-construction-equipment-open-attachment-microfactory-network",
+      "name": "Open Attachment Microfactory Network",
+      "summary": "Open attachment designs and local shops let contractors fabricate or repair a growing share of buckets, fixtures, and specialized tooling without waiting on OEM channels.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "home-microfactory",
+        "3d-printing",
+        "open-hardware"
+      ],
+      "thesis": "Unlike the first concept's shared fleet commons, this one attacks Caterpillar from the toolchain and parts side.",
+      "bitcoinOrDecentralizationRole": "Distributed fabrication lowers the capital barrier for specialized attachments and rapid repair.",
+      "coordinationMechanism": "Design owners publish attachment specs while local shops compete on turnaround, price, and field support.",
+      "verificationOrTrustModel": "Fit templates, load tests, and contractor reviews verify that attachments meet the promised machine and job specs.",
+      "failureModes": [
+        "Safety-critical attachments can face regulatory or liability resistance",
+        "Not every part is suitable for local fabrication"
+      ],
+      "adoptionPath": [
+        "Start with lower-risk attachments and job-specific fixtures",
+        "Expand after repeat designs build trust with contractors"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations"
+      ],
+      "enablerSourceIds": [
+        "ose-website",
+        "reprap",
+        "precious-plastic"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "This concept decentralizes construction attachments and repair work across local fabrication shops instead of OEM channels.",
+          "sourceIds": [
+            "ose-website",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination loop is credible because attachments can be specified and reviewed around clear machine fit and job performance.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations",
+            "ose-website",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.5,
+          "rationale": "Most primitives already exist; the fabrication tools exist now, though safety and liability stay category-specific.",
+          "sourceIds": [
+            "ose-website",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.6,
+          "rationale": "If it scales, it pressures Caterpillar's attachment, parts, and specialized tooling margin.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-construction-equipment",
+      "sourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations",
+        "ose-website",
+        "reprap",
+        "precious-plastic"
+      ]
+    },
+    {
+      "slug": "cat-mining-trucks-minestar-concept",
+      "name": "Open Mine Orchestration Layer",
+      "summary": "An autonomy and dispatch layer that lets mines mix OEM equipment and local control software rather than accepting a closed Cat control stack.",
+      "angleIds": [
+        "decentralized-coordination",
+        "open-hardware",
+        "cooperative-production"
+      ],
+      "thesis": "Attack the software and fleet-orchestration layer of mine autonomy even where the physical trucks remain capital-intensive.",
+      "bitcoinOrDecentralizationRole": "The decentralization value is in interoperable control software and shared mine telemetry, not pretending 400-ton trucks are easy to decentralize physically.",
+      "coordinationMechanism": "Mines, automation vendors, and service providers plug into open fleet APIs and site-level dispatch tools.",
+      "verificationOrTrustModel": "Replayable telemetry logs, safety attestations, and hardware-in-the-loop simulation suites help prove interoperability claims.",
+      "failureModes": [
+        "Safety certification is brutal",
+        "Physical truck dependence still leaves OEM leverage intact"
+      ],
+      "adoptionPath": [
+        "Begin as an overlay for mixed fleets and mine planning",
+        "Move deeper into autonomy only after safety and simulation evidence improves"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "cat-autonomy",
+        "cat-minestar"
+      ],
+      "enablerSourceIds": [
+        "cat-autonomy"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 6.6,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "cat-autonomy",
+            "cat-minestar"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "cat-autonomy",
+            "cat-minestar"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 4.8,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "cat-autonomy",
+            "cat-minestar"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 5.7,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "cat-autonomy",
+            "cat-minestar"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-mining-trucks-minestar",
+      "sourceIds": [
+        "cat-autonomy",
+        "cat-minestar"
+      ]
+    },
+    {
+      "slug": "cat-mining-trucks-minestar-retrofit-autonomy-kit-bazaar",
+      "name": "Retrofit Autonomy Kit Bazaar",
+      "summary": "Independent retrofit kits add perception, control, and dispatch modules to existing haul fleets so autonomy does not require a full closed-stack purchase from one mining vendor.",
+      "angleIds": [
+        "open-hardware",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "recycling-and-reuse"
+      ],
+      "thesis": "Unlike the first concept's open orchestration software, this one attacks the proprietary retrofit and upgrade package.",
+      "bitcoinOrDecentralizationRole": "Open hardware kits and competitive integrators let mines upgrade incrementally instead of replacing entire vendor stacks.",
+      "coordinationMechanism": "Kit vendors, integration crews, and mines coordinate around published retrofit packages and compatibility lists.",
+      "verificationOrTrustModel": "Simulation replays, safety case documentation, and monitored pilot runs prove whether a retrofit package can actually operate on a given fleet.",
+      "failureModes": [
+        "Safety certification is a hard gate in mining autonomy",
+        "OEM lock-in at the vehicle interface can still block retrofits"
+      ],
+      "adoptionPath": [
+        "Begin with assistive perception and dispatch modules",
+        "Move toward deeper autonomy only after field data is credible"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "cat-minestar",
+        "cat-autonomy"
+      ],
+      "enablerSourceIds": [
+        "openpilot",
+        "ose-website",
+        "reprap"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.9,
+          "rationale": "This concept decentralizes autonomy upgrades across retrofit kits and independent integrators rather than one closed vendor stack.",
+          "sourceIds": [
+            "openpilot",
+            "ose-website",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "The coordination loop is credible because retrofit modules can be matched to fleet types and tested incrementally before full rollout.",
+          "sourceIds": [
+            "cat-minestar",
+            "cat-autonomy",
+            "openpilot",
+            "ose-website",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.1,
+          "rationale": "Most primitives already exist; integration and safety evidence are hard, but modular assistance layers already exist.",
+          "sourceIds": [
+            "openpilot",
+            "ose-website",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.3,
+          "rationale": "If it scales, it pressures MineStar's closed-stack upgrade path and Caterpillar's control of autonomy retrofits.",
+          "sourceIds": [
+            "cat-minestar",
+            "cat-autonomy"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-mining-trucks-minestar",
+      "sourceIds": [
+        "cat-minestar",
+        "cat-autonomy",
+        "openpilot",
+        "ose-website",
+        "reprap"
+      ]
+    },
+    {
+      "slug": "cat-generator-sets-power-systems-concept",
+      "name": "Lightning-Dispatched Microgrid Fleet",
+      "summary": "A distributed power marketplace where solar, storage, flexible loads, and backup assets coordinate openly instead of defaulting to centralized diesel-heavy systems.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "federation",
+        "cooperative-production"
+      ],
+      "thesis": "Move more backup and prime-power value toward open microgrid coordination instead of bundled genset dependence.",
+      "bitcoinOrDecentralizationRole": "Lightning settles power services, reserve capacity, and response events between many small operators.",
+      "coordinationMechanism": "Microgrids, batteries, and flexible loads bid into local reliability markets run on open control software.",
+      "verificationOrTrustModel": "Metered dispatch proofs, inverter attestations, and event-based settlement logs reduce fake availability claims.",
+      "failureModes": [
+        "Diesel still wins some reliability cases",
+        "Interconnection and local market rules vary widely"
+      ],
+      "adoptionPath": [
+        "Start in campuses, islands, and edge sites where microgrids already pencil",
+        "Expand as storage costs fall and controls improve"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations"
+      ],
+      "enablerSourceIds": [
+        "open-energy-monitor"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.7,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.4,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-investor-relations"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-generator-sets-power-systems",
+      "sourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations",
+        "open-energy-monitor"
+      ]
+    },
+    {
+      "slug": "cat-generator-sets-power-systems-open-resilience-power-kit-market",
+      "name": "Open Resilience Power Kit Market",
+      "summary": "Open kits combine generators, solar, storage, controllers, and small wind components so resilience buyers can assemble hybrid power systems outside any one OEM catalog.",
+      "angleIds": [
+        "distributed-energy-generation",
+        "open-energy-hardware",
+        "solar-manufacturing",
+        "wind-manufacturing",
+        "microgrid-coordination"
+      ],
+      "thesis": "Unlike the first concept's dispatch market, this one turns the hardware stack itself into a modular competitive kit market.",
+      "bitcoinOrDecentralizationRole": "Open energy hardware and distributed generation let users mix power sources and vendors instead of staying captive to one genset ecosystem.",
+      "coordinationMechanism": "Installers and local shops assemble validated resilience bundles from interoperable components and publish service offers.",
+      "verificationOrTrustModel": "Commissioning tests, runtime telemetry, and fuel-to-output benchmarks show whether hybrid kits deliver promised resilience.",
+      "failureModes": [
+        "Integration quality may vary too much across installers",
+        "High-load industrial buyers may still prefer single-OEM packages"
+      ],
+      "adoptionPath": [
+        "Start with farms, remote sites, and resilience buyers already mixing assets",
+        "Expand after standard controller and warranty patterns emerge"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "cat-corporate-website",
+        "cat-sustainability"
+      ],
+      "enablerSourceIds": [
+        "open-energy-monitor",
+        "libre-solar",
+        "windkit",
+        "nrel-distributed-wind"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.7,
+          "rationale": "This concept decentralizes resilience power hardware across interoperable local generation components instead of one OEM catalog.",
+          "sourceIds": [
+            "open-energy-monitor",
+            "libre-solar",
+            "windkit",
+            "nrel-distributed-wind"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.1,
+          "rationale": "The coordination loop is credible because hybrid kits can be assembled around shared controller logic and service offers.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-sustainability",
+            "open-energy-monitor",
+            "libre-solar",
+            "windkit",
+            "nrel-distributed-wind"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.4,
+          "rationale": "Most primitives already exist; the pieces exist now, though installer quality and warranty norms still matter.",
+          "sourceIds": [
+            "open-energy-monitor",
+            "libre-solar",
+            "windkit",
+            "nrel-distributed-wind"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8,
+          "rationale": "If it scales, it pressures Caterpillar's bundled generator-system economics in hybrid resilience deployments.",
+          "sourceIds": [
+            "cat-corporate-website",
+            "cat-sustainability"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-generator-sets-power-systems",
+      "sourceIds": [
+        "cat-corporate-website",
+        "cat-sustainability",
+        "open-energy-monitor",
+        "libre-solar",
+        "windkit",
+        "nrel-distributed-wind"
+      ]
+    },
+    {
+      "slug": "cat-financial-concept",
+      "name": "Open Equipment Finance Pool",
+      "summary": "A financing market where lenders, operators, and service providers use open telemetry and asset data instead of relying on a captive finance arm.",
+      "angleIds": [
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination"
+      ],
+      "thesis": "Disrupt captive finance by making underwriting and servicing portable across many capital providers.",
+      "bitcoinOrDecentralizationRole": "Lightning settles servicing fees, uptime incentives, and late-payment flows without a closed captive stack.",
+      "coordinationMechanism": "Lenders buy exposure to equipment cash flows while operators and service providers publish open performance data.",
+      "verificationOrTrustModel": "Asset telemetry, maintenance logs, and bonded servicing milestones reduce the chance of mispriced equipment risk.",
+      "failureModes": [
+        "Repossession and legal enforcement remain local and messy",
+        "Capital providers need deep trust in telemetry"
+      ],
+      "adoptionPath": [
+        "Start with rental fleets and independent contractors",
+        "Expand as underwriting models prove they can beat captive finance spreads"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "cat-investor-relations",
+        "cat-corporate-website"
+      ],
+      "enablerSourceIds": [
+        "farm-credit-network"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.7,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-corporate-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.9,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-corporate-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.1,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-corporate-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.9,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-corporate-website"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-financial",
+      "sourceIds": [
+        "cat-investor-relations",
+        "cat-corporate-website",
+        "farm-credit-network"
+      ]
+    },
+    {
+      "slug": "cat-financial-proof-of-utilization-lease-market",
+      "name": "Proof-of-Utilization Lease Market",
+      "summary": "Equipment leases reprice around measured machine use so capital providers can fund assets directly against verified utilization instead of relying on a captive finance arm.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "cooperative-production"
+      ],
+      "thesis": "Unlike the first concept's open lending pool, this one changes the lease contract itself by tying financing to observable output and uptime.",
+      "bitcoinOrDecentralizationRole": "Open telemetry and small recurring settlement make utilization-based finance feasible for more counterparties.",
+      "coordinationMechanism": "Asset owners publish machine-hour streams and financing requests while capital providers price contracts against actual utilization patterns.",
+      "verificationOrTrustModel": "Metered operating hours, geofenced work logs, and maintenance events release payments only against real usage.",
+      "failureModes": [
+        "Telemetry can be spoofed or go dark in the field",
+        "Capital providers may still want OEM resale and service support"
+      ],
+      "adoptionPath": [
+        "Start with fleets already using digital telemetry",
+        "Expand once recovery and fraud controls are proven"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "cat-investor-relations",
+        "cat-sec-edgar"
+      ],
+      "enablerSourceIds": [
+        "open-energy-monitor",
+        "farm-credit-network",
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "This concept decentralizes equipment finance around verified utilization rather than one captive lessor.",
+          "sourceIds": [
+            "open-energy-monitor",
+            "farm-credit-network",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.4,
+          "rationale": "The coordination loop is credible because machine hours and payment obligations can be broken into recurring measurable units.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-sec-edgar",
+            "open-energy-monitor",
+            "farm-credit-network",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Most primitives already exist; telemetry and contract structures are available now, though fraud control remains essential.",
+          "sourceIds": [
+            "open-energy-monitor",
+            "farm-credit-network",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.5,
+          "rationale": "If it scales, it pressures Cat Financial's advantage in captive lease pricing and risk control.",
+          "sourceIds": [
+            "cat-investor-relations",
+            "cat-sec-edgar"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "cat-financial",
+      "sourceIds": [
+        "cat-investor-relations",
+        "cat-sec-edgar",
+        "open-energy-monitor",
+        "farm-credit-network",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "coca-cola-classic-concept",
+      "name": "Open Soda Microfactory Network",
+      "summary": "A marketplace for open soda machine designs, syrup recipes, and local ingredient fulfillment that recreates more beverage value at home and community scale.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "3d-printing",
+        "open-hardware",
+        "cooperative-production"
+      ],
+      "thesis": "Take beverage value away from centralized bottling and brand premiums by making machines, recipes, and local fulfillment more open.",
+      "bitcoinOrDecentralizationRole": "The decentralization story is local fabrication, open recipes, and community production rather than pretending Bitcoin alone solves flavor distribution.",
+      "coordinationMechanism": "Designers publish machines, operators manufacture locally, and recipe creators compete on taste, transparency, and remixability.",
+      "verificationOrTrustModel": "Open BOMs, user ratings, maintenance logs, and repeatable recipe test kits make quality visible.",
+      "failureModes": [
+        "Taste consistency still favors incumbents",
+        "Consumers may not want home beverage maintenance"
+      ],
+      "adoptionPath": [
+        "Start with hobbyists, makerspaces, and low-volume specialty beverage communities",
+        "Expand if convenience and refill economics keep improving"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "ko-company-site",
+        "opencola-wikipedia"
+      ],
+      "enablerSourceIds": [
+        "opencola-wikipedia"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "ko-company-site",
+            "opencola-wikipedia"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "ko-company-site",
+            "opencola-wikipedia"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "ko-company-site",
+            "opencola-wikipedia"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.5,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "ko-company-site",
+            "opencola-wikipedia"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "coca-cola-classic",
+      "sourceIds": [
+        "ko-company-site",
+        "opencola-wikipedia"
+      ]
+    },
+    {
+      "slug": "coca-cola-classic-open-refill-and-syrup-commons",
+      "name": "Open Refill and Syrup Commons",
+      "summary": "Open refill stations, reusable containers, and syrup commons reduce dependence on mass bottling and branded package distribution by moving more value into local mixing and refill loops.",
+      "angleIds": [
+        "cooperative-production",
+        "recycling-and-reuse",
+        "home-microfactory",
+        "decentralized-manufacturing"
+      ],
+      "thesis": "Unlike the first concept's microfactory play, this one attacks packaging and refill distribution rather than the full beverage appliance.",
+      "bitcoinOrDecentralizationRole": "Reusable packaging and open syrup recipes move margin out of centralized bottling and into local refill networks.",
+      "coordinationMechanism": "Refill hosts, syrup makers, and container suppliers compete on taste, hygiene, and neighborhood convenience.",
+      "verificationOrTrustModel": "Batch logs, container tracking, and taste reviews make it harder to hide bad sanitation or inconsistent recipes.",
+      "failureModes": [
+        "Food safety lapses would damage trust quickly",
+        "Brand loyalty may still dominate commodity refill logic"
+      ],
+      "adoptionPath": [
+        "Start with offices, campuses, and local hospitality venues",
+        "Expand after hygiene and refill UX are standardized"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "ko-company-site",
+        "ko-ir-2024"
+      ],
+      "enablerSourceIds": [
+        "opencola-wikipedia",
+        "precious-plastic",
+        "reprap"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "This concept decentralizes beverage packaging and refill distribution into local loops and reusable containers.",
+          "sourceIds": [
+            "opencola-wikipedia",
+            "precious-plastic",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.3,
+          "rationale": "The coordination loop is credible because hosts, syrup makers, and reusable-container suppliers can coordinate around repeat refill transactions.",
+          "sourceIds": [
+            "ko-company-site",
+            "ko-ir-2024",
+            "opencola-wikipedia",
+            "precious-plastic",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.2,
+          "rationale": "Most primitives already exist; the refill model is real today, though sanitation discipline and habit change are still hard.",
+          "sourceIds": [
+            "opencola-wikipedia",
+            "precious-plastic",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.8,
+          "rationale": "If it scales, it pressures Coca-Cola's bottling, packaging, and distribution leverage.",
+          "sourceIds": [
+            "ko-company-site",
+            "ko-ir-2024"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "coca-cola-classic",
+      "sourceIds": [
+        "ko-company-site",
+        "ko-ir-2024",
+        "opencola-wikipedia",
+        "precious-plastic",
+        "reprap"
+      ]
+    },
+    {
+      "slug": "fairlife-concept",
+      "name": "Open Nutrition Appliance Market",
+      "summary": "A hardware and recipe ecosystem for home or local production of high-protein drinks, filtered dairy alternatives, and personalized nutrition mixes.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "open-hardware",
+        "3d-printing",
+        "cooperative-production"
+      ],
+      "thesis": "Compete with premium branded nutrition by making production tools and recipes modular, local, and remixable.",
+      "bitcoinOrDecentralizationRole": "The decentralization edge comes from open formulation, small-batch production, and local trust signals rather than centralized packaged brands.",
+      "coordinationMechanism": "Appliance builders, recipe designers, and local ingredient suppliers coordinate through an open rating and fulfillment layer.",
+      "verificationOrTrustModel": "Open nutrition profiles, sanitation logs, and recipe test data reduce the chance of low-trust food experimentation.",
+      "failureModes": [
+        "Food safety and shelf life matter",
+        "Convenience still favors packaged incumbents"
+      ],
+      "adoptionPath": [
+        "Begin with gyms, maker kitchens, and direct-to-community nutrition clubs",
+        "Broaden only after safety and repeatability feel routine"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "fairlife-site",
+        "ko-ir-2024"
+      ],
+      "enablerSourceIds": [
+        "fairlife-site"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.6,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "fairlife-site",
+            "ko-ir-2024"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.4,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "fairlife-site",
+            "ko-ir-2024"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.4,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "fairlife-site",
+            "ko-ir-2024"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 5.9,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "fairlife-site",
+            "ko-ir-2024"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "fairlife",
+      "sourceIds": [
+        "fairlife-site",
+        "ko-ir-2024"
+      ]
+    },
+    {
+      "slug": "fairlife-ingredient-traceability-and-refill-network",
+      "name": "Ingredient Traceability and Refill Network",
+      "summary": "Open ingredient tracing, modular refill packs, and cooperative nutrition formulators make premium nutrition products easier to source and blend outside a single national brand.",
+      "angleIds": [
+        "cooperative-production",
+        "peer-to-peer-marketplace",
+        "recycling-and-reuse",
+        "home-microfactory"
+      ],
+      "thesis": "Unlike the first concept's appliance market, this one opens the ingredient and refill layer that feeds the appliance.",
+      "bitcoinOrDecentralizationRole": "Open coordination shifts value toward transparent sourcing and refillable nutrition inputs instead of branded packaged volume.",
+      "coordinationMechanism": "Ingredient producers, formulators, and refill hosts publish tested formulas and supply availability to a shared market.",
+      "verificationOrTrustModel": "Ingredient certificates, batch tests, and user reviews verify that refills match claimed macros and handling standards.",
+      "failureModes": [
+        "Cold-chain and shelf-life complexity can limit decentralization",
+        "Consumers may still privilege brand trust over transparent sourcing"
+      ],
+      "adoptionPath": [
+        "Begin with shelf-stable and community-distributed nutrition products",
+        "Expand into broader refill networks as testing becomes routine"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "fairlife-site",
+        "ko-ir-2024"
+      ],
+      "enablerSourceIds": [
+        "open-food-network",
+        "precious-plastic",
+        "reprap"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.8,
+          "rationale": "This concept decentralizes nutrition inputs and refill packs into transparent local sourcing loops.",
+          "sourceIds": [
+            "open-food-network",
+            "precious-plastic",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.1,
+          "rationale": "The coordination loop is credible because ingredient lots, recipes, and refill hosts can be matched around testable formulations.",
+          "sourceIds": [
+            "fairlife-site",
+            "ko-ir-2024",
+            "open-food-network",
+            "precious-plastic",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.9,
+          "rationale": "Most primitives already exist; shelf-stable categories are reachable first, while colder chains remain more constrained.",
+          "sourceIds": [
+            "open-food-network",
+            "precious-plastic",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.4,
+          "rationale": "If it scales, it pressures Fairlife's premium-brand hold on nutrition inputs and packaged refills.",
+          "sourceIds": [
+            "fairlife-site",
+            "ko-ir-2024"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "fairlife",
+      "sourceIds": [
+        "fairlife-site",
+        "ko-ir-2024",
+        "open-food-network",
+        "precious-plastic",
+        "reprap"
+      ]
+    },
+    {
+      "slug": "instagram-concept",
+      "name": "Proof-of-Attention Creator Market",
+      "summary": "A federated creator economy where audiences, advertisers, and curators transact across open identity and payout rails instead of renting every relationship from Instagram.",
+      "angleIds": [
+        "lightning",
+        "federation",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Distribute creator discovery, monetization, and audience ownership across interoperable services instead of one feed monopoly.",
+      "bitcoinOrDecentralizationRole": "Lightning handles small creator payouts, attention rewards, and ad settlement without forcing creators through one monetization stack.",
+      "coordinationMechanism": "Creators publish to federated feeds, curators compete on discovery, and brands buy access through open creator contracts.",
+      "verificationOrTrustModel": "Signed engagement receipts, rotating campaign markers, and random verifier checks reduce fake reach and fake impressions.",
+      "failureModes": [
+        "Fake engagement markets can adapt quickly",
+        "Incumbent distribution defaults remain strong"
+      ],
+      "adoptionPath": [
+        "Start with creator communities that already sell directly to fans",
+        "Add better analytics and brand tools once trust in receipts improves"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "meta-tech",
+        "pixelfed"
+      ],
+      "enablerSourceIds": [
+        "pixelfed",
+        "mastodon"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.7,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "meta-tech",
+            "pixelfed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.3,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "meta-tech",
+            "pixelfed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "meta-tech",
+            "pixelfed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8.1,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "meta-tech",
+            "pixelfed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "instagram",
+      "sourceIds": [
+        "meta-tech",
+        "pixelfed",
+        "mastodon"
+      ]
+    },
+    {
+      "slug": "instagram-portable-reputation-and-sponsorship-ledger",
+      "name": "Portable Reputation and Sponsorship Ledger",
+      "summary": "Creators carry reputation, sponsorship history, and audience response proofs across many surfaces so distribution and monetization are less hostage to one algorithmic feed.",
+      "angleIds": [
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "federation",
+        "lightning"
+      ],
+      "thesis": "Unlike the first concept's attention pricing market, this one attacks Instagram's hold on identity and sponsorship reputation.",
+      "bitcoinOrDecentralizationRole": "Open ledgers and direct payments make creator reputation and deal history portable across apps and communities.",
+      "coordinationMechanism": "Creators, brands, and audience communities subscribe to shared identity records and sponsorship terms rather than one platform profile.",
+      "verificationOrTrustModel": "Signed deal receipts, audience engagement proofs, and portable reputation histories reduce fake sponsorship claims and bought metrics.",
+      "failureModes": [
+        "Portable reputation can still be gamed with synthetic engagement",
+        "Brands may keep preferring incumbent reach and tooling"
+      ],
+      "adoptionPath": [
+        "Start with creators already publishing to multiple networks",
+        "Add brand tooling once cross-platform reputation data feels usable"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "meta-investor",
+        "meta-tech"
+      ],
+      "enablerSourceIds": [
+        "mastodon",
+        "pixelfed",
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "This concept decentralizes creator reputation and sponsorship records across many surfaces instead of one feed owner.",
+          "sourceIds": [
+            "mastodon",
+            "pixelfed",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination loop is credible because brands and creators already transact around campaigns that can be documented with portable records.",
+          "sourceIds": [
+            "meta-investor",
+            "meta-tech",
+            "mastodon",
+            "pixelfed",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Most primitives already exist; the identity and payment pieces exist, though brand adoption is still the gating factor.",
+          "sourceIds": [
+            "mastodon",
+            "pixelfed",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.7,
+          "rationale": "If it scales, it pressures Instagram's control of creator identity, sponsorship history, and monetization context.",
+          "sourceIds": [
+            "meta-investor",
+            "meta-tech"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "instagram",
+      "sourceIds": [
+        "meta-investor",
+        "meta-tech",
+        "mastodon",
+        "pixelfed",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "whatsapp-platform-concept",
+      "name": "Spam-Priced Messaging Mesh",
+      "summary": "An open messaging network that prices spam, routes across federated providers, and lets users keep identity and contact graphs outside one corporate app.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "Make proprietary messaging less dominant by pairing federation with a real economic spam deterrent and portable identity.",
+      "bitcoinOrDecentralizationRole": "Lightning enables tiny message pricing, relay fees, and abuse deterrence without making normal messaging expensive.",
+      "coordinationMechanism": "Users choose providers, relays compete on reliability, and apps interoperate over a shared identity and delivery layer.",
+      "verificationOrTrustModel": "Rate-limited payments, signed delivery receipts, and relay reputation markets constrain spam farms and fake delivery claims.",
+      "failureModes": [
+        "User experience can suffer if pricing feels awkward",
+        "Network effects still strongly favor incumbents"
+      ],
+      "adoptionPath": [
+        "Start with cross-border, community, and privacy-heavy groups",
+        "Expand once messaging clients hide most of the economic complexity"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "whatsapp",
+        "matrix"
+      ],
+      "enablerSourceIds": [
+        "matrix"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.9,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "whatsapp",
+            "matrix"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.8,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "whatsapp",
+            "matrix"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.1,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "whatsapp",
+            "matrix"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.9,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "whatsapp",
+            "matrix"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "whatsapp-platform",
+      "sourceIds": [
+        "whatsapp",
+        "matrix"
+      ]
+    },
+    {
+      "slug": "whatsapp-platform-federated-identity-and-contact-relay",
+      "name": "Federated Identity and Contact Relay",
+      "summary": "Users and businesses keep portable contact and identity state across multiple messaging hubs, so the coordination layer around chat, payments, and service threads is not trapped inside one app.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination",
+        "lightning",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Unlike the first concept's anti-spam pricing, this one attacks WhatsApp's address-book lock-in and service endpoint control.",
+      "bitcoinOrDecentralizationRole": "Federated identity plus open payment rails make it easier to switch hubs without losing commercial continuity.",
+      "coordinationMechanism": "Identity providers, messaging hubs, and service operators share portable contact records and endpoint metadata.",
+      "verificationOrTrustModel": "Signed contact claims, domain verification, and payment-backed rate limits constrain impersonation and low-cost spam.",
+      "failureModes": [
+        "User migration is hard when everyone already defaults to WhatsApp",
+        "Identity recovery and key management can be painful"
+      ],
+      "adoptionPath": [
+        "Begin with businesses and communities that already need multi-channel continuity",
+        "Broaden as consumer identity portability becomes simpler"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "whatsapp",
+        "meta-tech"
+      ],
+      "enablerSourceIds": [
+        "matrix",
+        "fedimint",
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.4,
+          "rationale": "This concept decentralizes messaging identity and contact portability across many hubs rather than one address-book silo.",
+          "sourceIds": [
+            "matrix",
+            "fedimint",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.3,
+          "rationale": "The coordination loop is credible because portable contact records and verified service endpoints can be shared across interoperable messaging hubs.",
+          "sourceIds": [
+            "whatsapp",
+            "meta-tech",
+            "matrix",
+            "fedimint",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "Most primitives already exist; the protocol pieces are available, though consumer migration remains slow.",
+          "sourceIds": [
+            "matrix",
+            "fedimint",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.5,
+          "rationale": "If it scales, it pressures WhatsApp's contact-graph lock-in and business messaging control.",
+          "sourceIds": [
+            "whatsapp",
+            "meta-tech"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "whatsapp-platform",
+      "sourceIds": [
+        "whatsapp",
+        "meta-tech",
+        "matrix",
+        "fedimint",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "microsoft-365-suite-concept",
+      "name": "Portable Workspace Federation",
+      "summary": "A work suite where documents, identity, collaboration, and billing are portable across self-hosted and managed providers instead of tied to Microsoft 365 rent capture.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination",
+        "lightning"
+      ],
+      "thesis": "Unbundle office productivity into portable data, interoperable hosting, and competitive service layers.",
+      "bitcoinOrDecentralizationRole": "Lightning can settle plugin fees, storage overages, and collaboration services in a more open workspace economy.",
+      "coordinationMechanism": "Teams choose hosts, document engines, and automation providers independently while staying on shared document and identity standards.",
+      "verificationOrTrustModel": "Signed document histories, portable permission logs, and migration proofs reduce lock-in and fake interoperability claims.",
+      "failureModes": [
+        "Enterprise compatibility is unforgiving",
+        "Users dislike migration friction"
+      ],
+      "adoptionPath": [
+        "Start with teams already using mixed open tools",
+        "Push into larger organizations once workflow parity and migration tooling improve"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "microsoft-365",
+        "libreoffice"
+      ],
+      "enablerSourceIds": [
+        "libreoffice",
+        "nextcloud"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.5,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "microsoft-365",
+            "libreoffice"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.6,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "microsoft-365",
+            "libreoffice"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.3,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "microsoft-365",
+            "libreoffice"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "microsoft-365",
+            "libreoffice"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "microsoft-365-suite",
+      "sourceIds": [
+        "microsoft-365",
+        "libreoffice",
+        "nextcloud"
+      ]
+    },
+    {
+      "slug": "microsoft-365-suite-office-appliance-cooperative",
+      "name": "Office Appliance Cooperative",
+      "summary": "Local office appliances bundle docs, sync, communications, and lightweight compute into repairable hardware that small teams can own outright instead of renting an endless suite subscription.",
+      "angleIds": [
+        "open-hardware",
+        "home-microfactory",
+        "decentralized-coordination",
+        "recycling-and-reuse"
+      ],
+      "thesis": "Unlike the first concept's portable federation, this one packages the alternative as a tangible local office system.",
+      "bitcoinOrDecentralizationRole": "Open hardware and reusable software stacks turn office productivity into something closer to owned infrastructure than rented tenancy.",
+      "coordinationMechanism": "Appliance vendors, local integrators, and support cooperatives compete while users keep files on open formats and sync layers.",
+      "verificationOrTrustModel": "Health checks, backup tests, and document round-trip validation show whether the appliance can really replace subscription dependence.",
+      "failureModes": [
+        "Teams may still want Microsoft's compatibility guarantees",
+        "Local appliance support can become fragmented"
+      ],
+      "adoptionPath": [
+        "Start with smaller teams and sovereignty-sensitive organizations",
+        "Expand after file compatibility and admin tooling are boringly good"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "microsoft-365",
+        "microsoft-investor"
+      ],
+      "enablerSourceIds": [
+        "libreoffice",
+        "nextcloud",
+        "reprap"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.9,
+          "rationale": "This concept decentralizes office productivity ownership into local appliances and open file workflows.",
+          "sourceIds": [
+            "libreoffice",
+            "nextcloud",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "The coordination loop is credible because integrators and appliance vendors can compete as long as documents remain portable.",
+          "sourceIds": [
+            "microsoft-365",
+            "microsoft-investor",
+            "libreoffice",
+            "nextcloud",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.7,
+          "rationale": "Most primitives already exist; the open suite pieces already exist, though enterprise compatibility still matters.",
+          "sourceIds": [
+            "libreoffice",
+            "nextcloud",
+            "reprap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.6,
+          "rationale": "If it scales, it pressures Microsoft 365's recurring subscription hold and suite bundling.",
+          "sourceIds": [
+            "microsoft-365",
+            "microsoft-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "microsoft-365-suite",
+      "sourceIds": [
+        "microsoft-365",
+        "microsoft-investor",
+        "libreoffice",
+        "nextcloud",
+        "reprap"
+      ]
+    },
+    {
+      "slug": "microsoft-github-concept",
+      "name": "Federated Forge with Maintenance Bounties",
+      "summary": "A forge network where code hosting, identity, CI, and maintainer payments are portable across many operators instead of one dominant developer social graph.",
+      "angleIds": [
+        "lightning",
+        "federation",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination"
+      ],
+      "thesis": "Break the combined lock-in of code hosting, social proof, and maintainer funding by making each layer portable.",
+      "bitcoinOrDecentralizationRole": "Lightning enables maintainer bounties, CI settlement, and sponsor flows without forcing all activity through one corporate billing surface.",
+      "coordinationMechanism": "Forges interoperate on issues, pull requests, and package identity while maintainers sell review and maintenance work in open markets.",
+      "verificationOrTrustModel": "Signed git histories, mirrored issue events, and escrowed bounty milestones reduce fake activity and unpaid work.",
+      "failureModes": [
+        "Network effects are very sticky",
+        "Cross-forge UX can feel fragmented"
+      ],
+      "adoptionPath": [
+        "Win first among open-source projects already uncomfortable with one-host dependency",
+        "Expand with better federation and sponsorship tooling"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "microsoft-investor",
+        "gitea"
+      ],
+      "enablerSourceIds": [
+        "gitea"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.8,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "microsoft-investor",
+            "gitea"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.9,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "microsoft-investor",
+            "gitea"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.4,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "microsoft-investor",
+            "gitea"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.6,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "microsoft-investor",
+            "gitea"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "microsoft-github",
+      "sourceIds": [
+        "microsoft-investor",
+        "gitea"
+      ]
+    },
+    {
+      "slug": "microsoft-github-attested-build-artifact-market",
+      "name": "Attested Build Artifact Market",
+      "summary": "Independent builders, testers, and artifact mirrors earn by producing reproducible build results and signed release bundles so trust in software distribution spreads beyond one forge.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "proof-of-work"
+      ],
+      "thesis": "Unlike the first concept's maintenance bounty market, this one attacks GitHub's release and CI trust concentration.",
+      "bitcoinOrDecentralizationRole": "Open settlement rewards build, test, and mirror work directly instead of bundling it inside a single platform.",
+      "coordinationMechanism": "Projects publish build specs, providers offer execution and mirroring, and maintainers choose from competing verification results.",
+      "verificationOrTrustModel": "Reproducible builds, signed attestations, and quorum-based test results make it harder to fake a successful pipeline.",
+      "failureModes": [
+        "Projects may not want to manage more CI vendors",
+        "Attestation standards have to stay simple enough for ordinary maintainers"
+      ],
+      "adoptionPath": [
+        "Start with high-value releases that already care about supply-chain trust",
+        "Expand as artifact and test markets become commodity services"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "microsoft-investor",
+        "azure"
+      ],
+      "enablerSourceIds": [
+        "gitea",
+        "openstack",
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "This concept decentralizes build, test, and release trust across many providers instead of one forge platform.",
+          "sourceIds": [
+            "gitea",
+            "openstack",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.4,
+          "rationale": "The coordination loop is credible because build jobs and attestations can be priced as discrete services with comparable outputs.",
+          "sourceIds": [
+            "microsoft-investor",
+            "azure",
+            "gitea",
+            "openstack",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.3,
+          "rationale": "Most primitives already exist; the tooling exists today, though standardizing attestations is still the work.",
+          "sourceIds": [
+            "gitea",
+            "openstack",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.7,
+          "rationale": "If it scales, it pressures GitHub's CI, release, and repository-trust concentration.",
+          "sourceIds": [
+            "microsoft-investor",
+            "azure"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "microsoft-github",
+      "sourceIds": [
+        "microsoft-investor",
+        "azure",
+        "gitea",
+        "openstack",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "nvidia-cuda-concept",
+      "name": "Open Accelerator Bounty Market",
+      "summary": "A market where framework authors, hardware vendors, and compute operators pay for open compatibility work that weakens one-vendor software lock-in.",
+      "angleIds": [
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination"
+      ],
+      "thesis": "Shift part of the CUDA moat from proprietary ecosystem gravity toward an open compatibility labor market.",
+      "bitcoinOrDecentralizationRole": "Lightning is useful for tiny bounties, regression payouts, and cross-org compatibility rewards that would otherwise be too awkward to coordinate.",
+      "coordinationMechanism": "Hardware vendors, labs, and developers post compatibility work, fund ports, and reward proof that workloads actually run elsewhere.",
+      "verificationOrTrustModel": "Reproducible benchmark suites and verified upstream merges make fake compatibility claims harder to sell.",
+      "failureModes": [
+        "Hardware scarcity still preserves NVIDIA leverage",
+        "Bounty markets can reward shallow fixes"
+      ],
+      "adoptionPath": [
+        "Begin with high-value frameworks and model-serving paths",
+        "Expand as open toolchains prove stable enough for serious production work"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "nvidia-cuda",
+        "amd-rocm"
+      ],
+      "enablerSourceIds": [
+        "amd-rocm",
+        "akash"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.8,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "nvidia-cuda",
+            "amd-rocm"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "nvidia-cuda",
+            "amd-rocm"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.3,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "nvidia-cuda",
+            "amd-rocm"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.2,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "nvidia-cuda",
+            "amd-rocm"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "nvidia-cuda",
+      "sourceIds": [
+        "nvidia-cuda",
+        "amd-rocm",
+        "akash"
+      ]
+    },
+    {
+      "slug": "nvidia-cuda-open-runtime-certification-market",
+      "name": "Open Runtime Certification Market",
+      "summary": "Independent labs and operators publish verified compatibility and benchmark results across open runtimes so developers trust portable accelerator targets without depending on NVIDIA's certification aura.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "proof-of-work"
+      ],
+      "thesis": "Unlike the first concept's bounty market for missing software, this one attacks CUDA's trust moat around compatibility and performance claims.",
+      "bitcoinOrDecentralizationRole": "Open certification markets and small recurring payouts make conformance data portable across hardware vendors.",
+      "coordinationMechanism": "Operators run benchmark suites and conformance tests while framework maintainers and users subscribe to the resulting compatibility records.",
+      "verificationOrTrustModel": "Signed benchmark traces, reproducible test harnesses, and challenge reruns reduce fake performance reporting.",
+      "failureModes": [
+        "Benchmark gaming is a persistent risk",
+        "Developers may still default to NVIDIA because that path has the fewest surprises"
+      ],
+      "adoptionPath": [
+        "Start with model runtimes already targeting multiple backends",
+        "Expand as compatibility data becomes better than vendor marketing"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "nvidia-cuda",
+        "nvidia-investor"
+      ],
+      "enablerSourceIds": [
+        "amd-rocm",
+        "akash",
+        "lightning-network-homepage"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "This concept decentralizes compatibility and performance trust across many runtime and hardware combinations instead of one vendor narrative.",
+          "sourceIds": [
+            "amd-rocm",
+            "akash",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The coordination loop is credible because benchmarking and certification can be offered as repeatable services with comparable outputs.",
+          "sourceIds": [
+            "nvidia-cuda",
+            "nvidia-investor",
+            "amd-rocm",
+            "akash",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.9,
+          "rationale": "Most primitives already exist; the testing primitives are real, but keeping the benchmarks honest remains a permanent challenge.",
+          "sourceIds": [
+            "amd-rocm",
+            "akash",
+            "lightning-network-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.6,
+          "rationale": "If it scales, it pressures CUDA's certification aura and developer trust moat.",
+          "sourceIds": [
+            "nvidia-cuda",
+            "nvidia-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "nvidia-cuda",
+      "sourceIds": [
+        "nvidia-cuda",
+        "nvidia-investor",
+        "amd-rocm",
+        "akash",
+        "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "nvidia-dgx-concept",
+      "name": "Federated AI Cluster Exchange",
+      "summary": "A market that aggregates independent GPU clusters, bare-metal operators, and storage providers into a more open alternative to premium integrated AI systems.",
+      "angleIds": [
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination",
+        "federation"
+      ],
+      "thesis": "Compete with integrated AI infrastructure bundles by making heterogeneous cluster capacity easier to buy and schedule.",
+      "bitcoinOrDecentralizationRole": "Lightning settles short compute jobs, storage bursts, and operator-side reliability rebates without one central allocator.",
+      "coordinationMechanism": "Cluster operators publish capability profiles, schedulers compose capacity, and buyers choose blends of performance and price.",
+      "verificationOrTrustModel": "Benchmark attestations, signed job receipts, and random capacity checks reduce fake GPU availability and inflated performance claims.",
+      "failureModes": [
+        "High-end networking and support remain hard",
+        "Buyers still fear heterogeneous environments"
+      ],
+      "adoptionPath": [
+        "Start with inference, burst training, and overflow demand",
+        "Add enterprise-grade support only after routing and proof systems stabilize"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "nvidia-data-center",
+        "openstack"
+      ],
+      "enablerSourceIds": [
+        "openstack",
+        "minio"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "nvidia-data-center",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "nvidia-data-center",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.1,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "nvidia-data-center",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.4,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "nvidia-data-center",
+            "openstack"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "nvidia-dgx",
+      "sourceIds": [
+        "nvidia-data-center",
+        "openstack",
+        "minio"
+      ]
+    },
+    {
+      "slug": "nvidia-dgx-waste-heat-ai-microdatacenter-network",
+      "name": "Waste-Heat AI Microdatacenter Network",
+      "summary": "AI compute moves into smaller sites that pair open rack designs with local power, cooling reuse, and standardized cluster software instead of concentrating every serious training workload in giant vendor-controlled campuses.",
+      "angleIds": [
+        "distributed-energy-generation",
+        "open-energy-hardware",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Unlike the first concept's cluster exchange, this one changes where the physical clusters live and who can host them.",
+      "bitcoinOrDecentralizationRole": "Open compute and local energy coordination lower the barrier to fielding smaller AI facilities outside hyperscaler campuses.",
+      "coordinationMechanism": "Site operators expose standardized cluster offers tied to power, cooling, and locality constraints, and buyers route jobs accordingly.",
+      "verificationOrTrustModel": "Attested hardware manifests, power telemetry, and completed job proofs tie revenue to real compute delivery.",
+      "failureModes": [
+        "Operations quality and GPU supply may still concentrate the market",
+        "Many training buyers will continue to prefer hyperscale procurement simplicity"
+      ],
+      "adoptionPath": [
+        "Begin with inference, fine-tuning, and sovereignty-driven workloads",
+        "Expand only where smaller sites can prove cost and reliability"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "nvidia-data-center",
+        "nvidia-investor"
+      ],
+      "enablerSourceIds": [
+        "open-compute-project",
+        "openems",
+        "akash"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "This concept decentralizes AI facility ownership across smaller locally powered sites instead of only hyperscale campuses.",
+          "sourceIds": [
+            "open-compute-project",
+            "openems",
+            "akash"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "The coordination loop is credible because cluster offers can be standardized around power, locality, and delivered jobs.",
+          "sourceIds": [
+            "nvidia-data-center",
+            "nvidia-investor",
+            "open-compute-project",
+            "openems",
+            "akash"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6,
+          "rationale": "Most primitives already exist; cluster software and hardware designs exist, but procurement and operations discipline still matter.",
+          "sourceIds": [
+            "open-compute-project",
+            "openems",
+            "akash"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.5,
+          "rationale": "If it scales, it pressures DGX-style concentration in AI facility buildout and hosted cluster economics.",
+          "sourceIds": [
+            "nvidia-data-center",
+            "nvidia-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "nvidia-dgx",
+      "sourceIds": [
+        "nvidia-data-center",
+        "nvidia-investor",
+        "open-compute-project",
+        "openems",
+        "akash"
+      ]
+    },
+    {
+      "slug": "tesla-supercharger-concept",
+      "name": "Open EV Charging Federation",
+      "summary": "A charging network where stations, payment rails, availability data, and loyalty layers are interoperable instead of tied to one branded network.",
+      "angleIds": [
+        "lightning",
+        "federation",
+        "decentralized-coordination",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Break charging lock-in by making roaming, billing, and uptime competition portable across many station operators.",
+      "bitcoinOrDecentralizationRole": "Lightning enables instant roaming settlement between drivers, station owners, and software operators with low overhead.",
+      "coordinationMechanism": "Independent chargers publish availability and pricing while routing apps and fleet services compose them into user-facing experiences.",
+      "verificationOrTrustModel": "Signed charger status, metered energy proofs, and random uptime audits reduce fake availability and billing disputes.",
+      "failureModes": [
+        "Hardware reliability still matters more than protocol elegance",
+        "Drivers heavily prefer dependable defaults"
+      ],
+      "adoptionPath": [
+        "Start with fleets and regional roaming partners",
+        "Expand into mainstream driver routing once uptime reporting is consistently trusted"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "tesla-energy",
+        "openevse"
+      ],
+      "enablerSourceIds": [
+        "openevse"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.5,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "tesla-energy",
+            "openevse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.6,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "tesla-energy",
+            "openevse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7.2,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "tesla-energy",
+            "openevse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.7,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "tesla-energy",
+            "openevse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "tesla-supercharger",
+      "sourceIds": [
+        "tesla-energy",
+        "openevse"
+      ]
+    },
+    {
+      "slug": "tesla-supercharger-community-energy-stop-kits",
+      "name": "Community Energy Stop Kits",
+      "summary": "Local businesses, municipalities, and property owners assemble charging stops from open chargers, local storage, and solar canopies instead of depending on a single branded network footprint.",
+      "angleIds": [
+        "open-energy-hardware",
+        "distributed-energy-generation",
+        "solar-manufacturing",
+        "microgrid-coordination"
+      ],
+      "thesis": "Unlike the first concept's charging federation, this one attacks the site-build and equipment stack that creates network concentration in the first place.",
+      "bitcoinOrDecentralizationRole": "Open energy hardware makes more of the charging stop buildout modular and locally sourceable.",
+      "coordinationMechanism": "Site hosts combine open charger kits, local power assets, and service contracts while federated software still keeps discovery interoperable.",
+      "verificationOrTrustModel": "Charger uptime logs, payment receipts, and site power telemetry prove whether a stop is actually usable and economic.",
+      "failureModes": [
+        "Permitting and grid interconnection still slow deployment",
+        "Drivers may still prefer the brand they already trust on long trips"
+      ],
+      "adoptionPath": [
+        "Start with destination charging and municipal sites",
+        "Expand to corridor charging as reliability data compounds"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "tesla-energy",
+        "tesla-investor"
+      ],
+      "enablerSourceIds": [
+        "openevse",
+        "libre-solar",
+        "nrel-perovskite-solar",
+        "openems"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.5,
+          "rationale": "This concept decentralizes charging-stop hardware and local power supply into many site owners instead of one branded network builder.",
+          "sourceIds": [
+            "openevse",
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.9,
+          "rationale": "The coordination loop is credible because site hosts can combine open chargers, storage, and software while still sharing discovery metadata.",
+          "sourceIds": [
+            "tesla-energy",
+            "tesla-investor",
+            "openevse",
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.2,
+          "rationale": "Most primitives already exist; the equipment exists now, though interconnection and service consistency still need work.",
+          "sourceIds": [
+            "openevse",
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "If it scales, it pressures Tesla's advantage in proprietary charging-site deployment and bundled energy hardware.",
+          "sourceIds": [
+            "tesla-energy",
+            "tesla-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "tesla-supercharger",
+      "sourceIds": [
+        "tesla-energy",
+        "tesla-investor",
+        "openevse",
+        "libre-solar",
+        "nrel-perovskite-solar",
+        "openems"
+      ]
+    },
+    {
+      "slug": "tesla-energy-stack-concept",
+      "name": "Household Energy Swarm",
+      "summary": "A network where homes, batteries, installers, and grid-service operators coordinate through open software rather than one vertically integrated battery brand.",
+      "angleIds": [
+        "lightning",
+        "federation",
+        "decentralized-coordination",
+        "cooperative-production"
+      ],
+      "thesis": "Move energy storage value toward open coordination and installer ecosystems instead of a single brand stack.",
+      "bitcoinOrDecentralizationRole": "Lightning can settle grid services and peer energy transactions while open protocols let hardware brands compete on equal terms.",
+      "coordinationMechanism": "Installers, homeowners, and local grid-service operators mix hardware and software under shared dispatch rules.",
+      "verificationOrTrustModel": "Metered dispatch logs, inverter attestations, and settlement records make delivered flexibility auditable.",
+      "failureModes": [
+        "Policy and utility rules still shape the market heavily",
+        "Hardware interoperability can be messy"
+      ],
+      "adoptionPath": [
+        "Start where virtual power plants already make sense",
+        "Broaden as open inverter and battery control standards improve"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "tesla-energy",
+        "openems"
+      ],
+      "enablerSourceIds": [
+        "openems"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.4,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "tesla-energy",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.5,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "tesla-energy",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "tesla-energy",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.6,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "tesla-energy",
+            "openems"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "tesla-energy-stack",
+      "sourceIds": [
+        "tesla-energy",
+        "openems"
+      ]
+    },
+    {
+      "slug": "tesla-energy-stack-open-solar-appliance-microfactory",
+      "name": "Open Solar Appliance Microfactory",
+      "summary": "Open solar, storage, inverter, and small-wind modules become configurable home energy appliances that households or local shops can assemble, upgrade, and repair instead of buying a fixed vendor stack.",
+      "angleIds": [
+        "solar-manufacturing",
+        "wind-manufacturing",
+        "home-microfactory",
+        "open-energy-hardware",
+        "distributed-energy-generation"
+      ],
+      "thesis": "Unlike the first concept's swarm coordination, this one attacks Tesla's hardware bundle by making more of the home energy system locally buildable.",
+      "bitcoinOrDecentralizationRole": "Printable solar research, open power electronics, and small wind hardware widen the range of components that can be assembled outside a closed vendor channel.",
+      "coordinationMechanism": "Design maintainers, local assemblers, and installers share validated hardware recipes while households buy interoperable modules over time.",
+      "verificationOrTrustModel": "Output telemetry, safety tests, and commissioning checklists keep locally assembled systems tied to measurable performance.",
+      "failureModes": [
+        "Too much of the stack is still technically or regulatorily hard for household assembly",
+        "Warranty and safety expectations could keep buyers in closed systems"
+      ],
+      "adoptionPath": [
+        "Start with controllers, racks, and replaceable power modules",
+        "Move deeper into generation hardware only as the open stack proves itself"
+      ],
+      "confidence": "speculative",
+      "problemSourceIds": [
+        "tesla-energy",
+        "tesla-investor"
+      ],
+      "enablerSourceIds": [
+        "libre-solar",
+        "nrel-perovskite-solar",
+        "windkit",
+        "reprap"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "This concept decentralizes home energy hardware into interoperable locally assembled modules instead of one closed vendor stack.",
+          "sourceIds": [
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "windkit",
+            "reprap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 6.9,
+          "rationale": "The coordination loop is credible because validated hardware recipes let many assemblers and installers serve the same modular system.",
+          "sourceIds": [
+            "tesla-energy",
+            "tesla-investor",
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "windkit",
+            "reprap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 5.1,
+          "rationale": "The enabling pieces exist, but controllers and power modules are real today, but truly local generation hardware is still early.",
+          "sourceIds": [
+            "libre-solar",
+            "nrel-perovskite-solar",
+            "windkit",
+            "reprap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 8.4,
+          "rationale": "If it scales, it pressures Tesla Energy's bundled hardware margins and ecosystem lock-in.",
+          "sourceIds": [
+            "tesla-energy",
+            "tesla-investor"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "tesla-energy-stack",
+      "sourceIds": [
+        "tesla-energy",
+        "tesla-investor",
+        "libre-solar",
+        "nrel-perovskite-solar",
+        "windkit",
+        "reprap"
+      ]
+    },
+    {
+      "slug": "walmart-marketplace-concept",
+      "name": "Seller-Owned Local Commerce Mesh",
+      "summary": "An open retail network where merchants, pickup hubs, and discovery services interoperate instead of depending on Walmart to mediate both traffic and logistics.",
+      "angleIds": [
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination",
+        "cooperative-production"
+      ],
+      "thesis": "Take marketplace leverage away from giant retail platforms by making catalog, logistics, and loyalty layers composable.",
+      "bitcoinOrDecentralizationRole": "Lightning supports instant merchant settlement, affiliate payouts, and pickup incentives without a giant retail treasury in the middle.",
+      "coordinationMechanism": "Merchants publish stock, local hubs compete on fulfillment, and discovery apps aggregate inventory across many stores.",
+      "verificationOrTrustModel": "Inventory attestations, pickup proofs, and bonded dispute workflows reduce fake stock and fake fulfillment claims.",
+      "failureModes": [
+        "Retail convenience is hard to match",
+        "Fraud and returns can erode trust quickly"
+      ],
+      "adoptionPath": [
+        "Start in regions with strong local merchant identity",
+        "Expand where local delivery and pickup economics already exist"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "walmart-store",
+        "open-food-network"
+      ],
+      "enablerSourceIds": [
+        "open-food-network"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.5,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "walmart-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "walmart-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "walmart-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "walmart-store",
+            "open-food-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "walmart-marketplace",
+      "sourceIds": [
+        "walmart-store",
+        "open-food-network"
+      ]
+    },
+    {
+      "slug": "walmart-marketplace-local-fabrication-pickup-network",
+      "name": "Local Fabrication Pickup Network",
+      "summary": "Neighborhood pickup points and fabrication shops fulfill a larger share of marketplace demand from local production and recovered materials instead of shipping every generic item through national inventory networks.",
+      "angleIds": [
+        "decentralized-manufacturing",
+        "home-microfactory",
+        "peer-to-peer-marketplace",
+        "recycling-and-reuse"
+      ],
+      "thesis": "Unlike the first concept's seller-owned marketplace, this one collapses distance between listing and fulfillment.",
+      "bitcoinOrDecentralizationRole": "Local fabrication and reuse loops reduce dependence on centralized inventory for many commodity categories.",
+      "coordinationMechanism": "Design owners, local producers, and pickup sites coordinate around shared specs and neighborhood demand.",
+      "verificationOrTrustModel": "Pickup confirmation, dimensional checks, and local reviews confirm that the product matched the promised spec and handoff.",
+      "failureModes": [
+        "Selection may stay too thin to rival centralized assortment",
+        "Quality control across many local producers is hard"
+      ],
+      "adoptionPath": [
+        "Start with high-turnover generic goods and repair parts",
+        "Expand as pickup sites and production cells densify"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "walmart-store",
+        "walmart-investor"
+      ],
+      "enablerSourceIds": [
+        "open-food-network",
+        "reprap",
+        "precious-plastic"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "This concept decentralizes marketplace fulfillment into local production cells and pickup nodes instead of national inventory hubs.",
+          "sourceIds": [
+            "open-food-network",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "The coordination loop is credible because shared specs and local pickup confirmations make neighborhood fulfillment comparable across producers.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-investor",
+            "open-food-network",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Most primitives already exist; the local-production path exists now, though assortment depth remains the limit.",
+          "sourceIds": [
+            "open-food-network",
+            "reprap",
+            "precious-plastic"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.4,
+          "rationale": "If it scales, it pressures Walmart Marketplace's inventory and pickup-scale advantage in commodity goods.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "walmart-marketplace",
+      "sourceIds": [
+        "walmart-store",
+        "walmart-investor",
+        "open-food-network",
+        "reprap",
+        "precious-plastic"
+      ]
+    },
+    {
+      "slug": "walmart-grocery-concept",
+      "name": "Community Grocery Routing Exchange",
+      "summary": "A grocery network that coordinates local producers, small retailers, and neighborhood pickup or delivery capacity instead of centralizing food demand through one big-box operator.",
+      "angleIds": [
+        "peer-to-peer-marketplace",
+        "cooperative-production",
+        "decentralized-coordination",
+        "lightning"
+      ],
+      "thesis": "Disrupt grocery scale advantages by making routing, inventory visibility, and fulfillment coordination reusable for many smaller food providers.",
+      "bitcoinOrDecentralizationRole": "Lightning helps settle narrow-margin food logistics and pickup fees in real time without heavy platform overhead.",
+      "coordinationMechanism": "Grocers, co-ops, farms, and delivery operators plug into shared routing and inventory tooling.",
+      "verificationOrTrustModel": "Inventory scans, pickup confirmations, and spoilage-adjusted settlement logs reduce fake stock and delivery disputes.",
+      "failureModes": [
+        "Grocery margins are punishing",
+        "Cold-chain logistics remain hard"
+      ],
+      "adoptionPath": [
+        "Start with co-ops, CSAs, and dense neighborhood pickup networks",
+        "Expand as routing software and local demand aggregation improve"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "walmart-store",
+        "walmart-about"
+      ],
+      "enablerSourceIds": [
+        "open-food-network"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7.1,
+          "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.5,
+          "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 7.3,
+          "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "walmart-grocery",
+      "sourceIds": [
+        "walmart-store",
+        "walmart-about",
+        "open-food-network"
+      ]
+    },
+    {
+      "slug": "walmart-grocery-neighborhood-cold-chain-cooperative",
+      "name": "Neighborhood Cold Chain Cooperative",
+      "summary": "Shared local cold storage, backup power, and neighborhood routing let smaller food sellers pool logistics and reliability instead of depending on one giant retailer's integrated grocery network.",
+      "angleIds": [
+        "cooperative-production",
+        "distributed-energy-generation",
+        "open-energy-hardware",
+        "microgrid-coordination"
+      ],
+      "thesis": "Unlike the first concept's routing exchange, this one opens the physical refrigeration and resilience layer underneath grocery operations.",
+      "bitcoinOrDecentralizationRole": "Open energy hardware and microgrid-style coordination keep cold-chain infrastructure operable for many local sellers, not just one large chain.",
+      "coordinationMechanism": "Storage hosts, delivery operators, and food sellers publish capacity, route windows, and resilience status into a cooperative network.",
+      "verificationOrTrustModel": "Temperature logs, power telemetry, and handoff receipts prove that food stayed within spec through storage and delivery.",
+      "failureModes": [
+        "Food safety and operational discipline leave little room for sloppiness",
+        "Dense incumbent networks may still be cheaper in major metros"
+      ],
+      "adoptionPath": [
+        "Begin with regional food hubs and community grocers",
+        "Expand after telemetry-backed cold-chain trust becomes routine"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "walmart-store",
+        "walmart-about"
+      ],
+      "enablerSourceIds": [
+        "open-food-network",
+        "open-energy-monitor",
+        "libre-solar"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7.8,
+          "rationale": "This concept decentralizes cold-chain infrastructure into shared local resilience assets instead of one retailer-operated network.",
+          "sourceIds": [
+            "open-food-network",
+            "open-energy-monitor",
+            "libre-solar"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination loop is credible because storage capacity, route windows, and temperature logs can be coordinated across many local sellers.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-about",
+            "open-food-network",
+            "open-energy-monitor",
+            "libre-solar"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "implementationFeasibility": {
+          "value": 6.5,
+          "rationale": "Most primitives already exist; the hardware exists now, though food-safety discipline is uncompromising.",
+          "sourceIds": [
+            "open-food-network",
+            "open-energy-monitor",
+            "libre-solar"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        },
+        "incumbentPressure": {
+          "value": 6.9,
+          "rationale": "If it scales, it pressures Walmart's grocery logistics advantage and control over reliable cold-chain infrastructure.",
+          "sourceIds": [
+            "walmart-store",
+            "walmart-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-21"
+        }
+      },
+      "productSlug": "walmart-grocery",
+      "sourceIds": [
+        "walmart-store",
+        "walmart-about",
+        "open-food-network",
+        "open-energy-monitor",
+        "libre-solar"
+      ]
+    }
+  ],
   "sources": [
     {
       "id": "akash",
@@ -5548,6 +11134,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-19"
     },
     {
+      "id": "fedimint",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Community custody and federation reference for local treasury, savings, and payment concepts built on Bitcoin and Lightning.",
+      "accessedOn": "2026-03-21"
+    },
+    {
       "id": "geico",
       "title": "GEICO",
       "url": "https://www.geico.com/",
@@ -5636,6 +11231,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "companiesmarketcap.com",
       "note": "Historical and current market capitalization data used for market cap estimate and S&P 500 relative rank.",
       "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "libre-solar",
+      "title": "The Libre Solar Project",
+      "url": "https://libre.solar/",
+      "kind": "open-source-project",
+      "publisher": "Libre Solar",
+      "note": "Open-source solar charge controller and energy hardware reference for distributed generation and open power electronics concepts.",
+      "accessedOn": "2026-03-21"
     },
     {
       "id": "libreoffice",
@@ -5782,6 +11386,24 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "nrel-distributed-wind",
+      "title": "Distributed Wind Research | Wind Research | NREL",
+      "url": "https://www.nrel.gov/wind/distributed-wind",
+      "kind": "technical-docs",
+      "publisher": "National Renewable Energy Laboratory",
+      "note": "Primary reference for distributed and small-wind deployment, manufacturing, and microgrid integration.",
+      "accessedOn": "2026-03-21"
+    },
+    {
+      "id": "nrel-perovskite-solar",
+      "title": "Perovskite Solar Cells | Photovoltaic Research | NREL",
+      "url": "https://www.nrel.gov/pv/perovskite-solar-cells",
+      "kind": "technical-docs",
+      "publisher": "National Renewable Energy Laboratory",
+      "note": "Primary reference for perovskite solar research including scale-up, printing, slot-die coating, and roll-to-roll manufacturing.",
+      "accessedOn": "2026-03-21"
+    },
+    {
       "id": "nvidia-cuda",
       "title": "CUDA Zone",
       "url": "https://developer.nvidia.com/cuda-zone",
@@ -5825,6 +11447,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "CompaniesMarketCap",
       "note": "Market cap snapshot reference.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "open-compute-project",
+      "title": "Open Compute Project",
+      "url": "https://www.opencompute.org/",
+      "kind": "open-source-project",
+      "publisher": "Open Compute Project Foundation",
+      "note": "Open hardware and data-center design commons reference for modular compute, networking, and rack infrastructure concepts.",
+      "accessedOn": "2026-03-21"
     },
     {
       "id": "open-energy-monitor",
@@ -5926,6 +11557,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "precious-plastic",
+      "title": "Precious Plastic",
+      "url": "https://preciousplastic.com/",
+      "kind": "open-source-project",
+      "publisher": "Precious Plastic",
+      "note": "Open recycling machinery and local material recovery reference for refill, refurbish, and circular manufacturing concepts.",
+      "accessedOn": "2026-03-21"
+    },
+    {
       "id": "proxmox",
       "title": "Proxmox VE",
       "url": "https://www.proxmox.com/en/proxmox-virtual-environment",
@@ -5933,6 +11573,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Proxmox",
       "note": "Prominent open virtualization alternative relevant to VMware replacement.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "reprap",
+      "title": "RepRap",
+      "url": "https://reprap.org/wiki/RepRap",
+      "kind": "open-source-project",
+      "publisher": "RepRap Community",
+      "note": "Open self-replicating 3D printer reference for home microfactory and distributed fabrication concepts.",
+      "accessedOn": "2026-03-21"
     },
     {
       "id": "searxng",
@@ -6079,6 +11728,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "windkit",
+      "title": "Empowering DIY Wind Energy - windkit",
+      "url": "https://windkit.cc/",
+      "kind": "open-source-project",
+      "publisher": "windkit",
+      "note": "Open-source small wind turbine and build-manual reference for local wind manufacturing and service concepts.",
+      "accessedOn": "2026-03-21"
+    },
+    {
       "id": "zephyr-epaper",
       "title": "Zephyr RTOS Display Driver Documentation",
       "url": "https://docs.zephyrproject.org/latest/hardware/peripherals/display/index.html",
@@ -6095,7 +11753,9 @@ export const indices = contentGraph.indices;
 export const sectors = contentGraph.sectors;
 export const industries = contentGraph.industries;
 export const technologyWaves = contentGraph.technologyWaves;
+export const conceptAngles = contentGraph.conceptAngles;
 export const companies = contentGraph.companies;
 export const products = contentGraph.products;
 export const alternatives = contentGraph.alternatives;
+export const disruptionConcepts = contentGraph.disruptionConcepts;
 export const sources = contentGraph.sources;

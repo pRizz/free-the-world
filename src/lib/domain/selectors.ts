@@ -1,6 +1,8 @@
 import {
   alternatives,
   companies,
+  conceptAngles,
+  disruptionConcepts,
   indices,
   industries,
   products,
@@ -26,6 +28,12 @@ export function getAlternativesForProduct(productSlug: string) {
   return alternatives.filter((alternative) => alternative.productSlug === productSlug);
 }
 
+export function getDisruptionConceptsForProduct(productSlug: string) {
+  return disruptionConcepts.filter(
+    (disruptionConcept) => disruptionConcept.productSlug === productSlug,
+  );
+}
+
 export function getSourcesByIds(sourceIds: string[]) {
   return sourceIds.map((sourceId) => {
     const maybeSource = sources.find((source) => source.id === sourceId);
@@ -43,6 +51,16 @@ export function getTechnologyWavesByIds(waveIds: string[]) {
       throw new Error(`Unknown technology wave id: ${waveId}`);
     }
     return maybeWave;
+  });
+}
+
+export function getConceptAnglesByIds(angleIds: string[]) {
+  return angleIds.map((angleId) => {
+    const maybeAngle = conceptAngles.find((conceptAngle) => conceptAngle.id === angleId);
+    if (!maybeAngle) {
+      throw new Error(`Unknown concept angle id: ${angleId}`);
+    }
+    return maybeAngle;
   });
 }
 

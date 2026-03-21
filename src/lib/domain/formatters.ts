@@ -1,7 +1,12 @@
-import { alternativeMetricDefinitions, companyMetricDefinitions } from "~/lib/domain/metrics";
+import {
+  alternativeMetricDefinitions,
+  companyMetricDefinitions,
+  conceptMetricDefinitions,
+} from "~/lib/domain/metrics";
 import type {
   AlternativeMetricId,
   CompanyMetricId,
+  ConceptMetricId,
   MetricAssessment,
   MetricValueType,
 } from "~/lib/domain/types";
@@ -73,5 +78,10 @@ export function formatAlternativeMetric(
   assessment: MetricAssessment,
 ) {
   const definition = alternativeMetricDefinitions[metricId];
+  return formatMetricValue(assessment.value, definition.valueType, definition.precision);
+}
+
+export function formatConceptMetric(metricId: ConceptMetricId, assessment: MetricAssessment) {
+  const definition = conceptMetricDefinitions[metricId];
   return formatMetricValue(assessment.value, definition.valueType, definition.precision);
 }

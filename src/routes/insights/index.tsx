@@ -9,16 +9,21 @@ import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
 import {
   getAlternativePressureDataset,
   getCapitalAtRiskDataset,
+  getDisruptionConceptDataset,
   getPostBubbleDataset,
 } from "~/lib/domain/insights";
 
 const postBubbleDataset = getPostBubbleDataset();
 const capitalAtRiskDataset = getCapitalAtRiskDataset();
 const alternativePressureDataset = getAlternativePressureDataset();
+const disruptionConceptDataset = getDisruptionConceptDataset();
 
 const topCapitalAtRiskPoint = capitalAtRiskDataset.points[0];
 const topPressureCompany = alternativePressureDataset.companyRows.find(
   (row) => row.hasDocumentedAlternatives,
+);
+const topConceptCompany = disruptionConceptDataset.companyRows.find(
+  (row) => row.hasDocumentedConcepts,
 );
 
 export default function InsightsPage() {
@@ -69,7 +74,7 @@ export default function InsightsPage() {
           ]}
         />
 
-        <div class="grid gap-6 xl:grid-cols-3">
+        <div class="grid gap-6 xl:grid-cols-2">
           <ContentCard class="space-y-5">
             <div class="flex flex-wrap gap-2">
               <Badge tone="accent">Page 1</Badge>
@@ -154,6 +159,34 @@ export default function InsightsPage() {
               </p>
             </div>
             <ButtonLink href="/insights/alternative-pressure">Open the pressure index</ButtonLink>
+          </ContentCard>
+
+          <ContentCard class="space-y-5">
+            <div class="flex flex-wrap gap-2">
+              <Badge tone="accent">Page 4</Badge>
+              <Badge tone="muted">Original attack vectors</Badge>
+            </div>
+            <div class="space-y-3">
+              <h2 class="text-2xl font-semibold tracking-tight">Disruption concept index</h2>
+              <p class="text-sm leading-7 text-muted-foreground">
+                Rank the registry's original product ideas by how buildable, incentive-coherent, and
+                strategically painful they look for incumbents.
+              </p>
+            </div>
+            <div class="rounded-2xl border border-border bg-background/55 p-4">
+              <p class="text-xs uppercase tracking-[0.24em] text-muted-foreground">
+                Highest-scoring concept stack
+              </p>
+              <p class="mt-2 text-xl font-semibold text-title-foreground">
+                {topConceptCompany?.company.name ?? "—"}
+              </p>
+              <p class="mt-2 text-sm leading-7 text-muted-foreground">
+                {topConceptCompany && topConceptCompany.conceptScore !== null
+                  ? `${topConceptCompany.conceptScore.toFixed(1)}/10 concept score · ${topConceptCompany.conceptCount} documented concepts`
+                  : "No disruption concepts documented yet."}
+              </p>
+            </div>
+            <ButtonLink href="/insights/disruption-concepts">Open the concept index</ButtonLink>
           </ContentCard>
         </div>
 

@@ -95,11 +95,19 @@ function buildBundle(
       const {
         companySlug: _companySlug,
         alternativeSlugs: _alternativeSlugs,
+        disruptionConceptSlugs: _disruptionConceptSlugs,
+        maybeDisruptionException: _maybeDisruptionException,
         ...productFields
       } = product;
       return {
         ...productFields,
+        maybeDisruptionException: {
+          reason: "Legacy migration snapshot predates structured disruption concepts.",
+          sourceIds: product.sourceIds,
+          lastReviewedOn: "2026-03-21",
+        },
         alternatives: productAlternatives,
+        disruptionConcepts: [],
       };
     });
 

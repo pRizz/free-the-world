@@ -228,6 +228,161 @@
             "syncthing"
           ]
         }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "apple-icloud-concept",
+          "name": "User-Owned Cloud Mesh",
+          "summary": "A personal cloud fabric that combines self-hosted nodes, trusted relays, and interoperable sync services so convenience no longer requires Apple custody.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination",
+            "lightning"
+          ],
+          "thesis": "Turn sync, backup, and device continuity into a portable service mesh instead of an ecosystem lock-in feature.",
+          "bitcoinOrDecentralizationRole": "Lightning pays relay operators and backup hosts in tiny recurring amounts without bundling everything into one subscription.",
+          "coordinationMechanism": "Users mix home nodes, friendly operators, and commercial relays under one interoperable data model.",
+          "verificationOrTrustModel": "End-to-end encryption, signed replication logs, and periodic restore drills reduce the risk of silent data loss or dishonest storage claims.",
+          "failureModes": [
+            "Consumer setup remains harder than iCloud",
+            "Mobile OS restrictions can blunt the experience"
+          ],
+          "adoptionPath": [
+            "Start with privacy-sensitive families and power users",
+            "Improve migration, restore, and mobile onboarding until switching feels normal"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "apple-services",
+            "nextcloud"
+          ],
+          "enablerSourceIds": [
+            "nextcloud",
+            "syncthing"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.8,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "apple-services",
+                "nextcloud"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.5,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "apple-services",
+                "nextcloud"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 7,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "apple-services",
+                "nextcloud"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "apple-services",
+                "nextcloud"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "apple-icloud-home-vault-appliance-grid",
+          "name": "Home Vault Appliance Grid",
+          "summary": "A market of repairable home storage appliances gives households a simple local default for backups, sync, and family file sharing instead of renting the whole relationship from Apple's cloud.",
+          "angleIds": [
+            "open-hardware",
+            "home-microfactory",
+            "decentralized-coordination",
+            "3d-printing"
+          ],
+          "thesis": "Unlike the first concept's software mesh, this one treats the replacement as a consumer hardware category that households can buy, repair, and even locally assemble.",
+          "bitcoinOrDecentralizationRole": "Open hardware and small-scale fabrication make appliance vendors interchangeable while open sync software keeps data portable.",
+          "coordinationMechanism": "Appliance makers compete on reliability and UX while users still sync across common open protocols.",
+          "verificationOrTrustModel": "Signed backup tests, restore drills, and device health attestations prove that an appliance is actually protecting data instead of silently failing.",
+          "failureModes": [
+            "Consumers may still prefer Apple's seamless defaults",
+            "Hardware support and backup reliability are unforgiving consumer requirements"
+          ],
+          "adoptionPath": [
+            "Sell through privacy-focused and prosumer channels first",
+            "Broaden after restore testing and mobile onboarding become routine"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "apple-services",
+            "apple-iphone"
+          ],
+          "enablerSourceIds": [
+            "nextcloud",
+            "syncthing",
+            "reprap"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.1,
+              "rationale": "This concept decentralizes consumer cloud ownership into repairable local appliances and open sync layers.",
+              "sourceIds": [
+                "nextcloud",
+                "syncthing",
+                "reprap"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.2,
+              "rationale": "The coordination loop is credible because appliance vendors and open sync providers can interoperate without one cloud operator controlling the account.",
+              "sourceIds": [
+                "apple-services",
+                "apple-iphone",
+                "nextcloud",
+                "syncthing",
+                "reprap"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 7,
+              "rationale": "Most primitives already exist; consumer polish and failure-proof backup behavior still need to be excellent.",
+              "sourceIds": [
+                "nextcloud",
+                "syncthing",
+                "reprap"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 6.7,
+              "rationale": "If it scales, it pressures iCloud's subscription lock-in and default consumer storage position.",
+              "sourceIds": [
+                "apple-services",
+                "apple-iphone"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
       ]
     },
     {
@@ -344,6 +499,160 @@
           "sourceIds": [
             "grapheneos"
           ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "apple-app-store-concept",
+          "name": "Signed App Federation",
+          "summary": "An app distribution network where software, payments, review reputation, and discovery are portable services rather than one controlled store.",
+          "angleIds": [
+            "lightning",
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "Unbundle software trust, payment rails, and discovery so Apple cannot charge rent on the entire mobile distribution path.",
+          "bitcoinOrDecentralizationRole": "Lightning enables direct software purchases, subscriptions, and refund bonds outside a single payment gatekeeper.",
+          "coordinationMechanism": "Developers publish signed packages, reputation providers audit safety, and client devices subscribe to trusted catalogs.",
+          "verificationOrTrustModel": "Package signatures, reproducible builds, and stake-backed review services reduce the chance of malware, fake reviews, and spoofed app provenance.",
+          "failureModes": [
+            "Platform restrictions still matter",
+            "Users may prefer incumbent safety narratives"
+          ],
+          "adoptionPath": [
+            "Win first on web apps, alternative OSes, and enterprise sideloading",
+            "Expand as portable identity and payment trust improves"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "apple-services",
+            "grapheneos"
+          ],
+          "enablerSourceIds": [
+            "grapheneos"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.3,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "apple-services",
+                "grapheneos"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.3,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "apple-services",
+                "grapheneos"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "apple-services",
+                "grapheneos"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 8,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "apple-services",
+                "grapheneos"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "apple-app-store-direct-license-wallet-rail",
+          "name": "Direct License Wallet Rail",
+          "summary": "Developers sell installation rights, subscriptions, and updates directly through wallet-backed licenses that devices can verify without a single storefront owning the payment rail.",
+          "angleIds": [
+            "bitcoin",
+            "lightning",
+            "decentralized-coordination",
+            "federation"
+          ],
+          "thesis": "Unlike the first concept's federated stores, this one unbundles discovery from payment and entitlement so Apple's toll booth loses its choke point.",
+          "bitcoinOrDecentralizationRole": "Bitcoin and Lightning carry direct payment and subscription renewal, while federated mint or wallet models reduce dependence on card rails.",
+          "coordinationMechanism": "Developers publish signed app manifests and pricing terms; discovery sites and device tools can compete without controlling settlement.",
+          "verificationOrTrustModel": "Devices verify signed manifests, revocation state, and proof of payment before install or update, limiting fake storefronts and replayed licenses.",
+          "failureModes": [
+            "Apple platform rules can still suppress direct install flows",
+            "Consumers may resist managing wallets or trust new payment paths"
+          ],
+          "adoptionPath": [
+            "Start with jurisdictions or device segments where sideloading is already viable",
+            "Use higher-margin professional apps before mass consumer categories"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "apple-services",
+            "apple-iphone"
+          ],
+          "enablerSourceIds": [
+            "grapheneos",
+            "lightning-network-homepage",
+            "fedimint"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.3,
+              "rationale": "This concept decentralizes app payment and entitlement control away from a single storefront.",
+              "sourceIds": [
+                "grapheneos",
+                "lightning-network-homepage",
+                "fedimint"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.4,
+              "rationale": "The coordination loop is credible because developers, discovery layers, and devices can coordinate around signed manifests and direct settlement.",
+              "sourceIds": [
+                "apple-services",
+                "apple-iphone",
+                "grapheneos",
+                "lightning-network-homepage",
+                "fedimint"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 7.1,
+              "rationale": "Most primitives already exist; the hardest blockers are platform policy and user trust, not basic payment or signature primitives.",
+              "sourceIds": [
+                "grapheneos",
+                "lightning-network-homepage",
+                "fedimint"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 8,
+              "rationale": "If it scales, it pressures App Store take rates and Apple's control over software commerce.",
+              "sourceIds": [
+                "apple-services",
+                "apple-iphone"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
         }
       ]
     }

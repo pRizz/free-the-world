@@ -3,6 +3,7 @@ import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
+  collectSyncTargets,
   executeProvider,
   extractClaudeCliResult,
   extractClaudeDebugDiagnostics,
@@ -332,6 +333,69 @@ test("isBundleStale flags aged bundles and keeps fresh bundles current", () => {
 
   expect(isBundleStale(bundle, now)).toBe(true);
   expect(isBundleStale(freshBundle, now)).toBe(false);
+});
+
+test("collectSyncTargets supports published, all, and stale batch targets", () => {
+  const staleBundle = makeBundle("2026-01-01");
+  const freshBundle = makeBundle("2026-03-10");
+  const raw = {
+    regions: [],
+    indices: [],
+    sectors: [],
+    industries: [],
+    technologyWaves: [],
+    conceptAngles: [],
+    manifests: [
+      {
+        schemaVersion: 1,
+        slug: "fixtureco",
+        name: "FixtureCo",
+        ticker: "FIX",
+        regionId: "us",
+        indexIds: ["sp500-top10"],
+        sectorId: "information-technology",
+        industryId: "software-cloud",
+        companiesMarketCapUrl: "https://example.com/fixtureco",
+        description: "Fixture company",
+        technologyWaveIds: [],
+      },
+      {
+        schemaVersion: 1,
+        slug: "freshco",
+        name: "FreshCo",
+        ticker: "FRS",
+        regionId: "us",
+        indexIds: ["sp500-top10"],
+        sectorId: "information-technology",
+        industryId: "software-cloud",
+        companiesMarketCapUrl: "https://example.com/freshco",
+        description: "Fresh company",
+        technologyWaveIds: [],
+      },
+      {
+        schemaVersion: 1,
+        slug: "unpublishedco",
+        name: "UnpublishedCo",
+        ticker: "UNP",
+        regionId: "us",
+        indexIds: ["sp500-top10"],
+        sectorId: "information-technology",
+        industryId: "software-cloud",
+        companiesMarketCapUrl: "https://example.com/unpublishedco",
+        description: "Unpublished company",
+        technologyWaveIds: [],
+      },
+    ],
+    bundles: [
+      staleBundle,
+      { ...freshBundle, company: { ...freshBundle.company, slug: "freshco" } },
+    ],
+    sources: [],
+  } satisfies Parameters<typeof collectSyncTargets>[0];
+
+  expect(collectSyncTargets(raw, "published")).toEqual(["fixtureco", "freshco"]);
+  expect(collectSyncTargets(raw, "all")).toEqual(["fixtureco", "freshco", "unpublishedco"]);
+  expect(collectSyncTargets(raw, "stale")).toEqual(["fixtureco", "unpublishedco"]);
 });
 
 function makeBundle(lastReviewedOn: string): CompanyBundle {

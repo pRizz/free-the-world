@@ -21,6 +21,15 @@ export const alternativeMetricIds = [
 
 export type AlternativeMetricId = (typeof alternativeMetricIds)[number];
 
+export const conceptMetricIds = [
+  "decentralizationFit",
+  "coordinationCredibility",
+  "implementationFeasibility",
+  "incumbentPressure",
+] as const;
+
+export type ConceptMetricId = (typeof conceptMetricIds)[number];
+
 export type MetricValueType = "score" | "currency" | "ratio" | "percentage";
 export const evidenceKinds = [
   "investor-relations",
@@ -82,7 +91,7 @@ export interface MetricDefinition<TMetricId extends string> {
   precision?: number;
   lowerIsBetter?: boolean;
   defaultVisible: boolean;
-  category: "scores" | "finance" | "derived" | "alternatives";
+  category: "scores" | "finance" | "derived" | "alternatives" | "concepts";
 }
 
 export interface Region {
@@ -113,6 +122,12 @@ export interface TechnologyWave {
   label: string;
   summary: string;
   implications: string[];
+}
+
+export interface ConceptAngle {
+  id: string;
+  label: string;
+  summary: string;
 }
 
 export interface Company {
@@ -147,6 +162,8 @@ export interface Product {
   whyItMatters: string;
   replacementSketch: string[];
   alternativeSlugs: string[];
+  disruptionConceptSlugs: string[];
+  maybeDisruptionException: DisruptionException | null;
   sourceIds: string[];
   technologyWaveIds: string[];
 }
@@ -161,6 +178,31 @@ export interface Alternative {
   summary: string;
   metrics: Record<AlternativeMetricId, MetricAssessment>;
   sourceIds: string[];
+}
+
+export interface DisruptionException {
+  reason: string;
+  sourceIds: string[];
+  lastReviewedOn: string;
+}
+
+export interface DisruptionConcept {
+  slug: string;
+  productSlug: string;
+  name: string;
+  summary: string;
+  angleIds: string[];
+  thesis: string;
+  bitcoinOrDecentralizationRole: string;
+  coordinationMechanism: string;
+  verificationOrTrustModel: string;
+  failureModes: string[];
+  adoptionPath: string[];
+  confidence: ConfidenceLevel;
+  problemSourceIds: string[];
+  enablerSourceIds: string[];
+  sourceIds: string[];
+  metrics: Record<ConceptMetricId, MetricAssessment>;
 }
 
 export interface PromptTaskDefinition {

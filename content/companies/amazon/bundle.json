@@ -133,7 +133,162 @@
       "technologyWaveIds": [
         "bitcoin-native-coordination"
       ],
-      "alternatives": []
+      "alternatives": [],
+      "disruptionConcepts": [
+        {
+          "slug": "aws-platform-concept",
+          "name": "Federated Workload Exchange",
+          "summary": "A market that lets operators sell compute, storage, and managed capacity through open contracts rather than forcing buyers onto one hyperscaler control plane.",
+          "angleIds": [
+            "lightning",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace",
+            "federation"
+          ],
+          "thesis": "Pull cloud value away from hyperscaler bundling by making capacity, orchestration, and escrow portable across many operators.",
+          "bitcoinOrDecentralizationRole": "Lightning settles burst workloads, storage commitments, and reliability rebates without a central bill-collection layer.",
+          "coordinationMechanism": "Independent operators publish price and SLA offers, schedulers route jobs, and buyers select blends of cost, geography, and trust.",
+          "verificationOrTrustModel": "Remote attestation, replicated job receipts, and random settlement challenges reduce the chance of fake capacity or underdelivery.",
+          "failureModes": [
+            "Enterprise buyers may still prefer one throat to choke",
+            "Heterogeneous infrastructure complicates support"
+          ],
+          "adoptionPath": [
+            "Win on edge, batch, and overflow workloads first",
+            "Layer better migration tooling on top of existing Kubernetes habits"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "aws",
+            "openstack"
+          ],
+          "enablerSourceIds": [
+            "aws"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.1,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "aws",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "aws",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.2,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "aws",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.9,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "aws",
+                "openstack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "aws-platform-waste-heat-microdatacenter-guild",
+          "name": "Waste-Heat Microdatacenter Guild",
+          "summary": "Community or small-business microdatacenters pair open racks with local power and heat reuse, selling standard compute capacity without needing hyperscale campus economics.",
+          "angleIds": [
+            "distributed-energy-generation",
+            "open-energy-hardware",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "Unlike the first concept's workload exchange, this one changes the physical supply base by making more of the cloud live in modular local infrastructure.",
+          "bitcoinOrDecentralizationRole": "Open compute designs and energy hardware reduce capex per site while market coordination lets local operators sell spare capacity into common pools.",
+          "coordinationMechanism": "Operators publish standard capacity offers tied to location, power profile, and heat-reuse characteristics, and buyers place workloads through open schedulers.",
+          "verificationOrTrustModel": "Attested host inventories, metered uptime, and settlement against delivered capacity keep the market tied to real hardware instead of paper promises.",
+          "failureModes": [
+            "Operations quality may vary too much across small sites",
+            "Local energy and cooling advantages may not offset AWS scale in core regions"
+          ],
+          "adoptionPath": [
+            "Start with edge workloads, sovereignty-sensitive customers, and heat-reuse sites",
+            "Expand after standard rack kits and billing metadata are widely interoperable"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "amazon-investor",
+            "aws"
+          ],
+          "enablerSourceIds": [
+            "open-compute-project",
+            "openstack",
+            "openems"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7.7,
+              "rationale": "This concept decentralizes cloud supply across smaller operators with local power and thermal advantages.",
+              "sourceIds": [
+                "open-compute-project",
+                "openstack",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 6.8,
+              "rationale": "The coordination loop is credible because capacity can be standardized well enough for buyers to compare location, uptime, and price across operators.",
+              "sourceIds": [
+                "amazon-investor",
+                "aws",
+                "open-compute-project",
+                "openstack",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.3,
+              "rationale": "Most primitives already exist; site operations and customer trust remain harder than assembling the software stack.",
+              "sourceIds": [
+                "open-compute-project",
+                "openstack",
+                "openems"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7,
+              "rationale": "If it scales, it pressures AWS's physical scale advantage at the edge and in sovereignty-sensitive workloads.",
+              "sourceIds": [
+                "amazon-investor",
+                "aws"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
+      ]
     },
     {
       "slug": "amazon-marketplace",
@@ -154,7 +309,162 @@
         "microfactories",
         "additive-manufacturing"
       ],
-      "alternatives": []
+      "alternatives": [],
+      "disruptionConcepts": [
+        {
+          "slug": "amazon-marketplace-concept",
+          "name": "Merchant-Owned Commerce Mesh",
+          "summary": "A seller-first marketplace network where storefronts, fulfillment partners, and reputation providers interoperate instead of renting access from Amazon.",
+          "angleIds": [
+            "lightning",
+            "peer-to-peer-marketplace",
+            "decentralized-coordination",
+            "cooperative-production"
+          ],
+          "thesis": "Move the marketplace from a centralized demand tollbooth toward an open merchant and logistics network.",
+          "bitcoinOrDecentralizationRole": "Lightning supports escrow, affiliate payouts, dispute bonds, and fulfillment settlement without a dominant payments operator.",
+          "coordinationMechanism": "Merchants publish inventory, logistics firms compete for delivery legs, and discovery layers aggregate catalogs without owning the merchant relationship.",
+          "verificationOrTrustModel": "Order proofs, shipment attestations, and bonded dispute resolution make fake inventory and fake delivery harder to monetize.",
+          "failureModes": [
+            "Buyers trust incumbent defaults",
+            "Fraud and returns still demand careful arbitration"
+          ],
+          "adoptionPath": [
+            "Begin with vertical merchant communities and repeat-buy categories",
+            "Expand as logistics and reputation layers become reusable"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "amazon-store",
+            "open-food-network"
+          ],
+          "enablerSourceIds": [
+            "amazon-store"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.6,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "amazon-store",
+                "open-food-network"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.1,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "amazon-store",
+                "open-food-network"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.7,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "amazon-store",
+                "open-food-network"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 8.4,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "amazon-store",
+                "open-food-network"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "amazon-marketplace-local-fabrication-catalog",
+          "name": "Local Fabrication Catalog",
+          "summary": "An open catalog of product designs, bills of materials, and fulfillment recipes lets nearby fabrication cells produce common goods on demand instead of routing everything through giant centralized inventory systems.",
+          "angleIds": [
+            "decentralized-manufacturing",
+            "home-microfactory",
+            "3d-printing",
+            "recycling-and-reuse"
+          ],
+          "thesis": "Unlike the first concept's merchant-owned marketplace, this one attacks Amazon's inventory and logistics advantage by localizing production itself.",
+          "bitcoinOrDecentralizationRole": "Distributed fabrication tools and local materials recovery shrink minimum efficient scale for many generic goods.",
+          "coordinationMechanism": "Design owners publish recipes, local shops accept jobs, and pickup or delivery nodes compete on turnaround time and trust.",
+          "verificationOrTrustModel": "Shared BOM checks, photo evidence, dimensional tests, and buyer reputation make it harder to pass off low-quality local production as equivalent goods.",
+          "failureModes": [
+            "Quality variance could scare buyers back toward branded centralized supply",
+            "Many categories will remain uneconomical for local fabrication"
+          ],
+          "adoptionPath": [
+            "Begin with repair parts, fixtures, and commodity household goods",
+            "Layer in pickup partnerships once repeatable specs and reviews emerge"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "amazon-store",
+            "amazon-investor"
+          ],
+          "enablerSourceIds": [
+            "reprap",
+            "precious-plastic",
+            "ose-website"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.5,
+              "rationale": "This concept decentralizes production and fulfillment for commodity goods across local workshops instead of centralized inventory nodes.",
+              "sourceIds": [
+                "reprap",
+                "precious-plastic",
+                "ose-website"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7,
+              "rationale": "The coordination loop is credible because design files, jobs, and local pickup can be matched as repeatable marketplace transactions.",
+              "sourceIds": [
+                "amazon-store",
+                "amazon-investor",
+                "reprap",
+                "precious-plastic",
+                "ose-website"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.4,
+              "rationale": "Most primitives already exist; many categories are still hard to localize, but the fabrication primitives already exist.",
+              "sourceIds": [
+                "reprap",
+                "precious-plastic",
+                "ose-website"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.8,
+              "rationale": "If it scales, it pressures Amazon's inventory depth and national fulfillment leverage in generic categories.",
+              "sourceIds": [
+                "amazon-store",
+                "amazon-investor"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
+      ]
     }
   ]
 }

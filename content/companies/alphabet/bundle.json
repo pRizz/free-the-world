@@ -226,6 +226,157 @@
             "searxng"
           ]
         }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "google-search-concept",
+          "name": "Lightning Search Syndicate",
+          "summary": "An open search market where interfaces, indexers, advertisers, and verifier nodes transact directly instead of routing all value through one search giant.",
+          "angleIds": [
+            "lightning",
+            "proof-of-work",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "Split search into competing indexers, interfaces, and ad buyers so discovery and monetization no longer require one company to own the whole stack.",
+          "bitcoinOrDecentralizationRole": "Lightning pays indexers, publishers, and verifiers in tiny increments, while proof-of-work style pricing can make spammy crawling and fake participation expensive.",
+          "coordinationMechanism": "Interfaces buy query coverage, ad inventory, and freshness guarantees from independent operators in an open market.",
+          "verificationOrTrustModel": "Rotating signed ad nonces, randomized verifier pools, and challenge fetches across many nodes make fake impressions and fake indexing harder to sustain.",
+          "failureModes": [
+            "Verifier collusion with publishers",
+            "Thin advertiser liquidity against Google defaults"
+          ],
+          "adoptionPath": [
+            "Launch with vertical search communities and independent publishers",
+            "Expand after verifier payouts and ad reporting look trustworthy"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "google-products",
+            "searxng"
+          ],
+          "enablerSourceIds": [
+            "searxng"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.4,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "google-products",
+                "searxng"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.2,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "google-products",
+                "searxng"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.4,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "google-products",
+                "searxng"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 8.2,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "google-products",
+                "searxng"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "google-search-proof-of-placement-ad-commons",
+          "name": "Proof-of-Placement Ad Commons",
+          "summary": "An open ad market for search and publisher inventory where creatives carry rotating signed challenges and payout clears only after independent verifiers confirm the placement.",
+          "angleIds": [
+            "lightning",
+            "proof-of-work",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "Unlike the first concept, which decentralizes indexing and query routing, this one attacks Google's monetization layer by making ad reporting and settlement portable.",
+          "bitcoinOrDecentralizationRole": "Lightning pays publishers and verifier nodes per completed challenge, while cheap proof-of-work or bonded entry makes sybil verification more expensive.",
+          "coordinationMechanism": "Advertisers post campaigns, publishers accept placements, and verifier nodes draw randomized audit jobs from a public queue.",
+          "verificationOrTrustModel": "Each ad response carries a rotating signed nonce and render challenge; randomized verifiers fetch from shifting networks and only matching proofs release payout.",
+          "failureModes": [
+            "Thin advertiser liquidity could leave the market too small to matter",
+            "Publishers and verifier nodes can still collude when audit diversity is weak"
+          ],
+          "adoptionPath": [
+            "Start with independent publishers that already distrust ad-tech concentration",
+            "Expand once buyers can compare verifier-backed reporting against incumbent dashboards"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "alphabet-investor",
+            "google-products"
+          ],
+          "enablerSourceIds": [
+            "lightning-network-homepage",
+            "searxng"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.4,
+              "rationale": "This concept decentralizes ad verification, payout, and placement reporting across many independent publishers.",
+              "sourceIds": [
+                "lightning-network-homepage",
+                "searxng"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.2,
+              "rationale": "The coordination loop is credible because advertisers, publishers, and verifier nodes can transact around discrete campaigns and audits.",
+              "sourceIds": [
+                "alphabet-investor",
+                "google-products",
+                "lightning-network-homepage",
+                "searxng"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.8,
+              "rationale": "Most primitives already exist; bootstrapping honest verifier depth and buyer trust is still the hard part.",
+              "sourceIds": [
+                "lightning-network-homepage",
+                "searxng"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 8.4,
+              "rationale": "If it scales, it pressures Google's measurement moat and ad reporting lock-in.",
+              "sourceIds": [
+                "alphabet-investor",
+                "google-products"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
       ]
     },
     {
@@ -342,6 +493,158 @@
           "sourceIds": [
             "matrix"
           ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "youtube-concept",
+          "name": "Federated Video Cooperatives",
+          "summary": "A federated video network where creators own audience relationships, split revenue directly, and use open moderation and discovery services instead of a single platform monopoly.",
+          "angleIds": [
+            "lightning",
+            "federation",
+            "decentralized-coordination",
+            "cooperative-production"
+          ],
+          "thesis": "Break video publishing into open hosting, discovery, moderation, and payout layers so creators can move without losing their business.",
+          "bitcoinOrDecentralizationRole": "Lightning enables direct creator splits, fan micropayments, and machine-scale settlement between hosts, moderators, and recommendation services.",
+          "coordinationMechanism": "Creators choose hosts, discovery providers compete for attention, and cooperative moderation pools sell safety services into the network.",
+          "verificationOrTrustModel": "Signed playback proofs, mirrored manifests, and cross-host receipts reduce the chance that hosts overstate views or suppress contracted payouts.",
+          "failureModes": [
+            "Moderation quality can fragment",
+            "Discovery quality may lag incumbent recommendation systems"
+          ],
+          "adoptionPath": [
+            "Start with creator niches that already dislike platform dependency",
+            "Add better tooling for clips, subscriptions, and payouts"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "google-products",
+            "peertube"
+          ],
+          "enablerSourceIds": [
+            "peertube",
+            "matrix"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.5,
+              "rationale": "This concept meaningfully shifts control away from a single incumbent operator.",
+              "sourceIds": [
+                "google-products",
+                "peertube"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 7.4,
+              "rationale": "The participant and incentive model is plausible but still operationally demanding.",
+              "sourceIds": [
+                "google-products",
+                "peertube"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 6.8,
+              "rationale": "Current tools and market structure could support an initial version without waiting for a full paradigm shift.",
+              "sourceIds": [
+                "google-products",
+                "peertube"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.8,
+              "rationale": "If adopted, the concept would chip away at pricing power or default distribution leverage.",
+              "sourceIds": [
+                "google-products",
+                "peertube"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
+        },
+        {
+          "slug": "youtube-edge-cache-and-transcode-market",
+          "name": "Edge Cache and Transcode Market",
+          "summary": "Independent operators earn for caching, transcoding, and serving video segments so creators do not need one platform to own the delivery stack as well as the audience relationship.",
+          "angleIds": [
+            "lightning",
+            "decentralized-coordination",
+            "peer-to-peer-marketplace",
+            "federation"
+          ],
+          "thesis": "Unlike the first concept's focus on federated ownership, this concept breaks YouTube's delivery economics by turning video infrastructure itself into a competitive market.",
+          "bitcoinOrDecentralizationRole": "Lightning clears tiny payouts for storage, egress, and transcode work without requiring creators to pre-negotiate with one CDN.",
+          "coordinationMechanism": "Creators or cooperatives publish storage and bitrate jobs while edge operators compete on price, geography, and reliability.",
+          "verificationOrTrustModel": "Segment hashes, retrieval challenges, and randomized playback probes prove that files were stored and served instead of merely promised.",
+          "failureModes": [
+            "Creator UX can collapse if multi-operator delivery feels less reliable than YouTube",
+            "Bandwidth sellers may game probes unless challenge diversity stays high"
+          ],
+          "adoptionPath": [
+            "Launch with creator cooperatives already publishing to PeerTube",
+            "Add live and high-bitrate markets after retrieval proof looks dependable"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "alphabet-investor",
+            "google-products"
+          ],
+          "enablerSourceIds": [
+            "peertube",
+            "akash"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7.8,
+              "rationale": "This concept decentralizes video delivery and storage work across many independent operators.",
+              "sourceIds": [
+                "peertube",
+                "akash"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "coordinationCredibility": {
+              "value": 6.9,
+              "rationale": "The coordination loop is credible because video caching, transcoding, and serving can be priced as discrete units of infrastructure work.",
+              "sourceIds": [
+                "alphabet-investor",
+                "google-products",
+                "peertube",
+                "akash"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "implementationFeasibility": {
+              "value": 7.1,
+              "rationale": "Most primitives already exist; the software pieces exist, though creator tooling and QoS discipline still need work.",
+              "sourceIds": [
+                "peertube",
+                "akash"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            },
+            "incumbentPressure": {
+              "value": 7.7,
+              "rationale": "If it scales, it pressures YouTube's infrastructure margin and bundled delivery advantage.",
+              "sourceIds": [
+                "alphabet-investor",
+                "google-products"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-03-21"
+            }
+          }
         }
       ]
     }

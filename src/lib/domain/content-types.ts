@@ -2,6 +2,9 @@ import type {
   Alternative,
   Company,
   CompanyIpo,
+  ConceptAngle,
+  DisruptionConcept,
+  DisruptionException,
   IndexDefinition,
   Industry,
   MetricAssessment,
@@ -35,6 +38,8 @@ export type ResearchTaskId = (typeof researchTaskIds)[number];
 export type RalphProviderId = "claude" | "codex";
 export type RalphProviderPreference = RalphProviderId | "auto" | "both";
 export type RalphSyncMode = "dry-run" | "publish";
+export const syncBatchTargetIds = ["published", "all", "stale"] as const;
+export type SyncBatchTargetId = (typeof syncBatchTargetIds)[number];
 export type ManifestQueueStatus = "queued";
 export type ResearchTargetSource = "canonical" | "queued";
 export type UnverifiedCompanyRequestStatus = "pending" | "prepared" | "completed" | "failed";
@@ -124,8 +129,22 @@ export interface ResearchLoopTarget {
 
 export interface RawAlternativeRecord extends Omit<Alternative, "productSlug"> {}
 
-export interface RawProductRecord extends Omit<Product, "companySlug" | "alternativeSlugs"> {
+export interface RawDisruptionConceptRecord
+  extends Omit<DisruptionConcept, "productSlug" | "sourceIds"> {}
+
+export interface RawProductRecord {
+  slug: string;
+  name: string;
+  category: string;
+  homepageUrl: string;
+  summary: string;
+  whyItMatters: string;
+  replacementSketch: string[];
+  maybeDisruptionException?: DisruptionException;
+  sourceIds: string[];
+  technologyWaveIds: string[];
   alternatives: RawAlternativeRecord[];
+  disruptionConcepts: RawDisruptionConceptRecord[];
 }
 
 export interface RawCompanyRecord extends Omit<Company, "productSlugs" | "metrics"> {
@@ -144,9 +163,11 @@ export interface ContentGraph {
   sectors: Sector[];
   industries: Industry[];
   technologyWaves: TechnologyWave[];
+  conceptAngles: ConceptAngle[];
   companies: Company[];
   products: Product[];
   alternatives: Alternative[];
+  disruptionConcepts: DisruptionConcept[];
   sources: SourceCitation[];
 }
 

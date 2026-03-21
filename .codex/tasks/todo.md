@@ -1,5 +1,25 @@
 # Post-Bubble Downside Label
 
+# Second-Wave Disruption Concepts Backfill
+
+- [x] Expand the disruption concept angle taxonomy for distributed energy, solar and wind manufacturing, home microfactories, local materials processing, open energy hardware, microgrid coordination, and recycling loops.
+  Verification: `bun run content:validate`
+- [x] Append one second disruption concept to each published product so the current `14` published bundles and `32` products compile with `2` concepts each.
+  Verification: `bun run content:validate`, `bun run typecheck`
+- [x] Update sync/prompt/reporting coverage so backfill runs and summaries expose two-concept coverage explicitly.
+  Verification: `bun run test`
+- [x] Add verification for multi-concept product rendering and the disruption-concepts insights page, then rerun the full verification chain.
+  Verification: `bun run lint`, `bun run test`, `bun run build`, `bun run test:e2e`
+
+Completion review:
+- Added `8` new concept-angle tags and `8` new supporting sources, then backfilled the published corpus from `32` concepts to `64` concepts while keeping the existing first concepts intact.
+- Updated the sync prompt and batch summary so future dry-run work can distinguish products already at two concepts from products that still need a second concept.
+- Added product-page and disruption-concepts e2e coverage, and fixed a real static-site bug during verification by adding `/insights/disruption-concepts` to the prerender route list in [site-routes.ts](/Users/peterryszkiewicz/.codex/worktrees/26be/free-the-world/src/lib/site-routes.ts).
+
+Residual risks:
+- Many of the new physical-world concepts are intentionally speculative; they are source-backed and tagged that way, but later editorial passes may still want to refine names, scores, or source mixes.
+- The published concept corpus is now denser, so future sync work should preserve the “distinct second concept” rule or the content will drift toward paraphrased duplicates.
+
 - [x] Add the downside percentage token to the capital-split row subtitle in the post-bubble bar chart.
   Verification: `bun run lint`, `bun run typecheck`
 - [x] Cover the new `At risk $... · -X%` label in post-bubble E2E verification and rerun mobile overflow coverage.
