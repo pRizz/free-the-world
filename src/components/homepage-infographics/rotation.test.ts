@@ -20,7 +20,7 @@ test("pickRandomHomepageInfographicId excludes the current infographic when poss
   const infographicIds = ["capital-at-risk", "post-bubble", "alternative-pressure"];
 
   // Act
-  const nextInfographicId = pickRandomHomepageInfographicId(infographicIds, "post-bubble", 0.4);
+  const nextInfographicId = pickRandomHomepageInfographicId(infographicIds, "post-bubble", 0.6);
 
   // Assert
   expect(nextInfographicId).toBe("alternative-pressure");

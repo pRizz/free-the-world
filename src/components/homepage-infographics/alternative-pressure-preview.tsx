@@ -60,7 +60,9 @@ export function AlternativePressurePreview() {
                     {row.productsWithDocumentedAlternatives}/{row.productCount} products covered
                   </p>
                 </div>
-                <p class="text-sm font-semibold text-title-foreground">{formatScore(row.pressureScore)}</p>
+                <p class="text-sm font-semibold text-title-foreground">
+                  {formatScore(row.pressureScore)}
+                </p>
               </div>
 
               <div class="mt-3 space-y-2">

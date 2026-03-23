@@ -30,7 +30,9 @@ export function DisruptionConceptsPreview() {
       <div class="grid gap-2 sm:grid-cols-2">
         <article class="rounded-2xl border border-border bg-background/55 p-3">
           <p class="text-xs uppercase tracking-[0.22em] text-muted-foreground">Concepts</p>
-          <p class="mt-2 text-lg font-semibold text-title-foreground">{dataset.totalConceptCount}</p>
+          <p class="mt-2 text-lg font-semibold text-title-foreground">
+            {dataset.totalConceptCount}
+          </p>
           <p class="mt-2 text-sm text-muted-foreground">
             Covering {dataset.productsWithConcepts} products with documented build ideas.
           </p>
@@ -58,7 +60,9 @@ export function DisruptionConceptsPreview() {
                     products mapped
                   </p>
                 </div>
-                <p class="text-sm font-semibold text-title-foreground">{formatScore(row.conceptScore)}</p>
+                <p class="text-sm font-semibold text-title-foreground">
+                  {formatScore(row.conceptScore)}
+                </p>
               </div>
 
               <div class="mt-3 h-2 rounded-full bg-secondary/85">

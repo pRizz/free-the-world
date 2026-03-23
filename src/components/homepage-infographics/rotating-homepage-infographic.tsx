@@ -102,9 +102,7 @@ export function RotatingHomepageInfographic() {
         >
           Show another view
         </Button>
-        <ButtonLink href={selectedInfographic().href}>
-          {selectedInfographic().ctaLabel}
-        </ButtonLink>
+        <ButtonLink href={selectedInfographic().href}>{selectedInfographic().ctaLabel}</ButtonLink>
       </div>
     </ContentCard>
   );

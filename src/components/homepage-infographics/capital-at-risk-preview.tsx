@@ -1,6 +1,6 @@
 import { For } from "solid-js";
 import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
-import { getCapitalAtRiskDataset, type CapitalAtRiskPoint } from "~/lib/domain/insights";
+import { type CapitalAtRiskPoint, getCapitalAtRiskDataset } from "~/lib/domain/insights";
 
 const dataset = getCapitalAtRiskDataset();
 const highlightedPoints = dataset.points.slice(0, 3);

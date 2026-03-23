@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import { ContentCard } from "~/components/blocks/content-card";
-import { RotatingHomepageInfographic } from "~/components/homepage-infographics/rotating-homepage-infographic";
 import { PageHeader } from "~/components/blocks/page-header";
+import { RotatingHomepageInfographic } from "~/components/homepage-infographics/rotating-homepage-infographic";
 import { NewsletterSignup } from "~/components/newsletter-signup";
 import { RepositoryLink } from "~/components/repository-link";
 import { Seo } from "~/components/seo";
