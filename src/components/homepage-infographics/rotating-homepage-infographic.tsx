@@ -75,9 +75,8 @@ export function RotatingHomepageInfographic() {
   return (
     <ContentCard class="space-y-5">
       <div class="flex flex-wrap gap-2">
-        <Badge tone="accent">Rotating homepage infographic</Badge>
         <Badge tone="muted">
-          {selectedInfographicIndex() + 1} of {homepageInfographics.length}
+          Infographic {selectedInfographicIndex() + 1} of {homepageInfographics.length}
         </Badge>
         <Badge tone="muted">Shuffles on each visit</Badge>
       </div>
