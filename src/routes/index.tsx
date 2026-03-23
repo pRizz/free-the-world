@@ -1,7 +1,7 @@
 import { A } from "@solidjs/router";
 import { ContentCard } from "~/components/blocks/content-card";
-import { MetricCard } from "~/components/blocks/metric-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import { RotatingHomepageInfographic } from "~/components/homepage-infographics/rotating-homepage-infographic";
 import { NewsletterSignup } from "~/components/newsletter-signup";
 import { RepositoryLink } from "~/components/repository-link";
 import { Seo } from "~/components/seo";
@@ -10,25 +10,8 @@ import { ButtonLink } from "~/components/ui/button";
 import { Card } from "~/components/ui/card";
 import { siteConfig } from "~/lib/config";
 import { landingHighlights, methodologyPrinciples } from "~/lib/content/site";
-import { companies } from "~/lib/content-graph";
-import { sortCompaniesByMetric } from "~/lib/domain/company-metrics";
-import { formatCompanyMetric } from "~/lib/domain/formatters";
 
 export default function Home() {
-  const [mostDecentralizable] = sortCompaniesByMetric(companies, "decentralizability", "desc");
-  const [mostCapitalAtRisk] = sortCompaniesByMetric(companies, "freedCapitalPotential", "desc");
-
-  if (!mostDecentralizable || !mostCapitalAtRisk) {
-    throw new Error("Expected at least one company in the registry.");
-  }
-
-  const decentralizabilityMetric = mostDecentralizable.metrics.decentralizability;
-  const freedCapitalMetric = mostCapitalAtRisk.metrics.freedCapitalPotential;
-
-  if (!decentralizabilityMetric || !freedCapitalMetric) {
-    throw new Error("Expected landing-page spotlight metrics to be available.");
-  }
-
   return (
     <>
       <Seo title="Free The World" description={siteConfig.shortDescription} route="/" />
@@ -68,37 +51,7 @@ export default function Home() {
             </div>
           </Card>
 
-          <ContentCard class="space-y-5">
-            <PageHeader
-              eyebrow="Snapshot highlights"
-              title="A few early signals"
-              description="The point is not to predict a single date when incumbents lose. The point is to notice which categories are already becoming harder to justify at current prices."
-            />
-            <div class="space-y-4">
-              <MetricCard
-                label="Most decentralizable large-cap in the launch set"
-                value={mostDecentralizable.name}
-                class="[&>p:first-child]:tracking-[0.22em]"
-              >
-                {formatCompanyMetric(
-                  "decentralizability",
-                  mostDecentralizable.metrics.decentralizability,
-                )}{" "}
-                — {decentralizabilityMetric.rationale}
-              </MetricCard>
-              <MetricCard
-                label="Largest implied capital release opportunity"
-                value={mostCapitalAtRisk.name}
-                class="[&>p:first-child]:tracking-[0.22em]"
-              >
-                {formatCompanyMetric(
-                  "freedCapitalPotential",
-                  mostCapitalAtRisk.metrics.freedCapitalPotential,
-                )}{" "}
-                — {freedCapitalMetric.rationale}
-              </MetricCard>
-            </div>
-          </ContentCard>
+          <RotatingHomepageInfographic />
         </section>
 
         <section class="grid gap-6 lg:grid-cols-[0.9fr_1.1fr]">
