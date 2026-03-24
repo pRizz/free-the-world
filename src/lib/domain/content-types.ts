@@ -30,6 +30,7 @@ export const researchTaskIds = [
   "moat-analysis",
   "decentralization-analysis",
   "product-alternatives",
+  "implementation-prompts",
   "source-gathering",
   "company-sync",
 ] as const;
@@ -171,6 +172,24 @@ export interface ContentGraph {
   sources: SourceCitation[];
 }
 
+export interface ImplementationPromptArtifact {
+  productSlug: string;
+  companySlug: string;
+  generatedOn: string;
+  markdown: string;
+}
+
+export interface LoadedImplementationPromptArtifact extends ImplementationPromptArtifact {
+  sourceFile: string;
+  issues: string[];
+}
+
+export interface ImplementationPromptsPayload {
+  schemaVersion: 1;
+  companySlug: string;
+  prompts: ImplementationPromptArtifact[];
+}
+
 export interface ResearchTaskDefinition {
   id: ResearchTaskId;
   label: string;
@@ -180,7 +199,7 @@ export interface ResearchTaskDefinition {
 
 export interface ResearchTaskResult {
   taskId: ResearchTaskId;
-  provider: RalphProviderId;
+  provider: RalphProviderId | "local";
   promptFile: string;
   rawOutputFile: string;
   normalizedFile?: string;

@@ -18,6 +18,7 @@ export async function writeMinimalFixture(
   await mkdir(path.join(root, "manifests", "queue"), { recursive: true });
   await mkdir(path.join(root, "manifests", "unverified"), { recursive: true });
   await mkdir(path.join(root, "companies", "fixtureco"), { recursive: true });
+  await mkdir(path.join(root, "implementation-prompts", "fixtureco-core"), { recursive: true });
   await mkdir(path.join(root, "sources"), { recursive: true });
   await mkdir(path.join(root, "prompts"), { recursive: true });
 
@@ -226,6 +227,22 @@ export async function writeMinimalFixture(
       },
     ],
   });
+  await writeFile(
+    path.join(root, "implementation-prompts", "fixtureco-core", "PROMPT.md"),
+    [
+      "---",
+      "productSlug: fixtureco-core",
+      "companySlug: fixtureco",
+      "generatedOn: 2026-03-24",
+      "---",
+      "",
+      "# Build Fixture product",
+      "",
+      "Use this prompt to implement FixtureCo's disruptive product alternative.",
+      "",
+    ].join("\n"),
+    "utf8",
+  );
 }
 
 export function buildManifest(overrides: Partial<CompanyManifest> = {}): CompanyManifest {
@@ -276,6 +293,8 @@ async function writeLoopPromptFixtures(root: string) {
       "Decentralization {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
     "product-alternatives":
       "Alternatives {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
+    "implementation-prompts":
+      "# Build {{productName}}\n\nCompany: {{companyName}}\nAlternatives:\n{{alternatives}}\n",
     "source-gathering":
       "Sources {{companyName}}\nProducts:\n{{productNames}}\nContext:\n{{companyDataJson}}\n",
   };
@@ -285,6 +304,7 @@ async function writeLoopPromptFixtures(root: string) {
     ["moat-analysis.md", promptContents["moat-analysis"]],
     ["decentralization-analysis.md", promptContents["decentralization-analysis"]],
     ["product-alternatives.md", promptContents["product-alternatives"]],
+    ["implementation-prompts.md", promptContents["implementation-prompts"]],
     ["source-gathering.md", promptContents["source-gathering"]],
     ["company-sync.md", "Sync {{companySlug}}\n{{companyManifestJson}}\n{{taxonomyJson}}\n"],
     [

@@ -18,6 +18,14 @@ test("company detail page renders the Apple overview", async ({ page }) => {
   ).toHaveAttribute("href", repositoryUrl);
 });
 
+test("company products page surfaces Implement Now actions", async ({ page }) => {
+  await gotoRoute(page, "/companies/apple/products");
+
+  await expect(page).toHaveURL(/\/companies\/apple\/products\/?$/);
+  await expect(page.getByRole("button", { name: "Implement Now!" }).first()).toBeVisible();
+  await expect(page.getByRole("link", { name: "Open analysis" }).first()).toBeVisible();
+});
+
 test("product detail page renders the product thesis and alternatives section", async ({
   page,
 }) => {
@@ -35,7 +43,22 @@ test("product detail page renders the product thesis and alternatives section", 
       .filter({ has: page.getByRole("heading", { name: "Product research sources" }) })
       .getByRole("link", { name: "Open source on GitHub" }),
   ).toHaveAttribute("href", repositoryUrl);
+  await expect(page.getByRole("button", { name: "Implement Now!" })).toBeVisible();
   await expect(
     page.getByRole("link", { name: "Back to Apple products", exact: true }),
   ).toBeVisible();
+});
+
+test("product detail page opens the implementation prompt modal", async ({ page }) => {
+  await gotoRoute(page, "/companies/apple/products/apple-icloud");
+
+  await page.getByRole("button", { name: "Implement Now!" }).click();
+
+  await expect(
+    page.getByRole("heading", { name: "Implement iCloud as a free-future project" }),
+  ).toBeVisible();
+  await expect(page.getByRole("button", { name: "Copy prompt" })).toBeVisible();
+  await expect(page.getByLabel("Implementation prompt")).toHaveValue(
+    /Bright Builds Requirement Adoption/,
+  );
 });

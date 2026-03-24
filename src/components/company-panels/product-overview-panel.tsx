@@ -2,6 +2,7 @@ import { For } from "solid-js";
 import { ActionRow } from "~/components/blocks/action-row";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import { ProductImplementationDialog } from "~/components/product-implementation-dialog";
 import { Button, ButtonLink } from "~/components/ui/button";
 import type { Company, Product } from "~/lib/domain/types";
 
@@ -26,6 +27,7 @@ export function ProductOverviewPanel(props: { product: Product; company: Company
           </ul>
         </div>
         <ActionRow>
+          <ProductImplementationDialog company={props.company} product={props.product} />
           <Button
             as="a"
             href={props.product.homepageUrl}

@@ -1,10 +1,12 @@
 import path from "node:path";
 import type {
   ManifestQueueEntry,
+  RalphProviderId,
   RalphProviderPreference,
   RalphSyncMode,
   ResearchRunManifest,
   ResearchTaskId,
+  ResearchTaskResult,
 } from "../../src/lib/domain/content-types";
 import { promoteQueuedManifest, queueManifestFromFile } from "./company-intake";
 import { loadManifestQueueEntries, rootDir, writeJsonFile } from "./content";
@@ -163,7 +165,7 @@ export async function runCompanyPipeline(
         `Running Ralph loop for ${target.companySlug} (${options.loopTaskIds.join(", ")})`,
       );
       const { runDir, runId } = await ensureRunDir(target.companySlug);
-      const taskResults = [];
+      const taskResults: ResearchTaskResult[] = [];
 
       for (const taskId of options.loopTaskIds) {
         const results = await runLoopTask({
@@ -185,7 +187,13 @@ export async function runCompanyPipeline(
         mode: "dry-run",
         requestedProvider: options.providerPreference,
         resolvedProviders: options.executeLoop
-          ? [...new Set(taskResults.map((result) => result.provider))]
+          ? [
+              ...new Set(
+                taskResults
+                  .map((result) => result.provider)
+                  .filter((provider): provider is RalphProviderId => provider !== "local"),
+              ),
+            ]
           : [],
         taskResults,
         generatedOn: new Date().toISOString(),

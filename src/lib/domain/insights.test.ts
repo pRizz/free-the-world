@@ -73,6 +73,10 @@ function makeProduct(slug: string, companySlug: string, overrides: Partial<Produ
     alternativeSlugs: [],
     disruptionConceptSlugs: [],
     maybeDisruptionException: null,
+    implementationPrompt: {
+      markdown: "Test prompt",
+      generatedOn: "2026-03-24",
+    },
     sourceIds: [],
     technologyWaveIds: [],
     ...overrides,

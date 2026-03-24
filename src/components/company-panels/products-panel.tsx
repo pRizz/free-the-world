@@ -3,6 +3,7 @@ import { For } from "solid-js";
 import { ActionRow } from "~/components/blocks/action-row";
 import { ContentCard } from "~/components/blocks/content-card";
 import { PageHeader } from "~/components/blocks/page-header";
+import { ProductImplementationDialog } from "~/components/product-implementation-dialog";
 import { Badge } from "~/components/ui/badge";
 import { ButtonLink } from "~/components/ui/button";
 import type { Company, Product } from "~/lib/domain/types";
@@ -51,9 +52,15 @@ export function CompanyProductsPanel(props: { company: Company; products: Produc
                   <p class="max-w-3xl text-sm leading-7 text-muted-foreground">{product.summary}</p>
                 </div>
                 <ActionRow class="shrink-0">
+                  <ProductImplementationDialog
+                    company={props.company}
+                    product={product}
+                    buttonSize="sm"
+                  />
                   <ButtonLink
                     href={`/companies/${props.company.slug}/products/${product.slug}`}
                     variant="secondary"
+                    size="sm"
                   >
                     Open analysis
                   </ButtonLink>

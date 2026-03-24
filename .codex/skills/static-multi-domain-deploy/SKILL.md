@@ -42,3 +42,5 @@ Read these files first:
 - Treat `--apply` as opt-in. The default mode is the safety mode.
 - Every deploy script writes a summary plus breadcrumb logs under `.codex/logs/deploy/`; review both before concluding a deploy is healthy.
 - Keep `.codex/tasks/todo.md` updated when changing the deployment system itself.
+- When you update `.codex/tasks/todo.md`, use append-only task blocks with stable IDs and timestamps in the heading, append new work at the end, and edit only the matching task block plus its `## Completion Review`.
+- Do not rewrite or reorder unrelated task blocks just to refresh formatting or status summaries; prefer localized edits and derive volatile status from the task blocks when practical.

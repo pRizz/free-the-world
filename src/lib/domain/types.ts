@@ -166,6 +166,10 @@ export interface Product {
   maybeDisruptionException: DisruptionException | null;
   sourceIds: string[];
   technologyWaveIds: string[];
+  implementationPrompt: {
+    markdown: string;
+    generatedOn: string;
+  };
 }
 
 export interface Alternative {

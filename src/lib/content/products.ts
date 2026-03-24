@@ -1,7 +1,10 @@
 import type { Alternative, MetricAssessment, Product } from "~/lib/domain/types";
 
 const reviewedOn = "2026-03-14";
-type LegacyProduct = Omit<Product, "disruptionConceptSlugs" | "maybeDisruptionException">;
+type LegacyProduct = Omit<
+  Product,
+  "disruptionConceptSlugs" | "maybeDisruptionException" | "implementationPrompt"
+>;
 
 function metric(
   value: number,
@@ -18,7 +21,7 @@ function metric(
   };
 }
 
-const rawProducts: LegacyProduct[] = [
+const legacyProducts: LegacyProduct[] = [
   {
     slug: "nvidia-cuda",
     companySlug: "nvidia",
@@ -349,10 +352,14 @@ const rawProducts: LegacyProduct[] = [
   },
 ];
 
-export const products: Product[] = rawProducts.map((product) => ({
+export const products: Product[] = legacyProducts.map((product) => ({
   ...product,
   disruptionConceptSlugs: [],
   maybeDisruptionException: null,
+  implementationPrompt: {
+    markdown: "",
+    generatedOn: reviewedOn,
+  },
 }));
 
 export const alternatives: Alternative[] = [

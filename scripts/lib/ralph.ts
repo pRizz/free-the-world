@@ -6,6 +6,7 @@ import type {
   CompanyBundle,
   CompanyManifest,
   CompanySyncPayload,
+  ImplementationPromptsPayload,
   RalphProviderId,
   RalphProviderPreference,
   RalphProvidersFile,
@@ -22,11 +23,16 @@ import { getManifestFile } from "./company-intake";
 import {
   compileContent,
   contentDir,
+  implementationPromptsDir,
   loadRawContent,
   rootDir,
   validateAndCompile,
   writeJsonFile,
 } from "./content";
+import {
+  generateImplementationPromptsPayload,
+  writeImplementationPromptPayload,
+} from "./implementation-prompts";
 
 export const promptTasks: ResearchTaskDefinition[] = [
   {
@@ -54,6 +60,12 @@ export const promptTasks: ResearchTaskDefinition[] = [
     outputSuffix: "alternatives",
   },
   {
+    id: "implementation-prompts",
+    label: "Implementation prompt generation",
+    templateFile: "implementation-prompts.md",
+    outputSuffix: "implementation-prompts",
+  },
+  {
     id: "source-gathering",
     label: "Source gathering",
     templateFile: "source-gathering.md",
@@ -71,6 +83,7 @@ const localProviderConfigFile = path.join(rootDir, ".codex", "ralph.providers.lo
 const exampleProviderConfigFile = path.join(rootDir, "config", "ralph.providers.example.json");
 const promptsDir = path.join(rootDir, "prompts");
 const researchRunsDir = path.join(rootDir, "research", "runs");
+const implementationPromptsTemplateFile = path.join(promptsDir, "implementation-prompts.md");
 const staleAfterDays = 30;
 const providerHeartbeatIntervalMs = 15_000;
 const defaultProviderTimeoutMs = 10 * 60 * 1000;
@@ -734,6 +747,121 @@ export function extractJsonPayload(rawOutput: string) {
   throw new Error("Provider output did not contain valid JSON.");
 }
 
+export async function buildImplementationPromptPayload(options: {
+  bundle: CompanyBundle;
+  sources: SourceCitation[];
+  allTechnologyWaves: TechnologyWave[];
+  generatedOn?: string;
+}) {
+  const payload = await generateImplementationPromptsPayload({
+    bundle: options.bundle,
+    sources: options.sources,
+    allTechnologyWaves: options.allTechnologyWaves,
+    templateFile: implementationPromptsTemplateFile,
+    generatedOn: options.generatedOn,
+  });
+
+  validateImplementationPromptsPayload(payload, options.bundle);
+  return payload;
+}
+
+function validateImplementationPromptsPayload(
+  payload: ImplementationPromptsPayload,
+  bundle: CompanyBundle,
+) {
+  if (payload.schemaVersion !== 1) {
+    throw new Error(
+      `Unsupported implementation prompt schemaVersion ${String(payload.schemaVersion)}.`,
+    );
+  }
+
+  if (payload.companySlug !== bundle.company.slug) {
+    throw new Error(
+      `Implementation prompt company slug ${payload.companySlug} does not match bundle ${bundle.company.slug}.`,
+    );
+  }
+
+  const bundleProductSlugs = new Set(bundle.products.map((product) => product.slug));
+  const seenPromptSlugs = new Set<string>();
+
+  for (const prompt of payload.prompts) {
+    if (!bundleProductSlugs.has(prompt.productSlug)) {
+      throw new Error(
+        `Implementation prompt ${prompt.productSlug} does not map to a product in bundle ${bundle.company.slug}.`,
+      );
+    }
+
+    if (prompt.companySlug !== bundle.company.slug) {
+      throw new Error(
+        `Implementation prompt ${prompt.productSlug} references company ${prompt.companySlug}, expected ${bundle.company.slug}.`,
+      );
+    }
+
+    if (!prompt.generatedOn) {
+      throw new Error(`Implementation prompt ${prompt.productSlug} is missing generatedOn.`);
+    }
+
+    if (!prompt.markdown.trim()) {
+      throw new Error(`Implementation prompt ${prompt.productSlug} is empty.`);
+    }
+
+    if (seenPromptSlugs.has(prompt.productSlug)) {
+      throw new Error(`Duplicate implementation prompt ${prompt.productSlug}.`);
+    }
+    seenPromptSlugs.add(prompt.productSlug);
+  }
+
+  for (const product of bundle.products) {
+    if (!seenPromptSlugs.has(product.slug)) {
+      throw new Error(`Bundle product ${product.slug} is missing an implementation prompt.`);
+    }
+  }
+}
+
+export async function writeImplementationPromptTaskArtifacts(options: {
+  runDir: string;
+  payload: ImplementationPromptsPayload;
+  companyName: string;
+}) {
+  const promptFile = path.join(options.runDir, "implementation-prompts.prompt.md");
+  const rawOutputFile = path.join(options.runDir, "implementation-prompts.local.raw.txt");
+  const normalizedFile = path.join(options.runDir, "implementation-prompts.local.normalized.json");
+  const validationFile = path.join(options.runDir, "implementation-prompts.local.validation.json");
+  const promptOutputRoot = path.join(options.runDir, "implementation-prompts");
+
+  await writeFile(
+    promptFile,
+    [
+      "# Implementation prompt generation",
+      "",
+      `Company: ${options.companyName} (${options.payload.companySlug})`,
+      `Template: ${path.relative(rootDir, implementationPromptsTemplateFile)}`,
+      "",
+      "Generated products:",
+      ...options.payload.prompts.map((prompt) => `- ${prompt.productSlug}`),
+      "",
+    ].join("\n"),
+    "utf8",
+  );
+  await writeFile(rawOutputFile, `${JSON.stringify(options.payload, null, 2)}\n`, "utf8");
+  await writeJsonFile(normalizedFile, options.payload);
+  await writeJsonFile(validationFile, {
+    provider: "local",
+    exitCode: 0,
+    validJson: true,
+    validContent: true,
+    promptCount: options.payload.prompts.length,
+  });
+  await writeImplementationPromptPayload(promptOutputRoot, options.payload);
+
+  return {
+    promptFile,
+    rawOutputFile,
+    normalizedFile,
+    validationFile,
+  };
+}
+
 export async function runLoopTask(options: {
   target: ResearchLoopTarget;
   taskId: ResearchTaskId;
@@ -756,6 +884,50 @@ export async function runLoopTask(options: {
     targetSource: options.target.targetSource,
     batchId: options.target.batchId ?? null,
   });
+
+  if (task.id === "implementation-prompts") {
+    const raw = await loadRawContent();
+    const currentBundle = raw.bundles.find(
+      (bundle) => bundle.company.slug === options.target.companySlug,
+    );
+    if (!currentBundle) {
+      throw new Error(
+        `Implementation prompt generation requires an existing bundle for ${options.target.companySlug}. Run company-sync first.`,
+      );
+    }
+
+    const currentSources = getReferencedSources(currentBundle, raw.sources);
+    const payload = await buildImplementationPromptPayload({
+      bundle: currentBundle,
+      sources: currentSources,
+      allTechnologyWaves: raw.technologyWaves,
+    });
+    const files = await writeImplementationPromptTaskArtifacts({
+      runDir: options.runDir,
+      payload,
+      companyName: currentBundle.company.name,
+    });
+
+    await trace("implementation-prompts:written", {
+      promptFile: path.relative(rootDir, files.promptFile),
+      normalizedFile: path.relative(rootDir, files.normalizedFile),
+      promptCount: payload.prompts.length,
+    });
+
+    const taskResult: ResearchTaskResult = {
+      taskId: task.id,
+      provider: "local",
+      promptFile: path.relative(rootDir, files.promptFile),
+      rawOutputFile: path.relative(rootDir, files.rawOutputFile),
+      normalizedFile: path.relative(rootDir, files.normalizedFile),
+      validationFile: path.relative(rootDir, files.validationFile),
+      exitCode: 0,
+      success: true,
+      generatedOn: new Date().toISOString(),
+    };
+
+    return [taskResult];
+  }
 
   const { graph, raw } = await compileContent();
   const context = buildLoopPromptContext(options.target, raw, graph);
@@ -931,6 +1103,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
   });
   const taskResults: ResearchTaskResult[] = [];
   const candidatePayloads = new Map<RalphProviderId, CompanySyncPayload>();
+  const candidatePromptPayloads = new Map<RalphProviderId, ImplementationPromptsPayload>();
 
   const prompt = await renderPrompt("company-sync.md", {
     companySlug: options.companySlug,
@@ -979,7 +1152,17 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     if (success) {
       try {
         const payload = extractJsonPayload(execution.rawOutput) as CompanySyncPayload;
-        const validatedCandidate = validateSyncPayload(payload, raw, context.manifest);
+        const promptPayload = await buildImplementationPromptPayload({
+          bundle: payload.bundle,
+          sources: payload.sources,
+          allTechnologyWaves: raw.technologyWaves,
+        });
+        const validatedCandidate = validateSyncPayload(
+          payload,
+          raw,
+          context.manifest,
+          promptPayload,
+        );
         await writeJsonFile(normalizedFile, payload);
         await writeJsonFile(validationFile, {
           ...validationSummary,
@@ -990,6 +1173,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
           bundleFile: path.relative(rootDir, validatedCandidate.bundleFile),
         });
         candidatePayloads.set(provider, payload);
+        candidatePromptPayloads.set(provider, promptPayload);
         await trace("validation:success", {
           provider,
           normalizedFile: path.relative(rootDir, normalizedFile),
@@ -1071,8 +1255,19 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
   if (!selectedPayload) {
     throw new Error(`Selected provider ${selectedProvider} did not produce a candidate payload.`);
   }
+  const selectedPromptPayload = candidatePromptPayloads.get(selectedProvider);
+  if (!selectedPromptPayload) {
+    throw new Error(
+      `Selected provider ${selectedProvider} did not produce implementation prompt payloads.`,
+    );
+  }
 
-  const validatedCandidate = validateSyncPayload(selectedPayload, raw, context.manifest);
+  const validatedCandidate = validateSyncPayload(
+    selectedPayload,
+    raw,
+    context.manifest,
+    selectedPromptPayload,
+  );
   await trace("candidate:selected", {
     provider: selectedProvider,
     bundleFile: path.relative(rootDir, validatedCandidate.bundleFile),
@@ -1084,6 +1279,22 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
   await writeJsonFile(path.join(runDir, "candidate.bundle.json"), selectedPayload.bundle);
   await writeJsonFile(path.join(runDir, "candidate.manifest.json"), validatedCandidate.manifest);
   await writeJsonFile(path.join(runDir, "candidate.sources.json"), selectedPayload.sources);
+  const implementationPromptFiles = await writeImplementationPromptTaskArtifacts({
+    runDir,
+    payload: selectedPromptPayload,
+    companyName: selectedPayload.bundle.company.name,
+  });
+  taskResults.push({
+    taskId: "implementation-prompts",
+    provider: "local",
+    promptFile: path.relative(rootDir, implementationPromptFiles.promptFile),
+    rawOutputFile: path.relative(rootDir, implementationPromptFiles.rawOutputFile),
+    normalizedFile: path.relative(rootDir, implementationPromptFiles.normalizedFile),
+    validationFile: path.relative(rootDir, implementationPromptFiles.validationFile),
+    exitCode: 0,
+    success: true,
+    generatedOn: new Date().toISOString(),
+  });
   if (summaryMarkdown) {
     await writeFile(path.join(runDir, "summary.md"), summaryMarkdown, "utf8");
   }
@@ -1091,7 +1302,7 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
   let commitSha: string | undefined;
   if (options.mode === "publish") {
     await trace("publish:persist:start");
-    await persistCandidate(validatedCandidate);
+    await persistCandidate(validatedCandidate, selectedPromptPayload);
     await trace("publish:persist:finish");
     await runPublishChecks(trace);
 
@@ -1269,6 +1480,7 @@ function validateSyncPayload(
   payload: CompanySyncPayload,
   raw: Awaited<ReturnType<typeof loadRawContent>>,
   existingManifest: CompanyManifest,
+  promptPayload: ImplementationPromptsPayload,
 ) {
   if (payload.schemaVersion !== 1) {
     throw new Error(`Unsupported payload schemaVersion ${String(payload.schemaVersion)}.`);
@@ -1284,8 +1496,23 @@ function validateSyncPayload(
     );
   }
 
+  validateImplementationPromptsPayload(promptPayload, payload.bundle);
+
   const manifest = deriveManifestFromBundle(payload.bundle, payload.sources, existingManifest);
   const mergedSources = mergeSources(raw.sources, payload.sources);
+  const existingCompanyBundle =
+    raw.bundles.find((bundle) => bundle.company.slug === payload.bundle.company.slug) ?? null;
+  const existingCompanyProductSlugs = new Set(
+    existingCompanyBundle?.products.map((product) => product.slug) ?? [],
+  );
+  const nextCompanyProductSlugs = new Set(payload.bundle.products.map((product) => product.slug));
+  const obsoleteImplementationPromptSlugs = [...existingCompanyProductSlugs].filter(
+    (productSlug) => !nextCompanyProductSlugs.has(productSlug),
+  );
+  const mergedImplementationPrompts = mergeImplementationPrompts(
+    raw.implementationPrompts,
+    promptPayload,
+  );
   const nextRaw = {
     ...raw,
     manifests: [
@@ -1296,6 +1523,7 @@ function validateSyncPayload(
       ...raw.bundles.filter((bundle) => bundle.company.slug !== payload.bundle.company.slug),
       payload.bundle,
     ],
+    implementationPrompts: mergedImplementationPrompts,
     sources: mergedSources,
   };
   validateAndCompile(nextRaw);
@@ -1304,18 +1532,28 @@ function validateSyncPayload(
     manifest,
     manifestFile: getManifestFile(manifest.slug),
     bundleFile: path.join(contentDir, "companies", payload.bundle.company.slug, "bundle.json"),
+    implementationPromptsRoot: implementationPromptsDir,
+    obsoleteImplementationPromptSlugs,
     sourcesDir: path.join(contentDir, "sources"),
     payload,
+    promptPayload,
   };
 }
 
-async function persistCandidate(candidate: ReturnType<typeof validateSyncPayload>) {
+async function persistCandidate(
+  candidate: ReturnType<typeof validateSyncPayload>,
+  promptPayload: ImplementationPromptsPayload,
+) {
   await writeJsonFile(candidate.manifestFile, candidate.manifest);
   await writeJsonFile(candidate.bundleFile, candidate.payload.bundle);
 
   for (const source of candidate.payload.sources) {
     await writeJsonFile(path.join(candidate.sourcesDir, `${source.id}.json`), source);
   }
+
+  await writeImplementationPromptPayload(candidate.implementationPromptsRoot, promptPayload, {
+    obsoleteProductSlugs: candidate.obsoleteImplementationPromptSlugs,
+  });
 }
 
 async function runPublishChecks(trace?: RalphTraceLogger) {
@@ -1407,6 +1645,26 @@ function mergeSources(existingSources: SourceCitation[], nextSources: SourceCita
     sourceById.set(source.id, source);
   }
   return [...sourceById.values()].sort((left, right) => left.id.localeCompare(right.id));
+}
+
+function mergeImplementationPrompts(
+  existingPrompts: Awaited<ReturnType<typeof loadRawContent>>["implementationPrompts"],
+  nextPromptPayload: ImplementationPromptsPayload,
+) {
+  const nextPromptSlugs = new Set(nextPromptPayload.prompts.map((prompt) => prompt.productSlug));
+
+  return [
+    ...existingPrompts.filter(
+      (prompt) =>
+        prompt.companySlug !== nextPromptPayload.companySlug &&
+        !nextPromptSlugs.has(prompt.productSlug),
+    ),
+    ...nextPromptPayload.prompts.map((prompt) => ({
+      ...prompt,
+      sourceFile: path.join(implementationPromptsDir, prompt.productSlug, "PROMPT.md"),
+      issues: [],
+    })),
+  ].sort((left, right) => left.productSlug.localeCompare(right.productSlug));
 }
 
 function getReferencedSources(bundle: CompanyBundle, allSources: SourceCitation[]) {

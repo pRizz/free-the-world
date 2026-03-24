@@ -116,6 +116,7 @@ async function writeSecondPublishedCompany(root: string) {
     }),
   );
   await mkdir(path.join(root, "companies", "secondco"), { recursive: true });
+  await mkdir(path.join(root, "implementation-prompts", "secondco-core"), { recursive: true });
   await writeJson(path.join(root, "companies", "secondco", "bundle.json"), {
     ...bundle,
     company: {
@@ -152,6 +153,22 @@ async function writeSecondPublishedCompany(root: string) {
           : [],
     })),
   });
+  await writeFile(
+    path.join(root, "implementation-prompts", "secondco-core", "PROMPT.md"),
+    [
+      "---",
+      "productSlug: secondco-core",
+      "companySlug: secondco",
+      "generatedOn: 2026-03-24",
+      "---",
+      "",
+      "# Build SecondCo Product",
+      "",
+      "Use this prompt to implement SecondCo's disruptive product alternative.",
+      "",
+    ].join("\n"),
+    "utf8",
+  );
 }
 
 async function writeFakeProvider(

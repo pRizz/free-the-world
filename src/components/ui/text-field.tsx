@@ -44,6 +44,22 @@ export function TextFieldInput(
   );
 }
 
+export function TextFieldTextArea(
+  props: ComponentProps<typeof KTextField.TextArea> & { class?: string },
+) {
+  const [local, rest] = splitProps(props, ["class"]);
+
+  return (
+    <KTextField.TextArea
+      class={cn(
+        "min-h-40 w-full rounded-2xl border border-border bg-card px-4 py-3 text-sm text-foreground outline-none transition placeholder:text-muted-foreground focus:border-ring",
+        local.class,
+      )}
+      {...rest}
+    />
+  );
+}
+
 export function TextFieldDescription(
   props: KTextField.TextFieldDescriptionProps & { class?: string },
 ) {

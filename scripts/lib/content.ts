@@ -7,6 +7,7 @@ import {
   type CompanyManifest,
   type ContentGraph,
   companyInputMetricIds,
+  type LoadedImplementationPromptArtifact,
   type ManifestQueueEntry,
   type UnverifiedCompanyRequest,
 } from "../../src/lib/domain/content-types";
@@ -33,6 +34,7 @@ import {
   conceptMetricIds,
   evidenceKinds,
 } from "../../src/lib/domain/types";
+import { readImplementationPromptArtifacts } from "./implementation-prompts";
 
 const defaultRootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
 
@@ -47,6 +49,7 @@ export const manifestsDir = path.join(contentDir, "manifests", "companies");
 export const queueManifestsDir = path.join(contentDir, "manifests", "queue");
 export const unverifiedManifestsDir = path.join(contentDir, "manifests", "unverified");
 export const companiesDir = path.join(contentDir, "companies");
+export const implementationPromptsDir = path.join(contentDir, "implementation-prompts");
 export const sourcesDir = path.join(contentDir, "sources");
 export const generatedGraphFile = path.join(rootDir, "src", "lib", "generated", "content-graph.ts");
 
@@ -59,6 +62,7 @@ export interface LoadedRawContent {
   conceptAngles: ConceptAngle[];
   manifests: CompanyManifest[];
   bundles: CompanyBundle[];
+  implementationPrompts: LoadedImplementationPromptArtifact[];
   sources: SourceCitation[];
 }
 
@@ -92,6 +96,7 @@ export async function loadRawContent(contentRoot = contentDir): Promise<LoadedRa
     manifests,
     sources,
     bundles,
+    implementationPromptArtifacts,
   ] = await Promise.all([
     readJsonFile<Region[]>(path.join(taxonomyRoot, "regions.json")),
     readJsonFile<IndexDefinition[]>(path.join(taxonomyRoot, "indices.json")),
@@ -102,6 +107,7 @@ export async function loadRawContent(contentRoot = contentDir): Promise<LoadedRa
     readJsonDirectory<CompanyManifest>(manifestsRoot),
     readJsonDirectory<SourceCitation>(sourcesRoot),
     readCompanyBundles(companiesRoot),
+    readImplementationPromptArtifacts(path.join(contentRoot, "implementation-prompts")),
   ]);
 
   return {
@@ -113,6 +119,7 @@ export async function loadRawContent(contentRoot = contentDir): Promise<LoadedRa
     conceptAngles,
     manifests,
     bundles,
+    implementationPrompts: implementationPromptArtifacts,
     sources,
   };
 }
@@ -187,6 +194,11 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
     "company bundle",
     issues,
   );
+  assertUnique(
+    raw.implementationPrompts.map((prompt) => prompt.productSlug),
+    "implementation prompt",
+    issues,
+  );
 
   const regionIds = new Set(raw.regions.map((region) => region.id));
   const indexById = new Map(raw.indices.map((index) => [index.id, index]));
@@ -216,7 +228,7 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
   }
 
   const companies: Company[] = [];
-  const products: Product[] = [];
+  const productsWithoutPrompts: Array<Omit<Product, "implementationPrompt">> = [];
   const alternatives: Alternative[] = [];
   const disruptionConcepts: DisruptionConcept[] = [];
   const productSlugSet = new Set<string>();
@@ -319,7 +331,7 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
       } = productRecord;
       void nestedAlternatives;
       void nestedDisruptionConcepts;
-      products.push({
+      productsWithoutPrompts.push({
         ...productFields,
         companySlug: bundle.company.slug,
         alternativeSlugs: productAlternativeSlugs,
@@ -341,6 +353,72 @@ export function validateAndCompile(raw: LoadedRawContent): ContentGraph {
   if (issues.length > 0) {
     throw new ContentValidationError(issues);
   }
+
+  const companyBySlug = new Map(companies.map((company) => [company.slug, company]));
+  const productBySlug = new Map(productsWithoutPrompts.map((product) => [product.slug, product]));
+  const promptByProductSlug = new Map<
+    string,
+    {
+      markdown: string;
+      generatedOn: string;
+    }
+  >();
+
+  for (const prompt of raw.implementationPrompts) {
+    for (const issue of prompt.issues) {
+      issues.push(issue);
+    }
+
+    const maybeProduct = productBySlug.get(prompt.productSlug);
+    if (!maybeProduct) {
+      issues.push(
+        `Implementation prompt ${prompt.productSlug} does not match any published product.`,
+      );
+      continue;
+    }
+
+    const maybeCompany = companyBySlug.get(maybeProduct.companySlug);
+    if (!maybeCompany) {
+      issues.push(
+        `Implementation prompt ${prompt.productSlug} points to company ${maybeProduct.companySlug}, which is not published.`,
+      );
+      continue;
+    }
+
+    if (prompt.companySlug !== maybeCompany.slug) {
+      issues.push(
+        `Implementation prompt ${prompt.productSlug} references company ${prompt.companySlug}, but product belongs to ${maybeCompany.slug}.`,
+      );
+      continue;
+    }
+
+    promptByProductSlug.set(prompt.productSlug, {
+      markdown: prompt.markdown,
+      generatedOn: prompt.generatedOn,
+    });
+  }
+
+  for (const product of productsWithoutPrompts) {
+    if (!promptByProductSlug.has(product.slug)) {
+      issues.push(`Product ${product.slug} is missing a canonical implementation prompt.`);
+    }
+  }
+
+  if (issues.length > 0) {
+    throw new ContentValidationError(issues);
+  }
+
+  const products: Product[] = productsWithoutPrompts.map((product) => {
+    const implementationPrompt = promptByProductSlug.get(product.slug);
+    if (!implementationPrompt) {
+      throw new Error(`Expected implementation prompt for ${product.slug}.`);
+    }
+
+    return {
+      ...product,
+      implementationPrompt,
+    };
+  });
 
   return {
     regions: raw.regions,

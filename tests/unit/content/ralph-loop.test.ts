@@ -283,6 +283,28 @@ describe("bun run loop", () => {
     expect(runManifest.batchId).toBe("sp500-top20-2026-03-15");
   });
 
+  test("writes local implementation prompt artifacts for a canonical company", async () => {
+    await writeMinimalFixture(tempRoot);
+
+    const result = runCli(["loop", "--company=fixtureco", "--task=implementation-prompts"]);
+
+    expect(result.status).toBe(0);
+
+    const runDir = await readOnlyRunDir("fixtureco");
+    const promptSummary = await readFile(
+      path.join(runDir, "implementation-prompts.prompt.md"),
+      "utf8",
+    );
+    const normalizedPayload = JSON.parse(
+      await readFile(path.join(runDir, "implementation-prompts.local.normalized.json"), "utf8"),
+    ) as { prompts: Array<{ productSlug: string }> };
+
+    expect(promptSummary).toContain("fixtureco");
+    expect(normalizedPayload.prompts.map((prompt) => prompt.productSlug)).toEqual([
+      "fixtureco-core",
+    ]);
+  });
+
   test("filters queued batch runs by company slug", async () => {
     await writeMinimalFixture(tempRoot);
     await writeJsonFile(

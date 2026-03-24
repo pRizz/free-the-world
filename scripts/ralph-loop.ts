@@ -1,7 +1,9 @@
 import type {
+  RalphProviderId,
   RalphProviderPreference,
   ResearchRunManifest,
   ResearchTaskId,
+  ResearchTaskResult,
 } from "../src/lib/domain/content-types";
 import { writeJsonFile } from "./lib/content";
 import { ensureRunDir, parseArgs, parseList, promptTasks, runLoopTask } from "./lib/ralph";
@@ -26,7 +28,9 @@ const concurrencyLimit = parseLoopConcurrencyLimit(args.concurrency);
 const taskIds =
   requestedTaskIds.length > 0
     ? requestedTaskIds
-    : promptTasks.filter((task) => task.id !== "company-sync").map((task) => task.id);
+    : promptTasks
+        .filter((task) => task.id !== "company-sync" && task.id !== "implementation-prompts")
+        .map((task) => task.id);
 const targets = await collectLoopTargets({
   requestedCompanySlugs,
   batchId,
@@ -41,9 +45,18 @@ if (batchId && taskIds.includes("company-sync")) {
   );
 }
 
+if (batchId && taskIds.includes("implementation-prompts")) {
+  throw new Error(
+    [
+      "Queued batch runs cannot generate implementation prompts before a canonical bundle exists.",
+      "Fix: remove --task=implementation-prompts from the batch run, or promote and sync the company first.",
+    ].join("\n"),
+  );
+}
+
 await runWithConcurrencyLimit(targets, concurrencyLimit, async (target) => {
   const { runDir, runId } = await ensureRunDir(target.companySlug);
-  const taskResults = [];
+  const taskResults: ResearchTaskResult[] = [];
 
   for (const taskId of taskIds) {
     const results = await runLoopTask({
@@ -65,7 +78,13 @@ await runWithConcurrencyLimit(targets, concurrencyLimit, async (target) => {
     mode: "dry-run",
     requestedProvider: providerPreference,
     resolvedProviders: shouldExecute
-      ? [...new Set(taskResults.map((result) => result.provider))]
+      ? [
+          ...new Set(
+            taskResults
+              .map((result) => result.provider)
+              .filter((provider): provider is RalphProviderId => provider !== "local"),
+          ),
+        ]
       : [],
     taskResults,
     generatedOn: new Date().toISOString(),

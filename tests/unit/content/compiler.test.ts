@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test } from "bun:test";
-import { mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, rm, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { ContentValidationError, compileContent } from "../../../scripts/lib/content";
@@ -21,6 +21,7 @@ test("compileContent compiles the real JSON corpus and strips raw-only fields", 
   const { graph } = await compileContent();
   const apple = graph.companies.find((company) => company.slug === "apple");
   const microsoft = graph.companies.find((company) => company.slug === "microsoft");
+  const appleIcloud = graph.products.find((product) => product.slug === "apple-icloud");
 
   expect(graph.companies.length).toBeGreaterThanOrEqual(10);
   expect(graph.products.length).toBeGreaterThanOrEqual(20);
@@ -29,8 +30,9 @@ test("compileContent compiles the real JSON corpus and strips raw-only fields", 
   expect(graph.sources.length).toBeGreaterThan(0);
   expect(apple).toBeDefined();
   expect(microsoft).toBeDefined();
-  if (!apple || !microsoft) {
-    throw new Error("Expected the seeded Apple and Microsoft records to exist.");
+  expect(appleIcloud).toBeDefined();
+  if (!apple || !microsoft || !appleIcloud) {
+    throw new Error("Expected the seeded Apple, Microsoft, and Apple iCloud records to exist.");
   }
   expect("inputMetrics" in apple).toBe(false);
   expect(apple.metrics.freedCapitalPotential).toBeDefined();
@@ -46,6 +48,8 @@ test("compileContent compiles the real JSON corpus and strips raw-only fields", 
         product.maybeDisruptionException !== null || product.disruptionConceptSlugs.length === 2,
     ),
   ).toBe(true);
+  expect(appleIcloud.implementationPrompt.generatedOn).toMatch(/\d{4}-\d{2}-\d{2}/);
+  expect(appleIcloud.implementationPrompt.markdown).toContain("Bright Builds");
 });
 
 test("compileContent rejects malformed JSON", async () => {
@@ -237,6 +241,69 @@ test("compileContent rejects disruption concepts without angles or source layers
   expect(
     error.issues.some((issue) => issue.includes("must reference at least one enabler source")),
   ).toBe(true);
+});
+
+test("compileContent rejects missing implementation prompts", async () => {
+  await writeMinimalFixture(tempRoot);
+  await rm(path.join(tempRoot, "implementation-prompts", "fixtureco-core"), {
+    recursive: true,
+    force: true,
+  });
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(error.issues).toContain(
+    "Product fixtureco-core is missing a canonical implementation prompt.",
+  );
+});
+
+test("compileContent rejects orphan implementation prompts", async () => {
+  await writeMinimalFixture(tempRoot);
+  await mkdir(path.join(tempRoot, "implementation-prompts", "orphan-product"), {
+    recursive: true,
+  });
+  await writeFile(
+    path.join(tempRoot, "implementation-prompts", "orphan-product", "PROMPT.md"),
+    [
+      "---",
+      "productSlug: orphan-product",
+      "companySlug: fixtureco",
+      "generatedOn: 2026-03-24",
+      "---",
+      "",
+      "# Orphan prompt",
+      "",
+    ].join("\n"),
+    "utf8",
+  );
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(error.issues).toContain(
+    "Implementation prompt orphan-product does not match any published product.",
+  );
+});
+
+test("compileContent rejects duplicate implementation prompt slugs", async () => {
+  await writeMinimalFixture(tempRoot);
+  await mkdir(path.join(tempRoot, "implementation-prompts", "fixtureco-core-copy"), {
+    recursive: true,
+  });
+  await writeFile(
+    path.join(tempRoot, "implementation-prompts", "fixtureco-core-copy", "PROMPT.md"),
+    [
+      "---",
+      "productSlug: fixtureco-core",
+      "companySlug: fixtureco",
+      "generatedOn: 2026-03-24",
+      "---",
+      "",
+      "# Duplicate prompt",
+      "",
+    ].join("\n"),
+    "utf8",
+  );
+
+  const error = await getValidationError(() => compileContent(tempRoot));
+  expect(error.issues).toContain("Duplicate implementation prompt id fixtureco-core.");
 });
 
 async function getValidationError(action: () => Promise<unknown>) {

@@ -390,6 +390,7 @@ test("collectSyncTargets supports published, all, and stale batch targets", () =
       staleBundle,
       { ...freshBundle, company: { ...freshBundle.company, slug: "freshco" } },
     ],
+    implementationPrompts: [],
     sources: [],
   } satisfies Parameters<typeof collectSyncTargets>[0];
 
