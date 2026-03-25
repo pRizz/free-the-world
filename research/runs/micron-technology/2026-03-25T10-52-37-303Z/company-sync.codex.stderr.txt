@@ -1,0 +1,682 @@
+2026-03-25T10:52:37.908367Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:37.908952Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:37.920227Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d249f-fc8b-7601-825b-b68373c7fbfc
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: micron-technology
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "micron-technology",
+  "name": "Micron Technology",
+  "ticker": "MU",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top20"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "semiconductors",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/micron-technology/marketcap/",
+  "description": "Memory and storage semiconductor company focused on DRAM, NAND, and high-bandwidth memory.",
+  "technologyWaveIds": [
+    "printed-electronics"
+  ],
+  "seedProductNames": [
+    "DRAM memory",
+    "NAND storage"
+  ],
+  "seedSourceUrls": [
+    "https://investors.micron.com/",
+    "https://companiesmarketcap.com/micron-technology/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: lsp starting
+mcp: playwright starting
+2026-03-25T10:52:37.946759Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:37.947507Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:37.971773Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:37.975146Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:37.996461Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.000213Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.026739Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.037741Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.062276Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.063120Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.083423Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.084210Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.106622Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.107852Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.132619Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.133483Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.156348Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.157158Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.178247Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.179140Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.179417Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 81832: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T10:52:38.202503Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.203133Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.228185Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.228839Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.253863Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.254555Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.275533Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.276244Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.301200Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.301881Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.326558Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.327549Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.952310Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d249f-fc8b-7601-825b-b68373c7fbfc.tmp-1774435957911147000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T10:52:39.581347Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 81830: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m verifying Micron against current primary sources first, then I’ll assemble the bundle with defensible metrics, products, and source links.
+🌐 Searching the web...
+🌐 Searched: Micron Technology investor relations annual report 2025 DRAM NAND HBM
+🌐 Searching the web...
+🌐 Searched: site:investors.micron.com annual report micron 2025 pdf
+🌐 Searching the web...
+🌐 Searched: site:investors.micron.com form 10-k 2025 micron pdf
+🌐 Searching the web...
+🌐 Searched: Micron annual report 2025 revenue fiscal year 2025 net income source
+🌐 Searching the web...
+🌐 Searched: LiteDRAM GitHub project open source DRAM controller
+🌐 Searching the web...
+🌐 Searched: open source SSD firmware project github openchannel
+🌐 Searching the web...
+🌐 Searched: site:micron.com DRAM components micron product page DDR5 RDIMM
+🌐 Searching the web...
+🌐 Searched: Micron founded 1978 public 1984 NASDAQ MU source
+🌐 Searching the web...
+🌐 Searched: "2025 Form 10-K" Micron pdf
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"micron-technology","name":"Micron Technology","ticker":"MU","rankApprox":21,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top20"],"sectorId":"information-technology","industryId":"semiconductors","companiesMarketCapUrl":"https://companiesmarketcap.com/micron-technology/marketcap/","description":"Micron Technology is a U.S. semiconductor manufacturer focused on DRAM, NAND, NOR, high-bandwidth memory, and storage products for data centers, AI systems, mobile devices, and embedded markets.","overview":[{"title":"Memory And Storage Position","paragraphs":["Micron describes itself as the only company manufacturing all three major memory technologies used today: DRAM, NAND, and NOR. That breadth matters because customers buying for AI servers, data centers, automotive, and edge systems increasingly want a supplier that can span both high-performance memory and storage layers.","Fiscal 2025 was a sharp upcycle for the business. Micron reported record full-year revenue of $37.38 billion and GAAP net income of $8.54 billion, with management explicitly tying results to AI data-center growth and stronger demand for its memory and storage portfolio."]},{"title":"AI-Centric Product Mix","paragraphs":["Micron’s current product messaging emphasizes HBM3E, HBM4 sampling, DDR5, MRDIMM, SOCAMM, and high-performance SSDs. That positioning shows a company leaning into the AI infrastructure stack rather than only commodity PC memory.","The moat is not just silicon design. It includes advanced process technology, packaging, qualification cycles, supply reliability, and the ability to ship at scale into hyperscale and OEM programs where failure costs are high and switching is slow."]}],"moatNarrative":["Micron operates inside one of the most capital-intensive parts of the semiconductor industry. Its moat comes from fabrication scale, process know-how across DRAM and NAND, packaging capability for HBM, long customer qualification cycles, and the operating discipline required to survive severe memory pricing cycles.","That moat is strong but cyclical rather than invulnerable. Memory is not a classic software lock-in market, yet the small number of globally credible suppliers and the difficulty of reproducing yield, packaging, and supply-chain execution keep the barrier to entry extremely high."],"decentralizationNarrative":["Micron’s products sit near the hard end of decentralization because advanced memory manufacturing depends on huge fabs, specialized equipment, process IP, and globally coordinated supply chains. A local or community-scale actor cannot realistically reproduce leading-edge DRAM or HBM production today.","Pressure can still emerge at adjacent layers: open memory-controller designs, open SSD firmware, refurbished storage loops, and smaller-batch hardware integration can reduce dependence on fully closed incumbents at the system level even if the underlying leading-edge chips remain centralized."],"sourceIds":["src-micron-10k-2025","src-micron-q4fy25-pr","src-micron-corporate-profile","src-cmc-micron-marketcap","src-cmc-micron-pe"],"technologyWaveIds":["printed-electronics"],"snapshotNote":"Prepared for a March 25, 2026 registry refresh using the queued March 13, 2026 S&P 500 top-20 snapshot context; market data reflects March 2026 source pages.","inputMetrics":{"moat":{"value":9,"rationale":"Micron combines leading-edge memory fabrication, HBM packaging, broad DRAM/NAND/NOR coverage, and deep qualification relationships in a market with very few credible global suppliers.","sourceIds":["src-micron-10k-2025","src-micron-corporate-profile","src-micron-hbm"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":2,"rationale":"Leading-edge DRAM, NAND, and HBM production remains highly centralized because it requires fabs, equipment, packaging expertise, and supply-chain coordination that are far beyond community-scale manufacturing today.","sourceIds":["src-micron-corporate-profile","src-micron-hbm","src-micron-g8-nand"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":8,"rationale":"Micron reported fiscal 2025 GAAP net income of $8.539 billion on $37.378 billion of revenue, indicating strong profitability for the current upcycle even though memory remains structurally cyclical.","sourceIds":["src-micron-q4fy25-pr"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":39.4,"rationale":"CompaniesMarketCap listed Micron's trailing P/E ratio at 39.4 as of March 2026; this is market-derived and can move materially with price and earnings revisions.","sourceIds":["src-cmc-micron-pe"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":471.23,"rationale":"CompaniesMarketCap listed Micron at roughly $471.23 billion in market capitalization in March 2026, placing it around rank 21 globally on that snapshot.","sourceIds":["src-cmc-micron-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"dram-memory","name":"DRAM memory","category":"Memory semiconductors","homepageUrl":"https://www.micron.com/products/memory","summary":"Micron sells DRAM across DDR5, LPDDR, graphics memory, data-center modules, and high-bandwidth memory used in AI and compute systems.","whyItMatters":"DRAM sets the working-memory ceiling for servers, accelerators, PCs, and many embedded systems, so supply, density, bandwidth, and power efficiency shape the economics of modern computing.","replacementSketch":["A realistic open replacement path does not start by cloning Micron’s leading-edge fabs. It starts with open memory-controller IP, modular board designs, and reuse of already-manufactured chips in more transparent systems.","Over time, more open controller stacks and smaller-batch hardware integration can weaken lock-in at the module and platform layer even if the frontier DRAM die still come from centralized fabs."],"sourceIds":["src-micron-memory","src-micron-datacenter-memory","src-micron-hbm","src-litedram"],"technologyWaveIds":["printed-electronics"],"alternatives":[{"slug":"litedram","name":"LiteDRAM","kind":"open-source","homepageUrl":"https://github.com/enjoy-digital/litedram","repoUrl":"https://github.com/enjoy-digital/litedram","summary":"LiteDRAM is an open-source, configurable DRAM controller core used in FPGA and open-hardware designs.","metrics":{"openness":{"value":9,"rationale":"LiteDRAM is published as a permissively licensed open-source project with public source code and documentation.","sourceIds":["src-litedram"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":6,"rationale":"It does not replace Micron's chip fabrication, but it does open a critical control layer for memory subsystem design and lowers dependence on closed controller IP.","sourceIds":["src-litedram","src-antmicro-litedram"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":6,"rationale":"The project is already used in real FPGA and open-hardware designs, but it is a subsystem building block rather than a drop-in commodity DRAM substitute.","sourceIds":["src-litedram"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":5,"rationale":"Open controller IP can reduce design friction and licensing cost for niche systems, though it does not materially change the cost of leading-edge DRAM die production.","sourceIds":["src-litedram"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-litedram","src-antmicro-litedram"]}],"disruptionConcepts":[{"slug":"open-memory-module-commons","name":"Open memory module commons","summary":"Open DRAM-controller IP, transparent module designs, and shared validation recipes could create a more open market for specialized memory subsystems built around standardized interfaces and reused components. The goal is not immediate replacement of leading-edge Micron fabs, but reducing the amount of proprietary control above the silicon die itself.","angleIds":["open-hardware","decentralized-manufacturing","recycling-and-reuse"],"thesis":"If more of the controller, module, and qualification stack becomes open and reproducible, incumbents retain the fab moat but lose some systems-level lock-in and margin capture around integration.","bitcoinOrDecentralizationRole":"Decentralization matters here through open hardware and distributed manufacturing rather than Bitcoin. Smaller labs, OEMs, and refurbishers can coordinate around shared designs and testing rather than depending on closed controller IP and opaque qualification workflows.","coordinationMechanism":"Designers publish controller IP, reference boards, and test suites; integrators build niche modules or daughterboards; refurbishers recover viable memory components; buyers select from interoperable designs backed by public validation artifacts.","verificationOrTrustModel":"Public test benches, reproducible validation logs, compatibility matrices, and third-party lab replication constrain false claims. The weak point is that chip provenance and long-term reliability still depend on centralized manufacturers and careful screening.","failureModes":["Open designs may stay confined to FPGA and niche hardware markets without reaching high-volume server qualification.","Recovered or mixed-source components can create reliability variance that scares off enterprise buyers."],"adoptionPath":["Expand open controller and PHY support for more DRAM families and publish repeatable validation suites.","Grow from research boards and niche appliances into refurb, industrial, and specialty-server memory ecosystems."],"confidence":"medium","problemSourceIds":["src-micron-memory","src-micron-datacenter-memory","src-micron-hbm"],"enablerSourceIds":["src-litedram","src-antmicro-litedram"],"metrics":{"decentralizationFit":{"value":6,"rationale":"The concept meaningfully decentralizes controller and module integration, but not leading-edge wafer fabrication.","sourceIds":["src-litedram","src-micron-memory"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":6,"rationale":"Open hardware communities already coordinate around reusable cores and board designs, though enterprise memory qualification remains demanding.","sourceIds":["src-litedram","src-antmicro-litedram"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":5,"rationale":"Technically feasible for niche and industrial systems now, but difficult to extend into volume server memory where qualification and supply guarantees dominate.","sourceIds":["src-litedram","src-micron-datacenter-memory"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":4,"rationale":"This would pressure incumbents more at the integration and specialty-module layer than at the frontier DRAM manufacturing layer.","sourceIds":["src-micron-corporate-profile","src-litedram"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]},{"slug":"nand-storage","name":"NAND storage","category":"Flash storage semiconductors","homepageUrl":"https://www.micron.com/products/storage","summary":"Micron sells NAND flash and SSD products for data center, client, automotive, and industrial storage, with recent emphasis on high-density G8/G9 NAND and AI-oriented data-center SSDs.","whyItMatters":"NAND and SSD controllers determine how cheaply and quickly data can be stored, moved, and served in AI clusters, cloud infrastructure, client devices, and embedded systems.","replacementSketch":["An open replacement path is more credible in storage than in leading-edge DRAM because controller firmware, FTL logic, and drive behavior can be opened up before the underlying NAND fabrication is decentralized.","Open SSD platforms, host-managed flash stacks, and refurbishment marketplaces can reduce dependence on vertically integrated proprietary storage products while extending the useful life of existing hardware."],"sourceIds":["src-micron-storage","src-micron-g8-nand","src-micron-ssd","src-openssd-cosmos"],"technologyWaveIds":["printed-electronics"],"alternatives":[{"slug":"cosmos-plus-openssd","name":"Cosmos+ OpenSSD","kind":"open-source","homepageUrl":"https://github.com/Cosmos-OpenSSD/Cosmos-plus-OpenSSD","repoUrl":"https://github.com/Cosmos-OpenSSD/Cosmos-plus-OpenSSD","summary":"Cosmos+ OpenSSD is an open-source hardware and software distribution for building and studying SSD firmware and controller behavior.","metrics":{"openness":{"value":9,"rationale":"The project publishes its hardware and software distribution publicly under an open-source license.","sourceIds":["src-openssd-cosmos"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":7,"rationale":"It opens controller and firmware layers that are usually closed in commercial SSDs, enabling more transparent storage experimentation and potentially broader multi-actor maintenance ecosystems.","sourceIds":["src-openssd-cosmos","src-liblightnvm"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":5,"rationale":"It is credible as a research and specialist development platform, but not a direct mass-market substitute for Micron's production SSD lineup.","sourceIds":["src-openssd-cosmos"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":6,"rationale":"Open firmware and controller research can reduce reinvention costs and support reuse, repair, and specialized deployments even if NAND chips still come from incumbent fabs.","sourceIds":["src-openssd-cosmos","src-liblightnvm"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-openssd-cosmos","src-liblightnvm"]}],"disruptionConcepts":[{"slug":"open-flash-controller-cooperatives","name":"Open flash controller cooperatives","summary":"Open SSD firmware, open controller boards, and host-managed flash software can support a cooperative storage ecosystem where universities, labs, refurbishers, and specialized vendors maintain interoperable stacks instead of relying entirely on opaque vendor firmware. The breakthrough is not making frontier NAND locally overnight; it is opening the trust and control surface around flash management.","angleIds":["open-hardware","cooperative-production","recycling-and-reuse"],"thesis":"If controller logic, wear management, and qualification data become open and shareable, storage vendors lose some of their proprietary grip over how NAND is packaged, tuned, repaired, and redeployed.","bitcoinOrDecentralizationRole":"Decentralization matters through cooperative production and open hardware rather than Bitcoin. Shared firmware, common controller designs, and refurbishment networks let more actors participate in storage supply and lifecycle management.","coordinationMechanism":"Maintainers publish controller firmware and test suites; refurbishers and niche vendors certify recovered drives or flash modules; buyers select providers that expose health data, firmware provenance, and interoperability guarantees.","verificationOrTrustModel":"Firmware hashes, public release histories, SMART and endurance telemetry, and independently replicated performance tests help constrain false claims. The largest weakness is that used flash health can still be misreported or degrade unpredictably without robust screening.","failureModes":["Enterprise customers may still prefer vertically integrated proprietary SSDs because liability and qualification remain simpler.","Recovered flash inventory can be inconsistent, making cooperative supply less predictable than incumbent channels."],"adoptionPath":["Expand open SSD controller and host-managed flash projects in research, edge, and homelab markets.","Build refurbishment and resale channels that pair transparent health metrics with open firmware support and standardized validation."],"confidence":"medium","problemSourceIds":["src-micron-storage","src-micron-g8-nand","src-micron-ssd"],"enablerSourceIds":["src-openssd-cosmos","src-liblightnvm","src-openexpress"],"metrics":{"decentralizationFit":{"value":7,"rationale":"Opening controller firmware and reuse channels decentralizes important parts of the storage stack even if NAND fabrication remains concentrated.","sourceIds":["src-openssd-cosmos","src-liblightnvm"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":6,"rationale":"There is already credible open research infrastructure for SSD controllers and host-managed flash, though the production ecosystem is still thin.","sourceIds":["src-openssd-cosmos","src-openexpress","src-liblightnvm"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":6,"rationale":"Specialized and research deployments are feasible now; mainstream cloud and OEM replacement is materially harder because support and qualification burdens remain high.","sourceIds":["src-openssd-cosmos","src-micron-ssd"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":5,"rationale":"The concept can pressure margins in niche and secondary markets first, with slower impact on leading enterprise SSD vendors.","sourceIds":["src-micron-ssd","src-openssd-cosmos"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]}]},"sources":[{"id":"src-micron-10k-2025","title":"Micron Technology 2025 Form 10-K","url":"https://investors.micron.com/sec-filings/sec-filing/10-k/0000723125-25-000028","kind":"annual-report","publisher":"Micron Technology","note":"Primary filing for Micron's business description, operating context, and fiscal 2025 results.","accessedOn":"2026-03-25"},{"id":"src-micron-q4fy25-pr","title":"Micron Technology, Inc. Reports Results for the Fourth Quarter and Full Year of Fiscal 2025","url":"https://investors.micron.com/news-releases/news-release-details/micron-technology-inc-reports-results-fourth-quarter-and-full-8","kind":"investor-relations","publisher":"Micron Technology","note":"Provides fiscal 2025 revenue, net income, and management framing around AI-driven growth.","accessedOn":"2026-03-25"},{"id":"src-micron-corporate-profile","title":"Micron Corporate Profile","url":"https://www.micron.com/about/company/corporate-profile","kind":"product-page","publisher":"Micron Technology","note":"Summarizes Micron's role across DRAM, NAND, and NOR and supports the company overview.","accessedOn":"2026-03-25"},{"id":"src-micron-memory","title":"Micron Memory Portfolio","url":"https://www.micron.com/products/memory","kind":"product-page","publisher":"Micron Technology","note":"Supports the scope of Micron's DRAM and HBM memory offerings.","accessedOn":"2026-03-25"},{"id":"src-micron-datacenter-memory","title":"Micron Data Center Memory","url":"https://www.micron.com/products/memory/data-center-memory","kind":"product-page","publisher":"Micron Technology","note":"Supports Micron's DDR5, HBM, MRDIMM, and AI memory positioning.","accessedOn":"2026-03-25"},{"id":"src-micron-hbm","title":"Micron HBM3E","url":"https://www.micron.com/products/memory/hbm/hbm3e","kind":"product-page","publisher":"Micron Technology","note":"Supports claims about Micron's HBM performance and AI-oriented memory portfolio.","accessedOn":"2026-03-25"},{"id":"src-micron-storage","title":"Micron Storage Portfolio","url":"https://www.micron.com/products/storage","kind":"product-page","publisher":"Micron Technology","note":"Supports Micron's SSD, NAND, and broader storage product coverage.","accessedOn":"2026-03-25"},{"id":"src-micron-g8-nand","title":"Micron G8 NAND","url":"https://www.micron.com/products/storage/nand-flash/g8-nand","kind":"product-page","publisher":"Micron Technology","note":"Supports product claims around Micron's high-density NAND offerings.","accessedOn":"2026-03-25"},{"id":"src-micron-ssd","title":"Micron SSD Portfolio","url":"https://my.micron.com/products/storage/ssd","kind":"product-page","publisher":"Micron Technology","note":"Supports Micron's enterprise and client SSD positioning, including AI-focused data-center SSD messaging.","accessedOn":"2026-03-25"},{"id":"src-cmc-micron-marketcap","title":"Micron Technology Market Capitalization","url":"https://companiesmarketcap.com/micron-technology/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for approximate rank and current market capitalization snapshot.","accessedOn":"2026-03-25"},{"id":"src-cmc-micron-pe","title":"Micron Technology P/E Ratio","url":"https://companiesmarketcap.com/micron-technology/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for the current trailing P/E snapshot.","accessedOn":"2026-03-25"},{"id":"src-litedram","title":"LiteDRAM","url":"https://github.com/enjoy-digital/litedram","kind":"open-source-project","publisher":"EnjoyDigital","note":"Open-source DRAM controller project used as an enabling alternative for more open memory subsystem design.","accessedOn":"2026-03-25"},{"id":"src-antmicro-litedram","title":"RPC DRAM support in open source DRAM controller","url":"https://antmicro.com/blog/2020/10/rpc-dram-support-in-litedram","kind":"technical-docs","publisher":"Antmicro","note":"Documents real expansion of LiteDRAM capabilities and supports its practical relevance in open hardware.","accessedOn":"2026-03-25"},{"id":"src-openssd-cosmos","title":"Cosmos+ OpenSSD","url":"https://github.com/Cosmos-OpenSSD/Cosmos-plus-OpenSSD","kind":"open-source-project","publisher":"Cosmos OpenSSD Project","note":"Open SSD hardware and software distribution used as an alternative reference for open storage stacks.","accessedOn":"2026-03-25"},{"id":"src-liblightnvm","title":"liblightnvm","url":"https://github.com/OpenChannelSSD/liblightnvm","kind":"open-source-project","publisher":"OpenChannelSSD","note":"Documents host-managed flash tooling that supports more open storage coordination models.","accessedOn":"2026-03-25"},{"id":"src-openexpress","title":"OpenExpress: Fully hardware automated open research framework for future fast NVMe devices","url":"https://pure.kaist.ac.kr/en/publications/openexpress-fully-hardware-automated-open-research-framework-for-/","kind":"technical-docs","publisher":"KAIST","note":"Academic support for open SSD controller research and feasibility of more open NVMe storage stacks.","accessedOn":"2026-03-25"}],"summaryMarkdown":"Micron remains a high-moat, low-decentralizability semiconductor incumbent centered on DRAM, NAND, and AI memory. The strongest credible pressure paths are not local reproduction of frontier fabs, but opening controller, firmware, module-integration, and refurbishment layers around memory and storage systems."}
+tokens used
+63,195

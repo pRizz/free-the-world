@@ -4,6 +4,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import {
   collectSyncTargets,
+  dedupeCompanySyncPayloadSlugs,
   executeProvider,
   extractClaudeCliResult,
   extractClaudeDebugDiagnostics,
@@ -11,10 +12,15 @@ import {
   extractJsonPayload,
   findCodexSessionFile,
   isBundleStale,
+  normalizeCompanySyncPayload,
   resolveProviderExecutionPlan,
   resolveProviders,
 } from "../../../scripts/lib/ralph";
-import type { CompanyBundle, RalphProvidersFile } from "../../../src/lib/domain/content-types";
+import type {
+  CompanyBundle,
+  CompanySyncPayload,
+  RalphProvidersFile,
+} from "../../../src/lib/domain/content-types";
 
 test("extractJsonPayload parses raw JSON and fenced JSON", () => {
   expect(extractJsonPayload('{"ok":true}')).toEqual({ ok: true });
@@ -23,6 +29,538 @@ test("extractJsonPayload parses raw JSON and fenced JSON", () => {
 
 test("extractJsonPayload rejects empty output", () => {
   expect(() => extractJsonPayload("   ")).toThrow(/empty output/i);
+});
+
+test("normalizeCompanySyncPayload coerces bare maybeIpo date strings to null", () => {
+  const payload: CompanySyncPayload = {
+    schemaVersion: 1,
+    bundle: {
+      schemaVersion: 1,
+      company: {
+        slug: "fixtureco",
+        name: "Fixture Co",
+        ticker: "FIX",
+        rankApprox: 1,
+        maybeIpo: "1980-12-12" as never,
+        regionId: "us",
+        indexIds: ["sp500-top35"],
+        sectorId: "information-technology",
+        industryId: "software",
+        companiesMarketCapUrl: "https://example.com",
+        description: "Fixture description.",
+        overview: [],
+        moatNarrative: [],
+        decentralizationNarrative: [],
+        sourceIds: ["src-fixture"],
+        technologyWaveIds: [],
+        snapshotNote: "Snapshot note.",
+        inputMetrics: {
+          moat: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-24",
+          },
+          decentralizability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-24",
+          },
+          profitability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-24",
+          },
+          peRatio: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "speculative",
+            lastReviewedOn: "2026-03-24",
+          },
+          marketCap: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "medium",
+            lastReviewedOn: "2026-03-24",
+          },
+        },
+      },
+      products: [],
+    },
+    sources: [
+      {
+        id: "src-fixture",
+        title: "Fixture source",
+        url: "https://example.com/source",
+        kind: "analysis",
+        publisher: "Fixture Publisher",
+        note: "Fixture note.",
+        accessedOn: "2026-03-24",
+      },
+    ],
+  };
+
+  const normalized = normalizeCompanySyncPayload(payload);
+
+  expect(normalized.payload.bundle.company.maybeIpo).toBeNull();
+  expect(normalized.notes).toEqual([
+    'Coerced company.maybeIpo string "1980-12-12" to null because the schema requires an object with date, dateSourceIds, and marketCap.',
+  ]);
+});
+
+test("normalizeCompanySyncPayload fills omitted product collection fields", () => {
+  const payload = {
+    schemaVersion: 1,
+    bundle: {
+      schemaVersion: 1,
+      company: {
+        slug: "fixtureco",
+        name: "Fixture Co",
+        ticker: "FIX",
+        rankApprox: 1,
+        maybeIpo: null,
+        regionId: "us",
+        indexIds: ["sp500-top35"],
+        sectorId: "information-technology",
+        industryId: "software",
+        companiesMarketCapUrl: "https://example.com",
+        description: "Fixture description.",
+        overview: [],
+        moatNarrative: [],
+        decentralizationNarrative: [],
+        sourceIds: ["src-fixture"],
+        technologyWaveIds: [],
+        snapshotNote: "Snapshot note.",
+        inputMetrics: {
+          moat: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-24",
+          },
+          decentralizability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-24",
+          },
+          profitability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-24",
+          },
+          peRatio: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "speculative",
+            lastReviewedOn: "2026-03-24",
+          },
+          marketCap: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-fixture"],
+            confidence: "medium",
+            lastReviewedOn: "2026-03-24",
+          },
+        },
+      },
+      products: [
+        {
+          slug: "fixture-product",
+          name: "Fixture Product",
+          category: "category",
+          homepageUrl: "https://example.com/product",
+          summary: "summary",
+          whyItMatters: "why it matters",
+          replacementSketch: [],
+          sourceIds: ["src-fixture"],
+          technologyWaveIds: [],
+        },
+      ],
+    },
+    sources: [
+      {
+        id: "src-fixture",
+        title: "Fixture source",
+        url: "https://example.com/source",
+        kind: "analysis",
+        publisher: "Fixture Publisher",
+        note: "Fixture note.",
+        accessedOn: "2026-03-24",
+      },
+    ],
+  } as unknown as CompanySyncPayload;
+
+  const normalized = normalizeCompanySyncPayload(payload);
+
+  expect(normalized.payload.bundle.products[0]?.alternatives).toEqual([]);
+  expect(normalized.payload.bundle.products[0]?.disruptionConcepts).toEqual([]);
+  expect(normalized.payload.bundle.products[0]?.maybeDisruptionException).toBeUndefined();
+  expect(normalized.notes).toEqual([
+    "Defaulted product fixture-product alternatives to an empty array because the payload omitted the field.",
+    "Defaulted product fixture-product disruptionConcepts to an empty array because the payload omitted the field.",
+  ]);
+});
+
+test("dedupeCompanySyncPayloadSlugs prefixes colliding slugs", () => {
+  const existingBundles: CompanyBundle[] = [
+    {
+      schemaVersion: 1,
+      company: {
+        slug: "chevron",
+        name: "Chevron",
+        ticker: "CVX",
+        rankApprox: 1,
+        maybeIpo: null,
+        regionId: "us",
+        indexIds: ["sp500-top35"],
+        sectorId: "energy",
+        industryId: "integrated-oil-gas",
+        companiesMarketCapUrl: "https://example.com/chevron",
+        description: "Chevron description.",
+        overview: [],
+        moatNarrative: [],
+        decentralizationNarrative: [],
+        sourceIds: ["src-chevron"],
+        technologyWaveIds: [],
+        snapshotNote: "Snapshot note.",
+        inputMetrics: {
+          moat: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-chevron"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-25",
+          },
+          decentralizability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-chevron"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-25",
+          },
+          profitability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-chevron"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-25",
+          },
+          peRatio: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-chevron"],
+            confidence: "speculative",
+            lastReviewedOn: "2026-03-25",
+          },
+          marketCap: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-chevron"],
+            confidence: "medium",
+            lastReviewedOn: "2026-03-25",
+          },
+        },
+      },
+      products: [
+        {
+          slug: "upstream-production",
+          name: "Upstream production",
+          category: "category",
+          homepageUrl: "https://example.com/upstream",
+          summary: "summary",
+          whyItMatters: "why",
+          replacementSketch: [],
+          sourceIds: ["src-chevron"],
+          technologyWaveIds: [],
+          alternatives: [
+            {
+              slug: "openevse",
+              name: "OpenEVSE",
+              kind: "open-source",
+              homepageUrl: "https://example.com/openevse",
+              summary: "summary",
+              metrics: {
+                openness: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                decentralizationFit: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                readiness: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                costLeverage: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+              },
+              sourceIds: ["src-chevron"],
+            },
+          ],
+          disruptionConcepts: [
+            {
+              slug: "community-charging-microgrids",
+              name: "Community charging microgrids",
+              summary: "summary",
+              angleIds: ["distributed-energy-generation"],
+              thesis: "thesis",
+              bitcoinOrDecentralizationRole: "role",
+              coordinationMechanism: "coordination",
+              verificationOrTrustModel: "trust",
+              failureModes: [],
+              adoptionPath: [],
+              confidence: "medium",
+              problemSourceIds: ["src-chevron"],
+              enablerSourceIds: ["src-chevron"],
+              metrics: {
+                decentralizationFit: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                coordinationCredibility: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                implementationFeasibility: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                incumbentPressure: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-chevron"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+              },
+            },
+          ],
+        },
+      ],
+    },
+  ];
+
+  const payload = {
+    schemaVersion: 1,
+    bundle: {
+      schemaVersion: 1,
+      company: {
+        slug: "exxon-mobil",
+        name: "Exxon Mobil",
+        ticker: "XOM",
+        rankApprox: 1,
+        maybeIpo: null,
+        regionId: "us",
+        indexIds: ["sp500-top35"],
+        sectorId: "energy",
+        industryId: "integrated-oil-gas",
+        companiesMarketCapUrl: "https://example.com/exxon",
+        description: "Exxon description.",
+        overview: [],
+        moatNarrative: [],
+        decentralizationNarrative: [],
+        sourceIds: ["src-exxon"],
+        technologyWaveIds: [],
+        snapshotNote: "Snapshot note.",
+        inputMetrics: {
+          moat: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-exxon"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-25",
+          },
+          decentralizability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-exxon"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-25",
+          },
+          profitability: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-exxon"],
+            confidence: "high",
+            lastReviewedOn: "2026-03-25",
+          },
+          peRatio: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-exxon"],
+            confidence: "speculative",
+            lastReviewedOn: "2026-03-25",
+          },
+          marketCap: {
+            value: 5,
+            rationale: "why",
+            sourceIds: ["src-exxon"],
+            confidence: "medium",
+            lastReviewedOn: "2026-03-25",
+          },
+        },
+      },
+      products: [
+        {
+          slug: "upstream-production",
+          name: "Upstream production",
+          category: "category",
+          homepageUrl: "https://example.com/upstream",
+          summary: "summary",
+          whyItMatters: "why",
+          replacementSketch: [],
+          sourceIds: ["src-exxon"],
+          technologyWaveIds: [],
+          alternatives: [
+            {
+              slug: "openevse",
+              name: "OpenEVSE",
+              kind: "open-source",
+              homepageUrl: "https://example.com/openevse",
+              summary: "summary",
+              metrics: {
+                openness: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                decentralizationFit: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                readiness: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                costLeverage: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+              },
+              sourceIds: ["src-exxon"],
+            },
+          ],
+          disruptionConcepts: [
+            {
+              slug: "community-charging-microgrids",
+              name: "Community charging microgrids",
+              summary: "summary",
+              angleIds: ["distributed-energy-generation"],
+              thesis: "thesis",
+              bitcoinOrDecentralizationRole: "role",
+              coordinationMechanism: "coordination",
+              verificationOrTrustModel: "trust",
+              failureModes: [],
+              adoptionPath: [],
+              confidence: "medium",
+              problemSourceIds: ["src-exxon"],
+              enablerSourceIds: ["src-exxon"],
+              metrics: {
+                decentralizationFit: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                coordinationCredibility: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                implementationFeasibility: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+                incumbentPressure: {
+                  value: 8,
+                  rationale: "why",
+                  sourceIds: ["src-exxon"],
+                  confidence: "high",
+                  lastReviewedOn: "2026-03-25",
+                },
+              },
+            },
+          ],
+          maybeDisruptionException: undefined,
+        },
+      ],
+    },
+    sources: [
+      {
+        id: "src-exxon",
+        title: "Exxon source",
+        url: "https://example.com/exxon",
+        kind: "analysis",
+        publisher: "Exxon Publisher",
+        note: "note",
+        accessedOn: "2026-03-25",
+      },
+    ],
+  } as CompanySyncPayload;
+
+  const normalized = dedupeCompanySyncPayloadSlugs(payload, existingBundles);
+
+  expect(normalized.payload.bundle.products[0]?.slug).toBe("exxon-mobil-upstream-production");
+  expect(normalized.payload.bundle.products[0]?.alternatives[0]?.slug).toBe(
+    "exxon-mobil-upstream-production-openevse",
+  );
+  expect(normalized.payload.bundle.products[0]?.disruptionConcepts[0]?.slug).toBe(
+    "exxon-mobil-upstream-production-community-charging-microgrids",
+  );
 });
 
 test("extractClaudeCliResult unwraps Claude JSON output metadata", () => {

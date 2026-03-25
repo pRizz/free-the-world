@@ -1,0 +1,674 @@
+2026-03-25T10:52:37.967291Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:37.967309Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:37.971864Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d249f-fcce-7721-bb46-d750b024dafb
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: rtx
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "rtx",
+  "name": "RTX",
+  "ticker": "RTX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top35"
+  ],
+  "sectorId": "industrials",
+  "industryId": "aerospace-defense",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/raytheon-technologies/marketcap/",
+  "description": "Aerospace and defense company spanning Pratt & Whitney, Collins Aerospace, and Raytheon systems.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Pratt & Whitney engines",
+    "Raytheon defense systems"
+  ],
+  "seedSourceUrls": [
+    "https://investors.rtx.com/",
+    "https://www.rtx.com/",
+    "https://companiesmarketcap.com/raytheon-technologies/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: lsp starting
+mcp: playwright starting
+2026-03-25T10:52:37.995171Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:37.997695Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.011907Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.013399Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.028725Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.040947Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.066217Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.066889Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.090021Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.091421Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.116284Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.117122Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.140012Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.141071Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.165611Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.166535Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.179450Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 82096: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T10:52:38.188118Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.188825Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.213104Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.213879Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.238850Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.239509Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.263209Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.263882Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.288897Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.289645Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.311412Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.312101Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.335692Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.337136Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.359003Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:52:38.359793Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:52:38.384601Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d249f-9001-7f81-a7b5-b88f12b1eec2.1774435930113954000.sh": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T10:52:38.952165Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d249f-fcce-7721-bb46-d750b024dafb.tmp-1774435957967581000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T10:52:39.145642Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 82099: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m verifying RTX facts against current primary sources first, then I’ll assemble a source-backed registry bundle with conservative metrics and product concepts.
+🌐 Searching the web...
+🌐 Searched: site:rtx.com RTX annual report 2025 pdf
+🌐 Searching the web...
+🌐 Searched: site:prattwhitney.com geared turbofan product page
+🌐 Searching the web...
+🌐 Searched: companiesmarketcap RTX market cap March 2026
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com/raytheon-technologies/pe-ratio RTX P/E
+codex
+I have enough source coverage for the company layer. I’m keeping product claims conservative because direct open replacements for certified jet engines and integrated missile-defense systems would be dishonest without stronger evidence.
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"rtx","name":"RTX","ticker":"RTX","rankApprox":30,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top35"],"sectorId":"industrials","industryId":"aerospace-defense","companiesMarketCapUrl":"https://companiesmarketcap.com/raytheon-technologies/marketcap/","description":"RTX is a large U.S. aerospace and defense company spanning Pratt & Whitney aircraft engines, Collins Aerospace systems, and Raytheon defense platforms.","overview":[{"title":"Business Mix","paragraphs":["RTX operates across commercial aerospace propulsion, avionics and aircraft systems, and defense systems through Pratt & Whitney, Collins Aerospace, and Raytheon.","The company positions itself as a scaled supplier to both airline OEM and aftermarket channels as well as government defense customers, which creates a mix of long-cycle commercial programs and state-backed defense demand."]},{"title":"Scale And Backlog","paragraphs":["RTX reported 2025 sales of $88.6 billion, operating profit of $9.3 billion, and free cash flow of $7.9 billion, alongside a company backlog of $268 billion.","That backlog split between commercial and defense work matters because it shows RTX is not just selling products once; it is embedded in multi-year production, sustainment, and upgrade programs that are difficult for new entrants to displace quickly."]}],"moatNarrative":["RTX's moat is anchored in certification-heavy propulsion programs, installed-base aftermarket economics, defense procurement relationships, and the manufacturing discipline needed to deliver at aerospace and missile-system scale. Those advantages are reinforced by long qualification cycles, strict reliability demands, and customer reluctance to switch away from proven systems already integrated into fleets or defense architectures.","The backlog and segment breadth matter almost as much as any one product. Pratt & Whitney benefits from engine selection and maintenance lock-in, Collins benefits from deep integration across aircraft subsystems, and Raytheon benefits from sovereign procurement cycles and mission-critical defense programs. That combination makes RTX hard to attack head-on."],"decentralizationNarrative":["RTX is structurally difficult to decentralize because many of its core businesses depend on export controls, national-security procurement, safety certification, scarce manufacturing capability, and tightly governed maintenance ecosystems. Those constraints keep fully open or peer-to-peer replacements from being credible in the near term for large turbofans or integrated missile-defense systems.","Pressure is more likely to emerge at the edges: open design tooling, additive manufacturing for parts, smaller distributed production cells, and modular sensing or control stacks in lower-end aerospace and autonomy markets. Those mechanisms can weaken some subsystem moats over time, but they do not yet erase the centralized capital, compliance, and trust requirements that protect RTX's highest-value businesses."],"sourceIds":["s1","s2","s3","s4"],"technologyWaveIds":["additive-manufacturing","microfactories"],"snapshotNote":"Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35.","inputMetrics":{"moat":{"value":9,"rationale":"RTX combines certification-heavy aerospace products, entrenched aftermarket service economics, defense procurement relationships, and a $268 billion backlog, all of which raise switching costs and slow competitive displacement.","sourceIds":["s1","s2"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":2,"rationale":"The company's core businesses rely on sovereign defense demand, export controls, safety certification, and specialized manufacturing, which makes credible decentralized replacement difficult except in limited subsystem niches.","sourceIds":["s1","s5","s6"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":7,"rationale":"RTX reported 2025 operating profit of $9.3 billion, free cash flow of $7.9 billion, and an operating margin around 9.9%, indicating solid but not software-like profitability for a capital- and program-intensive industrial company.","sourceIds":["s2","s7"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":40.5,"rationale":"CompaniesMarketCap lists RTX at a March 2026 trailing P/E of about 40.5, which is elevated relative to mature industrial norms and should be treated as market-data rather than a core operational metric.","sourceIds":["s4"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":278200000000,"rationale":"CompaniesMarketCap lists RTX at roughly $278.20 billion market capitalization in March 2026.","sourceIds":["s3"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"pratt-whitney-gtf-engines","name":"Pratt & Whitney GTF engines","category":"commercial aircraft propulsion","homepageUrl":"https://www.rtx.com/prattwhitney/products/commercial-engines/gtf/advantage","summary":"Pratt & Whitney's geared turbofan family powers single-aisle commercial aircraft with efficiency, noise, and durability claims that support long-lived OEM and aftermarket positions.","whyItMatters":"Large commercial aircraft engines are one of the hardest industrial products to replace because certification, reliability, maintenance networks, and fleet integration all compound into a durable moat.","replacementSketch":["Near-term pressure is more plausible in adjacent propulsion categories than in direct A320neo-class turbofan replacement. Open design tooling, additive manufacturing, and smaller electric or hybrid aircraft programs can lower barriers in regional, special-mission, and experimental segments first.","If decentralized manufacturing meaningfully improves aerospace-grade parts production and verification, more of the value stack could move toward modular components, local repair, and auditable open design layers. That still falls well short of an honest open replacement for a certified large-commercial turbofan today."],"maybeDisruptionException":{"reason":"A credible free or decentralized replacement for a certified large-commercial turbofan engine is not justified yet. The product's moat depends on regulated safety certification, advanced materials, OEM integration, and global maintenance support that current open alternatives do not match.","sourceIds":["s2","s5"],"lastReviewedOn":"2026-03-25"},"sourceIds":["s2","s5"],"technologyWaveIds":["additive-manufacturing","microfactories"],"alternatives":[]},{"slug":"raytheon-air-and-missile-defense-systems","name":"Raytheon air and missile defense systems","category":"integrated air and missile defense","homepageUrl":"https://www.rtx.com/raytheon/what-we-do/integrated-air-and-missile-defense","summary":"Raytheon sells integrated air and missile defense systems built from sensors, command-and-control components, and effectors for complex threat environments.","whyItMatters":"These systems sit inside sovereign procurement loops where trust, performance validation, integration history, and export-control regimes create exceptionally strong incumbency advantages.","replacementSketch":["Open pressure is more plausible at the lower end of sensing, autonomy, and counter-drone coordination than as a direct replacement for Patriot-class or LTAMDS-class systems. Modular open hardware and software could gradually commoditize pieces of the sensing and control stack around less demanding missions.","A more decentralized future here would likely look like interoperable sensor meshes, auditable control software, and distributed manufacturing of non-strategic subsystems rather than an immediately credible open substitute for high-end national missile defense."],"maybeDisruptionException":{"reason":"Even one strong decentralized replacement concept for RTX's integrated missile-defense portfolio would currently overstate the evidence. Classified performance requirements, sovereign procurement, export controls, and live-fire validation create barriers that open ecosystems do not yet credibly clear for this category.","sourceIds":["s2","s6"],"lastReviewedOn":"2026-03-25"},"sourceIds":["s2","s6"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[]}]},"sources":[{"id":"s1","title":"Reports & Proxy Statements","url":"https://investors.rtx.com/financial-information/annual-reports","kind":"investor-relations","publisher":"RTX","note":"Investor-relations source for annual reports and reporting archive used to anchor company description and reporting context.","accessedOn":"2026-03-25"},{"id":"s2","title":"RTX reports 2025 results and announces 2026 outlook","url":"https://www.rtx.com/news/news-center/2026/01/27/rtx-reports-2025-results-and-announces-2026-outlook","kind":"investor-relations","publisher":"RTX","note":"Primary source for 2025 sales, operating cash flow, free cash flow, segment commentary, and company backlog.","accessedOn":"2026-03-25"},{"id":"s3","title":"RTX (RTX) - Market capitalization","url":"https://companiesmarketcap.com/raytheon-technologies/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for approximate March 2026 market capitalization and rough size ranking context.","accessedOn":"2026-03-25"},{"id":"s4","title":"RTX (RTX) - P/E ratio","url":"https://companiesmarketcap.com/gbp/raytheon-technologies/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for trailing P/E reference as of March 2026.","accessedOn":"2026-03-25"},{"id":"s5","title":"GTF Advantage Engine","url":"https://www.rtx.com/prattwhitney/products/commercial-engines/gtf/advantage","kind":"product-page","publisher":"Pratt & Whitney","note":"Primary product-page source for the geared turbofan family and its efficiency and durability positioning.","accessedOn":"2026-03-25"},{"id":"s6","title":"Integrated Air & Missile Defense","url":"https://www.rtx.com/raytheon/what-we-do/integrated-air-and-missile-defense","kind":"product-page","publisher":"Raytheon","note":"Primary product-page source for Raytheon's integrated air and missile defense portfolio.","accessedOn":"2026-03-25"},{"id":"s7","title":"RTX (RTX) - Operating Margin","url":"https://companiesmarketcap.com/raytheon-technologies/operating-margin/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used as a quick market-data cross-check for operating margin context around 2025 profitability.","accessedOn":"2026-03-25"}],"summaryMarkdown":"RTX is a high-moat aerospace and defense incumbent with strong certification, procurement, and aftermarket advantages. The registry refresh keeps product disruption claims conservative because honest decentralized substitutes for large commercial turbofans and integrated missile-defense systems remain weak today, even though additive manufacturing and modular subsystem pressure could matter at the edges over time."}
+tokens used
+39,879

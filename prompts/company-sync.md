@@ -34,7 +34,17 @@ Return a JSON object matching this schema exactly:
       "name": "company name",
       "ticker": "ticker",
       "rankApprox": 0,
-      "maybeIpo": null,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
       "regionId": "taxonomy id",
       "indexIds": ["taxonomy id"],
       "sectorId": "taxonomy id",
@@ -214,6 +224,8 @@ Return a JSON object matching this schema exactly:
 Rules:
 - Use only taxonomy IDs from the provided taxonomy JSON.
 - Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
 - Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
 - Do not invent source kind aliases such as `sec-filing` or `company-website`.
 - Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.

@@ -765,6 +765,149 @@ export async function buildImplementationPromptPayload(options: {
   return payload;
 }
 
+export function normalizeCompanySyncPayload(payload: CompanySyncPayload) {
+  const normalizedPayload = structuredClone(payload) as CompanySyncPayload;
+  const notes: string[] = [];
+  const maybeIpo = normalizedPayload.bundle.company.maybeIpo;
+
+  if (typeof maybeIpo === "string") {
+    normalizedPayload.bundle.company.maybeIpo = null;
+    notes.push(
+      `Coerced company.maybeIpo string "${maybeIpo}" to null because the schema requires an object with date, dateSourceIds, and marketCap.`,
+    );
+  }
+
+  for (const product of normalizedPayload.bundle.products) {
+    if (!Array.isArray(product.alternatives)) {
+      product.alternatives = [];
+      notes.push(
+        `Defaulted product ${product.slug} alternatives to an empty array because the payload omitted the field.`,
+      );
+    }
+
+    if (!Array.isArray(product.disruptionConcepts)) {
+      product.disruptionConcepts = [];
+      notes.push(
+        `Defaulted product ${product.slug} disruptionConcepts to an empty array because the payload omitted the field.`,
+      );
+    }
+  }
+
+  return {
+    payload: normalizedPayload,
+    notes,
+  };
+}
+
+export function dedupeCompanySyncPayloadSlugs(
+  payload: CompanySyncPayload,
+  existingBundles: CompanyBundle[],
+) {
+  const normalizedPayload = structuredClone(payload) as CompanySyncPayload;
+  const companySlug = normalizedPayload.bundle.company.slug;
+  const notes: string[] = [];
+  const reservedProductSlugs = new Set(
+    existingBundles
+      .filter((bundle) => bundle.company.slug !== companySlug)
+      .flatMap((bundle) => bundle.products.map((product) => product.slug)),
+  );
+  const reservedAlternativeSlugs = new Set(
+    existingBundles
+      .filter((bundle) => bundle.company.slug !== companySlug)
+      .flatMap((bundle) =>
+        bundle.products.flatMap((product) => product.alternatives.map((alt) => alt.slug)),
+      ),
+  );
+  const reservedDisruptionConceptSlugs = new Set(
+    existingBundles
+      .filter((bundle) => bundle.company.slug !== companySlug)
+      .flatMap((bundle) =>
+        bundle.products.flatMap((product) =>
+          product.disruptionConcepts.map((concept) => concept.slug),
+        ),
+      ),
+  );
+  const usedProductSlugs = new Set<string>();
+  const usedAlternativeSlugs = new Set<string>();
+  const usedDisruptionConceptSlugs = new Set<string>();
+
+  for (const product of normalizedPayload.bundle.products) {
+    const uniqueProductSlug = ensureUniqueSyncSlug(
+      product.slug,
+      reservedProductSlugs,
+      usedProductSlugs,
+      [companySlug],
+    );
+    if (uniqueProductSlug !== product.slug) {
+      notes.push(
+        `Renamed product slug ${product.slug} to ${uniqueProductSlug} to avoid a global collision.`,
+      );
+      product.slug = uniqueProductSlug;
+    }
+    usedProductSlugs.add(product.slug);
+
+    for (const alternative of product.alternatives) {
+      const uniqueAlternativeSlug = ensureUniqueSyncSlug(
+        alternative.slug,
+        reservedAlternativeSlugs,
+        usedAlternativeSlugs,
+        [product.slug],
+      );
+      if (uniqueAlternativeSlug !== alternative.slug) {
+        notes.push(
+          `Renamed alternative slug ${alternative.slug} to ${uniqueAlternativeSlug} under product ${product.slug} to avoid a global collision.`,
+        );
+        alternative.slug = uniqueAlternativeSlug;
+      }
+      usedAlternativeSlugs.add(alternative.slug);
+    }
+
+    for (const disruptionConcept of product.disruptionConcepts) {
+      const uniqueDisruptionConceptSlug = ensureUniqueSyncSlug(
+        disruptionConcept.slug,
+        reservedDisruptionConceptSlugs,
+        usedDisruptionConceptSlugs,
+        [product.slug],
+      );
+      if (uniqueDisruptionConceptSlug !== disruptionConcept.slug) {
+        notes.push(
+          `Renamed disruption concept slug ${disruptionConcept.slug} to ${uniqueDisruptionConceptSlug} under product ${product.slug} to avoid a global collision.`,
+        );
+        disruptionConcept.slug = uniqueDisruptionConceptSlug;
+      }
+      usedDisruptionConceptSlugs.add(disruptionConcept.slug);
+    }
+  }
+
+  return {
+    payload: normalizedPayload,
+    notes,
+  };
+}
+
+function ensureUniqueSyncSlug(
+  slug: string,
+  reservedSlugs: Set<string>,
+  usedSlugs: Set<string>,
+  prefixes: string[],
+) {
+  if (!reservedSlugs.has(slug) && !usedSlugs.has(slug)) {
+    return slug;
+  }
+
+  const baseSlug = [...prefixes.filter(Boolean), slug].join("-");
+  if (!reservedSlugs.has(baseSlug) && !usedSlugs.has(baseSlug)) {
+    return baseSlug;
+  }
+
+  let suffix = 2;
+  while (reservedSlugs.has(`${baseSlug}-${suffix}`) || usedSlugs.has(`${baseSlug}-${suffix}`)) {
+    suffix += 1;
+  }
+
+  return `${baseSlug}-${suffix}`;
+}
+
 function validateImplementationPromptsPayload(
   payload: ImplementationPromptsPayload,
   bundle: CompanyBundle,
@@ -1151,7 +1294,20 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     const validationSummary: Record<string, unknown> = { provider, exitCode: execution.exitCode };
     if (success) {
       try {
-        const payload = extractJsonPayload(execution.rawOutput) as CompanySyncPayload;
+        const extractedPayload = extractJsonPayload(execution.rawOutput) as CompanySyncPayload;
+        const normalizationResult = normalizeCompanySyncPayload(extractedPayload);
+        const dedupeResult = dedupeCompanySyncPayloadSlugs(
+          normalizationResult.payload,
+          raw.bundles,
+        );
+        const payload = dedupeResult.payload;
+        const normalizationNotes = [...normalizationResult.notes, ...dedupeResult.notes];
+        if (normalizationNotes.length > 0) {
+          await trace("validation:normalized", {
+            provider,
+            notes: normalizationNotes,
+          });
+        }
         const promptPayload = await buildImplementationPromptPayload({
           bundle: payload.bundle,
           sources: payload.sources,

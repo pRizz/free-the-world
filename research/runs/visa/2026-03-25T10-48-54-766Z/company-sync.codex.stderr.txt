@@ -1,0 +1,681 @@
+2026-03-25T10:48:55.476008Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.476034Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.487482Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d249c-97b2-7f52-be1c-d0c68a2b6415
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: visa
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "visa",
+  "name": "Visa",
+  "ticker": "V",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top20"
+  ],
+  "sectorId": "financials",
+  "industryId": "payment-networks",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/visa/marketcap/",
+  "description": "Global electronic-payments network selling transaction rails and value-added services to banks and merchants.",
+  "technologyWaveIds": [
+    "bitcoin-native-coordination"
+  ],
+  "seedProductNames": [
+    "VisaNet",
+    "Consumer and commercial card network"
+  ],
+  "seedSourceUrls": [
+    "https://investor.visa.com/",
+    "https://companiesmarketcap.com/visa/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: playwright starting
+mcp: lsp starting
+2026-03-25T10:48:55.513133Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.517242Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.541969Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.543610Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.565814Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.568098Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.593051Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.594239Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.621943Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.623058Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.644466Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.645947Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.668454Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.669735Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.681776Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.682813Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.704794Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.705647Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.730413Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.731151Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.753762Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.754493Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.767928Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 50190: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T10:48:55.777375Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:55.778238Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:48:55.802301Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:48:56.621563Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d249c-97b2-7f52-be1c-d0c68a2b6415.tmp-1774435735476401000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T10:48:57.085012Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 50191: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m verifying current source material for Visa, its core products, and credible open or decentralized replacement paths before I draft the refresh JSON.
+🌐 Searching the web...
+🌐 Searched: Visa annual report 2025 pdf investor relations VisaNet volume services
+🌐 Searching the web...
+🌐 Searched: site:investor.visa.com annual report 2025 pdf Visa 10-k
+🌐 Searching the web...
+🌐 Searched: site:sec.gov Visa 2025 annual report 10-k revenue net income payment volumes processed transactions
+🌐 Searching the web...
+🌐 Searched: Visa IPO date March 19 2008 source investor relations
+🌐 Searching the web...
+🌐 Searched: BTCPay Server docs Lightning Network open source self-hosted payments
+🌐 Searching the web...
+🌐 Searched: GitHub BTCPay Server repository
+🌐 Searching the web...
+🌐 Searched: site:visa.com VisaNet product page merchant processing
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm
+🌐 Searching the web...
+🌐 Searched: https://corporate.visa.com/content/dam/VCOM/corporate/documents/about-visa-factsheet.pdf
+🌐 Searching the web...
+🌐 Searched: 'Net revenue' in https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm
+🌐 Searching the web...
+🌐 Searched: companiesmarketcap Visa PE ratio March 2026
+🌐 Searching the web...
+🌐 Searched: site:visa.com VisaNet overview
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"visa","name":"Visa","ticker":"V","rankApprox":18,"maybeIpo":{"date":"2008-03-19","dateSourceIds":["stockanalysis-visa-market-cap"],"marketCap":{"value":45440000000,"rationale":"StockAnalysis reports Visa's market cap was $45.44 billion on March 19, 2008, the IPO date it tracks for the company.","sourceIds":["stockanalysis-visa-market-cap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}},"regionId":"us","indexIds":["sp500-top20"],"sectorId":"financials","industryId":"payment-networks","companiesMarketCapUrl":"https://companiesmarketcap.com/visa/marketcap/","description":"Global payments-network operator connecting issuers, acquirers, merchants, consumers, businesses, and governments through VisaNet and related value-added services.","overview":[{"title":"Network At Scale","paragraphs":["Visa describes itself as a world leader in digital payments operating across more than 220 countries and territories, with roughly 14,500 financial institutions, 175 million-plus merchant locations, 4.9 billion payment credentials, $16.7 trillion in total volume, and 329 billion total transactions in the trailing twelve-month snapshot cited in its fact sheet.","Its business is not traditional balance-sheet lending; the core model is selling access to a trusted payment network, processing transactions at global scale, and layering security, data processing, cross-border capabilities, and related services on top of that network." ]},{"title":"Revenue Engine","paragraphs":["Visa's fiscal 2025 annual report says net revenue reached $40.0 billion and GAAP net income reached $20.1 billion, with 257.5 billion processed transactions for the year. The filing explicitly ties revenue growth to processed transactions, payments volume, and cross-border volume, which shows how much the business depends on entrenched network usage rather than one-off product sales.","The same reporting mix explains why Visa remains hard to dislodge: merchants, issuers, acquirers, fintechs, and enterprise customers plug into a common ruleset and infrastructure, then keep buying adjacent services once they are already inside the network." ]}],"moatNarrative":["Visa's moat is the classic two-sided network effect reinforced by regulation, brand trust, issuer and acquirer integrations, merchant acceptance, fraud tooling, and operational reliability. The network becomes more valuable as more institutions, merchants, and consumers join, and each side is reluctant to leave while the other sides remain entrenched.","The moat is strengthened by scale economics in authorization, data processing, cross-border settlement, risk controls, and product packaging for banks and businesses. VisaNet availability, global reach, and the installed base of financial-institution relationships make displacement much harder than merely shipping a cheaper checkout button."],"decentralizationNarrative":["Visa is not especially decentralized in its control structure, but some of its economic function can be attacked from the edges rather than head-on. Merchant acceptance, online checkout, software-driven invoicing, Lightning settlement, and community or federation-based e-cash systems can peel away transaction categories without needing to recreate the full global card stack on day one.","The strongest decentralization pressure is likely to come where open payment software and Bitcoin-native rails can remove scheme tolls, compress acquiring margins, or replace card credentials with wallets, invoices, and federated balance systems. That does not make Visa easy to disrupt, but it does create realistic wedge markets in internet-native commerce, high-fee corridors, and communities willing to trade convenience for openness and lower intermediation."],"sourceIds":["visa-fact-sheet","visa-2025-10k","visa-q1-2026-10q","visanet-product-page","visa-commercial-solutions","visa-commercial-card","companiesmarketcap-visa-marketcap","companiesmarketcap-visa-pe","stockanalysis-visa-market-cap"],"technologyWaveIds":["bitcoin-native-coordination"],"snapshotNote":"Prepared for the March 25, 2026 registry refresh using Visa investor materials, SEC filings, and current market-data snapshots. Visa was listed around rank #18 by market capitalization in March 2026.","inputMetrics":{"moat":{"value":9,"rationale":"Visa combines global merchant acceptance, issuer and acquirer integrations, strong brand trust, regulatory embedding, and large-scale processing infrastructure. The company also reports 220+ countries and territories, ~14,500 financial institutions, and 175M+ merchant locations in its fact sheet.","sourceIds":["visa-fact-sheet","visa-2025-10k","visanet-product-page"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":3,"rationale":"Open Bitcoin and Lightning payment software can replace parts of Visa's stack in specific segments, but the incumbent still benefits from deep institutional integration, universal merchant familiarity, and broad global acceptance. Disruption is plausible at the edge, not easy at the core.","sourceIds":["visa-2025-10k","visanet-product-page","btcpay-docs","fedimint-docs","cashu-home"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":10,"rationale":"Visa reported $40.0 billion in net revenue and $20.1 billion in GAAP net income for fiscal 2025, implying extraordinary profit conversion for a public large-cap payments company.","sourceIds":["visa-2025-10k"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":29,"rationale":"CompaniesMarketCap listed Visa's trailing P/E ratio at about 29.0 in March 2026.","sourceIds":["companiesmarketcap-visa-pe"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":595680000000,"rationale":"CompaniesMarketCap listed Visa at roughly $595.68 billion of market capitalization in March 2026, with rank #18 globally on its snapshot.","sourceIds":["companiesmarketcap-visa-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"visanet","name":"VisaNet","category":"payment-processing-network","homepageUrl":"https://corporate.visa.com/en/about-visa/visanet.html","summary":"Visa's core transaction-processing and network-access layer for authorization, routing, security, and related payment services.","whyItMatters":"VisaNet is the infrastructure heart of the company: it is where transaction processing, reliability, fraud controls, and access rules become monetizable network power.","replacementSketch":["A realistic open replacement starts with merchant-controlled payment gateways and wallet-native checkout rather than a full recreation of Visa's global scheme stack. BTCPay Server already gives merchants self-hosted bitcoin acceptance and Lightning support without a mandatory card-network intermediary.","If enough merchants, processors, and software platforms route specific payment flows over open rails first, the card network can lose the highest-margin edge cases before the global core is fully challenged."],"sourceIds":["visanet-product-page","visa-2025-10k","visa-q1-2026-10q"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"btcpay-server","name":"BTCPay Server","kind":"open-source","homepageUrl":"https://btcpayserver.org/","repoUrl":"https://github.com/btcpayserver/btcpayserver","summary":"Free, open-source, self-hosted bitcoin payment processor with Lightning support for online and in-person merchant acceptance.","metrics":{"openness":{"value":10,"rationale":"BTCPay Server is explicitly described in its documentation and GitHub repository as free, open-source, and self-hosted, with code published under the MIT license.","sourceIds":["btcpay-docs","btcpay-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":8,"rationale":"It lets merchants accept peer-to-peer bitcoin payments and optionally Lightning payments without relying on a mandatory centralized payment processor.","sourceIds":["btcpay-docs","btcpay-lightning-docs","btcpay-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":8,"rationale":"BTCPay is mature production software with an active repository, releases, merchant features, and documented Lightning integration paths.","sourceIds":["btcpay-docs","btcpay-github","btcpay-lightning-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":8,"rationale":"Its documented model removes processor fees beyond underlying network fees and lets merchants self-host, which can compress payment-stack costs versus scheme-mediated acceptance.","sourceIds":["btcpay-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["btcpay-docs","btcpay-github","btcpay-lightning-docs"]}],"disruptionConcepts":[{"slug":"lightning-merchant-acquiring-mesh","name":"Lightning Merchant Acquiring Mesh","summary":"Merchants, commerce platforms, and specialized operators can replace part of the acquiring layer with open payment gateways that accept bitcoin and Lightning invoices directly, then add conversion, accounting, and policy services as optional modules rather than mandatory scheme toll booths.","angleIds":["bitcoin","lightning","decentralized-coordination"],"thesis":"This changes market structure by turning payment acceptance from a closed network-licensing business into a software-and-liquidity business, letting merchants route some transactions over open rails with fewer intermediaries.","bitcoinOrDecentralizationRole":"Bitcoin provides final settlement and Lightning provides low-fee instant payment paths. The decentralization benefit is not that every merchant must run everything alone, but that the merchant can choose self-hosting, a service provider, or a mix without being trapped inside one card network's credential and routing system.","coordinationMechanism":"Merchants run or buy BTCPay-like infrastructure, customers pay from wallets, and liquidity providers or treasury services help bridge bitcoin-native receipts into local operational needs. Platforms coordinate through open invoices, payment channels, APIs, and wallet standards rather than a single network operator's rulebook.","verificationOrTrustModel":"Verification comes from cryptographic payment settlement on Bitcoin and Lightning invoice semantics rather than charge-authorize-settle messaging controlled by a central scheme. Weak points remain around channel liquidity, UX errors, refunds, price volatility, and fiat accounting, but fake payment confirmation is much harder when merchants verify settled invoices directly.","failureModes":["Merchants may still prefer card-network ubiquity if Lightning wallet adoption remains niche.","Liquidity management, refunds, and accounting workflows can remain operationally harder than incumbent card acceptance.","Regulatory or tax friction around bitcoin receipts can slow enterprise deployment."],"adoptionPath":["Start with internet-native merchants, donations, global digital goods, and communities already comfortable with Bitcoin or Lightning.","Expand through PSPs, ecommerce plugins, and local service providers that abstract node operations while keeping routing and settlement on open rails."],"confidence":"medium","problemSourceIds":["visa-2025-10k","visanet-product-page"],"enablerSourceIds":["btcpay-docs","btcpay-lightning-docs","btcpay-github"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The model removes dependence on a single card-network operator for at least a subset of merchant acceptance flows.","sourceIds":["btcpay-docs","btcpay-lightning-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":7,"rationale":"The tooling and protocols exist today, but broad merchant, wallet, and liquidity coordination still lags Visa's installed base.","sourceIds":["btcpay-docs","btcpay-lightning-docs","visanet-product-page"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":8,"rationale":"Production software exists now and is already deployable by merchants and service providers.","sourceIds":["btcpay-docs","btcpay-github"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":6,"rationale":"It can pressure acquiring economics and certain checkout categories, but it does not yet neutralize Visa's broad offline, issuer, and rewards-driven card ecosystem.","sourceIds":["visa-2025-10k","btcpay-docs"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]},{"slug":"consumer-and-commercial-card-network","name":"Consumer and Commercial Card Network","category":"card-network","homepageUrl":"https://usa.visa.com/run-your-business/commercial-solutions/enterprise-government-cards/commercial-card-enterprise-government.html","summary":"Visa's branded consumer and commercial credential ecosystem spanning credit, debit, prepaid, and business spending flows through issuing and acquiring partners.","whyItMatters":"This is the visible distribution layer of the moat: the credential users carry, the network merchants already accept, and the product surface banks use to keep customers inside Visa-linked spending behavior.","replacementSketch":["A credible replacement does not need to imitate plastic cards first. It can begin with wallet-based balances, community or business federations, and instant merchant settlement over Lightning while layering spend controls and reporting in software.","Commercial spend in particular is vulnerable to invoice-driven and policy-controlled wallet flows, where the software rules matter more than the legacy card credential."],"sourceIds":["visa-commercial-solutions","visa-commercial-card","visa-fact-sheet","visa-2025-10k"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"fedimint","name":"Fedimint","kind":"hybrid","homepageUrl":"https://fedimint.org/","repoUrl":"https://github.com/fedimint/fedimint","summary":"Open-source federated Chaumian e-cash system for Bitcoin that interoperates with Lightning and spreads control across guardian federations instead of a single operator.","metrics":{"openness":{"value":9,"rationale":"Fedimint is described as open-source on its site and GitHub, with public code and documentation.","sourceIds":["fedimint-home","fedimint-docs","fedimint-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":8,"rationale":"It replaces single-operator custody and issuance with federated guardians and interoperates with Lightning rather than a proprietary card network.","sourceIds":["fedimint-docs","fedimint-home","fedimint-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":6,"rationale":"The architecture and software are real, but end-user distribution and mainstream merchant acceptance are still far below incumbent card-network scale.","sourceIds":["fedimint-home","fedimint-docs","fedimint-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":7,"rationale":"For communities or businesses willing to operate on Bitcoin-native rails, federation-based balances and Lightning settlement can remove several layers of scheme and processing intermediation.","sourceIds":["fedimint-docs","fedimint-home"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["fedimint-home","fedimint-docs","fedimint-github"]}],"disruptionConcepts":[{"slug":"federated-ecash-spend-network","name":"Federated E-Cash Spend Network","summary":"Communities, fintechs, employers, cooperatives, or regional business groups can issue spendable balances through federated Chaumian e-cash systems backed by bitcoin, with Lightning gateways connecting those balances to wider merchant acceptance and external settlement.","angleIds":["bitcoin","lightning","federation","decentralized-coordination"],"thesis":"This changes the market structure by replacing a single global card credential and central scheme operator with many interoperable spending federations that can tailor trust, policy, and economics to local groups while still connecting outward through Lightning.","bitcoinOrDecentralizationRole":"Bitcoin serves as reserve and settlement asset, Lightning provides inter-federation and merchant payment interoperability, and federation changes the control model so no single issuer or network owns the entire system.","coordinationMechanism":"Guardians operate a federation, users hold e-cash or connected wallet balances, and Lightning gateways bridge payments between federations and merchants. Businesses can layer expense policies, allowances, or payout rules on top of the federation rather than outsourcing everything to a card-network product stack.","verificationOrTrustModel":"Chaumian e-cash and blinded signatures protect transaction privacy, while threshold-controlled federations reduce single-party abuse. Trust is still not eliminated: users must select competent guardians, gateways can create liquidity bottlenecks, and federation governance quality matters.","failureModes":["Users still trust a federation, so poor guardian selection or governance can damage the system.","Merchant acceptance depends on Lightning and wallet tooling rather than universal card-present infrastructure.","Compliance pressure could push many deployments back toward centralization."],"adoptionPath":["Begin with communities, payroll or stipend programs, local circular economies, and business groups that value privacy or lower intermediation.","Expand by adding merchant tools, Lightning gateway competition, and software layers for reporting, spend controls, and treasury management."],"confidence":"medium","problemSourceIds":["visa-commercial-solutions","visa-commercial-card","visa-2025-10k"],"enablerSourceIds":["fedimint-home","fedimint-docs","cashu-home"],"metrics":{"decentralizationFit":{"value":9,"rationale":"The concept directly targets central network control by splitting issuance and operation across independent federations linked by open Bitcoin-native rails.","sourceIds":["fedimint-docs","cashu-home"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":6,"rationale":"The technical primitives are coherent and already implemented, but federation governance and broad merchant coordination remain immature compared with Visa's card-network model.","sourceIds":["fedimint-docs","fedimint-home","visa-commercial-solutions"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":6,"rationale":"Open-source software and Lightning interoperability exist today, but enterprise-grade policy tooling and user-distribution channels are still developing.","sourceIds":["fedimint-github","fedimint-home","cashu-home"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":5,"rationale":"This can create real pressure in niche and regional spending systems first, but it is still far from matching Visa's mainstream consumer-card ubiquity.","sourceIds":["visa-fact-sheet","visa-commercial-card","fedimint-docs"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]}]},"sources":[{"id":"visa-fact-sheet","title":"Visa Fact Sheet - A global payments technology company at a glance","url":"https://corporate.visa.com/content/dam/VCOM/corporate/documents/about-visa-factsheet.pdf","kind":"investor-relations","publisher":"Visa","note":"Current corporate scale snapshot for countries, institutions, credentials, merchant locations, volume, and transactions.","accessedOn":"2026-03-25"},{"id":"visa-2025-10k","title":"Visa Annual Report on Form 10-K for the fiscal year ended September 30, 2025","url":"https://www.sec.gov/Archives/edgar/data/1403161/000140316125000089/v-20250930.htm","kind":"annual-report","publisher":"U.S. Securities and Exchange Commission","note":"Primary source for revenue, net income, processed transactions, risk factors, and business-model framing.","accessedOn":"2026-03-25"},{"id":"visa-q1-2026-10q","title":"Visa Quarterly Report for the quarter ended December 31, 2025","url":"https://www.sec.gov/Archives/edgar/data/1403161/000140316126000045/v-20251231.htm","kind":"regulatory-filing","publisher":"U.S. Securities and Exchange Commission","note":"Recent transaction-growth and capital-return snapshot used to confirm momentum after fiscal 2025 year-end.","accessedOn":"2026-03-25"},{"id":"visanet-product-page","title":"VisaNet | Electronic Payments Network","url":"https://corporate.visa.com/en/about-visa/visanet.html","kind":"product-page","publisher":"Visa","note":"Official description of VisaNet's role, access model, reliability claims, and network positioning.","accessedOn":"2026-03-25"},{"id":"visa-commercial-solutions","title":"Visa Commercial Solutions | Overview","url":"https://www.visa.com/en-us/solutions/commercial-solutions","kind":"product-page","publisher":"Visa","note":"Official overview of Visa's business and commercial payment offerings and how they extend the network moat.","accessedOn":"2026-03-25"},{"id":"visa-commercial-card","title":"Commercial Card | Credit Card Services","url":"https://usa.visa.com/run-your-business/commercial-solutions/enterprise-government-cards/commercial-card-enterprise-government.html","kind":"product-page","publisher":"Visa","note":"Official description of Visa commercial card capabilities and business-spend controls.","accessedOn":"2026-03-25"},{"id":"companiesmarketcap-visa-marketcap","title":"Visa (V) - Market capitalization","url":"https://companiesmarketcap.com/visa/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for current market-cap snapshot and approximate global ranking.","accessedOn":"2026-03-25"},{"id":"companiesmarketcap-visa-pe","title":"Visa (V) - P/E ratio","url":"https://companiesmarketcap.com/visa/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for current trailing P/E snapshot.","accessedOn":"2026-03-25"},{"id":"stockanalysis-visa-market-cap","title":"Visa Inc. (V) Market Cap","url":"https://stockanalysis.com/stocks/v/market-cap/","kind":"market-data","publisher":"Stock Analysis","note":"Used to support IPO date tracking and approximate market cap on the IPO date.","accessedOn":"2026-03-25"},{"id":"btcpay-docs","title":"BTCPay Server Documentation","url":"https://docs.btcpayserver.org/Guide/","kind":"technical-docs","publisher":"BTCPay Server","note":"Primary source for BTCPay's self-hosted, open-source merchant payment model and features.","accessedOn":"2026-03-25"},{"id":"btcpay-lightning-docs","title":"Lightning Network (LN) and BTCPay Server","url":"https://docs.btcpayserver.org/LightningNetwork/","kind":"technical-docs","publisher":"BTCPay Server","note":"Documents Lightning integration and operating model for merchant acceptance.","accessedOn":"2026-03-25"},{"id":"btcpay-github","title":"btcpayserver/btcpayserver","url":"https://github.com/btcpayserver/btcpayserver","kind":"open-source-project","publisher":"GitHub","note":"Open-source repository and license evidence for BTCPay Server.","accessedOn":"2026-03-25"},{"id":"fedimint-home","title":"Fedimint","url":"https://fedimint.org/","kind":"technical-docs","publisher":"Fedimint","note":"High-level description of Fedimint's community custody, e-cash, and Lightning interoperability model.","accessedOn":"2026-03-25"},{"id":"fedimint-docs","title":"What is a Fedimint","url":"https://fedimint.org/docs/GettingStarted/What-is-a-Fedimint","kind":"technical-docs","publisher":"Fedimint","note":"Explains federated Chaumian e-cash, guardians, and Lightning interoperability used in the disruption analysis.","accessedOn":"2026-03-25"},{"id":"fedimint-github","title":"fedimint/fedimint","url":"https://github.com/fedimint/fedimint","kind":"open-source-project","publisher":"GitHub","note":"Open-source repository evidence for production software and module design.","accessedOn":"2026-03-25"},{"id":"cashu-home","title":"Cashu - Open-source Ecash","url":"https://cashu.space/","kind":"technical-docs","publisher":"Cashu","note":"Used as an enabler source for open Chaumian e-cash and Lightning-routed mint interoperability.","accessedOn":"2026-03-25"}],"summaryMarkdown":"Visa remains one of the strongest payment-network incumbents in the registry: huge scale, exceptional profitability, and a moat built on merchant acceptance plus issuer-acquirer integrations. The most credible disruption path is not a direct clone of the card scheme, but open merchant acceptance, Lightning settlement, and federated e-cash systems that can peel away selected payment flows first."}
+tokens used
+75,510

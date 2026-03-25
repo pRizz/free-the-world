@@ -1,0 +1,657 @@
+2026-03-25T00:33:57.779197Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.779221Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.783270Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d2269-9412-7311-b0f6-f77545e89a68
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: exxon-mobil
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "exxon-mobil",
+  "name": "Exxon Mobil",
+  "ticker": "XOM",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top20"
+  ],
+  "sectorId": "energy",
+  "industryId": "integrated-oil-gas",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/exxon-mobil/marketcap/",
+  "description": "Integrated energy company spanning upstream production, refining, chemicals, and fuel distribution.",
+  "technologyWaveIds": [
+    "distributed-energy"
+  ],
+  "seedProductNames": [
+    "Upstream production",
+    "Exxon and Mobil fuels"
+  ],
+  "seedSourceUrls": [
+    "https://corporate.exxonmobil.com/",
+    "https://companiesmarketcap.com/exxon-mobil/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: playwright starting
+mcp: lsp starting
+2026-03-25T00:33:57.805184Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:33:57.806273Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.831572Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:33:57.833910Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.862047Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:33:57.863267Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.887078Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:33:57.888000Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.915181Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:33:57.916063Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.941998Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:33:57.942782Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:33:57.971852Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:33:58.151132Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 1052: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T00:33:58.592872Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 1053: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+2026-03-25T00:33:58.746493Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d2269-9412-7311-b0f6-f77545e89a68.tmp-1774398837779615000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+codex
+I’m gathering current source-backed facts for Exxon Mobil and then I’ll shape them into the exact bundle schema, including only defensible alternatives and disruption concepts.
+🌐 Searching the web...
+🌐 Searched: ExxonMobil 2025 annual report upstream production refining chemical products fuels retail official
+🌐 Searching the web...
+🌐 Searched: site:corporate.exxonmobil.com ExxonMobil annual report 2025 pdf
+🌐 Searching the web...
+🌐 Searched: site:corporate.exxonmobil.com Exxon Mobil fuels brands retail official
+🌐 Searching the web...
+🌐 Searched: OpenEnergyMonitor documentation energy monitoring open source
+🌐 Searching the web...
+🌐 Searched: OpenEVSE official documentation github
+🌐 Searching the web...
+🌐 Searched: stockanalysis XOM PE ratio March 2026
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"exxon-mobil","name":"Exxon Mobil","ticker":"XOM","rankApprox":17,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top20"],"sectorId":"energy","industryId":"integrated-oil-gas","companiesMarketCapUrl":"https://companiesmarketcap.com/exxon-mobil/marketcap/","description":"Integrated energy company spanning upstream oil and gas production, refining, chemicals, lubricants, and branded fuel distribution.","overview":[{"title":"Integrated energy platform","paragraphs":["Exxon Mobil operates across upstream production, product manufacturing, chemicals, lubricants, and lower-emissions initiatives, giving it a broad position across the hydrocarbon value chain.","Its corporate materials emphasize the combination of advantaged resource positions, refining and logistics scale, brand distribution, and technology-led operations as the foundation of its business model."]},{"title":"Scale and current earnings base","paragraphs":["ExxonMobil reported 2025 earnings of $28.8 billion, cash flow from operations of $52.0 billion, production volumes of 4.7 million oil-equivalent barrels per day, and record refinery throughput since the Exxon-Mobil merger.","Market-data sources place Exxon Mobil at roughly $631.6 billion in market capitalization in March 2026, keeping it inside the S&P 500 top-20 market-cap cohort referenced by this registry snapshot."]}],"moatNarrative":["Exxon Mobil's moat is built on capital intensity, reserve access, integrated refining and chemicals infrastructure, logistics, regulatory know-how, and globally recognized fuel brands. Those layers reinforce one another: low-cost upstream barrels feed large-scale downstream assets, which in turn support supply reliability and branded distribution.","The moat is also financial. Even with cyclical commodity exposure, ExxonMobil still generated very large 2025 earnings and operating cash flow, which help fund buybacks, dividends, and multi-year project pipelines that smaller challengers cannot easily match."],"decentralizationNarrative":["Exxon Mobil is structurally vulnerable where transport energy demand can be displaced rather than where oil extraction is directly replicated. Distributed solar, storage, open EV charging, and local energy-management stacks can chip away at retail fuel demand without needing to recreate an integrated oil major.","That said, the company remains harder to disrupt at the extraction and refining layer than at the end-use energy-services layer. Decentralization pressure is more credible as demand substitution and local coordination than as a near-term one-for-one replacement of upstream oil and gas operations."],"sourceIds":["src-exxon-overview","src-exxon-results-2025","src-exxon-upstream","src-exxon-downstream","src-xom-marketcap","src-xom-statistics"],"technologyWaveIds":["distributed-energy"],"snapshotNote":"Refreshed for a publishable March 2026 registry snapshot using official ExxonMobil materials plus March 2026 market-data references.","inputMetrics":{"moat":{"value":8,"rationale":"Exxon Mobil combines reserve access, large upstream and refining assets, logistics, branded retail distribution, and very large cash generation, which together create a durable incumbent position.","sourceIds":["src-exxon-overview","src-exxon-results-2025","src-exxon-downstream"],"confidence":"high","lastReviewedOn":"2026-03-24"},"decentralizability":{"value":3,"rationale":"Distributed energy can pressure transport-fuel demand, but Exxon Mobil's core upstream and refining businesses remain difficult to replace directly with open or local systems today.","sourceIds":["src-exxon-upstream","src-exxon-downstream","src-evcc-docs","src-oem-docs","src-openevse-site"],"confidence":"high","lastReviewedOn":"2026-03-24"},"profitability":{"value":8,"rationale":"The company reported $28.8 billion of 2025 earnings and $52.0 billion of operating cash flow, indicating strong absolute profitability despite commodity cyclicality.","sourceIds":["src-exxon-results-2025","src-exxon-investor"],"confidence":"high","lastReviewedOn":"2026-03-24"},"peRatio":{"value":22.62,"rationale":"StockAnalysis listed Exxon Mobil at a trailing P/E ratio of 22.62 in March 2026.","sourceIds":["src-xom-statistics"],"confidence":"speculative","lastReviewedOn":"2026-03-24"},"marketCap":{"value":631.59,"rationale":"CompaniesMarketCap listed Exxon Mobil at about $631.59 billion in market capitalization in March 2026, ranking it around 17th globally.","sourceIds":["src-xom-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}},"products":[{"slug":"upstream-production","name":"Upstream production","category":"oil-and-gas-production","homepageUrl":"https://corporate.exxonmobil.com/who-we-are/our-global-organization/business-divisions/upstream","summary":"Large-scale oil and natural gas exploration and production across unconventional, conventional, deepwater, heavy oil, and LNG assets.","whyItMatters":"Upstream production is the resource base that feeds Exxon Mobil's integrated system and underwrites much of its earnings power.","replacementSketch":["Near-term disruption is more likely to come from reducing fossil-fuel demand than from directly reproducing Exxon Mobil's upstream system with an open alternative.","Open local energy stacks, electrification, and efficiency can erode some downstream demand over time, but a credible decentralized substitute for global hydrocarbon extraction remains weak today."],"maybeDisruptionException":{"reason":"A source-backed, honest one-for-one decentralized replacement for Exxon Mobil's upstream oil and gas production is not yet credible. The business depends on geology, mineral rights, permitting, specialized equipment, safety systems, and very large project finance; current decentralization pressure acts indirectly by lowering fuel demand rather than directly replacing upstream extraction.","sourceIds":["src-exxon-upstream","src-exxon-results-2025"],"lastReviewedOn":"2026-03-24"},"sourceIds":["src-exxon-upstream","src-exxon-results-2025"],"technologyWaveIds":["distributed-energy"],"alternatives":[]},{"slug":"exxon-and-mobil-fuels","name":"Exxon and Mobil fuels","category":"transportation-fuels","homepageUrl":"https://corporate.exxonmobil.com/who-we-are/our-global-organization/business-divisions/downstream","summary":"Branded gasoline, diesel, and related retail and commercial fuel distribution sold through Exxon, Mobil, and Esso networks.","whyItMatters":"Retail and commercial fuels translate Exxon Mobil's refining and logistics scale into everyday customer relationships and recurring transport-energy demand.","replacementSketch":["A credible replacement path does not mimic a branded fuel network; it sidesteps it with electric mobility powered by local solar, storage, and open charging controls.","The practical stack is modular: open monitoring, open EV charging hardware, and local charging orchestration let households, fleets, and small sites substitute purchased liquid fuels with self-managed electricity."],"sourceIds":["src-exxon-downstream","src-evcc-docs","src-oem-docs","src-openevse-site","src-openevse-repo"],"technologyWaveIds":["distributed-energy"],"alternatives":[{"slug":"evcc","name":"evcc","kind":"open-source","homepageUrl":"https://evcc.io/en/","summary":"Open-source energy-management software focused on solar-aware EV charging, dynamic tariffs, and local control.","metrics":{"openness":{"value":8,"rationale":"evcc presents itself as open source and community-driven, with documentation describing local installation and broad hardware integrations.","sourceIds":["src-evcc-home","src-evcc-docs"],"confidence":"high","lastReviewedOn":"2026-03-24"},"decentralizationFit":{"value":8,"rationale":"It helps households or small sites coordinate charging around local solar generation and tariffs instead of relying on a centralized fuel-retail model.","sourceIds":["src-evcc-home","src-evcc-docs"],"confidence":"high","lastReviewedOn":"2026-03-24"},"readiness":{"value":8,"rationale":"The project documents support for many chargers, vehicles, batteries, and meters, indicating current real-world deployability.","sourceIds":["src-evcc-docs","src-evcc-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"costLeverage":{"value":7,"rationale":"Software-driven solar surplus charging can shift vehicle energy consumption toward self-generated or cheaper electricity, reducing recurring fuel spend.","sourceIds":["src-evcc-home","src-evcc-solar"],"confidence":"high","lastReviewedOn":"2026-03-24"}},"sourceIds":["src-evcc-home","src-evcc-docs","src-evcc-solar"]},{"slug":"openevse","name":"OpenEVSE","kind":"open-source","homepageUrl":"https://www.openevse.com/about-us.html","repoUrl":"https://github.com/OpenEVSE/open_evse","summary":"Open-source EV charging hardware and firmware designed for flexible, locally controlled charging deployments.","metrics":{"openness":{"value":9,"rationale":"OpenEVSE publishes hardware and firmware as open source, and the firmware repository is GPL-licensed.","sourceIds":["src-openevse-site","src-openevse-repo"],"confidence":"high","lastReviewedOn":"2026-03-24"},"decentralizationFit":{"value":8,"rationale":"Open charging hardware shifts transport-energy control toward households, workshops, and local operators instead of centralized liquid-fuel retail networks.","sourceIds":["src-openevse-site","src-openevse-repo"],"confidence":"high","lastReviewedOn":"2026-03-24"},"readiness":{"value":8,"rationale":"OpenEVSE documents commercially sold charging stations and mature firmware used in deployed charging products.","sourceIds":["src-openevse-site","src-openevse-repo"],"confidence":"high","lastReviewedOn":"2026-03-24"},"costLeverage":{"value":7,"rationale":"DIY or modular open charging hardware can reduce equipment lock-in and support lower-cost vehicle energy when paired with home or site electricity generation.","sourceIds":["src-openevse-site","src-openevse-repo"],"confidence":"high","lastReviewedOn":"2026-03-24"}},"sourceIds":["src-openevse-site","src-openevse-repo"]}],"disruptionConcepts":[{"slug":"local-solar-ev-energy-stack","name":"Local solar EV energy stack","summary":"Households, workplaces, and small fleets replace a portion of gasoline demand by combining rooftop solar, storage, open energy monitoring, and solar-aware EV charging. The disruption comes from moving transport energy purchases away from branded fuel stations and into a modular local electricity stack controlled by the end user.","angleIds":["distributed-energy-generation","open-energy-hardware","microgrid-coordination"],"thesis":"Exxon Mobil's retail fuel demand weakens when transport energy is increasingly produced, measured, and scheduled locally rather than bought as branded liquid fuel.","bitcoinOrDecentralizationRole":"Decentralization matters here through local ownership and interoperable control, not through forcing Bitcoin into the mechanism. Open hardware and local software let operators keep energy data, charging rules, and equipment control at the edge.","coordinationMechanism":"Homeowners, site operators, or fleet managers coordinate solar generation, storage, and EV charging with local software such as evcc and open monitoring hardware, prioritizing self-consumption and cheap electricity windows.","verificationOrTrustModel":"The model relies on physical metering, charger telemetry, and local device control rather than promises from a fuel retailer. Cheating is constrained by direct measurement of generation, load, and charging sessions, although meter accuracy and device interoperability remain practical weak points.","failureModes":["EV adoption, charger installation, and local generation uptake may remain too slow in fuel-heavy regions.","Grid interconnection limits, renter constraints, and vehicle mix can keep many drivers tied to liquid fuels.","Open components still require installation skill and dependable interoperability to avoid becoming hobbyist-only."],"adoptionPath":["Start with home or workplace EV charging controlled by open hardware and software.","Add rooftop solar or storage so more vehicle energy is supplied locally.","Expand from single sites to small fleets, apartments, or community-scale charging clusters."],"confidence":"medium","problemSourceIds":["src-exxon-downstream","src-exxon-results-2025"],"enablerSourceIds":["src-evcc-home","src-evcc-docs","src-evcc-solar","src-oem-docs","src-openevse-site","src-openevse-repo"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The concept replaces centralized fuel purchases with locally owned generation, local charging control, and open metering.","sourceIds":["src-evcc-docs","src-oem-docs","src-openevse-site"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":7,"rationale":"The building blocks already exist and integrate across chargers, meters, storage, and vehicles, though deployment still depends on site-level integration work.","sourceIds":["src-evcc-docs","src-openevse-repo","src-oem-docs"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":7,"rationale":"All major technical components are commercially or open-source available today, but site economics and hardware compatibility vary.","sourceIds":["src-evcc-home","src-openevse-site","src-oem-docs"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":6,"rationale":"The pressure is meaningful in passenger and light-fleet transport, but it does not quickly erase heavy-duty, aviation, or petrochemical demand.","sourceIds":["src-exxon-downstream","src-evcc-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}},{"slug":"federated-community-charging-coops","name":"Federated community charging cooperatives","summary":"Local operators can form cooperative charging networks using open EVSE hardware and open coordination software, letting neighborhoods, workplaces, and small commercial sites share charging capacity without depending on a single vertically integrated fuel retailer. This changes the market from branded fuel distribution toward federated local energy access points.","angleIds":["federation","peer-to-peer-marketplace","distributed-energy-generation"],"thesis":"If charging infrastructure is owned and coordinated by many local actors using interoperable tools, transport-energy distribution becomes a federated local service rather than a centralized branded-station business.","bitcoinOrDecentralizationRole":"The core decentralization mechanism is federation and cooperative local ownership. Bitcoin is not necessary to make this market change credible; the important shift is that no single operator has to own customer identity, charger control, and energy supply across the network.","coordinationMechanism":"Local site hosts install open chargers, publish availability or access rules, and coordinate pricing or member access through cooperative or federated software layers. Energy can come from grid power, on-site solar, or mixed local sources.","verificationOrTrustModel":"Trust depends on authenticated charger telemetry, meter readings, and auditable session records across independently operated sites. Fraud and free-riding are limited by physical access control, metered sessions, and cooperative rules, but cross-site settlement and quality assurance remain governance challenges.","failureModes":["Federated user experience may lag behind vertically integrated commercial charging networks.","Insurance, maintenance, and payment-settlement complexity can overwhelm small operators.","Sites without strong local governance may suffer from poor uptime or pricing disputes."],"adoptionPath":["Launch cooperative charging at a workplace, apartment, or neighborhood cluster using open EVSE hardware.","Standardize telemetry, access rules, and maintenance practices across a small federation of sites.","Layer in shared storage or solar so the network evolves from simple charging access to local energy coordination."],"confidence":"medium","problemSourceIds":["src-exxon-downstream"],"enablerSourceIds":["src-openevse-site","src-openevse-repo","src-evcc-docs","src-oem-docs"],"metrics":{"decentralizationFit":{"value":8,"rationale":"Ownership and operational control are pushed toward many local hosts rather than a single station brand.","sourceIds":["src-openevse-site","src-openevse-repo"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":6,"rationale":"Open chargers and local control are real today, but federated operating models are less standardized than single-operator networks.","sourceIds":["src-openevse-site","src-evcc-docs"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":6,"rationale":"The hardware and software are feasible now, but cooperative governance, maintenance, and settlement processes still require disciplined local execution.","sourceIds":["src-openevse-site","src-openevse-repo","src-oem-docs"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":5,"rationale":"This pressures the distribution edge of transport energy, but branded fuel retail remains strong where EV adoption and local site organization are limited.","sourceIds":["src-exxon-downstream","src-openevse-site"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}}]}]},"sources":[{"id":"src-exxon-overview","title":"Who we are","url":"https://corporate.exxonmobil.com/who-we-are","kind":"product-page","publisher":"ExxonMobil","note":"Official company overview describing ExxonMobil's scale, integrated profile, and major brands.","accessedOn":"2026-03-24"},{"id":"src-exxon-upstream","title":"Upstream","url":"https://corporate.exxonmobil.com/who-we-are/our-global-organization/business-divisions/upstream","kind":"product-page","publisher":"ExxonMobil","note":"Official upstream page covering the company's production businesses, asset types, and growth priorities.","accessedOn":"2026-03-24"},{"id":"src-exxon-downstream","title":"Downstream business","url":"https://corporate.exxonmobil.com/who-we-are/our-global-organization/business-divisions/downstream","kind":"product-page","publisher":"ExxonMobil","note":"Official downstream page documenting fuel, lubricant, retail-station, and petroleum-product sales scale.","accessedOn":"2026-03-24"},{"id":"src-exxon-results-2025","title":"ExxonMobil announces 2025 results","url":"https://corporate.exxonmobil.com/news/news-releases/2026/0130-exxonmobil-announces-2025-results","kind":"investor-relations","publisher":"ExxonMobil","note":"Official 2025 earnings release used for profitability, production, throughput, and cash-flow figures.","accessedOn":"2026-03-24"},{"id":"src-exxon-investor","title":"Exxon Mobil Corporation Investor Relations","url":"https://investor.exxonmobil.com/","kind":"investor-relations","publisher":"ExxonMobil","note":"Investor relations landing page summarizing latest annual filing metrics and key financial highlights.","accessedOn":"2026-03-24"},{"id":"src-xom-marketcap","title":"Exxon Mobil market capitalization","url":"https://companiesmarketcap.com/exxon-mobil/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for March 2026 market-cap estimate and approximate global rank.","accessedOn":"2026-03-24"},{"id":"src-xom-statistics","title":"Exxon Mobil statistics and valuation","url":"https://stockanalysis.com/stocks/xom/statistics/","kind":"analysis","publisher":"Stock Analysis","note":"Used for March 2026 trailing P/E and supporting valuation context.","accessedOn":"2026-03-24"},{"id":"src-oem-docs","title":"OpenEnergyMonitor documentation","url":"https://docs.openenergymonitor.org/","kind":"technical-docs","publisher":"OpenEnergyMonitor","note":"Technical documentation for open-source local energy monitoring and control building blocks.","accessedOn":"2026-03-24"},{"id":"src-evcc-home","title":"evcc homepage","url":"https://evcc.io/en/","kind":"open-source-project","publisher":"evcc","note":"Project overview for open-source solar-aware EV charging and energy management.","accessedOn":"2026-03-24"},{"id":"src-evcc-docs","title":"evcc introduction","url":"https://docs.evcc.io/en/docs/Home","kind":"technical-docs","publisher":"evcc","note":"Technical documentation describing local deployment and broad device integrations.","accessedOn":"2026-03-24"},{"id":"src-evcc-solar","title":"evcc solar surplus charging","url":"https://docs.evcc.io/en/docs/features/solar-charging","kind":"technical-docs","publisher":"evcc","note":"Technical explanation of solar-surplus EV charging used for the distributed-energy replacement path.","accessedOn":"2026-03-24"},{"id":"src-openevse-site","title":"OpenEVSE about us","url":"https://www.openevse.com/about-us.html","kind":"open-source-project","publisher":"OpenEVSE","note":"Project overview for open EV charging hardware and its features.","accessedOn":"2026-03-24"},{"id":"src-openevse-repo","title":"OpenEVSE firmware repository","url":"https://github.com/OpenEVSE/open_evse","kind":"open-source-project","publisher":"OpenEVSE","note":"Source repository confirming open-source firmware, licensing, and project maturity.","accessedOn":"2026-03-24"}],"summaryMarkdown":"Exxon Mobil remains a high-moat integrated oil and gas incumbent with strong 2025 profitability and March 2026 market cap around $631.6B. The most credible decentralization pressure is not a direct open replacement for upstream extraction, but distributed electrification that reduces branded fuel demand through local solar, storage, and open EV charging stacks."}
+tokens used
+49,987

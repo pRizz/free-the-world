@@ -1,0 +1,684 @@
+2026-03-25T10:55:57.143197Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.143223Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.147797Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d24a3-06d6-7b71-9a0e-a154c74988a4
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: merck-co
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "merck-co",
+  "name": "Merck & Co.",
+  "ticker": "MRK",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top35"
+  ],
+  "sectorId": "health-care",
+  "industryId": "pharmaceuticals",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/merck/marketcap/",
+  "description": "Pharmaceutical company focused on oncology, vaccines, animal health, and specialty medicines.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Keytruda",
+    "Gardasil"
+  ],
+  "seedSourceUrls": [
+    "https://investors.merck.com/",
+    "https://www.merck.com/",
+    "https://companiesmarketcap.com/merck/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: playwright starting
+mcp: lsp starting
+2026-03-25T10:55:57.172315Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.175201Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.199032Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.202238Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.216863Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.218106Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.241780Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.242395Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.266080Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.267139Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.290218Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.291026Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.316073Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.316910Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.341644Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.342318Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.350795Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3336: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T10:55:57.365258Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.366007Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.389635Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.390348Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.415268Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.416200Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.440362Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.443281Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.467137Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.467942Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.492947Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.493611Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.516674Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:57.517671Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T10:55:57.540998Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T10:55:58.114631Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24a3-06d6-7b71-9a0e-a154c74988a4.tmp-1774436157143624000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T10:55:59.463597Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3334: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+🌐 Searching the web...
+🌐 Searched: Merck Keytruda official product page Merck Gardasil official product page Merck annual report 2025 market cap companiesmarketcap MRK P/E IPO date market cap at IPO
+🌐 Searching the web...
+🌐 Searched: site:merck.com Merck annual report 2025 PDF Keytruda Gardasil sales oncology vaccines animal health
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com merck pe ratio
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com/merck/pe-ratio Merck PE ratio companiesmarketcap
+🌐 Searching the web...
+🌐 Searched: site:merck.com product Keytruda official merck.com
+🌐 Searching the web...
+🌐 Searched: KEYTRUDA official website
+🌐 Searching the web...
+🌐 Searched the web
+🌐 Searching the web...
+🌐 Searched: Merck 2024 annual report pdf sec 10-k 2025 merck
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/310158/000162828025007732/0001628280-25-007732-index.html
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/ix?doc=%2FArchives%2Fedgar%2Fdata%2F310158%2F000162828025007732%2Fmrk-20241231.htm
+🌐 Searching the web...
+🌐 Searched the web
+🌐 Searching the web...
+🌐 Searched: site:merck.com Merck annual report 2024 net income 10-K
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"merck-co","name":"Merck & Co.","ticker":"MRK","rankApprox":30,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top35"],"sectorId":"health-care","industryId":"pharmaceuticals","companiesMarketCapUrl":"https://companiesmarketcap.com/merck/marketcap/","description":"Global pharmaceutical company centered on oncology, vaccines, animal health, and a large late-stage drug pipeline.","overview":[{"title":"Commercial Base","paragraphs":["Merck reported $65.0 billion in full-year 2025 sales, with oncology, vaccines, and animal health as the main commercial pillars. KEYTRUDA remained the dominant revenue engine at $31.7 billion in 2025 sales, while Animal Health contributed $6.4 billion and GARDASIL/GARDASIL 9 contributed $5.2 billion.","The company still looks like a diversified pharmaceutical incumbent, but concentration inside that portfolio is meaningful because KEYTRUDA alone accounts for a very large share of revenue and strategic attention. That makes Merck both powerful and somewhat exposed to lifecycle, patent, and competitive shifts around its flagship oncology franchise."},{"title":"Operating Model","paragraphs":["Merck's model depends on discovering, licensing, clinically validating, manufacturing, and globally commercializing regulated medicines and vaccines. Its scale shows up not just in sales, but in the ability to run late-stage trials, support regulatory filings, manufacture complex products, and defend branded franchises across many markets.","The company continues reinvesting into pipeline expansion and business development, which helps extend the moat beyond any single product. Even so, the market still prices Merck primarily as a large pharma platform whose current cash generation is tied heavily to protected therapeutic franchises rather than open networks or decentralized production."}],"moatNarrative":["Merck's moat is built on patent-protected drug franchises, clinical trial infrastructure, regulatory know-how, global manufacturing, and entrenched relationships with health systems, physicians, and payers. Those assets are especially visible in KEYTRUDA, where scientific leadership and label expansion have compounded into a massive oncology position.","The moat is strong but not invulnerable. Revenue concentration in KEYTRUDA increases dependence on sustaining indication breadth, defending exclusivity, and replacing future erosion with new launches from the pipeline and acquired assets."],"decentralizationNarrative":["Merck is structurally hard to decentralize because its core products are regulated prescription biologics and vaccines that require centralized quality systems, validated manufacturing, cold-chain logistics, pharmacovigilance, and expensive clinical evidence. Open-source software dynamics do not map cleanly onto this market.","Some decentralizing pressure can emerge around manufacturing tools, shared research data, or regional production capacity over a long horizon, but the current commercial layer is still dominated by centralized approvals, proprietary processes, and institutional distribution. That keeps Merck's decentralizability low even if certain upstream scientific workflows become more open over time."],"sourceIds":["src-q4-2025","src-annual-2024","src-marketcap","src-pe-2026"],"technologyWaveIds":[],"snapshotNote":"Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35.","inputMetrics":{"moat":{"value":9,"rationale":"Merck combines blockbuster patented products, global clinical and regulatory execution, and large-scale manufacturing and commercialization capabilities; 2025 sales data show a powerful franchise anchored by KEYTRUDA with meaningful support from vaccines and animal health.","sourceIds":["src-q4-2025","src-annual-2024"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":2,"rationale":"Its core revenue comes from regulated biologics and vaccines delivered through centralized approval, manufacturing, and provider channels, which leaves little room for near-term open or peer-produced substitution.","sourceIds":["src-keytruda","src-gardasil9","src-annual-2024"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":8,"rationale":"Merck reported $18.3 billion in GAAP net income on $65.0 billion of 2025 sales, indicating strong earnings power even while continuing to invest in pipeline and business development.","sourceIds":["src-q4-2025"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":15.8,"rationale":"CompaniesMarketCap listed Merck's trailing P/E ratio at about 15.8 in March 2026.","sourceIds":["src-pe-2026"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":287310000000,"rationale":"CompaniesMarketCap listed Merck's market capitalization at about $287.31 billion in March 2026.","sourceIds":["src-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"keytruda","name":"Keytruda","category":"oncology immunotherapy","homepageUrl":"https://www.keytruda.com/","summary":"Pembrolizumab immunotherapy used across a wide range of cancer indications and the central commercial engine of Merck's oncology business.","whyItMatters":"KEYTRUDA is the product that most clearly defines Merck's current power: it generated $31.7 billion in 2025 sales and anchors Merck's position in modern immuno-oncology.","replacementSketch":["A true replacement would need to reproduce not just an anti-PD-1 mechanism, but the evidence stack, manufacturing consistency, regulatory approvals, and clinical distribution channels that make oncologists willing and able to use it.","That means meaningful disruption is more likely to start upstream in cheaper biologics manufacturing, shared trial infrastructure, or radically improved cancer prevention and early detection rather than in a near-term open substitute for KEYTRUDA itself."],"maybeDisruptionException":{"reason":"A credible open or decentralized replacement would be dishonest to claim today because KEYTRUDA is a regulated monoclonal-antibody cancer therapy with extensive indication-specific clinical evidence, centralized manufacturing requirements, and physician-administered delivery channels. The official product materials and Merck disclosures support treating this as a highly centralized biopharma franchise rather than an immediately decentralizable software-like market.","sourceIds":["src-keytruda","src-q4-2025","src-annual-2024"],"lastReviewedOn":"2026-03-25"},"sourceIds":["src-keytruda","src-q4-2025","src-annual-2024"],"technologyWaveIds":[],"alternatives":[],"disruptionConcepts":[]},{"slug":"gardasil-9","name":"Gardasil 9","category":"hpv vaccine","homepageUrl":"https://www.gardasil9.com/","summary":"Nine-valent HPV vaccine used to prevent multiple HPV-related cancers and diseases across eligible age groups.","whyItMatters":"GARDASIL 9 is one of Merck's signature vaccine franchises and a major proof of its ability to turn proprietary biologics, manufacturing quality, and public-health distribution into durable revenue.","replacementSketch":["A serious replacement would need validated antigen design, large-scale recombinant manufacturing, clinical efficacy data, long-term safety monitoring, and regulatory acceptance across immunization programs.","Over time, disruption is more plausible through lower-cost vaccine manufacturing platforms or broader public-health procurement reforms than through a near-term open-source equivalent of GARDASIL 9."],"maybeDisruptionException":{"reason":"It is not currently credible to present an open or decentralized replacement for GARDASIL 9 because the product is a regulated recombinant vaccine whose value depends on clinical evidence, manufacturing controls, safety surveillance, and institutional immunization channels. Those requirements make the market materially different from domains where open-source or protocol-native substitutes can emerge quickly.","sourceIds":["src-gardasil9","src-q4-2025","src-annual-2024"],"lastReviewedOn":"2026-03-25"},"sourceIds":["src-gardasil9","src-q4-2025","src-annual-2024"],"technologyWaveIds":[],"alternatives":[],"disruptionConcepts":[]}]},"sources":[{"id":"src-annual-2024","title":"Merck & Co., Inc. 2024 Form 10-K","url":"https://www.sec.gov/Archives/edgar/data/310158/000162828025017867/formars202410-k.pdf","kind":"annual-report","publisher":"U.S. Securities and Exchange Commission","note":"Baseline annual-report source for Merck's business segments, product revenue mix, and regulated pharmaceutical operating model.","accessedOn":"2026-03-25"},{"id":"src-q4-2025","title":"Merck Announces Fourth-Quarter and Full-Year 2025 Financial Results","url":"https://www.merck.com/news/merck-highlights-progress-advancing-broad-diverse-pipeline/","kind":"investor-relations","publisher":"Merck & Co.","note":"Primary current source for 2025 sales, net income, EPS, and product concentration including KEYTRUDA, GARDASIL, and Animal Health.","accessedOn":"2026-03-25"},{"id":"src-keytruda","title":"KEYTRUDA (pembrolizumab) Official Site","url":"https://www.keytruda.com/","kind":"product-page","publisher":"Merck & Co.","note":"Official product source describing KEYTRUDA's broad indication footprint and clinical positioning as a branded immunotherapy.","accessedOn":"2026-03-25"},{"id":"src-gardasil9","title":"GARDASIL 9 Official Site","url":"https://www.gardasil9.com/","kind":"product-page","publisher":"Merck & Co.","note":"Official product source for the vaccine's indications, dosing framing, and prevention role in HPV-related cancers and disease.","accessedOn":"2026-03-25"},{"id":"src-marketcap","title":"Merck Market Capitalization","url":"https://companiesmarketcap.com/merck/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current market capitalization reference used for approximate size and public-market standing.","accessedOn":"2026-03-25"},{"id":"src-pe-2026","title":"Merck P/E Ratio","url":"https://companiesmarketcap.com/merck/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current trailing P/E reference used for the valuation multiple field.","accessedOn":"2026-03-25"}],"summaryMarkdown":"Merck remains a high-moat, low-decentralizability pharmaceutical incumbent led by the KEYTRUDA oncology franchise, with GARDASIL 9 and Animal Health providing secondary support. For this refresh, both seeded products are treated as legitimate disruption-exception cases because near-term open or decentralized substitutes would overstate what current regulatory, clinical, and manufacturing realities allow."}
+tokens used
+60,327

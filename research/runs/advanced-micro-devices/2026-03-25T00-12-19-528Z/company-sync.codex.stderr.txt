@@ -1,0 +1,665 @@
+2026-03-25T00:12:19.674167Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.674483Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.682304Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d2255-c554-7732-922f-2e1a666a330b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: advanced-micro-devices
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "advanced-micro-devices",
+  "name": "Advanced Micro Devices",
+  "ticker": "AMD",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top35"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "semiconductors",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/amd/marketcap/",
+  "description": "Semiconductor company designing CPUs, GPUs, accelerators, and adaptive computing platforms.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "EPYC",
+    "Radeon"
+  ],
+  "seedSourceUrls": [
+    "https://ir.amd.com/",
+    "https://www.amd.com/",
+    "https://companiesmarketcap.com/amd/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: lsp starting
+mcp: playwright starting
+2026-03-25T00:12:19.706197Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.707406Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.732425Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.733306Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.758398Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.781861Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.782712Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.807368Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.808336Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.833204Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.834087Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.857437Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.858298Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.883269Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.884108Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.909081Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.909920Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:12:19.932053Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:12:19.968254Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 91373: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T00:12:20.481458Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d2255-c554-7732-922f-2e1a666a330b.tmp-1774397539675479000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T00:12:20.534663Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 91374: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m verifying AMD with primary sources and current market data first, then I’ll assemble the publishable JSON with company metrics, products, alternatives, and disruption concepts.
+🌐 Searching the web...
+🌐 Searched: AMD annual report 2025 pdf investor relations revenue net income data
+🌐 Searching the web...
+🌐 Searched: site:amd.com EPYC product page AMD EPYC processors
+🌐 Searching the web...
+🌐 Searched: OpenPOWER foundation open hardware server processor project
+🌐 Searching the web...
+🌐 Searched: CompaniesMarketCap AMD PE ratio
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/cad/amd/marketcap/
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/amd/marketcap/
+🌐 Searching the web...
+🌐 Searched: 'P/E ratio as of March 2026' in https://companiesmarketcap.com/amd/pe-ratio/
+🌐 Searching the web...
+🌐 Searched: PowerCommons open silicon commons A2O Microwatt
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"advanced-micro-devices","name":"Advanced Micro Devices","ticker":"AMD","rankApprox":30,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top35"],"sectorId":"information-technology","industryId":"semiconductors","companiesMarketCapUrl":"https://companiesmarketcap.com/amd/marketcap/","description":"Fabless semiconductor company designing x86 CPUs, GPUs, AI accelerators, and adaptive computing platforms for data center, client, gaming, and embedded markets.","overview":[{"title":"Business","paragraphs":["AMD sells high-performance compute products across data center, client, gaming, and embedded segments, with EPYC server CPUs and Radeon graphics products serving as visible anchors for its broader platform strategy.","Its 2025 results show record revenue and materially higher net income, indicating that its recent position is being reinforced by data-center demand, AI infrastructure spending, and stronger client and gaming mix rather than by a single transient product cycle."]},{"title":"Why It Matters","paragraphs":["AMD matters because it is one of the few scaled challengers to Intel and NVIDIA across general-purpose compute and accelerated computing, but it still depends on highly concentrated design, packaging, foundry, and software ecosystems.","That combination creates a strong moat in the current market while also exposing a long-run vulnerability: open firmware, open ISA compute, auditable hardware, and reuse-oriented hardware ecosystems could chip away at parts of the stack even if leading-edge fabrication remains centralized."]}],"moatNarrative":["AMD’s moat comes from scarce x86 CPU design capability, competitive GPU and accelerator IP, deep OEM and cloud relationships, and the software and validation work needed to land products in hyperscale, enterprise, and gaming ecosystems.","The moat is strong but not absolute. AMD is fabless and relies on concentrated external manufacturing and packaging partners, which means much of its practical advantage sits in design execution, platform integration, and customer trust rather than vertically controlled production."],"decentralizationNarrative":["AMD is not structurally decentralized. Its products depend on proprietary chip design, advanced fabs, concentrated packaging capacity, and centralized platform qualification, all of which keep production and control highly concentrated.","Decentralization pressure is more plausible at the system layer than at the leading-edge silicon layer: open firmware, open ISA servers, auditable boards, cooperative refurbishment, and regional integration models can erode lock-in around deployed compute even if they do not replicate top-tier AMD silicon soon."],"sourceIds":["amd-2025-results","cmc-amd-marketcap","cmc-amd-pe","amd-epyc","amd-radeon"],"technologyWaveIds":["printed-electronics","microfactories"],"snapshotNote":"Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35; refreshed on 2026-03-24 with current AMD financial and market-data references.","inputMetrics":{"moat":{"value":8,"rationale":"AMD combines scarce CPU and GPU design capability with hyperscaler, OEM, and software ecosystem integration that is difficult for new entrants to replicate quickly.","sourceIds":["amd-2025-results","amd-epyc","amd-radeon"],"confidence":"high","lastReviewedOn":"2026-03-24"},"decentralizability":{"value":3,"rationale":"Meaningful pressure exists at the firmware, system-integration, and refurbishment layers, but leading-edge semiconductor design and fabrication remain highly centralized and capital intensive.","sourceIds":["amd-epyc","amd-radeon","openpower-foundation","powercommons-overview","coreboot-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"profitability":{"value":8,"rationale":"AMD reported full-year 2025 revenue of $34.6 billion, operating income of $3.7 billion, and net income of $4.3 billion, indicating strong profitability with improved scale.","sourceIds":["amd-2025-results"],"confidence":"high","lastReviewedOn":"2026-03-24"},"peRatio":{"value":101,"rationale":"CompaniesMarketCap listed AMD’s trailing P/E at about 100.7 in March 2026, indicating the market still prices AMD as a high-expectation growth semiconductor name.","sourceIds":["cmc-amd-pe"],"confidence":"speculative","lastReviewedOn":"2026-03-24"},"marketCap":{"value":334830000000,"rationale":"CompaniesMarketCap listed AMD at roughly $334.83 billion market capitalization on March 24, 2026.","sourceIds":["cmc-amd-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}},"products":[{"slug":"epyc","name":"EPYC","category":"server-cpus","homepageUrl":"https://www.amd.com/epyc","summary":"AMD EPYC is the company’s server CPU line for enterprise, cloud, AI host, and HPC workloads.","whyItMatters":"EPYC is central to AMD’s data-center credibility because it anchors CPU socket wins in hyperscale, enterprise, and supercomputing deployments where platform qualification and lifecycle trust matter as much as raw benchmark results.","replacementSketch":["A credible replacement path is not a direct like-for-like clone of EPYC at leading-edge process nodes. It is a slower migration toward open ISA servers, auditable firmware, and regionally integrated systems that reduce dependence on a tiny set of opaque CPU platforms.","That path is more likely to start in public-interest infrastructure, research, sovereign compute, and specialized deployments where transparency and control can outrank absolute top-end performance per socket."],"sourceIds":["amd-epyc","amd-2025-results"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"powercommons-openpower-stack","name":"PowerCommons OpenPOWER Stack","kind":"open-source","homepageUrl":"https://powercommons.org/projects/overview.html","summary":"OpenPOWER-based effort combining open processor cores and system work to build auditable, Linux-capable compute infrastructure.","metrics":{"openness":{"value":9,"rationale":"PowerCommons positions the effort around fully open, verifiable compute infrastructure built on open processor implementations and public documentation.","sourceIds":["powercommons-home","powercommons-overview"],"confidence":"high","lastReviewedOn":"2026-03-24"},"decentralizationFit":{"value":8,"rationale":"The project explicitly supports transparent, sovereign, regionally deployable compute rather than dependence on a single proprietary chip vendor.","sourceIds":["powercommons-home","openpower-foundation"],"confidence":"high","lastReviewedOn":"2026-03-24"},"readiness":{"value":2,"rationale":"The project is still in active development and architecture phases, so it is not a mature drop-in replacement for mainstream EPYC deployments.","sourceIds":["powercommons-home","powercommons-overview"],"confidence":"high","lastReviewedOn":"2026-03-24"},"costLeverage":{"value":4,"rationale":"If open reference designs and regional integration mature, they could lower lock-in and lifecycle costs, but current development-stage status limits immediate cost leverage.","sourceIds":["powercommons-home","powercommons-overview"],"confidence":"high","lastReviewedOn":"2026-03-24"}},"sourceIds":["powercommons-home","powercommons-overview","openpower-foundation"]}],"disruptionConcepts":[{"slug":"open-server-federation","name":"Open Server Federation","summary":"A federated market of regional integrators could assemble auditable servers around open ISA and open firmware building blocks, targeting institutions that value inspectability, long lifecycle support, and procurement independence over absolute peak benchmark leadership.","angleIds":["decentralized-coordination","federation","open-hardware"],"thesis":"This changes the market structure from a concentrated x86 socket race toward a broader supply market where open system designs, firmware transparency, and regional integration become differentiated assets.","bitcoinOrDecentralizationRole":"Decentralization matters through federated procurement and deployment rather than through Bitcoin specifically: multiple operators can share reference designs, validation results, and maintenance practices without relying on a single dominant CPU vendor.","coordinationMechanism":"Open foundations, public design artifacts, and interoperable firmware stacks let universities, governments, and specialist integrators coordinate on shared server platforms while competing on support, packaging, and deployment quality.","verificationOrTrustModel":"Trust comes from inspectable firmware, public hardware documentation, reproducible validation, and cross-operator benchmarking. The main anti-cheating control is that performance, compatibility, and support claims can be tested and compared across operators using shared test suites.","failureModes":["Open CPU ecosystems may remain too slow or too power-inefficient versus leading EPYC generations.","Manufacturing and board-validation fragmentation could create support burdens that enterprise buyers reject."],"adoptionPath":["Start with research, sovereign, and public-interest compute deployments where auditability is valuable.","Expand into specialized enterprise and edge deployments once firmware, tooling, and supply chains stabilize."],"confidence":"medium","problemSourceIds":["amd-epyc","amd-2025-results"],"enablerSourceIds":["openpower-foundation","powercommons-home","powercommons-overview","coreboot-home"],"metrics":{"decentralizationFit":{"value":8,"rationale":"Federated open server procurement directly reduces dependence on a tiny set of opaque platform vendors.","sourceIds":["openpower-foundation","powercommons-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":5,"rationale":"OpenPOWER and PowerCommons provide real coordination anchors, but the commercial ecosystem is still much smaller than x86 incumbents.","sourceIds":["openpower-foundation","powercommons-overview"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":4,"rationale":"Pieces exist today, but a mature, broad enterprise replacement stack still requires more firmware, validation, and manufacturing work.","sourceIds":["powercommons-home","powercommons-overview","coreboot-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":5,"rationale":"The concept would pressure AMD most in transparency-sensitive niches first rather than in mainstream hyperscale demand immediately.","sourceIds":["amd-epyc","amd-2025-results","powercommons-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}},{"slug":"server-reuse-cooperatives","name":"Server Reuse Cooperatives","summary":"Cooperative refurbishers and regional data-center operators could use open firmware and standardized validation to keep existing servers productive longer, shifting part of the market from constant socket replacement toward audited reuse and lifecycle extension.","angleIds":["recycling-and-reuse","cooperative-production","open-hardware"],"thesis":"This pressures the new-server market by turning hardware longevity, repairability, and transparent refurbishment into a competitive substitute for some fresh EPYC purchases.","bitcoinOrDecentralizationRole":"The decentralization role is operational rather than monetary: independent refurbishers and operators coordinate around open firmware, published compatibility matrices, and shared test procedures instead of a single vendor-controlled refresh cycle.","coordinationMechanism":"Regional cooperatives or refurbisher networks certify compatible boards, firmware images, and workload classes, then resell or redeploy validated systems into secondary markets.","verificationOrTrustModel":"Trust depends on published burn-in tests, firmware hashes, component traceability, and peer-reviewed validation records. Cheating is constrained by repeatable diagnostics and reputational penalties for failed deployments, though fraudulent part substitution remains a risk.","failureModes":["Used hardware may miss customer performance-per-watt targets for modern AI and dense virtualization workloads.","Firmware support gaps and inconsistent spare-parts quality could limit enterprise adoption."],"adoptionPath":["Begin with education, municipal, lab, and edge deployments where lifecycle cost matters more than leading-edge throughput.","Scale through shared diagnostics, parts grading, and open firmware support networks."],"confidence":"medium","problemSourceIds":["amd-epyc","amd-2025-results"],"enablerSourceIds":["coreboot-home","libreboot-home","openpower-foundation"],"metrics":{"decentralizationFit":{"value":7,"rationale":"Distributed refurbishers and operators reduce dependence on centralized new-hardware purchasing cycles.","sourceIds":["coreboot-home","libreboot-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":6,"rationale":"Refurbishment markets already exist; the missing piece is stronger shared validation and open firmware support.","sourceIds":["coreboot-home","libreboot-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":6,"rationale":"This is easier than fabricating new open CPUs because it builds on existing hardware and operational practices.","sourceIds":["coreboot-home","libreboot-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":4,"rationale":"It would mostly soften replacement demand at the margin rather than displace AMD in high-growth greenfield data-center expansion.","sourceIds":["amd-2025-results","amd-epyc"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}}]},{"slug":"radeon","name":"Radeon","category":"graphics-cards","homepageUrl":"https://www.amd.com/en/products/graphics/desktops/radeon.html","summary":"AMD Radeon is the company’s graphics product family for gaming, visual computing, and increasing AI-assisted client workloads.","whyItMatters":"Radeon matters because GPUs are not just consumer gaming parts anymore; they are a control point for graphics APIs, media pipelines, AI features, and the surrounding software stack that can lock users into opaque firmware and driver ecosystems.","replacementSketch":["A realistic replacement path starts by opening more of the graphics stack around deployed hardware, then gradually moving toward auditable boards and open accelerator designs for specific workloads.","That means disruption may arrive first as reduced platform lock-in and longer usable hardware life, not as an immediate one-for-one replacement for the newest Radeon gaming card at the same performance tier."],"sourceIds":["amd-radeon","amd-2025-results"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"libre-soc","name":"Libre-SOC","kind":"hybrid","homepageUrl":"https://libre-soc.org/","summary":"Libre-SOC is an ambitious fully open CPU/GPU SoC effort aimed at delivering free hardware and driver control for graphics and compute workloads.","metrics":{"openness":{"value":10,"rationale":"Libre-SOC explicitly frames itself as a fully open chip effort with free hardware and driver ambitions.","sourceIds":["libre-soc-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"decentralizationFit":{"value":8,"rationale":"An open CPU/GPU design could reduce dependence on closed GPU vendors by enabling inspectable and modifiable compute hardware.","sourceIds":["libre-soc-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"readiness":{"value":2,"rationale":"Libre-SOC remains an ambitious early-stage project and is not a practical mainstream Radeon replacement today.","sourceIds":["libre-soc-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"costLeverage":{"value":3,"rationale":"Long-run cost leverage could be meaningful if open silicon matures, but present-day deployment economics remain weak.","sourceIds":["libre-soc-home"],"confidence":"high","lastReviewedOn":"2026-03-24"}},"sourceIds":["libre-soc-home"]}],"disruptionConcepts":[{"slug":"open-graphics-stack","name":"Open Graphics Stack","summary":"An open graphics market could grow around shared drivers, auditable firmware, and reference board designs so that more of the value shifts from captive GPU platforms toward interoperable, inspectable compute modules.","angleIds":["open-hardware","decentralized-coordination"],"thesis":"This weakens the GPU vendor’s control over the full graphics experience by making drivers, firmware, and board support less captive to a single proprietary roadmap.","bitcoinOrDecentralizationRole":"The decentralization role is technical rather than monetary: open drivers and firmware let more actors maintain, repair, and validate graphics hardware instead of deferring to a single vendor-controlled software stack.","coordinationMechanism":"Driver communities, hardware maintainers, and board makers coordinate through shared APIs, public documentation, open firmware efforts, and cross-vendor compatibility testing.","verificationOrTrustModel":"Trust comes from public source code, reproducible builds where possible, benchmark transparency, and broad peer review of driver behavior. False performance or compatibility claims are constrained by open test suites and community replication, though firmware blobs and undocumented hardware behavior still weaken assurance.","failureModes":["Vendors can still keep critical firmware or hardware interfaces closed.","Open stacks may lag in top-end gaming features or newest silicon enablement."],"adoptionPath":["Expand open driver and firmware support around already-deployed graphics hardware.","Use that installed base to justify more open board designs and eventually more open accelerator silicon."],"confidence":"medium","problemSourceIds":["amd-radeon","amd-2025-results"],"enablerSourceIds":["mesa-home","coreboot-home","libreboot-home","libre-soc-home"],"metrics":{"decentralizationFit":{"value":8,"rationale":"Open drivers and firmware directly disperse control over maintenance and compatibility.","sourceIds":["mesa-home","coreboot-home","libreboot-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":7,"rationale":"Mesa and firmware communities already show that large cross-organization graphics collaboration is possible.","sourceIds":["mesa-home","coreboot-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":6,"rationale":"The software-side path is real today, even if fully open next-generation GPU hardware remains difficult.","sourceIds":["mesa-home","libre-soc-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":5,"rationale":"It pressures lock-in and lifecycle control more quickly than it pressures AMD’s newest discrete GPU sales directly.","sourceIds":["amd-radeon","mesa-home","coreboot-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}},{"slug":"gpu-remanufacture-loops","name":"GPU Remanufacture Loops","summary":"Regional repair and remanufacture networks could keep older graphics cards useful longer through open diagnostics, replacement parts, firmware recovery, and Linux-first driver support, reducing the forced-upgrade dynamic in parts of the GPU market.","angleIds":["recycling-and-reuse","cooperative-production","open-hardware"],"thesis":"This changes the market by turning used GPUs into a more durable competitive pool rather than disposable stepping stones toward every new generation.","bitcoinOrDecentralizationRole":"Decentralization matters through distributed refurbishment and local service capability, not through Bitcoin; value shifts from centralized product launches toward many smaller operators extending hardware utility.","coordinationMechanism":"Repair shops, cooperatives, and resale platforms share validated repair procedures, compatibility data, and open-software images so used boards can be graded and redeployed with more confidence.","verificationOrTrustModel":"Operators use stress tests, thermal validation, visual inspection, and published pass/fail criteria to certify cards. Cheating is limited by standardized diagnostics and reputation systems, but hidden component fatigue and counterfeit parts remain hard problems.","failureModes":["High-end buyers may still prefer new GPUs for performance, efficiency, and feature support.","Remanufacture economics can be undermined by memory failures, scarce parts, or anti-repair board design."],"adoptionPath":["Start with Linux-oriented refurbishers and budget gaming or workstation markets.","Standardize grading, diagnostics, and firmware recovery processes to improve trust and resale value."],"confidence":"medium","problemSourceIds":["amd-radeon","amd-2025-results"],"enablerSourceIds":["mesa-home","coreboot-home","libreboot-home"],"metrics":{"decentralizationFit":{"value":7,"rationale":"Distributed repair and reuse moves economic power away from centralized launch cycles toward local operators.","sourceIds":["mesa-home","coreboot-home","libreboot-home"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":6,"rationale":"Refurbishment markets already exist; more open tooling and diagnostics would make them stronger.","sourceIds":["mesa-home","coreboot-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":7,"rationale":"Compared with fabricating new open GPUs, remanufacture loops are relatively practical because they extend existing hardware.","sourceIds":["mesa-home","libreboot-home"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":4,"rationale":"This would mainly pressure replacement cadence and low-to-midrange demand rather than immediately threaten new flagship Radeon sales.","sourceIds":["amd-radeon","amd-2025-results"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}}]}]},"sources":[{"id":"amd-2025-results","title":"AMD Reports Fourth Quarter and Full Year 2025 Financial Results","url":"https://ir.amd.com/news-events/press-releases/detail/1276/amd-reports-fourth-quarter-and-full-year-2025-financial-results","kind":"investor-relations","publisher":"Advanced Micro Devices, Inc.","note":"Primary source for AMD’s 2025 revenue, operating income, net income, and segment context.","accessedOn":"2026-03-24"},{"id":"cmc-amd-marketcap","title":"AMD (AMD) Market Capitalization","url":"https://companiesmarketcap.com/amd/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current market capitalization reference used for rank and market-cap metric.","accessedOn":"2026-03-24"},{"id":"cmc-amd-pe","title":"AMD (AMD) P/E Ratio","url":"https://companiesmarketcap.com/amd/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current trailing P/E reference used for valuation metric.","accessedOn":"2026-03-24"},{"id":"amd-epyc","title":"AMD EPYC Server CPUs","url":"https://www.amd.com/epyc","kind":"product-page","publisher":"Advanced Micro Devices, Inc.","note":"Primary product page describing EPYC positioning across enterprise, cloud, AI, and HPC workloads.","accessedOn":"2026-03-24"},{"id":"amd-radeon","title":"AMD Radeon RX Graphics Cards","url":"https://www.amd.com/en/products/graphics/desktops/radeon.html","kind":"product-page","publisher":"Advanced Micro Devices, Inc.","note":"Primary product page describing Radeon graphics positioning, RDNA generation, and gaming features.","accessedOn":"2026-03-24"},{"id":"mesa-home","title":"Mesa 3D Graphics Library Documentation","url":"https://docs.mesa3d.org/","kind":"open-source-project","publisher":"Mesa Project","note":"Open graphics stack reference showing mature community-driven driver infrastructure.","accessedOn":"2026-03-24"},{"id":"coreboot-home","title":"coreboot","url":"https://coreboot.org/","kind":"open-source-project","publisher":"coreboot project","note":"Open firmware reference relevant to auditable systems, lifecycle extension, and reduced platform lock-in.","accessedOn":"2026-03-24"},{"id":"libreboot-home","title":"Libreboot","url":"https://libreboot.org/","kind":"open-source-project","publisher":"Libreboot project","note":"Free firmware distribution relevant to repairability, transparency, and refurbished hardware concepts.","accessedOn":"2026-03-24"},{"id":"openpower-foundation","title":"OpenPOWER Foundation","url":"https://openpowerfoundation.org/","kind":"technical-docs","publisher":"OpenPOWER Foundation","note":"Reference for open processor ecosystem coordination and open ISA positioning.","accessedOn":"2026-03-24"},{"id":"powercommons-home","title":"PowerCommons","url":"https://powercommons.org/","kind":"technical-docs","publisher":"PowerCommons","note":"Primary source for an open, verifiable compute initiative built around OpenPOWER-derived components.","accessedOn":"2026-03-24"},{"id":"powercommons-overview","title":"PowerCommons Projects Overview","url":"https://powercommons.org/projects/overview.html","kind":"technical-docs","publisher":"PowerCommons","note":"Project roadmap and status source for open server and SoC alternative readiness assessment.","accessedOn":"2026-03-24"},{"id":"libre-soc-home","title":"Libre-SOC","url":"https://libre-soc.org/","kind":"open-source-project","publisher":"Libre-SOC","note":"Open CPU/GPU SoC project used as an ambitious open graphics hardware alternative reference.","accessedOn":"2026-03-24"}],"summaryMarkdown":"AMD remains a strong, profitable semiconductor incumbent with a real moat in server and graphics compute, but its stack is still highly centralized around proprietary design and concentrated manufacturing. The most credible decentralization pressure comes from open firmware, open ISA server ecosystems, open graphics software, and refurbishment-oriented hardware markets rather than from near-term replication of AMD’s leading-edge silicon."}
+tokens used
+56,995

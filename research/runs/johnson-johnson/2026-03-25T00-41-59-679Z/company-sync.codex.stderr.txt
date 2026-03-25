@@ -1,0 +1,663 @@
+2026-03-25T00:41:59.745270Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.745293Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.748919Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d2270-eec0-7cc0-915e-cf04b42a307b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: johnson-johnson
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "johnson-johnson",
+  "name": "Johnson & Johnson",
+  "ticker": "JNJ",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top20"
+  ],
+  "sectorId": "health-care",
+  "industryId": "pharma-medtech",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/johnson-johnson/marketcap/",
+  "description": "Diversified health-care company focused on pharmaceuticals and medical technology after the consumer-health separation.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Innovative medicine portfolio",
+    "MedTech portfolio"
+  ],
+  "seedSourceUrls": [
+    "https://www.jnj.com/",
+    "https://companiesmarketcap.com/johnson-johnson/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: playwright starting
+mcp: lsp starting
+2026-03-25T00:41:59.770476Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:41:59.771430Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.795037Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:41:59.796587Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.820594Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:41:59.821628Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.850484Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:41:59.851312Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.874352Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:41:59.875195Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.904401Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:41:59.905226Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.931781Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:41:59.932683Z  WARN codex_state::runtime: failed to open logs db at /Users/peterryszkiewicz/.codex/logs_1.sqlite: migration 2 was previously applied but is missing in the resolved migrations
+2026-03-25T00:41:59.961135Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T00:42:00.067140Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 14699: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T00:42:00.618886Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d2270-eec0-7cc0-915e-cf04b42a307b.tmp-1774399319745685000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T00:42:00.801214Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 14698: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m verifying Johnson & Johnson against current primary sources first, then I’ll shape the bundle around product areas that can be supported without inventing weak alternatives.
+🌐 Searching the web...
+🌐 Searched: Johnson & Johnson annual report 2025 medtech innovative medicine sales official
+🌐 Searching the web...
+🌐 Searched: https://investor.jnj.com/investor-news/news-details/2026/Johnson--Johnson-reports-Q4-and-Full-Year-2025-results/default.aspx
+🌐 Searching the web...
+🌐 Searched: site:jnj.com Johnson & Johnson company overview 2026 official
+🌐 Searching the web...
+🌐 Searched: Johnson & Johnson PE ratio March 2026 macrotrends
+🌐 Searching the web...
+🌐 Searched: open source pharma foundation drug discovery official
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com/johnson-johnson/marketcap Johnson & Johnson market cap USD March 2026
+🌐 Searching the web...
+🌐 Searched: Johnson & Johnson 2025 annual report 10-k pdf
+🌐 Searching the web...
+🌐 Searched: https://www.jnj.com/download/johnson-johnson-2025-annual-report
+🌐 Searching the web...
+🌐 Searched: site:opensourcemedicalsupplies.org about Open Source Medical Supplies official
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"johnson-johnson","name":"Johnson & Johnson","ticker":"JNJ","rankApprox":19,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top20"],"sectorId":"health-care","industryId":"pharma-medtech","companiesMarketCapUrl":"https://companiesmarketcap.com/johnson-johnson/marketcap/","description":"Diversified health-care company focused on Innovative Medicine and MedTech after the Kenvue consumer-health separation.","overview":[{"title":"Portfolio Shape","paragraphs":["Johnson & Johnson now presents itself as a two-segment health-care platform spanning Innovative Medicine and MedTech, with strategic concentration in oncology, immunology, neuroscience, cardiovascular, surgery, and vision.","Its 2025 annual report frames that combination of drug development, device franchises, clinical evidence generation, and global manufacturing as a differentiated scale advantage versus narrower pharma or medtech peers."]},{"title":"Current Financial Snapshot","paragraphs":["Johnson & Johnson reported $94.2 billion of 2025 sales, adjusted net earnings of $26.2 billion, and nearly $19.7 billion of free cash flow, indicating a still very profitable incumbent despite patent-loss pressure around STELARA.","As of March 2026, CompaniesMarketCap placed Johnson & Johnson at roughly $585.6 billion in market value and rank 19 globally, consistent with its inclusion in the S&P 500 top-20 market-cap snapshot used for this registry refresh."]}],"moatNarrative":["Johnson & Johnson's moat is built on regulatory expertise, a broad commercial footprint, deep clinician relationships, manufacturing scale, and a portfolio that spans high-value medicines and procedure-linked devices. Those advantages compound because approvals, reimbursement pathways, post-market surveillance, and hospital procurement all favor incumbents with capital and operating history.","The moat is not invulnerable. Patent expirations, device-category competition, and reimbursement pressure can erode product-level economics, but the company's scale, cash generation, and ability to redeploy capital across therapy areas and device categories keep the enterprise moat strong even when individual franchises mature."],"decentralizationNarrative":["Johnson & Johnson is relatively hard to decentralize in the near term because much of its value sits inside patented therapeutics, biologics manufacturing, regulated clinical evidence, and procedure-integrated medtech platforms that still require heavy compliance and capital. That makes broad replacement by open systems slower than in software or media.","The more realistic decentralizing pressure comes at the edges: open science in drug discovery, generic or cooperative manufacturing for mature therapies, open-hardware medical tooling, and distributed fabrication for simpler devices and supplies. Those mechanisms can chip away at portions of the value chain, but they do not yet amount to a full-stack substitute for J&J's current portfolio."],"sourceIds":["s1","s2","s3","s4","s5"],"technologyWaveIds":["additive-manufacturing","microfactories"],"snapshotNote":"Refreshed on 2026-03-24 using Johnson & Johnson FY2025 reporting and March 2026 market-cap data after the consumer-health separation.","inputMetrics":{"moat":{"value":9,"rationale":"The company combines large-scale drug R&D, device platforms, global distribution, regulatory execution, and strong cash generation across multiple health-care categories, which creates a durable incumbent position.","sourceIds":["s2","s3","s5"],"confidence":"high","lastReviewedOn":"2026-03-24"},"decentralizability":{"value":3,"rationale":"Most of the portfolio depends on patent protection, clinical evidence, regulated manufacturing, and hospital or specialist distribution, which limits near-term replacement by open or decentralized systems.","sourceIds":["s2","s4","s5"],"confidence":"high","lastReviewedOn":"2026-03-24"},"profitability":{"value":8,"rationale":"Johnson & Johnson reported $26.2 billion in adjusted net earnings and about $19.7 billion in free cash flow for 2025, indicating strong underlying profitability.","sourceIds":["s2","s3"],"confidence":"high","lastReviewedOn":"2026-03-24"},"peRatio":{"value":22.54,"rationale":"MacroTrends listed Johnson & Johnson's trailing P/E ratio at 22.54 as of March 12, 2026; this is market-data-derived and can move daily.","sourceIds":["s9"],"confidence":"speculative","lastReviewedOn":"2026-03-24"},"marketCap":{"value":585580000000,"rationale":"CompaniesMarketCap listed Johnson & Johnson at approximately $585.58 billion of market capitalization in March 2026, ranking it 19th globally.","sourceIds":["s1"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}},"products":[{"slug":"innovative-medicine-portfolio","name":"Innovative Medicine portfolio","category":"pharmaceuticals","homepageUrl":"https://innovativemedicine.jnj.com/our-innovation/focus-areas","summary":"Johnson & Johnson's Innovative Medicine segment spans oncology, immunology, neuroscience, and cardiopulmonary therapies, with multiple blockbuster products and a large late-stage pipeline.","whyItMatters":"This segment is a major profit engine and a core source of the company's pricing power, intellectual-property leverage, and long-duration clinical relationships.","replacementSketch":["A credible long-run replacement path is not a single rival drug company but a more open research-to-manufacturing stack: shared discovery data, collaborative trial infrastructure, and lower-margin generic production once viable therapies are identified.","That model would attack the economics of proprietary discovery and portfolio control rather than instantly substituting for J&J's current branded medicine lineup."],"sourceIds":["s2","s3","s4"],"technologyWaveIds":[],"alternatives":[],"disruptionConcepts":[{"slug":"open-source-pharma-generic-manufacturing-network","name":"Open-source pharma and generic manufacturing network","summary":"A federated open-science model could separate discovery knowledge from monopoly ownership by publishing target data, preclinical results, trial learnings, and manufacturing playbooks into a commons that multiple universities, nonprofits, hospitals, and generic manufacturers can build on. Instead of relying on one firm to capture the full return through exclusive patents and branded commercialization, the system would aim to lower R&D duplication and speed affordable therapy development in areas of high unmet need.","angleIds":["decentralized-coordination","cooperative-production"],"thesis":"This changes the market structure by moving more pharmaceutical value creation from proprietary portfolio ownership toward shared research infrastructure and competitive manufacturing, reducing the need for one integrated incumbent to control the entire therapy lifecycle.","bitcoinOrDecentralizationRole":"Bitcoin is not central here. The decentralization mechanism is open publication of research outputs, multi-party governance of data commons, and a broader manufacturing base that weakens exclusive control over discovery and supply.","coordinationMechanism":"Researchers, clinicians, funders, and manufacturers coordinate through open protocols, shared datasets, transparent milestone setting, and nonprofit or consortium governance that allows many parties to contribute to and use the same knowledge base.","verificationOrTrustModel":"Trust depends on preregistered studies, open datasets, independent replication, peer review, regulator-reviewed trials, and GMP-compliant manufacturing audits. The weak point is that open collaboration still has to pass expensive clinical and regulatory gates before therapies become real substitutes.","failureModes":["Funding may remain too fragmented to carry promising compounds through late-stage trials.","Open collaboration can still bottleneck on regulation, manufacturing scale, and liability.","Many high-value biologics remain difficult to commoditize even if earlier-stage knowledge becomes more open."],"adoptionPath":["Start with neglected or under-incentivized disease programs where open collaboration is already mission-aligned.","Build reusable open trial, data-sharing, and manufacturing playbooks that make later programs cheaper and faster."],"confidence":"medium","problemSourceIds":["s2","s3","s4"],"enablerSourceIds":["s6"],"metrics":{"decentralizationFit":{"value":7,"rationale":"The concept directly distributes research and manufacturing participation across many institutions instead of one proprietary owner.","sourceIds":["s6"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":5,"rationale":"Open Source Pharma Foundation demonstrates an articulated end-to-end model, but large-scale execution across mainstream therapeutics is still limited.","sourceIds":["s6"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":4,"rationale":"Drug development still faces expensive trials, regulatory review, and chemistry or biologics manufacturing constraints that slow broad adoption.","sourceIds":["s2","s6"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":6,"rationale":"If open discovery lowers duplication and speeds affordable manufacturing in selected therapy areas, it could compress some of the rents embedded in branded pharma portfolios.","sourceIds":["s2","s6"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}}]},{"slug":"medtech-portfolio","name":"MedTech portfolio","category":"medical-devices","homepageUrl":"https://www.jnjmedtech.com/en-US/","summary":"Johnson & Johnson's MedTech segment covers cardiovascular intervention, surgery, robotics, wound closure, and vision products sold into clinician and hospital workflows.","whyItMatters":"MedTech anchors recurring hospital relationships, procedure-driven revenue, and platform lock-in around devices, consumables, and clinical training.","replacementSketch":["The strongest decentralizing path is selective rather than universal: open hardware, shared design libraries, and local fabrication for simpler medical devices, accessories, and emergency-response equipment rather than the most complex implantable or robotic systems.","Over time, transparent QA systems and distributed fabrication networks could reduce dependence on centralized device supply for categories where regulation and performance requirements are manageable."],"sourceIds":["s2","s3","s5"],"technologyWaveIds":["additive-manufacturing","microfactories"],"alternatives":[],"disruptionConcepts":[{"slug":"distributed-open-medical-hardware-cells","name":"Distributed open medical hardware cells","summary":"A distributed manufacturing model for medical hardware would publish device designs, bills of materials, testing procedures, and traceability standards so local fabrication groups, hospitals, nonprofits, and regional manufacturers can make approved classes of equipment closer to demand. Rather than one brand controlling the design and supply chain end to end, resilient local production cells would compete on execution, service, and adaptation while sharing core technical knowledge.","angleIds":["decentralized-manufacturing","open-hardware","local-materials-processing"],"thesis":"This changes the market by shifting some medtech value away from centralized proprietary manufacturing toward open design plus local production capacity, especially in lower-complexity devices and crisis-response supply categories.","bitcoinOrDecentralizationRole":"Bitcoin is not central here. The important decentralization primitives are open hardware files, distributed fabrication capacity, provenance tracking, and transparent quality-assurance systems that let many producers participate without a single dominant manufacturer.","coordinationMechanism":"Design maintainers, medical reviewers, local fabricators, and receiving institutions coordinate through shared repositories, vetted project libraries, versioned documentation, and distributed tracking systems that connect makers to local demand.","verificationOrTrustModel":"Trust comes from published test protocols, clinician review, part traceability, version control, and systems such as GOSQAS that aim to improve provenance and quality transparency. Major weaknesses remain around regulatory clearance, liability, and ensuring consistent process discipline across many manufacturers.","failureModes":["Many high-risk implantable or highly specialized devices remain unsuitable for loosely distributed production.","Quality systems can fail if local fabricators do not follow validated materials and process controls.","Hospital procurement and regulator acceptance may lag technical feasibility."],"adoptionPath":["Expand first in emergency-response, accessories, training tools, and simpler non-implantable devices where local production already has precedent.","Add stronger provenance, QA, and limited-scope regulatory pathways so distributed manufacturing can move into broader categories over time."],"confidence":"medium","problemSourceIds":["s2","s3","s5"],"enablerSourceIds":["s7","s8"],"metrics":{"decentralizationFit":{"value":8,"rationale":"Open hardware plus local fabrication is directly aligned with distributing production away from a single incumbent manufacturer.","sourceIds":["s7","s8"],"confidence":"high","lastReviewedOn":"2026-03-24"},"coordinationCredibility":{"value":6,"rationale":"OSMS demonstrates large-scale community coordination and GOSQAS shows explicit work on traceability and trust, though the model is still strongest in selected categories rather than mainstream medtech broadly.","sourceIds":["s7"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"implementationFeasibility":{"value":5,"rationale":"Peer-reviewed literature supports the feasibility of open-source medical hardware and distributed manufacturing, but regulation and quality control still constrain category expansion.","sourceIds":["s8"],"confidence":"medium","lastReviewedOn":"2026-03-24"},"incumbentPressure":{"value":5,"rationale":"The model is more likely to pressure the edges of device supply and lower-complexity categories first, rather than displacing J&J's highest-end cardiovascular or robotic platforms immediately.","sourceIds":["s2","s7","s8"],"confidence":"medium","lastReviewedOn":"2026-03-24"}}}]}]},"sources":[{"id":"s1","title":"Johnson & Johnson (JNJ) market capitalization","url":"https://companiesmarketcap.com/johnson-johnson/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for current market-cap estimate and approximate global rank in March 2026.","accessedOn":"2026-03-24"},{"id":"s2","title":"Johnson & Johnson 2025 Annual Report","url":"https://www.jnj.com/download/johnson-johnson-2025-annual-report","kind":"annual-report","publisher":"Johnson & Johnson","note":"Primary source for segment structure, strategic focus, sales, earnings, free cash flow, and management narrative after the consumer-health separation.","accessedOn":"2026-03-24"},{"id":"s3","title":"Johnson & Johnson reports Q4 and Full-Year 2025 results","url":"https://investor.jnj.com/investor-news/news-details/2026/Johnson--Johnson-reports-Q4-and-Full-Year-2025-results/default.aspx","kind":"investor-relations","publisher":"Johnson & Johnson","note":"Provides current official segment commentary and 2025 financial results used in the company snapshot.","accessedOn":"2026-03-24"},{"id":"s4","title":"Areas of focus","url":"https://innovativemedicine.jnj.com/our-innovation/focus-areas","kind":"product-page","publisher":"Johnson & Johnson Innovative Medicine","note":"Used to describe the scope of the Innovative Medicine portfolio and therapy-area focus.","accessedOn":"2026-03-24"},{"id":"s5","title":"The next era of medtech is here","url":"https://www.jnjmedtech.com/en-US/","kind":"product-page","publisher":"J&J MedTech","note":"Used to describe J&J's MedTech priorities across cardiovascular, surgery, and related device categories.","accessedOn":"2026-03-24"},{"id":"s6","title":"About","url":"https://www.ospfound.org/about.html","kind":"open-source-project","publisher":"Open Source Pharma Foundation","note":"Documents an explicit open-source pharma model spanning discovery, open data, trials, and generic manufacturing.","accessedOn":"2026-03-24"},{"id":"s7","title":"About Open Source Medical Supplies","url":"https://opensourcemedicalsupplies.org/about/","kind":"open-source-project","publisher":"Open Source Medical Supplies","note":"Used as evidence that large distributed communities can coordinate open medical-supply design and fabrication, with related GOSQAS quality-tracking work on the same site.","accessedOn":"2026-03-24"},{"id":"s8","title":"Open-source hardware for medical devices","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4853539/","kind":"technical-docs","publisher":"BMJ Innovations / PubMed Central","note":"Peer-reviewed support for the feasibility and constraints of open-source medical-device development.","accessedOn":"2026-03-24"},{"id":"s9","title":"Johnson & Johnson PE Ratio 2012-2025","url":"https://www.macrotrends.net/stocks/charts/JNJ/johnson-johnson/pe-ratio","kind":"market-data","publisher":"MacroTrends","note":"Used for a current trailing P/E snapshot in March 2026.","accessedOn":"2026-03-24"}],"summaryMarkdown":"Johnson & Johnson remains a very strong incumbent moat in pharma and medtech, but the more credible decentralization pressure comes from open-science drug development and selective open-hardware or distributed-manufacturing models rather than direct near-term substitutes for the full portfolio."}
+tokens used
+62,262

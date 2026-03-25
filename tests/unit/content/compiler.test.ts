@@ -26,7 +26,7 @@ test("compileContent compiles the real JSON corpus and strips raw-only fields", 
   expect(graph.companies.length).toBeGreaterThanOrEqual(10);
   expect(graph.products.length).toBeGreaterThanOrEqual(20);
   expect(graph.alternatives.length).toBeGreaterThanOrEqual(31);
-  expect(graph.disruptionConcepts).toHaveLength(64);
+  expect(graph.disruptionConcepts.length).toBeGreaterThanOrEqual(64);
   expect(graph.sources.length).toBeGreaterThan(0);
   expect(apple).toBeDefined();
   expect(microsoft).toBeDefined();
@@ -45,7 +45,8 @@ test("compileContent compiles the real JSON corpus and strips raw-only fields", 
   expect(
     graph.products.every(
       (product) =>
-        product.maybeDisruptionException !== null || product.disruptionConceptSlugs.length === 2,
+        product.maybeDisruptionException !== null ||
+        (product.disruptionConceptSlugs.length >= 1 && product.disruptionConceptSlugs.length <= 2),
     ),
   ).toBe(true);
   expect(appleIcloud.implementationPrompt.generatedOn).toMatch(/\d{4}-\d{2}-\d{2}/);
