@@ -554,3 +554,20 @@ Completion review:
 Residual risks:
 - This first adoption rewrote a large number of existing source files to establish a Biome baseline, so future reviews should expect one large normalization diff before subsequent lint-only changes get smaller again.
 - Linting is still local-first in this pass. GitHub Actions does not enforce `bun run lint` yet, so CI gating remains a follow-up rather than part of this rollout.
+
+## task-fix-broken-ci-playwright | 2026-03-25 06:12 | Repair broken CI Playwright assertions
+
+- [x] Inspect the latest failed GitHub Actions runs and reproduce the failing Playwright cases locally.
+  Verification: `gh run view 23537904087 --log-failed`, `GITHUB_REPOSITORY=pRizz/free-the-world bunx playwright test tests/e2e/company-pages.e2e.ts tests/e2e/insights.e2e.ts -g 'product detail page opens the implementation prompt modal|disruption concepts page renders concept coverage and product rankings'`
+- [x] Patch the brittle E2E assertions so they track stable accessibility roles and page structure instead of stale text fragments.
+  Verification: targeted Playwright rerun passes.
+- [x] Rerun the local CI verification chain and review the diff for unintended side effects.
+  Verification: `bun run lint`, `bun run content:validate`, `bun run typecheck`, `bun run test`, `CI=1 GITHUB_REPOSITORY=pRizz/free-the-world bunx playwright test --workers=2`, `GITHUB_REPOSITORY=pRizz/free-the-world bun run deploy:build`, `git diff --stat`
+
+Completion review:
+- The GitHub failures were both stale Playwright assertions, not workflow YAML issues: one locator became ambiguous after the new floating copy button, and one disruption-concepts assertion hard-coded an old `32/32` content count.
+- Updated the modal assertion to target the implementation prompt textbox by role/name, and replaced the disruption-concepts magic string with a KPI ratio shape check plus a table-row presence check so future content growth does not break CI.
+- Reproduced the failures from the latest CI run locally, then verified the fix with a targeted rerun and a CI-shaped full Playwright pass (`CI=1`, `--workers=2`) before the final deploy build.
+
+Residual risks:
+- A non-CI local Playwright run at this machine's default 8-worker parallelism hit one smoke-test timeout, but the same suite passed cleanly under CI-like settings. If local flakiness matters later, the Playwright config may need an explicit worker cap outside CI too.

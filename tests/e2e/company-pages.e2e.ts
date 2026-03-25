@@ -58,7 +58,7 @@ test("product detail page opens the implementation prompt modal", async ({ page 
     page.getByRole("heading", { name: "Implement iCloud as a free-future project" }),
   ).toBeVisible();
   await expect(page.getByRole("button", { name: "Copy prompt" })).toBeVisible();
-  await expect(page.getByLabel("Implementation prompt")).toHaveValue(
+  await expect(page.getByRole("textbox", { name: "Implementation prompt" })).toHaveValue(
     /Bright Builds Requirement Adoption/,
   );
 });

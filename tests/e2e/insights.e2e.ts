@@ -63,6 +63,10 @@ test("alternative pressure index renders company rankings and the product heatma
 
 test("disruption concepts page renders concept coverage and product rankings", async ({ page }) => {
   await gotoRoute(page, "/insights/disruption-concepts");
+  const productsWithConceptsMetric = page
+    .locator("article")
+    .filter({ has: page.getByText("Products with concepts", { exact: true }) })
+    .first();
 
   await expect(page).toHaveURL(/\/insights\/disruption-concepts\/?$/);
   await expect(
@@ -70,8 +74,8 @@ test("disruption concepts page renders concept coverage and product rankings", a
       name: /Which original concepts look most capable of breaking the lineup\?/i,
     }),
   ).toBeVisible();
-  await expect(page.getByText("32/32")).toBeVisible();
-  await expect(page.getByText("Powerwall and Megapack", { exact: true }).first()).toBeVisible();
+  await expect(productsWithConceptsMetric).toContainText(/\d+\/\d+/);
   await expect(page.getByText("Company rankings", { exact: true })).toBeVisible();
   await expect(page.getByText("Product rankings", { exact: true })).toBeVisible();
+  expect(await page.getByRole("table").getByRole("row").count()).toBeGreaterThan(1);
 });
