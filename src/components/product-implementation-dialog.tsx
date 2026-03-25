@@ -40,6 +40,9 @@ export function ProductImplementationDialog(props: {
     }
   }
 
+  const floatingCopyLabel = () => (copyState() === "copied" ? "Copied" : "Copy");
+  const footerCopyLabel = () => (copyState() === "copied" ? "Copied" : "Copy prompt");
+
   return (
     <>
       <Button
@@ -95,13 +98,25 @@ export function ProductImplementationDialog(props: {
                 This is canonical repo content from the published research pipeline. If clipboard
                 access fails, the textarea will be selected for manual copy.
               </TextFieldDescription>
-              <TextFieldTextArea
-                ref={promptTextArea}
-                readOnly={true}
-                value={props.product.implementationPrompt.markdown}
-                rows={24}
-                class="min-h-[24rem] resize-y font-mono text-[0.82rem] leading-6"
-              />
+              <div class="relative">
+                <Button
+                  type="button"
+                  variant="secondary"
+                  size="sm"
+                  class="absolute right-3 top-3 z-10 shadow-lg shadow-black/10"
+                  onClick={handleCopy}
+                  aria-label="Copy implementation prompt"
+                >
+                  {floatingCopyLabel()}
+                </Button>
+                <TextFieldTextArea
+                  ref={promptTextArea}
+                  readOnly={true}
+                  value={props.product.implementationPrompt.markdown}
+                  rows={24}
+                  class="min-h-[24rem] resize-y pt-14 pr-24 font-mono text-[0.82rem] leading-6 sm:pr-28"
+                />
+              </div>
             </TextField>
 
             <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
@@ -113,7 +128,9 @@ export function ProductImplementationDialog(props: {
                     : "The prompt is ready to paste into your coding agent."}
               </p>
               <ActionRow>
-                <Button onClick={handleCopy}>Copy prompt</Button>
+                <Button type="button" onClick={handleCopy}>
+                  {footerCopyLabel()}
+                </Button>
                 <Button variant="secondary" onClick={() => setIsOpen(false)}>
                   Close
                 </Button>
