@@ -1,0 +1,686 @@
+2026-03-25T11:13:58.821362Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.821385Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.827651Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d24b3-8824-7793-b20e-0c1398e3ef7d
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: cisco-systems
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "cisco-systems",
+  "name": "Cisco Systems",
+  "ticker": "CSCO",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top35"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "communications-equipment",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/cisco/marketcap/",
+  "description": "Networking and security company selling switching, routing, collaboration, observability, and infrastructure software.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Cisco networking",
+    "Webex"
+  ],
+  "seedSourceUrls": [
+    "https://investor.cisco.com/",
+    "https://www.cisco.com/",
+    "https://companiesmarketcap.com/cisco/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: lsp starting
+mcp: playwright starting
+2026-03-25T11:13:58.854416Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.860875Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.886808Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.889862Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.910601Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.911515Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.936143Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.936877Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.960437Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.964217Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.990663Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24b1-ae95-7933-840e-b03737438517.1774437117589551000.sh": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:13:58.996979Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.018823Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.020015Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.044391Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.046161Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.069444Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.070999Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.094979Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.096820Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.121375Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.122203Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.144088Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.144821Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.148479Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3302: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T11:13:59.165337Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.165940Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.190374Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.191057Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.215645Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.216385Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.240400Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.241108Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.263495Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.264276Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.288597Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.878047Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24b3-8824-7793-b20e-0c1398e3ef7d.tmp-1774437238821791000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:14:00.080670Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3303: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m gathering current primary sources for Cisco’s company profile, product lines, and credible open alternatives so I can return a source-backed refresh in the required JSON schema.
+🌐 Searching the web...
+🌐 Searched: Cisco annual report 2025 collaboration networking security pdf investor relations
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com Cisco market cap companiesmarketcap
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com Cisco P/E ratio companiesmarketcap
+🌐 Searching the web...
+🌐 Searched: site:cisco.com webex suite official
+🌐 Searching the web...
+🌐 Searched: site:webex.com webex suite meetings calling official
+🌐 Searching the web...
+🌐 Searched: site:webex.com products suite meetings calling contact center official
+🌐 Searching the web...
+🌐 Searched: site:opnsense.org about OPNsense official
+🌐 Searching the web...
+🌐 Searched: site:sonicfoundation.dev SONiC official open source network operating system
+🌐 Searching the web...
+🌐 Searched: Cisco 10-k 2025 sec filing pdf
+🌐 Searching the web...
+🌐 Searched: site:github.com jitsi jitsi-meet github
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"cisco-systems","name":"Cisco Systems","ticker":"CSCO","rankApprox":30,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top35"],"sectorId":"information-technology","industryId":"communications-equipment","companiesMarketCapUrl":"https://companiesmarketcap.com/cisco/marketcap/","description":"Networking and security company selling enterprise networking, collaboration, observability, and infrastructure software.","overview":[{"title":"Business mix","paragraphs":["Cisco remains centered on enterprise networking infrastructure, with switching, routing, campus and branch networking, and adjacent security still defining the core of the franchise. Its current reporting and product positioning also show meaningful exposure to collaboration and observability software, which broadens the business beyond box sales alone.","Fiscal 2025 results show a business that is still large and cash-generative while leaning further into software, subscriptions, and platform management. That mix helps Cisco keep enterprise accounts even when individual hardware categories become more interchangeable."]},{"title":"Why it still matters","paragraphs":["Cisco benefits from being deeply embedded in how large organizations connect campuses, branches, workers, and applications. Buyers are not only purchasing devices; they are buying operational continuity, policy control, support, and a procurement path that risk-averse IT teams already trust.","Webex is no longer the whole story, but it still gives Cisco a collaboration foothold that pairs with its network, security, and device estate. The combination makes Cisco harder to displace than a pure hardware vendor, even as several layers of its stack face credible open alternatives."]}],"moatNarrative":["Cisco's moat is strongest where network downtime, compliance, and operational complexity make buyers prefer an incumbent with broad support, certified architectures, and integrated management. The company's scale, entrenched channel, and installed base let it bundle switching, routing, security, and lifecycle software in ways smaller vendors and single-project alternatives usually cannot.","That moat is not absolute. Merchant silicon, open network operating systems, software-defined control planes, and self-hosted collaboration tools make parts of Cisco's portfolio more modular than they once were. Cisco still defends the account through trust and integration, but the underlying technical stack is less uniquely proprietary over time."],"decentralizationNarrative":["Cisco's products generally concentrate control in centrally administered enterprise platforms, licensed software, and vendor-managed upgrade paths. That model fits large organizations, but it also means many customers depend on Cisco's tooling, contracts, and roadmap for core communications and network operations.","The pressure against that model is real in both networking and collaboration. Open-source network operating systems, firewall platforms, and self-hosted conferencing stacks give capable operators more ways to assemble narrower, cheaper, and less locked-in replacements, especially when they can tolerate more integration work or rely on regional service partners."],"sourceIds":["src-cisco-annual-reports","src-cisco-fy2025-earnings","src-cisco-enterprise-network","src-webex-suite","src-cisco-marketcap","src-cisco-pe"],"technologyWaveIds":[],"snapshotNote":"Prepared for the registry refresh on 2026-03-25. Queue note preserved: March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks Cisco in the 26-35 expansion cohort.","inputMetrics":{"moat":{"value":8,"rationale":"Cisco still pairs large installed-base inertia with integrated networking, security, collaboration, and enterprise support, which makes displacement expensive for big customers even when component technologies are increasingly modular.","sourceIds":["src-cisco-annual-reports","src-cisco-enterprise-network","src-webex-suite"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":5,"rationale":"Cisco's stack is pressured by credible open networking and collaboration projects, but replacement usually requires more integration effort and narrower scope than Cisco's full enterprise bundle, so decentralization is plausible but incomplete.","sourceIds":["src-cisco-enterprise-network","src-webex-suite","src-sonic-about","src-openwrt-about","src-opnsense-home","src-jitsi-meet","src-bigbluebutton-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":8,"rationale":"Cisco reported FY2025 revenue of $56.7 billion, GAAP net income of $10.5 billion, non-GAAP net income of $15.2 billion, and non-GAAP gross margin of 68.4% in Q4, indicating strong profitability for a mature infrastructure incumbent.","sourceIds":["src-cisco-fy2025-earnings"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":29.3,"rationale":"CompaniesMarketCap listed Cisco's trailing P/E ratio at 29.3 as of March 2026. This is a market-data snapshot rather than a primary filing figure, so it should be treated as a current approximation.","sourceIds":["src-cisco-pe"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":308580000000,"rationale":"CompaniesMarketCap listed Cisco's market capitalization at about $308.58 billion in March 2026, consistent with Cisco remaining in the upper tier of large U.S. technology companies.","sourceIds":["src-cisco-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"cisco-networking","name":"Cisco Networking","category":"enterprise networking","homepageUrl":"https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-an-enterprise-network.html","summary":"Cisco's networking franchise spans campus, branch, cloud, and data-center connectivity plus policy and security controls around those environments.","whyItMatters":"This is the operational core of Cisco's moat because enterprise networks are sticky, certification-heavy, and painful to replace once standardized across sites and teams.","replacementSketch":["A meaningful slice of Cisco's networking value can be decomposed into commodity hardware, open network operating systems, and specialized support providers rather than a single vertically integrated incumbent.","For edge routing and security, organizations with stronger in-house operations can also replace portions of the stack with open firewall or router software on standard appliances, especially in branch, lab, education, and SMB environments."],"sourceIds":["src-cisco-enterprise-network","src-cisco-fy2025-earnings"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"sonic","name":"SONiC","kind":"open-source","homepageUrl":"https://sonicfoundation.dev/about/","repoUrl":"https://github.com/sonic-net/SONiC","summary":"Open-source network operating system for multi-vendor switches and ASICs, production-hardened in large cloud environments.","metrics":{"openness":{"value":9,"rationale":"SONiC is presented as a free and open-source NOS with public governance, public source code, and multi-vendor support.","sourceIds":["src-sonic-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":8,"rationale":"Its multi-vendor design weakens dependence on a single switch OEM and makes federated integrator or operator models more credible.","sourceIds":["src-sonic-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":8,"rationale":"SONiC explicitly describes itself as production-hardened in large cloud-service-provider data centers, which makes it a serious option for certain switching environments.","sourceIds":["src-sonic-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":8,"rationale":"Running on switches from multiple vendors creates room to separate software choice from hardware procurement and compress incumbent margins.","sourceIds":["src-sonic-about"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-sonic-about"]},{"slug":"opnsense","name":"OPNsense","kind":"open-source","homepageUrl":"https://opnsense.org/","repoUrl":"https://github.com/opnsense/core","summary":"Open-source firewall and routing platform based on FreeBSD with commercial-grade features and frequent updates.","metrics":{"openness":{"value":9,"rationale":"OPNsense describes itself as open source, highlights open and verifiable sources, and publishes its code under OSI-approved licensing.","sourceIds":["src-opnsense-home","src-opnsense-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":7,"rationale":"It lets operators run routing and security on standard hardware without a single networking incumbent controlling the stack.","sourceIds":["src-opnsense-home","src-opnsense-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":7,"rationale":"The project emphasizes a broad firewall, VPN, and routing feature set plus regular security updates, making it credible for edge and branch use even if not a full Cisco enterprise replacement.","sourceIds":["src-opnsense-home","src-opnsense-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":8,"rationale":"Free software on commodity appliances can undercut premium proprietary edge networking and firewall bundles for many use cases.","sourceIds":["src-opnsense-home"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-opnsense-home","src-opnsense-docs"]}],"disruptionConcepts":[{"slug":"federated-whitebox-networking","name":"Federated white-box networking stacks","summary":"Enterprise switching and routing can increasingly be assembled from commodity or white-box hardware, open network operating systems, and regional integrators instead of a single vertically integrated vendor. The result is not consumer simplicity, but a more contestable market where hardware, software, and support are separable.","angleIds":["decentralized-coordination","open-hardware","federation"],"thesis":"This breaks Cisco's advantage by turning the network stack into a modular ecosystem where buyers can mix switch hardware, NOS software, and support providers instead of accepting a single-vendor control plane.","bitcoinOrDecentralizationRole":"The decentralization matters through multi-party coordination rather than Bitcoin specifically: open NOS software, interoperable hardware choices, and third-party operators make the market less dependent on one vendor's roadmap and pricing power.","coordinationMechanism":"Hardware vendors, NOS communities, and integration firms coordinate through open software, supported device lists, standard network protocols, and service contracts. Buyers can choose their own operating model instead of inheriting Cisco's full stack by default.","verificationOrTrustModel":"Trust comes from open source code, public documentation, multi-vendor deployment history, and the ability to test the stack on supported hardware before wider rollout. Cheating is constrained because software behavior is inspectable and operators can switch vendors or service partners if promised functionality does not materialize.","failureModes":["Operational complexity remains higher than a single-vendor Cisco deployment for many enterprises.","Support accountability can fragment across hardware, software, and integrator layers if governance and contracts are weak."],"adoptionPath":["Start with greenfield data-center, lab, or edge segments where white-box switching is acceptable.","Add regional integrators or internal platform teams to standardize designs, upgrades, and support across a narrower approved hardware list."],"confidence":"medium","problemSourceIds":["src-cisco-enterprise-network","src-cisco-fy2025-earnings"],"enablerSourceIds":["src-sonic-about"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The mechanism directly separates software control from hardware procurement and support, which is the core decentralizing move in enterprise networking.","sourceIds":["src-sonic-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":7,"rationale":"SONiC already runs across multiple vendors and has real production credibility, but enterprise adoption still depends on strong integrators and internal network engineering maturity.","sourceIds":["src-sonic-about"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":7,"rationale":"The approach is feasible now in segments that can tolerate integration work and narrower hardware qualification sets.","sourceIds":["src-sonic-about","src-cisco-enterprise-network"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":7,"rationale":"It does not erase Cisco's support and account-control advantages, but it pressures pricing and weakens the assumption that enterprise networking must remain vertically integrated.","sourceIds":["src-cisco-enterprise-network","src-sonic-about"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},{"slug":"reused-open-edge-appliances","name":"Reused and open edge appliances","summary":"A second pressure path comes from treating branch routing, firewalling, and smaller-site network services as software that can run on refurbished or generic appliances. Open platforms make it easier for local operators and service shops to repurpose existing hardware instead of replacing it with premium proprietary bundles on every refresh cycle.","angleIds":["recycling-and-reuse","open-hardware","decentralized-coordination"],"thesis":"This shifts parts of the market from branded appliance replacement toward local reuse, generic hardware, and open software maintenance, reducing Cisco's hold on lower-complexity edge environments.","bitcoinOrDecentralizationRole":"The decentralization is organizational rather than monetary: local operators, refurbishers, and MSPs can deploy and maintain open network software on non-proprietary hardware without routing every decision through a single vendor ecosystem.","coordinationMechanism":"Refurbishers, MSPs, and internal IT teams coordinate around standard x86 appliances, open firewall or router images, and repeatable deployment playbooks. Procurement becomes more local and incremental rather than tied to a monolithic vendor refresh.","verificationOrTrustModel":"Trust depends on transparent software, reproducible images, public documentation, and local acceptance testing. Weaknesses remain around hardware quality, long-term driver support, and fragmented accountability, so buyers still need validation and qualified supply channels.","failureModes":["Refurbished hardware quality and lifecycle support can be inconsistent.","This model fits edge and branch environments far better than mission-critical Cisco-heavy cores."],"adoptionPath":["Use open firewall and routing software on commodity appliances for branch offices, labs, or non-critical segments.","Build local or regional support capacity around approved hardware profiles and staged image management."],"confidence":"medium","problemSourceIds":["src-cisco-enterprise-network"],"enablerSourceIds":["src-opnsense-home","src-openwrt-about"],"metrics":{"decentralizationFit":{"value":7,"rationale":"It meaningfully disperses control across local operators and generic hardware channels, though it does not replace Cisco in every network tier.","sourceIds":["src-opnsense-home","src-openwrt-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":6,"rationale":"The pieces already exist, but success depends on disciplined hardware qualification and support practices outside a single incumbent's umbrella.","sourceIds":["src-opnsense-home","src-openwrt-about"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":7,"rationale":"For branch, lab, and SMB-style environments, open edge stacks are deployable now on standard appliances.","sourceIds":["src-opnsense-home","src-opnsense-docs","src-openwrt-about"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":6,"rationale":"This pressures Cisco most at the edge and in price-sensitive environments rather than across the whole enterprise account.","sourceIds":["src-cisco-enterprise-network","src-opnsense-home","src-openwrt-about"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]},{"slug":"webex","name":"Webex","category":"collaboration suite","homepageUrl":"https://www.webex.com/collaboration-suite.html","summary":"Webex is Cisco's AI-positioned collaboration suite spanning meetings, calling, messaging, webinars, events, polling, whiteboarding, and video messaging.","whyItMatters":"Webex helps Cisco stay inside day-to-day communication workflows and gives it a software layer that can reinforce broader account control beyond network hardware.","replacementSketch":["For many organizations, the core meeting layer can be replaced with self-hosted or managed open-source conferencing, especially when they do not need every workflow inside one branded suite.","The practical substitute is often a simpler stack: open conferencing for meetings, existing identity tools for access control, and a mix of adjacent messaging or classroom tools depending on the use case."],"sourceIds":["src-webex-suite"],"technologyWaveIds":[],"alternatives":[{"slug":"jitsi-meet","name":"Jitsi Meet","kind":"open-source","homepageUrl":"https://jitsi.org/jitsi-meet/","repoUrl":"https://github.com/jitsi/jitsi-meet","summary":"Open-source video conferencing stack that can be used for free or self-hosted, with browser-based meetings, chat, content sharing, and customization.","metrics":{"openness":{"value":9,"rationale":"Jitsi Meet explicitly describes itself as 100% open source and publishes an active public repository.","sourceIds":["src-jitsi-meet","src-jitsi-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":8,"rationale":"Organizations can run their own instances instead of relying on one central collaboration provider, which meaningfully improves control and exit options.","sourceIds":["src-jitsi-meet","src-jitsi-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":8,"rationale":"Jitsi offers a mature browser-based product, mobile support, SDKs, and self-hosting documentation, making it viable for many meeting-centric deployments.","sourceIds":["src-jitsi-meet","src-jitsi-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":9,"rationale":"Free use and self-hosted deployment can sharply reduce licensing dependence for organizations that mainly need meetings and screen sharing.","sourceIds":["src-jitsi-meet","src-jitsi-github"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-jitsi-meet","src-jitsi-github"]},{"slug":"bigbluebutton","name":"BigBlueButton","kind":"open-source","homepageUrl":"https://bigbluebutton.org/","repoUrl":"https://github.com/bigbluebutton","summary":"Open-source web conferencing and virtual classroom platform built around teaching, engagement, whiteboarding, breakout rooms, and LMS integration.","metrics":{"openness":{"value":9,"rationale":"BigBlueButton describes itself as completely open source and maintains a large public project presence.","sourceIds":["src-bigbluebutton-about","src-bigbluebutton-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":7,"rationale":"It enables schools and institutions to self-host or buy support from a broader ecosystem rather than depend entirely on a proprietary classroom or meeting silo.","sourceIds":["src-bigbluebutton-about","src-bigbluebutton-home"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":8,"rationale":"The platform emphasizes mature classroom features, LMS adoption, and broad real-world use, especially in education.","sourceIds":["src-bigbluebutton-home","src-bigbluebutton-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":8,"rationale":"Open deployment and education-focused workflows can replace more expensive commercial webinar or classroom use cases where Webex is overbuilt.","sourceIds":["src-bigbluebutton-home","src-bigbluebutton-about"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-bigbluebutton-home","src-bigbluebutton-about","src-bigbluebutton-github"]}],"disruptionConcepts":[{"slug":"federated-open-collaboration-nodes","name":"Federated open collaboration nodes","summary":"A credible disruption path for Webex is not one global replacement super-suite but a federated pattern of self-hosted or managed open collaboration nodes. Organizations can run their own meeting infrastructure or buy hosting from trusted providers while keeping more control over data, branding, upgrade timing, and cost.","angleIds":["federation","decentralized-coordination"],"thesis":"This weakens Webex by making high-quality conferencing a service that can be locally operated or competitively hosted rather than rented from a single collaboration incumbent.","bitcoinOrDecentralizationRole":"The key mechanism is federation and self-hostability rather than Bitcoin. The market becomes more decentralized when conferencing software is portable, inspectable, and deployable by many hosts instead of one platform owner.","coordinationMechanism":"Organizations coordinate through open-source meeting servers, managed hosting partners, and standard web clients. Procurement becomes a choice among software, hosting, and operations providers instead of a single suite contract.","verificationOrTrustModel":"Trust improves because code and deployment choices are more transparent, and operators can test or audit their own instances. Abuse and quality issues are constrained by local policy controls, host choice, and the ability to migrate if a provider underperforms, though interoperability and feature parity remain uneven.","failureModes":["Open alternatives may lag a full enterprise suite in admin polish, compliance tooling, or tightly integrated workflow breadth.","Fragmentation can create user-experience inconsistencies across organizations and hosting providers."],"adoptionPath":["Replace meeting-heavy internal or community workflows with self-hosted or managed Jitsi first.","Use BigBlueButton for education and training workflows where classroom-specific capabilities matter more than suite breadth."],"confidence":"medium","problemSourceIds":["src-webex-suite"],"enablerSourceIds":["src-jitsi-meet","src-bigbluebutton-about"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The model directly disperses control across many operators and preserves exit options through open-source software.","sourceIds":["src-jitsi-meet","src-bigbluebutton-about"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":7,"rationale":"The necessary software already exists and is actively used, but fragmented deployment and enterprise integration burdens still limit uniform adoption.","sourceIds":["src-jitsi-meet","src-jitsi-github","src-bigbluebutton-home"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":8,"rationale":"This is feasible today for organizations whose needs center on meetings, classrooms, or webinars rather than every workflow in a unified proprietary suite.","sourceIds":["src-jitsi-meet","src-bigbluebutton-home","src-bigbluebutton-about"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":6,"rationale":"It can erode specific Webex workloads and pricing power, but Cisco still retains advantages in enterprise bundling, calling, and administrative breadth.","sourceIds":["src-webex-suite","src-jitsi-meet","src-bigbluebutton-about"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]}]},"sources":[{"id":"src-cisco-annual-reports","title":"Annual Reports","url":"https://www.cisco.com/c/en/us/about/annual-reports.html","kind":"annual-report","publisher":"Cisco","note":"Cisco's official annual report hub, used to support the company's reporting scope and current investor-facing framing.","accessedOn":"2026-03-25"},{"id":"src-cisco-fy2025-earnings","title":"CISCO REPORTS FOURTH QUARTER AND FISCAL YEAR 2025 EARNINGS","url":"https://investor.cisco.com/news/news-details/2025/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2025-EARNINGS/default.aspx","kind":"investor-relations","publisher":"Cisco Investor Relations","note":"Primary source for FY2025 revenue, profit, margins, and Cisco's current segment commentary across networking, security, observability, and collaboration.","accessedOn":"2026-03-25"},{"id":"src-cisco-enterprise-network","title":"What is an enterprise network?","url":"https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-an-enterprise-network.html","kind":"product-page","publisher":"Cisco","note":"Official Cisco description of enterprise networking scope, architecture, subscriptions, cloud integration, and security roles.","accessedOn":"2026-03-25"},{"id":"src-webex-suite","title":"Webex Suite","url":"https://www.webex.com/collaboration-suite.html","kind":"product-page","publisher":"Webex by Cisco","note":"Official Webex suite page used to confirm the current collaboration workflows Cisco bundles under Webex.","accessedOn":"2026-03-25"},{"id":"src-cisco-marketcap","title":"Cisco (CSCO) - Market capitalization","url":"https://companiesmarketcap.com/cisco/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current market-cap snapshot used for approximate valuation and rank context.","accessedOn":"2026-03-25"},{"id":"src-cisco-pe","title":"Cisco (CSCO) - P/E ratio","url":"https://companiesmarketcap.com/inr/cisco/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current trailing P/E snapshot used as an approximate public-market valuation multiple.","accessedOn":"2026-03-25"},{"id":"src-openwrt-about","title":"About the OpenWrt/LEDE project","url":"https://openwrt.org/about","kind":"open-source-project","publisher":"OpenWrt","note":"Project overview used to support OpenWrt as an extensible open router platform and community-governed networking alternative.","accessedOn":"2026-03-25"},{"id":"src-opnsense-home","title":"OPNsense® is an open source, feature rich firewall and routing platform, offering cutting-edge network protection.","url":"https://opnsense.org/","kind":"open-source-project","publisher":"OPNsense","note":"Official OPNsense product overview used to support open firewall and routing capabilities plus community and licensing claims.","accessedOn":"2026-03-25"},{"id":"src-opnsense-docs","title":"Welcome to OPNsense’s documentation!","url":"https://docs.opnsense.org/","kind":"technical-docs","publisher":"OPNsense Documentation","note":"Documentation source used to support OPNsense feature breadth, mission, and operational maturity.","accessedOn":"2026-03-25"},{"id":"src-sonic-about","title":"About – Sonic Foundation","url":"https://sonicfoundation.dev/about/","kind":"open-source-project","publisher":"Sonic Foundation","note":"Official SONiC overview used to support multi-vendor open NOS claims and production credibility.","accessedOn":"2026-03-25"},{"id":"src-jitsi-meet","title":"About Jitsi Meet | Free Video Conferencing Solutions","url":"https://jitsi.org/jitsi-meet/","kind":"open-source-project","publisher":"Jitsi","note":"Official Jitsi Meet overview used to support open-source, free-use, and self-hosted conferencing claims.","accessedOn":"2026-03-25"},{"id":"src-jitsi-github","title":"GitHub - jitsi/jitsi-meet: Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.","url":"https://github.com/jitsi/jitsi-meet","kind":"open-source-project","publisher":"GitHub / Jitsi","note":"Repository source used to support public development, licensing, release activity, and self-hosting readiness.","accessedOn":"2026-03-25"},{"id":"src-bigbluebutton-home","title":"Virtual Classroom Software | BigBlueButton","url":"https://bigbluebutton.org/","kind":"open-source-project","publisher":"BigBlueButton","note":"Official product page used to support current feature scope and real-world education positioning.","accessedOn":"2026-03-25"},{"id":"src-bigbluebutton-about","title":"About BigBlueButton | Open Source Project | BigBlueButton","url":"https://bigbluebutton.org/open-source-project/about/","kind":"open-source-project","publisher":"BigBlueButton","note":"Official open-source project overview used to support community and licensing posture.","accessedOn":"2026-03-25"},{"id":"src-bigbluebutton-github","title":"BigBlueButton · GitHub","url":"https://github.com/bigbluebutton","kind":"open-source-project","publisher":"GitHub / BigBlueButton","note":"Repository organization source used to support public development activity and project maturity.","accessedOn":"2026-03-25"}],"summaryMarkdown":"Cisco remains a high-moat enterprise networking incumbent with strong FY2025 profitability, but its networking and collaboration layers face credible pressure from open stacks such as SONiC, OPNsense, Jitsi Meet, and BigBlueButton. The refresh keeps the company classified in communications equipment, preserves the top-35 snapshot context, and adds source-backed product, alternative, and disruption analysis."}
+tokens used
+70,130

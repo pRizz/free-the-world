@@ -1,0 +1,677 @@
+2026-03-25T11:08:57.172589Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.172608Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d24ae-edd3-70e3-8ea8-8ef1a6b1658f
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: mastercard
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "mastercard",
+  "name": "Mastercard",
+  "ticker": "MA",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top20"
+  ],
+  "sectorId": "financials",
+  "industryId": "payment-networks",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/mastercard/marketcap/",
+  "description": "Global card and payments network selling transaction rails plus security, data, and value-added services.",
+  "technologyWaveIds": [
+    "bitcoin-native-coordination"
+  ],
+  "seedProductNames": [
+    "Global card network",
+    "Cyber and fraud services"
+  ],
+  "seedSourceUrls": [
+    "https://investor.mastercard.com/",
+    "https://companiesmarketcap.com/mastercard/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-03-25T11:08:57.177178Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+mcp: playwright starting
+mcp: lsp starting
+2026-03-25T11:08:57.203238Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.205896Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.229808Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24a5-da67-7fa3-88f8-7743bc58921d.1774436342375852000.sh": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:08:57.231538Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.254287Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.255471Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.277813Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.279849Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.304990Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.305674Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.330685Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.331387Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.355696Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.356455Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.380233Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.380998Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.403940Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.404704Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.429725Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.430359Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.455357Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.456113Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.479205Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.479847Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.504839Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.505580Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.513249Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 45624: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T11:08:57.530592Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.531354Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.556423Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.557037Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.582781Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:58.267868Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24ae-edd3-70e3-8ea8-8ef1a6b1658f.tmp-1774436937172866000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:08:58.876403Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 45623: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+Using web sources to refresh the Mastercard bundle and ground the metrics in current references. I’m pulling official investor/product material plus market data and a small set of credible open alternatives before assembling the JSON.
+🌐 Searching the web...
+🌐 Searched: Mastercard investor relations annual report 2025 Mastercard payments network cyber fraud services
+🌐 Searching the web...
+🌐 Searched: site:investor.mastercard.com Mastercard annual report 2025 pdf
+🌐 Searching the web...
+🌐 Searched: site:investor.mastercard.com annual report pdf mastercard 2024 revenue net income
+🌐 Searching the web...
+🌐 Searched: https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm
+🌐 Searching the web...
+🌐 Searched: 'We provide transaction processing and other payment-related products and services' in https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm
+🌐 Searching the web...
+🌐 Searched: BTCPay Server official docs lightning self-hosted payments
+🌐 Searching the web...
+🌐 Searched: open source threat intelligence platform MISP official
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"mastercard","name":"Mastercard","ticker":"MA","rankApprox":23,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top20"],"sectorId":"financials","industryId":"payment-networks","companiesMarketCapUrl":"https://companiesmarketcap.com/mastercard/marketcap/","description":"Global payments network operator selling card-rail transaction processing alongside security, identity, data, and other value-added services.","overview":[{"title":"Business Model","paragraphs":["Mastercard runs a global payments network and sells complementary services to issuers, acquirers, merchants, governments, and digital partners. In its 2024 Form 10-K, the company reported $17.3 billion of payment-network revenue and $10.8 billion of value-added services and solutions revenue, showing that the business is no longer just card switching but a broader software, data, and risk platform.","Its value-added services include security solutions, consumer acquisition and engagement, business and market insights, digital and authentication solutions, processing and gateway services, real-time account-based payments, and open banking. That mix gives Mastercard more ways to monetize the network and deepen customer dependence beyond simple transaction routing."]},{"title":"Scale And Position","paragraphs":["Mastercard describes its network as operating across 220+ markets and territories and 155+ currencies, with $143 billion of transactions processed in 2023 on the referenced network-processing page. That global acceptance footprint and the entrenched issuer-acquirer-merchant relationships remain central to its competitive position.","The 2024 Form 10-K reported net revenue of $28.2 billion, operating income of $15.6 billion, and net income of $12.9 billion. CompaniesMarketCap listed Mastercard at roughly $449.78 billion in market capitalization and rank #23 globally as of March 2026, reinforcing how highly public markets still value the durability of the card-network model."]}],"moatNarrative":["Mastercard's moat comes from a dense two-sided network: issuers want acceptance, merchants want cardholders, and both sides rely on the same trusted rules, settlement processes, and brand. That installed base is reinforced by regulatory know-how, long-term customer incentives, fraud tooling, and adjacent services that make replacement operationally risky.","The moat is strengthened by bundling. Mastercard can sell security, authentication, analytics, processing, and open-banking capabilities alongside network access, which raises switching costs and lets it capture more economics per customer relationship than a pure card-rail utility would."],"decentralizationNarrative":["Mastercard is structurally centralized: transaction routing, rules, branding, dispute frameworks, and much of the fraud stack depend on a globally coordinated operator plus regulated financial intermediaries. That makes the current model resilient, but it also creates clear seams where open payment protocols can compete on cost, programmability, and permissionlessness.","Bitcoin and Lightning do not yet replace Mastercard's full compliance, credit, and chargeback envelope at global scale, but they do attack the need for a single gatekeeping network in some merchant and community-payment contexts. As self-custodial payment UX, federated custody, and open merchant tooling improve, parts of Mastercard's economic role can be unbundled even if the full incumbent bundle remains strong."],"sourceIds":["mastercard-10k-2024","mastercard-network-page","mastercard-threat-intelligence-page","cmc-mastercard-marketcap","cmc-mastercard-pe"],"technologyWaveIds":["bitcoin-native-coordination"],"snapshotNote":"Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot.","inputMetrics":{"moat":{"value":8.9,"rationale":"Mastercard combines a global acceptance network, issuer and acquirer integrations, brand trust, regulatory scale, and a growing layer of adjacent services that deepen switching costs.","sourceIds":["mastercard-10k-2024","mastercard-network-page"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":4.2,"rationale":"The core card-network model is centralized and regulated, but open Bitcoin and Lightning tools can bypass parts of the incumbent stack for some merchant acceptance and community payment use cases.","sourceIds":["mastercard-10k-2024","btcpay-docs","fedimint-what-is","breez-sdk"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":9.3,"rationale":"Mastercard reported $15.582 billion of operating income on $28.167 billion of net revenue and $12.874 billion of net income in 2024, implying unusually strong operating and net margins for a large-cap financial infrastructure company.","sourceIds":["mastercard-10k-2024"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":30.4,"rationale":"CompaniesMarketCap listed Mastercard's trailing P/E ratio at about 30.4 as of March 2026.","sourceIds":["cmc-mastercard-pe"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":449.78,"rationale":"CompaniesMarketCap listed Mastercard at approximately $449.78 billion in market capitalization and rank #23 globally as of March 2026.","sourceIds":["cmc-mastercard-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"mastercard-global-card-network","name":"Global card network","category":"payments network","homepageUrl":"https://www.mastercard.com/car/en/business/payments/consumer-payments/network-processing.html","summary":"Mastercard's core business connects issuers, acquirers, merchants, and consumers through a global card-processing and settlement network.","whyItMatters":"This is the main tollbooth layer in Mastercard's business: it captures transaction economics, controls rule-making, and anchors the surrounding bundle of risk, data, and authentication services.","replacementSketch":["At the edge, Mastercard can be weakened where merchants do not need card credit, chargeback infrastructure, or global issuer coordination. Self-hosted Bitcoin and Lightning checkout stacks already let merchants accept direct digital payments without a card network intermediary.","The harder but more consequential replacement path is not a single new giant network. It is a patchwork of merchant-direct acceptance, self-custodial wallets, federated community mints, and open developer tools that reduce how often a proprietary card rail is necessary."],"sourceIds":["mastercard-10k-2024","mastercard-network-page"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"btcpay-server","name":"BTCPay Server","kind":"open-source","homepageUrl":"https://docs.btcpayserver.org/Guide/","repoUrl":"https://github.com/btcpayserver/btcpayserver","summary":"Free, open-source, self-hosted bitcoin payment processor for online and in-person merchant acceptance.","metrics":{"openness":{"value":9.8,"rationale":"BTCPay Server is explicitly described as free, open-source, and self-hosted, with public documentation and source code.","sourceIds":["btcpay-docs","btcpay-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":8.8,"rationale":"It lets merchants accept payments directly without a card-network intermediary, fitting peer-to-peer and self-sovereign payment flows well.","sourceIds":["btcpay-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":8.1,"rationale":"BTCPay Server is a mature merchant tool with production documentation, invoice handling, and refund workflows, though it does not replicate the full card-network acceptance footprint.","sourceIds":["btcpay-docs","btcpay-github"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":8.9,"rationale":"BTCPay emphasizes no processor fees beyond network fees, which can materially undercut incumbent tolls in suitable payment contexts.","sourceIds":["btcpay-docs","btcpay-github"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["btcpay-docs","btcpay-github"]},{"slug":"lnbits","name":"LNbits","kind":"open-source","homepageUrl":"https://docs.lnbits.org/","summary":"Free and open-source Lightning wallet and accounts system with extensions including point-of-sale and paylink workflows.","metrics":{"openness":{"value":9.7,"rationale":"LNbits presents itself as a free and open-source Lightning wallet/accounts system with public docs and open distribution.","sourceIds":["lnbits-docs","lnbits-home"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":8.4,"rationale":"LNbits helps operators run wallet, POS, and payment-link flows on Lightning without relying on a proprietary card network.","sourceIds":["lnbits-docs","lnbits-home"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":7.4,"rationale":"The project is already used for wallets, extensions, and merchant flows, but it remains a toolkit rather than a turnkey global replacement for Mastercard acceptance.","sourceIds":["lnbits-docs","lnbits-home"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":8.5,"rationale":"Open deployment and Lightning-native settlement can reduce acceptance and software costs where merchants and users can tolerate bitcoin-denominated flows.","sourceIds":["lnbits-docs","lnbits-home"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["lnbits-docs","lnbits-home"]}],"disruptionConcepts":[{"slug":"lightning-merchant-direct-acceptance","name":"Lightning merchant-direct acceptance mesh","summary":"Merchants use self-hosted payment software and Lightning-native wallets to accept customer payments directly, shrinking the need for a global card-network intermediary in contexts where immediate digital settlement matters more than revolving credit and chargebacks.","angleIds":["bitcoin","lightning","decentralized-coordination"],"thesis":"If merchant acceptance can be assembled from open checkout software, self-custodial wallets, and interoperable Lightning rails, Mastercard loses pricing power on transactions that do not actually need a centralized card scheme.","bitcoinOrDecentralizationRole":"Bitcoin provides the neutral settlement asset, while Lightning provides instant low-fee routing and open interoperability between merchants, wallets, and service providers without requiring Mastercard's branded network to sit in the middle.","coordinationMechanism":"Merchants coordinate through open payment standards and self-hosted invoicing tools such as BTCPay Server, while wallets and SDKs such as Breez handle payment UX and liquidity abstractions for end users.","verificationOrTrustModel":"Settlement is constrained by cryptographic payment proofs and network-confirmed transfers rather than by Mastercard's centralized authorization stack. Fraud risk shifts toward merchant fulfillment, wallet security, and fiat-pricing UX rather than card chargebacks.","failureModes":["Consumers may still prefer card rewards, credit, and familiar protections over direct bitcoin payments.","Merchants still face volatility, accounting, and tax friction unless conversion and treasury tooling improve.","Lightning UX and liquidity abstractions must keep improving for mainstream checkout reliability."],"adoptionPath":["Start with merchants who already want lower fees, instant settlement, or censorship resistance for online and in-person sales.","Expand via wallets and SDKs that abstract node complexity and make Lightning checkout feel closer to mainstream app payments."],"confidence":"medium","problemSourceIds":["mastercard-10k-2024","mastercard-network-page"],"enablerSourceIds":["btcpay-docs","breez-sdk"],"metrics":{"decentralizationFit":{"value":8.9,"rationale":"The concept removes a central card-network operator from payment acceptance and settlement for a meaningful subset of transactions.","sourceIds":["btcpay-docs","breez-sdk"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":7.2,"rationale":"Merchant tools and Lightning SDKs already exist, but coordination still depends on better wallet UX, pricing stability, and broader user familiarity.","sourceIds":["btcpay-docs","breez-sdk"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":7.6,"rationale":"The core software stack is live today, though scaling to mass-market retail requires more polished fiat integration and support workflows.","sourceIds":["btcpay-docs","breez-sdk"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":7.8,"rationale":"Even partial merchant migration toward direct acceptance pressures card-network margins by proving that some checkout flows do not require Mastercard's tollbooth.","sourceIds":["mastercard-10k-2024","btcpay-docs"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},{"slug":"federated-community-mint-payments","name":"Federated community mint payments","summary":"Community or regional payment systems can use federated Chaumian ecash and Lightning gateways to offer fast local payments with shared governance instead of depending on a single global card operator.","angleIds":["lightning","federation","decentralized-coordination"],"thesis":"A network of many smaller federated payment communities can substitute for parts of Mastercard's coordination role in closed-loop, regional, or mission-driven economies where local trust and low-cost settlement matter more than universal card acceptance.","bitcoinOrDecentralizationRole":"Bitcoin and Lightning provide the base interoperability layer between federated mints, while federation distributes operational control across multiple guardians instead of a single company.","coordinationMechanism":"Users join local or affinity-based federations; guardians run the mint and gateway infrastructure; merchants accept community-issued ecash or Lightning payments and redeem through shared rules.","verificationOrTrustModel":"The system resists unilateral abuse by splitting control across federation guardians and using cryptographic ecash plus Lightning interoperability, but it still depends on the integrity and competence of a limited guardian set.","failureModes":["Poor guardian selection or governance could recreate local centralization and fraud risk.","Cross-federation liquidity and merchant tooling remain immature compared with card acceptance.","Regulatory treatment may vary sharply by jurisdiction and use case."],"adoptionPath":["Begin with communities, local circular economies, conferences, campuses, or aligned merchant networks where shared trust already exists.","Connect federations through Lightning so users can move value across communities without relying on a single branded scheme."],"confidence":"medium","problemSourceIds":["mastercard-10k-2024","mastercard-network-page"],"enablerSourceIds":["fedimint-what-is","fedimint-tech"],"metrics":{"decentralizationFit":{"value":8.4,"rationale":"Federated mints distribute control and can support many local payment communities rather than one proprietary global operator.","sourceIds":["fedimint-what-is","fedimint-tech"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":6.4,"rationale":"The model is coherent and already documented, but broad real-world coordination across many communities is still early.","sourceIds":["fedimint-what-is","fedimint-tech"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":6.1,"rationale":"The underlying technology exists, though merchant acceptance, compliance comfort, and inter-federation user experience remain immature.","sourceIds":["fedimint-what-is","fedimint-tech"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":6.7,"rationale":"This would not replace Mastercard everywhere, but it can erode the assumption that every digital payment community needs a centralized card-network operator.","sourceIds":["mastercard-network-page","fedimint-what-is"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]},{"slug":"mastercard-cyber-fraud-services","name":"Cyber and fraud services","category":"security and fraud intelligence","homepageUrl":"https://www.mastercard.com/us/en/business/cybersecurity-fraud-prevention/cybersecurity/mastercard-threat-intelligence.html","summary":"Mastercard sells threat intelligence, fraud detection, cybersecurity, authentication, and related risk services that monetize its network visibility and enterprise relationships.","whyItMatters":"These services widen Mastercard's moat by making customers dependent not only on payment routing but also on the security, analytics, and intelligence layer wrapped around that routing.","replacementSketch":["The practical open replacement is not a single open-source clone of Mastercard's full security business. It is a federated stack of threat-intelligence sharing, open fraud-analysis tooling, and cooperative defense networks that reduce dependence on one vendor's proprietary visibility.","Where payment and cyber teams can exchange indicators, automate enforcement, and price useful signals over open rails, part of Mastercard's services bundle becomes contestable even if the incumbent still retains stronger global data scale."],"sourceIds":["mastercard-10k-2024","mastercard-threat-intelligence-page"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"misp","name":"MISP","kind":"open-source","homepageUrl":"https://www.misp-project.org/","summary":"Open-source threat-intelligence and information-sharing platform used to collect, correlate, and distribute cyber and fraud indicators.","metrics":{"openness":{"value":9.7,"rationale":"MISP explicitly presents itself as an open-source threat-intelligence platform with open standards and community-driven development.","sourceIds":["misp-project"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":8.2,"rationale":"MISP is built for sharing intelligence across multiple parties and communities rather than forcing all visibility through one vendor.","sourceIds":["misp-project"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":8,"rationale":"MISP is established and feature-rich for cyber-intelligence workflows, though enterprises still need integration work to match a polished vendor bundle.","sourceIds":["misp-project"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":7.9,"rationale":"Open software and shared communities can reduce software licensing and dependency costs, even if staffing and integration remain real expenses.","sourceIds":["misp-project"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["misp-project"]}],"disruptionConcepts":[{"slug":"federated-threat-intelligence-coops","name":"Federated threat-intelligence cooperatives","summary":"Banks, processors, merchants, and service providers can pool fraud and cyber indicators through open-source sharing infrastructure, creating a cooperative defense layer that is less dependent on a single vendor's proprietary threat graph.","angleIds":["federation","decentralized-coordination"],"thesis":"If threat intelligence becomes a shared interoperable utility operated by member communities instead of a closed vendor product, Mastercard's security bundle loses some of its exclusivity and pricing power.","bitcoinOrDecentralizationRole":"The decentralization advantage comes from federation and open standards rather than from forcing Bitcoin into the stack. Multiple institutions coordinate as peers, retaining local autonomy while sharing structured indicators through interoperable systems.","coordinationMechanism":"Participants contribute indicators, incidents, and taxonomy-tagged findings into federated sharing communities using open platforms such as MISP, then automate downstream enforcement into their own security and fraud systems.","verificationOrTrustModel":"Trust is constrained by provenance metadata, structured indicators, access controls, and cross-member correlation rather than by blind reliance on a single vendor feed. The weakness is that members can still submit noisy, delayed, or low-quality data if governance is weak.","failureModes":["Institutions may under-share useful intelligence because of liability, secrecy, or incentive problems.","Data quality and taxonomy consistency can degrade without strong operating rules.","Open tooling alone does not create trust; member governance and response playbooks must be built."],"adoptionPath":["Start with sectoral or regional defense communities that already share some indicators informally.","Standardize taxonomies, automate exports into bank fraud workflows, and gradually reduce dependence on closed vendor intelligence silos."],"confidence":"medium","problemSourceIds":["mastercard-10k-2024","mastercard-threat-intelligence-page"],"enablerSourceIds":["misp-project"],"metrics":{"decentralizationFit":{"value":8.1,"rationale":"The concept distributes intelligence generation and control across cooperating institutions instead of centralizing it under one vendor.","sourceIds":["misp-project"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":7.1,"rationale":"Federated threat sharing already exists in practice, and MISP is built specifically for that pattern, though commercial incentives still complicate adoption.","sourceIds":["misp-project"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":7,"rationale":"The software and operating model are real, but successful deployment requires governance, integration, and ongoing analyst participation.","sourceIds":["misp-project"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":6.8,"rationale":"A cooperative threat-sharing layer would not erase Mastercard's data advantage, but it can commoditize part of the security-intelligence bundle.","sourceIds":["mastercard-threat-intelligence-page","misp-project"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},{"slug":"lightning-priced-fraud-signal-markets","name":"Lightning-priced fraud-signal markets","summary":"Fraud analysts, merchants, processors, and service providers could publish and consume fraud signals over open networks where micropayments and reputation price useful intelligence instead of bundling it inside a single proprietary vendor relationship.","angleIds":["bitcoin","lightning","peer-to-peer-marketplace","decentralized-coordination"],"thesis":"If high-value fraud signals can be bought, sold, and scored in an open market, proprietary intelligence vendors face pressure because useful detection data no longer has to stay trapped inside closed enterprise bundles.","bitcoinOrDecentralizationRole":"Lightning matters because it supports low-friction micropayments for signal access, machine-to-machine settlement, and anti-spam pricing. Open payment rails make it easier to compensate niche contributors and data providers without complex bilateral contracts.","coordinationMechanism":"Participants post signals, enrichment, or model outputs into an open marketplace; buyers subscribe or pay per use; reputation and payment history help surface high-signal providers over time.","verificationOrTrustModel":"The model resists spam partly through paid access and reputation, but it remains vulnerable to collusion, fabricated indicators, and wash-trading of low-quality data unless buyers can backtest outcomes and penalize bad actors.","failureModes":["Signal quality may be hard to verify quickly, especially when fraud labels arrive late.","Market participants could game reputation or collude to sell low-quality feeds.","Regulated institutions may hesitate to procure sensitive signals through open marketplaces without clearer legal frameworks."],"adoptionPath":["Begin with narrow fraud niches where signal contributors can prove value through measurable outcomes such as reduced card testing or skimming losses.","Layer reputation, escrow, and backtesting over time so buyers can distinguish useful contributors from noise."],"confidence":"medium","problemSourceIds":["mastercard-threat-intelligence-page"],"enablerSourceIds":["breez-sdk","lnbits-docs","misp-project"],"metrics":{"decentralizationFit":{"value":8.3,"rationale":"Open signal markets distribute intelligence supply across many contributors instead of concentrating it in one enterprise vendor.","sourceIds":["breez-sdk","lnbits-docs"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":5.6,"rationale":"The payment primitives are credible, but the market design for trustworthy fraud-signal exchange is still immature.","sourceIds":["breez-sdk","misp-project"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":5.2,"rationale":"Lightning micropayments are available today, but procurement, privacy, and signal-quality verification remain hard parts of the design.","sourceIds":["breez-sdk","lnbits-docs","misp-project"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":5.9,"rationale":"If it works, this model could unbundle parts of proprietary fraud intelligence, but it is not yet strong enough to seriously displace Mastercard's services at scale.","sourceIds":["mastercard-threat-intelligence-page","breez-sdk"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]}]},"sources":[{"id":"mastercard-10k-2024","title":"Mastercard 2024 Form 10-K","url":"https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm","kind":"regulatory-filing","publisher":"U.S. Securities and Exchange Commission","note":"Primary source for revenue mix, profitability, business description, and disclosed competitive risks.","accessedOn":"2026-03-25"},{"id":"mastercard-network-page","title":"Mastercard Network and Processing","url":"https://www.mastercard.com/car/en/business/payments/consumer-payments/network-processing.html","kind":"product-page","publisher":"Mastercard","note":"Official product page describing Mastercard's network scale, markets, currencies, and transaction-processing positioning.","accessedOn":"2026-03-25"},{"id":"mastercard-threat-intelligence-page","title":"Mastercard Threat Intelligence","url":"https://www.mastercard.com/us/en/business/cybersecurity-fraud-prevention/cybersecurity/mastercard-threat-intelligence.html","kind":"product-page","publisher":"Mastercard","note":"Official page for Mastercard's fraud and cyber-intelligence offering used to ground the security-services product.","accessedOn":"2026-03-25"},{"id":"cmc-mastercard-marketcap","title":"Mastercard Market Capitalization","url":"https://companiesmarketcap.com/mastercard/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for current market cap and approximate global rank as of March 2026.","accessedOn":"2026-03-25"},{"id":"cmc-mastercard-pe","title":"Mastercard P/E Ratio","url":"https://companiesmarketcap.com/mastercard/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Used for trailing P/E ratio as of March 2026.","accessedOn":"2026-03-25"},{"id":"btcpay-docs","title":"BTCPay Server Documentation","url":"https://docs.btcpayserver.org/Guide/","kind":"open-source-project","publisher":"BTCPay Server","note":"Primary documentation for a self-hosted open bitcoin payment processor used as a merchant-side alternative.","accessedOn":"2026-03-25"},{"id":"btcpay-github","title":"BTCPay Server GitHub Repository","url":"https://github.com/btcpayserver/btcpayserver","kind":"open-source-project","publisher":"GitHub","note":"Public repository confirming open-source status and active project footprint.","accessedOn":"2026-03-25"},{"id":"lnbits-docs","title":"LNbits Documentation","url":"https://docs.lnbits.org/","kind":"technical-docs","publisher":"LNbits","note":"Documentation for the Lightning wallet and accounts system used to support merchant and wallet replacement paths.","accessedOn":"2026-03-25"},{"id":"lnbits-home","title":"LNbits Home","url":"https://lnbits.github.io/","kind":"open-source-project","publisher":"LNbits","note":"Project homepage summarizing open-source status, accounts, extensions, and merchant-adjacent features.","accessedOn":"2026-03-25"},{"id":"fedimint-what-is","title":"What is a Fedimint","url":"https://fedimint.org/docs/GettingStarted/What-is-a-Fedimint","kind":"technical-docs","publisher":"Fedimint","note":"Explains federated Chaumian ecash and Lightning interoperability for community-scale payment coordination.","accessedOn":"2026-03-25"},{"id":"fedimint-tech","title":"Fedimint Core Technology Components","url":"https://fedimint.org/docs/GettingStarted/TechCompontents","kind":"technical-docs","publisher":"Fedimint","note":"Documents the federated custody, ecash, and Lightning-swap primitives behind the federated payment concept.","accessedOn":"2026-03-25"},{"id":"breez-sdk","title":"Breez SDK","url":"https://breez.technology/sdk/","kind":"technical-docs","publisher":"Breez","note":"Used to support claims about developer-ready self-custodial Lightning payment infrastructure.","accessedOn":"2026-03-25"},{"id":"misp-project","title":"MISP Open Source Threat Intelligence Platform","url":"https://www.misp-project.org/","kind":"open-source-project","publisher":"MISP Project","note":"Primary source for the open threat-intelligence sharing platform used as an alternative to proprietary cyber-fraud tooling.","accessedOn":"2026-03-25"}],"summaryMarkdown":"Mastercard remains one of the strongest proprietary payment-network incumbents, with a large bundled moat spanning card rails and value-added security/data services. The most credible decentralizing pressure comes from Bitcoin and Lightning-based merchant acceptance, federated community payment systems, and open threat-intelligence coordination rather than from a single direct replacement."}
+tokens used
+49,199

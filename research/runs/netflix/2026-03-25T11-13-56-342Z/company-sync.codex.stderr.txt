@@ -1,0 +1,697 @@
+2026-03-25T11:13:58.950939Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.950970Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d24b3-88a5-7390-a201-da7739944a68
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: netflix
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "netflix",
+  "name": "Netflix",
+  "ticker": "NFLX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top20"
+  ],
+  "sectorId": "communication-services",
+  "industryId": "streaming-video",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/netflix/marketcap/",
+  "description": "Subscription streaming platform combining global content distribution, recommendations, and a growing advertising tier.",
+  "technologyWaveIds": [
+    "bitcoin-native-coordination"
+  ],
+  "seedProductNames": [
+    "Netflix streaming",
+    "Advertising tier"
+  ],
+  "seedSourceUrls": [
+    "https://ir.netflix.net/",
+    "https://companiesmarketcap.com/netflix/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-03-25T11:13:58.966432Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+mcp: playwright starting
+mcp: lsp starting
+2026-03-25T11:13:58.992916Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.997132Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.022191Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.022940Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.045001Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.046353Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.067037Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.068443Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.092904Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.093900Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.115336Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24b1-ae95-7933-840e-b03737438517.1774437117589551000.sh": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:13:59.116124Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.137806Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.138967Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.148448Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3597: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T11:13:59.161846Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.162557Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.187527Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.188158Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.211503Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.212447Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.235458Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.236183Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.259580Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.261176Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.283621Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.290218Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.313496Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.314783Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.339132Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.340451Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.364205Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.365688Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.387253Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.388079Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.410633Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.911890Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24b3-88a5-7390-a201-da7739944a68.tmp-1774437238951278000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:14:00.533754Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3596: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m verifying Netflix source material first so the refresh is grounded in current, citable facts before I assemble the JSON bundle.
+Plan update
+  → Collect authoritative Netflix company, product, and market-data sources
+  • Draft company and product bundle with scored metrics and disruption concepts
+  • Cross-check source coverage against schema constraints and return final JSON
+🌐 Searching the web...
+🌐 Searched: site:ir.netflix.net Netflix annual report 2025 shareholders letter advertising tier 2026
+🌐 Searching the web...
+🌐 Searched: site:ir.netflix.net Netflix annual report 2025 pdf 10-k
+🌐 Searching the web...
+🌐 Searched: https://ir.netflix.net/annual-reports/
+🌐 Searching the web...
+🌐 Searched: https://s22.q4cdn.com/959853165/files/doc_financials/2025/ar/99482238-46b2-4d0d-b292-40e6781bdf03.pdf
+🌐 Searching the web...
+🌐 Searched: 'operating margin' in https://s22.q4cdn.com/959853165/files/doc_financials/2025/ar/99482238-46b2-4d0d-b292-40e6781bdf03.pdf
+codex
+I have the core Netflix investor and product sources. Next I’m tightening the product-side evidence and the open/decentralized replacement sources so the alternatives and disruption concepts are defensible rather than padded.
+🌐 Searching the web...
+🌐 Searched: Jellyfin official documentation open source media server
+🌐 Searching the web...
+🌐 Searched: joinpeertube about federation official
+🌐 Searching the web...
+🌐 Searched: companiesmarketcap Netflix P/E ratio March 2026
+🌐 Searching the web...
+🌐 Searched: Netflix IPO date SEC netflix 2002 prospectus
+codex
+The remaining work is synthesis: I have enough source coverage to score the company, describe the moat, and keep the product alternatives/concepts tied to real open and decentralized mechanisms instead of generic “someone could build this” language.
+🌐 Searching the web...
+🌐 Searched: https://www.netflix.com/pr/ads-plan
+🌐 Searching the web...
+🌐 Searched: 'free, open-source, and self-hosted bitcoin payment gateway' in https://docs.btcpayserver.org/Guide/
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"netflix","name":"Netflix","ticker":"NFLX","rankApprox":27,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top20"],"sectorId":"communication-services","industryId":"streaming-video","companiesMarketCapUrl":"https://companiesmarketcap.com/netflix/marketcap/","description":"Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.","overview":[{"title":"Platform Model","paragraphs":["Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.","The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising."]},{"title":"Economic Position","paragraphs":["For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.","Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control."]}],"moatNarrative":["Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.","That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack."],"decentralizationNarrative":["Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.","Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo."],"sourceIds":["src-netflix-2025-annual-report","src-netflix-ads-plan","src-netflix-ads-help","src-netflix-marketcap","src-netflix-pe"],"technologyWaveIds":["bitcoin-native-coordination"],"snapshotNote":"Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot.","inputMetrics":{"moat":{"value":8.7,"rationale":"Netflix combines large-scale original and licensed content, global consumer reach, a mature recommendation surface, and strong profitability, producing a durable entertainment-distribution moat even in a competitive market.","sourceIds":["src-netflix-2025-annual-report","src-netflix-ads-plan"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":4.2,"rationale":"Video distribution and monetization can be unbundled into self-hosted, federated, and direct-payment systems, but Netflix’s licensed catalog, originals budget, and convenience stack remain hard to match today.","sourceIds":["src-netflix-2025-annual-report","src-peertube","src-btcpay"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":9.0,"rationale":"Netflix reported $45.18 billion of revenue, $13.33 billion of operating income, 29.5% operating margin, and $10.98 billion of net income for 2025, indicating a very strong earnings profile.","sourceIds":["src-netflix-2025-annual-report"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":36.8,"rationale":"CompaniesMarketCap lists Netflix’s trailing P/E ratio at 36.8 as of March 2026; useful as a current valuation snapshot but dependent on market pricing and third-party aggregation.","sourceIds":["src-netflix-pe"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":402510000000,"rationale":"CompaniesMarketCap lists Netflix at roughly $402.51 billion market capitalization in March 2026, placing it around rank 27 globally by that source.","sourceIds":["src-netflix-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"netflix-streaming","name":"Netflix streaming","category":"video streaming","homepageUrl":"https://www.netflix.com/","summary":"Netflix’s flagship subscription streaming service for series, films, games, and live programming across connected devices.","whyItMatters":"This is the core product that concentrates Netflix’s economic power: catalog control, recommendation control, app distribution, pricing, and viewer relationship all sit inside one closed platform.","replacementSketch":["A realistic open replacement does not need to clone Netflix title-for-title. It can start by separating the stack into self-hosted media libraries, federated public video networks, and direct payment rails so creators and communities control distribution instead of a single platform owner.","Over time, the strongest challenge comes from networks that make hosting, discovery, monetization, and community governance modular. That lowers switching costs for creators and viewers even if premium licensed catalogs remain centralized for longer."],"sourceIds":["src-netflix-2025-annual-report","src-peertube","src-jellyfin","src-btcpay","src-podcast-value"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"jellyfin","name":"Jellyfin","kind":"open-source","homepageUrl":"https://jellyfin.org/","repoUrl":"https://github.com/jellyfin/jellyfin","summary":"Free software media server for managing and streaming your own media library across devices without premium feature gating.","metrics":{"openness":{"value":9.7,"rationale":"Jellyfin positions itself as a free software media system with source availability and no premium feature lockups.","sourceIds":["src-jellyfin"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":6.4,"rationale":"It decentralizes hosting and playback by moving control to self-hosted servers, though discovery and public catalog federation are limited compared with a broader network protocol.","sourceIds":["src-jellyfin"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":8.1,"rationale":"Jellyfin is already usable across many platforms as a mature self-hosted media system, though it is better for owned libraries than for replacing Netflix’s licensed catalog breadth.","sourceIds":["src-jellyfin"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":7.8,"rationale":"For users with their own media or community libraries, Jellyfin can replace recurring platform fees with commodity hosting and open clients.","sourceIds":["src-jellyfin"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-jellyfin"]},{"slug":"peertube","name":"PeerTube","kind":"decentralized","homepageUrl":"https://joinpeertube.org/","summary":"Federated video platform software that lets many independently operated sites host, share, and discover videos across an interconnected network.","metrics":{"openness":{"value":9.4,"rationale":"PeerTube presents itself as free, open-source software that can be modified and audited by anyone.","sourceIds":["src-peertube"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizationFit":{"value":9.2,"rationale":"Its model explicitly decentralizes storage and decision-making across multiple interconnected hosting providers using ActivityPub, with WebRTC helping distribution efficiency.","sourceIds":["src-peertube","src-peertube-activitypub"],"confidence":"high","lastReviewedOn":"2026-03-25"},"readiness":{"value":7.2,"rationale":"PeerTube is real and usable today for public video publishing and community hosting, but it is not yet a drop-in replacement for Netflix-scale premium entertainment aggregation.","sourceIds":["src-peertube"],"confidence":"high","lastReviewedOn":"2026-03-25"},"costLeverage":{"value":7.5,"rationale":"Federation and peer-assisted distribution can lower central bandwidth and platform overhead versus a single giant hosting silo.","sourceIds":["src-peertube"],"confidence":"high","lastReviewedOn":"2026-03-25"}},"sourceIds":["src-peertube","src-peertube-activitypub"]}],"disruptionConcepts":[{"slug":"federated-video-membership-bundles","name":"Federated Video Membership Bundles","summary":"Independent video hosts could run PeerTube-style instances for catalog hosting and discovery while joining shared membership bundles that let viewers pay once to support a cluster of aligned communities. Instead of one company owning hosting, discovery, moderation, and payments, the bundle would coordinate across autonomous nodes that remain portable and locally governed.","angleIds":["federation","decentralized-coordination"],"thesis":"This changes the market from a single centralized subscription silo into a federation of smaller operators that can share audiences and interoperability without surrendering ownership or moderation authority to one platform.","bitcoinOrDecentralizationRole":"Federation is central because the core shift is structural: storage, moderation, and identity are spread across many servers using open protocols, reducing dependence on one operator’s catalog and policy stack.","coordinationMechanism":"Operators publish catalogs and channels from their own servers, federate metadata and subscriptions through ActivityPub-compatible flows, and optionally participate in joint membership bundles or reciprocal discovery agreements.","verificationOrTrustModel":"Trust is local-first: each instance is accountable for what it hosts and whom it federates with, while protocol-level identity, signed activities, and transparent instance policies limit spoofing. Abuse still exists, but it is compartmentalized instead of platform-wide.","failureModes":["Fragmented discovery can make the user experience worse than a single polished app.","Premium licensed content may remain locked behind exclusive rights deals that federated hosts cannot easily replicate."],"adoptionPath":["Start with independent studios, niche communities, educators, and public-interest archives that do not need Hollywood-scale exclusivity.","Layer in shared discovery, shared subscriptions, and migration tools so creators can move between hosts without losing audiences."],"confidence":"medium","problemSourceIds":["src-netflix-2025-annual-report"],"enablerSourceIds":["src-peertube","src-peertube-activitypub"],"metrics":{"decentralizationFit":{"value":9.0,"rationale":"The concept directly decentralizes hosting, moderation, and platform governance across interoperable nodes.","sourceIds":["src-peertube","src-peertube-activitypub"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":7.0,"rationale":"ActivityPub-based federation is already proven for cross-instance coordination, though paid bundle administration and cross-host trust rules would still need careful product design.","sourceIds":["src-peertube","src-peertube-activitypub"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":6.8,"rationale":"The hosting and federation primitives exist today, but a consumer-grade shared membership layer and large-scale discovery UX remain unfinished.","sourceIds":["src-peertube","src-peertube-activitypub"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":6.6,"rationale":"This would not erase Netflix’s premium catalog moat quickly, but it would pressure the assumption that video distribution must be centralized to be convenient.","sourceIds":["src-netflix-2025-annual-report","src-peertube"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},{"slug":"lightning-metered-video","name":"Lightning-Metered Video Access","summary":"Instead of bundling all viewing into flat subscriptions or advertising, creators and curators could offer pay-per-title, pay-per-minute, or community membership access over Bitcoin and Lightning. Self-hosted commerce and open metadata standards would let viewers fund the content they actually value while keeping settlement and payout logic outside a platform-controlled billing stack.","angleIds":["bitcoin","lightning","decentralized-coordination"],"thesis":"This changes market structure by replacing part of the subscription-and-ads bundle with direct, interoperable payments, letting creators monetize without first surrendering distribution and billing to a giant platform.","bitcoinOrDecentralizationRole":"Bitcoin and Lightning matter here because very small payments, direct settlement, and programmable splits make metered media economics more plausible than card rails for low-dollar viewing or fan-funded access.","coordinationMechanism":"Creators or hosts publish content and payment metadata, viewers pay invoices or stream value over Lightning-compatible tools, and revenue can be split across collaborators using open value-recipient style metadata rather than a single platform ledger.","verificationOrTrustModel":"Payments are verified through invoice settlement and wallet-level confirmations, while access can be unlocked per stream, title, or bundle. The weak point is still off-chain enforcement of playback entitlements and honest reporting of viewing events when payment is usage-based.","failureModes":["Users may prefer all-you-can-watch bundles over metered payments unless pricing is simple and clearly cheaper.","A direct-payment model cannot by itself solve content licensing and may struggle to finance blockbuster-scale originals."],"adoptionPath":["Start with premium niches, live events, independent studios, and creator communities where direct audience support is already normal.","Add wallet UX, recurring memberships, and collaborative payout splits so the system feels simpler than today’s ad-tech and platform-rev-share stack."],"confidence":"medium","problemSourceIds":["src-netflix-2025-annual-report","src-netflix-ads-plan","src-netflix-ads-help"],"enablerSourceIds":["src-btcpay","src-podcast-value"],"metrics":{"decentralizationFit":{"value":8.1,"rationale":"The model removes centralized billing and can keep creator monetization closer to open protocols and self-hosted infrastructure.","sourceIds":["src-btcpay","src-podcast-value"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":6.9,"rationale":"BTCPay and open value metadata show real coordination primitives, but mainstream video purchasing behavior is not yet organized around them.","sourceIds":["src-btcpay","src-podcast-value"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":6.5,"rationale":"The payment rails already exist, yet broad consumer adoption still depends on easier wallets, better entitlement UX, and more creator tooling.","sourceIds":["src-btcpay","src-podcast-value"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":7.1,"rationale":"If direct micropayments and open revenue splits become easy enough, they weaken the assumption that ads or giant subscriptions are the only viable way to finance digital video.","sourceIds":["src-netflix-ads-plan","src-btcpay","src-podcast-value"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]},{"slug":"advertising-tier","name":"Advertising tier","category":"ad-supported streaming plan","homepageUrl":"https://www.netflix.com/pr/ads-plan","summary":"Netflix’s lower-priced Standard with ads plan that trades a cheaper monthly price for ad inventory, some licensing gaps, and certain device limitations.","whyItMatters":"This tier broadens Netflix’s monetization mix and market reach, but it also highlights the platform’s centralized control over pricing, ad load, audience measurement, rights availability, and access rules.","replacementSketch":["A decentralized alternative to ad-supported streaming does not need to recreate conventional ad tech. It can instead reduce dependence on ads by making direct payments, member patronage, and community bundles easier than negotiating access through centralized media buyers and proprietary audience data.","The strongest near-term replacement path is hybrid: free or low-cost federated video distribution paired with direct viewer support, event payments, and transparent creator revenue splits. That keeps monetization closer to audiences rather than to opaque ad-market intermediaries."],"sourceIds":["src-netflix-ads-plan","src-netflix-ads-help","src-btcpay","src-podcast-value"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[],"disruptionConcepts":[{"slug":"viewer-funded-adless-access","name":"Viewer-Funded Adless Access","summary":"Open video publishers could replace part of the ad-supported tier’s logic with lightweight membership, pay-per-view, and streaming-value models that let audiences directly fund the content or channels they want. Rather than lowering price by inserting more intermediaries into the viewing experience, the system lowers price by removing ad-tech overhead and routing more value directly between viewers and publishers.","angleIds":["lightning","peer-to-peer-marketplace","decentralized-coordination"],"thesis":"This changes the market by making low-priced access dependent on direct viewer funding and open payment coordination instead of centralized audience packaging and advertiser demand.","bitcoinOrDecentralizationRole":"Lightning-native payments matter because they support small, frequent, and programmable contributions that can substitute for part of the economic role currently played by advertising in low-price plans.","coordinationMechanism":"Publishers expose direct payment endpoints and optional value-split metadata, viewers fund access with one-off or recurring Lightning-compatible payments, and payout rules can be shared across hosts and collaborators without a single corporate ledger.","verificationOrTrustModel":"Payment settlement is verifiable through wallet and invoice status, while access control can be tied to invoices, memberships, or signed entitlements. The harder problem is proving fair access and consistent service quality across many hosts without recreating a central gatekeeper.","failureModes":["Direct viewer funding may be too uneven for mass-market entertainment without a large catalog and strong creator loyalty.","Rights holders may still prefer guaranteed licensing checks from centralized distributors over open monetization models."],"adoptionPath":["Begin with live events, niche catalogs, and creator-led communities where audiences already accept direct support.","Expand into shared wallets, recurring memberships, and interoperable discovery so the experience feels cheaper and simpler than ad-supported subscriptions."],"confidence":"medium","problemSourceIds":["src-netflix-ads-plan","src-netflix-ads-help"],"enablerSourceIds":["src-btcpay","src-podcast-value"],"metrics":{"decentralizationFit":{"value":8.3,"rationale":"The concept moves monetization away from centralized ad targeting and toward direct audience-to-publisher settlement.","sourceIds":["src-btcpay","src-podcast-value"],"confidence":"high","lastReviewedOn":"2026-03-25"},"coordinationCredibility":{"value":6.8,"rationale":"Open Bitcoin payment infrastructure and value-recipient metadata are real, but video-wide standardization and mainstream UX are still immature.","sourceIds":["src-btcpay","src-podcast-value"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"implementationFeasibility":{"value":6.2,"rationale":"The payment primitives work today, yet replacing ad-tier economics at scale still requires better wallets, identity, bundling, and publisher tooling.","sourceIds":["src-btcpay","src-podcast-value"],"confidence":"medium","lastReviewedOn":"2026-03-25"},"incumbentPressure":{"value":6.7,"rationale":"This would pressure Netflix most in niches where audiences are willing to fund access directly, but it is less threatening in blockbuster, mass-market entertainment today.","sourceIds":["src-netflix-ads-plan","src-btcpay"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}}]}]},"sources":[{"id":"src-netflix-2025-annual-report","title":"Netflix 2025 Annual Report","url":"https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx","kind":"annual-report","publisher":"Netflix Investor Relations","note":"Primary source for company description, strategy, competition framing, and 2025 financial results.","accessedOn":"2026-03-25"},{"id":"src-netflix-ads-plan","title":"Netflix with Ads, Starting at $7.99","url":"https://www.netflix.com/pr/ads-plan","kind":"product-page","publisher":"Netflix","note":"Official plan page describing price, ad load, supported features, and plan limitations.","accessedOn":"2026-03-25"},{"id":"src-netflix-ads-help","title":"Ads on Netflix","url":"https://help.netflix.com/en/node/126831","kind":"product-page","publisher":"Netflix Help Center","note":"Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.","accessedOn":"2026-03-25"},{"id":"src-netflix-marketcap","title":"Netflix (NFLX) Market Capitalization","url":"https://companiesmarketcap.com/netflix/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current market-cap snapshot and approximate market-cap rank used for bundle metrics.","accessedOn":"2026-03-25"},{"id":"src-netflix-pe","title":"Netflix (NFLX) P/E Ratio","url":"https://companiesmarketcap.com/netflix/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Current trailing P/E snapshot used as a speculative valuation metric.","accessedOn":"2026-03-25"},{"id":"src-jellyfin","title":"Jellyfin Documentation Introduction","url":"https://jellyfin.org/docs/","kind":"technical-docs","publisher":"Jellyfin","note":"Official documentation establishing Jellyfin as a free software media system without premium feature gating.","accessedOn":"2026-03-25"},{"id":"src-peertube","title":"What is PeerTube?","url":"https://joinpeertube.org/","kind":"technical-docs","publisher":"Framasoft","note":"Official overview of PeerTube’s federated, open-source, ad-free video-hosting model.","accessedOn":"2026-03-25"},{"id":"src-peertube-activitypub","title":"PeerTube ActivityPub Documentation","url":"https://docs.joinpeertube.org/api/activitypub","kind":"technical-docs","publisher":"PeerTube Documentation","note":"Technical source for how PeerTube federates videos, channels, and interactions across servers.","accessedOn":"2026-03-25"},{"id":"src-btcpay","title":"BTCPay Server Documentation","url":"https://docs.btcpayserver.org/Guide/","kind":"technical-docs","publisher":"BTCPay Server","note":"Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.","accessedOn":"2026-03-25"},{"id":"src-podcast-value","title":"Podcast Namespace Value Tag","url":"https://podcasting2.org/docs/podcast-namespace/tags/value","kind":"technical-docs","publisher":"Podcasting 2.0","note":"Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.","accessedOn":"2026-03-25"}],"summaryMarkdown":"Netflix remains a highly profitable centralized streaming platform with a strong content-and-distribution moat. The strongest open replacements today are not catalog-complete clones but modular systems such as Jellyfin for self-hosted media, PeerTube for federated public video, and Bitcoin-native payment rails for direct monetization that can weaken the subscription-plus-ad bundle over time."}
+tokens used
+70,529

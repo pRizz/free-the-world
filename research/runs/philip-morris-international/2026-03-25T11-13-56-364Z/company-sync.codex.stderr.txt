@@ -1,0 +1,685 @@
+2026-03-25T11:13:58.784735Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.784953Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.791153Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d24b3-87fb-7360-a662-7cbf688bc8e2
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: philip-morris-international
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "philip-morris-international",
+  "name": "Philip Morris International",
+  "ticker": "PM",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top35"
+  ],
+  "sectorId": "consumer-staples",
+  "industryId": "tobacco",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/philip-morris/marketcap/",
+  "description": "Tobacco and nicotine company focused on cigarettes, heated-tobacco devices, oral nicotine, and smoke-free products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "IQOS",
+    "ZYN"
+  ],
+  "seedSourceUrls": [
+    "https://investor.pmi.com/",
+    "https://www.pmi.com/",
+    "https://companiesmarketcap.com/philip-morris/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: lsp starting
+mcp: playwright starting
+2026-03-25T11:13:58.817165Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.818059Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.845776Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.859688Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.883124Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.883699Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.905800Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.906391Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.931077Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.931868Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.962074Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:58.985278Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:58.990830Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.013732Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.015280Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.038052Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.038839Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.061727Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.063305Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.084849Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.086526Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.109607Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.110776Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.135180Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.135948Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.148458Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3035: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T11:13:59.159494Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.160263Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.185038Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.185770Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.207841Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.208479Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.231558Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.232240Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:13:59.255335Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:13:59.878207Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24b3-87fb-7360-a662-7cbf688bc8e2.tmp-1774437238786121000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:14:01.345105Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 3034: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+codex
+I’m verifying the company facts and product/source coverage first so the JSON bundle is supportable with cited sources. After that I’ll assemble the bundle with only taxonomy-valid IDs and defensible disruption concepts.
+Plan update
+  → Collect primary sources for PMI company profile, products, and market data
+  • Draft company and product bundle with supported metrics and narratives
+  • Cross-check schema constraints and source ID consistency, then return final JSON
+🌐 Searching the web...
+🌐 Searched: Philip Morris International annual report 2025 PDF smoke-free products IQOS ZYN site:pmi.com
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/philip-morris/marketcap/
+🌐 Searching the web...
+🌐 Searched: site:pmi.com Philip Morris International 2025 annual report pdf
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/philip-morris/pe-ratio/
+🌐 Searching the web...
+🌐 Searched: site:fda.gov nicotine pouches addictive not risk free tobacco products FDA
+codex
+The source set is enough now to support the company profile and to justify a rare disruption exception for nicotine products instead of forcing weak open/decentralized concepts. I’m assembling the bundle with supported market data, PMI product evidence, and FDA risk/regulatory context.
+🌐 Searching the web...
+🌐 Searched: site:iqos.com IQOS ILUMA official
+🌐 Searching the web...
+🌐 Searched: site:iqos.com IQOS ILUMA official product page heated tobacco
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"philip-morris-international","name":"Philip Morris International","ticker":"PM","rankApprox":30,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top35"],"sectorId":"consumer-staples","industryId":"tobacco","companiesMarketCapUrl":"https://companiesmarketcap.com/philip-morris/marketcap/","description":"Global tobacco and nicotine company centered on cigarettes, heated-tobacco systems, nicotine pouches, and other smoke-free products.","overview":[{"title":"Business Shift","paragraphs":["Philip Morris International is still a tobacco incumbent, but its current investor narrative is built around migrating adult nicotine users from cigarettes toward smoke-free formats led by IQOS and ZYN.","PMI reported more than $40 billion in 2025 net revenue, with 41.5% coming from smoke-free products, indicating that the company is no longer defending only combustibles but also scaling a branded nicotine-device and pouch portfolio."]},{"title":"Scale And Reach","paragraphs":["PMI says its smoke-free products were available in 106 markets at the end of 2025 and used by more than 43 million legal-age consumers, giving it unusual global distribution leverage for a regulated nicotine business.","That reach is reinforced by category leadership claims around IQOS in heated tobacco and ZYN in U.S. nicotine pouches, which together help explain why the market continues to price PMI as one of the largest tobacco companies globally."]}],"moatNarrative":["PMI's moat comes from distribution, regulatory execution, brand power, and the capital intensity needed to commercialize nicotine products across many jurisdictions. IQOS and ZYN are not simple consumer brands; they sit inside licensing, authorization, manufacturing, and retailer-access systems that are hard for smaller entrants to replicate quickly.","The moat is also strengthened by portfolio migration. PMI can defend cash flow from cigarettes while moving users into its own smoke-free products, reducing the odds that category change automatically benefits outsiders."],"decentralizationNarrative":["PMI scores poorly on decentralizability because nicotine delivery products are tightly bound to regulatory approvals, controlled manufacturing, branded consumables, and age-gated retail channels. Those constraints make open, peer-produced, or federated substitutes unusually hard to justify responsibly.","The more realistic public-interest substitute to a PMI nicotine product is often quitting nicotine altogether or using approved cessation therapies, not a decentralized nicotine marketplace. That makes this company structurally resistant to the registry's usual open or protocol-native replacement patterns."],"sourceIds":["src-pmi-brands","src-pmi-progress","src-pmi-q4-2025","src-cmc-marketcap","src-cmc-pe","src-fda-nicotine"],"technologyWaveIds":[],"snapshotNote":"Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35.","inputMetrics":{"moat":{"value":8.8,"rationale":"PMI combines global distribution, heavy regulatory capability, flagship smoke-free brands, and incumbent cash flows that fund migration from cigarettes into proprietary alternatives such as IQOS and ZYN.","sourceIds":["src-pmi-brands","src-pmi-progress","src-pmi-q4-2025"],"confidence":"high","lastReviewedOn":"2026-03-25"},"decentralizability":{"value":1.2,"rationale":"Nicotine products are highly regulated, addictive, and tied to controlled manufacturing, age-gated distribution, and product-specific authorizations, leaving little honest room for open or decentralized substitution at the product layer.","sourceIds":["src-fda-nicotine","src-fda-zyn-authorized","src-fda-iqos-mrtp"],"confidence":"high","lastReviewedOn":"2026-03-25"},"profitability":{"value":8.7,"rationale":"PMI reported more than $40 billion in 2025 net revenue and said adjusted operating margin returned to above 40% in 2025, supporting a strong profitability assessment.","sourceIds":["src-pmi-q4-2025"],"confidence":"high","lastReviewedOn":"2026-03-25"},"peRatio":{"value":29.7,"rationale":"CompaniesMarketCap listed PMI's trailing P/E ratio at 29.7 in March 2026.","sourceIds":["src-cmc-pe"],"confidence":"speculative","lastReviewedOn":"2026-03-25"},"marketCap":{"value":255.09,"rationale":"CompaniesMarketCap listed Philip Morris International at roughly $255.09 billion in market capitalization in March 2026.","sourceIds":["src-cmc-marketcap"],"confidence":"medium","lastReviewedOn":"2026-03-25"}}},"products":[{"slug":"iqos","name":"IQOS","category":"heated-tobacco system","homepageUrl":"https://www.iqos.com/","summary":"IQOS is PMI's flagship heated-tobacco platform that uses electronic devices and tobacco sticks to deliver nicotine without combusting tobacco.","whyItMatters":"IQOS is central to PMI's claim that it can preserve nicotine demand while moving users away from cigarettes and into a proprietary smoke-free ecosystem.","replacementSketch":["A credible public-interest replacement is not an open-source heated-tobacco clone but complete nicotine cessation or FDA-approved nicotine replacement therapy for users trying to quit.","Because the product still depends on addictive nicotine delivery and regulated tobacco authorizations, the registry treats IQOS as a rare case where forcing a decentralization concept would be weaker than documenting the limitation clearly."],"maybeDisruptionException":{"reason":"IQOS remains a regulated heated-tobacco product used to deliver addictive nicotine. FDA materials emphasize that heated tobacco products are not safe or FDA-approved in the everyday sense, and the most credible harm-reduction alternative for many users is quitting or using approved nicotine replacement therapy rather than an open or decentralized heated-tobacco substitute.","sourceIds":["src-fda-nicotine","src-fda-iqos-mrtp","src-fda-iqos-authorized"],"lastReviewedOn":"2026-03-25"},"sourceIds":["src-pmi-brands","src-fda-iqos-mrtp","src-fda-iqos-authorized","src-fda-nicotine"],"technologyWaveIds":[],"alternatives":[]},{"slug":"zyn","name":"ZYN","category":"nicotine pouches","homepageUrl":"https://us.zyn.com/","summary":"ZYN is PMI's leading nicotine pouch brand, delivering oral nicotine in smoke-free, tobacco-leaf-free pouches.","whyItMatters":"ZYN gives PMI a fast-growing U.S. oral nicotine franchise and expands its smoke-free position beyond devices into a simpler consumables category.","replacementSketch":["The cleanest substitute pathway is nicotine cessation support, including approved nicotine replacement products, not an open or federated nicotine-pouch ecosystem.","Given the addiction, product-safety, and authorization constraints around nicotine pouches, a documented exception is more honest than inventing weak decentralized market concepts."],"maybeDisruptionException":{"reason":"ZYN products are addictive nicotine pouches sold in a tightly regulated category where FDA authorization matters and public-health guidance still states the products are harmful and not risk free. That makes an open or decentralized replacement concept hard to defend responsibly relative to cessation-oriented substitutes.","sourceIds":["src-fda-zyn-authorized","src-fda-relative-risk","src-fda-nicotine"],"lastReviewedOn":"2026-03-25"},"sourceIds":["src-pmi-brands","src-fda-zyn-authorized","src-fda-relative-risk","src-fda-nicotine"],"technologyWaveIds":[],"alternatives":[]}]},"sources":[{"id":"src-pmi-brands","title":"Building leading brands","url":"https://www.pmi.com/investor-relations/overview/building-leading-brands/","kind":"investor-relations","publisher":"Philip Morris International","note":"Primary company source describing IQOS and ZYN, including category positioning and shipment or user claims.","accessedOn":"2026-03-25"},{"id":"src-pmi-progress","title":"We're delivering a smoke free future, faster","url":"https://www.pmi.com/progress/","kind":"investor-relations","publisher":"Philip Morris International","note":"Company progress page with 2025 smoke-free revenue share, user counts, and market availability.","accessedOn":"2026-03-25"},{"id":"src-pmi-q4-2025","title":"Philip Morris International Reports 2025 Fourth-Quarter & Full-Year Results","url":"https://www.pmi.com/investor-relations/press-releases-and-events/press-releases-overview/press-release-details/?newsId=29566","kind":"investor-relations","publisher":"Philip Morris International","note":"Primary source for 2025 revenue, smoke-free share, EPS, and operating margin commentary.","accessedOn":"2026-03-25"},{"id":"src-cmc-marketcap","title":"Philip Morris International (PM) - Market capitalization","url":"https://companiesmarketcap.com/philip-morris/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Reference for current market capitalization and approximate global market-cap rank.","accessedOn":"2026-03-25"},{"id":"src-cmc-pe","title":"Philip Morris International (PM) - P/E ratio","url":"https://companiesmarketcap.com/philip-morris/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Reference for trailing P/E ratio used in the input metrics.","accessedOn":"2026-03-25"},{"id":"src-fda-nicotine","title":"Nicotine Is Why Tobacco Products Are Addictive","url":"https://www.fda.gov/tobacco-products/health-effects-tobacco-use/nicotine-why-tobacco-products-are-addictive","kind":"technical-docs","publisher":"U.S. Food and Drug Administration","note":"FDA health and cessation context covering nicotine addiction, heated tobacco risk positioning, and approved NRT alternatives.","accessedOn":"2026-03-25"},{"id":"src-fda-relative-risk","title":"The Relative Risks of Tobacco Products","url":"https://www.fda.gov/tobacco-products/health-effects-tobacco-use/relative-risks-tobacco-products","kind":"technical-docs","publisher":"U.S. Food and Drug Administration","note":"FDA comparative-risk overview stating nicotine pouches are not risk free and that quitting all tobacco products is most beneficial.","accessedOn":"2026-03-25"},{"id":"src-fda-zyn-authorized","title":"Nicotine Pouch Products Authorized by the FDA","url":"https://www.fda.gov/tobacco-products/market-and-distribute-tobacco-product/nicotine-pouch-products-authorized-fda","kind":"technical-docs","publisher":"U.S. Food and Drug Administration","note":"FDA list confirming authorized ZYN nicotine pouch variants and the constrained regulatory channel for lawful sale.","accessedOn":"2026-03-25"},{"id":"src-fda-iqos-authorized","title":"FDA Authorizes Three New Heated Tobacco Products","url":"https://www.fda.gov/tobacco-products/ctp-newsroom/fda-authorizes-three-new-heated-tobacco-products","kind":"technical-docs","publisher":"U.S. Food and Drug Administration","note":"FDA authorization context for additional heated tobacco products used with the IQOS device.","accessedOn":"2026-03-25"},{"id":"src-fda-iqos-mrtp","title":"Philip Morris Products S.A. Modified Risk Tobacco Product (MRTP) Applications","url":"https://www.fda.gov/tobacco-products/advertising-and-promotion/philip-morris-products-sa-modified-risk-tobacco-product-mrtp-applications","kind":"technical-docs","publisher":"U.S. Food and Drug Administration","note":"FDA source explaining the specific reduced-exposure claims allowed for IQOS and clarifying the regulatory framing.","accessedOn":"2026-03-25"}],"summaryMarkdown":"PMI remains a high-moat tobacco incumbent that is successfully shifting revenue toward smoke-free nicotine products, especially IQOS and ZYN. For this registry refresh, both products are treated as rare documented disruption exceptions because nicotine addiction, product safety, and regulatory authorization make forced open or decentralized replacement concepts less honest than stating those limits directly."}
+tokens used
+53,516

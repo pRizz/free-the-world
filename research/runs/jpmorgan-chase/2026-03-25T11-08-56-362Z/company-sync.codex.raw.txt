@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "ticker": "JPM",
+      "rankApprox": 15,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top20"
+      ],
+      "sectorId": "financials",
+      "industryId": "diversified-banks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/jpmorgan-chase/marketcap/",
+      "description": "Diversified financial-services company spanning consumer banking, payments, markets, and asset management.",
+      "overview": [
+        {
+          "title": "Scale And Scope",
+          "paragraphs": [
+            "JPMorgan Chase reported $4.0 trillion of assets, $177.6 billion of 2024 net revenue, and $58.5 billion of 2024 net income, making it the largest and most profitable U.S. diversified bank in this registry slice.",
+            "Under the J.P. Morgan and Chase brands, the firm spans consumer and small-business banking, commercial banking, investment banking, transaction processing, and asset management, which gives it unusual breadth across both household and enterprise financial flows."
+          ]
+        },
+        {
+          "title": "Why The Franchise Matters",
+          "paragraphs": [
+            "Chase remains a mass-market distribution machine, with over 84 million consumers, 7 million small businesses, more than 14,000 ATMs, and 5,000 branches, which makes the consumer franchise hard to dislodge through software alone.",
+            "J.P. Morgan Payments adds a separate institutional moat: the company says it processes nearly $10 trillion per day across more than 170 countries and 120 currencies, reinforcing network effects with global corporates, treasury teams, and payment operations."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "JPMorgan Chase's moat is built from regulated balance-sheet scale, brand trust, low-cost deposit gathering, broad product coverage, and deep enterprise integrations. Consumer banking, card issuance, treasury services, capital markets, and custody reinforce one another rather than operating as isolated businesses.",
+        "The payments and treasury franchise strengthens the moat further because corporate money movement is sticky: once a large merchant, platform, or multinational integrates accounts, receivables, fraud controls, reporting, and cross-border workflows into a bank's stack, switching costs become operational rather than merely commercial."
+      ],
+      "decentralizationNarrative": [
+        "The firm's core businesses are exposed to decentralization pressure unevenly. Retail deposits, local credit intermediation, and merchant acceptance can be partially re-bundled by open-source banking software, federated custody models, and merchant-direct Bitcoin and Lightning payment rails.",
+        "Even so, JPMorgan Chase is not easy to route around quickly. Compliance, liquidity, fraud management, global correspondent relationships, and institutional trust still favor incumbents. The more realistic disruption path is gradual unbundling of specific workflows, especially payments acceptance, community custody, and software-defined core banking layers."
+      ],
+      "sourceIds": [
+        "src-jpmc-financial-highlights-2024",
+        "src-jpmc-annual-report-2024",
+        "src-companiesmarketcap-jpm-marketcap",
+        "src-companiesmarketcap-jpm-pe",
+        "src-chase-checking",
+        "src-chase-savings",
+        "src-jpm-payments",
+        "src-jpm-payments-dev"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot; CompaniesMarketCap showed JPMorgan Chase at approximately rank 15 globally on that date.",
+      "inputMetrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "The firm combines the largest U.S. bank balance sheet in this set with consumer distribution, branch and ATM reach, leading corporate payments scale, and strong profitability.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024",
+            "src-chase-checking",
+            "src-jpm-payments"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Some retail banking and merchant-payment functions can be unbundled by open-source core banking, federated custody, and Bitcoin/Lightning payment stacks, but regulated balance-sheet services and enterprise treasury workflows still favor incumbents.",
+          "sourceIds": [
+            "src-chase-checking",
+            "src-fedimint-docs",
+            "src-fineract",
+            "src-btcpay-docs",
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 9,
+          "rationale": "JPMorgan Chase reported $58.471 billion of net income in 2024 with 18% return on common equity and 22% ROTCE.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 15.4,
+          "rationale": "CompaniesMarketCap listed JPMorgan Chase at a trailing P/E of about 15.4 as of its February 2026 snapshot.",
+          "sourceIds": [
+            "src-companiesmarketcap-jpm-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 670618000000,
+          "rationale": "The firm's official 2024 financial highlights reported year-end market capitalization of $670.618 billion. This is slightly older than the March 2026 ranking snapshot but comes from company reporting.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "chase-consumer-banking",
+        "name": "Chase consumer banking",
+        "category": "consumer banking",
+        "homepageUrl": "https://personal.chase.com/personal/checking",
+        "summary": "Mass-market U.S. consumer banking franchise spanning checking, savings, cards, digital banking, ATMs, and branches.",
+        "whyItMatters": "This is the everyday deposit and payments layer through which households store money, receive paychecks, and interact with financial services.",
+        "replacementSketch": [
+          "A decentralized replacement would likely split the current bundle into open ledger software, community-governed custody, and wallet-native payment rails instead of relying on one giant bank to own the whole stack.",
+          "In practice that could mean local institutions or cooperatives running open-source banking software for compliant account management while Bitcoin and Lightning tools handle instant transfer and settlement edges for users who want more direct control."
+        ],
+        "sourceIds": [
+          "src-chase-checking",
+          "src-chase-savings",
+          "src-jpmc-financial-highlights-2024"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "apache-fineract",
+            "name": "Apache Fineract",
+            "kind": "open-source",
+            "homepageUrl": "https://fineract.apache.org/",
+            "summary": "Open-source core banking software for digital financial services, account management, lending, savings, and reporting.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "Apache Fineract is explicitly presented as open-source software for financial services.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It does not decentralize trust by itself, but it lowers dependence on proprietary bank cores and enables many smaller institutions to run their own stack.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "The project describes itself as cloud-ready, scalable, and suitable for high-transaction financial-service environments.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source core banking can materially reduce license and vendor-lock-in costs for smaller operators and challengers.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-fineract"
+            ]
+          },
+          {
+            "slug": "fedimint",
+            "name": "Fedimint",
+            "kind": "protocol",
+            "homepageUrl": "https://fedimint.org/",
+            "summary": "Federated Bitcoin e-cash system that lets communities operate shared custody and private payments without a single central operator.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Fedimint describes itself as open-source federated e-cash for Bitcoin.",
+                "sourceIds": [
+                  "src-fedimint-home",
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "Its model explicitly replaces single-bank custody with a federation of guardians and independent community mints.",
+                "sourceIds": [
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "Fedimint is credible for community-scale custody and payments, but it is not a full regulated retail-bank replacement for mainstream U.S. households.",
+                "sourceIds": [
+                  "src-fedimint-docs",
+                  "src-chase-checking"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Federated community custody can reduce centralized overhead and dependence on branch-heavy incumbents for some use cases.",
+                "sourceIds": [
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-fedimint-home",
+              "src-fedimint-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-community-banking",
+            "name": "Federated Community Banking",
+            "summary": "Instead of one national bank owning custody, payments, and policy for everyone, local federations could run community mints backed by Bitcoin and Lightning while keeping governance distributed across multiple guardians. That would not fully replace insured bank accounts overnight, but it could peel away the day-to-day transaction and stored-value layer that keeps users captive to a branch-centric incumbent.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Retail banking becomes less of a single-firm product and more of a network of community-operated monetary and payment cells.",
+            "bitcoinOrDecentralizationRole": "Bitcoin provides the reserve asset and settlement anchor, Lightning provides fast transfer rails, and federation spreads custody and policy control across multiple operators instead of one bank.",
+            "coordinationMechanism": "Users join a local or affinity-based federation, deposit sats, receive spendable e-cash, and transact across Lightning-connected wallets and services while guardians jointly manage reserves.",
+            "verificationOrTrustModel": "Cheating is constrained by threshold-controlled custody, auditable federation operations, and redemption pressure into Bitcoin. The model still relies on users choosing trustworthy guardians and monitoring solvency practices.",
+            "failureModes": [
+              "Mainstream users may still prefer FDIC-insured accounts and incumbent bank UX.",
+              "Guardian collusion, poor operational security, or weak recovery processes can damage trust."
+            ],
+            "adoptionPath": [
+              "Start with community, diaspora, or circular-economy groups that already want shared custody and fast payments.",
+              "Expand into payroll, local commerce, and savings communities where bank switching costs are lower than full-credit relationships."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-chase-checking",
+              "src-chase-savings"
+            ],
+            "enablerSourceIds": [
+              "src-fedimint-home",
+              "src-fedimint-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "The concept directly replaces single-bank custody with federated operation and Bitcoin-native settlement.",
+                "sourceIds": [
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The coordination model is technically coherent and already described by the project, but scaling it to mainstream consumer banking remains uncertain.",
+                "sourceIds": [
+                  "src-fedimint-docs",
+                  "src-fedimint-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "It is feasible for niche communities now, but hard to map directly onto full U.S. retail-banking expectations and regulation.",
+                "sourceIds": [
+                  "src-fedimint-docs",
+                  "src-chase-checking"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Pressure is meaningful on transaction and custody edges, but weaker against JPMorgan's insured deposits, lending, and compliance-heavy services.",
+                "sourceIds": [
+                  "src-chase-checking",
+                  "src-jpmc-financial-highlights-2024"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          },
+          {
+            "slug": "open-core-cooperative-banking-stack",
+            "name": "Open-Core Cooperative Banking Stack",
+            "summary": "A second disruption path is less crypto-native and more software-native: smaller banks, credit unions, municipalities, or cooperatives could run open-source core banking infrastructure instead of renting proprietary vendor stacks or defaulting to giant universal banks. That does not eliminate regulated intermediaries, but it can lower the coordination and software cost of running many smaller ones.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The software layer of banking becomes commoditized enough that more local and cooperative institutions can exist without needing mega-bank scale.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters here through institutional plurality rather than Bitcoin itself: open-source infrastructure lowers dependence on a single vendor or a single giant bank's integrated stack.",
+            "coordinationMechanism": "Institutions deploy a shared open core, integrate their own channels and compliance processes, and compete or cooperate locally while keeping policy and governance separate.",
+            "verificationOrTrustModel": "Trust shifts from opaque proprietary cores toward inspectable software, internal controls, and regulated local operators. The model does not remove fraud or credit risk, but it reduces vendor black-box dependence.",
+            "failureModes": [
+              "Open software alone does not solve deposit insurance, underwriting, or regulatory burden.",
+              "Fragmented smaller operators may still lose on brand, convenience, and distribution."
+            ],
+            "adoptionPath": [
+              "Adopt first among challengers, MFIs, community institutions, and digital-first operators seeking lower software lock-in.",
+              "Layer local payment, savings, and cooperative finance products on top once the core ledger and reporting stack is stable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-chase-checking",
+              "src-jpmc-financial-highlights-2024"
+            ],
+            "enablerSourceIds": [
+              "src-fineract"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It increases institutional plurality and reduces proprietary concentration, though it does not remove regulated intermediaries.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Open-source core banking is already a credible operating model for financial-service providers.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The software is deployable now, but institution-building and compliance remain the hard parts.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This can pressure vendor lock-in and some bank software economics, but it is a slower challenge to JPMorgan's consumer distribution moat.",
+                "sourceIds": [
+                  "src-fineract",
+                  "src-chase-checking"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "jp-morgan-payments",
+        "name": "J.P. Morgan payments",
+        "category": "enterprise payments",
+        "homepageUrl": "https://www.jpmorgan.com/payments",
+        "summary": "Global enterprise payments and treasury platform for accepting, processing, managing, and sending money across domestic and cross-border rails.",
+        "whyItMatters": "Payments infrastructure creates sticky operating leverage because it sits inside merchant checkout, treasury workflows, fraud controls, receivables, payables, and cross-border money movement.",
+        "replacementSketch": [
+          "A realistic replacement path is not one new giant processor but a modular stack where merchants self-host acceptance, settlement, and wallet logic while connecting directly to open networks.",
+          "Bitcoin and Lightning tools are strongest where merchants want direct acceptance, programmable payouts, and lower platform dependence, especially for internet-native and cross-border flows."
+        ],
+        "sourceIds": [
+          "src-jpm-payments",
+          "src-jpm-payments-dev",
+          "src-jpmc-financial-highlights-2024"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://docs.btcpayserver.org/Guide/",
+            "summary": "Free, open-source, self-hosted Bitcoin payment gateway for online and in-person merchant acceptance.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "BTCPay Server describes itself as free, open-source, and self-hosted.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 10,
+                "rationale": "It enables direct peer-to-peer payments, no middleman, and non-custodial merchant control.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "The documentation covers production deployment, self-hosting, POS flows, and Lightning support.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 9,
+                "rationale": "Merchants can avoid processor and middleman fees beyond network costs, especially for Bitcoin-native flows.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-btcpay-docs"
+            ]
+          },
+          {
+            "slug": "lnbits",
+            "name": "LNbits",
+            "kind": "open-source",
+            "homepageUrl": "https://lnbits.com/",
+            "summary": "Modular open-source Lightning wallet and payments platform for checkout, APIs, micropayments, subscriptions, and programmable payment flows.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "LNbits describes itself as free and open-source with a large extension ecosystem.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "It supports self-run or community-run Lightning payment systems and avoids dependence on a single payment processor.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project emphasizes years of use, modular tooling, APIs, and practical payment extensions, though enterprise treasury replacement remains partial.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "A modular Lightning stack can reduce processor dependence and open cheaper micropayment or automation use cases.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-lnbits"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "merchant-direct-bitcoin-checkout",
+            "name": "Merchant-Direct Bitcoin Checkout",
+            "summary": "Merchants can bypass part of the acquiring and gateway stack by running their own Bitcoin and Lightning checkout, receiving funds directly, and outsourcing less of the payment flow to a giant intermediary. That does not replace every card and treasury use case, but it can shrink the surface area where a bank-owned processor is indispensable.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "Payment acceptance becomes a merchant-controlled software function rather than a bank-controlled service bundle.",
+            "bitcoinOrDecentralizationRole": "Bitcoin and Lightning matter directly because they provide the settlement rail, the merchant can self-custody, and payment verification is tied to the network rather than a closed processor ledger.",
+            "coordinationMechanism": "Merchants deploy their own payment server, present invoices at checkout, receive payment from customer wallets, and settle fulfillment based on on-chain or Lightning invoice status.",
+            "verificationOrTrustModel": "Settlement is verified cryptographically by the Bitcoin and Lightning systems, while merchant control of keys reduces processor custody risk. Weak points remain around volatility, refunds, chargeback expectations, and customer support.",
+            "failureModes": [
+              "Many customers still prefer cards and bank-linked payment methods.",
+              "Volatility, accounting complexity, and compliance friction can slow enterprise adoption."
+            ],
+            "adoptionPath": [
+              "Start with internet-native merchants, donations, digital goods, and cross-border sellers where direct settlement is most valuable.",
+              "Expand through hybrid checkouts that keep existing rails while adding Bitcoin and Lightning as lower-friction options."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-jpm-payments",
+              "src-jpm-payments-dev"
+            ],
+            "enablerSourceIds": [
+              "src-btcpay-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 10,
+                "rationale": "The concept removes the central processor from payment acceptance and custody for the supported flow.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "BTCPay Server is a real merchant tool with documented production features and Lightning support.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "It is feasible for merchants willing to self-host or use specialist operators, but not a drop-in replacement for every enterprise payment rail.",
+                "sourceIds": [
+                  "src-btcpay-docs",
+                  "src-jpm-payments-dev"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "This pressures acceptance-margin businesses and some gateway functions, but only for merchants and jurisdictions ready to route volume onto Bitcoin-native rails.",
+                "sourceIds": [
+                  "src-jpm-payments",
+                  "src-btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          },
+          {
+            "slug": "modular-lightning-treasury-mesh",
+            "name": "Modular Lightning Treasury Mesh",
+            "summary": "A modular Lightning stack can unbundle parts of enterprise payments into programmable wallets, APIs, invoice engines, and micropayment services that companies or platforms operate themselves. Instead of buying one large bank's payments operating system, developers compose specialized tooling around open payment standards and nodes.",
+            "angleIds": [
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "Payment orchestration shifts toward developer-operated modules and interoperable node-based infrastructure rather than a single bank-owned platform.",
+            "bitcoinOrDecentralizationRole": "Lightning provides the instant payment rail and LNbits provides the modular control surface for wallets, APIs, paywalls, POS, and automation without locking the builder into one payment processor.",
+            "coordinationMechanism": "Operators connect Lightning liquidity to LNbits, expose payment APIs or extensions to their apps and merchants, and coordinate settlement and user flows through interoperable wallet and invoice standards.",
+            "verificationOrTrustModel": "Trust comes from running your own node or choosing transparent operators, plus protocol-level invoice verification. Risks remain if operators centralize liquidity badly, mismanage custodial balances, or fail operationally.",
+            "failureModes": [
+              "Liquidity management and operational complexity may overwhelm non-technical enterprises.",
+              "The model is strongest for specific payment patterns, not full enterprise treasury replacement."
+            ],
+            "adoptionPath": [
+              "Begin with developers building donation flows, subscriptions, paywalls, tipping, or machine payments.",
+              "Move into broader merchant and platform orchestration as tooling, UX, and fiat interfaces improve."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-jpm-payments",
+              "src-jpm-payments-dev"
+            ],
+            "enablerSourceIds": [
+              "src-lnbits"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model distributes operation across many builders and nodes rather than one bank platform.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "LNbits is a credible modular toolkit, but broad treasury coordination still depends on surrounding infrastructure and operator maturity.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "This is practical for internet-native use cases and developers now, but weaker as a full substitute for multi-rail bank treasury stacks.",
+                "sourceIds": [
+                  "src-lnbits",
+                  "src-jpm-payments-dev"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Pressure is moderate because it can siphon off specific developer-driven flows, but JPMorgan's global enterprise footprint is much broader.",
+                "sourceIds": [
+                  "src-jpm-payments",
+                  "src-lnbits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "src-jpmc-annual-report-2024",
+      "title": "Annual Report & Proxy",
+      "url": "https://www.jpmorganchase.com/ir/annual-report",
+      "kind": "annual-report",
+      "publisher": "JPMorganChase",
+      "note": "Primary investor-relations source for the 2024 annual report and official reporting materials.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpmc-financial-highlights-2024",
+      "title": "JPMorganChase 2024 Financial Highlights",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/financial-highlights-2024.pdf",
+      "kind": "annual-report",
+      "publisher": "JPMorganChase",
+      "note": "Provides official 2024 revenue, net income, ROTCE, assets, and year-end market capitalization.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-companiesmarketcap-jpm-marketcap",
+      "title": "JPMorgan Chase (JPM) - Market capitalization",
+      "url": "https://companiesmarketcap.com/jpmorgan-chase/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Used for approximate March 13, 2026 global market-cap rank context tied to the snapshot note.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-companiesmarketcap-jpm-pe",
+      "title": "JPMorgan Chase (JPM) - P/E ratio",
+      "url": "https://companiesmarketcap.com/jpmorgan-chase/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Provides a current trailing P/E snapshot for the company.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-chase-checking",
+      "title": "Compare Checking Accounts & Apply Online",
+      "url": "https://personal.chase.com/personal/checking",
+      "kind": "product-page",
+      "publisher": "Chase",
+      "note": "Documents the breadth of Chase's consumer checking offer, branch and ATM footprint, and mass-market reach.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-chase-savings",
+      "title": "Chase Savings Account",
+      "url": "https://www.chase.com/personal/savings/savings-account",
+      "kind": "product-page",
+      "publisher": "Chase",
+      "note": "Provides official details on Chase savings features, digital banking, ATM and branch access, and insured deposit positioning.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpm-payments",
+      "title": "J.P. Morgan Payments: More Than a Payments Partner",
+      "url": "https://www.jpmorgan.com/payments",
+      "kind": "product-page",
+      "publisher": "J.P. Morgan",
+      "note": "Primary product page describing J.P. Morgan Payments categories and reported global processing scale.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpm-payments-dev",
+      "title": "API Reference | J.P. Morgan Developer Portal",
+      "url": "https://developer.payments.jpmorgan.com/api/home",
+      "kind": "technical-docs",
+      "publisher": "J.P. Morgan Payments Developer Portal",
+      "note": "Shows the API-led product surface for online payments, global payments, optimization, and protection services.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Project homepage describing federated Bitcoin e-cash and community custody.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fedimint-docs",
+      "title": "What is a Fedimint",
+      "url": "https://fedimint.org/docs/GettingStarted/What-is-a-Fedimint",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Explains the federated model, Lightning interoperability, and community-bank style deployment thesis.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-btcpay-docs",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/Guide/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Documents self-hosted Bitcoin and Lightning merchant acceptance without a centralized processor.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-lnbits",
+      "title": "LNbits",
+      "url": "https://lnbits.com/",
+      "kind": "open-source-project",
+      "publisher": "LNbits",
+      "note": "Describes LNbits as a modular open-source Lightning wallet and payment tooling platform.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fineract",
+      "title": "Apache Fineract",
+      "url": "https://fineract.apache.org/",
+      "kind": "open-source-project",
+      "publisher": "Apache Software Foundation",
+      "note": "Primary source for open-source core banking infrastructure as a software-layer alternative.",
+      "accessedOn": "2026-03-25"
+    }
+  ],
+  "summaryMarkdown": "JPMorgan Chase remains one of the hardest financial incumbents to dislodge because it combines retail distribution, global treasury/payment infrastructure, and unusually strong profitability. The most credible decentralization pressure is not a full-bank replacement in one step, but selective unbundling: federated community custody and open-source banking for retail edges, plus merchant-direct Bitcoin/Lightning payment stacks for acceptance and programmable treasury workflows."
+}

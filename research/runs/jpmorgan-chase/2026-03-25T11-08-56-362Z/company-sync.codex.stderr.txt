@@ -1,0 +1,1443 @@
+2026-03-25T11:08:57.189019Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.189050Z  WARN codex_core::state_db: failed to initialize state runtime at /Users/peterryszkiewicz/.codex: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.194576Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+OpenAI Codex v0.116.0 (research preview)
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.4
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019d24ae-ede3-7fa0-bee3-82ba9f585a8f
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: jpmorgan-chase
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "jpmorgan-chase",
+  "name": "JPMorgan Chase",
+  "ticker": "JPM",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top20"
+  ],
+  "sectorId": "financials",
+  "industryId": "diversified-banks",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/jpmorgan-chase/marketcap/",
+  "description": "Diversified financial-services company spanning consumer banking, payments, markets, and asset management.",
+  "technologyWaveIds": [
+    "bitcoin-native-coordination"
+  ],
+  "seedProductNames": [
+    "Chase consumer banking",
+    "J.P. Morgan payments"
+  ],
+  "seedSourceUrls": [
+    "https://www.jpmorganchase.com/",
+    "https://companiesmarketcap.com/jpmorgan-chase/marketcap/"
+  ],
+  "notes": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+mcp: lsp starting
+mcp: playwright starting
+2026-03-25T11:08:57.219410Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.222436Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.243844Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.247995Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.271849Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.273974Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.294145Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.295816Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.319710Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.320556Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.345630Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.346473Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.367679Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.368316Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.393312Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.394034Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.418250Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.418857Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.442809Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.443575Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.468137Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.468809Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.492840Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.493557Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.513249Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 45886: Operation not permitted (os error 1)
+mcp: lsp failed: MCP client for `lsp` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+2026-03-25T11:08:57.516563Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.517358Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.539712Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:57.540440Z  WARN codex_state::runtime: failed to open state db at /Users/peterryszkiewicz/.codex/state_5.sqlite: migration 21 was previously applied but is missing in the resolved migrations
+2026-03-25T11:08:57.563096Z  WARN codex_core::rollout::list: state db discrepancy during find_thread_path_by_id_str_in_subdir: falling_back
+2026-03-25T11:08:58.267618Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019d24ae-ede3-7fa0-bee3-82ba9f585a8f.tmp-1774436937189382000": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+2026-03-25T11:08:58.395907Z  WARN codex_rmcp_client::rmcp_client: Failed to terminate MCP process group 45887: Operation not permitted (os error 1)
+mcp: playwright failed: MCP client for `playwright` failed to start: MCP startup failed: handshaking with MCP server failed: connection closed: initialize response
+mcp startup: failed: lsp, playwright
+🌐 Searching the web...
+🌐 Searched: JPMorgan Chase annual report 2025 net income investor relations
+🌐 Searching the web...
+🌐 Searched: site:jpmorgan.com/payments J.P. Morgan Payments global payments official
+🌐 Searching the web...
+🌐 Searched: Core Lightning official docs lightning payments node
+🌐 Searching the web...
+🌐 Searched: https://www.jpmorganchase.com/ir/annual-report
+🌐 Searching the web...
+🌐 Searched: https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/financial-highlights-2024.pdf
+🌐 Searching the web...
+🌐 Searched: site:chase.com/personal Chase checking savings credit cards official
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/nzd/jp-morgan-chase/marketcap/
+🌐 Searching the web...
+🌐 Searched: 'Benefits of Chase Savings' in https://www.chase.com/personal/savings/savings-account
+🌐 Searching the web...
+🌐 Searched: 'financial services for consumers and small businesses' in https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/financial-highlights-2024.pdf
+🌐 Searching the web...
+🌐 Searched: site:jpmorgan.com/payments developer portal J.P. Morgan Payments API official
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/nzd/jp-morgan-chase/pe-ratio/
+🌐 Searching the web...
+🌐 Searched: site:companiesmarketcap.com/jp-morgan-chase/marketcap/ USD market cap March 2026
+🌐 Searching the web...
+🌐 Searched: "JPMorgan Chase (JPM) - Market capitalization" "$"
+🌐 Searching the web...
+🌐 Searched: https://companiesmarketcap.com/jp-morgan-chase/marketcap/
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "ticker": "JPM",
+      "rankApprox": 15,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top20"
+      ],
+      "sectorId": "financials",
+      "industryId": "diversified-banks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/jpmorgan-chase/marketcap/",
+      "description": "Diversified financial-services company spanning consumer banking, payments, markets, and asset management.",
+      "overview": [
+        {
+          "title": "Scale And Scope",
+          "paragraphs": [
+            "JPMorgan Chase reported $4.0 trillion of assets, $177.6 billion of 2024 net revenue, and $58.5 billion of 2024 net income, making it the largest and most profitable U.S. diversified bank in this registry slice.",
+            "Under the J.P. Morgan and Chase brands, the firm spans consumer and small-business banking, commercial banking, investment banking, transaction processing, and asset management, which gives it unusual breadth across both household and enterprise financial flows."
+          ]
+        },
+        {
+          "title": "Why The Franchise Matters",
+          "paragraphs": [
+            "Chase remains a mass-market distribution machine, with over 84 million consumers, 7 million small businesses, more than 14,000 ATMs, and 5,000 branches, which makes the consumer franchise hard to dislodge through software alone.",
+            "J.P. Morgan Payments adds a separate institutional moat: the company says it processes nearly $10 trillion per day across more than 170 countries and 120 currencies, reinforcing network effects with global corporates, treasury teams, and payment operations."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "JPMorgan Chase's moat is built from regulated balance-sheet scale, brand trust, low-cost deposit gathering, broad product coverage, and deep enterprise integrations. Consumer banking, card issuance, treasury services, capital markets, and custody reinforce one another rather than operating as isolated businesses.",
+        "The payments and treasury franchise strengthens the moat further because corporate money movement is sticky: once a large merchant, platform, or multinational integrates accounts, receivables, fraud controls, reporting, and cross-border workflows into a bank's stack, switching costs become operational rather than merely commercial."
+      ],
+      "decentralizationNarrative": [
+        "The firm's core businesses are exposed to decentralization pressure unevenly. Retail deposits, local credit intermediation, and merchant acceptance can be partially re-bundled by open-source banking software, federated custody models, and merchant-direct Bitcoin and Lightning payment rails.",
+        "Even so, JPMorgan Chase is not easy to route around quickly. Compliance, liquidity, fraud management, global correspondent relationships, and institutional trust still favor incumbents. The more realistic disruption path is gradual unbundling of specific workflows, especially payments acceptance, community custody, and software-defined core banking layers."
+      ],
+      "sourceIds": [
+        "src-jpmc-financial-highlights-2024",
+        "src-jpmc-annual-report-2024",
+        "src-companiesmarketcap-jpm-marketcap",
+        "src-companiesmarketcap-jpm-pe",
+        "src-chase-checking",
+        "src-chase-savings",
+        "src-jpm-payments",
+        "src-jpm-payments-dev"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot; CompaniesMarketCap showed JPMorgan Chase at approximately rank 15 globally on that date.",
+      "inputMetrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "The firm combines the largest U.S. bank balance sheet in this set with consumer distribution, branch and ATM reach, leading corporate payments scale, and strong profitability.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024",
+            "src-chase-checking",
+            "src-jpm-payments"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Some retail banking and merchant-payment functions can be unbundled by open-source core banking, federated custody, and Bitcoin/Lightning payment stacks, but regulated balance-sheet services and enterprise treasury workflows still favor incumbents.",
+          "sourceIds": [
+            "src-chase-checking",
+            "src-fedimint-docs",
+            "src-fineract",
+            "src-btcpay-docs",
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 9,
+          "rationale": "JPMorgan Chase reported $58.471 billion of net income in 2024 with 18% return on common equity and 22% ROTCE.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 15.4,
+          "rationale": "CompaniesMarketCap listed JPMorgan Chase at a trailing P/E of about 15.4 as of its February 2026 snapshot.",
+          "sourceIds": [
+            "src-companiesmarketcap-jpm-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 670618000000,
+          "rationale": "The firm's official 2024 financial highlights reported year-end market capitalization of $670.618 billion. This is slightly older than the March 2026 ranking snapshot but comes from company reporting.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "chase-consumer-banking",
+        "name": "Chase consumer banking",
+        "category": "consumer banking",
+        "homepageUrl": "https://personal.chase.com/personal/checking",
+        "summary": "Mass-market U.S. consumer banking franchise spanning checking, savings, cards, digital banking, ATMs, and branches.",
+        "whyItMatters": "This is the everyday deposit and payments layer through which households store money, receive paychecks, and interact with financial services.",
+        "replacementSketch": [
+          "A decentralized replacement would likely split the current bundle into open ledger software, community-governed custody, and wallet-native payment rails instead of relying on one giant bank to own the whole stack.",
+          "In practice that could mean local institutions or cooperatives running open-source banking software for compliant account management while Bitcoin and Lightning tools handle instant transfer and settlement edges for users who want more direct control."
+        ],
+        "sourceIds": [
+          "src-chase-checking",
+          "src-chase-savings",
+          "src-jpmc-financial-highlights-2024"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "apache-fineract",
+            "name": "Apache Fineract",
+            "kind": "open-source",
+            "homepageUrl": "https://fineract.apache.org/",
+            "summary": "Open-source core banking software for digital financial services, account management, lending, savings, and reporting.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "Apache Fineract is explicitly presented as open-source software for financial services.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It does not decentralize trust by itself, but it lowers dependence on proprietary bank cores and enables many smaller institutions to run their own stack.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "The project describes itself as cloud-ready, scalable, and suitable for high-transaction financial-service environments.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source core banking can materially reduce license and vendor-lock-in costs for smaller operators and challengers.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-fineract"
+            ]
+          },
+          {
+            "slug": "fedimint",
+            "name": "Fedimint",
+            "kind": "protocol",
+            "homepageUrl": "https://fedimint.org/",
+            "summary": "Federated Bitcoin e-cash system that lets communities operate shared custody and private payments without a single central operator.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Fedimint describes itself as open-source federated e-cash for Bitcoin.",
+                "sourceIds": [
+                  "src-fedimint-home",
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "Its model explicitly replaces single-bank custody with a federation of guardians and independent community mints.",
+                "sourceIds": [
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "Fedimint is credible for community-scale custody and payments, but it is not a full regulated retail-bank replacement for mainstream U.S. households.",
+                "sourceIds": [
+                  "src-fedimint-docs",
+                  "src-chase-checking"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Federated community custody can reduce centralized overhead and dependence on branch-heavy incumbents for some use cases.",
+                "sourceIds": [
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-fedimint-home",
+              "src-fedimint-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-community-banking",
+            "name": "Federated Community Banking",
+            "summary": "Instead of one national bank owning custody, payments, and policy for everyone, local federations could run community mints backed by Bitcoin and Lightning while keeping governance distributed across multiple guardians. That would not fully replace insured bank accounts overnight, but it could peel away the day-to-day transaction and stored-value layer that keeps users captive to a branch-centric incumbent.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Retail banking becomes less of a single-firm product and more of a network of community-operated monetary and payment cells.",
+            "bitcoinOrDecentralizationRole": "Bitcoin provides the reserve asset and settlement anchor, Lightning provides fast transfer rails, and federation spreads custody and policy control across multiple operators instead of one bank.",
+            "coordinationMechanism": "Users join a local or affinity-based federation, deposit sats, receive spendable e-cash, and transact across Lightning-connected wallets and services while guardians jointly manage reserves.",
+            "verificationOrTrustModel": "Cheating is constrained by threshold-controlled custody, auditable federation operations, and redemption pressure into Bitcoin. The model still relies on users choosing trustworthy guardians and monitoring solvency practices.",
+            "failureModes": [
+              "Mainstream users may still prefer FDIC-insured accounts and incumbent bank UX.",
+              "Guardian collusion, poor operational security, or weak recovery processes can damage trust."
+            ],
+            "adoptionPath": [
+              "Start with community, diaspora, or circular-economy groups that already want shared custody and fast payments.",
+              "Expand into payroll, local commerce, and savings communities where bank switching costs are lower than full-credit relationships."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-chase-checking",
+              "src-chase-savings"
+            ],
+            "enablerSourceIds": [
+              "src-fedimint-home",
+              "src-fedimint-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "The concept directly replaces single-bank custody with federated operation and Bitcoin-native settlement.",
+                "sourceIds": [
+                  "src-fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The coordination model is technically coherent and already described by the project, but scaling it to mainstream consumer banking remains uncertain.",
+                "sourceIds": [
+                  "src-fedimint-docs",
+                  "src-fedimint-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "It is feasible for niche communities now, but hard to map directly onto full U.S. retail-banking expectations and regulation.",
+                "sourceIds": [
+                  "src-fedimint-docs",
+                  "src-chase-checking"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Pressure is meaningful on transaction and custody edges, but weaker against JPMorgan's insured deposits, lending, and compliance-heavy services.",
+                "sourceIds": [
+                  "src-chase-checking",
+                  "src-jpmc-financial-highlights-2024"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          },
+          {
+            "slug": "open-core-cooperative-banking-stack",
+            "name": "Open-Core Cooperative Banking Stack",
+            "summary": "A second disruption path is less crypto-native and more software-native: smaller banks, credit unions, municipalities, or cooperatives could run open-source core banking infrastructure instead of renting proprietary vendor stacks or defaulting to giant universal banks. That does not eliminate regulated intermediaries, but it can lower the coordination and software cost of running many smaller ones.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The software layer of banking becomes commoditized enough that more local and cooperative institutions can exist without needing mega-bank scale.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters here through institutional plurality rather than Bitcoin itself: open-source infrastructure lowers dependence on a single vendor or a single giant bank's integrated stack.",
+            "coordinationMechanism": "Institutions deploy a shared open core, integrate their own channels and compliance processes, and compete or cooperate locally while keeping policy and governance separate.",
+            "verificationOrTrustModel": "Trust shifts from opaque proprietary cores toward inspectable software, internal controls, and regulated local operators. The model does not remove fraud or credit risk, but it reduces vendor black-box dependence.",
+            "failureModes": [
+              "Open software alone does not solve deposit insurance, underwriting, or regulatory burden.",
+              "Fragmented smaller operators may still lose on brand, convenience, and distribution."
+            ],
+            "adoptionPath": [
+              "Adopt first among challengers, MFIs, community institutions, and digital-first operators seeking lower software lock-in.",
+              "Layer local payment, savings, and cooperative finance products on top once the core ledger and reporting stack is stable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-chase-checking",
+              "src-jpmc-financial-highlights-2024"
+            ],
+            "enablerSourceIds": [
+              "src-fineract"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It increases institutional plurality and reduces proprietary concentration, though it does not remove regulated intermediaries.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Open-source core banking is already a credible operating model for financial-service providers.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The software is deployable now, but institution-building and compliance remain the hard parts.",
+                "sourceIds": [
+                  "src-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This can pressure vendor lock-in and some bank software economics, but it is a slower challenge to JPMorgan's consumer distribution moat.",
+                "sourceIds": [
+                  "src-fineract",
+                  "src-chase-checking"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "jp-morgan-payments",
+        "name": "J.P. Morgan payments",
+        "category": "enterprise payments",
+        "homepageUrl": "https://www.jpmorgan.com/payments",
+        "summary": "Global enterprise payments and treasury platform for accepting, processing, managing, and sending money across domestic and cross-border rails.",
+        "whyItMatters": "Payments infrastructure creates sticky operating leverage because it sits inside merchant checkout, treasury workflows, fraud controls, receivables, payables, and cross-border money movement.",
+        "replacementSketch": [
+          "A realistic replacement path is not one new giant processor but a modular stack where merchants self-host acceptance, settlement, and wallet logic while connecting directly to open networks.",
+          "Bitcoin and Lightning tools are strongest where merchants want direct acceptance, programmable payouts, and lower platform dependence, especially for internet-native and cross-border flows."
+        ],
+        "sourceIds": [
+          "src-jpm-payments",
+          "src-jpm-payments-dev",
+          "src-jpmc-financial-highlights-2024"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://docs.btcpayserver.org/Guide/",
+            "summary": "Free, open-source, self-hosted Bitcoin payment gateway for online and in-person merchant acceptance.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "BTCPay Server describes itself as free, open-source, and self-hosted.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 10,
+                "rationale": "It enables direct peer-to-peer payments, no middleman, and non-custodial merchant control.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "The documentation covers production deployment, self-hosting, POS flows, and Lightning support.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 9,
+                "rationale": "Merchants can avoid processor and middleman fees beyond network costs, especially for Bitcoin-native flows.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-btcpay-docs"
+            ]
+          },
+          {
+            "slug": "lnbits",
+            "name": "LNbits",
+            "kind": "open-source",
+            "homepageUrl": "https://lnbits.com/",
+            "summary": "Modular open-source Lightning wallet and payments platform for checkout, APIs, micropayments, subscriptions, and programmable payment flows.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "LNbits describes itself as free and open-source with a large extension ecosystem.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "It supports self-run or community-run Lightning payment systems and avoids dependence on a single payment processor.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project emphasizes years of use, modular tooling, APIs, and practical payment extensions, though enterprise treasury replacement remains partial.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "A modular Lightning stack can reduce processor dependence and open cheaper micropayment or automation use cases.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              }
+            },
+            "sourceIds": [
+              "src-lnbits"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "merchant-direct-bitcoin-checkout",
+            "name": "Merchant-Direct Bitcoin Checkout",
+            "summary": "Merchants can bypass part of the acquiring and gateway stack by running their own Bitcoin and Lightning checkout, receiving funds directly, and outsourcing less of the payment flow to a giant intermediary. That does not replace every card and treasury use case, but it can shrink the surface area where a bank-owned processor is indispensable.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "Payment acceptance becomes a merchant-controlled software function rather than a bank-controlled service bundle.",
+            "bitcoinOrDecentralizationRole": "Bitcoin and Lightning matter directly because they provide the settlement rail, the merchant can self-custody, and payment verification is tied to the network rather than a closed processor ledger.",
+            "coordinationMechanism": "Merchants deploy their own payment server, present invoices at checkout, receive payment from customer wallets, and settle fulfillment based on on-chain or Lightning invoice status.",
+            "verificationOrTrustModel": "Settlement is verified cryptographically by the Bitcoin and Lightning systems, while merchant control of keys reduces processor custody risk. Weak points remain around volatility, refunds, chargeback expectations, and customer support.",
+            "failureModes": [
+              "Many customers still prefer cards and bank-linked payment methods.",
+              "Volatility, accounting complexity, and compliance friction can slow enterprise adoption."
+            ],
+            "adoptionPath": [
+              "Start with internet-native merchants, donations, digital goods, and cross-border sellers where direct settlement is most valuable.",
+              "Expand through hybrid checkouts that keep existing rails while adding Bitcoin and Lightning as lower-friction options."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-jpm-payments",
+              "src-jpm-payments-dev"
+            ],
+            "enablerSourceIds": [
+              "src-btcpay-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 10,
+                "rationale": "The concept removes the central processor from payment acceptance and custody for the supported flow.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "BTCPay Server is a real merchant tool with documented production features and Lightning support.",
+                "sourceIds": [
+                  "src-btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "It is feasible for merchants willing to self-host or use specialist operators, but not a drop-in replacement for every enterprise payment rail.",
+                "sourceIds": [
+                  "src-btcpay-docs",
+                  "src-jpm-payments-dev"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "This pressures acceptance-margin businesses and some gateway functions, but only for merchants and jurisdictions ready to route volume onto Bitcoin-native rails.",
+                "sourceIds": [
+                  "src-jpm-payments",
+                  "src-btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          },
+          {
+            "slug": "modular-lightning-treasury-mesh",
+            "name": "Modular Lightning Treasury Mesh",
+            "summary": "A modular Lightning stack can unbundle parts of enterprise payments into programmable wallets, APIs, invoice engines, and micropayment services that companies or platforms operate themselves. Instead of buying one large bank's payments operating system, developers compose specialized tooling around open payment standards and nodes.",
+            "angleIds": [
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "Payment orchestration shifts toward developer-operated modules and interoperable node-based infrastructure rather than a single bank-owned platform.",
+            "bitcoinOrDecentralizationRole": "Lightning provides the instant payment rail and LNbits provides the modular control surface for wallets, APIs, paywalls, POS, and automation without locking the builder into one payment processor.",
+            "coordinationMechanism": "Operators connect Lightning liquidity to LNbits, expose payment APIs or extensions to their apps and merchants, and coordinate settlement and user flows through interoperable wallet and invoice standards.",
+            "verificationOrTrustModel": "Trust comes from running your own node or choosing transparent operators, plus protocol-level invoice verification. Risks remain if operators centralize liquidity badly, mismanage custodial balances, or fail operationally.",
+            "failureModes": [
+              "Liquidity management and operational complexity may overwhelm non-technical enterprises.",
+              "The model is strongest for specific payment patterns, not full enterprise treasury replacement."
+            ],
+            "adoptionPath": [
+              "Begin with developers building donation flows, subscriptions, paywalls, tipping, or machine payments.",
+              "Move into broader merchant and platform orchestration as tooling, UX, and fiat interfaces improve."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-jpm-payments",
+              "src-jpm-payments-dev"
+            ],
+            "enablerSourceIds": [
+              "src-lnbits"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model distributes operation across many builders and nodes rather than one bank platform.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "LNbits is a credible modular toolkit, but broad treasury coordination still depends on surrounding infrastructure and operator maturity.",
+                "sourceIds": [
+                  "src-lnbits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "This is practical for internet-native use cases and developers now, but weaker as a full substitute for multi-rail bank treasury stacks.",
+                "sourceIds": [
+                  "src-lnbits",
+                  "src-jpm-payments-dev"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Pressure is moderate because it can siphon off specific developer-driven flows, but JPMorgan's global enterprise footprint is much broader.",
+                "sourceIds": [
+                  "src-jpm-payments",
+                  "src-lnbits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-03-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "src-jpmc-annual-report-2024",
+      "title": "Annual Report & Proxy",
+      "url": "https://www.jpmorganchase.com/ir/annual-report",
+      "kind": "annual-report",
+      "publisher": "JPMorganChase",
+      "note": "Primary investor-relations source for the 2024 annual report and official reporting materials.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpmc-financial-highlights-2024",
+      "title": "JPMorganChase 2024 Financial Highlights",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/financial-highlights-2024.pdf",
+      "kind": "annual-report",
+      "publisher": "JPMorganChase",
+      "note": "Provides official 2024 revenue, net income, ROTCE, assets, and year-end market capitalization.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-companiesmarketcap-jpm-marketcap",
+      "title": "JPMorgan Chase (JPM) - Market capitalization",
+      "url": "https://companiesmarketcap.com/jpmorgan-chase/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Used for approximate March 13, 2026 global market-cap rank context tied to the snapshot note.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-companiesmarketcap-jpm-pe",
+      "title": "JPMorgan Chase (JPM) - P/E ratio",
+      "url": "https://companiesmarketcap.com/jpmorgan-chase/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Provides a current trailing P/E snapshot for the company.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-chase-checking",
+      "title": "Compare Checking Accounts & Apply Online",
+      "url": "https://personal.chase.com/personal/checking",
+      "kind": "product-page",
+      "publisher": "Chase",
+      "note": "Documents the breadth of Chase's consumer checking offer, branch and ATM footprint, and mass-market reach.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-chase-savings",
+      "title": "Chase Savings Account",
+      "url": "https://www.chase.com/personal/savings/savings-account",
+      "kind": "product-page",
+      "publisher": "Chase",
+      "note": "Provides official details on Chase savings features, digital banking, ATM and branch access, and insured deposit positioning.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpm-payments",
+      "title": "J.P. Morgan Payments: More Than a Payments Partner",
+      "url": "https://www.jpmorgan.com/payments",
+      "kind": "product-page",
+      "publisher": "J.P. Morgan",
+      "note": "Primary product page describing J.P. Morgan Payments categories and reported global processing scale.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpm-payments-dev",
+      "title": "API Reference | J.P. Morgan Developer Portal",
+      "url": "https://developer.payments.jpmorgan.com/api/home",
+      "kind": "technical-docs",
+      "publisher": "J.P. Morgan Payments Developer Portal",
+      "note": "Shows the API-led product surface for online payments, global payments, optimization, and protection services.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Project homepage describing federated Bitcoin e-cash and community custody.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fedimint-docs",
+      "title": "What is a Fedimint",
+      "url": "https://fedimint.org/docs/GettingStarted/What-is-a-Fedimint",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Explains the federated model, Lightning interoperability, and community-bank style deployment thesis.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-btcpay-docs",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/Guide/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Documents self-hosted Bitcoin and Lightning merchant acceptance without a centralized processor.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-lnbits",
+      "title": "LNbits",
+      "url": "https://lnbits.com/",
+      "kind": "open-source-project",
+      "publisher": "LNbits",
+      "note": "Describes LNbits as a modular open-source Lightning wallet and payment tooling platform.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fineract",
+      "title": "Apache Fineract",
+      "url": "https://fineract.apache.org/",
+      "kind": "open-source-project",
+      "publisher": "Apache Software Foundation",
+      "note": "Primary source for open-source core banking infrastructure as a software-layer alternative.",
+      "accessedOn": "2026-03-25"
+    }
+  ],
+  "summaryMarkdown": "JPMorgan Chase remains one of the hardest financial incumbents to dislodge because it combines retail distribution, global treasury/payment infrastructure, and unusually strong profitability. The most credible decentralization pressure is not a full-bank replacement in one step, but selective unbundling: federated community custody and open-source banking for retail edges, plus merchant-direct Bitcoin/Lightning payment stacks for acceptance and programmable treasury workflows."
+}
+tokens used
+83,529

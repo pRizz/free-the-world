@@ -1960,6 +1960,130 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "jpmorgan-chase",
+      "name": "JPMorgan Chase",
+      "ticker": "JPM",
+      "rankApprox": 15,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top20"
+      ],
+      "sectorId": "financials",
+      "industryId": "diversified-banks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/jpmorgan-chase/marketcap/",
+      "description": "Diversified financial-services company spanning consumer banking, payments, markets, and asset management.",
+      "overview": [
+        {
+          "title": "Scale And Scope",
+          "paragraphs": [
+            "JPMorgan Chase reported $4.0 trillion of assets, $177.6 billion of 2024 net revenue, and $58.5 billion of 2024 net income, making it the largest and most profitable U.S. diversified bank in this registry slice.",
+            "Under the J.P. Morgan and Chase brands, the firm spans consumer and small-business banking, commercial banking, investment banking, transaction processing, and asset management, which gives it unusual breadth across both household and enterprise financial flows."
+          ]
+        },
+        {
+          "title": "Why The Franchise Matters",
+          "paragraphs": [
+            "Chase remains a mass-market distribution machine, with over 84 million consumers, 7 million small businesses, more than 14,000 ATMs, and 5,000 branches, which makes the consumer franchise hard to dislodge through software alone.",
+            "J.P. Morgan Payments adds a separate institutional moat: the company says it processes nearly $10 trillion per day across more than 170 countries and 120 currencies, reinforcing network effects with global corporates, treasury teams, and payment operations."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "JPMorgan Chase's moat is built from regulated balance-sheet scale, brand trust, low-cost deposit gathering, broad product coverage, and deep enterprise integrations. Consumer banking, card issuance, treasury services, capital markets, and custody reinforce one another rather than operating as isolated businesses.",
+        "The payments and treasury franchise strengthens the moat further because corporate money movement is sticky: once a large merchant, platform, or multinational integrates accounts, receivables, fraud controls, reporting, and cross-border workflows into a bank's stack, switching costs become operational rather than merely commercial."
+      ],
+      "decentralizationNarrative": [
+        "The firm's core businesses are exposed to decentralization pressure unevenly. Retail deposits, local credit intermediation, and merchant acceptance can be partially re-bundled by open-source banking software, federated custody models, and merchant-direct Bitcoin and Lightning payment rails.",
+        "Even so, JPMorgan Chase is not easy to route around quickly. Compliance, liquidity, fraud management, global correspondent relationships, and institutional trust still favor incumbents. The more realistic disruption path is gradual unbundling of specific workflows, especially payments acceptance, community custody, and software-defined core banking layers."
+      ],
+      "sourceIds": [
+        "src-jpmc-financial-highlights-2024",
+        "src-jpmc-annual-report-2024",
+        "src-companiesmarketcap-jpm-marketcap",
+        "src-companiesmarketcap-jpm-pe",
+        "src-chase-checking",
+        "src-chase-savings",
+        "src-jpm-payments",
+        "src-jpm-payments-dev"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot; CompaniesMarketCap showed JPMorgan Chase at approximately rank 15 globally on that date.",
+      "productSlugs": [
+        "chase-consumer-banking",
+        "jp-morgan-payments"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "The firm combines the largest U.S. bank balance sheet in this set with consumer distribution, branch and ATM reach, leading corporate payments scale, and strong profitability.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024",
+            "src-chase-checking",
+            "src-jpm-payments"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Some retail banking and merchant-payment functions can be unbundled by open-source core banking, federated custody, and Bitcoin/Lightning payment stacks, but regulated balance-sheet services and enterprise treasury workflows still favor incumbents.",
+          "sourceIds": [
+            "src-chase-checking",
+            "src-fedimint-docs",
+            "src-fineract",
+            "src-btcpay-docs",
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 9,
+          "rationale": "JPMorgan Chase reported $58.471 billion of net income in 2024 with 18% return on common equity and 22% ROTCE.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 15.4,
+          "rationale": "CompaniesMarketCap listed JPMorgan Chase at a trailing P/E of about 15.4 as of its February 2026 snapshot.",
+          "sourceIds": [
+            "src-companiesmarketcap-jpm-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 670618000000,
+          "rationale": "The firm's official 2024 financial highlights reported year-end market capitalization of $670.618 billion. This is slightly older than the March 2026 ranking snapshot but comes from company reporting.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "freedCapitalPotential": {
+          "value": 67061800000,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "src-jpmc-financial-highlights-2024",
+            "src-chase-checking",
+            "src-fedimint-docs",
+            "src-fineract",
+            "src-btcpay-docs",
+            "src-lnbits"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        }
+      }
+    },
+    {
       "slug": "exxon-mobil",
       "name": "Exxon Mobil",
       "ticker": "XOM",
@@ -2609,6 +2733,124 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "mastercard",
+      "name": "Mastercard",
+      "ticker": "MA",
+      "rankApprox": 23,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top20"
+      ],
+      "sectorId": "financials",
+      "industryId": "payment-networks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/mastercard/marketcap/",
+      "description": "Global payments network operator selling card-rail transaction processing alongside security, identity, data, and other value-added services.",
+      "overview": [
+        {
+          "title": "Business Model",
+          "paragraphs": [
+            "Mastercard runs a global payments network and sells complementary services to issuers, acquirers, merchants, governments, and digital partners. In its 2024 Form 10-K, the company reported $17.3 billion of payment-network revenue and $10.8 billion of value-added services and solutions revenue, showing that the business is no longer just card switching but a broader software, data, and risk platform.",
+            "Its value-added services include security solutions, consumer acquisition and engagement, business and market insights, digital and authentication solutions, processing and gateway services, real-time account-based payments, and open banking. That mix gives Mastercard more ways to monetize the network and deepen customer dependence beyond simple transaction routing."
+          ]
+        },
+        {
+          "title": "Scale And Position",
+          "paragraphs": [
+            "Mastercard describes its network as operating across 220+ markets and territories and 155+ currencies, with $143 billion of transactions processed in 2023 on the referenced network-processing page. That global acceptance footprint and the entrenched issuer-acquirer-merchant relationships remain central to its competitive position.",
+            "The 2024 Form 10-K reported net revenue of $28.2 billion, operating income of $15.6 billion, and net income of $12.9 billion. CompaniesMarketCap listed Mastercard at roughly $449.78 billion in market capitalization and rank #23 globally as of March 2026, reinforcing how highly public markets still value the durability of the card-network model."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Mastercard's moat comes from a dense two-sided network: issuers want acceptance, merchants want cardholders, and both sides rely on the same trusted rules, settlement processes, and brand. That installed base is reinforced by regulatory know-how, long-term customer incentives, fraud tooling, and adjacent services that make replacement operationally risky.",
+        "The moat is strengthened by bundling. Mastercard can sell security, authentication, analytics, processing, and open-banking capabilities alongside network access, which raises switching costs and lets it capture more economics per customer relationship than a pure card-rail utility would."
+      ],
+      "decentralizationNarrative": [
+        "Mastercard is structurally centralized: transaction routing, rules, branding, dispute frameworks, and much of the fraud stack depend on a globally coordinated operator plus regulated financial intermediaries. That makes the current model resilient, but it also creates clear seams where open payment protocols can compete on cost, programmability, and permissionlessness.",
+        "Bitcoin and Lightning do not yet replace Mastercard's full compliance, credit, and chargeback envelope at global scale, but they do attack the need for a single gatekeeping network in some merchant and community-payment contexts. As self-custodial payment UX, federated custody, and open merchant tooling improve, parts of Mastercard's economic role can be unbundled even if the full incumbent bundle remains strong."
+      ],
+      "sourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-network-page",
+        "mastercard-threat-intelligence-page",
+        "cmc-mastercard-marketcap",
+        "cmc-mastercard-pe"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot.",
+      "productSlugs": [
+        "mastercard-global-card-network",
+        "mastercard-cyber-fraud-services"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8.9,
+          "rationale": "Mastercard combines a global acceptance network, issuer and acquirer integrations, brand trust, regulatory scale, and a growing layer of adjacent services that deepen switching costs.",
+          "sourceIds": [
+            "mastercard-10k-2024",
+            "mastercard-network-page"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 4.2,
+          "rationale": "The core card-network model is centralized and regulated, but open Bitcoin and Lightning tools can bypass parts of the incumbent stack for some merchant acceptance and community payment use cases.",
+          "sourceIds": [
+            "mastercard-10k-2024",
+            "btcpay-docs",
+            "fedimint-what-is",
+            "breez-sdk"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 9.3,
+          "rationale": "Mastercard reported $15.582 billion of operating income on $28.167 billion of net revenue and $12.874 billion of net income in 2024, implying unusually strong operating and net margins for a large-cap financial infrastructure company.",
+          "sourceIds": [
+            "mastercard-10k-2024"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 30.4,
+          "rationale": "CompaniesMarketCap listed Mastercard's trailing P/E ratio at about 30.4 as of March 2026.",
+          "sourceIds": [
+            "cmc-mastercard-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 449.78,
+          "rationale": "CompaniesMarketCap listed Mastercard at approximately $449.78 billion in market capitalization and rank #23 globally as of March 2026.",
+          "sourceIds": [
+            "cmc-mastercard-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "freedCapitalPotential": {
+          "value": 49.53314695,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "cmc-mastercard-marketcap",
+            "mastercard-10k-2024",
+            "btcpay-docs",
+            "fedimint-what-is",
+            "breez-sdk"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        }
+      }
+    },
+    {
       "slug": "costco",
       "name": "Costco",
       "ticker": "COST",
@@ -2836,6 +3078,122 @@ export const contentGraph: ContentGraph = {
           ],
           "confidence": "speculative",
           "lastReviewedOn": "2026-03-24"
+        }
+      }
+    },
+    {
+      "slug": "netflix",
+      "name": "Netflix",
+      "ticker": "NFLX",
+      "rankApprox": 27,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top20"
+      ],
+      "sectorId": "communication-services",
+      "industryId": "streaming-video",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/netflix/marketcap/",
+      "description": "Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.",
+      "overview": [
+        {
+          "title": "Platform Model",
+          "paragraphs": [
+            "Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.",
+            "The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising."
+          ]
+        },
+        {
+          "title": "Economic Position",
+          "paragraphs": [
+            "For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.",
+            "Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.",
+        "That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack."
+      ],
+      "decentralizationNarrative": [
+        "Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.",
+        "Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo."
+      ],
+      "sourceIds": [
+        "src-netflix-2025-annual-report",
+        "src-netflix-ads-plan",
+        "src-netflix-ads-help",
+        "src-netflix-marketcap",
+        "src-netflix-pe"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the March 13, 2026 company-level S&P 500 top-20 market-cap snapshot.",
+      "productSlugs": [
+        "netflix-streaming",
+        "advertising-tier"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8.7,
+          "rationale": "Netflix combines large-scale original and licensed content, global consumer reach, a mature recommendation surface, and strong profitability, producing a durable entertainment-distribution moat even in a competitive market.",
+          "sourceIds": [
+            "src-netflix-2025-annual-report",
+            "src-netflix-ads-plan"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 4.2,
+          "rationale": "Video distribution and monetization can be unbundled into self-hosted, federated, and direct-payment systems, but Netflix’s licensed catalog, originals budget, and convenience stack remain hard to match today.",
+          "sourceIds": [
+            "src-netflix-2025-annual-report",
+            "src-peertube",
+            "src-btcpay"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 9,
+          "rationale": "Netflix reported $45.18 billion of revenue, $13.33 billion of operating income, 29.5% operating margin, and $10.98 billion of net income for 2025, indicating a very strong earnings profile.",
+          "sourceIds": [
+            "src-netflix-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 36.8,
+          "rationale": "CompaniesMarketCap lists Netflix’s trailing P/E ratio at 36.8 as of March 2026; useful as a current valuation snapshot but dependent on market pricing and third-party aggregation.",
+          "sourceIds": [
+            "src-netflix-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 402510000000,
+          "rationale": "CompaniesMarketCap lists Netflix at roughly $402.51 billion market capitalization in March 2026, placing it around rank 27 globally by that source.",
+          "sourceIds": [
+            "src-netflix-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "freedCapitalPotential": {
+          "value": 46489905000.000015,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "src-netflix-marketcap",
+            "src-netflix-2025-annual-report",
+            "src-peertube",
+            "src-btcpay"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
         }
       }
     },
@@ -3613,6 +3971,130 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "cisco-systems",
+      "name": "Cisco Systems",
+      "ticker": "CSCO",
+      "rankApprox": 30,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top35"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "communications-equipment",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/cisco/marketcap/",
+      "description": "Networking and security company selling enterprise networking, collaboration, observability, and infrastructure software.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Cisco remains centered on enterprise networking infrastructure, with switching, routing, campus and branch networking, and adjacent security still defining the core of the franchise. Its current reporting and product positioning also show meaningful exposure to collaboration and observability software, which broadens the business beyond box sales alone.",
+            "Fiscal 2025 results show a business that is still large and cash-generative while leaning further into software, subscriptions, and platform management. That mix helps Cisco keep enterprise accounts even when individual hardware categories become more interchangeable."
+          ]
+        },
+        {
+          "title": "Why it still matters",
+          "paragraphs": [
+            "Cisco benefits from being deeply embedded in how large organizations connect campuses, branches, workers, and applications. Buyers are not only purchasing devices; they are buying operational continuity, policy control, support, and a procurement path that risk-averse IT teams already trust.",
+            "Webex is no longer the whole story, but it still gives Cisco a collaboration foothold that pairs with its network, security, and device estate. The combination makes Cisco harder to displace than a pure hardware vendor, even as several layers of its stack face credible open alternatives."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Cisco's moat is strongest where network downtime, compliance, and operational complexity make buyers prefer an incumbent with broad support, certified architectures, and integrated management. The company's scale, entrenched channel, and installed base let it bundle switching, routing, security, and lifecycle software in ways smaller vendors and single-project alternatives usually cannot.",
+        "That moat is not absolute. Merchant silicon, open network operating systems, software-defined control planes, and self-hosted collaboration tools make parts of Cisco's portfolio more modular than they once were. Cisco still defends the account through trust and integration, but the underlying technical stack is less uniquely proprietary over time."
+      ],
+      "decentralizationNarrative": [
+        "Cisco's products generally concentrate control in centrally administered enterprise platforms, licensed software, and vendor-managed upgrade paths. That model fits large organizations, but it also means many customers depend on Cisco's tooling, contracts, and roadmap for core communications and network operations.",
+        "The pressure against that model is real in both networking and collaboration. Open-source network operating systems, firewall platforms, and self-hosted conferencing stacks give capable operators more ways to assemble narrower, cheaper, and less locked-in replacements, especially when they can tolerate more integration work or rely on regional service partners."
+      ],
+      "sourceIds": [
+        "src-cisco-annual-reports",
+        "src-cisco-fy2025-earnings",
+        "src-cisco-enterprise-network",
+        "src-webex-suite",
+        "src-cisco-marketcap",
+        "src-cisco-pe"
+      ],
+      "technologyWaveIds": [],
+      "snapshotNote": "Prepared for the registry refresh on 2026-03-25. Queue note preserved: March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks Cisco in the 26-35 expansion cohort.",
+      "productSlugs": [
+        "cisco-networking",
+        "webex"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Cisco still pairs large installed-base inertia with integrated networking, security, collaboration, and enterprise support, which makes displacement expensive for big customers even when component technologies are increasingly modular.",
+          "sourceIds": [
+            "src-cisco-annual-reports",
+            "src-cisco-enterprise-network",
+            "src-webex-suite"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 5,
+          "rationale": "Cisco's stack is pressured by credible open networking and collaboration projects, but replacement usually requires more integration effort and narrower scope than Cisco's full enterprise bundle, so decentralization is plausible but incomplete.",
+          "sourceIds": [
+            "src-cisco-enterprise-network",
+            "src-webex-suite",
+            "src-sonic-about",
+            "src-openwrt-about",
+            "src-opnsense-home",
+            "src-jitsi-meet",
+            "src-bigbluebutton-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Cisco reported FY2025 revenue of $56.7 billion, GAAP net income of $10.5 billion, non-GAAP net income of $15.2 billion, and non-GAAP gross margin of 68.4% in Q4, indicating strong profitability for a mature infrastructure incumbent.",
+          "sourceIds": [
+            "src-cisco-fy2025-earnings"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 29.3,
+          "rationale": "CompaniesMarketCap listed Cisco's trailing P/E ratio at 29.3 as of March 2026. This is a market-data snapshot rather than a primary filing figure, so it should be treated as a current approximation.",
+          "sourceIds": [
+            "src-cisco-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 308580000000,
+          "rationale": "CompaniesMarketCap listed Cisco's market capitalization at about $308.58 billion in March 2026, consistent with Cisco remaining in the upper tier of large U.S. technology companies.",
+          "sourceIds": [
+            "src-cisco-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "freedCapitalPotential": {
+          "value": 48858500000.00001,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "src-cisco-marketcap",
+            "src-cisco-enterprise-network",
+            "src-webex-suite",
+            "src-sonic-about",
+            "src-openwrt-about",
+            "src-opnsense-home",
+            "src-jitsi-meet",
+            "src-bigbluebutton-about"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        }
+      }
+    },
+    {
       "slug": "ge-aerospace",
       "name": "GE Aerospace",
       "ticker": "GE",
@@ -3727,6 +4209,241 @@ export const contentGraph: ContentGraph = {
           ],
           "confidence": "speculative",
           "lastReviewedOn": "2026-03-24"
+        }
+      }
+    },
+    {
+      "slug": "merck-co",
+      "name": "Merck & Co.",
+      "ticker": "MRK",
+      "rankApprox": 30,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top35"
+      ],
+      "sectorId": "health-care",
+      "industryId": "pharmaceuticals",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/merck/marketcap/",
+      "description": "Research-intensive pharmaceutical company focused on oncology, vaccines, animal health, and specialty medicines.",
+      "overview": [
+        {
+          "title": "Business Mix",
+          "paragraphs": [
+            "Merck is a large U.S. biopharmaceutical company whose commercial engine is concentrated in human pharmaceuticals, especially oncology and vaccines, with a secondary animal health segment that still contributes meaningful diversification. Management frames the company around research-intensive drug and vaccine development rather than commodity generics or contract manufacturing.",
+            "In full-year 2025 results, Merck reported $65.0 billion of revenue, with KEYTRUDA/KEYTRUDA QLEX contributing $31.7 billion, GARDASIL/GARDASIL 9 contributing $5.2 billion, and Animal Health contributing $6.4 billion. That mix shows both the company’s scale and the degree to which a few franchises still dominate value creation."
+          ]
+        },
+        {
+          "title": "Concentration And Transition",
+          "paragraphs": [
+            "Merck’s moat is strongest where patent-protected biologics, regulatory know-how, global clinical infrastructure, and manufacturing quality systems reinforce each other. KEYTRUDA is the clearest example: Merck’s own filings note ongoing royalty obligations tied to pembrolizumab and show how central the product remains to the business.",
+            "That same concentration creates strategic fragility. Merck is trying to broaden the portfolio with newer launches and business development, but its near-term earnings power still depends heavily on blockbuster branded assets whose economics are difficult to reproduce without regulatory approval, biologics manufacturing capacity, and, in some cases, freedom-to-operate on intellectual property."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Merck’s moat rests on a familiar but still powerful pharmaceutical stack: patented molecules and biologics, regulatory approvals across many indications, global trial execution, payer and provider relationships, and the manufacturing discipline required for high-volume sterile biologics and vaccines. KEYTRUDA’s scale alone gives Merck unusually strong bargaining power, data advantages, and room to fund follow-on trials that smaller challengers cannot easily match.",
+        "The weakness in that moat is concentration. Merck’s own disclosures show that KEYTRUDA remains enormous relative to the rest of the portfolio, while GARDASIL remains a major vaccine franchise despite a sharp 2025 decline. That leaves Merck exposed to patent expiry, biosimilar pressure, procurement shifts, and technology-transfer efforts that reduce the premium attached to a single incumbent manufacturer."
+      ],
+      "decentralizationNarrative": [
+        "Merck is not naturally exposed to the easiest forms of software-style decentralization. Its leading products sit inside tightly regulated, capital-intensive supply chains where validation, comparability, sterility, pharmacovigilance, and cold-chain discipline matter more than open distribution alone.",
+        "Pressure is still possible, but it comes through slower structural channels: biosimilar pathways, voluntary licensing and patent-pool models, regional technology transfer, modular or continuous biomanufacturing, and public-sector procurement that seeds multiple qualified suppliers instead of one dominant franchise. Those mechanisms are real, but for Merck they are medium- to long-horizon forces rather than immediate consumer-led disruption."
+      ],
+      "sourceIds": [
+        "src-merck-fy2025-results",
+        "src-merck-q3-2025-10q",
+        "src-merck-marketcap",
+        "src-financecharts-pe"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35.",
+      "productSlugs": [
+        "keytruda",
+        "gardasil"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Merck combines blockbuster branded franchises, global clinical/regulatory execution, and hard-to-replicate biologics and vaccine manufacturing. FY2025 results show KEYTRUDA at $31.7 billion and GARDASIL/GARDASIL 9 at $5.2 billion, underscoring the commercial depth of its leading assets.",
+          "sourceIds": [
+            "src-merck-fy2025-results",
+            "src-merck-q3-2025-10q",
+            "src-keytruda-official",
+            "src-gardasil9-official"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Merck’s core products are difficult to decentralize because they depend on regulated biologics and vaccine production, validated quality systems, and proprietary know-how. Pressure is more plausible through biosimilar simplification, regional technology transfer, and modular manufacturing than through direct open-source substitution.",
+          "sourceIds": [
+            "src-fda-biosimilar",
+            "src-fda-advanced-manufacturing",
+            "src-who-htap",
+            "src-mpp-biotherapeutics"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Merck remained strongly profitable in 2025, reporting $18.254 billion of GAAP net income on $65.011 billion of sales, with even higher non-GAAP net income of $22.513 billion. That implies substantial earnings power despite portfolio transition costs.",
+          "sourceIds": [
+            "src-merck-fy2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 15.94,
+          "rationale": "FinanceCharts listed Merck’s trailing P/E ratio at 15.94 as of March 11, 2026. Market multiples move continuously, so this should be treated as a time-bound market snapshot rather than a durable company attribute.",
+          "sourceIds": [
+            "src-financecharts-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 287320000000,
+          "rationale": "StockAnalysis listed Merck’s market capitalization at $287.32 billion on March 11, 2026, which is consistent with Merck remaining one of the larger U.S. pharmaceutical companies by equity value.",
+          "sourceIds": [
+            "src-merck-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "freedCapitalPotential": {
+          "value": 27295400000.000004,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "src-merck-marketcap",
+            "src-fda-biosimilar",
+            "src-fda-advanced-manufacturing",
+            "src-who-htap",
+            "src-mpp-biotherapeutics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        }
+      }
+    },
+    {
+      "slug": "philip-morris-international",
+      "name": "Philip Morris International",
+      "ticker": "PM",
+      "rankApprox": 30,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top35"
+      ],
+      "sectorId": "consumer-staples",
+      "industryId": "tobacco",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/philip-morris/marketcap/",
+      "description": "Global tobacco and nicotine company centered on cigarettes, heated-tobacco systems, nicotine pouches, and other smoke-free products.",
+      "overview": [
+        {
+          "title": "Business Shift",
+          "paragraphs": [
+            "Philip Morris International is still a tobacco incumbent, but its current investor narrative is built around migrating adult nicotine users from cigarettes toward smoke-free formats led by IQOS and ZYN.",
+            "PMI reported more than $40 billion in 2025 net revenue, with 41.5% coming from smoke-free products, indicating that the company is no longer defending only combustibles but also scaling a branded nicotine-device and pouch portfolio."
+          ]
+        },
+        {
+          "title": "Scale And Reach",
+          "paragraphs": [
+            "PMI says its smoke-free products were available in 106 markets at the end of 2025 and used by more than 43 million legal-age consumers, giving it unusual global distribution leverage for a regulated nicotine business.",
+            "That reach is reinforced by category leadership claims around IQOS in heated tobacco and ZYN in U.S. nicotine pouches, which together help explain why the market continues to price PMI as one of the largest tobacco companies globally."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "PMI's moat comes from distribution, regulatory execution, brand power, and the capital intensity needed to commercialize nicotine products across many jurisdictions. IQOS and ZYN are not simple consumer brands; they sit inside licensing, authorization, manufacturing, and retailer-access systems that are hard for smaller entrants to replicate quickly.",
+        "The moat is also strengthened by portfolio migration. PMI can defend cash flow from cigarettes while moving users into its own smoke-free products, reducing the odds that category change automatically benefits outsiders."
+      ],
+      "decentralizationNarrative": [
+        "PMI scores poorly on decentralizability because nicotine delivery products are tightly bound to regulatory approvals, controlled manufacturing, branded consumables, and age-gated retail channels. Those constraints make open, peer-produced, or federated substitutes unusually hard to justify responsibly.",
+        "The more realistic public-interest substitute to a PMI nicotine product is often quitting nicotine altogether or using approved cessation therapies, not a decentralized nicotine marketplace. That makes this company structurally resistant to the registry's usual open or protocol-native replacement patterns."
+      ],
+      "sourceIds": [
+        "src-pmi-brands",
+        "src-pmi-progress",
+        "src-pmi-q4-2025",
+        "src-cmc-marketcap",
+        "src-cmc-pe",
+        "src-fda-nicotine"
+      ],
+      "technologyWaveIds": [],
+      "snapshotNote": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35.",
+      "productSlugs": [
+        "iqos",
+        "zyn"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8.8,
+          "rationale": "PMI combines global distribution, heavy regulatory capability, flagship smoke-free brands, and incumbent cash flows that fund migration from cigarettes into proprietary alternatives such as IQOS and ZYN.",
+          "sourceIds": [
+            "src-pmi-brands",
+            "src-pmi-progress",
+            "src-pmi-q4-2025"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizability": {
+          "value": 1.2,
+          "rationale": "Nicotine products are highly regulated, addictive, and tied to controlled manufacturing, age-gated distribution, and product-specific authorizations, leaving little honest room for open or decentralized substitution at the product layer.",
+          "sourceIds": [
+            "src-fda-nicotine",
+            "src-fda-zyn-authorized",
+            "src-fda-iqos-mrtp"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "profitability": {
+          "value": 8.7,
+          "rationale": "PMI reported more than $40 billion in 2025 net revenue and said adjusted operating margin returned to above 40% in 2025, supporting a strong profitability assessment.",
+          "sourceIds": [
+            "src-pmi-q4-2025"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "peRatio": {
+          "value": 29.7,
+          "rationale": "CompaniesMarketCap listed PMI's trailing P/E ratio at 29.7 in March 2026.",
+          "sourceIds": [
+            "src-cmc-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "marketCap": {
+          "value": 255.09,
+          "rationale": "CompaniesMarketCap listed Philip Morris International at roughly $255.09 billion in market capitalization in March 2026.",
+          "sourceIds": [
+            "src-cmc-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "freedCapitalPotential": {
+          "value": 8.040436799999998,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "src-cmc-marketcap",
+            "src-fda-nicotine",
+            "src-fda-zyn-authorized",
+            "src-fda-iqos-mrtp"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-03-25"
         }
       }
     },
@@ -4919,6 +5636,69 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "cisco-networking",
+      "name": "Cisco Networking",
+      "category": "enterprise networking",
+      "homepageUrl": "https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-an-enterprise-network.html",
+      "summary": "Cisco's networking franchise spans campus, branch, cloud, and data-center connectivity plus policy and security controls around those environments.",
+      "whyItMatters": "This is the operational core of Cisco's moat because enterprise networks are sticky, certification-heavy, and painful to replace once standardized across sites and teams.",
+      "replacementSketch": [
+        "A meaningful slice of Cisco's networking value can be decomposed into commodity hardware, open network operating systems, and specialized support providers rather than a single vertically integrated incumbent.",
+        "For edge routing and security, organizations with stronger in-house operations can also replace portions of the stack with open firewall or router software on standard appliances, especially in branch, lab, education, and SMB environments."
+      ],
+      "sourceIds": [
+        "src-cisco-enterprise-network",
+        "src-cisco-fy2025-earnings"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "companySlug": "cisco-systems",
+      "alternativeSlugs": [
+        "sonic",
+        "opnsense"
+      ],
+      "disruptionConceptSlugs": [
+        "federated-whitebox-networking",
+        "reused-open-edge-appliances"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Cisco Systems's Cisco Networking\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Cisco Systems (CSCO)\n- Company slug: cisco-systems\n- Company description: Networking and security company selling enterprise networking, collaboration, observability, and infrastructure software.\n- Product: Cisco Networking\n- Product slug: cisco-networking\n- Product category: enterprise networking\n- Product homepage: https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-an-enterprise-network.html\n- Product summary: Cisco's networking franchise spans campus, branch, cloud, and data-center connectivity plus policy and security controls around those environments.\n- Why it matters: This is the operational core of Cisco's moat because enterprise networks are sticky, certification-heavy, and painful to replace once standardized across sites and teams.\n\n## Company Thesis\n\n- Business mix\n  Cisco remains centered on enterprise networking infrastructure, with switching, routing, campus and branch networking, and adjacent security still defining the core of the franchise. Its current reporting and product positioning also show meaningful exposure to collaboration and observability software, which broadens the business beyond box sales alone.\n  Fiscal 2025 results show a business that is still large and cash-generative while leaning further into software, subscriptions, and platform management. That mix helps Cisco keep enterprise accounts even when individual hardware categories become more interchangeable.\n- Why it still matters\n  Cisco benefits from being deeply embedded in how large organizations connect campuses, branches, workers, and applications. Buyers are not only purchasing devices; they are buying operational continuity, policy control, support, and a procurement path that risk-averse IT teams already trust.\n  Webex is no longer the whole story, but it still gives Cisco a collaboration foothold that pairs with its network, security, and device estate. The combination makes Cisco harder to displace than a pure hardware vendor, even as several layers of its stack face credible open alternatives.\n\n### Moat narrative\n- Cisco's moat is strongest where network downtime, compliance, and operational complexity make buyers prefer an incumbent with broad support, certified architectures, and integrated management. The company's scale, entrenched channel, and installed base let it bundle switching, routing, security, and lifecycle software in ways smaller vendors and single-project alternatives usually cannot.\n- That moat is not absolute. Merchant silicon, open network operating systems, software-defined control planes, and self-hosted collaboration tools make parts of Cisco's portfolio more modular than they once were. Cisco still defends the account through trust and integration, but the underlying technical stack is less uniquely proprietary over time.\n\n### Decentralization narrative\n- Cisco's products generally concentrate control in centrally administered enterprise platforms, licensed software, and vendor-managed upgrade paths. That model fits large organizations, but it also means many customers depend on Cisco's tooling, contracts, and roadmap for core communications and network operations.\n- The pressure against that model is real in both networking and collaboration. Open-source network operating systems, firewall platforms, and self-hosted conferencing stacks give capable operators more ways to assemble narrower, cheaper, and less locked-in replacements, especially when they can tolerate more integration work or rely on regional service partners.\n\n## Replacement Sketch\n\n- A meaningful slice of Cisco's networking value can be decomposed into commodity hardware, open network operating systems, and specialized support providers rather than a single vertically integrated incumbent.\n- For edge routing and security, organizations with stronger in-house operations can also replace portions of the stack with open firewall or router software on standard appliances, especially in branch, lab, education, and SMB environments.\n\n## Existing Alternatives Worth Studying First\n\n- SONiC (open-source): Open-source network operating system for multi-vendor switches and ASICs, production-hardened in large cloud environments.. Homepage: https://sonicfoundation.dev/about/. Repo: https://github.com/sonic-net/SONiC.\n- OPNsense (open-source): Open-source firewall and routing platform based on FreeBSD with commercial-grade features and frequent updates.. Homepage: https://opnsense.org/. Repo: https://github.com/opnsense/core.\n\n## Relevant Technology Waves\n\n- Printed electronics and PCB tooling: PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.\n- Microfactories and automated mini-home production: Small, software-defined manufacturing cells could make localized production less eccentric and more default.\n\n## Useful Sources To Read Before Building\n\n- About – Sonic Foundation (Sonic Foundation) - https://sonicfoundation.dev/about/\n  Why it matters: Official SONiC overview used to support multi-vendor open NOS claims and production credibility.\n- Annual Reports (Cisco) - https://www.cisco.com/c/en/us/about/annual-reports.html\n  Why it matters: Cisco's official annual report hub, used to support the company's reporting scope and current investor-facing framing.\n- Cisco (CSCO) - Market capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/cisco/marketcap/\n  Why it matters: Current market-cap snapshot used for approximate valuation and rank context.\n- Cisco (CSCO) - P/E ratio (CompaniesMarketCap) - https://companiesmarketcap.com/inr/cisco/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as an approximate public-market valuation multiple.\n- CISCO REPORTS FOURTH QUARTER AND FISCAL YEAR 2025 EARNINGS (Cisco Investor Relations) - https://investor.cisco.com/news/news-details/2025/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2025-EARNINGS/default.aspx\n  Why it matters: Primary source for FY2025 revenue, profit, margins, and Cisco's current segment commentary across networking, security, observability, and collaboration.\n- OPNsense® is an open source, feature rich firewall and routing platform, offering cutting-edge network protection. (OPNsense) - https://opnsense.org/\n  Why it matters: Official OPNsense product overview used to support open firewall and routing capabilities plus community and licensing claims.\n- Webex Suite (Webex by Cisco) - https://www.webex.com/collaboration-suite.html\n  Why it matters: Official Webex suite page used to confirm the current collaboration workflows Cisco bundles under Webex.\n- Welcome to OPNsense’s documentation! (OPNsense Documentation) - https://docs.opnsense.org/\n  Why it matters: Documentation source used to support OPNsense feature breadth, mission, and operational maturity.\n- What is an enterprise network? (Cisco) - https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-an-enterprise-network.html\n  Why it matters: Official Cisco description of enterprise networking scope, architecture, subscriptions, cloud integration, and security roles.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Cisco Systems's Cisco Networking business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "webex",
+      "name": "Webex",
+      "category": "collaboration suite",
+      "homepageUrl": "https://www.webex.com/collaboration-suite.html",
+      "summary": "Webex is Cisco's AI-positioned collaboration suite spanning meetings, calling, messaging, webinars, events, polling, whiteboarding, and video messaging.",
+      "whyItMatters": "Webex helps Cisco stay inside day-to-day communication workflows and gives it a software layer that can reinforce broader account control beyond network hardware.",
+      "replacementSketch": [
+        "For many organizations, the core meeting layer can be replaced with self-hosted or managed open-source conferencing, especially when they do not need every workflow inside one branded suite.",
+        "The practical substitute is often a simpler stack: open conferencing for meetings, existing identity tools for access control, and a mix of adjacent messaging or classroom tools depending on the use case."
+      ],
+      "sourceIds": [
+        "src-webex-suite"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "cisco-systems",
+      "alternativeSlugs": [
+        "jitsi-meet",
+        "bigbluebutton"
+      ],
+      "disruptionConceptSlugs": [
+        "federated-open-collaboration-nodes"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Cisco Systems's Webex\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Cisco Systems (CSCO)\n- Company slug: cisco-systems\n- Company description: Networking and security company selling enterprise networking, collaboration, observability, and infrastructure software.\n- Product: Webex\n- Product slug: webex\n- Product category: collaboration suite\n- Product homepage: https://www.webex.com/collaboration-suite.html\n- Product summary: Webex is Cisco's AI-positioned collaboration suite spanning meetings, calling, messaging, webinars, events, polling, whiteboarding, and video messaging.\n- Why it matters: Webex helps Cisco stay inside day-to-day communication workflows and gives it a software layer that can reinforce broader account control beyond network hardware.\n\n## Company Thesis\n\n- Business mix\n  Cisco remains centered on enterprise networking infrastructure, with switching, routing, campus and branch networking, and adjacent security still defining the core of the franchise. Its current reporting and product positioning also show meaningful exposure to collaboration and observability software, which broadens the business beyond box sales alone.\n  Fiscal 2025 results show a business that is still large and cash-generative while leaning further into software, subscriptions, and platform management. That mix helps Cisco keep enterprise accounts even when individual hardware categories become more interchangeable.\n- Why it still matters\n  Cisco benefits from being deeply embedded in how large organizations connect campuses, branches, workers, and applications. Buyers are not only purchasing devices; they are buying operational continuity, policy control, support, and a procurement path that risk-averse IT teams already trust.\n  Webex is no longer the whole story, but it still gives Cisco a collaboration foothold that pairs with its network, security, and device estate. The combination makes Cisco harder to displace than a pure hardware vendor, even as several layers of its stack face credible open alternatives.\n\n### Moat narrative\n- Cisco's moat is strongest where network downtime, compliance, and operational complexity make buyers prefer an incumbent with broad support, certified architectures, and integrated management. The company's scale, entrenched channel, and installed base let it bundle switching, routing, security, and lifecycle software in ways smaller vendors and single-project alternatives usually cannot.\n- That moat is not absolute. Merchant silicon, open network operating systems, software-defined control planes, and self-hosted collaboration tools make parts of Cisco's portfolio more modular than they once were. Cisco still defends the account through trust and integration, but the underlying technical stack is less uniquely proprietary over time.\n\n### Decentralization narrative\n- Cisco's products generally concentrate control in centrally administered enterprise platforms, licensed software, and vendor-managed upgrade paths. That model fits large organizations, but it also means many customers depend on Cisco's tooling, contracts, and roadmap for core communications and network operations.\n- The pressure against that model is real in both networking and collaboration. Open-source network operating systems, firewall platforms, and self-hosted conferencing stacks give capable operators more ways to assemble narrower, cheaper, and less locked-in replacements, especially when they can tolerate more integration work or rely on regional service partners.\n\n## Replacement Sketch\n\n- For many organizations, the core meeting layer can be replaced with self-hosted or managed open-source conferencing, especially when they do not need every workflow inside one branded suite.\n- The practical substitute is often a simpler stack: open conferencing for meetings, existing identity tools for access control, and a mix of adjacent messaging or classroom tools depending on the use case.\n\n## Existing Alternatives Worth Studying First\n\n- Jitsi Meet (open-source): Open-source video conferencing stack that can be used for free or self-hosted, with browser-based meetings, chat, content sharing, and customization.. Homepage: https://jitsi.org/jitsi-meet/. Repo: https://github.com/jitsi/jitsi-meet.\n- BigBlueButton (open-source): Open-source web conferencing and virtual classroom platform built around teaching, engagement, whiteboarding, breakout rooms, and LMS integration.. Homepage: https://bigbluebutton.org/. Repo: https://github.com/bigbluebutton.\n\n## Relevant Technology Waves\n\n- No technology waves are currently attached. Identify the enabling waves before implementation.\n\n## Useful Sources To Read Before Building\n\n- About BigBlueButton | Open Source Project | BigBlueButton (BigBlueButton) - https://bigbluebutton.org/open-source-project/about/\n  Why it matters: Official open-source project overview used to support community and licensing posture.\n- About Jitsi Meet | Free Video Conferencing Solutions (Jitsi) - https://jitsi.org/jitsi-meet/\n  Why it matters: Official Jitsi Meet overview used to support open-source, free-use, and self-hosted conferencing claims.\n- Annual Reports (Cisco) - https://www.cisco.com/c/en/us/about/annual-reports.html\n  Why it matters: Cisco's official annual report hub, used to support the company's reporting scope and current investor-facing framing.\n- BigBlueButton · GitHub (GitHub / BigBlueButton) - https://github.com/bigbluebutton\n  Why it matters: Repository organization source used to support public development activity and project maturity.\n- Cisco (CSCO) - Market capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/cisco/marketcap/\n  Why it matters: Current market-cap snapshot used for approximate valuation and rank context.\n- Cisco (CSCO) - P/E ratio (CompaniesMarketCap) - https://companiesmarketcap.com/inr/cisco/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as an approximate public-market valuation multiple.\n- CISCO REPORTS FOURTH QUARTER AND FISCAL YEAR 2025 EARNINGS (Cisco Investor Relations) - https://investor.cisco.com/news/news-details/2025/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2025-EARNINGS/default.aspx\n  Why it matters: Primary source for FY2025 revenue, profit, margins, and Cisco's current segment commentary across networking, security, observability, and collaboration.\n- GitHub - jitsi/jitsi-meet: Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application. (GitHub / Jitsi) - https://github.com/jitsi/jitsi-meet\n  Why it matters: Repository source used to support public development, licensing, release activity, and self-hosting readiness.\n- Virtual Classroom Software | BigBlueButton (BigBlueButton) - https://bigbluebutton.org/\n  Why it matters: Official product page used to support current feature scope and real-world education positioning.\n- Webex Suite (Webex by Cisco) - https://www.webex.com/collaboration-suite.html\n  Why it matters: Official Webex suite page used to confirm the current collaboration workflows Cisco bundles under Webex.\n- What is an enterprise network? (Cisco) - https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-an-enterprise-network.html\n  Why it matters: Official Cisco description of enterprise networking scope, architecture, subscriptions, cloud integration, and security roles.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Cisco Systems's Webex business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
       "slug": "coca-cola-classic",
       "name": "Coca-Cola",
       "category": "Carbonated Soft Drinks",
@@ -5279,6 +6059,199 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "chase-consumer-banking",
+      "name": "Chase consumer banking",
+      "category": "consumer banking",
+      "homepageUrl": "https://personal.chase.com/personal/checking",
+      "summary": "Mass-market U.S. consumer banking franchise spanning checking, savings, cards, digital banking, ATMs, and branches.",
+      "whyItMatters": "This is the everyday deposit and payments layer through which households store money, receive paychecks, and interact with financial services.",
+      "replacementSketch": [
+        "A decentralized replacement would likely split the current bundle into open ledger software, community-governed custody, and wallet-native payment rails instead of relying on one giant bank to own the whole stack.",
+        "In practice that could mean local institutions or cooperatives running open-source banking software for compliant account management while Bitcoin and Lightning tools handle instant transfer and settlement edges for users who want more direct control."
+      ],
+      "sourceIds": [
+        "src-chase-checking",
+        "src-chase-savings",
+        "src-jpmc-financial-highlights-2024"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "jpmorgan-chase",
+      "alternativeSlugs": [
+        "apache-fineract",
+        "chase-consumer-banking-fedimint"
+      ],
+      "disruptionConceptSlugs": [
+        "federated-community-banking",
+        "open-core-cooperative-banking-stack"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To JPMorgan Chase's Chase consumer banking\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: JPMorgan Chase (JPM)\n- Company slug: jpmorgan-chase\n- Company description: Diversified financial-services company spanning consumer banking, payments, markets, and asset management.\n- Product: Chase consumer banking\n- Product slug: chase-consumer-banking\n- Product category: consumer banking\n- Product homepage: https://personal.chase.com/personal/checking\n- Product summary: Mass-market U.S. consumer banking franchise spanning checking, savings, cards, digital banking, ATMs, and branches.\n- Why it matters: This is the everyday deposit and payments layer through which households store money, receive paychecks, and interact with financial services.\n\n## Company Thesis\n\n- Scale And Scope\n  JPMorgan Chase reported $4.0 trillion of assets, $177.6 billion of 2024 net revenue, and $58.5 billion of 2024 net income, making it the largest and most profitable U.S. diversified bank in this registry slice.\n  Under the J.P. Morgan and Chase brands, the firm spans consumer and small-business banking, commercial banking, investment banking, transaction processing, and asset management, which gives it unusual breadth across both household and enterprise financial flows.\n- Why The Franchise Matters\n  Chase remains a mass-market distribution machine, with over 84 million consumers, 7 million small businesses, more than 14,000 ATMs, and 5,000 branches, which makes the consumer franchise hard to dislodge through software alone.\n  J.P. Morgan Payments adds a separate institutional moat: the company says it processes nearly $10 trillion per day across more than 170 countries and 120 currencies, reinforcing network effects with global corporates, treasury teams, and payment operations.\n\n### Moat narrative\n- JPMorgan Chase's moat is built from regulated balance-sheet scale, brand trust, low-cost deposit gathering, broad product coverage, and deep enterprise integrations. Consumer banking, card issuance, treasury services, capital markets, and custody reinforce one another rather than operating as isolated businesses.\n- The payments and treasury franchise strengthens the moat further because corporate money movement is sticky: once a large merchant, platform, or multinational integrates accounts, receivables, fraud controls, reporting, and cross-border workflows into a bank's stack, switching costs become operational rather than merely commercial.\n\n### Decentralization narrative\n- The firm's core businesses are exposed to decentralization pressure unevenly. Retail deposits, local credit intermediation, and merchant acceptance can be partially re-bundled by open-source banking software, federated custody models, and merchant-direct Bitcoin and Lightning payment rails.\n- Even so, JPMorgan Chase is not easy to route around quickly. Compliance, liquidity, fraud management, global correspondent relationships, and institutional trust still favor incumbents. The more realistic disruption path is gradual unbundling of specific workflows, especially payments acceptance, community custody, and software-defined core banking layers.\n\n## Replacement Sketch\n\n- A decentralized replacement would likely split the current bundle into open ledger software, community-governed custody, and wallet-native payment rails instead of relying on one giant bank to own the whole stack.\n- In practice that could mean local institutions or cooperatives running open-source banking software for compliant account management while Bitcoin and Lightning tools handle instant transfer and settlement edges for users who want more direct control.\n\n## Existing Alternatives Worth Studying First\n\n- Apache Fineract (open-source): Open-source core banking software for digital financial services, account management, lending, savings, and reporting.. Homepage: https://fineract.apache.org/.\n- Fedimint (protocol): Federated Bitcoin e-cash system that lets communities operate shared custody and private payments without a single central operator.. Homepage: https://fedimint.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Annual Report & Proxy (JPMorganChase) - https://www.jpmorganchase.com/ir/annual-report\n  Why it matters: Primary investor-relations source for the 2024 annual report and official reporting materials.\n- Apache Fineract (Apache Software Foundation) - https://fineract.apache.org/\n  Why it matters: Primary source for open-source core banking infrastructure as a software-layer alternative.\n- API Reference | J.P. Morgan Developer Portal (J.P. Morgan Payments Developer Portal) - https://developer.payments.jpmorgan.com/api/home\n  Why it matters: Shows the API-led product surface for online payments, global payments, optimization, and protection services.\n- Chase Savings Account (Chase) - https://www.chase.com/personal/savings/savings-account\n  Why it matters: Provides official details on Chase savings features, digital banking, ATM and branch access, and insured deposit positioning.\n- Compare Checking Accounts & Apply Online (Chase) - https://personal.chase.com/personal/checking\n  Why it matters: Documents the breadth of Chase's consumer checking offer, branch and ATM footprint, and mass-market reach.\n- Fedimint (Fedimint) - https://fedimint.org/\n  Why it matters: Project homepage describing federated Bitcoin e-cash and community custody.\n- J.P. Morgan Payments: More Than a Payments Partner (J.P. Morgan) - https://www.jpmorgan.com/payments\n  Why it matters: Primary product page describing J.P. Morgan Payments categories and reported global processing scale.\n- JPMorgan Chase (JPM) - Market capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/jpmorgan-chase/marketcap/\n  Why it matters: Used for approximate March 13, 2026 global market-cap rank context tied to the snapshot note.\n- JPMorgan Chase (JPM) - P/E ratio (CompaniesMarketCap) - https://companiesmarketcap.com/jpmorgan-chase/pe-ratio/\n  Why it matters: Provides a current trailing P/E snapshot for the company.\n- JPMorganChase 2024 Financial Highlights (JPMorganChase) - https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/financial-highlights-2024.pdf\n  Why it matters: Provides official 2024 revenue, net income, ROTCE, assets, and year-end market capitalization.\n- What is a Fedimint (Fedimint) - https://fedimint.org/docs/GettingStarted/What-is-a-Fedimint\n  Why it matters: Explains the federated model, Lightning interoperability, and community-bank style deployment thesis.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on JPMorgan Chase's Chase consumer banking business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "jp-morgan-payments",
+      "name": "J.P. Morgan payments",
+      "category": "enterprise payments",
+      "homepageUrl": "https://www.jpmorgan.com/payments",
+      "summary": "Global enterprise payments and treasury platform for accepting, processing, managing, and sending money across domestic and cross-border rails.",
+      "whyItMatters": "Payments infrastructure creates sticky operating leverage because it sits inside merchant checkout, treasury workflows, fraud controls, receivables, payables, and cross-border money movement.",
+      "replacementSketch": [
+        "A realistic replacement path is not one new giant processor but a modular stack where merchants self-host acceptance, settlement, and wallet logic while connecting directly to open networks.",
+        "Bitcoin and Lightning tools are strongest where merchants want direct acceptance, programmable payouts, and lower platform dependence, especially for internet-native and cross-border flows."
+      ],
+      "sourceIds": [
+        "src-jpm-payments",
+        "src-jpm-payments-dev",
+        "src-jpmc-financial-highlights-2024"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "jpmorgan-chase",
+      "alternativeSlugs": [
+        "jp-morgan-payments-btcpay-server",
+        "lnbits"
+      ],
+      "disruptionConceptSlugs": [
+        "merchant-direct-bitcoin-checkout",
+        "modular-lightning-treasury-mesh"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To JPMorgan Chase's J.P. Morgan payments\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: JPMorgan Chase (JPM)\n- Company slug: jpmorgan-chase\n- Company description: Diversified financial-services company spanning consumer banking, payments, markets, and asset management.\n- Product: J.P. Morgan payments\n- Product slug: jp-morgan-payments\n- Product category: enterprise payments\n- Product homepage: https://www.jpmorgan.com/payments\n- Product summary: Global enterprise payments and treasury platform for accepting, processing, managing, and sending money across domestic and cross-border rails.\n- Why it matters: Payments infrastructure creates sticky operating leverage because it sits inside merchant checkout, treasury workflows, fraud controls, receivables, payables, and cross-border money movement.\n\n## Company Thesis\n\n- Scale And Scope\n  JPMorgan Chase reported $4.0 trillion of assets, $177.6 billion of 2024 net revenue, and $58.5 billion of 2024 net income, making it the largest and most profitable U.S. diversified bank in this registry slice.\n  Under the J.P. Morgan and Chase brands, the firm spans consumer and small-business banking, commercial banking, investment banking, transaction processing, and asset management, which gives it unusual breadth across both household and enterprise financial flows.\n- Why The Franchise Matters\n  Chase remains a mass-market distribution machine, with over 84 million consumers, 7 million small businesses, more than 14,000 ATMs, and 5,000 branches, which makes the consumer franchise hard to dislodge through software alone.\n  J.P. Morgan Payments adds a separate institutional moat: the company says it processes nearly $10 trillion per day across more than 170 countries and 120 currencies, reinforcing network effects with global corporates, treasury teams, and payment operations.\n\n### Moat narrative\n- JPMorgan Chase's moat is built from regulated balance-sheet scale, brand trust, low-cost deposit gathering, broad product coverage, and deep enterprise integrations. Consumer banking, card issuance, treasury services, capital markets, and custody reinforce one another rather than operating as isolated businesses.\n- The payments and treasury franchise strengthens the moat further because corporate money movement is sticky: once a large merchant, platform, or multinational integrates accounts, receivables, fraud controls, reporting, and cross-border workflows into a bank's stack, switching costs become operational rather than merely commercial.\n\n### Decentralization narrative\n- The firm's core businesses are exposed to decentralization pressure unevenly. Retail deposits, local credit intermediation, and merchant acceptance can be partially re-bundled by open-source banking software, federated custody models, and merchant-direct Bitcoin and Lightning payment rails.\n- Even so, JPMorgan Chase is not easy to route around quickly. Compliance, liquidity, fraud management, global correspondent relationships, and institutional trust still favor incumbents. The more realistic disruption path is gradual unbundling of specific workflows, especially payments acceptance, community custody, and software-defined core banking layers.\n\n## Replacement Sketch\n\n- A realistic replacement path is not one new giant processor but a modular stack where merchants self-host acceptance, settlement, and wallet logic while connecting directly to open networks.\n- Bitcoin and Lightning tools are strongest where merchants want direct acceptance, programmable payouts, and lower platform dependence, especially for internet-native and cross-border flows.\n\n## Existing Alternatives Worth Studying First\n\n- BTCPay Server (open-source): Free, open-source, self-hosted Bitcoin payment gateway for online and in-person merchant acceptance.. Homepage: https://docs.btcpayserver.org/Guide/.\n- LNbits (open-source): Modular open-source Lightning wallet and payments platform for checkout, APIs, micropayments, subscriptions, and programmable payment flows.. Homepage: https://lnbits.com/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Annual Report & Proxy (JPMorganChase) - https://www.jpmorganchase.com/ir/annual-report\n  Why it matters: Primary investor-relations source for the 2024 annual report and official reporting materials.\n- API Reference | J.P. Morgan Developer Portal (J.P. Morgan Payments Developer Portal) - https://developer.payments.jpmorgan.com/api/home\n  Why it matters: Shows the API-led product surface for online payments, global payments, optimization, and protection services.\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Documents self-hosted Bitcoin and Lightning merchant acceptance without a centralized processor.\n- Chase Savings Account (Chase) - https://www.chase.com/personal/savings/savings-account\n  Why it matters: Provides official details on Chase savings features, digital banking, ATM and branch access, and insured deposit positioning.\n- Compare Checking Accounts & Apply Online (Chase) - https://personal.chase.com/personal/checking\n  Why it matters: Documents the breadth of Chase's consumer checking offer, branch and ATM footprint, and mass-market reach.\n- J.P. Morgan Payments: More Than a Payments Partner (J.P. Morgan) - https://www.jpmorgan.com/payments\n  Why it matters: Primary product page describing J.P. Morgan Payments categories and reported global processing scale.\n- JPMorgan Chase (JPM) - Market capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/jpmorgan-chase/marketcap/\n  Why it matters: Used for approximate March 13, 2026 global market-cap rank context tied to the snapshot note.\n- JPMorgan Chase (JPM) - P/E ratio (CompaniesMarketCap) - https://companiesmarketcap.com/jpmorgan-chase/pe-ratio/\n  Why it matters: Provides a current trailing P/E snapshot for the company.\n- JPMorganChase 2024 Financial Highlights (JPMorganChase) - https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/financial-highlights-2024.pdf\n  Why it matters: Provides official 2024 revenue, net income, ROTCE, assets, and year-end market capitalization.\n- LNbits (LNbits) - https://lnbits.com/\n  Why it matters: Describes LNbits as a modular open-source Lightning wallet and payment tooling platform.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on JPMorgan Chase's J.P. Morgan payments business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "mastercard-global-card-network",
+      "name": "Global card network",
+      "category": "payments network",
+      "homepageUrl": "https://www.mastercard.com/car/en/business/payments/consumer-payments/network-processing.html",
+      "summary": "Mastercard's core business connects issuers, acquirers, merchants, and consumers through a global card-processing and settlement network.",
+      "whyItMatters": "This is the main tollbooth layer in Mastercard's business: it captures transaction economics, controls rule-making, and anchors the surrounding bundle of risk, data, and authentication services.",
+      "replacementSketch": [
+        "At the edge, Mastercard can be weakened where merchants do not need card credit, chargeback infrastructure, or global issuer coordination. Self-hosted Bitcoin and Lightning checkout stacks already let merchants accept direct digital payments without a card network intermediary.",
+        "The harder but more consequential replacement path is not a single new giant network. It is a patchwork of merchant-direct acceptance, self-custodial wallets, federated community mints, and open developer tools that reduce how often a proprietary card rail is necessary."
+      ],
+      "sourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-network-page"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "mastercard",
+      "alternativeSlugs": [
+        "mastercard-global-card-network-btcpay-server",
+        "mastercard-global-card-network-lnbits"
+      ],
+      "disruptionConceptSlugs": [
+        "lightning-merchant-direct-acceptance",
+        "federated-community-mint-payments"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Mastercard's Global card network\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Mastercard (MA)\n- Company slug: mastercard\n- Company description: Global payments network operator selling card-rail transaction processing alongside security, identity, data, and other value-added services.\n- Product: Global card network\n- Product slug: mastercard-global-card-network\n- Product category: payments network\n- Product homepage: https://www.mastercard.com/car/en/business/payments/consumer-payments/network-processing.html\n- Product summary: Mastercard's core business connects issuers, acquirers, merchants, and consumers through a global card-processing and settlement network.\n- Why it matters: This is the main tollbooth layer in Mastercard's business: it captures transaction economics, controls rule-making, and anchors the surrounding bundle of risk, data, and authentication services.\n\n## Company Thesis\n\n- Business Model\n  Mastercard runs a global payments network and sells complementary services to issuers, acquirers, merchants, governments, and digital partners. In its 2024 Form 10-K, the company reported $17.3 billion of payment-network revenue and $10.8 billion of value-added services and solutions revenue, showing that the business is no longer just card switching but a broader software, data, and risk platform.\n  Its value-added services include security solutions, consumer acquisition and engagement, business and market insights, digital and authentication solutions, processing and gateway services, real-time account-based payments, and open banking. That mix gives Mastercard more ways to monetize the network and deepen customer dependence beyond simple transaction routing.\n- Scale And Position\n  Mastercard describes its network as operating across 220+ markets and territories and 155+ currencies, with $143 billion of transactions processed in 2023 on the referenced network-processing page. That global acceptance footprint and the entrenched issuer-acquirer-merchant relationships remain central to its competitive position.\n  The 2024 Form 10-K reported net revenue of $28.2 billion, operating income of $15.6 billion, and net income of $12.9 billion. CompaniesMarketCap listed Mastercard at roughly $449.78 billion in market capitalization and rank #23 globally as of March 2026, reinforcing how highly public markets still value the durability of the card-network model.\n\n### Moat narrative\n- Mastercard's moat comes from a dense two-sided network: issuers want acceptance, merchants want cardholders, and both sides rely on the same trusted rules, settlement processes, and brand. That installed base is reinforced by regulatory know-how, long-term customer incentives, fraud tooling, and adjacent services that make replacement operationally risky.\n- The moat is strengthened by bundling. Mastercard can sell security, authentication, analytics, processing, and open-banking capabilities alongside network access, which raises switching costs and lets it capture more economics per customer relationship than a pure card-rail utility would.\n\n### Decentralization narrative\n- Mastercard is structurally centralized: transaction routing, rules, branding, dispute frameworks, and much of the fraud stack depend on a globally coordinated operator plus regulated financial intermediaries. That makes the current model resilient, but it also creates clear seams where open payment protocols can compete on cost, programmability, and permissionlessness.\n- Bitcoin and Lightning do not yet replace Mastercard's full compliance, credit, and chargeback envelope at global scale, but they do attack the need for a single gatekeeping network in some merchant and community-payment contexts. As self-custodial payment UX, federated custody, and open merchant tooling improve, parts of Mastercard's economic role can be unbundled even if the full incumbent bundle remains strong.\n\n## Replacement Sketch\n\n- At the edge, Mastercard can be weakened where merchants do not need card credit, chargeback infrastructure, or global issuer coordination. Self-hosted Bitcoin and Lightning checkout stacks already let merchants accept direct digital payments without a card network intermediary.\n- The harder but more consequential replacement path is not a single new giant network. It is a patchwork of merchant-direct acceptance, self-custodial wallets, federated community mints, and open developer tools that reduce how often a proprietary card rail is necessary.\n\n## Existing Alternatives Worth Studying First\n\n- BTCPay Server (open-source): Free, open-source, self-hosted bitcoin payment processor for online and in-person merchant acceptance.. Homepage: https://docs.btcpayserver.org/Guide/. Repo: https://github.com/btcpayserver/btcpayserver.\n- LNbits (open-source): Free and open-source Lightning wallet and accounts system with extensions including point-of-sale and paylink workflows.. Homepage: https://docs.lnbits.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Primary documentation for a self-hosted open bitcoin payment processor used as a merchant-side alternative.\n- BTCPay Server GitHub Repository (GitHub) - https://github.com/btcpayserver/btcpayserver\n  Why it matters: Public repository confirming open-source status and active project footprint.\n- LNbits Documentation (LNbits) - https://docs.lnbits.org/\n  Why it matters: Documentation for the Lightning wallet and accounts system used to support merchant and wallet replacement paths.\n- LNbits Home (LNbits) - https://lnbits.github.io/\n  Why it matters: Project homepage summarizing open-source status, accounts, extensions, and merchant-adjacent features.\n- Mastercard 2024 Form 10-K (U.S. Securities and Exchange Commission) - https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm\n  Why it matters: Primary source for revenue mix, profitability, business description, and disclosed competitive risks.\n- Mastercard Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/mastercard/marketcap/\n  Why it matters: Used for current market cap and approximate global rank as of March 2026.\n- Mastercard Network and Processing (Mastercard) - https://www.mastercard.com/car/en/business/payments/consumer-payments/network-processing.html\n  Why it matters: Official product page describing Mastercard's network scale, markets, currencies, and transaction-processing positioning.\n- Mastercard P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/mastercard/pe-ratio/\n  Why it matters: Used for trailing P/E ratio as of March 2026.\n- Mastercard Threat Intelligence (Mastercard) - https://www.mastercard.com/us/en/business/cybersecurity-fraud-prevention/cybersecurity/mastercard-threat-intelligence.html\n  Why it matters: Official page for Mastercard's fraud and cyber-intelligence offering used to ground the security-services product.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Mastercard's Global card network business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "mastercard-cyber-fraud-services",
+      "name": "Cyber and fraud services",
+      "category": "security and fraud intelligence",
+      "homepageUrl": "https://www.mastercard.com/us/en/business/cybersecurity-fraud-prevention/cybersecurity/mastercard-threat-intelligence.html",
+      "summary": "Mastercard sells threat intelligence, fraud detection, cybersecurity, authentication, and related risk services that monetize its network visibility and enterprise relationships.",
+      "whyItMatters": "These services widen Mastercard's moat by making customers dependent not only on payment routing but also on the security, analytics, and intelligence layer wrapped around that routing.",
+      "replacementSketch": [
+        "The practical open replacement is not a single open-source clone of Mastercard's full security business. It is a federated stack of threat-intelligence sharing, open fraud-analysis tooling, and cooperative defense networks that reduce dependence on one vendor's proprietary visibility.",
+        "Where payment and cyber teams can exchange indicators, automate enforcement, and price useful signals over open rails, part of Mastercard's services bundle becomes contestable even if the incumbent still retains stronger global data scale."
+      ],
+      "sourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-threat-intelligence-page"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "mastercard",
+      "alternativeSlugs": [
+        "misp"
+      ],
+      "disruptionConceptSlugs": [
+        "federated-threat-intelligence-coops",
+        "lightning-priced-fraud-signal-markets"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Mastercard's Cyber and fraud services\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Mastercard (MA)\n- Company slug: mastercard\n- Company description: Global payments network operator selling card-rail transaction processing alongside security, identity, data, and other value-added services.\n- Product: Cyber and fraud services\n- Product slug: mastercard-cyber-fraud-services\n- Product category: security and fraud intelligence\n- Product homepage: https://www.mastercard.com/us/en/business/cybersecurity-fraud-prevention/cybersecurity/mastercard-threat-intelligence.html\n- Product summary: Mastercard sells threat intelligence, fraud detection, cybersecurity, authentication, and related risk services that monetize its network visibility and enterprise relationships.\n- Why it matters: These services widen Mastercard's moat by making customers dependent not only on payment routing but also on the security, analytics, and intelligence layer wrapped around that routing.\n\n## Company Thesis\n\n- Business Model\n  Mastercard runs a global payments network and sells complementary services to issuers, acquirers, merchants, governments, and digital partners. In its 2024 Form 10-K, the company reported $17.3 billion of payment-network revenue and $10.8 billion of value-added services and solutions revenue, showing that the business is no longer just card switching but a broader software, data, and risk platform.\n  Its value-added services include security solutions, consumer acquisition and engagement, business and market insights, digital and authentication solutions, processing and gateway services, real-time account-based payments, and open banking. That mix gives Mastercard more ways to monetize the network and deepen customer dependence beyond simple transaction routing.\n- Scale And Position\n  Mastercard describes its network as operating across 220+ markets and territories and 155+ currencies, with $143 billion of transactions processed in 2023 on the referenced network-processing page. That global acceptance footprint and the entrenched issuer-acquirer-merchant relationships remain central to its competitive position.\n  The 2024 Form 10-K reported net revenue of $28.2 billion, operating income of $15.6 billion, and net income of $12.9 billion. CompaniesMarketCap listed Mastercard at roughly $449.78 billion in market capitalization and rank #23 globally as of March 2026, reinforcing how highly public markets still value the durability of the card-network model.\n\n### Moat narrative\n- Mastercard's moat comes from a dense two-sided network: issuers want acceptance, merchants want cardholders, and both sides rely on the same trusted rules, settlement processes, and brand. That installed base is reinforced by regulatory know-how, long-term customer incentives, fraud tooling, and adjacent services that make replacement operationally risky.\n- The moat is strengthened by bundling. Mastercard can sell security, authentication, analytics, processing, and open-banking capabilities alongside network access, which raises switching costs and lets it capture more economics per customer relationship than a pure card-rail utility would.\n\n### Decentralization narrative\n- Mastercard is structurally centralized: transaction routing, rules, branding, dispute frameworks, and much of the fraud stack depend on a globally coordinated operator plus regulated financial intermediaries. That makes the current model resilient, but it also creates clear seams where open payment protocols can compete on cost, programmability, and permissionlessness.\n- Bitcoin and Lightning do not yet replace Mastercard's full compliance, credit, and chargeback envelope at global scale, but they do attack the need for a single gatekeeping network in some merchant and community-payment contexts. As self-custodial payment UX, federated custody, and open merchant tooling improve, parts of Mastercard's economic role can be unbundled even if the full incumbent bundle remains strong.\n\n## Replacement Sketch\n\n- The practical open replacement is not a single open-source clone of Mastercard's full security business. It is a federated stack of threat-intelligence sharing, open fraud-analysis tooling, and cooperative defense networks that reduce dependence on one vendor's proprietary visibility.\n- Where payment and cyber teams can exchange indicators, automate enforcement, and price useful signals over open rails, part of Mastercard's services bundle becomes contestable even if the incumbent still retains stronger global data scale.\n\n## Existing Alternatives Worth Studying First\n\n- MISP (open-source): Open-source threat-intelligence and information-sharing platform used to collect, correlate, and distribute cyber and fraud indicators.. Homepage: https://www.misp-project.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Mastercard 2024 Form 10-K (U.S. Securities and Exchange Commission) - https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm\n  Why it matters: Primary source for revenue mix, profitability, business description, and disclosed competitive risks.\n- Mastercard Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/mastercard/marketcap/\n  Why it matters: Used for current market cap and approximate global rank as of March 2026.\n- Mastercard Network and Processing (Mastercard) - https://www.mastercard.com/car/en/business/payments/consumer-payments/network-processing.html\n  Why it matters: Official product page describing Mastercard's network scale, markets, currencies, and transaction-processing positioning.\n- Mastercard P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/mastercard/pe-ratio/\n  Why it matters: Used for trailing P/E ratio as of March 2026.\n- Mastercard Threat Intelligence (Mastercard) - https://www.mastercard.com/us/en/business/cybersecurity-fraud-prevention/cybersecurity/mastercard-threat-intelligence.html\n  Why it matters: Official page for Mastercard's fraud and cyber-intelligence offering used to ground the security-services product.\n- MISP Open Source Threat Intelligence Platform (MISP Project) - https://www.misp-project.org/\n  Why it matters: Primary source for the open threat-intelligence sharing platform used as an alternative to proprietary cyber-fraud tooling.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Mastercard's Cyber and fraud services business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "keytruda",
+      "name": "Keytruda",
+      "category": "oncology biologic",
+      "homepageUrl": "https://www.keytruda.com/",
+      "summary": "Pembrolizumab immunotherapy used across many early-stage and metastatic cancer indications.",
+      "whyItMatters": "KEYTRUDA is Merck’s dominant economic engine and one of the most commercially important cancer drugs in the world, so any credible opening against it would materially weaken Merck’s moat.",
+      "replacementSketch": [
+        "Near-term replacement is not a consumer app switch; it would come from biosimilar pembrolizumab, broader licensing, and lower-cost regional biologics manufacturing once exclusivity and know-how barriers loosen.",
+        "A credible challenger path would pair pooled demand from public buyers and hospital systems with shared comparability work, validated manufacturing packages, and multi-region pharmacovigilance so buyers are not forced back into a single branded supply stack."
+      ],
+      "sourceIds": [
+        "src-merck-fy2025-results",
+        "src-keytruda-official",
+        "src-merck-q3-2025-10q"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "companySlug": "merck-co",
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [
+        "federated-pembrolizumab-biosimilar-network"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Merck & Co.'s Keytruda\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Merck & Co. (MRK)\n- Company slug: merck-co\n- Company description: Research-intensive pharmaceutical company focused on oncology, vaccines, animal health, and specialty medicines.\n- Product: Keytruda\n- Product slug: keytruda\n- Product category: oncology biologic\n- Product homepage: https://www.keytruda.com/\n- Product summary: Pembrolizumab immunotherapy used across many early-stage and metastatic cancer indications.\n- Why it matters: KEYTRUDA is Merck’s dominant economic engine and one of the most commercially important cancer drugs in the world, so any credible opening against it would materially weaken Merck’s moat.\n\n## Company Thesis\n\n- Business Mix\n  Merck is a large U.S. biopharmaceutical company whose commercial engine is concentrated in human pharmaceuticals, especially oncology and vaccines, with a secondary animal health segment that still contributes meaningful diversification. Management frames the company around research-intensive drug and vaccine development rather than commodity generics or contract manufacturing.\n  In full-year 2025 results, Merck reported $65.0 billion of revenue, with KEYTRUDA/KEYTRUDA QLEX contributing $31.7 billion, GARDASIL/GARDASIL 9 contributing $5.2 billion, and Animal Health contributing $6.4 billion. That mix shows both the company’s scale and the degree to which a few franchises still dominate value creation.\n- Concentration And Transition\n  Merck’s moat is strongest where patent-protected biologics, regulatory know-how, global clinical infrastructure, and manufacturing quality systems reinforce each other. KEYTRUDA is the clearest example: Merck’s own filings note ongoing royalty obligations tied to pembrolizumab and show how central the product remains to the business.\n  That same concentration creates strategic fragility. Merck is trying to broaden the portfolio with newer launches and business development, but its near-term earnings power still depends heavily on blockbuster branded assets whose economics are difficult to reproduce without regulatory approval, biologics manufacturing capacity, and, in some cases, freedom-to-operate on intellectual property.\n\n### Moat narrative\n- Merck’s moat rests on a familiar but still powerful pharmaceutical stack: patented molecules and biologics, regulatory approvals across many indications, global trial execution, payer and provider relationships, and the manufacturing discipline required for high-volume sterile biologics and vaccines. KEYTRUDA’s scale alone gives Merck unusually strong bargaining power, data advantages, and room to fund follow-on trials that smaller challengers cannot easily match.\n- The weakness in that moat is concentration. Merck’s own disclosures show that KEYTRUDA remains enormous relative to the rest of the portfolio, while GARDASIL remains a major vaccine franchise despite a sharp 2025 decline. That leaves Merck exposed to patent expiry, biosimilar pressure, procurement shifts, and technology-transfer efforts that reduce the premium attached to a single incumbent manufacturer.\n\n### Decentralization narrative\n- Merck is not naturally exposed to the easiest forms of software-style decentralization. Its leading products sit inside tightly regulated, capital-intensive supply chains where validation, comparability, sterility, pharmacovigilance, and cold-chain discipline matter more than open distribution alone.\n- Pressure is still possible, but it comes through slower structural channels: biosimilar pathways, voluntary licensing and patent-pool models, regional technology transfer, modular or continuous biomanufacturing, and public-sector procurement that seeds multiple qualified suppliers instead of one dominant franchise. Those mechanisms are real, but for Merck they are medium- to long-horizon forces rather than immediate consumer-led disruption.\n\n## Replacement Sketch\n\n- Near-term replacement is not a consumer app switch; it would come from biosimilar pembrolizumab, broader licensing, and lower-cost regional biologics manufacturing once exclusivity and know-how barriers loosen.\n- A credible challenger path would pair pooled demand from public buyers and hospital systems with shared comparability work, validated manufacturing packages, and multi-region pharmacovigilance so buyers are not forced back into a single branded supply stack.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- Microfactories and automated mini-home production: Small, software-defined manufacturing cells could make localized production less eccentric and more default.\n\n## Useful Sources To Read Before Building\n\n- KEYTRUDA Official Site (Merck & Co., Inc.) - https://www.keytruda.com/\n  Why it matters: Primary source for KEYTRUDA indication scope and product positioning.\n- Merck & Co (MRK) PE Ratio (FinanceCharts) - https://www.financecharts.com/stocks/MRK/value/pe-ratio\n  Why it matters: Time-bound trailing P/E snapshot used for the valuation metric.\n- Merck & Co. Market Cap (Stock Analysis) - https://stockanalysis.com/stocks/mrk/market-cap/\n  Why it matters: Time-bound market-cap snapshot used for the company market-cap metric.\n- Merck Announces Fourth-Quarter and Full-Year 2025 Financial Results (Merck & Co., Inc.) - https://www.merck.com/news/merck-highlights-progress-advancing-broad-diverse-pipeline/\n  Why it matters: Primary source for company revenue, net income, and the FY2025 sales weight of KEYTRUDA, GARDASIL, and Animal Health.\n- Merck Quarterly Report on Form 10-Q for the quarter ended September 30, 2025 (Merck & Co., Inc.) - https://www.merck.com/wp-content/uploads/sites/124/2025/10/3Q25-Form-10-Q-2025-11-05.pdf\n  Why it matters: Supports KEYTRUDA royalty disclosures and product concentration context from a regulatory filing.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Merck & Co.'s Keytruda business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "gardasil",
+      "name": "Gardasil 9",
+      "category": "hpv vaccine",
+      "homepageUrl": "https://www.gardasil9.com/",
+      "summary": "Human papillomavirus vaccine franchise used to prevent HPV-linked cancers, precancerous lesions, and genital warts.",
+      "whyItMatters": "GARDASIL 9 is a major Merck vaccine franchise and one of the clearest examples of how proprietary vaccine manufacturing and public-health procurement can create durable incumbent power.",
+      "replacementSketch": [
+        "A realistic disruption path is not a grassroots end-user substitute; it is a regional vaccine-manufacturing model where public buyers back additional qualified suppliers and shared technology-transfer capacity instead of one dominant branded franchise.",
+        "The strongest long-run challenge may come from public-health manufacturing networks that spread know-how, QA discipline, and procurement volume across regions, making HPV prevention less dependent on one supplier’s commercial position."
+      ],
+      "sourceIds": [
+        "src-merck-fy2025-results",
+        "src-gardasil9-official",
+        "src-fda-gardasil9"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "companySlug": "merck-co",
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [
+        "regional-hpv-vaccine-manufacturing-commons"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Merck & Co.'s Gardasil 9\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Merck & Co. (MRK)\n- Company slug: merck-co\n- Company description: Research-intensive pharmaceutical company focused on oncology, vaccines, animal health, and specialty medicines.\n- Product: Gardasil 9\n- Product slug: gardasil\n- Product category: hpv vaccine\n- Product homepage: https://www.gardasil9.com/\n- Product summary: Human papillomavirus vaccine franchise used to prevent HPV-linked cancers, precancerous lesions, and genital warts.\n- Why it matters: GARDASIL 9 is a major Merck vaccine franchise and one of the clearest examples of how proprietary vaccine manufacturing and public-health procurement can create durable incumbent power.\n\n## Company Thesis\n\n- Business Mix\n  Merck is a large U.S. biopharmaceutical company whose commercial engine is concentrated in human pharmaceuticals, especially oncology and vaccines, with a secondary animal health segment that still contributes meaningful diversification. Management frames the company around research-intensive drug and vaccine development rather than commodity generics or contract manufacturing.\n  In full-year 2025 results, Merck reported $65.0 billion of revenue, with KEYTRUDA/KEYTRUDA QLEX contributing $31.7 billion, GARDASIL/GARDASIL 9 contributing $5.2 billion, and Animal Health contributing $6.4 billion. That mix shows both the company’s scale and the degree to which a few franchises still dominate value creation.\n- Concentration And Transition\n  Merck’s moat is strongest where patent-protected biologics, regulatory know-how, global clinical infrastructure, and manufacturing quality systems reinforce each other. KEYTRUDA is the clearest example: Merck’s own filings note ongoing royalty obligations tied to pembrolizumab and show how central the product remains to the business.\n  That same concentration creates strategic fragility. Merck is trying to broaden the portfolio with newer launches and business development, but its near-term earnings power still depends heavily on blockbuster branded assets whose economics are difficult to reproduce without regulatory approval, biologics manufacturing capacity, and, in some cases, freedom-to-operate on intellectual property.\n\n### Moat narrative\n- Merck’s moat rests on a familiar but still powerful pharmaceutical stack: patented molecules and biologics, regulatory approvals across many indications, global trial execution, payer and provider relationships, and the manufacturing discipline required for high-volume sterile biologics and vaccines. KEYTRUDA’s scale alone gives Merck unusually strong bargaining power, data advantages, and room to fund follow-on trials that smaller challengers cannot easily match.\n- The weakness in that moat is concentration. Merck’s own disclosures show that KEYTRUDA remains enormous relative to the rest of the portfolio, while GARDASIL remains a major vaccine franchise despite a sharp 2025 decline. That leaves Merck exposed to patent expiry, biosimilar pressure, procurement shifts, and technology-transfer efforts that reduce the premium attached to a single incumbent manufacturer.\n\n### Decentralization narrative\n- Merck is not naturally exposed to the easiest forms of software-style decentralization. Its leading products sit inside tightly regulated, capital-intensive supply chains where validation, comparability, sterility, pharmacovigilance, and cold-chain discipline matter more than open distribution alone.\n- Pressure is still possible, but it comes through slower structural channels: biosimilar pathways, voluntary licensing and patent-pool models, regional technology transfer, modular or continuous biomanufacturing, and public-sector procurement that seeds multiple qualified suppliers instead of one dominant franchise. Those mechanisms are real, but for Merck they are medium- to long-horizon forces rather than immediate consumer-led disruption.\n\n## Replacement Sketch\n\n- A realistic disruption path is not a grassroots end-user substitute; it is a regional vaccine-manufacturing model where public buyers back additional qualified suppliers and shared technology-transfer capacity instead of one dominant branded franchise.\n- The strongest long-run challenge may come from public-health manufacturing networks that spread know-how, QA discipline, and procurement volume across regions, making HPV prevention less dependent on one supplier’s commercial position.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- Microfactories and automated mini-home production: Small, software-defined manufacturing cells could make localized production less eccentric and more default.\n\n## Useful Sources To Read Before Building\n\n- GARDASIL 9 (U.S. Food and Drug Administration) - https://www.fda.gov/vaccines-blood-biologics/vaccines/gardasil-9\n  Why it matters: Independent regulatory description of GARDASIL 9 indications and manufacturer.\n- GARDASIL 9 Official Site (Merck & Co., Inc.) - https://www.gardasil9.com/\n  Why it matters: Primary source for GARDASIL 9 indication scope and Merck’s product framing.\n- Merck & Co (MRK) PE Ratio (FinanceCharts) - https://www.financecharts.com/stocks/MRK/value/pe-ratio\n  Why it matters: Time-bound trailing P/E snapshot used for the valuation metric.\n- Merck & Co. Market Cap (Stock Analysis) - https://stockanalysis.com/stocks/mrk/market-cap/\n  Why it matters: Time-bound market-cap snapshot used for the company market-cap metric.\n- Merck Announces Fourth-Quarter and Full-Year 2025 Financial Results (Merck & Co., Inc.) - https://www.merck.com/news/merck-highlights-progress-advancing-broad-diverse-pipeline/\n  Why it matters: Primary source for company revenue, net income, and the FY2025 sales weight of KEYTRUDA, GARDASIL, and Animal Health.\n- Merck Quarterly Report on Form 10-Q for the quarter ended September 30, 2025 (Merck & Co., Inc.) - https://www.merck.com/wp-content/uploads/sites/124/2025/10/3Q25-Form-10-Q-2025-11-05.pdf\n  Why it matters: Supports KEYTRUDA royalty disclosures and product concentration context from a regulatory filing.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Merck & Co.'s Gardasil 9 business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
       "slug": "instagram",
       "name": "Instagram",
       "category": "Social platform",
@@ -5479,6 +6452,73 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "netflix-streaming",
+      "name": "Netflix streaming",
+      "category": "video streaming",
+      "homepageUrl": "https://www.netflix.com/",
+      "summary": "Netflix’s flagship subscription streaming service for series, films, games, and live programming across connected devices.",
+      "whyItMatters": "This is the core product that concentrates Netflix’s economic power: catalog control, recommendation control, app distribution, pricing, and viewer relationship all sit inside one closed platform.",
+      "replacementSketch": [
+        "A realistic open replacement does not need to clone Netflix title-for-title. It can start by separating the stack into self-hosted media libraries, federated public video networks, and direct payment rails so creators and communities control distribution instead of a single platform owner.",
+        "Over time, the strongest challenge comes from networks that make hosting, discovery, monetization, and community governance modular. That lowers switching costs for creators and viewers even if premium licensed catalogs remain centralized for longer."
+      ],
+      "sourceIds": [
+        "src-netflix-2025-annual-report",
+        "src-peertube",
+        "src-jellyfin",
+        "src-btcpay",
+        "src-podcast-value"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "netflix",
+      "alternativeSlugs": [
+        "jellyfin",
+        "peertube"
+      ],
+      "disruptionConceptSlugs": [
+        "federated-video-membership-bundles",
+        "lightning-metered-video"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Netflix's Netflix streaming\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Netflix (NFLX)\n- Company slug: netflix\n- Company description: Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.\n- Product: Netflix streaming\n- Product slug: netflix-streaming\n- Product category: video streaming\n- Product homepage: https://www.netflix.com/\n- Product summary: Netflix’s flagship subscription streaming service for series, films, games, and live programming across connected devices.\n- Why it matters: This is the core product that concentrates Netflix’s economic power: catalog control, recommendation control, app distribution, pricing, and viewer relationship all sit inside one closed platform.\n\n## Company Thesis\n\n- Platform Model\n  Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.\n  The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising.\n- Economic Position\n  For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.\n  Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control.\n\n### Moat narrative\n- Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.\n- That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack.\n\n### Decentralization narrative\n- Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.\n- Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo.\n\n## Replacement Sketch\n\n- A realistic open replacement does not need to clone Netflix title-for-title. It can start by separating the stack into self-hosted media libraries, federated public video networks, and direct payment rails so creators and communities control distribution instead of a single platform owner.\n- Over time, the strongest challenge comes from networks that make hosting, discovery, monetization, and community governance modular. That lowers switching costs for creators and viewers even if premium licensed catalogs remain centralized for longer.\n\n## Existing Alternatives Worth Studying First\n\n- Jellyfin (open-source): Free software media server for managing and streaming your own media library across devices without premium feature gating.. Homepage: https://jellyfin.org/. Repo: https://github.com/jellyfin/jellyfin.\n- PeerTube (decentralized): Federated video platform software that lets many independently operated sites host, share, and discover videos across an interconnected network.. Homepage: https://joinpeertube.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Ads on Netflix (Netflix Help Center) - https://help.netflix.com/en/node/126831\n  Why it matters: Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.\n- Jellyfin Documentation Introduction (Jellyfin) - https://jellyfin.org/docs/\n  Why it matters: Official documentation establishing Jellyfin as a free software media system without premium feature gating.\n- Netflix (NFLX) Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/marketcap/\n  Why it matters: Current market-cap snapshot and approximate market-cap rank used for bundle metrics.\n- Netflix (NFLX) P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as a speculative valuation metric.\n- Netflix 2025 Annual Report (Netflix Investor Relations) - https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx\n  Why it matters: Primary source for company description, strategy, competition framing, and 2025 financial results.\n- Netflix with Ads, Starting at $7.99 (Netflix) - https://www.netflix.com/pr/ads-plan\n  Why it matters: Official plan page describing price, ad load, supported features, and plan limitations.\n- PeerTube ActivityPub Documentation (PeerTube Documentation) - https://docs.joinpeertube.org/api/activitypub\n  Why it matters: Technical source for how PeerTube federates videos, channels, and interactions across servers.\n- Podcast Namespace Value Tag (Podcasting 2.0) - https://podcasting2.org/docs/podcast-namespace/tags/value\n  Why it matters: Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.\n- What is PeerTube? (Framasoft) - https://joinpeertube.org/\n  Why it matters: Official overview of PeerTube’s federated, open-source, ad-free video-hosting model.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Netflix's Netflix streaming business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "advertising-tier",
+      "name": "Advertising tier",
+      "category": "ad-supported streaming plan",
+      "homepageUrl": "https://www.netflix.com/pr/ads-plan",
+      "summary": "Netflix’s lower-priced Standard with ads plan that trades a cheaper monthly price for ad inventory, some licensing gaps, and certain device limitations.",
+      "whyItMatters": "This tier broadens Netflix’s monetization mix and market reach, but it also highlights the platform’s centralized control over pricing, ad load, audience measurement, rights availability, and access rules.",
+      "replacementSketch": [
+        "A decentralized alternative to ad-supported streaming does not need to recreate conventional ad tech. It can instead reduce dependence on ads by making direct payments, member patronage, and community bundles easier than negotiating access through centralized media buyers and proprietary audience data.",
+        "The strongest near-term replacement path is hybrid: free or low-cost federated video distribution paired with direct viewer support, event payments, and transparent creator revenue splits. That keeps monetization closer to audiences rather than to opaque ad-market intermediaries."
+      ],
+      "sourceIds": [
+        "src-netflix-ads-plan",
+        "src-netflix-ads-help",
+        "src-btcpay",
+        "src-podcast-value"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "netflix",
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [
+        "viewer-funded-adless-access"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Netflix's Advertising tier\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Netflix (NFLX)\n- Company slug: netflix\n- Company description: Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.\n- Product: Advertising tier\n- Product slug: advertising-tier\n- Product category: ad-supported streaming plan\n- Product homepage: https://www.netflix.com/pr/ads-plan\n- Product summary: Netflix’s lower-priced Standard with ads plan that trades a cheaper monthly price for ad inventory, some licensing gaps, and certain device limitations.\n- Why it matters: This tier broadens Netflix’s monetization mix and market reach, but it also highlights the platform’s centralized control over pricing, ad load, audience measurement, rights availability, and access rules.\n\n## Company Thesis\n\n- Platform Model\n  Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.\n  The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising.\n- Economic Position\n  For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.\n  Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control.\n\n### Moat narrative\n- Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.\n- That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack.\n\n### Decentralization narrative\n- Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.\n- Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo.\n\n## Replacement Sketch\n\n- A decentralized alternative to ad-supported streaming does not need to recreate conventional ad tech. It can instead reduce dependence on ads by making direct payments, member patronage, and community bundles easier than negotiating access through centralized media buyers and proprietary audience data.\n- The strongest near-term replacement path is hybrid: free or low-cost federated video distribution paired with direct viewer support, event payments, and transparent creator revenue splits. That keeps monetization closer to audiences rather than to opaque ad-market intermediaries.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Ads on Netflix (Netflix Help Center) - https://help.netflix.com/en/node/126831\n  Why it matters: Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.\n- Netflix (NFLX) Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/marketcap/\n  Why it matters: Current market-cap snapshot and approximate market-cap rank used for bundle metrics.\n- Netflix (NFLX) P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as a speculative valuation metric.\n- Netflix 2025 Annual Report (Netflix Investor Relations) - https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx\n  Why it matters: Primary source for company description, strategy, competition framing, and 2025 financial results.\n- Netflix with Ads, Starting at $7.99 (Netflix) - https://www.netflix.com/pr/ads-plan\n  Why it matters: Official plan page describing price, ad load, supported features, and plan limitations.\n- Podcast Namespace Value Tag (Podcasting 2.0) - https://podcasting2.org/docs/podcast-namespace/tags/value\n  Why it matters: Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Netflix's Advertising tier business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
       "slug": "nvidia-cuda",
       "name": "CUDA platform",
       "category": "Developer platform",
@@ -5671,6 +6711,76 @@ export const contentGraph: ContentGraph = {
       "maybeDisruptionException": null,
       "implementationPrompt": {
         "markdown": "# Build A Free Alternative To Palantir Technologies's Gotham\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Palantir Technologies (PLTR)\n- Company slug: palantir-technologies\n- Company description: Data integration, analytics, and AI software company serving governments and large enterprises.\n- Product: Gotham\n- Product slug: gotham\n- Product category: intelligence operations platform\n- Product homepage: https://www.palantir.com/docs/gotham/\n- Product summary: Palantir's security-focused platform for managing sensitive data, object relationships, and operational workflows in government and other highly regulated environments.\n- Why it matters: Gotham is the product most associated with Palantir's original intelligence and defense moat, where provenance, access controls, and operational decision support are difficult to replace once embedded.\n\n## Company Thesis\n\n- Business\n  Palantir builds software to integrate data, decisions, and operations at scale, with roots in U.S. intelligence and later expansion into commercial enterprises facing similar data-fragmentation problems.\n  Its current platform stack centers on Foundry for data operations, AIP for generative AI workflows, and Apollo for delivery, while Gotham remains the flagship environment for security-conscious and mission-critical use cases.\n- Current Position\n  Palantir's fiscal 2025 results show unusual momentum for an enterprise software vendor of its size: $4.48 billion in revenue, $1.63 billion in net income, and sharply higher remaining deal value across both government and commercial customers.\n  As of March 24, 2026, CompaniesMarketCap placed Palantir around the 29th-largest public company globally by market capitalization, reflecting investor belief that its ontology-centric workflow model has become strategically important in both defense and enterprise AI deployments.\n\n### Moat narrative\n- Palantir's moat comes from embedding itself inside high-stakes operational workflows where data integration, permissions, lineage, deployment rigor, and domain-specific implementation all matter at once. That creates switching costs beyond software seats: customers accumulate ontology models, operational logic, security controls, and organizational process changes around the platform.\n- The company's government pedigree, security posture, and willingness to do hands-on deployment work further reinforce the moat. Even when parts of the stack are technically reproducible with open tools, replacing Palantir usually means reconstructing a socio-technical system, not just swapping a dashboard or database.\n\n### Decentralization narrative\n- Palantir is not structurally decentralized. Its business model depends on selling a tightly integrated proprietary platform, long-lived customer relationships, and centralized vendor accountability for critical workflows.\n- That said, Palantir's own interoperability materials stress open APIs, exportability, Git-backed logic, and customer control over data and logic. Those features reduce lock-in relative to many black-box enterprise platforms, but they do not change the underlying centralized control of product direction, licensing, and platform governance.\n\n## Replacement Sketch\n\n- A believable replacement path is a federated investigation stack: open intelligence graph tooling, document analysis, entity resolution, and case collaboration spread across agencies or partner organizations instead of one dominant proprietary environment.\n- The near-term opportunity is narrower than Foundry's. Open tools can replace slices of investigation and knowledge management first, especially where agencies want interoperability and sovereign control more than a single vendor suite.\n\n## Existing Alternatives Worth Studying First\n\n- OpenCTI (open-source): Open-source cyber threat intelligence platform for structuring, storing, organizing, and visualizing technical and non-technical threat information.. Homepage: https://opencti.io/. Repo: https://github.com/OpenCTI-Platform/opencti.\n- Aleph (open-source): Open-source investigative platform for searching and browsing documents and data to find people, companies, and relationships.. Homepage: https://aleph.occrp.org/. Repo: https://github.com/alephdata/aleph.\n\n## Relevant Technology Waves\n\n- No technology waves are currently attached. Identify the enabling waves before implementation.\n\n## Useful Sources To Read Before Building\n\n- alephdata/aleph (GitHub / alephdata) - https://github.com/alephdata/aleph\n  Why it matters: Primary source for Aleph's open-source investigative search and entity-analysis capabilities.\n- Architecture Center Overview (Palantir) - https://www.palantir.com/docs/foundry/architecture-center/overview\n  Why it matters: Documents Palantir's platform architecture, including Foundry, AIP, Apollo, and the Ontology system.\n- Gotham Security Overview (Palantir) - https://www.palantir.com/docs/gotham/\n  Why it matters: Documents Gotham's security posture and usage in sensitive, regulated environments.\n- Impact Study: Accelerating Interoperability with Palantir Foundry (Palantir) - https://www.palantir.com/assets/xrfr7uokpv1b/5FoIhfiDSPjkrumfGPB0P8/970b652229e8700ee1717c38b2a9de81/Foundry_Interoperability_Impact_Study_22.pdf\n  Why it matters: Supports claims about Foundry interoperability, open APIs, exportability, and reduced lock-in.\n- OpenCTI-Platform/opencti (GitHub / OpenCTI-Platform) - https://github.com/OpenCTI-Platform/opencti\n  Why it matters: Primary source for OpenCTI's open-source scope and its fit as an intelligence-platform alternative.\n- Palantir (PLTR) Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/palantir/marketcap/\n  Why it matters: Used for current approximate rank and market cap snapshot.\n- Palantir Technologies 2025 Annual Report on Form 10-K (Palantir Technologies) - https://investors.palantir.com/files/2025%20FY%20PLTR%2010-K.pdf\n  Why it matters: Primary source for company description, revenue mix, net income, and remaining deal value.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Palantir Technologies's Gotham business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "iqos",
+      "name": "IQOS",
+      "category": "heated-tobacco system",
+      "homepageUrl": "https://www.iqos.com/",
+      "summary": "IQOS is PMI's flagship heated-tobacco platform that uses electronic devices and tobacco sticks to deliver nicotine without combusting tobacco.",
+      "whyItMatters": "IQOS is central to PMI's claim that it can preserve nicotine demand while moving users away from cigarettes and into a proprietary smoke-free ecosystem.",
+      "replacementSketch": [
+        "A credible public-interest replacement is not an open-source heated-tobacco clone but complete nicotine cessation or FDA-approved nicotine replacement therapy for users trying to quit.",
+        "Because the product still depends on addictive nicotine delivery and regulated tobacco authorizations, the registry treats IQOS as a rare case where forcing a decentralization concept would be weaker than documenting the limitation clearly."
+      ],
+      "sourceIds": [
+        "src-pmi-brands",
+        "src-fda-iqos-mrtp",
+        "src-fda-iqos-authorized",
+        "src-fda-nicotine"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "philip-morris-international",
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [],
+      "maybeDisruptionException": {
+        "reason": "IQOS remains a regulated heated-tobacco product used to deliver addictive nicotine. FDA materials emphasize that heated tobacco products are not safe or FDA-approved in the everyday sense, and the most credible harm-reduction alternative for many users is quitting or using approved nicotine replacement therapy rather than an open or decentralized heated-tobacco substitute.",
+        "sourceIds": [
+          "src-fda-nicotine",
+          "src-fda-iqos-mrtp",
+          "src-fda-iqos-authorized"
+        ],
+        "lastReviewedOn": "2026-03-25"
+      },
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Philip Morris International's IQOS\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Philip Morris International (PM)\n- Company slug: philip-morris-international\n- Company description: Global tobacco and nicotine company centered on cigarettes, heated-tobacco systems, nicotine pouches, and other smoke-free products.\n- Product: IQOS\n- Product slug: iqos\n- Product category: heated-tobacco system\n- Product homepage: https://www.iqos.com/\n- Product summary: IQOS is PMI's flagship heated-tobacco platform that uses electronic devices and tobacco sticks to deliver nicotine without combusting tobacco.\n- Why it matters: IQOS is central to PMI's claim that it can preserve nicotine demand while moving users away from cigarettes and into a proprietary smoke-free ecosystem.\n\n## Company Thesis\n\n- Business Shift\n  Philip Morris International is still a tobacco incumbent, but its current investor narrative is built around migrating adult nicotine users from cigarettes toward smoke-free formats led by IQOS and ZYN.\n  PMI reported more than $40 billion in 2025 net revenue, with 41.5% coming from smoke-free products, indicating that the company is no longer defending only combustibles but also scaling a branded nicotine-device and pouch portfolio.\n- Scale And Reach\n  PMI says its smoke-free products were available in 106 markets at the end of 2025 and used by more than 43 million legal-age consumers, giving it unusual global distribution leverage for a regulated nicotine business.\n  That reach is reinforced by category leadership claims around IQOS in heated tobacco and ZYN in U.S. nicotine pouches, which together help explain why the market continues to price PMI as one of the largest tobacco companies globally.\n\n### Moat narrative\n- PMI's moat comes from distribution, regulatory execution, brand power, and the capital intensity needed to commercialize nicotine products across many jurisdictions. IQOS and ZYN are not simple consumer brands; they sit inside licensing, authorization, manufacturing, and retailer-access systems that are hard for smaller entrants to replicate quickly.\n- The moat is also strengthened by portfolio migration. PMI can defend cash flow from cigarettes while moving users into its own smoke-free products, reducing the odds that category change automatically benefits outsiders.\n\n### Decentralization narrative\n- PMI scores poorly on decentralizability because nicotine delivery products are tightly bound to regulatory approvals, controlled manufacturing, branded consumables, and age-gated retail channels. Those constraints make open, peer-produced, or federated substitutes unusually hard to justify responsibly.\n- The more realistic public-interest substitute to a PMI nicotine product is often quitting nicotine altogether or using approved cessation therapies, not a decentralized nicotine marketplace. That makes this company structurally resistant to the registry's usual open or protocol-native replacement patterns.\n\n## Replacement Sketch\n\n- A credible public-interest replacement is not an open-source heated-tobacco clone but complete nicotine cessation or FDA-approved nicotine replacement therapy for users trying to quit.\n- Because the product still depends on addictive nicotine delivery and regulated tobacco authorizations, the registry treats IQOS as a rare case where forcing a decentralization concept would be weaker than documenting the limitation clearly.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- No technology waves are currently attached. Identify the enabling waves before implementation.\n\n## Useful Sources To Read Before Building\n\n- Building leading brands (Philip Morris International) - https://www.pmi.com/investor-relations/overview/building-leading-brands/\n  Why it matters: Primary company source describing IQOS and ZYN, including category positioning and shipment or user claims.\n- FDA Authorizes Three New Heated Tobacco Products (U.S. Food and Drug Administration) - https://www.fda.gov/tobacco-products/ctp-newsroom/fda-authorizes-three-new-heated-tobacco-products\n  Why it matters: FDA authorization context for additional heated tobacco products used with the IQOS device.\n- Nicotine Is Why Tobacco Products Are Addictive (U.S. Food and Drug Administration) - https://www.fda.gov/tobacco-products/health-effects-tobacco-use/nicotine-why-tobacco-products-are-addictive\n  Why it matters: FDA health and cessation context covering nicotine addiction, heated tobacco risk positioning, and approved NRT alternatives.\n- Philip Morris International (PM) - Market capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/philip-morris/marketcap/\n  Why it matters: Reference for current market capitalization and approximate global market-cap rank.\n- Philip Morris International (PM) - P/E ratio (CompaniesMarketCap) - https://companiesmarketcap.com/philip-morris/pe-ratio/\n  Why it matters: Reference for trailing P/E ratio used in the input metrics.\n- Philip Morris International Reports 2025 Fourth-Quarter & Full-Year Results (Philip Morris International) - https://www.pmi.com/investor-relations/press-releases-and-events/press-releases-overview/press-release-details/?newsId=29566\n  Why it matters: Primary source for 2025 revenue, smoke-free share, EPS, and operating margin commentary.\n- Philip Morris Products S.A. Modified Risk Tobacco Product (MRTP) Applications (U.S. Food and Drug Administration) - https://www.fda.gov/tobacco-products/advertising-and-promotion/philip-morris-products-sa-modified-risk-tobacco-product-mrtp-applications\n  Why it matters: FDA source explaining the specific reduced-exposure claims allowed for IQOS and clarifying the regulatory framing.\n- We're delivering a smoke free future, faster (Philip Morris International) - https://www.pmi.com/progress/\n  Why it matters: Company progress page with 2025 smoke-free revenue share, user counts, and market availability.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Philip Morris International's IQOS business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "zyn",
+      "name": "ZYN",
+      "category": "nicotine pouches",
+      "homepageUrl": "https://us.zyn.com/",
+      "summary": "ZYN is PMI's leading nicotine pouch brand, delivering oral nicotine in smoke-free, tobacco-leaf-free pouches.",
+      "whyItMatters": "ZYN gives PMI a fast-growing U.S. oral nicotine franchise and expands its smoke-free position beyond devices into a simpler consumables category.",
+      "replacementSketch": [
+        "The cleanest substitute pathway is nicotine cessation support, including approved nicotine replacement products, not an open or federated nicotine-pouch ecosystem.",
+        "Given the addiction, product-safety, and authorization constraints around nicotine pouches, a documented exception is more honest than inventing weak decentralized market concepts."
+      ],
+      "sourceIds": [
+        "src-pmi-brands",
+        "src-fda-zyn-authorized",
+        "src-fda-relative-risk",
+        "src-fda-nicotine"
+      ],
+      "technologyWaveIds": [],
+      "companySlug": "philip-morris-international",
+      "alternativeSlugs": [],
+      "disruptionConceptSlugs": [],
+      "maybeDisruptionException": {
+        "reason": "ZYN products are addictive nicotine pouches sold in a tightly regulated category where FDA authorization matters and public-health guidance still states the products are harmful and not risk free. That makes an open or decentralized replacement concept hard to defend responsibly relative to cessation-oriented substitutes.",
+        "sourceIds": [
+          "src-fda-zyn-authorized",
+          "src-fda-relative-risk",
+          "src-fda-nicotine"
+        ],
+        "lastReviewedOn": "2026-03-25"
+      },
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Philip Morris International's ZYN\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Philip Morris International (PM)\n- Company slug: philip-morris-international\n- Company description: Global tobacco and nicotine company centered on cigarettes, heated-tobacco systems, nicotine pouches, and other smoke-free products.\n- Product: ZYN\n- Product slug: zyn\n- Product category: nicotine pouches\n- Product homepage: https://us.zyn.com/\n- Product summary: ZYN is PMI's leading nicotine pouch brand, delivering oral nicotine in smoke-free, tobacco-leaf-free pouches.\n- Why it matters: ZYN gives PMI a fast-growing U.S. oral nicotine franchise and expands its smoke-free position beyond devices into a simpler consumables category.\n\n## Company Thesis\n\n- Business Shift\n  Philip Morris International is still a tobacco incumbent, but its current investor narrative is built around migrating adult nicotine users from cigarettes toward smoke-free formats led by IQOS and ZYN.\n  PMI reported more than $40 billion in 2025 net revenue, with 41.5% coming from smoke-free products, indicating that the company is no longer defending only combustibles but also scaling a branded nicotine-device and pouch portfolio.\n- Scale And Reach\n  PMI says its smoke-free products were available in 106 markets at the end of 2025 and used by more than 43 million legal-age consumers, giving it unusual global distribution leverage for a regulated nicotine business.\n  That reach is reinforced by category leadership claims around IQOS in heated tobacco and ZYN in U.S. nicotine pouches, which together help explain why the market continues to price PMI as one of the largest tobacco companies globally.\n\n### Moat narrative\n- PMI's moat comes from distribution, regulatory execution, brand power, and the capital intensity needed to commercialize nicotine products across many jurisdictions. IQOS and ZYN are not simple consumer brands; they sit inside licensing, authorization, manufacturing, and retailer-access systems that are hard for smaller entrants to replicate quickly.\n- The moat is also strengthened by portfolio migration. PMI can defend cash flow from cigarettes while moving users into its own smoke-free products, reducing the odds that category change automatically benefits outsiders.\n\n### Decentralization narrative\n- PMI scores poorly on decentralizability because nicotine delivery products are tightly bound to regulatory approvals, controlled manufacturing, branded consumables, and age-gated retail channels. Those constraints make open, peer-produced, or federated substitutes unusually hard to justify responsibly.\n- The more realistic public-interest substitute to a PMI nicotine product is often quitting nicotine altogether or using approved cessation therapies, not a decentralized nicotine marketplace. That makes this company structurally resistant to the registry's usual open or protocol-native replacement patterns.\n\n## Replacement Sketch\n\n- The cleanest substitute pathway is nicotine cessation support, including approved nicotine replacement products, not an open or federated nicotine-pouch ecosystem.\n- Given the addiction, product-safety, and authorization constraints around nicotine pouches, a documented exception is more honest than inventing weak decentralized market concepts.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- No technology waves are currently attached. Identify the enabling waves before implementation.\n\n## Useful Sources To Read Before Building\n\n- Building leading brands (Philip Morris International) - https://www.pmi.com/investor-relations/overview/building-leading-brands/\n  Why it matters: Primary company source describing IQOS and ZYN, including category positioning and shipment or user claims.\n- Nicotine Is Why Tobacco Products Are Addictive (U.S. Food and Drug Administration) - https://www.fda.gov/tobacco-products/health-effects-tobacco-use/nicotine-why-tobacco-products-are-addictive\n  Why it matters: FDA health and cessation context covering nicotine addiction, heated tobacco risk positioning, and approved NRT alternatives.\n- Nicotine Pouch Products Authorized by the FDA (U.S. Food and Drug Administration) - https://www.fda.gov/tobacco-products/market-and-distribute-tobacco-product/nicotine-pouch-products-authorized-fda\n  Why it matters: FDA list confirming authorized ZYN nicotine pouch variants and the constrained regulatory channel for lawful sale.\n- Philip Morris International (PM) - Market capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/philip-morris/marketcap/\n  Why it matters: Reference for current market capitalization and approximate global market-cap rank.\n- Philip Morris International (PM) - P/E ratio (CompaniesMarketCap) - https://companiesmarketcap.com/philip-morris/pe-ratio/\n  Why it matters: Reference for trailing P/E ratio used in the input metrics.\n- Philip Morris International Reports 2025 Fourth-Quarter & Full-Year Results (Philip Morris International) - https://www.pmi.com/investor-relations/press-releases-and-events/press-releases-overview/press-release-details/?newsId=29566\n  Why it matters: Primary source for 2025 revenue, smoke-free share, EPS, and operating margin commentary.\n- The Relative Risks of Tobacco Products (U.S. Food and Drug Administration) - https://www.fda.gov/tobacco-products/health-effects-tobacco-use/relative-risks-tobacco-products\n  Why it matters: FDA comparative-risk overview stating nicotine pouches are not risk free and that quitting all tobacco products is most beneficial.\n- We're delivering a smoke free future, faster (Philip Morris International) - https://www.pmi.com/progress/\n  Why it matters: Company progress page with 2025 smoke-free revenue share, user counts, and market availability.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Philip Morris International's ZYN business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
         "generatedOn": "2026-03-25"
       }
     },
@@ -7306,6 +8416,221 @@ export const contentGraph: ContentGraph = {
       "productSlug": "chevron-texaco-fuels"
     },
     {
+      "slug": "sonic",
+      "name": "SONiC",
+      "kind": "open-source",
+      "homepageUrl": "https://sonicfoundation.dev/about/",
+      "repoUrl": "https://github.com/sonic-net/SONiC",
+      "summary": "Open-source network operating system for multi-vendor switches and ASICs, production-hardened in large cloud environments.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "SONiC is presented as a free and open-source NOS with public governance, public source code, and multi-vendor support.",
+          "sourceIds": [
+            "src-sonic-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "Its multi-vendor design weakens dependence on a single switch OEM and makes federated integrator or operator models more credible.",
+          "sourceIds": [
+            "src-sonic-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "SONiC explicitly describes itself as production-hardened in large cloud-service-provider data centers, which makes it a serious option for certain switching environments.",
+          "sourceIds": [
+            "src-sonic-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Running on switches from multiple vendors creates room to separate software choice from hardware procurement and compress incumbent margins.",
+          "sourceIds": [
+            "src-sonic-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-sonic-about"
+      ],
+      "productSlug": "cisco-networking"
+    },
+    {
+      "slug": "opnsense",
+      "name": "OPNsense",
+      "kind": "open-source",
+      "homepageUrl": "https://opnsense.org/",
+      "repoUrl": "https://github.com/opnsense/core",
+      "summary": "Open-source firewall and routing platform based on FreeBSD with commercial-grade features and frequent updates.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "OPNsense describes itself as open source, highlights open and verifiable sources, and publishes its code under OSI-approved licensing.",
+          "sourceIds": [
+            "src-opnsense-home",
+            "src-opnsense-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "It lets operators run routing and security on standard hardware without a single networking incumbent controlling the stack.",
+          "sourceIds": [
+            "src-opnsense-home",
+            "src-opnsense-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 7,
+          "rationale": "The project emphasizes a broad firewall, VPN, and routing feature set plus regular security updates, making it credible for edge and branch use even if not a full Cisco enterprise replacement.",
+          "sourceIds": [
+            "src-opnsense-home",
+            "src-opnsense-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Free software on commodity appliances can undercut premium proprietary edge networking and firewall bundles for many use cases.",
+          "sourceIds": [
+            "src-opnsense-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-opnsense-home",
+        "src-opnsense-docs"
+      ],
+      "productSlug": "cisco-networking"
+    },
+    {
+      "slug": "jitsi-meet",
+      "name": "Jitsi Meet",
+      "kind": "open-source",
+      "homepageUrl": "https://jitsi.org/jitsi-meet/",
+      "repoUrl": "https://github.com/jitsi/jitsi-meet",
+      "summary": "Open-source video conferencing stack that can be used for free or self-hosted, with browser-based meetings, chat, content sharing, and customization.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "Jitsi Meet explicitly describes itself as 100% open source and publishes an active public repository.",
+          "sourceIds": [
+            "src-jitsi-meet",
+            "src-jitsi-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "Organizations can run their own instances instead of relying on one central collaboration provider, which meaningfully improves control and exit options.",
+          "sourceIds": [
+            "src-jitsi-meet",
+            "src-jitsi-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "Jitsi offers a mature browser-based product, mobile support, SDKs, and self-hosting documentation, making it viable for many meeting-centric deployments.",
+          "sourceIds": [
+            "src-jitsi-meet",
+            "src-jitsi-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 9,
+          "rationale": "Free use and self-hosted deployment can sharply reduce licensing dependence for organizations that mainly need meetings and screen sharing.",
+          "sourceIds": [
+            "src-jitsi-meet",
+            "src-jitsi-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-jitsi-meet",
+        "src-jitsi-github"
+      ],
+      "productSlug": "webex"
+    },
+    {
+      "slug": "bigbluebutton",
+      "name": "BigBlueButton",
+      "kind": "open-source",
+      "homepageUrl": "https://bigbluebutton.org/",
+      "repoUrl": "https://github.com/bigbluebutton",
+      "summary": "Open-source web conferencing and virtual classroom platform built around teaching, engagement, whiteboarding, breakout rooms, and LMS integration.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "BigBlueButton describes itself as completely open source and maintains a large public project presence.",
+          "sourceIds": [
+            "src-bigbluebutton-about",
+            "src-bigbluebutton-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "It enables schools and institutions to self-host or buy support from a broader ecosystem rather than depend entirely on a proprietary classroom or meeting silo.",
+          "sourceIds": [
+            "src-bigbluebutton-about",
+            "src-bigbluebutton-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "The platform emphasizes mature classroom features, LMS adoption, and broad real-world use, especially in education.",
+          "sourceIds": [
+            "src-bigbluebutton-home",
+            "src-bigbluebutton-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Open deployment and education-focused workflows can replace more expensive commercial webinar or classroom use cases where Webex is overbuilt.",
+          "sourceIds": [
+            "src-bigbluebutton-home",
+            "src-bigbluebutton-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-bigbluebutton-home",
+        "src-bigbluebutton-about",
+        "src-bigbluebutton-github"
+      ],
+      "productSlug": "webex"
+    },
+    {
       "slug": "opencola",
       "name": "OpenCola",
       "kind": "open-source",
@@ -7777,6 +9102,362 @@ export const contentGraph: ContentGraph = {
         "src-openmct-nasa"
       ],
       "productSlug": "engine-services-and-health-monitoring"
+    },
+    {
+      "slug": "apache-fineract",
+      "name": "Apache Fineract",
+      "kind": "open-source",
+      "homepageUrl": "https://fineract.apache.org/",
+      "summary": "Open-source core banking software for digital financial services, account management, lending, savings, and reporting.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "Apache Fineract is explicitly presented as open-source software for financial services.",
+          "sourceIds": [
+            "src-fineract"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "It does not decentralize trust by itself, but it lowers dependence on proprietary bank cores and enables many smaller institutions to run their own stack.",
+          "sourceIds": [
+            "src-fineract"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "The project describes itself as cloud-ready, scalable, and suitable for high-transaction financial-service environments.",
+          "sourceIds": [
+            "src-fineract"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Open-source core banking can materially reduce license and vendor-lock-in costs for smaller operators and challengers.",
+          "sourceIds": [
+            "src-fineract"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-fineract"
+      ],
+      "productSlug": "chase-consumer-banking"
+    },
+    {
+      "slug": "chase-consumer-banking-fedimint",
+      "name": "Fedimint",
+      "kind": "protocol",
+      "homepageUrl": "https://fedimint.org/",
+      "summary": "Federated Bitcoin e-cash system that lets communities operate shared custody and private payments without a single central operator.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "Fedimint describes itself as open-source federated e-cash for Bitcoin.",
+          "sourceIds": [
+            "src-fedimint-home",
+            "src-fedimint-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "Its model explicitly replaces single-bank custody with a federation of guardians and independent community mints.",
+          "sourceIds": [
+            "src-fedimint-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 5,
+          "rationale": "Fedimint is credible for community-scale custody and payments, but it is not a full regulated retail-bank replacement for mainstream U.S. households.",
+          "sourceIds": [
+            "src-fedimint-docs",
+            "src-chase-checking"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 7,
+          "rationale": "Federated community custody can reduce centralized overhead and dependence on branch-heavy incumbents for some use cases.",
+          "sourceIds": [
+            "src-fedimint-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-fedimint-home",
+        "src-fedimint-docs"
+      ],
+      "productSlug": "chase-consumer-banking"
+    },
+    {
+      "slug": "jp-morgan-payments-btcpay-server",
+      "name": "BTCPay Server",
+      "kind": "open-source",
+      "homepageUrl": "https://docs.btcpayserver.org/Guide/",
+      "summary": "Free, open-source, self-hosted Bitcoin payment gateway for online and in-person merchant acceptance.",
+      "metrics": {
+        "openness": {
+          "value": 10,
+          "rationale": "BTCPay Server describes itself as free, open-source, and self-hosted.",
+          "sourceIds": [
+            "src-btcpay-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 10,
+          "rationale": "It enables direct peer-to-peer payments, no middleman, and non-custodial merchant control.",
+          "sourceIds": [
+            "src-btcpay-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "The documentation covers production deployment, self-hosting, POS flows, and Lightning support.",
+          "sourceIds": [
+            "src-btcpay-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 9,
+          "rationale": "Merchants can avoid processor and middleman fees beyond network costs, especially for Bitcoin-native flows.",
+          "sourceIds": [
+            "src-btcpay-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-btcpay-docs"
+      ],
+      "productSlug": "jp-morgan-payments"
+    },
+    {
+      "slug": "lnbits",
+      "name": "LNbits",
+      "kind": "open-source",
+      "homepageUrl": "https://lnbits.com/",
+      "summary": "Modular open-source Lightning wallet and payments platform for checkout, APIs, micropayments, subscriptions, and programmable payment flows.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "LNbits describes itself as free and open-source with a large extension ecosystem.",
+          "sourceIds": [
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "It supports self-run or community-run Lightning payment systems and avoids dependence on a single payment processor.",
+          "sourceIds": [
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 7,
+          "rationale": "The project emphasizes years of use, modular tooling, APIs, and practical payment extensions, though enterprise treasury replacement remains partial.",
+          "sourceIds": [
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "A modular Lightning stack can reduce processor dependence and open cheaper micropayment or automation use cases.",
+          "sourceIds": [
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-lnbits"
+      ],
+      "productSlug": "jp-morgan-payments"
+    },
+    {
+      "slug": "mastercard-global-card-network-btcpay-server",
+      "name": "BTCPay Server",
+      "kind": "open-source",
+      "homepageUrl": "https://docs.btcpayserver.org/Guide/",
+      "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+      "summary": "Free, open-source, self-hosted bitcoin payment processor for online and in-person merchant acceptance.",
+      "metrics": {
+        "openness": {
+          "value": 9.8,
+          "rationale": "BTCPay Server is explicitly described as free, open-source, and self-hosted, with public documentation and source code.",
+          "sourceIds": [
+            "btcpay-docs",
+            "btcpay-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 8.8,
+          "rationale": "It lets merchants accept payments directly without a card-network intermediary, fitting peer-to-peer and self-sovereign payment flows well.",
+          "sourceIds": [
+            "btcpay-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8.1,
+          "rationale": "BTCPay Server is a mature merchant tool with production documentation, invoice handling, and refund workflows, though it does not replicate the full card-network acceptance footprint.",
+          "sourceIds": [
+            "btcpay-docs",
+            "btcpay-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 8.9,
+          "rationale": "BTCPay emphasizes no processor fees beyond network fees, which can materially undercut incumbent tolls in suitable payment contexts.",
+          "sourceIds": [
+            "btcpay-docs",
+            "btcpay-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "btcpay-docs",
+        "btcpay-github"
+      ],
+      "productSlug": "mastercard-global-card-network"
+    },
+    {
+      "slug": "mastercard-global-card-network-lnbits",
+      "name": "LNbits",
+      "kind": "open-source",
+      "homepageUrl": "https://docs.lnbits.org/",
+      "summary": "Free and open-source Lightning wallet and accounts system with extensions including point-of-sale and paylink workflows.",
+      "metrics": {
+        "openness": {
+          "value": 9.7,
+          "rationale": "LNbits presents itself as a free and open-source Lightning wallet/accounts system with public docs and open distribution.",
+          "sourceIds": [
+            "lnbits-docs",
+            "lnbits-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 8.4,
+          "rationale": "LNbits helps operators run wallet, POS, and payment-link flows on Lightning without relying on a proprietary card network.",
+          "sourceIds": [
+            "lnbits-docs",
+            "lnbits-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 7.4,
+          "rationale": "The project is already used for wallets, extensions, and merchant flows, but it remains a toolkit rather than a turnkey global replacement for Mastercard acceptance.",
+          "sourceIds": [
+            "lnbits-docs",
+            "lnbits-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 8.5,
+          "rationale": "Open deployment and Lightning-native settlement can reduce acceptance and software costs where merchants and users can tolerate bitcoin-denominated flows.",
+          "sourceIds": [
+            "lnbits-docs",
+            "lnbits-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "lnbits-docs",
+        "lnbits-home"
+      ],
+      "productSlug": "mastercard-global-card-network"
+    },
+    {
+      "slug": "misp",
+      "name": "MISP",
+      "kind": "open-source",
+      "homepageUrl": "https://www.misp-project.org/",
+      "summary": "Open-source threat-intelligence and information-sharing platform used to collect, correlate, and distribute cyber and fraud indicators.",
+      "metrics": {
+        "openness": {
+          "value": 9.7,
+          "rationale": "MISP explicitly presents itself as an open-source threat-intelligence platform with open standards and community-driven development.",
+          "sourceIds": [
+            "misp-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "MISP is built for sharing intelligence across multiple parties and communities rather than forcing all visibility through one vendor.",
+          "sourceIds": [
+            "misp-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8,
+          "rationale": "MISP is established and feature-rich for cyber-intelligence workflows, though enterprises still need integration work to match a polished vendor bundle.",
+          "sourceIds": [
+            "misp-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 7.9,
+          "rationale": "Open software and shared communities can reduce software licensing and dependency costs, even if staffing and integration remain real expenses.",
+          "sourceIds": [
+            "misp-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "misp-project"
+      ],
+      "productSlug": "mastercard-cyber-fraud-services"
     },
     {
       "slug": "pixelfed-social",
@@ -8274,6 +9955,107 @@ export const contentGraph: ContentGraph = {
         "gitea"
       ],
       "productSlug": "microsoft-github"
+    },
+    {
+      "slug": "jellyfin",
+      "name": "Jellyfin",
+      "kind": "open-source",
+      "homepageUrl": "https://jellyfin.org/",
+      "repoUrl": "https://github.com/jellyfin/jellyfin",
+      "summary": "Free software media server for managing and streaming your own media library across devices without premium feature gating.",
+      "metrics": {
+        "openness": {
+          "value": 9.7,
+          "rationale": "Jellyfin positions itself as a free software media system with source availability and no premium feature lockups.",
+          "sourceIds": [
+            "src-jellyfin"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 6.4,
+          "rationale": "It decentralizes hosting and playback by moving control to self-hosted servers, though discovery and public catalog federation are limited compared with a broader network protocol.",
+          "sourceIds": [
+            "src-jellyfin"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 8.1,
+          "rationale": "Jellyfin is already usable across many platforms as a mature self-hosted media system, though it is better for owned libraries than for replacing Netflix’s licensed catalog breadth.",
+          "sourceIds": [
+            "src-jellyfin"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 7.8,
+          "rationale": "For users with their own media or community libraries, Jellyfin can replace recurring platform fees with commodity hosting and open clients.",
+          "sourceIds": [
+            "src-jellyfin"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-jellyfin"
+      ],
+      "productSlug": "netflix-streaming"
+    },
+    {
+      "slug": "peertube",
+      "name": "PeerTube",
+      "kind": "decentralized",
+      "homepageUrl": "https://joinpeertube.org/",
+      "summary": "Federated video platform software that lets many independently operated sites host, share, and discover videos across an interconnected network.",
+      "metrics": {
+        "openness": {
+          "value": 9.4,
+          "rationale": "PeerTube presents itself as free, open-source software that can be modified and audited by anyone.",
+          "sourceIds": [
+            "src-peertube"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "decentralizationFit": {
+          "value": 9.2,
+          "rationale": "Its model explicitly decentralizes storage and decision-making across multiple interconnected hosting providers using ActivityPub, with WebRTC helping distribution efficiency.",
+          "sourceIds": [
+            "src-peertube",
+            "src-peertube-activitypub"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "readiness": {
+          "value": 7.2,
+          "rationale": "PeerTube is real and usable today for public video publishing and community hosting, but it is not yet a drop-in replacement for Netflix-scale premium entertainment aggregation.",
+          "sourceIds": [
+            "src-peertube"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "costLeverage": {
+          "value": 7.5,
+          "rationale": "Federation and peer-assisted distribution can lower central bandwidth and platform overhead versus a single giant hosting silo.",
+          "sourceIds": [
+            "src-peertube"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "sourceIds": [
+        "src-peertube",
+        "src-peertube-activitypub"
+      ],
+      "productSlug": "netflix-streaming"
     },
     {
       "slug": "rocm",
@@ -13158,6 +14940,245 @@ export const contentGraph: ContentGraph = {
       ]
     },
     {
+      "slug": "federated-whitebox-networking",
+      "name": "Federated white-box networking stacks",
+      "summary": "Enterprise switching and routing can increasingly be assembled from commodity or white-box hardware, open network operating systems, and regional integrators instead of a single vertically integrated vendor. The result is not consumer simplicity, but a more contestable market where hardware, software, and support are separable.",
+      "angleIds": [
+        "decentralized-coordination",
+        "open-hardware",
+        "federation"
+      ],
+      "thesis": "This breaks Cisco's advantage by turning the network stack into a modular ecosystem where buyers can mix switch hardware, NOS software, and support providers instead of accepting a single-vendor control plane.",
+      "bitcoinOrDecentralizationRole": "The decentralization matters through multi-party coordination rather than Bitcoin specifically: open NOS software, interoperable hardware choices, and third-party operators make the market less dependent on one vendor's roadmap and pricing power.",
+      "coordinationMechanism": "Hardware vendors, NOS communities, and integration firms coordinate through open software, supported device lists, standard network protocols, and service contracts. Buyers can choose their own operating model instead of inheriting Cisco's full stack by default.",
+      "verificationOrTrustModel": "Trust comes from open source code, public documentation, multi-vendor deployment history, and the ability to test the stack on supported hardware before wider rollout. Cheating is constrained because software behavior is inspectable and operators can switch vendors or service partners if promised functionality does not materialize.",
+      "failureModes": [
+        "Operational complexity remains higher than a single-vendor Cisco deployment for many enterprises.",
+        "Support accountability can fragment across hardware, software, and integrator layers if governance and contracts are weak."
+      ],
+      "adoptionPath": [
+        "Start with greenfield data-center, lab, or edge segments where white-box switching is acceptable.",
+        "Add regional integrators or internal platform teams to standardize designs, upgrades, and support across a narrower approved hardware list."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-cisco-enterprise-network",
+        "src-cisco-fy2025-earnings"
+      ],
+      "enablerSourceIds": [
+        "src-sonic-about"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "The mechanism directly separates software control from hardware procurement and support, which is the core decentralizing move in enterprise networking.",
+          "sourceIds": [
+            "src-sonic-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "SONiC already runs across multiple vendors and has real production credibility, but enterprise adoption still depends on strong integrators and internal network engineering maturity.",
+          "sourceIds": [
+            "src-sonic-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "The approach is feasible now in segments that can tolerate integration work and narrower hardware qualification sets.",
+          "sourceIds": [
+            "src-sonic-about",
+            "src-cisco-enterprise-network"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 7,
+          "rationale": "It does not erase Cisco's support and account-control advantages, but it pressures pricing and weakens the assumption that enterprise networking must remain vertically integrated.",
+          "sourceIds": [
+            "src-cisco-enterprise-network",
+            "src-sonic-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "cisco-networking",
+      "sourceIds": [
+        "src-cisco-enterprise-network",
+        "src-cisco-fy2025-earnings",
+        "src-sonic-about"
+      ]
+    },
+    {
+      "slug": "reused-open-edge-appliances",
+      "name": "Reused and open edge appliances",
+      "summary": "A second pressure path comes from treating branch routing, firewalling, and smaller-site network services as software that can run on refurbished or generic appliances. Open platforms make it easier for local operators and service shops to repurpose existing hardware instead of replacing it with premium proprietary bundles on every refresh cycle.",
+      "angleIds": [
+        "recycling-and-reuse",
+        "open-hardware",
+        "decentralized-coordination"
+      ],
+      "thesis": "This shifts parts of the market from branded appliance replacement toward local reuse, generic hardware, and open software maintenance, reducing Cisco's hold on lower-complexity edge environments.",
+      "bitcoinOrDecentralizationRole": "The decentralization is organizational rather than monetary: local operators, refurbishers, and MSPs can deploy and maintain open network software on non-proprietary hardware without routing every decision through a single vendor ecosystem.",
+      "coordinationMechanism": "Refurbishers, MSPs, and internal IT teams coordinate around standard x86 appliances, open firewall or router images, and repeatable deployment playbooks. Procurement becomes more local and incremental rather than tied to a monolithic vendor refresh.",
+      "verificationOrTrustModel": "Trust depends on transparent software, reproducible images, public documentation, and local acceptance testing. Weaknesses remain around hardware quality, long-term driver support, and fragmented accountability, so buyers still need validation and qualified supply channels.",
+      "failureModes": [
+        "Refurbished hardware quality and lifecycle support can be inconsistent.",
+        "This model fits edge and branch environments far better than mission-critical Cisco-heavy cores."
+      ],
+      "adoptionPath": [
+        "Use open firewall and routing software on commodity appliances for branch offices, labs, or non-critical segments.",
+        "Build local or regional support capacity around approved hardware profiles and staged image management."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-cisco-enterprise-network"
+      ],
+      "enablerSourceIds": [
+        "src-opnsense-home",
+        "src-openwrt-about"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "It meaningfully disperses control across local operators and generic hardware channels, though it does not replace Cisco in every network tier.",
+          "sourceIds": [
+            "src-opnsense-home",
+            "src-openwrt-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6,
+          "rationale": "The pieces already exist, but success depends on disciplined hardware qualification and support practices outside a single incumbent's umbrella.",
+          "sourceIds": [
+            "src-opnsense-home",
+            "src-openwrt-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "For branch, lab, and SMB-style environments, open edge stacks are deployable now on standard appliances.",
+          "sourceIds": [
+            "src-opnsense-home",
+            "src-opnsense-docs",
+            "src-openwrt-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6,
+          "rationale": "This pressures Cisco most at the edge and in price-sensitive environments rather than across the whole enterprise account.",
+          "sourceIds": [
+            "src-cisco-enterprise-network",
+            "src-opnsense-home",
+            "src-openwrt-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "cisco-networking",
+      "sourceIds": [
+        "src-cisco-enterprise-network",
+        "src-opnsense-home",
+        "src-openwrt-about",
+        "src-opnsense-docs"
+      ]
+    },
+    {
+      "slug": "federated-open-collaboration-nodes",
+      "name": "Federated open collaboration nodes",
+      "summary": "A credible disruption path for Webex is not one global replacement super-suite but a federated pattern of self-hosted or managed open collaboration nodes. Organizations can run their own meeting infrastructure or buy hosting from trusted providers while keeping more control over data, branding, upgrade timing, and cost.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "This weakens Webex by making high-quality conferencing a service that can be locally operated or competitively hosted rather than rented from a single collaboration incumbent.",
+      "bitcoinOrDecentralizationRole": "The key mechanism is federation and self-hostability rather than Bitcoin. The market becomes more decentralized when conferencing software is portable, inspectable, and deployable by many hosts instead of one platform owner.",
+      "coordinationMechanism": "Organizations coordinate through open-source meeting servers, managed hosting partners, and standard web clients. Procurement becomes a choice among software, hosting, and operations providers instead of a single suite contract.",
+      "verificationOrTrustModel": "Trust improves because code and deployment choices are more transparent, and operators can test or audit their own instances. Abuse and quality issues are constrained by local policy controls, host choice, and the ability to migrate if a provider underperforms, though interoperability and feature parity remain uneven.",
+      "failureModes": [
+        "Open alternatives may lag a full enterprise suite in admin polish, compliance tooling, or tightly integrated workflow breadth.",
+        "Fragmentation can create user-experience inconsistencies across organizations and hosting providers."
+      ],
+      "adoptionPath": [
+        "Replace meeting-heavy internal or community workflows with self-hosted or managed Jitsi first.",
+        "Use BigBlueButton for education and training workflows where classroom-specific capabilities matter more than suite breadth."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-webex-suite"
+      ],
+      "enablerSourceIds": [
+        "src-jitsi-meet",
+        "src-bigbluebutton-about"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "The model directly disperses control across many operators and preserves exit options through open-source software.",
+          "sourceIds": [
+            "src-jitsi-meet",
+            "src-bigbluebutton-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The necessary software already exists and is actively used, but fragmented deployment and enterprise integration burdens still limit uniform adoption.",
+          "sourceIds": [
+            "src-jitsi-meet",
+            "src-jitsi-github",
+            "src-bigbluebutton-home"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 8,
+          "rationale": "This is feasible today for organizations whose needs center on meetings, classrooms, or webinars rather than every workflow in a unified proprietary suite.",
+          "sourceIds": [
+            "src-jitsi-meet",
+            "src-bigbluebutton-home",
+            "src-bigbluebutton-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6,
+          "rationale": "It can erode specific Webex workloads and pricing power, but Cisco still retains advantages in enterprise bundling, calling, and administrative breadth.",
+          "sourceIds": [
+            "src-webex-suite",
+            "src-jitsi-meet",
+            "src-bigbluebutton-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "webex",
+      "sourceIds": [
+        "src-webex-suite",
+        "src-jitsi-meet",
+        "src-bigbluebutton-about",
+        "src-jitsi-github",
+        "src-bigbluebutton-home"
+      ]
+    },
+    {
       "slug": "coca-cola-classic-concept",
       "name": "Open Soda Microfactory Network",
       "summary": "A marketplace for open soda machine designs, syrup recipes, and local ingredient fulfillment that recreates more beverage value at home and community scale.",
@@ -14313,6 +16334,802 @@ export const contentGraph: ContentGraph = {
       ]
     },
     {
+      "slug": "federated-community-banking",
+      "name": "Federated Community Banking",
+      "summary": "Instead of one national bank owning custody, payments, and policy for everyone, local federations could run community mints backed by Bitcoin and Lightning while keeping governance distributed across multiple guardians. That would not fully replace insured bank accounts overnight, but it could peel away the day-to-day transaction and stored-value layer that keeps users captive to a branch-centric incumbent.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "Retail banking becomes less of a single-firm product and more of a network of community-operated monetary and payment cells.",
+      "bitcoinOrDecentralizationRole": "Bitcoin provides the reserve asset and settlement anchor, Lightning provides fast transfer rails, and federation spreads custody and policy control across multiple operators instead of one bank.",
+      "coordinationMechanism": "Users join a local or affinity-based federation, deposit sats, receive spendable e-cash, and transact across Lightning-connected wallets and services while guardians jointly manage reserves.",
+      "verificationOrTrustModel": "Cheating is constrained by threshold-controlled custody, auditable federation operations, and redemption pressure into Bitcoin. The model still relies on users choosing trustworthy guardians and monitoring solvency practices.",
+      "failureModes": [
+        "Mainstream users may still prefer FDIC-insured accounts and incumbent bank UX.",
+        "Guardian collusion, poor operational security, or weak recovery processes can damage trust."
+      ],
+      "adoptionPath": [
+        "Start with community, diaspora, or circular-economy groups that already want shared custody and fast payments.",
+        "Expand into payroll, local commerce, and savings communities where bank switching costs are lower than full-credit relationships."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-chase-checking",
+        "src-chase-savings"
+      ],
+      "enablerSourceIds": [
+        "src-fedimint-home",
+        "src-fedimint-docs"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "The concept directly replaces single-bank custody with federated operation and Bitcoin-native settlement.",
+          "sourceIds": [
+            "src-fedimint-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6,
+          "rationale": "The coordination model is technically coherent and already described by the project, but scaling it to mainstream consumer banking remains uncertain.",
+          "sourceIds": [
+            "src-fedimint-docs",
+            "src-fedimint-home"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 5,
+          "rationale": "It is feasible for niche communities now, but hard to map directly onto full U.S. retail-banking expectations and regulation.",
+          "sourceIds": [
+            "src-fedimint-docs",
+            "src-chase-checking"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 4,
+          "rationale": "Pressure is meaningful on transaction and custody edges, but weaker against JPMorgan's insured deposits, lending, and compliance-heavy services.",
+          "sourceIds": [
+            "src-chase-checking",
+            "src-jpmc-financial-highlights-2024"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "chase-consumer-banking",
+      "sourceIds": [
+        "src-chase-checking",
+        "src-chase-savings",
+        "src-fedimint-home",
+        "src-fedimint-docs",
+        "src-jpmc-financial-highlights-2024"
+      ]
+    },
+    {
+      "slug": "open-core-cooperative-banking-stack",
+      "name": "Open-Core Cooperative Banking Stack",
+      "summary": "A second disruption path is less crypto-native and more software-native: smaller banks, credit unions, municipalities, or cooperatives could run open-source core banking infrastructure instead of renting proprietary vendor stacks or defaulting to giant universal banks. That does not eliminate regulated intermediaries, but it can lower the coordination and software cost of running many smaller ones.",
+      "angleIds": [
+        "cooperative-production",
+        "decentralized-coordination"
+      ],
+      "thesis": "The software layer of banking becomes commoditized enough that more local and cooperative institutions can exist without needing mega-bank scale.",
+      "bitcoinOrDecentralizationRole": "Decentralization matters here through institutional plurality rather than Bitcoin itself: open-source infrastructure lowers dependence on a single vendor or a single giant bank's integrated stack.",
+      "coordinationMechanism": "Institutions deploy a shared open core, integrate their own channels and compliance processes, and compete or cooperate locally while keeping policy and governance separate.",
+      "verificationOrTrustModel": "Trust shifts from opaque proprietary cores toward inspectable software, internal controls, and regulated local operators. The model does not remove fraud or credit risk, but it reduces vendor black-box dependence.",
+      "failureModes": [
+        "Open software alone does not solve deposit insurance, underwriting, or regulatory burden.",
+        "Fragmented smaller operators may still lose on brand, convenience, and distribution."
+      ],
+      "adoptionPath": [
+        "Adopt first among challengers, MFIs, community institutions, and digital-first operators seeking lower software lock-in.",
+        "Layer local payment, savings, and cooperative finance products on top once the core ledger and reporting stack is stable."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-chase-checking",
+        "src-jpmc-financial-highlights-2024"
+      ],
+      "enablerSourceIds": [
+        "src-fineract"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "It increases institutional plurality and reduces proprietary concentration, though it does not remove regulated intermediaries.",
+          "sourceIds": [
+            "src-fineract"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "Open-source core banking is already a credible operating model for financial-service providers.",
+          "sourceIds": [
+            "src-fineract"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "The software is deployable now, but institution-building and compliance remain the hard parts.",
+          "sourceIds": [
+            "src-fineract"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 5,
+          "rationale": "This can pressure vendor lock-in and some bank software economics, but it is a slower challenge to JPMorgan's consumer distribution moat.",
+          "sourceIds": [
+            "src-fineract",
+            "src-chase-checking"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "chase-consumer-banking",
+      "sourceIds": [
+        "src-chase-checking",
+        "src-jpmc-financial-highlights-2024",
+        "src-fineract"
+      ]
+    },
+    {
+      "slug": "merchant-direct-bitcoin-checkout",
+      "name": "Merchant-Direct Bitcoin Checkout",
+      "summary": "Merchants can bypass part of the acquiring and gateway stack by running their own Bitcoin and Lightning checkout, receiving funds directly, and outsourcing less of the payment flow to a giant intermediary. That does not replace every card and treasury use case, but it can shrink the surface area where a bank-owned processor is indispensable.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Payment acceptance becomes a merchant-controlled software function rather than a bank-controlled service bundle.",
+      "bitcoinOrDecentralizationRole": "Bitcoin and Lightning matter directly because they provide the settlement rail, the merchant can self-custody, and payment verification is tied to the network rather than a closed processor ledger.",
+      "coordinationMechanism": "Merchants deploy their own payment server, present invoices at checkout, receive payment from customer wallets, and settle fulfillment based on on-chain or Lightning invoice status.",
+      "verificationOrTrustModel": "Settlement is verified cryptographically by the Bitcoin and Lightning systems, while merchant control of keys reduces processor custody risk. Weak points remain around volatility, refunds, chargeback expectations, and customer support.",
+      "failureModes": [
+        "Many customers still prefer cards and bank-linked payment methods.",
+        "Volatility, accounting complexity, and compliance friction can slow enterprise adoption."
+      ],
+      "adoptionPath": [
+        "Start with internet-native merchants, donations, digital goods, and cross-border sellers where direct settlement is most valuable.",
+        "Expand through hybrid checkouts that keep existing rails while adding Bitcoin and Lightning as lower-friction options."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-jpm-payments",
+        "src-jpm-payments-dev"
+      ],
+      "enablerSourceIds": [
+        "src-btcpay-docs"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 10,
+          "rationale": "The concept removes the central processor from payment acceptance and custody for the supported flow.",
+          "sourceIds": [
+            "src-btcpay-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "BTCPay Server is a real merchant tool with documented production features and Lightning support.",
+          "sourceIds": [
+            "src-btcpay-docs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "It is feasible for merchants willing to self-host or use specialist operators, but not a drop-in replacement for every enterprise payment rail.",
+          "sourceIds": [
+            "src-btcpay-docs",
+            "src-jpm-payments-dev"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6,
+          "rationale": "This pressures acceptance-margin businesses and some gateway functions, but only for merchants and jurisdictions ready to route volume onto Bitcoin-native rails.",
+          "sourceIds": [
+            "src-jpm-payments",
+            "src-btcpay-docs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "jp-morgan-payments",
+      "sourceIds": [
+        "src-jpm-payments",
+        "src-jpm-payments-dev",
+        "src-btcpay-docs"
+      ]
+    },
+    {
+      "slug": "modular-lightning-treasury-mesh",
+      "name": "Modular Lightning Treasury Mesh",
+      "summary": "A modular Lightning stack can unbundle parts of enterprise payments into programmable wallets, APIs, invoice engines, and micropayment services that companies or platforms operate themselves. Instead of buying one large bank's payments operating system, developers compose specialized tooling around open payment standards and nodes.",
+      "angleIds": [
+        "lightning",
+        "decentralized-coordination"
+      ],
+      "thesis": "Payment orchestration shifts toward developer-operated modules and interoperable node-based infrastructure rather than a single bank-owned platform.",
+      "bitcoinOrDecentralizationRole": "Lightning provides the instant payment rail and LNbits provides the modular control surface for wallets, APIs, paywalls, POS, and automation without locking the builder into one payment processor.",
+      "coordinationMechanism": "Operators connect Lightning liquidity to LNbits, expose payment APIs or extensions to their apps and merchants, and coordinate settlement and user flows through interoperable wallet and invoice standards.",
+      "verificationOrTrustModel": "Trust comes from running your own node or choosing transparent operators, plus protocol-level invoice verification. Risks remain if operators centralize liquidity badly, mismanage custodial balances, or fail operationally.",
+      "failureModes": [
+        "Liquidity management and operational complexity may overwhelm non-technical enterprises.",
+        "The model is strongest for specific payment patterns, not full enterprise treasury replacement."
+      ],
+      "adoptionPath": [
+        "Begin with developers building donation flows, subscriptions, paywalls, tipping, or machine payments.",
+        "Move into broader merchant and platform orchestration as tooling, UX, and fiat interfaces improve."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-jpm-payments",
+        "src-jpm-payments-dev"
+      ],
+      "enablerSourceIds": [
+        "src-lnbits"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8,
+          "rationale": "The model distributes operation across many builders and nodes rather than one bank platform.",
+          "sourceIds": [
+            "src-lnbits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6,
+          "rationale": "LNbits is a credible modular toolkit, but broad treasury coordination still depends on surrounding infrastructure and operator maturity.",
+          "sourceIds": [
+            "src-lnbits"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 6,
+          "rationale": "This is practical for internet-native use cases and developers now, but weaker as a full substitute for multi-rail bank treasury stacks.",
+          "sourceIds": [
+            "src-lnbits",
+            "src-jpm-payments-dev"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 5,
+          "rationale": "Pressure is moderate because it can siphon off specific developer-driven flows, but JPMorgan's global enterprise footprint is much broader.",
+          "sourceIds": [
+            "src-jpm-payments",
+            "src-lnbits"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "jp-morgan-payments",
+      "sourceIds": [
+        "src-jpm-payments",
+        "src-jpm-payments-dev",
+        "src-lnbits"
+      ]
+    },
+    {
+      "slug": "lightning-merchant-direct-acceptance",
+      "name": "Lightning merchant-direct acceptance mesh",
+      "summary": "Merchants use self-hosted payment software and Lightning-native wallets to accept customer payments directly, shrinking the need for a global card-network intermediary in contexts where immediate digital settlement matters more than revolving credit and chargebacks.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "decentralized-coordination"
+      ],
+      "thesis": "If merchant acceptance can be assembled from open checkout software, self-custodial wallets, and interoperable Lightning rails, Mastercard loses pricing power on transactions that do not actually need a centralized card scheme.",
+      "bitcoinOrDecentralizationRole": "Bitcoin provides the neutral settlement asset, while Lightning provides instant low-fee routing and open interoperability between merchants, wallets, and service providers without requiring Mastercard's branded network to sit in the middle.",
+      "coordinationMechanism": "Merchants coordinate through open payment standards and self-hosted invoicing tools such as BTCPay Server, while wallets and SDKs such as Breez handle payment UX and liquidity abstractions for end users.",
+      "verificationOrTrustModel": "Settlement is constrained by cryptographic payment proofs and network-confirmed transfers rather than by Mastercard's centralized authorization stack. Fraud risk shifts toward merchant fulfillment, wallet security, and fiat-pricing UX rather than card chargebacks.",
+      "failureModes": [
+        "Consumers may still prefer card rewards, credit, and familiar protections over direct bitcoin payments.",
+        "Merchants still face volatility, accounting, and tax friction unless conversion and treasury tooling improve.",
+        "Lightning UX and liquidity abstractions must keep improving for mainstream checkout reliability."
+      ],
+      "adoptionPath": [
+        "Start with merchants who already want lower fees, instant settlement, or censorship resistance for online and in-person sales.",
+        "Expand via wallets and SDKs that abstract node complexity and make Lightning checkout feel closer to mainstream app payments."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-network-page"
+      ],
+      "enablerSourceIds": [
+        "btcpay-docs",
+        "breez-sdk"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.9,
+          "rationale": "The concept removes a central card-network operator from payment acceptance and settlement for a meaningful subset of transactions.",
+          "sourceIds": [
+            "btcpay-docs",
+            "breez-sdk"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 7.2,
+          "rationale": "Merchant tools and Lightning SDKs already exist, but coordination still depends on better wallet UX, pricing stability, and broader user familiarity.",
+          "sourceIds": [
+            "btcpay-docs",
+            "breez-sdk"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 7.6,
+          "rationale": "The core software stack is live today, though scaling to mass-market retail requires more polished fiat integration and support workflows.",
+          "sourceIds": [
+            "btcpay-docs",
+            "breez-sdk"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "Even partial merchant migration toward direct acceptance pressures card-network margins by proving that some checkout flows do not require Mastercard's tollbooth.",
+          "sourceIds": [
+            "mastercard-10k-2024",
+            "btcpay-docs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "mastercard-global-card-network",
+      "sourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-network-page",
+        "btcpay-docs",
+        "breez-sdk"
+      ]
+    },
+    {
+      "slug": "federated-community-mint-payments",
+      "name": "Federated community mint payments",
+      "summary": "Community or regional payment systems can use federated Chaumian ecash and Lightning gateways to offer fast local payments with shared governance instead of depending on a single global card operator.",
+      "angleIds": [
+        "lightning",
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "A network of many smaller federated payment communities can substitute for parts of Mastercard's coordination role in closed-loop, regional, or mission-driven economies where local trust and low-cost settlement matter more than universal card acceptance.",
+      "bitcoinOrDecentralizationRole": "Bitcoin and Lightning provide the base interoperability layer between federated mints, while federation distributes operational control across multiple guardians instead of a single company.",
+      "coordinationMechanism": "Users join local or affinity-based federations; guardians run the mint and gateway infrastructure; merchants accept community-issued ecash or Lightning payments and redeem through shared rules.",
+      "verificationOrTrustModel": "The system resists unilateral abuse by splitting control across federation guardians and using cryptographic ecash plus Lightning interoperability, but it still depends on the integrity and competence of a limited guardian set.",
+      "failureModes": [
+        "Poor guardian selection or governance could recreate local centralization and fraud risk.",
+        "Cross-federation liquidity and merchant tooling remain immature compared with card acceptance.",
+        "Regulatory treatment may vary sharply by jurisdiction and use case."
+      ],
+      "adoptionPath": [
+        "Begin with communities, local circular economies, conferences, campuses, or aligned merchant networks where shared trust already exists.",
+        "Connect federations through Lightning so users can move value across communities without relying on a single branded scheme."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-network-page"
+      ],
+      "enablerSourceIds": [
+        "fedimint-what-is",
+        "fedimint-tech"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.4,
+          "rationale": "Federated mints distribute control and can support many local payment communities rather than one proprietary global operator.",
+          "sourceIds": [
+            "fedimint-what-is",
+            "fedimint-tech"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6.4,
+          "rationale": "The model is coherent and already documented, but broad real-world coordination across many communities is still early.",
+          "sourceIds": [
+            "fedimint-what-is",
+            "fedimint-tech"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 6.1,
+          "rationale": "The underlying technology exists, though merchant acceptance, compliance comfort, and inter-federation user experience remain immature.",
+          "sourceIds": [
+            "fedimint-what-is",
+            "fedimint-tech"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6.7,
+          "rationale": "This would not replace Mastercard everywhere, but it can erode the assumption that every digital payment community needs a centralized card-network operator.",
+          "sourceIds": [
+            "mastercard-network-page",
+            "fedimint-what-is"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "mastercard-global-card-network",
+      "sourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-network-page",
+        "fedimint-what-is",
+        "fedimint-tech"
+      ]
+    },
+    {
+      "slug": "federated-threat-intelligence-coops",
+      "name": "Federated threat-intelligence cooperatives",
+      "summary": "Banks, processors, merchants, and service providers can pool fraud and cyber indicators through open-source sharing infrastructure, creating a cooperative defense layer that is less dependent on a single vendor's proprietary threat graph.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "If threat intelligence becomes a shared interoperable utility operated by member communities instead of a closed vendor product, Mastercard's security bundle loses some of its exclusivity and pricing power.",
+      "bitcoinOrDecentralizationRole": "The decentralization advantage comes from federation and open standards rather than from forcing Bitcoin into the stack. Multiple institutions coordinate as peers, retaining local autonomy while sharing structured indicators through interoperable systems.",
+      "coordinationMechanism": "Participants contribute indicators, incidents, and taxonomy-tagged findings into federated sharing communities using open platforms such as MISP, then automate downstream enforcement into their own security and fraud systems.",
+      "verificationOrTrustModel": "Trust is constrained by provenance metadata, structured indicators, access controls, and cross-member correlation rather than by blind reliance on a single vendor feed. The weakness is that members can still submit noisy, delayed, or low-quality data if governance is weak.",
+      "failureModes": [
+        "Institutions may under-share useful intelligence because of liability, secrecy, or incentive problems.",
+        "Data quality and taxonomy consistency can degrade without strong operating rules.",
+        "Open tooling alone does not create trust; member governance and response playbooks must be built."
+      ],
+      "adoptionPath": [
+        "Start with sectoral or regional defense communities that already share some indicators informally.",
+        "Standardize taxonomies, automate exports into bank fraud workflows, and gradually reduce dependence on closed vendor intelligence silos."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-threat-intelligence-page"
+      ],
+      "enablerSourceIds": [
+        "misp-project"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "The concept distributes intelligence generation and control across cooperating institutions instead of centralizing it under one vendor.",
+          "sourceIds": [
+            "misp-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 7.1,
+          "rationale": "Federated threat sharing already exists in practice, and MISP is built specifically for that pattern, though commercial incentives still complicate adoption.",
+          "sourceIds": [
+            "misp-project"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "The software and operating model are real, but successful deployment requires governance, integration, and ongoing analyst participation.",
+          "sourceIds": [
+            "misp-project"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6.8,
+          "rationale": "A cooperative threat-sharing layer would not erase Mastercard's data advantage, but it can commoditize part of the security-intelligence bundle.",
+          "sourceIds": [
+            "mastercard-threat-intelligence-page",
+            "misp-project"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "mastercard-cyber-fraud-services",
+      "sourceIds": [
+        "mastercard-10k-2024",
+        "mastercard-threat-intelligence-page",
+        "misp-project"
+      ]
+    },
+    {
+      "slug": "lightning-priced-fraud-signal-markets",
+      "name": "Lightning-priced fraud-signal markets",
+      "summary": "Fraud analysts, merchants, processors, and service providers could publish and consume fraud signals over open networks where micropayments and reputation price useful intelligence instead of bundling it inside a single proprietary vendor relationship.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination"
+      ],
+      "thesis": "If high-value fraud signals can be bought, sold, and scored in an open market, proprietary intelligence vendors face pressure because useful detection data no longer has to stay trapped inside closed enterprise bundles.",
+      "bitcoinOrDecentralizationRole": "Lightning matters because it supports low-friction micropayments for signal access, machine-to-machine settlement, and anti-spam pricing. Open payment rails make it easier to compensate niche contributors and data providers without complex bilateral contracts.",
+      "coordinationMechanism": "Participants post signals, enrichment, or model outputs into an open marketplace; buyers subscribe or pay per use; reputation and payment history help surface high-signal providers over time.",
+      "verificationOrTrustModel": "The model resists spam partly through paid access and reputation, but it remains vulnerable to collusion, fabricated indicators, and wash-trading of low-quality data unless buyers can backtest outcomes and penalize bad actors.",
+      "failureModes": [
+        "Signal quality may be hard to verify quickly, especially when fraud labels arrive late.",
+        "Market participants could game reputation or collude to sell low-quality feeds.",
+        "Regulated institutions may hesitate to procure sensitive signals through open marketplaces without clearer legal frameworks."
+      ],
+      "adoptionPath": [
+        "Begin with narrow fraud niches where signal contributors can prove value through measurable outcomes such as reduced card testing or skimming losses.",
+        "Layer reputation, escrow, and backtesting over time so buyers can distinguish useful contributors from noise."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "mastercard-threat-intelligence-page"
+      ],
+      "enablerSourceIds": [
+        "breez-sdk",
+        "lnbits-docs",
+        "misp-project"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "Open signal markets distribute intelligence supply across many contributors instead of concentrating it in one enterprise vendor.",
+          "sourceIds": [
+            "breez-sdk",
+            "lnbits-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 5.6,
+          "rationale": "The payment primitives are credible, but the market design for trustworthy fraud-signal exchange is still immature.",
+          "sourceIds": [
+            "breez-sdk",
+            "misp-project"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 5.2,
+          "rationale": "Lightning micropayments are available today, but procurement, privacy, and signal-quality verification remain hard parts of the design.",
+          "sourceIds": [
+            "breez-sdk",
+            "lnbits-docs",
+            "misp-project"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 5.9,
+          "rationale": "If it works, this model could unbundle parts of proprietary fraud intelligence, but it is not yet strong enough to seriously displace Mastercard's services at scale.",
+          "sourceIds": [
+            "mastercard-threat-intelligence-page",
+            "breez-sdk"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "mastercard-cyber-fraud-services",
+      "sourceIds": [
+        "mastercard-threat-intelligence-page",
+        "breez-sdk",
+        "lnbits-docs",
+        "misp-project"
+      ]
+    },
+    {
+      "slug": "federated-pembrolizumab-biosimilar-network",
+      "name": "Federated Pembrolizumab Biosimilar Network",
+      "summary": "After exclusivity weakens, pembrolizumab pressure could come from a federation of qualified regional biologics manufacturers that share validated process packages, procurement commitments, and post-market evidence instead of relying on a single global brand owner. The disruptive move is not open chemistry in the abstract; it is reducing the market’s dependence on one concentrated commercial and manufacturing stack for a therapy class that already has huge clinical demand.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation"
+      ],
+      "thesis": "This would shift market power from one branded immunotherapy franchise toward multiple regulated suppliers coordinated through shared standards, pooled procurement, and biosimilar pathways.",
+      "bitcoinOrDecentralizationRole": "The relevant decentralization is federated manufacturing and procurement, not Bitcoin. Trust moves from a single incumbent brand toward a network of regulators, reference standards, batch-release systems, and regional producers.",
+      "coordinationMechanism": "Public buyers, oncology networks, and payers aggregate demand; qualified manufacturers obtain licenses or enter post-exclusivity biosimilar development; shared analytical packages and pooled post-market surveillance reduce duplication across regions.",
+      "verificationOrTrustModel": "Trust depends on regulator-reviewed comparability, GMP inspections, validated analytics, lot release, serialized supply-chain tracking, and pharmacovigilance. Cheating is constrained by batch testing, inspection, and the legal liability attached to biologic manufacturing, though comparability remains expensive and technically demanding.",
+      "failureModes": [
+        "Analytical and clinical comparability for a complex biologic may remain too expensive for many regional suppliers.",
+        "Manufacturing fragmentation can fail if demand is not large enough to sustain multiple compliant plants.",
+        "Freedom-to-operate and know-how barriers can delay entry even after headline exclusivity pressure increases."
+      ],
+      "adoptionPath": [
+        "Simplified biosimilar rules and shared public procurement lower the cost of first entrants.",
+        "One or two regional manufacturers prove reliable supply and comparability, then additional buyers standardize them into formularies."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-merck-fy2025-results",
+        "src-merck-q3-2025-10q",
+        "src-fda-biosimilar"
+      ],
+      "enablerSourceIds": [
+        "src-fda-biosimilar",
+        "src-fda-advanced-manufacturing",
+        "src-mpp-biotherapeutics"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 6,
+          "rationale": "A federated biosimilar market is structurally plausible because biologics supply does not need to remain tied to a single brand owner forever, but the model still relies on regulated manufacturers rather than peer-to-peer end users.",
+          "sourceIds": [
+            "src-fda-biosimilar",
+            "src-mpp-biotherapeutics"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6,
+          "rationale": "Pooled procurement, biosimilar regulation, and voluntary licensing are established coordination tools, though building a functioning multi-region network for an oncology biologic remains operationally heavy.",
+          "sourceIds": [
+            "src-fda-biosimilar",
+            "src-mpp-biotherapeutics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 4,
+          "rationale": "Biologics manufacturing, comparability, and regulatory approval remain hard, and KEYTRUDA’s current franchise strength shows the incumbent still controls the category economically.",
+          "sourceIds": [
+            "src-keytruda-official",
+            "src-merck-q3-2025-10q",
+            "src-fda-advanced-manufacturing"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 7,
+          "rationale": "Because KEYTRUDA contributes such a large share of Merck’s revenue, even partial biosimilar or licensing pressure would matter materially to Merck’s earnings mix.",
+          "sourceIds": [
+            "src-merck-fy2025-results"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "keytruda",
+      "sourceIds": [
+        "src-merck-fy2025-results",
+        "src-merck-q3-2025-10q",
+        "src-fda-biosimilar",
+        "src-fda-advanced-manufacturing",
+        "src-mpp-biotherapeutics",
+        "src-keytruda-official"
+      ]
+    },
+    {
+      "slug": "regional-hpv-vaccine-manufacturing-commons",
+      "name": "Regional HPV Vaccine Manufacturing Commons",
+      "summary": "A credible long-run challenge to GARDASIL-like franchise power is a regional vaccine commons: public-health buyers, technology-transfer institutions, and qualified manufacturers coordinate to develop or license HPV-prevention platforms and produce them across multiple regions. The point is not hobbyist vaccine production; it is turning vaccine supply into a more distributed industrial network with shared know-how, reference standards, and procurement support.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation",
+        "cooperative-production"
+      ],
+      "thesis": "This would reduce the structural advantage of a single branded HPV vaccine supplier by giving regional manufacturers a coordinated path to build competing supply under public-health rather than franchise-maximizing incentives.",
+      "bitcoinOrDecentralizationRole": "Bitcoin is not central here. Decentralization matters as federated industrial capacity: more than one region can manufacture, verify, and contract for HPV-prevention products instead of depending on a single global incumbent.",
+      "coordinationMechanism": "WHO- or MPP-style technology-transfer programs, pooled procurement by governments or multilateral buyers, and shared assay and quality frameworks create demand certainty and reduce duplicated setup costs for regional manufacturers.",
+      "verificationOrTrustModel": "Verification comes from GMP compliance, national regulator approval, WHO-style prequalification logic where applicable, lot release testing, cold-chain audits, and traceable distribution. The main weakness is that vaccine trust can collapse quickly if any node has quality failures or politicized procurement decisions.",
+      "failureModes": [
+        "HPV vaccine know-how, adjuvant supply, and process transfer may remain too difficult for fast regional replication.",
+        "Cold-chain, fill-finish, and quality-system gaps can block scale even when the science is available.",
+        "Procurement can stay fragmented enough that no challenger network gets the demand volume needed for sustainable operations."
+      ],
+      "adoptionPath": [
+        "Regional health buyers commit multi-year demand and fund shared transfer infrastructure.",
+        "One region proves a compliant HPV-prevention manufacturing platform, then other manufacturers adopt the model with local regulatory support."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-merck-fy2025-results",
+        "src-gardasil9-official",
+        "src-fda-gardasil9"
+      ],
+      "enablerSourceIds": [
+        "src-who-htap",
+        "src-who-mrna-tt",
+        "src-mpp-mrna-programme"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 7,
+          "rationale": "Vaccines remain industrial products, but supply can be distributed across multiple qualified regional producers more readily than Merck’s current single-franchise structure implies.",
+          "sourceIds": [
+            "src-who-htap",
+            "src-mpp-mrna-programme"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6,
+          "rationale": "WHO and MPP already document technology-transfer and regional manufacturing models, which makes the coordination pattern credible even if HPV-specific execution would be difficult.",
+          "sourceIds": [
+            "src-who-htap",
+            "src-who-mrna-tt",
+            "src-mpp-mrna-programme"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 4,
+          "rationale": "Applying those models to HPV-prevention products still requires substantial technical transfer, regulatory work, and stable procurement commitments.",
+          "sourceIds": [
+            "src-fda-gardasil9",
+            "src-who-htap",
+            "src-mpp-mrna-programme"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6,
+          "rationale": "GARDASIL/GARDASIL 9 remains a multi-billion-dollar franchise, so regional supply alternatives would matter, but the franchise is smaller than KEYTRUDA and already showing demand volatility in some markets.",
+          "sourceIds": [
+            "src-merck-fy2025-results"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "gardasil",
+      "sourceIds": [
+        "src-merck-fy2025-results",
+        "src-gardasil9-official",
+        "src-fda-gardasil9",
+        "src-who-htap",
+        "src-who-mrna-tt",
+        "src-mpp-mrna-programme"
+      ]
+    },
+    {
       "slug": "instagram-concept",
       "name": "Proof-of-Attention Creator Market",
       "summary": "A federated creator economy where audiences, advertisers, and curators transact across open identity and payout rails instead of renting every relationship from Instagram.",
@@ -15145,6 +17962,246 @@ export const contentGraph: ContentGraph = {
         "gitea",
         "openstack",
         "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "federated-video-membership-bundles",
+      "name": "Federated Video Membership Bundles",
+      "summary": "Independent video hosts could run PeerTube-style instances for catalog hosting and discovery while joining shared membership bundles that let viewers pay once to support a cluster of aligned communities. Instead of one company owning hosting, discovery, moderation, and payments, the bundle would coordinate across autonomous nodes that remain portable and locally governed.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination"
+      ],
+      "thesis": "This changes the market from a single centralized subscription silo into a federation of smaller operators that can share audiences and interoperability without surrendering ownership or moderation authority to one platform.",
+      "bitcoinOrDecentralizationRole": "Federation is central because the core shift is structural: storage, moderation, and identity are spread across many servers using open protocols, reducing dependence on one operator’s catalog and policy stack.",
+      "coordinationMechanism": "Operators publish catalogs and channels from their own servers, federate metadata and subscriptions through ActivityPub-compatible flows, and optionally participate in joint membership bundles or reciprocal discovery agreements.",
+      "verificationOrTrustModel": "Trust is local-first: each instance is accountable for what it hosts and whom it federates with, while protocol-level identity, signed activities, and transparent instance policies limit spoofing. Abuse still exists, but it is compartmentalized instead of platform-wide.",
+      "failureModes": [
+        "Fragmented discovery can make the user experience worse than a single polished app.",
+        "Premium licensed content may remain locked behind exclusive rights deals that federated hosts cannot easily replicate."
+      ],
+      "adoptionPath": [
+        "Start with independent studios, niche communities, educators, and public-interest archives that do not need Hollywood-scale exclusivity.",
+        "Layer in shared discovery, shared subscriptions, and migration tools so creators can move between hosts without losing audiences."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-netflix-2025-annual-report"
+      ],
+      "enablerSourceIds": [
+        "src-peertube",
+        "src-peertube-activitypub"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 9,
+          "rationale": "The concept directly decentralizes hosting, moderation, and platform governance across interoperable nodes.",
+          "sourceIds": [
+            "src-peertube",
+            "src-peertube-activitypub"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "ActivityPub-based federation is already proven for cross-instance coordination, though paid bundle administration and cross-host trust rules would still need careful product design.",
+          "sourceIds": [
+            "src-peertube",
+            "src-peertube-activitypub"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "The hosting and federation primitives exist today, but a consumer-grade shared membership layer and large-scale discovery UX remain unfinished.",
+          "sourceIds": [
+            "src-peertube",
+            "src-peertube-activitypub"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6.6,
+          "rationale": "This would not erase Netflix’s premium catalog moat quickly, but it would pressure the assumption that video distribution must be centralized to be convenient.",
+          "sourceIds": [
+            "src-netflix-2025-annual-report",
+            "src-peertube"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "netflix-streaming",
+      "sourceIds": [
+        "src-netflix-2025-annual-report",
+        "src-peertube",
+        "src-peertube-activitypub"
+      ]
+    },
+    {
+      "slug": "lightning-metered-video",
+      "name": "Lightning-Metered Video Access",
+      "summary": "Instead of bundling all viewing into flat subscriptions or advertising, creators and curators could offer pay-per-title, pay-per-minute, or community membership access over Bitcoin and Lightning. Self-hosted commerce and open metadata standards would let viewers fund the content they actually value while keeping settlement and payout logic outside a platform-controlled billing stack.",
+      "angleIds": [
+        "bitcoin",
+        "lightning",
+        "decentralized-coordination"
+      ],
+      "thesis": "This changes market structure by replacing part of the subscription-and-ads bundle with direct, interoperable payments, letting creators monetize without first surrendering distribution and billing to a giant platform.",
+      "bitcoinOrDecentralizationRole": "Bitcoin and Lightning matter here because very small payments, direct settlement, and programmable splits make metered media economics more plausible than card rails for low-dollar viewing or fan-funded access.",
+      "coordinationMechanism": "Creators or hosts publish content and payment metadata, viewers pay invoices or stream value over Lightning-compatible tools, and revenue can be split across collaborators using open value-recipient style metadata rather than a single platform ledger.",
+      "verificationOrTrustModel": "Payments are verified through invoice settlement and wallet-level confirmations, while access can be unlocked per stream, title, or bundle. The weak point is still off-chain enforcement of playback entitlements and honest reporting of viewing events when payment is usage-based.",
+      "failureModes": [
+        "Users may prefer all-you-can-watch bundles over metered payments unless pricing is simple and clearly cheaper.",
+        "A direct-payment model cannot by itself solve content licensing and may struggle to finance blockbuster-scale originals."
+      ],
+      "adoptionPath": [
+        "Start with premium niches, live events, independent studios, and creator communities where direct audience support is already normal.",
+        "Add wallet UX, recurring memberships, and collaborative payout splits so the system feels simpler than today’s ad-tech and platform-rev-share stack."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-netflix-2025-annual-report",
+        "src-netflix-ads-plan",
+        "src-netflix-ads-help"
+      ],
+      "enablerSourceIds": [
+        "src-btcpay",
+        "src-podcast-value"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "The model removes centralized billing and can keep creator monetization closer to open protocols and self-hosted infrastructure.",
+          "sourceIds": [
+            "src-btcpay",
+            "src-podcast-value"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6.9,
+          "rationale": "BTCPay and open value metadata show real coordination primitives, but mainstream video purchasing behavior is not yet organized around them.",
+          "sourceIds": [
+            "src-btcpay",
+            "src-podcast-value"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 6.5,
+          "rationale": "The payment rails already exist, yet broad consumer adoption still depends on easier wallets, better entitlement UX, and more creator tooling.",
+          "sourceIds": [
+            "src-btcpay",
+            "src-podcast-value"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 7.1,
+          "rationale": "If direct micropayments and open revenue splits become easy enough, they weaken the assumption that ads or giant subscriptions are the only viable way to finance digital video.",
+          "sourceIds": [
+            "src-netflix-ads-plan",
+            "src-btcpay",
+            "src-podcast-value"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "netflix-streaming",
+      "sourceIds": [
+        "src-netflix-2025-annual-report",
+        "src-netflix-ads-plan",
+        "src-netflix-ads-help",
+        "src-btcpay",
+        "src-podcast-value"
+      ]
+    },
+    {
+      "slug": "viewer-funded-adless-access",
+      "name": "Viewer-Funded Adless Access",
+      "summary": "Open video publishers could replace part of the ad-supported tier’s logic with lightweight membership, pay-per-view, and streaming-value models that let audiences directly fund the content or channels they want. Rather than lowering price by inserting more intermediaries into the viewing experience, the system lowers price by removing ad-tech overhead and routing more value directly between viewers and publishers.",
+      "angleIds": [
+        "lightning",
+        "peer-to-peer-marketplace",
+        "decentralized-coordination"
+      ],
+      "thesis": "This changes the market by making low-priced access dependent on direct viewer funding and open payment coordination instead of centralized audience packaging and advertiser demand.",
+      "bitcoinOrDecentralizationRole": "Lightning-native payments matter because they support small, frequent, and programmable contributions that can substitute for part of the economic role currently played by advertising in low-price plans.",
+      "coordinationMechanism": "Publishers expose direct payment endpoints and optional value-split metadata, viewers fund access with one-off or recurring Lightning-compatible payments, and payout rules can be shared across hosts and collaborators without a single corporate ledger.",
+      "verificationOrTrustModel": "Payment settlement is verifiable through wallet and invoice status, while access control can be tied to invoices, memberships, or signed entitlements. The harder problem is proving fair access and consistent service quality across many hosts without recreating a central gatekeeper.",
+      "failureModes": [
+        "Direct viewer funding may be too uneven for mass-market entertainment without a large catalog and strong creator loyalty.",
+        "Rights holders may still prefer guaranteed licensing checks from centralized distributors over open monetization models."
+      ],
+      "adoptionPath": [
+        "Begin with live events, niche catalogs, and creator-led communities where audiences already accept direct support.",
+        "Expand into shared wallets, recurring memberships, and interoperable discovery so the experience feels cheaper and simpler than ad-supported subscriptions."
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "src-netflix-ads-plan",
+        "src-netflix-ads-help"
+      ],
+      "enablerSourceIds": [
+        "src-btcpay",
+        "src-podcast-value"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.3,
+          "rationale": "The concept moves monetization away from centralized ad targeting and toward direct audience-to-publisher settlement.",
+          "sourceIds": [
+            "src-btcpay",
+            "src-podcast-value"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "coordinationCredibility": {
+          "value": 6.8,
+          "rationale": "Open Bitcoin payment infrastructure and value-recipient metadata are real, but video-wide standardization and mainstream UX are still immature.",
+          "sourceIds": [
+            "src-btcpay",
+            "src-podcast-value"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "implementationFeasibility": {
+          "value": 6.2,
+          "rationale": "The payment primitives work today, yet replacing ad-tier economics at scale still requires better wallets, identity, bundling, and publisher tooling.",
+          "sourceIds": [
+            "src-btcpay",
+            "src-podcast-value"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        },
+        "incumbentPressure": {
+          "value": 6.7,
+          "rationale": "This would pressure Netflix most in niches where audiences are willing to fund access directly, but it is less threatening in blockbuster, mass-market entertainment today.",
+          "sourceIds": [
+            "src-netflix-ads-plan",
+            "src-btcpay"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-03-25"
+        }
+      },
+      "productSlug": "advertising-tier",
+      "sourceIds": [
+        "src-netflix-ads-plan",
+        "src-netflix-ads-help",
+        "src-btcpay",
+        "src-podcast-value"
       ]
     },
     {
@@ -17166,6 +20223,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "breez-sdk",
+      "title": "Breez SDK",
+      "url": "https://breez.technology/sdk/",
+      "kind": "technical-docs",
+      "publisher": "Breez",
+      "note": "Used to support claims about developer-ready self-custodial Lightning payment infrastructure.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "broadcom-home",
       "title": "Broadcom",
       "url": "https://www.broadcom.com/",
@@ -17205,18 +20271,18 @@ export const contentGraph: ContentGraph = {
       "id": "btcpay-docs",
       "title": "BTCPay Server Documentation",
       "url": "https://docs.btcpayserver.org/Guide/",
-      "kind": "technical-docs",
+      "kind": "open-source-project",
       "publisher": "BTCPay Server",
-      "note": "Primary source for BTCPay's self-hosted, open-source merchant payment model and features.",
+      "note": "Primary documentation for a self-hosted open bitcoin payment processor used as a merchant-side alternative.",
       "accessedOn": "2026-03-25"
     },
     {
       "id": "btcpay-github",
-      "title": "btcpayserver/btcpayserver",
+      "title": "BTCPay Server GitHub Repository",
       "url": "https://github.com/btcpayserver/btcpayserver",
       "kind": "open-source-project",
       "publisher": "GitHub",
-      "note": "Open-source repository and license evidence for BTCPay Server.",
+      "note": "Public repository confirming open-source status and active project footprint.",
       "accessedOn": "2026-03-25"
     },
     {
@@ -17319,6 +20385,24 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "cmc-mastercard-marketcap",
+      "title": "Mastercard Market Capitalization",
+      "url": "https://companiesmarketcap.com/mastercard/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Used for current market cap and approximate global rank as of March 2026.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "cmc-mastercard-pe",
+      "title": "Mastercard P/E Ratio",
+      "url": "https://companiesmarketcap.com/mastercard/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Used for trailing P/E ratio as of March 2026.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "companies-market-cap-bac",
       "title": "Bank of America Market Cap History — CompaniesMarketCap",
       "url": "https://companiesmarketcap.com/bank-of-america/marketcap/",
@@ -17415,6 +20499,24 @@ export const contentGraph: ContentGraph = {
       "kind": "technical-docs",
       "publisher": "Fedimint",
       "note": "High-level description of Fedimint's community custody, e-cash, and Lightning interoperability model.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "fedimint-tech",
+      "title": "Fedimint Core Technology Components",
+      "url": "https://fedimint.org/docs/GettingStarted/TechCompontents",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Documents the federated custody, ecash, and Lightning-swap primitives behind the federated payment concept.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "fedimint-what-is",
+      "title": "What is a Fedimint",
+      "url": "https://fedimint.org/docs/GettingStarted/What-is-a-Fedimint",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Explains federated Chaumian ecash and Lightning interoperability for community-scale payment coordination.",
       "accessedOn": "2026-03-25"
     },
     {
@@ -17553,6 +20655,51 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-19"
     },
     {
+      "id": "lnbits-docs",
+      "title": "LNbits Documentation",
+      "url": "https://docs.lnbits.org/",
+      "kind": "technical-docs",
+      "publisher": "LNbits",
+      "note": "Documentation for the Lightning wallet and accounts system used to support merchant and wallet replacement paths.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "lnbits-home",
+      "title": "LNbits Home",
+      "url": "https://lnbits.github.io/",
+      "kind": "open-source-project",
+      "publisher": "LNbits",
+      "note": "Project homepage summarizing open-source status, accounts, extensions, and merchant-adjacent features.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "mastercard-10k-2024",
+      "title": "Mastercard 2024 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1141391/000114139125000011/ma-20241231.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary source for revenue mix, profitability, business description, and disclosed competitive risks.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "mastercard-network-page",
+      "title": "Mastercard Network and Processing",
+      "url": "https://www.mastercard.com/car/en/business/payments/consumer-payments/network-processing.html",
+      "kind": "product-page",
+      "publisher": "Mastercard",
+      "note": "Official product page describing Mastercard's network scale, markets, currencies, and transaction-processing positioning.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "mastercard-threat-intelligence-page",
+      "title": "Mastercard Threat Intelligence",
+      "url": "https://www.mastercard.com/us/en/business/cybersecurity-fraud-prevention/cybersecurity/mastercard-threat-intelligence.html",
+      "kind": "product-page",
+      "publisher": "Mastercard",
+      "note": "Official page for Mastercard's fraud and cyber-intelligence offering used to ground the security-services product.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "mastodon",
       "title": "Mastodon",
       "url": "https://joinmastodon.org/",
@@ -17677,6 +20824,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "MinIO",
       "note": "Object storage alternative relevant to cloud stacks.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "misp-project",
+      "title": "MISP Open Source Threat Intelligence Platform",
+      "url": "https://www.misp-project.org/",
+      "kind": "open-source-project",
+      "publisher": "MISP Project",
+      "note": "Primary source for the open threat-intelligence sharing platform used as an alternative to proprietary cyber-fraud tooling.",
+      "accessedOn": "2026-03-25"
     },
     {
       "id": "nextcloud",
@@ -18327,6 +21483,69 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-25"
     },
     {
+      "id": "src-bigbluebutton-about",
+      "title": "About BigBlueButton | Open Source Project | BigBlueButton",
+      "url": "https://bigbluebutton.org/open-source-project/about/",
+      "kind": "open-source-project",
+      "publisher": "BigBlueButton",
+      "note": "Official open-source project overview used to support community and licensing posture.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-bigbluebutton-github",
+      "title": "BigBlueButton · GitHub",
+      "url": "https://github.com/bigbluebutton",
+      "kind": "open-source-project",
+      "publisher": "GitHub / BigBlueButton",
+      "note": "Repository organization source used to support public development activity and project maturity.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-bigbluebutton-home",
+      "title": "Virtual Classroom Software | BigBlueButton",
+      "url": "https://bigbluebutton.org/",
+      "kind": "open-source-project",
+      "publisher": "BigBlueButton",
+      "note": "Official product page used to support current feature scope and real-world education positioning.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-btcpay",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/Guide/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-btcpay-docs",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/Guide/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Documents self-hosted Bitcoin and Lightning merchant acceptance without a centralized processor.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-chase-checking",
+      "title": "Compare Checking Accounts & Apply Online",
+      "url": "https://personal.chase.com/personal/checking",
+      "kind": "product-page",
+      "publisher": "Chase",
+      "note": "Documents the breadth of Chase's consumer checking offer, branch and ATM footprint, and mass-market reach.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-chase-savings",
+      "title": "Chase Savings Account",
+      "url": "https://www.chase.com/personal/savings/savings-account",
+      "kind": "product-page",
+      "publisher": "Chase",
+      "note": "Provides official details on Chase savings features, digital banking, ATM and branch access, and insured deposit positioning.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "src-chevron-annual-report-2024",
       "title": "2024 Annual Report",
       "url": "https://www.chevron.com/annual-report?mod=mod_e2456e64",
@@ -18372,6 +21591,51 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "src-cisco-annual-reports",
+      "title": "Annual Reports",
+      "url": "https://www.cisco.com/c/en/us/about/annual-reports.html",
+      "kind": "annual-report",
+      "publisher": "Cisco",
+      "note": "Cisco's official annual report hub, used to support the company's reporting scope and current investor-facing framing.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-cisco-enterprise-network",
+      "title": "What is an enterprise network?",
+      "url": "https://www.cisco.com/c/en/us/solutions/enterprise-networks/what-is-an-enterprise-network.html",
+      "kind": "product-page",
+      "publisher": "Cisco",
+      "note": "Official Cisco description of enterprise networking scope, architecture, subscriptions, cloud integration, and security roles.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-cisco-fy2025-earnings",
+      "title": "CISCO REPORTS FOURTH QUARTER AND FISCAL YEAR 2025 EARNINGS",
+      "url": "https://investor.cisco.com/news/news-details/2025/CISCO-REPORTS-FOURTH-QUARTER-AND-FISCAL-YEAR-2025-EARNINGS/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Cisco Investor Relations",
+      "note": "Primary source for FY2025 revenue, profit, margins, and Cisco's current segment commentary across networking, security, observability, and collaboration.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-cisco-marketcap",
+      "title": "Cisco (CSCO) - Market capitalization",
+      "url": "https://companiesmarketcap.com/cisco/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Current market-cap snapshot used for approximate valuation and rank context.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-cisco-pe",
+      "title": "Cisco (CSCO) - P/E ratio",
+      "url": "https://companiesmarketcap.com/inr/cisco/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Current trailing P/E snapshot used as an approximate public-market valuation multiple.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "src-cmc-lly-marketcap",
       "title": "Eli Lilly (LLY) market capitalization",
       "url": "https://companiesmarketcap.com/eli-lilly/marketcap/",
@@ -18382,11 +21646,11 @@ export const contentGraph: ContentGraph = {
     },
     {
       "id": "src-cmc-marketcap",
-      "title": "Palantir (PLTR) Market Capitalization",
-      "url": "https://companiesmarketcap.com/palantir/marketcap/",
+      "title": "Philip Morris International (PM) - Market capitalization",
+      "url": "https://companiesmarketcap.com/philip-morris/marketcap/",
       "kind": "market-data",
       "publisher": "CompaniesMarketCap",
-      "note": "Used for current approximate rank and market cap snapshot.",
+      "note": "Reference for current market capitalization and approximate global market-cap rank.",
       "accessedOn": "2026-03-25"
     },
     {
@@ -18409,11 +21673,29 @@ export const contentGraph: ContentGraph = {
     },
     {
       "id": "src-cmc-pe",
-      "title": "Palantir (PLTR) P/E Ratio",
-      "url": "https://companiesmarketcap.com/palantir/pe-ratio/",
+      "title": "Philip Morris International (PM) - P/E ratio",
+      "url": "https://companiesmarketcap.com/philip-morris/pe-ratio/",
       "kind": "market-data",
       "publisher": "CompaniesMarketCap",
-      "note": "Used for the current trailing P/E ratio snapshot.",
+      "note": "Reference for trailing P/E ratio used in the input metrics.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-companiesmarketcap-jpm-marketcap",
+      "title": "JPMorgan Chase (JPM) - Market capitalization",
+      "url": "https://companiesmarketcap.com/jpmorgan-chase/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Used for approximate March 13, 2026 global market-cap rank context tied to the snapshot note.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-companiesmarketcap-jpm-pe",
+      "title": "JPMorgan Chase (JPM) - P/E ratio",
+      "url": "https://companiesmarketcap.com/jpmorgan-chase/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Provides a current trailing P/E snapshot for the company.",
       "accessedOn": "2026-03-25"
     },
     {
@@ -18570,6 +21852,114 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "src-fda-advanced-manufacturing",
+      "title": "About Advanced Manufacturing for Public Health Emergency Preparedness and Response",
+      "url": "https://www.fda.gov/emergency-preparedness-and-response/innovative-technologies/about-advanced-manufacturing-public-health-emergency-preparedness-and-response",
+      "kind": "technical-docs",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "Supports claims about distributed and advanced pharmaceutical manufacturing as an enabler of less centralized production.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fda-biosimilar",
+      "title": "FDA Moves to Accelerate Biosimilar Development and Lower Drug Costs",
+      "url": "https://www.fda.gov/news-events/press-announcements/fda-moves-accelerate-biosimilar-development-and-lower-drug-costs",
+      "kind": "technical-docs",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "Supports the claim that regulatory simplification can lower barriers and costs for biologic competition.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fda-gardasil9",
+      "title": "GARDASIL 9",
+      "url": "https://www.fda.gov/vaccines-blood-biologics/vaccines/gardasil-9",
+      "kind": "product-page",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "Independent regulatory description of GARDASIL 9 indications and manufacturer.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fda-iqos-authorized",
+      "title": "FDA Authorizes Three New Heated Tobacco Products",
+      "url": "https://www.fda.gov/tobacco-products/ctp-newsroom/fda-authorizes-three-new-heated-tobacco-products",
+      "kind": "technical-docs",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "FDA authorization context for additional heated tobacco products used with the IQOS device.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fda-iqos-mrtp",
+      "title": "Philip Morris Products S.A. Modified Risk Tobacco Product (MRTP) Applications",
+      "url": "https://www.fda.gov/tobacco-products/advertising-and-promotion/philip-morris-products-sa-modified-risk-tobacco-product-mrtp-applications",
+      "kind": "technical-docs",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "FDA source explaining the specific reduced-exposure claims allowed for IQOS and clarifying the regulatory framing.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fda-nicotine",
+      "title": "Nicotine Is Why Tobacco Products Are Addictive",
+      "url": "https://www.fda.gov/tobacco-products/health-effects-tobacco-use/nicotine-why-tobacco-products-are-addictive",
+      "kind": "technical-docs",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "FDA health and cessation context covering nicotine addiction, heated tobacco risk positioning, and approved NRT alternatives.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fda-relative-risk",
+      "title": "The Relative Risks of Tobacco Products",
+      "url": "https://www.fda.gov/tobacco-products/health-effects-tobacco-use/relative-risks-tobacco-products",
+      "kind": "technical-docs",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "FDA comparative-risk overview stating nicotine pouches are not risk free and that quitting all tobacco products is most beneficial.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fda-zyn-authorized",
+      "title": "Nicotine Pouch Products Authorized by the FDA",
+      "url": "https://www.fda.gov/tobacco-products/market-and-distribute-tobacco-product/nicotine-pouch-products-authorized-fda",
+      "kind": "technical-docs",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "FDA list confirming authorized ZYN nicotine pouch variants and the constrained regulatory channel for lawful sale.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fedimint-docs",
+      "title": "What is a Fedimint",
+      "url": "https://fedimint.org/docs/GettingStarted/What-is-a-Fedimint",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Explains the federated model, Lightning interoperability, and community-bank style deployment thesis.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Project homepage describing federated Bitcoin e-cash and community custody.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-financecharts-pe",
+      "title": "Merck & Co (MRK) PE Ratio",
+      "url": "https://www.financecharts.com/stocks/MRK/value/pe-ratio",
+      "kind": "market-data",
+      "publisher": "FinanceCharts",
+      "note": "Time-bound trailing P/E snapshot used for the valuation metric.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-fineract",
+      "title": "Apache Fineract",
+      "url": "https://fineract.apache.org/",
+      "kind": "open-source-project",
+      "publisher": "Apache Software Foundation",
+      "note": "Primary source for open-source core banking infrastructure as a software-layer alternative.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "src-foodcoopshop-repo",
       "title": "foodcoopshop/foodcoopshop",
       "url": "https://github.com/foodcoopshop/foodcoopshop",
@@ -18585,6 +21975,15 @@ export const contentGraph: ContentGraph = {
       "kind": "technical-docs",
       "publisher": "Palantir",
       "note": "Supports claims about Foundry interoperability, open APIs, exportability, and reduced lock-in.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-gardasil9-official",
+      "title": "GARDASIL 9 Official Site",
+      "url": "https://www.gardasil9.com/",
+      "kind": "product-page",
+      "publisher": "Merck & Co., Inc.",
+      "note": "Primary source for GARDASIL 9 indication scope and Merck’s product framing.",
       "accessedOn": "2026-03-25"
     },
     {
@@ -18669,6 +22068,78 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-25"
     },
     {
+      "id": "src-jellyfin",
+      "title": "Jellyfin Documentation Introduction",
+      "url": "https://jellyfin.org/docs/",
+      "kind": "technical-docs",
+      "publisher": "Jellyfin",
+      "note": "Official documentation establishing Jellyfin as a free software media system without premium feature gating.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jitsi-github",
+      "title": "GitHub - jitsi/jitsi-meet: Jitsi Meet - Secure, Simple and Scalable Video Conferences that you use as a standalone app or embed in your web application.",
+      "url": "https://github.com/jitsi/jitsi-meet",
+      "kind": "open-source-project",
+      "publisher": "GitHub / Jitsi",
+      "note": "Repository source used to support public development, licensing, release activity, and self-hosting readiness.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jitsi-meet",
+      "title": "About Jitsi Meet | Free Video Conferencing Solutions",
+      "url": "https://jitsi.org/jitsi-meet/",
+      "kind": "open-source-project",
+      "publisher": "Jitsi",
+      "note": "Official Jitsi Meet overview used to support open-source, free-use, and self-hosted conferencing claims.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpm-payments",
+      "title": "J.P. Morgan Payments: More Than a Payments Partner",
+      "url": "https://www.jpmorgan.com/payments",
+      "kind": "product-page",
+      "publisher": "J.P. Morgan",
+      "note": "Primary product page describing J.P. Morgan Payments categories and reported global processing scale.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpm-payments-dev",
+      "title": "API Reference | J.P. Morgan Developer Portal",
+      "url": "https://developer.payments.jpmorgan.com/api/home",
+      "kind": "technical-docs",
+      "publisher": "J.P. Morgan Payments Developer Portal",
+      "note": "Shows the API-led product surface for online payments, global payments, optimization, and protection services.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpmc-annual-report-2024",
+      "title": "Annual Report & Proxy",
+      "url": "https://www.jpmorganchase.com/ir/annual-report",
+      "kind": "annual-report",
+      "publisher": "JPMorganChase",
+      "note": "Primary investor-relations source for the 2024 annual report and official reporting materials.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-jpmc-financial-highlights-2024",
+      "title": "JPMorganChase 2024 Financial Highlights",
+      "url": "https://www.jpmorganchase.com/content/dam/jpmc/jpmorgan-chase-and-co/investor-relations/documents/financial-highlights-2024.pdf",
+      "kind": "annual-report",
+      "publisher": "JPMorganChase",
+      "note": "Provides official 2024 revenue, net income, ROTCE, assets, and year-end market capitalization.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-keytruda-official",
+      "title": "KEYTRUDA Official Site",
+      "url": "https://www.keytruda.com/",
+      "kind": "product-page",
+      "publisher": "Merck & Co., Inc.",
+      "note": "Primary source for KEYTRUDA indication scope and product positioning.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "src-kirkland-about",
       "title": "About Kirkland Signature",
       "url": "https://www.costco.com/f/-/about-kirkland-signature/",
@@ -18732,6 +22203,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "src-lnbits",
+      "title": "LNbits",
+      "url": "https://lnbits.com/",
+      "kind": "open-source-project",
+      "publisher": "LNbits",
+      "note": "Describes LNbits as a modular open-source Lightning wallet and payment tooling platform.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "src-macrotrends-lly-pe",
       "title": "Eli Lilly PE Ratio 2012-2025",
       "url": "https://www.macrotrends.net/stocks/charts/LLY/eli-lilly/pe-ratio",
@@ -18748,6 +22228,33 @@ export const contentGraph: ContentGraph = {
       "publisher": "MacroTrends",
       "note": "Reference for trailing P/E context in early 2026.",
       "accessedOn": "2026-03-24"
+    },
+    {
+      "id": "src-merck-fy2025-results",
+      "title": "Merck Announces Fourth-Quarter and Full-Year 2025 Financial Results",
+      "url": "https://www.merck.com/news/merck-highlights-progress-advancing-broad-diverse-pipeline/",
+      "kind": "investor-relations",
+      "publisher": "Merck & Co., Inc.",
+      "note": "Primary source for company revenue, net income, and the FY2025 sales weight of KEYTRUDA, GARDASIL, and Animal Health.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-merck-marketcap",
+      "title": "Merck & Co. Market Cap",
+      "url": "https://stockanalysis.com/stocks/mrk/market-cap/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Time-bound market-cap snapshot used for the company market-cap metric.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-merck-q3-2025-10q",
+      "title": "Merck Quarterly Report on Form 10-Q for the quarter ended September 30, 2025",
+      "url": "https://www.merck.com/wp-content/uploads/sites/124/2025/10/3Q25-Form-10-Q-2025-11-05.pdf",
+      "kind": "regulatory-filing",
+      "publisher": "Merck & Co., Inc.",
+      "note": "Supports KEYTRUDA royalty disclosures and product concentration context from a regulatory filing.",
+      "accessedOn": "2026-03-25"
     },
     {
       "id": "src-mesa",
@@ -18856,6 +22363,69 @@ export const contentGraph: ContentGraph = {
       "publisher": "Eli Lilly and Company",
       "note": "Used for Mounjaro indication, dosing form, and prescription-product framing.",
       "accessedOn": "2026-03-24"
+    },
+    {
+      "id": "src-mpp-biotherapeutics",
+      "title": "Improving Access to Biotherapeutics",
+      "url": "https://medicinespatentpool.org/what-we-do/biotherapeutics",
+      "kind": "analysis",
+      "publisher": "Medicines Patent Pool",
+      "note": "Supports the case that biotherapeutics access can be widened through voluntary licensing and technology transfer.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-mpp-mrna-programme",
+      "title": "Global mRNA Technology Transfer Programme",
+      "url": "https://medicinespatentpool.org/what-we-do/mrna-technology-transfer-programme",
+      "kind": "technical-docs",
+      "publisher": "Medicines Patent Pool",
+      "note": "Documents the federated technology-transfer model for locally owned regional mRNA manufacturing.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-netflix-2025-annual-report",
+      "title": "Netflix 2025 Annual Report",
+      "url": "https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx",
+      "kind": "annual-report",
+      "publisher": "Netflix Investor Relations",
+      "note": "Primary source for company description, strategy, competition framing, and 2025 financial results.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-netflix-ads-help",
+      "title": "Ads on Netflix",
+      "url": "https://help.netflix.com/en/node/126831",
+      "kind": "product-page",
+      "publisher": "Netflix Help Center",
+      "note": "Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-netflix-ads-plan",
+      "title": "Netflix with Ads, Starting at $7.99",
+      "url": "https://www.netflix.com/pr/ads-plan",
+      "kind": "product-page",
+      "publisher": "Netflix",
+      "note": "Official plan page describing price, ad load, supported features, and plan limitations.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-netflix-marketcap",
+      "title": "Netflix (NFLX) Market Capitalization",
+      "url": "https://companiesmarketcap.com/netflix/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Current market-cap snapshot and approximate market-cap rank used for bundle metrics.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-netflix-pe",
+      "title": "Netflix (NFLX) P/E Ratio",
+      "url": "https://companiesmarketcap.com/netflix/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Current trailing P/E snapshot used as a speculative valuation metric.",
+      "accessedOn": "2026-03-25"
     },
     {
       "id": "src-oem-docs",
@@ -19029,6 +22599,33 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-25"
     },
     {
+      "id": "src-openwrt-about",
+      "title": "About the OpenWrt/LEDE project",
+      "url": "https://openwrt.org/about",
+      "kind": "open-source-project",
+      "publisher": "OpenWrt",
+      "note": "Project overview used to support OpenWrt as an extensible open router platform and community-governed networking alternative.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-opnsense-docs",
+      "title": "Welcome to OPNsense’s documentation!",
+      "url": "https://docs.opnsense.org/",
+      "kind": "technical-docs",
+      "publisher": "OPNsense Documentation",
+      "note": "Documentation source used to support OPNsense feature breadth, mission, and operational maturity.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-opnsense-home",
+      "title": "OPNsense® is an open source, feature rich firewall and routing platform, offering cutting-edge network protection.",
+      "url": "https://opnsense.org/",
+      "kind": "open-source-project",
+      "publisher": "OPNsense",
+      "note": "Official OPNsense product overview used to support open firewall and routing capabilities plus community and licensing claims.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "src-ose-microfactory",
       "title": "Open Source Microfactory",
       "url": "https://wiki.opensourceecology.org/wiki/Open_Source_Microfactory",
@@ -19038,12 +22635,66 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "src-peertube",
+      "title": "What is PeerTube?",
+      "url": "https://joinpeertube.org/",
+      "kind": "technical-docs",
+      "publisher": "Framasoft",
+      "note": "Official overview of PeerTube’s federated, open-source, ad-free video-hosting model.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-peertube-activitypub",
+      "title": "PeerTube ActivityPub Documentation",
+      "url": "https://docs.joinpeertube.org/api/activitypub",
+      "kind": "technical-docs",
+      "publisher": "PeerTube Documentation",
+      "note": "Technical source for how PeerTube federates videos, channels, and interactions across servers.",
+      "accessedOn": "2026-03-25"
+    },
+    {
       "id": "src-platform-architecture",
       "title": "Architecture Center Overview",
       "url": "https://www.palantir.com/docs/foundry/architecture-center/overview",
       "kind": "technical-docs",
       "publisher": "Palantir",
       "note": "Documents Palantir's platform architecture, including Foundry, AIP, Apollo, and the Ontology system.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-pmi-brands",
+      "title": "Building leading brands",
+      "url": "https://www.pmi.com/investor-relations/overview/building-leading-brands/",
+      "kind": "investor-relations",
+      "publisher": "Philip Morris International",
+      "note": "Primary company source describing IQOS and ZYN, including category positioning and shipment or user claims.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-pmi-progress",
+      "title": "We're delivering a smoke free future, faster",
+      "url": "https://www.pmi.com/progress/",
+      "kind": "investor-relations",
+      "publisher": "Philip Morris International",
+      "note": "Company progress page with 2025 smoke-free revenue share, user counts, and market availability.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-pmi-q4-2025",
+      "title": "Philip Morris International Reports 2025 Fourth-Quarter & Full-Year Results",
+      "url": "https://www.pmi.com/investor-relations/press-releases-and-events/press-releases-overview/press-release-details/?newsId=29566",
+      "kind": "investor-relations",
+      "publisher": "Philip Morris International",
+      "note": "Primary source for 2025 revenue, smoke-free share, EPS, and operating margin commentary.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-podcast-value",
+      "title": "Podcast Namespace Value Tag",
+      "url": "https://podcasting2.org/docs/podcast-namespace/tags/value",
+      "kind": "technical-docs",
+      "publisher": "Podcasting 2.0",
+      "note": "Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.",
       "accessedOn": "2026-03-25"
     },
     {
@@ -19063,6 +22714,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "RISC-V International",
       "note": "Used as the primary reference for the open ISA ecosystem that could enable more open server compute alternatives.",
       "accessedOn": "2026-03-24"
+    },
+    {
+      "id": "src-sonic-about",
+      "title": "About – Sonic Foundation",
+      "url": "https://sonicfoundation.dev/about/",
+      "kind": "open-source-project",
+      "publisher": "Sonic Foundation",
+      "note": "Official SONiC overview used to support multi-vendor open NOS claims and production credibility.",
+      "accessedOn": "2026-03-25"
     },
     {
       "id": "src-stockanalysis-marketcap",
@@ -19090,6 +22750,33 @@ export const contentGraph: ContentGraph = {
       "publisher": "ThingsBoard",
       "note": "Official project site describing open-source telemetry ingestion, dashboards, alarms, and fleet-tracking capabilities.",
       "accessedOn": "2026-03-24"
+    },
+    {
+      "id": "src-webex-suite",
+      "title": "Webex Suite",
+      "url": "https://www.webex.com/collaboration-suite.html",
+      "kind": "product-page",
+      "publisher": "Webex by Cisco",
+      "note": "Official Webex suite page used to confirm the current collaboration workflows Cisco bundles under Webex.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-who-htap",
+      "title": "WHO Health Technology Access Programme",
+      "url": "https://www.who.int/initiatives/who-health-technology-access-programme",
+      "kind": "technical-docs",
+      "publisher": "World Health Organization",
+      "note": "Documents WHO’s program to expand regional innovation, technology transfer, and sustainable health-product manufacturing capacity.",
+      "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "src-who-mrna-tt",
+      "title": "mRNA Technology Transfer Programme",
+      "url": "https://www.who.int/initiatives/mrna-technology-transfer-%28mrna-tt%29-programme",
+      "kind": "technical-docs",
+      "publisher": "World Health Organization",
+      "note": "Evidence that WHO-backed transfer models are being extended toward sustainable regional manufacturing of vaccines and therapeutics.",
+      "accessedOn": "2026-03-25"
     },
     {
       "id": "src-xom-marketcap",
