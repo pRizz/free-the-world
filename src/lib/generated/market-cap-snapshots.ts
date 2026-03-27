@@ -3,7 +3,7 @@
 import type { MarketCapSnapshot } from "~/lib/domain/market-cap-snapshots";
 
 export const marketCapSnapshot: MarketCapSnapshot = {
-  "generatedAt": "2026-03-27T12:03:09.869Z",
+  "generatedAt": "2026-03-27T12:19:20.514Z",
   "sourceName": "CompaniesMarketCap",
   "rows": [
     {
@@ -15,7 +15,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$4.161 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -27,7 +27,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$3.716 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -39,7 +39,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$3.396 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -51,7 +51,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$2.720 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -63,7 +63,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$2.227 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -75,7 +75,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$1.467 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -87,7 +87,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$1.396 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -99,7 +99,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$1.385 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -111,7 +111,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$1.025 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "March 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": null
     },
     {
@@ -123,7 +123,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$974.06 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -135,7 +135,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$802.83 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -147,7 +147,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$689.30 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -159,7 +159,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$670.6 B",
       "sourceKind": "published-fallback",
       "sourceReportedAtLabel": "2026-03-25",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "Live fetch failed; used the latest published market-cap metric instead. Received 404 Not Found"
     },
     {
@@ -171,7 +171,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$589.07 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -183,7 +183,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$585.6 B",
       "sourceKind": "published-fallback",
       "sourceReportedAtLabel": "2026-03-24",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "Live fetch failed; used the latest published market-cap metric instead. Received 404 Not Found"
     },
     {
@@ -195,7 +195,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$446.88 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -207,7 +207,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$434.83 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -219,7 +219,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$415.44 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -231,7 +231,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$410.72 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -243,7 +243,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$400.86 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -255,7 +255,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$395.85 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -267,7 +267,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$373.42 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -279,7 +279,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$352.91 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -291,7 +291,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$346.20 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -303,7 +303,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$332.79 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -315,7 +315,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$332.22 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -327,7 +327,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$329.07 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -339,7 +339,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$324.62 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -351,7 +351,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$321.47 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -363,7 +363,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$300.87 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -375,7 +375,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$294.04 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -387,7 +387,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$268.67 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -399,7 +399,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$259.57 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     },
     {
@@ -411,7 +411,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$253.24 B",
       "sourceKind": "live",
       "sourceReportedAtLabel": "Mar 26th, 2026",
-      "fetchedAt": "2026-03-27T12:03:09.869Z",
+      "fetchedAt": "2026-03-27T12:19:20.514Z",
       "sourceNote": "retrieved from website (26-03-2026 22:01 UTC)"
     }
   ]
