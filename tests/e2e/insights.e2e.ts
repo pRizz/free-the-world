@@ -8,9 +8,31 @@ test("insights landing page renders the section overview and entry cards", async
   await expect(
     page.getByRole("heading", { name: /Visual arguments for the slowly free future/i }),
   ).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Market-cap disruption" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Post-bubble" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Capital release atlas" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Alternative pressure index" })).toBeVisible();
+});
+
+test("market-cap disruption page renders the pie chart and coverage table", async ({ page }) => {
+  await gotoRoute(page, "/insights/market-cap-disruption");
+
+  await expect(page).toHaveURL(/\/insights\/market-cap-disruption\/?$/);
+  await expect(
+    page.getByRole("heading", {
+      name: /How much of the analyzed S&P 500 sample do we think gets repriced\?/i,
+    }),
+  ).toBeVisible();
+  await expect(
+    page.getByLabel(
+      /Pie chart showing the analyzed S&P 500 market cap split between thesis-adjusted disrupted value and residual value\./i,
+    ),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /Download the latest market-cap CSV/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "Current cap" })).toBeVisible();
+  await expect(page.getByRole("columnheader", { name: "Cap source" })).toBeVisible();
 });
 
 test("post-bubble page renders the comparison charts and company table", async ({ page }) => {

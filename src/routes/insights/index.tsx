@@ -10,6 +10,7 @@ import {
   getAlternativePressureDataset,
   getCapitalAtRiskDataset,
   getDisruptionConceptDataset,
+  getMarketCapCoverageDataset,
   getPostBubbleDataset,
 } from "~/lib/domain/insights";
 
@@ -17,6 +18,7 @@ const postBubbleDataset = getPostBubbleDataset();
 const capitalAtRiskDataset = getCapitalAtRiskDataset();
 const alternativePressureDataset = getAlternativePressureDataset();
 const disruptionConceptDataset = getDisruptionConceptDataset();
+const marketCapCoverageDataset = getMarketCapCoverageDataset();
 
 const topCapitalAtRiskPoint = capitalAtRiskDataset.points[0];
 const topPressureCompany = alternativePressureDataset.companyRows.find(
@@ -25,6 +27,11 @@ const topPressureCompany = alternativePressureDataset.companyRows.find(
 const topConceptCompany = disruptionConceptDataset.companyRows.find(
   (row) => row.hasDocumentedConcepts,
 );
+const marketCapDisruptedShare =
+  marketCapCoverageDataset.totalCurrentMarketCap === 0
+    ? 0
+    : marketCapCoverageDataset.totalDisruptedMarketCap /
+      marketCapCoverageDataset.totalCurrentMarketCap;
 
 export default function InsightsPage() {
   return (
@@ -45,14 +52,14 @@ export default function InsightsPage() {
         <InsightKpiStrip
           items={[
             {
+              label: "Analyzed S&P 500 sample",
+              value: `${marketCapCoverageDataset.analyzedCompanyCount} companies`,
+              note: `${formatMoneyRange(marketCapCoverageDataset.totalDisruptedMarketCap)} currently modeled as repricable in the published sample.`,
+            },
+            {
               label: "IPO baselines",
               value: `${postBubbleDataset.rows.length} companies`,
               note: `${postBubbleDataset.excludedCompanies.length} published company currently lacks an IPO baseline.`,
-            },
-            {
-              label: "Capital at risk",
-              value: formatMoneyRange(capitalAtRiskDataset.totalFreedCapitalPotential),
-              note: "Illustrative capital release across the current published sample.",
             },
             {
               label: "Alternatives tracked",
@@ -78,6 +85,35 @@ export default function InsightsPage() {
           <ContentCard class="space-y-5">
             <div class="flex flex-wrap gap-2">
               <Badge tone="accent">Page 1</Badge>
+              <Badge tone="muted">Market-cap coverage</Badge>
+            </div>
+            <div class="space-y-3">
+              <h2 class="text-2xl font-semibold tracking-tight">Market-cap disruption</h2>
+              <p class="text-sm leading-7 text-muted-foreground">
+                Start with the simplest question: of the analyzed S&amp;P 500 sample we publish,
+                what share of current market cap looks challengeable if you combine fresh caps with
+                the site's current disruption ratios?
+              </p>
+            </div>
+            <div class="rounded-2xl border border-border bg-background/55 p-4">
+              <p class="text-xs uppercase tracking-[0.24em] text-muted-foreground">
+                Current disrupted slice
+              </p>
+              <p class="mt-2 text-xl font-semibold text-title-foreground">
+                {formatMoneyRange(marketCapCoverageDataset.totalDisruptedMarketCap)}
+              </p>
+              <p class="mt-2 text-sm leading-7 text-muted-foreground">
+                {formatMetricValue(marketCapDisruptedShare, "percentage", 0)} of{" "}
+                {formatMoneyRange(marketCapCoverageDataset.totalCurrentMarketCap)} across{" "}
+                {marketCapCoverageDataset.analyzedCompanyCount} analyzed companies.
+              </p>
+            </div>
+            <ButtonLink href="/insights/market-cap-disruption">Open the market-cap view</ButtonLink>
+          </ContentCard>
+
+          <ContentCard class="space-y-5">
+            <div class="flex flex-wrap gap-2">
+              <Badge tone="accent">Page 2</Badge>
               <Badge tone="muted">IPO vs now vs residual</Badge>
             </div>
             <div class="space-y-3">
@@ -106,7 +142,7 @@ export default function InsightsPage() {
 
           <ContentCard class="space-y-5">
             <div class="flex flex-wrap gap-2">
-              <Badge tone="accent">Page 2</Badge>
+              <Badge tone="accent">Page 3</Badge>
               <Badge tone="muted">Moat vs decentralizability</Badge>
             </div>
             <div class="space-y-3">
@@ -134,7 +170,7 @@ export default function InsightsPage() {
 
           <ContentCard class="space-y-5">
             <div class="flex flex-wrap gap-2">
-              <Badge tone="accent">Page 3</Badge>
+              <Badge tone="accent">Page 4</Badge>
               <Badge tone="muted">Replacement landscape</Badge>
             </div>
             <div class="space-y-3">
@@ -163,7 +199,7 @@ export default function InsightsPage() {
 
           <ContentCard class="space-y-5">
             <div class="flex flex-wrap gap-2">
-              <Badge tone="accent">Page 4</Badge>
+              <Badge tone="accent">Page 5</Badge>
               <Badge tone="muted">Original attack vectors</Badge>
             </div>
             <div class="space-y-3">

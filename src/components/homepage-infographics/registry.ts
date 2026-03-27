@@ -1,10 +1,21 @@
 import { AlternativePressurePreview } from "~/components/homepage-infographics/alternative-pressure-preview";
 import { CapitalAtRiskPreview } from "~/components/homepage-infographics/capital-at-risk-preview";
 import { DisruptionConceptsPreview } from "~/components/homepage-infographics/disruption-concepts-preview";
+import { MarketCapDisruptionPreview } from "~/components/homepage-infographics/market-cap-disruption-preview";
 import { PostBubblePreview } from "~/components/homepage-infographics/post-bubble-preview";
 import type { HomepageInfographicDefinition } from "~/components/homepage-infographics/types";
 
 export const homepageInfographics = [
+  {
+    id: "market-cap-disruption",
+    eyebrow: "Rotating infographic · Market-cap disruption",
+    title: "How much of the analyzed S&P 500 sample looks repricable?",
+    description:
+      "The front-page pie chart combines the latest committed market caps with the site's current disruption-share model, so the homepage can show the scale of the thesis before readers open the deeper views.",
+    href: "/insights/market-cap-disruption",
+    ctaLabel: "Open the market-cap view",
+    component: MarketCapDisruptionPreview,
+  },
   {
     id: "capital-at-risk",
     eyebrow: "Rotating infographic · Capital release atlas",

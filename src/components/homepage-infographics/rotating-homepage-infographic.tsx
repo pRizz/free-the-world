@@ -69,6 +69,11 @@ export function RotatingHomepageInfographic() {
 
   onMount(() => {
     const maybeStoredInfographicId = readStoredInfographicId();
+    if (!maybeStoredInfographicId) {
+      persistInfographicId(defaultInfographicId);
+      return;
+    }
+
     selectRandomInfographic(maybeStoredInfographicId);
   });
 
@@ -78,7 +83,7 @@ export function RotatingHomepageInfographic() {
         <Badge tone="muted">
           Infographic {selectedInfographicIndex() + 1} of {homepageInfographics.length}
         </Badge>
-        <Badge tone="muted">Shuffles on each visit</Badge>
+        <Badge tone="muted">Page 1 on first load, shuffle after</Badge>
       </div>
 
       <PageHeader
