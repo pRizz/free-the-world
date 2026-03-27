@@ -8,6 +8,7 @@ import {
   getCapitalAtRiskDataset,
   getDisruptionConceptDataset,
   getDisruptionConceptMetricAverages,
+  getMarketCapCoverageDataset,
   getPostBubbleDataset,
 } from "~/lib/domain/insights";
 import type {
@@ -374,4 +375,137 @@ test("calculateDisruptionConceptScore emphasizes feasibility and pressure", () =
 
   // Assert
   expect(score).toBeLessThan(strongerExecutionScore);
+});
+
+test("getMarketCapCoverageDataset prefers live snapshot caps and dedupes S&P index membership", () => {
+  // Arrange
+  const sp500WithLiveSnapshot = makeCompany(
+    "alpha",
+    {
+      moat: makeAssessment(6),
+      decentralizability: makeAssessment(8),
+      profitability: makeAssessment(7),
+      marketCap: {
+        ...makeAssessment(100),
+        lastReviewedOn: "2026-03-10",
+      },
+    },
+    {
+      name: "Alpha",
+      indexIds: ["sp500-top10", "sp500-top20"],
+    },
+  );
+  const sp500WithFallback = makeCompany(
+    "beta",
+    {
+      moat: {
+        ...makeAssessment(5),
+        lastReviewedOn: "2026-03-01",
+      },
+      decentralizability: {
+        ...makeAssessment(7),
+        lastReviewedOn: "2026-03-01",
+      },
+      profitability: {
+        ...makeAssessment(6),
+        lastReviewedOn: "2026-03-01",
+      },
+      marketCap: {
+        ...makeAssessment(200),
+        lastReviewedOn: "2026-03-12",
+      },
+    },
+    {
+      name: "Beta",
+      indexIds: ["sp500-top35"],
+    },
+  );
+  const nonSp500Company = makeCompany(
+    "gamma",
+    {
+      moat: makeAssessment(7),
+      decentralizability: makeAssessment(7),
+      profitability: makeAssessment(7),
+      marketCap: makeAssessment(300),
+    },
+    {
+      name: "Gamma",
+      indexIds: [],
+    },
+  );
+
+  // Act
+  const dataset = getMarketCapCoverageDataset(
+    [sp500WithLiveSnapshot, sp500WithFallback, nonSp500Company],
+    [
+      {
+        companySlug: "alpha",
+        companyName: "Alpha",
+        ticker: "ALPHA",
+        companiesMarketCapUrl: "https://example.com/alpha",
+        marketCapUsd: 150,
+        marketCapDisplay: "$150",
+        sourceKind: "live",
+        sourceReportedAtLabel: "2026-03-20",
+        fetchedAt: "2026-03-21T00:00:00.000Z",
+        sourceNote: "Live row",
+      },
+    ],
+  );
+
+  // Assert
+  expect(dataset.rows.map((row) => row.company.slug)).toEqual(["beta", "alpha"]);
+  expect(dataset.analyzedCompanyCount).toBe(2);
+  expect(dataset.rows[0]?.marketCapSourceKind).toBe("published");
+  expect(dataset.rows[0]?.currentMarketCap).toBe(200);
+  expect(dataset.rows[1]?.marketCapSourceKind).toBe("live");
+  expect(dataset.rows[1]?.currentMarketCap).toBe(150);
+  expect(dataset.totalCurrentMarketCap).toBe(350);
+  expect(dataset.liveSnapshotCompanyCount).toBe(1);
+  expect(dataset.fallbackSnapshotCompanyCount).toBe(0);
+  expect(dataset.staleThesisCompanyCount).toBe(2);
+  expect(dataset.latestMarketCapSnapshotAt).toBe("2026-03-21T00:00:00.000Z");
+});
+
+test("getMarketCapCoverageDataset uses published fallback snapshot rows when live fetches failed", () => {
+  // Arrange
+  const sp500Company = makeCompany(
+    "delta",
+    {
+      moat: makeAssessment(4),
+      decentralizability: makeAssessment(8),
+      profitability: makeAssessment(5),
+      marketCap: makeAssessment(250),
+    },
+    {
+      name: "Delta",
+      indexIds: ["sp500-top20"],
+    },
+  );
+
+  // Act
+  const dataset = getMarketCapCoverageDataset(
+    [sp500Company],
+    [
+      {
+        companySlug: "delta",
+        companyName: "Delta",
+        ticker: "DELTA",
+        companiesMarketCapUrl: "https://example.com/delta",
+        marketCapUsd: 240,
+        marketCapDisplay: "$240",
+        sourceKind: "published-fallback",
+        sourceReportedAtLabel: "2026-03-18",
+        fetchedAt: "2026-03-19T00:00:00.000Z",
+        sourceNote: "Fallback row",
+      },
+    ],
+  );
+
+  // Assert
+  expect(dataset.rows).toHaveLength(1);
+  expect(dataset.rows[0]?.marketCapSourceKind).toBe("published-fallback");
+  expect(dataset.rows[0]?.currentMarketCap).toBe(240);
+  expect(dataset.fallbackSnapshotCompanyCount).toBe(1);
+  expect(dataset.liveSnapshotCompanyCount).toBe(0);
 });

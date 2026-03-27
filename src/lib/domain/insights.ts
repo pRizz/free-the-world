@@ -1,5 +1,7 @@
 import { alternatives, companies, disruptionConcepts, products } from "~/lib/content-graph";
+import { calculateFreedCapitalPotentialShare } from "~/lib/domain/scoring";
 import type { Alternative, Company, DisruptionConcept, Product } from "~/lib/domain/types";
+import { marketCapSnapshotRows } from "~/lib/market-cap-snapshots";
 
 export interface PostBubbleRow {
   company: Company;
@@ -115,6 +117,34 @@ export interface DisruptionConceptDataset {
   productsWithExceptions: number;
   totalConceptCount: number;
   averageConceptScore: number | null;
+}
+
+export interface MarketCapCoverageRow {
+  company: Company;
+  currentMarketCap: number;
+  currentMarketCapDisplay: string;
+  marketCapSourceKind: "live" | "published-fallback" | "published";
+  marketCapSourceReportedAtLabel: string | null;
+  marketCapFetchedAt: string | null;
+  marketCapSourceNote: string | null;
+  disruptionShare: number;
+  disruptionShareLastReviewedOn: string;
+  disruptedMarketCap: number;
+  residualMarketCap: number;
+}
+
+export interface MarketCapCoverageDataset {
+  rows: MarketCapCoverageRow[];
+  totalCurrentMarketCap: number;
+  totalDisruptedMarketCap: number;
+  totalResidualMarketCap: number;
+  averageDisruptionShare: number | null;
+  analyzedCompanyCount: number;
+  liveSnapshotCompanyCount: number;
+  fallbackSnapshotCompanyCount: number;
+  staleThesisCompanyCount: number;
+  latestMarketCapSnapshotAt: string | null;
+  latestDisruptionReviewAt: string | null;
 }
 
 export function calculateResidualMarketCap(
@@ -528,6 +558,91 @@ export function getDisruptionConceptDataset(
   };
 }
 
+export function getMarketCapCoverageDataset(
+  inputCompanies: Company[] = companies,
+  inputSnapshotRows = marketCapSnapshotRows,
+): MarketCapCoverageDataset {
+  const snapshotRowsByCompanySlug = new Map(
+    inputSnapshotRows.map((row) => [row.companySlug, row] as const),
+  );
+  const rows = inputCompanies
+    .filter((company) => company.indexIds.some((indexId) => indexId.startsWith("sp500-")))
+    .map((company) => {
+      const maybeMoat = company.metrics.moat?.value;
+      const maybeDecentralizability = company.metrics.decentralizability?.value;
+      const maybeProfitability = company.metrics.profitability?.value;
+      const maybePublishedMarketCap = company.metrics.marketCap;
+
+      if (
+        maybeMoat === undefined ||
+        maybeDecentralizability === undefined ||
+        maybeProfitability === undefined
+      ) {
+        return null;
+      }
+
+      const disruptionShare = calculateFreedCapitalPotentialShare(
+        maybeMoat,
+        maybeDecentralizability,
+        maybeProfitability,
+      );
+      const snapshotRow = snapshotRowsByCompanySlug.get(company.slug);
+      const currentMarketCap = snapshotRow?.marketCapUsd ?? maybePublishedMarketCap?.value;
+
+      if (currentMarketCap === undefined) {
+        return null;
+      }
+
+      const disruptionShareLastReviewedOn =
+        maxIsoDate(
+          company.metrics.moat?.lastReviewedOn,
+          company.metrics.decentralizability?.lastReviewedOn,
+          company.metrics.profitability?.lastReviewedOn,
+        ) ?? "";
+
+      return {
+        company,
+        currentMarketCap,
+        currentMarketCapDisplay:
+          snapshotRow?.marketCapDisplay ?? formatMoneyRangeFromNumber(currentMarketCap),
+        marketCapSourceKind:
+          snapshotRow?.sourceKind ?? (maybePublishedMarketCap ? "published" : "published-fallback"),
+        marketCapSourceReportedAtLabel:
+          snapshotRow?.sourceReportedAtLabel ?? maybePublishedMarketCap?.lastReviewedOn ?? null,
+        marketCapFetchedAt: snapshotRow?.fetchedAt ?? null,
+        marketCapSourceNote: snapshotRow?.sourceNote ?? null,
+        disruptionShare,
+        disruptionShareLastReviewedOn,
+        disruptedMarketCap: currentMarketCap * disruptionShare,
+        residualMarketCap: currentMarketCap * (1 - disruptionShare),
+      } satisfies MarketCapCoverageRow;
+    })
+    .filter((row): row is MarketCapCoverageRow => row !== null)
+    .sort((left, right) => {
+      if (right.currentMarketCap !== left.currentMarketCap) {
+        return right.currentMarketCap - left.currentMarketCap;
+      }
+
+      return left.company.name.localeCompare(right.company.name);
+    });
+
+  return {
+    rows,
+    totalCurrentMarketCap: sum(rows.map((row) => row.currentMarketCap)),
+    totalDisruptedMarketCap: sum(rows.map((row) => row.disruptedMarketCap)),
+    totalResidualMarketCap: sum(rows.map((row) => row.residualMarketCap)),
+    averageDisruptionShare: average(rows.map((row) => row.disruptionShare)),
+    analyzedCompanyCount: rows.length,
+    liveSnapshotCompanyCount: rows.filter((row) => row.marketCapSourceKind === "live").length,
+    fallbackSnapshotCompanyCount: rows.filter(
+      (row) => row.marketCapSourceKind === "published-fallback",
+    ).length,
+    staleThesisCompanyCount: rows.filter((row) => isThesisPossiblyStale(row)).length,
+    latestMarketCapSnapshotAt: maxIsoDate(...rows.map((row) => row.marketCapFetchedAt)),
+    latestDisruptionReviewAt: maxIsoDate(...rows.map((row) => row.disruptionShareLastReviewedOn)),
+  };
+}
+
 function compareAlternativePressureRows(
   left: AlternativePressureProductRow,
   right: AlternativePressureProductRow,
@@ -588,4 +703,46 @@ function average(values: number[]) {
   }
 
   return sum(values) / values.length;
+}
+
+function maxIsoDate(...values: Array<string | null | undefined>) {
+  const presentValues = values.filter((value): value is string => Boolean(value));
+  if (presentValues.length === 0) {
+    return null;
+  }
+
+  return [...presentValues].sort().at(-1) ?? null;
+}
+
+function formatMoneyRangeFromNumber(value: number) {
+  if (value >= 1_000_000_000_000) {
+    return `$${(value / 1_000_000_000_000).toFixed(1).replace(/\.0$/, "")}T`;
+  }
+
+  if (value >= 1_000_000_000) {
+    return `$${(value / 1_000_000_000).toFixed(1).replace(/\.0$/, "")}B`;
+  }
+
+  return `$${Math.round(value).toLocaleString("en-US")}`;
+}
+
+function isThesisPossiblyStale(row: MarketCapCoverageRow) {
+  const marketCapDate = row.marketCapSourceReportedAtLabel ?? row.marketCapFetchedAt;
+  if (!marketCapDate) {
+    return false;
+  }
+
+  const maybeMarketCapTimestamp = parseIsoTimestamp(marketCapDate);
+  const maybeDisruptionTimestamp = parseIsoTimestamp(row.disruptionShareLastReviewedOn);
+
+  if (maybeMarketCapTimestamp !== null && maybeDisruptionTimestamp !== null) {
+    return maybeDisruptionTimestamp < maybeMarketCapTimestamp;
+  }
+
+  return row.disruptionShareLastReviewedOn < marketCapDate;
+}
+
+function parseIsoTimestamp(input: string) {
+  const timestamp = Date.parse(input);
+  return Number.isFinite(timestamp) ? timestamp : null;
 }

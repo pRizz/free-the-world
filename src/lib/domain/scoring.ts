@@ -7,6 +7,18 @@
  * - stronger moats reduce the rate of capital release
  * - profitability increases the amount of value that exists to be challenged
  */
+export function calculateFreedCapitalPotentialShare(
+  moatScore: number,
+  decentralizabilityScore: number,
+  profitabilityScore: number,
+) {
+  const decentralizationFactor = decentralizabilityScore / 10;
+  const moatResistance = 1 - moatScore / 12;
+  const profitElasticity = 0.55 + profitabilityScore / 20;
+
+  return Math.max(0, Math.min(1, decentralizationFactor * moatResistance * profitElasticity));
+}
+
 export function calculateFreedCapitalPotential(
   marketCap: number,
   moatScore: number,

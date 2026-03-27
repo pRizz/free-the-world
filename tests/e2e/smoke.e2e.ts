@@ -17,6 +17,13 @@ test("home page renders shell and hero content", async ({ page }) => {
   await expect(
     page.getByRole("main").getByRole("link", { name: "Inspect or contribute on GitHub" }),
   ).toHaveAttribute("href", repositoryUrl);
+  await expect(page.getByText("Infographic 1 of 5")).toBeVisible();
+  await expect(
+    page.getByRole("heading", {
+      name: /How much of the analyzed S&P 500 sample looks repricable\?/i,
+    }),
+  ).toBeVisible();
+  await expect(page.getByRole("link", { name: "Open the market-cap view" })).toBeVisible();
   await expect(
     page.getByRole("contentinfo").getByRole("link", { name: "Open source on GitHub" }),
   ).toHaveAttribute("href", repositoryUrl);

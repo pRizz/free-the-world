@@ -17,9 +17,29 @@ test("insights landing page stacks cleanly on mobile", async ({ page }) => {
   await expect(
     page.getByRole("heading", { name: /Visual arguments for the slowly free future/i }),
   ).toBeVisible();
+  await expect(page.getByRole("link", { name: /Open the market-cap view/i })).toBeVisible();
   await expect(page.getByRole("link", { name: /Open the post-bubble view/i })).toBeVisible();
   await expect(page.getByRole("link", { name: /Open the atlas/i })).toBeVisible();
   await expect(page.getByRole("link", { name: /Open the pressure index/i })).toBeVisible();
+  await expectNoPageLevelHorizontalOverflow(page);
+});
+
+test("market-cap disruption page keeps the pie chart and table readable on mobile", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await gotoRoute(page, "/insights/market-cap-disruption");
+
+  await expect(
+    page.getByRole("heading", {
+      name: /How much of the analyzed S&P 500 sample do we think gets repriced\?/i,
+    }),
+  ).toBeVisible();
+  await expect(page.getByText(/A simple pie chart for the current sample/i)).toBeVisible();
+  await expect(
+    page.getByRole("link", { name: /Download the latest market-cap CSV/i }),
+  ).toBeVisible();
+  await expect(page.getByRole("table")).toBeVisible();
   await expectNoPageLevelHorizontalOverflow(page);
 });
 

@@ -9,6 +9,7 @@ const rawRoutes = [
   "/insights/alternative-pressure",
   "/insights/capital-at-risk",
   "/insights/disruption-concepts",
+  "/insights/market-cap-disruption",
   "/insights/post-bubble",
   "/mirrors",
   "/methodology",
