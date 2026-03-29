@@ -91,6 +91,11 @@ The repository separates published content from draft research:
 - `scripts/ralph-loop.ts` → low-level repeatable AI prompt loop
 - `scripts/sync-company.ts` / `scripts/sync-all.ts` → structured research-to-publish commands
 
+Prompt assets for reusing this project's formula in other repos:
+
+- `prompts/gsd-new-project-research-registry.md` → generic `$gsd-new-project` seed for thesis-driven research registry sites using this repo's stack and architecture defaults
+- `prompts/gsd-new-project-politician-wealth-example.md` → worked example for a US politician wealth and holdings research site using the same stack pattern
+
 Core content commands:
 
 ```bash
