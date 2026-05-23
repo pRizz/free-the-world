@@ -1155,13 +1155,19 @@ export const contentGraph: ContentGraph = {
       "sourceIds": [
         "meta-investor",
         "meta-tech",
+        "meta-forum-app-store",
+        "gadgets360-meta-forum",
+        "geekout-meta-forum",
         "whatsapp",
         "meta-marketcap",
         "meta-ipo-prospectus",
         "meta-ipo-registration",
         "mastodon",
         "pixelfed",
-        "matrix"
+        "matrix",
+        "lemmy",
+        "piefed",
+        "discourse"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -1169,6 +1175,7 @@ export const contentGraph: ContentGraph = {
       "snapshotNote": "Curated early-2026 public-source snapshot. Exact ordering can drift with the tape.",
       "productSlugs": [
         "instagram",
+        "meta-forum",
         "whatsapp-platform"
       ],
       "metrics": {
@@ -6286,6 +6293,44 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "meta-forum",
+      "name": "Forum",
+      "category": "Community platform",
+      "homepageUrl": "https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862",
+      "summary": "Standalone iOS app that turns Facebook Groups into a Reddit-style discussion and answer surface.",
+      "whyItMatters": "Forum is Meta's attempt to repackage Facebook Groups as a cleaner community knowledge layer before Reddit-like utility drifts elsewhere.",
+      "replacementSketch": [
+        "Federated forums can preserve topical communities without requiring a Facebook account or central graph owner.",
+        "Self-hosted community platforms let groups keep archives, moderation norms, and member identity portable."
+      ],
+      "sourceIds": [
+        "meta-forum-app-store",
+        "gadgets360-meta-forum",
+        "geekout-meta-forum",
+        "lemmy",
+        "piefed",
+        "discourse"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "meta-platforms",
+      "alternativeSlugs": [
+        "lemmy-communities",
+        "piefed-forums",
+        "discourse-communities"
+      ],
+      "disruptionConceptSlugs": [
+        "meta-forum-federated-answer-engine",
+        "meta-forum-portable-community-commons"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Meta Platforms's Forum\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: Forum\n- Product slug: meta-forum\n- Product category: Community platform\n- Product homepage: https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n- Product summary: Standalone iOS app that turns Facebook Groups into a Reddit-style discussion and answer surface.\n- Why it matters: Forum is Meta's attempt to repackage Facebook Groups as a cleaner community knowledge layer before Reddit-like utility drifts elsewhere.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Federated forums can preserve topical communities without requiring a Facebook account or central graph owner.\n- Self-hosted community platforms let groups keep archives, moderation norms, and member identity portable.\n\n## Existing Alternatives Worth Studying First\n\n- Lemmy (decentralized): Federated discussion platform for Reddit-like communities, threaded comments, voting, and self-hosted instances.. Homepage: https://join-lemmy.org/. Repo: https://github.com/LemmyNet/lemmy.\n- PieFed (decentralized): Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.. Homepage: https://join.piefed.social/. Repo: https://codeberg.org/rimu/pyfedi/.\n- Discourse (open-source): Open-source community platform for searchable forums, support hubs, product feedback, and member-owned knowledge bases.. Homepage: https://www.discourse.org/. Repo: https://github.com/discourse/discourse.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Discourse (Discourse) - https://www.discourse.org/\n  Why it matters: Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Facebook's new Forum app is Meta's clearest challenge to Reddit yet (Geekout) - https://geekout.mattnavarra.com/p/facebook-forum-app-reddit-spotify-disco-ball-icon-linkedin-ai-non-consensual-moderation\n  Why it matters: Analysis of Forum as Meta's attempt to copy Reddit's community knowledge utility through Facebook Groups.\n- Forum, a Facebook app (Apple App Store) - https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n  Why it matters: Primary app listing for Meta's Forum app, including Facebook account carry-over, Ask, and admin AI assistant descriptions.\n- Lemmy (Lemmy) - https://join-lemmy.org/\n  Why it matters: Federated open-source discussion platform with Reddit-like communities, voting, threaded comments, and self-hosting.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Launches Forum App as a Reddit-Like Platform for Discussions With AI-Powered Assistant for Admins (Gadgets 360) - https://www.gadgets360.com/apps/news/meta-forum-app-facebook-listing-store-ios-features-11533633\n  Why it matters: Coverage describing Forum as a Reddit-like Facebook Groups app with Ask and admin AI features.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- PieFed (PieFed) - https://join.piefed.social/\n  Why it matters: Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's Forum business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-23"
+      }
+    },
+    {
       "slug": "whatsapp-platform",
       "name": "WhatsApp",
       "category": "Messaging",
@@ -9556,6 +9601,156 @@ export const contentGraph: ContentGraph = {
         "mastodon"
       ],
       "productSlug": "instagram"
+    },
+    {
+      "slug": "lemmy-communities",
+      "name": "Lemmy",
+      "kind": "decentralized",
+      "homepageUrl": "https://join-lemmy.org/",
+      "repoUrl": "https://github.com/LemmyNet/lemmy",
+      "summary": "Federated discussion platform for Reddit-like communities, threaded comments, voting, and self-hosted instances.",
+      "metrics": {
+        "openness": {
+          "value": 9.4,
+          "rationale": "Lemmy is open source, self-hostable, and developed in public.",
+          "sourceIds": [
+            "lemmy"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "decentralizationFit": {
+          "value": 9.3,
+          "rationale": "Federated instances shift community hosting and moderation away from one corporate operator.",
+          "sourceIds": [
+            "lemmy"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "readiness": {
+          "value": 7.2,
+          "rationale": "The core Reddit-style interaction model is already usable, with multiple clients and active servers.",
+          "sourceIds": [
+            "lemmy"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "costLeverage": {
+          "value": 7.4,
+          "rationale": "It pressures proprietary community apps by proving forums can run without ads, tracking, or centralized feed control.",
+          "sourceIds": [
+            "lemmy"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        }
+      },
+      "sourceIds": [
+        "lemmy"
+      ],
+      "productSlug": "meta-forum"
+    },
+    {
+      "slug": "piefed-forums",
+      "name": "PieFed",
+      "kind": "decentralized",
+      "homepageUrl": "https://join.piefed.social/",
+      "repoUrl": "https://codeberg.org/rimu/pyfedi/",
+      "summary": "Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.",
+      "metrics": {
+        "openness": {
+          "value": 9.2,
+          "rationale": "PieFed is AGPL-licensed, developer-friendly, and openly hosted on Codeberg.",
+          "sourceIds": [
+            "piefed"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "decentralizationFit": {
+          "value": 9.4,
+          "rationale": "ActivityPub federation and self-hosting are central to the product's design.",
+          "sourceIds": [
+            "piefed"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "readiness": {
+          "value": 6.4,
+          "rationale": "PieFed is active and usable, though less mature than larger forum and Fediverse projects.",
+          "sourceIds": [
+            "piefed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "costLeverage": {
+          "value": 7.1,
+          "rationale": "Its ad-free, user-controlled model creates credible pressure on engagement-driven community products.",
+          "sourceIds": [
+            "piefed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        }
+      },
+      "sourceIds": [
+        "piefed"
+      ],
+      "productSlug": "meta-forum"
+    },
+    {
+      "slug": "discourse-communities",
+      "name": "Discourse",
+      "kind": "open-source",
+      "homepageUrl": "https://www.discourse.org/",
+      "repoUrl": "https://github.com/discourse/discourse",
+      "summary": "Open-source community platform for searchable forums, support hubs, product feedback, and member-owned knowledge bases.",
+      "metrics": {
+        "openness": {
+          "value": 8.7,
+          "rationale": "The codebase is openly available, self-hosting is supported, and data export is a core selling point.",
+          "sourceIds": [
+            "discourse"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "decentralizationFit": {
+          "value": 7.1,
+          "rationale": "Discourse is not primarily federated, but it gives communities meaningful hosting and data ownership choices.",
+          "sourceIds": [
+            "discourse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "readiness": {
+          "value": 8.8,
+          "rationale": "Discourse is mature, widely deployed, and already suitable for serious public communities.",
+          "sourceIds": [
+            "discourse"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "costLeverage": {
+          "value": 7.2,
+          "rationale": "Self-hosting and open data exports reduce vendor lock-in for groups that would otherwise depend on platform-owned communities.",
+          "sourceIds": [
+            "discourse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        }
+      },
+      "sourceIds": [
+        "discourse"
+      ],
+      "productSlug": "meta-forum"
     },
     {
       "slug": "matrix-messaging",
@@ -17298,6 +17493,180 @@ export const contentGraph: ContentGraph = {
       ]
     },
     {
+      "slug": "meta-forum-federated-answer-engine",
+      "name": "Federated Community Answer Engine",
+      "summary": "A cross-instance forum layer that helps people ask questions once and discover answers from many independently hosted communities.",
+      "angleIds": [
+        "federation",
+        "decentralized-coordination",
+        "bitcoin",
+        "lightning"
+      ],
+      "thesis": "Copy Forum's answer-retrieval utility while refusing the Facebook-account dependency and single-owner community graph.",
+      "bitcoinOrDecentralizationRole": "Federation keeps communities independently hosted while optional micropayments or reputation fees can reward useful answers and deter spam.",
+      "coordinationMechanism": "Instances publish topic indexes, clients query across trusted servers, and communities decide which sources they admit into local answer summaries.",
+      "verificationOrTrustModel": "Signed posts, transparent moderation logs, instance reputation, and payment-backed rate limits reduce low-cost spam and synthetic recommendations.",
+      "failureModes": [
+        "Cross-instance search can become noisy or expensive",
+        "Large communities may still prefer a single high-reach platform"
+      ],
+      "adoptionPath": [
+        "Start with technical and local-interest communities that already distrust closed feeds",
+        "Add answer aggregation and moderation controls once instance-to-instance trust improves"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "meta-forum-app-store",
+        "gadgets360-meta-forum",
+        "geekout-meta-forum"
+      ],
+      "enablerSourceIds": [
+        "lemmy",
+        "piefed",
+        "discourse"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.9,
+          "rationale": "The concept replaces one Facebook-owned answer surface with independently hosted community indexes.",
+          "sourceIds": [
+            "meta-forum-app-store",
+            "lemmy",
+            "piefed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "coordinationCredibility": {
+          "value": 7.4,
+          "rationale": "Forum-style Q&A already has clear demand, and existing federated forums provide plausible coordination substrates.",
+          "sourceIds": [
+            "geekout-meta-forum",
+            "lemmy",
+            "piefed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "implementationFeasibility": {
+          "value": 7,
+          "rationale": "The forum, federation, and self-hosting primitives exist; cross-instance answer ranking is the harder product layer.",
+          "sourceIds": [
+            "lemmy",
+            "piefed",
+            "discourse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "incumbentPressure": {
+          "value": 7.8,
+          "rationale": "A good federated answer layer would undercut Forum's attempt to make Facebook Groups the default community knowledge base.",
+          "sourceIds": [
+            "gadgets360-meta-forum",
+            "geekout-meta-forum",
+            "lemmy"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        }
+      },
+      "productSlug": "meta-forum",
+      "sourceIds": [
+        "meta-forum-app-store",
+        "gadgets360-meta-forum",
+        "geekout-meta-forum",
+        "lemmy",
+        "piefed",
+        "discourse"
+      ]
+    },
+    {
+      "slug": "meta-forum-portable-community-commons",
+      "name": "Portable Community Commons",
+      "summary": "Groups keep archives, moderation norms, member reputation, and discovery metadata portable across forum hosts instead of locking that value inside Facebook.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation",
+        "bitcoin",
+        "peer-to-peer-marketplace"
+      ],
+      "thesis": "Unlike a pure answer engine, this attacks Forum's deeper lock-in: the durable social and moderation state around Facebook Groups.",
+      "bitcoinOrDecentralizationRole": "Open identity and payment rails can make contributor reputation, anti-spam deposits, and community funding portable across hosts.",
+      "coordinationMechanism": "Communities maintain exportable archives and signed moderation records that can be imported by compatible hosts or mirrored across instances.",
+      "verificationOrTrustModel": "Signed moderation actions, portable member attestations, and public export manifests make it harder for one host to trap community state.",
+      "failureModes": [
+        "Portable moderation records can expose sensitive community context",
+        "Mainstream groups may prioritize convenience over sovereignty"
+      ],
+      "adoptionPath": [
+        "Begin with open-source, hobbyist, and local communities that already maintain public archives",
+        "Layer in migration tooling for groups leaving centralized platforms"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "meta-forum-app-store",
+        "geekout-meta-forum"
+      ],
+      "enablerSourceIds": [
+        "discourse",
+        "lemmy",
+        "piefed"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.4,
+          "rationale": "Portable archives and moderation state move the community's durable value away from a single app owner.",
+          "sourceIds": [
+            "discourse",
+            "lemmy",
+            "piefed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "coordinationCredibility": {
+          "value": 7.1,
+          "rationale": "Communities already migrate between forums; standardized exports and attestations make the coordination problem tractable.",
+          "sourceIds": [
+            "discourse",
+            "lemmy"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Export and self-hosting tools are mature, while shared reputation and moderation portability need more convention-setting.",
+          "sourceIds": [
+            "discourse",
+            "piefed"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        },
+        "incumbentPressure": {
+          "value": 7.5,
+          "rationale": "It pressures Forum by making the Facebook Groups archive and moderator toolkit easier to leave behind.",
+          "sourceIds": [
+            "meta-forum-app-store",
+            "geekout-meta-forum",
+            "discourse"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-23"
+        }
+      },
+      "productSlug": "meta-forum",
+      "sourceIds": [
+        "meta-forum-app-store",
+        "geekout-meta-forum",
+        "discourse",
+        "lemmy",
+        "piefed"
+      ]
+    },
+    {
       "slug": "whatsapp-platform-concept",
       "name": "Spam-Priced Messaging Mesh",
       "summary": "An open messaging network that prices spam, routes across federated providers, and lets users keep identity and contact graphs outside one corporate app.",
@@ -20448,6 +20817,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "discourse",
+      "title": "Discourse",
+      "url": "https://www.discourse.org/",
+      "kind": "open-source-project",
+      "publisher": "Discourse",
+      "note": "Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.",
+      "accessedOn": "2026-05-23"
+    },
+    {
       "id": "fairlife-site",
       "title": "Fairlife – Official Website",
       "url": "https://fairlife.com/",
@@ -20518,6 +20896,24 @@ export const contentGraph: ContentGraph = {
       "publisher": "Fedimint",
       "note": "Explains federated Chaumian ecash and Lightning interoperability for community-scale payment coordination.",
       "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "gadgets360-meta-forum",
+      "title": "Meta Launches Forum App as a Reddit-Like Platform for Discussions With AI-Powered Assistant for Admins",
+      "url": "https://www.gadgets360.com/apps/news/meta-forum-app-facebook-listing-store-ios-features-11533633",
+      "kind": "analysis",
+      "publisher": "Gadgets 360",
+      "note": "Coverage describing Forum as a Reddit-like Facebook Groups app with Ask and admin AI features.",
+      "accessedOn": "2026-05-23"
+    },
+    {
+      "id": "geekout-meta-forum",
+      "title": "Facebook's new Forum app is Meta's clearest challenge to Reddit yet",
+      "url": "https://geekout.mattnavarra.com/p/facebook-forum-app-reddit-spotify-disco-ball-icon-linkedin-ai-non-consensual-moderation",
+      "kind": "analysis",
+      "publisher": "Geekout",
+      "note": "Analysis of Forum as Meta's attempt to copy Reddit's community knowledge utility through Facebook Groups.",
+      "accessedOn": "2026-05-23"
     },
     {
       "id": "geico",
@@ -20608,6 +21004,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "companiesmarketcap.com",
       "note": "Historical and current market capitalization data used for market cap estimate and S&P 500 relative rank.",
       "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "lemmy",
+      "title": "Lemmy",
+      "url": "https://join-lemmy.org/",
+      "kind": "open-source-project",
+      "publisher": "Lemmy",
+      "note": "Federated open-source discussion platform with Reddit-like communities, voting, threaded comments, and self-hosting.",
+      "accessedOn": "2026-05-23"
     },
     {
       "id": "libre-soc-home",
@@ -20734,6 +21139,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Mesa Project",
       "note": "Open graphics stack reference showing mature community-driven driver infrastructure.",
       "accessedOn": "2026-03-24"
+    },
+    {
+      "id": "meta-forum-app-store",
+      "title": "Forum, a Facebook app",
+      "url": "https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862",
+      "kind": "product-page",
+      "publisher": "Apple App Store",
+      "note": "Primary app listing for Meta's Forum app, including Facebook account carry-over, Ask, and admin AI assistant descriptions.",
+      "accessedOn": "2026-05-23"
     },
     {
       "id": "meta-investor",
@@ -21013,6 +21427,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Framasoft",
       "note": "Federated video alternative relevant to YouTube.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "piefed",
+      "title": "PieFed",
+      "url": "https://join.piefed.social/",
+      "kind": "open-source-project",
+      "publisher": "PieFed",
+      "note": "Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.",
+      "accessedOn": "2026-05-23"
     },
     {
       "id": "pixelfed",

@@ -50,13 +50,19 @@
     "sourceIds": [
       "meta-investor",
       "meta-tech",
+      "meta-forum-app-store",
+      "gadgets360-meta-forum",
+      "geekout-meta-forum",
       "whatsapp",
       "meta-marketcap",
       "meta-ipo-prospectus",
       "meta-ipo-registration",
       "mastodon",
       "pixelfed",
-      "matrix"
+      "matrix",
+      "lemmy",
+      "piefed",
+      "discourse"
     ],
     "technologyWaveIds": [
       "bitcoin-native-coordination"
@@ -383,6 +389,337 @@
               ],
               "confidence": "medium",
               "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "meta-forum",
+      "name": "Forum",
+      "category": "Community platform",
+      "homepageUrl": "https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862",
+      "summary": "Standalone iOS app that turns Facebook Groups into a Reddit-style discussion and answer surface.",
+      "whyItMatters": "Forum is Meta's attempt to repackage Facebook Groups as a cleaner community knowledge layer before Reddit-like utility drifts elsewhere.",
+      "replacementSketch": [
+        "Federated forums can preserve topical communities without requiring a Facebook account or central graph owner.",
+        "Self-hosted community platforms let groups keep archives, moderation norms, and member identity portable."
+      ],
+      "sourceIds": [
+        "meta-forum-app-store",
+        "gadgets360-meta-forum",
+        "geekout-meta-forum",
+        "lemmy",
+        "piefed",
+        "discourse"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "lemmy-communities",
+          "name": "Lemmy",
+          "kind": "decentralized",
+          "homepageUrl": "https://join-lemmy.org/",
+          "repoUrl": "https://github.com/LemmyNet/lemmy",
+          "summary": "Federated discussion platform for Reddit-like communities, threaded comments, voting, and self-hosted instances.",
+          "metrics": {
+            "openness": {
+              "value": 9.4,
+              "rationale": "Lemmy is open source, self-hostable, and developed in public.",
+              "sourceIds": [
+                "lemmy"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "decentralizationFit": {
+              "value": 9.3,
+              "rationale": "Federated instances shift community hosting and moderation away from one corporate operator.",
+              "sourceIds": [
+                "lemmy"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "readiness": {
+              "value": 7.2,
+              "rationale": "The core Reddit-style interaction model is already usable, with multiple clients and active servers.",
+              "sourceIds": [
+                "lemmy"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "costLeverage": {
+              "value": 7.4,
+              "rationale": "It pressures proprietary community apps by proving forums can run without ads, tracking, or centralized feed control.",
+              "sourceIds": [
+                "lemmy"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            }
+          },
+          "sourceIds": [
+            "lemmy"
+          ]
+        },
+        {
+          "slug": "piefed-forums",
+          "name": "PieFed",
+          "kind": "decentralized",
+          "homepageUrl": "https://join.piefed.social/",
+          "repoUrl": "https://codeberg.org/rimu/pyfedi/",
+          "summary": "Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.",
+          "metrics": {
+            "openness": {
+              "value": 9.2,
+              "rationale": "PieFed is AGPL-licensed, developer-friendly, and openly hosted on Codeberg.",
+              "sourceIds": [
+                "piefed"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "decentralizationFit": {
+              "value": 9.4,
+              "rationale": "ActivityPub federation and self-hosting are central to the product's design.",
+              "sourceIds": [
+                "piefed"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "readiness": {
+              "value": 6.4,
+              "rationale": "PieFed is active and usable, though less mature than larger forum and Fediverse projects.",
+              "sourceIds": [
+                "piefed"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "costLeverage": {
+              "value": 7.1,
+              "rationale": "Its ad-free, user-controlled model creates credible pressure on engagement-driven community products.",
+              "sourceIds": [
+                "piefed"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            }
+          },
+          "sourceIds": [
+            "piefed"
+          ]
+        },
+        {
+          "slug": "discourse-communities",
+          "name": "Discourse",
+          "kind": "open-source",
+          "homepageUrl": "https://www.discourse.org/",
+          "repoUrl": "https://github.com/discourse/discourse",
+          "summary": "Open-source community platform for searchable forums, support hubs, product feedback, and member-owned knowledge bases.",
+          "metrics": {
+            "openness": {
+              "value": 8.7,
+              "rationale": "The codebase is openly available, self-hosting is supported, and data export is a core selling point.",
+              "sourceIds": [
+                "discourse"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "decentralizationFit": {
+              "value": 7.1,
+              "rationale": "Discourse is not primarily federated, but it gives communities meaningful hosting and data ownership choices.",
+              "sourceIds": [
+                "discourse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "readiness": {
+              "value": 8.8,
+              "rationale": "Discourse is mature, widely deployed, and already suitable for serious public communities.",
+              "sourceIds": [
+                "discourse"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "costLeverage": {
+              "value": 7.2,
+              "rationale": "Self-hosting and open data exports reduce vendor lock-in for groups that would otherwise depend on platform-owned communities.",
+              "sourceIds": [
+                "discourse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            }
+          },
+          "sourceIds": [
+            "discourse"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "meta-forum-federated-answer-engine",
+          "name": "Federated Community Answer Engine",
+          "summary": "A cross-instance forum layer that helps people ask questions once and discover answers from many independently hosted communities.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination",
+            "bitcoin",
+            "lightning"
+          ],
+          "thesis": "Copy Forum's answer-retrieval utility while refusing the Facebook-account dependency and single-owner community graph.",
+          "bitcoinOrDecentralizationRole": "Federation keeps communities independently hosted while optional micropayments or reputation fees can reward useful answers and deter spam.",
+          "coordinationMechanism": "Instances publish topic indexes, clients query across trusted servers, and communities decide which sources they admit into local answer summaries.",
+          "verificationOrTrustModel": "Signed posts, transparent moderation logs, instance reputation, and payment-backed rate limits reduce low-cost spam and synthetic recommendations.",
+          "failureModes": [
+            "Cross-instance search can become noisy or expensive",
+            "Large communities may still prefer a single high-reach platform"
+          ],
+          "adoptionPath": [
+            "Start with technical and local-interest communities that already distrust closed feeds",
+            "Add answer aggregation and moderation controls once instance-to-instance trust improves"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "meta-forum-app-store",
+            "gadgets360-meta-forum",
+            "geekout-meta-forum"
+          ],
+          "enablerSourceIds": [
+            "lemmy",
+            "piefed",
+            "discourse"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.9,
+              "rationale": "The concept replaces one Facebook-owned answer surface with independently hosted community indexes.",
+              "sourceIds": [
+                "meta-forum-app-store",
+                "lemmy",
+                "piefed"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "coordinationCredibility": {
+              "value": 7.4,
+              "rationale": "Forum-style Q&A already has clear demand, and existing federated forums provide plausible coordination substrates.",
+              "sourceIds": [
+                "geekout-meta-forum",
+                "lemmy",
+                "piefed"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "implementationFeasibility": {
+              "value": 7,
+              "rationale": "The forum, federation, and self-hosting primitives exist; cross-instance answer ranking is the harder product layer.",
+              "sourceIds": [
+                "lemmy",
+                "piefed",
+                "discourse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "incumbentPressure": {
+              "value": 7.8,
+              "rationale": "A good federated answer layer would undercut Forum's attempt to make Facebook Groups the default community knowledge base.",
+              "sourceIds": [
+                "gadgets360-meta-forum",
+                "geekout-meta-forum",
+                "lemmy"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            }
+          }
+        },
+        {
+          "slug": "meta-forum-portable-community-commons",
+          "name": "Portable Community Commons",
+          "summary": "Groups keep archives, moderation norms, member reputation, and discovery metadata portable across forum hosts instead of locking that value inside Facebook.",
+          "angleIds": [
+            "decentralized-coordination",
+            "federation",
+            "bitcoin",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "Unlike a pure answer engine, this attacks Forum's deeper lock-in: the durable social and moderation state around Facebook Groups.",
+          "bitcoinOrDecentralizationRole": "Open identity and payment rails can make contributor reputation, anti-spam deposits, and community funding portable across hosts.",
+          "coordinationMechanism": "Communities maintain exportable archives and signed moderation records that can be imported by compatible hosts or mirrored across instances.",
+          "verificationOrTrustModel": "Signed moderation actions, portable member attestations, and public export manifests make it harder for one host to trap community state.",
+          "failureModes": [
+            "Portable moderation records can expose sensitive community context",
+            "Mainstream groups may prioritize convenience over sovereignty"
+          ],
+          "adoptionPath": [
+            "Begin with open-source, hobbyist, and local communities that already maintain public archives",
+            "Layer in migration tooling for groups leaving centralized platforms"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "meta-forum-app-store",
+            "geekout-meta-forum"
+          ],
+          "enablerSourceIds": [
+            "discourse",
+            "lemmy",
+            "piefed"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.4,
+              "rationale": "Portable archives and moderation state move the community's durable value away from a single app owner.",
+              "sourceIds": [
+                "discourse",
+                "lemmy",
+                "piefed"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "coordinationCredibility": {
+              "value": 7.1,
+              "rationale": "Communities already migrate between forums; standardized exports and attestations make the coordination problem tractable.",
+              "sourceIds": [
+                "discourse",
+                "lemmy"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "implementationFeasibility": {
+              "value": 6.8,
+              "rationale": "Export and self-hosting tools are mature, while shared reputation and moderation portability need more convention-setting.",
+              "sourceIds": [
+                "discourse",
+                "piefed"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
+            },
+            "incumbentPressure": {
+              "value": 7.5,
+              "rationale": "It pressures Forum by making the Facebook Groups archive and moderator toolkit easier to leave behind.",
+              "sourceIds": [
+                "meta-forum-app-store",
+                "geekout-meta-forum",
+                "discourse"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-23"
             }
           }
         }
