@@ -1513,6 +1513,7 @@ export function isBundleStale(bundle: CompanyBundle, now = new Date()) {
 export function collectSyncTargets(
   raw: Awaited<ReturnType<typeof loadRawContent>>,
   target: SyncBatchTargetId,
+  now = new Date(),
 ) {
   if (target === "published") {
     return raw.bundles.map((bundle) => bundle.company.slug);
@@ -1531,7 +1532,7 @@ export function collectSyncTargets(
         return true;
       }
 
-      return isBundleStale(maybeBundle);
+      return isBundleStale(maybeBundle, now);
     });
 }
 
