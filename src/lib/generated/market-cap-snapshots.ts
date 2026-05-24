@@ -3,7 +3,7 @@
 import type { MarketCapSnapshot } from "~/lib/domain/market-cap-snapshots";
 
 export const marketCapSnapshot: MarketCapSnapshot = {
-  "generatedAt": "2026-05-23T07:13:59.280Z",
+  "generatedAt": "2026-05-24T07:26:53.254Z",
   "sourceName": "CompaniesMarketCap",
   "rows": [
     {
@@ -14,9 +14,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 5215000000000,
       "marketCapDisplay": "$5.215 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "alphabet",
@@ -26,9 +26,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 4596000000000,
       "marketCapDisplay": "$4.596 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "apple",
@@ -38,9 +38,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 4535000000000,
       "marketCapDisplay": "$4.535 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "microsoft",
@@ -50,9 +50,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 3109000000000,
       "marketCapDisplay": "$3.109 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "amazon",
@@ -62,9 +62,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 2864000000000,
       "marketCapDisplay": "$2.864 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "broadcom",
@@ -74,9 +74,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 1960000000000,
       "marketCapDisplay": "$1.960 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "tesla",
@@ -86,9 +86,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 1599000000000,
       "marketCapDisplay": "$1.599 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "meta-platforms",
@@ -98,9 +98,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 1549000000000,
       "marketCapDisplay": "$1.549 T",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "berkshire-hathaway",
@@ -111,7 +111,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$1.049 T",
       "sourceKind": "live",
       "sourceReportedAtLabel": "May 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
       "sourceNote": null
     },
     {
@@ -122,9 +122,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 958670000000,
       "marketCapDisplay": "$958.67 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "eli-lilly",
@@ -134,9 +134,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 949700000000,
       "marketCapDisplay": "$949.70 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "micron-technology",
@@ -146,9 +146,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 846920000000,
       "marketCapDisplay": "$846.92 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "advanced-micro-devices",
@@ -158,9 +158,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 762320000000,
       "marketCapDisplay": "$762.32 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "jpmorgan-chase",
@@ -171,7 +171,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$670.6 B",
       "sourceKind": "published-fallback",
       "sourceReportedAtLabel": "2026-03-25",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
       "sourceNote": "Live fetch failed; used the latest published market-cap metric instead. Received 404 Not Found"
     },
     {
@@ -182,9 +182,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 642130000000,
       "marketCapDisplay": "$642.13 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "visa",
@@ -194,9 +194,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 625440000000,
       "marketCapDisplay": "$625.44 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "johnson-johnson",
@@ -207,7 +207,7 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapDisplay": "$585.6 B",
       "sourceKind": "published-fallback",
       "sourceReportedAtLabel": "2026-03-24",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
       "sourceNote": "Live fetch failed; used the latest published market-cap metric instead. Received 404 Not Found"
     },
     {
@@ -218,9 +218,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 552430000000,
       "marketCapDisplay": "$552.43 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "cisco-systems",
@@ -230,9 +230,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 474580000000,
       "marketCapDisplay": "$474.58 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "costco",
@@ -242,9 +242,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 456180000000,
       "marketCapDisplay": "$456.18 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "mastercard",
@@ -254,9 +254,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 440500000000,
       "marketCapDisplay": "$440.50 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "caterpillar",
@@ -266,9 +266,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 405270000000,
       "marketCapDisplay": "$405.27 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "chevron",
@@ -278,9 +278,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 381250000000,
       "marketCapDisplay": "$381.25 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "abbvie",
@@ -290,9 +290,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 381090000000,
       "marketCapDisplay": "$381.09 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "netflix",
@@ -302,9 +302,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 373070000000,
       "marketCapDisplay": "$373.07 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "bank-of-america",
@@ -314,9 +314,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 367600000000,
       "marketCapDisplay": "$367.60 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "coca-cola",
@@ -326,9 +326,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 350560000000,
       "marketCapDisplay": "$350.56 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "applied-materials",
@@ -338,9 +338,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 342960000000,
       "marketCapDisplay": "$342.96 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "procter-gamble",
@@ -350,9 +350,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 336340000000,
       "marketCapDisplay": "$336.34 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "palantir-technologies",
@@ -362,9 +362,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 328140000000,
       "marketCapDisplay": "$328.14 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "ge-aerospace",
@@ -374,9 +374,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 316410000000,
       "marketCapDisplay": "$316.41 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "merck-co",
@@ -386,9 +386,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 302330000000,
       "marketCapDisplay": "$302.33 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "philip-morris-international",
@@ -398,9 +398,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 294550000000,
       "marketCapDisplay": "$294.55 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     },
     {
       "companySlug": "rtx",
@@ -410,9 +410,9 @@ export const marketCapSnapshot: MarketCapSnapshot = {
       "marketCapUsd": 238370000000,
       "marketCapDisplay": "$238.37 B",
       "sourceKind": "live",
-      "sourceReportedAtLabel": "May 22nd, 2026",
-      "fetchedAt": "2026-05-23T07:13:59.280Z",
-      "sourceNote": "retrieved from website (22-05-2026 21:01 UTC)"
+      "sourceReportedAtLabel": "May 23rd, 2026",
+      "fetchedAt": "2026-05-24T07:26:53.254Z",
+      "sourceNote": "retrieved from website (23-05-2026 21:01 UTC)"
     }
   ]
 };
