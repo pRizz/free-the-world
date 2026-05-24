@@ -693,7 +693,14 @@ export const contentGraph: ContentGraph = {
         "microsoft-ipo-prospectus",
         "libreoffice",
         "gitea",
-        "nextcloud"
+        "nextcloud",
+        "anytype-home",
+        "anytype-github",
+        "microsoft-loop",
+        "microsoft-whiteboard",
+        "tldraw-home",
+        "tldraw-github",
+        "reddit-startupmind-open-source-saas"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -701,7 +708,8 @@ export const contentGraph: ContentGraph = {
       "snapshotNote": "Curated early-2026 public-source snapshot. Exact ordering can drift with the tape.",
       "productSlugs": [
         "microsoft-365-suite",
-        "microsoft-github"
+        "microsoft-github",
+        "microsoft-whiteboard"
       ],
       "metrics": {
         "moat": {
@@ -848,7 +856,14 @@ export const contentGraph: ContentGraph = {
         "alphabet-marketcap",
         "alphabet-ipo-prospectus",
         "searxng",
-        "peertube"
+        "peertube",
+        "google-photos",
+        "immich-home",
+        "immich-github",
+        "gmail-workspace",
+        "inbox-zero-home",
+        "inbox-zero-github",
+        "reddit-startupmind-open-source-saas"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -856,7 +871,9 @@ export const contentGraph: ContentGraph = {
       "snapshotNote": "Curated early-2026 public-source snapshot. Exact ordering can drift with the tape.",
       "productSlugs": [
         "google-search",
-        "youtube"
+        "youtube",
+        "google-photos",
+        "gmail"
       ],
       "metrics": {
         "moat": {
@@ -1167,7 +1184,11 @@ export const contentGraph: ContentGraph = {
         "matrix",
         "lemmy",
         "piefed",
-        "discourse"
+        "discourse",
+        "meta-business-tools",
+        "postiz-home",
+        "postiz-github",
+        "reddit-startupmind-open-source-saas"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -1176,7 +1197,8 @@ export const contentGraph: ContentGraph = {
       "productSlugs": [
         "instagram",
         "meta-forum",
-        "whatsapp-platform"
+        "whatsapp-platform",
+        "meta-business-suite"
       ],
       "metrics": {
         "moat": {
@@ -3131,7 +3153,8 @@ export const contentGraph: ContentGraph = {
         "src-netflix-ads-plan",
         "src-netflix-ads-help",
         "src-netflix-marketcap",
-        "src-netflix-pe"
+        "src-netflix-pe",
+        "reddit-startupmind-open-source-saas"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -4805,6 +4828,420 @@ export const contentGraph: ContentGraph = {
           "lastReviewedOn": "2026-03-25"
         }
       }
+    },
+    {
+      "slug": "salesforce",
+      "name": "Salesforce",
+      "ticker": "CRM",
+      "rankApprox": 141,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/salesforce/marketcap/",
+      "description": "Enterprise CRM and sales automation platform company centered on Sales Cloud, Data Cloud, and Agentforce.",
+      "overview": [
+        {
+          "title": "Workflow gravity with open-source pressure",
+          "paragraphs": [
+            "Salesforce monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.",
+            "The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.",
+        "Open-source alternatives can start with teams that value control more than procurement convenience."
+      ],
+      "decentralizationNarrative": [
+        "The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.",
+        "The main adoption barrier is operational maturity rather than basic technical possibility."
+      ],
+      "sourceIds": [
+        "salesforce-sales-cloud",
+        "salesforce-marketcap",
+        "twenty-home",
+        "twenty-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Curated May 2026 public-source snapshot seeded from the user-provided Reddit open-source SaaS list.",
+      "productSlugs": [
+        "salesforce-sales-cloud"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8.6,
+          "rationale": "The incumbent combines brand, installed base, integrations, and enterprise switching costs in its category.",
+          "sourceIds": [
+            "salesforce-sales-cloud"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizability": {
+          "value": 5.4,
+          "rationale": "Open-source challengers can decentralize some workflow control, but enterprise integrations and procurement inertia remain meaningful.",
+          "sourceIds": [
+            "salesforce-sales-cloud"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "profitability": {
+          "value": 7.6,
+          "rationale": "Public financial posture and SaaS gross-margin structure suggest meaningful monetization quality, though exact margin mix varies.",
+          "sourceIds": [
+            "salesforce-sales-cloud"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "peRatio": {
+          "value": 35,
+          "rationale": "Approximate valuation multiple placeholder from public market context; exact ratio can drift materially.",
+          "sourceIds": [
+            "salesforce-marketcap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "marketCap": {
+          "value": 147300000000,
+          "rationale": "Approximate market cap snapshot from CompaniesMarketCap.",
+          "sourceIds": [
+            "salesforce-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "freedCapitalPotential": {
+          "value": 20959317000,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "salesforce-marketcap",
+            "salesforce-sales-cloud"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        }
+      }
+    },
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "ticker": "NET",
+      "rankApprox": 322,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/cloudflare/marketcap/",
+      "description": "Internet infrastructure and security platform company spanning CDN, web security, bot mitigation, and edge services.",
+      "overview": [
+        {
+          "title": "Workflow gravity with open-source pressure",
+          "paragraphs": [
+            "Cloudflare monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.",
+            "The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.",
+        "Open-source alternatives can start with teams that value control more than procurement convenience."
+      ],
+      "decentralizationNarrative": [
+        "The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.",
+        "The main adoption barrier is operational maturity rather than basic technical possibility."
+      ],
+      "sourceIds": [
+        "cloudflare-bot-management",
+        "cloudflare-marketcap",
+        "crowdsec-home",
+        "crowdsec-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Curated May 2026 public-source snapshot seeded from the user-provided Reddit open-source SaaS list.",
+      "productSlugs": [
+        "cloudflare-bot-management"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "The incumbent combines brand, installed base, integrations, and enterprise switching costs in its category.",
+          "sourceIds": [
+            "cloudflare-bot-management"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizability": {
+          "value": 5.7,
+          "rationale": "Open-source challengers can decentralize some workflow control, but enterprise integrations and procurement inertia remain meaningful.",
+          "sourceIds": [
+            "cloudflare-bot-management"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "profitability": {
+          "value": 6,
+          "rationale": "Public financial posture and SaaS gross-margin structure suggest meaningful monetization quality, though exact margin mix varies.",
+          "sourceIds": [
+            "cloudflare-bot-management"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "peRatio": {
+          "value": 180,
+          "rationale": "Approximate valuation multiple placeholder from public market context; exact ratio can drift materially.",
+          "sourceIds": [
+            "cloudflare-marketcap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "marketCap": {
+          "value": 76400000000,
+          "rationale": "Approximate market cap snapshot from CompaniesMarketCap.",
+          "sourceIds": [
+            "cloudflare-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "freedCapitalPotential": {
+          "value": 12338600000.000004,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "cloudflare-marketcap",
+            "cloudflare-bot-management"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        }
+      }
+    },
+    {
+      "slug": "docusign",
+      "name": "Docusign",
+      "ticker": "DOCU",
+      "rankApprox": 2090,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/docusign/marketcap/",
+      "description": "Agreement management and electronic signature company spanning eSignature, CLM, and intelligent agreement workflows.",
+      "overview": [
+        {
+          "title": "Workflow gravity with open-source pressure",
+          "paragraphs": [
+            "Docusign monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.",
+            "The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.",
+        "Open-source alternatives can start with teams that value control more than procurement convenience."
+      ],
+      "decentralizationNarrative": [
+        "The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.",
+        "The main adoption barrier is operational maturity rather than basic technical possibility."
+      ],
+      "sourceIds": [
+        "docusign-home",
+        "docusign-investor",
+        "docusign-marketcap",
+        "documenso-home",
+        "documenso-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Curated May 2026 public-source snapshot seeded from the user-provided Reddit open-source SaaS list.",
+      "productSlugs": [
+        "docusign-esignature"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 7.2,
+          "rationale": "The incumbent combines brand, installed base, integrations, and enterprise switching costs in its category.",
+          "sourceIds": [
+            "docusign-home",
+            "docusign-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizability": {
+          "value": 5.8,
+          "rationale": "Open-source challengers can decentralize some workflow control, but enterprise integrations and procurement inertia remain meaningful.",
+          "sourceIds": [
+            "docusign-home",
+            "docusign-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "profitability": {
+          "value": 6.5,
+          "rationale": "Public financial posture and SaaS gross-margin structure suggest meaningful monetization quality, though exact margin mix varies.",
+          "sourceIds": [
+            "docusign-home",
+            "docusign-investor"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "peRatio": {
+          "value": 22,
+          "rationale": "Approximate valuation multiple placeholder from public market context; exact ratio can drift materially.",
+          "sourceIds": [
+            "docusign-marketcap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "marketCap": {
+          "value": 9620000000,
+          "rationale": "Approximate market cap snapshot from CompaniesMarketCap.",
+          "sourceIds": [
+            "docusign-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "freedCapitalPotential": {
+          "value": 1952860000,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "docusign-marketcap",
+            "docusign-home",
+            "docusign-investor"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        }
+      }
+    },
+    {
+      "slug": "dropbox",
+      "name": "Dropbox",
+      "ticker": "DBX",
+      "rankApprox": 2717,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/dropbox/marketcap/",
+      "description": "Collaboration and file-sharing software company whose DocSend product provides tracked document sharing and virtual data rooms.",
+      "overview": [
+        {
+          "title": "Workflow gravity with open-source pressure",
+          "paragraphs": [
+            "Dropbox monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.",
+            "The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.",
+        "Open-source alternatives can start with teams that value control more than procurement convenience."
+      ],
+      "decentralizationNarrative": [
+        "The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.",
+        "The main adoption barrier is operational maturity rather than basic technical possibility."
+      ],
+      "sourceIds": [
+        "dropbox-investor",
+        "dropbox-marketcap",
+        "docsend",
+        "papermark-home",
+        "papermark-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Curated May 2026 public-source snapshot seeded from the user-provided Reddit open-source SaaS list.",
+      "productSlugs": [
+        "dropbox-docsend"
+      ],
+      "metrics": {
+        "moat": {
+          "value": 6.4,
+          "rationale": "The incumbent combines brand, installed base, integrations, and enterprise switching costs in its category.",
+          "sourceIds": [
+            "dropbox-investor",
+            "docsend"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizability": {
+          "value": 6.2,
+          "rationale": "Open-source challengers can decentralize some workflow control, but enterprise integrations and procurement inertia remain meaningful.",
+          "sourceIds": [
+            "dropbox-investor",
+            "docsend"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "profitability": {
+          "value": 7.1,
+          "rationale": "Public financial posture and SaaS gross-margin structure suggest meaningful monetization quality, though exact margin mix varies.",
+          "sourceIds": [
+            "dropbox-investor",
+            "docsend"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "peRatio": {
+          "value": 14,
+          "rationale": "Approximate valuation multiple placeholder from public market context; exact ratio can drift materially.",
+          "sourceIds": [
+            "dropbox-marketcap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "marketCap": {
+          "value": 6390000000,
+          "rationale": "Approximate market cap snapshot from CompaniesMarketCap.",
+          "sourceIds": [
+            "dropbox-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "freedCapitalPotential": {
+          "value": 1673200200,
+          "rationale": "Derived from market cap, moat resistance, decentralizability, and profitability. It is a directional estimate of value capture that could come under pressure if open alternatives compound.",
+          "sourceIds": [
+            "dropbox-marketcap",
+            "dropbox-investor",
+            "docsend"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        }
+      }
     }
   ],
   "products": [
@@ -4963,8 +5400,8 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Alphabet's Google Search\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Alphabet (GOOGL)\n- Company slug: alphabet\n- Company description: Search, ads, video, mobile, and cloud giant still centered economically on attention capture.\n- Product: Google Search\n- Product slug: google-search\n- Product category: Search engine\n- Product homepage: https://www.google.com/\n- Product summary: Alphabet's flagship query and ad-distribution surface.\n- Why it matters: Search still funds a startling amount of Google's empire.\n\n## Company Thesis\n\n- The empire of default answers\n  Alphabet is a reminder that a search box can turn into an economic continent if enough adjacent products quietly feed it users, data, and ad inventory.\n  Unlike hardware-heavy empires, much of Alphabet's surface area is theoretically reproducible with open software and protocols. The challenge is that reproducing the data flywheel, distribution, and ad-market depth is harder than reproducing the software itself.\n\n### Moat narrative\n- Search quality, ad-market liquidity, distribution via Android and browsers, and YouTube's audience scale keep Alphabet resilient.\n- The moat is partly product quality and partly the advantage of already being where the world's queries and creators congregate.\n\n### Decentralization narrative\n- Search aggregation, federated video, and de-Googled Android all create real cracks in the story that Google's stack is irreplaceable.\n- Still, open alternatives often struggle exactly where Google is strongest: defaults, reach, and advertiser convenience.\n\n## Replacement Sketch\n\n- Open metasearch and smaller search providers can disaggregate parts of the search experience.\n- Agentic AI may move value from traditional ranked pages toward multi-source synthesis layers.\n\n## Existing Alternatives Worth Studying First\n\n- SearXNG (open-source): Open metasearch engine that lets operators own their search interface and aggregation logic.. Homepage: https://github.com/searxng/searxng. Repo: https://github.com/searxng/searxng.\n- YaCy (decentralized): Peer-to-peer search engine project.. Homepage: https://yacy.net/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Alphabet Investor Relations (Alphabet) - https://abc.xyz/investor/\n  Why it matters: Primary source for business segments and financial framing.\n- Alphabet Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/alphabet-google/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Google Cloud (Google) - https://cloud.google.com/\n  Why it matters: Cloud and workspace surface area.\n- Google final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1288776/000119312504143377/d424b4.htm\n  Why it matters: Primary source for Google's IPO date, auction clearing price, and post-offering share count.\n- Google Products (Google) - https://about.google/products/\n  Why it matters: Broad overview of consumer-facing product footprint.\n- PeerTube (Framasoft) - https://joinpeertube.org/\n  Why it matters: Federated video alternative relevant to YouTube.\n- SearXNG (SearXNG contributors) - https://github.com/searxng/searxng\n  Why it matters: Open metasearch alternative relevant to search decentralization arguments.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Alphabet's Google Search business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-24"
+        "markdown": "# Build A Free Alternative To Alphabet's Google Search\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Alphabet (GOOGL)\n- Company slug: alphabet\n- Company description: Search, ads, video, mobile, and cloud giant still centered economically on attention capture.\n- Product: Google Search\n- Product slug: google-search\n- Product category: Search engine\n- Product homepage: https://www.google.com/\n- Product summary: Alphabet's flagship query and ad-distribution surface.\n- Why it matters: Search still funds a startling amount of Google's empire.\n\n## Company Thesis\n\n- The empire of default answers\n  Alphabet is a reminder that a search box can turn into an economic continent if enough adjacent products quietly feed it users, data, and ad inventory.\n  Unlike hardware-heavy empires, much of Alphabet's surface area is theoretically reproducible with open software and protocols. The challenge is that reproducing the data flywheel, distribution, and ad-market depth is harder than reproducing the software itself.\n\n### Moat narrative\n- Search quality, ad-market liquidity, distribution via Android and browsers, and YouTube's audience scale keep Alphabet resilient.\n- The moat is partly product quality and partly the advantage of already being where the world's queries and creators congregate.\n\n### Decentralization narrative\n- Search aggregation, federated video, and de-Googled Android all create real cracks in the story that Google's stack is irreplaceable.\n- Still, open alternatives often struggle exactly where Google is strongest: defaults, reach, and advertiser convenience.\n\n## Replacement Sketch\n\n- Open metasearch and smaller search providers can disaggregate parts of the search experience.\n- Agentic AI may move value from traditional ranked pages toward multi-source synthesis layers.\n\n## Existing Alternatives Worth Studying First\n\n- SearXNG (open-source): Open metasearch engine that lets operators own their search interface and aggregation logic.. Homepage: https://github.com/searxng/searxng. Repo: https://github.com/searxng/searxng.\n- YaCy (decentralized): Peer-to-peer search engine project.. Homepage: https://yacy.net/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Alphabet Investor Relations (Alphabet) - https://abc.xyz/investor/\n  Why it matters: Primary source for business segments and financial framing.\n- Alphabet Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/alphabet-google/marketcap/\n  Why it matters: Market cap snapshot reference.\n- elie222/inbox-zero (GitHub) - https://github.com/elie222/inbox-zero\n  Why it matters: GitHub repository for Inbox Zero, an open-source AI personal assistant for email.\n- Gmail for Google Workspace (Google Workspace) - https://workspace.google.com/products/gmail/\n  Why it matters: Product page for Gmail, including Gemini-assisted email, Smart Reply, security, and Workspace positioning.\n- Google Cloud (Google) - https://cloud.google.com/\n  Why it matters: Cloud and workspace surface area.\n- Google final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1288776/000119312504143377/d424b4.htm\n  Why it matters: Primary source for Google's IPO date, auction clearing price, and post-offering share count.\n- Google Photos (Google) - https://www.google.com/photos/about/\n  Why it matters: Product page describing Google Photos backup, search, AI organization, sharing, and Google One storage upsell.\n- Google Products (Google) - https://about.google/products/\n  Why it matters: Broad overview of consumer-facing product footprint.\n- Immich (Immich) - https://immich.app/\n  Why it matters: Homepage for the self-hosted photo and video management project.\n- immich-app/immich (GitHub) - https://github.com/immich-app/immich\n  Why it matters: GitHub repository for Immich, described as a high-performance self-hosted photo and video management solution.\n- Inbox Zero (Inbox Zero) - https://www.getinboxzero.com/\n  Why it matters: Homepage for the AI email assistant with privacy-first, open-source, and self-hosting claims.\n- PeerTube (Framasoft) - https://joinpeertube.org/\n  Why it matters: Federated video alternative relevant to YouTube.\n- SearXNG (SearXNG contributors) - https://github.com/searxng/searxng\n  Why it matters: Open metasearch alternative relevant to search decentralization arguments.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Alphabet's Google Search business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -4996,8 +5433,74 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Alphabet's YouTube\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Alphabet (GOOGL)\n- Company slug: alphabet\n- Company description: Search, ads, video, mobile, and cloud giant still centered economically on attention capture.\n- Product: YouTube\n- Product slug: youtube\n- Product category: Video platform\n- Product homepage: https://www.youtube.com/\n- Product summary: Massive hosted video and creator platform with ad and subscription monetization.\n- Why it matters: YouTube combines distribution, monetization, and default discoverability.\n\n## Company Thesis\n\n- The empire of default answers\n  Alphabet is a reminder that a search box can turn into an economic continent if enough adjacent products quietly feed it users, data, and ad inventory.\n  Unlike hardware-heavy empires, much of Alphabet's surface area is theoretically reproducible with open software and protocols. The challenge is that reproducing the data flywheel, distribution, and ad-market depth is harder than reproducing the software itself.\n\n### Moat narrative\n- Search quality, ad-market liquidity, distribution via Android and browsers, and YouTube's audience scale keep Alphabet resilient.\n- The moat is partly product quality and partly the advantage of already being where the world's queries and creators congregate.\n\n### Decentralization narrative\n- Search aggregation, federated video, and de-Googled Android all create real cracks in the story that Google's stack is irreplaceable.\n- Still, open alternatives often struggle exactly where Google is strongest: defaults, reach, and advertiser convenience.\n\n## Replacement Sketch\n\n- Federated video and direct payment rails can reduce the need for a single platform to intermediate every creator-audience relationship.\n- AI-assisted subtitling, moderation, and discovery lower some of the operational excuses for centralization.\n\n## Existing Alternatives Worth Studying First\n\n- PeerTube (decentralized): Federated video hosting platform.. Homepage: https://joinpeertube.org/.\n- Nostr video clients (protocol): Protocol-native publishing tools with Bitcoin-adjacent identity and monetization possibilities.. Homepage: https://nostr.com/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Alphabet Investor Relations (Alphabet) - https://abc.xyz/investor/\n  Why it matters: Primary source for business segments and financial framing.\n- Alphabet Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/alphabet-google/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Google Cloud (Google) - https://cloud.google.com/\n  Why it matters: Cloud and workspace surface area.\n- Google final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1288776/000119312504143377/d424b4.htm\n  Why it matters: Primary source for Google's IPO date, auction clearing price, and post-offering share count.\n- Google Products (Google) - https://about.google/products/\n  Why it matters: Broad overview of consumer-facing product footprint.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- PeerTube (Framasoft) - https://joinpeertube.org/\n  Why it matters: Federated video alternative relevant to YouTube.\n- SearXNG (SearXNG contributors) - https://github.com/searxng/searxng\n  Why it matters: Open metasearch alternative relevant to search decentralization arguments.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Alphabet's YouTube business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-24"
+        "markdown": "# Build A Free Alternative To Alphabet's YouTube\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Alphabet (GOOGL)\n- Company slug: alphabet\n- Company description: Search, ads, video, mobile, and cloud giant still centered economically on attention capture.\n- Product: YouTube\n- Product slug: youtube\n- Product category: Video platform\n- Product homepage: https://www.youtube.com/\n- Product summary: Massive hosted video and creator platform with ad and subscription monetization.\n- Why it matters: YouTube combines distribution, monetization, and default discoverability.\n\n## Company Thesis\n\n- The empire of default answers\n  Alphabet is a reminder that a search box can turn into an economic continent if enough adjacent products quietly feed it users, data, and ad inventory.\n  Unlike hardware-heavy empires, much of Alphabet's surface area is theoretically reproducible with open software and protocols. The challenge is that reproducing the data flywheel, distribution, and ad-market depth is harder than reproducing the software itself.\n\n### Moat narrative\n- Search quality, ad-market liquidity, distribution via Android and browsers, and YouTube's audience scale keep Alphabet resilient.\n- The moat is partly product quality and partly the advantage of already being where the world's queries and creators congregate.\n\n### Decentralization narrative\n- Search aggregation, federated video, and de-Googled Android all create real cracks in the story that Google's stack is irreplaceable.\n- Still, open alternatives often struggle exactly where Google is strongest: defaults, reach, and advertiser convenience.\n\n## Replacement Sketch\n\n- Federated video and direct payment rails can reduce the need for a single platform to intermediate every creator-audience relationship.\n- AI-assisted subtitling, moderation, and discovery lower some of the operational excuses for centralization.\n\n## Existing Alternatives Worth Studying First\n\n- PeerTube (decentralized): Federated video hosting platform.. Homepage: https://joinpeertube.org/.\n- Nostr video clients (protocol): Protocol-native publishing tools with Bitcoin-adjacent identity and monetization possibilities.. Homepage: https://nostr.com/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Alphabet Investor Relations (Alphabet) - https://abc.xyz/investor/\n  Why it matters: Primary source for business segments and financial framing.\n- Alphabet Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/alphabet-google/marketcap/\n  Why it matters: Market cap snapshot reference.\n- elie222/inbox-zero (GitHub) - https://github.com/elie222/inbox-zero\n  Why it matters: GitHub repository for Inbox Zero, an open-source AI personal assistant for email.\n- Gmail for Google Workspace (Google Workspace) - https://workspace.google.com/products/gmail/\n  Why it matters: Product page for Gmail, including Gemini-assisted email, Smart Reply, security, and Workspace positioning.\n- Google Cloud (Google) - https://cloud.google.com/\n  Why it matters: Cloud and workspace surface area.\n- Google final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1288776/000119312504143377/d424b4.htm\n  Why it matters: Primary source for Google's IPO date, auction clearing price, and post-offering share count.\n- Google Photos (Google) - https://www.google.com/photos/about/\n  Why it matters: Product page describing Google Photos backup, search, AI organization, sharing, and Google One storage upsell.\n- Google Products (Google) - https://about.google/products/\n  Why it matters: Broad overview of consumer-facing product footprint.\n- Immich (Immich) - https://immich.app/\n  Why it matters: Homepage for the self-hosted photo and video management project.\n- immich-app/immich (GitHub) - https://github.com/immich-app/immich\n  Why it matters: GitHub repository for Immich, described as a high-performance self-hosted photo and video management solution.\n- Inbox Zero (Inbox Zero) - https://www.getinboxzero.com/\n  Why it matters: Homepage for the AI email assistant with privacy-first, open-source, and self-hosting claims.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- PeerTube (Framasoft) - https://joinpeertube.org/\n  Why it matters: Federated video alternative relevant to YouTube.\n- SearXNG (SearXNG contributors) - https://github.com/searxng/searxng\n  Why it matters: Open metasearch alternative relevant to search decentralization arguments.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Alphabet's YouTube business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
+      }
+    },
+    {
+      "slug": "google-photos",
+      "name": "Google Photos",
+      "category": "Photo storage and memories",
+      "homepageUrl": "https://www.google.com/photos/about/",
+      "summary": "Cloud photo backup, organization, editing, search, and sharing tied to Google accounts and Google One storage economics.",
+      "whyItMatters": "Photos are emotionally sticky data; once a lifetime of memories lives in one cloud, switching costs become unusually personal.",
+      "replacementSketch": [
+        "Self-hosted photo libraries can keep personal memories under household or community control instead of inside an ad-scale identity company.",
+        "Local AI indexing plus commodity storage can recreate much of the magic without requiring Google to own the archive."
+      ],
+      "sourceIds": [
+        "google-photos",
+        "immich-home",
+        "immich-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "alphabet",
+      "alternativeSlugs": [
+        "immich-photo-management"
+      ],
+      "disruptionConceptSlugs": [
+        "google-photos-self-hosted-memory-vault"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Alphabet's Google Photos\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Alphabet (GOOGL)\n- Company slug: alphabet\n- Company description: Search, ads, video, mobile, and cloud giant still centered economically on attention capture.\n- Product: Google Photos\n- Product slug: google-photos\n- Product category: Photo storage and memories\n- Product homepage: https://www.google.com/photos/about/\n- Product summary: Cloud photo backup, organization, editing, search, and sharing tied to Google accounts and Google One storage economics.\n- Why it matters: Photos are emotionally sticky data; once a lifetime of memories lives in one cloud, switching costs become unusually personal.\n\n## Company Thesis\n\n- The empire of default answers\n  Alphabet is a reminder that a search box can turn into an economic continent if enough adjacent products quietly feed it users, data, and ad inventory.\n  Unlike hardware-heavy empires, much of Alphabet's surface area is theoretically reproducible with open software and protocols. The challenge is that reproducing the data flywheel, distribution, and ad-market depth is harder than reproducing the software itself.\n\n### Moat narrative\n- Search quality, ad-market liquidity, distribution via Android and browsers, and YouTube's audience scale keep Alphabet resilient.\n- The moat is partly product quality and partly the advantage of already being where the world's queries and creators congregate.\n\n### Decentralization narrative\n- Search aggregation, federated video, and de-Googled Android all create real cracks in the story that Google's stack is irreplaceable.\n- Still, open alternatives often struggle exactly where Google is strongest: defaults, reach, and advertiser convenience.\n\n## Replacement Sketch\n\n- Self-hosted photo libraries can keep personal memories under household or community control instead of inside an ad-scale identity company.\n- Local AI indexing plus commodity storage can recreate much of the magic without requiring Google to own the archive.\n\n## Existing Alternatives Worth Studying First\n\n- Immich (open-source): Self-hosted photo and video management system for backing up, browsing, and searching personal media libraries.. Homepage: https://immich.app/. Repo: https://github.com/immich-app/immich.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Alphabet Investor Relations (Alphabet) - https://abc.xyz/investor/\n  Why it matters: Primary source for business segments and financial framing.\n- Alphabet Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/alphabet-google/marketcap/\n  Why it matters: Market cap snapshot reference.\n- elie222/inbox-zero (GitHub) - https://github.com/elie222/inbox-zero\n  Why it matters: GitHub repository for Inbox Zero, an open-source AI personal assistant for email.\n- Gmail for Google Workspace (Google Workspace) - https://workspace.google.com/products/gmail/\n  Why it matters: Product page for Gmail, including Gemini-assisted email, Smart Reply, security, and Workspace positioning.\n- Google Cloud (Google) - https://cloud.google.com/\n  Why it matters: Cloud and workspace surface area.\n- Google final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1288776/000119312504143377/d424b4.htm\n  Why it matters: Primary source for Google's IPO date, auction clearing price, and post-offering share count.\n- Google Photos (Google) - https://www.google.com/photos/about/\n  Why it matters: Product page describing Google Photos backup, search, AI organization, sharing, and Google One storage upsell.\n- Google Products (Google) - https://about.google/products/\n  Why it matters: Broad overview of consumer-facing product footprint.\n- Immich (Immich) - https://immich.app/\n  Why it matters: Homepage for the self-hosted photo and video management project.\n- immich-app/immich (GitHub) - https://github.com/immich-app/immich\n  Why it matters: GitHub repository for Immich, described as a high-performance self-hosted photo and video management solution.\n- Inbox Zero (Inbox Zero) - https://www.getinboxzero.com/\n  Why it matters: Homepage for the AI email assistant with privacy-first, open-source, and self-hosting claims.\n- PeerTube (Framasoft) - https://joinpeertube.org/\n  Why it matters: Federated video alternative relevant to YouTube.\n- SearXNG (SearXNG contributors) - https://github.com/searxng/searxng\n  Why it matters: Open metasearch alternative relevant to search decentralization arguments.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Alphabet's Google Photos business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
+      }
+    },
+    {
+      "slug": "gmail",
+      "name": "Gmail",
+      "category": "Email and inbox productivity",
+      "homepageUrl": "https://workspace.google.com/products/gmail/",
+      "summary": "Google email product with Workspace integration, Gemini-assisted writing, security filtering, and inbox automation.",
+      "whyItMatters": "Email remains the universal work queue, and inbox intelligence can become another layer of account and workflow lock-in.",
+      "replacementSketch": [
+        "Open-source assistants can sit beside existing mail providers while keeping automation logic auditable and self-hostable.",
+        "Portable rules, labels, and reply-drafting workflows reduce dependence on one platform-owned AI layer."
+      ],
+      "sourceIds": [
+        "gmail-workspace",
+        "inbox-zero-home",
+        "inbox-zero-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "alphabet",
+      "alternativeSlugs": [
+        "inbox-zero-email-assistant"
+      ],
+      "disruptionConceptSlugs": [
+        "gmail-portable-inbox-agent"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Alphabet's Gmail\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Alphabet (GOOGL)\n- Company slug: alphabet\n- Company description: Search, ads, video, mobile, and cloud giant still centered economically on attention capture.\n- Product: Gmail\n- Product slug: gmail\n- Product category: Email and inbox productivity\n- Product homepage: https://workspace.google.com/products/gmail/\n- Product summary: Google email product with Workspace integration, Gemini-assisted writing, security filtering, and inbox automation.\n- Why it matters: Email remains the universal work queue, and inbox intelligence can become another layer of account and workflow lock-in.\n\n## Company Thesis\n\n- The empire of default answers\n  Alphabet is a reminder that a search box can turn into an economic continent if enough adjacent products quietly feed it users, data, and ad inventory.\n  Unlike hardware-heavy empires, much of Alphabet's surface area is theoretically reproducible with open software and protocols. The challenge is that reproducing the data flywheel, distribution, and ad-market depth is harder than reproducing the software itself.\n\n### Moat narrative\n- Search quality, ad-market liquidity, distribution via Android and browsers, and YouTube's audience scale keep Alphabet resilient.\n- The moat is partly product quality and partly the advantage of already being where the world's queries and creators congregate.\n\n### Decentralization narrative\n- Search aggregation, federated video, and de-Googled Android all create real cracks in the story that Google's stack is irreplaceable.\n- Still, open alternatives often struggle exactly where Google is strongest: defaults, reach, and advertiser convenience.\n\n## Replacement Sketch\n\n- Open-source assistants can sit beside existing mail providers while keeping automation logic auditable and self-hostable.\n- Portable rules, labels, and reply-drafting workflows reduce dependence on one platform-owned AI layer.\n\n## Existing Alternatives Worth Studying First\n\n- Inbox Zero (open-source): Open-source AI email assistant for labeling, drafting replies, unsubscribing, analytics, and inbox cleanup.. Homepage: https://www.getinboxzero.com/. Repo: https://github.com/elie222/inbox-zero.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Alphabet Investor Relations (Alphabet) - https://abc.xyz/investor/\n  Why it matters: Primary source for business segments and financial framing.\n- Alphabet Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/alphabet-google/marketcap/\n  Why it matters: Market cap snapshot reference.\n- elie222/inbox-zero (GitHub) - https://github.com/elie222/inbox-zero\n  Why it matters: GitHub repository for Inbox Zero, an open-source AI personal assistant for email.\n- Gmail for Google Workspace (Google Workspace) - https://workspace.google.com/products/gmail/\n  Why it matters: Product page for Gmail, including Gemini-assisted email, Smart Reply, security, and Workspace positioning.\n- Google Cloud (Google) - https://cloud.google.com/\n  Why it matters: Cloud and workspace surface area.\n- Google final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1288776/000119312504143377/d424b4.htm\n  Why it matters: Primary source for Google's IPO date, auction clearing price, and post-offering share count.\n- Google Photos (Google) - https://www.google.com/photos/about/\n  Why it matters: Product page describing Google Photos backup, search, AI organization, sharing, and Google One storage upsell.\n- Google Products (Google) - https://about.google/products/\n  Why it matters: Broad overview of consumer-facing product footprint.\n- Immich (Immich) - https://immich.app/\n  Why it matters: Homepage for the self-hosted photo and video management project.\n- immich-app/immich (GitHub) - https://github.com/immich-app/immich\n  Why it matters: GitHub repository for Immich, described as a high-performance self-hosted photo and video management solution.\n- Inbox Zero (Inbox Zero) - https://www.getinboxzero.com/\n  Why it matters: Homepage for the AI email assistant with privacy-first, open-source, and self-hosting claims.\n- PeerTube (Framasoft) - https://joinpeertube.org/\n  Why it matters: Federated video alternative relevant to YouTube.\n- SearXNG (SearXNG contributors) - https://github.com/searxng/searxng\n  Why it matters: Open metasearch alternative relevant to search decentralization arguments.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Alphabet's Gmail business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -5706,6 +6209,39 @@ export const contentGraph: ContentGraph = {
       }
     },
     {
+      "slug": "cloudflare-bot-management",
+      "name": "Cloudflare Bot Management",
+      "category": "Bot mitigation and threat intelligence",
+      "homepageUrl": "https://www.cloudflare.com/application-services/products/bot-management/",
+      "summary": "Bot detection and mitigation product using machine learning, behavioral analysis, Turnstile, and Cloudflare edge enforcement.",
+      "whyItMatters": "Cloudflare benefits from network-scale traffic intelligence; that data advantage can make bot protection feel inseparable from one infrastructure provider.",
+      "replacementSketch": [
+        "Crowdsourced threat intelligence can make defensive signals portable across operators instead of locked inside one edge network.",
+        "Open security engines let defenders inspect detections and share reputation without handing all traffic to one vendor."
+      ],
+      "sourceIds": [
+        "cloudflare-bot-management",
+        "crowdsec-home",
+        "crowdsec-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "cloudflare",
+      "alternativeSlugs": [
+        "crowdsec-threat-intelligence"
+      ],
+      "disruptionConceptSlugs": [
+        "cloudflare-crowdsourced-threat-intel-commons"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Cloudflare's Cloudflare Bot Management\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Cloudflare (NET)\n- Company slug: cloudflare\n- Company description: Internet infrastructure and security platform company spanning CDN, web security, bot mitigation, and edge services.\n- Product: Cloudflare Bot Management\n- Product slug: cloudflare-bot-management\n- Product category: Bot mitigation and threat intelligence\n- Product homepage: https://www.cloudflare.com/application-services/products/bot-management/\n- Product summary: Bot detection and mitigation product using machine learning, behavioral analysis, Turnstile, and Cloudflare edge enforcement.\n- Why it matters: Cloudflare benefits from network-scale traffic intelligence; that data advantage can make bot protection feel inseparable from one infrastructure provider.\n\n## Company Thesis\n\n- Workflow gravity with open-source pressure\n  Cloudflare monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.\n  The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most.\n\n### Moat narrative\n- The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.\n- Open-source alternatives can start with teams that value control more than procurement convenience.\n\n### Decentralization narrative\n- The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.\n- The main adoption barrier is operational maturity rather than basic technical possibility.\n\n## Replacement Sketch\n\n- Crowdsourced threat intelligence can make defensive signals portable across operators instead of locked inside one edge network.\n- Open security engines let defenders inspect detections and share reputation without handing all traffic to one vendor.\n\n## Existing Alternatives Worth Studying First\n\n- CrowdSec (open-source): Open-source security engine and crowd-powered threat intelligence network for detecting and blocking malicious IP behavior.. Homepage: https://www.crowdsec.net/. Repo: https://github.com/crowdsecurity/crowdsec.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Cloudflare Bot Management (Cloudflare) - https://www.cloudflare.com/application-services/products/bot-management/\n  Why it matters: Product page for Cloudflare Bot Management / bot mitigation using ML, behavioral analysis, and edge enforcement.\n- Cloudflare Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/cloudflare/marketcap/\n  Why it matters: Market capitalization snapshot for Cloudflare.\n- CrowdSec (CrowdSec) - https://www.crowdsec.net/\n  Why it matters: Homepage for crowd-powered threat intelligence, blocklists, and the CrowdSec security engine.\n- crowdsecurity/crowdsec (GitHub) - https://github.com/crowdsecurity/crowdsec\n  Why it matters: GitHub repository for CrowdSec.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Cloudflare's Cloudflare Bot Management business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
+      }
+    },
+    {
       "slug": "coca-cola-classic",
       "name": "Coca-Cola",
       "category": "Carbonated Soft Drinks",
@@ -5803,6 +6339,73 @@ export const contentGraph: ContentGraph = {
       "implementationPrompt": {
         "markdown": "# Build A Free Alternative To Costco's Warehouse clubs\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Costco (COST)\n- Company slug: costco\n- Company description: Membership warehouse retailer combining limited-SKU bulk merchandising, private-label products, and high-volume operational discipline.\n- Product: Warehouse clubs\n- Product slug: warehouse-clubs\n- Product category: membership retail\n- Product homepage: https://www.costco.com/join-costco.html\n- Product summary: Members pay annual fees for access to low-margin bulk groceries, household goods, ancillary services, and selected private-label products.\n- Why it matters: This is the core retail format that concentrates purchasing power, logistics, and consumer demand into one operator, making Costco a major gatekeeper for bulk household spending.\n\n## Company Thesis\n\n- Membership Warehouse Model\n  Costco operates an international chain of membership warehouses and e-commerce sites built around low prices on a limited selection of nationally branded and private-label products across a wide range of categories.\n  Its model depends on high sales volume, rapid inventory turnover, efficient distribution, and no-frills self-service facilities, with membership fees adding a recurring revenue layer on top of thin retail margins.\n- Scale And Current Performance\n  Costco reported fiscal 2025 net sales of $269.9 billion, membership fees of $5.323 billion, and net income of $8.099 billion, while operating 914 warehouses at fiscal year-end.\n  In the first 24 weeks of fiscal 2026, net sales rose to $134.22 billion and membership fees to $2.684 billion, indicating that the scale-and-membership engine remained intact into March 2026.\n\n### Moat narrative\n- Costco’s moat comes from purchasing scale, supplier leverage, unusually fast inventory turnover, and member willingness to pre-commit through annual fees. That combination lets it sell at lower gross margins while still producing meaningful operating income.\n- The Kirkland Signature private label deepens the moat by giving Costco margin control and customer loyalty without stocking the full SKU sprawl of a conventional retailer. Replicating the same trust, throughput, and national warehouse footprint is difficult for smaller challengers.\n\n### Decentralization narrative\n- The warehouse-club model is structurally centralized: buying power, distribution, private-label sourcing, and membership economics all improve with scale and coordination from a single operator. That makes Costco hard to displace directly with purely local alternatives today.\n- The weaker flank is not the warehouse shell itself but the category mix inside it. Local food hubs, cooperative ordering software, open logistics coordination, and distributed manufacturing for some commodity household goods could chip away at slices of Costco’s value proposition over time rather than replacing the whole company at once.\n\n## Replacement Sketch\n\n- A credible replacement path starts with federated local food hubs, buying clubs, and cooperative storefronts that aggregate demand without requiring one giant national operator. Software like Open Food Network and FoodCoopShop makes that coordination more practical than a pure paper-and-spreadsheet co-op model.\n- A second path targets the private-label and commodity side of the basket rather than the entire warehouse. Local refill systems, recycled-material workshops, and small open manufacturing cells could capture narrow categories first, especially where branding matters less than price, availability, and repairability.\n\n## Existing Alternatives Worth Studying First\n\n- Open Food Network (open-source): Open-source marketplace infrastructure for local food producers, food hubs, and community enterprises.. Homepage: https://openfoodnetwork.org/. Repo: https://github.com/openfoodfoundation/openfoodnetwork.\n- FoodCoopShop (open-source): AGPL-licensed software for food co-ops and local shops, including decentralized product synchronization between installations.. Homepage: https://www.foodcoopshop.com/. Repo: https://github.com/foodcoopshop/foodcoopshop.\n\n## Relevant Technology Waves\n\n- Microfactories and automated mini-home production: Small, software-defined manufacturing cells could make localized production less eccentric and more default.\n\n## Useful Sources To Read Before Building\n\n- About Kirkland Signature (Costco) - https://www.costco.com/f/-/about-kirkland-signature/\n  Why it matters: Official page describing Kirkland Signature as a Costco-exclusive private label spanning many household categories.\n- About Us (Costco) - https://www.costco.com/f/-/about/\n  Why it matters: Official about page explaining Costco’s warehouse-club history, limited SKU strategy, and operating philosophy.\n- About Us - Open Food Network (Open Food Network) - https://openfoodnetwork.org/about-us/\n  Why it matters: Explains the project’s open-source, transparent-governance approach to community food enterprises.\n- Costco Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/costco/marketcap/\n  Why it matters: Used for current approximate market capitalization and global market-cap rank.\n- Costco P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/costco/pe-ratio/\n  Why it matters: Used for current approximate trailing price-to-earnings ratio.\n- Costco Wholesale Corporation Company Profile (Costco Wholesale Corporation) - https://investor.costco.com/company-profile/\n  Why it matters: Official company profile describing the membership warehouse model, product categories, Kirkland Signature, and membership structure.\n- Costco Wholesale Corporation Reports Fourth Quarter and Fiscal Year 2025 Operating Results (Costco Wholesale Corporation) - https://investor.costco.com/news/news-details/2025/Costco-Wholesale-Corporation-Reports-Fourth-Quarter-and-Fiscal-Year-2025-Operating-Results/\n  Why it matters: Official fiscal 2025 sales, membership-fee, net-income, and warehouse-count figures.\n- Costco Wholesale Corporation Reports Second Quarter and Year-to-Date Operating Results for Fiscal 2026 and February Sales Results (Costco Wholesale Corporation) - https://investor.costco.com/news/news-details/2026/Costco-Wholesale-Corporation-Reports-Second-Quarter-and-Year-to-Date-Operating-Results-for-Fiscal-2026-and-February-Sales-Results/default.aspx\n  Why it matters: Official March 5, 2026 update confirming recent sales, membership-fee growth, and net income trends.\n- foodcoopshop/foodcoopshop (GitHub / FoodCoopShop) - https://github.com/foodcoopshop/foodcoopshop\n  Why it matters: Public AGPL repository for software aimed at food co-ops and local shops, including decentralized synchronization.\n- Home - Open Food Network (Open Food Network) - https://openfoodnetwork.org/\n  Why it matters: Provides current positioning, deployment scale, and mission for OFN as local food marketplace infrastructure.\n- Join Costco (Costco) - https://www.costco.com/join-costco.html?COSTID=Header_Membership_MAIN\n  Why it matters: Official membership page showing current membership packaging and economics for the warehouse-club product.\n- Open Source Microfactory (Open Source Ecology) - https://wiki.opensourceecology.org/wiki/Open_Source_Microfactory\n  Why it matters: Documents the open-source microfactory concept as distributed local manufacturing infrastructure.\n- openfoodfoundation/openfoodnetwork (GitHub / Open Food Foundation) - https://github.com/openfoodfoundation/openfoodnetwork\n  Why it matters: Public repository supporting OFN’s open-source and not-for-profit claims.\n- Precious Plastic Machines Overview (Precious Plastic) - https://www.preciousplastic.com/solutions/machines/overview\n  Why it matters: Documents openly shared local plastic recycling and manufacturing machines relevant to distributed household-goods production.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Costco's Warehouse clubs business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
         "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "docusign-esignature",
+      "name": "Docusign eSignature",
+      "category": "Electronic signature",
+      "homepageUrl": "https://www.docusign.com/",
+      "summary": "Electronic signature and agreement workflow product inside Docusign Intelligent Agreement Management.",
+      "whyItMatters": "Signing workflows sit at the legal boundary of business; once templates, audit trails, and integrations accumulate, switching becomes costly.",
+      "replacementSketch": [
+        "Open-source signing can make templates, audit trails, and embedded signing flows more portable.",
+        "Self-hosted or transparent signing backends can serve teams that need control over agreement infrastructure."
+      ],
+      "sourceIds": [
+        "docusign-home",
+        "docusign-investor",
+        "documenso-home",
+        "documenso-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "docusign",
+      "alternativeSlugs": [
+        "documenso-esignature"
+      ],
+      "disruptionConceptSlugs": [
+        "docusign-open-signing-backend"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Docusign's Docusign eSignature\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Docusign (DOCU)\n- Company slug: docusign\n- Company description: Agreement management and electronic signature company spanning eSignature, CLM, and intelligent agreement workflows.\n- Product: Docusign eSignature\n- Product slug: docusign-esignature\n- Product category: Electronic signature\n- Product homepage: https://www.docusign.com/\n- Product summary: Electronic signature and agreement workflow product inside Docusign Intelligent Agreement Management.\n- Why it matters: Signing workflows sit at the legal boundary of business; once templates, audit trails, and integrations accumulate, switching becomes costly.\n\n## Company Thesis\n\n- Workflow gravity with open-source pressure\n  Docusign monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.\n  The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most.\n\n### Moat narrative\n- The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.\n- Open-source alternatives can start with teams that value control more than procurement convenience.\n\n### Decentralization narrative\n- The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.\n- The main adoption barrier is operational maturity rather than basic technical possibility.\n\n## Replacement Sketch\n\n- Open-source signing can make templates, audit trails, and embedded signing flows more portable.\n- Self-hosted or transparent signing backends can serve teams that need control over agreement infrastructure.\n\n## Existing Alternatives Worth Studying First\n\n- Documenso (open-source): Open-source e-signature platform for document signing, templates, teams, APIs, and embedded workflows.. Homepage: https://documenso.com/. Repo: https://github.com/documenso/documenso.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Documenso (Documenso) - https://documenso.com/\n  Why it matters: Homepage for open-source enterprise-grade e-signatures and signing workflows.\n- documenso/documenso (GitHub) - https://github.com/documenso/documenso\n  Why it matters: GitHub repository for Documenso, the open-source Docusign alternative.\n- Docusign (Docusign) - https://www.docusign.com/\n  Why it matters: Product page for Docusign eSignature and Intelligent Agreement Management.\n- Docusign Investor Relations (Docusign) - https://investor.docusign.com/\n  Why it matters: Investor relations page describing Docusign IAM, eSignature, CLM, customer scale, and AI agreement data.\n- Docusign Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/docusign/marketcap/\n  Why it matters: Market capitalization snapshot for Docusign.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Docusign's Docusign eSignature business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
+      }
+    },
+    {
+      "slug": "dropbox-docsend",
+      "name": "DocSend",
+      "category": "Tracked document sharing",
+      "homepageUrl": "https://www.docsend.com/",
+      "summary": "Dropbox document sharing and virtual data room product with link controls, analytics, permissions, and deal workflows.",
+      "whyItMatters": "Pitch decks, diligence rooms, and investor updates create high-stakes document trails where analytics and access control become expensive workflow rent.",
+      "replacementSketch": [
+        "Open data rooms can give founders and deal teams document control without trapping sensitive sharing workflows in a closed SaaS.",
+        "Self-hosting and custom domains can preserve trust while lowering cost."
+      ],
+      "sourceIds": [
+        "docsend",
+        "papermark-home",
+        "papermark-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "dropbox",
+      "alternativeSlugs": [
+        "papermark-docsend-alternative"
+      ],
+      "disruptionConceptSlugs": [
+        "dropbox-docsend-self-hosted-data-room"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Dropbox's DocSend\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Dropbox (DBX)\n- Company slug: dropbox\n- Company description: Collaboration and file-sharing software company whose DocSend product provides tracked document sharing and virtual data rooms.\n- Product: DocSend\n- Product slug: dropbox-docsend\n- Product category: Tracked document sharing\n- Product homepage: https://www.docsend.com/\n- Product summary: Dropbox document sharing and virtual data room product with link controls, analytics, permissions, and deal workflows.\n- Why it matters: Pitch decks, diligence rooms, and investor updates create high-stakes document trails where analytics and access control become expensive workflow rent.\n\n## Company Thesis\n\n- Workflow gravity with open-source pressure\n  Dropbox monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.\n  The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most.\n\n### Moat narrative\n- The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.\n- Open-source alternatives can start with teams that value control more than procurement convenience.\n\n### Decentralization narrative\n- The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.\n- The main adoption barrier is operational maturity rather than basic technical possibility.\n\n## Replacement Sketch\n\n- Open data rooms can give founders and deal teams document control without trapping sensitive sharing workflows in a closed SaaS.\n- Self-hosting and custom domains can preserve trust while lowering cost.\n\n## Existing Alternatives Worth Studying First\n\n- Papermark (open-source): Open-source secure document sharing and data room platform with analytics, custom domains, and self-hosting.. Homepage: https://www.papermark.com/. Repo: https://github.com/papermark/papermark.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- DocSend (Dropbox DocSend) - https://www.docsend.com/\n  Why it matters: Product page for Dropbox DocSend secure document sharing, virtual data rooms, and analytics.\n- Dropbox Investor Relations (Dropbox) - https://investors.dropbox.com/\n  Why it matters: Investor relations page describing Dropbox as a global collaboration platform.\n- Dropbox Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/dropbox/marketcap/\n  Why it matters: Market capitalization snapshot for Dropbox.\n- Papermark (Papermark) - https://www.papermark.com/\n  Why it matters: Homepage for Papermark secure data rooms and open-source DocSend alternative.\n- papermark/papermark (GitHub) - https://github.com/papermark/papermark\n  Why it matters: GitHub repository for Papermark, the open-source DocSend alternative.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Dropbox's DocSend business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6288,8 +6891,8 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Meta Platforms's Instagram\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: Instagram\n- Product slug: instagram\n- Product category: Social platform\n- Product homepage: https://www.instagram.com/\n- Product summary: Photo and short-form social platform with immense creator and advertiser gravity.\n- Why it matters: Instagram monetizes cultural attention at scale.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Federated social graphs can weaken the assumption that creators must rent distribution from a single feed algorithm.\n- Portable identities and payment rails make creator businesses less platform-dependent over time.\n\n## Existing Alternatives Worth Studying First\n\n- Pixelfed (open-source): Federated photo-sharing network built on ActivityPub.. Homepage: https://pixelfed.org/.\n- Mastodon (open-source): Federated social network and a visible proof that large-scale social publishing can use open protocols.. Homepage: https://joinmastodon.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's Instagram business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-24"
+        "markdown": "# Build A Free Alternative To Meta Platforms's Instagram\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: Instagram\n- Product slug: instagram\n- Product category: Social platform\n- Product homepage: https://www.instagram.com/\n- Product summary: Photo and short-form social platform with immense creator and advertiser gravity.\n- Why it matters: Instagram monetizes cultural attention at scale.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Federated social graphs can weaken the assumption that creators must rent distribution from a single feed algorithm.\n- Portable identities and payment rails make creator businesses less platform-dependent over time.\n\n## Existing Alternatives Worth Studying First\n\n- Pixelfed (open-source): Federated photo-sharing network built on ActivityPub.. Homepage: https://pixelfed.org/.\n- Mastodon (open-source): Federated social network and a visible proof that large-scale social publishing can use open protocols.. Homepage: https://joinmastodon.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Discourse (Discourse) - https://www.discourse.org/\n  Why it matters: Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Facebook's new Forum app is Meta's clearest challenge to Reddit yet (Geekout) - https://geekout.mattnavarra.com/p/facebook-forum-app-reddit-spotify-disco-ball-icon-linkedin-ai-non-consensual-moderation\n  Why it matters: Analysis of Forum as Meta's attempt to copy Reddit's community knowledge utility through Facebook Groups.\n- Forum, a Facebook app (Apple App Store) - https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n  Why it matters: Primary app listing for Meta's Forum app, including Facebook account carry-over, Ask, and admin AI assistant descriptions.\n- gitroomhq/postiz-app (GitHub) - https://github.com/gitroomhq/postiz-app\n  Why it matters: GitHub repository for Postiz, an agentic social media scheduling tool.\n- Lemmy (Lemmy) - https://join-lemmy.org/\n  Why it matters: Federated open-source discussion platform with Reddit-like communities, voting, threaded comments, and self-hosting.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta for Business (Meta) - https://business.facebook.com/\n  Why it matters: Business tools page for Meta Business Suite, Ads Manager, publishing, inbox, and insights across Meta technologies.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Launches Forum App as a Reddit-Like Platform for Discussions With AI-Powered Assistant for Admins (Gadgets 360) - https://www.gadgets360.com/apps/news/meta-forum-app-facebook-listing-store-ios-features-11533633\n  Why it matters: Coverage describing Forum as a Reddit-like Facebook Groups app with Ask and admin AI features.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- PieFed (PieFed) - https://join.piefed.social/\n  Why it matters: Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- Postiz (Postiz) - https://postiz.com/\n  Why it matters: Homepage for the agentic social media scheduling and automation tool.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's Instagram business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6326,8 +6929,8 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Meta Platforms's Forum\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: Forum\n- Product slug: meta-forum\n- Product category: Community platform\n- Product homepage: https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n- Product summary: Standalone iOS app that turns Facebook Groups into a Reddit-style discussion and answer surface.\n- Why it matters: Forum is Meta's attempt to repackage Facebook Groups as a cleaner community knowledge layer before Reddit-like utility drifts elsewhere.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Federated forums can preserve topical communities without requiring a Facebook account or central graph owner.\n- Self-hosted community platforms let groups keep archives, moderation norms, and member identity portable.\n\n## Existing Alternatives Worth Studying First\n\n- Lemmy (decentralized): Federated discussion platform for Reddit-like communities, threaded comments, voting, and self-hosted instances.. Homepage: https://join-lemmy.org/. Repo: https://github.com/LemmyNet/lemmy.\n- PieFed (decentralized): Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.. Homepage: https://join.piefed.social/. Repo: https://codeberg.org/rimu/pyfedi/.\n- Discourse (open-source): Open-source community platform for searchable forums, support hubs, product feedback, and member-owned knowledge bases.. Homepage: https://www.discourse.org/. Repo: https://github.com/discourse/discourse.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Discourse (Discourse) - https://www.discourse.org/\n  Why it matters: Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Facebook's new Forum app is Meta's clearest challenge to Reddit yet (Geekout) - https://geekout.mattnavarra.com/p/facebook-forum-app-reddit-spotify-disco-ball-icon-linkedin-ai-non-consensual-moderation\n  Why it matters: Analysis of Forum as Meta's attempt to copy Reddit's community knowledge utility through Facebook Groups.\n- Forum, a Facebook app (Apple App Store) - https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n  Why it matters: Primary app listing for Meta's Forum app, including Facebook account carry-over, Ask, and admin AI assistant descriptions.\n- Lemmy (Lemmy) - https://join-lemmy.org/\n  Why it matters: Federated open-source discussion platform with Reddit-like communities, voting, threaded comments, and self-hosting.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Launches Forum App as a Reddit-Like Platform for Discussions With AI-Powered Assistant for Admins (Gadgets 360) - https://www.gadgets360.com/apps/news/meta-forum-app-facebook-listing-store-ios-features-11533633\n  Why it matters: Coverage describing Forum as a Reddit-like Facebook Groups app with Ask and admin AI features.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- PieFed (PieFed) - https://join.piefed.social/\n  Why it matters: Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's Forum business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-05-23"
+        "markdown": "# Build A Free Alternative To Meta Platforms's Forum\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: Forum\n- Product slug: meta-forum\n- Product category: Community platform\n- Product homepage: https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n- Product summary: Standalone iOS app that turns Facebook Groups into a Reddit-style discussion and answer surface.\n- Why it matters: Forum is Meta's attempt to repackage Facebook Groups as a cleaner community knowledge layer before Reddit-like utility drifts elsewhere.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Federated forums can preserve topical communities without requiring a Facebook account or central graph owner.\n- Self-hosted community platforms let groups keep archives, moderation norms, and member identity portable.\n\n## Existing Alternatives Worth Studying First\n\n- Lemmy (decentralized): Federated discussion platform for Reddit-like communities, threaded comments, voting, and self-hosted instances.. Homepage: https://join-lemmy.org/. Repo: https://github.com/LemmyNet/lemmy.\n- PieFed (decentralized): Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.. Homepage: https://join.piefed.social/. Repo: https://codeberg.org/rimu/pyfedi/.\n- Discourse (open-source): Open-source community platform for searchable forums, support hubs, product feedback, and member-owned knowledge bases.. Homepage: https://www.discourse.org/. Repo: https://github.com/discourse/discourse.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Discourse (Discourse) - https://www.discourse.org/\n  Why it matters: Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Facebook's new Forum app is Meta's clearest challenge to Reddit yet (Geekout) - https://geekout.mattnavarra.com/p/facebook-forum-app-reddit-spotify-disco-ball-icon-linkedin-ai-non-consensual-moderation\n  Why it matters: Analysis of Forum as Meta's attempt to copy Reddit's community knowledge utility through Facebook Groups.\n- Forum, a Facebook app (Apple App Store) - https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n  Why it matters: Primary app listing for Meta's Forum app, including Facebook account carry-over, Ask, and admin AI assistant descriptions.\n- gitroomhq/postiz-app (GitHub) - https://github.com/gitroomhq/postiz-app\n  Why it matters: GitHub repository for Postiz, an agentic social media scheduling tool.\n- Lemmy (Lemmy) - https://join-lemmy.org/\n  Why it matters: Federated open-source discussion platform with Reddit-like communities, voting, threaded comments, and self-hosting.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta for Business (Meta) - https://business.facebook.com/\n  Why it matters: Business tools page for Meta Business Suite, Ads Manager, publishing, inbox, and insights across Meta technologies.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Launches Forum App as a Reddit-Like Platform for Discussions With AI-Powered Assistant for Admins (Gadgets 360) - https://www.gadgets360.com/apps/news/meta-forum-app-facebook-listing-store-ios-features-11533633\n  Why it matters: Coverage describing Forum as a Reddit-like Facebook Groups app with Ask and admin AI features.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- PieFed (PieFed) - https://join.piefed.social/\n  Why it matters: Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- Postiz (Postiz) - https://postiz.com/\n  Why it matters: Homepage for the agentic social media scheduling and automation tool.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's Forum business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6359,8 +6962,41 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Meta Platforms's WhatsApp\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: WhatsApp\n- Product slug: whatsapp-platform\n- Product category: Messaging\n- Product homepage: https://www.whatsapp.com/\n- Product summary: Global messaging network with powerful cross-border reach.\n- Why it matters: WhatsApp is one of the planet's default private communication layers.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Open messaging protocols and encrypted self-hosted tooling make proprietary messaging less inevitable.\n- Micropayments and protocol-native spam resistance could create healthier open messaging economics.\n\n## Existing Alternatives Worth Studying First\n\n- Matrix (protocol): Open messaging protocol with self-hosting and federation.. Homepage: https://matrix.org/.\n- Signal (hybrid): Privacy-focused messaging service that remains more centralized than Matrix but still pushes the market toward better norms.. Homepage: https://signal.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's WhatsApp business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-24"
+        "markdown": "# Build A Free Alternative To Meta Platforms's WhatsApp\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: WhatsApp\n- Product slug: whatsapp-platform\n- Product category: Messaging\n- Product homepage: https://www.whatsapp.com/\n- Product summary: Global messaging network with powerful cross-border reach.\n- Why it matters: WhatsApp is one of the planet's default private communication layers.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Open messaging protocols and encrypted self-hosted tooling make proprietary messaging less inevitable.\n- Micropayments and protocol-native spam resistance could create healthier open messaging economics.\n\n## Existing Alternatives Worth Studying First\n\n- Matrix (protocol): Open messaging protocol with self-hosting and federation.. Homepage: https://matrix.org/.\n- Signal (hybrid): Privacy-focused messaging service that remains more centralized than Matrix but still pushes the market toward better norms.. Homepage: https://signal.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Discourse (Discourse) - https://www.discourse.org/\n  Why it matters: Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Facebook's new Forum app is Meta's clearest challenge to Reddit yet (Geekout) - https://geekout.mattnavarra.com/p/facebook-forum-app-reddit-spotify-disco-ball-icon-linkedin-ai-non-consensual-moderation\n  Why it matters: Analysis of Forum as Meta's attempt to copy Reddit's community knowledge utility through Facebook Groups.\n- Forum, a Facebook app (Apple App Store) - https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n  Why it matters: Primary app listing for Meta's Forum app, including Facebook account carry-over, Ask, and admin AI assistant descriptions.\n- gitroomhq/postiz-app (GitHub) - https://github.com/gitroomhq/postiz-app\n  Why it matters: GitHub repository for Postiz, an agentic social media scheduling tool.\n- Lemmy (Lemmy) - https://join-lemmy.org/\n  Why it matters: Federated open-source discussion platform with Reddit-like communities, voting, threaded comments, and self-hosting.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta for Business (Meta) - https://business.facebook.com/\n  Why it matters: Business tools page for Meta Business Suite, Ads Manager, publishing, inbox, and insights across Meta technologies.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Launches Forum App as a Reddit-Like Platform for Discussions With AI-Powered Assistant for Admins (Gadgets 360) - https://www.gadgets360.com/apps/news/meta-forum-app-facebook-listing-store-ios-features-11533633\n  Why it matters: Coverage describing Forum as a Reddit-like Facebook Groups app with Ask and admin AI features.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- PieFed (PieFed) - https://join.piefed.social/\n  Why it matters: Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- Postiz (Postiz) - https://postiz.com/\n  Why it matters: Homepage for the agentic social media scheduling and automation tool.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's WhatsApp business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
+      }
+    },
+    {
+      "slug": "meta-business-suite",
+      "name": "Meta Business Suite",
+      "category": "Social media management",
+      "homepageUrl": "https://business.facebook.com/",
+      "summary": "Business tools for publishing, inbox management, ads, and insights across Facebook, Instagram, Messenger, and Meta surfaces.",
+      "whyItMatters": "Creator and small-business distribution often starts on Meta surfaces, giving Meta leverage over scheduling, analytics, and customer messaging workflows.",
+      "replacementSketch": [
+        "Open schedulers can make publishing workflows portable across many networks instead of privileging one platform owner.",
+        "Agentic social operations can run from self-hosted automation while still connecting to official network APIs."
+      ],
+      "sourceIds": [
+        "meta-business-tools",
+        "postiz-home",
+        "postiz-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "meta-platforms",
+      "alternativeSlugs": [
+        "postiz-social-scheduler"
+      ],
+      "disruptionConceptSlugs": [
+        "meta-business-suite-portable-social-ops"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Meta Platforms's Meta Business Suite\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Meta Platforms (META)\n- Company slug: meta-platforms\n- Company description: Ad-supported social and messaging empire anchored by Facebook, Instagram, and WhatsApp.\n- Product: Meta Business Suite\n- Product slug: meta-business-suite\n- Product category: Social media management\n- Product homepage: https://business.facebook.com/\n- Product summary: Business tools for publishing, inbox management, ads, and insights across Facebook, Instagram, Messenger, and Meta surfaces.\n- Why it matters: Creator and small-business distribution often starts on Meta surfaces, giving Meta leverage over scheduling, analytics, and customer messaging workflows.\n\n## Company Thesis\n\n- Network effects wearing designer casual\n  Meta's core power is not that social media is impossible to copy. It is that people still prefer congregating where other people already are, even when they complain about the landlord continuously.\n  That keeps Meta's moat meaningful but makes its decentralization risk unusually visible. Social publishing, messaging, and creator distribution are exactly the categories where protocols and federated systems can plausibly chip away at incumbents over time.\n\n### Moat narrative\n- Meta's strongest asset is social graph density and the ad machine built on top of that attention.\n- Its lock-in is real, but it is more behavioral than infrastructural, which usually means disruption starts as migration at the edges.\n\n### Decentralization narrative\n- ActivityPub, federated photo sharing, and open messaging stacks make Meta one of the easier mega-caps to imagine being slowly unbundled.\n- The difficulty is less technical architecture than the sheer inertia of habit, creators, and ad buyers.\n\n## Replacement Sketch\n\n- Open schedulers can make publishing workflows portable across many networks instead of privileging one platform owner.\n- Agentic social operations can run from self-hosted automation while still connecting to official network APIs.\n\n## Existing Alternatives Worth Studying First\n\n- Postiz (open-source): Open-source social media scheduling and automation tool with AI agents, calendar workflows, analytics, and multi-channel publishing.. Homepage: https://postiz.com/. Repo: https://github.com/gitroomhq/postiz-app.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Discourse (Discourse) - https://www.discourse.org/\n  Why it matters: Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.\n- Facebook Amendment No. 8 to Form S-1 (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512222368/d287954ds1a.htm\n  Why it matters: Primary source for Facebook's total Class A and Class B shares outstanding after the IPO.\n- Facebook final IPO prospectus (SEC) - https://www.sec.gov/Archives/edgar/data/1326801/000119312512240111/d287954d424b4.htm\n  Why it matters: Primary source for Facebook's IPO date and final offer price.\n- Facebook's new Forum app is Meta's clearest challenge to Reddit yet (Geekout) - https://geekout.mattnavarra.com/p/facebook-forum-app-reddit-spotify-disco-ball-icon-linkedin-ai-non-consensual-moderation\n  Why it matters: Analysis of Forum as Meta's attempt to copy Reddit's community knowledge utility through Facebook Groups.\n- Forum, a Facebook app (Apple App Store) - https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862\n  Why it matters: Primary app listing for Meta's Forum app, including Facebook account carry-over, Ask, and admin AI assistant descriptions.\n- gitroomhq/postiz-app (GitHub) - https://github.com/gitroomhq/postiz-app\n  Why it matters: GitHub repository for Postiz, an agentic social media scheduling tool.\n- Lemmy (Lemmy) - https://join-lemmy.org/\n  Why it matters: Federated open-source discussion platform with Reddit-like communities, voting, threaded comments, and self-hosting.\n- Mastodon (Mastodon) - https://joinmastodon.org/\n  Why it matters: Federated social alternative reference.\n- Matrix (Matrix.org Foundation) - https://matrix.org/\n  Why it matters: Open messaging protocol alternative.\n- Meta for Business (Meta) - https://business.facebook.com/\n  Why it matters: Business tools page for Meta Business Suite, Ads Manager, publishing, inbox, and insights across Meta technologies.\n- Meta Investor Relations (Meta) - https://investor.atmeta.com/\n  Why it matters: Business and financial framing for Meta's platforms.\n- Meta Launches Forum App as a Reddit-Like Platform for Discussions With AI-Powered Assistant for Admins (Gadgets 360) - https://www.gadgets360.com/apps/news/meta-forum-app-facebook-listing-store-ios-features-11533633\n  Why it matters: Coverage describing Forum as a Reddit-like Facebook Groups app with Ask and admin AI features.\n- Meta Platforms Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/meta-platforms/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Meta technologies (Meta) - https://about.meta.com/technologies/\n  Why it matters: Shows the breadth of Meta's consumer products.\n- PieFed (PieFed) - https://join.piefed.social/\n  Why it matters: Open-source federated forum software built on ActivityPub with ad-free feeds and self-hosting.\n- Pixelfed (Pixelfed) - https://pixelfed.org/\n  Why it matters: Federated photo-sharing alternative relevant to Instagram.\n- Postiz (Postiz) - https://postiz.com/\n  Why it matters: Homepage for the agentic social media scheduling and automation tool.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- WhatsApp (Meta) - https://www.whatsapp.com/\n  Why it matters: Messaging footprint and scale context.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Meta Platforms's Meta Business Suite business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6443,7 +7079,9 @@ export const contentGraph: ContentGraph = {
       "sourceIds": [
         "microsoft-365",
         "libreoffice",
-        "nextcloud"
+        "nextcloud",
+        "anytype-home",
+        "anytype-github"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -6451,7 +7089,8 @@ export const contentGraph: ContentGraph = {
       "companySlug": "microsoft",
       "alternativeSlugs": [
         "libreoffice-suite",
-        "nextcloud-collaboration"
+        "nextcloud-collaboration",
+        "anytype-workspace"
       ],
       "disruptionConceptSlugs": [
         "microsoft-365-suite-concept",
@@ -6459,8 +7098,8 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Microsoft's Microsoft 365\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Microsoft (MSFT)\n- Company slug: microsoft\n- Company description: Enterprise software and cloud infrastructure giant spanning productivity, developer platforms, and operating systems.\n- Product: Microsoft 365\n- Product slug: microsoft-365-suite\n- Product category: Productivity software\n- Product homepage: https://www.microsoft.com/en-us/microsoft-365\n- Product summary: Subscription bundle for documents, collaboration, email, and enterprise workflows.\n- Why it matters: This is one of Microsoft's most obvious rent-capture surfaces.\n\n## Company Thesis\n\n- The office landlord of the enterprise century\n  Microsoft still captures a remarkable amount of value from being the default digital office, identity provider, and enterprise coordination fabric. It has quietly become a utilities company for knowledge work, albeit one with a much better slide deck.\n  That makes it powerful but not invincible. A significant share of Microsoft's software surface area can be rebuilt, self-hosted, or swapped for open alternatives, even if doing so remains inconvenient enough to preserve the moat for now.\n\n### Moat narrative\n- The moat is strongest where Microsoft controls organizational workflow, identity, procurement pathways, and default compatibility expectations.\n- GitHub, Azure, and Microsoft 365 reinforce each other into a platform stack that feels safer to keep paying than to rethink.\n\n### Decentralization narrative\n- Productivity, version control, storage, and even cloud layers all have credible open or self-hosted alternatives.\n- The decentralization challenge is cultural and operational more than technical: Microsoft monetizes institutional inertia with exceptional discipline.\n\n## Replacement Sketch\n\n- Open office suites plus self-hosted collaboration are already good enough for more organizations than current procurement habits admit.\n- AI-mediated file conversion and workflow migration should keep lowering switching pain.\n\n## Existing Alternatives Worth Studying First\n\n- LibreOffice (open-source): Open desktop productivity suite for documents, spreadsheets, and presentations.. Homepage: https://www.libreoffice.org/.\n- Nextcloud + Collabora/ONLYOFFICE (hybrid): Self-hosted collaboration stack for storage, docs, and workflows.. Homepage: https://nextcloud.com/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Gitea (Gitea) - https://about.gitea.com/\n  Why it matters: Open alternative to centrally hosted developer platforms.\n- LibreOffice (The Document Foundation) - https://www.libreoffice.org/\n  Why it matters: A durable open-source anchor for productivity-suite alternatives.\n- Microsoft 365 (Microsoft) - https://www.microsoft.com/en-us/microsoft-365\n  Why it matters: Primary productivity subscription reference.\n- Microsoft Azure (Microsoft) - https://azure.microsoft.com/\n  Why it matters: Cloud infrastructure reference.\n- Microsoft final IPO prospectus (Microsoft prospectus archive) - https://www.begintoinvest.com/wp-content/uploads/2018/03/Microsoft_prospectus.pdf\n  Why it matters: Prospectus scan used for Microsoft's IPO date, offer price, and post-offering share count.\n- Microsoft Investor Relations (Microsoft) - https://www.microsoft.com/en-us/investor\n  Why it matters: Business structure and strategic priorities.\n- Microsoft Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/microsoft/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Nextcloud (Nextcloud) - https://nextcloud.com/\n  Why it matters: Widely adopted self-hosted cloud platform.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Microsoft's Microsoft 365 business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-24"
+        "markdown": "# Build A Free Alternative To Microsoft's Microsoft 365\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Microsoft (MSFT)\n- Company slug: microsoft\n- Company description: Enterprise software and cloud infrastructure giant spanning productivity, developer platforms, and operating systems.\n- Product: Microsoft 365\n- Product slug: microsoft-365-suite\n- Product category: Productivity software\n- Product homepage: https://www.microsoft.com/en-us/microsoft-365\n- Product summary: Subscription bundle for documents, collaboration, email, and enterprise workflows.\n- Why it matters: This is one of Microsoft's most obvious rent-capture surfaces.\n\n## Company Thesis\n\n- The office landlord of the enterprise century\n  Microsoft still captures a remarkable amount of value from being the default digital office, identity provider, and enterprise coordination fabric. It has quietly become a utilities company for knowledge work, albeit one with a much better slide deck.\n  That makes it powerful but not invincible. A significant share of Microsoft's software surface area can be rebuilt, self-hosted, or swapped for open alternatives, even if doing so remains inconvenient enough to preserve the moat for now.\n\n### Moat narrative\n- The moat is strongest where Microsoft controls organizational workflow, identity, procurement pathways, and default compatibility expectations.\n- GitHub, Azure, and Microsoft 365 reinforce each other into a platform stack that feels safer to keep paying than to rethink.\n\n### Decentralization narrative\n- Productivity, version control, storage, and even cloud layers all have credible open or self-hosted alternatives.\n- The decentralization challenge is cultural and operational more than technical: Microsoft monetizes institutional inertia with exceptional discipline.\n\n## Replacement Sketch\n\n- Open office suites plus self-hosted collaboration are already good enough for more organizations than current procurement habits admit.\n- AI-mediated file conversion and workflow migration should keep lowering switching pain.\n\n## Existing Alternatives Worth Studying First\n\n- LibreOffice (open-source): Open desktop productivity suite for documents, spreadsheets, and presentations.. Homepage: https://www.libreoffice.org/.\n- Nextcloud + Collabora/ONLYOFFICE (hybrid): Self-hosted collaboration stack for storage, docs, and workflows.. Homepage: https://nextcloud.com/.\n- Anytype (open-source): Local-first encrypted workspace for notes, databases, and collaboration with peer-to-peer sync and user-owned data.. Homepage: https://anytype.io/. Repo: https://github.com/anyproto/anytype-ts.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- anyproto/anytype-ts (GitHub) - https://github.com/anyproto/anytype-ts\n  Why it matters: GitHub repository for the official Anytype desktop client.\n- Anytype (Anytype) - https://anytype.io/\n  Why it matters: Homepage describing Anytype as local-first, encrypted, offline-capable, and peer-to-peer syncable.\n- Gitea (Gitea) - https://about.gitea.com/\n  Why it matters: Open alternative to centrally hosted developer platforms.\n- LibreOffice (The Document Foundation) - https://www.libreoffice.org/\n  Why it matters: A durable open-source anchor for productivity-suite alternatives.\n- Microsoft 365 (Microsoft) - https://www.microsoft.com/en-us/microsoft-365\n  Why it matters: Primary productivity subscription reference.\n- Microsoft Azure (Microsoft) - https://azure.microsoft.com/\n  Why it matters: Cloud infrastructure reference.\n- Microsoft final IPO prospectus (Microsoft prospectus archive) - https://www.begintoinvest.com/wp-content/uploads/2018/03/Microsoft_prospectus.pdf\n  Why it matters: Prospectus scan used for Microsoft's IPO date, offer price, and post-offering share count.\n- Microsoft Investor Relations (Microsoft) - https://www.microsoft.com/en-us/investor\n  Why it matters: Business structure and strategic priorities.\n- Microsoft Loop (Microsoft) - https://www.microsoft.com/en-us/microsoft-loop\n  Why it matters: Product page describing Loop as a collaborative Microsoft 365 app for thinking, planning, and creating together.\n- Microsoft Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/microsoft/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Microsoft Whiteboard (Microsoft) - https://www.microsoft.com/en-us/microsoft-365/microsoft-whiteboard/digital-whiteboard-app\n  Why it matters: Product page for Microsoft Whiteboard as a digital canvas within Microsoft 365.\n- Nextcloud (Nextcloud) - https://nextcloud.com/\n  Why it matters: Widely adopted self-hosted cloud platform.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- tldraw (tldraw) - https://tldraw.dev/\n  Why it matters: Homepage for the React infinite canvas SDK with multiplayer sync and whiteboard infrastructure.\n- tldraw/tldraw (GitHub) - https://github.com/tldraw/tldraw\n  Why it matters: GitHub repository for tldraw, an infinite canvas SDK and whiteboard toolkit.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Microsoft's Microsoft 365 business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6492,8 +7131,41 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Microsoft's GitHub\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Microsoft (MSFT)\n- Company slug: microsoft\n- Company description: Enterprise software and cloud infrastructure giant spanning productivity, developer platforms, and operating systems.\n- Product: GitHub\n- Product slug: microsoft-github\n- Product category: Developer platform\n- Product homepage: https://github.com/\n- Product summary: Code hosting, collaboration, and developer workflow platform.\n- Why it matters: GitHub's value comes from network effects in open-source and enterprise development workflows.\n\n## Company Thesis\n\n- The office landlord of the enterprise century\n  Microsoft still captures a remarkable amount of value from being the default digital office, identity provider, and enterprise coordination fabric. It has quietly become a utilities company for knowledge work, albeit one with a much better slide deck.\n  That makes it powerful but not invincible. A significant share of Microsoft's software surface area can be rebuilt, self-hosted, or swapped for open alternatives, even if doing so remains inconvenient enough to preserve the moat for now.\n\n### Moat narrative\n- The moat is strongest where Microsoft controls organizational workflow, identity, procurement pathways, and default compatibility expectations.\n- GitHub, Azure, and Microsoft 365 reinforce each other into a platform stack that feels safer to keep paying than to rethink.\n\n### Decentralization narrative\n- Productivity, version control, storage, and even cloud layers all have credible open or self-hosted alternatives.\n- The decentralization challenge is cultural and operational more than technical: Microsoft monetizes institutional inertia with exceptional discipline.\n\n## Replacement Sketch\n\n- Open Git hosting and decentralized forge concepts reduce dependence on a single social layer for software development.\n- AI-assisted migration can make self-hosting or federation much less operationally annoying.\n\n## Existing Alternatives Worth Studying First\n\n- Gitea (open-source): Lightweight open forge for code hosting and collaboration.. Homepage: https://about.gitea.com/.\n- Self-hosted Git platforms (hybrid): Umbrella category for self-hosted Git services such as Gitea and GitLab CE.. Homepage: https://about.gitea.com/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Gitea (Gitea) - https://about.gitea.com/\n  Why it matters: Open alternative to centrally hosted developer platforms.\n- LibreOffice (The Document Foundation) - https://www.libreoffice.org/\n  Why it matters: A durable open-source anchor for productivity-suite alternatives.\n- Microsoft 365 (Microsoft) - https://www.microsoft.com/en-us/microsoft-365\n  Why it matters: Primary productivity subscription reference.\n- Microsoft Azure (Microsoft) - https://azure.microsoft.com/\n  Why it matters: Cloud infrastructure reference.\n- Microsoft final IPO prospectus (Microsoft prospectus archive) - https://www.begintoinvest.com/wp-content/uploads/2018/03/Microsoft_prospectus.pdf\n  Why it matters: Prospectus scan used for Microsoft's IPO date, offer price, and post-offering share count.\n- Microsoft Investor Relations (Microsoft) - https://www.microsoft.com/en-us/investor\n  Why it matters: Business structure and strategic priorities.\n- Microsoft Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/microsoft/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Nextcloud (Nextcloud) - https://nextcloud.com/\n  Why it matters: Widely adopted self-hosted cloud platform.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Microsoft's GitHub business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-24"
+        "markdown": "# Build A Free Alternative To Microsoft's GitHub\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Microsoft (MSFT)\n- Company slug: microsoft\n- Company description: Enterprise software and cloud infrastructure giant spanning productivity, developer platforms, and operating systems.\n- Product: GitHub\n- Product slug: microsoft-github\n- Product category: Developer platform\n- Product homepage: https://github.com/\n- Product summary: Code hosting, collaboration, and developer workflow platform.\n- Why it matters: GitHub's value comes from network effects in open-source and enterprise development workflows.\n\n## Company Thesis\n\n- The office landlord of the enterprise century\n  Microsoft still captures a remarkable amount of value from being the default digital office, identity provider, and enterprise coordination fabric. It has quietly become a utilities company for knowledge work, albeit one with a much better slide deck.\n  That makes it powerful but not invincible. A significant share of Microsoft's software surface area can be rebuilt, self-hosted, or swapped for open alternatives, even if doing so remains inconvenient enough to preserve the moat for now.\n\n### Moat narrative\n- The moat is strongest where Microsoft controls organizational workflow, identity, procurement pathways, and default compatibility expectations.\n- GitHub, Azure, and Microsoft 365 reinforce each other into a platform stack that feels safer to keep paying than to rethink.\n\n### Decentralization narrative\n- Productivity, version control, storage, and even cloud layers all have credible open or self-hosted alternatives.\n- The decentralization challenge is cultural and operational more than technical: Microsoft monetizes institutional inertia with exceptional discipline.\n\n## Replacement Sketch\n\n- Open Git hosting and decentralized forge concepts reduce dependence on a single social layer for software development.\n- AI-assisted migration can make self-hosting or federation much less operationally annoying.\n\n## Existing Alternatives Worth Studying First\n\n- Gitea (open-source): Lightweight open forge for code hosting and collaboration.. Homepage: https://about.gitea.com/.\n- Self-hosted Git platforms (hybrid): Umbrella category for self-hosted Git services such as Gitea and GitLab CE.. Homepage: https://about.gitea.com/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- anyproto/anytype-ts (GitHub) - https://github.com/anyproto/anytype-ts\n  Why it matters: GitHub repository for the official Anytype desktop client.\n- Anytype (Anytype) - https://anytype.io/\n  Why it matters: Homepage describing Anytype as local-first, encrypted, offline-capable, and peer-to-peer syncable.\n- Gitea (Gitea) - https://about.gitea.com/\n  Why it matters: Open alternative to centrally hosted developer platforms.\n- LibreOffice (The Document Foundation) - https://www.libreoffice.org/\n  Why it matters: A durable open-source anchor for productivity-suite alternatives.\n- Microsoft 365 (Microsoft) - https://www.microsoft.com/en-us/microsoft-365\n  Why it matters: Primary productivity subscription reference.\n- Microsoft Azure (Microsoft) - https://azure.microsoft.com/\n  Why it matters: Cloud infrastructure reference.\n- Microsoft final IPO prospectus (Microsoft prospectus archive) - https://www.begintoinvest.com/wp-content/uploads/2018/03/Microsoft_prospectus.pdf\n  Why it matters: Prospectus scan used for Microsoft's IPO date, offer price, and post-offering share count.\n- Microsoft Investor Relations (Microsoft) - https://www.microsoft.com/en-us/investor\n  Why it matters: Business structure and strategic priorities.\n- Microsoft Loop (Microsoft) - https://www.microsoft.com/en-us/microsoft-loop\n  Why it matters: Product page describing Loop as a collaborative Microsoft 365 app for thinking, planning, and creating together.\n- Microsoft Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/microsoft/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Microsoft Whiteboard (Microsoft) - https://www.microsoft.com/en-us/microsoft-365/microsoft-whiteboard/digital-whiteboard-app\n  Why it matters: Product page for Microsoft Whiteboard as a digital canvas within Microsoft 365.\n- Nextcloud (Nextcloud) - https://nextcloud.com/\n  Why it matters: Widely adopted self-hosted cloud platform.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- tldraw (tldraw) - https://tldraw.dev/\n  Why it matters: Homepage for the React infinite canvas SDK with multiplayer sync and whiteboard infrastructure.\n- tldraw/tldraw (GitHub) - https://github.com/tldraw/tldraw\n  Why it matters: GitHub repository for tldraw, an infinite canvas SDK and whiteboard toolkit.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Microsoft's GitHub business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
+      }
+    },
+    {
+      "slug": "microsoft-whiteboard",
+      "name": "Microsoft Whiteboard",
+      "category": "Collaborative whiteboard",
+      "homepageUrl": "https://www.microsoft.com/en-us/microsoft-365/microsoft-whiteboard/digital-whiteboard-app",
+      "summary": "Digital whiteboard and visual collaboration surface within the Microsoft 365 collaboration stack.",
+      "whyItMatters": "Visual collaboration tools can become sticky meeting, product, and planning infrastructure inside a broader office suite.",
+      "replacementSketch": [
+        "Open canvas SDKs let teams build domain-specific whiteboards without surrendering every workflow to a suite vendor.",
+        "Portable canvas data and self-hosted sync can make visual collaboration more composable."
+      ],
+      "sourceIds": [
+        "microsoft-whiteboard",
+        "tldraw-home",
+        "tldraw-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "microsoft",
+      "alternativeSlugs": [
+        "tldraw-infinite-canvas"
+      ],
+      "disruptionConceptSlugs": [
+        "microsoft-whiteboard-composable-canvas-apps"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Microsoft's Microsoft Whiteboard\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Microsoft (MSFT)\n- Company slug: microsoft\n- Company description: Enterprise software and cloud infrastructure giant spanning productivity, developer platforms, and operating systems.\n- Product: Microsoft Whiteboard\n- Product slug: microsoft-whiteboard\n- Product category: Collaborative whiteboard\n- Product homepage: https://www.microsoft.com/en-us/microsoft-365/microsoft-whiteboard/digital-whiteboard-app\n- Product summary: Digital whiteboard and visual collaboration surface within the Microsoft 365 collaboration stack.\n- Why it matters: Visual collaboration tools can become sticky meeting, product, and planning infrastructure inside a broader office suite.\n\n## Company Thesis\n\n- The office landlord of the enterprise century\n  Microsoft still captures a remarkable amount of value from being the default digital office, identity provider, and enterprise coordination fabric. It has quietly become a utilities company for knowledge work, albeit one with a much better slide deck.\n  That makes it powerful but not invincible. A significant share of Microsoft's software surface area can be rebuilt, self-hosted, or swapped for open alternatives, even if doing so remains inconvenient enough to preserve the moat for now.\n\n### Moat narrative\n- The moat is strongest where Microsoft controls organizational workflow, identity, procurement pathways, and default compatibility expectations.\n- GitHub, Azure, and Microsoft 365 reinforce each other into a platform stack that feels safer to keep paying than to rethink.\n\n### Decentralization narrative\n- Productivity, version control, storage, and even cloud layers all have credible open or self-hosted alternatives.\n- The decentralization challenge is cultural and operational more than technical: Microsoft monetizes institutional inertia with exceptional discipline.\n\n## Replacement Sketch\n\n- Open canvas SDKs let teams build domain-specific whiteboards without surrendering every workflow to a suite vendor.\n- Portable canvas data and self-hosted sync can make visual collaboration more composable.\n\n## Existing Alternatives Worth Studying First\n\n- tldraw (open-source): Open infinite-canvas SDK for building whiteboards and visual collaboration apps in React.. Homepage: https://tldraw.dev/. Repo: https://github.com/tldraw/tldraw.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- anyproto/anytype-ts (GitHub) - https://github.com/anyproto/anytype-ts\n  Why it matters: GitHub repository for the official Anytype desktop client.\n- Anytype (Anytype) - https://anytype.io/\n  Why it matters: Homepage describing Anytype as local-first, encrypted, offline-capable, and peer-to-peer syncable.\n- Gitea (Gitea) - https://about.gitea.com/\n  Why it matters: Open alternative to centrally hosted developer platforms.\n- LibreOffice (The Document Foundation) - https://www.libreoffice.org/\n  Why it matters: A durable open-source anchor for productivity-suite alternatives.\n- Microsoft 365 (Microsoft) - https://www.microsoft.com/en-us/microsoft-365\n  Why it matters: Primary productivity subscription reference.\n- Microsoft Azure (Microsoft) - https://azure.microsoft.com/\n  Why it matters: Cloud infrastructure reference.\n- Microsoft final IPO prospectus (Microsoft prospectus archive) - https://www.begintoinvest.com/wp-content/uploads/2018/03/Microsoft_prospectus.pdf\n  Why it matters: Prospectus scan used for Microsoft's IPO date, offer price, and post-offering share count.\n- Microsoft Investor Relations (Microsoft) - https://www.microsoft.com/en-us/investor\n  Why it matters: Business structure and strategic priorities.\n- Microsoft Loop (Microsoft) - https://www.microsoft.com/en-us/microsoft-loop\n  Why it matters: Product page describing Loop as a collaborative Microsoft 365 app for thinking, planning, and creating together.\n- Microsoft Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/microsoft/marketcap/\n  Why it matters: Market cap snapshot reference.\n- Microsoft Whiteboard (Microsoft) - https://www.microsoft.com/en-us/microsoft-365/microsoft-whiteboard/digital-whiteboard-app\n  Why it matters: Product page for Microsoft Whiteboard as a digital canvas within Microsoft 365.\n- Nextcloud (Nextcloud) - https://nextcloud.com/\n  Why it matters: Widely adopted self-hosted cloud platform.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- tldraw (tldraw) - https://tldraw.dev/\n  Why it matters: Homepage for the React infinite canvas SDK with multiplayer sync and whiteboard infrastructure.\n- tldraw/tldraw (GitHub) - https://github.com/tldraw/tldraw\n  Why it matters: GitHub repository for tldraw, an infinite canvas SDK and whiteboard toolkit.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Microsoft's Microsoft Whiteboard business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6512,7 +7184,8 @@ export const contentGraph: ContentGraph = {
         "src-peertube",
         "src-jellyfin",
         "src-btcpay",
-        "src-podcast-value"
+        "src-podcast-value",
+        "reddit-startupmind-open-source-saas"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -6528,8 +7201,8 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Netflix's Netflix streaming\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Netflix (NFLX)\n- Company slug: netflix\n- Company description: Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.\n- Product: Netflix streaming\n- Product slug: netflix-streaming\n- Product category: video streaming\n- Product homepage: https://www.netflix.com/\n- Product summary: Netflix’s flagship subscription streaming service for series, films, games, and live programming across connected devices.\n- Why it matters: This is the core product that concentrates Netflix’s economic power: catalog control, recommendation control, app distribution, pricing, and viewer relationship all sit inside one closed platform.\n\n## Company Thesis\n\n- Platform Model\n  Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.\n  The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising.\n- Economic Position\n  For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.\n  Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control.\n\n### Moat narrative\n- Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.\n- That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack.\n\n### Decentralization narrative\n- Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.\n- Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo.\n\n## Replacement Sketch\n\n- A realistic open replacement does not need to clone Netflix title-for-title. It can start by separating the stack into self-hosted media libraries, federated public video networks, and direct payment rails so creators and communities control distribution instead of a single platform owner.\n- Over time, the strongest challenge comes from networks that make hosting, discovery, monetization, and community governance modular. That lowers switching costs for creators and viewers even if premium licensed catalogs remain centralized for longer.\n\n## Existing Alternatives Worth Studying First\n\n- Jellyfin (open-source): Free software media server for managing and streaming your own media library across devices without premium feature gating.. Homepage: https://jellyfin.org/. Repo: https://github.com/jellyfin/jellyfin.\n- PeerTube (decentralized): Federated video platform software that lets many independently operated sites host, share, and discover videos across an interconnected network.. Homepage: https://joinpeertube.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Ads on Netflix (Netflix Help Center) - https://help.netflix.com/en/node/126831\n  Why it matters: Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.\n- Jellyfin Documentation Introduction (Jellyfin) - https://jellyfin.org/docs/\n  Why it matters: Official documentation establishing Jellyfin as a free software media system without premium feature gating.\n- Netflix (NFLX) Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/marketcap/\n  Why it matters: Current market-cap snapshot and approximate market-cap rank used for bundle metrics.\n- Netflix (NFLX) P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as a speculative valuation metric.\n- Netflix 2025 Annual Report (Netflix Investor Relations) - https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx\n  Why it matters: Primary source for company description, strategy, competition framing, and 2025 financial results.\n- Netflix with Ads, Starting at $7.99 (Netflix) - https://www.netflix.com/pr/ads-plan\n  Why it matters: Official plan page describing price, ad load, supported features, and plan limitations.\n- PeerTube ActivityPub Documentation (PeerTube Documentation) - https://docs.joinpeertube.org/api/activitypub\n  Why it matters: Technical source for how PeerTube federates videos, channels, and interactions across servers.\n- Podcast Namespace Value Tag (Podcasting 2.0) - https://podcasting2.org/docs/podcast-namespace/tags/value\n  Why it matters: Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.\n- What is PeerTube? (Framasoft) - https://joinpeertube.org/\n  Why it matters: Official overview of PeerTube’s federated, open-source, ad-free video-hosting model.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Netflix's Netflix streaming business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-25"
+        "markdown": "# Build A Free Alternative To Netflix's Netflix streaming\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Netflix (NFLX)\n- Company slug: netflix\n- Company description: Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.\n- Product: Netflix streaming\n- Product slug: netflix-streaming\n- Product category: video streaming\n- Product homepage: https://www.netflix.com/\n- Product summary: Netflix’s flagship subscription streaming service for series, films, games, and live programming across connected devices.\n- Why it matters: This is the core product that concentrates Netflix’s economic power: catalog control, recommendation control, app distribution, pricing, and viewer relationship all sit inside one closed platform.\n\n## Company Thesis\n\n- Platform Model\n  Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.\n  The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising.\n- Economic Position\n  For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.\n  Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control.\n\n### Moat narrative\n- Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.\n- That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack.\n\n### Decentralization narrative\n- Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.\n- Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo.\n\n## Replacement Sketch\n\n- A realistic open replacement does not need to clone Netflix title-for-title. It can start by separating the stack into self-hosted media libraries, federated public video networks, and direct payment rails so creators and communities control distribution instead of a single platform owner.\n- Over time, the strongest challenge comes from networks that make hosting, discovery, monetization, and community governance modular. That lowers switching costs for creators and viewers even if premium licensed catalogs remain centralized for longer.\n\n## Existing Alternatives Worth Studying First\n\n- Jellyfin (open-source): Free software media server for managing and streaming your own legally owned media library across devices without premium feature gating.. Homepage: https://jellyfin.org/. Repo: https://github.com/jellyfin/jellyfin.\n- PeerTube (decentralized): Federated video platform software that lets many independently operated sites host, share, and discover videos across an interconnected network.. Homepage: https://joinpeertube.org/.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Ads on Netflix (Netflix Help Center) - https://help.netflix.com/en/node/126831\n  Why it matters: Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.\n- Jellyfin Documentation Introduction (Jellyfin) - https://jellyfin.org/docs/\n  Why it matters: Official documentation establishing Jellyfin as a free software media system without premium feature gating.\n- Netflix (NFLX) Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/marketcap/\n  Why it matters: Current market-cap snapshot and approximate market-cap rank used for bundle metrics.\n- Netflix (NFLX) P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as a speculative valuation metric.\n- Netflix 2025 Annual Report (Netflix Investor Relations) - https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx\n  Why it matters: Primary source for company description, strategy, competition framing, and 2025 financial results.\n- Netflix with Ads, Starting at $7.99 (Netflix) - https://www.netflix.com/pr/ads-plan\n  Why it matters: Official plan page describing price, ad load, supported features, and plan limitations.\n- PeerTube ActivityPub Documentation (PeerTube Documentation) - https://docs.joinpeertube.org/api/activitypub\n  Why it matters: Technical source for how PeerTube federates videos, channels, and interactions across servers.\n- Podcast Namespace Value Tag (Podcasting 2.0) - https://podcasting2.org/docs/podcast-namespace/tags/value\n  Why it matters: Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- What is PeerTube? (Framasoft) - https://joinpeertube.org/\n  Why it matters: Official overview of PeerTube’s federated, open-source, ad-free video-hosting model.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Netflix's Netflix streaming business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6559,8 +7232,8 @@ export const contentGraph: ContentGraph = {
       ],
       "maybeDisruptionException": null,
       "implementationPrompt": {
-        "markdown": "# Build A Free Alternative To Netflix's Advertising tier\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Netflix (NFLX)\n- Company slug: netflix\n- Company description: Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.\n- Product: Advertising tier\n- Product slug: advertising-tier\n- Product category: ad-supported streaming plan\n- Product homepage: https://www.netflix.com/pr/ads-plan\n- Product summary: Netflix’s lower-priced Standard with ads plan that trades a cheaper monthly price for ad inventory, some licensing gaps, and certain device limitations.\n- Why it matters: This tier broadens Netflix’s monetization mix and market reach, but it also highlights the platform’s centralized control over pricing, ad load, audience measurement, rights availability, and access rules.\n\n## Company Thesis\n\n- Platform Model\n  Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.\n  The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising.\n- Economic Position\n  For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.\n  Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control.\n\n### Moat narrative\n- Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.\n- That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack.\n\n### Decentralization narrative\n- Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.\n- Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo.\n\n## Replacement Sketch\n\n- A decentralized alternative to ad-supported streaming does not need to recreate conventional ad tech. It can instead reduce dependence on ads by making direct payments, member patronage, and community bundles easier than negotiating access through centralized media buyers and proprietary audience data.\n- The strongest near-term replacement path is hybrid: free or low-cost federated video distribution paired with direct viewer support, event payments, and transparent creator revenue splits. That keeps monetization closer to audiences rather than to opaque ad-market intermediaries.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Ads on Netflix (Netflix Help Center) - https://help.netflix.com/en/node/126831\n  Why it matters: Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.\n- Netflix (NFLX) Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/marketcap/\n  Why it matters: Current market-cap snapshot and approximate market-cap rank used for bundle metrics.\n- Netflix (NFLX) P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as a speculative valuation metric.\n- Netflix 2025 Annual Report (Netflix Investor Relations) - https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx\n  Why it matters: Primary source for company description, strategy, competition framing, and 2025 financial results.\n- Netflix with Ads, Starting at $7.99 (Netflix) - https://www.netflix.com/pr/ads-plan\n  Why it matters: Official plan page describing price, ad load, supported features, and plan limitations.\n- Podcast Namespace Value Tag (Podcasting 2.0) - https://podcasting2.org/docs/podcast-namespace/tags/value\n  Why it matters: Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Netflix's Advertising tier business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
-        "generatedOn": "2026-03-25"
+        "markdown": "# Build A Free Alternative To Netflix's Advertising tier\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Netflix (NFLX)\n- Company slug: netflix\n- Company description: Global subscription video service combining streaming, original programming, recommendations, live programming, games, and a lower-priced ad-supported plan.\n- Product: Advertising tier\n- Product slug: advertising-tier\n- Product category: ad-supported streaming plan\n- Product homepage: https://www.netflix.com/pr/ads-plan\n- Product summary: Netflix’s lower-priced Standard with ads plan that trades a cheaper monthly price for ad inventory, some licensing gaps, and certain device limitations.\n- Why it matters: This tier broadens Netflix’s monetization mix and market reach, but it also highlights the platform’s centralized control over pricing, ad load, audience measurement, rights availability, and access rules.\n\n## Company Thesis\n\n- Platform Model\n  Netflix describes itself as one of the world’s leading entertainment services, offering TV series, films, games, and live programming across many genres and languages. Its core business is still monthly membership fees tied to streaming access, with product design focused on making content easy to discover and consume across devices.\n  The company operates as a single segment and frames its strategy around global growth within an operating-margin target. That matters because Netflix is no longer just a content library; it is a scaled distribution and recommendation system with pricing power, large content budgets, and increasingly diversified monetization through both subscriptions and advertising.\n- Economic Position\n  For fiscal year 2025, Netflix reported $45.18 billion in revenue, $13.33 billion in operating income, a 29.5% operating margin, and $10.98 billion in net income. Those figures show a business that has moved well beyond growth-at-all-costs into a highly profitable global media platform.\n  Its ad-supported plan broadens reach without fully abandoning the subscription model. Netflix markets that tier as a lower-priced plan with a few short ads per hour, but also notes licensing gaps and device-compatibility limits, which underscores how much its offering still depends on centralized rights negotiations, closed app distribution, and platform control.\n\n### Moat narrative\n- Netflix’s moat is a compound of brand recognition, global distribution, recommendation and personalization systems, large-scale content financing, exclusive originals, and entrenched consumer habit. The company also benefits from a broad device footprint and the ability to spread content, marketing, and product investment across a very large paying base.\n- That moat is strong but not absolute. The 10-K explicitly frames competition as a fight for consumers’ leisure time across streaming, gaming, social media, and open content platforms, while the ad-supported plan introduces more sensitivity to rights availability and advertiser demand. Netflix remains powerful because it combines capital, distribution, and interface control in one stack.\n\n### Decentralization narrative\n- Netflix is structurally centralized: content licensing, hosting, recommendation logic, monetization, moderation, account access, and pricing all run through a single operator. Users and creators do not get portability, independent monetization rails, or meaningful governance over discovery and policy.\n- Still, the market it dominates is more decentralizable than the current consumer interface suggests. Federated video hosting, self-hosted media systems, and Bitcoin-native payment rails do not yet replace Netflix’s catalog depth, but they can chip away at its assumptions by separating hosting, discovery, playback, and monetization into interoperable layers rather than one corporate silo.\n\n## Replacement Sketch\n\n- A decentralized alternative to ad-supported streaming does not need to recreate conventional ad tech. It can instead reduce dependence on ads by making direct payments, member patronage, and community bundles easier than negotiating access through centralized media buyers and proprietary audience data.\n- The strongest near-term replacement path is hybrid: free or low-cost federated video distribution paired with direct viewer support, event payments, and transparent creator revenue splits. That keeps monetization closer to audiences rather than to opaque ad-market intermediaries.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Ads on Netflix (Netflix Help Center) - https://help.netflix.com/en/node/126831\n  Why it matters: Official support article describing ad behavior, targeting basics, and device or content restrictions on the ad-supported experience.\n- BTCPay Server Documentation (BTCPay Server) - https://docs.btcpayserver.org/Guide/\n  Why it matters: Official documentation for self-hosted Bitcoin and Lightning payments, including direct peer-to-peer settlement.\n- Netflix (NFLX) Market Capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/marketcap/\n  Why it matters: Current market-cap snapshot and approximate market-cap rank used for bundle metrics.\n- Netflix (NFLX) P/E Ratio (CompaniesMarketCap) - https://companiesmarketcap.com/netflix/pe-ratio/\n  Why it matters: Current trailing P/E snapshot used as a speculative valuation metric.\n- Netflix 2025 Annual Report (Netflix Investor Relations) - https://ir.netflix.net/financials/annual-reports-and-proxies/default.aspx\n  Why it matters: Primary source for company description, strategy, competition framing, and 2025 financial results.\n- Netflix with Ads, Starting at $7.99 (Netflix) - https://www.netflix.com/pr/ads-plan\n  Why it matters: Official plan page describing price, ad load, supported features, and plan limitations.\n- Podcast Namespace Value Tag (Podcasting 2.0) - https://podcasting2.org/docs/podcast-namespace/tags/value\n  Why it matters: Open metadata standard showing how Lightning-compatible value flows and recipient splits can be declared in media distribution.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Netflix's Advertising tier business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -6958,6 +7631,39 @@ export const contentGraph: ContentGraph = {
       "implementationPrompt": {
         "markdown": "# Build A Free Alternative To RTX's Raytheon air and missile defense systems\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: RTX (RTX)\n- Company slug: rtx\n- Company description: RTX is a large U.S. aerospace and defense company spanning Pratt & Whitney aircraft engines, Collins Aerospace systems, and Raytheon defense platforms.\n- Product: Raytheon air and missile defense systems\n- Product slug: raytheon-air-and-missile-defense-systems\n- Product category: integrated air and missile defense\n- Product homepage: https://www.rtx.com/raytheon/what-we-do/integrated-air-and-missile-defense\n- Product summary: Raytheon sells integrated air and missile defense systems built from sensors, command-and-control components, and effectors for complex threat environments.\n- Why it matters: These systems sit inside sovereign procurement loops where trust, performance validation, integration history, and export-control regimes create exceptionally strong incumbency advantages.\n\n## Company Thesis\n\n- Business Mix\n  RTX operates across commercial aerospace propulsion, avionics and aircraft systems, and defense systems through Pratt & Whitney, Collins Aerospace, and Raytheon.\n  The company positions itself as a scaled supplier to both airline OEM and aftermarket channels as well as government defense customers, which creates a mix of long-cycle commercial programs and state-backed defense demand.\n- Scale And Backlog\n  RTX reported 2025 sales of $88.6 billion, operating profit of $9.3 billion, and free cash flow of $7.9 billion, alongside a company backlog of $268 billion.\n  That backlog split between commercial and defense work matters because it shows RTX is not just selling products once; it is embedded in multi-year production, sustainment, and upgrade programs that are difficult for new entrants to displace quickly.\n\n### Moat narrative\n- RTX's moat is anchored in certification-heavy propulsion programs, installed-base aftermarket economics, defense procurement relationships, and the manufacturing discipline needed to deliver at aerospace and missile-system scale. Those advantages are reinforced by long qualification cycles, strict reliability demands, and customer reluctance to switch away from proven systems already integrated into fleets or defense architectures.\n- The backlog and segment breadth matter almost as much as any one product. Pratt & Whitney benefits from engine selection and maintenance lock-in, Collins benefits from deep integration across aircraft subsystems, and Raytheon benefits from sovereign procurement cycles and mission-critical defense programs. That combination makes RTX hard to attack head-on.\n\n### Decentralization narrative\n- RTX is structurally difficult to decentralize because many of its core businesses depend on export controls, national-security procurement, safety certification, scarce manufacturing capability, and tightly governed maintenance ecosystems. Those constraints keep fully open or peer-to-peer replacements from being credible in the near term for large turbofans or integrated missile-defense systems.\n- Pressure is more likely to emerge at the edges: open design tooling, additive manufacturing for parts, smaller distributed production cells, and modular sensing or control stacks in lower-end aerospace and autonomy markets. Those mechanisms can weaken some subsystem moats over time, but they do not yet erase the centralized capital, compliance, and trust requirements that protect RTX's highest-value businesses.\n\n## Replacement Sketch\n\n- Open pressure is more plausible at the lower end of sensing, autonomy, and counter-drone coordination than as a direct replacement for Patriot-class or LTAMDS-class systems. Modular open hardware and software could gradually commoditize pieces of the sensing and control stack around less demanding missions.\n- A more decentralized future here would likely look like interoperable sensor meshes, auditable control software, and distributed manufacturing of non-strategic subsystems rather than an immediately credible open substitute for high-end national missile defense.\n\n## Existing Alternatives Worth Studying First\n\n- No mature alternative is already in the registry. Research net-new protocol, open-source, cooperative, or decentralized approaches before locking implementation scope.\n\n## Relevant Technology Waves\n\n- Additive manufacturing: 3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.\n- Microfactories and automated mini-home production: Small, software-defined manufacturing cells could make localized production less eccentric and more default.\n- Printed electronics and PCB tooling: PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.\n\n## Useful Sources To Read Before Building\n\n- Integrated Air & Missile Defense (Raytheon) - https://www.rtx.com/raytheon/what-we-do/integrated-air-and-missile-defense\n  Why it matters: Primary product-page source for Raytheon's integrated air and missile defense portfolio.\n- Reports & Proxy Statements (RTX) - https://investors.rtx.com/financial-information/annual-reports\n  Why it matters: Investor-relations source for annual reports and reporting archive used to anchor company description and reporting context.\n- RTX (RTX) - Market capitalization (CompaniesMarketCap) - https://companiesmarketcap.com/raytheon-technologies/marketcap/\n  Why it matters: Used for approximate March 2026 market capitalization and rough size ranking context.\n- RTX (RTX) - P/E ratio (CompaniesMarketCap) - https://companiesmarketcap.com/gbp/raytheon-technologies/pe-ratio/\n  Why it matters: Used for trailing P/E reference as of March 2026.\n- RTX reports 2025 results and announces 2026 outlook (RTX) - https://www.rtx.com/news/news-center/2026/01/27/rtx-reports-2025-results-and-announces-2026-outlook\n  Why it matters: Primary source for 2025 sales, operating cash flow, free cash flow, segment commentary, and company backlog.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on RTX's Raytheon air and missile defense systems business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
         "generatedOn": "2026-03-25"
+      }
+    },
+    {
+      "slug": "salesforce-sales-cloud",
+      "name": "Sales Cloud",
+      "category": "CRM and sales automation",
+      "homepageUrl": "https://www.salesforce.com/sales/cloud/",
+      "summary": "Salesforce CRM product for lead, account, opportunity, forecast, workflow, analytics, and AI-assisted sales automation.",
+      "whyItMatters": "Sales Cloud is the system-of-record layer for many revenue teams, which makes pricing, data model control, and customization deeply sticky.",
+      "replacementSketch": [
+        "Open-source CRMs can make customer records, workflows, and automation logic portable.",
+        "AI-assisted customization can narrow the gap between incumbent configurability and self-owned software."
+      ],
+      "sourceIds": [
+        "salesforce-sales-cloud",
+        "twenty-home",
+        "twenty-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "companySlug": "salesforce",
+      "alternativeSlugs": [
+        "twenty-crm"
+      ],
+      "disruptionConceptSlugs": [
+        "salesforce-open-revenue-system"
+      ],
+      "maybeDisruptionException": null,
+      "implementationPrompt": {
+        "markdown": "# Build A Free Alternative To Salesforce's Sales Cloud\n\nYou are turning a disruptive product thesis into a real project. Treat this as an execution brief for Codex, Claude, OpenCode/OpenClaw, or another capable coding agent.\n\n## Product Context\n\n- Company: Salesforce (CRM)\n- Company slug: salesforce\n- Company description: Enterprise CRM and sales automation platform company centered on Sales Cloud, Data Cloud, and Agentforce.\n- Product: Sales Cloud\n- Product slug: salesforce-sales-cloud\n- Product category: CRM and sales automation\n- Product homepage: https://www.salesforce.com/sales/cloud/\n- Product summary: Salesforce CRM product for lead, account, opportunity, forecast, workflow, analytics, and AI-assisted sales automation.\n- Why it matters: Sales Cloud is the system-of-record layer for many revenue teams, which makes pricing, data model control, and customization deeply sticky.\n\n## Company Thesis\n\n- Workflow gravity with open-source pressure\n  Salesforce monetizes a workflow category where customers often accumulate data, integrations, and habits faster than they notice.\n  The open-source challenger does not need to match every enterprise feature first; it pressures the parts of the workflow where ownership, auditability, and deployment control matter most.\n\n### Moat narrative\n- The moat is strongest where the incumbent owns integrations, compliance defaults, and familiar workflows.\n- Open-source alternatives can start with teams that value control more than procurement convenience.\n\n### Decentralization narrative\n- The category is software-defined, which makes self-hosting, API portability, and auditable workflow logic credible forms of pressure.\n- The main adoption barrier is operational maturity rather than basic technical possibility.\n\n## Replacement Sketch\n\n- Open-source CRMs can make customer records, workflows, and automation logic portable.\n- AI-assisted customization can narrow the gap between incumbent configurability and self-owned software.\n\n## Existing Alternatives Worth Studying First\n\n- Twenty CRM (open-source): Open-source CRM designed as a modern alternative to Salesforce with extensible data models and AI-friendly customization.. Homepage: https://twenty.com/. Repo: https://github.com/twentyhq/twenty.\n\n## Relevant Technology Waves\n\n- Bitcoin and Lightning as coordination rails: Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.\n\n## Useful Sources To Read Before Building\n\n- Sales Cloud (Salesforce) - https://www.salesforce.com/sales/cloud/\n  Why it matters: Product page for Salesforce Sales Cloud and sales force automation features.\n- Salesforce Market Cap (CompaniesMarketCap) - https://companiesmarketcap.com/salesforce/marketcap/\n  Why it matters: Market capitalization snapshot for Salesforce.\n- StartupMind Reddit open-source SaaS list (Reddit / r/StartupMind) - https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW\n  Why it matters: User-provided post listing ten open-source repositories positioned against large SaaS incumbents.\n- Twenty (Twenty) - https://twenty.com/\n  Why it matters: Homepage positioning Twenty as an open-source CRM and Salesforce alternative.\n- twentyhq/twenty (GitHub) - https://github.com/twentyhq/twenty\n  Why it matters: GitHub repository for Twenty, described as the open alternative to Salesforce.\n\n## Required Operating Workflow\n\n1. Start by asking the user whether they already have a repository for this project.\n2. If they do not have a repository yet, ask which platform they want to use.\n3. If the user wants a new repository and a suitable CLI is installed and authenticated, offer to create it on their behalf.\n4. Prefer `gh` for GitHub when available, but support another installed platform CLI if that is what the user is using.\n5. Do not assume repository ownership, visibility, or naming. Ask first, then act.\n\n## Required Build Sequence\n\n1. Restate the target: build a free, open, decentralized, cooperative, or protocol-first alternative that creates real pressure on Salesforce's Sales Cloud business.\n2. Before writing implementation code, research and document the enabling protocols, interfaces, standards, and coordination mechanisms this product should rely on.\n3. Produce the high-level docs first. At minimum create:\n   - a `README.md` with the product thesis and scope;\n   - a `docs/architecture.md` describing the system shape;\n   - a `docs/protocols.md` describing APIs, protocols, data contracts, or higher-level coordination documents;\n   - a `docs/research.md` summarizing incumbent assumptions, alternatives, and what the project will deliberately not do yet.\n4. If the right answer is initially a protocol spec, design document, or interface contract instead of running code, do that first and make the repo reflect it.\n5. Only after the docs and protocols are coherent should implementation begin.\n\n## Bright Builds Requirement Adoption\n\nAdopt the Bright Builds coding and architecture requirements very early, before significant implementation work.\n\nRepository:\n- [bright-builds-llc/coding-and-architecture-requirements](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n\nPrimary references:\n- [README](https://github.com/bright-builds-llc/coding-and-architecture-requirements)\n- [AI-ADOPTION.md](https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/AI-ADOPTION.md)\n\nFollow this exact decision flow:\n\n1. Confirm you are in the root of the downstream repository.\n2. Run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- status\n```\n\n3. If status reports `Repo state: installable`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- install --ref main\n```\n\n4. If status reports `Repo state: installed`, run:\n\n```bash\ncurl -fsSL https://raw.githubusercontent.com/bright-builds-llc/coding-and-architecture-requirements/main/scripts/manage-downstream.sh | bash -s -- update --ref main\n```\n\n5. If status reports `Repo state: blocked`, stop and explain the blocking files instead of forcing replacement automatically.\n6. Only use `install --force` if the user explicitly asks to replace blocked managed files.\n7. After installation or update, mention `coding-and-architecture-requirements.audit.md` as the paper trail.\n\n## Parallel Research Expectations\n\nIf your environment supports subagents, spawn bounded parallel subagents early for:\n\n- protocol and standards research;\n- incumbent and alternative product research;\n- repo/bootstrap and requirements adoption;\n- architecture and system design;\n- implementation planning and test strategy.\n\nIf your environment does not support subagents, still execute those tracks explicitly in sequence and preserve the same separation of concerns.\n\n## Implementation Expectations\n\nAfter the docs and protocols are settled:\n\n1. Choose the smallest credible first release shape: protocol/spec only, backend service, web app, full-stack app, or another justified structure.\n2. Implement the project on top of the documented contracts instead of improvising ad hoc interfaces mid-build.\n3. Prefer root-cause design over shallow feature imitation.\n4. Keep the repo production-shaped early: clear module boundaries, tests, verification commands, and documented assumptions.\n5. If the project should expose APIs, formalize request/response contracts and error behavior before broad feature work.\n\n## Required Deliverables\n\nProduce all of the following unless the user narrows scope:\n\n- repository bootstrap or repository-creation outcome;\n- Bright Builds requirements adoption outcome;\n- protocol and interface research summary;\n- high-level docs and architecture docs;\n- initial implementation plan with milestones or phases;\n- working implementation of the first meaningful slice;\n- tests and verification evidence;\n- explicit residual risks and next steps.\n\n## Done Criteria\n\nDo not declare completion until:\n\n- the docs and protocol decisions are written down;\n- the implementation matches those decisions or explains the deviation;\n- relevant tests, lint, type checks, and build steps have run, or there is a concrete reason they could not run;\n- the user has a clear path to continue shipping the project.",
+        "generatedOn": "2026-05-24"
       }
     },
     {
@@ -7455,6 +8161,118 @@ export const contentGraph: ContentGraph = {
         "matrix"
       ],
       "productSlug": "youtube"
+    },
+    {
+      "slug": "immich-photo-management",
+      "name": "Immich",
+      "kind": "open-source",
+      "homepageUrl": "https://immich.app/",
+      "repoUrl": "https://github.com/immich-app/immich",
+      "summary": "Self-hosted photo and video management system for backing up, browsing, and searching personal media libraries.",
+      "metrics": {
+        "openness": {
+          "value": 9.5,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 8.6,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7.7,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "immich-home",
+        "immich-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "google-photos"
+    },
+    {
+      "slug": "inbox-zero-email-assistant",
+      "name": "Inbox Zero",
+      "kind": "open-source",
+      "homepageUrl": "https://www.getinboxzero.com/",
+      "repoUrl": "https://github.com/elie222/inbox-zero",
+      "summary": "Open-source AI email assistant for labeling, drafting replies, unsubscribing, analytics, and inbox cleanup.",
+      "metrics": {
+        "openness": {
+          "value": 9.3,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 6.8,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7.3,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 7.5,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "inbox-zero-home",
+        "inbox-zero-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "gmail"
     },
     {
       "slug": "nextcloud-platform",
@@ -8676,6 +9494,62 @@ export const contentGraph: ContentGraph = {
       "productSlug": "webex"
     },
     {
+      "slug": "crowdsec-threat-intelligence",
+      "name": "CrowdSec",
+      "kind": "open-source",
+      "homepageUrl": "https://www.crowdsec.net/",
+      "repoUrl": "https://github.com/crowdsecurity/crowdsec",
+      "summary": "Open-source security engine and crowd-powered threat intelligence network for detecting and blocking malicious IP behavior.",
+      "metrics": {
+        "openness": {
+          "value": 9.1,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 8.1,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7.8,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 7.6,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "crowdsec-home",
+        "crowdsec-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "cloudflare-bot-management"
+    },
+    {
       "slug": "opencola",
       "name": "OpenCola",
       "kind": "open-source",
@@ -8927,6 +9801,118 @@ export const contentGraph: ContentGraph = {
         "src-foodcoopshop-repo"
       ],
       "productSlug": "warehouse-clubs"
+    },
+    {
+      "slug": "documenso-esignature",
+      "name": "Documenso",
+      "kind": "open-source",
+      "homepageUrl": "https://documenso.com/",
+      "repoUrl": "https://github.com/documenso/documenso",
+      "summary": "Open-source e-signature platform for document signing, templates, teams, APIs, and embedded workflows.",
+      "metrics": {
+        "openness": {
+          "value": 9.3,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 7.5,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7.5,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 7.8,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "documenso-home",
+        "documenso-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "docusign-esignature"
+    },
+    {
+      "slug": "papermark-docsend-alternative",
+      "name": "Papermark",
+      "kind": "open-source",
+      "homepageUrl": "https://www.papermark.com/",
+      "repoUrl": "https://github.com/papermark/papermark",
+      "summary": "Open-source secure document sharing and data room platform with analytics, custom domains, and self-hosting.",
+      "metrics": {
+        "openness": {
+          "value": 9.2,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 7.4,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7.6,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 8,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "papermark-home",
+        "papermark-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "dropbox-docsend"
     },
     {
       "slug": "evcc",
@@ -9851,6 +10837,62 @@ export const contentGraph: ContentGraph = {
       "productSlug": "whatsapp-platform"
     },
     {
+      "slug": "postiz-social-scheduler",
+      "name": "Postiz",
+      "kind": "open-source",
+      "homepageUrl": "https://postiz.com/",
+      "repoUrl": "https://github.com/gitroomhq/postiz-app",
+      "summary": "Open-source social media scheduling and automation tool with AI agents, calendar workflows, analytics, and multi-channel publishing.",
+      "metrics": {
+        "openness": {
+          "value": 9,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 6.7,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7.5,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 7.6,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "postiz-home",
+        "postiz-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "meta-business-suite"
+    },
+    {
       "slug": "litedram",
       "name": "LiteDRAM",
       "kind": "open-source",
@@ -10054,6 +11096,62 @@ export const contentGraph: ContentGraph = {
       "productSlug": "microsoft-365-suite"
     },
     {
+      "slug": "anytype-workspace",
+      "name": "Anytype",
+      "kind": "open-source",
+      "homepageUrl": "https://anytype.io/",
+      "repoUrl": "https://github.com/anyproto/anytype-ts",
+      "summary": "Local-first encrypted workspace for notes, databases, and collaboration with peer-to-peer sync and user-owned data.",
+      "metrics": {
+        "openness": {
+          "value": 8.8,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "anytype-home",
+            "anytype-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 8.5,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "anytype-home",
+            "anytype-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "anytype-home",
+            "anytype-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 7.2,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "anytype-home",
+            "anytype-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "anytype-home",
+        "anytype-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "microsoft-365-suite"
+    },
+    {
       "slug": "gitea-forge",
       "name": "Gitea",
       "kind": "open-source",
@@ -10152,12 +11250,68 @@ export const contentGraph: ContentGraph = {
       "productSlug": "microsoft-github"
     },
     {
+      "slug": "tldraw-infinite-canvas",
+      "name": "tldraw",
+      "kind": "open-source",
+      "homepageUrl": "https://tldraw.dev/",
+      "repoUrl": "https://github.com/tldraw/tldraw",
+      "summary": "Open infinite-canvas SDK for building whiteboards and visual collaboration apps in React.",
+      "metrics": {
+        "openness": {
+          "value": 9.1,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 6.6,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 8.1,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 7.3,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "tldraw-home",
+        "tldraw-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "microsoft-whiteboard"
+    },
+    {
       "slug": "jellyfin",
       "name": "Jellyfin",
       "kind": "open-source",
       "homepageUrl": "https://jellyfin.org/",
       "repoUrl": "https://github.com/jellyfin/jellyfin",
-      "summary": "Free software media server for managing and streaming your own media library across devices without premium feature gating.",
+      "summary": "Free software media server for managing and streaming your own legally owned media library across devices without premium feature gating.",
       "metrics": {
         "openness": {
           "value": 9.7,
@@ -10197,7 +11351,8 @@ export const contentGraph: ContentGraph = {
         }
       },
       "sourceIds": [
-        "src-jellyfin"
+        "src-jellyfin",
+        "reddit-startupmind-open-source-saas"
       ],
       "productSlug": "netflix-streaming"
     },
@@ -10859,6 +12014,62 @@ export const contentGraph: ContentGraph = {
         "src-aleph-github"
       ],
       "productSlug": "gotham"
+    },
+    {
+      "slug": "twenty-crm",
+      "name": "Twenty CRM",
+      "kind": "open-source",
+      "homepageUrl": "https://twenty.com/",
+      "repoUrl": "https://github.com/twentyhq/twenty",
+      "summary": "Open-source CRM designed as a modern alternative to Salesforce with extensible data models and AI-friendly customization.",
+      "metrics": {
+        "openness": {
+          "value": 9.3,
+          "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+          "sourceIds": [
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizationFit": {
+          "value": 7.8,
+          "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+          "sourceIds": [
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "readiness": {
+          "value": 7.4,
+          "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+          "sourceIds": [
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "costLeverage": {
+          "value": 8.2,
+          "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+          "sourceIds": [
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "sourceIds": [
+        "twenty-home",
+        "twenty-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "productSlug": "salesforce-sales-cloud"
     },
     {
       "slug": "openevse-charging",
@@ -11963,6 +13174,167 @@ export const contentGraph: ContentGraph = {
         "google-products",
         "peertube",
         "akash"
+      ]
+    },
+    {
+      "slug": "google-photos-self-hosted-memory-vault",
+      "name": "Self-Hosted Memory Vault",
+      "summary": "A personal photo archive where backup, face/object search, sharing, and family permissions run on user-controlled storage instead of a centralized cloud account.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation",
+        "bitcoin"
+      ],
+      "thesis": "Compete with Google Photos by making the lifetime media library portable, self-hosted, and locally intelligible.",
+      "bitcoinOrDecentralizationRole": "Decentralized hosting keeps the archive under user control; optional direct payments can fund hosted instances, family storage pools, or backup relays without forcing a surveillance-adjacent cloud bundle.",
+      "coordinationMechanism": "Users or trusted operators run media servers, sync clients back up devices, and families share selected albums through signed links or federated access controls.",
+      "verificationOrTrustModel": "Device identity, server permissions, encrypted backups, and audit logs establish who can read, modify, or share memories.",
+      "failureModes": [
+        "Consumer backup UX must be simpler than typical self-hosting",
+        "AI search quality can lag Google without careful local models"
+      ],
+      "adoptionPath": [
+        "Start with privacy-conscious families and homelab users",
+        "Add managed hosting and migration tooling for mainstream photo libraries"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "google-photos"
+      ],
+      "enablerSourceIds": [
+        "immich-home",
+        "immich-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "google-photos",
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "google-photos",
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 7.9,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "google-photos",
+            "immich-home",
+            "immich-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "google-photos",
+      "sourceIds": [
+        "google-photos",
+        "immich-home",
+        "immich-github"
+      ]
+    },
+    {
+      "slug": "gmail-portable-inbox-agent",
+      "name": "Portable Inbox Agent",
+      "summary": "An auditable email assistant that carries prioritization rules, reply style, and unsubscribe logic across providers instead of trapping workflow intelligence inside Gmail.",
+      "angleIds": [
+        "decentralized-coordination",
+        "bitcoin"
+      ],
+      "thesis": "Make AI email productivity a portable user-controlled layer rather than a feature bundled into the dominant mailbox provider.",
+      "bitcoinOrDecentralizationRole": "Open-source automation and self-hosting let users choose where inference and mailbox metadata live; micropayments could fund specialized classifiers or private model hosts.",
+      "coordinationMechanism": "Users connect mailboxes, define rules in plain language, and run assistant workers that label, draft, file, and summarize without changing the mailbox of record.",
+      "verificationOrTrustModel": "OAuth scopes, local logs, user-approved drafts, and model/provider auditability constrain overreach and accidental sending.",
+      "failureModes": [
+        "Mail provider API limits can restrict automation depth",
+        "Users may not trust AI drafts with sensitive communication"
+      ],
+      "adoptionPath": [
+        "Begin with high-volume professionals who already pay for inbox help",
+        "Expand through self-hosting and team policies for regulated environments"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "gmail-workspace"
+      ],
+      "enablerSourceIds": [
+        "inbox-zero-home",
+        "inbox-zero-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "gmail-workspace",
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "gmail-workspace",
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 7.1,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "gmail-workspace",
+            "inbox-zero-home",
+            "inbox-zero-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "gmail",
+      "sourceIds": [
+        "gmail-workspace",
+        "inbox-zero-home",
+        "inbox-zero-github"
       ]
     },
     {
@@ -15374,6 +16746,87 @@ export const contentGraph: ContentGraph = {
       ]
     },
     {
+      "slug": "cloudflare-crowdsourced-threat-intel-commons",
+      "name": "Crowdsourced Threat Intel Commons",
+      "summary": "A shared defensive network where operators contribute real attack signals and consume curated blocklists without routing protection through one CDN.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation",
+        "bitcoin"
+      ],
+      "thesis": "Challenge proprietary network-scale bot detection with an open signal-sharing loop among many independent operators.",
+      "bitcoinOrDecentralizationRole": "Decentralization distributes observation and enforcement across many servers; reputation, staking, or payment-backed signals could reduce poisoning over time.",
+      "coordinationMechanism": "Servers run local agents, submit attack signals, receive curated intelligence, and enforce block decisions at their own edge, firewall, or reverse proxy.",
+      "verificationOrTrustModel": "Reporter reputation, diversity checks, machine profiling, and local enforcement logs constrain false positives and malicious reports.",
+      "failureModes": [
+        "Signal poisoning and false positives remain hard",
+        "Cloudflare sees traffic at a scale most coalitions cannot match"
+      ],
+      "adoptionPath": [
+        "Start with self-hosters and mid-market operators",
+        "Expand through managed blocklists, integrations, and transparent quality scoring"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "cloudflare-bot-management"
+      ],
+      "enablerSourceIds": [
+        "crowdsec-home",
+        "crowdsec-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "cloudflare-bot-management",
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "cloudflare-bot-management",
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 7.6,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "cloudflare-bot-management",
+            "crowdsec-home",
+            "crowdsec-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "cloudflare-bot-management",
+      "sourceIds": [
+        "cloudflare-bot-management",
+        "crowdsec-home",
+        "crowdsec-github"
+      ]
+    },
+    {
       "slug": "coca-cola-classic-concept",
       "name": "Open Soda Microfactory Network",
       "summary": "A marketplace for open soda machine designs, syrup recipes, and local ingredient fulfillment that recreates more beverage value at home and community scale.",
@@ -15872,6 +17325,173 @@ export const contentGraph: ContentGraph = {
         "src-kirkland-about",
         "src-ose-microfactory",
         "src-precious-plastic"
+      ]
+    },
+    {
+      "slug": "docusign-open-signing-backend",
+      "name": "Open Signing Backend",
+      "summary": "An auditable signing backend where documents, templates, recipient workflows, and API embeddings are portable across hosts.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation",
+        "bitcoin"
+      ],
+      "thesis": "Pressure agreement-management lock-in by making signature workflows inspectable, self-hostable, and API-portable.",
+      "bitcoinOrDecentralizationRole": "Decentralization lives in deployment choice and ownership of audit trails; future notarization or timestamp rails could anchor signing evidence outside a single vendor.",
+      "coordinationMechanism": "Teams host or buy Documenso, embed signing flows, and keep templates and completed agreement metadata exportable.",
+      "verificationOrTrustModel": "Signed audit trails, identity verification options, immutable event logs, and compliance controls verify the signing process.",
+      "failureModes": [
+        "Legal/compliance trust takes time",
+        "Enterprise integrations are hard to match"
+      ],
+      "adoptionPath": [
+        "Start with startups and product-led embedded signing",
+        "Expand into regulated teams with compliance certifications and migration importers"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "docusign-home",
+        "docusign-investor"
+      ],
+      "enablerSourceIds": [
+        "documenso-home",
+        "documenso-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "docusign-home",
+            "docusign-investor",
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "docusign-home",
+            "docusign-investor",
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 7.7,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "docusign-home",
+            "docusign-investor",
+            "documenso-home",
+            "documenso-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "docusign-esignature",
+      "sourceIds": [
+        "docusign-home",
+        "docusign-investor",
+        "documenso-home",
+        "documenso-github"
+      ]
+    },
+    {
+      "slug": "dropbox-docsend-self-hosted-data-room",
+      "name": "Self-Hosted Deal Room",
+      "summary": "A founder- or fund-controlled data room where sharing, analytics, and access revocation run on auditable infrastructure.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation",
+        "bitcoin"
+      ],
+      "thesis": "Turn high-stakes document sharing into an owned workflow rather than a proprietary analytics silo.",
+      "bitcoinOrDecentralizationRole": "Decentralization is mainly self-hosting and data ownership; payment rails could fund per-deal rooms or verified diligence access without platform lock-in.",
+      "coordinationMechanism": "Teams deploy Papermark, issue tracked links, segment viewers, and keep analytics and document custody under their domain.",
+      "verificationOrTrustModel": "Access logs, expiring links, watermarking, domain controls, and audit trails verify document handling.",
+      "failureModes": [
+        "Security expectations are high for fundraising and M&A",
+        "Incumbent brand trust matters in conservative deal processes"
+      ],
+      "adoptionPath": [
+        "Start with startups and small funds",
+        "Expand through compliance evidence, migration tooling, and managed hosting"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "docsend"
+      ],
+      "enablerSourceIds": [
+        "papermark-home",
+        "papermark-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "docsend",
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "docsend",
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 7.2,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "docsend",
+            "papermark-home",
+            "papermark-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "dropbox-docsend",
+      "sourceIds": [
+        "docsend",
+        "papermark-home",
+        "papermark-github"
       ]
     },
     {
@@ -17833,6 +19453,87 @@ export const contentGraph: ContentGraph = {
       ]
     },
     {
+      "slug": "meta-business-suite-portable-social-ops",
+      "name": "Portable Social Operations Console",
+      "summary": "A self-hosted scheduler and agent layer that coordinates publishing, approvals, analytics, and automation across networks instead of centering Meta-owned business tooling.",
+      "angleIds": [
+        "decentralized-coordination",
+        "peer-to-peer-marketplace",
+        "bitcoin"
+      ],
+      "thesis": "Make social operations portable so creators and businesses do not have to treat platform-owned dashboards as the command center.",
+      "bitcoinOrDecentralizationRole": "Open scheduling and automation let teams own workflow state; payments can support creator ops agents, posting queues, or API relay services without locking into one ad platform.",
+      "coordinationMechanism": "Teams connect official social APIs, draft in a shared calendar, and let approved agents schedule, adapt, or recycle posts across channels.",
+      "verificationOrTrustModel": "OAuth tokens, approval trails, audit logs, and per-channel rate limits constrain unauthorized posting and automation abuse.",
+      "failureModes": [
+        "Network API policy changes can break integrations",
+        "Analytics remain limited by each platform API"
+      ],
+      "adoptionPath": [
+        "Start with developers, agencies, and privacy-conscious creators",
+        "Add governed team workflows and portable analytics exports"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "meta-business-tools"
+      ],
+      "enablerSourceIds": [
+        "postiz-home",
+        "postiz-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "meta-business-tools",
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "meta-business-tools",
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 7,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "meta-business-tools",
+            "postiz-home",
+            "postiz-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "meta-business-suite",
+      "sourceIds": [
+        "meta-business-tools",
+        "postiz-home",
+        "postiz-github"
+      ]
+    },
+    {
       "slug": "open-memory-module-commons",
       "name": "Open memory module commons",
       "summary": "Open DRAM-controller IP, transparent module designs, and shared validation recipes could create a more open market for specialized memory subsystems built around standardized interfaces and reused components. The goal is not immediate replacement of leading-edge Micron fabs, but reducing the amount of proprietary control above the silicon die itself.",
@@ -18331,6 +20032,86 @@ export const contentGraph: ContentGraph = {
         "gitea",
         "openstack",
         "lightning-network-homepage"
+      ]
+    },
+    {
+      "slug": "microsoft-whiteboard-composable-canvas-apps",
+      "name": "Composable Canvas Apps",
+      "summary": "Teams build custom collaborative canvases on open primitives, keeping diagrams, workflows, and sync logic portable across apps instead of locked in one suite whiteboard.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation"
+      ],
+      "thesis": "Turn whiteboarding from a suite feature into embeddable open infrastructure for many specialized collaboration products.",
+      "bitcoinOrDecentralizationRole": "Decentralization comes from portable canvas state and independently operated collaboration backends rather than one tenant-bound office suite.",
+      "coordinationMechanism": "Developers embed a canvas SDK, persist documents in their own apps, and interoperate through exportable shapes, records, and sync adapters.",
+      "verificationOrTrustModel": "Document ownership, signed exports, and app-level access controls verify who controls each canvas and its collaboration history.",
+      "failureModes": [
+        "SDK adoption can fragment file formats",
+        "Enterprise buyers may prefer bundled suite defaults"
+      ],
+      "adoptionPath": [
+        "Start with product, design, and education tools that need custom canvas workflows",
+        "Standardize portable canvas records and migration paths"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "microsoft-whiteboard"
+      ],
+      "enablerSourceIds": [
+        "tldraw-home",
+        "tldraw-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "microsoft-whiteboard",
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "microsoft-whiteboard",
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 6.9,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "microsoft-whiteboard",
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "microsoft-whiteboard",
+      "sourceIds": [
+        "microsoft-whiteboard",
+        "tldraw-home",
+        "tldraw-github"
       ]
     },
     {
@@ -19469,6 +21250,87 @@ export const contentGraph: ContentGraph = {
       ]
     },
     {
+      "slug": "salesforce-open-revenue-system",
+      "name": "Open Revenue System of Record",
+      "summary": "A self-hostable CRM layer where customer records, workflow automation, and AI customization remain controlled by the company using them.",
+      "angleIds": [
+        "decentralized-coordination",
+        "federation",
+        "bitcoin"
+      ],
+      "thesis": "Replace CRM lock-in with an open operational database that revenue teams can extend like normal software.",
+      "bitcoinOrDecentralizationRole": "Decentralization means customer data, automation, and customization can live in a tenant-controlled system rather than a single SaaS landlord.",
+      "coordinationMechanism": "Teams run or buy hosted Twenty deployments, define CRM objects in code, and connect AI agents to their own schemas and workflows.",
+      "verificationOrTrustModel": "Role permissions, audit logs, schema migration history, and integration tokens verify changes and data access.",
+      "failureModes": [
+        "Enterprise CRM migration is painful",
+        "AppExchange-style ecosystem depth is hard to replicate"
+      ],
+      "adoptionPath": [
+        "Start with startups and technical teams replacing lightweight CRMs",
+        "Move upmarket through migration tools and compliance hardening"
+      ],
+      "confidence": "medium",
+      "problemSourceIds": [
+        "salesforce-sales-cloud"
+      ],
+      "enablerSourceIds": [
+        "twenty-home",
+        "twenty-github"
+      ],
+      "metrics": {
+        "decentralizationFit": {
+          "value": 8.2,
+          "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+          "sourceIds": [
+            "salesforce-sales-cloud",
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "coordinationCredibility": {
+          "value": 7,
+          "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+          "sourceIds": [
+            "salesforce-sales-cloud",
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "implementationFeasibility": {
+          "value": 6.8,
+          "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+          "sourceIds": [
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "incumbentPressure": {
+          "value": 8,
+          "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+          "sourceIds": [
+            "salesforce-sales-cloud",
+            "twenty-home",
+            "twenty-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "productSlug": "salesforce-sales-cloud",
+      "sourceIds": [
+        "salesforce-sales-cloud",
+        "twenty-home",
+        "twenty-github"
+      ]
+    },
+    {
       "slug": "tesla-supercharger-concept",
       "name": "Open EV Charging Federation",
       "summary": "A charging network where stations, payment rails, availability data, and loyalty layers are interoperable instead of tied to one branded network.",
@@ -20457,6 +22319,24 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "anytype-github",
+      "title": "anyproto/anytype-ts",
+      "url": "https://github.com/anyproto/anytype-ts",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for the official Anytype desktop client.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "anytype-home",
+      "title": "Anytype",
+      "url": "https://anytype.io/",
+      "kind": "open-source-project",
+      "publisher": "Anytype",
+      "note": "Homepage describing Anytype as local-first, encrypted, offline-capable, and peer-to-peer syncable.",
+      "accessedOn": "2026-05-24"
+    },
+    {
       "id": "apple-investor",
       "title": "Apple Investor Relations",
       "url": "https://investor.apple.com/",
@@ -20736,6 +22616,24 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-19"
     },
     {
+      "id": "cloudflare-bot-management",
+      "title": "Cloudflare Bot Management",
+      "url": "https://www.cloudflare.com/application-services/products/bot-management/",
+      "kind": "product-page",
+      "publisher": "Cloudflare",
+      "note": "Product page for Cloudflare Bot Management / bot mitigation using ML, behavioral analysis, and edge enforcement.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "cloudflare-marketcap",
+      "title": "Cloudflare Market Cap",
+      "url": "https://companiesmarketcap.com/cloudflare/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization snapshot for Cloudflare.",
+      "accessedOn": "2026-05-24"
+    },
+    {
       "id": "cmc-amd-marketcap",
       "title": "AMD (AMD) Market Capitalization",
       "url": "https://companiesmarketcap.com/amd/marketcap/",
@@ -20817,6 +22715,24 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "crowdsec-github",
+      "title": "crowdsecurity/crowdsec",
+      "url": "https://github.com/crowdsecurity/crowdsec",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for CrowdSec.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "crowdsec-home",
+      "title": "CrowdSec",
+      "url": "https://www.crowdsec.net/",
+      "kind": "open-source-project",
+      "publisher": "CrowdSec",
+      "note": "Homepage for crowd-powered threat intelligence, blocklists, and the CrowdSec security engine.",
+      "accessedOn": "2026-05-24"
+    },
+    {
       "id": "discourse",
       "title": "Discourse",
       "url": "https://www.discourse.org/",
@@ -20824,6 +22740,78 @@ export const contentGraph: ContentGraph = {
       "publisher": "Discourse",
       "note": "Open-source community platform with self-hosting, data export, searchable forums, and managed hosting options.",
       "accessedOn": "2026-05-23"
+    },
+    {
+      "id": "docsend",
+      "title": "DocSend",
+      "url": "https://www.docsend.com/",
+      "kind": "product-page",
+      "publisher": "Dropbox DocSend",
+      "note": "Product page for Dropbox DocSend secure document sharing, virtual data rooms, and analytics.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "documenso-github",
+      "title": "documenso/documenso",
+      "url": "https://github.com/documenso/documenso",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for Documenso, the open-source Docusign alternative.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "documenso-home",
+      "title": "Documenso",
+      "url": "https://documenso.com/",
+      "kind": "open-source-project",
+      "publisher": "Documenso",
+      "note": "Homepage for open-source enterprise-grade e-signatures and signing workflows.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "docusign-home",
+      "title": "Docusign",
+      "url": "https://www.docusign.com/",
+      "kind": "product-page",
+      "publisher": "Docusign",
+      "note": "Product page for Docusign eSignature and Intelligent Agreement Management.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "docusign-investor",
+      "title": "Docusign Investor Relations",
+      "url": "https://investor.docusign.com/",
+      "kind": "investor-relations",
+      "publisher": "Docusign",
+      "note": "Investor relations page describing Docusign IAM, eSignature, CLM, customer scale, and AI agreement data.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "docusign-marketcap",
+      "title": "Docusign Market Cap",
+      "url": "https://companiesmarketcap.com/docusign/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization snapshot for Docusign.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "dropbox-investor",
+      "title": "Dropbox Investor Relations",
+      "url": "https://investors.dropbox.com/",
+      "kind": "investor-relations",
+      "publisher": "Dropbox",
+      "note": "Investor relations page describing Dropbox as a global collaboration platform.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "dropbox-marketcap",
+      "title": "Dropbox Market Cap",
+      "url": "https://companiesmarketcap.com/dropbox/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization snapshot for Dropbox.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "fairlife-site",
@@ -20943,6 +22931,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "gmail-workspace",
+      "title": "Gmail for Google Workspace",
+      "url": "https://workspace.google.com/products/gmail/",
+      "kind": "product-page",
+      "publisher": "Google Workspace",
+      "note": "Product page for Gmail, including Gemini-assisted email, Smart Reply, security, and Workspace positioning.",
+      "accessedOn": "2026-05-24"
+    },
+    {
       "id": "google-cloud",
       "title": "Google Cloud",
       "url": "https://cloud.google.com/",
@@ -20950,6 +22947,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Google",
       "note": "Cloud and workspace surface area.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "google-photos",
+      "title": "Google Photos",
+      "url": "https://www.google.com/photos/about/",
+      "kind": "product-page",
+      "publisher": "Google",
+      "note": "Product page describing Google Photos backup, search, AI organization, sharing, and Google One storage upsell.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "google-products",
@@ -20977,6 +22983,42 @@ export const contentGraph: ContentGraph = {
       "publisher": "Clifford Wolf / YosysHQ",
       "note": "Reference for the open FPGA toolchain enabling programmable logic without proprietary EDA tools or custom ASIC tape-outs.",
       "accessedOn": "2026-03-19"
+    },
+    {
+      "id": "immich-github",
+      "title": "immich-app/immich",
+      "url": "https://github.com/immich-app/immich",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for Immich, described as a high-performance self-hosted photo and video management solution.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "immich-home",
+      "title": "Immich",
+      "url": "https://immich.app/",
+      "kind": "open-source-project",
+      "publisher": "Immich",
+      "note": "Homepage for the self-hosted photo and video management project.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "inbox-zero-github",
+      "title": "elie222/inbox-zero",
+      "url": "https://github.com/elie222/inbox-zero",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for Inbox Zero, an open-source AI personal assistant for email.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "inbox-zero-home",
+      "title": "Inbox Zero",
+      "url": "https://www.getinboxzero.com/",
+      "kind": "open-source-project",
+      "publisher": "Inbox Zero",
+      "note": "Homepage for the AI email assistant with privacy-first, open-source, and self-hosting claims.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "ko-company-site",
@@ -21141,6 +23183,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-24"
     },
     {
+      "id": "meta-business-tools",
+      "title": "Meta for Business",
+      "url": "https://business.facebook.com/",
+      "kind": "product-page",
+      "publisher": "Meta",
+      "note": "Business tools page for Meta Business Suite, Ads Manager, publishing, inbox, and insights across Meta technologies.",
+      "accessedOn": "2026-05-24"
+    },
+    {
       "id": "meta-forum-app-store",
       "title": "Forum, a Facebook app",
       "url": "https://apps.apple.com/us/app/forum-a-facebook-app/id6758308862",
@@ -21222,6 +23273,15 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-14"
     },
     {
+      "id": "microsoft-loop",
+      "title": "Microsoft Loop",
+      "url": "https://www.microsoft.com/en-us/microsoft-loop",
+      "kind": "product-page",
+      "publisher": "Microsoft",
+      "note": "Product page describing Loop as a collaborative Microsoft 365 app for thinking, planning, and creating together.",
+      "accessedOn": "2026-05-24"
+    },
+    {
       "id": "microsoft-marketcap",
       "title": "Microsoft Market Cap",
       "url": "https://companiesmarketcap.com/microsoft/marketcap/",
@@ -21229,6 +23289,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "CompaniesMarketCap",
       "note": "Market cap snapshot reference.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "microsoft-whiteboard",
+      "title": "Microsoft Whiteboard",
+      "url": "https://www.microsoft.com/en-us/microsoft-365/microsoft-whiteboard/digital-whiteboard-app",
+      "kind": "product-page",
+      "publisher": "Microsoft",
+      "note": "Product page for Microsoft Whiteboard as a digital canvas within Microsoft 365.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "minio",
@@ -21420,6 +23489,24 @@ export const contentGraph: ContentGraph = {
       "accessedOn": "2026-03-19"
     },
     {
+      "id": "papermark-github",
+      "title": "papermark/papermark",
+      "url": "https://github.com/papermark/papermark",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for Papermark, the open-source DocSend alternative.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "papermark-home",
+      "title": "Papermark",
+      "url": "https://www.papermark.com/",
+      "kind": "open-source-project",
+      "publisher": "Papermark",
+      "note": "Homepage for Papermark secure data rooms and open-source DocSend alternative.",
+      "accessedOn": "2026-05-24"
+    },
+    {
       "id": "peertube",
       "title": "PeerTube",
       "url": "https://joinpeertube.org/",
@@ -21445,6 +23532,24 @@ export const contentGraph: ContentGraph = {
       "publisher": "Pixelfed",
       "note": "Federated photo-sharing alternative relevant to Instagram.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "postiz-github",
+      "title": "gitroomhq/postiz-app",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for Postiz, an agentic social media scheduling tool.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "postiz-home",
+      "title": "Postiz",
+      "url": "https://postiz.com/",
+      "kind": "open-source-project",
+      "publisher": "Postiz",
+      "note": "Homepage for the agentic social media scheduling and automation tool.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "powercommons-home",
@@ -21481,6 +23586,15 @@ export const contentGraph: ContentGraph = {
       "publisher": "Proxmox",
       "note": "Prominent open virtualization alternative relevant to VMware replacement.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "reddit-startupmind-open-source-saas",
+      "title": "StartupMind Reddit open-source SaaS list",
+      "url": "https://www.reddit.com/r/StartupMind/s/fNsXp5mjZW",
+      "kind": "analysis",
+      "publisher": "Reddit / r/StartupMind",
+      "note": "User-provided post listing ten open-source repositories positioned against large SaaS incumbents.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "reprap",
@@ -21571,6 +23685,24 @@ export const contentGraph: ContentGraph = {
       "publisher": "PubMed Central",
       "note": "Analysis source supporting the ongoing viability of cloth diaper use and the conditions for reusable-service alternatives.",
       "accessedOn": "2026-03-25"
+    },
+    {
+      "id": "salesforce-marketcap",
+      "title": "Salesforce Market Cap",
+      "url": "https://companiesmarketcap.com/salesforce/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization snapshot for Salesforce.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "salesforce-sales-cloud",
+      "title": "Sales Cloud",
+      "url": "https://www.salesforce.com/sales/cloud/",
+      "kind": "product-page",
+      "publisher": "Salesforce",
+      "note": "Product page for Salesforce Sales Cloud and sales force automation features.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "searxng",
@@ -23299,6 +25431,42 @@ export const contentGraph: ContentGraph = {
       "publisher": "Tesla",
       "note": "Flagship consumer vehicle reference.",
       "accessedOn": "2026-03-14"
+    },
+    {
+      "id": "tldraw-github",
+      "title": "tldraw/tldraw",
+      "url": "https://github.com/tldraw/tldraw",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for tldraw, an infinite canvas SDK and whiteboard toolkit.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "tldraw-home",
+      "title": "tldraw",
+      "url": "https://tldraw.dev/",
+      "kind": "open-source-project",
+      "publisher": "tldraw",
+      "note": "Homepage for the React infinite canvas SDK with multiplayer sync and whiteboard infrastructure.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "twenty-github",
+      "title": "twentyhq/twenty",
+      "url": "https://github.com/twentyhq/twenty",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "GitHub repository for Twenty, described as the open alternative to Salesforce.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "twenty-home",
+      "title": "Twenty",
+      "url": "https://twenty.com/",
+      "kind": "open-source-project",
+      "publisher": "Twenty",
+      "note": "Homepage positioning Twenty as an open-source CRM and Salesforce alternative.",
+      "accessedOn": "2026-05-24"
     },
     {
       "id": "visa-2025-10k",

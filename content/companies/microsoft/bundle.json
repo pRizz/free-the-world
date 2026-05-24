@@ -54,7 +54,14 @@
       "microsoft-ipo-prospectus",
       "libreoffice",
       "gitea",
-      "nextcloud"
+      "nextcloud",
+      "anytype-home",
+      "anytype-github",
+      "microsoft-loop",
+      "microsoft-whiteboard",
+      "tldraw-home",
+      "tldraw-github",
+      "reddit-startupmind-open-source-saas"
     ],
     "technologyWaveIds": [
       "bitcoin-native-coordination"
@@ -126,7 +133,9 @@
       "sourceIds": [
         "microsoft-365",
         "libreoffice",
-        "nextcloud"
+        "nextcloud",
+        "anytype-home",
+        "anytype-github"
       ],
       "technologyWaveIds": [
         "bitcoin-native-coordination"
@@ -226,6 +235,61 @@
           },
           "sourceIds": [
             "nextcloud"
+          ]
+        },
+        {
+          "slug": "anytype-workspace",
+          "name": "Anytype",
+          "kind": "open-source",
+          "homepageUrl": "https://anytype.io/",
+          "repoUrl": "https://github.com/anyproto/anytype-ts",
+          "summary": "Local-first encrypted workspace for notes, databases, and collaboration with peer-to-peer sync and user-owned data.",
+          "metrics": {
+            "openness": {
+              "value": 8.8,
+              "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+              "sourceIds": [
+                "anytype-home",
+                "anytype-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 8.5,
+              "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+              "sourceIds": [
+                "anytype-home",
+                "anytype-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 7.0,
+              "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+              "sourceIds": [
+                "anytype-home",
+                "anytype-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 7.2,
+              "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+              "sourceIds": [
+                "anytype-home",
+                "anytype-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "anytype-home",
+            "anytype-github",
+            "reddit-startupmind-open-source-saas"
           ]
         }
       ],
@@ -652,6 +716,160 @@
               ],
               "confidence": "medium",
               "lastReviewedOn": "2026-03-21"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "microsoft-whiteboard",
+      "name": "Microsoft Whiteboard",
+      "category": "Collaborative whiteboard",
+      "homepageUrl": "https://www.microsoft.com/en-us/microsoft-365/microsoft-whiteboard/digital-whiteboard-app",
+      "summary": "Digital whiteboard and visual collaboration surface within the Microsoft 365 collaboration stack.",
+      "whyItMatters": "Visual collaboration tools can become sticky meeting, product, and planning infrastructure inside a broader office suite.",
+      "replacementSketch": [
+        "Open canvas SDKs let teams build domain-specific whiteboards without surrendering every workflow to a suite vendor.",
+        "Portable canvas data and self-hosted sync can make visual collaboration more composable."
+      ],
+      "sourceIds": [
+        "microsoft-whiteboard",
+        "tldraw-home",
+        "tldraw-github",
+        "reddit-startupmind-open-source-saas"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "tldraw-infinite-canvas",
+          "name": "tldraw",
+          "kind": "open-source",
+          "homepageUrl": "https://tldraw.dev/",
+          "repoUrl": "https://github.com/tldraw/tldraw",
+          "summary": "Open infinite-canvas SDK for building whiteboards and visual collaboration apps in React.",
+          "metrics": {
+            "openness": {
+              "value": 9.1,
+              "rationale": "Open-source availability and auditable code materially increase user and operator control.",
+              "sourceIds": [
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 6.6,
+              "rationale": "Self-hosting or local-first operation reduces dependence on a single SaaS operator.",
+              "sourceIds": [
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 8.1,
+              "rationale": "The project is usable today, though incumbent polish, integrations, and migration depth still vary by use case.",
+              "sourceIds": [
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 7.3,
+              "rationale": "Open deployment creates credible pressure on subscription pricing and data lock-in.",
+              "sourceIds": [
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "tldraw-home",
+            "tldraw-github",
+            "reddit-startupmind-open-source-saas"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "microsoft-whiteboard-composable-canvas-apps",
+          "name": "Composable Canvas Apps",
+          "summary": "Teams build custom collaborative canvases on open primitives, keeping diagrams, workflows, and sync logic portable across apps instead of locked in one suite whiteboard.",
+          "angleIds": [
+            "decentralized-coordination",
+            "federation"
+          ],
+          "thesis": "Turn whiteboarding from a suite feature into embeddable open infrastructure for many specialized collaboration products.",
+          "bitcoinOrDecentralizationRole": "Decentralization comes from portable canvas state and independently operated collaboration backends rather than one tenant-bound office suite.",
+          "coordinationMechanism": "Developers embed a canvas SDK, persist documents in their own apps, and interoperate through exportable shapes, records, and sync adapters.",
+          "verificationOrTrustModel": "Document ownership, signed exports, and app-level access controls verify who controls each canvas and its collaboration history.",
+          "failureModes": [
+            "SDK adoption can fragment file formats",
+            "Enterprise buyers may prefer bundled suite defaults"
+          ],
+          "adoptionPath": [
+            "Start with product, design, and education tools that need custom canvas workflows",
+            "Standardize portable canvas records and migration paths"
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "microsoft-whiteboard"
+          ],
+          "enablerSourceIds": [
+            "tldraw-home",
+            "tldraw-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8.2,
+              "rationale": "The concept shifts control from a single SaaS operator toward user-controlled software, hosting, or portable workflows.",
+              "sourceIds": [
+                "microsoft-whiteboard",
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 7.0,
+              "rationale": "The coordination model is plausible because the open-source project already proves a working user or operator loop.",
+              "sourceIds": [
+                "microsoft-whiteboard",
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 6.8,
+              "rationale": "Current software primitives exist; the harder work is migration, distribution, and enterprise-grade polish.",
+              "sourceIds": [
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 6.9,
+              "rationale": "If adopted, the concept directly pressures incumbent lock-in, pricing, or data control in this category.",
+              "sourceIds": [
+                "microsoft-whiteboard",
+                "tldraw-home",
+                "tldraw-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
             }
           }
         }
