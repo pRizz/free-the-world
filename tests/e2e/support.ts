@@ -3,17 +3,21 @@ import type { Page } from "@playwright/test";
 const basePath = normalizeBasePath(process.env.SITE_BASE_PATH ?? "/");
 
 export function gotoRoute(page: Page, route: string) {
+  return page.goto(withBasePath(route));
+}
+
+export function withBasePath(route: string) {
   const normalizedRoute = route === "/" ? "/" : route.startsWith("/") ? route : `/${route}`;
 
   if (basePath === "/") {
-    return page.goto(normalizedRoute);
+    return normalizedRoute;
   }
 
   if (normalizedRoute === "/") {
-    return page.goto(`${basePath}/`);
+    return `${basePath}/`;
   }
 
-  return page.goto(`${basePath}${normalizedRoute}`);
+  return `${basePath}${normalizedRoute}`;
 }
 
 function normalizeBasePath(input: string) {

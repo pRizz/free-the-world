@@ -1,5 +1,5 @@
 import { expect, test } from "@playwright/test";
-import { gotoRoute } from "./support";
+import { gotoRoute, withBasePath } from "./support";
 
 test("insights landing page renders the section overview and entry cards", async ({ page }) => {
   await gotoRoute(page, "/insights");
@@ -28,9 +28,12 @@ test("market-cap disruption page renders the pie chart and coverage table", asyn
       /Pie chart showing the analyzed S&P 500 market cap split between thesis-adjusted disrupted value and residual value\./i,
     ),
   ).toBeVisible();
-  await expect(
-    page.getByRole("link", { name: /Download the latest market-cap CSV/i }),
-  ).toBeVisible();
+  const csvLink = page.getByRole("link", { name: /Download the latest market-cap CSV/i });
+  await expect(csvLink).toBeVisible();
+  await expect(csvLink).toHaveAttribute(
+    "href",
+    withBasePath("/data/market-cap-snapshots-latest.csv"),
+  );
   await expect(page.getByRole("columnheader", { name: "Current cap" })).toBeVisible();
   await expect(page.getByRole("columnheader", { name: "Cap source" })).toBeVisible();
 });

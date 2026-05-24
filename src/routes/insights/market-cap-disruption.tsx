@@ -12,6 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "~/components/ui/table";
+import { withBasePath } from "~/lib/config";
 import { formatMetricValue, formatMoneyRange } from "~/lib/domain/formatters";
 import { getMarketCapCoverageDataset } from "~/lib/domain/insights";
 import { marketCapSnapshotCsvPath } from "~/lib/market-cap-snapshots";
@@ -182,7 +183,7 @@ export default function MarketCapDisruptionPage() {
                     point to a concrete, auditable table.
                   </p>
                   <a
-                    href={marketCapSnapshotCsvPath}
+                    href={withBasePath(marketCapSnapshotCsvPath)}
                     class="mt-3 inline-flex text-sm font-medium text-accent-foreground hover:underline"
                   >
                     Download the latest market-cap CSV →
