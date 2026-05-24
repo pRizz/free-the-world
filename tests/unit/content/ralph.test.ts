@@ -876,6 +876,7 @@ test("isBundleStale flags aged bundles and keeps fresh bundles current", () => {
 test("collectSyncTargets supports published, all, and stale batch targets", () => {
   const staleBundle = makeBundle("2026-01-01");
   const freshBundle = makeBundle("2026-03-10");
+  const now = new Date("2026-03-15T00:00:00Z");
   const raw = {
     regions: [],
     indices: [],
@@ -934,7 +935,7 @@ test("collectSyncTargets supports published, all, and stale batch targets", () =
 
   expect(collectSyncTargets(raw, "published")).toEqual(["fixtureco", "freshco"]);
   expect(collectSyncTargets(raw, "all")).toEqual(["fixtureco", "freshco", "unpublishedco"]);
-  expect(collectSyncTargets(raw, "stale")).toEqual(["fixtureco", "unpublishedco"]);
+  expect(collectSyncTargets(raw, "stale", now)).toEqual(["fixtureco", "unpublishedco"]);
 });
 
 function makeBundle(lastReviewedOn: string): CompanyBundle {
