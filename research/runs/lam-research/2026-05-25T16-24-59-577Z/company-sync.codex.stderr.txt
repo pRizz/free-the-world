@@ -1,0 +1,1142 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e5ff4-32bf-7951-81d7-5a535323e351
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: lam-research
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "lam-research",
+  "name": "Lam Research",
+  "ticker": "LRCX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top50"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "semiconductor-equipment",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/lam-research/marketcap/",
+  "description": "Lam Research supplies wafer fabrication equipment and services used in semiconductor manufacturing.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "SABRE",
+    "ALTUS"
+  ],
+  "seedSourceUrls": [
+    "https://investor.lamresearch.com/",
+    "https://www.lamresearch.com/products/",
+    "https://companiesmarketcap.com/lam-research/marketcap/"
+  ],
+  "notes": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T16:25:01.274826Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:01.274844Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:01.275276Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:01.275282Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:01.275754Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:01.275763Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:01.276232Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:01.276237Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:01.276731Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:01.276736Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:01.277673Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:01.277687Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:02.076774Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:02.076788Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:02.077219Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:02.077224Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:02.077568Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:02.077572Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:02.077977Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:02.077980Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:02.078671Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:02.078680Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:25:02.079682Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:25:02.079689Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Lam Research 2025 annual report Form 10-K net income revenue products SABRE ALTUS ...
+web search: 
+web search: open source semiconductor manufacturing equipment open hardware wafer fabrication ...
+web search: 
+web search: https://www.sec.gov/Archives/edgar/data/707549/000114036125036023/ny20050572x4_ars.pdf
+web search: 
+web search: 'Net income' in https://www.sec.gov/Archives/edgar/data/707549/000114036125036023/ny20050572x4_ars.pdf
+web search: 
+web search: 'Net sales' in https://www.sec.gov/Archives/edgar/data/707549/000114036125036023/ny20050572x4_ars.pdf
+web search: 
+web search: site:lamresearch.com/product SABRE Lam Research copper plating
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "lam-research",
+      "name": "Lam Research",
+      "ticker": "LRCX",
+      "rankApprox": 33,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "semiconductor-equipment",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/lam-research/marketcap/",
+      "description": "Lam Research supplies wafer fabrication equipment and services used in semiconductor manufacturing.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "Lam Research is a global supplier of wafer fabrication equipment and services for semiconductor manufacturers, with core positions in deposition, etch, clean, customer support, process control, and related software-enabled productivity.",
+            "The company benefits from increasingly complex memory, foundry, logic, and advanced packaging transitions that require more deposition, etch, electrochemical deposition, and process-control steps per wafer."
+          ]
+        },
+        {
+          "title": "Current snapshot",
+          "paragraphs": [
+            "Lam reported strong fiscal 2025 profitability, including $5.36 billion of net income and 32.3% non-GAAP operating income as a percentage of revenue in its 2025 annual report materials.",
+            "CompaniesMarketCap listed Lam Research at about $374.01 billion of market capitalization in May 2026, placing it in the S&P 500 top-50 cohort used for this refresh."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Lam's moat is rooted in process know-how, long qualification cycles, installed-base service economics, deep customer relationships, and the difficulty of reproducing high-yield wafer processing at advanced nodes. The company's own materials emphasize deposition and etch intensity, close-to-customer R&D, and a large installed base of chambers as drivers of durable advantage.",
+        "The moat is still exposed to semiconductor capital spending cycles, export controls, customer concentration, and national industrial-policy efforts to localize equipment supply chains. Those risks lower the score from near-absolute but do not erase the practical difficulty of displacing Lam in leading-edge production fabs."
+      ],
+      "decentralizationNarrative": [
+        "Lam's core products are large-scale industrial capital equipment optimized for high-volume semiconductor fabs, so direct decentralization pressure is weak today. Replacing Lam-class tools at advanced nodes would require extreme precision, contamination control, materials science, recipes, service infrastructure, and process validation.",
+        "The most credible decentralization pressure is not a near-term one-for-one replacement. It comes from open semiconductor process documentation, university-scale open fabs, minimal-fab architectures, and low-volume local fabrication workflows that could expand the pool of chipmakers for mature, educational, sensing, analog, or specialty devices."
+      ],
+      "sourceIds": [
+        "lam-2025-annual-report",
+        "lam-products",
+        "companiesmarketcap-lam-marketcap",
+        "stockanalysis-lam-statistics"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "New company bundle prepared from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh and reviewed on 2026-05-25.",
+      "inputMetrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "Lam has high switching costs, deep process IP, long fab qualification cycles, a broad installed base, and strong positions in deposition, etch, clean, and customer support for advanced semiconductor manufacturing.",
+          "sourceIds": [
+            "lam-2025-annual-report",
+            "lam-products"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 2,
+          "rationale": "Advanced wafer fabrication equipment is capital-intensive, precision-heavy, and deeply tied to closed process integration, though open semiconductor and minimal-fab efforts create early decentralization vectors for lower-volume or mature-node use cases.",
+          "sourceIds": [
+            "lam-2025-annual-report",
+            "hackerfab-cmu",
+            "minimal-fab-yokogawa",
+            "libresilicon"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Lam reported $5.36 billion of fiscal 2025 net income and 32.3% non-GAAP operating income as a percentage of revenue, indicating strong profitability even within a cyclical equipment market.",
+          "sourceIds": [
+            "lam-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 57.09,
+          "rationale": "StockAnalysis listed Lam Research's trailing P/E ratio at 57.09 near the May 2026 market snapshot.",
+          "sourceIds": [
+            "stockanalysis-lam-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 374010000000,
+          "rationale": "CompaniesMarketCap listed Lam Research at $374.01 billion of market capitalization in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-lam-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "sabre",
+        "name": "SABRE",
+        "category": "Electrochemical deposition equipment",
+        "homepageUrl": "https://www.lamresearch.com/product/sabre/",
+        "summary": "SABRE is Lam Research's electrochemical deposition product family for copper interconnect and related copper damascene manufacturing steps.",
+        "whyItMatters": "Copper interconnect quality affects device speed, yield, reliability, and cost, making high-throughput, low-defect plating tools strategically important for advanced semiconductor production.",
+        "replacementSketch": [
+          "A realistic open replacement would start far below leading-edge production: shared process documentation, open test vehicles, low-volume plating cells, and community-verified recipes for education, packaging prototypes, MEMS, analog, or mature-node devices.",
+          "The hard part is not only building a plating chamber. It is proving uniformity, defect density, chemistry control, uptime, contamination handling, and repeatability across wafers well enough for paying customers to trust the result."
+        ],
+        "sourceIds": [
+          "lam-sabre",
+          "lam-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [],
+        "disruptionConcepts": [
+          {
+            "slug": "open-mature-node-plating-cells",
+            "name": "Open mature-node plating cells",
+            "summary": "An open-hardware and open-process ecosystem could document small electrochemical deposition cells, recipes, metrology checklists, and test wafers for mature-node interconnect or packaging work, targeting education, prototyping, and specialty devices before any attempt at high-volume production.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-manufacturing",
+              "local-materials-processing"
+            ],
+            "thesis": "The concept would not replace SABRE in advanced fabs, but it could move a narrow slice of low-volume semiconductor process development away from proprietary tool stacks and toward shared, inspectable, locally operated process cells.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing is central because the value comes from many labs and small fabs sharing validated tool designs and process results rather than waiting for a single equipment vendor to package every capability.",
+            "coordinationMechanism": "Universities, open silicon groups, and small labs publish chamber designs, recipes, calibration results, and wafer outcomes into shared repositories; buyers or users select recipes and operators based on documented yields and peer-reviewed process evidence.",
+            "verificationOrTrustModel": "Trust would come from reproducible test structures, published metrology data, versioned process recipes, independent replication by multiple labs, and audit trails linking a wafer lot to tool configuration, chemistry, operator, and inspection results.",
+            "failureModes": [
+              "Open cells may never achieve the defect density, uptime, or process windows required for commercial interconnect manufacturing.",
+              "Chemical handling, contamination control, and metrology costs may keep even mature-node replication too expensive for most local operators.",
+              "Published process claims could be exaggerated unless independent labs repeatedly reproduce the same results."
+            ],
+            "adoptionPath": [
+              "Begin with university and maker-lab demonstrations for visible-scale or mature process steps using shared test wafers.",
+              "Move into specialty packaging, sensors, MEMS, or education workflows where learning speed and transparency matter more than leading-edge yield.",
+              "Only after repeated independent replication should operators attempt small commercial lots for low-risk mature-node applications."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "lam-sabre",
+              "lam-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "hackerfab-cmu",
+              "libresilicon",
+              "minimal-fab-yokogawa"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept explicitly shifts tooling, recipes, and process evidence into shared local fabrication networks, but it only fits mature or low-volume use cases.",
+                "sourceIds": [
+                  "hackerfab-cmu",
+                  "libresilicon",
+                  "minimal-fab-yokogawa"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Open semiconductor communities already coordinate around documentation and shared process standards, but production-grade process validation remains hard.",
+                "sourceIds": [
+                  "hackerfab-cmu",
+                  "libresilicon"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 3,
+                "rationale": "Small process cells are plausible, but SABRE-class copper deposition requires stringent defect, uniformity, and throughput performance that open efforts have not demonstrated at commercial scale.",
+                "sourceIds": [
+                  "lam-sabre",
+                  "hackerfab-cmu"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 2,
+                "rationale": "Near-term pressure on Lam's advanced-fab business is low; pressure would appear first in education, process experimentation, and small specialty markets.",
+                "sourceIds": [
+                  "lam-sabre",
+                  "minimal-fab-yokogawa"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "altus",
+        "name": "ALTUS",
+        "category": "Deposition equipment",
+        "homepageUrl": "https://www.lamresearch.com/product/altus-product-family/",
+        "summary": "ALTUS is Lam Research's deposition product family combining chemical vapor deposition and atomic layer deposition technologies for advanced metallization applications.",
+        "whyItMatters": "Advanced memory, interconnect, packaging, and transistor architectures need highly conformal films, and Lam positions ALTUS for critical metallization transitions such as tungsten and molybdenum applications.",
+        "replacementSketch": [
+          "A credible replacement pathway starts as open ALD and thin-film deposition tooling for teaching, prototyping, and process exploration, not as a substitute for leading-edge production deposition tools.",
+          "As open process libraries mature, a network of small fabs could use lower-cost deposition modules for mature devices, sensors, research lots, and hardware-security experiments that value inspectability over maximum throughput."
+        ],
+        "sourceIds": [
+          "lam-altus",
+          "lam-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "hackerfab-open-ald-tooling",
+            "name": "Hacker Fab open ALD tooling",
+            "kind": "open-source",
+            "homepageUrl": "https://hackerfab.ece.cmu.edu/",
+            "repoUrl": "https://docs.hackerfab.org/",
+            "summary": "Hacker Fab documents open microfabrication tools and processes, including an Arduino-run atomic layer deposition tool within a student-led open semiconductor fab effort.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project describes open-source documentation and shared DIY semiconductor fabrication tools.",
+                "sourceIds": [
+                  "hackerfab-cmu",
+                  "hackerfab-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model is explicitly about making semiconductor fabrication tools and processes replicable in smaller labs rather than centralized industrial fabs.",
+                "sourceIds": [
+                  "hackerfab-cmu"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 2,
+                "rationale": "The effort has demonstrated educational and experimental fabrication capability, but it is not a production-ready substitute for Lam-class deposition tools.",
+                "sourceIds": [
+                  "hackerfab-cmu"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Repurposed consumer and hobbyist technologies could lower learning and prototyping costs, but commercial-grade metrology, safety, and reliability remain expensive.",
+                "sourceIds": [
+                  "hackerfab-cmu"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "hackerfab-cmu",
+              "hackerfab-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-ald-process-library",
+            "name": "Federated open ALD process library",
+            "summary": "A federated network of university, community, and small commercial fabs could publish open ALD tool designs, material recipes, test structures, and measured film results so mature semiconductor processes become easier to inspect, reproduce, and localize.",
+            "angleIds": [
+              "federation",
+              "open-hardware",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "Lam retains the high-volume advanced-node market, but a federated open library would weaken proprietary control over lower-end process learning and specialty-device prototyping by making recipes and tooling more portable across small labs.",
+            "bitcoinOrDecentralizationRole": "Federation and decentralized manufacturing matter more than Bitcoin here: the mechanism depends on many independent fabs publishing and validating process data instead of trusting a single vendor's closed process stack.",
+            "coordinationMechanism": "Participating labs register tool versions, process recipes, precursor details, metrology outputs, and wafer results in shared repositories; users choose process flows based on replicated results and operator reputation.",
+            "verificationOrTrustModel": "False claims are constrained by standardized test structures, repeatable film-thickness and uniformity measurements, cross-lab replication, signed dataset provenance, and public comparison against expected electrical or material properties.",
+            "failureModes": [
+              "Published ALD processes may be too tool-specific to reproduce across labs without expensive calibration.",
+              "Safety, precursor availability, contamination control, and waste handling could limit who can participate.",
+              "The open network may remain educational unless it can prove stable yields and acceptable liability for commercial customers."
+            ],
+            "adoptionPath": [
+              "Document educational ALD builds and baseline recipes with simple metrology targets.",
+              "Federate multiple university or community fabs around shared test wafers and reproducibility reports.",
+              "Offer limited specialty-device or mature-process services where transparent provenance is valuable."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "lam-altus",
+              "lam-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "hackerfab-cmu",
+              "hackerfab-docs",
+              "libresilicon"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "A federated recipe and tooling library directly distributes process knowledge and operational capability across independent labs.",
+                "sourceIds": [
+                  "hackerfab-cmu",
+                  "hackerfab-docs",
+                  "libresilicon"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Open semiconductor communities already share process goals and documentation, but standardized cross-lab verification is still immature.",
+                "sourceIds": [
+                  "hackerfab-cmu",
+                  "libresilicon"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 3,
+                "rationale": "Open ALD demonstrations are plausible, but production-grade conformity, repeatability, precursor handling, and contamination control remain hard.",
+                "sourceIds": [
+                  "lam-altus",
+                  "hackerfab-cmu"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 2,
+                "rationale": "The pressure is mostly long-term and outside leading-edge high-volume fabs; Lam's core market remains protected by performance and qualification requirements.",
+                "sourceIds": [
+                  "lam-altus",
+                  "lam-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "lam-2025-annual-report",
+      "title": "Lam Research 2025 Annual Report and Proxy Materials",
+      "url": "https://www.sec.gov/Archives/edgar/data/707549/000114036125036023/ny20050572x4_ars.pdf",
+      "kind": "annual-report",
+      "publisher": "Lam Research / SEC",
+      "note": "Primary source for Lam's business description, strategic positioning, product portfolio, installed-base context, fiscal 2025 profitability, and risk backdrop.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "lam-products",
+      "title": "Lam Research Products",
+      "url": "https://www.lamresearch.com/products/",
+      "kind": "product-page",
+      "publisher": "Lam Research",
+      "note": "Company product index used to confirm Lam's wafer fabrication equipment categories and product families.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "lam-sabre",
+      "title": "SABRE Product Family",
+      "url": "https://www.lamresearch.com/product/sabre/",
+      "kind": "product-page",
+      "publisher": "Lam Research",
+      "note": "Primary product source for SABRE electrochemical deposition, copper damascene, interconnect applications, and product benefits.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "lam-altus",
+      "title": "ALTUS Product Family",
+      "url": "https://www.lamresearch.com/product/altus-product-family/",
+      "kind": "product-page",
+      "publisher": "Lam Research",
+      "note": "Primary product source for ALTUS CVD and ALD deposition systems for conformal films and metallization applications.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "companiesmarketcap-lam-marketcap",
+      "title": "Lam Research Market Capitalization",
+      "url": "https://companiesmarketcap.com/lam-research/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap and approximate global rank snapshot used for the registry refresh.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-lam-statistics",
+      "title": "Lam Research Stock Price and Overview",
+      "url": "https://stockanalysis.com/stocks/lrcx/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Supplemental market-data source for trailing P/E ratio and current financial snapshot.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "hackerfab-cmu",
+      "title": "The Hacker Fab at Carnegie Mellon University",
+      "url": "https://hackerfab.ece.cmu.edu/",
+      "kind": "open-source-project",
+      "publisher": "Carnegie Mellon University Hacker Fab",
+      "note": "Open semiconductor fabrication effort documenting DIY microfabrication tools, including sputtering and ALD examples, used as a decentralization enabler.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "hackerfab-docs",
+      "title": "Hacker Fab Documentation",
+      "url": "https://docs.hackerfab.org/",
+      "kind": "technical-docs",
+      "publisher": "Hacker Fab",
+      "note": "Documentation source for collaborative open-source semiconductor fabrication tooling and process knowledge.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "libresilicon",
+      "title": "LibreSilicon",
+      "url": "https://libresilicon.com/",
+      "kind": "open-source-project",
+      "publisher": "LibreSilicon",
+      "note": "Open semiconductor process-standard project used to support the feasibility of open process libraries and peer-reviewable silicon manufacturing knowledge.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "minimal-fab-yokogawa",
+      "title": "Minimal Fab Solution",
+      "url": "https://www.yokogawa.com/eu/industries/semiconductor/minimal-fab/",
+      "kind": "analysis",
+      "publisher": "Yokogawa",
+      "note": "Reference for the minimal-fab concept: small wafers and compact tools as an alternative architecture for low-volume semiconductor production.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Lam Research registry bundle focused on SABRE and ALTUS. The refresh scores Lam as a very high-moat, low-decentralizability semiconductor equipment incumbent, with speculative disruption concepts centered on open mature-node process cells, federated ALD process libraries, and minimal/open semiconductor fab efforts rather than forced Bitcoin mechanisms."
+}
+tokens used
+67,921

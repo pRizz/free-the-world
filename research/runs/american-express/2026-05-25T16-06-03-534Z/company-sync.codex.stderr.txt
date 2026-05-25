@@ -1,0 +1,1318 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e5fe2-ded5-7392-a4df-724615cee4b4
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: american-express
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "american-express",
+  "name": "American Express",
+  "ticker": "AXP",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top50"
+  ],
+  "sectorId": "financials",
+  "industryId": "payment-networks",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/american-express/marketcap/",
+  "description": "American Express operates a global payments network and issues charge, credit, and corporate payment products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "American Express Card",
+    "Membership Rewards"
+  ],
+  "seedSourceUrls": [
+    "https://ir.americanexpress.com/",
+    "https://www.americanexpress.com/",
+    "https://companiesmarketcap.com/american-express/marketcap/"
+  ],
+  "notes": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T16:06:05.885959Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:05.885974Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:05.886450Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:05.886454Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:05.886979Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:05.886984Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:05.887691Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:05.887698Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:05.888251Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:05.888258Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:05.889386Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:05.889395Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:07.191723Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:07.191737Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:07.192135Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:07.192141Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:07.192514Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:07.192518Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:07.192891Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:07.192898Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:07.193233Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:07.193236Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:06:07.193964Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:06:07.193968Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: American Express 2024 annual report payments network cards Membership Rewards net income revenue annual report ...
+web search: 
+web search: American Express 2024 annual report closed-loop network spend cards net income revenues ...
+web search: 
+web search: American Express PE ratio May 2026 AXP trailing pe ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "american-express",
+      "name": "American Express",
+      "ticker": "AXP",
+      "rankApprox": 45,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "financials",
+      "industryId": "payment-networks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/american-express/marketcap/",
+      "description": "American Express operates a global payments network and issues charge, credit, and corporate payment products.",
+      "overview": [
+        {
+          "title": "Business model",
+          "paragraphs": [
+            "American Express combines card issuing, merchant acquiring, network services, lending, and rewards into a relatively integrated payments franchise. Its closed-loop model gives it direct relationships with many card members and merchants, while its brand skews toward premium consumer, small-business, corporate, and travel-oriented spend.",
+            "The company earns from discount revenue on merchant transactions, card fees, net interest income, service fees, and other payments and travel-related revenues. Membership Rewards and card benefits are part of the value proposition that helps sustain annual fees and card member engagement."
+          ]
+        },
+        {
+          "title": "Registry relevance",
+          "paragraphs": [
+            "American Express is relevant to the Free The World registry because payment networks are coordination infrastructure. They determine who can transact, what merchants pay for access, how identity and fraud controls are enforced, and how rewards steer consumer behavior.",
+            "Open payment protocols and self-hosted merchant tooling do not replace the full American Express bundle today, but they pressure the idea that merchant acceptance, settlement, rewards, and dispute handling must remain bundled inside a proprietary card-network stack."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "American Express has a strong moat because its network, issuing base, merchant acceptance, premium brand, rewards economics, underwriting, and compliance machinery reinforce each other. The 2025 annual results show a highly profitable scaled franchise with $72.2 billion of total revenues net of interest expense and $10.8 billion of net income.",
+        "The moat is not only technical. It is contractual, regulatory, behavioral, and reputational: card members value benefits and acceptance, merchants value affluent spend, and both sides reinforce the network."
+      ],
+      "decentralizationNarrative": [
+        "The core card network is difficult to decentralize because credit underwriting, fraud management, chargebacks, merchant rules, KYC, sanctions controls, and rewards liabilities depend on centralized governance and balance-sheet capacity.",
+        "The most credible decentralization pressure is narrower: merchant payment acceptance can move toward open, self-hosted, non-custodial rails, while loyalty and rewards can be rebuilt as portable, auditable credits rather than closed points inside a single issuer ecosystem."
+      ],
+      "sourceIds": [
+        "amex-2025-10k",
+        "amex-membership-rewards",
+        "stockanalysis-axp-market-cap",
+        "financecharts-axp-pe"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Refresh prepared on 2026-05-25 using American Express 2025 annual reporting, current market-data snapshots, and official/open-source project documentation.",
+      "inputMetrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "The company has a scaled two-sided payments franchise, premium cardholder relationships, broad merchant acceptance, strong rewards engagement, and regulatory/compliance capabilities that are hard for new entrants to replicate.",
+          "sourceIds": [
+            "amex-2025-10k",
+            "amex-membership-rewards"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Payment acceptance and loyalty ledgers can be partially opened or federated, but American Express's credit, fraud, dispute, merchant-rule, and regulatory functions remain structurally centralized.",
+          "sourceIds": [
+            "amex-2025-10k",
+            "btcpay-docs",
+            "gnu-taler-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 9,
+          "rationale": "American Express reported $10.8 billion of 2025 net income on $72.2 billion of total revenues net of interest expense, indicating a large and consistently profitable franchise.",
+          "sourceIds": [
+            "amex-2025-10k",
+            "amex-q4-2025-earnings"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 19.46,
+          "rationale": "FinanceCharts reported American Express's trailing P/E ratio at 19.46 as of 2026-05-22.",
+          "sourceIds": [
+            "financecharts-axp-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 212740000000,
+          "rationale": "StockAnalysis reported American Express market capitalization of $212.74 billion as of 2026-05-22.",
+          "sourceIds": [
+            "stockanalysis-axp-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "american-express-card",
+        "name": "American Express Card",
+        "category": "Payment cards and merchant network",
+        "homepageUrl": "https://www.americanexpress.com/",
+        "summary": "American Express cards combine consumer or business payment credentials, merchant acceptance, credit or charge-card features, fraud controls, benefits, and issuer-network economics.",
+        "whyItMatters": "The card product is the visible interface to a larger payments network that influences merchant fees, consumer rewards, credit access, fraud allocation, and transaction governance.",
+        "replacementSketch": [
+          "A credible replacement would not start by cloning every card-network feature. It would begin with merchants who want lower-cost, open, self-hosted payment acceptance and customers who can pay directly with interoperable wallets.",
+          "Credit, chargebacks, travel benefits, and rewards would likely remain separate services layered around open payment rails rather than bundled into a single proprietary card scheme."
+        ],
+        "sourceIds": [
+          "amex-2025-10k",
+          "amex-home",
+          "btcpay-docs",
+          "gnu-taler-docs"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://btcpayserver.org/",
+            "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+            "summary": "BTCPay Server is a free, open-source, self-hosted Bitcoin payment gateway for online and in-person merchants.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "The project is explicitly free and open-source, with public source code and self-hosted deployment.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Merchants can receive payments directly to their own wallets without relying on a centralized card processor for settlement.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "BTCPay is mature enough for real merchants and integrations, but it does not replicate card credit, chargebacks, or broad consumer default behavior.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "opensats-btcpay"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Self-hosted payment acceptance can reduce processor dependency and avoid card-network-style merchant discount economics, though operators still bear hosting, liquidity, and operational costs.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "btcpay-docs",
+              "opensats-btcpay"
+            ]
+          },
+          {
+            "slug": "gnu-taler",
+            "name": "GNU Taler",
+            "kind": "protocol",
+            "homepageUrl": "https://www.taler.net/",
+            "repoUrl": "https://git.taler.net/",
+            "summary": "GNU Taler is a free-software electronic payment system designed for privacy-preserving payments using exchange operators rather than a new cryptocurrency.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "GNU Taler is documented as an open protocol with a free software reference implementation.",
+                "sourceIds": [
+                  "gnu-taler-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Taler can separate wallets, merchants, and exchange operators, but it still depends on regulated exchange services rather than fully permissionless settlement.",
+                "sourceIds": [
+                  "gnu-taler-docs",
+                  "gnu-taler-features"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The system has documentation and integrations, but it is not yet a mass-market replacement for card-network acceptance.",
+                "sourceIds": [
+                  "gnu-taler-docs",
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open protocol competition could reduce lock-in and payment acceptance costs, though regulated exchange operation and deployment overhead remain material.",
+                "sourceIds": [
+                  "gnu-taler-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "gnu-taler-home",
+              "gnu-taler-docs",
+              "gnu-taler-features"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "merchant-owned-lightning-acceptance",
+            "name": "Merchant-owned Lightning acceptance",
+            "summary": "Merchants use open-source payment servers and Lightning-enabled wallets to accept direct digital payments without routing every transaction through a proprietary card network.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "This shifts part of the payment market from network-controlled merchant acceptance toward merchant-operated settlement endpoints, reducing dependence on proprietary card rules for low-risk transactions.",
+            "bitcoinOrDecentralizationRole": "Bitcoin and Lightning provide the settlement rail, while self-hosted merchant software lets merchants control payment acceptance and custody choices.",
+            "coordinationMechanism": "Merchants publish invoices through self-hosted payment servers, customers pay from compatible wallets, and stores reconcile invoices against wallet or node settlement state.",
+            "verificationOrTrustModel": "Payment servers verify invoice status against Bitcoin or Lightning settlement data. Cheating is constrained by cryptographic payment proofs and direct wallet settlement, but customer-service disputes and refund handling remain off-chain business processes.",
+            "failureModes": [
+              "Consumers may not hold or want to spend bitcoin for ordinary purchases.",
+              "Volatility, tax treatment, refunds, and accounting can make direct Bitcoin acceptance operationally awkward.",
+              "The model does not replace card credit, chargebacks, purchase protection, or premium rewards."
+            ],
+            "adoptionPath": [
+              "Start with online merchants, nonprofits, creator stores, and cross-border sellers where card fees or account risk are salient.",
+              "Add point-of-sale integrations, hosted options, fiat conversion partners, and accounting workflows before broader retail adoption."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "amex-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "btcpay-docs",
+              "opensats-btcpay"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The mechanism directly replaces centralized payment acceptance with merchant-controlled infrastructure and open settlement rails.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Invoices, wallets, nodes, and merchant callbacks are already documented in BTCPay's operating model, though consumer-side adoption is still limited.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The tooling exists today for motivated merchants, but full retail parity requires better accounting, refunds, support, and liquidity workflows.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "opensats-btcpay"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The pressure is real for niches with high fee sensitivity or censorship risk, but it is not yet broad enough to threaten mainstream Amex card usage.",
+                "sourceIds": [
+                  "amex-2025-10k",
+                  "btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "open-privacy-preserving-payment-protocol",
+            "name": "Open privacy-preserving payment protocol",
+            "summary": "An open payment protocol such as GNU Taler separates wallets, merchants, and exchange operators so payments can be privacy-preserving for buyers while remaining auditable for merchants and regulators.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "This changes the market structure by making payment acceptance interoperable at the protocol layer instead of controlled by a small set of card-network brands.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not central to this concept. The decentralization role comes from open protocols, free software implementations, and multiple possible exchange or service operators.",
+            "coordinationMechanism": "Wallets obtain electronic value through an exchange, merchants integrate a protocol-compatible backend, and exchange operators handle regulated conversion and settlement.",
+            "verificationOrTrustModel": "Cryptographic tokens protect payer privacy while merchant deposits and exchange records support accountability. The main trust boundary shifts to regulated exchange operators and their solvency, compliance, and uptime.",
+            "failureModes": [
+              "Exchange operators can become new centralized chokepoints.",
+              "Merchant and wallet adoption may remain too thin to overcome card-network convenience.",
+              "Regulatory requirements can limit deployment geography or product design."
+            ],
+            "adoptionPath": [
+              "Deploy in public-sector, university, cooperative, or local-commerce contexts where open standards and privacy are valued.",
+              "Expand through merchant plugins, wallet usability, and multiple exchange operators to reduce single-provider dependence."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "amex-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "gnu-taler-home",
+              "gnu-taler-docs",
+              "gnu-taler-features"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The protocol can federate payment infrastructure across operators, but it does not eliminate regulated intermediaries.",
+                "sourceIds": [
+                  "gnu-taler-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The wallet, merchant, and exchange roles are well described, but market coordination remains early compared with card networks.",
+                "sourceIds": [
+                  "gnu-taler-docs",
+                  "gnu-taler-features"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The reference implementation and docs exist, but regulated exchange operation and merchant distribution are significant execution hurdles.",
+                "sourceIds": [
+                  "gnu-taler-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept is structurally relevant but would need major institutional or merchant adoption before materially pressuring American Express.",
+                "sourceIds": [
+                  "amex-2025-10k",
+                  "gnu-taler-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "membership-rewards",
+        "name": "Membership Rewards",
+        "category": "Card loyalty and rewards program",
+        "homepageUrl": "https://www.americanexpress.com/en-us/benefits/rewards/membership-rewards/",
+        "summary": "Membership Rewards is American Express's points program for eligible cards, with redemption options across travel, gift cards, checkout partners, statement credits, and participating transfer partners.",
+        "whyItMatters": "Rewards programs are a major part of cardholder lock-in: they turn spending behavior, partner economics, and accumulated points into switching costs.",
+        "replacementSketch": [
+          "A replacement would treat rewards as portable credits or attestations that can be issued by many merchants and redeemed across interoperable wallets rather than held inside one card issuer's program.",
+          "The hardest parts are not point accounting alone; they are fraud control, partner settlement, consumer trust, tax treatment, and avoiding a fragmented rewards experience."
+        ],
+        "sourceIds": [
+          "amex-membership-rewards",
+          "amex-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-loyalty",
+            "name": "Open Loyalty",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openloyalty.io/",
+            "repoUrl": "https://github.com/DivanteLtd/open-loyalty",
+            "summary": "Open Loyalty is an open-source loyalty platform that can be used to build points, rewards, tiers, and customer engagement programs.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The platform has an open-source codebase and is aimed at building loyalty programs outside a single proprietary card issuer.",
+                "sourceIds": [
+                  "open-loyalty-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 4,
+                "rationale": "Open Loyalty can reduce vendor lock-in for program software, but it is still typically operated by one program sponsor rather than a decentralized network.",
+                "sourceIds": [
+                  "open-loyalty-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is a plausible loyalty-system building block, but it does not by itself provide the partner network, card economics, or global redemption liquidity of Membership Rewards.",
+                "sourceIds": [
+                  "open-loyalty-github",
+                  "amex-membership-rewards"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open-source loyalty infrastructure can lower software lock-in and customization costs, but partner rewards still require commercial funding and settlement.",
+                "sourceIds": [
+                  "open-loyalty-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "open-loyalty-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "portable-merchant-rewards-wallet",
+            "name": "Portable merchant rewards wallet",
+            "summary": "Merchants and cooperatives issue interoperable loyalty credits into user-controlled wallets, letting customers carry rewards across many issuers rather than keeping them locked inside one card program.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation",
+              "cooperative-production"
+            ],
+            "thesis": "This breaks part of the card issuer's rewards moat by separating reward issuance, custody, redemption, and partner discovery into interoperable services.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not required. The decentralization role is federation: many merchants or cooperatives can issue and redeem credits using common wallet and ledger standards.",
+            "coordinationMechanism": "Merchants publish reward terms, wallets track balances or signed credits, and participating merchants or cooperatives settle redemptions through agreed clearing rules.",
+            "verificationOrTrustModel": "Signed reward issuance, transparent redemption logs, and merchant-level settlement records constrain double spending and fake credits. Trust still depends on issuer solvency and clear redemption rules.",
+            "failureModes": [
+              "Users may prefer the simplicity of one large rewards program over many smaller merchant credits.",
+              "Fraud, abandoned balances, and inconsistent redemption rules could undermine confidence.",
+              "Without major merchants or travel partners, redemption value may remain too narrow."
+            ],
+            "adoptionPath": [
+              "Start with local merchant associations, online communities, or cooperatives that already share customers.",
+              "Add wallet portability, common redemption APIs, and settlement tooling before trying to compete with large travel-card rewards."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "amex-membership-rewards",
+              "amex-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "open-loyalty-github",
+              "gnu-taler-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The model moves rewards from one issuer-controlled points ledger toward interoperable merchant and cooperative issuance.",
+                "sourceIds": [
+                  "open-loyalty-github",
+                  "gnu-taler-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The software building blocks are plausible, but multi-merchant governance and settlement are harder than single-brand loyalty.",
+                "sourceIds": [
+                  "open-loyalty-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "A limited merchant federation is feasible, but matching Membership Rewards breadth would require substantial partner recruitment and consumer experience polish.",
+                "sourceIds": [
+                  "amex-membership-rewards",
+                  "open-loyalty-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept could pressure smaller loyalty use cases first, but American Express's travel partners, premium benefits, and card economics remain strong.",
+                "sourceIds": [
+                  "amex-membership-rewards",
+                  "amex-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "amex-2025-10k",
+      "title": "American Express 2025 Form 10-K",
+      "url": "https://last10k.com/sec-filings/axp/0000004962-26-000080.htm",
+      "kind": "regulatory-filing",
+      "publisher": "SEC / American Express",
+      "note": "Primary filing support for American Express business model, revenue lines, competition, profitability, and risk context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "amex-q4-2025-earnings",
+      "title": "American Express Q4 2025 Earnings Press Release",
+      "url": "https://s26.q4cdn.com/747928648/files/doc_earnings/2025/q4/earnings-result/Q4-2025-Earnings-Press-Release.pdf",
+      "kind": "investor-relations",
+      "publisher": "American Express",
+      "note": "Investor release confirming full-year 2025 net income, EPS, and outlook context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "amex-home",
+      "title": "American Express",
+      "url": "https://www.americanexpress.com/",
+      "kind": "product-page",
+      "publisher": "American Express",
+      "note": "Official company product entry point for consumer and business card offerings.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "amex-membership-rewards",
+      "title": "Redeem Membership Rewards Points",
+      "url": "https://www.americanexpress.com/en-us/benefits/rewards/membership-rewards/",
+      "kind": "product-page",
+      "publisher": "American Express",
+      "note": "Official description of Membership Rewards redemption options and partner-based point usage.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-axp-market-cap",
+      "title": "American Express Market Cap",
+      "url": "https://stockanalysis.com/stocks/axp/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market capitalization snapshot used for the registry market-cap metric.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "financecharts-axp-pe",
+      "title": "American Express PE Ratio",
+      "url": "https://www.financecharts.com/stocks/AXP/value/pe-ratio",
+      "kind": "market-data",
+      "publisher": "FinanceCharts",
+      "note": "Trailing P/E snapshot used for the registry valuation metric.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "btcpay-docs",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/Guide/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Primary documentation for BTCPay Server's self-hosted, open-source Bitcoin payment gateway model.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "opensats-btcpay",
+      "title": "BTCPay Server - funded by OpenSats",
+      "url": "https://opensats.org/projects/btcpayserver",
+      "kind": "analysis",
+      "publisher": "OpenSats",
+      "note": "Ecosystem evidence for BTCPay usage and community funding support.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "gnu-taler-home",
+      "title": "GNU Taler",
+      "url": "https://www.taler.net/",
+      "kind": "technical-docs",
+      "publisher": "GNU Taler",
+      "note": "Official project entry point for GNU Taler's privacy-friendly electronic payment system.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "gnu-taler-features",
+      "title": "GNU Taler Features",
+      "url": "https://www.taler.net/en/features.html",
+      "kind": "technical-docs",
+      "publisher": "GNU Taler",
+      "note": "Official feature description for privacy-preserving payments and exchange-based operation.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "gnu-taler-docs",
+      "title": "GNU Taler Merchant Backend Operator Manual",
+      "url": "https://docs.taler.net/taler-merchant-manual.html",
+      "kind": "technical-docs",
+      "publisher": "GNU Taler",
+      "note": "Technical documentation describing GNU Taler as an open protocol with free software implementation and merchant operation model.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-loyalty-github",
+      "title": "Open Loyalty GitHub Repository",
+      "url": "https://github.com/DivanteLtd/open-loyalty",
+      "kind": "open-source-project",
+      "publisher": "Open Loyalty / Divante",
+      "note": "Open-source loyalty-platform reference used as a plausible rewards infrastructure alternative.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new American Express bundle with two registry products: American Express Card and Membership Rewards. The strongest decentralization pressure is merchant-owned open payment acceptance through BTCPay-style infrastructure; rewards disruption is more speculative and centered on portable federated merchant credits."
+}
+tokens used
+50,660

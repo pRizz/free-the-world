@@ -1,0 +1,673 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "ibm",
+      "name": "IBM",
+      "ticker": "IBM",
+      "rankApprox": 50,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/ibm/marketcap/",
+      "description": "IBM provides hybrid cloud, artificial intelligence, consulting, infrastructure, and enterprise software products and services.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "IBM is an enterprise technology company organized around software, consulting, infrastructure, and financing, with strategic emphasis on hybrid cloud and artificial intelligence.",
+            "The company's current software-led profile is anchored by Red Hat, automation, data and AI products, transaction processing software, mainframe systems, and global enterprise services."
+          ]
+        },
+        {
+          "title": "Strategic focus",
+          "paragraphs": [
+            "IBM positions Red Hat OpenShift as the operating layer for hybrid cloud workloads and watsonx as an enterprise AI and data platform for foundation models, machine learning, governance, and AI applications.",
+            "This makes IBM less exposed to consumer software substitution than many large technology peers, but still vulnerable where open infrastructure, self-hosted AI, and portable Kubernetes stacks reduce enterprise dependence on bundled vendor platforms."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "IBM's moat is strongest in large-enterprise relationships, mainframe and transaction-processing lock-in, regulated-industry procurement trust, Red Hat's enterprise open-source distribution model, and the consulting capacity needed to integrate complex systems.",
+        "The moat is weaker where the underlying primitives are already open: Kubernetes, Linux, open model tooling, and self-hosted AI interfaces give buyers credible bargaining power even when they still pay IBM for support, integration, compliance, or managed operations."
+      ],
+      "decentralizationNarrative": [
+        "IBM's core markets are decentralizable at the infrastructure layer because Kubernetes, Linux, open-source storage, and local model runtimes allow workloads to move across clouds, data centers, and edge sites.",
+        "The harder layer to decentralize is enterprise accountability: regulated buyers still need support contracts, governance evidence, service-level guarantees, migration help, and audit trails, which keeps room for IBM even when the software base is open."
+      ],
+      "sourceIds": [
+        "ibm-2024-annual-report",
+        "ibm-investor-relations",
+        "ibm-market-cap-stockanalysis",
+        "ibm-stockanalysis-overview",
+        "ibm-products"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "New IBM bundle prepared from the 2026-05-24 S&P 500 top-50 refresh using IBM investor materials, product pages, market-data snapshots, and open-source project documentation reviewed on 2026-05-25.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "IBM has durable enterprise account relationships, high-switching-cost infrastructure and transaction-processing systems, Red Hat distribution economics, and consulting-led implementation channels, though much of the modern cloud stack is based on open technologies.",
+          "sourceIds": [
+            "ibm-2024-annual-report",
+            "ibm-openshift-product",
+            "redhat-openshift-developer"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 6,
+          "rationale": "IBM's target workloads can often run on open Kubernetes, Linux, and self-hosted AI stacks, but enterprise support, governance, integration, compliance, and legacy system dependencies limit full decentralization.",
+          "sourceIds": [
+            "kubernetes-homepage",
+            "okd-github",
+            "ibm-watsonx-product",
+            "open-webui-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "IBM's annual report shows a mature, profitable software-led enterprise business with substantial recurring infrastructure and services demand, though growth is more moderate than faster cloud-native peers.",
+          "sourceIds": [
+            "ibm-2024-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 19.42,
+          "rationale": "StockAnalysis listed IBM's trailing PE ratio at 19.42 in a May 2026 market-data snapshot; this is market-sensitive and should be refreshed before publication if the registry requires current valuation figures.",
+          "sourceIds": [
+            "ibm-stockanalysis-overview"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 238600000000,
+          "rationale": "Capital.com reported IBM market capitalization of about $238.60 billion as of 2026-05-22, broadly consistent with other late-May 2026 market-data snapshots.",
+          "sourceIds": [
+            "ibm-market-cap-capital"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "red-hat-openshift",
+        "name": "Red Hat OpenShift",
+        "category": "Hybrid cloud and Kubernetes platform",
+        "homepageUrl": "https://www.ibm.com/products/openshift",
+        "summary": "Red Hat OpenShift is IBM's enterprise Kubernetes platform for building, deploying, operating, and modernizing containerized applications across hybrid cloud environments.",
+        "whyItMatters": "OpenShift is central to IBM's hybrid-cloud strategy because it turns open Kubernetes primitives into an enterprise-supported platform for application modernization, platform engineering, virtualization, and regulated workload operations.",
+        "replacementSketch": [
+          "A replacement path would start with open Kubernetes distributions, GitOps tooling, open-source observability, and community storage or networking layers, then add support from independent operators rather than a single platform vendor.",
+          "Large enterprises would likely adopt this gradually, using OpenShift where contractual support and migration services matter while moving lower-risk workloads to portable upstream Kubernetes stacks."
+        ],
+        "sourceIds": [
+          "ibm-openshift-product",
+          "ibm-cloud-openshift-docs",
+          "redhat-openshift-developer",
+          "kubernetes-homepage",
+          "okd-github"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "okd",
+            "name": "OKD",
+            "kind": "open-source",
+            "homepageUrl": "https://www.okd.io/",
+            "repoUrl": "https://github.com/okd-project/okd",
+            "summary": "OKD is the community distribution of Kubernetes that powers Red Hat OpenShift and uses many of the same underlying open-source technologies.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OKD is explicitly positioned as a community Kubernetes distribution and upstream to OpenShift, with source available through the OKD project.",
+                "sourceIds": [
+                  "okd-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "OKD can run outside IBM or Red Hat-managed services, preserving Kubernetes portability while still carrying much of the OpenShift operating model.",
+                "sourceIds": [
+                  "okd-github",
+                  "kubernetes-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OKD is a real upstream distribution, but enterprise buyers may still need independent support, validated integrations, and migration expertise before replacing OpenShift in production.",
+                "sourceIds": [
+                  "okd-github",
+                  "redhat-openshift-developer"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Because OKD avoids proprietary platform subscription economics, it can give sophisticated operators strong bargaining leverage, though internal operations and support costs remain material.",
+                "sourceIds": [
+                  "okd-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "okd-github"
+            ]
+          },
+          {
+            "slug": "kubernetes",
+            "name": "Kubernetes",
+            "kind": "open-source",
+            "homepageUrl": "https://kubernetes.io/",
+            "repoUrl": "https://github.com/kubernetes/kubernetes",
+            "summary": "Kubernetes is the open-source container orchestration system that underlies many managed and self-managed cloud-native platforms.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "Kubernetes is an open-source project designed for portable workload orchestration across on-premises, hybrid, and public cloud environments.",
+                "sourceIds": [
+                  "kubernetes-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Kubernetes reduces dependence on one infrastructure owner by standardizing workload deployment and operations across many environments.",
+                "sourceIds": [
+                  "kubernetes-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 9,
+                "rationale": "Kubernetes is production-grade infrastructure used broadly across enterprise and cloud-native deployments, though replacing OpenShift requires assembling adjacent platform services.",
+                "sourceIds": [
+                  "kubernetes-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Kubernetes improves buyer leverage by enabling multi-vendor and self-managed operations, but support, observability, security, and platform engineering costs can be significant.",
+                "sourceIds": [
+                  "kubernetes-homepage",
+                  "ibm-cloud-openshift-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "kubernetes-homepage"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-kubernetes-operator-market",
+            "name": "Federated Kubernetes operator market",
+            "summary": "A federation of independent platform operators could provide OpenShift-like managed Kubernetes outcomes using upstream distributions, shared conformance profiles, portable SRE runbooks, and marketplace-based support contracts instead of a single vendor-controlled platform.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The market structure shifts from bundled enterprise platform licensing toward a competitive operator layer where workloads remain portable and support can be purchased from many qualified providers.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated operations and portable conformance rather than Bitcoin itself: buyers can choose operators, move clusters, and verify capabilities against open Kubernetes interfaces.",
+            "coordinationMechanism": "Enterprises publish workload requirements, operators bid to run or support clusters, and shared conformance tests plus public incident-history attestations help buyers compare providers.",
+            "verificationOrTrustModel": "Operators prove cluster conformance, uptime, patch cadence, and incident response through signed logs, reproducible test runs, customer-controlled observability exports, and escrowed runbooks that reduce lock-in if an operator fails.",
+            "failureModes": [
+              "Operator quality could fragment, causing enterprises to prefer IBM or Red Hat support for accountability.",
+              "Security and compliance evidence may remain too costly for small operators to maintain across regulated industries.",
+              "Complex platform integrations could recreate vendor lock-in around observability, identity, storage, or policy layers."
+            ],
+            "adoptionPath": [
+              "Start with non-regulated internal developer platforms and edge workloads where Kubernetes portability already matters.",
+              "Standardize conformance profiles, incident reporting, and migration playbooks for multi-operator support.",
+              "Expand into regulated workloads after auditors and insurers accept portable evidence packages."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ibm-openshift-product",
+              "ibm-cloud-openshift-docs"
+            ],
+            "enablerSourceIds": [
+              "kubernetes-homepage",
+              "okd-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly distributes control across many operators while keeping workloads on open Kubernetes-compatible infrastructure.",
+                "sourceIds": [
+                  "kubernetes-homepage",
+                  "okd-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Kubernetes conformance and open project practices make coordination plausible, but enterprise procurement and liability requirements remain difficult.",
+                "sourceIds": [
+                  "kubernetes-homepage",
+                  "redhat-openshift-developer"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "Most technical primitives already exist; the gap is packaging, support economics, compliance evidence, and buyer trust.",
+                "sourceIds": [
+                  "kubernetes-homepage",
+                  "okd-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "This would pressure OpenShift pricing and lock-in in sophisticated accounts, but many enterprises would still value Red Hat support and IBM integration services.",
+                "sourceIds": [
+                  "ibm-openshift-product",
+                  "redhat-openshift-developer"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "watsonx",
+        "name": "watsonx",
+        "category": "Enterprise AI and data platform",
+        "homepageUrl": "https://www.ibm.com/products/watsonx",
+        "summary": "watsonx is IBM's enterprise AI and data platform for building, deploying, governing, and scaling foundation-model and machine-learning workloads.",
+        "whyItMatters": "watsonx is IBM's flagship AI platform and a key way for IBM to attach governance, data, consulting, and infrastructure revenue to enterprise adoption of generative AI.",
+        "replacementSketch": [
+          "A credible replacement stack would combine open model runtimes, self-hosted interfaces, vector databases, policy engines, audit logging, and enterprise identity controls.",
+          "The practical substitution point is not a single app replacing watsonx; it is a modular stack where organizations keep sensitive data and inference closer to their own infrastructure while buying only the support or model hosting they need."
+        ],
+        "sourceIds": [
+          "ibm-watsonx-product",
+          "ibm-watsonx-newsroom",
+          "ollama-github",
+          "open-webui-github"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "ollama",
+            "name": "Ollama",
+            "kind": "open-source",
+            "homepageUrl": "https://ollama.com/",
+            "repoUrl": "https://github.com/ollama/ollama",
+            "summary": "Ollama is open-source software for running and managing large language models locally or on user-controlled infrastructure.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Ollama's source is available on GitHub and it supports local operation with open model ecosystems, though the surrounding model licensing varies by model.",
+                "sourceIds": [
+                  "ollama-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Local model execution lets teams keep inference and data handling on user-controlled machines or private infrastructure instead of a centralized AI platform.",
+                "sourceIds": [
+                  "ollama-github",
+                  "ollama-security-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Ollama is widely used for local LLM workflows, but enterprise readiness depends on hardening, access controls, monitoring, and governance layers around it.",
+                "sourceIds": [
+                  "ollama-github",
+                  "ollama-security-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Self-hosted inference can reduce marginal API and platform costs for suitable workloads, though GPU capacity, operations, and model-quality tradeoffs remain material.",
+                "sourceIds": [
+                  "ollama-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "ollama-github"
+            ]
+          },
+          {
+            "slug": "open-webui",
+            "name": "Open WebUI",
+            "kind": "open-source",
+            "homepageUrl": "https://openwebui.com/",
+            "repoUrl": "https://github.com/open-webui/open-webui",
+            "summary": "Open WebUI is an open-source, self-hosted AI interface that can connect to local and remote model backends including Ollama-compatible deployments.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Open WebUI is published as an open-source project with source available on GitHub.",
+                "sourceIds": [
+                  "open-webui-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Self-hosted AI interfaces help teams operate model access and data flows outside a single proprietary AI platform.",
+                "sourceIds": [
+                  "open-webui-github",
+                  "open-webui-paper"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Open WebUI provides a usable interface for local and remote model interaction, but regulated enterprise replacement requires added governance, policy, and audit controls.",
+                "sourceIds": [
+                  "open-webui-github",
+                  "open-webui-paper"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "A self-hosted interface can reduce dependence on bundled AI platforms and enable cheaper local or mixed-provider model routing, subject to operations and model-hosting costs.",
+                "sourceIds": [
+                  "open-webui-github",
+                  "ollama-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "open-webui-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-private-ai-inference-pools",
+            "name": "Cooperative private AI inference pools",
+            "summary": "Enterprises, universities, local governments, or industry consortia could pool GPU capacity and operate shared private model-serving infrastructure with open runtimes, audited access policies, and portable user interfaces instead of relying on one vendor's AI platform.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "AI platform economics shift from proprietary bundled suites toward cooperative compute and governance pools where participants retain more control over data, model choice, and cost allocation.",
+            "bitcoinOrDecentralizationRole": "The central mechanism is decentralized and cooperative governance, not Bitcoin: members share infrastructure while using open runtimes and auditable policies to avoid a single platform owner controlling access.",
+            "coordinationMechanism": "Members contribute capacity or funding, workloads are scheduled across approved nodes, usage is metered per participant, and governance rules define model eligibility, data boundaries, retention, and incident response.",
+            "verificationOrTrustModel": "Trust depends on signed workload logs, hardware and software attestations where available, strict identity controls, reproducible deployment manifests, audit exports, and penalties or expulsion for operators that leak data or misreport capacity.",
+            "failureModes": [
+              "Hardware scarcity and GPU operations complexity could make cooperative pools less reliable than IBM-managed or hyperscaler services.",
+              "Participants may disagree on model risk, retention rules, or liability for generated outputs.",
+              "Poorly secured self-hosted inference endpoints can expose sensitive workloads if default configurations are not hardened."
+            ],
+            "adoptionPath": [
+              "Begin with low-risk internal knowledge assistants using open model runtimes and self-hosted interfaces.",
+              "Add shared governance, access logging, and independent security audits for multi-organization workloads.",
+              "Move regulated or high-value workloads only after procurement, legal, and cyber-risk teams accept the evidence model."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ibm-watsonx-product",
+              "ibm-watsonx-newsroom"
+            ],
+            "enablerSourceIds": [
+              "ollama-github",
+              "open-webui-github",
+              "open-webui-paper"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept distributes AI compute ownership and governance across participants instead of centralizing it in IBM or another platform vendor.",
+                "sourceIds": [
+                  "ollama-github",
+                  "open-webui-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Shared compute pools are plausible for aligned institutions, but liability, security, scheduling, and cost-sharing rules are hard coordination problems.",
+                "sourceIds": [
+                  "open-webui-paper",
+                  "ollama-security-analysis"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Open model-serving and self-hosted interface tools exist, but enterprise-grade governance, monitoring, and secure multi-tenant operations require substantial engineering.",
+                "sourceIds": [
+                  "ollama-github",
+                  "open-webui-github",
+                  "ibm-watsonx-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "The model could pressure watsonx for privacy-sensitive or cost-sensitive workloads, but IBM's governance packaging and consulting support remain attractive to large enterprises.",
+                "sourceIds": [
+                  "ibm-watsonx-product",
+                  "ibm-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "ibm-investor-relations",
+      "title": "IBM Investor Relations",
+      "url": "https://www.ibm.com/investor",
+      "kind": "investor-relations",
+      "publisher": "IBM",
+      "note": "Primary investor-relations landing page for IBM financial reporting and strategy materials.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-2024-annual-report",
+      "title": "IBM 2024 Annual Report",
+      "url": "https://www.ibm.com/downloads/documents/us-en/1227cc9d6ecb9697",
+      "kind": "annual-report",
+      "publisher": "IBM",
+      "note": "Annual report used for business mix, revenue base, profitability context, and IBM's hybrid cloud and AI strategy.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-products",
+      "title": "IBM Products",
+      "url": "https://www.ibm.com/products",
+      "kind": "product-page",
+      "publisher": "IBM",
+      "note": "IBM product catalog source for confirming current product focus.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-market-cap-capital",
+      "title": "IBM Market Cap - May 2026 Update",
+      "url": "https://capital.com/en-int/markets/shares/ibm-corp-share-price/market-cap",
+      "kind": "market-data",
+      "publisher": "Capital.com",
+      "note": "Market-data snapshot reporting IBM market capitalization of about $238.60 billion as of 2026-05-22.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-market-cap-stockanalysis",
+      "title": "International Business Machines (IBM) Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/ibm/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Independent market-cap snapshot used as a cross-check for IBM's late-May 2026 valuation range.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-stockanalysis-overview",
+      "title": "International Business Machines (IBM) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/ibm/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data page used for IBM PE ratio and valuation context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-openshift-product",
+      "title": "IBM Red Hat OpenShift",
+      "url": "https://www.ibm.com/products/openshift",
+      "kind": "product-page",
+      "publisher": "IBM",
+      "note": "IBM product page for Red Hat OpenShift positioning and managed hybrid-cloud use cases.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-cloud-openshift-docs",
+      "title": "Understanding Red Hat OpenShift on IBM Cloud",
+      "url": "https://cloud.ibm.com/docs/openshift?topic=openshift-overview",
+      "kind": "technical-docs",
+      "publisher": "IBM Cloud Docs",
+      "note": "Technical documentation describing Red Hat OpenShift on IBM Cloud and hybrid Kubernetes deployment behavior.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "redhat-openshift-developer",
+      "title": "Red Hat OpenShift",
+      "url": "https://developers.redhat.com/products/openshift/",
+      "kind": "technical-docs",
+      "publisher": "Red Hat Developer",
+      "note": "Red Hat developer documentation for OpenShift's Kubernetes-based hybrid-cloud platform capabilities.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "kubernetes-homepage",
+      "title": "Kubernetes",
+      "url": "https://kubernetes.io/",
+      "kind": "open-source-project",
+      "publisher": "Cloud Native Computing Foundation",
+      "note": "Primary open-source project page for Kubernetes as production-grade container orchestration.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "okd-github",
+      "title": "OKD: The Community Distribution of Kubernetes that powers Red Hat's OpenShift",
+      "url": "https://github.com/okd-project/okd",
+      "kind": "open-source-project",
+      "publisher": "OKD Project",
+      "note": "Open-source upstream project for OpenShift-compatible Kubernetes distribution analysis.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-watsonx-product",
+      "title": "IBM watsonx",
+      "url": "https://www.ibm.com/products/watsonx",
+      "kind": "product-page",
+      "publisher": "IBM",
+      "note": "IBM product page for watsonx enterprise AI and data platform positioning.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ibm-watsonx-newsroom",
+      "title": "IBM watsonx is now available to help meet enterprises' AI for business needs",
+      "url": "https://newsroom.ibm.com/IBM-watsonx-capabilities-are-now-available-to-help-meet-enterprises-AI-for-business-needs",
+      "kind": "analysis",
+      "publisher": "IBM Newsroom",
+      "note": "IBM launch and positioning source for watsonx as an enterprise-ready AI and data platform.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ollama-github",
+      "title": "Ollama",
+      "url": "https://github.com/ollama/ollama",
+      "kind": "open-source-project",
+      "publisher": "Ollama",
+      "note": "Open-source local model runtime used as a plausible self-hosted AI alternative.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-webui-github",
+      "title": "Open WebUI",
+      "url": "https://github.com/open-webui/open-webui",
+      "kind": "open-source-project",
+      "publisher": "Open WebUI",
+      "note": "Open-source self-hosted AI interface used as a watsonx alternative component.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-webui-paper",
+      "title": "Open WebUI: An Open, Extensible, and Usable Interface for AI Interaction",
+      "url": "https://arxiv.org/abs/2510.02546",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Technical analysis source describing Open WebUI as an open, extensible, local-capable AI interface toolkit.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ollama-security-analysis",
+      "title": "Over 175,000 publicly exposed Ollama AI servers discovered worldwide",
+      "url": "https://www.techradar.com/pro/security/over-175-000-publicly-exposed-ollama-ai-servers-discovered-worldwide-so-fix-now",
+      "kind": "analysis",
+      "publisher": "TechRadar",
+      "note": "Security analysis used to document self-hosted AI failure modes around exposed inference endpoints.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new IBM registry bundle with two products: Red Hat OpenShift and watsonx. The refresh emphasizes IBM's hybrid-cloud and enterprise-AI moat while identifying credible open-source alternatives through Kubernetes, OKD, Ollama, and Open WebUI. IPO metadata is left null because both IPO date and IPO market capitalization were not supported by the referenced source set."
+}

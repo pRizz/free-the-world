@@ -1,0 +1,755 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "wells-fargo",
+      "name": "Wells Fargo",
+      "ticker": "WFC",
+      "rankApprox": 74,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "financials",
+      "industryId": "diversified-banks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/wells-fargo/marketcap/",
+      "description": "Wells Fargo is a U.S. diversified bank offering consumer banking, commercial banking, corporate banking, investment banking, and wealth management services.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Wells Fargo operates across Consumer Banking and Lending, Commercial Banking, Corporate and Investment Banking, and Wealth and Investment Management, giving it a broad deposit, lending, payments, and advisory footprint.",
+            "Its core consumer surfaces include Wells Fargo Online and the Wells Fargo Mobile app, while products such as the Active Cash Card extend the bank into everyday card spending and rewards."
+          ]
+        },
+        {
+          "title": "Scale and financial profile",
+          "paragraphs": [
+            "The 2025 annual report showed $21.3 billion of net income and a 12.4% return on average equity, while CompaniesMarketCap reported a May 2026 market capitalization of $233.79 billion.",
+            "This places Wells Fargo among the largest global public companies by market capitalization, but its valuation still reflects mature-bank economics rather than high-growth software multiples."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Wells Fargo's moat is built on regulated-bank licensing, a national deposit base, consumer relationships, branch and digital distribution, credit underwriting data, risk management infrastructure, and deep integration with card and payment networks.",
+        "The moat is durable but not absolute: digital-first banks, open-source core banking platforms, Bitcoin payment rails, and community financial infrastructure can reduce switching friction at the edges, especially for users who value portability, privacy, or lower-fee coordination."
+      ],
+      "decentralizationNarrative": [
+        "Wells Fargo is structurally centralized because deposits, credit decisions, account access, card issuance, compliance, fraud controls, and settlement interfaces are controlled by regulated corporate entities and their network partners.",
+        "The most credible decentralization pressure is not a full replacement of bank balance sheets today, but modular substitution: open core banking for community lenders, federated Bitcoin custody for local savings and payments, and self-hosted merchant payment tools for card-network bypass."
+      ],
+      "sourceIds": [
+        "wfc-2025-annual-report",
+        "wfc-online-banking",
+        "wfc-active-cash-terms",
+        "wfc-marketcap-2026-05"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Prepared as a publishable registry refresh on 2026-05-25 using Wells Fargo product pages, the 2025 annual report, CompaniesMarketCap, and open-source financial infrastructure references.",
+      "inputMetrics": {
+        "moat": {
+          "value": 86,
+          "rationale": "Wells Fargo combines regulated-bank permissions, a large customer base, national distribution, deposit funding, established credit operations, and embedded card/payment relationships.",
+          "sourceIds": [
+            "wfc-2025-annual-report",
+            "wfc-online-banking",
+            "wfc-active-cash-terms"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 31,
+          "rationale": "Some account, payment, and community finance functions can be modularized through open-source banking software and Bitcoin-based payment systems, but regulated deposits, credit, KYC, and consumer protections remain centralized and compliance-heavy.",
+          "sourceIds": [
+            "wfc-2025-annual-report",
+            "apache-fineract-github",
+            "fedimint-how-it-works",
+            "btcpay-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "Wells Fargo reported $21.3 billion of net income for 2025 and a 12.4% return on average equity, indicating strong mature-bank profitability.",
+          "sourceIds": [
+            "wfc-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 11.6,
+          "rationale": "CompaniesMarketCap reported Wells Fargo's trailing P/E ratio as 11.6 in May 2026.",
+          "sourceIds": [
+            "wfc-pe-2026-05"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 233790000000,
+          "rationale": "CompaniesMarketCap reported a $233.79 billion market capitalization for Wells Fargo as of May 2026 and also listed $233.79 billion for May 24, 2026.",
+          "sourceIds": [
+            "wfc-marketcap-2026-05"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "wells-fargo-online",
+        "name": "Wells Fargo Online",
+        "category": "digital banking",
+        "homepageUrl": "https://www.wellsfargo.com/mobile-online-banking/",
+        "summary": "Wells Fargo Online and the Wells Fargo Mobile app let customers manage accounts, transfer money, pay bills, and access security tools through digital channels.",
+        "whyItMatters": "Digital banking is the daily interface where a large bank's account custody, payments, fraud controls, identity checks, and customer lock-in become visible to consumers.",
+        "replacementSketch": [
+          "A credible replacement path starts with community financial institutions, credit unions, or mutual-aid finance groups using open-source core banking software for accounts, savings, loans, reporting, and mobile access.",
+          "For users whose needs are closer to payments and savings than regulated bank credit, federated Bitcoin e-cash could handle local private transactions while still bridging to Lightning for external payments."
+        ],
+        "sourceIds": [
+          "wfc-online-banking",
+          "apache-fineract-github",
+          "mifos-x",
+          "fedimint-how-it-works"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "wells-fargo-online-apache-fineract",
+            "name": "Apache Fineract",
+            "kind": "open-source",
+            "homepageUrl": "https://fineract.apache.org/",
+            "repoUrl": "https://github.com/apache/fineract",
+            "summary": "Apache Fineract is an open-source core banking platform for financial services, savings, lending, and related account operations.",
+            "metrics": {
+              "openness": {
+                "value": 94,
+                "rationale": "The project is openly developed on GitHub and describes itself as an open-source core banking platform.",
+                "sourceIds": [
+                  "apache-fineract-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 57,
+                "rationale": "Fineract can decentralize software ownership for financial institutions and community lenders, but each deployment remains operated by an institution rather than by a peer-to-peer network.",
+                "sourceIds": [
+                  "apache-fineract-github",
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "The platform is mature enough to be used as a foundation for financial services, though production banking still requires integration, compliance, security operations, and institutional governance.",
+                "sourceIds": [
+                  "apache-fineract-github",
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 75,
+                "rationale": "Open-source licensing and configurable banking primitives can reduce vendor lock-in and implementation cost for smaller institutions relative to closed core banking systems.",
+                "sourceIds": [
+                  "apache-fineract-github",
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "apache-fineract-github",
+              "mifos-x"
+            ]
+          },
+          {
+            "slug": "wells-fargo-online-fedimint",
+            "name": "Fedimint",
+            "kind": "decentralized",
+            "homepageUrl": "https://fedimint.org/",
+            "repoUrl": "https://github.com/fedimint/fedimint",
+            "summary": "Fedimint is an open-source federated e-cash system that uses Bitcoin reserves, guardian multisignature custody, blind signatures, and Lightning interoperability.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "Fedimint is published as open-source Bitcoin infrastructure with public documentation and implementation work.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "Custody and issuance are split across federation guardians, and users can transact privately inside a federation while bridging to Lightning for external payments.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 45,
+                "rationale": "The model is promising but still much less mature than regulated consumer banking and depends on guardian reliability, user education, liquidity, and wallet experience.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Federated custody and Lightning settlement can reduce dependence on bank branches and card intermediaries for some payments, but does not remove compliance and operational costs where fiat conversion or regulated services are needed.",
+                "sourceIds": [
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "fedimint-home",
+              "fedimint-how-it-works",
+              "fedimint-federations"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-owned-open-core-banking",
+            "name": "Community-Owned Open Core Banking",
+            "summary": "Credit unions, community banks, and local cooperative finance groups could use open-source core banking software to operate savings, lending, accounting, and mobile account access without relying on closed vendor stacks or a national megabank's product roadmap.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "If smaller financial institutions can share and improve open banking infrastructure, the software portion of Wells Fargo's digital account moat weakens even while regulated balance-sheet functions remain local and supervised.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared software governance and institution-level autonomy rather than Bitcoin; participating institutions coordinate improvements without a single proprietary platform owner controlling the stack.",
+            "coordinationMechanism": "Institutions, implementers, and developers coordinate through open-source repositories, shared roadmaps, support vendors, and deployable configurations for savings, lending, accounting, and digital access.",
+            "verificationOrTrustModel": "Trust still comes from regulated institutions, audits, reconciliation, and institutional controls; the open codebase improves inspectability, but customer funds remain dependent on each operator's governance and compliance.",
+            "failureModes": [
+              "Open-source software does not eliminate the need for bank licensing, compliance operations, fraud controls, cybersecurity, and customer support.",
+              "Fragmented deployments could lag large banks on user experience, integrations, and real-time risk controls."
+            ],
+            "adoptionPath": [
+              "Start with community lenders, credit unions, and nonprofit financial institutions that need lower-cost digital banking infrastructure.",
+              "Build shared implementation templates, hosted support options, and compliance integrations that make migration less risky."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "wfc-online-banking",
+              "wfc-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "apache-fineract-github",
+              "mifos-x"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 61,
+                "rationale": "The concept decentralizes software ownership and institutional capability but not custody or regulatory authority at the user level.",
+                "sourceIds": [
+                  "apache-fineract-github",
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 68,
+                "rationale": "Open-source project governance and implementation vendors provide a plausible coordination path for smaller financial institutions.",
+                "sourceIds": [
+                  "apache-fineract-github",
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 63,
+                "rationale": "The software foundations exist, but production deployment requires security, compliance, migration, uptime, and operational discipline.",
+                "sourceIds": [
+                  "apache-fineract-github",
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "The pressure is strongest in underserved, community, and low-cost banking contexts rather than in Wells Fargo's full national consumer and commercial banking franchise.",
+                "sourceIds": [
+                  "wfc-2025-annual-report",
+                  "apache-fineract-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "federated-bitcoin-neighborhood-banking",
+            "name": "Federated Bitcoin Neighborhood Banking",
+            "summary": "Local groups could use Fedimint-style federations to hold Bitcoin in guardian multisig, issue private e-cash notes, and support instant local payments with Lightning bridges for external settlement.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "For payment and savings use cases that do not require bank credit or FDIC-insured deposits, a federation can replace some centralized online banking functions with community custody, private bearer payments, and open Lightning interoperability.",
+            "bitcoinOrDecentralizationRole": "Bitcoin provides the reserve asset, Lightning provides external payment interoperability, and federation prevents any single operator from unilaterally controlling the reserve wallet.",
+            "coordinationMechanism": "Users join a known federation, guardians collectively manage the multisignature wallet and mint issuance, and Lightning gateways bridge federation balances to outside invoices.",
+            "verificationOrTrustModel": "Guardian threshold signatures constrain unilateral theft, blind signatures improve user privacy, and total issued e-cash can be compared against federation reserves, but users still trust a guardian quorum and software implementation.",
+            "failureModes": [
+              "A colluding guardian quorum, lost backups, poor liquidity, or weak governance could harm users.",
+              "Bitcoin volatility, regulatory uncertainty, and recovery complexity limit mainstream suitability for ordinary deposit accounts."
+            ],
+            "adoptionPath": [
+              "Begin with communities already comfortable with Bitcoin custody and local mutual-aid finance.",
+              "Add practical wallets, gateway liquidity, education, backup workflows, and clear disclosure that this is not insured bank money."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "wfc-online-banking"
+            ],
+            "enablerSourceIds": [
+              "fedimint-how-it-works",
+              "fedimint-federations"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 84,
+                "rationale": "The concept directly replaces single-bank custody for some payments with guardian federations, multisig custody, and Lightning interoperability.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 55,
+                "rationale": "The technical coordination model is documented, but real-world community governance and liquidity operations remain difficult.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 43,
+                "rationale": "Fedimint is plausible for motivated communities, but consumer-grade replacement of online banking requires major usability, compliance, recovery, and liquidity progress.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 38,
+                "rationale": "It pressures selected payments and community savings use cases rather than Wells Fargo's full regulated banking product set.",
+                "sourceIds": [
+                  "wfc-online-banking",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "wells-fargo-active-cash-card",
+        "name": "Wells Fargo Active Cash Card",
+        "category": "credit card",
+        "homepageUrl": "https://www.wellsfargo.com/credit-cards/active-cash/",
+        "summary": "The Wells Fargo Active Cash Visa Card is a consumer credit card whose rewards terms state that cardholders earn two cents in cash rewards for every dollar of net purchases and can earn unlimited cash rewards unless Wells Fargo says otherwise.",
+        "whyItMatters": "Flat-rate rewards cards are a clear example of bank, issuer, and card-network control over consumer payments, merchant fees, reward rules, eligibility, and account access.",
+        "replacementSketch": [
+          "A partial replacement would let merchants accept open Bitcoin and Lightning payments directly, then return some avoided card-interchange cost to customers as transparent instant discounts or loyalty credits.",
+          "For credit-like functionality, decentralized or cooperative systems would still need underwriting, consumer protection, dispute handling, fraud management, and legal compliance before they could honestly replace a mainstream credit card."
+        ],
+        "sourceIds": [
+          "wfc-active-cash-terms",
+          "btcpay-github"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "wells-fargo-active-cash-card-btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://btcpayserver.org/",
+            "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+            "summary": "BTCPay Server is a free, open-source, self-hosted Bitcoin payment processor that lets merchants accept Bitcoin without intermediaries.",
+            "metrics": {
+              "openness": {
+                "value": 95,
+                "rationale": "The project is open-source, self-hosted, and published under the MIT license on GitHub.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 83,
+                "rationale": "Merchants can receive payments directly to their own Bitcoin or Lightning setup rather than routing through a card issuer or centralized payment processor.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 64,
+                "rationale": "BTCPay Server is usable merchant infrastructure, but mainstream card replacement is limited by buyer adoption, volatility handling, tax treatment, refunds, and consumer dispute expectations.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 78,
+                "rationale": "Self-hosted Bitcoin and Lightning acceptance can reduce processor dependence and intermediary fees for merchants willing to handle operational complexity.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "btcpay-github"
+            ]
+          },
+          {
+            "slug": "wells-fargo-active-cash-card-fedimint",
+            "name": "Fedimint",
+            "kind": "decentralized",
+            "homepageUrl": "https://fedimint.org/",
+            "repoUrl": "https://github.com/fedimint/fedimint",
+            "summary": "Fedimint enables federated Bitcoin-backed e-cash and Lightning interoperability, making it a possible local-payments substrate rather than a conventional credit card.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "Fedimint is open-source Bitcoin infrastructure with public documentation for federated e-cash and Lightning gateways.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 80,
+                "rationale": "Federated custody, private e-cash transfers, and Lightning bridges fit decentralized local payment use cases better than centralized card issuance.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 42,
+                "rationale": "The model is much less ready than card networks for chargebacks, consumer credit, merchant acceptance, regulatory compliance, and mainstream recovery flows.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 65,
+                "rationale": "Local e-cash and Lightning payments can avoid some card-network costs, but gateway liquidity, custody risk, and fiat conversion can reintroduce costs.",
+                "sourceIds": [
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "fedimint-home",
+              "fedimint-how-it-works",
+              "fedimint-federations"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "merchant-funded-lightning-cashback",
+            "name": "Merchant-Funded Lightning Cashback",
+            "summary": "Merchants using self-hosted Bitcoin and Lightning payment processors could offer instant discounts or Lightning rebates funded from avoided card-processing and rewards-program costs, shifting loyalty economics from issuer-controlled reward ledgers to merchant-controlled settlement flows.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "If enough merchants can offer lower-cost direct settlement with visible customer rebates, flat-rate rewards cards lose some appeal because the reward becomes a merchant-side price concession rather than a bank-controlled incentive.",
+            "bitcoinOrDecentralizationRole": "Bitcoin and Lightning are central because they provide open settlement rails, while BTCPay-style infrastructure lets merchants accept payment without a card issuer, acquirer, or proprietary rewards ledger.",
+            "coordinationMechanism": "Merchants publish Bitcoin or Lightning invoices, customers pay from compatible wallets, and rebate logic can be encoded in merchant checkout flows or loyalty accounts.",
+            "verificationOrTrustModel": "Payment settlement is verified by Bitcoin or Lightning payment state, while rebate fulfillment is verified by merchant receipts, signed webhook events, and auditable order records; there is still merchant-side trust for refunds and loyalty accounting.",
+            "failureModes": [
+              "Customers may prefer credit, chargebacks, float, and card protections over direct payment discounts.",
+              "Merchant adoption, accounting treatment, exchange-rate exposure, and refund workflows may remain too cumbersome for mass-market retail."
+            ],
+            "adoptionPath": [
+              "Start with Bitcoin-native merchants and high-margin online sellers willing to offer explicit discounts for direct settlement.",
+              "Expand through hosted BTCPay support, wallet UX improvements, stable pricing workflows, and transparent merchant-funded rebate disclosure."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "wfc-active-cash-terms"
+            ],
+            "enablerSourceIds": [
+              "btcpay-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "The concept directly replaces card-issuer reward mediation with merchant-controlled open payment rails.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "BTCPay provides credible merchant infrastructure, but buyer adoption and rebate standards would need broader coordination.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 61,
+                "rationale": "Direct Bitcoin and Lightning checkout is feasible today for willing merchants, while mass-market UX, tax, volatility, and refunds remain friction points.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 44,
+                "rationale": "The pressure is real for selected online merchants and Bitcoin users, but it does not yet match card networks on acceptance, credit, chargebacks, or consumer rewards habit.",
+                "sourceIds": [
+                  "wfc-active-cash-terms",
+                  "btcpay-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "federated-local-spending-clubs",
+            "name": "Federated Local Spending Clubs",
+            "summary": "A local federation could issue Bitcoin-backed e-cash to members and coordinate merchant discounts or loyalty benefits inside a community, creating a privacy-preserving alternative to bank-card rewards for selected local spending.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "federation",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "A federation can turn rewards from a bank-issued credit-card program into a local coordination problem among consumers, merchants, and guardians, with incentives tied to direct community spending rather than issuer interchange economics.",
+            "bitcoinOrDecentralizationRole": "Bitcoin backs federation reserves, Lightning connects the federation to external invoices, and federated guardians reduce reliance on one bank or card issuer for local payment balances.",
+            "coordinationMechanism": "Members deposit Bitcoin, receive e-cash, pay local merchants inside the federation or through Lightning gateways, and merchants fund discounts based on lower settlement costs or community-development goals.",
+            "verificationOrTrustModel": "Guardian multisig constrains unilateral reserve movement, blind e-cash protects payer privacy, and merchant discount claims can be tied to signed receipts or gateway payment events; the system remains vulnerable to guardian collusion and merchant nonperformance.",
+            "failureModes": [
+              "Federations may struggle with governance, liquidity, recovery, tax reporting, and consumer protection expectations.",
+              "Credit-card benefits such as credit lines, fraud disputes, warranty coverage, and chargebacks are not naturally replaced by local e-cash."
+            ],
+            "adoptionPath": [
+              "Pilot with local merchant associations, Bitcoin meetups, or mutual-aid communities that already trust named guardians.",
+              "Add merchant dashboards, clear reserve reporting, wallet backups, and simple discount settlement before targeting broader consumers."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "wfc-active-cash-terms"
+            ],
+            "enablerSourceIds": [
+              "fedimint-how-it-works",
+              "fedimint-federations"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 79,
+                "rationale": "The concept shifts custody and loyalty coordination from a bank-card issuer to a local federation with Bitcoin and Lightning interoperability.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 49,
+                "rationale": "The technical model supports local private payments, but merchant participation and guardian governance are difficult social coordination problems.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 38,
+                "rationale": "A small pilot is feasible, but replacing mainstream rewards-card behavior would require mature wallets, merchant tools, compliance clarity, and user recovery flows.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-federations"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 30,
+                "rationale": "The concept is more likely to serve niche local communities than to materially threaten a national cash-back card in the near term.",
+                "sourceIds": [
+                  "wfc-active-cash-terms",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "wfc-2025-annual-report",
+      "title": "Wells Fargo 2025 Annual Report",
+      "url": "https://www.wellsfargo.com/assets/pdf/about/investor-relations/annual-reports/2025-annual-report.pdf",
+      "kind": "annual-report",
+      "publisher": "Wells Fargo",
+      "note": "Primary source for Wells Fargo's 2025 financial performance, reportable segments, profitability, and capital metrics.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "wfc-online-banking",
+      "title": "Mobile and online banking with Wells Fargo",
+      "url": "https://www.wellsfargo.com/mobile-online-banking/",
+      "kind": "product-page",
+      "publisher": "Wells Fargo",
+      "note": "Official product page describing Wells Fargo Online and Wells Fargo Mobile features such as account management, transfers, bill pay, and security tools.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "wfc-active-cash-terms",
+      "title": "Wells Fargo Active Cash Visa Card Terms and Conditions",
+      "url": "https://www.wellsfargo.com/credit-cards/active-cash/terms/",
+      "kind": "product-page",
+      "publisher": "Wells Fargo",
+      "note": "Official terms page documenting Active Cash rewards mechanics, including two cents per dollar on net purchases and unlimited cash rewards unless otherwise stated.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "wfc-marketcap-2026-05",
+      "title": "Wells Fargo Market Capitalization",
+      "url": "https://companiesmarketcap.com/wells-fargo/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market data source for Wells Fargo's May 2026 market capitalization and approximate global market-cap rank.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "wfc-pe-2026-05",
+      "title": "Wells Fargo P/E Ratio",
+      "url": "https://companiesmarketcap.com/wells-fargo/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market data source for Wells Fargo's May 2026 trailing P/E ratio.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "apache-fineract-github",
+      "title": "Apache Fineract GitHub Repository",
+      "url": "https://github.com/apache/fineract",
+      "kind": "open-source-project",
+      "publisher": "Apache Software Foundation",
+      "note": "Open-source core banking platform used to evaluate plausible community-bank and credit-union software alternatives.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "mifos-x",
+      "title": "Mifos X",
+      "url": "https://mifos.org/mifos-x/",
+      "kind": "open-source-project",
+      "publisher": "Mifos Initiative",
+      "note": "Open financial-services platform using Apache Fineract as a backend, relevant to digital financial services and financial inclusion deployments.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Open-source federated Bitcoin e-cash project used as a decentralized payment and custody alternative reference.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "fedimint-how-it-works",
+      "title": "How Fedimint Works",
+      "url": "https://fedimint.org/users/how-it-works",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Technical documentation describing Bitcoin deposits, e-cash notes, private federation transfers, and Lightning interoperability.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "fedimint-federations",
+      "title": "How Federations Work",
+      "url": "https://fedimint.org/guardians/how-federations-work",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Technical documentation describing guardian threshold multisig custody, federation modules, and Lightning gateway mechanics.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "btcpay-github",
+      "title": "BTCPay Server GitHub Repository",
+      "url": "https://github.com/btcpayserver/btcpayserver",
+      "kind": "open-source-project",
+      "publisher": "BTCPay Server",
+      "note": "Open-source, self-hosted Bitcoin payment processor used to evaluate merchant-side alternatives to card-network and bank-issued payment flows.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Refresh adds Wells Fargo as a diversified U.S. bank with two products: Wells Fargo Online and Wells Fargo Active Cash Card. Strong alternatives are Apache Fineract, Mifos X, Fedimint, and BTCPay Server, with disruption concepts focused on open core banking, federated Bitcoin e-cash, and merchant-funded Lightning rewards."
+}

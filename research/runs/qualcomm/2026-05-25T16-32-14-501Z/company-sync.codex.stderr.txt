@@ -1,0 +1,1351 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e5ffa-d5a4-7080-9067-1e5726ab0142
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: qualcomm
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "qualcomm",
+  "name": "Qualcomm",
+  "ticker": "QCOM",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top50"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "semiconductors",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/qualcomm/marketcap/",
+  "description": "Qualcomm develops wireless semiconductor platforms, modems, processors, and related technologies for mobile, automotive, IoT, and edge devices.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Snapdragon",
+    "Qualcomm 5G Modem-RF"
+  ],
+  "seedSourceUrls": [
+    "https://investor.qualcomm.com/",
+    "https://www.qualcomm.com/products",
+    "https://companiesmarketcap.com/qualcomm/marketcap/"
+  ],
+  "notes": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T16:32:16.207940Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:16.207952Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:16.208280Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:16.208285Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:16.208623Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:16.208628Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:16.208965Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:16.208969Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:16.209283Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:16.209286Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:16.209938Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:16.209941Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:17.028438Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:17.028451Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:17.028760Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:17.028766Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:17.029069Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:17.029076Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:17.029367Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:17.029373Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:17.029647Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:17.029650Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:32:17.030267Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:32:17.030270Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Qualcomm 2025 annual report revenue net income Snapdragon QCT QTL ...
+web search: 
+web search: RISC-V International open standard instruction set official ...
+web search: 
+web search: Qualcomm 2025 annual report revenue net income QCT QTL 2025 ...
+web search: 
+web search: finance: QCOM
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "qualcomm",
+      "name": "Qualcomm",
+      "ticker": "QCOM",
+      "rankApprox": 62,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "semiconductors",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/qualcomm/marketcap/",
+      "description": "Qualcomm designs wireless semiconductor platforms, modem-RF systems, processors, and licensing technologies for mobile, automotive, IoT, edge AI, and connected computing devices.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Qualcomm operates mainly through QCT, its semiconductor products business, and QTL, its patent licensing business. Its chip platforms span handsets, automotive, IoT, compute, XR, networking, and edge AI.",
+            "The company's fiscal 2025 annual report showed $44.3 billion of revenue and $5.5 billion of net income, with QCT growth driven by handset, automotive, and IoT platforms while QTL remained a high-margin licensing business."
+          ]
+        },
+        {
+          "title": "Platform position",
+          "paragraphs": [
+            "Snapdragon anchors Qualcomm's device platform strategy by bundling CPU, GPU, NPU, modem, camera, security, and connectivity capabilities into OEM-ready designs. Its modem-RF systems reinforce that position by controlling difficult radio, power, antenna, and standards-compliance layers.",
+            "That integration makes Qualcomm more than a chip vendor: it sells time-to-market, certified connectivity, software support, and intellectual-property access to device makers that often cannot replicate those capabilities internally."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Qualcomm's moat is strongest where standards-essential patents, carrier certification, RF engineering, software stacks, OEM relationships, and scale manufacturing converge. In mobile and cellular IoT, replacing a Qualcomm platform means replacing a dense bundle of silicon, firmware, reference designs, regulatory work, and licensing rights.",
+        "The moat is not absolute. RISC-V, open chiplet flows, open-source EDA, and open RAN software can chip away at parts of the stack, but high-performance mobile SoCs and commercial modem-RF systems still require advanced fabrication, deep RF expertise, and long certification cycles."
+      ],
+      "decentralizationNarrative": [
+        "Qualcomm is difficult to decentralize at the finished-chip level because advanced SoCs and cellular modems depend on leading-edge fabs, proprietary IP blocks, patent licensing, and telecom standards compliance. The most realistic pressure comes from modularizing parts of the stack rather than locally replicating a flagship Snapdragon.",
+        "Open RISC-V cores, open hardware design flows, open-source 5G research stacks, software-defined radios, and smaller specialty silicon programs create credible wedges for education, industrial IoT, private networks, and lower-volume devices. These do not yet replace Qualcomm at premium smartphone scale, but they reduce dependency in narrower markets."
+      ],
+      "sourceIds": [
+        "qualcomm-2025-10k",
+        "qualcomm-products",
+        "qualcomm-snapdragon-products",
+        "companiesmarketcap-qualcomm"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Publishable refresh prepared on 2026-05-25 from Qualcomm fiscal 2025 filings, official product pages, CompaniesMarketCap, and open hardware/open 5G project sources.",
+      "inputMetrics": {
+        "moat": {
+          "value": 86,
+          "rationale": "Qualcomm combines standards-essential patents, modem-RF expertise, OEM reference platforms, software stacks, and scale relationships across handsets, automotive, IoT, and edge devices.",
+          "sourceIds": [
+            "qualcomm-2025-10k",
+            "qualcomm-products",
+            "qualcomm-snapdragon-products"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 32,
+          "rationale": "Open RISC-V and open 5G stacks can decentralize parts of compute and network experimentation, but commercial modem-RF systems and flagship SoCs remain fab-, patent-, and certification-intensive.",
+          "sourceIds": [
+            "riscv-international",
+            "openhw-corev",
+            "srsran-project",
+            "openairinterface"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 73,
+          "rationale": "Fiscal 2025 revenue was $44.3 billion with $5.5 billion of net income despite a significant tax-related effect, and QTL remains structurally high margin.",
+          "sourceIds": [
+            "qualcomm-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 24.9,
+          "rationale": "Approximate trailing valuation based on current public market data; Qualcomm's fiscal 2025 GAAP earnings were affected by a large tax valuation allowance, so the multiple should be treated cautiously.",
+          "sourceIds": [
+            "stockanalysis-qcom-financials"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 143110000000,
+          "rationale": "Recent market-data snapshots placed Qualcomm's equity value near $143 billion, with CompaniesMarketCap ranking it around the low 60s globally by market capitalization.",
+          "sourceIds": [
+            "companiesmarketcap-qualcomm",
+            "stockanalysis-qcom-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "snapdragon",
+        "name": "Snapdragon",
+        "category": "Mobile, compute, XR, automotive, and IoT processor platforms",
+        "homepageUrl": "https://www.qualcomm.com/snapdragon/products",
+        "summary": "Snapdragon is Qualcomm's family of integrated processing platforms for smartphones, PCs, XR devices, gaming, automotive systems, cameras, and IoT products.",
+        "whyItMatters": "Snapdragon packages compute, graphics, AI acceleration, connectivity, security, camera processing, and software support into OEM-ready platforms, making it a central dependency for many Android, edge, and connected-device manufacturers.",
+        "replacementSketch": [
+          "The most credible open replacement path starts below flagship phones: RISC-V-based processors, open cores, reusable open verification flows, and commodity manufacturing can target embedded, industrial, education, and specialty edge devices before challenging premium mobile SoCs.",
+          "For higher-end markets, pressure is more likely to come from modular open chiplet ecosystems and shared reference designs than from a single open-source Snapdragon clone."
+        ],
+        "sourceIds": [
+          "qualcomm-snapdragon-products",
+          "qualcomm-processors",
+          "riscv-international",
+          "openhw-corev"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "risc-v",
+            "name": "RISC-V",
+            "kind": "protocol",
+            "homepageUrl": "https://riscv.org/",
+            "summary": "RISC-V is an open standard instruction set architecture that lets many parties design compatible processors without depending on a single proprietary ISA owner.",
+            "metrics": {
+              "openness": {
+                "value": 89,
+                "rationale": "The ISA is maintained as an open standard, though individual commercial implementations can still be proprietary.",
+                "sourceIds": [
+                  "riscv-international"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "An open ISA lowers dependence on one processor licensor and supports many independent implementers, toolchains, and silicon programs.",
+                "sourceIds": [
+                  "riscv-international",
+                  "openhw-corev"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 57,
+                "rationale": "RISC-V is real and growing in embedded and specialized use cases, but it is not yet a full drop-in replacement for premium Snapdragon mobile platforms.",
+                "sourceIds": [
+                  "riscv-international",
+                  "openhw-corev"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open ISA access can reduce licensing friction and encourage reusable designs, though fabrication, verification, and software enablement remain expensive.",
+                "sourceIds": [
+                  "riscv-international",
+                  "openhw-corev"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "riscv-international"
+            ]
+          },
+          {
+            "slug": "core-v",
+            "name": "OpenHW CORE-V",
+            "kind": "open-source",
+            "homepageUrl": "https://openhwfoundation.org/about-us/core-v-risc-v-cores/",
+            "repoUrl": "https://github.com/openhwgroup/core-v-cores",
+            "summary": "CORE-V is a family of open-source RISC-V processor cores with related IP, tools, and software from the OpenHW Foundation.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "CORE-V publishes open processor cores and supporting project materials intended for reuse in electronic systems.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "openhw-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Reusable open cores help smaller teams and institutions build processor subsystems without relying entirely on proprietary CPU IP.",
+                "sourceIds": [
+                  "openhw-corev"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 45,
+                "rationale": "CORE-V is useful for embedded and research-class designs, but it does not match Snapdragon's commercial integration, modem, GPU, NPU, and software breadth.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "qualcomm-snapdragon-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Open cores reduce IP barriers for prototypes and specialized chips, while tape-out, verification, and packaging costs still dominate serious silicon programs.",
+                "sourceIds": [
+                  "openhw-corev"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openhw-corev",
+              "openhw-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-risc-v-edge-platforms",
+            "name": "Community RISC-V Edge Platforms",
+            "summary": "A shared ecosystem of RISC-V cores, open board designs, open firmware, and cooperative validation labs could give device makers a credible path for embedded AI, industrial IoT, education, and repairable edge devices without buying an all-in-one proprietary Snapdragon-class platform.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-manufacturing",
+              "cooperative-production"
+            ],
+            "thesis": "The concept weakens Qualcomm's platform bundling power in narrower device categories by replacing a single vendor reference platform with reusable open compute blocks and shared validation services.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing and cooperative validation matter more than Bitcoin here: the core shift is from a proprietary platform owner to many implementers sharing open processor designs, board files, firmware, and test results.",
+            "coordinationMechanism": "Design maintainers publish cores, board files, firmware, and conformance suites; fabricators, labs, and device makers coordinate through versioned releases, public issue trackers, and cooperative procurement of small production runs.",
+            "verificationOrTrustModel": "Trust is built through reproducible RTL, open test benches, signed release artifacts, public conformance reports, third-party lab attestations, and traceable manufacturing batches. Cheating is constrained by independent rebuilds and cross-lab retesting, though hardware supply-chain opacity remains a weakness.",
+            "failureModes": [
+              "Open designs may lag Qualcomm on performance, power, modem integration, GPU/NPU software, and security certification.",
+              "Fragmentation across boards, firmware, toolchains, and vendors could recreate integration costs that Qualcomm currently absorbs."
+            ],
+            "adoptionPath": [
+              "Start with embedded Linux, education, industrial control, routers, and specialty AI edge devices where cellular flagship performance is unnecessary.",
+              "Move into modular chiplets, verified reference boards, and cooperative long-term support programs once the open stack has enough commercial users."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "qualcomm-snapdragon-products",
+              "qualcomm-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "riscv-international",
+              "openhw-corev"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 79,
+                "rationale": "The mechanism directly distributes processor design, validation, and manufacturing options across many actors instead of one platform vendor.",
+                "sourceIds": [
+                  "riscv-international",
+                  "openhw-corev"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 61,
+                "rationale": "Open standards bodies, foundations, and GitHub-based development make coordination credible, but hardware validation and long-term support are harder than software coordination.",
+                "sourceIds": [
+                  "riscv-international",
+                  "openhw-corev",
+                  "openhw-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 52,
+                "rationale": "Embedded and specialty edge implementations are feasible today; premium mobile replacement remains constrained by fabs, GPU/NPU software, cellular integration, and certification.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "qualcomm-snapdragon-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "Pressure is meaningful in lower-volume and embedded categories, but Qualcomm's strongest mobile and modem moats remain difficult to displace.",
+                "sourceIds": [
+                  "qualcomm-2025-10k",
+                  "riscv-international"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "qualcomm-5g-modem-rf",
+        "name": "Qualcomm 5G Modem-RF",
+        "category": "Cellular modem-RF systems",
+        "homepageUrl": "https://www.qualcomm.com/modems/products/snapdragon-x75-5g-modem-rf-system",
+        "summary": "Qualcomm 5G Modem-RF systems integrate cellular baseband, RF front-end coordination, antenna tuning, power management, and standards support for 5G devices.",
+        "whyItMatters": "Commercial cellular connectivity is one of the hardest parts of connected hardware because it combines radio engineering, telecom standards, carrier certification, power efficiency, antennas, patents, and global spectrum support.",
+        "replacementSketch": [
+          "Open-source 5G software stacks and software-defined radios can replace parts of the network experimentation and private-network stack, especially in labs, campuses, industrial sites, and community deployments.",
+          "They are not near-term replacements for a power-efficient certified smartphone modem-RF system, but they can reduce dependence on closed cellular infrastructure and create a learning path toward more modular radio systems."
+        ],
+        "sourceIds": [
+          "qualcomm-x75",
+          "qualcomm-modem-rf-release",
+          "srsran-project",
+          "openairinterface"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "srsran-project",
+            "name": "srsRAN Project",
+            "kind": "open-source",
+            "homepageUrl": "https://www.srsran.com/",
+            "repoUrl": "https://github.com/srsran/srsRAN_Project",
+            "summary": "srsRAN Project is an open-source 5G O-RAN CU/DU software stack for research, private networks, and software radio experimentation.",
+            "metrics": {
+              "openness": {
+                "value": 83,
+                "rationale": "The project publishes open-source software and source repositories for 5G O-RAN CU/DU work.",
+                "sourceIds": [
+                  "srsran-project",
+                  "srsran-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 75,
+                "rationale": "Open RAN software lets smaller operators, researchers, and enterprises build and inspect parts of cellular infrastructure outside a closed vendor stack.",
+                "sourceIds": [
+                  "srsran-project",
+                  "srsran-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 54,
+                "rationale": "It is credible for research and private 5G infrastructure, but it does not replace Qualcomm's handset modem-RF silicon.",
+                "sourceIds": [
+                  "srsran-project",
+                  "qualcomm-x75"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Software-defined open RAN can lower experimentation and private-network costs, though radios, spectrum access, integration, and operational expertise remain material.",
+                "sourceIds": [
+                  "srsran-project",
+                  "srsran-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "srsran-project",
+              "srsran-github"
+            ]
+          },
+          {
+            "slug": "openairinterface",
+            "name": "OpenAirInterface",
+            "kind": "open-source",
+            "homepageUrl": "https://openairinterface.org/",
+            "repoUrl": "https://github.com/OPENAIRINTERFACE",
+            "summary": "OpenAirInterface is an open-source 4G and 5G RAN and core network software platform developed and promoted by the OpenAirInterface Software Alliance.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "OAI develops and promotes open-source 4G and 5G RAN and core network software.",
+                "sourceIds": [
+                  "openairinterface"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 77,
+                "rationale": "Open 5G RAN and core software supports independent labs, universities, enterprises, and smaller operators experimenting outside closed telecom vendor stacks.",
+                "sourceIds": [
+                  "openairinterface"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 50,
+                "rationale": "OAI is established for research and testbeds, but production-grade commercial handset modem replacement is a different silicon and certification problem.",
+                "sourceIds": [
+                  "openairinterface",
+                  "qualcomm-x75"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 63,
+                "rationale": "Open software can reduce dependence on proprietary network software, but practical deployments still require spectrum rights, SDR or radio hardware, integration, and support.",
+                "sourceIds": [
+                  "openairinterface"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openairinterface"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-private-5g-labs",
+            "name": "Federated Private 5G Labs",
+            "summary": "A federation of universities, community networks, industrial sites, and independent labs could use open 5G software stacks with SDR hardware to share tested configurations, spectrum practices, interoperability reports, and procurement knowledge for local private networks.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "open-hardware"
+            ],
+            "thesis": "The concept does not replace Qualcomm's modem-RF silicon directly; it pressures the surrounding cellular stack by making network experimentation, validation, and local deployments less dependent on closed telecom vendors.",
+            "bitcoinOrDecentralizationRole": "Federation is the central mechanism: independent operators share test data and deployment recipes while retaining local control over hardware, spectrum arrangements, and network policy.",
+            "coordinationMechanism": "Participants publish reproducible lab profiles, radio hardware bills of materials, configuration bundles, interop results, and incident reports through a federated registry with maintainers for each hardware and software release line.",
+            "verificationOrTrustModel": "Claims are checked through signed test logs, reproducible configuration files, RF measurements, packet captures, independent retests, and lab reputations. Spoofed results can be challenged by requiring raw artifacts and repeat runs on known hardware.",
+            "failureModes": [
+              "Carrier-grade reliability, lawful spectrum access, emergency-service requirements, and handset certification can exceed what volunteer or small-lab federations can support.",
+              "Open 5G software may remain strongest in research and private-network contexts while commercial modem-RF power efficiency stays proprietary."
+            ],
+            "adoptionPath": [
+              "Begin with campus labs, industrial private 5G, rural experiments, and neutral-host testbeds where local control and transparency matter more than mass-market handset certification.",
+              "Build a shared registry of verified configurations and then add cooperative purchasing, training, and third-party testing for repeatable deployments."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "qualcomm-x75",
+              "qualcomm-modem-rf-release"
+            ],
+            "enablerSourceIds": [
+              "srsran-project",
+              "srsran-docs",
+              "openairinterface"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 81,
+                "rationale": "Federated private-network labs distribute knowledge, test capability, and deployment control across many local operators instead of relying only on closed telecom stacks.",
+                "sourceIds": [
+                  "srsran-project",
+                  "openairinterface"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 64,
+                "rationale": "Open repositories, published documentation, and research communities already exist, but operational federation and verified deployment registries would require additional governance.",
+                "sourceIds": [
+                  "srsran-project",
+                  "srsran-docs",
+                  "openairinterface"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 55,
+                "rationale": "Private and research deployments are feasible with open software and SDR hardware; broad commercial cellular substitution remains constrained by hardware, spectrum, certification, and operations.",
+                "sourceIds": [
+                  "srsran-project",
+                  "openairinterface",
+                  "qualcomm-x75"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 41,
+                "rationale": "The pressure is indirect and strongest in private networks, labs, and education; it does not yet threaten Qualcomm's certified modem-RF position in smartphones.",
+                "sourceIds": [
+                  "qualcomm-x75",
+                  "srsran-project",
+                  "openairinterface"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "qualcomm-2025-10k",
+      "title": "Qualcomm FY2025 Form 10-K Annual Report",
+      "url": "https://s204.q4cdn.com/645488518/files/doc_financials/2025/q4/QCOM-09-28-25-FY2025-10-K-Final.pdf",
+      "kind": "annual-report",
+      "publisher": "Qualcomm",
+      "note": "Primary source for fiscal 2025 revenue, net income, business segments, QCT/QTL structure, customer concentration, and strategic risk context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "qualcomm-products",
+      "title": "All Products and Platforms",
+      "url": "https://www.qualcomm.com/products",
+      "kind": "product-page",
+      "publisher": "Qualcomm",
+      "note": "Official overview of Qualcomm product families across mobile, automotive, IoT, connectivity, and edge platforms.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "qualcomm-processors",
+      "title": "Qualcomm Processors",
+      "url": "https://www.qualcomm.com/processors",
+      "kind": "product-page",
+      "publisher": "Qualcomm",
+      "note": "Official processor-platform page describing Snapdragon processor capabilities, mobile AI, security, camera, and connectivity positioning.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "qualcomm-snapdragon-products",
+      "title": "Snapdragon Mobile Platforms, Processors, Modems and Chipsets",
+      "url": "https://www.qualcomm.com/snapdragon/products",
+      "kind": "product-page",
+      "publisher": "Qualcomm",
+      "note": "Official Snapdragon product family page covering mobile platforms, compute, XR, 5G modems, gaming, and on-device AI.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "qualcomm-x75",
+      "title": "Snapdragon X75 5G Modem-RF System",
+      "url": "https://www.qualcomm.com/modems/products/snapdragon-x75-5g-modem-rf-system",
+      "kind": "product-page",
+      "publisher": "Qualcomm",
+      "note": "Official modem-RF product page used to characterize Qualcomm's commercial 5G modem-RF integration and feature set.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "qualcomm-modem-rf-release",
+      "title": "Qualcomm Drives 5G Paradigm Shift and Global 5G Enablement with Modem-RF System",
+      "url": "https://www.qualcomm.com/news/releases/2019/09/qualcomm-drives-5g-paradigm-shift-and-global-5g-enablement-modem-rf-system",
+      "kind": "investor-relations",
+      "publisher": "Qualcomm",
+      "note": "Qualcomm release explaining the strategic modem-to-antenna integration behind its 5G Modem-RF systems.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "companiesmarketcap-qualcomm",
+      "title": "QUALCOMM (QCOM) Market Capitalization",
+      "url": "https://companiesmarketcap.com/qualcomm/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization and approximate global market-cap rank reference for Qualcomm.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-qcom-marketcap",
+      "title": "QUALCOMM Market Cap",
+      "url": "https://stockanalysis.com/stocks/qcom/market-cap/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Secondary market capitalization reference for Qualcomm's current equity value.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-qcom-financials",
+      "title": "QUALCOMM Financials and Income Statement",
+      "url": "https://stockanalysis.com/stocks/qcom/financials/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Market-data reference for current financial ratios and recent income-statement context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "riscv-international",
+      "title": "RISC-V International",
+      "url": "https://riscv.org/",
+      "kind": "technical-docs",
+      "publisher": "RISC-V International",
+      "note": "Primary source for RISC-V as an open standard ISA and decentralizing alternative to proprietary processor instruction-set control.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openhw-corev",
+      "title": "CORE-V Open Source RISC-V Cores",
+      "url": "https://openhwfoundation.org/about-us/core-v-risc-v-cores/",
+      "kind": "open-source-project",
+      "publisher": "OpenHW Foundation",
+      "note": "Source for OpenHW's open-source RISC-V core portfolio and related processor-subsystem tooling.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openhw-github",
+      "title": "OpenHW Group CORE-V Cores Repository",
+      "url": "https://github.com/openhwgroup/core-v-cores",
+      "kind": "open-source-project",
+      "publisher": "OpenHW Group",
+      "note": "Repository source for CORE-V open-source RISC-V cores.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "srsran-project",
+      "title": "srsRAN Project",
+      "url": "https://www.srsran.com/",
+      "kind": "open-source-project",
+      "publisher": "Software Radio Systems",
+      "note": "Open-source 4G and 5G software radio project used as an open alternative for RAN experimentation and private-network stacks.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "srsran-docs",
+      "title": "srsRAN Project Documentation",
+      "url": "https://docs.srsran.com/projects/project/en/latest/",
+      "kind": "technical-docs",
+      "publisher": "Software Radio Systems",
+      "note": "Technical documentation describing srsRAN's open-source 5G CU/DU capabilities and portability.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "srsran-github",
+      "title": "srsRAN Project GitHub Repository",
+      "url": "https://github.com/srsran/srsRAN_Project",
+      "kind": "open-source-project",
+      "publisher": "Software Radio Systems",
+      "note": "Source repository for the srsRAN open-source O-RAN 5G CU/DU project.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openairinterface",
+      "title": "OpenAirInterface",
+      "url": "https://openairinterface.org/",
+      "kind": "open-source-project",
+      "publisher": "OpenAirInterface Software Alliance",
+      "note": "Open-source 4G/5G RAN and core network software platform used as an alternative path for transparent cellular experimentation.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Qualcomm registry bundle with two products: Snapdragon and Qualcomm 5G Modem-RF. The strongest decentralization pathways are open RISC-V/open-core edge platforms for Snapdragon-adjacent devices and federated open 5G labs for private-network and research use cases, while the refresh keeps Qualcomm's advanced modem-RF and flagship mobile SoC moats high."
+}
+tokens used
+55,745

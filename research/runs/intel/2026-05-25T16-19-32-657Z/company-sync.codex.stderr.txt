@@ -1,0 +1,687 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e5fef-36bc-7a23-92f3-a6430a061eef
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: intel
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "intel",
+  "name": "Intel",
+  "ticker": "INTC",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top50"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "semiconductors",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/intel/marketcap/",
+  "description": "Intel designs and manufactures processors, chipsets, accelerators, and other semiconductor products for client, data center, edge, and embedded markets.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Intel Core",
+    "Xeon"
+  ],
+  "seedSourceUrls": [
+    "https://www.intc.com/",
+    "https://www.intel.com/content/www/us/en/products/overview.html",
+    "https://companiesmarketcap.com/intel/marketcap/"
+  ],
+  "notes": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T16:19:34.694261Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:34.694278Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:34.694669Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:34.694676Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:34.695063Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:34.695067Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:34.695507Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:34.695512Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:34.695850Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:34.695854Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:34.696527Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:34.696531Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:35.563554Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:35.563584Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:35.564106Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:35.564116Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:35.564474Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:35.564478Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:35.564814Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:35.564817Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:35.565170Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:35.565173Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:19:35.565935Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:19:35.565941Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify Intel’s current source material and market data first, then return only the requested JSON object in the final response.
+web search: 
+web search: Intel 2024 annual report form 10-k 2025 net income revenue ...
+web search: 
+web search: https://www.intel.com/content/www/us/en/products/overview.html
+web search: 
+web search: RISC-V International open standard ISA official ...
+web search: 
+web search: Intel PE ratio stockanalysis 2026 INTC ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"intel","name":"Intel","ticker":"INTC","rankApprox":21,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top50"],"sectorId":"information-technology","industryId":"semiconductors","companiesMarketCapUrl":"https://companiesmarketcap.com/intel/marketcap/","description":"Intel designs and manufactures processors, chipsets, accelerators, networking silicon, software, and foundry services for client, data center, edge, and embedded computing markets.","overview":[{"title":"Business Snapshot","paragraphs":["Intel remains one of the central x86 computing incumbents, with client PC processors, Xeon server CPUs, graphics and AI accelerators, networking products, software tools, and a large internal manufacturing and foundry footprint.","The 2025 annual report shows a company still in turnaround mode: revenue was roughly flat year over year, Intel Products generated most of the revenue and operating income, and Intel Foundry continued to absorb heavy investment and losses."]},{"title":"Registry Framing","paragraphs":["For Free The World, Intel is best read as both a product incumbent and an infrastructure incumbent. Its moat comes from x86 software compatibility, OEM and enterprise procurement channels, process and packaging know-how, validation ecosystems, and long-lived data center qualification cycles.","The realistic decentralization pressure is not a single open chip replacing Intel overnight. It is a layered pressure stack: open ISAs, open chip design tooling, reusable open IP, local or regional fabrication access, and procurement shifts toward auditable, modular, non-proprietary compute platforms."]}],"moatNarrative":["Intel's moat is still meaningful because CPUs are not purchased as isolated components. They sit inside validated platforms, firmware stacks, compiler targets, OEM relationships, enterprise support contracts, datacenter refresh cycles, and long software-compatibility histories.","The moat has weakened versus its historical peak. Advanced-node delays, foundry losses, aggressive competition from AMD, Arm, Nvidia-adjacent accelerated computing, and the rise of open instruction-set ecosystems reduce the inevitability of Intel's architecture and manufacturing control."],"decentralizationNarrative":["Intel is only partially decentralizable in the near term. High-performance CPU manufacturing still depends on capital-intensive fabs, specialized equipment, advanced packaging, process recipes, and large-scale quality systems that are difficult for small operators to reproduce.","The more credible decentralization path is modular: open ISA standards such as RISC-V, open hardware collaboration through groups such as CHIPS Alliance, and open EDA flows such as OpenROAD can reduce design lock-in even while fabrication remains concentrated. Over time, this makes Intel's platform control less absolute, especially in edge, embedded, education, sovereign infrastructure, and specialized accelerator markets."],"sourceIds":["intel-2025-annual-report","intel-products-overview","intel-xeon-product-page","stockanalysis-intc-market-cap","stockanalysis-intc-overview","riscv-home","riscv-specifications","chips-alliance-github","openroad-home"],"technologyWaveIds":["printed-electronics","microfactories"],"snapshotNote":"Prepared as a publishable registry refresh on 2026-05-25 using Intel's 2025 annual report, official product pages, current market data, and open silicon ecosystem sources.","inputMetrics":{"moat":{"value":8,"rationale":"Intel retains a strong moat from x86 compatibility, enterprise validation, OEM channels, manufacturing expertise, packaging, and software tooling, but competitive pressure and foundry losses keep the score below a maximum.","sourceIds":["intel-2025-annual-report","intel-products-overview","intel-xeon-product-page"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizability":{"value":3,"rationale":"Leading-edge processor fabrication is highly centralized and capital intensive, but open ISAs, open silicon IP, and open EDA flows create partial decentralization pressure at the design and platform layers.","sourceIds":["intel-2025-annual-report","riscv-home","chips-alliance-github","openroad-home"],"confidence":"high","lastReviewedOn":"2026-05-25"},"profitability":{"value":3,"rationale":"Intel's 2025 revenue was roughly flat and the company reported a small GAAP net loss while Intel Foundry remained loss-making, despite continued operating income in Intel Products.","sourceIds":["intel-2025-annual-report","stockanalysis-intc-overview"],"confidence":"high","lastReviewedOn":"2026-05-25"},"peRatio":{"value":0,"rationale":"A conventional positive trailing P/E is not meaningful because recent GAAP earnings were negative or near breakeven; market data services list Intel's P/E as not available.","sourceIds":["stockanalysis-intc-overview"],"confidence":"speculative","lastReviewedOn":"2026-05-25"},"marketCap":{"value":602320000000,"rationale":"StockAnalysis listed Intel's market capitalization at about $602.32 billion as of May 22, 2026, with a last checked date of May 24, 2026.","sourceIds":["stockanalysis-intc-market-cap"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}},"products":[{"slug":"intel-core","name":"Intel Core","category":"Client processors","homepageUrl":"https://www.intel.com/content/www/us/en/products/details/processors/core.html","summary":"Intel Core is Intel's mainstream client processor family for consumer and business PCs, including desktop, laptop, gaming, and AI PC systems.","whyItMatters":"Core processors anchor Intel's consumer computing relationship with OEMs and users, and they keep x86 compatibility central to the PC ecosystem.","replacementSketch":["A realistic replacement path would not start by matching every high-end Core SKU. It would begin with open-standard client platforms for education, repairable workstations, thin clients, sovereign desktops, and embedded PCs where transparency and supply-chain independence matter more than absolute peak performance.","As RISC-V software, firmware, compilers, operating-system support, and open board designs mature, buyers could treat the CPU ISA as a replaceable layer rather than a permanent lock-in decision."],"sourceIds":["intel-products-overview","riscv-home","riscv-specifications","chips-alliance-github"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"risc-v-client-platforms","name":"RISC-V Client Platforms","kind":"protocol","homepageUrl":"https://riscv.org/","summary":"RISC-V is an open-standard instruction set architecture that can support independently designed processors and boards without requiring a proprietary ISA license.","metrics":{"openness":{"value":9,"rationale":"The ISA and related specifications are openly developed and published by RISC-V International, though individual chip implementations may still be proprietary.","sourceIds":["riscv-home","riscv-specifications"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":8,"rationale":"An open ISA lowers architectural lock-in and lets many implementers build compatible CPUs, boards, and software stacks.","sourceIds":["riscv-home","riscv-specifications"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":4,"rationale":"RISC-V is credible in embedded and edge use cases, but broad high-performance consumer PC readiness still trails x86 and Arm ecosystems.","sourceIds":["riscv-home","riscv-specifications"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":6,"rationale":"Avoiding ISA licensing can improve design economics, but fabrication, validation, software support, and distribution still dominate finished-system cost.","sourceIds":["riscv-home","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"}},"sourceIds":["riscv-home","riscv-specifications","chips-alliance-github"]},{"slug":"openpower-client-workstations","name":"OpenPOWER Workstations","kind":"open-source","homepageUrl":"https://openpower.foundation/","summary":"OpenPOWER makes the POWER ISA and related ecosystem available through an open foundation model, offering a non-x86 route for high-performance systems where software support is acceptable.","metrics":{"openness":{"value":8,"rationale":"OpenPOWER describes its mission as democratizing access to the POWER ISA through open sourcing and foundation-led development.","sourceIds":["openpower-home"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":6,"rationale":"The ISA governance and specifications are more open than a closed vendor platform, but the practical workstation ecosystem is much smaller than x86.","sourceIds":["openpower-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"readiness":{"value":3,"rationale":"OpenPOWER can support serious computing workloads, but consumer desktop availability, software compatibility, and OEM breadth are limited compared with Intel Core PCs.","sourceIds":["openpower-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":3,"rationale":"A smaller hardware ecosystem limits near-term price leverage for mainstream client machines even if the architecture is more open.","sourceIds":["openpower-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"}},"sourceIds":["openpower-home"]}],"disruptionConcepts":[{"slug":"open-isa-repairable-pc-commons","name":"Open-ISA Repairable PC Commons","summary":"A cooperative PC hardware stack could combine RISC-V client boards, open firmware, standard mechanical designs, and community-maintained Linux images to serve schools, public agencies, repair shops, and low-cost workstations before challenging premium consumer laptops.","angleIds":["open-hardware","cooperative-production","decentralized-manufacturing"],"thesis":"This shifts client computing power away from a small set of x86 platform vendors and toward a shared hardware/software baseline that can be produced, repaired, and adapted by many regional suppliers.","bitcoinOrDecentralizationRole":"The decentralization role is open hardware and cooperative production, not Bitcoin. The important mechanism is that the ISA, firmware, board files, repair documentation, and validation recipes become shared infrastructure rather than vendor-controlled product boundaries.","coordinationMechanism":"Schools, agencies, repair cooperatives, board vendors, and Linux maintainers coordinate around certified reference designs, reproducible firmware builds, compatibility test suites, and approved regional suppliers.","verificationOrTrustModel":"Suppliers publish board revisions, firmware hashes, bill-of-materials attestations, and conformance test results. Buyers can verify shipped devices against reference designs and require independent lab or community certification before procurement.","failureModes":["RISC-V client performance and software compatibility may remain insufficient for mainstream PC replacement.","Open board designs can still depend on proprietary components, closed boot firmware, or unavailable fabrication capacity.","Small suppliers may struggle to match OEM support, warranties, and logistics."],"adoptionPath":["Start with education, thin-client, public-sector, and repair-focused deployments where openness and lifecycle control are valued.","Build shared conformance suites, firmware distributions, procurement templates, and certified board catalogs.","Expand into developer workstations and modular desktops as software support and silicon performance improve."],"confidence":"medium","problemSourceIds":["intel-products-overview","intel-2025-annual-report"],"enablerSourceIds":["riscv-home","riscv-specifications","chips-alliance-github"],"metrics":{"decentralizationFit":{"value":8,"rationale":"Open ISA and open hardware designs directly reduce dependence on a single CPU vendor's platform roadmap.","sourceIds":["riscv-home","chips-alliance-github"],"confidence":"high","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":6,"rationale":"The model is credible for institutional and cooperative procurement, but it requires disciplined certification and long-term maintenance.","sourceIds":["riscv-specifications","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":5,"rationale":"The design-side primitives exist, but client-class silicon, polished firmware, peripheral compatibility, and support channels remain hard.","sourceIds":["riscv-home","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":4,"rationale":"Near-term pressure is strongest in niche institutional and repairable computing markets, not premium consumer laptops or gaming desktops.","sourceIds":["intel-products-overview","riscv-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}},{"slug":"local-open-silicon-design-cells","name":"Local Open Silicon Design Cells","summary":"Regional engineering groups could use open EDA tooling, open IP libraries, and open-standard ISAs to design small batches of specialized controllers, edge accelerators, and client-adjacent chips without relying on a closed CPU vendor roadmap.","angleIds":["open-hardware","decentralized-manufacturing","home-microfactory"],"thesis":"Instead of replacing Core with a single rival CPU, the market fractures into many locally designed or domain-specific chips that reduce the need for general-purpose incumbent control at the edge.","bitcoinOrDecentralizationRole":"The role is decentralized manufacturing and open hardware. Bitcoin is not central; the important change is lower coordination cost for distributed design teams and local hardware integrators.","coordinationMechanism":"Design teams coordinate through shared repositories, reusable IP blocks, open physical-design flows, fabrication shuttle programs, and published validation artifacts.","verificationOrTrustModel":"Reproducible RTL-to-GDS flows, source-visible IP, signed design releases, test vectors, and post-silicon reports constrain false claims. Weakness remains because fabrication quality and supply-chain provenance are harder to verify than code.","failureModes":["Open EDA flows may not match commercial tools for leading-edge performance, power, and area.","Fabrication access and packaging remain centralized bottlenecks.","Security review for open hardware is expensive and slow."],"adoptionPath":["Begin with microcontrollers, edge co-processors, education silicon, and low-volume industrial boards.","Use open EDA and open IP to create auditable reference chips for local manufacturers and integrators.","Move upward into more capable client-adjacent accelerators as tool quality and fabrication access improve."],"confidence":"speculative","problemSourceIds":["intel-2025-annual-report","intel-products-overview"],"enablerSourceIds":["openroad-home","chips-alliance-github","riscv-home"],"metrics":{"decentralizationFit":{"value":7,"rationale":"Distributed design cells weaken centralized roadmap control, even though fabrication itself remains concentrated.","sourceIds":["openroad-home","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":5,"rationale":"Open repositories and toolchains make coordination plausible, but hardware validation and supplier trust remain difficult.","sourceIds":["openroad-home","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":4,"rationale":"Open RTL-to-GDS and open IP exist, but high-performance client-class silicon is still far beyond most local groups.","sourceIds":["openroad-home","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":3,"rationale":"This pressures Intel indirectly by removing some edge and specialized workloads from general-purpose PC CPU demand, not by displacing Core immediately.","sourceIds":["intel-products-overview","openroad-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}}]},{"slug":"xeon","name":"Xeon","category":"Server and data center processors","homepageUrl":"https://www.intel.com/content/www/us/en/products/details/processors/xeon.html","summary":"Intel Xeon is Intel's server, data center, workstation, networking, edge, and AI host CPU family, including Xeon 6 processors with performance-core and efficient-core variants.","whyItMatters":"Xeon remains a major enterprise and cloud infrastructure platform because data center CPUs require validated reliability, performance, memory, I/O, security, virtualization, and long support lifecycles.","replacementSketch":["A credible replacement would emerge first in specialized data center and edge deployments where buyers can tolerate architecture migration in exchange for openness, supply diversity, lower licensing lock-in, or auditable platform control.","The most important replacement wedge is not merely a different CPU. It is an open server platform stack: ISA, firmware, accelerators, management interfaces, workload images, validation, and procurement mechanisms that let more operators participate without inheriting a single vendor's roadmap."],"sourceIds":["intel-xeon-product-page","intel-products-overview","riscv-home","openpower-home","openroad-home"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"risc-v-server-ecosystem","name":"RISC-V Server Ecosystem","kind":"protocol","homepageUrl":"https://riscv.org/","summary":"RISC-V provides an open-standard ISA foundation for server and accelerator designers that want to avoid proprietary CPU instruction-set lock-in.","metrics":{"openness":{"value":9,"rationale":"RISC-V specifications are openly developed and ratified, though the openness of each server CPU implementation varies.","sourceIds":["riscv-home","riscv-specifications"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":8,"rationale":"An open ISA lets multiple implementers build compatible CPUs and accelerators, which directly challenges single-vendor platform control.","sourceIds":["riscv-home","riscv-specifications"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":3,"rationale":"RISC-V server-class deployments remain early compared with mature Xeon infrastructure, especially for enterprise software certification and hyperscale procurement.","sourceIds":["riscv-home","intel-xeon-product-page"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":5,"rationale":"ISA openness can reduce licensing and customization friction, but server-grade silicon, validation, memory, I/O, and support costs remain substantial.","sourceIds":["riscv-home","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"}},"sourceIds":["riscv-home","riscv-specifications","chips-alliance-github"]},{"slug":"openpower-server-platforms","name":"OpenPOWER Server Platforms","kind":"open-source","homepageUrl":"https://openpower.foundation/","summary":"OpenPOWER provides an open foundation around the POWER ISA for server-class systems, offering a more open alternative for workloads that can run outside the x86 ecosystem.","metrics":{"openness":{"value":8,"rationale":"OpenPOWER positions the POWER ISA as an open foundation-led architecture with published specifications and an open-source-oriented ecosystem.","sourceIds":["openpower-home"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":6,"rationale":"Open governance and published specifications reduce vendor lock-in, but practical silicon supply and platform availability remain narrower than x86.","sourceIds":["openpower-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"readiness":{"value":5,"rationale":"POWER has a long server history, but OpenPOWER alternatives are less broadly available and less universally certified than Xeon platforms.","sourceIds":["openpower-home","intel-xeon-product-page"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":4,"rationale":"A smaller supplier base and narrower ecosystem reduce immediate cost leverage, even if openness improves negotiation and customization options.","sourceIds":["openpower-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"}},"sourceIds":["openpower-home"]}],"disruptionConcepts":[{"slug":"federated-open-server-certification","name":"Federated Open Server Certification","summary":"A federation of operators, labs, universities, and hardware vendors could certify open ISA server platforms against reproducible workload, firmware, security, and energy-efficiency test suites, giving buyers a route around proprietary platform validation bottlenecks.","angleIds":["federation","open-hardware","decentralized-coordination"],"thesis":"Xeon's enterprise moat depends heavily on trust, validation, and procurement familiarity. A federated certification layer could make non-x86 open platforms easier to buy by moving trust from a single vendor brand to transparent, repeatable, multi-party evidence.","bitcoinOrDecentralizationRole":"Decentralization matters through federation, not Bitcoin. Multiple independent certifiers reduce dependence on Intel or any single hardware vendor to define which server platforms are trustworthy.","coordinationMechanism":"Hardware vendors submit reference systems; labs run standardized test suites; operators publish workload profiles; buyers require federation certificates in procurement; maintainers update compliance profiles as kernels, firmware, and accelerators change.","verificationOrTrustModel":"Certification artifacts include signed test logs, firmware hashes, energy measurements, reproducible benchmark harnesses, and independent lab identities. Collusion is constrained by cross-lab replication and public revocation lists, though benchmark gaming remains a risk.","failureModes":["Enterprise buyers may still prefer incumbent support contracts over federation certificates.","Open server platforms may lack software certification for critical workloads.","Labs can be captured by vendors unless governance and funding are diversified."],"adoptionPath":["Begin with universities, public-sector clusters, edge clouds, and sovereign infrastructure projects that value transparency.","Publish workload-specific certification profiles for web, storage, AI host CPU, and virtualization use cases.","Use successful deployments to pressure mainstream procurement templates to accept open ISA server platforms."],"confidence":"medium","problemSourceIds":["intel-xeon-product-page","intel-2025-annual-report"],"enablerSourceIds":["riscv-home","openpower-home","chips-alliance-github"],"metrics":{"decentralizationFit":{"value":8,"rationale":"Federated certification directly shifts trust from a central incumbent platform owner to multiple independent verifiers.","sourceIds":["riscv-home","openpower-home"],"confidence":"high","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":7,"rationale":"Certification federations are plausible for institutional buyers, but they require sustained governance, funding, and shared technical standards.","sourceIds":["riscv-specifications","openpower-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":5,"rationale":"Testing and certification are easier than building competing leading-edge CPUs, but server software compatibility and support remain material barriers.","sourceIds":["intel-xeon-product-page","riscv-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":5,"rationale":"This could pressure Xeon in public, edge, research, and sovereign deployments before it affects the largest cloud and enterprise refresh cycles.","sourceIds":["intel-xeon-product-page","intel-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}},{"slug":"open-chiplet-marketplace-for-edge-cloud","name":"Open Chiplet Marketplace for Edge Cloud","summary":"An open hardware marketplace could let regional cloud and edge operators source modular compute, memory, accelerator, and networking chiplets from multiple qualified suppliers, weakening vertically integrated CPU platform control.","angleIds":["peer-to-peer-marketplace","open-hardware","decentralized-manufacturing"],"thesis":"If chiplets and open interfaces become procurement units, the server market can shift from buying monolithic vendor platforms to assembling certified modules around workload needs.","bitcoinOrDecentralizationRole":"The relevant decentralization mechanism is a peer-to-peer hardware marketplace with open specifications and auditable certification. Bitcoin or Lightning could be useful for settlement in a global marketplace, but it is not essential to the technical thesis.","coordinationMechanism":"Design houses, packaging providers, test labs, and edge-cloud operators list certified chiplets and reference assemblies. Buyers select modules by workload, power envelope, certification status, and supply-chain provenance.","verificationOrTrustModel":"Participants use signed design manifests, interface compliance tests, packaging yield reports, firmware attestations, and escrowed acceptance testing. Fraud is constrained by certification records and buyer-side incoming inspection, but counterfeit modules and exaggerated performance claims remain serious risks.","failureModes":["Open chiplet standards and packaging access may not mature quickly enough.","Thermal, memory, I/O, and firmware integration can erase the modularity advantage.","Large incumbents may dominate the marketplace through supply volume, patents, or preferred packaging access."],"adoptionPath":["Start with edge appliances, accelerators, and networking modules where workload specialization matters.","Create reference boards and packaging recipes around open interfaces and published validation flows.","Expand into regional cloud servers once enough suppliers can meet reliability and support requirements."],"confidence":"speculative","problemSourceIds":["intel-xeon-product-page","intel-2025-annual-report"],"enablerSourceIds":["chips-alliance-github","openroad-home","riscv-home"],"metrics":{"decentralizationFit":{"value":7,"rationale":"A modular chiplet marketplace would reduce dependence on monolithic CPU platform vendors, especially for edge and specialized infrastructure.","sourceIds":["chips-alliance-github","openroad-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":5,"rationale":"Market coordination is plausible, but hardware verification, warranties, yield, and integration accountability are difficult to decentralize.","sourceIds":["chips-alliance-github","openroad-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":3,"rationale":"Open design tools and IP are improving, but advanced packaging, chiplet interoperability, and server-grade reliability remain hard constraints.","sourceIds":["openroad-home","chips-alliance-github"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":4,"rationale":"The concept could pressure Xeon in specialized edge-cloud segments, but it is unlikely to displace mainstream enterprise servers soon.","sourceIds":["intel-xeon-product-page","openroad-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}}]}]},"sources":[{"id":"intel-2025-annual-report","title":"Intel 2025 Annual Report","url":"https://www.intc.com/filings-reports/annual-reports/content/0000050863-26-000060/0000050863-26-000060.pdf","kind":"annual-report","publisher":"Intel","note":"Primary source for Intel's 2025 financial results, segment performance, business description, and turnaround context.","accessedOn":"2026-05-25"},{"id":"intel-products-overview","title":"Intel Products Overview","url":"https://www.intel.com/content/www/us/en/products/overview.html","kind":"product-page","publisher":"Intel","note":"Official overview of Intel product families including Core, Xeon, Arc, Gaudi, networking, edge, and software offerings.","accessedOn":"2026-05-25"},{"id":"intel-xeon-product-page","title":"Intel Xeon Processors","url":"https://www.intel.com/content/www/us/en/products/details/processors/xeon.html","kind":"product-page","publisher":"Intel","note":"Official product page for Xeon server, data center, edge, networking, AI, and workstation processor positioning.","accessedOn":"2026-05-25"},{"id":"stockanalysis-intc-market-cap","title":"Intel Market Cap","url":"https://stockanalysis.com/stocks/intc/market-cap/","kind":"market-data","publisher":"StockAnalysis","note":"Current market capitalization and market-cap ranking snapshot used for marketCap and rankApprox inputs.","accessedOn":"2026-05-25"},{"id":"stockanalysis-intc-overview","title":"Intel Stock Price and Overview","url":"https://stockanalysis.com/stocks/intc/","kind":"market-data","publisher":"StockAnalysis","note":"Market data overview used for revenue and P/E context, including the absence of a meaningful listed P/E ratio.","accessedOn":"2026-05-25"},{"id":"riscv-home","title":"RISC-V International","url":"https://riscv.org/","kind":"technical-docs","publisher":"RISC-V International","note":"Official source describing RISC-V as an open-standard ISA platform for processors, extensions, hardware, and software ecosystems.","accessedOn":"2026-05-25"},{"id":"riscv-specifications","title":"RISC-V Ratified Specifications","url":"https://riscv.org/specifications/ratified/","kind":"technical-docs","publisher":"RISC-V International","note":"Official specification source for the collaboratively developed and ratified RISC-V ISA and related standards.","accessedOn":"2026-05-25"},{"id":"chips-alliance-github","title":"CHIPS Alliance GitHub Organization","url":"https://github.com/chipsalliance","kind":"open-source-project","publisher":"CHIPS Alliance","note":"Open-source hardware and tooling ecosystem source for open IP, CPUs, peripherals, and collaborative chip design infrastructure.","accessedOn":"2026-05-25"},{"id":"openroad-home","title":"OpenROAD Project","url":"https://openroad.ergodex.ai/","kind":"open-source-project","publisher":"OpenROAD Project","note":"Open-source RTL-to-GDSII physical design flow used as an enabling primitive for open silicon and distributed chip design concepts.","accessedOn":"2026-05-25"},{"id":"openpower-home","title":"OpenPOWER Foundation","url":"https://openpower.foundation/","kind":"technical-docs","publisher":"OpenPOWER Foundation","note":"Official source for the OpenPOWER ecosystem and its open POWER ISA positioning as an alternative server and workstation architecture.","accessedOn":"2026-05-25"}],"summaryMarkdown":"Prepared Intel as a new publishable registry bundle with Core and Xeon products, open ISA/open hardware alternatives, two disruption concepts per product, and sourced current financial and market metrics."}
+tokens used
+59,635

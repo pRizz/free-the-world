@@ -1,0 +1,689 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e5ff8-bf67-76c2-883a-1eea4e5fdaf5
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: morgan-stanley
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "morgan-stanley",
+  "name": "Morgan Stanley",
+  "ticker": "MS",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top50"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/morgan-stanley/marketcap/",
+  "description": "Morgan Stanley is a global financial services firm focused on institutional securities, wealth management, and investment management.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Morgan Stanley Wealth Management",
+    "E*TRADE"
+  ],
+  "seedSourceUrls": [
+    "https://www.morganstanley.com/about-us-ir",
+    "https://www.morganstanley.com/what-we-do",
+    "https://companiesmarketcap.com/morgan-stanley/marketcap/"
+  ],
+  "notes": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T16:29:59.369553Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:29:59.369566Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:29:59.369956Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:29:59.369961Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:29:59.370337Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:29:59.370340Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:29:59.370688Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:29:59.370693Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:29:59.371006Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:29:59.371009Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:29:59.371704Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:29:59.371709Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:30:00.335052Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:30:00.335067Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:30:00.335486Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:30:00.335491Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:30:00.335846Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:30:00.335850Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:30:00.336241Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:30:00.336244Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:30:00.336661Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:30:00.336667Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T16:30:00.337543Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T16:30:00.337548Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Morgan Stanley 2025 annual report net revenues net income wealth management investment management institutional securities ...
+web search: 
+web search: Ghostfolio open source wealth management software GitHub ...
+web search: 
+web search: site:morganstanley.com wealth management Morgan Stanley Wealth Management homepage services ...
+web search: 
+web search: finance: MS
+web search: 
+web search: https://companiesmarketcap.com/morgan-stanley/marketcap/
+web search: 
+web search: https://companiesmarketcap.com/morgan-stanley/pe-ratio/
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"morgan-stanley","name":"Morgan Stanley","ticker":"MS","rankApprox":44,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top50"],"sectorId":"financials","industryId":"capital-markets","companiesMarketCapUrl":"https://companiesmarketcap.com/morgan-stanley/marketcap/","description":"Morgan Stanley is a global financial services firm focused on institutional securities, wealth management, and investment management.","overview":[{"title":"Business mix","paragraphs":["Morgan Stanley operates through Institutional Securities, Wealth Management, and Investment Management, combining capital markets advisory and trading with a large advisory and brokerage franchise.","The firm has expanded its consumer-facing footprint through E*TRADE, giving it both high-touch advisor relationships and self-directed digital brokerage accounts."]},{"title":"Scale snapshot","paragraphs":["Morgan Stanley reported 2025 net revenues of $70.6 billion and net income applicable to Morgan Stanley of $16.9 billion, reflecting a highly profitable capital-markets and wealth platform.","CompaniesMarketCap reported a market capitalization of $317.08 billion on May 24, 2026, placing Morgan Stanley around rank 44 globally by market value."]}],"moatNarrative":["Morgan Stanley's moat comes from regulated trust, advisor relationships, brand credibility, institutional counterparty access, distribution scale, and integrated capital-markets capabilities that are difficult for small entrants to reproduce.","The Wealth Management and E*TRADE stack reinforces retention through custody, tax records, portfolio history, workplace stock-plan relationships, lending, cash management, research, and advisor workflows."],"decentralizationNarrative":["Morgan Stanley is less vulnerable to simple open-source substitution than a pure software company because regulated custody, securities execution, compliance, and capital-markets intermediation remain centralized and license-heavy.","Its software-facing surfaces are still partially decentralizable: portfolio analytics, financial planning, client data portability, investment research, and some execution-routing transparency can move toward open tools, user-owned data stores, federated advisor networks, and protocol-based audit trails."],"sourceIds":["morgan-stanley-2025-10k","morgan-stanley-what-we-do","morgan-stanley-wealth-management","companiesmarketcap-ms-marketcap","companiesmarketcap-ms-pe"],"technologyWaveIds":["bitcoin-native-coordination"],"snapshotNote":"Prepared for the 2026-05-24 S&P 500 top-50 market-cap cohort refresh using 2025 financial filings and May 2026 market data.","inputMetrics":{"moat":{"value":9,"rationale":"Morgan Stanley combines a global brand, regulated licenses, advisor and institutional client relationships, capital markets infrastructure, custody, research, and cross-segment distribution; these are durable advantages with high switching costs.","sourceIds":["morgan-stanley-2025-10k","morgan-stanley-what-we-do","morgan-stanley-wealth-management"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizability":{"value":4,"rationale":"Client-facing analytics and data portability can decentralize, but regulated securities custody, advisory supervision, market access, AML/KYC, and institutional financing remain hard to replace with open protocols today.","sourceIds":["morgan-stanley-2025-10k","etrade-crs","morgan-stanley-wealth-management"],"confidence":"high","lastReviewedOn":"2026-05-25"},"profitability":{"value":9,"rationale":"The 2025 Form 10-K reported $16.9 billion of net income applicable to Morgan Stanley on $70.6 billion of net revenues, showing strong profitability across a large financial-services platform.","sourceIds":["morgan-stanley-2025-10k"],"confidence":"high","lastReviewedOn":"2026-05-25"},"peRatio":{"value":18,"rationale":"CompaniesMarketCap reported a May 2026 trailing P/E ratio of about 18.0 for Morgan Stanley.","sourceIds":["companiesmarketcap-ms-pe"],"confidence":"speculative","lastReviewedOn":"2026-05-25"},"marketCap":{"value":317080000000,"rationale":"CompaniesMarketCap reported Morgan Stanley's market capitalization at $317.08 billion on May 24, 2026.","sourceIds":["companiesmarketcap-ms-marketcap"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}},"products":[{"slug":"morgan-stanley-wealth-management","name":"Morgan Stanley Wealth Management","category":"wealth-management","homepageUrl":"https://www.morganstanley.com/what-we-do/wealth-management","summary":"Morgan Stanley Wealth Management offers financial advisors, virtual advice, self-directed investing through E*TRADE, planning, brokerage, lending, cash management, and related wealth services.","whyItMatters":"Wealth management is the core consumer and high-net-worth relationship layer where Morgan Stanley turns trust, custody, advice, and data into recurring revenue and durable client retention.","replacementSketch":["A credible replacement would start with user-owned portfolio records, open planning tools, and self-hosted or cooperative advisor workflows rather than trying to immediately replace regulated custody.","Over time, open analytics, transparent fees, portable advisor notes, and federated compliance services could reduce dependence on a single wealth platform while leaving regulated execution and custody with licensed providers."],"sourceIds":["morgan-stanley-wealth-management","morgan-stanley-2025-10k"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"ghostfolio","name":"Ghostfolio","kind":"open-source","homepageUrl":"https://ghostfol.io/","repoUrl":"https://github.com/ghostfolio/ghostfolio","summary":"Ghostfolio is an AGPL-licensed open-source wealth management and portfolio tracking application for stocks, ETFs, and cryptocurrencies with self-hosting support.","metrics":{"openness":{"value":9,"rationale":"The project is public on GitHub and describes itself as free and open source under AGPLv3.","sourceIds":["ghostfolio-github"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":6,"rationale":"Self-hosting and user-controlled portfolio records reduce dependence on a single wealth dashboard, although brokerage custody and trade execution remain external.","sourceIds":["ghostfolio-github"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":7,"rationale":"Ghostfolio has an active project, documented self-hosting path, releases, and practical portfolio analytics, but it is not a regulated broker or advisor replacement.","sourceIds":["ghostfolio-github"],"confidence":"high","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":7,"rationale":"Self-hosted software can lower analytics and aggregation costs for users who can manage data imports and infrastructure, but it does not remove custody, advice, or execution costs.","sourceIds":["ghostfolio-github"],"confidence":"high","lastReviewedOn":"2026-05-25"}},"sourceIds":["ghostfolio-github"]},{"slug":"openbb","name":"OpenBB","kind":"open-source","homepageUrl":"https://openbb.co/products/odp","repoUrl":"https://github.com/openbb-finance","summary":"OpenBB provides open-source investment research tooling and data integrations that can support local or internal financial analysis workflows.","metrics":{"openness":{"value":8,"rationale":"OpenBB describes its Open Data Platform as AGPL-licensed and open for research, development, and internal business use.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":5,"rationale":"Open research tooling decentralizes analysis and data integration, but it does not decentralize custody, brokerage, or advisor compliance.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":7,"rationale":"OpenBB is usable for research and analytics workflows, but it is a research/data platform rather than a full wealth-management operating system.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":6,"rationale":"Open-source research tooling can reduce dependence on expensive terminals or proprietary analytics, though users still need market data sources and regulated execution relationships.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"}},"sourceIds":["openbb-odp"]}],"disruptionConcepts":[{"slug":"client-owned-wealth-data-layer","name":"Client-owned wealth data layer","summary":"A user-controlled wealth data layer would let households keep portfolio history, planning assumptions, tax lots, advisor notes, and risk preferences in portable stores that multiple advisors, analytics tools, and custodians can read with permission.","angleIds":["decentralized-coordination","federation"],"thesis":"The market structure shifts from one firm controlling the client record and interface to a competitive ecosystem where advice, analytics, and custody can be swapped without losing years of financial context.","bitcoinOrDecentralizationRole":"Decentralization matters through portable identity, federated storage, and auditable consent logs rather than through Bitcoin as a settlement asset; the key mechanism is reducing platform lock-in around client data.","coordinationMechanism":"Clients grant scoped access to advisors, tax preparers, open-source analytics tools, and custodians; providers compete on service quality while reading and writing standardized records.","verificationOrTrustModel":"Signed data exports, append-only audit logs, cryptographic hashes of records, and permission scopes constrain unauthorized edits or hidden changes, while regulated custodians remain the source of truth for balances and trades.","failureModes":["Standards adoption may stall if major custodians and advisors refuse portable data models.","Privacy and liability risks rise if users mismanage credentials or grant overly broad access.","Open analytics cannot replace fiduciary judgment, suitability review, or regulated supervision by itself."],"adoptionPath":["Start with read-only aggregation and self-hosted planning tools for clients who already export brokerage and tax data.","Add advisor-facing workflows that preserve portable notes, risk questionnaires, and investment-policy statements across firms.","Integrate licensed custodians and compliance vendors once audit logs and permission standards become reliable enough for supervised use."],"confidence":"medium","problemSourceIds":["morgan-stanley-wealth-management","morgan-stanley-2025-10k"],"enablerSourceIds":["ghostfolio-github","openbb-odp"],"metrics":{"decentralizationFit":{"value":7,"rationale":"The concept directly attacks data and workflow lock-in while keeping regulated custody with licensed entities.","sourceIds":["ghostfolio-github","openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":6,"rationale":"Portfolio tools and open research platforms show that user-controlled analytics are practical, but industry-wide advisor and custodian interoperability is still hard.","sourceIds":["ghostfolio-github","openbb-odp","morgan-stanley-wealth-management"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":6,"rationale":"Read-only data portability is feasible today; write-back, compliance-grade records, and multi-party advisor workflows are harder but incremental.","sourceIds":["ghostfolio-github","openbb-odp"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":5,"rationale":"This could pressure wealth-management software margins and switching costs, but it does not immediately replace Morgan Stanley's advisor brand, custody, lending, or institutional access.","sourceIds":["morgan-stanley-wealth-management","morgan-stanley-2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}}]},{"slug":"etrade","name":"E*TRADE","category":"online-brokerage","homepageUrl":"https://us.etrade.com/","summary":"E*TRADE from Morgan Stanley is a self-directed brokerage and trading platform offering accounts, market access, research, tools, and support for retail investors.","whyItMatters":"E*TRADE gives Morgan Stanley a mass-market digital brokerage channel, workplace stock-plan adjacency, retail trading data, cash relationships, and a funnel into broader wealth-management services.","replacementSketch":["A practical replacement would not begin as an unregulated clone of a broker; it would separate open research, portfolio analytics, routing transparency, and account portability from licensed custody and execution.","The strongest open substitute is a hybrid stack where users own their analysis and records while licensed brokers compete through standardized APIs and transparent best-execution reporting."],"sourceIds":["etrade-crs","etrade-at-work","morgan-stanley-etrade-acquisition"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"wealthfolio","name":"Wealthfolio","kind":"open-source","homepageUrl":"https://wealthfolio.app/","repoUrl":"https://github.com/afadil/wealthfolio","summary":"Wealthfolio is an open-source local investment tracker focused on private, offline portfolio and net-worth tracking.","metrics":{"openness":{"value":8,"rationale":"The project presents itself as an open-source investment tracker with a public repository and local-first positioning.","sourceIds":["wealthfolio-homepage"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":6,"rationale":"Local portfolio tracking improves user control over records, but it does not provide securities custody or regulated trade execution.","sourceIds":["wealthfolio-homepage"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":6,"rationale":"The product appears suitable for portfolio tracking and CSV-based aggregation, but it is not a brokerage replacement.","sourceIds":["wealthfolio-homepage"],"confidence":"high","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":7,"rationale":"Local software can reduce recurring portfolio-tracking and aggregation costs, especially for users who can import statements across brokers.","sourceIds":["wealthfolio-homepage"],"confidence":"high","lastReviewedOn":"2026-05-25"}},"sourceIds":["wealthfolio-homepage"]},{"slug":"openbb","name":"OpenBB","kind":"open-source","homepageUrl":"https://openbb.co/products/odp","repoUrl":"https://github.com/openbb-finance","summary":"OpenBB can replace part of a brokerage's proprietary research and analytics experience with open-source data tooling and local workflows.","metrics":{"openness":{"value":8,"rationale":"OpenBB's Open Data Platform is described as AGPL-licensed and open for research, development, and internal business use.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":5,"rationale":"It decentralizes investment research and data workflows, but it is not a broker and does not decentralize order execution or custody.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":7,"rationale":"OpenBB is credible for financial research and data integration, though execution still requires broker connectivity or separate services.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":6,"rationale":"Open tooling can reduce reliance on bundled brokerage research, but data feeds and execution costs remain separate.","sourceIds":["openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"}},"sourceIds":["openbb-odp"]}],"disruptionConcepts":[{"slug":"brokerage-portability-and-routing-protocol","name":"Brokerage portability and routing protocol","summary":"A brokerage portability protocol would standardize account data, order-intent messages, execution reports, and best-execution proofs so retail investors can use independent tools while routing orders through competing licensed brokers.","angleIds":["decentralized-coordination","federation"],"thesis":"The brokerage interface becomes less of a captive platform and more of a replaceable endpoint, weakening proprietary research, UX, and data lock-in while preserving regulated broker responsibilities.","bitcoinOrDecentralizationRole":"The decentralization role is federation and verifiable auditability, not Bitcoin settlement; users, tools, and brokers coordinate through common schemas and signed execution records.","coordinationMechanism":"Investors authorize tools to create order intents; licensed brokers compete to execute or reject those intents; analytics apps reconcile fills, fees, tax lots, and account positions through standardized event streams.","verificationOrTrustModel":"Signed order receipts, timestamped execution reports, public fee schedules, and broker-specific regulatory records make spoofed fills or hidden routing changes easier to detect, while regulators and clearing firms remain part of the trust model.","failureModes":["Licensed brokers may resist standardized APIs that weaken platform lock-in.","A protocol cannot remove suitability, margin, KYC, AML, and clearing requirements.","Retail users could misunderstand routing choices or expose credentials to unsafe third-party tools."],"adoptionPath":["Begin with read-only statement, tax-lot, and execution-report portability across brokers.","Add standardized order-intent APIs for low-risk asset classes and paper-trading environments.","Expand to broker comparison, fee transparency, and audited routing once licensed participants support the common event model."],"confidence":"medium","problemSourceIds":["etrade-crs","etrade-at-work"],"enablerSourceIds":["openbb-odp","wealthfolio-homepage"],"metrics":{"decentralizationFit":{"value":7,"rationale":"Federated order-intent and account-data standards would reduce dependence on a single brokerage UI while leaving regulated execution with licensed firms.","sourceIds":["etrade-crs","openbb-odp"],"confidence":"high","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":6,"rationale":"The roles are clear, but broker adoption and regulatory comfort are the main constraints.","sourceIds":["etrade-crs","etrade-at-work","openbb-odp"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":5,"rationale":"Read-only portability is practical, but standardized multi-broker order routing and compliance-grade signed execution records require industry participation.","sourceIds":["wealthfolio-homepage","openbb-odp","etrade-crs"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":6,"rationale":"If adopted, the concept would pressure E*TRADE's platform lock-in and bundled research value, though Morgan Stanley's custody, support, and brand advantages would remain meaningful.","sourceIds":["etrade-crs","morgan-stanley-wealth-management"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}}]}]},"sources":[{"id":"morgan-stanley-2025-10k","title":"Morgan Stanley 2025 Form 10-K","url":"https://www.sec.gov/Archives/edgar/data/895421/000089542126000086/ms-20251231.htm","kind":"regulatory-filing","publisher":"U.S. Securities and Exchange Commission","note":"Primary filing source for Morgan Stanley's business segments, 2025 net revenues, profitability, and risk context.","accessedOn":"2026-05-25"},{"id":"morgan-stanley-what-we-do","title":"What We Do: Solutions and Services","url":"https://www.morganstanley.com/what-we-do","kind":"investor-relations","publisher":"Morgan Stanley","note":"Company overview describing the firm's capital raising, wealth, market access, and investment-management activities.","accessedOn":"2026-05-25"},{"id":"morgan-stanley-wealth-management","title":"Wealth Management","url":"https://www.morganstanley.com/what-we-do/wealth-management","kind":"product-page","publisher":"Morgan Stanley","note":"Official product page describing advisor, virtual-advisor, and E*TRADE-linked wealth-management offerings.","accessedOn":"2026-05-25"},{"id":"etrade-crs","title":"E*TRADE Securities LLC Client Relationship Summary","url":"https://www.morganstanley.com/content/dam/msdotcom/en/wealth-investmentsolutions/pdfs/adv/ET_CRS.pdf","kind":"regulatory-filing","publisher":"Morgan Stanley","note":"Regulatory disclosure describing E*TRADE brokerage services and the securities products supported for retail investors.","accessedOn":"2026-05-25"},{"id":"etrade-at-work","title":"Trading and Investment Accounts","url":"https://www.morganstanley.com/atwork/employees/explore-more/trading-and-investment-accounts","kind":"product-page","publisher":"Morgan Stanley","note":"Official page describing E*TRADE self-directed brokerage access through Morgan Stanley at Work.","accessedOn":"2026-05-25"},{"id":"morgan-stanley-etrade-acquisition","title":"Morgan Stanley to Acquire E*TRADE","url":"https://www.morganstanley.com/press-releases/morgan-stanley-to-acquire-e-trade","kind":"investor-relations","publisher":"Morgan Stanley","note":"Acquisition announcement establishing E*TRADE's strategic role in Morgan Stanley's digital brokerage and wealth platform.","accessedOn":"2026-05-25"},{"id":"companiesmarketcap-ms-marketcap","title":"Morgan Stanley (MS) - Market capitalization","url":"https://companiesmarketcap.com/morgan-stanley/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-cap and approximate rank source for the May 2026 snapshot.","accessedOn":"2026-05-25"},{"id":"companiesmarketcap-ms-pe","title":"Morgan Stanley (MS) - P/E ratio","url":"https://companiesmarketcap.com/morgan-stanley/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Trailing P/E source for the May 2026 valuation snapshot.","accessedOn":"2026-05-25"},{"id":"ghostfolio-github","title":"ghostfolio/ghostfolio","url":"https://github.com/ghostfolio/ghostfolio","kind":"open-source-project","publisher":"GitHub","note":"Open-source wealth-management software used as a plausible user-owned portfolio and wealth analytics alternative.","accessedOn":"2026-05-25"},{"id":"openbb-odp","title":"Open Data Platform","url":"https://openbb.co/products/odp","kind":"open-source-project","publisher":"OpenBB","note":"Open-source investment research and data integration platform relevant to replacing proprietary research and analytics layers.","accessedOn":"2026-05-25"},{"id":"wealthfolio-homepage","title":"Wealthfolio | Open-Source, Offline & Private Portfolio Tracker","url":"https://wealthfolio.app/","kind":"open-source-project","publisher":"Wealthfolio","note":"Local-first open-source portfolio tracker used as a plausible replacement for brokerage-adjacent portfolio aggregation.","accessedOn":"2026-05-25"}],"summaryMarkdown":"Morgan Stanley refresh adds a first publishable bundle with two products: Morgan Stanley Wealth Management and E*TRADE. The strongest decentralization pressure is around client-owned wealth data, open research tooling, and brokerage portability rather than direct replacement of regulated custody or securities execution."}
+tokens used
+59,781

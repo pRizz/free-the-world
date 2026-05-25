@@ -7,4 +7,10 @@ if (!root) {
   throw new Error("Expected the #app root element to exist before client mount.");
 }
 
-export default mount(() => <StartClient />, root);
+const dispose = mount(() => <StartClient />, root);
+
+requestAnimationFrame(() => {
+  root.dataset.hydrated = "true";
+});
+
+export default dispose;

@@ -2,8 +2,9 @@ import type { Page } from "@playwright/test";
 
 const basePath = normalizeBasePath(process.env.SITE_BASE_PATH ?? "/");
 
-export function gotoRoute(page: Page, route: string) {
-  return page.goto(withBasePath(route));
+export async function gotoRoute(page: Page, route: string) {
+  await page.goto(withBasePath(route));
+  await page.locator("#app[data-hydrated='true']").waitFor();
 }
 
 export function withBasePath(route: string) {

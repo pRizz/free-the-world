@@ -1,0 +1,757 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "texas-instruments",
+      "name": "Texas Instruments",
+      "ticker": "TXN",
+      "rankApprox": 50,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "semiconductors",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/texas-instruments/marketcap/",
+      "description": "Texas Instruments designs and manufactures analog and embedded processing semiconductors for industrial, automotive, personal electronics, and communications markets.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "Texas Instruments is a U.S.-based semiconductor manufacturer focused on analog and embedded processing chips. Its 2025 annual report describes a business centered on products that sense, condition, convert, control, and process signals across industrial, automotive, personal electronics, enterprise, and communications end markets.",
+            "The company generated most of its 2025 revenue from Analog products, with Embedded Processing as the second major segment. TI's manufacturing strategy emphasizes internal capacity, long-lived process technologies, and 300mm wafer fabs that can lower unit costs for high-volume analog and embedded products."
+          ]
+        },
+        {
+          "title": "Registry snapshot",
+          "paragraphs": [
+            "This refresh treats Texas Instruments as a strong incumbent in foundational semiconductors rather than a consumer platform company. Its power-management, signal-chain, microcontroller, and processor lines sit deep inside products built by other companies, which makes replacement more about open design flows, open instruction sets, modular reference designs, and distributed electronics production than about consumer-facing substitution."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Texas Instruments' moat comes from manufacturing scale, broad catalog depth, long product lifecycles, customer design-in inertia, field engineering, packaging know-how, and 300mm analog capacity. Analog and embedded chips are often low-cost parts relative to the systems they control, but qualification, reliability, availability, and long-term support make switching expensive for OEMs.",
+        "The moat is strongest where TI owns both product design and manufacturing economics. It is weaker where open reference designs, commodity microcontrollers, RISC-V cores, open-source RTOS stacks, and more accessible PCB/silicon tooling let smaller teams design around standard interfaces rather than vendor-specific ecosystems."
+      ],
+      "decentralizationNarrative": [
+        "Texas Instruments is not easily displaced by a single open-source project because semiconductor manufacturing remains capital intensive and heavily quality controlled. Still, the market has decentralizable layers: circuit design, PCB tooling, firmware, processor architecture, board support packages, reference designs, repair knowledge, and smaller-batch electronics assembly.",
+        "The most credible decentralization path is layered: open EDA tools reduce design-tool lock-in, open silicon flows and RISC-V reduce processor IP lock-in, Zephyr-like RTOS ecosystems reduce firmware lock-in, and local microfactory or repair networks create pressure around boards and modules even if wafer fabrication remains centralized."
+      ],
+      "sourceIds": [
+        "ti-2025-annual-report",
+        "ti-company-overview",
+        "companiesmarketcap-txn-marketcap-2026",
+        "companiesmarketcap-txn-pe-2026"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Reviewed on 2026-05-25 using TI investor/company materials, market data, and open electronics ecosystem sources.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "TI has a broad analog and embedded catalog, large internal manufacturing base, long customer design cycles, and a 300mm manufacturing strategy that strengthens cost and supply advantages.",
+          "sourceIds": [
+            "ti-2025-annual-report",
+            "ti-company-overview"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Wafer fabrication and automotive/industrial qualification remain centralized and capital intensive, but firmware, PCB design, open instruction sets, open RTOS support, and local electronics assembly provide meaningful decentralizable layers.",
+          "sourceIds": [
+            "ti-2025-annual-report",
+            "kicad-about",
+            "riscv-faq",
+            "zephyr-about"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "TI remained strongly profitable in 2025, reporting about $17.68 billion of revenue and about $5.0 billion of net income despite cyclical semiconductor demand and heavy manufacturing investment.",
+          "sourceIds": [
+            "ti-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 52.9,
+          "rationale": "CompaniesMarketCap reported Texas Instruments' trailing P/E ratio at about 52.9 as of May 2026; this is a market snapshot and can move materially with price and earnings revisions.",
+          "sourceIds": [
+            "companiesmarketcap-txn-pe-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 275510000000,
+          "rationale": "CompaniesMarketCap reported Texas Instruments' market capitalization at about $275.51 billion in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-txn-marketcap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "analog-chips",
+        "name": "Analog chips",
+        "category": "Analog semiconductors",
+        "homepageUrl": "https://www.ti.com/analog-circuit/overview.html",
+        "summary": "TI analog products include power management, signal-chain, interface, amplifier, data-converter, and related chips used to connect real-world signals and power systems to electronic control logic.",
+        "whyItMatters": "Analog chips are small components with large system leverage: they regulate power, measure physical signals, convert data, and protect industrial, automotive, medical, communications, and consumer electronics from failure.",
+        "replacementSketch": [
+          "Open alternatives do not replace TI's full analog catalog directly. The realistic replacement path is open design leverage: open EDA tools, open reference boards, reusable circuit blocks, transparent BOMs, community-verified footprints, and local assembly networks that reduce dependency on single-vendor application notes or proprietary design environments.",
+          "For many systems, TI parts would still be purchased where they are the most reliable or available option. The disruption comes from making the surrounding design, validation, sourcing, and repair process portable enough that engineers can substitute compatible parts more easily."
+        ],
+        "sourceIds": [
+          "ti-2025-annual-report",
+          "ti-analog-products",
+          "kicad-about",
+          "openroad-project"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "kicad",
+            "name": "KiCad",
+            "kind": "open-source",
+            "homepageUrl": "https://www.kicad.org/",
+            "repoUrl": "https://gitlab.com/kicad/code/kicad",
+            "summary": "KiCad is an open-source electronic design automation suite for schematic capture and PCB design, useful for open hardware teams designing boards around analog and mixed-signal components.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "KiCad is explicitly published as open-source EDA software with public source code and documentation.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It does not manufacture chips, but it lowers the tooling barrier for distributed board design, review, repair, and small-batch electronics production.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "KiCad is mature enough for real PCB workflows and has broad community and institutional support.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Free open-source EDA can remove recurring proprietary tool costs for many PCB-level analog design workflows.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "kicad-about"
+            ]
+          },
+          {
+            "slug": "openroad",
+            "name": "OpenROAD",
+            "kind": "open-source",
+            "homepageUrl": "https://theopenroadproject.org/",
+            "repoUrl": "https://github.com/The-OpenROAD-Project/OpenROAD",
+            "summary": "OpenROAD is an open-source RTL-to-GDSII chip implementation flow that supports more accessible silicon design, especially for digital and mixed-signal-adjacent experimentation.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenROAD is organized around an open-source chip implementation flow with public project artifacts.",
+                "sourceIds": [
+                  "openroad-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It can decentralize parts of chip design, though analog design and fabrication remain harder to democratize than PCB-level workflows.",
+                "sourceIds": [
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "OpenROAD is credible for research and some silicon flows, but it is not a drop-in replacement for the full proprietary analog design and qualification stack.",
+                "sourceIds": [
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source implementation tools can materially reduce access costs for chip design experiments and education.",
+                "sourceIds": [
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openroad-project"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-analog-reference-cell-library",
+            "name": "Open analog reference cell library",
+            "summary": "A shared library of open, reviewable analog reference circuits, PCB layouts, test procedures, footprints, and substitution maps could make many power and signal-chain designs less dependent on one vendor's application notes or parts ecosystem.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "The concept does not eliminate TI's manufacturing advantage, but it weakens design-in lock-in by making circuit knowledge, validation artifacts, and compatible part choices portable across suppliers and local builders.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through open hardware repositories, distributed maintainers, independent test labs, and local electronics assemblers rather than through Bitcoin payments.",
+            "coordinationMechanism": "Engineers, repair shops, universities, and small manufacturers coordinate through versioned repositories, published BOMs, KiCad projects, test fixtures, and issue-based review of circuit variants and compatible components.",
+            "verificationOrTrustModel": "Claims would be constrained by reproducible test fixtures, published measurement logs, peer-reviewed schematics, signed release artifacts, and independent replication by multiple labs or makerspaces. The model remains weak where high-voltage, medical, automotive, or safety-critical validation is required.",
+            "failureModes": [
+              "Open reference designs may lag proprietary vendor application notes in accuracy, safety margins, and regulatory documentation.",
+              "Component substitutions can fail under temperature, noise, lifecycle, or supply-chain constraints that are hard for community projects to test exhaustively."
+            ],
+            "adoptionPath": [
+              "Start with low-risk power, sensing, and interface boards where open KiCad projects can document proven substitutions.",
+              "Build community-maintained test fixtures and release channels for reusable analog blocks before attempting safety-critical or automotive applications."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ti-2025-annual-report",
+              "ti-analog-products"
+            ],
+            "enablerSourceIds": [
+              "kicad-about"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept decentralizes design knowledge, board files, validation artifacts, and repairability even though chip fabrication remains centralized.",
+                "sourceIds": [
+                  "kicad-about",
+                  "ti-analog-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open repositories and reproducible test artifacts are credible coordination tools, but analog validation requires disciplined maintainers and lab equipment.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "PCB-level open hardware workflows are feasible today; broad analog qualification and substitution coverage would take sustained community and lab investment.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This would pressure vendor lock-in and support costs more than it would immediately replace TI's catalog or fabs.",
+                "sourceIds": [
+                  "ti-2025-annual-report",
+                  "ti-analog-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "local-power-electronics-microfactories",
+            "name": "Local power-electronics microfactories",
+            "summary": "Small electronics workshops using open PCB tooling, standardized power modules, automated assembly, and community repair loops could localize more of the board-level value around TI-like power and analog chips.",
+            "angleIds": [
+              "home-microfactory",
+              "recycling-and-reuse",
+              "open-hardware"
+            ],
+            "thesis": "If power-management boards become easier to design, assemble, test, and repair locally, the strategic leverage shifts partly from proprietary component catalogs toward open module designs, repair networks, and validated local production recipes.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is localized production and reuse. Bitcoin or Lightning could support machine-to-machine settlement between small shops and buyers, but it is not necessary to the core technical mechanism.",
+            "coordinationMechanism": "Local operators coordinate through shared CAD files, open BOMs, distributor availability feeds, test profiles, repair documentation, and reputation systems for shops that can deliver verified modules.",
+            "verificationOrTrustModel": "Verification would rely on automated electrical tests, serial-numbered test reports, open fixture definitions, return-rate tracking, and public reputation. Cheating is constrained by reproducible acceptance tests and buyer-side sampling, but counterfeit parts and poor workmanship remain serious risks.",
+            "failureModes": [
+              "Local shops may not meet safety, thermal, EMI, or reliability requirements for demanding industrial or automotive products.",
+              "Open module designs can be copied without maintaining quality, creating reputational risk for the broader ecosystem."
+            ],
+            "adoptionPath": [
+              "Begin with repair, prototyping, education, and non-critical industrial modules where local turnaround matters.",
+              "Expand only after standardized test fixtures, compliance guidance, and supplier traceability mature enough for higher-reliability applications."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "ti-2025-annual-report",
+              "ti-analog-products"
+            ],
+            "enablerSourceIds": [
+              "kicad-about"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model pushes board-level production, repair, and validation toward local operators rather than a single vertically integrated supplier relationship.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Open BOMs and test artifacts can coordinate small shops, but quality assurance and liability are difficult in power electronics.",
+                "sourceIds": [
+                  "kicad-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Small-batch PCB assembly is available today, but reliable distributed manufacturing of power electronics at scale still faces testing, compliance, and supply-chain hurdles.",
+                "sourceIds": [
+                  "kicad-about",
+                  "ti-analog-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The near-term pressure is on modules, reference designs, and service channels, not on TI's wafer-scale economics.",
+                "sourceIds": [
+                  "ti-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "embedded-processors",
+        "name": "Embedded processors",
+        "category": "Embedded semiconductors",
+        "homepageUrl": "https://www.ti.com/microcontrollers-mcus-processors/overview.html",
+        "summary": "TI embedded processing products include microcontrollers, digital signal processors, and application processors used to control specific tasks in electronic systems.",
+        "whyItMatters": "Embedded processors define the control surface for machines, vehicles, sensors, appliances, meters, and industrial equipment. Their instruction sets, SDKs, board support, and RTOS integrations can shape whether downstream products are portable or vendor locked.",
+        "replacementSketch": [
+          "The strongest open replacement pattern is not one board or chip, but a stack: RISC-V processor IP or silicon where appropriate, open firmware frameworks, open RTOS support, portable board definitions, and modular hardware designs that can move across suppliers.",
+          "For production hardware, TI processors may remain compelling because of availability, analog integration, documentation, and support. Open alternatives matter most when they prevent firmware and tooling from becoming trapped around one vendor's microcontroller family."
+        ],
+        "sourceIds": [
+          "ti-2025-annual-report",
+          "ti-embedded-products",
+          "riscv-faq",
+          "zephyr-about",
+          "ti-zephyr"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "embedded-processors-risc-v",
+            "name": "RISC-V",
+            "kind": "protocol",
+            "homepageUrl": "https://riscv.org/",
+            "summary": "RISC-V is an open-standard instruction set architecture that lets implementers build compatible processor cores without depending on a proprietary ISA owner.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "RISC-V International describes RISC-V as an open-standard ISA with specifications developed and maintained by members.",
+                "sourceIds": [
+                  "riscv-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "An open ISA allows many vendors, universities, and open silicon projects to build compatible processors and software ecosystems.",
+                "sourceIds": [
+                  "riscv-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "RISC-V has a broad and growing ecosystem, but readiness varies by performance class, safety certification, toolchain maturity, and peripheral support.",
+                "sourceIds": [
+                  "riscv-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Royalty-free ISA access and multi-vendor implementations can reduce licensing and sourcing constraints for embedded designs.",
+                "sourceIds": [
+                  "riscv-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "riscv-faq"
+            ]
+          },
+          {
+            "slug": "zephyr-rtos",
+            "name": "Zephyr RTOS",
+            "kind": "open-source",
+            "homepageUrl": "https://www.zephyrproject.org/",
+            "repoUrl": "https://github.com/zephyrproject-rtos/zephyr",
+            "summary": "Zephyr is an open-source, scalable real-time operating system for resource-constrained devices across multiple hardware architectures, including RISC-V and Arm.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The Zephyr Project describes Zephyr as an open-source collaborative RTOS with public development.",
+                "sourceIds": [
+                  "zephyr-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Zephyr reduces firmware dependence on any one silicon vendor by supporting multiple architectures and vendor contributions in a neutral project.",
+                "sourceIds": [
+                  "zephyr-about",
+                  "zephyr-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "Zephyr is used across embedded and IoT workflows and is supported by multiple silicon vendors, including TI board support in the official ecosystem.",
+                "sourceIds": [
+                  "zephyr-about",
+                  "ti-zephyr"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source RTOS support can reduce proprietary firmware stack costs and improve portability across hardware choices.",
+                "sourceIds": [
+                  "zephyr-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "zephyr-about",
+              "ti-zephyr"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "risc-v-zephyr-portable-controller-stack",
+            "name": "RISC-V and Zephyr portable controller stack",
+            "summary": "A portable embedded stack built around RISC-V-compatible hardware, Zephyr, open board definitions, and reproducible firmware builds can make embedded controller designs less dependent on one vendor's MCU family and SDK.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept shifts market power from vendor-specific embedded ecosystems toward portable firmware, open instruction sets, and multi-supplier hardware choices. TI can still win on quality and integration, but lock-in from proprietary tooling and board support becomes less durable.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central through open standards and neutral open-source firmware governance. Bitcoin is not central because the coordination problem is technical portability, not settlement.",
+            "coordinationMechanism": "Silicon vendors, firmware maintainers, OEMs, and open hardware builders coordinate through RISC-V specifications, Zephyr board definitions, upstream drivers, reproducible builds, conformance tests, and public issue tracking.",
+            "verificationOrTrustModel": "Compatibility is verified through upstream CI, architecture conformance, board-level test suites, signed firmware releases, reproducible builds, and hardware-in-the-loop testing. The main weakness is that peripheral behavior, safety certification, and long-term maintenance can still fragment by vendor.",
+            "failureModes": [
+              "RISC-V silicon and peripheral ecosystems may not match TI parts for analog integration, documentation, availability, or safety-certified use cases.",
+              "Open firmware support can become uneven if board maintainers abandon drivers or fail to upstream changes."
+            ],
+            "adoptionPath": [
+              "Use Zephyr on existing TI and non-TI boards to make firmware portable before changing silicon choices.",
+              "Introduce RISC-V controllers first in non-critical products, education, prototyping, and modular subsystems where supplier diversity is more valuable than one-vendor optimization."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ti-2025-annual-report",
+              "ti-embedded-products"
+            ],
+            "enablerSourceIds": [
+              "riscv-faq",
+              "zephyr-about",
+              "ti-zephyr"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Open ISA and open RTOS layers directly reduce dependence on a single processor vendor's instruction set, SDK, and board support ecosystem.",
+                "sourceIds": [
+                  "riscv-faq",
+                  "zephyr-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "RISC-V specifications and Zephyr's neutral collaborative project provide credible coordination surfaces for many vendors and users.",
+                "sourceIds": [
+                  "riscv-faq",
+                  "zephyr-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The enabling pieces exist today, though production migration depends on peripheral support, certification needs, and long-term supply commitments.",
+                "sourceIds": [
+                  "riscv-faq",
+                  "zephyr-about",
+                  "ti-zephyr"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "This can pressure MCU ecosystem lock-in and SDK dependence, but TI's analog integration, manufacturing, and support remain strong defenses.",
+                "sourceIds": [
+                  "ti-2025-annual-report",
+                  "ti-embedded-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "community-verified-industrial-controller-modules",
+            "name": "Community-verified industrial controller modules",
+            "summary": "Open industrial controller modules with published schematics, portable firmware, documented test fixtures, and multi-vendor processor options could give small manufacturers and repair networks a credible path around vendor-specific embedded boards.",
+            "angleIds": [
+              "open-hardware",
+              "cooperative-production",
+              "home-microfactory"
+            ],
+            "thesis": "The concept moves some value from proprietary embedded modules toward cooperatively maintained designs and local production or repair networks, especially for low-volume industrial controls and retrofit markets.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative maintenance and distributed production. Bitcoin or Lightning could help settle small orders or warranty bonds between shops, but the core mechanism is open hardware plus verifiable test evidence.",
+            "coordinationMechanism": "Design maintainers publish reference hardware, firmware, BOMs, test fixtures, and release notes. Local shops or contract assemblers produce modules, while buyers choose suppliers based on test reports, firmware attestations, and field reputation.",
+            "verificationOrTrustModel": "Cheating is constrained through reproducible firmware hashes, open electrical test procedures, serialized production logs, random buyer audits, and public defect tracking. The model is weaker for safety-critical machinery unless third-party certification is added.",
+            "failureModes": [
+              "Industrial buyers may require long-term support, certifications, environmental ratings, and liability coverage that community modules cannot initially provide.",
+              "Fragmentation across forks could reduce compatibility and create confusion over which hardware revisions are trustworthy."
+            ],
+            "adoptionPath": [
+              "Target retrofit, education, lab automation, and non-safety-critical industrial monitoring modules first.",
+              "Add cooperative support contracts, third-party test labs, and certification tracks before challenging higher-reliability controller markets."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "ti-2025-annual-report",
+              "ti-embedded-products"
+            ],
+            "enablerSourceIds": [
+              "zephyr-about",
+              "riscv-faq",
+              "kicad-about"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model distributes design, production, firmware maintenance, and repair across many operators instead of concentrating control in one silicon or module vendor.",
+                "sourceIds": [
+                  "zephyr-about",
+                  "kicad-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open hardware repositories and RTOS ecosystems can coordinate contributors, but cooperative production needs governance and quality processes.",
+                "sourceIds": [
+                  "zephyr-about",
+                  "kicad-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The software and board-design tools exist, but reliable distributed production for industrial modules requires test infrastructure and support commitments.",
+                "sourceIds": [
+                  "zephyr-about",
+                  "riscv-faq",
+                  "kicad-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This could pressure embedded board and module margins in niche markets, while TI's high-volume chip and support advantages remain substantial.",
+                "sourceIds": [
+                  "ti-2025-annual-report",
+                  "ti-embedded-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "ti-2025-annual-report",
+      "title": "Texas Instruments 2025 Annual Report / Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/97476/000009747626000080/ti2025ars.pdf",
+      "kind": "annual-report",
+      "publisher": "Texas Instruments / SEC EDGAR",
+      "note": "Primary source for TI's segment structure, 2025 revenue, profitability, end markets, and manufacturing strategy.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ti-company-overview",
+      "title": "About Texas Instruments",
+      "url": "https://www.ti.com/about-ti/company.html",
+      "kind": "investor-relations",
+      "publisher": "Texas Instruments",
+      "note": "Company overview source for TI's business description and positioning in analog and embedded processing semiconductors.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ti-analog-products",
+      "title": "Analog products overview",
+      "url": "https://www.ti.com/analog-circuit/overview.html",
+      "kind": "product-page",
+      "publisher": "Texas Instruments",
+      "note": "Product source for TI's analog chip categories and use cases.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ti-embedded-products",
+      "title": "Microcontrollers, processors and wireless connectivity overview",
+      "url": "https://www.ti.com/microcontrollers-mcus-processors/overview.html",
+      "kind": "product-page",
+      "publisher": "Texas Instruments",
+      "note": "Product source for TI's embedded processor and microcontroller families.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "companiesmarketcap-txn-marketcap-2026",
+      "title": "Texas Instruments (TXN) Market capitalization",
+      "url": "https://companiesmarketcap.com/texas-instruments/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market data source for May 2026 market capitalization snapshot.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "companiesmarketcap-txn-pe-2026",
+      "title": "Texas Instruments (TXN) P/E ratio",
+      "url": "https://companiesmarketcap.com/texas-instruments/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market data source for trailing P/E ratio snapshot as of May 2026.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "kicad-about",
+      "title": "About KiCad",
+      "url": "https://www.kicad.org/about/kicad/",
+      "kind": "open-source-project",
+      "publisher": "KiCad",
+      "note": "Open-source EDA source supporting PCB-level open hardware alternatives and distributed electronics workflows.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openroad-project",
+      "title": "OpenROAD Project",
+      "url": "https://theopenroadproject.org/",
+      "kind": "open-source-project",
+      "publisher": "The OpenROAD Project",
+      "note": "Open-source silicon design flow source relevant to more accessible chip implementation tooling.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "riscv-faq",
+      "title": "RISC-V International FAQ",
+      "url": "https://riscv.org/about/faq/",
+      "kind": "technical-docs",
+      "publisher": "RISC-V International",
+      "note": "Authoritative source for RISC-V as an open-standard instruction set architecture.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "zephyr-about",
+      "title": "About the Zephyr Project",
+      "url": "https://www.zephyrproject.org/learn-about/",
+      "kind": "open-source-project",
+      "publisher": "The Zephyr Project",
+      "note": "Open-source RTOS source for portable embedded firmware and multi-architecture support.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "zephyr-faq",
+      "title": "Zephyr Project FAQ",
+      "url": "https://www.zephyrproject.org/faqs/",
+      "kind": "technical-docs",
+      "publisher": "The Zephyr Project",
+      "note": "Technical source for Zephyr's architecture support and embedded RTOS positioning.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ti-zephyr",
+      "title": "Zephyr RTOS on TI embedded devices",
+      "url": "https://www.ti.com/design-development/software-design/Zephyr-RTOS.html",
+      "kind": "technical-docs",
+      "publisher": "Texas Instruments",
+      "note": "Source showing TI's own support for Zephyr in its embedded device ecosystem.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Texas Instruments refreshed as a high-moat analog and embedded semiconductor incumbent. Strongest decentralization paths are open EDA and open hardware around analog boards, plus RISC-V and Zephyr-driven portability for embedded processors."
+}
