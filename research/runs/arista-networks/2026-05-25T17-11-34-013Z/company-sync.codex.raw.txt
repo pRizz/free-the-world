@@ -1,0 +1,455 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "arista-networks",
+      "name": "Arista Networks",
+      "ticker": "ANET",
+      "rankApprox": 60,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "communications-equipment",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/arista-networks/marketcap/",
+      "description": "Arista Networks provides high-performance cloud, AI, data-center, campus, and routing networking products built around its EOS operating system and CloudVision management software.",
+      "overview": [
+        {
+          "title": "Business Profile",
+          "paragraphs": [
+            "Arista sells switching, routing, campus, observability, and automation products for large AI, cloud, data-center, campus, and service-provider environments.",
+            "Its core software layer is EOS, while CloudVision provides network-wide automation, telemetry, visibility, and operations workflows across Arista environments."
+          ]
+        },
+        {
+          "title": "Financial Snapshot",
+          "paragraphs": [
+            "For fiscal 2025, Arista reported revenue of $9.006 billion and GAAP net income of $3.511 billion, showing a highly profitable growth profile tied to AI and cloud networking demand.",
+            "CompaniesMarketCap reported a May 2026 market capitalization of about $193.94 billion and a trailing P/E ratio of about 52.0."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Arista's moat is strongest where large cloud and AI infrastructure buyers value validated high-speed switching platforms, EOS consistency, operational tooling, and vendor accountability over do-it-yourself integration.",
+        "The moat is not purely hardware-based: merchant silicon, open network operating systems, and standards-based telemetry reduce theoretical lock-in, but customers still pay for reliability, lifecycle support, and tightly integrated operations at scale."
+      ],
+      "decentralizationNarrative": [
+        "Arista is exposed to decentralization pressure from open network operating systems, white-box switching, and vendor-neutral management models that let sophisticated operators separate hardware, software, and automation layers.",
+        "The pressure is strongest among hyperscalers, telecoms, research networks, and technically mature enterprises; it is weaker for buyers who need certified support, fast incident response, and a single accountable vendor for production networking."
+      ],
+      "sourceIds": [
+        "arista-products",
+        "arista-2025-results",
+        "companiesmarketcap-anet-marketcap",
+        "companiesmarketcap-anet-pe"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75; market data refreshed against CompaniesMarketCap as of May 2026.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "High-speed cloud and AI networking requires validated hardware, software, automation, and support; Arista's EOS and CloudVision platform breadth gives it a strong enterprise and hyperscale moat despite open-networking substitutes.",
+          "sourceIds": [
+            "arista-products",
+            "arista-2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 6,
+          "rationale": "Switching can be decomposed through white-box hardware, SONiC, OpenConfig, and gNMI, but production-grade deployment still requires hardware compatibility, operational skill, and support coverage.",
+          "sourceIds": [
+            "sonic-github",
+            "openconfig-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 9,
+          "rationale": "Fiscal 2025 GAAP net income of $3.511 billion on $9.006 billion of revenue implies very strong profitability for a communications-equipment company.",
+          "sourceIds": [
+            "arista-2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 52,
+          "rationale": "CompaniesMarketCap reported a May 2026 trailing P/E ratio of 52.0, reflecting a premium growth valuation.",
+          "sourceIds": [
+            "companiesmarketcap-anet-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 193940000000,
+          "rationale": "CompaniesMarketCap reported Arista's market capitalization at $193.94 billion in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-anet-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "eos",
+        "name": "EOS",
+        "category": "Network operating system",
+        "homepageUrl": "https://www.arista.com/en/products/eos",
+        "summary": "EOS is Arista's network operating system for cloud, AI, data-center, campus, and routing platforms.",
+        "whyItMatters": "EOS is the control and automation layer that makes Arista's switching portfolio more than interchangeable Ethernet hardware.",
+        "replacementSketch": [
+          "A technically mature operator could pair supported white-box switches with an open network operating system, open routing components, and standards-based telemetry.",
+          "The practical replacement burden is operational: hardware qualification, lifecycle management, incident response, and feature parity must be carried by the operator or an ecosystem rather than a single vendor."
+        ],
+        "sourceIds": [
+          "arista-products"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "sonic",
+            "name": "SONiC",
+            "kind": "open-source",
+            "homepageUrl": "https://sonic-net.github.io/SONiC/",
+            "repoUrl": "https://github.com/sonic-net/SONiC",
+            "summary": "SONiC is a Linux-based open-source network operating system that runs on switches from multiple vendors and ASICs.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The SONiC project is open source, hosted on GitHub, and documents community contribution paths.",
+                "sourceIds": [
+                  "sonic-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "SONiC directly separates the network operating system from a single proprietary switch vendor and supports multi-vendor switching environments.",
+                "sourceIds": [
+                  "sonic-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "SONiC is described as production-hardened in large cloud data centers, but readiness depends heavily on supported hardware and operator skill.",
+                "sourceIds": [
+                  "sonic-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open NOS plus white-box switching can reduce vendor lock-in and procurement leverage, though integration and support costs can offset some savings.",
+                "sourceIds": [
+                  "sonic-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "sonic-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-qualified-whitebox-fabric",
+            "name": "Community-Qualified White-Box Fabric",
+            "summary": "A shared certification commons could qualify switch hardware, SONiC builds, routing stacks, and telemetry profiles so more operators can deploy open fabrics without each organization repeating the same validation work.",
+            "angleIds": [
+              "decentralized-coordination",
+              "open-hardware",
+              "federation"
+            ],
+            "thesis": "The market shifts from proprietary vertically integrated networking stacks toward a federated compatibility and support ecosystem around open NOS images and commodity switch hardware.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated qualification, shared test evidence, and multi-party support rather than through Bitcoin or payments.",
+            "coordinationMechanism": "Operators, integrators, labs, and hardware vendors publish signed compatibility matrices, reproducible test results, and supported image manifests.",
+            "verificationOrTrustModel": "Reproducible test harnesses, hardware attestation, signed build artifacts, and cross-lab retesting reduce fake compatibility claims; reputation and support contracts still matter for severe outages.",
+            "failureModes": [
+              "ASIC SDK licensing and platform-specific drivers can keep key layers closed.",
+              "Small operators may lack the skills to debug failures even when compatibility tests pass."
+            ],
+            "adoptionPath": [
+              "Start with lab-validated leaf-spine reference designs for common data-center topologies.",
+              "Expand into paid cooperative support pools where members fund maintenance for the hardware and SONiC combinations they actually deploy."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "arista-products"
+            ],
+            "enablerSourceIds": [
+              "sonic-github",
+              "openconfig-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly moves control from a single switch vendor to a shared qualification and support network.",
+                "sourceIds": [
+                  "sonic-github",
+                  "openconfig-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open source projects and standards bodies already coordinate network software and models, but shared hardware certification needs sustained funding and governance.",
+                "sourceIds": [
+                  "sonic-github",
+                  "openconfig-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The primitives exist, but hardware diversity, ASIC dependencies, and enterprise support expectations make full replacement difficult.",
+                "sourceIds": [
+                  "sonic-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "This would pressure Arista mainly among sophisticated operators, while less specialized buyers would still value Arista's integrated support model.",
+                "sourceIds": [
+                  "arista-products",
+                  "sonic-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "cloudvision",
+        "name": "CloudVision",
+        "category": "Network automation and observability",
+        "homepageUrl": "https://www.arista.com/en/products/eos/eos-cloudvision",
+        "summary": "CloudVision is Arista's platform for cloud network automation, visibility, telemetry, and operational workflows.",
+        "whyItMatters": "CloudVision increases customer dependence on Arista by centralizing network state, compliance, telemetry, and automation around Arista-managed infrastructure.",
+        "replacementSketch": [
+          "A replacement would combine vendor-neutral models, streaming telemetry, open collectors, source-controlled configuration, and automation workflows.",
+          "The main challenge is not collecting data; it is matching CloudVision's integrated inventory, compliance, remediation, and support experience across heterogeneous production networks."
+        ],
+        "sourceIds": [
+          "arista-products",
+          "openconfig-home"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "openconfig-gnmi",
+            "name": "OpenConfig and gNMI",
+            "kind": "protocol",
+            "homepageUrl": "https://www.openconfig.net/",
+            "repoUrl": "https://github.com/openconfig",
+            "summary": "OpenConfig provides vendor-neutral data models and gNMI-based management interfaces for network configuration and telemetry.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenConfig is an open source project with public models, code, and participation from operators and vendors.",
+                "sourceIds": [
+                  "openconfig-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Vendor-neutral models and management protocols reduce dependence on a single vendor's controller and data model.",
+                "sourceIds": [
+                  "openconfig-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OpenConfig and gNMI are mature primitives, but full CloudVision replacement still requires integration, policy, dashboards, and remediation workflows.",
+                "sourceIds": [
+                  "openconfig-home",
+                  "openconfig-gnmi"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open telemetry and configuration interfaces improve switching costs and bargaining leverage, but operators must build or buy the surrounding platform.",
+                "sourceIds": [
+                  "openconfig-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openconfig-home",
+              "openconfig-gnmi"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-network-operations-commons",
+            "name": "Federated Network Operations Commons",
+            "summary": "A federated operations layer could let enterprises publish and consume shared OpenConfig schemas, telemetry pipelines, compliance checks, and remediation recipes without tying the control plane to one switch vendor.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Network operations value migrates from vendor-owned management suites toward interoperable policies, telemetry, and remediation workflows that can run across many vendors.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is federation: independent operators and vendors coordinate around shared models and signed operational recipes instead of a single SaaS control plane.",
+            "coordinationMechanism": "Operators publish versioned policy packs, telemetry schemas, compliance tests, and remediation workflows to federated registries that tooling can subscribe to.",
+            "verificationOrTrustModel": "Signed policy artifacts, reproducible test results, audit logs, and staged rollout gates constrain malicious or broken recipes; local operators retain final approval for production changes.",
+            "failureModes": [
+              "Operational recipes may be too environment-specific to generalize safely.",
+              "Vendors may implement standards unevenly, leaving gaps that proprietary controllers hide."
+            ],
+            "adoptionPath": [
+              "Begin with read-only telemetry and compliance checks using OpenConfig and gNMI.",
+              "Add guarded remediation workflows after operators build confidence in model coverage and rollback behavior."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "arista-products"
+            ],
+            "enablerSourceIds": [
+              "openconfig-home",
+              "openconfig-gnmi"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept replaces single-vendor operational gravity with federated models, registries, and locally controlled automation.",
+                "sourceIds": [
+                  "openconfig-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "OpenConfig already coordinates operators, vendors, and software providers around common models and management protocols.",
+                "sourceIds": [
+                  "openconfig-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Read-only telemetry is feasible today; safe cross-vendor remediation is harder because model support and device behavior vary.",
+                "sourceIds": [
+                  "openconfig-home",
+                  "openconfig-gnmi"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This would pressure CloudVision's lock-in but may complement Arista in mixed environments rather than fully replace its integrated platform.",
+                "sourceIds": [
+                  "arista-products",
+                  "openconfig-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "arista-products",
+      "title": "Arista Products",
+      "url": "https://www.arista.com/en/products",
+      "kind": "product-page",
+      "publisher": "Arista Networks",
+      "note": "Product portfolio source for EOS, CloudVision, switching, routing, observability, campus, and AI networking positioning.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "arista-2025-results",
+      "title": "Arista Networks, Inc. Reports Fourth Quarter and Year End 2025 Financial Results",
+      "url": "https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Networks-Inc--Reports-Fourth-Quarter-and-Year-End-2025-Financial-Results/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Arista Networks",
+      "note": "Investor-relations release for fiscal 2025 revenue, GAAP net income, profitability, and AI/cloud networking commentary.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "companiesmarketcap-anet-marketcap",
+      "title": "Arista Networks (ANET) Market Capitalization",
+      "url": "https://companiesmarketcap.com/arista-networks/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap source reporting Arista's May 2026 market capitalization and global rank.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "companiesmarketcap-anet-pe",
+      "title": "Arista Networks (ANET) P/E Ratio",
+      "url": "https://companiesmarketcap.com/arista-networks/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for trailing P/E ratio as of May 2026.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "sonic-github",
+      "title": "Software for Open Networking in the Cloud (SONiC)",
+      "url": "https://github.com/sonic-net/SONiC",
+      "kind": "open-source-project",
+      "publisher": "SONiC Project",
+      "note": "Open-source network operating system project used as the primary EOS-aligned alternative.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openconfig-home",
+      "title": "OpenConfig",
+      "url": "https://www.openconfig.net/",
+      "kind": "open-source-project",
+      "publisher": "OpenConfig Project",
+      "note": "Open-source vendor-neutral network management project used for decentralized management and telemetry analysis.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openconfig-gnmi",
+      "title": "OpenConfig gRPC Network Management Interface",
+      "url": "https://openconfig.net/docs/gnmi/gnmi-specification/",
+      "kind": "technical-docs",
+      "publisher": "OpenConfig Project",
+      "note": "Technical specification for gNMI, supporting the CloudVision replacement analysis.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Arista Networks registry bundle with EOS and CloudVision as the primary products, SONiC and OpenConfig/gNMI as strong open alternatives, and one credible decentralization concept for each product."
+}

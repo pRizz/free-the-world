@@ -1,0 +1,526 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "blackrock",
+    "name": "BlackRock",
+    "ticker": "BLK",
+    "rankApprox": 63,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top75"
+    ],
+    "sectorId": "financials",
+    "industryId": "capital-markets",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/blackrock/marketcap/",
+    "description": "BlackRock is a global asset manager offering investment funds, portfolio management, risk analytics, technology platforms, and advisory services.",
+    "overview": [
+      {
+        "title": "Asset management scale",
+        "paragraphs": [
+          "BlackRock is one of the world's largest investment managers, with its economics tied to assets under management, investment performance, client flows, ETF adoption, private markets, and demand for risk and portfolio technology.",
+          "Its iShares franchise gives BlackRock a large position in exchange-traded funds, while Aladdin extends the company into portfolio analytics, risk management, operations, and investment workflow software."
+        ]
+      },
+      {
+        "title": "Technology and data layer",
+        "paragraphs": [
+          "Aladdin is strategically important because it embeds BlackRock risk models, portfolio analytics, order workflows, and data integrations into institutional investment operations.",
+          "This makes BlackRock more than a fund sponsor: it is also a financial operating-system vendor for asset managers, insurers, pensions, banks, and other institutional investors."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "BlackRock's moat comes from scale, distribution, brand trust, regulatory capability, low-cost ETF operations, benchmark relationships, and deep institutional switching costs around Aladdin. In iShares, liquidity and fund scale reinforce themselves because many investors prefer the largest and tightest-traded vehicles.",
+      "The moat is not absolute. Asset management fees are structurally competitive, index products can be commoditized, and open data plus lower-cost portfolio tooling can chip away at some analytics and advisory functions. Still, BlackRock's trust, compliance infrastructure, and institutional integrations are difficult to replicate quickly."
+    ],
+    "decentralizationNarrative": [
+      "BlackRock is moderately exposed to decentralization pressure because many parts of investing are information, coordination, custody, and governance problems that can be rebuilt with open data, open analytics, transparent protocols, and federated investor tools.",
+      "The hardest parts to decentralize are regulated fund sponsorship, fiduciary accountability, custody, compliance, market-making depth, and institutional risk governance. Decentralized concepts can pressure fees and workflows before they fully replace BlackRock's core products."
+    ],
+    "sourceIds": [
+      "blackrock-2025-10k",
+      "blackrock-about",
+      "blackrock-ishares-etfs",
+      "blackrock-aladdin",
+      "companiesmarketcap-blackrock",
+      "stockanalysis-blk"
+    ],
+    "technologyWaveIds": [
+      "bitcoin-native-coordination"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75.",
+    "inputMetrics": {
+      "moat": {
+        "value": 8,
+        "rationale": "BlackRock combines massive AUM, iShares ETF liquidity, global institutional distribution, regulatory capacity, and Aladdin workflow switching costs. Fee compression and open tooling reduce the score from a maximum.",
+        "sourceIds": [
+          "blackrock-2025-10k",
+          "blackrock-ishares-etfs",
+          "blackrock-aladdin"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "decentralizability": {
+        "value": 5,
+        "rationale": "Portfolio research, analytics, investor coordination, governance, and some fund-like exposure can be opened or federated, but regulated fund issuance, custody, fiduciary duties, and institutional risk controls remain difficult to decentralize.",
+        "sourceIds": [
+          "blackrock-2025-10k",
+          "blackrock-aladdin",
+          "openbb-odp",
+          "quantlib-github"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "profitability": {
+        "value": 8,
+        "rationale": "FY2025 revenue of about $24.2 billion and net income of about $5.6 billion indicate strong profitability and operating leverage, despite exposure to market levels and fee pressure.",
+        "sourceIds": [
+          "blackrock-2025-10k",
+          "stockanalysis-blk-financials"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "peRatio": {
+        "value": 26.94,
+        "rationale": "StockAnalysis reported a trailing P/E ratio of 26.94 for BLK around May 22, 2026; valuation metrics move daily and should be treated as a point-in-time market-data input.",
+        "sourceIds": [
+          "stockanalysis-blk-ratios"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "marketCap": {
+        "value": 165130000000,
+        "rationale": "CompaniesMarketCap reported BlackRock's market capitalization at approximately $165.13 billion as of May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-blackrock"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-25"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "ishares",
+      "name": "iShares",
+      "category": "Exchange-traded funds",
+      "homepageUrl": "https://www.ishares.com/us",
+      "summary": "iShares is BlackRock's ETF platform, offering indexed and active exchange-traded funds across equities, bonds, commodities, allocation strategies, and other exposures.",
+      "whyItMatters": "iShares matters because ETF scale, liquidity, distribution, and benchmark access influence how ordinary and institutional investors gain market exposure.",
+      "replacementSketch": [
+        "A lightweight replacement path would not immediately clone regulated ETFs. It would start with open portfolio research, transparent model portfolios, low-cost direct indexing tools, and investor-owned governance around index construction.",
+        "Over time, cooperative fund sponsors or protocol-assisted baskets could pressure ETF fees by making methodology, voting policy, and portfolio construction auditable by default."
+      ],
+      "sourceIds": [
+        "blackrock-ishares-etfs",
+        "blackrock-2025-10k"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "openbb-platform",
+          "name": "OpenBB Platform",
+          "kind": "open-source",
+          "homepageUrl": "https://openbb.co/products/odp",
+          "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+          "summary": "OpenBB provides an open-source financial data and research platform that can support investor analysis, portfolio research, and custom allocation workflows.",
+          "metrics": {
+            "openness": {
+              "value": 8,
+              "rationale": "OpenBB describes its platform as an open-source toolset and exposes code through GitHub, though some data sources and hosted services may remain externally controlled.",
+              "sourceIds": [
+                "openbb-odp",
+                "openbb-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 5,
+              "rationale": "OpenBB can localize analysis and reduce dependence on proprietary terminals, but it does not itself decentralize custody, fund issuance, exchange trading, or benchmark governance.",
+              "sourceIds": [
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "The project is usable for research and data integration workflows today, but it is not a direct regulated ETF replacement.",
+              "sourceIds": [
+                "openbb-odp",
+                "openbb-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "Open tooling can reduce research and analytics costs for investors and small managers, even though brokerage, custody, and market-data costs still apply.",
+              "sourceIds": [
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "openbb-odp",
+            "openbb-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "cooperative-index-baskets",
+          "name": "Cooperative index baskets",
+          "summary": "A cooperative index-basket network would publish transparent portfolio rules, rebalance schedules, voting policies, fee budgets, and audit trails so investors can coordinate around low-cost exposures without relying entirely on a dominant ETF sponsor.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination"
+          ],
+          "thesis": "The pressure point is not instant replacement of ETFs, but the unbundling of index design, governance, analytics, and stewardship from a single asset-manager brand.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative governance, open methodology repositories, transparent rebalancing records, and portable portfolio models rather than through Bitcoin as a settlement asset.",
+          "coordinationMechanism": "Participants coordinate around published index rules, independent calculation agents, cooperative voting processes, and broker-compatible execution files for investors or advisors.",
+          "verificationOrTrustModel": "Rules, holdings, rebalance files, and governance votes are published for independent replication. Cheating is constrained when multiple calculators can reproduce the index and compare proposed trades against the public methodology.",
+          "failureModes": [
+            "Regulated fund wrappers, custody, and tax handling may still require conventional financial institutions.",
+            "Liquidity, tracking error, and investor protection may be worse than established ETFs until scale develops."
+          ],
+          "adoptionPath": [
+            "Start with open model portfolios, public index methodology, and advisor tools that replicate exposures through existing brokers.",
+            "Graduate into cooperative fund sponsorship or separately managed account infrastructure once governance, compliance, and demand are proven."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "blackrock-ishares-etfs",
+            "blackrock-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "openbb-odp",
+            "portfolio-performance-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "The concept moves methodology, research, and governance away from a single sponsor, although regulated execution still often runs through centralized brokers and custodians.",
+              "sourceIds": [
+                "openbb-odp",
+                "portfolio-performance-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Open portfolio rules and cooperative governance are credible coordination mechanisms, but capital formation and investor protection are harder than software collaboration.",
+              "sourceIds": [
+                "blackrock-2025-10k",
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 5,
+              "rationale": "The research and portfolio-model layer is feasible now; the regulated fund layer requires legal, compliance, custody, and distribution infrastructure.",
+              "sourceIds": [
+                "blackrock-ishares-etfs",
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "This could pressure fees, voting transparency, and index governance, but iShares' liquidity and distribution advantages remain substantial.",
+              "sourceIds": [
+                "blackrock-ishares-etfs",
+                "blackrock-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "aladdin",
+      "name": "Aladdin",
+      "category": "Portfolio and risk management platform",
+      "homepageUrl": "https://www.blackrock.com/aladdin/",
+      "summary": "Aladdin is BlackRock's investment management technology platform for portfolio analytics, risk management, data integration, operations, and investment workflows.",
+      "whyItMatters": "Aladdin matters because it can become embedded in institutional decision-making, risk controls, operating workflows, and data pipelines, creating high switching costs.",
+      "replacementSketch": [
+        "A practical replacement path would combine open quantitative libraries, open data connectors, local research notebooks, auditable risk models, and modular workflow tools rather than attempting to clone Aladdin in one monolithic product.",
+        "Institutions could adopt open components first for model validation, independent risk checks, and portfolio analytics, then gradually federate data standards and operational workflows."
+      ],
+      "sourceIds": [
+        "blackrock-aladdin",
+        "blackrock-aladdin-risk",
+        "blackrock-2025-10k"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "aladdin-quantlib",
+          "name": "QuantLib",
+          "kind": "open-source",
+          "homepageUrl": "https://www.quantlib.org/",
+          "repoUrl": "https://github.com/lballabio/QuantLib",
+          "summary": "QuantLib is a free, open-source quantitative finance library used for modeling, pricing, and risk-related financial calculations.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "QuantLib is explicitly described as a free and open-source quantitative finance library with public source code.",
+              "sourceIds": [
+                "quantlib-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "QuantLib decentralizes model implementation and validation by letting teams inspect and run calculations independently, but it is a library rather than a federated operating network.",
+              "sourceIds": [
+                "quantlib-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "QuantLib is mature enough for serious quantitative workflows, though institutions must still build data, governance, UI, controls, and operations around it.",
+              "sourceIds": [
+                "quantlib-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 8,
+              "rationale": "Open quantitative libraries can materially reduce licensing and model-validation costs when teams have the engineering capacity to integrate them.",
+              "sourceIds": [
+                "quantlib-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "quantlib-github"
+          ]
+        },
+        {
+          "slug": "aladdin-openbb-platform",
+          "name": "OpenBB Platform",
+          "kind": "open-source",
+          "homepageUrl": "https://openbb.co/products/odp",
+          "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+          "summary": "OpenBB provides open-source financial data integrations and research tooling that can support local analytics workflows.",
+          "metrics": {
+            "openness": {
+              "value": 8,
+              "rationale": "OpenBB positions its data platform as open source and provides public repositories, while some connected data feeds may remain proprietary.",
+              "sourceIds": [
+                "openbb-odp",
+                "openbb-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "OpenBB helps analysts run and extend research locally and reduces dependence on a single closed terminal, but it does not replace institutional order management or enterprise controls by itself.",
+              "sourceIds": [
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "OpenBB is suitable for research and integration work today, but replacing an enterprise platform like Aladdin would require additional workflow, risk, compliance, and audit layers.",
+              "sourceIds": [
+                "openbb-odp",
+                "openbb-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "Open-source data tooling can reduce analytics integration costs, especially for smaller teams that can tolerate building their own controls.",
+              "sourceIds": [
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "openbb-odp",
+            "openbb-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-risk-model-registry",
+          "name": "Federated risk model registry",
+          "summary": "A federated risk model registry would let institutions publish, version, test, and independently reproduce portfolio-risk models across open libraries and standardized datasets, weakening dependence on a single proprietary analytics stack.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "The market structure changes if risk analytics become portable, reproducible, and benchmarked across many institutions instead of being locked inside one vendor's model and data environment.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated model publication, independent validation, reproducible calculations, and multi-party attestations rather than through Bitcoin payments.",
+          "coordinationMechanism": "Asset managers, academics, auditors, and vendors coordinate through signed model releases, shared test portfolios, standardized result fixtures, and compatibility profiles for common asset classes.",
+          "verificationOrTrustModel": "Model outputs are checked against public fixtures and independent implementations. False claims are constrained by reproducible tests, versioned inputs, signed releases, and third-party audit reports.",
+          "failureModes": [
+            "High-quality market data can remain expensive and legally restricted, limiting reproducibility.",
+            "Institutions may resist publishing enough model detail to make validation meaningful."
+          ],
+          "adoptionPath": [
+            "Begin as an open validation layer for QuantLib-style models and public test portfolios.",
+            "Expand into institutional procurement standards that require vendor models to pass shared reproducibility and stress-test suites."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "blackrock-aladdin",
+            "blackrock-aladdin-risk"
+          ],
+          "enablerSourceIds": [
+            "quantlib-github",
+            "openbb-odp"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "A federated registry directly reduces single-vendor control over model definitions and validation, although data licensing remains a centralizing force.",
+              "sourceIds": [
+                "quantlib-github",
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 7,
+              "rationale": "Open-source software communities already coordinate around versioned libraries and test suites; extending that pattern to financial model validation is credible but institutionally difficult.",
+              "sourceIds": [
+                "quantlib-github",
+                "openbb-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "The software primitives exist, but robust data licensing, audit acceptance, and enterprise integration would take significant coordination.",
+              "sourceIds": [
+                "blackrock-aladdin-risk",
+                "quantlib-github",
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 6,
+              "rationale": "The concept pressures Aladdin's analytics moat by making model validation and portability more open, but it does not immediately replace Aladdin's integrated operations platform.",
+              "sourceIds": [
+                "blackrock-aladdin",
+                "blackrock-aladdin-risk"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        },
+        {
+          "slug": "proof-of-audit-portfolio-operations",
+          "name": "Proof-of-audit portfolio operations",
+          "summary": "A proof-of-audit operations layer would create tamper-evident logs for portfolio data changes, model runs, approvals, and rebalance decisions so institutions can independently verify operational history across vendors.",
+          "angleIds": [
+            "proof-of-work",
+            "decentralized-coordination"
+          ],
+          "thesis": "If operational evidence becomes portable and independently verifiable, institutions can reduce reliance on one closed platform as the source of truth for portfolio controls.",
+          "bitcoinOrDecentralizationRole": "Proof-of-work can anchor periodic commitments to operational logs, making retroactive tampering expensive and visible without requiring every institution to share private portfolio data publicly.",
+          "coordinationMechanism": "Managers, custodians, auditors, and compliance teams coordinate by committing hashed event logs to a shared timestamping layer while keeping sensitive records private.",
+          "verificationOrTrustModel": "Auditors verify that private logs match public commitments and that workflow events occurred in the claimed order. Spoofing is constrained by signatures, role-based approvals, independent custody records, and proof-of-work timestamp anchoring.",
+          "failureModes": [
+            "Hash commitments prove ordering and integrity, not that the underlying decision was prudent or compliant.",
+            "Adoption requires integration with sensitive enterprise systems and careful privacy controls."
+          ],
+          "adoptionPath": [
+            "Start with audit trails for model runs, investment committee approvals, and rebalance files.",
+            "Extend to cross-vendor reconciliation between portfolio managers, custodians, and auditors."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "blackrock-aladdin",
+            "blackrock-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "quantlib-github",
+            "openbb-odp"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "The design decentralizes audit evidence and reduces dependence on one vendor's internal logs, but most workflows still run inside regulated institutions.",
+              "sourceIds": [
+                "blackrock-aladdin",
+                "quantlib-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 5,
+              "rationale": "Shared audit commitments are technically plausible, but legal acceptance and enterprise process changes are uncertain.",
+              "sourceIds": [
+                "blackrock-2025-10k",
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 5,
+              "rationale": "Hashing, signatures, and timestamping are feasible, but privacy, integration, retention, and regulator acceptance create meaningful implementation risk.",
+              "sourceIds": [
+                "blackrock-aladdin",
+                "quantlib-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "This could pressure closed audit and workflow control layers, but Aladdin's broader analytics, data, and operations footprint would remain valuable.",
+              "sourceIds": [
+                "blackrock-aladdin",
+                "blackrock-aladdin-risk"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

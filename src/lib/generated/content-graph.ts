@@ -39,6 +39,12 @@ export const contentGraph: ContentGraph = {
       "label": "S&P 500 · Top 50 by market cap",
       "regionId": "us",
       "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
     }
   ],
   "sectors": [
@@ -77,6 +83,10 @@ export const contentGraph: ContentGraph = {
     {
       "id": "materials",
       "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
     }
   ],
   "industries": [
@@ -219,6 +229,41 @@ export const contentGraph: ContentGraph = {
       "id": "industrial-gases",
       "sectorId": "materials",
       "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
     }
   ],
   "technologyWaves": [

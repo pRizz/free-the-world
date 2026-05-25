@@ -1,0 +1,579 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "boeing",
+      "name": "Boeing",
+      "ticker": "BA",
+      "rankApprox": 62,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "industrials",
+      "industryId": "aerospace-defense",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/boeing/marketcap/",
+      "description": "Boeing designs, manufactures, and services commercial aircraft, defense systems, satellites, and related aerospace products.",
+      "overview": [
+        {
+          "title": "Aerospace Systems Integrator",
+          "paragraphs": [
+            "Boeing operates across commercial airplanes, defense and space systems, and global services, making it one of the central prime contractors in civil aviation and U.S.-aligned aerospace procurement.",
+            "Its commercial moat is tied to certified aircraft families, airline fleet commonality, production know-how, supplier coordination, installed-base support, and the regulatory cost of certifying large transport aircraft."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Boeing's strongest moat is not only aircraft design; it is the certified production system around each aircraft family. Airlines, lessors, regulators, pilots, maintenance providers, and suppliers all coordinate around long-lived platforms that are expensive to replace.",
+        "That moat has also become a constraint. Quality, certification, and production-rate issues can damage trust and cash flow because aircraft programs require high fixed investment, long delivery cycles, and regulatory approval before product changes can scale."
+      ],
+      "decentralizationNarrative": [
+        "Full replacement of large commercial jet manufacturing is not currently credible as a near-term open or decentralized project. The certification burden, safety-critical supply chain, capital intensity, and liability profile remain far outside ordinary open-hardware replication.",
+        "The more realistic decentralization pressure is upstream and adjacent: open aircraft design tools, shared simulation workflows, distributed maintenance tooling, local spare-part manufacturing for non-critical parts, and transparent certification evidence pipelines could weaken parts of the closed aerospace stack without pretending to clone a 737 or 787."
+      ],
+      "sourceIds": [
+        "boeing-2025-10k",
+        "boeing-commercial",
+        "faa-aircraft-certification",
+        "stockanalysis-ba-2026-05-22"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75.",
+      "inputMetrics": {
+        "moat": {
+          "value": 88,
+          "rationale": "Certified aircraft programs, long-lived airline fleets, a large commercial and defense backlog, and global service obligations create very high switching costs and regulatory barriers.",
+          "sourceIds": [
+            "boeing-2025-10k",
+            "boeing-commercial",
+            "faa-aircraft-certification"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 18,
+          "rationale": "Large commercial aircraft production is deeply centralized by certification, safety, tooling, capital, and liability requirements, though design and some maintenance tooling can decentralize at the edges.",
+          "sourceIds": [
+            "faa-aircraft-certification",
+            "nasa-openvsp-catalog",
+            "ose-microfactory"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 42,
+          "rationale": "Recent financial data show Boeing returning to positive net income but still carrying thin margins and program execution risk relative to the scale of its revenue base.",
+          "sourceIds": [
+            "boeing-2025-10k",
+            "stockanalysis-ba-2026-05-22"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 87.74,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 87.74 at the May 22, 2026 close, reflecting a high valuation multiple on still-recovering earnings.",
+          "sourceIds": [
+            "stockanalysis-ba-2026-05-22"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 172650000000,
+          "rationale": "StockAnalysis reported Boeing's market capitalization at about $172.65 billion at the May 22, 2026 close.",
+          "sourceIds": [
+            "stockanalysis-ba-2026-05-22"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "737",
+        "name": "737",
+        "category": "Commercial narrow-body aircraft family",
+        "homepageUrl": "https://www.boeing.com/commercial/737max/",
+        "summary": "The Boeing 737 family, including the 737 MAX, is Boeing's narrow-body jetliner platform for short- and medium-haul airline routes.",
+        "whyItMatters": "The 737 is one of the core aircraft families in global commercial aviation, so its design, certification status, production rate, and fleet support affect airline capacity and supplier economics worldwide.",
+        "replacementSketch": [
+          "A credible open replacement is not a single open-source jetliner. It is a layered stack of open conceptual design tools, shared aerodynamic and structural analysis, transparent certification evidence, and distributed production for non-critical tooling and parts.",
+          "Over time, that stack could help smaller manufacturers, airlines, and maintenance networks reduce dependence on opaque design workflows and sole-source support arrangements while still respecting regulated safety boundaries."
+        ],
+        "sourceIds": [
+          "boeing-737max",
+          "boeing-commercial",
+          "faa-aircraft-certification"
+        ],
+        "technologyWaveIds": [
+          "additive-manufacturing",
+          "microfactories",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "openvsp",
+            "name": "OpenVSP",
+            "kind": "open-source",
+            "homepageUrl": "https://software.nasa.gov/software/LAR-17491-1",
+            "repoUrl": "https://github.com/OpenVSP/OpenVSP",
+            "summary": "NASA-originated open-source parametric aircraft geometry software for conceptual aircraft design and analysis workflows.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "OpenVSP is distributed as open-source software and its public repository exposes the aircraft geometry toolchain for inspection and contribution.",
+                "sourceIds": [
+                  "nasa-openvsp-catalog",
+                  "openvsp-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "It decentralizes early aircraft design capability, though it does not decentralize certification, production, or airline fleet support by itself.",
+                "sourceIds": [
+                  "nasa-openvsp-catalog",
+                  "faa-aircraft-certification"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "NASA maintains documentation and training material, making it usable for conceptual design rather than only a research prototype.",
+                "sourceIds": [
+                  "nasa-openvsp-ground-school",
+                  "nasa-openvsp-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 65,
+                "rationale": "Open conceptual geometry and analysis tooling can lower early design and education costs, but the largest aircraft program costs remain certification, testing, tooling, and production.",
+                "sourceIds": [
+                  "nasa-openvsp-catalog",
+                  "faa-aircraft-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "nasa-openvsp-catalog",
+              "openvsp-github",
+              "nasa-openvsp-ground-school"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-certification-evidence-pipeline",
+            "name": "Open Certification Evidence Pipeline",
+            "summary": "An open, auditable workflow for aircraft design models, simulations, test evidence, change control, and maintenance findings could reduce dependence on closed manufacturer-controlled evidence packages while still leaving final approval with aviation regulators.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "The market structure changes if airlines, suppliers, independent engineers, and regulators can inspect more of the evidence chain around airframe changes and maintenance-critical issues instead of relying on opaque bilateral manufacturer processes.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated evidence repositories and multi-party audit trails, not through Bitcoin. The key shift is from single-firm information custody toward regulator-recognized, independently reproducible engineering evidence.",
+            "coordinationMechanism": "Design teams, suppliers, airlines, maintenance organizations, and designated engineering representatives publish signed model versions, test artifacts, conformity records, and issue reports into interoperable repositories with role-based attestations.",
+            "verificationOrTrustModel": "Cheating is constrained by cryptographic signing, regulator-recognized submitter identities, reproducible simulation inputs, traceable test artifacts, and cross-checks between airline service data and approved design changes. The weak point remains the quality of human engineering judgment and regulator capacity.",
+            "failureModes": [
+              "Regulators may reject open repositories that do not map cleanly to existing certification processes.",
+              "Safety-critical data may be restricted by export controls, proprietary supplier contracts, or liability concerns.",
+              "Open evidence can improve auditability without making aircraft manufacturing itself decentralized."
+            ],
+            "adoptionPath": [
+              "Start with non-sensitive maintenance bulletins, service difficulty reports, and open model validation around non-critical systems.",
+              "Expand to supplier-neutral evidence packages for modifications, repairs, and supplemental type certificate workflows where regulators already accept third-party engineering submissions."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "faa-aircraft-certification",
+              "boeing-737max"
+            ],
+            "enablerSourceIds": [
+              "nasa-openvsp-catalog",
+              "openvsp-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 63,
+                "rationale": "The concept decentralizes engineering evidence custody and review participation, but not final certification authority or aircraft production.",
+                "sourceIds": [
+                  "faa-aircraft-certification",
+                  "nasa-openvsp-catalog"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "Aviation already coordinates among applicants, regulators, suppliers, and delegated experts, but formalizing open multi-party evidence would require institutional adoption.",
+                "sourceIds": [
+                  "faa-aircraft-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 46,
+                "rationale": "The software and signing primitives are feasible, but regulatory acceptance, liability allocation, and export-control boundaries are hard.",
+                "sourceIds": [
+                  "faa-aircraft-certification",
+                  "openvsp-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 41,
+                "rationale": "This would pressure opaque support and modification workflows, but it would not directly displace Boeing's certified 737 production franchise.",
+                "sourceIds": [
+                  "boeing-737max",
+                  "faa-aircraft-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "787-dreamliner",
+        "name": "787 Dreamliner",
+        "category": "Commercial wide-body aircraft family",
+        "homepageUrl": "https://787dreamliner.boeing.com/",
+        "summary": "The Boeing 787 Dreamliner is Boeing's twin-aisle wide-body aircraft family built for long-range routes with a modern composite-intensive airframe.",
+        "whyItMatters": "The 787 anchors Boeing's long-haul commercial aircraft portfolio and demonstrates how advanced materials, global suppliers, and complex production systems shape the economics of modern aerospace manufacturing.",
+        "replacementSketch": [
+          "The near-term open alternative is an open design and manufacturing knowledge layer around advanced airframes, not a community-built wide-body aircraft. Open tools can make conceptual design, geometry, and trade studies more accessible while certified production remains centralized.",
+          "The longer-term wedge is distributed manufacturing for fixtures, tooling, training rigs, test articles, and non-flight-critical parts, paired with open materials documentation and rigorous inspection records."
+        ],
+        "sourceIds": [
+          "boeing-787",
+          "boeing-787-difference",
+          "boeing-commercial",
+          "faa-aircraft-certification"
+        ],
+        "technologyWaveIds": [
+          "additive-manufacturing",
+          "microfactories",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "787-dreamliner-openvsp",
+            "name": "OpenVSP",
+            "kind": "open-source",
+            "homepageUrl": "https://software.nasa.gov/software/LAR-17491-1",
+            "repoUrl": "https://github.com/OpenVSP/OpenVSP",
+            "summary": "Open-source aircraft geometry software that can support early trade studies for aircraft configurations and airframe concepts.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "The project is openly distributed and backed by public NASA software catalog material plus a public code repository.",
+                "sourceIds": [
+                  "nasa-openvsp-catalog",
+                  "openvsp-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 57,
+                "rationale": "OpenVSP helps decentralize early design work but does not solve materials qualification, production certification, or fleet support.",
+                "sourceIds": [
+                  "nasa-openvsp-catalog",
+                  "faa-aircraft-certification"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "NASA's catalog and tutorial resources indicate the tool is mature enough for conceptual design education and workflows.",
+                "sourceIds": [
+                  "nasa-openvsp-ground-school",
+                  "nasa-openvsp-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 63,
+                "rationale": "It can reduce the cost of exploration and learning around wide-body concepts, while certified composite airframe manufacturing remains capital intensive.",
+                "sourceIds": [
+                  "nasa-openvsp-catalog",
+                  "boeing-787-difference"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "nasa-openvsp-catalog",
+              "openvsp-github",
+              "nasa-openvsp-ground-school"
+            ]
+          },
+          {
+            "slug": "open-source-ecology-microfactory",
+            "name": "Open Source Ecology Microfactory",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourceecology.org/cnc-torch-table-workshop/",
+            "summary": "An open-source distributed production effort centered on tools such as CNC torch tables, 3D printers, and other local fabrication equipment.",
+            "metrics": {
+              "openness": {
+                "value": 84,
+                "rationale": "Open Source Ecology publishes open fabrication concepts, workshop material, and machine documentation for distributed production.",
+                "sourceIds": [
+                  "ose-microfactory",
+                  "ose-cnc-torch"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "The project is explicitly aimed at distributed production, which fits aerospace tooling and repair-adjacent use cases better than full aircraft production.",
+                "sourceIds": [
+                  "ose-microfactory"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 35,
+                "rationale": "The tooling is relevant to local fabrication but is not aerospace-qualified and cannot substitute for certified composite aircraft manufacturing.",
+                "sourceIds": [
+                  "ose-cnc-torch",
+                  "faa-aircraft-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 52,
+                "rationale": "Local fabrication can lower some tooling and prototyping costs, but the leverage is limited by aerospace material, inspection, and certification requirements.",
+                "sourceIds": [
+                  "ose-microfactory",
+                  "faa-aircraft-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "ose-microfactory",
+              "ose-cnc-torch"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "distributed-aerospace-tooling-cells",
+            "name": "Distributed Aerospace Tooling Cells",
+            "summary": "Regional fabrication cells using open machine designs, additive manufacturing, CNC cutting, and standardized inspection records could produce fixtures, jigs, training aids, ground-support parts, and non-critical replacement components closer to airlines and maintenance bases.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "home-microfactory",
+              "open-hardware",
+              "local-materials-processing"
+            ],
+            "thesis": "The disruption is not a decentralized 787 factory; it is the erosion of centralized tooling and support bottlenecks around the aircraft lifecycle, especially where parts are non-flight-critical or can be separately qualified.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing matters because production shifts to qualified local operators using shared designs and inspection recipes. Bitcoin is not central unless later used for settlement or bonding between operators.",
+            "coordinationMechanism": "Airlines, MRO providers, local fabrication cells, and design maintainers coordinate through shared design files, approved material specifications, inspection templates, and order marketplaces that route work to qualified local operators.",
+            "verificationOrTrustModel": "Trust depends on serialized job records, calibrated machine logs, incoming-material certificates, dimensional inspection, destructive testing for sample batches, and clear separation between non-critical tooling and regulated flight hardware. Fraud is constrained by audits and buyer acceptance tests, not by code alone.",
+            "failureModes": [
+              "Aerospace quality systems may reject locally fabricated parts unless qualification and traceability are rigorous.",
+              "The economics may be weak for low-volume parts if inspection and liability costs exceed logistics savings.",
+              "Critical flight hardware remains difficult to decentralize because material pedigree, process control, and certification dominate fabrication cost."
+            ],
+            "adoptionPath": [
+              "Begin with ground-support equipment, maintenance fixtures, cabin mockups, training aids, and shop tools that do not require aircraft type-design approval.",
+              "Move into qualified non-critical spares only where airlines, MROs, and regulators accept documented materials, inspection, and configuration-control procedures."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "boeing-787-difference",
+              "faa-aircraft-certification"
+            ],
+            "enablerSourceIds": [
+              "ose-microfactory",
+              "ose-cnc-torch",
+              "nasa-openvsp-catalog"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "The concept directly moves selected production tasks toward local operators, though only around the aircraft lifecycle rather than final aircraft assembly.",
+                "sourceIds": [
+                  "ose-microfactory",
+                  "ose-cnc-torch"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 44,
+                "rationale": "Local fabrication networks are plausible, but aerospace-grade configuration control and buyer trust would require stronger institutional machinery than generic maker networks provide.",
+                "sourceIds": [
+                  "faa-aircraft-certification",
+                  "ose-microfactory"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 38,
+                "rationale": "Non-critical tooling and fixtures are feasible first targets; certified flight parts remain much harder because process control and regulatory acceptance dominate.",
+                "sourceIds": [
+                  "faa-aircraft-certification",
+                  "ose-cnc-torch"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 35,
+                "rationale": "The concept pressures aftermarket tooling and support margins more than Boeing's core wide-body aircraft manufacturing franchise.",
+                "sourceIds": [
+                  "boeing-787",
+                  "boeing-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "boeing-2025-10k",
+      "title": "The Boeing Company 2025 Annual Report Form 10-K",
+      "url": "https://fortune.com/company-assets/1637/quartr/annual-report-10-k-8c3c9-2026-01-30-07-42-25.pdf",
+      "kind": "annual-report",
+      "publisher": "Boeing",
+      "note": "Primary filing source for Boeing segment structure, revenue scale, backlog, and business risks.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-commercial",
+      "title": "Boeing Commercial Airplanes",
+      "url": "https://www.boeing.com/commercial",
+      "kind": "product-page",
+      "publisher": "Boeing",
+      "note": "Company product page describing Boeing's commercial aircraft families, including 737 MAX and 787 Dreamliner.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-737max",
+      "title": "737 MAX",
+      "url": "https://www.boeing.com/commercial/737max/",
+      "kind": "product-page",
+      "publisher": "Boeing",
+      "note": "Official Boeing product page for the 737 MAX family.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-787",
+      "title": "787 Dreamliner",
+      "url": "https://787dreamliner.boeing.com/",
+      "kind": "product-page",
+      "publisher": "Boeing",
+      "note": "Official Boeing product site for the 787 Dreamliner family.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-787-difference",
+      "title": "The 787 Dreamliner Difference",
+      "url": "https://www.boeing.com/innovation/innovation-quarterly/2025/01/the-787-dreamliner-difference",
+      "kind": "analysis",
+      "publisher": "Boeing",
+      "note": "Boeing analysis page describing the 787's manufacturing and materials significance.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "faa-aircraft-certification",
+      "title": "How it Works: Aircraft Certification",
+      "url": "https://www.faa.gov/newsroom/how-it-works-aircraft-certification",
+      "kind": "regulatory-filing",
+      "publisher": "Federal Aviation Administration",
+      "note": "Regulatory source for the rigorous multi-phase aircraft certification process that shapes aerospace moats and decentralization limits.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-ba-2026-05-22",
+      "title": "The Boeing Company (BA) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/ba/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market data source for Boeing market capitalization and valuation metrics near the May 25, 2026 registry refresh.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "nasa-openvsp-catalog",
+      "title": "Vehicle Sketch Pad (VSP) NASA Software Catalog",
+      "url": "https://software.nasa.gov/software/LAR-17491-1",
+      "kind": "open-source-project",
+      "publisher": "NASA",
+      "note": "Official NASA catalog entry for OpenVSP as an open-source aircraft geometry and conceptual design tool.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openvsp-github",
+      "title": "OpenVSP GitHub Repository",
+      "url": "https://github.com/OpenVSP/OpenVSP",
+      "kind": "open-source-project",
+      "publisher": "OpenVSP",
+      "note": "Public source repository for OpenVSP, documenting its open-source aircraft geometry software implementation.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "nasa-openvsp-ground-school",
+      "title": "OpenVSP Ground School",
+      "url": "https://www.nasa.gov/software/openvsp-ground-school/",
+      "kind": "technical-docs",
+      "publisher": "NASA",
+      "note": "NASA training and documentation source showing OpenVSP's practical use in aircraft design workflows.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ose-microfactory",
+      "title": "CNC Torch Table Workshop",
+      "url": "https://www.opensourceecology.org/cnc-torch-table-workshop/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Source for open-source microfactory and distributed production framing relevant to local fabrication concepts.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "ose-cnc-torch",
+      "title": "D3D CNC Torch Table",
+      "url": "https://wiki.opensourceecology.org/wiki/D3D_CNC_Torch_Table",
+      "kind": "technical-docs",
+      "publisher": "Open Source Ecology",
+      "note": "Technical documentation for an open CNC torch table used as an enabling example for distributed fabrication.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Boeing bundle with two core products, 737 and 787 Dreamliner. The refresh treats Boeing as a high-moat, low-decentralizability aerospace systems integrator and uses open aircraft design tooling plus distributed fabrication concepts as realistic pressure points rather than pretending open-source large jetliners are currently credible."
+}

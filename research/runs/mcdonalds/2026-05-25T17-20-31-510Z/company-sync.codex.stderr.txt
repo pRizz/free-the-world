@@ -1,0 +1,1415 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6027-099a-7152-8a0b-838643a49ba9
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: mcdonalds
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "mcdonalds",
+  "name": "McDonald's",
+  "ticker": "MCD",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "consumer-discretionary",
+  "industryId": "restaurants",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/mcdonald/marketcap/",
+  "description": "McDonald's is a global restaurant company built around franchised and company-operated quick-service restaurants.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "McDonald's restaurants",
+    "McDelivery"
+  ],
+  "seedSourceUrls": [
+    "https://corporate.mcdonalds.com/corpmcd/investors.html",
+    "https://www.mcdonalds.com/",
+    "https://companiesmarketcap.com/mcdonald/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 ranks 51-75 market-cap cohort."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T17:20:32.603309Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:32.603325Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:32.603878Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:32.603884Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:32.604428Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:32.604433Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:32.604972Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:32.604977Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:32.605425Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:32.605430Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:32.606384Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:32.606386Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:33.444023Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:33.444039Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:33.444371Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:33.444375Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:33.444710Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:33.444716Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:33.445038Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:33.445041Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:33.445414Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:33.445417Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:20:33.446209Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:20:33.446212Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search:
+web search: McDonald's 2024 annual report franchised restaurants company-operated net income revenue ...
+web search:
+web search: McDonald's 2025 annual report 2025 revenue net income restaurants franchised 2026 ...
+web search:
+web search: Open Food Network open source platform local food systems ...
+web search:
+web search: McDonald's McDelivery official delivery page ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "mcdonalds",
+      "name": "McDonald's",
+      "ticker": "MCD",
+      "rankApprox": 59,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "consumer-discretionary",
+      "industryId": "restaurants",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/mcdonald/marketcap/",
+      "description": "McDonald's is a global restaurant company built around franchised and company-operated quick-service restaurants.",
+      "overview": [
+        {
+          "title": "Franchised restaurant system",
+          "paragraphs": [
+            "McDonald's operates a global quick-service restaurant system whose economics are dominated by franchised restaurants, brand standards, menus, real estate control, supply-chain coordination, and digital ordering infrastructure.",
+            "At year-end 2025, McDonald's reported 45,356 restaurants, with approximately 95% franchised, giving the company a capital-light operating profile while preserving tight influence over restaurant experience and brand execution."
+          ]
+        },
+        {
+          "title": "Digital and delivery layer",
+          "paragraphs": [
+            "The company has made delivery, mobile ordering, loyalty, and app-based personalization a larger part of the restaurant experience, with the 2025 annual report describing nearly 210 million 90-day active loyalty users by year-end.",
+            "McDelivery turns the restaurant network into a digitally mediated local logistics network, linking stores, app demand, loyalty rewards, and third-party or market-specific delivery capacity."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "McDonald's moat is unusually strong for restaurants because it combines global brand recognition, dense store coverage, franchisee capital, standardized operating systems, high-volume purchasing, real estate economics, and habitual consumer demand.",
+        "The franchise model also hardens the moat: independent operators supply local capital and execution while McDonald's keeps the brand, menu architecture, technology roadmap, and systemwide bargaining power."
+      ],
+      "decentralizationNarrative": [
+        "McDonald's restaurants are physically distributed and mostly franchised, but the system is not meaningfully decentralized in the Free The World sense because brand rules, menus, suppliers, technology, data, and operating standards remain centrally governed.",
+        "The credible decentralization pressure is not a direct open-source burger chain clone; it is a combination of local food networks, cooperative restaurant ownership, open food logistics, transparent sourcing, and smaller automated production systems that reduce reliance on a single global brand coordinator."
+      ],
+      "sourceIds": [
+        "mcd-2025-10k",
+        "mcd-marketcap-companiesmarketcap",
+        "mcd-pe-macrotrends",
+        "mcd-mcdelivery"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Publishable refresh reviewed on 2026-05-25 using McDonald's FY2025 Form 10-K, current market-data pages, and open/cooperative food-system references.",
+      "inputMetrics": {
+        "moat": {
+          "value": 92,
+          "rationale": "Global brand scale, dense restaurant coverage, a 95% franchised system, standardized operations, digital loyalty, supply-chain leverage, and real estate/franchise economics create a very durable restaurant moat.",
+          "sourceIds": [
+            "mcd-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 38,
+          "rationale": "Restaurants are locally operated and mostly franchised, but McDonald's core value depends on centralized brand governance, menu control, technology, procurement standards, and systemwide coordination.",
+          "sourceIds": [
+            "mcd-2025-10k",
+            "mcd-mcdelivery",
+            "open-food-network-platform",
+            "coopcycle-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 86,
+          "rationale": "FY2025 revenue was about $26.9 billion and net income about $8.6 billion, with operating margin reported at 46.1%, reflecting a highly profitable franchise-heavy model.",
+          "sourceIds": [
+            "mcd-2025-10k",
+            "mcd-financials-stockanalysis"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 25.06,
+          "rationale": "MacroTrends reported McDonald's P/E ratio as 25.06 as of May 21, 2026; market multiples move daily, so this is a point-in-time valuation input.",
+          "sourceIds": [
+            "mcd-pe-macrotrends"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 201910000000,
+          "rationale": "CompaniesMarketCap reported McDonald's market capitalization at $201.91 billion in May 2026.",
+          "sourceIds": [
+            "mcd-marketcap-companiesmarketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "mcdonalds-restaurants",
+        "name": "McDonald's restaurants",
+        "category": "Quick-service restaurants",
+        "homepageUrl": "https://www.mcdonalds.com/",
+        "summary": "McDonald's restaurants are standardized quick-service food locations operated through a mix of company-owned restaurants and a predominantly franchised global system.",
+        "whyItMatters": "The restaurant network is the company's core asset: it concentrates brand trust, physical convenience, procurement scale, franchisee capital, and repeat food demand into one coordinated global system.",
+        "replacementSketch": [
+          "A realistic replacement path would not start by copying McDonald's menu at global scale. It would start with local restaurant operators sharing open playbooks, transparent sourcing, cooperative purchasing, and community-owned storefronts that can adapt menus to local supply.",
+          "Over time, open food marketplaces, local producer networks, and compact automation could let regional operators replicate some of McDonald's consistency and convenience without surrendering control to a single brand owner."
+        ],
+        "sourceIds": [
+          "mcd-2025-10k",
+          "mcd-franchising-us",
+          "open-food-network-platform",
+          "open-source-ecology-food"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-food-network",
+            "name": "Open Food Network",
+            "kind": "open-source",
+            "homepageUrl": "https://openfoodnetwork.org/",
+            "repoUrl": "https://github.com/openfoodfoundation/openfoodnetwork",
+            "summary": "Open Food Network is an open-source platform for local food producers, food hubs, wholesalers, shops, and communities to sell and coordinate food distribution online.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "The project describes its software platform as open source and publishes its code repository publicly.",
+                "sourceIds": [
+                  "open-food-network-platform",
+                  "open-food-network-openagri"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "Open Food Network is designed around local producers, food hubs, shops, and community food enterprises rather than a single centralized restaurant brand.",
+                "sourceIds": [
+                  "open-food-network-platform",
+                  "open-food-network-guide"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 67,
+                "rationale": "The platform is live and used for local food commerce, but it does not directly replace standardized prepared-food restaurants without additional operators, kitchens, and logistics.",
+                "sourceIds": [
+                  "open-food-network-platform",
+                  "open-food-network-openagri"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Shared open-source marketplace software can reduce coordination and software costs for local food enterprises, though restaurant labor, rent, compliance, and food costs remain substantial.",
+                "sourceIds": [
+                  "open-food-network-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "open-food-network-platform",
+              "open-food-network-openagri"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "local-open-restaurant-protocol",
+            "name": "Local open restaurant protocol",
+            "summary": "A network of independent kitchens, farms, food hubs, and community storefronts could share open operating playbooks, recipes, menu costing templates, procurement rules, reputation data, and quality audits. Instead of one global brand enforcing uniformity, local operators would coordinate through open standards and shared verification so customers can find dependable, affordable meals with known sourcing and community ownership options.",
+            "angleIds": [
+              "decentralized-coordination",
+              "cooperative-production",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept weakens McDonald's central brand control by shifting restaurant consistency from proprietary franchise governance toward open standards, local ownership, transparent sourcing, and interoperable marketplace discovery.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters because kitchens, producers, auditors, and buyers can coordinate without one franchisor owning the brand, data, supplier rules, and customer relationship. Bitcoin is not central here; the core mechanism is federated local-market coordination and cooperative governance.",
+            "coordinationMechanism": "Local producers list available supply through open food-market software, kitchens publish menus and sourcing commitments, customers order through interoperable local storefronts, and regional cooperatives maintain shared standards, purchasing pools, and dispute processes.",
+            "verificationOrTrustModel": "Operators would publish supplier provenance, inspection records, allergen data, menu formulas, and customer dispute histories. Independent local auditors and customer reputation can constrain false claims, while marketplace delisting and cooperative membership rules provide enforcement.",
+            "failureModes": [
+              "Local operators may fail to match McDonald's speed, price, consistency, and convenience.",
+              "Quality verification can become fragmented or captured by local insiders.",
+              "Food safety and labor compliance remain jurisdiction-specific and expensive.",
+              "Open marketplace software does not by itself create strong consumer demand."
+            ],
+            "adoptionPath": [
+              "Start with local food hubs and prepared-meal operators already using open marketplace tooling.",
+              "Add shared recipe costing, sourcing, allergen, and quality templates for repeatable prepared meals.",
+              "Create regional cooperative brands that certify standards while preserving local ownership.",
+              "Use institutional buyers, campuses, and neighborhoods as initial demand anchors."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "mcd-2025-10k",
+              "mcd-franchising-us"
+            ],
+            "enablerSourceIds": [
+              "open-food-network-platform",
+              "open-food-network-guide"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 84,
+                "rationale": "The concept replaces centralized franchise governance with local operators, shared open tooling, and cooperative standard-setting.",
+                "sourceIds": [
+                  "open-food-network-platform",
+                  "open-food-network-guide"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Open Food Network already demonstrates producer, hub, shop, and community coordination, but prepared-food restaurant execution adds harder operational and safety constraints.",
+                "sourceIds": [
+                  "open-food-network-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 55,
+                "rationale": "Software and local food-network pieces exist, but matching McDonald's speed, density, procurement scale, and brand consistency would require major operational discipline.",
+                "sourceIds": [
+                  "mcd-2025-10k",
+                  "open-food-network-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 42,
+                "rationale": "The model can pressure some local demand and values-driven customers, but it is unlikely to displace McDonald's mainstream convenience moat quickly.",
+                "sourceIds": [
+                  "mcd-2025-10k",
+                  "open-food-network-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "neighborhood-food-microfactory",
+            "name": "Neighborhood food microfactory",
+            "summary": "Compact, locally owned kitchen cells could combine standardized open recipes, shared food-safety instrumentation, small-scale preparation automation, and local supplier integrations. The concept aims to reproduce part of quick-service consistency and throughput at neighborhood scale while letting menus, ownership, sourcing, and profits stay local.",
+            "angleIds": [
+              "home-microfactory",
+              "decentralized-manufacturing",
+              "open-hardware",
+              "local-materials-processing"
+            ],
+            "thesis": "The concept attacks McDonald's scale advantage by turning parts of food preparation, quality monitoring, and kitchen tooling into replicable local production recipes rather than centrally branded franchise packages.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing matters more than Bitcoin: open kitchen hardware, shared process documentation, and local materials processing could let small operators copy and improve production cells without buying into a global franchise.",
+            "coordinationMechanism": "Local operators would use shared equipment designs, recipe/process files, supplier feeds, and maintenance guides. Regional cooperatives could pool purchasing and training while workshops fabricate or repair selected kitchen components.",
+            "verificationOrTrustModel": "Food-safety logs, equipment calibration records, ingredient provenance, and batch-level process data would be digitally signed by operators and spot-checked by inspectors or cooperative auditors. False reporting remains a risk unless linked to real inspections and penalties.",
+            "failureModes": [
+              "Food-service automation may not deliver enough cost savings for small kitchens.",
+              "Open hardware designs still need certification, maintenance, sanitation, and insurance.",
+              "McDonald's brand, site density, and advertising can overpower local technical efficiency.",
+              "Supplier reliability and food-safety compliance may be harder for small operators."
+            ],
+            "adoptionPath": [
+              "Begin with narrow prepared-food categories where recipes and processes are easy to standardize.",
+              "Document open equipment, cleaning, sourcing, and QA routines for cooperative kitchens.",
+              "Use community kitchens, schools, and local food halls as test beds.",
+              "Expand into repeatable neighborhood meal formats once safety and unit economics are proven."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "mcd-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "open-source-ecology-food",
+              "openag-personal-food-computer"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "Local kitchen cells and open hardware/process recipes would distribute production capacity and ownership away from a single brand coordinator.",
+                "sourceIds": [
+                  "open-source-ecology-food"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 46,
+                "rationale": "Open-source food and agriculture hardware primitives exist, but a certified quick-service kitchen microfactory network is still largely conceptual.",
+                "sourceIds": [
+                  "open-source-ecology-food",
+                  "openag-personal-food-computer"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 38,
+                "rationale": "Technical building blocks are plausible, but regulatory approval, sanitation, supply reliability, maintenance, and labor workflows make implementation difficult.",
+                "sourceIds": [
+                  "open-source-ecology-food",
+                  "openag-personal-food-computer"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 31,
+                "rationale": "Even if technically viable, the approach would likely pressure niche local prepared-food markets before threatening McDonald's mass-market restaurant economics.",
+                "sourceIds": [
+                  "mcd-2025-10k",
+                  "open-source-ecology-food"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "mcdelivery",
+        "name": "McDelivery",
+        "category": "Restaurant delivery",
+        "homepageUrl": "https://www.mcdonalds.com/us/en-us/mcdelivery.html",
+        "summary": "McDelivery lets customers order McDonald's food for delivery through the McDonald's app and delivery partner integrations in supported markets.",
+        "whyItMatters": "Delivery extends McDonald's restaurant network into app-mediated logistics, tying local store density to digital demand capture, loyalty points, customer data, and convenience.",
+        "replacementSketch": [
+          "A replacement would likely look less like one national delivery brand and more like interoperable local delivery cooperatives that restaurants can plug into without surrendering customer relationships or paying extractive platform rents.",
+          "For prepared food, the hardest part is not only the app; it is dispatch reliability, driver/rider economics, insurance, food handoff quality, customer support, and enough order density to keep delivery affordable."
+        ],
+        "sourceIds": [
+          "mcd-mcdelivery",
+          "mcd-2025-10k",
+          "coopcycle-home",
+          "coopcycle-opencollective"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "coopcycle",
+            "name": "CoopCycle",
+            "kind": "cooperative",
+            "homepageUrl": "https://coopcycle.org/en/",
+            "summary": "CoopCycle is a bike logistics platform and federation designed to help worker-owned delivery cooperatives create and manage local delivery services.",
+            "metrics": {
+              "openness": {
+                "value": 72,
+                "rationale": "CoopCycle presents itself as an open and federated logistics platform, but its reciprocal cooperative licensing model is intentionally narrower than permissive open source.",
+                "sourceIds": [
+                  "coopcycle-home",
+                  "coopcycle-opencollective"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 86,
+                "rationale": "The federation model is built around independent worker-owned delivery cooperatives rather than one centralized delivery platform.",
+                "sourceIds": [
+                  "coopcycle-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 63,
+                "rationale": "CoopCycle provides a working platform and federation support, but coverage, density, and restaurant integration are market-specific.",
+                "sourceIds": [
+                  "coopcycle-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 58,
+                "rationale": "Worker ownership and shared platform development can reduce platform-rent leakage, but food delivery still faces difficult labor, routing, insurance, and demand-density economics.",
+                "sourceIds": [
+                  "coopcycle-home",
+                  "coopcycle-opencollective"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "coopcycle-home",
+              "coopcycle-opencollective"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-restaurant-delivery-coops",
+            "name": "Federated restaurant delivery co-ops",
+            "summary": "A city-by-city federation of rider-owned delivery cooperatives could provide restaurants with shared dispatch software, local governance, transparent fees, and portable reputation. Restaurants would keep more control of customer relationships while riders coordinate through cooperative ownership rather than a centralized delivery marketplace.",
+            "angleIds": [
+              "federation",
+              "cooperative-production",
+              "peer-to-peer-marketplace",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept changes delivery from a centrally owned demand aggregator into local cooperative logistics infrastructure that restaurants can choose without giving up customer data and pricing power.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central through federated local cooperatives and shared platform governance. Bitcoin is optional rather than necessary; ordinary fiat settlement can work, while Lightning could later reduce small cross-party settlement costs.",
+            "coordinationMechanism": "Restaurants publish delivery zones and menus, riders accept shifts or jobs through cooperative dispatch, customers order through local storefronts or restaurant integrations, and the federation maintains shared software, onboarding, and dispute standards.",
+            "verificationOrTrustModel": "GPS traces, restaurant handoff confirmations, customer receipt confirmations, rider reputation, and cooperative dispute review constrain fake delivery claims. Collusion and spoofed location data remain risks without audits and payment holds.",
+            "failureModes": [
+              "Delivery density may be too low outside dense urban areas.",
+              "Cooperatives may struggle with customer support and service consistency across cities.",
+              "Large platforms and branded apps can subsidize promotions or lock in restaurants.",
+              "Worker ownership does not automatically solve food delivery's thin margins."
+            ],
+            "adoptionPath": [
+              "Start with dense neighborhoods where independent restaurants already dislike platform fees.",
+              "Integrate cooperative dispatch with restaurant-owned ordering pages.",
+              "Use transparent fee schedules and rider governance as the customer and merchant differentiator.",
+              "Federate software maintenance, insurance templates, and dispute procedures across cities."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "mcd-mcdelivery",
+              "mcd-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "coopcycle-home",
+              "coopcycle-opencollective"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 88,
+                "rationale": "The model is explicitly federated and cooperative, distributing ownership and governance among local delivery operators.",
+                "sourceIds": [
+                  "coopcycle-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 68,
+                "rationale": "CoopCycle already documents a federation and bike logistics platform for worker-owned delivery cooperatives, though local density remains the gating factor.",
+                "sourceIds": [
+                  "coopcycle-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 61,
+                "rationale": "The software and cooperative pattern exist, but scaling restaurant coverage, support, insurance, and reliable delivery capacity is operationally demanding.",
+                "sourceIds": [
+                  "coopcycle-home",
+                  "coopcycle-opencollective"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 45,
+                "rationale": "Cooperative delivery can pressure third-party delivery fees and local restaurant relationships, but McDonald's app, brand demand, store density, and partner integrations remain strong.",
+                "sourceIds": [
+                  "mcd-mcdelivery",
+                  "mcd-2025-10k",
+                  "coopcycle-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "lightning-local-delivery-settlement",
+            "name": "Lightning local delivery settlement",
+            "summary": "Local delivery networks could use Lightning payment flows for instant settlement among customers, restaurants, riders, and cooperative dispatch services. The point is not cryptocurrency branding; it is reducing custody, payout delays, chargeback exposure, and small-ticket settlement friction for many independent operators.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept pressures app-mediated delivery moats by making multi-party payment settlement cheaper and more programmable for independent restaurants and riders.",
+            "bitcoinOrDecentralizationRole": "Lightning is central because it can settle small payments quickly across parties without a dominant delivery platform holding balances, delaying payouts, or controlling the merchant relationship.",
+            "coordinationMechanism": "A customer payment is split through escrow-like invoice flows among the restaurant, rider, cooperative dispatch provider, and optional local marketplace operator after handoff confirmations are completed.",
+            "verificationOrTrustModel": "Delivery completion would require restaurant handoff proof and customer receipt confirmation before final release. Time locks, partial holds, reputation, and dispute bonds can reduce fake fulfillment, but real-world delivery disputes still need human review.",
+            "failureModes": [
+              "Mainstream customers may not want to use Bitcoin or Lightning directly.",
+              "Regulatory, tax, refund, and accounting workflows can be harder than card payments.",
+              "Payment settlement does not solve restaurant discovery, routing density, or food quality.",
+              "Bad actors can still spoof delivery evidence unless real-world checks are strong."
+            ],
+            "adoptionPath": [
+              "Begin with rider cooperatives and restaurants that already accept alternative payment rails.",
+              "Hide wallet complexity behind stable local-currency pricing and automated conversion where compliant.",
+              "Use Lightning for rider payouts and inter-operator settlement before requiring customer-facing Bitcoin payments.",
+              "Add reputation and dispute bonds once delivery volume justifies programmable settlement."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "mcd-mcdelivery"
+            ],
+            "enablerSourceIds": [
+              "coopcycle-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Lightning can reduce reliance on a central platform custodian for small multi-party delivery payments, but the delivery marketplace still needs non-payment coordination.",
+                "sourceIds": [
+                  "coopcycle-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 48,
+                "rationale": "Programmable payment splits are credible in principle, but the sourced delivery enabler is cooperative logistics rather than a documented Lightning delivery deployment.",
+                "sourceIds": [
+                  "coopcycle-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 41,
+                "rationale": "Wallet UX, refunds, taxes, compliance, and customer adoption make direct Lightning delivery settlement difficult today.",
+                "sourceIds": [
+                  "mcd-mcdelivery",
+                  "coopcycle-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 28,
+                "rationale": "Payment rails alone are not enough to pressure McDelivery materially; the bigger moat is brand demand, store density, app loyalty, and operational execution.",
+                "sourceIds": [
+                  "mcd-mcdelivery",
+                  "mcd-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "mcd-2025-10k",
+      "title": "McDonald's Corporation 2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000035/mcd-20251231.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary filing for FY2025 restaurant count, franchised percentage, operating margin, digital loyalty context, business model, and risk disclosures.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "mcd-marketcap-companiesmarketcap",
+      "title": "McDonald Market Capitalization",
+      "url": "https://companiesmarketcap.com/mcdonald/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time market capitalization source for the company snapshot.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "mcd-pe-macrotrends",
+      "title": "McDonald's PE Ratio 2012-2026",
+      "url": "https://www.macrotrends.net/stocks/charts/MCD/mcdonalds/pe-ratio",
+      "kind": "market-data",
+      "publisher": "MacroTrends",
+      "note": "Point-in-time P/E ratio source used for valuation input.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "mcd-financials-stockanalysis",
+      "title": "McDonald's Financials and Income Statement",
+      "url": "https://stockanalysis.com/stocks/mcd/financials/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Secondary market-data reference for FY2025 revenue and net income figures.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "mcd-mcdelivery",
+      "title": "McDelivery: Food Delivery Near Me",
+      "url": "https://www.mcdonalds.com/us/en-us/mcdelivery.html",
+      "kind": "product-page",
+      "publisher": "McDonald's",
+      "note": "Official product page for McDelivery and app-linked delivery ordering.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "mcd-franchising-us",
+      "title": "McDonald's U.S. Franchising",
+      "url": "https://www.mcdonalds.com/us/en-us/us-franchising.html",
+      "kind": "product-page",
+      "publisher": "McDonald's",
+      "note": "Official franchising page describing the franchise-owner model and local restaurant ownership framing.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-food-network-platform",
+      "title": "Open Food Network Software Platform",
+      "url": "https://openfoodnetwork.org/software-platform/",
+      "kind": "open-source-project",
+      "publisher": "Open Food Network",
+      "note": "Documents the open-source platform for food producers, wholesalers, hubs, shops, and local food communities.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-food-network-guide",
+      "title": "About Open Food Network",
+      "url": "https://guide.openfoodnetwork.org/shopping-with-open-food-network/about-open-food-network",
+      "kind": "technical-docs",
+      "publisher": "Open Food Network",
+      "note": "Explains the local-food, open-source, not-for-profit, and direct producer-buyer model behind the network.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-food-network-openagri",
+      "title": "Open Food Network - Horizon OpenAgri",
+      "url": "https://horizon-openagri.eu/open-source-catalogue/open-food-network/",
+      "kind": "analysis",
+      "publisher": "Horizon OpenAgri",
+      "note": "Catalog entry identifying Open Food Network as a web-based platform connecting farmers, food hubs, cooperatives, and consumers, with a public repository link.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "coopcycle-home",
+      "title": "CoopCycle - Federation of Bike Delivery Cooperatives",
+      "url": "https://coopcycle.org/en/",
+      "kind": "open-source-project",
+      "publisher": "CoopCycle",
+      "note": "Primary source for CoopCycle's worker-owned bike delivery cooperative platform and federation model.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "coopcycle-opencollective",
+      "title": "CoopCycle - Open Collective",
+      "url": "https://opencollective.com/coopcycle",
+      "kind": "open-source-project",
+      "publisher": "Open Collective",
+      "note": "Secondary source describing CoopCycle as an open, decentralized, federated logistics and e-commerce platform.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-source-ecology-food",
+      "title": "Food and Agriculture - Open Source Ecology",
+      "url": "https://wiki.opensourceecology.org/wiki/Category:Food_and_Agriculture",
+      "kind": "technical-docs",
+      "publisher": "Open Source Ecology",
+      "note": "Reference for open-source food-production and decentralized production framing used in the microfactory concept.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openag-personal-food-computer",
+      "title": "Personal Food Computer: A New Device for Controlled-Environment Agriculture",
+      "url": "https://arxiv.org/abs/1706.05104",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research reference for open-source controlled-environment food-production hardware primitives.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new McDonald's registry bundle with two products: McDonald's restaurants and McDelivery. The refresh uses FY2025 company filings and current market-data references, keeps IPO data null because IPO market-cap support was not established, and includes open/cooperative alternatives plus one to two disruption concepts per product."
+}
+tokens used
+38,190

@@ -1,0 +1,1378 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6031-4c0d-7080-bc62-daa354e37221
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: blackrock
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "blackrock",
+  "name": "BlackRock",
+  "ticker": "BLK",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/blackrock/marketcap/",
+  "description": "BlackRock is an asset management company offering investment funds, portfolio management, risk analytics, and advisory services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "iShares",
+    "Aladdin"
+  ],
+  "seedSourceUrls": [
+    "https://ir.blackrock.com/",
+    "https://www.blackrock.com/corporate/about-us",
+    "https://companiesmarketcap.com/blackrock/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T17:31:45.991838Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:45.991853Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:45.992595Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:45.992602Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:45.993327Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:45.993334Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:45.994124Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:45.994130Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:45.994883Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:45.994888Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:45.996523Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:45.996529Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:46.872927Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:46.872939Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:46.873457Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:46.873462Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:46.873939Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:46.873944Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:46.874560Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:46.874565Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:46.875079Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:46.875091Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:31:46.876376Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:31:46.876382Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search:
+web search: BlackRock annual report 2025 assets under management revenue net income Aladdin iShares ...
+web search:
+web search: BlackRock 2025 annual report 10-K revenue net income assets under management 2025 ...
+web search:
+web search: OpenBB Platform GitHub open source investment research platform ...
+web search:
+web search: BlackRock PE ratio May 2026 BLK
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "blackrock",
+      "name": "BlackRock",
+      "ticker": "BLK",
+      "rankApprox": 63,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/blackrock/marketcap/",
+      "description": "BlackRock is a global asset manager offering investment funds, portfolio management, risk analytics, technology platforms, and advisory services.",
+      "overview": [
+        {
+          "title": "Asset management scale",
+          "paragraphs": [
+            "BlackRock is one of the world's largest investment managers, with its economics tied to assets under management, investment performance, client flows, ETF adoption, private markets, and demand for risk and portfolio technology.",
+            "Its iShares franchise gives BlackRock a large position in exchange-traded funds, while Aladdin extends the company into portfolio analytics, risk management, operations, and investment workflow software."
+          ]
+        },
+        {
+          "title": "Technology and data layer",
+          "paragraphs": [
+            "Aladdin is strategically important because it embeds BlackRock risk models, portfolio analytics, order workflows, and data integrations into institutional investment operations.",
+            "This makes BlackRock more than a fund sponsor: it is also a financial operating-system vendor for asset managers, insurers, pensions, banks, and other institutional investors."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "BlackRock's moat comes from scale, distribution, brand trust, regulatory capability, low-cost ETF operations, benchmark relationships, and deep institutional switching costs around Aladdin. In iShares, liquidity and fund scale reinforce themselves because many investors prefer the largest and tightest-traded vehicles.",
+        "The moat is not absolute. Asset management fees are structurally competitive, index products can be commoditized, and open data plus lower-cost portfolio tooling can chip away at some analytics and advisory functions. Still, BlackRock's trust, compliance infrastructure, and institutional integrations are difficult to replicate quickly."
+      ],
+      "decentralizationNarrative": [
+        "BlackRock is moderately exposed to decentralization pressure because many parts of investing are information, coordination, custody, and governance problems that can be rebuilt with open data, open analytics, transparent protocols, and federated investor tools.",
+        "The hardest parts to decentralize are regulated fund sponsorship, fiduciary accountability, custody, compliance, market-making depth, and institutional risk governance. Decentralized concepts can pressure fees and workflows before they fully replace BlackRock's core products."
+      ],
+      "sourceIds": [
+        "blackrock-2025-10k",
+        "blackrock-about",
+        "blackrock-ishares-etfs",
+        "blackrock-aladdin",
+        "companiesmarketcap-blackrock",
+        "stockanalysis-blk"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "BlackRock combines massive AUM, iShares ETF liquidity, global institutional distribution, regulatory capacity, and Aladdin workflow switching costs. Fee compression and open tooling reduce the score from a maximum.",
+          "sourceIds": [
+            "blackrock-2025-10k",
+            "blackrock-ishares-etfs",
+            "blackrock-aladdin"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 5,
+          "rationale": "Portfolio research, analytics, investor coordination, governance, and some fund-like exposure can be opened or federated, but regulated fund issuance, custody, fiduciary duties, and institutional risk controls remain difficult to decentralize.",
+          "sourceIds": [
+            "blackrock-2025-10k",
+            "blackrock-aladdin",
+            "openbb-odp",
+            "quantlib-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "FY2025 revenue of about $24.2 billion and net income of about $5.6 billion indicate strong profitability and operating leverage, despite exposure to market levels and fee pressure.",
+          "sourceIds": [
+            "blackrock-2025-10k",
+            "stockanalysis-blk-financials"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 26.94,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 26.94 for BLK around May 22, 2026; valuation metrics move daily and should be treated as a point-in-time market-data input.",
+          "sourceIds": [
+            "stockanalysis-blk-ratios"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 165130000000,
+          "rationale": "CompaniesMarketCap reported BlackRock's market capitalization at approximately $165.13 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-blackrock"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "ishares",
+        "name": "iShares",
+        "category": "Exchange-traded funds",
+        "homepageUrl": "https://www.ishares.com/us",
+        "summary": "iShares is BlackRock's ETF platform, offering indexed and active exchange-traded funds across equities, bonds, commodities, allocation strategies, and other exposures.",
+        "whyItMatters": "iShares matters because ETF scale, liquidity, distribution, and benchmark access influence how ordinary and institutional investors gain market exposure.",
+        "replacementSketch": [
+          "A lightweight replacement path would not immediately clone regulated ETFs. It would start with open portfolio research, transparent model portfolios, low-cost direct indexing tools, and investor-owned governance around index construction.",
+          "Over time, cooperative fund sponsors or protocol-assisted baskets could pressure ETF fees by making methodology, voting policy, and portfolio construction auditable by default."
+        ],
+        "sourceIds": [
+          "blackrock-ishares-etfs",
+          "blackrock-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb-platform",
+            "name": "OpenBB Platform",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB provides an open-source financial data and research platform that can support investor analysis, portfolio research, and custom allocation workflows.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenBB describes its platform as an open-source toolset and exposes code through GitHub, though some data sources and hosted services may remain externally controlled.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "openbb-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "OpenBB can localize analysis and reduce dependence on proprietary terminals, but it does not itself decentralize custody, fund issuance, exchange trading, or benchmark governance.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project is usable for research and data integration workflows today, but it is not a direct regulated ETF replacement.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open tooling can reduce research and analytics costs for investors and small managers, even though brokerage, custody, and market-data costs still apply.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openbb-odp",
+              "openbb-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-index-baskets",
+            "name": "Cooperative index baskets",
+            "summary": "A cooperative index-basket network would publish transparent portfolio rules, rebalance schedules, voting policies, fee budgets, and audit trails so investors can coordinate around low-cost exposures without relying entirely on a dominant ETF sponsor.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The pressure point is not instant replacement of ETFs, but the unbundling of index design, governance, analytics, and stewardship from a single asset-manager brand.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative governance, open methodology repositories, transparent rebalancing records, and portable portfolio models rather than through Bitcoin as a settlement asset.",
+            "coordinationMechanism": "Participants coordinate around published index rules, independent calculation agents, cooperative voting processes, and broker-compatible execution files for investors or advisors.",
+            "verificationOrTrustModel": "Rules, holdings, rebalance files, and governance votes are published for independent replication. Cheating is constrained when multiple calculators can reproduce the index and compare proposed trades against the public methodology.",
+            "failureModes": [
+              "Regulated fund wrappers, custody, and tax handling may still require conventional financial institutions.",
+              "Liquidity, tracking error, and investor protection may be worse than established ETFs until scale develops."
+            ],
+            "adoptionPath": [
+              "Start with open model portfolios, public index methodology, and advisor tools that replicate exposures through existing brokers.",
+              "Graduate into cooperative fund sponsorship or separately managed account infrastructure once governance, compliance, and demand are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "blackrock-ishares-etfs",
+              "blackrock-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "openbb-odp",
+              "portfolio-performance-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept moves methodology, research, and governance away from a single sponsor, although regulated execution still often runs through centralized brokers and custodians.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "portfolio-performance-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open portfolio rules and cooperative governance are credible coordination mechanisms, but capital formation and investor protection are harder than software collaboration.",
+                "sourceIds": [
+                  "blackrock-2025-10k",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The research and portfolio-model layer is feasible now; the regulated fund layer requires legal, compliance, custody, and distribution infrastructure.",
+                "sourceIds": [
+                  "blackrock-ishares-etfs",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This could pressure fees, voting transparency, and index governance, but iShares' liquidity and distribution advantages remain substantial.",
+                "sourceIds": [
+                  "blackrock-ishares-etfs",
+                  "blackrock-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "aladdin",
+        "name": "Aladdin",
+        "category": "Portfolio and risk management platform",
+        "homepageUrl": "https://www.blackrock.com/aladdin/",
+        "summary": "Aladdin is BlackRock's investment management technology platform for portfolio analytics, risk management, data integration, operations, and investment workflows.",
+        "whyItMatters": "Aladdin matters because it can become embedded in institutional decision-making, risk controls, operating workflows, and data pipelines, creating high switching costs.",
+        "replacementSketch": [
+          "A practical replacement path would combine open quantitative libraries, open data connectors, local research notebooks, auditable risk models, and modular workflow tools rather than attempting to clone Aladdin in one monolithic product.",
+          "Institutions could adopt open components first for model validation, independent risk checks, and portfolio analytics, then gradually federate data standards and operational workflows."
+        ],
+        "sourceIds": [
+          "blackrock-aladdin",
+          "blackrock-aladdin-risk",
+          "blackrock-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "quantlib",
+            "name": "QuantLib",
+            "kind": "open-source",
+            "homepageUrl": "https://www.quantlib.org/",
+            "repoUrl": "https://github.com/lballabio/QuantLib",
+            "summary": "QuantLib is a free, open-source quantitative finance library used for modeling, pricing, and risk-related financial calculations.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "QuantLib is explicitly described as a free and open-source quantitative finance library with public source code.",
+                "sourceIds": [
+                  "quantlib-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "QuantLib decentralizes model implementation and validation by letting teams inspect and run calculations independently, but it is a library rather than a federated operating network.",
+                "sourceIds": [
+                  "quantlib-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "QuantLib is mature enough for serious quantitative workflows, though institutions must still build data, governance, UI, controls, and operations around it.",
+                "sourceIds": [
+                  "quantlib-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open quantitative libraries can materially reduce licensing and model-validation costs when teams have the engineering capacity to integrate them.",
+                "sourceIds": [
+                  "quantlib-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "quantlib-github"
+            ]
+          },
+          {
+            "slug": "openbb-platform",
+            "name": "OpenBB Platform",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB provides open-source financial data integrations and research tooling that can support local analytics workflows.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenBB positions its data platform as open source and provides public repositories, while some connected data feeds may remain proprietary.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "openbb-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "OpenBB helps analysts run and extend research locally and reduces dependence on a single closed terminal, but it does not replace institutional order management or enterprise controls by itself.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OpenBB is suitable for research and integration work today, but replacing an enterprise platform like Aladdin would require additional workflow, risk, compliance, and audit layers.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source data tooling can reduce analytics integration costs, especially for smaller teams that can tolerate building their own controls.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openbb-odp",
+              "openbb-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-risk-model-registry",
+            "name": "Federated risk model registry",
+            "summary": "A federated risk model registry would let institutions publish, version, test, and independently reproduce portfolio-risk models across open libraries and standardized datasets, weakening dependence on a single proprietary analytics stack.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure changes if risk analytics become portable, reproducible, and benchmarked across many institutions instead of being locked inside one vendor's model and data environment.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated model publication, independent validation, reproducible calculations, and multi-party attestations rather than through Bitcoin payments.",
+            "coordinationMechanism": "Asset managers, academics, auditors, and vendors coordinate through signed model releases, shared test portfolios, standardized result fixtures, and compatibility profiles for common asset classes.",
+            "verificationOrTrustModel": "Model outputs are checked against public fixtures and independent implementations. False claims are constrained by reproducible tests, versioned inputs, signed releases, and third-party audit reports.",
+            "failureModes": [
+              "High-quality market data can remain expensive and legally restricted, limiting reproducibility.",
+              "Institutions may resist publishing enough model detail to make validation meaningful."
+            ],
+            "adoptionPath": [
+              "Begin as an open validation layer for QuantLib-style models and public test portfolios.",
+              "Expand into institutional procurement standards that require vendor models to pass shared reproducibility and stress-test suites."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "blackrock-aladdin",
+              "blackrock-aladdin-risk"
+            ],
+            "enablerSourceIds": [
+              "quantlib-github",
+              "openbb-odp"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "A federated registry directly reduces single-vendor control over model definitions and validation, although data licensing remains a centralizing force.",
+                "sourceIds": [
+                  "quantlib-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Open-source software communities already coordinate around versioned libraries and test suites; extending that pattern to financial model validation is credible but institutionally difficult.",
+                "sourceIds": [
+                  "quantlib-github",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software primitives exist, but robust data licensing, audit acceptance, and enterprise integration would take significant coordination.",
+                "sourceIds": [
+                  "blackrock-aladdin-risk",
+                  "quantlib-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "The concept pressures Aladdin's analytics moat by making model validation and portability more open, but it does not immediately replace Aladdin's integrated operations platform.",
+                "sourceIds": [
+                  "blackrock-aladdin",
+                  "blackrock-aladdin-risk"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "proof-of-audit-portfolio-operations",
+            "name": "Proof-of-audit portfolio operations",
+            "summary": "A proof-of-audit operations layer would create tamper-evident logs for portfolio data changes, model runs, approvals, and rebalance decisions so institutions can independently verify operational history across vendors.",
+            "angleIds": [
+              "proof-of-work",
+              "decentralized-coordination"
+            ],
+            "thesis": "If operational evidence becomes portable and independently verifiable, institutions can reduce reliance on one closed platform as the source of truth for portfolio controls.",
+            "bitcoinOrDecentralizationRole": "Proof-of-work can anchor periodic commitments to operational logs, making retroactive tampering expensive and visible without requiring every institution to share private portfolio data publicly.",
+            "coordinationMechanism": "Managers, custodians, auditors, and compliance teams coordinate by committing hashed event logs to a shared timestamping layer while keeping sensitive records private.",
+            "verificationOrTrustModel": "Auditors verify that private logs match public commitments and that workflow events occurred in the claimed order. Spoofing is constrained by signatures, role-based approvals, independent custody records, and proof-of-work timestamp anchoring.",
+            "failureModes": [
+              "Hash commitments prove ordering and integrity, not that the underlying decision was prudent or compliant.",
+              "Adoption requires integration with sensitive enterprise systems and careful privacy controls."
+            ],
+            "adoptionPath": [
+              "Start with audit trails for model runs, investment committee approvals, and rebalance files.",
+              "Extend to cross-vendor reconciliation between portfolio managers, custodians, and auditors."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "blackrock-aladdin",
+              "blackrock-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "quantlib-github",
+              "openbb-odp"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The design decentralizes audit evidence and reduces dependence on one vendor's internal logs, but most workflows still run inside regulated institutions.",
+                "sourceIds": [
+                  "blackrock-aladdin",
+                  "quantlib-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Shared audit commitments are technically plausible, but legal acceptance and enterprise process changes are uncertain.",
+                "sourceIds": [
+                  "blackrock-2025-10k",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Hashing, signatures, and timestamping are feasible, but privacy, integration, retention, and regulator acceptance create meaningful implementation risk.",
+                "sourceIds": [
+                  "blackrock-aladdin",
+                  "quantlib-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This could pressure closed audit and workflow control layers, but Aladdin's broader analytics, data, and operations footprint would remain valuable.",
+                "sourceIds": [
+                  "blackrock-aladdin",
+                  "blackrock-aladdin-risk"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "blackrock-2025-10k",
+      "title": "BlackRock FY2025 Form 10-K Annual Report",
+      "url": "https://www.otcmarkets.com/filing/html?guid=Zzx-kF6jaROUFoh&id=19185064",
+      "kind": "annual-report",
+      "publisher": "BlackRock / SEC EDGAR",
+      "note": "Primary annual filing for BlackRock business description, risk factors, financial performance, AUM context, and operating model.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "blackrock-about",
+      "title": "About BlackRock",
+      "url": "https://www.blackrock.com/corporate/about-us",
+      "kind": "investor-relations",
+      "publisher": "BlackRock",
+      "note": "Company overview and positioning for BlackRock's global asset-management business.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "blackrock-ishares-etfs",
+      "title": "iShares Exchange-Traded Funds",
+      "url": "https://www.blackrock.com/us/financial-professionals/investments/products/ishares-etfs.page",
+      "kind": "product-page",
+      "publisher": "BlackRock",
+      "note": "Product source for the iShares ETF platform and its role in investor access to ETF exposures.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "blackrock-aladdin",
+      "title": "Aladdin by BlackRock",
+      "url": "https://www.blackrock.com/aladdin/",
+      "kind": "product-page",
+      "publisher": "BlackRock",
+      "note": "Product source for Aladdin as BlackRock's portfolio management, data, and investment technology platform.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "blackrock-aladdin-risk",
+      "title": "Aladdin Risk",
+      "url": "https://www.blackrock.com/aladdin/benefits/risk-managers",
+      "kind": "product-page",
+      "publisher": "BlackRock",
+      "note": "Source for Aladdin risk analytics claims, including monitored risk factors, stress tests, and calculation scale.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "companiesmarketcap-blackrock",
+      "title": "BlackRock Market Capitalization",
+      "url": "https://companiesmarketcap.com/blackrock/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time market capitalization source for BLK in May 2026.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-blk",
+      "title": "BlackRock Stock Price and Overview",
+      "url": "https://stockanalysis.com/stocks/blk/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data reference for BLK share metrics and company profile context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-blk-financials",
+      "title": "BlackRock Financials",
+      "url": "https://stockanalysis.com/stocks/blk/financials/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Financial data reference for revenue and net income cross-checks.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-blk-ratios",
+      "title": "BlackRock Financial Ratios",
+      "url": "https://stockanalysis.com/stocks/blk/financials/ratios/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Point-in-time valuation ratio source for BLK trailing P/E.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openbb-odp",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source financial data and analytics tooling relevant to decentralized investment research workflows.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openbb-github",
+      "title": "OpenBB GitHub Organization",
+      "url": "https://github.com/openbb-finance",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Repository source for OpenBB open-source project activity and code availability.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "quantlib-github",
+      "title": "QuantLib GitHub Repository",
+      "url": "https://github.com/lballabio/QuantLib",
+      "kind": "open-source-project",
+      "publisher": "QuantLib",
+      "note": "Open-source quantitative finance library relevant to portfolio analytics and model-validation alternatives.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "portfolio-performance-github",
+      "title": "Portfolio Performance GitHub Repository",
+      "url": "https://github.com/portfolio-performance/portfolio",
+      "kind": "open-source-project",
+      "publisher": "Portfolio Performance",
+      "note": "Open-source portfolio tracking and performance-analysis project relevant to investor-owned portfolio tooling.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new BlackRock registry bundle covering iShares and Aladdin, with source-backed company metrics, open-source alternatives, and disruption concepts focused on cooperative index governance, federated risk-model validation, and proof-of-audit portfolio operations."
+}
+tokens used
+33,022

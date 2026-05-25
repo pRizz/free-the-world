@@ -1,0 +1,664 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "western-digital",
+    "name": "Western Digital",
+    "ticker": "WDC",
+    "rankApprox": 75,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top75"
+    ],
+    "sectorId": "information-technology",
+    "industryId": "technology-hardware",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/western-digital/marketcap/",
+    "description": "Western Digital develops and sells hard disk drive storage devices and data-center storage platforms after separating its flash business into SanDisk.",
+    "overview": [
+      {
+        "title": "Business focus",
+        "paragraphs": [
+          "Western Digital is now primarily an HDD company serving cloud, enterprise, client, and consumer storage markets. Its 2025 annual report describes the February 2025 separation of the Flash business and a narrower focus on hard disk drive products and storage platforms.",
+          "The company's portfolio includes high-capacity Ultrastar data-center drives and WD_BLACK performance desktop hard drives. The mix has shifted heavily toward cloud and enterprise customers, making the company more exposed to hyperscale infrastructure cycles than to consumer retail demand."
+        ]
+      },
+      {
+        "title": "Registry interpretation",
+        "paragraphs": [
+          "Western Digital's moat rests on manufacturing know-how, reliability engineering, supply relationships, brand trust, and qualification inside large storage fleets. Those advantages are meaningful because enterprise storage buyers care about predictable failure rates, long qualification cycles, and continuity of supply.",
+          "The decentralization angle is uneven. HDD manufacturing itself remains capital intensive and specialized, but open software-defined storage, open reliability telemetry, repair and reuse loops, and commodity-server architectures can reduce downstream lock-in around how drives are deployed, monitored, and replaced."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Western Digital has a defensible but cyclical hardware moat. High-capacity HDDs require specialized manufacturing, precision mechanics, firmware, media technology, and customer qualification, while cloud customers reward suppliers that can deliver reliable drives at scale.",
+      "The moat is not absolute. HDDs are still standardized components in many deployments, and customers can often multi-source between major suppliers after qualification. The post-SanDisk company also has less diversification than the pre-separation Western Digital."
+    ],
+    "decentralizationNarrative": [
+      "The core drive factory is not very decentralizable today: clean manufacturing, precision assembly, and media production are not credible neighborhood-scale activities. That keeps the hardware layer concentrated.",
+      "The surrounding storage stack is much more open to decentralization. OpenZFS, TrueNAS, Ceph, SMART tooling, and public reliability datasets let smaller operators assemble, audit, and manage storage pools without accepting a single-vendor appliance model."
+    ],
+    "sourceIds": [
+      "wdc-2025-10k",
+      "wdc-products",
+      "companiesmarketcap-wdc",
+      "wdc-pe-ratio"
+    ],
+    "technologyWaveIds": [
+      "microfactories",
+      "printed-electronics"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75; reviewed as a post-separation HDD-focused Western Digital profile.",
+    "inputMetrics": {
+      "moat": {
+        "value": 74,
+        "rationale": "High-capacity HDD manufacturing, firmware, reliability history, hyperscale qualification, and scale purchasing create a strong but not monopoly-like moat.",
+        "sourceIds": [
+          "wdc-2025-10k",
+          "wdc-ultrastar-hc690"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "decentralizability": {
+        "value": 38,
+        "rationale": "Drive manufacturing remains centralized and capital intensive, but deployment, monitoring, storage orchestration, and reuse can be meaningfully decentralized with open storage software and telemetry.",
+        "sourceIds": [
+          "openzfs",
+          "ceph",
+          "smartmontools",
+          "backblaze-drive-stats"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "profitability": {
+        "value": 70,
+        "rationale": "The fiscal 2025 annual report showed a major recovery in continuing operations, with positive net income and improved gross profit after prior-year losses.",
+        "sourceIds": [
+          "wdc-2025-10k"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "peRatio": {
+        "value": 25.4,
+        "rationale": "CompaniesMarketCap reported Western Digital's trailing P/E ratio at about 25.4 in May 2026.",
+        "sourceIds": [
+          "wdc-pe-ratio"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "marketCap": {
+        "value": 166920000000,
+        "rationale": "CompaniesMarketCap listed Western Digital at about $166.92 billion market capitalization in May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-wdc"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-25"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "ultrastar",
+      "name": "Ultrastar",
+      "category": "Data-center hard disk drives",
+      "homepageUrl": "https://www.westerndigital.com/products/internal-drives/data-center-drives",
+      "summary": "Ultrastar is Western Digital's enterprise and cloud data-center HDD family for high-capacity storage deployments.",
+      "whyItMatters": "Large data-center fleets depend on dense, reliable, qualified storage devices, so Ultrastar is part of the physical substrate behind cloud storage, AI training data, backups, and archival infrastructure.",
+      "replacementSketch": [
+        "There is no near-term open-source replacement for a high-capacity helium-filled HDD manufactured at scale. A practical substitute is an open storage stack that treats drives as commodity inputs and reduces lock-in above the hardware layer.",
+        "OpenZFS, TrueNAS, Ceph, SMART tooling, and public reliability data can let operators build auditable storage pools, compare drive behavior, and shift procurement across qualified suppliers instead of buying a closed appliance stack."
+      ],
+      "sourceIds": [
+        "wdc-ultrastar-hc690",
+        "wdc-2025-10k"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "printed-electronics"
+      ],
+      "alternatives": [
+        {
+          "slug": "ceph",
+          "name": "Ceph",
+          "kind": "open-source",
+          "homepageUrl": "https://ceph.io/en/",
+          "repoUrl": "https://github.com/ceph/ceph",
+          "summary": "Ceph is an open-source distributed storage system providing object, block, and file storage from clusters built on commodity hardware.",
+          "metrics": {
+            "openness": {
+              "value": 94,
+              "rationale": "Ceph is an established open-source project with public source code and broad community and vendor participation.",
+              "sourceIds": [
+                "ceph"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 79,
+              "rationale": "Ceph can distribute storage across many nodes and operators, though real production clusters still require operational expertise.",
+              "sourceIds": [
+                "ceph"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 82,
+              "rationale": "Ceph is widely used for production object, block, and file storage, but it is not a drop-in replacement for the physical HDD itself.",
+              "sourceIds": [
+                "ceph"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 75,
+              "rationale": "Running on commodity hardware can reduce appliance lock-in and procurement concentration, though labor and reliability engineering costs remain significant.",
+              "sourceIds": [
+                "ceph"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "ceph"
+          ]
+        },
+        {
+          "slug": "openzfs",
+          "name": "OpenZFS",
+          "kind": "open-source",
+          "homepageUrl": "https://openzfs.org/",
+          "repoUrl": "https://github.com/openzfs/zfs",
+          "summary": "OpenZFS is an open-source storage platform combining file-system and volume-management capabilities for reliable storage pools.",
+          "metrics": {
+            "openness": {
+              "value": 93,
+              "rationale": "OpenZFS publishes source code and development activity openly.",
+              "sourceIds": [
+                "openzfs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 72,
+              "rationale": "OpenZFS helps households, labs, and small operators run robust local storage without proprietary storage appliances.",
+              "sourceIds": [
+                "openzfs",
+                "truenas"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 85,
+              "rationale": "OpenZFS is mature and used through distributions such as TrueNAS, though it still depends on commodity drives and operator skill.",
+              "sourceIds": [
+                "openzfs",
+                "truenas"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 78,
+              "rationale": "OpenZFS can extend useful hardware life and reduce dependence on turnkey proprietary arrays.",
+              "sourceIds": [
+                "openzfs",
+                "truenas"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "openzfs",
+            "truenas"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-drive-health-exchange",
+          "name": "Federated Drive Health Exchange",
+          "summary": "A federated reliability network could let independent operators publish signed, privacy-preserving drive-health and failure observations, turning fleet experience into shared purchasing intelligence rather than a private advantage held by hyperscalers and vendors.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "If credible drive reliability data becomes a shared commons, smaller storage operators can qualify hardware more intelligently and reduce the informational moat held by large buyers and incumbent manufacturers.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated publication and independent verification of drive-health attestations, not through Bitcoin payments. Operators keep local control while contributing comparable reliability signals.",
+          "coordinationMechanism": "Storage operators run compatible agents that publish signed anonymized telemetry, aggregate by model and firmware, and consume reputation-weighted reports when buying, retiring, or refurbishing drives.",
+          "verificationOrTrustModel": "Reports are constrained by signed device serial observations, SMART logs, fleet-size proofs, delayed publication, duplicate detection, and cross-operator anomaly checks. The model cannot fully eliminate selective reporting, but it can make large-scale fake reliability claims expensive and visible.",
+          "failureModes": [
+            "Vendors or resellers could try to poison datasets with selective or synthetic reports.",
+            "Operators may be unwilling to share enough telemetry because storage fleet composition can reveal business-sensitive information.",
+            "SMART attributes are not perfectly standardized across drive families and can be misinterpreted."
+          ],
+          "adoptionPath": [
+            "Start as an opt-in extension for Ceph, TrueNAS, and smartmontools deployments.",
+            "Publish model-level reliability summaries with strict privacy thresholds and clear uncertainty ranges.",
+            "Let refurbishers and smaller cloud operators use the data for procurement and warranty pricing."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "wdc-2025-10k",
+            "backblaze-drive-stats"
+          ],
+          "enablerSourceIds": [
+            "smartmontools",
+            "backblaze-drive-stats",
+            "ceph"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 78,
+              "rationale": "The concept shifts reliability intelligence from private fleets to a federation of independent operators.",
+              "sourceIds": [
+                "backblaze-drive-stats",
+                "smartmontools"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 64,
+              "rationale": "Open telemetry tools and public drive datasets make the coordination model plausible, but incentives for sharing remain difficult.",
+              "sourceIds": [
+                "smartmontools",
+                "backblaze-drive-stats"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 68,
+              "rationale": "The software layer is feasible using existing monitoring and storage projects, while privacy, standardization, and anti-gaming design are the hard parts.",
+              "sourceIds": [
+                "smartmontools",
+                "ceph",
+                "openzfs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 48,
+              "rationale": "Better shared reliability data pressures procurement and support margins, but it does not replace the need for advanced HDD manufacturing.",
+              "sourceIds": [
+                "wdc-ultrastar-hc690",
+                "backblaze-drive-stats"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        },
+        {
+          "slug": "open-storage-pods",
+          "name": "Open Storage Pods",
+          "summary": "Open hardware storage enclosures combined with Ceph or OpenZFS could let regional operators assemble dense storage capacity from commodity servers and qualified drives, weakening closed-appliance lock-in even when HDD manufacturing remains concentrated.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-manufacturing",
+            "home-microfactory"
+          ],
+          "thesis": "The disruption is not a locally fabricated HDD; it is local assembly, repair, and operation of storage infrastructure around standardized drives.",
+          "bitcoinOrDecentralizationRole": "Decentralized manufacturing matters because enclosures, sleds, cabling plans, monitoring fixtures, and operating recipes can be shared and improved by many workshops and operators.",
+          "coordinationMechanism": "Operators publish bills of materials, enclosure designs, firmware settings, failure reports, and deployment recipes; local fabricators produce non-critical mechanical parts while storage operators pool purchasing and maintenance knowledge.",
+          "verificationOrTrustModel": "Trust comes from reproducible BOMs, public burn-in results, serial-level asset tracking, open monitoring dashboards, and peer-reviewed deployment reports. The system remains vulnerable if local assemblers cut corners on power, cooling, or vibration control.",
+          "failureModes": [
+            "Poor mechanical design can destroy reliability advantages through heat, vibration, or power faults.",
+            "Commodity assembly may not satisfy enterprise procurement, warranty, or compliance requirements.",
+            "Drive supply can remain concentrated even if the enclosure and software stack are open."
+          ],
+          "adoptionPath": [
+            "Begin with community labs, schools, small clouds, and archival projects that already tolerate hands-on infrastructure.",
+            "Standardize validated pod designs for specific drive classes and publish burn-in data.",
+            "Form regional cooperative maintenance networks for spares, testing, and refurbishment."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "wdc-ultrastar-hc690",
+            "wdc-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "ceph",
+            "openzfs",
+            "truenas",
+            "freecad"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "Local assembly and open operating recipes decentralize the storage appliance layer even though the HDD component remains industrial.",
+              "sourceIds": [
+                "ceph",
+                "openzfs",
+                "freecad"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 61,
+              "rationale": "Open CAD and open storage stacks support shared designs, but operational validation and warranty handling are coordination bottlenecks.",
+              "sourceIds": [
+                "freecad",
+                "ceph",
+                "truenas"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 58,
+              "rationale": "Small and regional deployments are feasible; hyperscale-grade density and reliability are much harder.",
+              "sourceIds": [
+                "ceph",
+                "openzfs",
+                "wdc-ultrastar-hc690"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 43,
+              "rationale": "Open pods pressure proprietary storage systems more than Western Digital's drive manufacturing business, but they can reduce downstream lock-in around storage platforms.",
+              "sourceIds": [
+                "wdc-2025-10k",
+                "ceph",
+                "truenas"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wd-black-desktop-hdd",
+      "name": "WD_BLACK Desktop HDD",
+      "category": "Performance desktop hard drive",
+      "homepageUrl": "https://www.westerndigital.com/products/internal-drives/wd-black-desktop-sata-hdd",
+      "summary": "WD_BLACK Desktop HDDs are performance-oriented 3.5-inch SATA hard drives aimed at gamers, creators, and desktop users who need local capacity.",
+      "whyItMatters": "The product represents the consumer and prosumer face of Western Digital's HDD business, where brand trust, warranty, perceived performance, and retail availability shape purchasing decisions.",
+      "replacementSketch": [
+        "For many users, the practical replacement is not another branded drive but a more open local-storage setup: commodity disks, OpenZFS or TrueNAS, transparent backup policies, and replaceable parts.",
+        "For creators and households, shared repair knowledge, refurbished drives with verified health data, and open NAS tooling can lower dependence on premium retail branding while preserving local data ownership."
+      ],
+      "sourceIds": [
+        "wd-black-hdd"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "truenas-community-edition",
+          "name": "TrueNAS Community Edition",
+          "kind": "open-source",
+          "homepageUrl": "https://www.truenas.com/truenas-core/",
+          "summary": "TrueNAS Community Edition is an open storage operating system built around OpenZFS for file, block, object, app, and VM-oriented local storage.",
+          "metrics": {
+            "openness": {
+              "value": 82,
+              "rationale": "TrueNAS Community Edition is presented as open source and built on OpenZFS, though some community concerns around build transparency lower the score.",
+              "sourceIds": [
+                "truenas",
+                "openzfs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 76,
+              "rationale": "It lets households and small operators run local storage on their own hardware instead of relying only on cloud storage or closed appliances.",
+              "sourceIds": [
+                "truenas"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 84,
+              "rationale": "TrueNAS is mature and widely deployed for NAS use cases, though it is a storage-system alternative rather than a direct disk manufacturing substitute.",
+              "sourceIds": [
+                "truenas"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 79,
+              "rationale": "Running on commodity x86 hardware can reduce appliance and subscription costs for capable users.",
+              "sourceIds": [
+                "truenas"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "truenas",
+            "openzfs"
+          ]
+        },
+        {
+          "slug": "smartmontools",
+          "name": "smartmontools",
+          "kind": "open-source",
+          "homepageUrl": "https://www.smartmontools.org/",
+          "repoUrl": "https://github.com/smartmontools/smartmontools",
+          "summary": "smartmontools provides open-source tools for monitoring and controlling storage devices through SMART telemetry.",
+          "metrics": {
+            "openness": {
+              "value": 92,
+              "rationale": "smartmontools is an open-source project with public code and long-running support for SMART device monitoring.",
+              "sourceIds": [
+                "smartmontools"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 69,
+              "rationale": "It lets individual users and small operators inspect drive health directly instead of relying only on vendor utilities.",
+              "sourceIds": [
+                "smartmontools"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 88,
+              "rationale": "The tool is mature and supports many ATA, SATA, SCSI, SAS, and NVMe devices.",
+              "sourceIds": [
+                "smartmontools"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 70,
+              "rationale": "Better drive-health visibility can extend hardware life and support secondhand purchasing, though it does not replace the physical drive.",
+              "sourceIds": [
+                "smartmontools"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "smartmontools"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "verified-refurbished-drive-coops",
+          "name": "Verified Refurbished Drive Cooperatives",
+          "summary": "Local repair and resale cooperatives could refurbish drives, publish health attestations, and match buyers with lower-cost storage for non-critical workloads, reducing the premium attached to new branded retail drives.",
+          "angleIds": [
+            "cooperative-production",
+            "recycling-and-reuse",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "The market structure changes if trusted refurbishing and health verification make used drives a more credible default for secondary storage, backup rotation, labs, schools, and community archives.",
+          "bitcoinOrDecentralizationRole": "The central mechanism is cooperative reuse and peer-to-peer market coordination. Bitcoin or Lightning could support escrow or small payments, but they are not required for the concept to work.",
+          "coordinationMechanism": "Refurbishers test drives with open tooling, publish signed health reports, escrow payments until delivery and burn-in windows pass, and maintain shared reputation for sellers and testing labs.",
+          "verificationOrTrustModel": "Drive serials, SMART logs, surface tests, power-on hours, bad-sector scans, buyer challenge windows, and random audits constrain fake listings. The weakest point is that a drive can still fail after passing tests.",
+          "failureModes": [
+            "Refurbished HDDs remain unsuitable for users who need manufacturer-backed reliability guarantees.",
+            "Sellers can misrepresent history unless serials, logs, and delivery records are consistently checked.",
+            "Shipping damage and poor packaging can erase refurbishment gains."
+          ],
+          "adoptionPath": [
+            "Start with local makerspaces, schools, archival groups, and home-lab communities.",
+            "Standardize testing reports generated by smartmontools and storage burn-in workflows.",
+            "Add cooperative warranty pools for lower-criticality workloads."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "wd-black-hdd",
+            "wdc-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "smartmontools",
+            "backblaze-drive-stats",
+            "openzfs"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 80,
+              "rationale": "The concept moves resale, verification, and maintenance toward local cooperatives and peer marketplaces.",
+              "sourceIds": [
+                "smartmontools",
+                "backblaze-drive-stats"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 66,
+              "rationale": "Open health tooling and public reliability data support the model, but trust and warranty coordination are hard.",
+              "sourceIds": [
+                "smartmontools",
+                "backblaze-drive-stats"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 72,
+              "rationale": "Testing, resale, and cooperative warranty pools are practical at small scale with existing tools.",
+              "sourceIds": [
+                "smartmontools",
+                "openzfs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 45,
+              "rationale": "The pressure is strongest in budget and secondary-storage segments, not mission-critical enterprise or premium new-drive demand.",
+              "sourceIds": [
+                "wd-black-hdd",
+                "wdc-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        },
+        {
+          "slug": "personal-open-nas-kits",
+          "name": "Personal Open NAS Kits",
+          "summary": "Open NAS kits could combine commodity drives, published enclosure designs, OpenZFS-based storage, and simple repair procedures so households and creators treat local storage as a maintainable system instead of a branded black box.",
+          "angleIds": [
+            "open-hardware",
+            "home-microfactory",
+            "decentralized-manufacturing"
+          ],
+          "thesis": "Western Digital's consumer brand moat weakens when buyers focus less on a single premium drive label and more on open, redundant, repairable storage systems they can assemble and maintain.",
+          "bitcoinOrDecentralizationRole": "Decentralized manufacturing matters through shared enclosure designs, replaceable parts, and local assembly rather than through a payment rail.",
+          "coordinationMechanism": "Designers publish parametric enclosures and BOMs; users and small shops adapt them for available drives, controllers, fans, and power supplies; communities share validated thermal and noise measurements.",
+          "verificationOrTrustModel": "Trust comes from reproducible CAD files, public BOMs, thermal testing, storage scrub logs, and peer-reviewed build reports. There is no cryptographic guarantee that a given local build was assembled correctly.",
+          "failureModes": [
+            "Bad thermal or vibration design can make open kits less reliable than commercial products.",
+            "Most consumers still prefer turnkey storage over assembly and maintenance.",
+            "Open kits cannot eliminate dependence on industrial drive suppliers."
+          ],
+          "adoptionPath": [
+            "Target home-lab users, creators, and schools that already buy multiple drives.",
+            "Publish validated small NAS recipes with OpenZFS, smartmontools, and clear replacement workflows.",
+            "Let local repair shops offer assembly and maintenance as a service."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "wd-black-hdd"
+          ],
+          "enablerSourceIds": [
+            "truenas",
+            "openzfs",
+            "smartmontools",
+            "freecad"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 76,
+              "rationale": "The kit model decentralizes assembly, maintenance, and design iteration around commodity components.",
+              "sourceIds": [
+                "freecad",
+                "openzfs",
+                "truenas"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 55,
+              "rationale": "Open CAD and NAS software are available, but consumer coordination around validated hardware recipes is still immature.",
+              "sourceIds": [
+                "freecad",
+                "truenas"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 62,
+              "rationale": "Small NAS kits are technically feasible today, though polished consumer experience and support are the limiting factors.",
+              "sourceIds": [
+                "truenas",
+                "openzfs",
+                "smartmontools"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 38,
+              "rationale": "This would mostly pressure branded retail storage accessories and premium positioning, not Western Digital's core enterprise HDD supply.",
+              "sourceIds": [
+                "wd-black-hdd",
+                "wdc-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

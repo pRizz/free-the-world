@@ -1,0 +1,728 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6029-4d09-7ec0-84b7-dd1d4b51058f
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: att
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "att",
+  "name": "AT&T",
+  "ticker": "T",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "communication-services",
+  "industryId": "wireless-telecom",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/at-t/marketcap/",
+  "description": "AT&T provides wireless, fiber broadband, and business communications services in the United States.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "AT&T Wireless",
+    "AT&T Fiber"
+  ],
+  "seedSourceUrls": [
+    "https://investors.att.com/",
+    "https://www.att.com/",
+    "https://companiesmarketcap.com/at-t/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-25T17:23:01.673655Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:01.673669Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:01.674473Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:01.674483Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:01.675190Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:01.675196Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:01.675866Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:01.675872Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:01.676523Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:01.676529Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:01.677805Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:01.677811Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:02.573781Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:02.573793Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:02.574123Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:02.574127Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:02.574457Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:02.574463Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:02.574806Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:02.574811Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:02.575153Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:02.575157Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-25T17:23:02.575938Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-25T17:23:02.575941Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify AT&T’s current investor/product facts and a small set of sourceable open alternatives, then return only the JSON object.
+web search:
+web search: AT&T 2024 annual report wireless fiber revenue subscribers ...
+web search:
+web search: AT&T wireless official plans page 5G network ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"att","name":"AT&T","ticker":"T","rankApprox":70,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top75"],"sectorId":"communication-services","industryId":"wireless-telecom","companiesMarketCapUrl":"https://companiesmarketcap.com/att/marketcap/","description":"AT&T provides wireless, fiber broadband, and business communications services in the United States.","overview":[{"title":"Business Profile","paragraphs":["AT&T is a U.S. telecommunications carrier centered on mobility, consumer broadband, and business connectivity. Its current strategy emphasizes 5G wireless service, fiber broadband expansion, and migration away from legacy copper networks.","The company remains infrastructure-heavy: spectrum licenses, fiber routes, cell sites, backhaul, customer acquisition, billing, and regulatory compliance all reinforce the scale advantages of a nationwide carrier."]},{"title":"Registry Fit","paragraphs":["AT&T is a useful registry entry because its strongest products are access networks rather than purely digital applications. The credible alternatives are therefore not simple app replacements; they are community networks, open routing stacks, open telecom cores, and local infrastructure models that reduce dependence on vertically integrated carriers."]}],"moatNarrative":["AT&T's moat is high because wireless and broadband access networks require licensed spectrum, rights of way, fiber construction, tower and small-cell deployment, backhaul, customer support, and compliance operations at national scale. Its annual report highlights wireless and broadband as core growth businesses and reports large free cash flow, which supports continued network investment.","The moat is not absolute. Local fiber overbuilders, fixed wireless, municipal broadband, open router firmware, and community mesh networks can attack specific neighborhoods or customer segments. But replacing AT&T's nationwide mobility footprint remains far harder than replacing a software product."],"decentralizationNarrative":["AT&T's services are only moderately decentralizable in the near term. Last-mile broadband can be partially decentralized through community-owned fiber, mesh backhaul, neutral-host infrastructure, and user-controlled routers. Mobile service is harder because spectrum licensing, roaming, emergency calling, device certification, and radio planning create centralized coordination requirements.","The strongest decentralization path is layered rather than total: open customer-premises equipment, open-source routing software, cooperative local networks, and open mobile-core deployments can make parts of the stack contestable even when licensed spectrum and wide-area mobility remain dominated by large carriers."],"sourceIds":["att-2024-annual-report","att-wireless-plans","att-fiber-product","companiesmarketcap-att-2026"],"technologyWaveIds":["bitcoin-native-coordination"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75; market cap cross-checked against public market-data pages available on May 25, 2026.","inputMetrics":{"moat":{"value":86,"rationale":"Nationwide wireless and fiber networks require spectrum, capital expenditure, rights of way, operations, billing, support, and regulatory execution; AT&T's 2024 annual report frames wireless and broadband as core growth businesses supported by large free cash flow.","sourceIds":["att-2024-annual-report"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizability":{"value":39,"rationale":"Broadband access can be partially decentralized through community networks and open routing, but nationwide mobile service depends on licensed spectrum, roaming, device certification, emergency-service obligations, and dense physical infrastructure.","sourceIds":["att-2024-annual-report","nyc-mesh-home","openwrt-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"profitability":{"value":68,"rationale":"AT&T reports material free cash flow and ongoing wireless and broadband revenue momentum, but the business remains capital-intensive and debt-sensitive.","sourceIds":["att-2024-annual-report"],"confidence":"high","lastReviewedOn":"2026-05-25"},"peRatio":{"value":11.5,"rationale":"Approximate valuation multiple inferred from public market-data levels around May 2026; use as a directional registry input rather than an audited financial figure.","sourceIds":["stockanalysis-att-marketcap"],"confidence":"speculative","lastReviewedOn":"2026-05-25"},"marketCap":{"value":176070000000,"rationale":"CompaniesMarketCap reported AT&T market capitalization of about $176.07 billion in May 2026; StockAnalysis showed a similar level near $175.52 billion as of May 22, 2026.","sourceIds":["companiesmarketcap-att-2026","stockanalysis-att-marketcap"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}},"products":[{"slug":"att-wireless","name":"AT&T Wireless","category":"Mobile network service","homepageUrl":"https://www.att.com/plans/wireless/","summary":"AT&T Wireless provides mobile voice, messaging, and data plans on AT&T's cellular network, including 5G service tiers.","whyItMatters":"Mobile connectivity is a core dependency for identity, payments, work, navigation, emergency communication, and everyday internet access; control over the access network gives carriers leverage over devices, pricing, prioritization, and customer data flows.","replacementSketch":["A realistic replacement path begins with local or regional connectivity layers rather than a full national carrier clone. Open mobile-core software, shared or lightly licensed spectrum, neutral-host radios, and community operators can cover campuses, rural towns, events, and underserved neighborhoods.","Over time, interoperable local networks could federate through roaming agreements, open settlement rails, and transparent quality metrics. That would pressure incumbent carriers most in places where users value local accountability, resilience, and lower access costs more than nationwide bundle convenience."],"sourceIds":["att-wireless-plans","att-2024-annual-report"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"open5gs","name":"Open5GS","kind":"open-source","homepageUrl":"https://open5gs.org/","repoUrl":"https://github.com/open5gs/open5gs","summary":"Open5GS is an open-source implementation of 4G and 5G mobile core network functions used for private, research, and experimental cellular deployments.","metrics":{"openness":{"value":90,"rationale":"The project publishes source code and documentation for mobile-core components under open-source terms.","sourceIds":["open5gs-project"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":62,"rationale":"Open5GS can decentralize mobile-core ownership for private or local deployments, but radios, spectrum, SIM provisioning, and roaming still require substantial coordination.","sourceIds":["open5gs-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"readiness":{"value":54,"rationale":"Useful for labs, private networks, and technically capable operators, but not a turnkey consumer substitute for nationwide carrier service.","sourceIds":["open5gs-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":58,"rationale":"Open software can reduce core-network licensing costs for small operators, though radio hardware, spectrum access, installation, and operations remain material costs.","sourceIds":["open5gs-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"}},"sourceIds":["open5gs-project"]}],"disruptionConcepts":[{"slug":"federated-local-mobile-networks","name":"Federated Local Mobile Networks","summary":"A federation of local cellular operators could use open mobile-core software, shared or private spectrum where available, neutral-host radios, and transparent roaming settlement to provide credible mobile coverage in bounded areas before attempting wider substitution.","angleIds":["federation","decentralized-coordination"],"thesis":"The market structure shifts from a few nationwide vertically integrated carriers toward many local access operators that interconnect through open roaming, quality reporting, and settlement rules.","bitcoinOrDecentralizationRole":"Decentralization matters through federation: each local operator can own and operate its access layer while participating in shared identity, roaming, and settlement protocols. Bitcoin or Lightning could be useful for small roaming settlements, but they are not required for the core feasibility of local mobile access.","coordinationMechanism":"Local operators publish coverage, pricing, supported bands, and service-level data into a shared registry; users or MVNO-like coordinators choose networks dynamically; roaming settlement occurs through standardized usage records and bilateral or protocol-mediated payments.","verificationOrTrustModel":"SIM or eSIM credentials, signed network usage records, radio-location evidence, and periodic third-party drive or device tests constrain fake coverage claims. Settlement disputes can be limited by capped balances, reproducible usage logs, and reputation loss for operators that spoof coverage or degrade service.","failureModes":["Licensed spectrum access and emergency-calling obligations may keep most consumer deployments dependent on incumbent carriers or regulators.","Device compatibility, roaming trust, and support expectations could prevent local networks from feeling seamless to ordinary users."],"adoptionPath":["Start with campuses, farms, industrial sites, events, and underserved rural communities where private cellular or neutral-host deployments already have a clear operational buyer.","Add federation, roaming, and transparent quality metrics between local networks before attempting consumer-facing mobile substitution."],"confidence":"medium","problemSourceIds":["att-2024-annual-report","att-wireless-plans"],"enablerSourceIds":["open5gs-project"],"metrics":{"decentralizationFit":{"value":70,"rationale":"The concept moves ownership and operation of mobile access from one national carrier to many local operators, while preserving coordination through federation.","sourceIds":["open5gs-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":52,"rationale":"Roaming, authentication, and billing are well-understood telecom problems, but open multi-operator governance remains difficult outside controlled deployments.","sourceIds":["open5gs-project","att-2024-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":48,"rationale":"Open mobile-core software exists, but spectrum access, radio planning, device support, emergency services, and customer operations make broad consumer deployment challenging.","sourceIds":["open5gs-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":41,"rationale":"The concept can pressure AT&T in campuses, private networks, and underserved areas, but it is unlikely to displace nationwide mobility in the near term.","sourceIds":["att-2024-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}}]},{"slug":"att-fiber","name":"AT&T Fiber","category":"Fiber broadband","homepageUrl":"https://www.att.com/internet/fiber/","summary":"AT&T Fiber provides residential and business fiber internet service over AT&T's wireline broadband network.","whyItMatters":"Fixed broadband controls the household's primary internet pipe, customer-premises equipment, installation relationship, and often bundled security, Wi-Fi, and support services.","replacementSketch":["The most credible alternative is local access infrastructure: community fiber, cooperative broadband, neighborhood mesh backhaul, and open customer-premises routing. These models do not need to recreate AT&T's entire national footprint to matter; they can win block by block where local density and trust make deployment economics work.","Open firmware and user-owned routers also weaken lock-in at the edge. Even when AT&T remains the access provider, customers can shift more control of routing, firewalling, DNS, VPNs, and local services away from carrier-managed equipment."],"sourceIds":["att-fiber-product","att-2024-annual-report"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"nyc-mesh","name":"NYC Mesh","kind":"cooperative","homepageUrl":"https://www.nycmesh.net/","summary":"NYC Mesh is a community network that connects neighbors through shared local infrastructure and emphasizes neutral, privacy-respecting internet access.","metrics":{"openness":{"value":72,"rationale":"NYC Mesh publishes community participation and network principles, though the replacement value is organizational and infrastructural rather than a single open-source software artifact.","sourceIds":["nyc-mesh-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":84,"rationale":"The model decentralizes access-network deployment and stewardship through neighborhood participation and volunteer-supported infrastructure.","sourceIds":["nyc-mesh-home"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":60,"rationale":"The model is operational in a specific geography but depends on local density, rooftops, volunteers, backhaul, and installation capacity.","sourceIds":["nyc-mesh-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":65,"rationale":"Community infrastructure can lower retail access costs where backhaul and installation are favorable, but economics vary heavily by building access and local participation.","sourceIds":["nyc-mesh-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"}},"sourceIds":["nyc-mesh-home"]},{"slug":"openwrt","name":"OpenWrt","kind":"open-source","homepageUrl":"https://openwrt.org/","repoUrl":"https://git.openwrt.org/project/","summary":"OpenWrt is a Linux-based open-source operating system for routers and embedded networking devices that gives users more control over local networking functions.","metrics":{"openness":{"value":95,"rationale":"OpenWrt is a long-running free and open-source router operating system with public source repositories and documentation.","sourceIds":["openwrt-project","openwrt-git"],"confidence":"high","lastReviewedOn":"2026-05-25"},"decentralizationFit":{"value":63,"rationale":"OpenWrt decentralizes control at the customer-premises and small-network edge, though it does not replace upstream fiber construction or ISP backhaul by itself.","sourceIds":["openwrt-project"],"confidence":"high","lastReviewedOn":"2026-05-25"},"readiness":{"value":78,"rationale":"OpenWrt is mature and widely used by technical users, but device support, installation complexity, and ISP gateway restrictions can limit mainstream adoption.","sourceIds":["openwrt-project"],"confidence":"high","lastReviewedOn":"2026-05-25"},"costLeverage":{"value":70,"rationale":"Reusing supported hardware and extending router life can reduce equipment lock-in and subscription add-ons, though it does not eliminate broadband service fees.","sourceIds":["openwrt-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"}},"sourceIds":["openwrt-project","openwrt-git"]}],"disruptionConcepts":[{"slug":"community-fiber-and-mesh-coops","name":"Community Fiber and Mesh Cooperatives","summary":"Neighborhood-owned broadband networks can combine local fiber drops, rooftop wireless links, shared backhaul, and transparent governance to provide internet access without depending entirely on a vertically integrated incumbent ISP.","angleIds":["cooperative-production","decentralized-coordination"],"thesis":"Broadband competition moves from national ISP bundles toward locally governed access infrastructure that can prioritize affordability, neutrality, repairability, and resilience.","bitcoinOrDecentralizationRole":"The central role is cooperative and decentralized governance, not Bitcoin. Local participants coordinate capital, rooftops, installation labor, maintenance, and usage policies without a single national carrier controlling the customer relationship.","coordinationMechanism":"Residents, landlords, volunteers, and local operators coordinate installation queues, rooftop sites, backhaul purchases, dues, and maintenance through a community organization or cooperative operating agreement.","verificationOrTrustModel":"Service quality can be checked through public network-status dashboards, member-reported outages, installation records, and transparent accounting for dues and backhaul costs. Abuse is constrained by local accountability, published policies, and the ability for members to inspect governance and performance claims.","failureModes":["Local density, permitting, rooftop access, backhaul pricing, and volunteer capacity can make deployment uneven or fragile.","Community networks may struggle to provide 24/7 support expectations, professional installation speed, and universal coverage across low-density areas."],"adoptionPath":["Begin in apartment clusters, dense neighborhoods, campuses, and underserved areas where shared backhaul can serve many users from a few access points.","Use successful local deployments to negotiate better backhaul, train installers, and replicate governance playbooks in adjacent neighborhoods."],"confidence":"medium","problemSourceIds":["att-fiber-product","att-2024-annual-report"],"enablerSourceIds":["nyc-mesh-home","openwrt-project"],"metrics":{"decentralizationFit":{"value":82,"rationale":"The concept directly moves access infrastructure ownership and operation toward local participants rather than a national ISP.","sourceIds":["nyc-mesh-home"],"confidence":"high","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":68,"rationale":"Operational community networks demonstrate that local coordination is possible, but repeatability depends on geography, volunteers, backhaul, and governance quality.","sourceIds":["nyc-mesh-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":61,"rationale":"The required hardware and routing software are available, but civil work, rooftop access, installation labor, and support operations remain substantial constraints.","sourceIds":["nyc-mesh-home","openwrt-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":55,"rationale":"Community networks can pressure AT&T in specific neighborhoods and underserved areas, though they are unlikely to match AT&T's broad fiber footprint quickly.","sourceIds":["att-2024-annual-report","nyc-mesh-home"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}},{"slug":"user-owned-open-router-edge","name":"User-Owned Open Router Edge","summary":"A household or small business can reduce carrier lock-in by using open router firmware and user-controlled network services at the edge, separating local networking, firewalling, VPN, DNS, and monitoring from ISP-managed equipment.","angleIds":["open-hardware","decentralized-coordination"],"thesis":"Even when the incumbent still sells the physical broadband pipe, control shifts away from carrier-managed gateways and value-added bundles toward user-owned, interoperable network equipment.","bitcoinOrDecentralizationRole":"The decentralization role is edge sovereignty: households and small operators control routing policy, local services, privacy tools, and device lifecycle decisions. Bitcoin is not central to this mechanism.","coordinationMechanism":"Users, device makers, firmware maintainers, and local technicians coordinate through open firmware releases, supported hardware lists, package repositories, and repair or installation knowledge bases.","verificationOrTrustModel":"Open source code, reproducible builds where available, public issue trackers, package signatures, and community device testing reduce the chance that users must blindly trust carrier firmware. The model still depends on maintainers and users applying security updates.","failureModes":["ISP gateway requirements, unsupported chipsets, and difficult installation can prevent ordinary users from adopting open firmware.","Poorly maintained router builds or misconfiguration can create security and reliability risks."],"adoptionPath":["Start with technically comfortable households and small businesses that already use their own routers behind an ISP modem or optical network terminal.","Expand through preinstalled open-firmware devices, local installers, and clearer compatibility guidance for fiber customers."],"confidence":"medium","problemSourceIds":["att-fiber-product"],"enablerSourceIds":["openwrt-project","openwrt-git"],"metrics":{"decentralizationFit":{"value":64,"rationale":"The concept decentralizes control of the home-network edge, but upstream access remains centralized through the ISP.","sourceIds":["openwrt-project"],"confidence":"high","lastReviewedOn":"2026-05-25"},"coordinationCredibility":{"value":72,"rationale":"OpenWrt already coordinates firmware, packages, device documentation, and source repositories through an established open-source project.","sourceIds":["openwrt-project","openwrt-git"],"confidence":"high","lastReviewedOn":"2026-05-25"},"implementationFeasibility":{"value":76,"rationale":"The software and supported hardware ecosystem already exists, though mainstream adoption requires simpler installation and ISP compatibility.","sourceIds":["openwrt-project"],"confidence":"high","lastReviewedOn":"2026-05-25"},"incumbentPressure":{"value":43,"rationale":"Open routers reduce equipment and service lock-in at the edge but do not directly replace AT&T's fiber access network.","sourceIds":["att-fiber-product","openwrt-project"],"confidence":"medium","lastReviewedOn":"2026-05-25"}}}]}]},"sources":[{"id":"att-2024-annual-report","title":"AT&T 2024 Annual Report","url":"https://investors.att.com/financial-reports/annual-reports/2024","kind":"annual-report","publisher":"AT&T Investor Relations","note":"Primary company source for AT&T's business mix, wireless and broadband strategy, free cash flow, debt profile, and network-investment context.","accessedOn":"2026-05-25"},{"id":"att-wireless-plans","title":"AT&T Wireless Plans","url":"https://www.att.com/plans/wireless/","kind":"product-page","publisher":"AT&T","note":"Primary product page for AT&T consumer wireless plans and 5G positioning.","accessedOn":"2026-05-25"},{"id":"att-fiber-product","title":"AT&T Fiber Internet","url":"https://www.att.com/internet/fiber/","kind":"product-page","publisher":"AT&T","note":"Primary product page for AT&T Fiber broadband service and bundled home-network features.","accessedOn":"2026-05-25"},{"id":"companiesmarketcap-att-2026","title":"AT&T Market Capitalization","url":"https://companiesmarketcap.com/att/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-data source for AT&T market capitalization around the May 2026 registry snapshot.","accessedOn":"2026-05-25"},{"id":"stockanalysis-att-marketcap","title":"AT&T Market Cap and Net Worth","url":"https://stockanalysis.com/stocks/t/market-cap/","kind":"market-data","publisher":"StockAnalysis","note":"Secondary market-data cross-check for AT&T market capitalization near the review date.","accessedOn":"2026-05-25"},{"id":"openwrt-project","title":"Welcome to the OpenWrt Project","url":"https://openwrt.org/","kind":"open-source-project","publisher":"OpenWrt Project","note":"Primary project source for OpenWrt as an open-source router operating system and edge-network alternative.","accessedOn":"2026-05-25"},{"id":"openwrt-git","title":"OpenWrt Source Repositories","url":"https://git.openwrt.org/project/","kind":"open-source-project","publisher":"OpenWrt Project","note":"Source-code repository index supporting OpenWrt openness claims.","accessedOn":"2026-05-25"},{"id":"nyc-mesh-home","title":"NYC Mesh","url":"https://www.nycmesh.net/","kind":"analysis","publisher":"NYC Mesh","note":"Community-network source documenting a working local alternative model for broadband access infrastructure.","accessedOn":"2026-05-25"},{"id":"open5gs-project","title":"Open5GS","url":"https://open5gs.org/","kind":"open-source-project","publisher":"Open5GS Project","note":"Open-source mobile-core project used as an enabling primitive for local or private cellular alternatives.","accessedOn":"2026-05-25"}],"summaryMarkdown":"Prepared a new AT&T registry bundle covering AT&T Wireless and AT&T Fiber, with sourced market-cap, moat, decentralizability, and profitability inputs. Strong alternatives are limited to open or community-aligned infrastructure: Open5GS, NYC Mesh, and OpenWrt."}
+tokens used
+22,483

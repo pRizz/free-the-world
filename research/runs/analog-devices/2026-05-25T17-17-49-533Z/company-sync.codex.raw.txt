@@ -1,0 +1,561 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "analog-devices",
+      "name": "Analog Devices",
+      "ticker": "ADI",
+      "rankApprox": 63,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "semiconductors",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/analog-devices/marketcap/",
+      "description": "Analog Devices designs and manufactures high-performance analog, mixed-signal, power management, radio-frequency, and digital signal processing semiconductors.",
+      "overview": [
+        {
+          "title": "Business",
+          "paragraphs": [
+            "Analog Devices is a diversified semiconductor supplier focused on the real-world signal chain: sensing, measurement, conversion, power, connectivity, and processing at the intelligent edge.",
+            "Its fiscal 2025 revenue base was about $11.0 billion, with industrial, automotive, communications, consumer, and data-center-related demand spread across a broad catalog of long-lived products."
+          ]
+        },
+        {
+          "title": "Strategic Position",
+          "paragraphs": [
+            "ADI's moat comes less from a single platform and more from accumulated analog design expertise, qualification history, broad application support, reference designs, and sticky customer design-ins.",
+            "The company is exposed to semiconductor cycles, export controls, customer inventory swings, and the long-term democratization of electronics design and low-volume manufacturing."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Analog and mixed-signal chips are difficult to commoditize because performance depends on process knowledge, layout skill, packaging, calibration, noise behavior, reliability, and years of field validation. Once a converter, amplifier, power IC, or isolation device is qualified into an industrial or automotive system, switching costs can be high relative to the bill-of-material savings.",
+        "ADI also benefits from portfolio breadth. Customers can combine converters, power products, RF parts, sensors, software, and reference designs from one vendor, which gives the company pricing power and design-cycle leverage even when individual product categories face competition."
+      ],
+      "decentralizationNarrative": [
+        "ADI is not a natural decentralization target in the way a software platform is: it manufactures specialized silicon at industrial scale, and many customers need certified, high-reliability parts rather than community substitutes.",
+        "The pressure point is at the edges. Open hardware boards, open energy systems, open-source EDA flows, chiplet-style integration, and local electronics assembly can reduce dependence on vendor-locked reference designs and make more of the surrounding system reproducible even when the core IC remains proprietary."
+      ],
+      "sourceIds": [
+        "adi-2025-annual-report",
+        "adi-products",
+        "stockanalysis-adi-statistics"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "High-performance analog and mixed-signal semiconductors have deep design, qualification, reliability, and application-support barriers, reinforced by broad catalog coverage and long customer product cycles.",
+          "sourceIds": [
+            "adi-2025-annual-report",
+            "adi-products"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Open hardware and open EDA can decentralize prototypes, boards, and system integration, but the most valuable ADI products still depend on specialized silicon design, fabrication, testing, and qualification.",
+          "sourceIds": [
+            "adi-products",
+            "openroad-project",
+            "simplefe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "ADI reported roughly $11.0 billion of fiscal 2025 revenue and about $2.3 billion of net income, indicating strong profitability through the semiconductor cycle.",
+          "sourceIds": [
+            "adi-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 41,
+          "rationale": "Recent market-data pages show ADI trading at a premium semiconductor multiple; the exact value is volatile with price and trailing earnings.",
+          "sourceIds": [
+            "stockanalysis-adi-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 187140000000,
+          "rationale": "StockAnalysis listed Analog Devices' market capitalization at about $187.14 billion in a recently crawled statistics page; market capitalization changes continuously.",
+          "sourceIds": [
+            "stockanalysis-adi-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "data-converters",
+        "name": "Data Converters",
+        "category": "Analog and mixed-signal semiconductors",
+        "homepageUrl": "https://www.analog.com/en/product-category/data-converters.html",
+        "summary": "ADI data converters include analog-to-digital and digital-to-analog converter products used to translate real-world signals into digital data and digital control outputs back into analog signals.",
+        "whyItMatters": "Data converters sit at the boundary between physical systems and software, making them core components in instrumentation, industrial automation, communications, medical equipment, and embedded control.",
+        "replacementSketch": [
+          "A realistic open replacement path starts with open reference boards, reproducible KiCad layouts, open firmware, and documented calibration flows around available converter ICs.",
+          "Over time, open-source analog block research and open EDA flows could move some low-to-mid-performance converter designs from board-level openness toward reusable silicon IP, but high-performance commercial converters remain difficult to displace."
+        ],
+        "sourceIds": [
+          "adi-data-converters",
+          "simplefe",
+          "open-source-adc-paper"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "simplefe",
+            "name": "simpleFE",
+            "kind": "open-source",
+            "homepageUrl": "https://www.crowdsupply.com/ning-wang/simplefe",
+            "summary": "An open hardware data-conversion module designed in KiCad with open-source software support for specialized ADC and DAC applications.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project describes itself as open hardware, designed in KiCad, and driven by open-source software.",
+                "sourceIds": [
+                  "simplefe"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "It helps engineers reproduce and modify the surrounding data-acquisition module, but it still relies on commercial converter silicon and external fabrication.",
+                "sourceIds": [
+                  "simplefe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "It is a concrete hardware project for prototyping and specialized signal-chain work, but it is not a drop-in substitute for ADI's broad converter catalog.",
+                "sourceIds": [
+                  "simplefe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open design files and commodity assembly can reduce prototyping friction, though converter IC cost and analog validation remain material constraints.",
+                "sourceIds": [
+                  "simplefe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "simplefe"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-calibrated-signal-chain-modules",
+            "name": "Open Calibrated Signal-Chain Modules",
+            "summary": "A federation of labs, makers, universities, and small manufacturers publishes reproducible converter modules with open layouts, firmware, test fixtures, calibration data formats, and benchmark results. The concept does not immediately replace ADI silicon, but it weakens vendor lock-in around evaluation boards, reference designs, and system-level integration.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-manufacturing",
+              "federation"
+            ],
+            "thesis": "If more signal-chain modules become auditable and locally reproducible, value shifts from proprietary reference designs toward verified open modules and shared calibration infrastructure.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated publishing, local manufacturing, and independent verification rather than Bitcoin-native settlement.",
+            "coordinationMechanism": "Design maintainers publish versioned hardware files and test procedures; fabricators produce boards; labs submit calibration and performance results; buyers select modules based on verified use-case fit.",
+            "verificationOrTrustModel": "Independent labs can reproduce test vectors, publish raw measurement logs, sign calibration artifacts, and compare board lots against declared tolerances. Cheating is constrained by repeat testing across unrelated labs, but high-end analog measurements still require expensive equipment.",
+            "failureModes": [
+              "Open modules may still depend on proprietary converter ICs with limited second sourcing.",
+              "Calibration quality can vary across labs and equipment, weakening buyer trust.",
+              "High-speed or high-resolution converter performance may remain too sensitive to layout, packaging, and process variation for community designs to match ADI."
+            ],
+            "adoptionPath": [
+              "Start with instrumentation, education, SDR, audio, and lab-automation niches where open design files matter more than maximum performance.",
+              "Build shared test fixtures and public calibration datasets for common converter classes.",
+              "Use open EDA and reusable analog block research to push a subset of converter functions toward open silicon IP where performance requirements allow."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "adi-data-converters",
+              "adi-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "simplefe",
+              "open-source-adc-paper",
+              "openroad-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The mechanism decentralizes board design, testing, and sourcing even though the converter die may remain proprietary at first.",
+                "sourceIds": [
+                  "simplefe",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open hardware communities can coordinate around shared repositories, test fixtures, and reproducible builds, but trusted analog calibration is harder than software CI.",
+                "sourceIds": [
+                  "simplefe",
+                  "open-source-adc-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Board-level openness is feasible today; open high-performance converter silicon is still research-heavy and process-dependent.",
+                "sourceIds": [
+                  "simplefe",
+                  "open-source-adc-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept pressures evaluation boards, reference designs, and low-volume modules more than ADI's high-performance converter IC revenue.",
+                "sourceIds": [
+                  "adi-data-converters",
+                  "simplefe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "power-management-products",
+        "name": "Power Management Products",
+        "category": "Power semiconductors and system management",
+        "homepageUrl": "https://www.analog.com/en/product-category/power-management.html",
+        "summary": "ADI power management products include regulators, battery management, power-over-Ethernet, power system management, sequencing, monitoring, and related power-conversion components.",
+        "whyItMatters": "Power management determines efficiency, safety, uptime, and controllability across industrial systems, vehicles, communications equipment, servers, batteries, and distributed energy hardware.",
+        "replacementSketch": [
+          "Open replacements are most credible at the system layer: open battery-management firmware, open energy-management controllers, transparent telemetry, and interoperable control loops around standards-based hardware.",
+          "The semiconductor ICs themselves remain specialized, but open designs can reduce dependence on closed vendor ecosystems by making the control, monitoring, and integration layers inspectable."
+        ],
+        "sourceIds": [
+          "adi-power-management",
+          "libre-solar-bms",
+          "openems-github"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "libre-solar-bms",
+            "name": "Libre Solar BMS",
+            "kind": "open-source",
+            "homepageUrl": "https://libre.solar/software/bms.html",
+            "repoUrl": "https://github.com/LibreSolar/bms-firmware",
+            "summary": "Open-source battery-management-system firmware and hardware documentation for small battery packs and DC energy systems.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Libre Solar publishes open BMS firmware, documentation, and hardware-oriented materials for battery management.",
+                "sourceIds": [
+                  "libre-solar-bms"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open BMS designs support repairable, locally assembled, and independently controlled battery systems.",
+                "sourceIds": [
+                  "libre-solar-bms",
+                  "libre-solar-bms-c1"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The project is usable for constrained battery-management contexts, but it is not a broad substitute for ADI's full power-management IC portfolio.",
+                "sourceIds": [
+                  "libre-solar-bms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open firmware and documented hardware can reduce integration and repair costs for small battery systems, though certified power electronics still carry compliance costs.",
+                "sourceIds": [
+                  "libre-solar-bms-c1"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "libre-solar-bms",
+              "libre-solar-bms-c1"
+            ]
+          },
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "An open-source energy-management platform for storage, generation, loads, and grid-connected energy applications.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenEMS publishes its source code on GitHub and describes itself as an open-source modular energy-management system.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It coordinates distributed batteries, inverters, loads, and generators, making it aligned with local energy control rather than centralized vendor-only management.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The platform has an established codebase and architecture for modern energy management, though deployment still depends on compatible hardware and integrators.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open control software can reduce lock-in and integration costs, but power hardware, certification, and installation remain significant cost drivers.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openems-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-local-power-control-stacks",
+            "name": "Open Local Power-Control Stacks",
+            "summary": "Open BMS firmware, open energy-management software, documented inverter integrations, and locally serviceable power modules combine into a community-verifiable control layer for batteries, solar, EV charging, and industrial loads. This attacks closed power ecosystems at the supervisory and integration layer before it attacks the silicon itself.",
+            "angleIds": [
+              "open-energy-hardware",
+              "microgrid-coordination",
+              "distributed-energy-generation",
+              "open-hardware"
+            ],
+            "thesis": "As distributed energy assets proliferate, control-layer openness can matter as much as individual power IC selection, shifting value away from closed vendor stacks toward interoperable local energy systems.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through local control, open telemetry, and multi-operator coordination of energy assets; Bitcoin is not central to the base mechanism.",
+            "coordinationMechanism": "Households, installers, small manufacturers, and energy communities coordinate through shared device profiles, open firmware, local controllers, and auditable control policies for batteries, inverters, loads, and meters.",
+            "verificationOrTrustModel": "Controllers log device telemetry, signed firmware versions, protection events, and energy flows. Cheating is constrained by local measurements, cross-checks between meters and devices, and reproducible firmware builds, though grid settlement and safety compliance still require trusted institutions.",
+            "failureModes": [
+              "Unsafe power electronics can cause physical damage, so certification and installer competence are hard bottlenecks.",
+              "Vendor APIs and inverter protocols may remain closed or unstable.",
+              "Open software cannot fully substitute for high-efficiency, high-reliability power silicon in dense industrial designs."
+            ],
+            "adoptionPath": [
+              "Adopt open controllers first in off-grid, maker, educational, and small commercial energy systems.",
+              "Standardize device profiles and telemetry schemas for batteries, inverters, chargers, and controllable loads.",
+              "Move from open supervisory control toward more open power-stage reference designs as local electronics assembly improves."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "adi-power-management",
+              "adi-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "libre-solar-bms",
+              "libre-solar-bms-c1",
+              "openems-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly enables local control of distributed energy assets and reduces dependence on a single closed power-management vendor stack.",
+                "sourceIds": [
+                  "openems-github",
+                  "libre-solar-bms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "OpenEMS and Libre Solar show credible building blocks, but multi-party energy coordination still depends on hardware compatibility, installers, and grid rules.",
+                "sourceIds": [
+                  "openems-github",
+                  "libre-solar-bms-c1"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Open supervisory software and BMS firmware are feasible now; certified high-power hardware and broad protocol coverage remain harder.",
+                "sourceIds": [
+                  "openems-github",
+                  "libre-solar-bms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The pressure is meaningful in distributed-energy systems and power monitoring, but ADI's component-level portfolio remains valuable inside many open and closed designs alike.",
+                "sourceIds": [
+                  "adi-power-management",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "adi-2025-annual-report",
+      "title": "2025 Annual Report",
+      "url": "https://investor.analog.com/static-files/ed11172b-23b3-4639-becd-94386def2869",
+      "kind": "annual-report",
+      "publisher": "Analog Devices",
+      "note": "Primary source for ADI business description, revenue scale, profitability, end markets, and risk context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "adi-products",
+      "title": "Products",
+      "url": "https://www.analog.com/en/products.html",
+      "kind": "product-page",
+      "publisher": "Analog Devices",
+      "note": "Company product catalog showing ADI's broad semiconductor portfolio.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "adi-data-converters",
+      "title": "Data Converters",
+      "url": "https://www.analog.com/en/product-category/data-converters.html",
+      "kind": "product-page",
+      "publisher": "Analog Devices",
+      "note": "Product category source for ADI converter offerings.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "adi-power-management",
+      "title": "Power Management",
+      "url": "https://www.analog.com/en/product-category/power-management.html",
+      "kind": "product-page",
+      "publisher": "Analog Devices",
+      "note": "Product category source for ADI regulators, battery, PoE, sequencing, monitoring, and power-management products.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-adi-statistics",
+      "title": "Analog Devices Statistics and Valuation",
+      "url": "https://stockanalysis.com/stocks/adi/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data reference for recent ADI market capitalization and valuation context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "simplefe",
+      "title": "simpleFE",
+      "url": "https://www.crowdsupply.com/ning-wang/simplefe",
+      "kind": "open-source-project",
+      "publisher": "Crowd Supply",
+      "note": "Open hardware data-conversion module relevant to open signal-chain replacement paths.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-source-adc-paper",
+      "title": "Open-Source Synthesizable Analog Blocks for High-Speed Link Designs",
+      "url": "https://arxiv.org/abs/2009.09077",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research source showing open-source analog block work, including a high-speed ADC, as a long-term enabler.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openroad-project",
+      "title": "The OpenROAD Project",
+      "url": "https://theopenroadproject.org/",
+      "kind": "technical-docs",
+      "publisher": "The OpenROAD Project",
+      "note": "Open-source EDA flow reference for democratized chip design and reusable silicon implementation paths.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "libre-solar-bms",
+      "title": "Battery Management System Firmware",
+      "url": "https://libre.solar/software/bms.html",
+      "kind": "open-source-project",
+      "publisher": "The Libre Solar Project",
+      "note": "Open-source BMS firmware reference for decentralized battery and power-management alternatives.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "libre-solar-bms-c1",
+      "title": "User Manual - Libre Solar BMS C1",
+      "url": "https://libre.solar/bms-c1/manual/",
+      "kind": "technical-docs",
+      "publisher": "The Libre Solar Project",
+      "note": "Technical documentation for an open battery-management-system design.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS - Open Source Energy Management System",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Open-source energy-management platform relevant to distributed power-control and microgrid coordination.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Analog Devices registry bundle with two product areas: data converters and power management products. The refresh treats ADI as a high-moat analog and mixed-signal semiconductor company with decentralization pressure concentrated around open hardware modules, open EDA, open BMS firmware, and open energy-management systems rather than direct near-term replacement of proprietary high-performance silicon."
+}
