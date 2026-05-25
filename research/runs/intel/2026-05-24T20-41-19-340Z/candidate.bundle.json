@@ -1,0 +1,502 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "intel",
+    "name": "Intel",
+    "ticker": "INTC",
+    "rankApprox": 24,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top50"
+    ],
+    "sectorId": "information-technology",
+    "industryId": "semiconductors",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/intel/marketcap/",
+    "description": "Intel designs and manufactures processors, chipsets, accelerators, networking silicon, and foundry services for client, data center, edge, and embedded computing markets.",
+    "overview": [
+      {
+        "title": "Business Position",
+        "paragraphs": [
+          "Intel remains one of the largest U.S. semiconductor companies, with a product portfolio spanning client CPUs, server CPUs, accelerators, networking components, software enablement, and an increasingly strategic foundry business.",
+          "The company reported 2024 revenue of $53.1 billion, but profitability was pressured by manufacturing investment, foundry transition costs, competitive pressure, and restructuring."
+        ]
+      },
+      {
+        "title": "Registry Relevance",
+        "paragraphs": [
+          "Intel is central to the x86 computing stack used across personal computers, enterprise servers, cloud infrastructure, edge devices, and industrial systems.",
+          "Its moat is not only chip design; it also includes fabrication expertise, process technology, OEM relationships, software compatibility, server platform validation, and long-running enterprise trust."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Intel's strongest moat comes from deep x86 software compatibility, long-standing OEM and enterprise procurement channels, data center validation, manufacturing know-how, and the capital intensity of advanced semiconductor fabrication.",
+      "That moat is no longer absolute. RISC-V, open silicon tooling, OpenPOWER, Arm-based systems, chiplet ecosystems, and open server hardware standards all pressure parts of the stack, but replacing Intel at mainstream client and server scale still requires strong software, packaging, manufacturing, firmware, validation, security, and supply-chain execution."
+    ],
+    "decentralizationNarrative": [
+      "Intel's products are difficult to decentralize at the leading-edge manufacturing layer because advanced fabs require extreme capital, process control, supplier coordination, and yield learning.",
+      "The more credible decentralization path is modular and layered: open ISAs, open RTL blocks, auditable firmware, open server designs, cooperative validation labs, second-source manufacturing, and procurement coalitions that reduce dependence on a single proprietary CPU platform."
+    ],
+    "sourceIds": [
+      "intel-2024-10k",
+      "intel-products-overview",
+      "intel-processors-page",
+      "marketcap-company-intc-2026-05-24"
+    ],
+    "technologyWaveIds": [
+      "printed-electronics",
+      "microfactories"
+    ],
+    "snapshotNote": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh; market data and rank are point-in-time and should be rechecked before publication.",
+    "inputMetrics": {
+      "moat": {
+        "value": 86,
+        "rationale": "Intel has durable advantages from x86 compatibility, enterprise validation, OEM relationships, semiconductor design scale, and manufacturing assets, although competition and foundry execution risk weaken the moat versus its historical peak.",
+        "sourceIds": [
+          "intel-2024-10k",
+          "intel-products-overview"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "decentralizability": {
+        "value": 31,
+        "rationale": "The software and ISA layers can become more open through RISC-V, OpenPOWER, open RTL, and open server designs, but leading-edge CPU production remains highly centralized and capital intensive.",
+        "sourceIds": [
+          "intel-2024-10k",
+          "riscv-faq",
+          "chips-alliance-about",
+          "openpower-home"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "profitability": {
+        "value": 22,
+        "rationale": "Intel generated large revenue in 2024 but reported a net loss, reflecting heavy investment, restructuring, competitive pressure, and foundry transition costs.",
+        "sourceIds": [
+          "intel-2024-10k"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "peRatio": {
+        "value": 0,
+        "rationale": "A conventional positive P/E ratio is not meaningful for this snapshot because Intel reported a net loss in the latest annual filing used for review.",
+        "sourceIds": [
+          "intel-2024-10k"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "marketCap": {
+        "value": 602320000000,
+        "rationale": "MarketCap.company reported Intel at approximately $602.32 billion in market capitalization on May 24, 2026.",
+        "sourceIds": [
+          "marketcap-company-intc-2026-05-24"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-24"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "intel-core",
+      "name": "Intel Core",
+      "category": "Client processors",
+      "homepageUrl": "https://www.intel.com/content/www/us/en/products/details/processors/core.html",
+      "summary": "Intel Core processors power consumer and business PCs, laptops, workstations, and edge client systems.",
+      "whyItMatters": "Client CPUs sit underneath operating systems, productivity software, gaming, local AI workloads, and repairable computing hardware, so the degree of openness at the processor and firmware layer affects user control over everyday machines.",
+      "replacementSketch": [
+        "A realistic replacement path is not a single open laptop CPU immediately displacing Core. It is a gradual shift toward open-standard ISAs, auditable firmware, repairable boards, and hardware designs that can be manufactured by multiple vendors.",
+        "RISC-V is the strongest long-term pressure point because it opens the instruction-set layer. Open silicon tooling and shared validation infrastructure could eventually make client-class hardware less dependent on one proprietary CPU roadmap."
+      ],
+      "sourceIds": [
+        "intel-products-overview",
+        "intel-processors-page",
+        "riscv-faq",
+        "chips-alliance-about"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "risc-v",
+          "name": "RISC-V",
+          "kind": "protocol",
+          "homepageUrl": "https://riscv.org/",
+          "summary": "RISC-V is an open-standard instruction set architecture that enables many implementers to design compatible processors without depending on a proprietary ISA owner.",
+          "metrics": {
+            "openness": {
+              "value": 88,
+              "rationale": "The ISA is maintained as an open standard by RISC-V International, though individual processor implementations may still be proprietary.",
+              "sourceIds": [
+                "riscv-faq"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 78,
+              "rationale": "An open ISA lowers coordination barriers for multiple chip designers, universities, startups, and regional manufacturers, even though fabrication remains concentrated.",
+              "sourceIds": [
+                "riscv-faq",
+                "chips-alliance-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 48,
+              "rationale": "RISC-V is widely used in embedded and specialized contexts, but mainstream client PC replacement still faces software, performance, GPU, firmware, and OEM ecosystem gaps.",
+              "sourceIds": [
+                "riscv-faq"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 66,
+              "rationale": "Royalty-free ISA access can reduce licensing friction and encourage custom silicon competition, but total system cost depends heavily on fabrication, packaging, software enablement, and volume.",
+              "sourceIds": [
+                "riscv-faq"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "riscv-faq"
+          ]
+        },
+        {
+          "slug": "chips-alliance-open-hardware",
+          "name": "CHIPS Alliance Open Hardware",
+          "kind": "open-source",
+          "homepageUrl": "https://www.chipsalliance.org/",
+          "summary": "CHIPS Alliance hosts open source hardware code, interconnect IP, and design and verification tools for collaborative silicon development.",
+          "metrics": {
+            "openness": {
+              "value": 82,
+              "rationale": "The alliance explicitly develops and hosts open source hardware code, IP, and tooling.",
+              "sourceIds": [
+                "chips-alliance-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 70,
+              "rationale": "Shared RTL, tools, and verification assets can distribute more of the chip-design process across many contributors, although manufacturing remains specialized.",
+              "sourceIds": [
+                "chips-alliance-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 42,
+              "rationale": "The tooling and IP ecosystem is important but does not yet represent a direct full client CPU platform replacement for Intel Core-class systems.",
+              "sourceIds": [
+                "chips-alliance-about"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 58,
+              "rationale": "Reusable open IP and tooling can reduce duplicated design effort, but leading-edge tape-outs, validation, and supply-chain qualification remain expensive.",
+              "sourceIds": [
+                "chips-alliance-about"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "chips-alliance-about"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-client-compute-stack",
+          "name": "Open Client Compute Stack",
+          "summary": "A coalition of RISC-V implementers, open firmware projects, repairable-device makers, and validation labs could create a practical client-computing stack that competes less on proprietary CPU lock-in and more on auditable hardware, replaceable modules, and long-lived software support.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-coordination",
+            "decentralized-manufacturing"
+          ],
+          "thesis": "The client CPU market becomes less controlled by a small number of proprietary ISA and platform vendors if the ISA, firmware, board designs, and validation suites become shared infrastructure.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through shared specifications, open hardware designs, and independent validation rather than through Bitcoin or Lightning payments.",
+          "coordinationMechanism": "Designers publish compatible boards, firmware, test results, and component manifests; OEMs and repair networks coordinate around common validation profiles and shared procurement requirements.",
+          "verificationOrTrustModel": "Independent labs reproduce benchmarks, firmware builds, hardware security checks, and conformance tests; signed build artifacts and public test logs reduce false claims, though full silicon inspection remains difficult.",
+          "failureModes": [
+            "Client-class performance, graphics, power management, and software compatibility may lag proprietary x86 platforms for years.",
+            "Open specifications do not guarantee open physical implementations, and supply chains can still centralize around a few fabs or module vendors."
+          ],
+          "adoptionPath": [
+            "Start with developer boards, education devices, repairable laptops, and sovereign computing programs where openness matters more than peak compatibility.",
+            "Expand into mainstream PCs as operating systems, browsers, productivity software, and local AI frameworks mature on open-standard architectures."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "intel-products-overview",
+            "intel-2024-10k"
+          ],
+          "enablerSourceIds": [
+            "riscv-faq",
+            "chips-alliance-about"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "The concept targets decentralization of ISA control, firmware visibility, board designs, and validation rather than attempting to decentralize leading-edge fabs immediately.",
+              "sourceIds": [
+                "riscv-faq",
+                "chips-alliance-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 55,
+              "rationale": "Standards bodies and open hardware alliances already provide coordination primitives, but OEM adoption and consumer software support remain hard.",
+              "sourceIds": [
+                "riscv-faq",
+                "chips-alliance-about"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 46,
+              "rationale": "The building blocks exist, but client-class performance, power management, graphics support, firmware security, and mass manufacturing are still major obstacles.",
+              "sourceIds": [
+                "riscv-faq",
+                "chips-alliance-about"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 48,
+              "rationale": "The concept can pressure Intel in education, public-sector, repairability, embedded-client, and sovereignty-sensitive markets before it becomes a broad consumer replacement.",
+              "sourceIds": [
+                "intel-products-overview",
+                "riscv-faq"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "xeon",
+      "name": "Xeon",
+      "category": "Server processors",
+      "homepageUrl": "https://www.intel.com/content/www/us/en/products/details/processors/xeon.html",
+      "summary": "Intel Xeon processors are server and workstation CPUs used in cloud, enterprise, high-performance computing, networking, storage, and edge infrastructure.",
+      "whyItMatters": "Server CPUs shape cloud economics, data center procurement, workload portability, firmware trust, and the degree to which infrastructure operators can avoid dependence on a single proprietary platform.",
+      "replacementSketch": [
+        "The near-term replacement path is modular rather than direct: open rack designs, open accelerator interfaces, open firmware, and multi-ISA software support reduce lock-in around any one server CPU family.",
+        "RISC-V and OpenPOWER offer open-standard or open ISA pressure at the processor layer, while Open Compute Project practices can shift more bargaining power to operators and shared hardware specifications."
+      ],
+      "sourceIds": [
+        "intel-products-overview",
+        "intel-processors-page",
+        "openpower-home",
+        "riscv-faq",
+        "open-compute-server"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics"
+      ],
+      "alternatives": [
+        {
+          "slug": "openpower",
+          "name": "OpenPOWER",
+          "kind": "open-source",
+          "homepageUrl": "https://openpower.foundation/",
+          "summary": "OpenPOWER develops and publishes the POWER ISA and related specifications through an open foundation model.",
+          "metrics": {
+            "openness": {
+              "value": 76,
+              "rationale": "OpenPOWER describes its work as open sourcing and developing the POWER ISA, with public specifications available through the foundation.",
+              "sourceIds": [
+                "openpower-home",
+                "openpower-isa"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 62,
+              "rationale": "An open ISA and foundation governance can reduce dependence on x86, though commercial server implementations and ecosystem depth are narrower than Intel's.",
+              "sourceIds": [
+                "openpower-home",
+                "openpower-isa"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 52,
+              "rationale": "POWER has a mature server heritage, but OpenPOWER is not a drop-in replacement for the full Xeon ecosystem across mainstream enterprise workloads.",
+              "sourceIds": [
+                "openpower-home",
+                "openpower-isa"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 44,
+              "rationale": "Open ISA access can help bargaining and customization, but system availability, vendor concentration, and software porting costs limit immediate cost leverage.",
+              "sourceIds": [
+                "openpower-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "openpower-home",
+            "openpower-isa"
+          ]
+        },
+        {
+          "slug": "open-compute-project-server",
+          "name": "Open Compute Project Server Designs",
+          "kind": "open-source",
+          "homepageUrl": "https://www.opencompute.org/",
+          "summary": "Open Compute Project coordinates open data center and server hardware specifications intended to improve interoperability, efficiency, validation, and operator choice.",
+          "metrics": {
+            "openness": {
+              "value": 72,
+              "rationale": "OCP publishes server and data center hardware specifications and coordinates collaborative hardware design practices.",
+              "sourceIds": [
+                "open-compute-server"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 64,
+              "rationale": "Open server specifications reduce platform lock-in at the rack and system-design layer even when CPUs still come from concentrated vendors.",
+              "sourceIds": [
+                "open-compute-server"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 67,
+              "rationale": "OCP-style hardware is already relevant to large-scale data center operators, though it is not itself a CPU replacement.",
+              "sourceIds": [
+                "open-compute-server"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 61,
+              "rationale": "Shared designs and operator-driven specifications can improve procurement leverage, serviceability, and lifecycle efficiency.",
+              "sourceIds": [
+                "open-compute-server"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "open-compute-server"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "operator-owned-open-server-platform",
+          "name": "Operator-Owned Open Server Platform",
+          "summary": "Large infrastructure buyers could coordinate around open server specifications, multi-ISA workload portability, auditable firmware, and shared validation logs so CPU vendors compete inside an operator-controlled hardware envelope rather than owning the whole platform relationship.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-coordination",
+            "cooperative-production"
+          ],
+          "thesis": "Server procurement shifts from vendor-led platform lock-in toward buyer-led open specifications where CPUs, accelerators, firmware, and chassis components can be swapped with less friction.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is governance and procurement coordination among operators, not a Bitcoin-native payment mechanism.",
+          "coordinationMechanism": "Cloud operators, colocation providers, public institutions, and hardware vendors publish shared requirements, certify compatible modules, and maintain reproducible validation profiles for workloads and firmware.",
+          "verificationOrTrustModel": "Conformance testing, public hardware manifests, reproducible firmware builds, third-party lab reports, and operator-run burn-in data constrain fake compatibility claims; procurement contracts penalize failed validation.",
+          "failureModes": [
+            "Hyperscale buyers may capture the standards process in ways that do not help smaller operators.",
+            "CPU vendors can still differentiate through closed firmware, accelerators, packaging, and supply guarantees that are hard for open specifications to neutralize."
+          ],
+          "adoptionPath": [
+            "Begin with OCP-style racks, open management modules, and transparent validation for commodity server fleets.",
+            "Add RISC-V, OpenPOWER, Arm, or x86 modules where software portability and workload economics justify multi-ISA procurement."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "intel-products-overview",
+            "intel-2024-10k"
+          ],
+          "enablerSourceIds": [
+            "open-compute-server",
+            "openpower-home",
+            "riscv-faq"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 68,
+              "rationale": "The concept decentralizes control over platform requirements, validation, and procurement, while accepting that advanced CPUs remain specialized products.",
+              "sourceIds": [
+                "open-compute-server",
+                "openpower-home",
+                "riscv-faq"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 63,
+              "rationale": "OCP demonstrates an existing coordination venue for server hardware, but aligning many operators around CPU-level portability is more difficult.",
+              "sourceIds": [
+                "open-compute-server"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 58,
+              "rationale": "Open server design and validation are feasible today, while true CPU interchangeability is limited by workload tuning, firmware, accelerators, and supply-chain qualification.",
+              "sourceIds": [
+                "open-compute-server",
+                "openpower-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 57,
+              "rationale": "Buyer-led open specifications can pressure Xeon margins and lock-in in hyperscale and public-sector procurement, even if Intel remains a major supplier.",
+              "sourceIds": [
+                "intel-products-overview",
+                "open-compute-server"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1317 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e5bb6-f8c5-71f1-8aec-99ff75d45913
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: goldman-sachs
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "goldman-sachs",
+  "name": "Goldman Sachs",
+  "ticker": "GS",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top50"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/goldman-sachs/marketcap/",
+  "description": "Goldman Sachs is a global financial services firm focused on investment banking, markets, asset management, and wealth management.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Global Banking & Markets",
+    "Asset & Wealth Management"
+  ],
+  "seedSourceUrls": [
+    "https://www.goldmansachs.com/investor-relations/",
+    "https://www.goldmansachs.com/what-we-do/",
+    "https://companiesmarketcap.com/goldman-sachs/marketcap/"
+  ],
+  "notes": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-24T20:39:40.416040Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:40.416052Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:40.416834Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:40.416844Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:40.417658Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:40.417665Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:40.418518Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:40.418523Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:40.419222Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:40.419228Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:40.420715Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:40.420720Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:41.320631Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:41.320640Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:41.321444Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:41.321453Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:41.322261Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:41.322267Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:41.323048Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:41.323053Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:41.323832Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:41.323843Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:39:41.325568Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:39:41.325573Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Goldman Sachs 2025 annual report global banking markets asset wealth management revenue net earnings market capitalization P/E ratio ...
+web search: 
+web search: CompaniesMarketCap Goldman Sachs market cap May 2026 P/E ratio ...
+web search: 
+web search: OpenBB open source investment research platform GitHub ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "goldman-sachs",
+      "name": "Goldman Sachs",
+      "ticker": "GS",
+      "rankApprox": 55,
+      "maybeIpo": {
+        "date": "1999-05-04",
+        "dateSourceIds": [
+          "goldman-ipo-anniversary-2024"
+        ],
+        "marketCap": {
+          "value": 33000000000,
+          "rationale": "Bloomberg's contemporaneous IPO coverage reported that the offering valued Goldman Sachs at roughly $33 billion.",
+          "sourceIds": [
+            "bloomberg-goldman-ipo-1999"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      },
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/goldman-sachs/marketcap/",
+      "description": "Goldman Sachs is a global financial services firm focused on investment banking, markets, asset management, and wealth management.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Goldman Sachs reports through Global Banking & Markets, Asset & Wealth Management, and Platform Solutions, with the strategic center of gravity in institutional advisory, market intermediation, financing, investment management, and wealth services.",
+            "The firm benefits from deep institutional relationships, regulatory permissions, balance-sheet capacity, risk systems, distribution, and a reputation built over decades in capital markets."
+          ]
+        },
+        {
+          "title": "Refresh posture",
+          "paragraphs": [
+            "This snapshot treats Goldman Sachs as a highly profitable capital-markets incumbent whose products are mostly institutional services rather than simple software products.",
+            "The most credible decentralization pressure is not a one-for-one replacement of a regulated investment bank, but the gradual unbundling of research, portfolio tooling, private-market coordination, and capital formation workflows into open, federated, and peer-to-peer rails."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Goldman Sachs has a very strong moat in regulated institutional finance. Its advantages include trusted corporate and investor relationships, trading and risk infrastructure, compliance scale, access to liquidity, balance-sheet capacity, and the ability to coordinate complex transactions across issuers, asset owners, sovereigns, funds, and wealthy clients.",
+        "The moat is not absolute. Some information, analytics, portfolio construction, and investor-coordination layers can be replicated or unbundled with open software, but high-stakes underwriting, regulated advisory work, prime brokerage, market making, and fiduciary wealth services remain hard to decentralize quickly."
+      ],
+      "decentralizationNarrative": [
+        "Goldman's most defensible functions depend on law, trust, reputation, capital, and regulated execution. Those are not naturally decentralized in the same way that publishing, messaging, or developer tooling can be.",
+        "Still, open financial research stacks, self-hosted wealth dashboards, quantitative finance libraries, federated investor communities, and peer-to-peer capital-formation protocols can lower dependency on centralized information vendors and incumbent advisory channels at the edges."
+      ],
+      "sourceIds": [
+        "goldman-2025-annual-report",
+        "goldman-our-businesses",
+        "stockanalysis-gs-overview-2026",
+        "companiesmarketcap-gs-pe-2026"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Publishable registry refresh prepared on 2026-05-24 using Goldman Sachs investor materials, current market-data snapshots, and open-source finance project sources.",
+      "inputMetrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "Goldman Sachs combines regulated status, global institutional relationships, execution infrastructure, brand trust, balance-sheet capacity, and scale across investment banking, markets, asset management, and wealth management.",
+          "sourceIds": [
+            "goldman-2025-annual-report",
+            "goldman-our-businesses"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Research, analytics, portfolio tooling, and some capital-coordination layers can be opened or federated, but core investment banking, market making, custody-adjacent, lending, and fiduciary services remain regulation-heavy and reputation-dependent.",
+          "sourceIds": [
+            "goldman-2025-annual-report",
+            "openbb-open-data-platform",
+            "quantlib-home",
+            "ghostfolio-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Goldman reported 2025 net revenues of $58.3 billion, EPS of $51.32, and return on equity of 15.0%, indicating strong profitability for a capital-markets firm.",
+          "sourceIds": [
+            "goldman-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "peRatio": {
+          "value": 18.25,
+          "rationale": "StockAnalysis reported a PE ratio of 18.25 for GS at the May 22, 2026 close.",
+          "sourceIds": [
+            "stockanalysis-gs-overview-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "marketCap": {
+          "value": 305600000000,
+          "rationale": "StockAnalysis reported Goldman Sachs market capitalization at $305.60 billion as of the May 22, 2026 close.",
+          "sourceIds": [
+            "stockanalysis-gs-market-cap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "global-banking-markets",
+        "name": "Global Banking & Markets",
+        "category": "Investment banking, trading, financing, and institutional markets",
+        "homepageUrl": "https://www.goldmansachs.com/what-we-do/our-businesses",
+        "summary": "Goldman's Global Banking & Markets franchise provides advisory, underwriting, financing, trading, market intelligence, analytics, and execution services to institutional and corporate clients.",
+        "whyItMatters": "This franchise sits near the center of corporate capital formation and institutional market access, making it a high-leverage target for any open alternative that can reduce dependency on closed data, opaque deal networks, or centralized gatekeeping.",
+        "replacementSketch": [
+          "Open finance tools can replace pieces of the workflow: market research, analytics, risk modeling, valuation libraries, portfolio simulation, and standardized data integrations.",
+          "The harder replacement path is capital formation itself: issuer discovery, diligence, investor coordination, reputation, legal compliance, settlement, and post-transaction reporting would need to be bundled into trustworthy open or federated networks."
+        ],
+        "sourceIds": [
+          "goldman-our-businesses",
+          "goldman-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB provides open-source investment research and standardized financial-data tooling that can replace part of the closed institutional research and analytics stack.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenBB presents its Open Data Platform as an open-source toolset and links to its public GitHub organization.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "openbb-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "OpenBB decentralizes access to research tooling and data integrations, but most market data and execution venues remain centralized or vendor-controlled.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project is active and positioned for engineers and analysts building financial-data workflows, though it does not replace regulated advisory or execution services.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "openbb-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source research and data tooling can reduce dependency on expensive proprietary terminal-style workflows for some users and teams.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "openbb-open-data-platform",
+              "openbb-github"
+            ]
+          },
+          {
+            "slug": "quantlib",
+            "name": "QuantLib",
+            "kind": "open-source",
+            "homepageUrl": "https://www.quantlib.org/",
+            "summary": "QuantLib is a free and open-source quantitative finance library for modeling, trading, and risk management.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "QuantLib describes itself as a free and open-source library for quantitative finance.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 4,
+                "rationale": "QuantLib opens the modeling layer but does not itself decentralize market access, compliance, clearing, or settlement.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "QuantLib is a mature library used for real-world modeling, trading, and risk-management workflows.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "A free quantitative finance library can materially lower the cost of building internal analytics and risk systems.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "quantlib-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-capital-formation-network",
+            "name": "Federated capital formation network",
+            "summary": "A federated network for issuers, investors, analysts, and diligence providers could unbundle parts of investment banking by making deal discovery, standardized data rooms, investor indications, reputational history, and post-close reporting portable across many operators instead of concentrated inside a few advisory franchises.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept pressures the information and coordination premium in investment banking by turning some advisory workflows into interoperable rails that issuers and investors can use without relying on one dominant intermediary.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated identity, portable reputation, auditable investor interest, and multi-operator data-room standards. Bitcoin or Lightning could be useful for deposits, anti-spam pricing, or small diligence-market payments, but they are not the core replacement mechanism.",
+            "coordinationMechanism": "Issuers publish standardized offering materials to permissioned federated rooms; accredited investors submit signed indications of interest; analysts and diligence providers attach attestations; local regulated brokers or advisors can still handle jurisdiction-specific compliance and execution.",
+            "verificationOrTrustModel": "Participants use cryptographic signatures, auditable access logs, regulated-entity attestations, stake or fee-based anti-spam rules, and reputation histories tied to completed financings. The system still depends on legal enforcement, disclosure liability, and regulated intermediaries for many transactions.",
+            "failureModes": [
+              "Securities-law compliance may force most meaningful activity back through licensed intermediaries.",
+              "Fake investor demand, selective disclosure, and reputation gaming could persist without strong identity and enforcement.",
+              "Large issuers may still prefer incumbent banks for certainty, underwriting capacity, and board-level trust."
+            ],
+            "adoptionPath": [
+              "Start with private-company investor relations, secondary-market discovery, and standardized diligence packets.",
+              "Add regulated broker-dealer partners for execution while keeping research, discovery, and reporting portable.",
+              "Expand into smaller public offerings, private credit syndication, and cross-border institutional workflows once compliance patterns are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "goldman-our-businesses",
+              "goldman-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openbb-open-data-platform",
+              "quantlib-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model deliberately shifts discovery, diligence, and reputation from a single advisory gatekeeper to interoperable operators.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Federated data rooms and signed indications are plausible, but regulated execution and issuer trust are substantial constraints.",
+                "sourceIds": [
+                  "goldman-2025-annual-report",
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The software primitives are feasible, but compliance, identity, liability, and investor onboarding are harder than the technical layer.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "quantlib-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept can pressure smaller deals and information workflows, but Goldman retains advantages in complex advisory, underwriting, financing, and institutional execution.",
+                "sourceIds": [
+                  "goldman-our-businesses",
+                  "goldman-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "asset-wealth-management",
+        "name": "Asset & Wealth Management",
+        "category": "Asset management, private wealth, advisory, and investment products",
+        "homepageUrl": "https://www.goldmansachs.com/what-we-do/our-businesses",
+        "summary": "Goldman's Asset & Wealth Management business provides investment and advisory services across public and private markets for institutions, financial advisors, and individuals.",
+        "whyItMatters": "Asset and wealth management concentrates portfolio construction, manager selection, access to private markets, reporting, advice, and client trust inside large institutions, creating a natural target for open tooling and self-custodied advisory workflows.",
+        "replacementSketch": [
+          "Open-source portfolio trackers, optimization libraries, and research platforms can give individuals, advisors, and small institutions more control over data, reporting, allocation, and analysis.",
+          "A credible replacement would still need to solve fiduciary advice, tax context, suitability, private-market access, custody, identity, fraud prevention, and regulated execution."
+        ],
+        "sourceIds": [
+          "goldman-our-businesses",
+          "goldman-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "ghostfolio",
+            "name": "Ghostfolio",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/ghostfolio/ghostfolio",
+            "repoUrl": "https://github.com/ghostfolio/ghostfolio",
+            "summary": "Ghostfolio is open-source wealth-management software for tracking and managing personal investment portfolios.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The GitHub project describes Ghostfolio as open-source wealth-management software.",
+                "sourceIds": [
+                  "ghostfolio-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Self-hostable wealth software improves user control over portfolio data, but it does not decentralize custody, advice, or market execution by itself.",
+                "sourceIds": [
+                  "ghostfolio-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Ghostfolio is an active web-technology project for wealth tracking, suitable for individuals and technically capable users rather than full-service fiduciary replacement.",
+                "sourceIds": [
+                  "ghostfolio-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source portfolio management can reduce reporting and tracking costs for users who can self-host or operate their own stack.",
+                "sourceIds": [
+                  "ghostfolio-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "ghostfolio-github"
+            ]
+          },
+          {
+            "slug": "wealthfolio",
+            "name": "Wealthfolio",
+            "kind": "open-source",
+            "homepageUrl": "https://wealthfolio.app/",
+            "summary": "Wealthfolio is a private, open-source investment tracker that runs locally on user devices.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Wealthfolio describes itself as private and open-source portfolio tracking software.",
+                "sourceIds": [
+                  "wealthfolio-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Local-first portfolio tracking gives users more control over their own investment records, though external brokers, custodians, and data providers remain centralized.",
+                "sourceIds": [
+                  "wealthfolio-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The product is positioned as a usable local investment tracker, but not as a full institutional asset-management platform.",
+                "sourceIds": [
+                  "wealthfolio-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "A local open-source tracker can reduce dependency on paid portfolio dashboards and proprietary reporting tools.",
+                "sourceIds": [
+                  "wealthfolio-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "wealthfolio-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-wealth-operating-system",
+            "name": "Federated wealth operating system",
+            "summary": "A federated wealth stack could combine self-hosted portfolio records, open research, portfolio optimization libraries, advisor attestations, and portable client mandates so households and independent advisors can coordinate without surrendering the full client relationship to a large wealth-management institution.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept shifts wealth management from institution-owned dashboards and relationship silos toward user-controlled records, portable analytics, and advisor networks that compete on service rather than custody of data.",
+            "bitcoinOrDecentralizationRole": "Federation and decentralized identity are central: clients keep portable portfolio records and permission advisors, tax specialists, or managers into specific views. Bitcoin or Lightning could support small advisory payments or self-custody education, but the core mechanism is federated data and advisory coordination.",
+            "coordinationMechanism": "Clients maintain local or self-hosted portfolio books; advisors and model providers publish signed recommendations; optimization and research tools run against permissioned data; custodians and brokers provide read-only feeds and execution receipts.",
+            "verificationOrTrustModel": "Advice and recommendations are signed by accountable providers, portfolio states are reconciled against broker or custodian statements, and client permissions are scoped and revocable. Regulatory licensing, suitability, and tax advice still require off-chain professional accountability.",
+            "failureModes": [
+              "Most users may prefer bundled advice and custody over operating a federated wealth stack.",
+              "Data imports, tax lots, private assets, and alternative investments are difficult to normalize accurately.",
+              "Bad advice can still look credible unless licensing, disclosures, and accountability are enforced."
+            ],
+            "adoptionPath": [
+              "Begin with privacy-preserving personal and family-office portfolio tracking.",
+              "Add independent-advisor collaboration, signed model portfolios, and audit trails.",
+              "Integrate regulated custodians, tax workflows, and private-market reporting after the user-controlled data layer becomes reliable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "goldman-our-businesses",
+              "goldman-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "ghostfolio-github",
+              "wealthfolio-home",
+              "skfolio-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model makes client data portable and lets many advisors and tools coordinate around user-controlled records.",
+                "sourceIds": [
+                  "ghostfolio-github",
+                  "wealthfolio-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Portfolio tracking, advisor permissions, and signed recommendations are plausible, but full fiduciary workflows require compliance and professional accountability.",
+                "sourceIds": [
+                  "ghostfolio-github",
+                  "wealthfolio-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Open-source tracking and optimization tools already exist, but broker integrations, tax accuracy, private assets, and regulatory workflows remain hard.",
+                "sourceIds": [
+                  "ghostfolio-github",
+                  "wealthfolio-home",
+                  "skfolio-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept can pressure reporting, portfolio construction, and independent-advisor workflows, but Goldman retains advantages with ultra-high-net-worth relationships, private markets, lending, and institutional distribution.",
+                "sourceIds": [
+                  "goldman-our-businesses",
+                  "goldman-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "goldman-2025-annual-report",
+      "title": "2025 Annual Report",
+      "url": "https://www.goldmansachs.com/investor-relations/financials/current/annual-reports/2025-annual-report",
+      "kind": "annual-report",
+      "publisher": "Goldman Sachs",
+      "note": "Primary source for 2025 financial performance, business segments, strategic framing, profitability, and risk context.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "goldman-our-businesses",
+      "title": "Our Businesses",
+      "url": "https://www.goldmansachs.com/what-we-do/our-businesses",
+      "kind": "product-page",
+      "publisher": "Goldman Sachs",
+      "note": "Primary source describing Global Banking & Markets, Asset & Wealth Management, Marquee, and the firm's business mix.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "stockanalysis-gs-overview-2026",
+      "title": "The Goldman Sachs Group (GS) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/gs/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data snapshot for PE ratio, market capitalization context, sector, industry, and IPO date reference.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "stockanalysis-gs-market-cap-2026",
+      "title": "The Goldman Sachs Group (GS) Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/gs/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market capitalization source reporting Goldman Sachs at $305.60 billion as of May 22, 2026.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "companiesmarketcap-gs-pe-2026",
+      "title": "Goldman Sachs (GS) - P/E Ratio",
+      "url": "https://companiesmarketcap.com/goldman-sachs/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Supplemental market-data source for ranking, market capitalization, share price, and PE ratio context.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "goldman-ipo-anniversary-2024",
+      "title": "Commemorating the 25th Anniversary of Our IPO",
+      "url": "https://www.goldmansachs.com/our-firm/history/ipo-anniversary",
+      "kind": "investor-relations",
+      "publisher": "Goldman Sachs",
+      "note": "Goldman Sachs source confirming that the firm went public on May 4, 1999.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "bloomberg-goldman-ipo-1999",
+      "title": "Goldman Sachs: How Public Is This IPO?",
+      "url": "https://www.bloomberg.com/news/articles/1999-05-16/goldman-sachs-how-public-is-this-ipo",
+      "kind": "analysis",
+      "publisher": "Bloomberg",
+      "note": "Contemporaneous IPO coverage noting the approximate $33 billion market capitalization implied by the deal.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "openbb-open-data-platform",
+      "title": "Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "technical-docs",
+      "publisher": "OpenBB",
+      "note": "Source for OpenBB's open-source financial data integration and analyst tooling claims.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "openbb-github",
+      "title": "OpenBB GitHub Organization",
+      "url": "https://github.com/openbb-finance",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Repository source for OpenBB's open-source investment research and financial data tooling.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "quantlib-home",
+      "title": "QuantLib, a free/open-source library for quantitative finance",
+      "url": "https://www.quantlib.org/",
+      "kind": "open-source-project",
+      "publisher": "QuantLib",
+      "note": "Primary source for QuantLib as a free open-source library for modeling, trading, and risk management.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "ghostfolio-github",
+      "title": "Ghostfolio: Open Source Wealth Management Software",
+      "url": "https://github.com/ghostfolio/ghostfolio",
+      "kind": "open-source-project",
+      "publisher": "Ghostfolio",
+      "note": "Repository source for Ghostfolio as open-source wealth-management software.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "wealthfolio-home",
+      "title": "Wealthfolio | Open-Source, Offline & Private Portfolio Tracker",
+      "url": "https://wealthfolio.app/",
+      "kind": "open-source-project",
+      "publisher": "Wealthfolio",
+      "note": "Source for Wealthfolio as a private, local, open-source investment tracker.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "skfolio-home",
+      "title": "Skfolio Labs - Open Source Portfolio Optimization and Risk Management",
+      "url": "https://skfoliolabs.com/",
+      "kind": "open-source-project",
+      "publisher": "Skfolio Labs",
+      "note": "Source for open-source portfolio optimization and risk-management tooling relevant to decentralized wealth workflows.",
+      "accessedOn": "2026-05-24"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Goldman Sachs bundle covering Global Banking & Markets and Asset & Wealth Management. The refresh uses official Goldman investor/business sources, current market-data snapshots, and open-source finance alternatives including OpenBB, QuantLib, Ghostfolio, Wealthfolio, and skfolio."
+}
+tokens used
+28,299

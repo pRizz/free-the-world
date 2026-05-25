@@ -1,0 +1,640 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "citigroup",
+      "name": "Citigroup",
+      "ticker": "C",
+      "rankApprox": 80,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top50"
+      ],
+      "sectorId": "financials",
+      "industryId": "diversified-banks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/citigroup/marketcap/",
+      "description": "Citigroup is a global diversified bank providing consumer banking, institutional banking, markets, treasury, trade, and wealth management services.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Citigroup operates across Services, Markets, Banking, U.S. Personal Banking, and Wealth, giving it a broad deposit, lending, payments, custody, trading, and advisory footprint.",
+            "Its strongest strategic position is in global institutional banking, where treasury, trade, foreign exchange, securities services, and working-capital products are bundled for multinational clients."
+          ]
+        },
+        {
+          "title": "Scale and profitability",
+          "paragraphs": [
+            "Citi reported $81.1 billion of 2024 revenue, $12.8 billion of income from continuing operations, and $2.35 trillion of year-end assets.",
+            "The company remains profitable and systemically important, but its complexity, regulatory burden, and restructuring history make the moat more operational than purely technological."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Citi's moat comes from regulated banking licenses, balance-sheet scale, global correspondent relationships, corporate treasury integration, card issuing scale, risk infrastructure, and decades of embedded enterprise workflows.",
+        "The moat is strongest where clients need multi-country compliance, liquidity, foreign exchange, credit, and payment rails from one counterparty. It is weaker at the user-interface layer, where open-source banking software, wallets, and payment protocols can replace pieces of the stack for smaller communities or businesses."
+      ],
+      "decentralizationNarrative": [
+        "Citi is difficult to decentralize as a whole because insured deposits, credit underwriting, capital markets activity, and cross-border banking depend on regulated legal entities and centralized risk controls.",
+        "The most plausible decentralization pressure comes from modular replacements around payments, community custody, open core banking, self-hosted merchant acceptance, and local business finance workflows that reduce reliance on a universal bank for every transaction."
+      ],
+      "sourceIds": [
+        "citigroup-2024-annual-report",
+        "citigroup-businesses",
+        "companiesmarketcap-citigroup-marketcap",
+        "companiesmarketcap-citigroup-pe"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Reviewed on 2026-05-24 for a publishable registry refresh using Citi investor materials, official product pages, and market-data snapshots.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Citi combines global banking licenses, regulated balance-sheet capacity, treasury and trade networks, institutional relationships, and consumer banking distribution that are hard to replicate quickly.",
+          "sourceIds": [
+            "citigroup-2024-annual-report",
+            "citigroup-businesses",
+            "citi-tts-global-trade"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Some payment, wallet, and business-finance workflows can be modularized, but deposit insurance, credit creation, securities services, compliance, and regulated capital-market activities remain centralized.",
+          "sourceIds": [
+            "citigroup-2024-annual-report",
+            "mifos-x",
+            "fedimint-home",
+            "btcpay-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Citi reported $12.8 billion of 2024 income from continuing operations on $81.1 billion of revenue, showing solid profitability despite restructuring and credit-cost drag.",
+          "sourceIds": [
+            "citigroup-2024-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "peRatio": {
+          "value": 15.3,
+          "rationale": "CompaniesMarketCap reported Citigroup's trailing P/E ratio at about 15.3 in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-citigroup-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-24"
+        },
+        "marketCap": {
+          "value": 213350000000,
+          "rationale": "CompaniesMarketCap reported Citigroup at about $213.35 billion of market capitalization in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-citigroup-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-24"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "citi-mobile",
+        "name": "Citi Mobile",
+        "category": "Consumer mobile banking",
+        "homepageUrl": "https://www.citi.com/banking/citi-mobile-app-download/landing",
+        "summary": "Citi Mobile lets retail customers manage accounts, cards, payments, deposits, account aggregation, and branch or ATM discovery from a mobile app.",
+        "whyItMatters": "Consumer mobile banking is the most visible customer interface for a diversified bank and the layer most exposed to wallet, open-banking, and community-finance alternatives.",
+        "replacementSketch": [
+          "A lighter replacement path would combine open core banking software, local or cooperative financial institutions, and interoperable payment wallets rather than trying to clone Citi's whole regulated bank.",
+          "For mainstream users, the hardest missing pieces are insured deposits, dispute resolution, credit underwriting, and compliance. Open tools are more credible first for community finance, credit unions, local savings groups, and merchant payment flows."
+        ],
+        "sourceIds": [
+          "citi-mobile-google-play",
+          "citi-mobile-page",
+          "mifos-x",
+          "fedimint-home"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "mifos-x",
+            "name": "Mifos X",
+            "kind": "open-source",
+            "homepageUrl": "https://mifos.org/mifos-x/",
+            "repoUrl": "https://github.com/openMF",
+            "summary": "Mifos X combines an open financial-services platform, web client, mobile client, and Apache Fineract backend for savings, loans, accounting, reporting, and financial-inclusion use cases.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Mifos positions the platform around open-source financial-services software and links to source code for contributors.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It can be deployed by smaller institutions or local operators, but each deployment still typically has an institutional administrator and regulated operating context.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The project targets real financial-services deployments, though replacing a top-tier consumer bank requires additional compliance, deposit, fraud, and support operations.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open software can lower licensing and customization costs for community finance providers compared with proprietary banking stacks.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "mifos-x"
+            ]
+          },
+          {
+            "slug": "citi-mobile-fedimint",
+            "name": "Fedimint",
+            "kind": "protocol",
+            "homepageUrl": "https://fedimint.org/",
+            "repoUrl": "https://github.com/fedimint/fedimint",
+            "summary": "Fedimint is open-source federated e-cash for Bitcoin, letting communities operate guardian-based custody and private payments with Lightning interoperability.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Fedimint is an open-source protocol with public developer resources and source code.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Custody is distributed across federation guardians rather than a single bank, and payments can interoperate with Lightning.",
+                "sourceIds": [
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "Fedimint is credible infrastructure for community custody and payments, but it is not a full replacement for insured retail banking, credit, compliance, or broad consumer support.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Community-run infrastructure can reduce dependence on bank payment accounts for some transactions, especially where Bitcoin and Lightning liquidity are already useful.",
+                "sourceIds": [
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "fedimint-home",
+              "fedimint-how-it-works"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-custody-mobile-wallet",
+            "name": "Community Custody Mobile Wallet",
+            "summary": "A credit union, mutual-aid group, employer network, or local merchant association could offer a mobile wallet backed by open core banking and federated Bitcoin e-cash, handling small payments and local balances without forcing every interaction through a global bank app.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The consumer banking interface becomes modular: a local institution or community federation controls the wallet relationship while regulated banking partners provide only the parts that still require licensed balance-sheet services.",
+            "bitcoinOrDecentralizationRole": "Bitcoin provides the bearer reserve asset, Lightning gives external payment interoperability, and federation spreads custody among guardians instead of routing all trust through one bank.",
+            "coordinationMechanism": "Users join a federation or local financial institution, guardians operate signing infrastructure, wallet clients handle balances and payments, and regulated partners can bridge fiat deposits or withdrawals where needed.",
+            "verificationOrTrustModel": "Fedimint-style guardians collectively hold reserves in multisignature custody; outstanding e-cash is checked against federation issuance rules, and Lightning gateways provide externally verifiable payment settlement. The model still depends on honest-enough guardian sets and transparent reserve practices.",
+            "failureModes": [
+              "Guardian collusion, key loss, or weak governance could compromise user funds.",
+              "Regulatory requirements for deposits, KYC, sanctions screening, and consumer protection may force centralization.",
+              "Mainstream users may not accept Bitcoin volatility or federation trust assumptions for primary banking."
+            ],
+            "adoptionPath": [
+              "Start with narrow community wallets for remittances, merchant rewards, mutual aid, or local payments.",
+              "Add fiat on-ramps through regulated partners and clear governance for reserve custody.",
+              "Expand into account-like services only where legal, support, and insurance gaps are solved."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "citi-mobile-google-play",
+              "citigroup-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "fedimint-home",
+              "fedimint-how-it-works",
+              "mifos-x"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly replaces single-bank app custody with federated governance and interoperable wallet infrastructure.",
+                "sourceIds": [
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Federation guardians, wallet users, and Lightning gateways provide a concrete coordination model, but governance and legal responsibilities remain difficult.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The technical primitives exist, but consumer banking compliance, fiat conversion, dispute handling, and support are substantial barriers.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The pressure is meaningful in niches but unlikely to displace Citi's mainstream retail banking franchise without regulatory and UX breakthroughs.",
+                "sourceIds": [
+                  "citi-mobile-google-play",
+                  "citigroup-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "citi-treasury-and-trade-solutions",
+        "name": "Citi Treasury and Trade Solutions",
+        "category": "Corporate treasury and trade finance",
+        "homepageUrl": "https://www.citigroup.com/global/businesses/services/treasury-and-trade-solutions",
+        "summary": "Citi Treasury and Trade Solutions provides cash management, trade, liquidity, working-capital, commercial-card, and cross-border transaction services for corporations, financial institutions, and public-sector clients.",
+        "whyItMatters": "Treasury and trade services are among Citi's deepest moats because they combine compliance, network reach, payment rails, supplier finance, and enterprise integrations across many jurisdictions.",
+        "replacementSketch": [
+          "Open replacements are most credible around small-business invoicing, supplier coordination, merchant payment acceptance, and accounting workflows rather than full multinational bank-grade treasury.",
+          "A decentralized replacement would need to split the stack: open ERP for invoices and payables, self-hosted payment acceptance for settlement, and specialized regulated partners for fiat custody, credit, and compliance."
+        ],
+        "sourceIds": [
+          "citi-tts-global-trade",
+          "citi-services-tts",
+          "erpnext-official",
+          "btcpay-docs"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "erpnext",
+            "name": "ERPNext",
+            "kind": "open-source",
+            "homepageUrl": "https://frappe.io/erpnext",
+            "repoUrl": "https://github.com/frappe/erpnext",
+            "summary": "ERPNext is an open-source ERP suite covering accounting, inventory, manufacturing, CRM, HR, projects, procurement, invoices, and business operations.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "ERPNext is positioned as a free and open-source ERP platform with public source code.",
+                "sourceIds": [
+                  "erpnext-official"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "It decentralizes business operations away from proprietary enterprise suites, but it does not itself provide decentralized settlement, custody, or trade finance.",
+                "sourceIds": [
+                  "erpnext-official"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "ERPNext is broad enough for real accounting and procurement workflows, though large multinational treasury and bank connectivity needs remain outside its core replacement scope.",
+                "sourceIds": [
+                  "erpnext-official"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source ERP can reduce licensing dependence and let firms customize procurement, invoicing, and accounting workflows.",
+                "sourceIds": [
+                  "erpnext-official"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "erpnext-official"
+            ]
+          },
+          {
+            "slug": "citi-treasury-and-trade-solutions-btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://btcpayserver.org/",
+            "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+            "summary": "BTCPay Server is a free, open-source, self-hosted Bitcoin payment gateway for online or in-person merchant payments.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "BTCPay Server is free, open-source, self-hosted payment infrastructure with inspectable code.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Merchants can accept Bitcoin directly to their own wallets without a centralized payment processor.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is usable for merchant payments and invoicing, but it does not replace trade credit, fiat treasury accounts, liquidity management, or bank-grade compliance.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "btcpay-deployment-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Self-hosted payment acceptance can reduce processor fees and vendor lock-in for Bitcoin and Lightning payments.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              }
+            },
+            "sourceIds": [
+              "btcpay-docs",
+              "btcpay-deployment-faq"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-supplier-finance-clearing-network",
+            "name": "Open Supplier Finance Clearing Network",
+            "summary": "An open procurement and invoice network could let buyers, suppliers, financiers, and auditors coordinate invoice approval, early-payment offers, and settlement through interoperable software instead of a bank-owned supplier-finance portal.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "bitcoin",
+              "lightning"
+            ],
+            "thesis": "Supplier finance shifts from a bank-controlled platform to an open marketplace where verified invoices can attract liquidity from multiple funders and settle through interoperable fiat or Bitcoin rails.",
+            "bitcoinOrDecentralizationRole": "Bitcoin and Lightning are useful as optional settlement rails for cross-border or low-friction payments, while decentralized coordination matters more broadly by allowing multiple funders and operators to compete on the same invoice workflow.",
+            "coordinationMechanism": "Buyers publish approved payable events from open ERP systems, suppliers choose early-payment bids, liquidity providers compete to finance invoices, and payment processors or bank partners settle the final cash movement.",
+            "verificationOrTrustModel": "Invoices are verified against buyer approval events, purchase orders, delivery confirmations, and accounting records; funders rely on signed attestations, audit logs, and reputation bonds. Cheating is constrained by buyer confirmations and recourse rules, but fake invoices and collusion remain major risks.",
+            "failureModes": [
+              "Fraudulent invoices, forged delivery records, or buyer-supplier collusion could drain liquidity providers.",
+              "Large buyers may prefer bank-managed programs because they bundle credit, compliance, and operational support.",
+              "Cross-border legal enforceability and sanctions screening could reintroduce centralized gatekeepers."
+            ],
+            "adoptionPath": [
+              "Start with open ERP integrations for small and mid-sized suppliers that already issue digital invoices.",
+              "Add multi-funder early-payment auctions with transparent fee disclosure and signed buyer approval records.",
+              "Integrate regulated payment partners and Bitcoin or Lightning settlement only where counterparties explicitly opt in."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "citi-tts-global-trade"
+            ],
+            "enablerSourceIds": [
+              "erpnext-official",
+              "btcpay-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model opens supplier finance to multiple funders and software operators instead of a single bank portal.",
+                "sourceIds": [
+                  "erpnext-official",
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Invoices, buyer approvals, supplier choices, and funder bids are concrete coordination objects, but fraud and enforceability require strong controls.",
+                "sourceIds": [
+                  "citi-tts-global-trade",
+                  "erpnext-official"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Open ERP and payment tools exist, but regulated trade finance, credit risk, and dispute handling make implementation hard.",
+                "sourceIds": [
+                  "erpnext-official",
+                  "btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept could pressure fees and lock-in in smaller supplier-finance programs but is unlikely to replace Citi's global corporate treasury franchise quickly.",
+                "sourceIds": [
+                  "citi-tts-global-trade",
+                  "citigroup-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-24"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "citigroup-2024-annual-report",
+      "title": "Citigroup 2024 Annual Report",
+      "url": "https://www.citigroup.com/rcs/citigpa/storage/public/citi-2024-annual-report.pdf",
+      "kind": "annual-report",
+      "publisher": "Citigroup",
+      "note": "Primary source for Citi segment structure, 2024 revenue, income, assets, loans, deposits, and business overview.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "citigroup-businesses",
+      "title": "Citi Businesses",
+      "url": "https://www.citigroup.com/global/businesses",
+      "kind": "investor-relations",
+      "publisher": "Citigroup",
+      "note": "Company business overview used to validate Citi's services, markets, banking, wealth, and personal banking positioning.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "companiesmarketcap-citigroup-marketcap",
+      "title": "Citigroup Market Cap",
+      "url": "https://companiesmarketcap.com/citigroup/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data reference for current market capitalization and approximate global rank.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "companiesmarketcap-citigroup-pe",
+      "title": "Citigroup P/E Ratio",
+      "url": "https://companiesmarketcap.com/citigroup/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data reference for Citigroup's trailing price-to-earnings ratio.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "citi-mobile-page",
+      "title": "Citi Mobile App",
+      "url": "https://www.citi.com/banking/citi-mobile-app-download/landing",
+      "kind": "product-page",
+      "publisher": "Citi",
+      "note": "Official Citi product page for the consumer mobile banking app.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "citi-mobile-google-play",
+      "title": "Citi Mobile on Google Play",
+      "url": "https://play.google.com/store/apps/details?id=com.citi.citimobile",
+      "kind": "product-page",
+      "publisher": "Google Play",
+      "note": "App-store listing describing Citi Mobile features such as account opening, card replacement, Zelle, mobile deposit, ATM search, and account aggregation.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "citi-services-tts",
+      "title": "Citi Treasury and Trade Solutions",
+      "url": "https://www.citigroup.com/global/businesses/services/treasury-and-trade-solutions",
+      "kind": "product-page",
+      "publisher": "Citi",
+      "note": "Official product page for Citi's treasury and trade services business.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "citi-tts-global-trade",
+      "title": "Citi Global Trade",
+      "url": "https://www.citigroup.com/global/businesses/services/treasury-and-trade-solutions/global-trade",
+      "kind": "product-page",
+      "publisher": "Citi",
+      "note": "Official Citi page documenting global trade products, network reach, trade flows, client counts, and supplier network scale.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "mifos-x",
+      "title": "Mifos X",
+      "url": "https://mifos.org/mifos-x/",
+      "kind": "open-source-project",
+      "publisher": "Mifos Initiative",
+      "note": "Open-source financial-services platform used as a plausible community banking and financial-inclusion alternative.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Open-source federated Bitcoin e-cash project used as an enabling primitive for community custody and wallet concepts.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "fedimint-how-it-works",
+      "title": "How Fedimint Works",
+      "url": "https://fedimint.org/users/how-it-works",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Technical explanation of guardian custody, e-cash transactions, and Lightning interoperability.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "erpnext-official",
+      "title": "ERPNext",
+      "url": "https://frappe.io/erpnext",
+      "kind": "open-source-project",
+      "publisher": "Frappe",
+      "note": "Open-source ERP reference for accounting, procurement, inventory, CRM, and business workflow replacement sketches.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "btcpay-docs",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/Guide/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Documentation for self-hosted open-source Bitcoin payment processing and merchant invoicing.",
+      "accessedOn": "2026-05-24"
+    },
+    {
+      "id": "btcpay-deployment-faq",
+      "title": "BTCPay Server Deployment FAQ",
+      "url": "https://docs.btcpayserver.org/FAQ/Deployment/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Operational reference for self-hosting constraints and node requirements that affect readiness scoring.",
+      "accessedOn": "2026-05-24"
+    }
+  ],
+  "summaryMarkdown": "Citigroup refresh adds a new Financials diversified-bank bundle with two products: Citi Mobile and Citi Treasury and Trade Solutions. The strongest decentralization pressure is modular rather than full-bank replacement: open core banking, federated Bitcoin custody, open ERP, and self-hosted payment acceptance can pressure pieces of Citi's consumer and treasury workflows while regulated deposits, credit, compliance, and global bank balance-sheet services remain difficult to decentralize."
+}

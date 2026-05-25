@@ -1,5 +1,5 @@
 import { expect, test } from "bun:test";
-import { mkdir, mkdtemp, writeFile } from "node:fs/promises";
+import { mkdir, mkdtemp, readFile, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import {
@@ -645,6 +645,16 @@ test("resolveProviders honors provider availability and auto fallback order", ()
 
   expect(resolveProviders("auto", providerConfig)).toEqual(["claude"]);
   expect(() => resolveProviders("both", providerConfig)).toThrow(/requires both providers/i);
+});
+
+test("example provider config defaults auto mode to Codex before Claude", async () => {
+  const rawConfig = await readFile(
+    new URL("../../../config/ralph.providers.example.json", import.meta.url),
+    "utf8",
+  );
+  const providerConfig = JSON.parse(rawConfig) as RalphProvidersFile;
+
+  expect(providerConfig.defaultProviderOrder).toEqual(["codex", "claude"]);
 });
 
 test("resolveProviderExecutionPlan injects codex last-message capture before stdin prompt", async () => {

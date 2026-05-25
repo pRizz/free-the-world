@@ -135,11 +135,25 @@ bun run company:intake --request=<request-id> --mode=publish --provider=auto --n
 `company:intake` defaults to:
 
 - `--mode=prepare`
-- `--provider=auto`
+- `--provider=auto` (Codex first, then Claude fallback)
 - `--loop-tasks=company-overview`
 - `--concurrency=5`
 - `--already-researched=skip`
 - `--no-commit=true`
+
+Refresh the currently modeled S&P 500 catalog without publishing:
+
+```bash
+bun run sync:all --target=all --provider=codex --mode=dry-run --no-commit=true
+```
+
+Prepare a frozen top-50 expansion before any publish run:
+
+```bash
+bun run company:intake --raw="S&P 500 top 50 companies by market cap as of 2026-05-24" --mode=prepare --provider=codex --already-researched=refresh --batch-id=sp500-top50-2026-05-24 --group-label="S&P 500 Top 50 by market cap" --request-notes="Freeze and refresh the top-50 market-cap cohort." --loop-tasks=company-overview --concurrency=5
+```
+
+Review the prepared request summary and candidate roster, then resume the printed request id with `--mode=dry-run` before publishing.
 
 Queue a net-new company from a draft manifest file:
 
@@ -214,7 +228,7 @@ Generate low-level loop artifacts for every seeded company:
 bun run loop
 ```
 
-Provider defaults live in `config/ralph.providers.example.json`. Machine-local overrides belong in `.codex/ralph.providers.local.json`.
+Provider defaults live in `config/ralph.providers.example.json`; `auto` tries Codex first and then Claude. Machine-local overrides belong in `.codex/ralph.providers.local.json`.
 Claude provider entries can also set `env` overrides; the default profile now disables nonessential traffic and official marketplace autoinstall so Ralph runs are less exposed to local Claude plugin state.
 
 ## Theme

@@ -33,6 +33,12 @@ export const contentGraph: ContentGraph = {
       "label": "S&P 500 · Top 35 by market cap",
       "regionId": "us",
       "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
     }
   ],
   "sectors": [
@@ -67,6 +73,10 @@ export const contentGraph: ContentGraph = {
     {
       "id": "industrials",
       "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
     }
   ],
   "industries": [
@@ -121,9 +131,19 @@ export const contentGraph: ContentGraph = {
       "label": "Diversified Banks"
     },
     {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
       "id": "pharmaceuticals",
       "sectorId": "health-care",
       "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
     },
     {
       "id": "payment-networks",
@@ -171,9 +191,19 @@ export const contentGraph: ContentGraph = {
       "label": "Aerospace & Defense"
     },
     {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
       "id": "communications-equipment",
       "sectorId": "information-technology",
       "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
     },
     {
       "id": "tobacco",
@@ -184,6 +214,11 @@ export const contentGraph: ContentGraph = {
       "id": "semiconductor-equipment",
       "sectorId": "information-technology",
       "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
     }
   ],
   "technologyWaves": [

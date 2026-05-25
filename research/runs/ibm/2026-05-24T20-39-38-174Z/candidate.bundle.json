@@ -1,0 +1,506 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "ibm",
+    "name": "IBM",
+    "ticker": "IBM",
+    "rankApprox": 50,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top50"
+    ],
+    "sectorId": "information-technology",
+    "industryId": "software-cloud",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/ibm/marketcap/",
+    "description": "IBM provides hybrid cloud, artificial intelligence, consulting, infrastructure, and enterprise software products and services.",
+    "overview": [
+      {
+        "title": "Business profile",
+        "paragraphs": [
+          "IBM is an enterprise technology company centered on software, consulting, infrastructure, and financing, with strategic emphasis on hybrid cloud and AI.",
+          "Its current growth narrative depends heavily on Red Hat, OpenShift, watsonx, automation software, mainframe infrastructure cycles, and large-client consulting relationships."
+        ]
+      },
+      {
+        "title": "Registry relevance",
+        "paragraphs": [
+          "IBM is unusually exposed to open-source substitution because Red Hat and OpenShift sit directly on Kubernetes, Linux, and open cloud-native ecosystems.",
+          "At the same time, IBM's moat comes from support contracts, regulated-enterprise trust, long procurement cycles, migration services, and operational integration rather than from purely closed software."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "IBM's moat is strongest in large enterprises that need accountable vendors for mission-critical infrastructure, regulated AI, hybrid cloud operations, and legacy modernization. Its software and consulting relationships create switching costs because customers often embed IBM tools into security, compliance, mainframe, and data workflows.",
+      "The moat is weaker where the underlying primitives are already open: Kubernetes, Linux, open model tooling, data lakehouse formats, and MLOps components can be assembled without IBM. IBM's advantage is therefore less about exclusive technical control and more about trust, integration, support, procurement access, and enterprise-grade packaging."
+    ],
+    "decentralizationNarrative": [
+      "IBM is not a decentralization-native company, but many of the markets it serves are vulnerable to more federated and open operating models. OpenShift competes in a world where Kubernetes can run across clouds and bare metal, and watsonx competes in a world where open models and open MLOps tooling continue to improve.",
+      "The most credible decentralization pressure comes from open-source stacks, self-hosted AI, federated model governance, and cooperative cloud operators that reduce dependence on a single hyperscaler or enterprise platform vendor. Bitcoin or Lightning are not central to IBM's current products, though proof-of-work or payment rails could matter at the edges for compute markets and abuse-resistant AI coordination."
+    ],
+    "sourceIds": [
+      "ibm-2025-annual-report",
+      "ibm-financial-reporting",
+      "stockanalysis-ibm-market-cap",
+      "stockanalysis-ibm-pe"
+    ],
+    "technologyWaveIds": [
+      "bitcoin-native-coordination"
+    ],
+    "snapshotNote": "Prepared on 2026-05-24 from IBM annual-report, product, market-data, and open-source ecosystem sources for the S&P 500 top-50 refresh.",
+    "inputMetrics": {
+      "moat": {
+        "value": 7,
+        "rationale": "IBM has durable enterprise relationships, support obligations, regulated-industry trust, Red Hat assets, and mainframe-adjacent switching costs, but much of its strategic software stack is built on open foundations that customers can substitute or self-operate.",
+        "sourceIds": [
+          "ibm-2025-annual-report",
+          "ibm-openshift-product",
+          "okd-about"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "decentralizability": {
+        "value": 6,
+        "rationale": "IBM's core markets can be served by open-source Kubernetes, Linux, AI model, and MLOps ecosystems, but enterprise buyers still need support, compliance, procurement, and integration layers that make full decentralization slower.",
+        "sourceIds": [
+          "kubernetes-docs",
+          "okd-about",
+          "huggingface-transformers-github",
+          "mlflow-docs"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "profitability": {
+        "value": 7,
+        "rationale": "IBM reported 2025 revenue of $67.5 billion and net income from continuing operations of $10.6 billion, indicating a profitable enterprise technology franchise with meaningful earnings power.",
+        "sourceIds": [
+          "ibm-2025-10k"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "peRatio": {
+        "value": 22.37,
+        "rationale": "FinanceCharts reported IBM's trailing P/E ratio at 22.37 as of 2026-05-21; this is a live market metric and should be refreshed before publication if exact valuation precision matters.",
+        "sourceIds": [
+          "financecharts-ibm-pe"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "marketCap": {
+        "value": 237760000000,
+        "rationale": "StockAnalysis reported IBM market capitalization of $237.76 billion as of 2026-05-21.",
+        "sourceIds": [
+          "stockanalysis-ibm-market-cap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-24"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "red-hat-openshift",
+      "name": "Red Hat OpenShift",
+      "category": "Hybrid cloud application platform",
+      "homepageUrl": "https://www.ibm.com/products/openshift",
+      "summary": "Red Hat OpenShift is IBM's enterprise Kubernetes application platform for building, deploying, and operating containerized workloads across hybrid cloud environments.",
+      "whyItMatters": "OpenShift is strategically important because it packages open Kubernetes primitives into a supported enterprise platform, letting IBM monetize the operational complexity of hybrid cloud.",
+      "replacementSketch": [
+        "A credible replacement path starts with upstream Kubernetes, OKD, GitOps, open observability, and managed support from smaller vendors or internal platform teams.",
+        "The harder part is not basic orchestration; it is reproducing enterprise support, compliance controls, upgrade discipline, security defaults, and the accountability large buyers expect from Red Hat."
+      ],
+      "sourceIds": [
+        "ibm-openshift-product",
+        "ibm-openshift-docs",
+        "kubernetes-docs",
+        "okd-about"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "kubernetes",
+          "name": "Kubernetes",
+          "kind": "open-source",
+          "homepageUrl": "https://kubernetes.io/",
+          "repoUrl": "https://github.com/kubernetes/kubernetes",
+          "summary": "Kubernetes is the open-source container orchestration engine underlying much of the cloud-native ecosystem.",
+          "metrics": {
+            "openness": {
+              "value": 10,
+              "rationale": "Kubernetes is an open-source CNCF project with public documentation, source code, and a broad multi-vendor ecosystem.",
+              "sourceIds": [
+                "kubernetes-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "Kubernetes can be run across clouds, private data centers, and bare metal, reducing dependence on a single vendor even when commercial support is added.",
+              "sourceIds": [
+                "kubernetes-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 9,
+              "rationale": "Kubernetes is widely used for production container orchestration and has mature documentation and ecosystem support.",
+              "sourceIds": [
+                "kubernetes-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "The software itself is open source, but meaningful savings depend on operator skill, support choices, and the complexity of the workloads being migrated.",
+              "sourceIds": [
+                "kubernetes-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "kubernetes-docs"
+          ]
+        },
+        {
+          "slug": "okd",
+          "name": "OKD",
+          "kind": "open-source",
+          "homepageUrl": "https://okd.io/",
+          "repoUrl": "https://github.com/okd-project/okd",
+          "summary": "OKD is the community distribution of Kubernetes related to the OpenShift ecosystem.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "OKD is documented as a community Kubernetes distribution with public documentation and project resources.",
+              "sourceIds": [
+                "okd-about",
+                "okd-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "OKD gives operators a closer OpenShift-like path without relying entirely on IBM's commercial distribution.",
+              "sourceIds": [
+                "okd-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 6,
+              "rationale": "OKD is usable and actively documented, but enterprises that require vendor-backed support may still prefer Red Hat OpenShift.",
+              "sourceIds": [
+                "okd-docs",
+                "okd-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 8,
+              "rationale": "OKD can reduce subscription dependence for capable operators, though support and staffing costs remain material.",
+              "sourceIds": [
+                "okd-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "okd-about",
+            "okd-docs"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-kubernetes-operator-coops",
+          "name": "Federated Kubernetes operator cooperatives",
+          "summary": "Regional cloud operators, public institutions, and specialist platform teams could form federated support cooperatives around Kubernetes and OKD, sharing hardened cluster profiles, audit evidence, incident playbooks, and procurement templates while each member runs infrastructure locally.",
+          "angleIds": [
+            "federation",
+            "cooperative-production",
+            "decentralized-coordination"
+          ],
+          "thesis": "OpenShift monetizes the trust and operational discipline around Kubernetes; a federation of operators could move some of that trust into shared governance, portable runbooks, and pooled support rather than a single vendor subscription.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is federation and cooperative production, not Bitcoin. The point is to separate operational credibility from single-vendor control while preserving shared standards and accountability.",
+          "coordinationMechanism": "Members coordinate through shared certification profiles, rotating maintenance groups, common incident response procedures, public conformance records, and pooled procurement for security audits and support retainers.",
+          "verificationOrTrustModel": "Clusters would publish signed conformance attestations, reproducible configuration baselines, audit logs, and third-party security reviews; cheating is constrained by revocable membership, customer-visible attestations, and cross-member incident review.",
+          "failureModes": [
+            "The cooperative may fail to match Red Hat's support depth for severe production incidents.",
+            "Shared governance can become slow or politicized when members disagree on upgrade cadence, security posture, or commercial priorities."
+          ],
+          "adoptionPath": [
+            "Start with non-critical workloads for municipalities, universities, regional hosting providers, and privacy-sensitive organizations already comfortable with open-source operations.",
+            "Expand into regulated workloads only after conformance, support response, and audit evidence become credible enough for procurement teams."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "ibm-openshift-product",
+            "ibm-openshift-docs"
+          ],
+          "enablerSourceIds": [
+            "kubernetes-docs",
+            "okd-about",
+            "okd-docs"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "The concept directly distributes platform operation and support across many operators while retaining shared standards.",
+              "sourceIds": [
+                "kubernetes-docs",
+                "okd-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Federated open-source infrastructure communities are plausible, but enterprise-grade support coordination is difficult and requires durable governance.",
+              "sourceIds": [
+                "okd-docs",
+                "kubernetes-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "The technical components exist, but reliable 24/7 operations, liability handling, and audit processes are the hard implementation work.",
+              "sourceIds": [
+                "okd-about",
+                "kubernetes-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "This could pressure OpenShift subscriptions for cost-sensitive or sovereignty-focused buyers, but IBM remains strong where buyers require single-vendor accountability.",
+              "sourceIds": [
+                "ibm-openshift-product",
+                "ibm-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "watsonx",
+      "name": "watsonx",
+      "category": "Enterprise AI and data platform",
+      "homepageUrl": "https://www.ibm.com/products/watsonx",
+      "summary": "watsonx is IBM's enterprise AI and data platform for building, deploying, governing, and scaling AI applications and models.",
+      "whyItMatters": "watsonx is IBM's flagship response to enterprise generative AI demand, combining model tooling, data infrastructure, governance, and consulting-led implementation.",
+      "replacementSketch": [
+        "A lighter replacement can combine open models, Hugging Face tooling, MLflow, open evaluation frameworks, and self-hosted data platforms for teams that can operate their own AI stack.",
+        "The main gap is governance and enterprise assurance: regulated buyers need lineage, policy enforcement, monitoring, auditability, and support that many open stacks provide only as pieces."
+      ],
+      "sourceIds": [
+        "ibm-watsonx-product",
+        "ibm-watsonx-news",
+        "huggingface-transformers-github",
+        "mlflow-docs"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "hugging-face-transformers",
+          "name": "Hugging Face Transformers",
+          "kind": "open-source",
+          "homepageUrl": "https://huggingface.co/docs/transformers/index",
+          "repoUrl": "https://github.com/huggingface/transformers",
+          "summary": "Transformers is an open-source library for using and training state-of-the-art machine learning models across text, vision, audio, and multimodal tasks.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "The project is publicly developed on GitHub and explicitly positioned around broad access to model tooling.",
+              "sourceIds": [
+                "huggingface-transformers-github",
+                "huggingface-transformers-paper"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "Transformers helps teams run and adapt models outside a single proprietary platform, though model hosting and governance may still centralize elsewhere.",
+              "sourceIds": [
+                "huggingface-transformers-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "The library is widely adopted for modern AI development, but it is a toolkit rather than a complete enterprise governance platform.",
+              "sourceIds": [
+                "huggingface-transformers-github",
+                "huggingface-transformers-paper"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 8,
+              "rationale": "Open tooling can lower platform dependence and enable self-hosted experimentation, with costs shifting toward compute, data, and engineering labor.",
+              "sourceIds": [
+                "huggingface-transformers-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "huggingface-transformers-github",
+            "huggingface-transformers-paper"
+          ]
+        },
+        {
+          "slug": "mlflow",
+          "name": "MLflow",
+          "kind": "open-source",
+          "homepageUrl": "https://mlflow.org/",
+          "repoUrl": "https://github.com/mlflow/mlflow",
+          "summary": "MLflow is an open-source platform for managing machine learning and AI workflows, artifacts, experiments, models, and lifecycle operations.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "MLflow is documented as an open-source platform for the machine learning lifecycle with public project infrastructure.",
+              "sourceIds": [
+                "mlflow-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "MLflow can be self-hosted and connected to different model, data, and deployment backends, reducing reliance on one AI platform.",
+              "sourceIds": [
+                "mlflow-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "MLflow is mature enough for serious MLOps workflows, though enterprise governance still requires integration with policy, identity, and monitoring systems.",
+              "sourceIds": [
+                "mlflow-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "Open lifecycle tooling can reduce dependence on bundled AI platforms, but operating costs remain significant for production AI systems.",
+              "sourceIds": [
+                "mlflow-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "mlflow-docs"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-ai-governance-ledgers",
+          "name": "Federated AI governance ledgers",
+          "summary": "A federated AI governance layer could let organizations publish signed model cards, evaluation results, dataset lineage, deployment policies, and incident records without relying on one vendor's AI governance platform.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination",
+            "proof-of-work"
+          ],
+          "thesis": "watsonx captures value by packaging enterprise AI governance with model and data tooling; a federated evidence layer would make governance records portable across open AI stacks and competing platforms.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated attestations and portable audit evidence. Proof-of-work could optionally rate-limit spammy or low-cost fake attestations, but it is not the core compute layer for model training.",
+          "coordinationMechanism": "Model builders, auditors, deployers, and buyers coordinate by publishing signed evidence bundles for model provenance, evaluation, policy checks, and deployment incidents to interoperable registries.",
+          "verificationOrTrustModel": "Trust depends on cryptographic signatures, reproducible evaluation harnesses, independent auditor keys, timestamped records, and penalties for revoked or fraudulent attestations; proof-of-work can add friction to mass fake submissions but cannot prove model quality by itself.",
+          "failureModes": [
+            "Organizations may refuse to publish enough evidence for competitive, privacy, or regulatory reasons.",
+            "Attestation systems can become checkbox compliance if evaluations are weak, non-reproducible, or captured by preferred auditors."
+          ],
+          "adoptionPath": [
+            "Begin with open-model deployments where teams already need model cards, evaluation logs, and reproducible provenance.",
+            "Grow into regulated enterprise procurement when auditors and buyers accept portable governance records as evidence alongside vendor-specific controls."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "ibm-watsonx-product",
+            "ibm-watsonx-news"
+          ],
+          "enablerSourceIds": [
+            "huggingface-transformers-github",
+            "mlflow-docs",
+            "huggingface-transformers-paper"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "The concept moves governance evidence from a single platform into interoperable registries controlled by many organizations.",
+              "sourceIds": [
+                "huggingface-transformers-github",
+                "mlflow-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Signed evidence, open tooling, and shared registries are plausible, but industry-wide governance standards are hard to align.",
+              "sourceIds": [
+                "mlflow-docs",
+                "huggingface-transformers-paper"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "The software primitives exist, but robust privacy-preserving audits, liability, and regulatory acceptance remain unresolved.",
+              "sourceIds": [
+                "mlflow-docs",
+                "huggingface-transformers-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 6,
+              "rationale": "Portable AI governance would pressure watsonx where customers mainly need auditability rather than IBM's full managed platform and consulting stack.",
+              "sourceIds": [
+                "ibm-watsonx-product",
+                "ibm-watsonx-news"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

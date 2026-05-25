@@ -1,0 +1,591 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "texas-instruments",
+    "name": "Texas Instruments",
+    "ticker": "TXN",
+    "rankApprox": 55,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top50"
+    ],
+    "sectorId": "information-technology",
+    "industryId": "semiconductors",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/texas-instruments/marketcap/",
+    "description": "Texas Instruments designs, manufactures, and sells analog and embedded processing semiconductors for industrial, automotive, personal electronics, data center, and communications equipment markets.",
+    "overview": [
+      {
+        "title": "Business focus",
+        "paragraphs": [
+          "Texas Instruments is a large U.S. semiconductor manufacturer focused on analog chips and embedded processors, with the company reporting that about 95% of 2025 revenue came from those two core categories.",
+          "Its strategy emphasizes internally owned manufacturing, broad product breadth, direct customer relationships, and long product lifecycles across thousands of industrial, automotive, data center, personal electronics, and communications applications."
+        ]
+      },
+      {
+        "title": "2025 scale",
+        "paragraphs": [
+          "TI reported 2025 revenue of $17.68 billion, including $14.01 billion from Analog and $2.70 billion from Embedded Processing.",
+          "The company also reported 2025 operating profit margin of 34.1%, while market-data sources placed its May 2026 market capitalization near $281.4 billion and trailing P/E near 52.9."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "TI's moat is unusually durable for a component company because it combines process and packaging know-how, owned wafer fabrication, a very broad catalog, direct sales reach, and long-lived sockets in industrial and automotive systems.",
+      "The products are often low unit-cost but high design-friction components: once a power-management IC, signal chain part, or microcontroller is validated into equipment, customers have strong reasons to keep buying the same part for years."
+    ],
+    "decentralizationNarrative": [
+      "TI is not very decentralizable at the manufacturing layer because analog and embedded semiconductors still depend on capital-intensive fabs, process control, packaging, qualification, and supply-chain reliability.",
+      "The most credible decentralization pressure is upstream and at the edge: open EDA tools, open PDKs, RISC-V cores, shared silicon shuttles, and open reference hardware can reduce design lock-in and let more local or specialist builders replace some proprietary embedded-control stacks."
+    ],
+    "sourceIds": [
+      "ti-2025-annual-report",
+      "ti-q4-2025-results",
+      "companiesmarketcap-txn-pe",
+      "lowrisc-ibex",
+      "openroad-github",
+      "tiny-tapeout"
+    ],
+    "technologyWaveIds": [
+      "printed-electronics",
+      "microfactories"
+    ],
+    "snapshotNote": "Publishable refresh prepared on 2026-05-24 using TI 2025 reporting and current market-data snapshots.",
+    "inputMetrics": {
+      "moat": {
+        "value": 88,
+        "rationale": "TI's own reporting emphasizes hard-to-replicate advantages in manufacturing, technology, broad analog and embedded portfolios, market-channel reach, and diverse long-lived customer positions.",
+        "sourceIds": [
+          "ti-2025-annual-report"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "decentralizability": {
+        "value": 28,
+        "rationale": "Open silicon tooling and RISC-V cores improve design autonomy, but TI's core value still depends on high-scale fabrication, process control, packaging, reliability qualification, and distribution.",
+        "sourceIds": [
+          "ti-2025-annual-report",
+          "lowrisc-ibex",
+          "openroad-github",
+          "tiny-tapeout"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "profitability": {
+        "value": 78,
+        "rationale": "TI reported 2025 operating profit margin of 34.1%, indicating high profitability despite semiconductor-cycle and capacity-investment pressure.",
+        "sourceIds": [
+          "ti-2025-annual-report"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "peRatio": {
+        "value": 52.9,
+        "rationale": "CompaniesMarketCap reported a May 2026 trailing P/E ratio of about 52.9 for Texas Instruments.",
+        "sourceIds": [
+          "companiesmarketcap-txn-pe"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-24"
+      },
+      "marketCap": {
+        "value": 281400000000,
+        "rationale": "CompaniesMarketCap reported Texas Instruments' market capitalization at approximately $281.4 billion in May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-txn-pe"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-24"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "analog-chips",
+      "name": "Analog chips",
+      "category": "Semiconductors",
+      "homepageUrl": "https://www.ti.com/",
+      "summary": "TI's Analog segment includes semiconductors that condition, amplify, convert, manage, and interface real-world signals such as power, temperature, pressure, light, and sound.",
+      "whyItMatters": "Analog chips are the interface between physical systems and digital control, so they sit inside industrial equipment, vehicles, power systems, consumer devices, and communications hardware.",
+      "replacementSketch": [
+        "The near-term replacement path is not a like-for-like open-source analog chip catalog. It is a gradual shift toward open reference designs, more transparent component qualification, reusable analog front-end blocks, and community-validated boards that reduce dependence on a single supplier's design ecosystem.",
+        "Over a longer horizon, shared silicon shuttles, open PDKs, and lower-cost local electronics assembly could let specialist groups produce narrower analog or mixed-signal components for repair, industrial retrofits, sensors, and low-volume equipment."
+      ],
+      "sourceIds": [
+        "ti-2025-annual-report",
+        "ti-q4-2025-results"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "kicad-open-hardware-design-stack",
+          "name": "KiCad-centered open hardware design stack",
+          "kind": "open-source",
+          "homepageUrl": "https://www.kicad.org/",
+          "summary": "Open-source PCB design workflows can help teams publish, inspect, fork, and locally manufacture analog front-end and power-electronics boards, even when the integrated circuits themselves remain proprietary.",
+          "metrics": {
+            "openness": {
+              "value": 86,
+              "rationale": "KiCad is an open-source EDA tool for PCB design and supports inspectable, shareable design files.",
+              "sourceIds": [
+                "kicad"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 62,
+              "rationale": "It decentralizes board design and repair documentation, but it does not remove dependence on semiconductor fabrication.",
+              "sourceIds": [
+                "kicad",
+                "ti-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 82,
+              "rationale": "PCB-level open hardware workflows are mature and usable today for many analog interface, control, and repair boards.",
+              "sourceIds": [
+                "kicad"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 58,
+              "rationale": "Open board designs reduce engineering and sourcing friction, though bill-of-materials cost still depends on available components.",
+              "sourceIds": [
+                "kicad"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "kicad"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "community-qualified-analog-reference-designs",
+          "name": "Community-qualified analog reference designs",
+          "summary": "Open hardware groups could publish validated analog and power-management reference boards with test fixtures, sourcing data, firmware, and repair documentation so industrial users can substitute assemblies rather than depend entirely on vendor application notes and closed design ecosystems.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-manufacturing",
+            "cooperative-production"
+          ],
+          "thesis": "This shifts some market power from proprietary component ecosystems toward transparent, testable assemblies that can be sourced, repaired, or locally adapted by many operators.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through shared design custody and distributed qualification rather than through Bitcoin payments; many labs and users can inspect the same design files and compare measured performance.",
+          "coordinationMechanism": "Designers publish board files, BOMs, test procedures, and performance logs; labs and manufacturers submit independent validation runs; buyers choose suppliers based on verified design conformance.",
+          "verificationOrTrustModel": "Cheating is constrained by reproducible test fixtures, public measurement logs, lot traceability, and multiple independent labs validating the same design, though full semiconductor-grade reliability still requires expensive qualification.",
+          "failureModes": [
+            "Open reference assemblies may fail to meet automotive, medical, or safety-critical qualification requirements.",
+            "Component substitutions can silently change behavior if the community does not maintain rigorous test coverage."
+          ],
+          "adoptionPath": [
+            "Start with non-safety-critical industrial sensor, power, and repair boards.",
+            "Build shared test fixtures and publish measured performance across multiple contract manufacturers."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "ti-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "kicad",
+            "tiny-tapeout"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 66,
+              "rationale": "The concept decentralizes board-level design, validation, and manufacturing choices while leaving advanced IC fabrication centralized.",
+              "sourceIds": [
+                "kicad",
+                "ti-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 58,
+              "rationale": "Open hardware communities already coordinate design files and reviews, but industrial-grade validation networks are harder to sustain.",
+              "sourceIds": [
+                "kicad",
+                "tiny-tapeout"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 61,
+              "rationale": "PCB-level implementation is feasible today; replacing proprietary analog silicon is much less feasible.",
+              "sourceIds": [
+                "kicad",
+                "ti-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 41,
+              "rationale": "This pressures support, reference-design, and long-tail repair lock-in more than TI's core high-volume analog IC economics.",
+              "sourceIds": [
+                "ti-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        },
+        {
+          "slug": "shared-shuttle-mixed-signal-niche-ics",
+          "name": "Shared-shuttle mixed-signal niche ICs",
+          "summary": "Open PDKs, shared tapeout services, and open EDA flows could let universities, cooperatives, and specialist manufacturers produce narrow mixed-signal chips for older nodes, repair markets, sensors, and low-volume industrial equipment.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-manufacturing",
+            "home-microfactory"
+          ],
+          "thesis": "The concept weakens the assumption that every useful low-volume chip must come from a global catalog vendor by making some older-node silicon design and tapeout capacity more accessible.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is manufacturing access and design transparency, not a token system; shared shuttles and open flows let more independent teams coordinate around verified designs.",
+          "coordinationMechanism": "Design teams submit open designs to shared shuttles, publish verification collateral, and coordinate small-batch demand from repair shops, labs, and industrial users.",
+          "verificationOrTrustModel": "Design provenance, reproducible simulations, open testbenches, wafer-lot documentation, and post-silicon characterization reduce false claims, but analog performance still depends heavily on process variation and skilled layout.",
+          "failureModes": [
+            "Open-source EDA and PDK support may remain strongest on older nodes that cannot match incumbent cost, quality, or performance.",
+            "Mixed-signal verification, packaging, reliability testing, and liability may be too expensive for community-scale actors."
+          ],
+          "adoptionPath": [
+            "Use public PDKs and shared shuttles for educational and non-critical mixed-signal prototypes.",
+            "Move into narrow repair, instrumentation, and long-tail industrial components where old-node performance is sufficient."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "ti-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "openroad-github",
+            "tiny-tapeout"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 72,
+              "rationale": "Shared shuttles and open flows expand who can participate in silicon design, although foundry manufacturing remains centralized.",
+              "sourceIds": [
+                "openroad-github",
+                "tiny-tapeout"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 52,
+              "rationale": "OpenROAD and Tiny Tapeout show real coordination primitives, but demand aggregation and quality assurance for commercial analog parts remain immature.",
+              "sourceIds": [
+                "openroad-github",
+                "tiny-tapeout"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 38,
+              "rationale": "Digital open silicon is advancing faster than robust open mixed-signal replacement of TI-class analog portfolios.",
+              "sourceIds": [
+                "openroad-github",
+                "ti-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 33,
+              "rationale": "Pressure is plausible in low-volume and long-tail niches, but it is unlikely to displace TI's broad high-reliability analog catalog soon.",
+              "sourceIds": [
+                "ti-2025-annual-report",
+                "openroad-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "embedded-processors",
+      "name": "Embedded processors",
+      "category": "Semiconductors",
+      "homepageUrl": "https://www.ti.com/microcontrollers-mcus-processors/overview.html",
+      "summary": "TI's Embedded Processing segment includes microcontrollers and processors used to control specific tasks in electronic equipment, often alongside analog functionality.",
+      "whyItMatters": "Embedded processors define the control layer for industrial equipment, vehicles, connected devices, power electronics, and communications systems.",
+      "replacementSketch": [
+        "The most credible open replacement path is RISC-V-based embedded control, where open instruction sets, open CPU cores, and open firmware stacks can reduce dependence on proprietary MCU architectures.",
+        "For many real products, replacement still requires vendor-grade peripherals, toolchains, long-term supply, functional-safety documentation, and board-level validation."
+      ],
+      "sourceIds": [
+        "ti-2025-annual-report",
+        "lowrisc-ibex",
+        "pulpino-github"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "lowrisc-ibex",
+          "name": "lowRISC Ibex",
+          "kind": "open-source",
+          "homepageUrl": "https://lowrisc.org/ibex/",
+          "repoUrl": "https://github.com/lowRISC/ibex",
+          "summary": "Ibex is a small, configurable, Apache-2.0-licensed open-source RISC-V embedded processor core aimed at embedded control, secure hardware, low power, and small-area use cases.",
+          "metrics": {
+            "openness": {
+              "value": 92,
+              "rationale": "Ibex is published as an open-source RISC-V core under the Apache 2.0 license.",
+              "sourceIds": [
+                "lowrisc-ibex"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 78,
+              "rationale": "Open CPU RTL lets many implementers inspect, modify, verify, and integrate the processor instead of depending entirely on a closed vendor core.",
+              "sourceIds": [
+                "lowrisc-ibex"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 63,
+              "rationale": "Ibex is well validated and used in commercial SoCs, but a CPU core alone is not a full drop-in replacement for TI microcontrollers and processors.",
+              "sourceIds": [
+                "lowrisc-ibex"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 65,
+              "rationale": "Open RTL can reduce licensing and audit costs, but silicon manufacturing, peripherals, software support, and certification still dominate many embedded programs.",
+              "sourceIds": [
+                "lowrisc-ibex",
+                "ti-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "lowrisc-ibex"
+          ]
+        },
+        {
+          "slug": "pulpino",
+          "name": "PULPino",
+          "kind": "open-source",
+          "homepageUrl": "https://github.com/pulp-platform/pulpino",
+          "repoUrl": "https://github.com/pulp-platform/pulpino",
+          "summary": "PULPino is an open-source single-core microcontroller system based on 32-bit RISC-V cores from ETH Zurich's PULP platform.",
+          "metrics": {
+            "openness": {
+              "value": 88,
+              "rationale": "The project publishes an open-source microcontroller system and design collateral on GitHub.",
+              "sourceIds": [
+                "pulpino-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "A full open microcontroller system improves auditability and forkability compared with closed MCU designs.",
+              "sourceIds": [
+                "pulpino-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "readiness": {
+              "value": 48,
+              "rationale": "It is valuable for research, education, and prototyping, but is not a broad commercial MCU supply-chain replacement.",
+              "sourceIds": [
+                "pulpino-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "costLeverage": {
+              "value": 54,
+              "rationale": "Open designs reduce learning and prototype costs, while production economics still depend on fabrication, packaging, and support.",
+              "sourceIds": [
+                "pulpino-github",
+                "openroad-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          },
+          "sourceIds": [
+            "pulpino-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-risc-v-industrial-control-stack",
+          "name": "Open RISC-V industrial control stack",
+          "summary": "An open embedded-control stack could combine RISC-V CPU cores, open firmware, open board files, reproducible toolchains, and public conformance tests for industrial controllers that currently depend on proprietary MCU ecosystems.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-coordination",
+            "decentralized-manufacturing"
+          ],
+          "thesis": "The control layer becomes more portable and auditable, reducing vendor lock-in around instruction sets, compilers, debug tools, and reference designs.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is open implementation and multi-party validation; Bitcoin is not central because the key constraint is hardware and firmware auditability rather than settlement.",
+          "coordinationMechanism": "Core developers, board designers, firmware maintainers, and manufacturers coordinate around public RTL, board designs, tests, and certification evidence.",
+          "verificationOrTrustModel": "Trust comes from open RTL review, formal verification where available, reproducible firmware builds, conformance tests, and independent post-silicon validation by multiple labs.",
+          "failureModes": [
+            "Open cores may lack the peripheral integration, analog integration, safety certification, and long-term support buyers expect from TI-class MCU families.",
+            "Fragmentation across boards, toolchains, and SoC variants can raise integration cost."
+          ],
+          "adoptionPath": [
+            "Begin with education, maker, research, and non-critical industrial monitoring applications.",
+            "Expand into commercial controllers where open auditability, long-term availability, or custom integration outweighs incumbent ecosystem convenience."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "ti-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "lowrisc-ibex",
+            "pulpino-github",
+            "openroad-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 79,
+              "rationale": "Open CPU cores and system designs directly reduce dependence on proprietary embedded processor implementations.",
+              "sourceIds": [
+                "lowrisc-ibex",
+                "pulpino-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 68,
+              "rationale": "Existing open RISC-V projects demonstrate credible collaboration, though industrial certification remains a higher bar.",
+              "sourceIds": [
+                "lowrisc-ibex",
+                "pulpino-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 60,
+              "rationale": "Open RISC-V embedded cores are real, but replacing full TI MCU families requires peripherals, tools, packaging, support, and supply guarantees.",
+              "sourceIds": [
+                "lowrisc-ibex",
+                "ti-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 52,
+              "rationale": "The pressure is meaningful in new custom SoCs and open-audit systems, but lower for existing high-volume validated sockets.",
+              "sourceIds": [
+                "ti-2025-annual-report",
+                "lowrisc-ibex"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        },
+        {
+          "slug": "auditable-secure-embedded-controllers",
+          "name": "Auditable secure embedded controllers",
+          "summary": "Open embedded processors with formally verified blocks and memory-safety extensions could create a trust-focused alternative for secure controllers in IoT, industrial, and infrastructure systems.",
+          "angleIds": [
+            "open-hardware",
+            "proof-of-work",
+            "decentralized-coordination"
+          ],
+          "thesis": "Instead of trusting closed silicon and vendor claims, buyers could demand auditable controller designs whose critical security behavior is publicly inspectable and independently reproduced.",
+          "bitcoinOrDecentralizationRole": "Proof-of-work is relevant only as an optional anti-spam or device-attestation primitive for fleets; the central decentralization mechanism is independent verification of open hardware and firmware.",
+          "coordinationMechanism": "Security researchers, silicon teams, firmware maintainers, and device operators coordinate through public design repositories, issue trackers, reproducible builds, and signed validation reports.",
+          "verificationOrTrustModel": "Open RTL, formal verification artifacts, reproducible firmware, signed test vectors, and multi-lab validation reduce hidden-backdoor and false-compliance risk, while fleet operators can require attestation before network access.",
+          "failureModes": [
+            "Public designs can still contain flaws, and attackers may benefit from the same visibility as defenders.",
+            "Formal verification coverage may be incomplete, especially around peripherals, analog interfaces, packaging, and supply-chain tampering."
+          ],
+          "adoptionPath": [
+            "Deploy first in security research boards, roots of trust, and infrastructure sensors where auditability is a primary buying criterion.",
+            "Move into higher-volume embedded devices after toolchains, certification evidence, and manufacturing partners mature."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "ti-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "lowrisc-ibex",
+            "openroad-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 76,
+              "rationale": "Independent verification of open controller designs is a strong decentralization fit for trust-sensitive embedded systems.",
+              "sourceIds": [
+                "lowrisc-ibex"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "coordinationCredibility": {
+              "value": 61,
+              "rationale": "Open-source hardware communities can coordinate review and validation, but security certification and manufacturing assurance remain hard.",
+              "sourceIds": [
+                "lowrisc-ibex",
+                "openroad-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "implementationFeasibility": {
+              "value": 46,
+              "rationale": "Verified open cores exist, but full auditable secure-controller products require a larger stack than the CPU core alone.",
+              "sourceIds": [
+                "lowrisc-ibex"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            },
+            "incumbentPressure": {
+              "value": 45,
+              "rationale": "This can pressure closed trust anchors and security-sensitive designs, but only a subset of TI's embedded processor market buys primarily on auditability.",
+              "sourceIds": [
+                "ti-2025-annual-report",
+                "lowrisc-ibex"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-24"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

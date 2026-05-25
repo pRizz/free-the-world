@@ -1,0 +1,687 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e5bb8-de0f-7442-b26f-6ba25f320571
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: linde
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "linde",
+  "name": "Linde",
+  "ticker": "LIN",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top50"
+  ],
+  "sectorId": "materials",
+  "industryId": "industrial-gases",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/linde/marketcap/",
+  "description": "Linde is an industrial gases and engineering company serving health care, manufacturing, chemicals, energy, electronics, and other end markets.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Industrial gases",
+    "Linde Engineering"
+  ],
+  "seedSourceUrls": [
+    "https://investors.linde.com/",
+    "https://www.linde.com/about-linde",
+    "https://companiesmarketcap.com/linde/marketcap/"
+  ],
+  "notes": "Queued from the 2026-05-24 S&P 500 top-50 market-cap cohort refresh."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-24T20:41:43.615895Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:43.615908Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:43.616346Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:43.616350Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:43.616728Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:43.616731Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:43.617127Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:43.617132Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:43.617458Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:43.617464Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:43.618235Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:43.618238Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:44.653236Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:44.653247Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:44.653613Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:44.653619Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:44.653969Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:44.653974Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:44.654320Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:44.654324Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:44.654662Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:44.654666Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-24T20:41:44.655410Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-24T20:41:44.655416Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Linde 2025 annual report revenue operating profit industrial gases engineering ...
+web search: 
+web search: Open Source Ecology oxygen concentrator open source hardware ...
+web search: 
+web search: Linde 2025 annual report sales operating profit backlog engineering long-term contracts ...
+web search: 
+web search: companiesmarketcap linde market cap LIN rank 2026
+web search: 
+web search: IDAES open source process systems engineering framework gas separation ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"linde","name":"Linde","ticker":"LIN","rankApprox":56,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top50"],"sectorId":"materials","industryId":"industrial-gases","companiesMarketCapUrl":"https://companiesmarketcap.com/linde/marketcap/","description":"Linde is a global industrial gases and engineering company serving health care, manufacturing, chemicals, energy, electronics, and other end markets.","overview":[{"title":"Business mix","paragraphs":["Linde sells atmospheric and process gases through packaged, merchant bulk, and on-site supply models, and also designs and builds gas-processing plants through Linde Engineering.","Its 2025 sales were about $34.0 billion, with packaged gas, merchant, on-site, and engineering revenue spread across the Americas, EMEA, and APAC."]},{"title":"Engineering role","paragraphs":["Linde Engineering supplies air separation, hydrogen, synthesis gas, olefin, natural gas, adsorption, membrane, purification, and liquefaction plants.","That engineering capability reinforces the gas business because customers buying critical oxygen, nitrogen, hydrogen, helium, carbon dioxide, and specialty gases often need reliable process design, operations expertise, and long-lived supply contracts."]}],"moatNarrative":["Linde's moat comes from scale, plant density, technical know-how, safety systems, customer switching costs, and long-lived on-site projects that are embedded into customer operations.","Industrial gases are often low-cost inputs relative to the cost of a production shutdown, so reliability, proximity, and proven operating capability matter more than headline commodity pricing."],"decentralizationNarrative":["Linde is difficult to decentralize at the high-purity, high-volume industrial level because cryogenic air separation, hydrogen production, helium recovery, and specialty gas logistics require capital, safety compliance, process control, and dense distribution networks.","The clearest decentralization pressure is at the edge: open oxygen concentrators, PSA nitrogen generation, open process simulation, and local fabrication can reduce dependence for smaller medical, lab, workshop, agricultural, and resilience use cases, while large industrial users remain much harder to replace."],"sourceIds":["linde-2025-annual-report","linde-about","linde-engineering-process-plants","linde-fy2025-results","stockanalysis-lin-marketcap-2026","companiesmarketcap-linde-2026"],"technologyWaveIds":["microfactories","distributed-energy"],"snapshotNote":"Reviewed on 2026-05-24 for the S&P 500 top-50 refresh; market metrics use late-May 2026 public market-data snapshots.","inputMetrics":{"moat":{"value":88,"rationale":"Linde combines global scale, technical process know-how, safety and reliability credentials, local distribution density, and large on-site project commitments in a mission-critical input category.","sourceIds":["linde-2025-annual-report","linde-engineering-process-plants","linde-fy2025-results"],"confidence":"high","lastReviewedOn":"2026-05-24"},"decentralizability":{"value":28,"rationale":"Some small oxygen and nitrogen generation use cases can decentralize, but Linde's core high-volume industrial gas and engineered plant businesses remain capital-intensive, regulated, and operationally specialized.","sourceIds":["linde-2025-annual-report","openox-mki","ose-psa-nitrogen","linde-engineering-process-plants"],"confidence":"high","lastReviewedOn":"2026-05-24"},"profitability":{"value":86,"rationale":"Linde reported 2025 operating profit above $8.9 billion and adjusted operating margin near 29.8%, indicating very strong profitability for an industrial materials supplier.","sourceIds":["linde-2025-annual-report","linde-fy2025-results"],"confidence":"high","lastReviewedOn":"2026-05-24"},"peRatio":{"value":34.12,"rationale":"StockAnalysis reported a trailing P/E ratio of 34.12 for LIN in its late-May 2026 statistics snapshot.","sourceIds":["stockanalysis-lin-statistics-2026"],"confidence":"speculative","lastReviewedOn":"2026-05-24"},"marketCap":{"value":239300000000,"rationale":"StockAnalysis reported Linde market capitalization of about $239.3 billion as of May 22, 2026; CompaniesMarketCap also placed Linde around the mid-$230-billion range in May 2026.","sourceIds":["stockanalysis-lin-marketcap-2026","companiesmarketcap-linde-2026"],"confidence":"medium","lastReviewedOn":"2026-05-24"}}},"products":[{"slug":"industrial-gases","name":"Industrial gases","category":"Industrial gases and on-site supply","homepageUrl":"https://www.linde.com/about-linde","summary":"Linde supplies atmospheric, process, medical, electronic, specialty, and packaged gases across industrial and health-care end markets.","whyItMatters":"Industrial gases are critical inputs for hospitals, semiconductor fabs, welding, food and beverage, chemicals, refining, energy, and manufacturing, making reliability and local availability structurally important.","replacementSketch":["For small and medium use cases, local PSA oxygen or nitrogen generation can replace some delivered cylinders or bulk supply when purity, flow, maintenance, and safety requirements are within reach.","For larger facilities, the plausible replacement path is not a single open gadget but a network of certified local operators using open designs, open monitoring, shared service playbooks, and verifiable uptime records."],"sourceIds":["linde-about","linde-2025-annual-report","openox-mki","ose-psa-nitrogen","messer-psa-nitrogen"],"technologyWaveIds":["microfactories","distributed-energy"],"alternatives":[{"slug":"openox-mki","name":"OpenOX MKI","kind":"open-source","homepageUrl":"https://openox.hacklab.kiev.ua/","summary":"OpenOX is an open-source hardware oxygen concentrator using molecular sieves and pressure swing adsorption to produce medical oxygen at modest flow rates.","metrics":{"openness":{"value":82,"rationale":"The project explicitly presents itself as open-source hardware with public design intent for local production.","sourceIds":["openox-mki"],"confidence":"high","lastReviewedOn":"2026-05-24"},"decentralizationFit":{"value":74,"rationale":"A modular oxygen concentrator can move some oxygen production to clinics, homes, field settings, and local makers, although it does not replace bulk industrial oxygen.","sourceIds":["openox-mki"],"confidence":"high","lastReviewedOn":"2026-05-24"},"readiness":{"value":42,"rationale":"The design documents a working PSA approach and target specifications, but medical reliability, certification, service, and scale remain major gaps versus incumbent gas supply.","sourceIds":["openox-mki"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"costLeverage":{"value":65,"rationale":"Local oxygen concentration can avoid cylinder logistics for suitable use cases, but cost leverage depends on compressor durability, sieve replacement, testing, and regulatory overhead.","sourceIds":["openox-mki"],"confidence":"medium","lastReviewedOn":"2026-05-24"}},"sourceIds":["openox-mki"]},{"slug":"open-source-psa-nitrogen-device","name":"Open Source PSA Nitrogen/Oxygen Device","kind":"open-source","homepageUrl":"https://wiki.opensourceecology.org/wiki/Open_Source_Pressure_Swing_Absorption_99%25_Nitrogen/High_Percentage_Oxygen_Device","summary":"Open Source Ecology documents exploratory pressure swing adsorption work for nitrogen and oxygen generation.","metrics":{"openness":{"value":76,"rationale":"The work is published on Open Source Ecology's wiki as an open hardware-oriented pressure swing adsorption concept.","sourceIds":["ose-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"decentralizationFit":{"value":68,"rationale":"Small PSA systems can move some nitrogen and oxygen production closer to workshops, farms, labs, and local manufacturing cells.","sourceIds":["ose-psa-nitrogen","messer-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"readiness":{"value":25,"rationale":"The concept is much less mature than commercial PSA nitrogen systems and would require engineering validation, safety controls, and dependable maintenance before serious use.","sourceIds":["ose-psa-nitrogen","messer-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"costLeverage":{"value":55,"rationale":"If matured, open PSA designs could reduce dependence on delivered gas for lower-volume use cases, but purity, energy use, and uptime determine real savings.","sourceIds":["ose-psa-nitrogen","messer-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"}},"sourceIds":["ose-psa-nitrogen","messer-psa-nitrogen"]}],"disruptionConcepts":[{"slug":"certified-local-gas-generation-cooperatives","name":"Certified local gas-generation cooperatives","summary":"A cooperative network of local oxygen and nitrogen generation operators could use open PSA designs, shared maintenance procedures, common telemetry, and independent testing to serve clinics, farms, repair shops, labs, and small manufacturers that do not need Linde-scale cryogenic supply.","angleIds":["cooperative-production","decentralized-manufacturing","open-hardware","local-materials-processing"],"thesis":"The concept attacks the distribution and service-density layer of the industrial gas model at the low-volume edge, not the high-volume air-separation core.","bitcoinOrDecentralizationRole":"Decentralized manufacturing matters because generation assets, spare parts, service skills, and accountability are spread across local operators instead of a single incumbent distribution network; Bitcoin is not central to the mechanism.","coordinationMechanism":"Customers subscribe to local certified operators; operators share open bills of materials, maintenance schedules, calibration records, and mutual-aid spare capacity through a cooperative registry.","verificationOrTrustModel":"Output purity, flow, pressure, runtime, and maintenance events are logged by calibrated sensors, periodically audited by third parties, and tied to operator reputation; spot checks and customer-side analyzers constrain false reporting, but high-trust medical uses still need formal certification.","failureModes":["Open designs may fail to meet medical or industrial certification requirements.","Small operators may underinvest in maintenance, calibration, or spare parts.","Energy costs and compressor failures can erase logistics savings.","High-purity or high-volume users may remain uneconomic without incumbent-scale plants."],"adoptionPath":["Start with non-critical workshop, agricultural, laboratory, and training use cases where local generation is already accepted.","Add audited service playbooks and customer-owned purity testing for small clinics and emergency resilience settings.","Form regional cooperatives that share backup units, maintenance labor, and documented certification pathways."],"confidence":"medium","problemSourceIds":["linde-2025-annual-report","linde-about"],"enablerSourceIds":["openox-mki","ose-psa-nitrogen","messer-psa-nitrogen"],"metrics":{"decentralizationFit":{"value":76,"rationale":"Local operators and open PSA designs directly reduce dependence on centralized gas delivery for suitable low-volume use cases.","sourceIds":["openox-mki","ose-psa-nitrogen"],"confidence":"high","lastReviewedOn":"2026-05-24"},"coordinationCredibility":{"value":55,"rationale":"Cooperative service networks and auditable telemetry are plausible, but certification, liability, and emergency backup coordination are difficult.","sourceIds":["openox-mki","messer-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"implementationFeasibility":{"value":46,"rationale":"PSA generation is established commercially and open oxygen projects exist, but robust open industrial-grade implementations need substantial engineering and compliance work.","sourceIds":["openox-mki","ose-psa-nitrogen","messer-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"incumbentPressure":{"value":38,"rationale":"Pressure is meaningful at the edge but limited against large on-site and merchant bulk accounts where Linde's scale, safety record, and reliability dominate.","sourceIds":["linde-2025-annual-report","linde-fy2025-results"],"confidence":"medium","lastReviewedOn":"2026-05-24"}}},{"slug":"microfactory-gas-utility-layer","name":"Microfactory gas utility layer","summary":"Distributed manufacturing cells could integrate small oxygen, nitrogen, shielding-gas, and monitoring modules as shared local utilities, reducing cylinder dependence for welding, cutting, inerting, food packaging, and prototyping workflows.","angleIds":["home-microfactory","decentralized-manufacturing","open-hardware"],"thesis":"As microfactories become more common, gas supply can shift from externally delivered consumables toward embedded, repairable utility modules for lower-volume production.","bitcoinOrDecentralizationRole":"The decentralization role is open hardware and local manufacturing, not monetary settlement: microfactory operators can replicate, repair, and customize gas utility modules without a single vendor controlling the stack.","coordinationMechanism":"Local fabrication shops pool demand, publish compatible equipment recipes, share maintenance parts, and coordinate backup supply through regional production guilds or cooperatives.","verificationOrTrustModel":"Gas modules publish sensor data and maintenance histories; buyers verify purity with portable analyzers, and shared guild standards define acceptable use cases and safety limits.","failureModes":["Shielding and specialty gases may require purity levels that small systems cannot reliably hit.","Improper pressure vessels, compressors, or oxygen handling can create serious safety hazards.","Open hardware may lag incumbent service quality and liability coverage.","The model may only cover intermittent or low-volume production."],"adoptionPath":["Use open monitors and small PSA systems in maker spaces, schools, repair shops, and low-risk fabrication labs.","Standardize parts, safety checklists, and analyzer-based acceptance testing across local workshops.","Expand to cooperative supply clusters for farms, food packaging, welding, and repair businesses where local generation beats cylinder logistics."],"confidence":"speculative","problemSourceIds":["linde-about","linde-2025-annual-report"],"enablerSourceIds":["openox-mki","ose-psa-nitrogen","messer-psa-nitrogen"],"metrics":{"decentralizationFit":{"value":71,"rationale":"The mechanism embeds gas generation and monitoring into distributed workshops rather than relying entirely on centralized delivery networks.","sourceIds":["openox-mki","ose-psa-nitrogen"],"confidence":"high","lastReviewedOn":"2026-05-24"},"coordinationCredibility":{"value":48,"rationale":"Workshop cooperatives can coordinate shared equipment and standards, but safety governance and liability are hard to decentralize cleanly.","sourceIds":["ose-psa-nitrogen","messer-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"implementationFeasibility":{"value":40,"rationale":"Small PSA and concentrator technology exists, but integrating it into dependable multi-gas microfactory utilities remains early and use-case dependent.","sourceIds":["openox-mki","messer-psa-nitrogen"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"incumbentPressure":{"value":32,"rationale":"The concept can chip away at low-volume cylinder demand but is unlikely to pressure Linde's large on-site contracts or specialty gas franchises soon.","sourceIds":["linde-2025-annual-report","linde-fy2025-results"],"confidence":"medium","lastReviewedOn":"2026-05-24"}}}]},{"slug":"linde-engineering","name":"Linde Engineering","category":"Gas processing and process plant engineering","homepageUrl":"https://www.linde-engineering.com/products-and-services/process-plants","summary":"Linde Engineering designs and delivers process plants for air separation, hydrogen and synthesis gas, olefins, natural gas processing, adsorption, membranes, purification, liquefaction, and carbon management.","whyItMatters":"Engineering capability helps Linde secure and execute large gas projects, including long-lived plants that anchor industrial customers into Linde's operating and technology stack.","replacementSketch":["Open process simulation cannot replace EPC execution, safety responsibility, or plant warranties, but it can lower the knowledge barrier for education, early design, local optimization, and smaller modular systems.","A credible decentralized path would combine open simulation tools, shared process models, modular equipment standards, and certified local integrators for narrower plant classes."],"sourceIds":["linde-engineering-process-plants","linde-engineering-hydrogen","dwsim","idaes"],"technologyWaveIds":["microfactories","distributed-energy"],"alternatives":[{"slug":"dwsim","name":"DWSIM","kind":"open-source","homepageUrl":"https://dwsim.org/","repoUrl":"https://github.com/DanWBR/dwsim","summary":"DWSIM is an open-source chemical process simulator for modeling, simulation, life-cycle analysis, and techno-economic analysis workflows.","metrics":{"openness":{"value":90,"rationale":"DWSIM presents itself as an open-source process simulator with public code and broad platform availability.","sourceIds":["dwsim"],"confidence":"high","lastReviewedOn":"2026-05-24"},"decentralizationFit":{"value":58,"rationale":"Open simulation lowers access barriers for engineers, students, local operators, and smaller firms, but does not replace real-world EPC, commissioning, or operations.","sourceIds":["dwsim"],"confidence":"high","lastReviewedOn":"2026-05-24"},"readiness":{"value":68,"rationale":"DWSIM is a mature and widely visible open process simulation tool, though high-stakes industrial design still requires validated data, expert review, and commercial-grade assurance.","sourceIds":["dwsim"],"confidence":"high","lastReviewedOn":"2026-05-24"},"costLeverage":{"value":72,"rationale":"Free and open simulation can reduce software access costs and improve early-stage design leverage, especially for education and smaller engineering teams.","sourceIds":["dwsim"],"confidence":"high","lastReviewedOn":"2026-05-24"}},"sourceIds":["dwsim"]},{"slug":"idaes-pse-framework","name":"IDAES PSE Framework","kind":"open-source","homepageUrl":"https://idaes.org/download-open-source-idaes-pse-framework/","repoUrl":"https://github.com/IDAES/idaes-pse","summary":"IDAES is an open-source process systems engineering framework for modeling, optimizing, and analyzing advanced energy systems.","metrics":{"openness":{"value":86,"rationale":"IDAES is explicitly released as open-source software for process systems engineering.","sourceIds":["idaes"],"confidence":"high","lastReviewedOn":"2026-05-24"},"decentralizationFit":{"value":55,"rationale":"Open modeling tools distribute design and optimization capability, but physical plant execution remains specialized and capital-intensive.","sourceIds":["idaes"],"confidence":"high","lastReviewedOn":"2026-05-24"},"readiness":{"value":60,"rationale":"IDAES is useful for advanced modeling and optimization, but readiness depends on specialized engineering skill and validated models for each plant type.","sourceIds":["idaes"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"costLeverage":{"value":66,"rationale":"Open access can reduce modeling-tool barriers for universities, labs, and smaller developers exploring process and energy-system designs.","sourceIds":["idaes"],"confidence":"medium","lastReviewedOn":"2026-05-24"}},"sourceIds":["idaes"]}],"disruptionConcepts":[{"slug":"open-modular-gas-plant-design-network","name":"Open modular gas-plant design network","summary":"Open process models, reusable modular plant blocks, and certified local integrators could make smaller air-separation, hydrogen, carbon-capture, and purification projects less dependent on a handful of global engineering incumbents.","angleIds":["open-hardware","decentralized-manufacturing","cooperative-production","open-energy-hardware"],"thesis":"The concept moves bargaining power from proprietary engineering stacks toward shared design libraries, transparent simulation, and a distributed base of qualified integrators for standardized smaller plants.","bitcoinOrDecentralizationRole":"Decentralization matters through open engineering knowledge, shared validation artifacts, and distributed fabrication and integration capacity; Bitcoin is not necessary unless later used for escrow or machine-to-machine settlement.","coordinationMechanism":"Engineers publish validated flowsheets, equipment modules, test data, and commissioning checklists; local integrators bid on standardized packages and feed operating feedback into shared model libraries.","verificationOrTrustModel":"Designs are checked against open simulations, third-party safety reviews, commissioning tests, sensor logs, and post-startup performance data; failures trigger model revisions and integrator reputation penalties.","failureModes":["Open simulations may not capture proprietary thermodynamic data or real plant behavior accurately enough.","Safety, warranty, and liability requirements may keep customers with established EPC contractors.","Large projects still require financing, project management, procurement leverage, and operational guarantees.","Incumbents can adopt open tools while retaining the customer relationship and execution moat."],"adoptionPath":["Begin with education, pre-feasibility studies, and non-critical balance-of-plant optimization using DWSIM and IDAES.","Develop validated modular flowsheets for small PSA, membrane, electrolyzer, and carbon-capture subsystems.","Create regional integrator networks that certify repeatable designs for small industrial, municipal, and microgrid-linked plants."],"confidence":"speculative","problemSourceIds":["linde-engineering-process-plants","linde-engineering-hydrogen","linde-fy2025-results"],"enablerSourceIds":["dwsim","idaes"],"metrics":{"decentralizationFit":{"value":64,"rationale":"Open model libraries and local integrator networks could distribute engineering capability, though not eliminate the need for specialized execution.","sourceIds":["dwsim","idaes"],"confidence":"high","lastReviewedOn":"2026-05-24"},"coordinationCredibility":{"value":50,"rationale":"Open software communities already coordinate process-modeling work, but plant-level validation, safety review, and liability coordination are much harder.","sourceIds":["dwsim","idaes","linde-engineering-process-plants"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"implementationFeasibility":{"value":43,"rationale":"The software enablers are real, but turning open models into certified modular plant packages requires deep domain validation and manufacturing capability.","sourceIds":["dwsim","idaes","linde-engineering-process-plants"],"confidence":"medium","lastReviewedOn":"2026-05-24"},"incumbentPressure":{"value":35,"rationale":"The concept may pressure early design and small modular projects, but Linde's global references, execution record, and project backlog remain powerful for large plants.","sourceIds":["linde-engineering-process-plants","linde-fy2025-results"],"confidence":"medium","lastReviewedOn":"2026-05-24"}}}]}]},"sources":[{"id":"linde-2025-annual-report","title":"Linde 2025 Annual Report to Shareholders","url":"https://assets.linde.com/-/media/global/corporate/corporate/documents/investors/full-year-financial-reports/2025-annual-report-to-shareholders.pdf","kind":"annual-report","publisher":"Linde","note":"Primary source for 2025 sales mix, operating profit, business segments, and company disclosures.","accessedOn":"2026-05-24"},{"id":"linde-about","title":"About Linde","url":"https://www.linde.com/about-linde","kind":"product-page","publisher":"Linde","note":"Company overview source for Linde's industrial gases, engineering activities, and end-market positioning.","accessedOn":"2026-05-24"},{"id":"linde-engineering-process-plants","title":"Process Plants","url":"https://www.linde-engineering.com/products-and-services/process-plants","kind":"product-page","publisher":"Linde Engineering","note":"Describes Linde Engineering's process plant portfolio and project references, including air separation and other gas-processing plants.","accessedOn":"2026-05-24"},{"id":"linde-engineering-hydrogen","title":"Hydrogen & Synthesis Gas Plants","url":"https://www.linde-engineering.com/products-and-services/process-plants/hydrogen-and-synthesis-gas","kind":"product-page","publisher":"Linde Engineering","note":"Supports the engineering product profile for hydrogen, syngas, purification, conditioning, and liquefaction capabilities.","accessedOn":"2026-05-24"},{"id":"linde-fy2025-results","title":"Linde Reports Full-Year and Fourth-Quarter 2025 Results","url":"https://assets.linde.com/-/media/global/corporate/corporate/documents/press-releases/2025/linde-4q25-earnings-release-tables.pdf","kind":"investor-relations","publisher":"Linde","note":"Investor release for 2025 sales, operating margin, project backlog, and management commentary.","accessedOn":"2026-05-24"},{"id":"stockanalysis-lin-marketcap-2026","title":"Linde Market Cap & Net Worth","url":"https://stockanalysis.com/stocks/lin/market-cap/","kind":"market-data","publisher":"StockAnalysis","note":"Late-May 2026 market capitalization and rank snapshot used for market-cap metric and approximate rank.","accessedOn":"2026-05-24"},{"id":"stockanalysis-lin-statistics-2026","title":"Linde Statistics & Valuation","url":"https://stockanalysis.com/stocks/lin/statistics/","kind":"market-data","publisher":"StockAnalysis","note":"Late-May 2026 valuation statistics source for trailing P/E ratio and share data.","accessedOn":"2026-05-24"},{"id":"companiesmarketcap-linde-2026","title":"Market capitalization of Linde (LIN)","url":"https://companiesmarketcap.com/linde/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Required market-cap URL and secondary market-cap/ranking reference for Linde.","accessedOn":"2026-05-24"},{"id":"openox-mki","title":"OpenOX MKI OSHW Oxygen Concentrator","url":"https://openox.hacklab.kiev.ua/","kind":"open-source-project","publisher":"OpenOX","note":"Open-source hardware oxygen concentrator source supporting decentralized oxygen-generation alternatives and concepts.","accessedOn":"2026-05-24"},{"id":"ose-psa-nitrogen","title":"Open Source Pressure Swing Absorption 99% Nitrogen/High Percentage Oxygen Device","url":"https://wiki.opensourceecology.org/wiki/Open_Source_Pressure_Swing_Absorption_99%25_Nitrogen/High_Percentage_Oxygen_Device","kind":"open-source-project","publisher":"Open Source Ecology","note":"Open hardware-oriented PSA nitrogen and oxygen concept source for distributed gas generation.","accessedOn":"2026-05-24"},{"id":"messer-psa-nitrogen","title":"PSA Nitrogen Generator Technology","url":"https://applications.messergroup.com/psa","kind":"technical-docs","publisher":"Messer","note":"Technical reference for pressure swing adsorption nitrogen generation, modularity, purity ranges, and on-site generation logic.","accessedOn":"2026-05-24"},{"id":"dwsim","title":"DWSIM: Open-Source Chemical Process Simulator","url":"https://dwsim.org/","kind":"open-source-project","publisher":"DWSIM","note":"Open-source process simulation alternative relevant to Linde Engineering's design and optimization layer.","accessedOn":"2026-05-24"},{"id":"idaes","title":"Download Open-Source IDAES PSE Framework","url":"https://idaes.org/download-open-source-idaes-pse-framework/","kind":"open-source-project","publisher":"IDAES","note":"Open-source process systems engineering framework source for distributed modeling and optimization concepts.","accessedOn":"2026-05-24"}],"summaryMarkdown":"Prepared a new Linde bundle with two products: Industrial gases and Linde Engineering. The strongest decentralization pressure is low-volume local PSA oxygen/nitrogen generation and open process-modeling tools; the core large-scale industrial gas moat remains strong."}
+tokens used
+40,049
