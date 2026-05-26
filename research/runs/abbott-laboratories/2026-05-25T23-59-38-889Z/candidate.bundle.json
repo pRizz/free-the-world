@@ -1,0 +1,582 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "abbott-laboratories",
+    "name": "Abbott Laboratories",
+    "ticker": "ABT",
+    "rankApprox": 75,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top75"
+    ],
+    "sectorId": "health-care",
+    "industryId": "pharma-medtech",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/abbott-laboratories/marketcap/",
+    "description": "Abbott Laboratories makes medical devices, diagnostics, nutrition products, and branded generic medicines.",
+    "overview": [
+      {
+        "title": "Business mix",
+        "paragraphs": [
+          "Abbott operates across medical devices, diagnostics, nutrition, and established pharmaceuticals, giving it a diversified health-care revenue base rather than a single-drug patent cycle.",
+          "The FreeStyle Libre diabetes-care platform and adult nutrition brands such as Ensure illustrate Abbott's mix of regulated device ecosystems and branded consumable products."
+        ]
+      },
+      {
+        "title": "Registry posture",
+        "paragraphs": [
+          "Abbott is a large, regulated incumbent with meaningful clinical, manufacturing, distribution, brand, and reimbursement advantages.",
+          "The most credible decentralization pressure is not a near-term clone of Abbott's regulated products, but open data, interoperable care infrastructure, cooperative nutrition formulation, and user-controlled monitoring layers around the products."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Abbott's moat is strongest where regulated clinical evidence, quality systems, reimbursement relationships, clinician trust, manufacturing scale, and brand familiarity compound. Continuous glucose monitoring and medical nutrition are not simple software markets; safety, compliance, distribution, and patient trust all matter.",
+      "The moat is not absolute. Open-source diabetes data tools show that motivated patients can build user-controlled monitoring and automation layers around commercial sensors, while open nutrition data can make product comparison and formulation more transparent."
+    ],
+    "decentralizationNarrative": [
+      "Abbott's physical products remain difficult to decentralize because sensors, diagnostics, nutrition manufacturing, labeling, and medical claims are heavily regulated and quality-sensitive. That limits near-term substitution by informal open projects.",
+      "The decentralizable layers are coordination and information: patient-controlled CGM data stores, open artificial-pancreas software, open food databases, cooperative purchasing, and transparent formulation networks that reduce dependence on a single branded interface or nutrition label."
+    ],
+    "sourceIds": [
+      "abbott-products",
+      "abbott-2025-annual-report",
+      "stockanalysis-abt-market-cap",
+      "companiesmarketcap-abt-pe"
+    ],
+    "technologyWaveIds": [
+      "microfactories"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75; market data refreshed on May 25, 2026 using public market-data pages available near the snapshot date.",
+    "inputMetrics": {
+      "moat": {
+        "value": 8,
+        "rationale": "Abbott combines regulated medical-device and diagnostics businesses, branded nutrition, broad distribution, clinical credibility, and scale across multiple health-care segments.",
+        "sourceIds": [
+          "abbott-2025-annual-report",
+          "abbott-products"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "decentralizability": {
+        "value": 3,
+        "rationale": "Core regulated devices and nutrition products are hard to decentralize, but patient-controlled data layers, open-source diabetes tools, and open nutrition databases create credible pressure around interfaces and coordination.",
+        "sourceIds": [
+          "nightscout-docs",
+          "androidaps-docs",
+          "openfoodfacts-api"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "profitability": {
+        "value": 7,
+        "rationale": "Recent public market data reports positive trailing net income of roughly $6.25 billion on about $45.13 billion of trailing revenue, indicating durable profitability despite earnings pressure.",
+        "sourceIds": [
+          "stockanalysis-abt-profile"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "peRatio": {
+        "value": 24.2,
+        "rationale": "CompaniesMarketCap reported Abbott's trailing P/E ratio at about 24.2 as of May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-abt-pe"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-25"
+      },
+      "marketCap": {
+        "value": 152250000000,
+        "rationale": "StockAnalysis reported Abbott Laboratories market capitalization at about $152.25 billion as of May 22, 2026.",
+        "sourceIds": [
+          "stockanalysis-abt-market-cap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-25"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "freestyle-libre",
+      "name": "FreeStyle Libre",
+      "category": "Continuous glucose monitoring",
+      "homepageUrl": "https://www.freestyle.abbott/",
+      "summary": "FreeStyle Libre is Abbott's continuous glucose monitoring platform, pairing wearable glucose sensors with reader and smartphone-app workflows.",
+      "whyItMatters": "CGM data is increasingly central to diabetes self-management, remote monitoring, and automated insulin-delivery workflows, making control over data access and interoperability strategically important.",
+      "replacementSketch": [
+        "A credible free-world replacement does not start by copying Abbott's regulated sensor manufacturing. It starts with patient-controlled data export, self-hosted visualization, interoperable alerts, and open automation tools that make the sensor vendor less central to the care workflow.",
+        "Over time, open hardware research and regulated community manufacturing could pressure disposable sensor margins, but the immediate wedge is open data and coordination rather than informal medical-device fabrication."
+      ],
+      "sourceIds": [
+        "abbott-products",
+        "nightscout-docs",
+        "androidaps-docs"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "nightscout",
+          "name": "Nightscout",
+          "kind": "open-source",
+          "homepageUrl": "https://nightscout.github.io/",
+          "repoUrl": "https://github.com/nightscout/cgm-remote-monitor",
+          "summary": "Nightscout is an open-source CGM-in-the-cloud system for visualizing, storing, and sharing glucose and treatment data controlled by the user or caregiver.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "Nightscout is documented as an open-source project with public GitHub repositories and self-hostable deployment patterns.",
+              "sourceIds": [
+                "nightscout-docs",
+                "nightscout-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "The project shifts glucose data access from a vendor-controlled app experience toward user-operated storage, sharing, and visualization.",
+              "sourceIds": [
+                "nightscout-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 6,
+              "rationale": "Nightscout is actively used by diabetes communities but still requires technical setup and depends on compatible data upload paths.",
+              "sourceIds": [
+                "nightscout-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 6,
+              "rationale": "Self-hosted monitoring can reduce software and data-lock-in costs, though it does not replace the underlying regulated sensor hardware.",
+              "sourceIds": [
+                "nightscout-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "nightscout-docs",
+            "nightscout-github"
+          ]
+        },
+        {
+          "slug": "androidaps",
+          "name": "AndroidAPS",
+          "kind": "open-source",
+          "homepageUrl": "https://androidaps.readthedocs.io/en/latest/",
+          "repoUrl": "https://github.com/nightscout/AndroidAPS",
+          "summary": "AndroidAPS is an open-source automated insulin-delivery application for people living with insulin-dependent diabetes, designed for technically capable users working with compatible devices and clinical awareness.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "AndroidAPS is presented as open-source documentation and has public source repositories in the Nightscout ecosystem.",
+              "sourceIds": [
+                "androidaps-docs",
+                "nightscout-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "It moves some therapy-automation logic into user-controlled software rather than a single proprietary device stack, while still depending on regulated pumps and sensors.",
+              "sourceIds": [
+                "androidaps-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 5,
+              "rationale": "The tool is real and documented but complex, safety-critical, and unsuitable as a casual consumer replacement.",
+              "sourceIds": [
+                "androidaps-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 5,
+              "rationale": "Open automation can reduce dependence on proprietary software bundles, but hardware, clinical support, and supplies remain major cost drivers.",
+              "sourceIds": [
+                "androidaps-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "androidaps-docs",
+            "nightscout-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "patient-owned-cgm-data-federation",
+          "name": "Patient-Owned CGM Data Federation",
+          "summary": "A federation of self-hosted or community-hosted CGM data stores could let patients, caregivers, clinicians, and compatible apps exchange glucose data without making a single device vendor the permanent system of record.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "The market structure shifts from closed device-app ecosystems toward interoperable patient-controlled records where sensor vendors compete on hardware quality, accuracy, and support rather than data captivity.",
+          "bitcoinOrDecentralizationRole": "Federation is central: each patient or care group can choose a host, export path, and sharing rules while still interoperating with other tools. Bitcoin is not forced into the core mechanism because medical data privacy and clinical reliability matter more than payments here.",
+          "coordinationMechanism": "Patients authorize uploaders, clinicians consume read-only views, app developers integrate documented APIs, and community hosts compete on reliability, privacy, and usability.",
+          "verificationOrTrustModel": "Sensor readings remain traceable to device-upload timestamps and account permissions; hosts can expose audit logs, signed exports, role-based access, and backup hashes. The main weakness is that the model cannot independently prove sensor accuracy without the regulated hardware chain.",
+          "failureModes": [
+            "Vendor API changes or app restrictions can break upload paths.",
+            "Self-hosting mistakes can expose sensitive medical data.",
+            "Clinicians may resist unofficial workflows without liability clarity."
+          ],
+          "adoptionPath": [
+            "Start with technically capable patients using Nightscout-style self-hosted monitoring alongside commercial sensors.",
+            "Standardize export formats, permissioned sharing, and clinician-friendly audit reports so patient-owned data becomes less operationally exotic."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "abbott-products"
+          ],
+          "enablerSourceIds": [
+            "nightscout-docs",
+            "nightscout-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "The concept directly redistributes data custody and app choice away from a single vendor interface.",
+              "sourceIds": [
+                "nightscout-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 7,
+              "rationale": "Nightscout already demonstrates user, caregiver, and follower coordination around CGM data, though standardization and clinical acceptance remain constraints.",
+              "sourceIds": [
+                "nightscout-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "The software pattern exists today, but durable adoption depends on stable data access, privacy operations, and clinician workflow integration.",
+              "sourceIds": [
+                "nightscout-docs",
+                "nightscout-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "It weakens app and data lock-in but does not directly replace Abbott's regulated sensor hardware revenue.",
+              "sourceIds": [
+                "abbott-products",
+                "nightscout-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        },
+        {
+          "slug": "open-loop-diabetes-automation-layer",
+          "name": "Open Diabetes Automation Layer",
+          "summary": "Open-source closed-loop and decision-support software can sit above commercial CGM and pump hardware, letting communities iterate on automation logic, transparency, and interoperability outside a single manufacturer's product roadmap.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-coordination"
+          ],
+          "thesis": "The defensible center of the market moves from proprietary end-to-end stacks toward certified hardware plus auditable, user-governed automation layers.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is open coordination around software, testing, and device interoperability. Bitcoin is not essential because the core problem is safety-critical control and transparency, not settlement.",
+          "coordinationMechanism": "Developers publish code and documentation, users configure compatible devices, clinicians review generated reports, and maintainers coordinate safety warnings and releases through public repositories and documentation.",
+          "verificationOrTrustModel": "Public code review, deterministic configuration, local logs, and conservative safety constraints help expose errors, but the system still depends on honest configuration and medically appropriate supervision.",
+          "failureModes": [
+            "Incorrect configuration can cause health risk.",
+            "Compatible hardware access can narrow if vendors close interfaces.",
+            "Regulatory and liability concerns can limit mainstream clinical endorsement."
+          ],
+          "adoptionPath": [
+            "Keep the first adoption path among informed users who already use CGM and insulin-delivery devices.",
+            "Build auditable reports, testbeds, and clinician education materials before attempting broader institutional use."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "abbott-products"
+          ],
+          "enablerSourceIds": [
+            "androidaps-docs",
+            "nightscout-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "Open automation decentralizes software control while still relying on commercial medical hardware.",
+              "sourceIds": [
+                "androidaps-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "The AAPS and Nightscout communities show credible coordination, but safety-critical governance remains hard.",
+              "sourceIds": [
+                "androidaps-docs",
+                "nightscout-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 5,
+              "rationale": "The software exists but mainstream deployment is constrained by compatibility, liability, and patient-safety complexity.",
+              "sourceIds": [
+                "androidaps-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 4,
+              "rationale": "It pressures proprietary software ecosystems more than Abbott's sensor manufacturing or regulatory moat.",
+              "sourceIds": [
+                "abbott-products",
+                "androidaps-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "ensure",
+      "name": "Ensure",
+      "category": "Adult nutrition shakes and supplements",
+      "homepageUrl": "https://www.ensure.com/",
+      "summary": "Ensure is Abbott's adult nutrition brand, offering shakes and supplements aimed at protein, calorie, vitamin, and specialty nutrition use cases.",
+      "whyItMatters": "Branded nutrition products sit at the intersection of consumer trust, clinical recommendations, ingredient sourcing, retail distribution, and label transparency.",
+      "replacementSketch": [
+        "A free-world replacement is more likely to be an open formulation and verification network than a single competing brand: transparent recipes, open nutrition databases, cooperative ingredient purchasing, and local production partners.",
+        "For medically vulnerable users, replacement has to respect dietitian oversight, allergen controls, and manufacturing quality rather than treating nutrition shakes as generic consumer smoothies."
+      ],
+      "sourceIds": [
+        "abbott-products",
+        "abbott-2025-annual-report",
+        "openfoodfacts-api"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "open-food-facts",
+          "name": "Open Food Facts",
+          "kind": "open-source",
+          "homepageUrl": "https://world.openfoodfacts.org/",
+          "repoUrl": "https://github.com/openfoodfacts/openfoodfacts-server",
+          "summary": "Open Food Facts is an open food-product database and API that can support nutrition comparison, ingredient transparency, and community verification around packaged foods.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "Open Food Facts provides public documentation and API access for product ingredients and nutritional values, with contribution workflows for improving product records.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "The project turns food-label data into a shared commons rather than leaving comparison and trust entirely inside brand-controlled marketing channels.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "The API and database are usable today for comparison and transparency applications, though they do not manufacture nutrition products directly.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "costLeverage": {
+              "value": 6,
+              "rationale": "Open comparison data can expose lower-cost equivalent nutrition profiles and support cooperative purchasing, but savings depend on local supply and formulation execution.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          },
+          "sourceIds": [
+            "openfoodfacts-api"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-nutrition-formulary-coops",
+          "name": "Open Nutrition Formulary Co-ops",
+          "summary": "Dietitian-reviewed open formulations for common adult nutrition use cases could be paired with cooperative purchasing and local fulfillment, reducing the premium attached to branded shakes where the need is transparent nutrition rather than proprietary therapy.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination"
+          ],
+          "thesis": "The market structure shifts from brand-led packaged nutrition toward verified recipes, shared procurement, and local production partners that compete on quality, freshness, and trust.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative governance and shared formulation records. Bitcoin is not core; the trust problem is ingredient provenance, allergen control, nutrition accuracy, and fulfillment quality.",
+          "coordinationMechanism": "Dietitians maintain formulation templates, co-ops source ingredients, local producers batch under documented controls, and buyers choose formulas based on dietary goals and verified nutrition panels.",
+          "verificationOrTrustModel": "Batches can be tied to ingredient lots, lab tests, nutrition calculations, allergen declarations, and community audits. Fraud is constrained by transparent batch records and repeat-purchase reputation, though independent lab testing is still needed for high-risk claims.",
+          "failureModes": [
+            "Medical nutrition claims can trigger regulatory requirements that small producers cannot meet.",
+            "Ingredient substitution or allergen contamination can harm users.",
+            "Cooperative operations may struggle to match Abbott's distribution and consistency."
+          ],
+          "adoptionPath": [
+            "Begin with non-prescription adult nutrition and transparent comparison tools rather than disease-treatment claims.",
+            "Add third-party lab testing, dietitian review, and documented batch controls for higher-trust use cases."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "abbott-products",
+            "abbott-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "openfoodfacts-api"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "The concept distributes formulation, purchasing, and production across co-ops instead of relying on a single branded manufacturer.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Open nutrition data can coordinate comparison and formulation work, but reliable food manufacturing governance is harder than data publication.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "Basic formulation and local production are feasible, but medically sensitive nutrition requires quality controls, labeling compliance, and careful scope limits.",
+              "sourceIds": [
+                "abbott-products",
+                "openfoodfacts-api"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 4,
+              "rationale": "The concept could pressure price and transparency for general nutrition shakes, but Abbott retains brand, retail, clinical, and quality-system advantages.",
+              "sourceIds": [
+                "abbott-2025-annual-report",
+                "abbott-products"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        },
+        {
+          "slug": "community-verified-nutrition-labels",
+          "name": "Community-Verified Nutrition Labels",
+          "summary": "An open label-verification layer could let consumers, caregivers, and institutions compare branded nutrition products against independent ingredient, allergen, price, and nutrition records before choosing Abbott, a generic, or a local formulation.",
+          "angleIds": [
+            "decentralized-coordination",
+            "recycling-and-reuse"
+          ],
+          "thesis": "The market becomes less dependent on brand claims because purchasing decisions can route through shared, inspectable product records and reuse-oriented procurement data.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is shared verification and open data rather than cryptocurrency. A payment rail could help co-op purchasing later, but it is not necessary for the initial mechanism.",
+          "coordinationMechanism": "Contributors scan labels, maintain product records, flag formula changes, compare unit nutrition costs, and publish reusable purchasing guides for households and care institutions.",
+          "verificationOrTrustModel": "Multiple contributors can cross-check barcode records, photos, ingredient lists, nutrition panels, and timestamps. Cheating is constrained by edit history and image evidence, but laboratory verification is needed for claims that cannot be read from the label.",
+          "failureModes": [
+            "Crowdsourced records can be incomplete or stale after reformulations.",
+            "Label data does not prove actual nutrient content without lab tests.",
+            "Institutions may still prefer vendor contracts and known brands over community data."
+          ],
+          "adoptionPath": [
+            "Use open databases to compare retail nutrition products and identify equivalent lower-cost options.",
+            "Add institutional procurement dashboards, formula-change alerts, and optional lab-test attachments for high-volume products."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "abbott-products"
+          ],
+          "enablerSourceIds": [
+            "openfoodfacts-api"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "Open product records decentralize comparison and monitoring, though they do not decentralize manufacturing by themselves.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "coordinationCredibility": {
+              "value": 7,
+              "rationale": "Open Food Facts already documents public API access and contribution around food-product data, making the coordination layer credible.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "implementationFeasibility": {
+              "value": 7,
+              "rationale": "Barcode scanning, label photos, nutrition-panel comparison, and alerts are practical software workflows today.",
+              "sourceIds": [
+                "openfoodfacts-api"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-25"
+            },
+            "incumbentPressure": {
+              "value": 3,
+              "rationale": "Transparency can pressure pricing and marketing claims, but Abbott's manufacturing and clinical trust advantages remain mostly intact.",
+              "sourceIds": [
+                "abbott-products",
+                "openfoodfacts-api"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-25"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

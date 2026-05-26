@@ -1,0 +1,726 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e61b3-6505-7d63-a999-ac7ae3956ef2
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: nextera-energy
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "nextera-energy",
+  "name": "NextEra Energy",
+  "ticker": "NEE",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "utilities",
+  "industryId": "electric-utilities",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/nextera-energy/marketcap/",
+  "description": "NextEra Energy is an electric utility and energy infrastructure company serving customers through regulated utilities and clean energy generation.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Florida Power & Light",
+    "NextEra Energy Resources"
+  ],
+  "seedSourceUrls": [
+    "https://www.investor.nexteraenergy.com/",
+    "https://www.nexteraenergy.com/",
+    "https://companiesmarketcap.com/nextera-energy/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 ranks 51-75 market-cap cohort."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T00:33:28.321291Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:28.321304Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:28.321687Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:28.321694Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:28.322088Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:28.322092Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:28.322474Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:28.322478Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:28.322828Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:28.322831Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:28.323485Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:28.323489Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:29.142309Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:29.142326Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:29.142693Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:29.142699Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:29.143072Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:29.143078Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:29.143443Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:29.143447Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:29.143798Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:29.143805Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:33:29.144587Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:33:29.144591Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: NextEra Energy 2024 annual report Florida Power & Light NextEra Energy Resources net income customers ...
+web search: 
+web search: CompaniesMarketCap NextEra Energy market cap PE ratio 2026 ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"nextera-energy","name":"NextEra Energy","ticker":"NEE","rankApprox":62,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top75"],"sectorId":"utilities","industryId":"electric-utilities","companiesMarketCapUrl":"https://companiesmarketcap.com/nextera-energy/marketcap/","description":"NextEra Energy is a U.S. electric utility and energy infrastructure company built around Florida Power & Light and large-scale clean-energy development through NextEra Energy Resources.","overview":[{"title":"Business Mix","paragraphs":["NextEra Energy combines a regulated Florida electric utility with a large competitive energy-development platform. Florida Power & Light supplies electricity to more than six million customer accounts, while NextEra Energy Resources develops, owns, and operates renewable generation, storage, transmission, and related energy infrastructure.","The company sits at the intersection of classic utility regulation and the capital-intensive buildout of cleaner grid infrastructure. That gives it predictable regulated earnings, but also exposes it to rate-case politics, project execution risk, financing costs, and transmission interconnection constraints."]},{"title":"Registry Snapshot","paragraphs":["For Free The World, NextEra is best understood as a centralized grid and generation incumbent whose business can be pressured by distributed energy, open grid-control software, interoperable demand response, and community-scale energy coordination.","The strongest decentralization wedge is not a like-for-like replacement for utility service. It is the gradual unbundling of generation, storage, load flexibility, metering, and dispatch into local systems that utilities must interoperate with rather than exclusively control."]}],"moatNarrative":["NextEra's moat is strong because FPL operates inside a regulated monopoly service territory with massive grid assets, customer density, political/regulatory relationships, and long-lived capital infrastructure. NEER adds scale in renewable origination, procurement, construction, financing, and operations that smaller developers struggle to match.","The moat is not purely technological. It depends on capital access, utility regulation, transmission availability, land and interconnection pipelines, and operational execution. Those are durable advantages, but they can be pressured by policy shifts, distributed-energy economics, and open standards that reduce switching costs around grid-edge resources."],"decentralizationNarrative":["NextEra's core services are difficult to decentralize completely because high-voltage transmission, reliability obligations, storm hardening, nuclear and gas generation, and utility-scale renewable projects require coordinated planning and large balance sheets. A household or cooperative cannot simply replace the full FPL system.","The decentralization path is modular: community solar, behind-the-meter batteries, open energy management, automated demand response, virtual power plants, microgrids, and transparent local markets can move some control away from the incumbent utility. The practical question is whether these systems remain utility-administered programs or become interoperable networks where homes, businesses, municipalities, and cooperatives can coordinate directly."],"sourceIds":["nee-2024-annual-report","nee-about","neer-who-we-are","companiesmarketcap-nee-marketcap","companiesmarketcap-nee-pe"],"technologyWaveIds":["distributed-energy"],"snapshotNote":"New publishable bundle created from the supplied May 25, 2026 S&P 500 top-75 queue manifest and refreshed with current company, financial, and open-energy ecosystem sources reviewed on 2026-05-26.","inputMetrics":{"moat":{"value":88,"rationale":"FPL's regulated utility territory, customer base, grid assets, rate-base economics, and NEER's development scale create a high barrier to displacement, although regulatory and distributed-energy pressure keep the score below a near-absolute monopoly rating.","sourceIds":["nee-2024-annual-report","nee-about","neer-who-we-are"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizability":{"value":42,"rationale":"Retail electric service and utility-scale generation are physically and legally centralized, but demand response, distributed generation, storage orchestration, microgrids, and open energy-management layers create meaningful partial decentralization vectors.","sourceIds":["openadr-faq","openadr-resources","lf-energy-projects","openems-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"profitability":{"value":78,"rationale":"NextEra reports substantial recurring earnings from regulated utility operations and energy infrastructure, with profitability supported by FPL and large-scale development, though capital intensity and financing costs remain central constraints.","sourceIds":["nee-2024-annual-report","nee-q4-2025-release"],"confidence":"high","lastReviewedOn":"2026-05-26"},"peRatio":{"value":22.4,"rationale":"CompaniesMarketCap reported NextEra Energy's trailing P/E ratio at about 22.4 as of May 2026.","sourceIds":["companiesmarketcap-nee-pe"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"marketCap":{"value":184680000000,"rationale":"CompaniesMarketCap listed NextEra Energy's market capitalization at approximately $184.68 billion in May 2026.","sourceIds":["companiesmarketcap-nee-marketcap"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},"products":[{"slug":"florida-power-light","name":"Florida Power & Light","category":"regulated electric utility","homepageUrl":"https://www.fpl.com/","summary":"Florida Power & Light is NextEra Energy's regulated Florida electric utility, serving more than six million customer accounts through generation, transmission, distribution, billing, and reliability programs.","whyItMatters":"FPL is the regulated cash-flow anchor of NextEra and a useful test case for how much local energy autonomy can exist inside a large investor-owned utility service territory.","replacementSketch":["A realistic replacement path starts with households, businesses, municipalities, and community institutions operating more distributed generation, storage, flexible load, and local backup systems while still using the grid for balancing and reliability.","Over time, open protocols and community-scale coordination could reduce the utility's role from sole planner and controller toward wires operator, reliability backstop, and market participant among many local resources."],"sourceIds":["nee-2024-annual-report","nee-about","openadr-faq","openems-home"],"technologyWaveIds":["distributed-energy"],"alternatives":[{"slug":"openems","name":"OpenEMS","kind":"open-source","homepageUrl":"https://openems.io/","repoUrl":"https://github.com/OpenEMS/openems","summary":"OpenEMS is an open-source energy management platform for orchestrating renewable generation, storage, grid interaction, and controllable loads.","metrics":{"openness":{"value":92,"rationale":"The project publishes source code on GitHub and positions itself as an open-source energy management system.","sourceIds":["openems-home","openems-github"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":74,"rationale":"OpenEMS can run at the edge and coordinate local generation, storage, and load, making it a strong building block for decentralized grid-edge control even though it does not replace utility wires.","sourceIds":["openems-home","openems-docs"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":68,"rationale":"The project has public documentation and active code, but deployment still requires integration, hardware compatibility, installer expertise, and regulatory fit.","sourceIds":["openems-github","openems-docs"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":70,"rationale":"Open software can reduce vendor lock-in and integration cost for local energy systems, but hardware, installation, permitting, and utility interconnection remain major costs.","sourceIds":["openems-home","openems-docs"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"sourceIds":["openems-home","openems-github","openems-docs"]},{"slug":"openadr","name":"OpenADR","kind":"protocol","homepageUrl":"https://www.openadr.org/","summary":"OpenADR is an open automated demand-response standard for communicating grid events and load-flexibility signals between utilities, aggregators, devices, and customer systems.","metrics":{"openness":{"value":78,"rationale":"OpenADR is a published standard with alliance resources and implementation guidance, though certification and commercial implementations can vary in openness.","sourceIds":["openadr-faq","openadr-resources"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":69,"rationale":"It enables many distributed loads and resources to respond to grid signals, but most deployments still depend on utility or aggregator coordination.","sourceIds":["openadr-faq","openadr-der-guide"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":82,"rationale":"OpenADR is mature enough for real demand-response programs and DER-oriented guidance, making it more deployable than purely experimental protocols.","sourceIds":["openadr-faq","openadr-der-guide"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":63,"rationale":"Standardized demand response can defer some peak infrastructure investment and reduce proprietary integration costs, but savings depend heavily on program design and customer participation.","sourceIds":["openadr-faq","openadr-program-guide"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"sourceIds":["openadr-faq","openadr-resources","openadr-der-guide","openadr-program-guide"]}],"disruptionConcepts":[{"slug":"fpl-open-microgrid-flex-market","name":"Open Microgrid Flexibility Market","summary":"A local flexibility market would let homes, businesses, batteries, EV chargers, solar systems, and municipal microgrids offer verified load reduction, export, or backup capacity through open energy-management software and demand-response protocols instead of relying only on utility-administered programs.","angleIds":["distributed-energy-generation","microgrid-coordination","open-energy-hardware","decentralized-coordination"],"thesis":"The concept weakens the utility's exclusive control over planning and dispatch at the grid edge by making distributed resources legible, verifiable, and price-responsive across many local owners.","bitcoinOrDecentralizationRole":"Decentralization matters through local ownership and interoperable dispatch rather than Bitcoin. Open protocols and edge controllers let many independent resource owners coordinate without a single proprietary vendor stack.","coordinationMechanism":"Participants register devices through certified gateways, publish available flexibility, receive event or price signals, and settle measured performance through an aggregator, cooperative, or local market operator that interfaces with the utility or wholesale market.","verificationOrTrustModel":"Performance is checked against smart-meter data, device telemetry, baseline methods, and event logs. Cheating is constrained by comparing promised reductions or exports against measured intervals, penalizing non-performance, and requiring auditable device enrollment.","failureModes":["Baseline gaming can overpay participants that inflate normal usage before events.","Utilities or regulators may restrict third-party dispatch in the name of reliability or customer protection.","Interoperability can degrade if certified devices still implement vendor-specific extensions.","Low-income customers may be excluded if participation requires expensive batteries or controls."],"adoptionPath":["Start with municipal facilities, commercial buildings, and community resilience hubs that already have interval metering and controllable loads.","Add residential batteries, EV chargers, thermostats, and solar in neighborhoods where feeder constraints make flexibility valuable.","Use open standards and public performance reporting so multiple aggregators and cooperatives can participate instead of a single utility program vendor."],"confidence":"medium","problemSourceIds":["nee-2024-annual-report","openadr-faq"],"enablerSourceIds":["openadr-der-guide","openems-home","lf-energy-projects"],"metrics":{"decentralizationFit":{"value":76,"rationale":"The model pushes control toward many local asset owners while keeping grid coordination intact.","sourceIds":["openadr-der-guide","openems-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":70,"rationale":"Demand-response standards and energy-management systems already exist, but market rules, settlement, and regulatory acceptance are difficult.","sourceIds":["openadr-faq","openadr-program-guide","openems-docs"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":62,"rationale":"The software and protocol primitives are credible, but large-scale feeder-aware dispatch and customer enrollment would require utility integration and policy support.","sourceIds":["openadr-der-guide","lf-energy-projects"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":58,"rationale":"This would not replace FPL's grid, but it could reduce peak investment needs and shift some control and margin to local owners and aggregators.","sourceIds":["nee-2024-annual-report","openadr-faq"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},{"slug":"fpl-community-resilience-coops","name":"Community Resilience Energy Cooperatives","summary":"Neighborhoods, schools, hospitals, and municipal facilities could form cooperative microgrid clusters with shared solar, batteries, backup generation, and open control systems that island during outages and participate in grid services during normal operation.","angleIds":["cooperative-production","microgrid-coordination","distributed-energy-generation","open-energy-hardware"],"thesis":"The concept turns some reliability investment from centralized utility capital spending into locally owned resilience infrastructure, reducing customer dependence on a single utility-controlled recovery path after storms or grid failures.","bitcoinOrDecentralizationRole":"The decentralization role is cooperative ownership and local dispatch. Bitcoin is not central; the important shift is from a single investor-owned utility planning all resilience assets to communities owning and governing some of the assets themselves.","coordinationMechanism":"Members finance shared assets, govern operating rules, and use an energy-management platform to prioritize critical loads, schedule maintenance, and offer surplus flexibility to utility or wholesale programs.","verificationOrTrustModel":"Trust depends on metered energy flows, transparent cooperative accounting, equipment inspection, and auditable dispatch logs. Islanding performance can be tested periodically, and revenue shares can be tied to measured contribution and availability.","failureModes":["Capital costs and insurance requirements can block adoption in lower-income neighborhoods.","Interconnection and islanding approvals may be slow or hostile if utilities view the model as bypassing rate-base investment.","Poor governance could create disputes over who receives power during emergencies.","Hardware maintenance failures can quietly erode reliability until an outage reveals the weakness."],"adoptionPath":["Deploy first at public-purpose sites such as schools, shelters, wastewater facilities, clinics, and municipal buildings.","Expand to adjacent residential and small-business participants through shared storage, rooftop solar, and managed critical-load circuits.","Negotiate tariffs that compensate resilience hubs for capacity, demand response, and outage-support services without forcing full utility ownership."],"confidence":"medium","problemSourceIds":["nee-2024-annual-report","nee-about"],"enablerSourceIds":["openems-home","lf-energy-projects","openadr-der-guide"],"metrics":{"decentralizationFit":{"value":81,"rationale":"Community ownership and islandable microgrids move generation and resilience functions materially closer to local users.","sourceIds":["openems-home","lf-energy-projects"],"confidence":"high","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":63,"rationale":"Cooperative governance and metered microgrid operation are plausible, but tariff design and emergency prioritization are hard social and regulatory problems.","sourceIds":["lf-energy-projects","openems-docs"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":56,"rationale":"The model is technically feasible but capital-intensive, site-specific, and dependent on interconnection, permitting, and resilience funding.","sourceIds":["openems-home","nee-2024-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":52,"rationale":"It pressures a slice of utility reliability and peak-demand investment, but FPL would still own the broader distribution and transmission network.","sourceIds":["nee-2024-annual-report","nee-about"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}}]},{"slug":"nextera-energy-resources","name":"NextEra Energy Resources","category":"renewable energy and infrastructure developer","homepageUrl":"https://www.nexteraenergyresources.com/","summary":"NextEra Energy Resources develops, owns, and operates large-scale renewable generation, storage, transmission, and energy infrastructure across North America.","whyItMatters":"NEER is one of the central incumbents in utility-scale clean-energy buildout, so its vulnerabilities reveal where open planning tools, distributed generation, and local manufacturing could pressure centralized renewable development.","replacementSketch":["The practical replacement is not a single developer clone. It is a stack of open modeling tools, community finance, local installers, standardized equipment, shared interconnection knowledge, and cooperative ownership that lets more groups build smaller projects without depending entirely on giant developers.","Utility-scale expertise will still matter for transmission-connected projects, but open design, transparent procurement, and distributed ownership can reduce the information and coordination advantage of the incumbent developer."],"sourceIds":["neer-who-we-are","nee-2024-annual-report","lf-energy-projects"],"technologyWaveIds":["distributed-energy","microfactories"],"alternatives":[{"slug":"lf-energy","name":"LF Energy","kind":"open-source","homepageUrl":"https://lfenergy.org/","repoUrl":"https://github.com/lf-energy","summary":"LF Energy is a Linux Foundation initiative hosting open-source projects for power-system simulation, grid operation, interoperability, and energy-transition infrastructure.","metrics":{"openness":{"value":90,"rationale":"LF Energy hosts open-source energy projects and public repositories under a foundation governance model.","sourceIds":["lf-energy-home","lf-energy-github","lf-energy-projects"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":68,"rationale":"The projects do not directly build power plants, but they lower the software coordination barrier for more distributed and interoperable grid participants.","sourceIds":["lf-energy-home","lf-energy-projects"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"readiness":{"value":64,"rationale":"Some LF Energy projects are mature enough for serious utility and research use, while the ecosystem remains uneven across domains.","sourceIds":["lf-energy-projects","lf-energy-github"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":72,"rationale":"Shared non-differentiating grid software can reduce duplicated utility and vendor development costs, especially for modeling, interoperability, and operations tooling.","sourceIds":["lf-energy-home","lf-energy-projects"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"sourceIds":["lf-energy-home","lf-energy-projects","lf-energy-github"]},{"slug":"open-energy-modelling-framework","name":"Open Energy Modelling Framework","kind":"open-source","homepageUrl":"https://oemof.org/","repoUrl":"https://github.com/oemof/oemof","summary":"The Open Energy Modelling Framework provides open-source tools for building energy-system models used in planning, optimization, and research.","metrics":{"openness":{"value":88,"rationale":"oemof is an open-source energy-system modeling framework with public code and academic documentation.","sourceIds":["oemof-paper"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":61,"rationale":"Open planning models help communities, researchers, and smaller developers evaluate alternatives, but they do not themselves decentralize ownership or operations.","sourceIds":["oemof-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"readiness":{"value":66,"rationale":"The framework is established in open energy modeling, though production project finance and interconnection studies require additional tools and expertise.","sourceIds":["oemof-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":67,"rationale":"Open modeling reduces dependence on proprietary planning software and consulting workflows, but site development, permitting, equipment, and construction remain the dominant project costs.","sourceIds":["oemof-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"sourceIds":["oemof-paper"]}],"disruptionConcepts":[{"slug":"community-renewable-development-stack","name":"Community Renewable Development Stack","summary":"An open development stack would combine public site-screening models, open interconnection playbooks, cooperative financing templates, transparent procurement, and reusable grid-modeling workflows so municipalities, cooperatives, tribes, and local developers can originate smaller solar, wind, and storage projects without relying on a giant centralized developer.","angleIds":["cooperative-production","distributed-energy-generation","decentralized-coordination"],"thesis":"The concept attacks the incumbent developer's information, process, and financing advantage by making project origination more repeatable and shareable for local owners.","bitcoinOrDecentralizationRole":"Decentralization is central through ownership and project origination rather than payment rails. Open planning tools and cooperative templates let many local sponsors coordinate capital, land, permitting, and operations without one dominant developer controlling the pipeline.","coordinationMechanism":"Local sponsors use shared models to identify sites, publish project assumptions, solicit equipment and EPC bids, raise member or municipal capital, and share performance data back into the commons for future projects.","verificationOrTrustModel":"Claims are checked through public project documents, interconnection filings, metered production, independent engineering review, and transparent financial reporting. Shared datasets make it harder to hide unrealistic assumptions, but they do not eliminate execution risk.","failureModes":["Interconnection queues and transmission constraints can still block otherwise well-modeled projects.","Local sponsors may lack construction and operations expertise even with open tools.","Cooperative finance can be slower than incumbent balance-sheet development.","Bad shared assumptions could propagate across many projects if not audited."],"adoptionPath":["Begin with municipal solar-plus-storage and community solar projects where public procurement and local accountability already exist.","Publish reusable financial models, engineering assumptions, and interconnection lessons from each project.","Pool procurement and operations across regional cooperatives to gain some scale advantages while preserving local ownership."],"confidence":"medium","problemSourceIds":["neer-who-we-are","nee-2024-annual-report"],"enablerSourceIds":["lf-energy-projects","oemof-paper"],"metrics":{"decentralizationFit":{"value":73,"rationale":"The model shifts ownership and origination toward many local sponsors while still using centralized grids and professional contractors.","sourceIds":["lf-energy-projects","oemof-paper"],"confidence":"high","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":61,"rationale":"Open modeling and cooperative procurement are credible, but the hard parts are finance, interconnection, and project execution rather than software alone.","sourceIds":["oemof-paper","lf-energy-projects"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":58,"rationale":"The concept can start with smaller projects, but scaling to NEER-like capacity requires institutional capability and substantial capital.","sourceIds":["neer-who-we-are","oemof-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":55,"rationale":"It pressures smaller and community-scale projects more than hyperscale renewable development, but it can chip away at origination margins and political control.","sourceIds":["neer-who-we-are","nee-2024-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},{"slug":"localized-energy-hardware-loop","name":"Localized Energy Hardware Loop","summary":"A more speculative pressure vector is local or regional fabrication, repair, refurbishment, and reuse of energy hardware components such as mounting hardware, enclosures, racking parts, small wind components, controller boards, and storage balance-of-system parts using open designs and microfactory methods.","angleIds":["decentralized-manufacturing","open-hardware","home-microfactory","recycling-and-reuse","solar-manufacturing","wind-manufacturing"],"thesis":"If more energy-project hardware can be locally fabricated, repaired, or reused, large developers lose some procurement and supply-chain advantages while communities gain more resilience and bargaining power.","bitcoinOrDecentralizationRole":"The relevant decentralization mechanism is manufacturing and repair autonomy, not Bitcoin. Open hardware designs, local fabrication cells, and reuse loops reduce dependence on centralized procurement channels.","coordinationMechanism":"Design maintainers publish validated bills of materials and fabrication instructions; local shops certify parts against open test procedures; project owners source approved components locally when economics and safety rules allow.","verificationOrTrustModel":"Trust depends on open test protocols, serial-numbered parts, destructive and non-destructive testing samples, installer inspection, warranty pools, and published failure data. Safety-critical components would need stricter certification than non-structural parts.","failureModes":["Utility-scale solar and wind components have demanding safety, warranty, and bankability requirements that local fabrication may not meet.","Insurance, lender, and EPC standards may reject nontraditional parts even when technically adequate.","Counterfeit or under-tested parts could create fire, structural, or reliability risk.","The biggest components, such as turbines, transformers, and battery cells, are unlikely to decentralize quickly."],"adoptionPath":["Start with non-critical balance-of-system parts, replacement brackets, monitoring enclosures, cable-management pieces, and refurbishment workflows.","Move into certified regional fabrication for racking, small wind, and repair parts where testing is straightforward and logistics savings are meaningful.","Use shared failure databases and open certification procedures before attempting higher-risk electrical or structural components."],"confidence":"speculative","problemSourceIds":["neer-who-we-are","nee-2024-annual-report"],"enablerSourceIds":["lf-energy-projects"],"metrics":{"decentralizationFit":{"value":69,"rationale":"Local fabrication and reuse can decentralize supply chains, but it addresses only a subset of energy-infrastructure components.","sourceIds":["lf-energy-projects"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":45,"rationale":"Open design sharing is plausible, but certification, liability, and quality assurance are difficult for grid-connected hardware.","sourceIds":["lf-energy-projects"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":38,"rationale":"The near-term path is limited to lower-risk parts and repair loops; large certified energy hardware remains highly specialized and capital-intensive.","sourceIds":["nee-2024-annual-report","neer-who-we-are"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":41,"rationale":"This would create supply-chain leverage and resilience, but it is unlikely to displace NEER's core project-development scale in the near term.","sourceIds":["neer-who-we-are"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}}]}]},"sources":[{"id":"nee-2024-annual-report","title":"NextEra Energy 2024 Annual Report","url":"https://www.investor.nexteraenergy.com/~/media/Files/N/NEE-IR/investor-materials/shareholder-resources/2025/2024%20NEE%20Annual%20Report.pdf","kind":"annual-report","publisher":"NextEra Energy","note":"Primary filing-style source for FPL, NEER, operating segments, regulated utility exposure, financial performance, risks, and customer scale.","accessedOn":"2026-05-26"},{"id":"nee-q4-2025-release","title":"NextEra Energy Reports Fourth-Quarter and Full-Year 2025 Financial Results","url":"https://www.investor.nexteraenergy.com/~/media/Files/N/NEE-IR/reports-and-fillings/quarterly-earnings/2025/Q4%202025/2026-0127%20NEEQ42025News%20Release%20vF.pdf","kind":"investor-relations","publisher":"NextEra Energy","note":"Recent investor-relations source for 2025 results, backlog, generation and storage additions, and earnings-growth outlook.","accessedOn":"2026-05-26"},{"id":"nee-about","title":"About NextEra Energy","url":"https://www.nexteraenergy.com/about-us.html","kind":"product-page","publisher":"NextEra Energy","note":"Company overview source describing NextEra Energy's positioning, customer value, and energy infrastructure focus.","accessedOn":"2026-05-26"},{"id":"neer-who-we-are","title":"Who We Are | NextEra Energy Resources","url":"https://www.nexteraenergyresources.com/our-company/who-we-are.html","kind":"product-page","publisher":"NextEra Energy Resources","note":"Product and business-unit source for NEER's role as a large U.S. energy infrastructure developer.","accessedOn":"2026-05-26"},{"id":"companiesmarketcap-nee-marketcap","title":"NextEra Energy Market Cap","url":"https://companiesmarketcap.com/nextera-energy/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-data source for current NextEra Energy market capitalization and ranking context.","accessedOn":"2026-05-26"},{"id":"companiesmarketcap-nee-pe","title":"NextEra Energy P/E Ratio","url":"https://companiesmarketcap.com/nextera-energy/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-data source for current trailing P/E ratio used in input metrics.","accessedOn":"2026-05-26"},{"id":"openadr-faq","title":"OpenADR FAQ","url":"https://www.openadr.org/faq","kind":"technical-docs","publisher":"OpenADR Alliance","note":"Explains automated demand response and why standardized demand-response communication matters for grid flexibility.","accessedOn":"2026-05-26"},{"id":"openadr-resources","title":"OpenADR Resources","url":"https://www.openadr.org/resources","kind":"technical-docs","publisher":"OpenADR Alliance","note":"Provides OpenADR resources and references to specifications, standards, and implementation materials.","accessedOn":"2026-05-26"},{"id":"openadr-program-guide","title":"OpenADR Demand Response Program Guides","url":"https://www.openadr.org/demand-response-program-guide","kind":"technical-docs","publisher":"OpenADR Alliance","note":"Describes demand-response program implementation guidance, including distributed energy resource demand-response use cases.","accessedOn":"2026-05-26"},{"id":"openadr-der-guide","title":"OpenADR: Using Automated Demand Response to Manage Distributed Energy Resources","url":"https://www.openadr.org/assets/docs/openadr_der_factsheet_pdfx4.pdf","kind":"technical-docs","publisher":"OpenADR Alliance","note":"Technical source for applying OpenADR to distributed energy resources and grid-edge coordination.","accessedOn":"2026-05-26"},{"id":"openems-home","title":"OpenEMS - Open Energy Management System","url":"https://openems.io/","kind":"open-source-project","publisher":"OpenEMS Association","note":"Primary project page for the open-source energy management system alternative.","accessedOn":"2026-05-26"},{"id":"openems-github","title":"OpenEMS GitHub Repository","url":"https://github.com/OpenEMS/openems","kind":"open-source-project","publisher":"OpenEMS","note":"Source repository confirming OpenEMS code availability and project structure.","accessedOn":"2026-05-26"},{"id":"openems-docs","title":"OpenEMS Getting Started Documentation","url":"https://openems.github.io/openems.io/openems/latest/gettingstarted.html","kind":"technical-docs","publisher":"OpenEMS","note":"Documentation source for OpenEMS edge deployment and operational model.","accessedOn":"2026-05-26"},{"id":"lf-energy-home","title":"LF Energy | Open Source for the Energy Transition","url":"https://lfenergy.org/","kind":"open-source-project","publisher":"LF Energy","note":"Primary source for LF Energy's open-source energy-transition mission and ecosystem.","accessedOn":"2026-05-26"},{"id":"lf-energy-projects","title":"LF Energy Projects","url":"https://lfenergy.org/our-projects/","kind":"open-source-project","publisher":"LF Energy","note":"Catalog source for open-source grid, modeling, and energy-system projects relevant to decentralized energy coordination.","accessedOn":"2026-05-26"},{"id":"lf-energy-github","title":"LF Energy GitHub Organization","url":"https://github.com/lf-energy","kind":"open-source-project","publisher":"LF Energy","note":"Repository source for LF Energy open-source project activity and code availability.","accessedOn":"2026-05-26"},{"id":"oemof-paper","title":"The Open Energy Modelling Framework (oemof) - A New Approach to Facilitate Open Science in Energy System Modelling","url":"https://arxiv.org/abs/1808.08070","kind":"analysis","publisher":"arXiv","note":"Academic source documenting an open-source energy-system modeling framework relevant to community and cooperative renewable planning.","accessedOn":"2026-05-26"}],"summaryMarkdown":"Prepared a new NextEra Energy bundle with FPL and NextEra Energy Resources as the two registry products, using regulated-utility and open-energy sources. The refresh assigns the distributed-energy wave, keeps IPO data null due to missing sourced IPO market-cap support, and includes two disruption concepts per product focused on microgrid coordination, open demand response, cooperative renewable development, and localized energy hardware loops."}
+tokens used
+26,850

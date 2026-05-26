@@ -1,0 +1,1373 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e61bf-abdc-7531-ae94-2df3347bf204
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: tjx-companies
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "tjx-companies",
+  "name": "TJX Companies",
+  "ticker": "TJX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "consumer-discretionary",
+  "industryId": "apparel-retail",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/tjx-companies/marketcap/",
+  "description": "TJX Companies is an off-price apparel and home fashions retailer operating banners including T.J. Maxx, Marshalls, and HomeGoods.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "T.J. Maxx",
+    "Marshalls",
+    "HomeGoods"
+  ],
+  "seedSourceUrls": [
+    "https://investors.tjx.com/",
+    "https://www.tjx.com/",
+    "https://companiesmarketcap.com/tjx-companies/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 ranks 51-75 market-cap cohort."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T00:46:52.950742Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:52.950755Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:52.951158Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:52.951164Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:52.951633Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:52.951639Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:52.952068Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:52.952074Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:52.952575Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:52.952580Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:52.953282Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:52.953291Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:53.804024Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:53.804039Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:53.804399Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:53.804406Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:53.804715Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:53.804720Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:53.805016Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:53.805019Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:53.805322Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:53.805324Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:46:53.805911Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:46:53.805914Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: TJX Companies 2025 annual report net sales net income 2024 10-K ...
+web search: 
+web search: TJX Companies IPO date ...
+web search: 
+web search: TJX fiscal 2026 net sales 2026 annual report net sales 2026 ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "tjx-companies",
+      "name": "TJX Companies",
+      "ticker": "TJX",
+      "rankApprox": 65,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "consumer-discretionary",
+      "industryId": "apparel-retail",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/tjx-companies/marketcap/",
+      "description": "TJX Companies is a global off-price apparel and home fashions retailer operating banners including T.J. Maxx, Marshalls, HomeGoods, Winners, HomeSense, Sierra, and T.K. Maxx.",
+      "overview": [
+        {
+          "title": "Business Snapshot",
+          "paragraphs": [
+            "TJX operates an off-price retail model built around branded apparel, footwear, accessories, home fashions, giftware, and related merchandise sold through more than 5,000 stores and several e-commerce sites.",
+            "The company buys opportunistically from a large vendor base and turns that sourcing network into a treasure-hunt retail experience across banners such as T.J. Maxx, Marshalls, and HomeGoods."
+          ]
+        },
+        {
+          "title": "Financial Snapshot",
+          "paragraphs": [
+            "For the fiscal year ended January 31, 2026, TJX reported annual revenue of about $60.37 billion and net income of about $5.49 billion, with continued comparable-sales growth into the first quarter of fiscal 2027.",
+            "The equity market valued TJX at roughly $175 billion in late May 2026, reflecting the market's view that its off-price sourcing model, store productivity, and brand portfolio remain unusually durable in discretionary retail."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "TJX's moat is strongest in procurement, store operations, and consumer habit. The company has decades of vendor relationships, enormous purchasing scale, and the ability to move fragmented inventory into a retail environment where scarcity and discovery are part of the product.",
+        "The business is not protected by hard technical lock-in, but it is protected by execution density: buyers, distribution, stores, brand permission, landlord relationships, and consumer trust reinforce each other."
+      ],
+      "decentralizationNarrative": [
+        "TJX is meaningfully vulnerable to decentralized pressure only where buyers can coordinate directly with local resellers, thrift operators, manufacturers, or liquidation sources without needing TJX's store network.",
+        "The hardest part to decentralize is not listing merchandise online; it is authentication, returns, assortment quality, local fulfillment, and the repeatable feeling of finding underpriced branded goods. Open marketplaces and cooperative resale networks can pressure parts of the model, but replacing the full store experience remains difficult."
+      ],
+      "sourceIds": [
+        "tjx-2026-10k",
+        "tjx-q1-fy27-release",
+        "tjx-business-pages",
+        "stockanalysis-tjx-market-cap"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "snapshotNote": "Prepared as a May 26, 2026 registry refresh for the S&P 500 top-75 expansion cohort.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "TJX has a strong retail moat from vendor relationships, scale buying, global store density, proven off-price execution, and a multi-banner portfolio that is difficult for smaller retailers to replicate.",
+          "sourceIds": [
+            "tjx-2026-10k",
+            "tjx-business-pages"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "The underlying goods can be sourced, resold, and fulfilled through decentralized or cooperative networks, but TJX's scale procurement, merchandising, stores, returns, and brand trust make full decentralization hard.",
+          "sourceIds": [
+            "tjx-2026-10k",
+            "flohmarkt-project"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "TJX reported about $5.49 billion of net income on about $60.37 billion of fiscal 2026 revenue and continued strong fiscal 2027 first-quarter operating performance.",
+          "sourceIds": [
+            "tjx-2026-10k",
+            "stockanalysis-tjx-revenue",
+            "tjx-q1-fy27-release"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 32,
+          "rationale": "Approximate trailing multiple using late-May 2026 market capitalization near $175 billion divided by fiscal 2026 net income of about $5.49 billion.",
+          "sourceIds": [
+            "stockanalysis-tjx-market-cap",
+            "tjx-2026-10k"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 175020000000,
+          "rationale": "StockAnalysis reported TJX market capitalization of about $175.02 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-tjx-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "tj-maxx",
+        "name": "T.J. Maxx",
+        "category": "Off-price apparel and home fashions retail",
+        "homepageUrl": "https://tjmaxx.tjx.com/",
+        "summary": "T.J. Maxx is TJX's flagship U.S. off-price chain for apparel, footwear, accessories, beauty, jewelry, home decor, and related merchandise.",
+        "whyItMatters": "T.J. Maxx is a central expression of TJX's ability to turn opportunistic brand buying into repeat store traffic and consumer habit.",
+        "replacementSketch": [
+          "A credible replacement would combine local resale inventory, brand overstock, and independent sellers into a marketplace that preserves discovery while making provenance, condition, and fulfillment more transparent.",
+          "The near-term substitute is not one single chain, but a stack of open marketplace software, resale cooperatives, neighborhood pickup points, and trust tools for authenticating and rating sellers."
+        ],
+        "sourceIds": [
+          "tjx-tjmaxx-page",
+          "tjx-2026-10k"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "flohmarkt",
+            "name": "flohmarkt",
+            "kind": "open-source",
+            "homepageUrl": "https://flohmarkt.fyi/",
+            "repoUrl": "https://codeberg.org/flohmarkt/flohmarkt",
+            "summary": "flohmarkt is AGPL-licensed federated marketplace software that can support community-run buying and selling rather than a single centralized retail operator.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project presents itself as free and open-source software under the AGPL-3.0 license.",
+                "sourceIds": [
+                  "flohmarkt-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Federated marketplace architecture directly supports independent communities coordinating commerce without one dominant operator.",
+                "sourceIds": [
+                  "flohmarkt-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "The project is a real software effort, but it is not yet a proven high-volume substitute for national off-price retail operations.",
+                "sourceIds": [
+                  "flohmarkt-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open software and local sellers can reduce platform rent, but inventory acquisition, returns, authentication, and logistics still impose material costs.",
+                "sourceIds": [
+                  "flohmarkt-project",
+                  "tjx-2026-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "flohmarkt-project"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-local-off-price-market",
+            "name": "Federated Local Off-Price Market",
+            "summary": "A federation of neighborhood resale, overstock, and liquidation marketplaces could let local operators list branded goods, coordinate pickup or delivery, and share reputation without routing all commerce through one national retailer.",
+            "angleIds": [
+              "federation",
+              "peer-to-peer-marketplace",
+              "decentralized-coordination"
+            ],
+            "thesis": "TJX's centralized buying and store network would face pressure if local sellers and small liquidation buyers could match supply and demand with credible discovery, reputation, and fulfillment tools.",
+            "bitcoinOrDecentralizationRole": "Federation matters more than Bitcoin here: independent marketplace operators can host their own communities while interoperating on listings, seller reputation, and moderation norms.",
+            "coordinationMechanism": "Sellers list inventory through local federated nodes; buyers discover nearby goods; node operators set local policies; reputation and dispute records travel across trusted federation relationships.",
+            "verificationOrTrustModel": "Trust depends on seller history, item photos, escrow or delayed settlement, buyer dispute windows, and local node moderation. Fraud is constrained by reputation portability and operator-level accountability, but not eliminated.",
+            "failureModes": [
+              "Fragmented inventory may not match the density and surprise of a T.J. Maxx store.",
+              "Authentication and returns may remain weaker than a national retailer's standardized service model."
+            ],
+            "adoptionPath": [
+              "Start with local thrift, resale, and boutique overstock operators that already manage physical inventory.",
+              "Add shared reputation, pickup points, and cross-node search once local liquidity exists."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "tjx-tjmaxx-page",
+              "tjx-2026-10k"
+            ],
+            "enablerSourceIds": [
+              "flohmarkt-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly shifts discovery and selling from a national chain to interoperable local marketplace operators.",
+                "sourceIds": [
+                  "flohmarkt-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Federated marketplace software provides a plausible coordination layer, but retail trust, returns, and dispute handling require operator discipline.",
+                "sourceIds": [
+                  "flohmarkt-project",
+                  "tjx-2026-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software and local resale behaviors are feasible, but achieving enough inventory density to compete with T.J. Maxx is operationally hard.",
+                "sourceIds": [
+                  "flohmarkt-project",
+                  "tjx-tjmaxx-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The model could pressure some apparel discovery and resale demand, but TJX's brand supply and store traffic remain strong advantages.",
+                "sourceIds": [
+                  "tjx-2026-10k",
+                  "tjx-q1-fy27-release"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "marshalls",
+        "name": "Marshalls",
+        "category": "Off-price apparel, footwear, and home retail",
+        "homepageUrl": "https://www.marshalls.com/",
+        "summary": "Marshalls is a U.S. off-price chain in the TJX portfolio with a broad apparel assortment plus relatively expanded men's and footwear departments.",
+        "whyItMatters": "Marshalls adds banner segmentation to TJX's off-price network and helps the company reach overlapping but distinct apparel and footwear shopping occasions.",
+        "replacementSketch": [
+          "A replacement would need to aggregate independent footwear, apparel, and accessories sellers while keeping search, condition grading, and returns simple enough for mainstream shoppers.",
+          "Cooperative seller networks could challenge the lowest-friction parts of Marshalls, especially where local inventory and resale goods are already available."
+        ],
+        "sourceIds": [
+          "tjx-marshalls-page",
+          "tjx-2026-10k"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "spree-commerce",
+            "name": "Spree Commerce",
+            "kind": "open-source",
+            "homepageUrl": "https://spreecommerce.org/",
+            "repoUrl": "https://github.com/spree/spree",
+            "summary": "Spree Commerce is an open-source commerce platform that can be used by independent sellers or cooperatives to run online retail without relying on a closed proprietary storefront stack.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Spree is a long-running open-source commerce project with public source code.",
+                "sourceIds": [
+                  "spree-commerce-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "Open-source storefront software reduces dependency on proprietary commerce platforms, though each deployment can still be centrally operated.",
+                "sourceIds": [
+                  "spree-commerce-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Spree is more mature as commerce infrastructure than many experimental decentralized marketplaces, but it does not itself solve sourcing or store operations.",
+                "sourceIds": [
+                  "spree-commerce-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open-source commerce can reduce software rent for independent operators, while merchandising, payment, fulfillment, and returns remain significant expenses.",
+                "sourceIds": [
+                  "spree-commerce-project",
+                  "tjx-marshalls-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "spree-commerce-project"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-footwear-and-apparel-overstock-network",
+            "name": "Cooperative Footwear and Apparel Overstock Network",
+            "summary": "Independent apparel shops, local resellers, and small liquidation buyers could pool inventory into cooperative online catalogs while keeping fulfillment local or regional.",
+            "angleIds": [
+              "cooperative-production",
+              "peer-to-peer-marketplace",
+              "decentralized-coordination"
+            ],
+            "thesis": "Marshalls benefits from centralized buying and banner trust; a cooperative overstock network would attack that by giving smaller operators shared catalog scale without surrendering ownership to a single chain.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is shared ownership and interoperable seller coordination, not forced crypto settlement. Bitcoin or Lightning could be optional for low-cost seller payouts but is not essential.",
+            "coordinationMechanism": "Co-op members publish inventory to a shared catalog, use common item grading rules, share fulfillment standards, and route orders to the operator with the best stock, location, and service score.",
+            "verificationOrTrustModel": "Operators are audited through fulfillment metrics, return rates, buyer reviews, and random item checks. Repeated misgrading or fake listings reduce catalog visibility or trigger expulsion from the cooperative.",
+            "failureModes": [
+              "Small operators may lack consistent data quality and return handling.",
+              "Cooperative governance can be slow when members disagree about standards, pricing, or penalties."
+            ],
+            "adoptionPath": [
+              "Begin with a regional group of resale and overstock shops that already sell apparel and footwear.",
+              "Standardize catalog metadata, condition grading, and returns before expanding into national search."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "tjx-marshalls-page",
+              "tjx-2026-10k"
+            ],
+            "enablerSourceIds": [
+              "spree-commerce-project",
+              "flohmarkt-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model distributes ownership and inventory control across member sellers rather than centralizing assortment in one retailer.",
+                "sourceIds": [
+                  "spree-commerce-project",
+                  "flohmarkt-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Shared commerce software and cooperative rules can coordinate sellers, but enforcement and customer service quality remain hard.",
+                "sourceIds": [
+                  "spree-commerce-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The digital commerce layer is feasible, while inventory quality, returns, and seller discipline are the major operational constraints.",
+                "sourceIds": [
+                  "spree-commerce-project",
+                  "tjx-marshalls-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "A cooperative catalog could pressure online and local resale demand, but Marshalls' store scale and purchasing machine would remain difficult to match.",
+                "sourceIds": [
+                  "tjx-2026-10k",
+                  "tjx-q1-fy27-release"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "homegoods",
+        "name": "HomeGoods",
+        "category": "Off-price home fashions retail",
+        "homepageUrl": "https://www.homegoods.com/",
+        "summary": "HomeGoods is TJX's off-price home retail banner focused on furniture, rugs, lighting, decor, tabletop, cookware, giftware, pet products, and related home categories.",
+        "whyItMatters": "HomeGoods extends TJX's off-price model into home categories where discovery, local availability, and visual inspection matter heavily.",
+        "replacementSketch": [
+          "A replacement would combine local maker markets, reuse networks, secondhand furniture, and open design libraries for home goods that can be repaired, remade, or fabricated close to the buyer.",
+          "The most credible disruption is not a pure online store; it is a local circular home-goods network where resale, repair, and small-batch fabrication substitute for centralized buying."
+        ],
+        "sourceIds": [
+          "tjx-homegoods-page",
+          "tjx-2026-10k"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "precious-plastic",
+            "name": "Precious Plastic",
+            "kind": "open-source",
+            "homepageUrl": "https://www.preciousplastic.com/",
+            "summary": "Precious Plastic is an open hardware and community project for local plastic recycling and small-scale production, relevant to decentralized home goods and decor manufacturing.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Precious Plastic publishes open hardware knowledge and machine concepts for local plastic recycling and fabrication.",
+                "sourceIds": [
+                  "precious-plastic-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The project is explicitly oriented around local workshops and distributed recycling or fabrication rather than centralized factories.",
+                "sourceIds": [
+                  "precious-plastic-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The concept is practical for some recycled plastic goods, but it does not cover the full HomeGoods assortment or national retail service expectations.",
+                "sourceIds": [
+                  "precious-plastic-project",
+                  "tjx-homegoods-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Local recycled feedstock and open machinery can reduce some production costs, but labor, quality control, finishing, and retail presentation remain constraints.",
+                "sourceIds": [
+                  "precious-plastic-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "precious-plastic-project"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "local-circular-homegoods-microfactories",
+            "name": "Local Circular Home-Goods Microfactories",
+            "summary": "Local workshops could collect reusable materials, fabricate simple decor or household goods with open tools, and sell through neighborhood marketplaces that compete with part of the HomeGoods assortment.",
+            "angleIds": [
+              "home-microfactory",
+              "open-hardware",
+              "recycling-and-reuse",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "HomeGoods centralizes opportunistic sourcing for home products; distributed workshops would pressure generic decor and utility categories by making production, repair, and reuse local.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing is central: open machine designs, local materials, and small workshops reduce dependence on a national retailer's buying network for simple home goods.",
+            "coordinationMechanism": "Workshops source local recycled or reclaimed materials, publish available products through local marketplaces, and use shared design files, quality standards, and maker reputation to coordinate demand.",
+            "verificationOrTrustModel": "Quality is checked through visible maker identity, standardized material disclosures, local pickup inspection, return windows, and reputation histories. False sustainability claims remain a risk unless material sourcing is audited.",
+            "failureModes": [
+              "Local workshops may struggle to match the breadth, finish quality, and low prices of mass-produced home goods.",
+              "Material safety, durability, and design consistency can vary across decentralized producers."
+            ],
+            "adoptionPath": [
+              "Start with simple categories such as organizers, small decor, planters, trays, and replacement household parts.",
+              "Build local marketplace demand around repair, reuse, customization, and provenance before expanding into more complex furnishings."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "tjx-homegoods-page",
+              "tjx-2026-10k"
+            ],
+            "enablerSourceIds": [
+              "precious-plastic-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept moves production and inventory decisions to local workshops using open hardware and local materials.",
+                "sourceIds": [
+                  "precious-plastic-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Local marketplaces and maker reputation can coordinate small batches, but quality standards and consumer trust are harder at scale.",
+                "sourceIds": [
+                  "precious-plastic-project",
+                  "flohmarkt-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Open recycling and fabrication tools exist, but broad home-fashions assortment, finish quality, and safety compliance make the model speculative.",
+                "sourceIds": [
+                  "precious-plastic-project",
+                  "tjx-homegoods-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The approach could pressure generic decor and reuse-sensitive categories but is unlikely to replace HomeGoods' full assortment soon.",
+                "sourceIds": [
+                  "tjx-homegoods-page",
+                  "tjx-2026-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "tjx-2026-10k",
+      "title": "The TJX Companies 2025 Annual Report and Form 10-K",
+      "url": "https://www.tjx.com/docs/default-source/investor-docs/annual-reports/tjx-2025-annual-report-and-10-k.pdf?sfvrsn=af6ab07d_1",
+      "kind": "annual-report",
+      "publisher": "The TJX Companies",
+      "note": "Primary annual filing source for business model, segment context, fiscal 2026 net income, share repurchases, and risk context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "tjx-q1-fy27-release",
+      "title": "TJX Reports Q1 FY27 Results",
+      "url": "https://www.businesswire.com/news/home/20260519184496/en/TJX-Reports-Q1-FY27-Results-Comp-Sales-up-6-Pretax-Profit-Margin-of-12.0-and-Diluted-EPS-of-%241.19-up-29-Vs.-Last-Year-All-Well-Above-Plan-Increases-Full-Year-FY27-Comp-Sales-Growth-Pretax-Profit-Margin-EPS-and-Share-Buyback-Guidance",
+      "kind": "investor-relations",
+      "publisher": "The TJX Companies / Business Wire",
+      "note": "Latest quarterly results source for fiscal 2027 first-quarter comparable sales, profit margin, EPS, and guidance context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "tjx-business-pages",
+      "title": "TJX Businesses",
+      "url": "https://www.tjx.com/businesses",
+      "kind": "product-page",
+      "publisher": "The TJX Companies",
+      "note": "Company-operated source describing TJX retail banners and category positioning.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "tjx-tjmaxx-page",
+      "title": "T.J. Maxx",
+      "url": "https://www.tjx.com/businesses/united-states/tj-maxx",
+      "kind": "product-page",
+      "publisher": "The TJX Companies",
+      "note": "Official banner page describing T.J. Maxx assortment, value proposition, and role within Marmaxx.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "tjx-marshalls-page",
+      "title": "Marshalls U.S.",
+      "url": "https://www.tjx.com/businesses/united-states/marshalls",
+      "kind": "product-page",
+      "publisher": "The TJX Companies",
+      "note": "Official banner page describing Marshalls, including its men's and footwear emphasis and Marmaxx role.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "tjx-homegoods-page",
+      "title": "HomeGoods",
+      "url": "https://www.tjx.com/businesses/united-states/homegoods",
+      "kind": "product-page",
+      "publisher": "The TJX Companies",
+      "note": "Official banner page for HomeGoods and its off-price home category positioning.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-tjx-market-cap",
+      "title": "The TJX Companies Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/tjx/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for TJX market capitalization around the May 2026 snapshot date.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-tjx-revenue",
+      "title": "The TJX Companies Revenue 2005-2026",
+      "url": "https://stockanalysis.com/stocks/tjx/revenue/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source summarizing fiscal 2026 annual revenue.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "flohmarkt-project",
+      "title": "flohmarkt Federated Marketplace",
+      "url": "https://flohmarkt.fyi/",
+      "kind": "open-source-project",
+      "publisher": "flohmarkt",
+      "note": "Open-source federated marketplace project used as an enabling source for decentralized resale and local commerce alternatives.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "spree-commerce-project",
+      "title": "Spree Commerce",
+      "url": "https://spreecommerce.org/",
+      "kind": "open-source-project",
+      "publisher": "Spree Commerce",
+      "note": "Open-source commerce platform used as an enabling source for independent and cooperative retail storefront infrastructure.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "precious-plastic-project",
+      "title": "Precious Plastic",
+      "url": "https://www.preciousplastic.com/",
+      "kind": "open-source-project",
+      "publisher": "Precious Plastic",
+      "note": "Open hardware and community recycling project used as an enabling source for local circular home-goods microfactory concepts.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new TJX Companies registry bundle with three banner products, focused open/decentralized alternatives, and one disruption concept per product. IPO metadata is set to null because IPO date and IPO market-cap evidence were not both supported by strong sources."
+}
+tokens used
+51,507

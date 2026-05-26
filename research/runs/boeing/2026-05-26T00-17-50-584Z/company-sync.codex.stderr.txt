@@ -1,0 +1,1471 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e61a5-1afc-7dc1-b11b-9aad0c7dc710
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: boeing
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "boeing",
+  "name": "Boeing",
+  "ticker": "BA",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "industrials",
+  "industryId": "aerospace-defense",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/boeing/marketcap/",
+  "description": "Boeing designs, manufactures, and services commercial aircraft, defense systems, satellites, and related aerospace products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "737",
+    "787 Dreamliner"
+  ],
+  "seedSourceUrls": [
+    "https://investors.boeing.com/",
+    "https://www.boeing.com/commercial",
+    "https://companiesmarketcap.com/boeing/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T00:17:52.175678Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.175695Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.176219Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.176225Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.176654Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.176659Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.177022Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.177025Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.177404Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.177409Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.178074Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.178080Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.978033Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.978047Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.978371Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.978376Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.978703Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.978708Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.979049Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.979055Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.979346Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.979349Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:17:52.979937Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:17:52.979940Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Boeing 2025 annual report 10-K commercial airplanes defense space security revenue 2025 ...
+web search: 
+web search: OpenVSP NASA open source aircraft geometry tool ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "boeing",
+      "name": "Boeing",
+      "ticker": "BA",
+      "rankApprox": 63,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "industrials",
+      "industryId": "aerospace-defense",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/boeing/marketcap/",
+      "description": "Boeing designs, manufactures, sells, and services commercial aircraft, defense systems, satellites, and related aerospace products.",
+      "overview": [
+        {
+          "title": "Commercial aircraft and aerospace systems",
+          "paragraphs": [
+            "Boeing is one of the world's largest aerospace manufacturers, with major business lines in commercial airplanes, defense, space, security, and global services.",
+            "The company's commercial-aircraft franchise is anchored by the 737 narrow-body family and the 787 Dreamliner wide-body family, while its defense and services operations add long-cycle government, sustainment, and aftermarket exposure."
+          ]
+        },
+        {
+          "title": "Heavy certification moat",
+          "paragraphs": [
+            "Large commercial aircraft are among the least decentralized products in the registry because safety certification, capital intensity, supplier qualification, test infrastructure, airline financing, and decades-long maintenance obligations concentrate production around a small number of prime manufacturers.",
+            "Open-source tools can improve design, simulation, maintenance coordination, and local fabrication of some non-flight-critical parts, but they do not yet create a credible near-term substitute for Boeing's full aircraft programs."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Boeing's moat is unusually deep because commercial-aircraft manufacturing combines regulated design approval, global support infrastructure, airline switching costs, long production backlogs, supplier qualification, and installed-fleet maintenance economics.",
+        "The moat is not frictionless: quality, delivery, and certification problems can damage trust and delay revenue. Even so, the number of organizations capable of certifying and supporting new large aircraft platforms remains very small."
+      ],
+      "decentralizationNarrative": [
+        "The most realistic decentralization pressure is around the edges: open aircraft-design software, transparent maintenance records, repair marketplaces, distributed simulation, open tooling for cabin or ground-support equipment, and localized manufacturing of approved low-risk parts.",
+        "Full airframe decentralization remains speculative because certification evidence, liability, composites expertise, engine integration, production repeatability, and global airline support have to be solved together, not merely designed in an open CAD repository."
+      ],
+      "sourceIds": [
+        "boeing-2025-annual-report",
+        "boeing-commercial",
+        "stockanalysis-ba-market-cap",
+        "financecharts-ba-pe"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "microfactories",
+        "printed-electronics"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75.",
+      "inputMetrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "Large commercial aircraft require regulated certification, capital-intensive production, deep supplier networks, airline fleet support, and long-term service obligations, creating a very strong incumbent moat.",
+          "sourceIds": [
+            "boeing-2025-annual-report",
+            "boeing-commercial"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "decentralizability": {
+          "value": 2,
+          "rationale": "Open tools and distributed fabrication can pressure design workflows, simulation, parts, and support, but full aircraft manufacturing remains tightly constrained by certification, liability, and high-volume precision production.",
+          "sourceIds": [
+            "boeing-commercial",
+            "openvsp-nasa-catalog",
+            "open-source-ecology-microfactory"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "profitability": {
+          "value": 5,
+          "rationale": "Boeing's 2025 reporting showed recovery in revenue and positive net income, but profitability remains uneven because commercial-aircraft execution, defense charges, debt, and delivery timing continue to matter materially.",
+          "sourceIds": [
+            "boeing-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "peRatio": {
+          "value": 96.48,
+          "rationale": "FinanceCharts reported a BA price-to-earnings ratio of 96.48 as of May 22, 2026; the figure is volatile because recent earnings are still recovering.",
+          "sourceIds": [
+            "financecharts-ba-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-25"
+        },
+        "marketCap": {
+          "value": 173120000000,
+          "rationale": "StockAnalysis reported Boeing's market capitalization at about $173.12 billion as of May 21, 2026.",
+          "sourceIds": [
+            "stockanalysis-ba-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-25"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "737",
+        "name": "737",
+        "category": "Narrow-body commercial aircraft",
+        "homepageUrl": "https://www.boeing.com/commercial/737max/",
+        "summary": "The Boeing 737 family is Boeing's narrow-body aircraft platform for short- and medium-haul airline routes.",
+        "whyItMatters": "The 737 is central to global airline fleet planning, airport connectivity, maintenance ecosystems, and Boeing's commercial-aircraft economics.",
+        "replacementSketch": [
+          "A realistic open replacement does not start as a full 737 clone. It starts with open design and simulation tooling, transparent maintenance records, interoperable supplier qualification, and local production of approved low-risk fixtures, tools, and cabin components.",
+          "Over time, those layers could make aircraft programs more modular and auditable, but airworthiness certification and production repeatability remain the hard boundary."
+        ],
+        "sourceIds": [
+          "boeing-commercial",
+          "boeing-737-product",
+          "openvsp-nasa-catalog",
+          "openaerostruct-github"
+        ],
+        "technologyWaveIds": [
+          "additive-manufacturing",
+          "microfactories",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "openvsp",
+            "name": "OpenVSP",
+            "kind": "open-source",
+            "homepageUrl": "https://openvsp.org/",
+            "repoUrl": "https://github.com/OpenVSP/OpenVSP",
+            "summary": "NASA-originated open-source parametric aircraft-geometry software for conceptual aircraft design and analysis.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenVSP is distributed as an open-source aircraft geometry tool with public source code.",
+                "sourceIds": [
+                  "openvsp-github",
+                  "openvsp-nasa-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "It decentralizes early aircraft concept modeling and education, but it does not decentralize certification or serial aircraft manufacturing.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The tool is established and documented, but it is an engineering-enablement tool rather than a complete aircraft-production stack.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog",
+                  "openvsp-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open design tooling can reduce early analysis and education costs, though aircraft certification and production costs still dominate.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openvsp-github",
+              "openvsp-nasa-catalog"
+            ]
+          },
+          {
+            "slug": "openaerostruct",
+            "name": "OpenAeroStruct",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/mdolab/OpenAeroStruct",
+            "repoUrl": "https://github.com/mdolab/OpenAeroStruct",
+            "summary": "Open-source aerostructural optimization software built around OpenMDAO for aircraft wing analysis and design studies.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project publishes its source code and examples in a public GitHub repository.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 4,
+                "rationale": "It helps more teams study aircraft structures, but it remains a technical analysis component rather than a production or certification system.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is usable for engineering studies and research, but not a turnkey substitute for a commercial aircraft program.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open optimization tooling can reduce analysis barriers for researchers and smaller teams, while full aircraft development remains capital intensive.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openaerostruct-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-aircraft-maintenance-ledger",
+            "name": "Federated Aircraft Maintenance Ledger",
+            "summary": "A federated maintenance and parts-history network could let airlines, lessors, regulators, repair stations, and approved suppliers share tamper-evident aircraft records without depending on one manufacturer's closed service stack.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The first credible pressure point is not building a new 737, but reducing the incumbent's control over fleet history, parts provenance, and maintenance coordination.",
+            "bitcoinOrDecentralizationRole": "Federation matters because multiple regulated parties need shared state without giving Boeing, one airline, or one software vendor unilateral control over the maintenance record.",
+            "coordinationMechanism": "Airlines, maintenance providers, lessors, and parts suppliers run interoperable nodes that publish signed maintenance events, part certificates, repair approvals, and audit trails.",
+            "verificationOrTrustModel": "Records are signed by licensed parties, cross-checked against serial numbers and regulator approvals, and audited by counterparties before aircraft transfer, lease return, or heavy maintenance events.",
+            "failureModes": [
+              "Regulators may not accept federated records as legally sufficient without long validation periods.",
+              "Large incumbents could preserve closed data advantages by refusing API access or tying warranties to proprietary systems."
+            ],
+            "adoptionPath": [
+              "Begin with non-exclusive maintenance-history mirrors for airline-owned records and leased-aircraft handoffs.",
+              "Expand to parts provenance, repair-station attestations, and regulator-readable audit exports once schemas stabilize."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "boeing-737-product",
+              "boeing-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openvsp-nasa-catalog"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Maintenance records and supplier attestations are naturally multi-party and can be federated without decentralizing airframe production itself.",
+                "sourceIds": [
+                  "boeing-2025-annual-report"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Airlines, lessors, and repair stations already coordinate around regulated records, but shared standards and legal acceptance are hard.",
+                "sourceIds": [
+                  "boeing-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The software layer is feasible, while certification, liability, and incumbent data access create the main implementation drag.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "A successful ledger would pressure service lock-in and data control more than primary aircraft sales.",
+                "sourceIds": [
+                  "boeing-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "certified-cabin-and-tooling-microfactories",
+            "name": "Certified Cabin and Tooling Microfactories",
+            "summary": "Distributed microfactories could produce approved ground-support tools, jigs, cabin fixtures, and other low-risk components closer to airline maintenance bases, using open designs and audited production recipes.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "home-microfactory",
+              "open-hardware"
+            ],
+            "thesis": "Aircraft production stays centralized, but more peripheral manufacturing could move to certified local operators, weakening some aftermarket and supply-chain bottlenecks.",
+            "bitcoinOrDecentralizationRole": "The relevant mechanism is decentralized manufacturing rather than Bitcoin: open hardware designs, local fabrication cells, and audited recipes reduce dependence on one centralized supplier chain.",
+            "coordinationMechanism": "Approved designers publish versioned hardware files and process requirements; certified local shops fabricate parts; airlines and maintenance providers accept parts only when production logs and inspections match the approved recipe.",
+            "verificationOrTrustModel": "Traceable materials, machine logs, inspection records, and signed quality attestations constrain counterfeit or out-of-spec production, with high-risk flight-critical parts excluded until standards mature.",
+            "failureModes": [
+              "Quality drift across shops could create safety or liability problems.",
+              "Certification economics may limit the concept to tools, fixtures, and low-criticality parts for a long time."
+            ],
+            "adoptionPath": [
+              "Start with ground-support equipment, shop tooling, training fixtures, and cabin-adjacent noncritical parts.",
+              "Move only into higher-criticality components where regulators, OEMs, and airlines agree on repeatable qualification evidence."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "boeing-737-product",
+              "boeing-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "open-source-ecology-microfactory",
+              "openvsp-nasa-catalog"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The concept decentralizes selected manufacturing and repair support, but excludes core certified airframe production.",
+                "sourceIds": [
+                  "open-source-ecology-microfactory"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 4,
+                "rationale": "Distributed fabrication is plausible for tooling and low-risk components, but aerospace certification makes coordination difficult.",
+                "sourceIds": [
+                  "open-source-ecology-microfactory",
+                  "boeing-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Microfactory tooling exists conceptually, but aerospace-grade repeatability and approvals remain a major constraint.",
+                "sourceIds": [
+                  "open-source-ecology-microfactory"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept could pressure aftermarket lead times and some supplier margins, but not Boeing's core aircraft platform moat.",
+                "sourceIds": [
+                  "boeing-737-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "787-dreamliner",
+        "name": "787 Dreamliner",
+        "category": "Wide-body commercial aircraft",
+        "homepageUrl": "https://www.boeing.com/commercial/787/",
+        "summary": "The Boeing 787 Dreamliner is a wide-body aircraft family designed for efficient long-haul routes and network expansion.",
+        "whyItMatters": "The 787 is a flagship long-haul platform whose composite structure, global supplier base, and airline-route economics make it a major part of Boeing's commercial-aircraft positioning.",
+        "replacementSketch": [
+          "The near-term open substitute is not an open 787 airframe. It is an open toolchain for early-stage aircraft geometry, aerostructural optimization, transparent component provenance, and federated maintenance knowledge.",
+          "A more ambitious replacement path would combine open composite process research, distributed simulation, and certified local repair workflows, but it remains far from replacing a production wide-body program."
+        ],
+        "sourceIds": [
+          "boeing-787-product",
+          "boeing-787-design",
+          "openvsp-nasa-catalog",
+          "openaerostruct-github"
+        ],
+        "technologyWaveIds": [
+          "additive-manufacturing",
+          "microfactories",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "openvsp",
+            "name": "OpenVSP",
+            "kind": "open-source",
+            "homepageUrl": "https://openvsp.org/",
+            "repoUrl": "https://github.com/OpenVSP/OpenVSP",
+            "summary": "NASA-originated open-source aircraft geometry software that can support conceptual modeling and aircraft-design education.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenVSP provides public source code and open-source access to aircraft geometry tooling.",
+                "sourceIds": [
+                  "openvsp-github",
+                  "openvsp-nasa-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "It expands access to conceptual design capability, but it does not replace wide-body certification, production, or support.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The tool is mature enough for conceptual studies and education, but not a standalone commercial-aircraft substitute.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog",
+                  "openvsp-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open access to geometry tooling lowers early design and analysis barriers for researchers and smaller teams.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openvsp-github",
+              "openvsp-nasa-catalog"
+            ]
+          },
+          {
+            "slug": "openaerostruct",
+            "name": "OpenAeroStruct",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/mdolab/OpenAeroStruct",
+            "repoUrl": "https://github.com/mdolab/OpenAeroStruct",
+            "summary": "Open-source aerostructural optimization software for wing and aircraft design studies.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The software is published in a public open-source repository.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "decentralizationFit": {
+                "value": 4,
+                "rationale": "It broadens access to aircraft optimization research, while production and certification remain centralized.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is suitable for analysis and research workflows, not direct wide-body aircraft production.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open optimization tooling can reduce research barriers, but composite wide-body development costs remain very high.",
+                "sourceIds": [
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              }
+            },
+            "sourceIds": [
+              "openaerostruct-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-composite-repair-knowledge-network",
+            "name": "Open Composite Repair Knowledge Network",
+            "summary": "A federated technical network for approved composite inspection, repair procedures, tooling, and lessons learned could reduce dependence on closed OEM channels for some 787 support workflows while preserving regulated approvals.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "open-hardware"
+            ],
+            "thesis": "The 787's advanced materials make support knowledge valuable; a federated repair-knowledge layer would pressure closed documentation and service bottlenecks without pretending to decentralize airframe production.",
+            "bitcoinOrDecentralizationRole": "Federated governance is central because airlines, repair stations, material suppliers, and regulators need shared procedures and evidence without a single commercial gatekeeper controlling the whole knowledge base.",
+            "coordinationMechanism": "Certified operators submit repair cases, tool designs, inspection evidence, and procedure improvements into interoperable repositories governed by role-based approval and versioning.",
+            "verificationOrTrustModel": "Only credentialed parties can publish approved procedures; evidence packages include material lots, inspection images, non-destructive-test records, and regulator or delegated-engineering approvals.",
+            "failureModes": [
+              "OEM intellectual-property and liability constraints may block meaningful sharing.",
+              "Poorly generalized repair cases could create unsafe recommendations if governance is weak."
+            ],
+            "adoptionPath": [
+              "Start with open training fixtures, inspection templates, and nonproprietary maintenance lessons.",
+              "Add regulator-readable repair evidence packages and approved tooling libraries after governance proves reliable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "boeing-787-product",
+              "boeing-787-design"
+            ],
+            "enablerSourceIds": [
+              "openvsp-nasa-catalog",
+              "openaerostruct-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Repair knowledge and tooling can be shared across certified parties more readily than aircraft manufacturing can be decentralized.",
+                "sourceIds": [
+                  "boeing-787-design"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The need for shared repair evidence is credible, but aerospace liability and proprietary documentation make adoption hard.",
+                "sourceIds": [
+                  "boeing-787-product",
+                  "boeing-787-design"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The data and workflow layer is feasible, while certification acceptance and OEM cooperation remain uncertain.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog",
+                  "openaerostruct-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "It could pressure service and documentation lock-in, but not the main 787 production franchise.",
+                "sourceIds": [
+                  "boeing-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          },
+          {
+            "slug": "open-widebody-design-simulation-commons",
+            "name": "Open Wide-Body Design Simulation Commons",
+            "summary": "An open simulation commons combining aircraft geometry, aerostructural optimization, and benchmark datasets could make early wide-body design work more accessible to universities, suppliers, and new entrants.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination"
+            ],
+            "thesis": "Boeing's full production moat remains intact, but open simulation infrastructure can lower the knowledge barrier for future aircraft concepts and supplier-led subsystem innovation.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared engineering infrastructure and open benchmarks rather than token incentives; many independent teams can reproduce and challenge design assumptions.",
+            "coordinationMechanism": "Researchers, suppliers, and public agencies publish geometry models, optimization cases, validation datasets, and reproducible simulation workflows under open governance.",
+            "verificationOrTrustModel": "Reproducible simulations, benchmark test cases, peer review, and independent replication constrain false performance claims, though real-world flight testing remains the final proof.",
+            "failureModes": [
+              "Simulation benchmarks may not transfer to certified production aircraft.",
+              "Critical proprietary material, manufacturing, and engine-integration data may stay outside the commons."
+            ],
+            "adoptionPath": [
+              "Build shared educational and research benchmarks around open aircraft geometry and wing optimization tools.",
+              "Expand into supplier subsystem studies, sustainability comparisons, and precompetitive public research programs."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "boeing-787-product",
+              "boeing-787-design"
+            ],
+            "enablerSourceIds": [
+              "openvsp-nasa-catalog",
+              "openaerostruct-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "The concept decentralizes design knowledge and research participation, but not aircraft certification or final assembly.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog",
+                  "openaerostruct-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Universities, public agencies, and open-source engineering projects already coordinate around shared tools and papers.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog",
+                  "openaerostruct-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Open software and benchmark datasets are feasible, although validated industrial-grade models are harder to publish.",
+                "sourceIds": [
+                  "openvsp-nasa-catalog",
+                  "openaerostruct-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              },
+              "incumbentPressure": {
+                "value": 3,
+                "rationale": "The concept pressures knowledge asymmetry over the long term but does not quickly replace Boeing's certified aircraft platforms.",
+                "sourceIds": [
+                  "boeing-787-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-25"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "boeing-2025-annual-report",
+      "title": "The Boeing Company 2025 Annual Report",
+      "url": "https://materials.proxyvote.com/Approved/097023/20260217/AR_625422/images/The_Boeing_Company-AR2025.pdf",
+      "kind": "annual-report",
+      "publisher": "Boeing",
+      "note": "Primary company reporting source for business segments, revenue context, profitability, risks, and aerospace-services exposure.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-commercial",
+      "title": "Boeing Commercial Airplanes",
+      "url": "https://www.boeing.com/commercial.html",
+      "kind": "product-page",
+      "publisher": "Boeing",
+      "note": "Company product-family overview for Boeing's commercial aircraft portfolio, including the 737 MAX and 787 Dreamliner.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-737-product",
+      "title": "737 MAX",
+      "url": "https://www.boeing.com/commercial/737max/",
+      "kind": "product-page",
+      "publisher": "Boeing",
+      "note": "Official Boeing product page for the 737 MAX family.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-787-product",
+      "title": "787 Dreamliner",
+      "url": "https://www.boeing.com/commercial/787/",
+      "kind": "product-page",
+      "publisher": "Boeing",
+      "note": "Official Boeing product page for the 787 Dreamliner family.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "boeing-787-design",
+      "title": "787 Dreamliner By Design",
+      "url": "https://www.boeing.com/commercial/787/by-design/",
+      "kind": "product-page",
+      "publisher": "Boeing",
+      "note": "Boeing design overview for the 787 Dreamliner, useful for understanding the product's technical positioning.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "stockanalysis-ba-market-cap",
+      "title": "The Boeing Company (BA) Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/ba/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-cap reference used for the refreshed company market-cap metric.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "financecharts-ba-pe",
+      "title": "Boeing PE Ratio - Current & Historical Data",
+      "url": "https://www.financecharts.com/stocks/BA/value/pe-ratio",
+      "kind": "market-data",
+      "publisher": "FinanceCharts",
+      "note": "Current P/E reference used because Boeing's valuation multiple is volatile during earnings recovery.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openvsp-nasa-catalog",
+      "title": "Vehicle Sketch Pad (VSP) - NASA Software Catalog",
+      "url": "https://software.nasa.gov/software/LAR-17491-1",
+      "kind": "technical-docs",
+      "publisher": "NASA",
+      "note": "NASA catalog entry describing OpenVSP as an open-source aircraft geometry tool for advanced design concepts.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openvsp-github",
+      "title": "OpenVSP GitHub Repository",
+      "url": "https://github.com/OpenVSP/OpenVSP",
+      "kind": "open-source-project",
+      "publisher": "OpenVSP",
+      "note": "Public source repository for OpenVSP and its open-source licensing context.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "openaerostruct-github",
+      "title": "OpenAeroStruct GitHub Repository",
+      "url": "https://github.com/mdolab/OpenAeroStruct",
+      "kind": "open-source-project",
+      "publisher": "MDO Lab",
+      "note": "Open-source aerostructural optimization project relevant to aircraft design and simulation alternatives.",
+      "accessedOn": "2026-05-25"
+    },
+    {
+      "id": "open-source-ecology-microfactory",
+      "title": "Open Source Microfactory Boot Camp",
+      "url": "https://www.opensourceecology.org/open-source-microfactory-boot-camp/",
+      "kind": "analysis",
+      "publisher": "Open Source Ecology",
+      "note": "Reference for open-source microfactory concepts used in distributed-manufacturing disruption analysis.",
+      "accessedOn": "2026-05-25"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Boeing registry bundle with two commercial-aircraft products, sourced market metrics, open aerospace tooling alternatives, and constrained disruption concepts focused on federated maintenance, open simulation, and certified peripheral microfactories rather than unrealistic full aircraft replacement."
+}
+tokens used
+42,697

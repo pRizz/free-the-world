@@ -1,0 +1,917 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e61b5-b4af-7990-93c8-e98d8886cb5b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: palo-alto-networks
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "palo-alto-networks",
+  "name": "Palo Alto Networks",
+  "ticker": "PANW",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "software-cloud",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/palo-alto-networks/marketcap/",
+  "description": "Palo Alto Networks provides cybersecurity platforms spanning network security, cloud security, and security operations.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Strata",
+    "Prisma Cloud"
+  ],
+  "seedSourceUrls": [
+    "https://investors.paloaltonetworks.com/",
+    "https://www.paloaltonetworks.com/products",
+    "https://companiesmarketcap.com/palo-alto-networks/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T00:35:59.796129Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:35:59.796143Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:35:59.796668Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:35:59.796673Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:35:59.797105Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:35:59.797110Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:35:59.797622Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:35:59.797626Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:35:59.798111Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:35:59.798115Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:35:59.799283Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:35:59.799287Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:01.186449Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:01.186464Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:01.186782Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:01.186788Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:01.187128Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:01.187135Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:01.187467Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:01.187471Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:01.187819Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:01.187822Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:01.188543Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:01.188546Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll use the company manifest queue guidance for the registry shape, then verify current Palo Alto Networks/product/source facts before returning the JSON.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md && rg --files content | rg 'palo|manifest|bundle|source|company' | head -80" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+content/companies/meta-platforms/bundle.json
+content/companies/ge-aerospace/bundle.json
+content/companies/kla/bundle.json
+content/companies/arista-networks/bundle.json
+content/companies/exxon-mobil/bundle.json
+content/companies/corning/bundle.json
+content/companies/unitedhealth-group/bundle.json
+content/companies/abbott-laboratories/bundle.json
+content/companies/att/bundle.json
+content/companies/boeing/bundle.json
+content/companies/morgan-stanley/bundle.json
+content/companies/applied-materials/bundle.json
+content/companies/eli-lilly/bundle.json
+content/companies/salesforce/bundle.json
+content/companies/dropbox/bundle.json
+content/companies/caterpillar/bundle.json
+content/companies/cloudflare/bundle.json
+content/companies/abbvie/bundle.json
+content/companies/rtx/bundle.json
+content/companies/jpmorgan-chase/bundle.json
+content/companies/analog-devices/bundle.json
+content/companies/lam-research/bundle.json
+content/companies/intel/bundle.json
+content/companies/ge-vernova/bundle.json
+content/companies/philip-morris-international/bundle.json
+content/companies/netflix/bundle.json
+content/companies/cisco-systems/bundle.json
+content/companies/berkshire-hathaway/bundle.json
+content/companies/amazon/bundle.json
+content/companies/nvidia/bundle.json
+content/companies/texas-instruments/bundle.json
+content/companies/apple/bundle.json
+content/companies/chevron/bundle.json
+content/companies/nextera-energy/bundle.json
+content/companies/procter-gamble/bundle.json
+content/companies/johnson-johnson/bundle.json
+content/companies/docusign/bundle.json
+content/companies/american-express/bundle.json
+content/companies/goldman-sachs/bundle.json
+content/companies/linde/bundle.json
+content/companies/ibm/bundle.json
+content/companies/advanced-micro-devices/bundle.json
+content/companies/blackrock/bundle.json
+content/companies/intuitive-surgical/bundle.json
+content/companies/costco/bundle.json
+content/companies/mastercard/bundle.json
+content/companies/t-mobile-us/bundle.json
+content/sources/src-ofn-repo.json
+content/sources/raven2-github.json
+content/sources/libresolar-github.json
+content/sources/pixelfed.json
+content/sources/src-dagster-docs.json
+content/sources/cisco-sonic-architecture.json
+content/sources/src_usp_pcm_guide.json
+content/sources/arista-2025-results.json
+content/sources/lf-energy-projects.json
+content/sources/amat-ir.json
+content/sources/src_opennebula_edge.json
+content/sources/src-cmc-micron-pe.json
+content/sources/tesla-modely.json
+content/sources/corning-optical-fiber.json
+content/sources/src-exxon-downstream.json
+content/sources/marketcap-company-c.json
+content/sources/src-netflix-ads-plan.json
+content/sources/src-opnsense-home.json
+content/sources/meta-marketcap.json
+content/sources/anytype-home.json
+content/sources/src-ge-commercial.json
+content/sources/gmail-workspace.json
+content/sources/techcrunch-arista-ipo.json
+content/sources/ose-pressure-swing-adsorption.json
+content/sources/src-costco-fy2025.json
+content/sources/openadr-resources.json
+content/sources/helium-docs.json
+content/sources/openems-home.json
+content/sources/src-jpm-payments.json
+content/sources/walmart-stock-split-history.json
+content/sources/src-mounjaro-page.json
+content/sources/stockanalysis-gs-market-cap-2026.json
+content/sources/s7.json
+
+2026-05-26T00:36:05.876068Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:05.876084Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:05.876439Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:05.876442Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:05.876817Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:05.876820Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:05.877136Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:05.877139Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:05.877482Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:05.877485Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:36:05.878428Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:36:05.878431Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Palo Alto Networks Form 10-K 2025 revenue segments Strata Prisma Cortex profitability ...
+web search: 
+web search: Palo Alto Networks 2025 10-K annual report revenue net income next-generation security ARR ...
+web search: 
+web search: Falco open source cloud native runtime security official ...
+web search: 
+web search: Palo Alto Networks IPO July 20 2012 prospectus market cap 3.54 billion ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"palo-alto-networks","name":"Palo Alto Networks","ticker":"PANW","rankApprox":62,"maybeIpo":{"date":"2012-07-20","dateSourceIds":["src-panw-ipo-prnewswire"],"marketCap":{"value":3540000000,"rationale":"StockAnalysis reports Palo Alto Networks' market capitalization at about $3.54 billion on July 20, 2012, the first trading date identified by the IPO pricing release.","sourceIds":["src-panw-ipo-prnewswire","src-panw-marketcap-stockanalysis"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"regionId":"us","indexIds":["sp500-top75"],"sectorId":"information-technology","industryId":"software-cloud","companiesMarketCapUrl":"https://companiesmarketcap.com/palo-alto-networks/marketcap/","description":"Palo Alto Networks provides cybersecurity platforms spanning network security, cloud security, and security operations.","overview":[{"title":"Business Position","paragraphs":["Palo Alto Networks sells enterprise cybersecurity products across network security, cloud security, and security operations. Its platform strategy combines hardware, virtual, cloud-delivered, and software security controls with subscriptions, support, threat intelligence, and centralized management.","The company remains a large public pure-play cybersecurity vendor with strong recurring revenue, high gross margins, and expanding next-generation security annual recurring revenue, but its products sit in a crowded market where open-source components can replace parts of the stack for technically capable organizations."]},{"title":"Registry Lens","paragraphs":["The most decentralizable parts of Palo Alto Networks' portfolio are not the appliance supply chain or enterprise support relationship; they are the detection rules, policy engines, telemetry pipelines, and trust-coordination layers that can be rebuilt as open systems.","The strongest open alternatives are componentized rather than one-for-one replacements: OPNsense and Suricata for firewall and IDS functions, Falco and OPA for cloud-native runtime and policy enforcement, and Wazuh for open SIEM/XDR operations."]}],"moatNarrative":["Palo Alto Networks' moat is strongest where enterprises value integrated controls, vendor accountability, compliance documentation, global support, threat research, and a consolidated purchasing relationship. Switching costs rise as customers standardize policy, logging, endpoint, cloud, and SOC workflows around the platform.","The moat is weaker at the component layer. Firewalling, IDS/IPS, telemetry collection, runtime security, and policy enforcement have mature open-source building blocks, but replacing the integrated platform requires security engineering capacity and operational discipline that many enterprises prefer to buy."],"decentralizationNarrative":["Cybersecurity is naturally compatible with open coordination because indicators, rules, policies, and telemetry schemas can be shared across organizations. Open-source firewall, IDS, SIEM, runtime-security, and policy projects already show that credible security controls do not have to be owned by a single vendor.","The decentralization limit is trust and accountability. Enterprises need verified updates, low false-positive rates, emergency response, auditability, and liability clarity. Decentralized threat-intelligence and policy markets can pressure proprietary suites, but they must prove governance, provenance, and abuse resistance before they can replace a platform vendor for high-risk organizations."],"sourceIds":["src-panw-fy2025-10k","src-panw-products","src-panw-marketcap-stockanalysis","src-panw-pe-public"],"technologyWaveIds":["bitcoin-native-coordination"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75.","inputMetrics":{"moat":{"value":8,"rationale":"The company combines a broad enterprise security platform, recurring subscriptions, centralized management, threat intelligence, and high switching costs across network, cloud, endpoint, and SOC workflows.","sourceIds":["src-panw-fy2025-10k","src-panw-products"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizability":{"value":5,"rationale":"Many underlying functions have strong open-source substitutes, but enterprise-grade integration, support, compliance, managed detection, and high-confidence threat updates remain hard to decentralize fully.","sourceIds":["src-opnsense-home","src-falco-home","src-opa-cncf","src-wazuh-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"profitability":{"value":7,"rationale":"Fiscal 2025 filings show profitable operations and strong free cash flow, though GAAP net income margins are lower than the prior year because fiscal 2024 benefited from a large tax item.","sourceIds":["src-panw-fy2025-10k"],"confidence":"high","lastReviewedOn":"2026-05-26"},"peRatio":{"value":139.95,"rationale":"Public.com reported a PANW trailing P/E ratio of 139.95 as of May 21, 2026; market-data values vary materially with price and EPS timing.","sourceIds":["src-panw-pe-public"],"confidence":"speculative","lastReviewedOn":"2026-05-26"},"marketCap":{"value":166980000000,"rationale":"Trading Economics reported Palo Alto Networks market capitalization at about $166.98 billion in May 2026.","sourceIds":["src-panw-marketcap-tradingeconomics"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},"products":[{"slug":"strata","name":"Strata","category":"Network security platform","homepageUrl":"https://www.paloaltonetworks.com/network-security/next-generation-firewall","summary":"Strata is Palo Alto Networks' network-security family, including next-generation firewalls, software and cloud-delivered firewall form factors, and centralized management.","whyItMatters":"Network firewalls remain a core enterprise control point, and Palo Alto Networks' ability to combine hardware, software, threat prevention, and policy management is central to its platform moat.","replacementSketch":["A practical open replacement would start with OPNsense or a similar open firewall distribution at the edge, Suricata for IDS/IPS, WireGuard for VPN, and open telemetry export into a SIEM or data lake.","The replacement is not a drop-in enterprise suite. It trades vendor consolidation for inspectable policy, local control, and modular procurement, which is strongest for technically capable operators and weaker for organizations that need one accountable vendor."],"sourceIds":["src-panw-strata-ngfw","src-panw-products"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"opnsense","name":"OPNsense","kind":"open-source","homepageUrl":"https://opnsense.org/","summary":"OPNsense is an open-source firewall and routing platform with VPN, traffic shaping, IDS/IPS integrations, and commercial support options.","metrics":{"openness":{"value":9,"rationale":"OPNsense is distributed as open-source software under an OSI-approved license and publishes documentation for deployment and operation.","sourceIds":["src-opnsense-home","src-opnsense-docs"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":7,"rationale":"It lets organizations self-host network enforcement on their own hardware or virtual infrastructure rather than depending on a single cloud security vendor.","sourceIds":["src-opnsense-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":7,"rationale":"The project is mature enough for real deployments, though large enterprises may still need additional support, centralized management, and SOC integrations.","sourceIds":["src-opnsense-docs"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":8,"rationale":"Open licensing and commodity hardware can materially reduce licensing leverage for firewall and routing use cases, especially where advanced proprietary support is not required.","sourceIds":["src-opnsense-home"],"confidence":"high","lastReviewedOn":"2026-05-26"}},"sourceIds":["src-opnsense-home","src-opnsense-docs"]},{"slug":"suricata","name":"Suricata","kind":"open-source","homepageUrl":"https://suricata.io/","repoUrl":"https://github.com/OISF/suricata","summary":"Suricata is an open-source IDS, IPS, and network-security monitoring engine maintained by the Open Information Security Foundation.","metrics":{"openness":{"value":9,"rationale":"Suricata is an open-source security engine with public source code and community governance through OISF.","sourceIds":["src-suricata-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":7,"rationale":"It separates detection logic from a proprietary appliance and can be deployed by many independent operators across networks and clouds.","sourceIds":["src-suricata-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":8,"rationale":"Suricata is widely used for production IDS/IPS and monitoring, but it normally needs surrounding policy, tuning, and alert operations.","sourceIds":["src-suricata-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":8,"rationale":"It can replace a meaningful part of threat-detection functionality without per-device proprietary licensing, although operations and tuning costs remain.","sourceIds":["src-suricata-home"],"confidence":"high","lastReviewedOn":"2026-05-26"}},"sourceIds":["src-suricata-home"]}],"disruptionConcepts":[{"slug":"federated-threat-rules-market","name":"Federated Threat Rules Market","summary":"A federation of enterprises, managed service providers, and independent researchers publishes signed firewall and IDS rules into a shared registry. Operators subscribe to rule feeds based on reputation, proof of performance, and local policy fit rather than buying every update through one platform vendor.","angleIds":["federation","decentralized-coordination"],"thesis":"Threat prevention becomes a competitive rules-and-reputation market instead of a closed update stream bundled to one appliance vendor.","bitcoinOrDecentralizationRole":"Federation matters more than Bitcoin here: independent rule authors, validators, and operators can coordinate through open registries, signed updates, and transparent reputation without one vendor deciding which protections ship.","coordinationMechanism":"Researchers submit signed rules, operators publish anonymized performance feedback, and federated registries rank feeds by false-positive rates, exploit coverage, and maintainer reputation.","verificationOrTrustModel":"Rules are reproducibly signed, test suites replay known traffic captures, and operators can stage rules in monitor-only mode before enforcement. Abuse is constrained by public reputation, revocation lists, and independent validation, though private exploit data remains hard to share safely.","failureModes":["Rule quality may lag proprietary research teams during fast-moving campaigns.","Attackers could poison public feeds or infer defensive coverage from published rules.","Enterprises may still require indemnification and emergency support from a single accountable vendor."],"adoptionPath":["Start with non-blocking Suricata and firewall rule feeds for smaller organizations and labs.","Add shared validation harnesses and signed release channels for managed service providers.","Integrate reputation and policy import/export into open firewall distributions and SOC platforms."],"confidence":"medium","problemSourceIds":["src-panw-strata-ngfw","src-panw-fy2025-10k"],"enablerSourceIds":["src-opnsense-home","src-suricata-home"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The mechanism directly shifts rule authorship, validation, and deployment away from a single vendor-controlled update stream.","sourceIds":["src-opnsense-home","src-suricata-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":6,"rationale":"Open IDS rules and firewall distributions already exist, but shared reputation and enterprise-grade validation would need stronger governance.","sourceIds":["src-suricata-home","src-opnsense-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":6,"rationale":"The software pieces are feasible, but reliable false-positive measurement and safe sharing of threat intelligence are difficult operational problems.","sourceIds":["src-suricata-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":5,"rationale":"It pressures subscriptions for smaller and technically capable customers, but large enterprises may still pay for integrated management and support.","sourceIds":["src-panw-fy2025-10k","src-panw-strata-ngfw"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}}]},{"slug":"prisma-cloud","name":"Prisma Cloud","category":"Cloud native application protection platform","homepageUrl":"https://www.paloaltonetworks.com/prisma/","summary":"Prisma Cloud is Palo Alto Networks' cloud-security platform for finding and reducing risks across code, cloud infrastructure, workloads, containers, Kubernetes, and runtime environments.","whyItMatters":"Cloud-native security is a major growth area because organizations need to connect misconfiguration, identity, runtime, vulnerability, and incident data across fast-changing infrastructure.","replacementSketch":["A modular open stack can combine OPA or Kyverno-style policy enforcement, Falco for runtime detection, OpenTelemetry for vendor-neutral telemetry, and Wazuh or OpenSearch-based workflows for alerting and investigation.","This replacement sketch is credible for engineering-led teams, but it requires careful integration, rule tuning, identity design, and incident-response process. The value shifts from buying a complete CNAPP to assembling an inspectable security control plane."],"sourceIds":["src-panw-prisma-cloud","src-panw-cortex-cloud-release"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"falco","name":"Falco","kind":"open-source","homepageUrl":"https://falco.org/","repoUrl":"https://github.com/falcosecurity/falco","summary":"Falco is a CNCF cloud-native runtime security project for detecting suspicious behavior across hosts, containers, Kubernetes, and cloud environments.","metrics":{"openness":{"value":9,"rationale":"Falco is an open-source CNCF project with public source code and open documentation.","sourceIds":["src-falco-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":7,"rationale":"It lets operators run local runtime detection and contribute rules outside a proprietary cloud-security platform.","sourceIds":["src-falco-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":7,"rationale":"Falco is production-oriented and CNCF graduated, but it is a component rather than a full CNAPP replacement.","sourceIds":["src-falco-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":7,"rationale":"It can reduce dependence on proprietary runtime-security licensing, though teams still need alert pipelines, tuning, and response workflows.","sourceIds":["src-falco-home"],"confidence":"high","lastReviewedOn":"2026-05-26"}},"sourceIds":["src-falco-home"]},{"slug":"open-policy-agent","name":"Open Policy Agent","kind":"open-source","homepageUrl":"https://www.openpolicyagent.org/","repoUrl":"https://github.com/open-policy-agent/opa","summary":"Open Policy Agent is a general-purpose open-source policy engine used to enforce policy across cloud-native infrastructure and applications.","metrics":{"openness":{"value":9,"rationale":"OPA is an open-source CNCF graduated project with public governance and broad ecosystem adoption.","sourceIds":["src-opa-cncf"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":8,"rationale":"It moves authorization and compliance logic into portable policy-as-code that can be evaluated across many independent systems.","sourceIds":["src-opa-cncf"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":8,"rationale":"OPA is mature for policy enforcement, but it must be paired with scanners, telemetry, inventory, and response systems for CNAPP coverage.","sourceIds":["src-opa-cncf"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":7,"rationale":"Portable policy-as-code reduces lock-in to proprietary compliance engines and makes cloud posture checks more reusable.","sourceIds":["src-opa-cncf"],"confidence":"high","lastReviewedOn":"2026-05-26"}},"sourceIds":["src-opa-cncf"]},{"slug":"wazuh","name":"Wazuh","kind":"open-source","homepageUrl":"https://wazuh.com/","repoUrl":"https://github.com/wazuh/wazuh","summary":"Wazuh is an open-source security platform combining XDR and SIEM capabilities for endpoints, workloads, and cloud environments.","metrics":{"openness":{"value":8,"rationale":"Wazuh is published as a free and open-source security platform with public documentation and source repositories.","sourceIds":["src-wazuh-home","src-wazuh-docs"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":6,"rationale":"It allows self-hosted security monitoring and incident workflows, though deployments still tend to centralize logs within an operator-controlled SIEM.","sourceIds":["src-wazuh-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":7,"rationale":"Wazuh is mature enough for real SIEM/XDR use cases, but large-scale enterprise operations require integration, scaling, and tuning work.","sourceIds":["src-wazuh-docs"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":8,"rationale":"Open-source SIEM/XDR can materially reduce proprietary SOC platform costs where teams can operate the stack themselves.","sourceIds":["src-wazuh-home"],"confidence":"high","lastReviewedOn":"2026-05-26"}},"sourceIds":["src-wazuh-home","src-wazuh-docs"]}],"disruptionConcepts":[{"slug":"open-cnapp-control-plane","name":"Open CNAPP Control Plane","summary":"An open cloud-security control plane assembles policy-as-code, runtime detection, telemetry, and SIEM workflows into a portable security stack. Instead of one vendor owning code-to-cloud findings, each organization can run local controls while sharing policy packs, detections, and evidence schemas.","angleIds":["decentralized-coordination","federation"],"thesis":"Cloud-security value shifts from a proprietary findings database to interoperable controls and shared evidence formats that multiple tools can verify.","bitcoinOrDecentralizationRole":"Decentralization is the core mechanism: policy authors, cloud operators, and incident responders coordinate through open schemas, signed rule packs, and federated repositories rather than one CNAPP vendor's console.","coordinationMechanism":"Cloud teams publish policy bundles, runtime rules, and telemetry schemas; operators run them locally; managed security providers curate tested bundles for specific industries and compliance regimes.","verificationOrTrustModel":"Policy bundles are versioned and signed, runtime findings can be reproduced from local telemetry, and evidence is linked to cloud-resource identifiers and immutable audit logs. The weak point is that each operator must still secure its telemetry pipeline and identity boundaries.","failureModes":["Integration burden can overwhelm small security teams.","Conflicting policy packs may create noisy or contradictory findings.","Cloud-provider APIs and identity models change quickly, forcing constant maintenance."],"adoptionPath":["Use OPA for cloud and Kubernetes policy checks and Falco for runtime detection in pilot environments.","Normalize findings through OpenTelemetry and route them into Wazuh or another open SIEM.","Build curated signed policy and detection packs for regulated industries and managed service providers."],"confidence":"medium","problemSourceIds":["src-panw-prisma-cloud","src-panw-cortex-cloud-release"],"enablerSourceIds":["src-falco-home","src-opa-cncf","src-opentelemetry-home","src-wazuh-home"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The concept explicitly separates policy, runtime detection, telemetry, and SOC workflows into independently operated open components.","sourceIds":["src-falco-home","src-opa-cncf","src-opentelemetry-home"],"confidence":"high","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":6,"rationale":"CNCF projects and open SIEM tooling provide a credible base, but cross-project security evidence standards and governance remain immature.","sourceIds":["src-falco-home","src-opa-cncf","src-wazuh-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":6,"rationale":"All major components exist, but integration, tuning, and compliance reporting require significant engineering work.","sourceIds":["src-falco-home","src-opa-cncf","src-opentelemetry-home","src-wazuh-docs"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":6,"rationale":"This can pressure CNAPP pricing and lock-in for cloud-native teams, but Palo Alto's integrated product and support story remains valuable to enterprises.","sourceIds":["src-panw-prisma-cloud","src-panw-fy2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},{"slug":"proof-priced-threat-intel-exchange","name":"Proof-Priced Threat Intel Exchange","summary":"A threat-intelligence exchange uses small economic commitments, staking, or proof-of-work-style anti-spam costs to make submitted indicators and detections more expensive to flood. Buyers pay for useful, validated signal while weak or malicious feeds lose reputation and economic weight.","angleIds":["proof-of-work","decentralized-coordination"],"thesis":"Threat intelligence becomes less dependent on proprietary vendor feeds by creating an open market where useful security signal is rewarded and spam has a measurable cost.","bitcoinOrDecentralizationRole":"Proof-of-work or Bitcoin-native payments matter as anti-spam and settlement rails: submissions can carry a cost, reviewers can be rewarded for validation, and subscribers can pay for high-quality feeds without a central platform owner.","coordinationMechanism":"Researchers submit indicators or rules with a small cost or stake, validators test them against shared corpora and live opt-in telemetry, and subscribers fund feeds that maintain high precision and coverage.","verificationOrTrustModel":"Cheating is constrained by signed submissions, reproducible test results, reputation histories, and economic penalties for spammy feeds. The model remains vulnerable when high-value threat data cannot be publicly disclosed or when attackers submit plausible but misleading signals.","failureModes":["Privacy restrictions may limit the telemetry needed to validate indicators.","Attackers could buy reputation slowly and then poison feeds during a campaign.","Economic incentives may favor high-volume commodity indicators over rare but important intelligence."],"adoptionPath":["Start with optional paid feeds for open SIEM and IDS users.","Add signed validation results and transparent false-positive reporting.","Integrate micropayments or proof-of-work costs into federation gateways for high-volume submissions."],"confidence":"speculative","problemSourceIds":["src-panw-prisma-cloud","src-panw-fy2025-10k"],"enablerSourceIds":["src-wazuh-home","src-suricata-home","src-opentelemetry-home"],"metrics":{"decentralizationFit":{"value":7,"rationale":"The concept creates a multi-party market for threat intelligence rather than relying on a vendor-controlled feed.","sourceIds":["src-wazuh-home","src-suricata-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":5,"rationale":"Open security tooling can consume feeds, but the incentive and validation layer is still largely unproven.","sourceIds":["src-wazuh-home","src-suricata-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":4,"rationale":"Micropayment or proof-priced submission mechanics are technically possible, but privacy-preserving validation and market design are hard.","sourceIds":["src-opentelemetry-home","src-wazuh-home"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":5,"rationale":"If successful, it pressures proprietary threat-intel subscriptions, but it is unlikely to replace complete CNAPP or SOC platforms by itself.","sourceIds":["src-panw-fy2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}}]}]},"sources":[{"id":"src-panw-fy2025-10k","title":"Palo Alto Networks Fiscal 2025 Form 10-K","url":"https://investors.paloaltonetworks.com/static-files/821765bc-6121-4f8e-b898-1755b8e26ac8","kind":"annual-report","publisher":"Palo Alto Networks","note":"Primary filing source for business model, risks, revenue mix, recurring revenue, profitability, and platform strategy.","accessedOn":"2026-05-26"},{"id":"src-panw-products","title":"Palo Alto Networks Products A-Z","url":"https://www.paloaltonetworks.com/products/","kind":"product-page","publisher":"Palo Alto Networks","note":"Official product index used to confirm current portfolio framing and product families.","accessedOn":"2026-05-26"},{"id":"src-panw-strata-ngfw","title":"Next-Generation Firewalls","url":"https://www.paloaltonetworks.com/network-security/next-generation-firewall","kind":"product-page","publisher":"Palo Alto Networks","note":"Official Strata and next-generation firewall page for network-security positioning.","accessedOn":"2026-05-26"},{"id":"src-panw-prisma-cloud","title":"Prisma Cloud Comprehensive Cloud Security","url":"https://www.paloaltonetworks.com/prisma/","kind":"product-page","publisher":"Palo Alto Networks","note":"Official Prisma Cloud product page for CNAPP and cloud-security positioning.","accessedOn":"2026-05-26"},{"id":"src-panw-cortex-cloud-release","title":"Palo Alto Networks Introduces Cortex Cloud","url":"https://investors.paloaltonetworks.com/node/18981/pdf","kind":"investor-relations","publisher":"Palo Alto Networks","note":"Company release documenting the Prisma Cloud and Cortex cloud-security direction.","accessedOn":"2026-05-26"},{"id":"src-panw-marketcap-stockanalysis","title":"Palo Alto Networks Market Cap","url":"https://stockanalysis.com/stocks/panw/market-cap/","kind":"market-data","publisher":"StockAnalysis","note":"Market-cap history source, including first-trading-date market capitalization.","accessedOn":"2026-05-26"},{"id":"src-panw-marketcap-tradingeconomics","title":"Palo Alto Networks Market Capitalization","url":"https://tradingeconomics.com/panw:us:market-capitalization","kind":"market-data","publisher":"Trading Economics","note":"Recent market-cap reference for May 2026.","accessedOn":"2026-05-26"},{"id":"src-panw-pe-public","title":"Palo Alto Networks P/E Ratio","url":"https://public.com/stocks/panw/pe-ratio","kind":"market-data","publisher":"Public.com","note":"Recent trailing P/E ratio reference for valuation input.","accessedOn":"2026-05-26"},{"id":"src-panw-ipo-prnewswire","title":"Palo Alto Networks Announces Pricing of Initial Public Offering","url":"https://www.prnewswire.com/news-releases/palo-alto-networks-announces-pricing-of-initial-public-offering-163096446.html","kind":"investor-relations","publisher":"Palo Alto Networks via PR Newswire","note":"Primary IPO pricing release confirming IPO pricing and expected first trading date.","accessedOn":"2026-05-26"},{"id":"src-opnsense-home","title":"OPNsense Open Source Firewall and Routing Platform","url":"https://opnsense.org/","kind":"open-source-project","publisher":"OPNsense","note":"Open-source firewall alternative source for Strata replacement analysis.","accessedOn":"2026-05-26"},{"id":"src-opnsense-docs","title":"OPNsense Documentation","url":"https://docs.opnsense.org/index.html","kind":"technical-docs","publisher":"OPNsense","note":"Technical documentation for OPNsense deployment and capabilities.","accessedOn":"2026-05-26"},{"id":"src-suricata-home","title":"Suricata Open Source Network Threat Detection","url":"https://suricata.io/","kind":"open-source-project","publisher":"Open Information Security Foundation","note":"Open IDS/IPS and network-security monitoring alternative for firewall threat-prevention functions.","accessedOn":"2026-05-26"},{"id":"src-falco-home","title":"Falco Cloud Native Runtime Security","url":"https://falco.org/","kind":"open-source-project","publisher":"Falco Project","note":"Open-source runtime-security component for cloud-native replacement stack.","accessedOn":"2026-05-26"},{"id":"src-opa-cncf","title":"Open Policy Agent Project","url":"https://www.cncf.io/projects/open-policy-agent-opa/","kind":"open-source-project","publisher":"Cloud Native Computing Foundation","note":"Open policy engine used for cloud and Kubernetes policy-as-code replacement analysis.","accessedOn":"2026-05-26"},{"id":"src-opentelemetry-home","title":"OpenTelemetry","url":"https://opentelemetry.io/","kind":"open-source-project","publisher":"OpenTelemetry Project","note":"Vendor-neutral telemetry framework relevant to open cloud-security control planes.","accessedOn":"2026-05-26"},{"id":"src-wazuh-home","title":"Wazuh Open Source XDR and SIEM","url":"https://wazuh.com/","kind":"open-source-project","publisher":"Wazuh","note":"Open-source SIEM/XDR alternative for security operations and cloud workload monitoring.","accessedOn":"2026-05-26"},{"id":"src-wazuh-docs","title":"Wazuh Getting Started Documentation","url":"https://documentation.wazuh.com/current/getting-started/index.html","kind":"technical-docs","publisher":"Wazuh","note":"Technical documentation source for Wazuh readiness and operational scope.","accessedOn":"2026-05-26"}],"summaryMarkdown":"Prepared a new Palo Alto Networks registry bundle with Strata and Prisma Cloud as the covered products, open-source alternatives centered on OPNsense, Suricata, Falco, OPA, and Wazuh, and disruption concepts focused on federated threat rules, open CNAPP control planes, and proof-priced threat intelligence."}
+tokens used
+60,071

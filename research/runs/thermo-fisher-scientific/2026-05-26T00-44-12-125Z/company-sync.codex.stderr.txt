@@ -1,0 +1,1419 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e61bd-3d0c-7e43-8f08-ace91e6f8676
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: thermo-fisher-scientific
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "thermo-fisher-scientific",
+  "name": "Thermo Fisher Scientific",
+  "ticker": "TMO",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "health-care",
+  "industryId": "life-sciences-tools-services",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/thermo-fisher-scientific/marketcap/",
+  "description": "Thermo Fisher Scientific supplies analytical instruments, laboratory equipment, reagents, consumables, software, and services for science and health care customers.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Thermo Scientific",
+    "Applied Biosystems"
+  ],
+  "seedSourceUrls": [
+    "https://ir.thermofisher.com/",
+    "https://www.thermofisher.com/",
+    "https://companiesmarketcap.com/thermo-fisher-scientific/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 ranks 51-75 market-cap cohort."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T00:44:13.438236Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:13.438251Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:13.438665Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:13.438673Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:13.439078Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:13.439081Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:13.439484Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:13.439487Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:13.439900Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:13.439904Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:13.440666Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:13.440669Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:14.214282Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:14.214297Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:14.214627Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:14.214632Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:14.214994Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:14.215000Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:14.215377Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:14.215381Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:14.215740Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:14.215746Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:44:14.216482Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:44:14.216487Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Thermo Fisher Scientific 2025 annual report revenue net income ...
+web search: 
+web search: Thermo Fisher Thermo Scientific products analytical instruments laboratory equipment official ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "thermo-fisher-scientific",
+      "name": "Thermo Fisher Scientific",
+      "ticker": "TMO",
+      "rankApprox": 60,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "health-care",
+      "industryId": "life-sciences-tools-services",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/thermo-fisher-scientific/marketcap/",
+      "description": "Thermo Fisher Scientific supplies analytical instruments, laboratory equipment, reagents, consumables, software, and services for science and health care customers.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Thermo Fisher Scientific is a scaled life-sciences infrastructure supplier spanning analytical instruments, life-sciences reagents, specialty diagnostics, laboratory products, biopharma services, and clinical research services.",
+            "Its brands include Thermo Scientific for instruments, equipment, software, services, and consumables, and Applied Biosystems for genetic-analysis systems such as PCR and sequencing-adjacent instruments."
+          ]
+        },
+        {
+          "title": "Market position",
+          "paragraphs": [
+            "The company benefits from broad catalog depth, regulated customer workflows, global distribution, installed instrument bases, service contracts, and procurement relationships with research, clinical, pharmaceutical, biotechnology, academic, industrial, and government customers.",
+            "Thermo Fisher reported roughly $44.6 billion of 2025 revenue, and market-data sources placed its market capitalization near $167 billion in late May 2026."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Thermo Fisher's moat is strongest where customers need validated workflows, repeatable consumables, service coverage, regulatory documentation, and purchasing simplicity across many lab categories. Its scale lets it bundle instruments, reagents, consumables, support, and channel access in a way smaller vendors struggle to match.",
+        "The moat is less absolute in commodity lab equipment, software-adjacent workflows, and lower-complexity automation where open-source protocols, lower-cost robotics, shared designs, refurbished equipment, and community methods can pressure closed vendor ecosystems."
+      ],
+      "decentralizationNarrative": [
+        "Thermo Fisher is structurally centralized because it manufactures or channels specialized instruments, branded consumables, validated reagents, and support-heavy systems through a global corporate platform.",
+        "The decentralization opening is not a full replacement of high-end analytical instrumentation. It is more credible around open lab automation, shared protocol execution, low-cost genetic-analysis hardware, open instrument-control layers, and federated lab networks that reduce dependence on proprietary software and single-vendor consumables."
+      ],
+      "sourceIds": [
+        "thermo-ir",
+        "thermo-2024-10k",
+        "thermo-scientific-brand",
+        "applied-biosystems-genetic-analysis",
+        "stockanalysis-revenue-2026",
+        "stockanalysis-market-cap-2026",
+        "macrotrends-pe-2026"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "printed-electronics"
+      ],
+      "snapshotNote": "Prepared as a May 26, 2026 registry refresh from the S&P 500 ranks 51-75 market-cap cohort; market metrics are point-in-time estimates and should be reviewed before financial publication.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "Thermo Fisher has a large installed base, broad catalog, regulated customer relationships, service infrastructure, and a combined instruments-consumables-services model, but some lab equipment and automation workflows are vulnerable to open or lower-cost substitutes.",
+          "sourceIds": [
+            "thermo-2024-10k",
+            "thermo-scientific-brand",
+            "applied-biosystems-genetic-analysis"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 34,
+          "rationale": "High-end analytical instruments, validated diagnostics, and regulated consumables remain difficult to decentralize, while protocol software, lower-end lab automation, and some genetic-analysis tools have credible open-source or community alternatives.",
+          "sourceIds": [
+            "thermo-2024-10k",
+            "opentrons-open-source-docs",
+            "pylabrobot-github",
+            "openpcr-github"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 76,
+          "rationale": "Thermo Fisher remained strongly profitable at 2025 scale, with third-party financial summaries reporting about $44.6 billion of revenue and about $6.7 billion of net income.",
+          "sourceIds": [
+            "stockanalysis-revenue-2026",
+            "billiver-income-2025"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 21.69,
+          "rationale": "Macrotrends reported Thermo Fisher Scientific's P/E ratio at 21.69 as of May 6, 2026; this is market-sensitive and should be treated as a point-in-time estimate.",
+          "sourceIds": [
+            "macrotrends-pe-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 167000000000,
+          "rationale": "StockAnalysis reported Thermo Fisher's market capitalization at about $167 billion as of May 21, 2026, broadly consistent with other late-May 2026 market-data snapshots.",
+          "sourceIds": [
+            "stockanalysis-market-cap-2026",
+            "companiesmarketcap-tmo-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "thermo-scientific",
+        "name": "Thermo Scientific",
+        "category": "Analytical instruments, laboratory equipment, software, services, and consumables",
+        "homepageUrl": "https://www.thermofisher.com/us/en/home/brands/thermo-scientific.html",
+        "summary": "Thermo Scientific is Thermo Fisher's flagship instrument and lab-equipment brand, covering areas such as chromatography, mass spectrometry, electron microscopy, sample preparation, cold storage, lab equipment, chemicals, software, services, and consumables.",
+        "whyItMatters": "This brand anchors Thermo Fisher's control over everyday and high-end lab workflows, where instrument choice often determines consumables, service contracts, data formats, and procurement patterns.",
+        "replacementSketch": [
+          "A realistic replacement path starts with open protocol execution, open labware definitions, lower-cost robotics, and hardware-agnostic automation layers around commodity workflows rather than direct replacement of every high-end analytical instrument.",
+          "Over time, federated labs could share validated protocols, instrument adapters, maintenance knowledge, and reproducibility metadata so buyers can mix equipment and services without being locked into one vendor stack."
+        ],
+        "sourceIds": [
+          "thermo-scientific-brand",
+          "thermo-2024-10k"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "opentrons",
+            "name": "Opentrons",
+            "kind": "open-source",
+            "homepageUrl": "https://opentrons.com/",
+            "repoUrl": "https://github.com/Opentrons/opentrons",
+            "summary": "Opentrons provides lab-automation robots and open-source software for writing, sharing, and running biology protocols.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "Opentrons publishes its robot software, app, APIs, and protocol tooling in public repositories, with documentation describing its open-source model and licenses.",
+                "sourceIds": [
+                  "opentrons-open-source-docs",
+                  "opentrons-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "Shared protocols and open APIs make Opentrons a credible platform for distributed labs, although it still depends on manufactured robots and commercial support.",
+                "sourceIds": [
+                  "opentrons-open-source-docs",
+                  "opentrons-protocol-library"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 74,
+                "rationale": "Opentrons is a real commercial platform with documented software and protocol libraries, but it replaces only selected automation workflows rather than Thermo Fisher's full analytical-instrument portfolio.",
+                "sourceIds": [
+                  "opentrons-open-source-docs",
+                  "opentrons-software"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 67,
+                "rationale": "Open software, programmable protocols, and shared labware definitions can lower automation and switching costs for routine workflows, though hardware and validation costs remain material.",
+                "sourceIds": [
+                  "opentrons-open-source-docs",
+                  "opentrons-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "opentrons-open-source-docs",
+              "opentrons-github"
+            ]
+          },
+          {
+            "slug": "pylabrobot",
+            "name": "PyLabRobot",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/PyLabRobot/pylabrobot",
+            "repoUrl": "https://github.com/PyLabRobot/pylabrobot",
+            "summary": "PyLabRobot is a hardware-agnostic Python SDK for controlling liquid handlers, plate readers, pumps, scales, heater shakers, and other lab-automation equipment.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "The project is published as free and open-source software on GitHub.",
+                "sourceIds": [
+                  "pylabrobot-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 73,
+                "rationale": "Hardware-agnostic control helps labs avoid single-vendor automation software and supports shared protocol execution across mixed instrument fleets.",
+                "sourceIds": [
+                  "pylabrobot-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 58,
+                "rationale": "PyLabRobot is useful for technical labs and developers, but production use still depends on supported hardware, validation, and local engineering skill.",
+                "sourceIds": [
+                  "pylabrobot-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "A common open SDK can reduce integration costs and extend useful life for heterogeneous lab equipment.",
+                "sourceIds": [
+                  "pylabrobot-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "pylabrobot-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-lab-automation-network",
+            "name": "Federated Open Lab Automation Network",
+            "summary": "A federation of labs, protocol authors, equipment refurbishers, and validation groups could publish portable lab-automation protocols, instrument adapters, labware definitions, and reproducibility records so routine workflows are not captive to one vendor's software or consumables stack.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Thermo Fisher's procurement and workflow moat weakens when labs can coordinate around open protocol execution, shared validation evidence, and hardware-agnostic automation rather than buying a vertically bundled vendor workflow.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated protocol registries and independent validation nodes, not through Bitcoin. Labs can host their own protocol repositories while sharing signed metadata and reproducibility outcomes across institutions.",
+            "coordinationMechanism": "Protocol authors publish machine-readable methods; labs submit run metadata and compatibility results; refurbishers and adapter maintainers list supported instruments; buyers choose validated combinations based on public reputation and local constraints.",
+            "verificationOrTrustModel": "Runs can be tied to signed protocol versions, instrument identifiers, calibration records, reagent lots, and output hashes. Independent labs can reproduce benchmark workflows, while federated reputation limits the value of fake compatibility claims.",
+            "failureModes": [
+              "Regulated labs may still require vendor-validated workflows and formal quality systems.",
+              "Instrument vendors can restrict APIs, service manuals, firmware access, or consumable compatibility.",
+              "Shared protocol metadata may not capture enough tacit wet-lab knowledge for reliable transfer."
+            ],
+            "adoptionPath": [
+              "Start with non-clinical research workflows using open automation APIs and shared labware definitions.",
+              "Add cross-lab reproducibility badges for common assays and sample-preparation protocols.",
+              "Expand into procurement marketplaces for validated refurbished equipment, open adapters, and third-party service providers."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "thermo-scientific-brand",
+              "thermo-2024-10k"
+            ],
+            "enablerSourceIds": [
+              "opentrons-open-source-docs",
+              "opentrons-protocol-library",
+              "pylabrobot-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "The concept directly shifts protocol knowledge and equipment interoperability from vendor-controlled stacks to federated lab communities.",
+                "sourceIds": [
+                  "opentrons-open-source-docs",
+                  "pylabrobot-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Open APIs, protocol libraries, and hardware-agnostic SDKs already exist, but trusted validation across institutions is still an organizational challenge.",
+                "sourceIds": [
+                  "opentrons-protocol-library",
+                  "pylabrobot-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 57,
+                "rationale": "Routine liquid-handling and sample-preparation workflows are feasible today; high-end analytical instruments and regulated diagnostics remain much harder.",
+                "sourceIds": [
+                  "opentrons-open-source-docs",
+                  "thermo-2024-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 49,
+                "rationale": "Pressure is meaningful in automation software, adapters, and routine equipment workflows, but Thermo Fisher's broad catalog and service coverage limit near-term displacement.",
+                "sourceIds": [
+                  "thermo-scientific-brand",
+                  "opentrons-open-source-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "local-lab-equipment-refurbishment-and-adapter-loops",
+            "name": "Local Lab Equipment Refurbishment and Adapter Loops",
+            "summary": "Local workshops and university cores could extend the life of common lab equipment with open maintenance documentation, replacement parts, firmware adapters, and shared calibration procedures, reducing dependence on new proprietary purchases for lower-risk workflows.",
+            "angleIds": [
+              "recycling-and-reuse",
+              "local-materials-processing",
+              "open-hardware"
+            ],
+            "thesis": "Thermo Fisher's equipment replacement cycle faces pressure if labs can safely refurbish, adapt, and recertify more common equipment locally.",
+            "bitcoinOrDecentralizationRole": "The decentralization mechanism is local production and open repair knowledge. Bitcoin is not central unless future marketplaces use escrowed payments for parts, service, or calibration bounties.",
+            "coordinationMechanism": "Labs publish equipment failure patterns; local technicians list repair capabilities; open-hardware contributors publish adapters and replacement designs; calibration providers issue signed service records.",
+            "verificationOrTrustModel": "Trust depends on calibration logs, test artifacts, peer-reviewed repair procedures, signed service histories, and liability boundaries that distinguish research use from clinical or regulated use.",
+            "failureModes": [
+              "Safety, liability, and quality-system requirements can block locally repaired equipment in regulated settings.",
+              "Closed firmware, unavailable parts, or proprietary service tools can make many devices uneconomic to repair.",
+              "A weak certification layer could create false confidence in poorly maintained instruments."
+            ],
+            "adoptionPath": [
+              "Begin with non-critical equipment such as centrifuges, incubators, cold storage accessories, adapters, and teaching-lab hardware.",
+              "Build shared calibration and service-record templates for university, maker, and local technician networks.",
+              "Move selectively into higher-value workflows only where open documentation and validation evidence are strong."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "thermo-scientific-brand",
+              "fishersci-equipment-instruments"
+            ],
+            "enablerSourceIds": [
+              "pylabrobot-github",
+              "opentrons-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 69,
+                "rationale": "The concept shifts maintenance, adapters, and some equipment lifecycle control toward local operators and open designs.",
+                "sourceIds": [
+                  "pylabrobot-github",
+                  "opentrons-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 46,
+                "rationale": "Repair and reuse networks are plausible, but trusted calibration and liability coordination are much less mature than open software collaboration.",
+                "sourceIds": [
+                  "fishersci-equipment-instruments",
+                  "pylabrobot-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 42,
+                "rationale": "Local repair is feasible for selected equipment classes, but closed designs, compliance requirements, and precision calibration limit broad deployment.",
+                "sourceIds": [
+                  "thermo-scientific-brand",
+                  "fishersci-equipment-instruments"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 38,
+                "rationale": "The pressure is likely incremental, affecting long-tail equipment spend and service margins more than Thermo Fisher's highest-value analytical platforms.",
+                "sourceIds": [
+                  "thermo-2024-10k",
+                  "fishersci-equipment-instruments"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "applied-biosystems",
+        "name": "Applied Biosystems",
+        "category": "Genetic analysis instruments and reagents",
+        "homepageUrl": "https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing/instruments-automation/genetic-analysis-instruments.html",
+        "summary": "Applied Biosystems is Thermo Fisher's genetic-analysis brand for PCR, real-time PCR, thermal cyclers, capillary electrophoresis, and related molecular-biology workflows.",
+        "whyItMatters": "Genetic-analysis instruments sit near the center of clinical diagnostics, research, forensic, public-health, and biotechnology workflows, where validation, consumables, software, and data formats can reinforce vendor lock-in.",
+        "replacementSketch": [
+          "Open replacements are most credible in education, field research, low-resource labs, and non-clinical workflows where lower-cost thermocyclers, transparent control software, and shared protocols matter more than vendor validation.",
+          "For regulated diagnostics, open tools would need a much stronger evidence layer: calibration records, reproducibility benchmarks, reagent traceability, and clear boundaries between research and clinical use."
+        ],
+        "sourceIds": [
+          "applied-biosystems-genetic-analysis",
+          "seqstudio-flex-brochure"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "openpcr",
+            "name": "OpenPCR",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/chaibio/openqpcr",
+            "repoUrl": "https://github.com/chaibio/openqpcr",
+            "summary": "OpenPCR and related Open qPCR materials provide open-source PCR/qPCR hardware and software designs aimed at making DNA amplification equipment more accessible.",
+            "metrics": {
+              "openness": {
+                "value": 78,
+                "rationale": "The project publishes source materials in a public GitHub repository for open PCR/qPCR tooling.",
+                "sourceIds": [
+                  "openpcr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Open thermocycler designs can support education, field science, and local experimentation outside proprietary genetic-analysis platforms.",
+                "sourceIds": [
+                  "openpcr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 42,
+                "rationale": "Open PCR hardware is credible for learning and research experimentation but is not a drop-in substitute for validated Applied Biosystems clinical or production workflows.",
+                "sourceIds": [
+                  "openpcr-github",
+                  "applied-biosystems-genetic-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 75,
+                "rationale": "Open designs and locally understandable components can reduce entry costs for basic DNA amplification workflows.",
+                "sourceIds": [
+                  "openpcr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openpcr-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-genetic-analysis-field-kit-network",
+            "name": "Open Genetic Analysis Field Kit Network",
+            "summary": "A network of schools, community labs, field researchers, and public-health-adjacent groups could use open PCR hardware, published protocols, and reproducibility records to make basic genetic-analysis capability cheaper and more locally auditable.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination",
+              "home-microfactory"
+            ],
+            "thesis": "Applied Biosystems remains strong in validated and regulated genetic analysis, but open field kits can erode the educational, research, and low-resource edge of the market by making basic amplification workflows locally inspectable and cheaper to replicate.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through open hardware, local assembly, and shared validation data. Bitcoin is not central to the technical mechanism.",
+            "coordinationMechanism": "Kit builders publish hardware revisions, firmware, reagent constraints, and protocols; labs publish benchmark runs; educators and field groups share validated lesson or assay templates.",
+            "verificationOrTrustModel": "The network would rely on signed protocol versions, calibration runs, control samples, temperature logs, public failure reports, and independent replication by multiple labs before a workflow is treated as reliable.",
+            "failureModes": [
+              "Open PCR systems may lack the precision, support, throughput, and regulatory validation required for clinical use.",
+              "Poor reagent handling or weak controls can produce misleading results even when the hardware is open.",
+              "Local assembly quality can vary enough to undermine reproducibility."
+            ],
+            "adoptionPath": [
+              "Use open PCR kits in education, citizen science, and non-clinical field research.",
+              "Build shared benchmark protocols with positive and negative controls across many sites.",
+              "Standardize local calibration and documentation for research-grade community lab use."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "applied-biosystems-genetic-analysis",
+              "seqstudio-flex-brochure"
+            ],
+            "enablerSourceIds": [
+              "openpcr-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "Open genetic-analysis hardware and shared protocols directly move basic capability toward local operators.",
+                "sourceIds": [
+                  "openpcr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 55,
+                "rationale": "Open repositories support coordination, but robust cross-lab validation and quality control remain difficult.",
+                "sourceIds": [
+                  "openpcr-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 50,
+                "rationale": "Basic thermocycling is feasible with open hardware, while high-throughput, regulated, or diagnostic genetic analysis is much harder.",
+                "sourceIds": [
+                  "openpcr-github",
+                  "applied-biosystems-genetic-analysis"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 35,
+                "rationale": "The concept pressures entry-level and educational workflows more than Thermo Fisher's validated clinical and professional genetic-analysis business.",
+                "sourceIds": [
+                  "applied-biosystems-genetic-analysis",
+                  "openpcr-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "thermo-ir",
+      "title": "Thermo Fisher Scientific Investor Relations",
+      "url": "https://ir.thermofisher.com/",
+      "kind": "investor-relations",
+      "publisher": "Thermo Fisher Scientific",
+      "note": "Primary investor-relations portal for company reporting and corporate updates.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "thermo-2024-10k",
+      "title": "Thermo Fisher Scientific 2024 Annual Report on Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/97745/000009774525000029/tmo2024ars.pdf",
+      "kind": "annual-report",
+      "publisher": "Thermo Fisher Scientific",
+      "note": "Primary filing source for business segments, product categories, risk factors, and operating context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "thermo-scientific-brand",
+      "title": "Thermo Scientific Brand Page",
+      "url": "https://www.thermofisher.com/us/en/home/brands/thermo-scientific.html",
+      "kind": "product-page",
+      "publisher": "Thermo Fisher Scientific",
+      "note": "Product-brand source describing Thermo Scientific instruments, equipment, software, services, and consumables.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "fishersci-equipment-instruments",
+      "title": "Fisher Scientific Equipment and Instruments",
+      "url": "https://www.fishersci.com/us/en/scientific-products/categories/equipment-instruments.html",
+      "kind": "product-page",
+      "publisher": "Fisher Scientific",
+      "note": "Channel source describing the breadth of laboratory equipment and instruments sold through Thermo Fisher's Fisher Scientific channel.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "applied-biosystems-genetic-analysis",
+      "title": "Applied Biosystems Genetic Analysis Instruments",
+      "url": "https://www.thermofisher.com/us/en/home/clinical/diagnostic-testing/instruments-automation/genetic-analysis-instruments.html",
+      "kind": "product-page",
+      "publisher": "Thermo Fisher Scientific",
+      "note": "Product source for Applied Biosystems genetic-analysis instruments including thermal cyclers and real-time PCR systems.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "seqstudio-flex-brochure",
+      "title": "Applied Biosystems SeqStudio Flex Series Brochure",
+      "url": "https://documents.thermofisher.com/TFS-Assets/GSD/brochures/SeqStudio-Flex-Series-Brochure.pdf",
+      "kind": "product-page",
+      "publisher": "Thermo Fisher Scientific",
+      "note": "Product brochure supporting Applied Biosystems genetic-analysis workflow characterization.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-revenue-2026",
+      "title": "Thermo Fisher Scientific Revenue",
+      "url": "https://stockanalysis.com/stocks/tmo/revenue/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for 2025 revenue and trailing-twelve-month revenue context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-market-cap-2026",
+      "title": "Thermo Fisher Scientific Market Cap",
+      "url": "https://stockanalysis.com/stocks/tmo/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for late-May 2026 market capitalization estimate.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-tmo-2026",
+      "title": "Thermo Fisher Scientific Market Capitalization",
+      "url": "https://companiesmarketcap.com/thermo-fisher-scientific/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap.com",
+      "note": "Secondary market-cap source tied to the manifest's CompaniesMarketCap URL.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "macrotrends-pe-2026",
+      "title": "Thermo Fisher Scientific PE Ratio",
+      "url": "https://www.macrotrends.net/stocks/charts/TMO/thermo-fisher-scientific/pe-ratio",
+      "kind": "market-data",
+      "publisher": "Macrotrends",
+      "note": "Point-in-time P/E ratio source for valuation metric.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "billiver-income-2025",
+      "title": "Thermo Fisher Scientific Income Statement",
+      "url": "https://billiver.com/company/thermo-fisher-scientific/income-statement",
+      "kind": "market-data",
+      "publisher": "Billiver",
+      "note": "Third-party financial statement summary used for 2025 net income context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "opentrons-open-source-docs",
+      "title": "Opentrons Flex Open-Source Software Documentation",
+      "url": "https://docs.opentrons.com/flex/open-source/",
+      "kind": "technical-docs",
+      "publisher": "Opentrons",
+      "note": "Documentation source for Opentrons open-source software, GitHub organization, APIs, and licensing context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "opentrons-github",
+      "title": "Opentrons Platform GitHub Repository",
+      "url": "https://github.com/Opentrons/opentrons",
+      "kind": "open-source-project",
+      "publisher": "Opentrons",
+      "note": "Open-source repository for Opentrons API and app software.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "opentrons-protocol-library",
+      "title": "Opentrons Protocol Library",
+      "url": "https://opentrons.com/intro-to-protocol-library",
+      "kind": "technical-docs",
+      "publisher": "Opentrons",
+      "note": "Source for open, searchable, downloadable lab-automation protocols.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "opentrons-software",
+      "title": "Opentrons Software Ecosystem",
+      "url": "https://opentrons.com/software",
+      "kind": "product-page",
+      "publisher": "Opentrons",
+      "note": "Product page describing Opentrons software ecosystem and open-source positioning.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "pylabrobot-github",
+      "title": "PyLabRobot GitHub Repository",
+      "url": "https://github.com/PyLabRobot/pylabrobot",
+      "kind": "open-source-project",
+      "publisher": "PyLabRobot",
+      "note": "Open-source, hardware-agnostic Python SDK for lab automation equipment.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openpcr-github",
+      "title": "Open qPCR GitHub Repository",
+      "url": "https://github.com/chaibio/openqpcr",
+      "kind": "open-source-project",
+      "publisher": "ChaiBio",
+      "note": "Open-source PCR/qPCR project used as a plausible open genetic-analysis hardware alternative.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Thermo Fisher Scientific bundle with two product areas: Thermo Scientific and Applied Biosystems. The refresh uses official Thermo Fisher product and filing sources, late-May 2026 market-data snapshots, and open lab automation or open PCR alternatives where the decentralization fit is credible."
+}
+tokens used
+46,992

@@ -1,0 +1,720 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "western-digital",
+      "name": "Western Digital",
+      "ticker": "WDC",
+      "rankApprox": 75,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "technology-hardware",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/western-digital/marketcap/",
+      "description": "Western Digital develops and sells hard-disk storage devices and data-center storage platforms after separating its flash business into Sandisk.",
+      "overview": [
+        {
+          "title": "Business Focus",
+          "paragraphs": [
+            "Western Digital is now primarily an HDD company, with the Western Digital name remaining with the hard-drive business after the February 2025 Sandisk separation.",
+            "The company serves cloud, client, and consumer storage markets, but fiscal 2025 results and later commentary point to cloud demand as the dominant growth driver."
+          ]
+        },
+        {
+          "title": "Registry Relevance",
+          "paragraphs": [
+            "The company sits at an interesting boundary for Free The World: the magnetic drives themselves are difficult to decentralize, but the surrounding storage systems, reliability data, procurement, repair, and reuse layers are meaningfully open to free-software and cooperative alternatives.",
+            "Western Digital's moat is strongest in high-capacity HDD manufacturing, qualification, firmware, channel access, and hyperscaler supply relationships rather than in the higher-level data storage software stack."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Western Digital's moat is substantial because high-capacity HDD production depends on deep manufacturing know-how, precision components, firmware, reliability qualification, and long customer validation cycles. The Ultrastar line also benefits from enterprise qualification and cloud-scale purchasing relationships.",
+        "That moat is narrower at the system layer. Buyers can run open storage software such as Ceph or OpenZFS on commodity hardware, and open rack and storage specifications can reduce enclosure and integration lock-in even when the actual drives remain proprietary."
+      ],
+      "decentralizationNarrative": [
+        "The platter, head, and firmware stack of a modern HDD is not realistically open to local fabrication today, so direct product-level decentralization is low.",
+        "The strongest decentralization paths are around storage orchestration, open hardware chassis, shared reliability datasets, repair/reuse markets, and cooperative storage operators that pool commodity drives without depending on a single cloud or storage-appliance vendor."
+      ],
+      "sourceIds": [
+        "wd-fy2025-results",
+        "wd-2025-10k",
+        "sandisk-separation-faq",
+        "companiesmarketcap-wdc",
+        "wd-ultrastar-hc690",
+        "wd-black-hdd-brief"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75; refreshed with Western Digital's post-Sandisk HDD-focused business profile.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "High-capacity HDD manufacturing, firmware, qualification, and hyperscaler supply commitments create a strong hardware moat, even though storage software and some enclosure layers are more open.",
+          "sourceIds": [
+            "wd-2025-10k",
+            "wd-fy2025-results",
+            "wd-ultrastar-hc690"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 34,
+          "rationale": "Drive manufacturing is capital-intensive and proprietary, but open software-defined storage, open hardware chassis work, and reuse markets create decentralization leverage around the device rather than inside it.",
+          "sourceIds": [
+            "ceph-home",
+            "openzfs-home",
+            "ocp-storage",
+            "backblaze-drive-stats"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "Fiscal 2025 continuing-business results showed a strong recovery, with $9.52 billion of revenue and positive profitability after prior-cycle weakness.",
+          "sourceIds": [
+            "wd-fy2025-results",
+            "wd-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 26,
+          "rationale": "A rough market-implied multiple using current market-cap references and recent profitability; volatile post-separation earnings and AI-driven HDD demand make the estimate speculative.",
+          "sourceIds": [
+            "companiesmarketcap-wdc",
+            "wd-fy2025-results"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 170300000000,
+          "rationale": "Market data sources in mid-May 2026 reported Western Digital around $170 billion of equity value, consistent with its inclusion in the queued top-75 S&P 500 expansion snapshot.",
+          "sourceIds": [
+            "companiesmarketcap-wdc",
+            "stockanalysis-wdc-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "ultrastar",
+        "name": "Ultrastar",
+        "category": "Data-center hard drives",
+        "homepageUrl": "https://www.westerndigital.com/products/internal-drives/data-center-drives",
+        "summary": "Ultrastar is Western Digital's enterprise and data-center HDD family for high-capacity cloud, archival, and infrastructure storage.",
+        "whyItMatters": "High-capacity HDDs remain a critical substrate for cloud storage, AI data lakes, backups, media archives, and low-cost exabyte-scale infrastructure.",
+        "replacementSketch": [
+          "A realistic replacement path does not start by locally manufacturing equivalent HDDs. It starts by reducing dependence on proprietary storage appliances through open software-defined storage and open hardware integration.",
+          "Ceph, OpenZFS, and Open Compute Project storage designs can let operators assemble auditable storage systems from commodity drives while shifting bargaining power toward users, cooperatives, and independent infrastructure operators."
+        ],
+        "sourceIds": [
+          "wd-ultrastar-hc690",
+          "wd-2025-10k",
+          "ceph-home",
+          "ocp-storage",
+          "openzfs-home"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "ultrastar-ceph",
+            "name": "Ceph",
+            "kind": "open-source",
+            "homepageUrl": "https://ceph.io/en/",
+            "repoUrl": "https://github.com/ceph/ceph",
+            "summary": "Ceph is an open-source distributed storage system providing object, block, and file storage on commodity hardware.",
+            "metrics": {
+              "openness": {
+                "value": 94,
+                "rationale": "Ceph is developed as an open-source project with public source code and broad ecosystem participation.",
+                "sourceIds": [
+                  "ceph-home",
+                  "ceph-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "Ceph lets many operators build storage clusters without a single proprietary appliance controller, though each cluster still needs competent administration.",
+                "sourceIds": [
+                  "ceph-home",
+                  "ceph-technology"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 86,
+                "rationale": "Ceph is production-grade software used for object, block, and file storage, but it is operationally complex compared with packaged appliances.",
+                "sourceIds": [
+                  "ceph-home",
+                  "ceph-technology"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 76,
+                "rationale": "Running on commodity hardware can reduce appliance lock-in and improve procurement leverage, although staffing and reliability engineering costs remain material.",
+                "sourceIds": [
+                  "ceph-home",
+                  "ocp-storage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "ceph-home",
+              "ceph-github",
+              "ceph-technology"
+            ]
+          },
+          {
+            "slug": "open-compute-storage",
+            "name": "Open Compute Project Storage",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opencompute.org/projects/storage",
+            "summary": "The Open Compute Project Storage group publishes open data-center storage hardware specifications and collaboration work around chassis, sleds, components, and networked storage compatibility.",
+            "metrics": {
+              "openness": {
+                "value": 84,
+                "rationale": "OCP storage work is organized around shared specifications and community collaboration rather than proprietary enclosure designs.",
+                "sourceIds": [
+                  "ocp-storage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Open hardware specifications can reduce dependence on vertically integrated storage vendors, but large-scale manufacturing remains concentrated.",
+                "sourceIds": [
+                  "ocp-storage",
+                  "ocp-circularity"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 68,
+                "rationale": "OCP designs are credible in data-center environments but are not a drop-in product for most smaller storage buyers.",
+                "sourceIds": [
+                  "ocp-storage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 74,
+                "rationale": "Shared designs and component compatibility can improve sourcing leverage and reuse economics for operators able to adopt OCP-style infrastructure.",
+                "sourceIds": [
+                  "ocp-storage",
+                  "ocp-circularity"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "ocp-storage",
+              "ocp-circularity"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-ceph-storage-cooperatives",
+            "name": "Federated Ceph Storage Cooperatives",
+            "summary": "Regional storage cooperatives could pool commodity HDDs, open chassis designs, and Ceph clusters into auditable storage capacity that competes with vertically integrated storage systems and single-cloud dependence.",
+            "angleIds": [
+              "federation",
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure changes when buyers purchase resilient storage from federated operators running open systems instead of buying proprietary appliances or defaulting to centralized cloud storage.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and cooperative ownership rather than Bitcoin. Each operator can run its own storage cluster while publishing capacity, durability, and audit evidence to shared procurement networks.",
+            "coordinationMechanism": "Operators coordinate through cooperative purchasing, shared hardware specifications, common Ceph deployment patterns, and service-level contracts for capacity and durability.",
+            "verificationOrTrustModel": "Clients can verify erasure-coding policies, placement rules, uptime reports, object checksums, and periodic restore tests; third-party auditors or member operators can challenge suspicious capacity claims with proof-of-retrievability style checks.",
+            "failureModes": [
+              "Operational complexity may overwhelm smaller cooperatives.",
+              "A weak audit layer could allow fake capacity or poor restore readiness.",
+              "Commodity drive shortages can still raise costs for all participants."
+            ],
+            "adoptionPath": [
+              "Start with municipal, university, media-archive, or small-cloud workloads that need transparent data locality and cost control.",
+              "Standardize reference deployments around Ceph, OpenZFS backup tiers, and OCP-compatible enclosures.",
+              "Add cooperative procurement and published reliability reporting once multiple operators share similar hardware profiles."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "wd-2025-10k",
+              "wd-fy2025-results",
+              "wd-capacity-sold-out"
+            ],
+            "enablerSourceIds": [
+              "ceph-home",
+              "ceph-technology",
+              "ocp-storage"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "Federated operators using open storage software directly reduce dependence on one storage-appliance vendor or cloud platform.",
+                "sourceIds": [
+                  "ceph-home",
+                  "ocp-storage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 64,
+                "rationale": "The technical pieces exist, but governance, audits, and service-level enforcement are hard to coordinate across independent operators.",
+                "sourceIds": [
+                  "ceph-technology",
+                  "backblaze-drive-stats"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 68,
+                "rationale": "Ceph and OCP-style infrastructure are real, but successful deployments require strong storage engineering and disciplined operations.",
+                "sourceIds": [
+                  "ceph-home",
+                  "ocp-storage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 58,
+                "rationale": "This pressures appliance and cloud-service margins more than it pressures Western Digital's drive manufacturing moat.",
+                "sourceIds": [
+                  "wd-ultrastar-hc690",
+                  "ceph-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "open-drive-reliability-and-reuse-market",
+            "name": "Open Drive Reliability And Reuse Market",
+            "summary": "A public marketplace for tested used drives could combine open reliability datasets, SMART telemetry, secure erasure attestations, and repair/reuse logistics to extend drive life and reduce dependence on new hyperscaler-scarce supply.",
+            "angleIds": [
+              "recycling-and-reuse",
+              "peer-to-peer-marketplace",
+              "local-materials-processing"
+            ],
+            "thesis": "If buyers can price used drives by transparent model-level failure history, burn-in results, and verified erasure, some storage demand shifts from new proprietary supply channels to circular local markets.",
+            "bitcoinOrDecentralizationRole": "The core role is peer-to-peer market coordination and reuse, not Bitcoin. Payment rails or escrow could be added later, but the important mechanism is verifiable drive condition and chain-of-custody.",
+            "coordinationMechanism": "Sellers publish drive model, age, power-on hours, SMART attributes, test logs, erasure certificate hashes, and warranty terms; buyers and refurbishers bid based on transparent risk grades.",
+            "verificationOrTrustModel": "Listings are constrained by cryptographic hashes of test logs, random sample audits, reproducible burn-in procedures, and reputation penalties for sellers whose drives fail early or whose erasure claims are invalid.",
+            "failureModes": [
+              "SMART data can be incomplete, vendor-specific, or manipulated.",
+              "Privacy and secure-erasure failures could destroy buyer trust.",
+              "High-capacity enterprise buyers may still prefer new drives with OEM warranty and predictable supply."
+            ],
+            "adoptionPath": [
+              "Begin with homelab, small-business backup, media archive, and nonprofit storage buyers willing to trade warranty for cost.",
+              "Use Backblaze-style public reliability data to shape model-level risk pricing.",
+              "Add certified refurbishers and local e-waste processors as trusted market participants."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "wd-capacity-sold-out",
+              "backblaze-drive-stats",
+              "ocp-circularity"
+            ],
+            "enablerSourceIds": [
+              "backblaze-drive-stats",
+              "ifixit-right-to-repair",
+              "ereuse"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "Reuse markets decentralize procurement and extend storage access outside new OEM supply channels.",
+                "sourceIds": [
+                  "backblaze-drive-stats",
+                  "ereuse"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 60,
+                "rationale": "Marketplaces and public test data are plausible, but reliable erasure, grading, and dispute resolution are non-trivial.",
+                "sourceIds": [
+                  "backblaze-drive-stats",
+                  "ifixit-right-to-repair"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 66,
+                "rationale": "The required tools are mostly procedural and software-based, but standardized drive grading would need adoption from refurbishers and buyers.",
+                "sourceIds": [
+                  "backblaze-drive-stats",
+                  "ereuse"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "A reuse market could reduce some marginal new-drive demand during shortages, but it cannot replace leading-edge high-capacity HDD manufacturing.",
+                "sourceIds": [
+                  "wd-capacity-sold-out",
+                  "wd-ultrastar-hc690"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "wd-black",
+        "name": "WD_BLACK",
+        "category": "Performance hard drives",
+        "homepageUrl": "https://www.westerndigital.com/products/internal-drives/wd-black-desktop-sata-hdd",
+        "summary": "WD_BLACK is Western Digital's performance-oriented consumer hard-drive brand, historically associated with gaming and creator storage.",
+        "whyItMatters": "Consumer and prosumer storage is where open file systems, repair culture, and self-hosted backup habits can most directly reduce dependence on branded storage ecosystems.",
+        "replacementSketch": [
+          "For users, the practical replacement is not another proprietary gaming drive brand. It is a self-managed storage stack using commodity drives, OpenZFS, reproducible backups, and transparent reliability practices.",
+          "This shifts value away from brand segmentation and toward data integrity, replaceability, and user-controlled storage pools."
+        ],
+        "sourceIds": [
+          "wd-black-hdd-brief",
+          "openzfs-home",
+          "backblaze-drive-stats",
+          "sandisk-separation-faq"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "wd-black-openzfs",
+            "name": "OpenZFS",
+            "kind": "open-source",
+            "homepageUrl": "https://openzfs.org/",
+            "repoUrl": "https://github.com/openzfs/zfs",
+            "summary": "OpenZFS is an open-source storage platform widely used for reliable local and server storage pools.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "OpenZFS is an open-source project with public development and source access.",
+                "sourceIds": [
+                  "openzfs-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "OpenZFS enables user-controlled storage pools on commodity machines without dependence on a proprietary appliance layer.",
+                "sourceIds": [
+                  "openzfs-home",
+                  "openzfs-distributions"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 84,
+                "rationale": "OpenZFS is mature and available across multiple open-source operating-system distributions, though setup still requires technical competence.",
+                "sourceIds": [
+                  "openzfs-home",
+                  "openzfs-distributions"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Users can combine ordinary drives into resilient pools and avoid many appliance markups, but they still buy proprietary drives.",
+                "sourceIds": [
+                  "openzfs-home",
+                  "backblaze-drive-stats"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openzfs-home",
+              "openzfs-distributions"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "self-hosted-openzfs-storage-kits",
+            "name": "Self-Hosted OpenZFS Storage Kits",
+            "summary": "Community-maintained NAS reference kits could bundle OpenZFS, tested commodity drive lists, backup recipes, and right-to-repair documentation so households and small studios can build resilient storage without buying branded appliance ecosystems.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination",
+              "recycling-and-reuse"
+            ],
+            "thesis": "The market shifts from brand-led drive segmentation toward user-owned, repairable, inspectable storage systems where the drive is a replaceable component.",
+            "bitcoinOrDecentralizationRole": "Decentralization is expressed through self-hosting and open documentation rather than Bitcoin. Users coordinate around shared reference builds, public reliability reports, and repair practices.",
+            "coordinationMechanism": "Maintainers publish recommended bills of materials, known-good drive models, setup scripts, and backup verification workflows; users report failures and compatibility issues back into the shared dataset.",
+            "verificationOrTrustModel": "Trust comes from reproducible configuration, scrub and checksum reports, drive burn-in logs, public issue tracking, and independent restore tests rather than vendor marketing claims.",
+            "failureModes": [
+              "Poorly configured self-hosted storage can lose data despite open tools.",
+              "Consumer users may underinvest in offsite backup and restore testing.",
+              "Drive firmware and hardware internals remain proprietary."
+            ],
+            "adoptionPath": [
+              "Start with homelab, creator, and small-studio users already buying WD_BLACK-class drives.",
+              "Publish turnkey OpenZFS templates with clear backup and restore checks.",
+              "Layer in local repair, reuse, and drive-grading communities as confidence grows."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "wd-black-hdd-brief",
+              "sandisk-separation-faq"
+            ],
+            "enablerSourceIds": [
+              "openzfs-home",
+              "openzfs-distributions",
+              "backblaze-drive-stats",
+              "ifixit-right-to-repair"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "Self-hosted OpenZFS systems move control over data placement, redundancy, and replacement away from branded storage appliances.",
+                "sourceIds": [
+                  "openzfs-home",
+                  "openzfs-distributions"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 68,
+                "rationale": "Open-source storage communities already coordinate software and documentation, but shared hardware qualification requires sustained maintenance.",
+                "sourceIds": [
+                  "openzfs-home",
+                  "backblaze-drive-stats"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 72,
+                "rationale": "The software and community practices exist today; the hard part is packaging them into reliable consumer-friendly kits.",
+                "sourceIds": [
+                  "openzfs-home",
+                  "ifixit-right-to-repair"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "This pressures branded storage ecosystems and NAS appliances more than Western Digital's underlying drive sales.",
+                "sourceIds": [
+                  "wd-black-hdd-brief",
+                  "openzfs-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "wd-fy2025-results",
+      "title": "Western Digital Reports Fiscal Fourth Quarter and Fiscal Year 2025 Financial Results",
+      "url": "https://www.westerndigital.com/company/newsroom/press-releases/2025/2025-07-30-western-digital-reports-fiscal-fourth-quarter-and-fiscal-year-2025-financial-results",
+      "kind": "investor-relations",
+      "publisher": "Western Digital",
+      "note": "Provides fiscal 2025 revenue, profitability context, and management commentary on cloud demand.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "wd-2025-10k",
+      "title": "Western Digital Corporation 2025 Form 10-K",
+      "url": "https://investor.wdc.com/static-files/f97228d0-28c2-4360-8fed-f8ddfa15020e",
+      "kind": "annual-report",
+      "publisher": "Western Digital",
+      "note": "Annual filing used for business model, risk, segment, and post-separation financial context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "sandisk-separation-faq",
+      "title": "Sandisk Corporate Separation and Brand FAQ",
+      "url": "https://www.sandisk.com/en-us/sandisk-separation-faqs",
+      "kind": "investor-relations",
+      "publisher": "Sandisk",
+      "note": "Documents the February 2025 separation of Sandisk from Western Digital and clarifies flash-product brand ownership.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-wdc",
+      "title": "Western Digital Market Cap",
+      "url": "https://companiesmarketcap.com/western-digital/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Seed market-cap reference supplied in the manifest.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-wdc-marketcap",
+      "title": "Western Digital Market Cap",
+      "url": "https://stockanalysis.com/stocks/wdc/market-cap/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Supplemental current market-cap reference for WDC.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "wd-ultrastar-hc690",
+      "title": "Ultrastar DC HC690 Data Center Hard Drive",
+      "url": "https://www.westerndigital.com/products/internal-drives/data-center-drives/ultrastar-dc-hc690-hdd",
+      "kind": "product-page",
+      "publisher": "Western Digital",
+      "note": "Official product page for a current Ultrastar high-capacity data-center hard drive.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "wd-black-hdd-brief",
+      "title": "WD_BLACK PC HDD Product Brief",
+      "url": "https://documents.westerndigital.com/content/dam/doc-library/en_us/assets/public/western-digital/product/internal-drives/wd-black-hdd/product-brief-western-digital-wd-black-pc-hdd.pdf",
+      "kind": "product-page",
+      "publisher": "Western Digital",
+      "note": "Official product brief for WD_BLACK hard-drive positioning and features.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "wd-capacity-sold-out",
+      "title": "Western Digital is already sold out of hard drives for all of 2026",
+      "url": "https://www.tomshardware.com/pc-components/hdds/western-digital-is-already-sold-out-of-hard-drives-for-all-of-2026-chief-says-some-long-term-agreements-for-2027-and-2028-already-in-place",
+      "kind": "analysis",
+      "publisher": "Tom's Hardware",
+      "note": "Reports management comments about 2026 HDD capacity being booked by large customers, useful for supply-concentration and shortage context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ceph-home",
+      "title": "Ceph.io",
+      "url": "https://ceph.io/en/",
+      "kind": "open-source-project",
+      "publisher": "Ceph",
+      "note": "Official project homepage for the open-source distributed storage system.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ceph-github",
+      "title": "ceph/ceph GitHub Repository",
+      "url": "https://github.com/ceph/ceph",
+      "kind": "open-source-project",
+      "publisher": "Ceph",
+      "note": "Public source repository for Ceph.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ceph-technology",
+      "title": "Ceph Technology",
+      "url": "https://ceph.io/en/discover/technology/",
+      "kind": "technical-docs",
+      "publisher": "Ceph",
+      "note": "Technical overview of Ceph's object, block, file, erasure-coding, and distributed storage capabilities.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openzfs-home",
+      "title": "OpenZFS",
+      "url": "https://openzfs.org/",
+      "kind": "open-source-project",
+      "publisher": "OpenZFS",
+      "note": "Official project site for the open-source storage platform.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openzfs-distributions",
+      "title": "OpenZFS Distributions",
+      "url": "https://openzfs.org/wiki/Distributions",
+      "kind": "technical-docs",
+      "publisher": "OpenZFS",
+      "note": "Documents open-source platform availability for OpenZFS.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ocp-storage",
+      "title": "Open Compute Project Storage",
+      "url": "https://www.opencompute.org/projects/storage",
+      "kind": "technical-docs",
+      "publisher": "Open Compute Project",
+      "note": "Official OCP storage project page covering chassis, sleds, components, networked storage, and compatibility work.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ocp-circularity",
+      "title": "Data Center Impact Report: The Financial and Sustainability Case for Circularity",
+      "url": "https://www.opencompute.org/documents/itrenew-the-case-for-circularity-data-center-impact-report-ocp-v11-pdf",
+      "kind": "analysis",
+      "publisher": "Open Compute Project",
+      "note": "OCP-hosted circularity report used for reuse and data-center hardware lifecycle context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "backblaze-drive-stats",
+      "title": "Backblaze Drive Stats",
+      "url": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+      "kind": "analysis",
+      "publisher": "Backblaze",
+      "note": "Public hard-drive reliability dataset and reports used as an enabler for transparent drive grading and reliability analysis.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ifixit-right-to-repair",
+      "title": "What Is Right to Repair?",
+      "url": "https://www.ifixit.com/News/61140/what-is-right-to-repair",
+      "kind": "analysis",
+      "publisher": "iFixit",
+      "note": "Right-to-repair context for user-controlled repair, replacement, and local service ecosystems.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ereuse",
+      "title": "Electronics Reuse",
+      "url": "https://ereuse.org/",
+      "kind": "open-source-project",
+      "publisher": "eReuse",
+      "note": "Open-source-oriented project focused on digital-device reuse, circularity metrics, and reducing e-waste.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Western Digital registry bundle focused on the post-Sandisk HDD business. The strongest disruption paths are open software-defined storage, OCP-style storage hardware, federated storage cooperatives, and transparent drive reuse markets rather than local fabrication of HDDs."
+}

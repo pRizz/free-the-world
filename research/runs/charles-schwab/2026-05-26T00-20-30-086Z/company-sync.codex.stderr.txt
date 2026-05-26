@@ -1,0 +1,1485 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e61a7-8a1a-7bc1-91d1-dbc637304917
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: charles-schwab
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "charles-schwab",
+  "name": "Charles Schwab",
+  "ticker": "SCHW",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/charles-schwab/marketcap/",
+  "description": "Charles Schwab provides brokerage, wealth management, banking, and investment advisory services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Schwab Brokerage",
+    "Schwab Wealth Advisory"
+  ],
+  "seedSourceUrls": [
+    "https://www.aboutschwab.com/investor-relations",
+    "https://www.schwab.com/",
+    "https://companiesmarketcap.com/charles-schwab/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T00:20:31.755863Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:31.755876Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:31.756278Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:31.756284Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:31.756699Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:31.756702Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:31.757098Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:31.757101Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:31.757476Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:31.757479Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:31.758128Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:31.758131Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:32.720470Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:32.720485Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:32.721080Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:32.721088Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:32.721482Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:32.721489Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:32.721879Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:32.721885Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:32.722252Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:32.722255Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T00:20:32.723044Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T00:20:32.723048Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Charles Schwab 2025 annual report net income revenue 2025 Form 10-K ...
+web search: 
+web search: Schwab brokerage accounts product page investing trading brokerage ...
+web search: 
+web search: Schwab 2025 net income 2025 net revenues 2025 annual report total client assets ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "charles-schwab",
+      "name": "Charles Schwab",
+      "ticker": "SCHW",
+      "rankApprox": 62,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top75"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/charles-schwab/marketcap/",
+      "description": "Charles Schwab provides brokerage, wealth management, banking, custody, and investment advisory services to retail investors, advisors, and institutions.",
+      "overview": [
+        {
+          "title": "Business Snapshot",
+          "paragraphs": [
+            "Charles Schwab is one of the largest U.S. retail brokerage and wealth platforms, combining brokerage accounts, banking, managed investing, advisor custody, trading tools, research, and investment products.",
+            "Schwab's 2025 annual report emphasized record net revenue, record client assets, strong core net new assets, and scale advantages tied to its large base of brokerage, banking, and advisory relationships."
+          ]
+        },
+        {
+          "title": "Control Points",
+          "paragraphs": [
+            "Schwab's moat comes less from a single proprietary product and more from regulated custody, customer trust, distribution, balance-sheet economics, branch and support infrastructure, embedded account relationships, and a broad product bundle.",
+            "The most decentralizable portions are research, portfolio analytics, planning tools, and self-directed investment workflows. Regulated securities custody, bank sweep programs, execution, compliance, and insured client asset handling remain much harder to replace with open or peer-to-peer systems."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Schwab has a high moat because brokerage and wealth management combine trust, regulatory licensing, operational reliability, low-cost execution, cash sweep economics, advisor relationships, and customer inertia. The company reported $11.90 trillion in total client assets at year-end 2025, which gives it scale in trading, cash management, investment products, and service operations.",
+        "The moat is not absolute: price competition compressed retail brokerage commissions across the industry, and independent software can replicate portfolio tracking, research, analytics, and financial planning. But the hardest parts of Schwab's bundle are regulated custody, insured bank products, tax reporting, compliance, asset transfers, and investor support at national scale."
+      ],
+      "decentralizationNarrative": [
+        "Schwab's brokerage account and advisory workflows can be partially unbundled into open-source research tools, local-first portfolio trackers, open data connectors, cooperative advisor networks, and protocol-mediated attestations. These alternatives can reduce dependence on a single portal for analytics, planning, and decision support.",
+        "Full displacement is harder. Public securities markets rely on regulated brokers, clearing firms, transfer agents, exchanges, custodians, and banking rails. Decentralized concepts are most credible as overlays that improve portability, transparency, and client-controlled analysis before they become direct replacements for regulated securities custody."
+      ],
+      "sourceIds": [
+        "schwab-2025-annual-report",
+        "schwab-brokerage-page",
+        "schwab-wealth-advisory-page",
+        "stockanalysis-schw-market-cap",
+        "macrotrends-schw-pe"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75; financial metrics refreshed using publicly available 2025 annual-report and May 2026 market-data references.",
+      "inputMetrics": {
+        "moat": {
+          "value": 86,
+          "rationale": "Schwab combines regulated custody, banking, brokerage scale, advisor distribution, research tools, brand trust, and $11.90 trillion of reported year-end 2025 client assets, creating high switching costs and operational barriers.",
+          "sourceIds": [
+            "schwab-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 38,
+          "rationale": "Research, analytics, planning, and portfolio tracking can move to open or local-first tools, but regulated brokerage, securities custody, bank products, tax reporting, and clearing remain centralized and compliance-heavy.",
+          "sourceIds": [
+            "schwab-brokerage-page",
+            "schwab-wealth-advisory-page",
+            "portfolio-performance-github",
+            "openbb-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 82,
+          "rationale": "Schwab reported record 2025 performance, including $23.9 billion in net revenue and $8.9 billion in net income, indicating strong profitability and operating leverage.",
+          "sourceIds": [
+            "schwab-2025-annual-report",
+            "schwab-sec-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 19.43,
+          "rationale": "Macrotrends reported Charles Schwab's P/E ratio at 19.43 as of May 21, 2026; live valuation metrics can vary by market close and data provider.",
+          "sourceIds": [
+            "macrotrends-schw-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 156780000000,
+          "rationale": "StockAnalysis reported Charles Schwab's market capitalization at approximately $156.78 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-schw-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "schwab-brokerage",
+        "name": "Schwab Brokerage",
+        "category": "Retail brokerage and trading account",
+        "homepageUrl": "https://www.schwab.com/brokerage",
+        "summary": "Schwab Brokerage lets customers hold investment accounts, trade listed securities and other products, access research tools, and receive support through Schwab's web, mobile, branch, and service channels.",
+        "whyItMatters": "The brokerage account is the core customer relationship that anchors Schwab's custody, trading, cash management, investment product distribution, and data advantage.",
+        "replacementSketch": [
+          "A practical open replacement would not begin by duplicating regulated brokerage custody. It would first separate research, portfolio tracking, decision support, tax-aware records, and account aggregation into client-controlled tools that can work across brokers.",
+          "Over time, protocol-based identity, portable account attestations, and peer-to-peer market infrastructure could pressure Schwab's role as the default interface for investment decisions, even if regulated execution and custody remain specialized services."
+        ],
+        "sourceIds": [
+          "schwab-brokerage-page",
+          "schwab-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "portfolio-performance",
+            "name": "Portfolio Performance",
+            "kind": "open-source",
+            "homepageUrl": "https://www.portfolio-performance.info/",
+            "repoUrl": "https://github.com/portfolio-performance/portfolio",
+            "summary": "Open-source desktop software for tracking and evaluating investment portfolios across securities, cryptocurrencies, and other assets.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "The project publishes source code on GitHub under the Eclipse Public License and has an active release history.",
+                "sourceIds": [
+                  "portfolio-performance-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "It is local and user-controlled for portfolio records and analytics, but it does not replace brokerage custody or trade execution.",
+                "sourceIds": [
+                  "portfolio-performance-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 78,
+                "rationale": "The project has mature releases and a focused portfolio-tracking use case, making it usable today for self-directed investors who can import their own data.",
+                "sourceIds": [
+                  "portfolio-performance-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Open-source local analytics can reduce dependence on broker-provided reporting and paid portfolio tools, though users still need brokerage access for execution.",
+                "sourceIds": [
+                  "portfolio-performance-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "portfolio-performance-github"
+            ]
+          },
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "Open-source investment research platform and data tooling for financial analysis, market data integrations, and programmable investment workflows.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB maintains public GitHub repositories for its open financial research and data platform components.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 55,
+                "rationale": "OpenBB helps move research and analytics outside a broker-controlled interface, but it still depends on external market data and does not provide custody.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 74,
+                "rationale": "It is usable for developers and analysts comfortable with programmatic research workflows, though less complete as a retail brokerage replacement.",
+                "sourceIds": [
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Open research tooling can lower dependence on proprietary research terminals and broker portals, especially for investors who can integrate their own data sources.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openbb-github",
+              "openbb-odp"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "portable-brokerage-data-wallet",
+            "name": "Portable Brokerage Data Wallet",
+            "summary": "A client-controlled financial data wallet would store signed account statements, tax lots, performance histories, risk preferences, and suitability attestations that can be reused across brokers, advisors, research tools, and tax software.",
+            "angleIds": [
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept weakens broker lock-in by making the investor's history and portfolio context portable instead of trapped inside a single brokerage portal.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through client-controlled credentials and verifiable records rather than through a token. Bitcoin is not central; the relevant shift is from broker-owned account context to user-held, cryptographically verifiable data.",
+            "coordinationMechanism": "Brokers, investors, tax tools, and advisor software coordinate around common credential schemas, signed exports, and permissioned data sharing initiated by the client.",
+            "verificationOrTrustModel": "Statements and holdings exports are signed by originating institutions, hashed into an append-only audit log, and checked by receiving tools for issuer identity, timestamp validity, and tampering. The model still depends on regulated institutions truthfully signing source records.",
+            "failureModes": [
+              "Large brokers may resist standardized exports that reduce customer lock-in.",
+              "Credential standards could fragment across vendors and regulators.",
+              "Signed records prove what an institution reported, not whether the original institution made an operational error."
+            ],
+            "adoptionPath": [
+              "Start with read-only imports for holdings, transactions, cost basis, and realized gains into open portfolio software.",
+              "Add signed statement verification for tax, advisor onboarding, and performance reporting.",
+              "Use portability pressure to make broker switching and multi-broker analytics easier for sophisticated retail investors."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "schwab-brokerage-page",
+              "schwab-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "portfolio-performance-github",
+              "openbb-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "The mechanism moves investor records and analytics away from a single broker-controlled interface while leaving custody where regulation requires it.",
+                "sourceIds": [
+                  "portfolio-performance-github",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "The coordination model is technically plausible but needs broker participation, common schemas, and compliance acceptance.",
+                "sourceIds": [
+                  "schwab-brokerage-page",
+                  "portfolio-performance-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 62,
+                "rationale": "Read-only portfolio imports and open analytics exist today; signed, portable institutional attestations would require new standards and incentives.",
+                "sourceIds": [
+                  "portfolio-performance-github",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 48,
+                "rationale": "It pressures Schwab's interface and switching-cost advantages, but it does not directly replace regulated execution, custody, or bank sweep economics.",
+                "sourceIds": [
+                  "schwab-2025-annual-report",
+                  "schwab-brokerage-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "peer-to-peer-capital-access-overlay",
+            "name": "Peer-to-Peer Capital Access Overlay",
+            "summary": "A compliance-aware marketplace overlay could match investors with vetted private offerings, community notes, or tokenized claims while using open reputation, escrow, and disclosure workflows to reduce dependence on a single brokerage distribution channel.",
+            "angleIds": [
+              "peer-to-peer-marketplace",
+              "decentralized-coordination",
+              "bitcoin"
+            ],
+            "thesis": "If investors can discover, evaluate, and settle certain capital-market opportunities through open networks, brokers lose some gatekeeping power over product distribution and investor attention.",
+            "bitcoinOrDecentralizationRole": "Bitcoin can matter as neutral settlement collateral or escrow for eligible non-securities claims, while decentralized coordination matters for reputation, disclosure distribution, and marketplace governance. Regulated securities would still need compliant transfer and custody arrangements.",
+            "coordinationMechanism": "Issuers, investors, verifiers, and marketplace operators coordinate through open listing standards, reputation histories, disclosure attestations, escrow rules, and jurisdiction-specific compliance gates.",
+            "verificationOrTrustModel": "Listings require issuer attestations, third-party document checks, escrow or delivery-versus-payment workflows, public dispute histories, and revocation mechanisms. The system cannot eliminate securities-law risk or fraudulent disclosures without regulated oversight.",
+            "failureModes": [
+              "Securities regulation may sharply limit which assets can use peer-to-peer distribution.",
+              "Fake issuers, wash reputation, and coordinated promotion could harm retail investors.",
+              "Liquidity may be poor without trusted market makers, transfer agents, and custodians."
+            ],
+            "adoptionPath": [
+              "Begin with non-custodial education, disclosure comparison, and due-diligence tooling around existing regulated offerings.",
+              "Add compliant private-market or community-finance pilots where identity, accreditation, and transfer restrictions can be enforced.",
+              "Use open reputation and settlement rails only where legal treatment and investor protections are clear."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "schwab-brokerage-page",
+              "schwab-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openbb-github",
+              "openbb-odp"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "The marketplace structure can decentralize discovery and coordination, though regulated securities custody remains a major constraint.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 42,
+                "rationale": "Open disclosure and reputation workflows are plausible, but investor protection, jurisdictional compliance, and market integrity make coordination difficult.",
+                "sourceIds": [
+                  "schwab-brokerage-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 36,
+                "rationale": "The software primitives are available, but compliant execution across securities markets is difficult and likely limited to narrow asset classes at first.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 40,
+                "rationale": "It could pressure product discovery and private-market access more than Schwab's core listed-securities brokerage and custody business.",
+                "sourceIds": [
+                  "schwab-2025-annual-report",
+                  "schwab-brokerage-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "schwab-wealth-advisory",
+        "name": "Schwab Wealth Advisory",
+        "category": "Personalized wealth management",
+        "homepageUrl": "https://www.schwab.com/wealth-management/wealth-advisor",
+        "summary": "Schwab Wealth Advisory provides personalized wealth management through dedicated advisors, portfolio management, planning, and ongoing support.",
+        "whyItMatters": "Advisory relationships deepen customer retention, expand Schwab's share of wallet, and convert brokerage customers into higher-value managed relationships.",
+        "replacementSketch": [
+          "The near-term replacement is a stack of open planning software, open-source portfolio optimization, local-first recordkeeping, and human advisors who operate as independent fiduciaries rather than as a single-platform relationship.",
+          "A more decentralized model would let clients carry their financial plan, risk profile, and advisor history across providers, while federated advisor cooperatives compete on quality and transparency instead of captive distribution."
+        ],
+        "sourceIds": [
+          "schwab-wealth-advisory-page",
+          "schwab-wealth-advisory-brochure",
+          "schwab-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "Open-source financial research and analytics tooling that can support advisor research, portfolio review, and data-driven investment workflows.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB maintains public GitHub repositories and open financial data tooling for research workflows.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 57,
+                "rationale": "It lets advisors and investors run research outside a proprietary wealth platform, but does not replace fiduciary advice, custody, or full planning operations.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "OpenBB is strong for research and data workflows, especially for technical users, but it is not a turnkey regulated wealth advisory service.",
+                "sourceIds": [
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 65,
+                "rationale": "Open research infrastructure can lower the cost of advisor analytics and reduce dependence on closed platform tooling.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openbb-github",
+              "openbb-odp"
+            ]
+          },
+          {
+            "slug": "skfolio",
+            "name": "skfolio",
+            "kind": "open-source",
+            "homepageUrl": "https://skfoliolabs.com/",
+            "repoUrl": "https://github.com/skfolio/skfolio",
+            "summary": "Open-source Python library for portfolio optimization and risk management across multi-asset allocation workflows.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "skfolio is positioned as an open-source portfolio optimization and risk management library with public GitHub access.",
+                "sourceIds": [
+                  "skfolio-site"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 50,
+                "rationale": "It decentralizes part of the analytical engine behind wealth management but does not provide advice governance, custody, or client service.",
+                "sourceIds": [
+                  "skfolio-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 67,
+                "rationale": "The library is suitable for technical portfolio-construction workflows, but it requires integration and professional oversight for retail wealth management.",
+                "sourceIds": [
+                  "skfolio-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open optimization tooling can reduce the cost of building advisor-grade portfolio analytics and make allocation logic more auditable.",
+                "sourceIds": [
+                  "skfolio-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "skfolio-site"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-fiduciary-advisor-network",
+            "name": "Federated Fiduciary Advisor Network",
+            "summary": "A federated advisor network would let independent fiduciaries use shared open planning standards, portable client profiles, auditable portfolio models, and cooperative compliance infrastructure while clients retain control of their records.",
+            "angleIds": [
+              "federation",
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept shifts wealth advice away from captive platform distribution and toward portable client relationships where advisors compete on transparent process, fees, and outcomes.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not central. The decentralization mechanism is federation: many independent advisors coordinate through shared standards, verifiable records, and cooperative governance rather than a single national platform owning the client workflow.",
+            "coordinationMechanism": "Clients, advisors, compliance reviewers, and software providers coordinate through portable client profiles, model portfolio registries, fiduciary attestations, and shared audit trails.",
+            "verificationOrTrustModel": "Advisor credentials, fiduciary status, fee schedules, planning assumptions, and portfolio model changes are logged and auditable. Client approvals are signed, and peer or third-party compliance reviewers can sample records for misrepresentation.",
+            "failureModes": [
+              "Regulatory supervision and liability may be too costly for small federated advisor groups.",
+              "Quality control could vary across member advisors.",
+              "Clients may still prefer the perceived safety of a national brand."
+            ],
+            "adoptionPath": [
+              "Start with open-source planning and portfolio analytics used by independent RIAs.",
+              "Create portable client data packages and transparent model libraries.",
+              "Add cooperative compliance services and reputation records for advisors who meet fiduciary and documentation standards."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "schwab-wealth-advisory-page",
+              "schwab-wealth-advisory-brochure"
+            ],
+            "enablerSourceIds": [
+              "openbb-github",
+              "skfolio-site"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Federation directly reduces dependence on a single wealth platform while preserving human advice and compliance responsibilities.",
+                "sourceIds": [
+                  "openbb-github",
+                  "skfolio-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "Independent RIAs already exist, and shared software standards are plausible, but cooperative compliance and reputation systems would need careful governance.",
+                "sourceIds": [
+                  "schwab-wealth-advisory-brochure",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 55,
+                "rationale": "The analytics components are feasible today, while compliant federation, advisor quality control, and client acquisition remain the hard parts.",
+                "sourceIds": [
+                  "openbb-github",
+                  "skfolio-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "It can pressure advisory fees and platform lock-in, but Schwab's brand, custody integrations, and service scale remain strong.",
+                "sourceIds": [
+                  "schwab-wealth-advisory-page",
+                  "schwab-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "auditable-open-robo-advice",
+            "name": "Auditable Open Robo-Advice",
+            "summary": "An open robo-advice stack would publish its allocation logic, constraints, tax assumptions, and rebalancing rules so clients and advisors can inspect, fork, and verify the models used for portfolio guidance.",
+            "angleIds": [
+              "decentralized-coordination",
+              "proof-of-work"
+            ],
+            "thesis": "The concept attacks opaque managed-account packaging by making portfolio advice more inspectable, reproducible, and portable across custodians.",
+            "bitcoinOrDecentralizationRole": "Proof-of-work is relevant only as a possible anti-spam or timestamping primitive for model attestations and public audit logs; the main decentralization role is open, reproducible model governance rather than tokenized advice.",
+            "coordinationMechanism": "Model maintainers, advisors, clients, and reviewers coordinate through open repositories, signed model releases, reproducible backtests, public issue review, and client-specific policy files.",
+            "verificationOrTrustModel": "Users can verify that a recommendation was generated from a specific signed model version and input policy. Independent reviewers can reproduce backtests and flag hidden assumptions. The model still cannot guarantee future returns or eliminate unsuitable human configuration.",
+            "failureModes": [
+              "Open models may be misused by investors without adequate advice or risk understanding.",
+              "Backtests can be overfit or misleading even when code is open.",
+              "Regulatory obligations for personalized advice may limit fully automated deployment."
+            ],
+            "adoptionPath": [
+              "Begin as transparent portfolio analytics for advisors and sophisticated self-directed investors.",
+              "Add signed model releases, reproducible backtests, and standardized risk profiles.",
+              "Integrate with custodians through read-only data first, then limited supervised rebalancing where regulations permit."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "schwab-wealth-advisory-page",
+              "schwab-wealth-advisory-brochure"
+            ],
+            "enablerSourceIds": [
+              "skfolio-site",
+              "openbb-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 66,
+                "rationale": "Open models and reproducible advice reduce dependence on closed managed-account logic, though custody and fiduciary accountability remain centralized in practice.",
+                "sourceIds": [
+                  "skfolio-site",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 50,
+                "rationale": "Open-source development and signed model releases are credible, but translating them into regulated personalized advice is difficult.",
+                "sourceIds": [
+                  "skfolio-site",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 60,
+                "rationale": "Portfolio optimization and research tooling exist now; compliance-grade personalization, tax handling, and advisor oversight need more work.",
+                "sourceIds": [
+                  "skfolio-site",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 44,
+                "rationale": "It can pressure advisory product opacity and software margins, but Schwab's human advisory relationship and custody bundle remain durable.",
+                "sourceIds": [
+                  "schwab-wealth-advisory-page",
+                  "schwab-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "schwab-2025-annual-report",
+      "title": "Charles Schwab 2025 Annual Report",
+      "url": "https://www.aboutschwab.com/annual-report",
+      "kind": "annual-report",
+      "publisher": "Charles Schwab",
+      "note": "Primary company source for 2025 business overview, record net revenue, client asset scale, and operating narrative.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "schwab-sec-2025-10k",
+      "title": "The Charles Schwab Corporation 2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/316709/000031670926000009/schw-20251231.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Regulatory filing source for 2025 net income, total client assets, and business-risk context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "schwab-brokerage-page",
+      "title": "Brokerage Account",
+      "url": "https://www.schwab.com/brokerage",
+      "kind": "product-page",
+      "publisher": "Charles Schwab",
+      "note": "Product source for Schwab Brokerage account features, trading access, online tools, and account support.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "schwab-wealth-advisory-page",
+      "title": "Wealth Management Services | Schwab Wealth Advisory",
+      "url": "https://www.schwab.com/wealth-management/wealth-advisor",
+      "kind": "product-page",
+      "publisher": "Charles Schwab",
+      "note": "Product source for Schwab Wealth Advisory positioning, dedicated advisor relationship, and managed portfolio support.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "schwab-wealth-advisory-brochure",
+      "title": "Schwab Wealth Advisory Disclosure Brochure",
+      "url": "https://disclosures.schwab.com/SchwabDashboard/63325/REG38672.pdf",
+      "kind": "regulatory-filing",
+      "publisher": "Charles Schwab",
+      "note": "Disclosure source for advisory-program structure and compliance context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-schw-market-cap",
+      "title": "The Charles Schwab Corporation (SCHW) Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/schw/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for May 2026 market capitalization estimate.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "macrotrends-schw-pe",
+      "title": "Charles Schwab PE Ratio 2012-2026",
+      "url": "https://www.macrotrends.net/stocks/charts/SCHW/charles-schwab/pe-ratio",
+      "kind": "market-data",
+      "publisher": "Macrotrends",
+      "note": "Market-data source for current and historical P/E ratio reference.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "portfolio-performance-github",
+      "title": "Portfolio Performance GitHub Repository",
+      "url": "https://github.com/portfolio-performance/portfolio",
+      "kind": "open-source-project",
+      "publisher": "Portfolio Performance",
+      "note": "Open-source alternative source for local portfolio tracking and performance analytics.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openbb-github",
+      "title": "OpenBB GitHub Organization",
+      "url": "https://github.com/OpenBB-finance",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source project source for financial research and data-analysis tooling.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openbb-odp",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "technical-docs",
+      "publisher": "OpenBB",
+      "note": "Technical source for OpenBB's open data integration tooling and licensing context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "skfolio-site",
+      "title": "skfolio Labs Open Source Portfolio Optimization and Risk Management",
+      "url": "https://skfoliolabs.com/",
+      "kind": "open-source-project",
+      "publisher": "skfolio Labs",
+      "note": "Open-source alternative source for portfolio optimization and risk-management tooling relevant to advisory workflows.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Charles Schwab registry bundle with two products: Schwab Brokerage and Schwab Wealth Advisory. The refresh emphasizes Schwab's regulated custody, brokerage scale, advisory relationships, and high profitability while identifying credible open-source analytics and portfolio-management alternatives rather than direct commercial brokerage peers."
+}
+tokens used
+50,324
