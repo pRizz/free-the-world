@@ -1,0 +1,1352 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63e3-6040-7252-aefa-7e5ae2b21ed2
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: conocophillips
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "conocophillips",
+  "name": "ConocoPhillips",
+  "ticker": "COP",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "energy",
+  "industryId": "oil-gas-exploration-production",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/conocophillips/marketcap/",
+  "description": "ConocoPhillips is an oil and natural gas exploration and production company.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Lower 48 operations",
+    "LNG portfolio"
+  ],
+  "seedSourceUrls": [
+    "https://www.conocophillips.com/investor-relations/",
+    "https://companiesmarketcap.com/conocophillips/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:45:08.285934Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.285951Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.286613Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.286622Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.287285Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.287291Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.287887Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.287891Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.288489Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.288496Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.289738Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.289743Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.360244Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.360253Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.360526Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.360529Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.360795Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.360797Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.361071Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.361073Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.361314Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.361316Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.361869Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.361872Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: ConocoPhillips 2024 annual report proved reserves Lower 48 LNG portfolio ...
+web search: 
+web search: ConocoPhillips market cap May 2026 companiesmarketcap PE ratio ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "conocophillips",
+      "name": "ConocoPhillips",
+      "ticker": "COP",
+      "rankApprox": 90,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "energy",
+      "industryId": "oil-gas-exploration-production",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/conocophillips/marketcap/",
+      "description": "ConocoPhillips is a U.S.-based oil and natural gas exploration and production company with large Lower 48, Alaska, LNG, Canadian, and international upstream assets.",
+      "overview": [
+        {
+          "title": "Business Profile",
+          "paragraphs": [
+            "ConocoPhillips is one of the largest independent upstream oil and gas companies, focused on finding, producing, transporting, and marketing crude oil, bitumen, natural gas, LNG, and natural gas liquids.",
+            "Its Lower 48 segment is the largest segment by production, with positions in the Permian Basin, Eagle Ford, and Bakken, and the company also participates in longer-cycle projects such as Alaska Willow and global LNG."
+          ]
+        },
+        {
+          "title": "Registry Relevance",
+          "paragraphs": [
+            "The company is a useful energy benchmark because its moat depends less on consumer brand lock-in and more on subsurface rights, capital allocation, operational scale, regulatory approvals, commodity-cycle resilience, and access to LNG and hydrocarbon infrastructure.",
+            "Decentralized pressure is indirect: open energy modeling, distributed generation, microgrids, and demand-side coordination can reduce long-run dependence on centrally supplied hydrocarbons, but they do not directly replicate ConocoPhillips' upstream reserve base."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "ConocoPhillips' moat is rooted in high-quality acreage, proved reserves, long-lived operating know-how, scale procurement, capital discipline, and the ability to fund multi-year projects across commodity cycles. The Marathon Oil acquisition expanded Lower 48 scale and added complementary shale positions.",
+        "The moat remains exposed to commodity prices, depletion, policy constraints, reserve replacement risk, and competition for advantaged acreage. Unlike software monopolies, the company cannot lock in demand through network effects, but the physical and regulatory barriers to replacing large upstream supply are substantial."
+      ],
+      "decentralizationNarrative": [
+        "The most credible decentralization pressure is substitution rather than direct replication: households, communities, industrial buyers, and grid operators can use distributed generation, storage, open energy-management systems, and transparent planning tools to reduce gas and oil demand at the margin.",
+        "For LNG and Lower 48 production, decentralization will likely arrive unevenly. Power-sector and building-energy demand are more contestable than petrochemical feedstocks, aviation, heavy industry, and legacy gas infrastructure, so the registry should treat disruption as plausible but gradual."
+      ],
+      "sourceIds": [
+        "conocophillips-2025-annual-report",
+        "conocophillips-lower-48",
+        "companiesmarketcap-cop-marketcap",
+        "companiesmarketcap-cop-pe"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; refreshed with public company, market-data, and open-energy sources reviewed on 2026-05-26.",
+      "inputMetrics": {
+        "moat": {
+          "value": 78,
+          "rationale": "Large proved reserves, advantaged Lower 48 acreage, global LNG exposure, operating scale, and capital access create a strong physical moat, though commodity cyclicality and depletion prevent a higher score.",
+          "sourceIds": [
+            "conocophillips-2025-annual-report",
+            "conocophillips-lower-48"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 29,
+          "rationale": "Upstream hydrocarbon extraction is capital-intensive, site-specific, and regulated, but demand can be partially decentralized through distributed energy, storage, and open grid coordination.",
+          "sourceIds": [
+            "conocophillips-2025-annual-report",
+            "openems-homepage",
+            "pypsa-docs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 72,
+          "rationale": "ConocoPhillips remained a profitable large-cap producer in its latest annual reporting cycle, but earnings are materially exposed to oil, gas, and LNG price cycles.",
+          "sourceIds": [
+            "conocophillips-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 20.5,
+          "rationale": "CompaniesMarketCap reported a trailing P/E ratio of about 20.5 for ConocoPhillips as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-cop-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 146860000000,
+          "rationale": "CompaniesMarketCap reported ConocoPhillips' market capitalization at approximately $146.86 billion in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-cop-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "lower-48-operations",
+        "name": "Lower 48 operations",
+        "category": "upstream oil and gas production",
+        "homepageUrl": "https://www.conocophillips.com/operations/lower-48/",
+        "summary": "ConocoPhillips' Lower 48 operations cover major U.S. unconventional oil and gas positions, including the Permian Basin, Eagle Ford, and Bakken.",
+        "whyItMatters": "The Lower 48 segment is ConocoPhillips' largest production base and a core source of its scale, cash flow, and reserve depth.",
+        "replacementSketch": [
+          "A realistic replacement path does not copy shale drilling one-for-one. It reduces the demand pull for marginal oil and gas through local generation, storage, electrification, and open energy planning that lets communities and industrial buyers coordinate alternatives.",
+          "The near-term opportunity is transparent software and shared infrastructure for local energy decisions; the harder long-term challenge is replacing liquid fuels, petrochemical feedstocks, and reliability services that still depend on hydrocarbons."
+        ],
+        "sourceIds": [
+          "conocophillips-lower-48",
+          "conocophillips-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "pypsa",
+            "name": "PyPSA",
+            "kind": "open-source",
+            "homepageUrl": "https://pypsa.org/",
+            "repoUrl": "https://github.com/PyPSA/PyPSA",
+            "summary": "PyPSA is an open-source Python framework for modeling, optimizing, and simulating modern power and energy systems.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "PyPSA is openly documented and developed as an open-source energy-system modeling framework.",
+                "sourceIds": [
+                  "pypsa-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "It supports transparent planning for distributed generation, storage, and grid alternatives, although it is a planning tool rather than physical energy infrastructure.",
+                "sourceIds": [
+                  "pypsa-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 76,
+                "rationale": "PyPSA is mature enough for researchers, planners, and utilities with technical capability, but adoption requires modeling expertise and local data.",
+                "sourceIds": [
+                  "pypsa-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open modeling can lower planning and scenario-analysis costs compared with closed consulting workflows, while implementation costs remain tied to physical energy assets.",
+                "sourceIds": [
+                  "pypsa-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "pypsa-docs"
+            ]
+          },
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy management system for coordinating renewable generation, storage, grid connections, and loads.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "OpenEMS describes itself as a free and open-source energy-management platform with public GitHub development.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "It is well aligned with distributed energy because it coordinates storage, renewable generation, grid interaction, and flexible loads at smaller sites.",
+                "sourceIds": [
+                  "openems-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "The project presents an established community and production-oriented architecture, though deployments still require hardware integration and operator expertise.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Open control software can reduce vendor lock-in and integration costs for local energy assets, but the main capital cost remains in generation, storage, and grid equipment.",
+                "sourceIds": [
+                  "openems-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openems-homepage",
+              "openems-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-energy-demand-substitution",
+            "name": "Community energy demand substitution",
+            "summary": "Open planning tools and open energy-management software can help communities, campuses, municipalities, and industrial parks coordinate solar, storage, flexible loads, and efficiency upgrades that reduce marginal demand for gas-fired power and liquid-fuel exposure.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "open-energy-hardware"
+            ],
+            "thesis": "The market structure shifts from upstream producers satisfying centralized energy demand toward many smaller energy asset owners coordinating local supply, storage, and demand response.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through ownership and control of energy assets rather than a token mechanism: households, local operators, and municipalities can coordinate using open software instead of relying on a single vertically controlled supplier.",
+            "coordinationMechanism": "Local operators model investment options with open tools, deploy interoperable energy assets, and coordinate dispatch through open energy-management systems and microgrid rules.",
+            "verificationOrTrustModel": "Metered generation, storage state, grid import/export data, and auditable dispatch logs constrain false performance claims; the weakness is that hardware telemetry and local governance still need trustworthy installation and maintenance.",
+            "failureModes": [
+              "Hydrocarbon demand in transport, petrochemicals, and heavy industry may not fall quickly enough to pressure upstream economics.",
+              "Local energy projects can stall on permitting, interconnection queues, financing, installer capacity, and incumbent utility rules."
+            ],
+            "adoptionPath": [
+              "Start with campuses, municipal facilities, and industrial sites that already have clear load profiles and procurement authority.",
+              "Use open modeling to compare gas-dependent baseline scenarios with portfolios of solar, storage, demand response, and efficiency.",
+              "Operate the resulting assets through open energy-management software and publish performance data to make replication easier."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "conocophillips-lower-48",
+              "conocophillips-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "pypsa-docs",
+              "openems-homepage"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "The concept distributes generation, control, and planning across many local operators instead of central hydrocarbon supply chains.",
+                "sourceIds": [
+                  "pypsa-docs",
+                  "openems-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Open tools can coordinate planning and dispatch, but multi-party financing, permitting, and grid interconnection remain difficult.",
+                "sourceIds": [
+                  "pypsa-docs",
+                  "openems-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 58,
+                "rationale": "The software primitives exist today, while broad physical deployment depends on capital, installers, storage costs, and policy conditions.",
+                "sourceIds": [
+                  "pypsa-docs",
+                  "openems-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "It can reduce marginal gas and oil demand in some segments but does not directly replace shale production for all end uses.",
+                "sourceIds": [
+                  "conocophillips-lower-48",
+                  "pypsa-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "lng-portfolio",
+        "name": "LNG portfolio",
+        "category": "global LNG and gas commercialization",
+        "homepageUrl": "https://www.conocophillips.com/investor-relations/",
+        "summary": "ConocoPhillips participates in global LNG and gas commercialization through long-cycle projects, offtake agreements, and international upstream exposure.",
+        "whyItMatters": "LNG links upstream gas production with global power, heating, and industrial demand, making it a central part of ConocoPhillips' long-duration energy strategy.",
+        "replacementSketch": [
+          "The most credible replacement path is not an open-source LNG plant. It is a portfolio of local renewables, storage, flexible demand, open grid planning, and transparent procurement that reduces the need for imported gas in power and heating markets.",
+          "This pressure is strongest where LNG is used for electricity or building heat and weakest where gas is used for industrial process heat, petrochemicals, or reliability services without cheap local substitutes."
+        ],
+        "sourceIds": [
+          "conocophillips-2025-annual-report",
+          "conocophillips-investor-relations"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "pypsa-earth",
+            "name": "PyPSA-Earth",
+            "kind": "open-source",
+            "homepageUrl": "https://pypsa-earth.readthedocs.io/en/latest/",
+            "repoUrl": "https://github.com/pypsa-meets-earth/pypsa-earth",
+            "summary": "PyPSA-Earth is an open-source global energy-system model for high-resolution, country-scale and cross-sector energy planning.",
+            "metrics": {
+              "openness": {
+                "value": 91,
+                "rationale": "PyPSA-Earth is documented as an open-source global energy-system model with public workflows and code.",
+                "sourceIds": [
+                  "pypsa-earth-docs",
+                  "pypsa-earth-paper"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "It enables transparent national and regional planning for renewable-heavy systems, though it is not itself a decentralized operating network.",
+                "sourceIds": [
+                  "pypsa-earth-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 67,
+                "rationale": "The model is usable by technical planners and researchers, but results depend on data quality and expert configuration.",
+                "sourceIds": [
+                  "pypsa-earth-docs",
+                  "pypsa-earth-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 69,
+                "rationale": "Open global modeling can reduce dependence on proprietary planning studies and make LNG-substitution scenarios easier to audit.",
+                "sourceIds": [
+                  "pypsa-earth-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "pypsa-earth-docs",
+              "pypsa-earth-paper"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-lng-substitution-planning",
+            "name": "Open LNG substitution planning",
+            "summary": "Countries and regions that rely on LNG can use open energy-system models to compare imported-gas pathways against local renewable generation, storage, transmission, efficiency, and demand-flexibility portfolios before locking in long-term gas infrastructure.",
+            "angleIds": [
+              "decentralized-coordination",
+              "distributed-energy-generation",
+              "microgrid-coordination"
+            ],
+            "thesis": "Transparent open planning weakens the information advantage of large fuel suppliers by letting public buyers and local developers test whether distributed assets can avoid or defer LNG demand.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is institutional and operational: planning assumptions, datasets, and dispatch scenarios become inspectable by many parties instead of controlled by one fuel supplier or consultant.",
+            "coordinationMechanism": "Public agencies, grid planners, local developers, and large buyers share open scenarios, compare costs and reliability outcomes, and coordinate procurement around the least-regret mix of local generation, storage, transmission, and demand response.",
+            "verificationOrTrustModel": "Open datasets, reproducible model runs, public assumptions, and sensitivity analysis constrain cherry-picked claims; remaining weaknesses include political capture, poor input data, and models that simplify real grid constraints.",
+            "failureModes": [
+              "Open planning may identify alternatives but fail to overcome financing, siting, and transmission bottlenecks.",
+              "LNG can remain attractive for reliability, geopolitical diversification, or industrial heat even when renewable-heavy scenarios look cheaper on paper."
+            ],
+            "adoptionPath": [
+              "Publish baseline LNG demand and infrastructure assumptions in open model formats.",
+              "Run renewable, storage, efficiency, demand-response, and transmission scenarios against the same reliability constraints.",
+              "Use procurement and interconnection policy to favor portfolios that beat new long-term LNG commitments on cost and resilience."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "conocophillips-2025-annual-report",
+              "conocophillips-investor-relations"
+            ],
+            "enablerSourceIds": [
+              "pypsa-earth-docs",
+              "pypsa-earth-paper",
+              "pypsa-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "The concept decentralizes planning scrutiny and can support more local generation, but it remains tied to public institutions and grid-scale procurement.",
+                "sourceIds": [
+                  "pypsa-earth-docs",
+                  "pypsa-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 66,
+                "rationale": "Open modeling provides a credible shared planning substrate, though execution depends on regulators, utilities, developers, and financiers aligning around the results.",
+                "sourceIds": [
+                  "pypsa-earth-docs",
+                  "pypsa-earth-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 61,
+                "rationale": "The modeling tools exist, but using them to change LNG procurement requires institutional capacity and policy follow-through.",
+                "sourceIds": [
+                  "pypsa-earth-docs",
+                  "pypsa-earth-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 43,
+                "rationale": "This can pressure new LNG growth and contract renewals, but it does not eliminate gas demand where reliability, industrial heat, or existing infrastructure dominate.",
+                "sourceIds": [
+                  "conocophillips-2025-annual-report",
+                  "pypsa-earth-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "conocophillips-2025-annual-report",
+      "title": "ConocoPhillips 2025 Annual Report",
+      "url": "https://static.conocophillips.com/files/resources/2025-conocophillips-annual-report.pdf",
+      "kind": "annual-report",
+      "publisher": "ConocoPhillips",
+      "note": "Primary annual filing source for business segments, production mix, LNG strategy, reserves, profitability, risks, and capital allocation.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "conocophillips-lower-48",
+      "title": "Lower 48 Operations",
+      "url": "https://www.conocophillips.com/operations/lower-48/",
+      "kind": "product-page",
+      "publisher": "ConocoPhillips",
+      "note": "Company page describing Lower 48 operations, production scale, proved reserves, acreage, and the strategic role of U.S. unconventional assets.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "conocophillips-investor-relations",
+      "title": "ConocoPhillips Investor Relations",
+      "url": "https://www.conocophillips.com/investor-relations/",
+      "kind": "investor-relations",
+      "publisher": "ConocoPhillips",
+      "note": "Investor-relations landing page for company presentations, reports, and current strategic materials.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-cop-marketcap",
+      "title": "ConocoPhillips Market Capitalization",
+      "url": "https://companiesmarketcap.com/conocophillips/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for ConocoPhillips' May 2026 market capitalization and global market-cap rank.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-cop-pe",
+      "title": "ConocoPhillips P/E Ratio",
+      "url": "https://companiesmarketcap.com/conocophillips/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for ConocoPhillips' trailing P/E ratio in May 2026.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "pypsa-docs",
+      "title": "PyPSA Documentation",
+      "url": "https://docs.pypsa.org/",
+      "kind": "technical-docs",
+      "publisher": "PyPSA",
+      "note": "Documentation for the open-source Python framework used to model and optimize modern power and energy systems.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "pypsa-earth-docs",
+      "title": "PyPSA-Earth Documentation",
+      "url": "https://pypsa-earth.readthedocs.io/en/latest/",
+      "kind": "technical-docs",
+      "publisher": "PyPSA-Earth",
+      "note": "Documentation for an open-source global energy-system model used to analyze country-scale and cross-sector energy transitions.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "pypsa-earth-paper",
+      "title": "PyPSA-Earth: A New Global Open Energy System Optimization Model Demonstrated in Africa",
+      "url": "https://arxiv.org/abs/2209.04663",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research paper supporting PyPSA-Earth's role as an open, high-resolution global energy-system modeling framework.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openems-homepage",
+      "title": "OpenEMS",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association e.V.",
+      "note": "Project source for OpenEMS as a free and open-source energy-management system for renewable generation, storage, grid, and load coordination.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS GitHub Repository",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Public repository for the OpenEMS modular energy-management platform.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Created a new ConocoPhillips registry bundle with two products: Lower 48 operations and LNG portfolio. The refresh keeps the company in `sp500-top100`, uses the Energy / Oil & Gas Exploration & Production taxonomy, adds distributed-energy disruption concepts, and grounds market metrics in May 2026 market-data sources."
+}
+tokens used
+24,071

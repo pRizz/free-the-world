@@ -1,0 +1,1468 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63e6-722b-7621-8d83-b260833399ae
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: capital-one-financial
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "capital-one-financial",
+  "name": "Capital One Financial",
+  "ticker": "COF",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "financials",
+  "industryId": "consumer-finance",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/capital-one/marketcap/",
+  "description": "Capital One Financial provides credit cards, consumer banking, commercial banking, and auto finance services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Capital One credit cards",
+    "Capital One 360"
+  ],
+  "seedSourceUrls": [
+    "https://investor.capitalone.com/",
+    "https://companiesmarketcap.com/capital-one/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:48:28.440972Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:28.440985Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:28.441407Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:28.441411Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:28.441878Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:28.441882Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:28.442268Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:28.442274Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:28.442642Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:28.442646Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:28.443357Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:28.443360Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:29.188193Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:29.188211Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:29.188627Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:29.188633Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:29.188974Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:29.188980Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:29.189314Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:29.189319Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:29.189684Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:29.189688Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:48:29.190414Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:48:29.190418Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Capital One 2024 annual report credit card consumer banking commercial banking auto finance ...
+web search: 
+web search: BTCPay Server open source payment processor official ...
+web search: 
+web search: Capital One Reports Fourth Quarter 2025 net income annual 2025 ...
+web search: 
+web search: finance: COF
+web search: 
+web search: COF PE ratio May 2026 stockanalysis ...
+2026-05-26T10:49:35.862914Z  WARN codex_core::session::turn: stream disconnected - retrying sampling request (1/5 in 214ms)...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "capital-one-financial",
+      "name": "Capital One Financial",
+      "ticker": "COF",
+      "rankApprox": 76,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "financials",
+      "industryId": "consumer-finance",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/capital-one/marketcap/",
+      "description": "Capital One Financial provides credit cards, consumer banking, commercial banking, and auto finance services.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Capital One is a large U.S. consumer-finance institution built around domestic credit cards, consumer banking, commercial banking, and auto finance.",
+            "Its core economics depend on regulated banking licenses, underwriting, deposits, payments-network access, consumer acquisition, risk models, and brand trust."
+          ]
+        },
+        {
+          "title": "Competitive position",
+          "paragraphs": [
+            "The company combines direct banking distribution through Capital One 360 with a national credit-card franchise and large-scale data-driven lending operations.",
+            "Its moat is strongest where regulation, capital requirements, compliance, risk management, and payment acceptance networks raise the cost of entry."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Capital One has a strong moat for conventional consumer finance because lending, card issuance, deposit taking, fraud controls, compliance, and payment-network access all require scale and regulated infrastructure.",
+        "The moat is not absolute. Open payment rails, self-custody tools, federated custody, and merchant-controlled acceptance software can separate some payment and savings functions from large issuing banks, but they do not yet replace credit underwriting or insured deposits at mainstream scale."
+      ],
+      "decentralizationNarrative": [
+        "The most decentralizable parts of Capital One's stack are payments acceptance, small-value settlement, budgeting workflows, and community custody models. Credit risk, deposit insurance, bank regulation, and consumer protection are much harder to decentralize cleanly.",
+        "A realistic displacement path starts with merchants and consumers adopting open payment tools alongside bank accounts, then expands into federated savings, local credit circles, or programmable escrow where legal and operational risks are bounded."
+      ],
+      "sourceIds": [
+        "capital-one-ir",
+        "capital-one-2024-10k",
+        "companiesmarketcap-cof",
+        "stockanalysis-cof-statistics"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Capital One benefits from bank regulation, deposit funding, card issuing relationships, consumer data, underwriting scale, fraud systems, and national brand trust.",
+          "sourceIds": [
+            "capital-one-2024-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Payments and merchant acceptance can move toward open protocols, but regulated deposits, credit underwriting, chargebacks, compliance, and bank capital requirements remain centralized constraints.",
+          "sourceIds": [
+            "capital-one-2024-10k",
+            "btcpay-docs",
+            "fedimint-docs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Capital One is a profitable large-scale lender, though earnings are cyclically exposed to credit losses, funding costs, and consumer credit conditions.",
+          "sourceIds": [
+            "capital-one-2024-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 15,
+          "rationale": "Public market data sources reported a mid-teens trailing earnings multiple around the review date; exact point-in-time values can move with price and earnings revisions.",
+          "sourceIds": [
+            "stockanalysis-cof-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 116000000000,
+          "rationale": "CompaniesMarketCap listed Capital One near the low-hundreds of billions in market capitalization around the May 2026 review window.",
+          "sourceIds": [
+            "companiesmarketcap-cof"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "capital-one-credit-cards",
+        "name": "Capital One credit cards",
+        "category": "credit cards and consumer payments",
+        "homepageUrl": "https://www.capitalone.com/credit-cards/",
+        "summary": "Capital One issues consumer and business credit cards with rewards, credit lines, fraud protection, and network-based merchant acceptance.",
+        "whyItMatters": "Credit cards sit at the intersection of consumer credit, everyday payments, merchant fees, identity, fraud protection, and loyalty programs.",
+        "replacementSketch": [
+          "A partial replacement would unbundle merchant payment acceptance from bank-issued credit, letting merchants receive open payments directly while consumers choose separate custody, savings, or credit providers.",
+          "Credit itself is harder to replace than payment settlement. Open alternatives are strongest for debit-like payments, merchant tools, and programmable escrow before they can credibly attack revolving credit."
+        ],
+        "sourceIds": [
+          "capital-one-credit-cards",
+          "capital-one-2024-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://btcpayserver.org/",
+            "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+            "summary": "Open-source, self-hosted Bitcoin payment processing software for merchants.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "BTCPay Server is published as open-source software with a public repository and self-hosting model.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Merchants can run their own payment processor instead of relying on a centralized acquirer-like platform.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project is mature enough for real merchant checkout use, though it does not provide consumer credit or card chargeback workflows.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Self-hosted direct settlement can reduce processor dependency and payment acceptance fees for merchants that can manage Bitcoin volatility and operations.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "btcpay-docs"
+            ]
+          },
+          {
+            "slug": "gnu-taler",
+            "name": "GNU Taler",
+            "kind": "protocol",
+            "homepageUrl": "https://taler.net/",
+            "repoUrl": "https://git.taler.net/",
+            "summary": "Free software payment system focused on privacy-preserving digital cash with auditable merchants and exchanges.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "GNU Taler is developed as free software with public source repositories and protocol documentation.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The protocol can support multiple exchanges and wallets, but it is not a fully permissionless credit network.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The software and pilots are real, but mainstream consumer and merchant coverage remains far below card-network ubiquity.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Digital cash can lower some payment overhead if exchanges and merchants adopt it, but deployment and compliance costs remain meaningful.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "gnu-taler"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "merchant-owned-lightning-checkout",
+            "name": "Merchant-owned Lightning checkout",
+            "summary": "Merchants use self-hosted Bitcoin and Lightning checkout software to accept direct payments without routing every transaction through card issuers and acquiring processors.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "If more merchants can receive final settlement directly, the card issuer's role narrows from universal payment intermediary to optional credit provider.",
+            "bitcoinOrDecentralizationRole": "Bitcoin provides the settlement asset and Lightning provides low-fee instant payment channels; decentralization matters because merchants can operate their own processor.",
+            "coordinationMechanism": "Consumers pay invoices generated by merchant-controlled checkout software, while merchants coordinate pricing, confirmation policy, refunds, and accounting through open tooling.",
+            "verificationOrTrustModel": "Payment validity is checked against Bitcoin or Lightning settlement; invoices, channel states, and on-chain confirmations constrain fake payment claims, while merchant delivery disputes still need external reputation or legal processes.",
+            "failureModes": [
+              "Consumers may prefer credit, rewards, chargebacks, and fiat accounting over final-settlement payments.",
+              "Merchants face tax, volatility, refund, liquidity, and support complexity."
+            ],
+            "adoptionPath": [
+              "Start with online merchants that already serve Bitcoin users and can tolerate direct settlement.",
+              "Expand through point-of-sale plugins, stable accounting integrations, and optional instant conversion services."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "capital-one-2024-10k"
+            ],
+            "enablerSourceIds": [
+              "btcpay-docs",
+              "lightning-network-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The mechanism moves payment processing toward merchant-operated nodes and open settlement rails.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "lightning-network-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Invoice-based payment coordination is already supported by Lightning and merchant software, though mainstream refunds and disputes are weaker than card workflows.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "lightning-network-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The core software exists today, but merchant operations, fiat conversion, tax handling, and customer support remain adoption bottlenecks.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Direct settlement pressures merchant fees and processor dependency, but it does not yet replace revolving credit, rewards, or chargeback protections.",
+                "sourceIds": [
+                  "capital-one-credit-cards",
+                  "btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "privacy-preserving-digital-cash-wallets",
+            "name": "Privacy-preserving digital cash wallets",
+            "summary": "Digital cash systems can give consumers spendable balances and merchants auditable receipt of funds without exposing every payment relationship to a card issuer.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "A multi-exchange digital cash ecosystem would move some everyday purchases away from card authorization and issuer-controlled transaction data.",
+            "bitcoinOrDecentralizationRole": "The central mechanism is federated or multi-issuer digital cash rather than Bitcoin itself; decentralization matters because consumers and merchants can choose among wallet and exchange operators.",
+            "coordinationMechanism": "Wallets, exchanges, merchants, and auditors coordinate through open payment protocols, with consumers withdrawing spendable tokens and merchants depositing them for settlement.",
+            "verificationOrTrustModel": "Cryptographic signatures prevent forged coins, merchant deposits create an audit trail for business receipts, and exchange reserve practices must be monitored by auditors or regulators.",
+            "failureModes": [
+              "Exchange operators can become new centralized chokepoints if competition and auditability are weak.",
+              "Consumer adoption may stall without broad merchant acceptance and simple wallet recovery."
+            ],
+            "adoptionPath": [
+              "Pilot with public-sector, university, or cooperative payment environments where merchant acceptance can be coordinated.",
+              "Expand into online checkout and small merchant payments once wallet usability and compliance integrations improve."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "capital-one-credit-cards"
+            ],
+            "enablerSourceIds": [
+              "gnu-taler"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The model can support multiple exchanges and wallets, but it still depends on exchange operators and regulatory acceptance.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The protocol defines wallet, merchant, and exchange roles, but ecosystem coordination is less proven than card-network acceptance.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Software exists, but deployment depends on compliant exchanges, wallet distribution, merchant integrations, and consumer trust.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Digital cash could pressure card data capture and small-payment economics, but it does not directly replace credit lines or rewards.",
+                "sourceIds": [
+                  "capital-one-credit-cards",
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "capital-one-360",
+        "name": "Capital One 360",
+        "category": "online consumer banking",
+        "homepageUrl": "https://www.capitalone.com/bank/",
+        "summary": "Capital One 360 is Capital One's online consumer banking product family, including checking, savings, CDs, and digital account management.",
+        "whyItMatters": "Online banking controls consumer deposits, payment access, account identity, and day-to-day money movement.",
+        "replacementSketch": [
+          "A plausible replacement path starts with open personal-finance tools, self-custody wallets, and cooperative custody services that sit alongside insured bank accounts.",
+          "Full replacement is difficult because deposit insurance, regulatory compliance, identity checks, fraud handling, and consumer support are still centralized institutional functions."
+        ],
+        "sourceIds": [
+          "capital-one-bank",
+          "capital-one-2024-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "fedimint",
+            "name": "Fedimint",
+            "kind": "protocol",
+            "homepageUrl": "https://fedimint.org/",
+            "repoUrl": "https://github.com/fedimint/fedimint",
+            "summary": "Open-source protocol for federated Bitcoin custody and community ecash systems.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Fedimint is developed in public as open-source software with protocol documentation and a public repository.",
+                "sourceIds": [
+                  "fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Custody and payment services can be operated by local federations rather than one national bank or exchange.",
+                "sourceIds": [
+                  "fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The technology is promising but still early relative to mainstream consumer banking reliability, compliance, and support expectations.",
+                "sourceIds": [
+                  "fedimint-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Community custody can reduce reliance on large banking intermediaries for some balances, but operational, liquidity, and governance costs remain.",
+                "sourceIds": [
+                  "fedimint-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "fedimint-docs"
+            ]
+          },
+          {
+            "slug": "gnucash",
+            "name": "GnuCash",
+            "kind": "open-source",
+            "homepageUrl": "https://www.gnucash.org/",
+            "repoUrl": "https://github.com/Gnucash/gnucash",
+            "summary": "Free accounting software for personal and small-business financial records.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "GnuCash is free software with public source code and long-running community development.",
+                "sourceIds": [
+                  "gnucash"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 4,
+                "rationale": "It decentralizes personal recordkeeping but does not provide deposits, payments, insured custody, or bank connectivity by itself.",
+                "sourceIds": [
+                  "gnucash"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The software is mature for accounting and budgeting workflows, though it is not a bank account replacement.",
+                "sourceIds": [
+                  "gnucash"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open local financial records reduce dependence on proprietary budgeting interfaces but do not remove the need for banking services.",
+                "sourceIds": [
+                  "gnucash"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "gnucash"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-federated-savings-wallets",
+            "name": "Community federated savings wallets",
+            "summary": "Local federations, cooperatives, or affinity groups operate shared custody and ecash services for small balances, giving users a banking-adjacent savings and payments layer outside a single national consumer bank.",
+            "angleIds": [
+              "bitcoin",
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Federated custody can move a slice of consumer deposits and payments from large banks toward community-run financial infrastructure.",
+            "bitcoinOrDecentralizationRole": "Bitcoin acts as the reserve asset and settlement layer, while federation distributes operational trust across multiple guardians instead of one custodian.",
+            "coordinationMechanism": "Federation guardians run shared infrastructure, users hold wallet balances, merchants or peers accept payments, and governance rules define fees, recovery, reserve policy, and member admission.",
+            "verificationOrTrustModel": "Threshold custody reduces single-operator theft risk, cryptographic ecash limits unauthorized issuance, and public governance plus audits are needed to detect reserve shortfalls or guardian collusion.",
+            "failureModes": [
+              "Guardian collusion, poor governance, or weak audits could still lose user funds.",
+              "Consumer protection, deposit insurance, tax reporting, and regulatory compliance may prevent broad adoption."
+            ],
+            "adoptionPath": [
+              "Begin with small communities that already share trust and want resilient local payment tools.",
+              "Add merchant acceptance, transparent audits, and recovery practices before handling larger balances."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "capital-one-bank",
+              "capital-one-2024-10k"
+            ],
+            "enablerSourceIds": [
+              "fedimint-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Federations distribute custody and payment operations across community-selected guardians.",
+                "sourceIds": [
+                  "fedimint-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The roles are clear, but long-term governance, audit discipline, and legal compliance remain hard.",
+                "sourceIds": [
+                  "fedimint-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Open-source protocol work exists, but consumer-grade reliability and regulatory treatment are still immature.",
+                "sourceIds": [
+                  "fedimint-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "This could reduce reliance on bank accounts for small balances and local payments, but it does not replace insured deposits or mainstream credit.",
+                "sourceIds": [
+                  "capital-one-bank",
+                  "fedimint-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "capital-one-ir",
+      "title": "Capital One Investor Relations",
+      "url": "https://investor.capitalone.com/",
+      "kind": "investor-relations",
+      "publisher": "Capital One Financial",
+      "note": "Primary investor portal for company filings, earnings materials, and corporate information.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "capital-one-2024-10k",
+      "title": "Capital One Financial 2024 Form 10-K",
+      "url": "https://investor.capitalone.com/financial-information/sec-filings",
+      "kind": "regulatory-filing",
+      "publisher": "Capital One Financial",
+      "note": "Primary regulatory filing source for business segments, risk factors, profitability, and operating model.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-cof",
+      "title": "Capital One Market Cap",
+      "url": "https://companiesmarketcap.com/capital-one/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap.com",
+      "note": "Market-cap reference used for the S&P 500 top-100 snapshot context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-cof-statistics",
+      "title": "Capital One Financial Statistics",
+      "url": "https://stockanalysis.com/stocks/cof/statistics/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Market statistics reference for valuation context such as P/E ratio.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "capital-one-credit-cards",
+      "title": "Capital One Credit Cards",
+      "url": "https://www.capitalone.com/credit-cards/",
+      "kind": "product-page",
+      "publisher": "Capital One Financial",
+      "note": "Official product page for Capital One's credit-card offerings.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "capital-one-bank",
+      "title": "Capital One Bank",
+      "url": "https://www.capitalone.com/bank/",
+      "kind": "product-page",
+      "publisher": "Capital One Financial",
+      "note": "Official product page for Capital One 360 checking, savings, CDs, and digital banking.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "btcpay-docs",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Documentation for open-source, self-hosted Bitcoin merchant payment processing.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "lightning-network-docs",
+      "title": "Lightning Network Documentation",
+      "url": "https://lightning.network/docs/",
+      "kind": "technical-docs",
+      "publisher": "Lightning Network",
+      "note": "Technical reference for Lightning's payment-channel based Bitcoin payment network.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "gnu-taler",
+      "title": "GNU Taler",
+      "url": "https://taler.net/",
+      "kind": "open-source-project",
+      "publisher": "GNU Taler",
+      "note": "Free software digital cash system used as a privacy-preserving payment alternative.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "fedimint-docs",
+      "title": "Fedimint Documentation",
+      "url": "https://fedimint.org/",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Open-source federated custody and ecash protocol documentation.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "gnucash",
+      "title": "GnuCash",
+      "url": "https://www.gnucash.org/",
+      "kind": "open-source-project",
+      "publisher": "GnuCash",
+      "note": "Free accounting software used as an open personal-finance recordkeeping alternative.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Capital One Financial registry bundle with two core products: Capital One credit cards and Capital One 360. The strongest decentralization pressure is in merchant-owned Bitcoin/Lightning checkout and federated community custody, while regulated deposits and credit underwriting remain difficult to decentralize."
+}
+tokens used
+7,302

@@ -1,0 +1,1581 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63e8-4ffa-79c2-8976-e777ca2a3cba
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: parker-hannifin
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "parker-hannifin",
+  "name": "Parker-Hannifin",
+  "ticker": "PH",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "industrials",
+  "industryId": "industrial-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/parker-hannifin/marketcap/",
+  "description": "Parker-Hannifin makes motion and control technologies for industrial and aerospace markets.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Motion and control systems",
+    "Aerospace systems"
+  ],
+  "seedSourceUrls": [
+    "https://investors.parker.com/",
+    "https://companiesmarketcap.com/parker-hannifin/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:50:31.148503Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:31.148517Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:31.148996Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:31.149000Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:31.149405Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:31.149409Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:31.149898Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:31.149903Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:31.150278Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:31.150282Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:31.151076Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:31.151081Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:32.021778Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:32.021792Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:32.022166Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:32.022171Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:32.022523Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:32.022529Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:32.022901Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:32.022905Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:32.023262Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:32.023265Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:50:32.024208Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:50:32.024213Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Parker Hannifin 2025 annual report net income sales motion control aerospace ...
+web search: 
+web search: Parker Hannifin motion control systems product hydraulics electromechanical official ...
+web search: 
+web search: PX4 Autopilot open source drone autopilot official ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "parker-hannifin",
+      "name": "Parker-Hannifin",
+      "ticker": "PH",
+      "rankApprox": 88,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "industrials",
+      "industryId": "industrial-machinery",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/parker-hannifin/marketcap/",
+      "description": "Parker-Hannifin makes motion and control technologies for industrial and aerospace markets.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Parker-Hannifin is a diversified motion-and-control manufacturer serving industrial machinery, mobile equipment, energy, transportation, life sciences, and aerospace customers.",
+            "The company reported fiscal 2025 net sales of about $19.9 billion, with Diversified Industrial products representing the majority of sales and Aerospace Systems representing a smaller but higher-growth segment."
+          ]
+        },
+        {
+          "title": "Strategic position",
+          "paragraphs": [
+            "Parker's moat is built around engineered components, distribution reach, application support, qualification cycles, installed-base familiarity, and customer reluctance to redesign critical control systems.",
+            "Its exposure to both factory automation and certified aircraft systems makes it partly vulnerable to open controls, local fabrication, and modular retrofit ecosystems, but the highest-assurance applications remain difficult to decentralize quickly."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Parker benefits from a broad catalog of hydraulics, pneumatics, electromechanical motion, filtration, sealing, fuel, and aerospace systems that are embedded in customer designs. Once a machine builder, aircraft program, or maintenance organization has qualified a control stack, switching can mean engineering work, downtime risk, certification friction, and supply-chain retraining.",
+        "The moat is not a single consumer brand; it is accumulated trust in critical hardware, deep application engineering, distribution availability, and long-lived installed bases. That makes the business durable even where individual products are technically replicable."
+      ],
+      "decentralizationNarrative": [
+        "The industrial side has meaningful decentralization exposure because motion controllers, PLCs, machine-control software, sensors, and actuators can be modularized. Open control software, commodity drives, local fabrication, and repair-centered integrators can reduce dependence on bundled vendor stacks in lower-risk machines and retrofits.",
+        "Aerospace systems are much less immediately decentralizable. Open autopilot projects demonstrate that collaborative flight-control software can be credible in drones and experimental platforms, but certified commercial and defense aircraft systems still require qualification, traceability, redundancy, liability coverage, and regulated production controls."
+      ],
+      "sourceIds": [
+        "parker-ir-company-profile",
+        "parker-2025-10k",
+        "companiesmarketcap-ph",
+        "stockanalysis-ph-statistics"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "additive-manufacturing",
+        "printed-electronics"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; market data refreshed on 2026-05-26.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "Critical motion-control and aerospace systems benefit from qualification cycles, application engineering, distributor reach, and deep integration into customer equipment.",
+          "sourceIds": [
+            "parker-ir-company-profile",
+            "parker-2025-10k",
+            "parker-motion-control"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 42,
+          "rationale": "Industrial motion and controls can be partially opened through modular hardware and open software, but aerospace certification and high-reliability hydraulic and fuel systems resist fast decentralization.",
+          "sourceIds": [
+            "parker-2025-10k",
+            "linuxcnc-about",
+            "px4-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "Fiscal 2025 filings show strong segment operating income and profitable Aerospace Systems growth despite roughly flat consolidated sales.",
+          "sourceIds": [
+            "parker-2025-10k",
+            "stockanalysis-ph-statistics"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 31.9,
+          "rationale": "Market data sources reported Parker-Hannifin trading near a trailing P/E ratio of about 32 in late May 2026.",
+          "sourceIds": [
+            "stockanalysis-ph-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 109310000000,
+          "rationale": "CompaniesMarketCap reported Parker-Hannifin market capitalization of about $109.31 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-ph"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "motion-control-systems",
+        "name": "Motion and control systems",
+        "category": "Industrial automation and motion control",
+        "homepageUrl": "https://www.parkermotion.com/",
+        "summary": "Parker sells electromechanical, hydraulic, pneumatic, servo, HMI, controller, actuator, and positioning products used to build complete machine-motion systems.",
+        "whyItMatters": "Motion-control stacks sit close to the physical workflow of factories, mobile equipment, labs, and material-handling systems, so vendor lock-in can shape maintenance cost, retrofit options, and local repair capacity.",
+        "replacementSketch": [
+          "A realistic replacement path starts with open machine-control software, commodity drives, documented interfaces, and locally serviceable actuator assemblies in non-safety-critical machinery and retrofit projects.",
+          "The strongest near-term opportunity is not replacing every Parker component, but reducing dependence on closed controllers and bundled configuration tools so independent integrators can maintain and adapt machines over longer lives."
+        ],
+        "sourceIds": [
+          "parker-motion-control",
+          "parker-2025-10k",
+          "linuxcnc-about",
+          "openplc-docs"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "additive-manufacturing",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "linuxcnc",
+            "name": "LinuxCNC",
+            "kind": "open-source",
+            "homepageUrl": "https://linuxcnc.org/",
+            "repoUrl": "https://github.com/LinuxCNC/linuxcnc",
+            "summary": "LinuxCNC is free and open-source machine-control software for CNC machines, robots, laser cutters, plasma cutters, and other motion-control applications.",
+            "metrics": {
+              "openness": {
+                "value": 93,
+                "rationale": "LinuxCNC publishes source code and is licensed under GPL and LGPL terms.",
+                "sourceIds": [
+                  "linuxcnc-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "It lets machine builders and retrofitters separate control software from proprietary machine vendors, though hardware integration skill is still required.",
+                "sourceIds": [
+                  "linuxcnc-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "The project is mature and used for real machine control, but it is best suited to capable integrators rather than turnkey industrial buyers.",
+                "sourceIds": [
+                  "linuxcnc-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 74,
+                "rationale": "Open software and commodity-compatible interfaces can lower retrofit and long-term maintenance costs when engineering labor is available.",
+                "sourceIds": [
+                  "linuxcnc-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "linuxcnc-about"
+            ]
+          },
+          {
+            "slug": "openplc",
+            "name": "OpenPLC",
+            "kind": "open-source",
+            "homepageUrl": "https://openplcproject.gitlab.io/",
+            "repoUrl": "https://github.com/thiagoralves/OpenPLC_v3",
+            "summary": "OpenPLC is an open-source programmable logic controller ecosystem intended for vendor-neutral control education, prototyping, research, and low-cost automation.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenPLC is presented as a free and open-source PLC project with source access for controller experimentation.",
+                "sourceIds": [
+                  "openplc-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 66,
+                "rationale": "It reduces dependence on proprietary PLC software in prototyping and training, though production adoption depends on hardware, support, and safety requirements.",
+                "sourceIds": [
+                  "openplc-docs",
+                  "openplc-security-paper"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 52,
+                "rationale": "OpenPLC is useful for research, education, and prototypes, but published security research and industrial support gaps limit readiness for critical production control.",
+                "sourceIds": [
+                  "openplc-docs",
+                  "openplc-security-paper"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Running PLC logic on low-cost hardware can materially lower experimentation and training costs.",
+                "sourceIds": [
+                  "openplc-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openplc-docs",
+              "openplc-security-paper"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-retrofit-motion-cells",
+            "name": "Open retrofit motion cells",
+            "summary": "Independent integrators could package open controller software, documented drive interfaces, locally fabricated mounts, and commodity servos into repeatable retrofit kits for aging industrial machines.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "open-hardware",
+              "home-microfactory"
+            ],
+            "thesis": "Machine owners would buy capability and uptime from local retrofit operators instead of replacing entire vendor-controlled motion stacks.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing matters because the competitive pressure comes from many local shops sharing designs, fixture files, and controller recipes rather than a single replacement vendor.",
+            "coordinationMechanism": "Operators publish tested machine profiles, bills of materials, wiring diagrams, and commissioning checklists; local integrators adapt them to specific equipment and feed fixes back to shared repositories.",
+            "verificationOrTrustModel": "Trust is constrained by reproducible test routines, versioned controller configurations, customer acceptance runs, public issue histories, and signed release artifacts for control profiles. The weak point is physical installation quality, which still requires competent local inspection.",
+            "failureModes": [
+              "Safety-critical machinery may require certifications that community retrofit kits cannot economically satisfy.",
+              "Hardware substitutions can create subtle performance or reliability differences that are hard to diagnose remotely."
+            ],
+            "adoptionPath": [
+              "Start with low-risk CNC, lab automation, packaging, and positioning retrofits where downtime cost is high but certification burden is manageable.",
+              "Build regional integrator networks that maintain shared controller profiles and publish field reliability data."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "parker-motion-control",
+              "parker-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "linuxcnc-about",
+              "openplc-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The model shifts know-how and maintenance from proprietary bundles toward local integrators and shared control recipes.",
+                "sourceIds": [
+                  "linuxcnc-about",
+                  "openplc-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Open-source control communities already coordinate software releases, but field installation quality and liability coordination are harder.",
+                "sourceIds": [
+                  "linuxcnc-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 60,
+                "rationale": "The enabling software exists, but repeatable industrial retrofit packages require documentation, testing, and local mechanical competence.",
+                "sourceIds": [
+                  "linuxcnc-about",
+                  "openplc-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 50,
+                "rationale": "Pressure is strongest in retrofits and cost-sensitive machinery, not in Parker's highest-reliability or deeply qualified systems.",
+                "sourceIds": [
+                  "parker-2025-10k",
+                  "parker-motion-control"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "shared-actuator-repair-and-reuse-loops",
+            "name": "Shared actuator repair and reuse loops",
+            "summary": "Local repair networks could standardize teardown data, printable jigs, seal replacement procedures, and refurbished actuator marketplaces for hydraulic and electromechanical motion components.",
+            "angleIds": [
+              "recycling-and-reuse",
+              "local-materials-processing",
+              "cooperative-production"
+            ],
+            "thesis": "The market structure shifts from new-component replacement toward pooled refurbishment knowledge, local remanufacturing capacity, and verified used-component supply.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is cooperative production and local materials processing, not Bitcoin; the value comes from shared repair knowledge and distributed component recovery.",
+            "coordinationMechanism": "Repair shops coordinate through shared part schemas, photos, measurements, failure reports, and refurbishing procedures, while buyers compare verified test results before purchasing remanufactured units.",
+            "verificationOrTrustModel": "Trust depends on serialized test reports, pressure and cycle testing, photos of wear surfaces, reputation of refurbishers, and return policies. Fraud remains possible if test data is fabricated or parts are misidentified.",
+            "failureModes": [
+              "High-liability applications may reject refurbished or locally repaired components.",
+              "Incomplete part interchange data can lead to unsafe substitutions."
+            ],
+            "adoptionPath": [
+              "Begin with non-critical actuators, spare parts, and end-of-life machinery where OEM lead times or cost are painful.",
+              "Expand into cooperative repair catalogs with standardized acceptance tests and transparent refurbisher histories."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "parker-motion-control",
+              "parker-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "linuxcnc-about",
+              "openplc-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "Repair and reuse loops move supply and knowledge toward local shops, but many components still depend on specialized materials and precision manufacturing.",
+                "sourceIds": [
+                  "parker-motion-control"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "The coordination model is plausible for repair networks, but shared data standards and liability practices would need to mature.",
+                "sourceIds": [
+                  "parker-motion-control"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 48,
+                "rationale": "Basic refurbishment is feasible, while high-performance or safety-critical components require testing capacity that many local shops lack.",
+                "sourceIds": [
+                  "parker-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 42,
+                "rationale": "This would pressure aftermarket parts and long-tail service economics more than original equipment design wins.",
+                "sourceIds": [
+                  "parker-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "aerospace-systems",
+        "name": "Aerospace systems",
+        "category": "Aerospace controls, fuel, hydraulics, and actuation",
+        "homepageUrl": "https://www.parker.com/us/en/markets/aerospace",
+        "summary": "Parker Aerospace supplies flight-control actuation, hydraulic, fuel, lubrication, pneumatic, wheel-and-brake, fluid conveyance, and related systems for commercial and defense aircraft.",
+        "whyItMatters": "Aircraft motion, fuel, and hydraulic systems are high-assurance components where certification, reliability, and program integration create strong incumbent control over design choices and aftermarket service.",
+        "replacementSketch": [
+          "Open autopilot and unmanned-vehicle ecosystems show how collaborative flight-control software and modular avionics can expand outside traditional aerospace vendors.",
+          "For certified aircraft, replacement is likely to arrive first in drones, experimental aviation, ground-test systems, and auxiliary monitoring rather than direct substitution for Parker's qualified flight-critical hardware."
+        ],
+        "sourceIds": [
+          "parker-aerospace-a350",
+          "parker-2025-10k",
+          "px4-home",
+          "ardupilot-home"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "px4-autopilot",
+            "name": "PX4 Autopilot",
+            "kind": "open-source",
+            "homepageUrl": "https://px4.io/",
+            "repoUrl": "https://github.com/PX4/PX4-Autopilot",
+            "summary": "PX4 is open-source flight-control software for drones and other unmanned vehicles, supported by the Dronecode ecosystem.",
+            "metrics": {
+              "openness": {
+                "value": 91,
+                "rationale": "PX4 is published as an open-source autopilot stack with public documentation and repository access.",
+                "sourceIds": [
+                  "px4-home",
+                  "px4-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "It supports a multi-party ecosystem of drone developers and hardware vendors rather than a single aerospace controls supplier.",
+                "sourceIds": [
+                  "px4-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 64,
+                "rationale": "PX4 is widely used in drones and research, but it is not a drop-in replacement for certified commercial aircraft systems.",
+                "sourceIds": [
+                  "px4-home",
+                  "parker-aerospace-a350"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Open software and commodity-compatible flight hardware can lower experimentation and unmanned-platform development costs.",
+                "sourceIds": [
+                  "px4-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "px4-home",
+              "px4-github"
+            ]
+          },
+          {
+            "slug": "ardupilot",
+            "name": "ArduPilot",
+            "kind": "open-source",
+            "homepageUrl": "https://ardupilot.org/",
+            "repoUrl": "https://github.com/ArduPilot/ardupilot",
+            "summary": "ArduPilot is an open-source autopilot software system supporting copters, planes, rovers, boats, submarines, and other vehicle types.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "ArduPilot is presented as an open-source autopilot project with public source code.",
+                "sourceIds": [
+                  "ardupilot-home",
+                  "ardupilot-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "It enables independent builders and researchers to coordinate around shared flight-control software rather than proprietary avionics stacks.",
+                "sourceIds": [
+                  "ardupilot-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 62,
+                "rationale": "ArduPilot is mature for many unmanned and experimental uses, but certified aerospace substitution remains constrained.",
+                "sourceIds": [
+                  "ardupilot-home",
+                  "parker-aerospace-a350"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "The open software stack reduces the cost of prototyping and maintaining autonomous vehicle controls.",
+                "sourceIds": [
+                  "ardupilot-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "ardupilot-home",
+              "ardupilot-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-uav-flight-control-supply-chain",
+            "name": "Open UAV flight-control supply chain",
+            "summary": "Drone and uncrewed-aircraft builders could coordinate around open flight-control software, documented hardware interfaces, and shared test evidence to reduce reliance on vertically bundled aerospace-control suppliers.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "Aerospace control innovation shifts first in unmanned systems, where open software and modular hardware can iterate faster than certified aircraft programs.",
+            "bitcoinOrDecentralizationRole": "Decentralized coordination matters because many manufacturers, researchers, and operators can share flight-control improvements and compatible hardware targets without a single Parker-like integrator controlling the stack.",
+            "coordinationMechanism": "Developers coordinate through public repositories, release processes, hardware compatibility lists, simulation tools, flight logs, and integrator feedback from real vehicles.",
+            "verificationOrTrustModel": "Trust is built through reproducible software builds, simulation, hardware-in-the-loop testing, public issue tracking, logged flight tests, and peer review. It does not eliminate the need for airworthiness review in regulated operations.",
+            "failureModes": [
+              "Open UAV systems may not satisfy certification requirements for passenger or defense aircraft without costly assurance processes.",
+              "Fragmented hardware variants can create support and reliability problems."
+            ],
+            "adoptionPath": [
+              "Grow in drones, research aircraft, agriculture, inspection, and other unmanned platforms where certification burden is lower.",
+              "Use accumulated flight logs and testing tools to support more formal assurance cases for higher-value autonomous aircraft."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "parker-aerospace-a350",
+              "parker-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "px4-home",
+              "ardupilot-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "Open autopilot ecosystems distribute flight-control development across many organizations and hardware targets.",
+                "sourceIds": [
+                  "px4-home",
+                  "ardupilot-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 68,
+                "rationale": "PX4 and ArduPilot already coordinate public development communities, though regulated aerospace assurance is a separate challenge.",
+                "sourceIds": [
+                  "px4-home",
+                  "ardupilot-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 58,
+                "rationale": "Feasible in UAVs and experimental platforms, but hard to extend into certified aircraft systems.",
+                "sourceIds": [
+                  "px4-home",
+                  "parker-aerospace-a350"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 44,
+                "rationale": "Pressure is meaningful in emerging UAV and autonomy markets but limited against existing commercial aircraft programs.",
+                "sourceIds": [
+                  "parker-2025-10k",
+                  "px4-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "certifiable-open-test-evidence-commons",
+            "name": "Certifiable open test-evidence commons",
+            "summary": "A shared evidence commons for flight-control software, actuation interfaces, and health-monitoring components could let smaller aerospace suppliers reuse verification artifacts instead of rebuilding every assurance case privately.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation",
+              "open-hardware"
+            ],
+            "thesis": "The bottleneck shifts from proprietary component ownership toward who can produce, maintain, and audit credible verification evidence for modular aerospace subsystems.",
+            "bitcoinOrDecentralizationRole": "Federation and decentralized coordination are central: independent labs, suppliers, and operators would maintain compatible evidence records and test suites rather than trusting one private vendor's closed qualification package.",
+            "coordinationMechanism": "Labs and suppliers publish signed test artifacts, interface specifications, failure reports, and simulation results into federated registries that aircraft integrators can inspect and cite.",
+            "verificationOrTrustModel": "Cheating is constrained by signed artifacts, accredited lab identities, reproducible test harnesses, traceable configuration management, and cross-lab replication. The main weakness is that regulators and prime contractors must still accept the evidence model.",
+            "failureModes": [
+              "Regulators may not accept shared open evidence without a clear accountable certificate holder.",
+              "Participants may underfund long-term maintenance of test suites and evidence registries."
+            ],
+            "adoptionPath": [
+              "Start with non-flight-critical monitoring, ground support, UAV subsystems, and experimental aircraft components.",
+              "Expand to modular actuation and control interfaces where multiple suppliers can pass the same public conformance suite."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "parker-aerospace-a350",
+              "parker-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "px4-home",
+              "ardupilot-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "A federated evidence commons could reduce single-vendor control over qualification knowledge, but certification accountability remains centralized.",
+                "sourceIds": [
+                  "px4-home",
+                  "ardupilot-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 48,
+                "rationale": "Open flight software communities show coordination potential, but shared certifiable evidence is institutionally harder.",
+                "sourceIds": [
+                  "px4-home",
+                  "parker-aerospace-a350"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 38,
+                "rationale": "Technically plausible for test artifacts and conformance suites, but regulation, liability, and funding make implementation difficult.",
+                "sourceIds": [
+                  "parker-aerospace-a350"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 36,
+                "rationale": "This would pressure long-term qualification economics only if regulators, integrators, and insurers accepted shared evidence workflows.",
+                "sourceIds": [
+                  "parker-2025-10k",
+                  "parker-aerospace-a350"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "parker-ir-company-profile",
+      "title": "Company Information",
+      "url": "https://investors.parker.com/company-information",
+      "kind": "investor-relations",
+      "publisher": "Parker-Hannifin Corporation",
+      "note": "Company profile, fiscal 2025 sales figure, and high-level description of Parker as a motion and control technology company.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "parker-2025-10k",
+      "title": "Parker-Hannifin Corporation 2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/76334/000007633425000035/ph-20250630.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary filing source for fiscal 2025 segment sales, business mix, risks, and profitability context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-ph",
+      "title": "Parker-Hannifin Market Cap",
+      "url": "https://companiesmarketcap.com/parker-hannifin/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization source used for the refreshed registry snapshot.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-ph-statistics",
+      "title": "Parker-Hannifin Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/ph/statistics/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Supplemental market data source for P/E ratio, market cap, revenue, and profit context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "parker-motion-control",
+      "title": "Motion Control Systems",
+      "url": "https://www.parkermotion.com/",
+      "kind": "product-page",
+      "publisher": "Parker-Hannifin Corporation",
+      "note": "Product source for Parker's machine and motion-control portfolio, including controllers, drives, motors, actuators, HMI, and positioning systems.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "parker-aerospace-a350",
+      "title": "Parker Aerospace Is Awarded $2 Billion Fuel Package and Hydraulic System for New Airbus A350 XWB Aircraft",
+      "url": "https://investors.parker.com/news-events/press-releases/detail/372/parker-aerospace-is-awarded-2-billion-fuel-package-and",
+      "kind": "investor-relations",
+      "publisher": "Parker-Hannifin Corporation",
+      "note": "Describes Parker Aerospace product lines such as flight-control actuation, hydraulic systems, fuel systems, pumps, brakes, and fluid conveyance.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "linuxcnc-about",
+      "title": "About LinuxCNC",
+      "url": "https://linuxcnc.org/docs/html/getting-started/about-linuxcnc.html",
+      "kind": "open-source-project",
+      "publisher": "LinuxCNC",
+      "note": "Open-source machine-control reference for CNC, robotic, and motion-control replacement potential.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openplc-docs",
+      "title": "Welcome to OpenPLC",
+      "url": "https://openplcproject.gitlab.io/index.html",
+      "kind": "open-source-project",
+      "publisher": "OpenPLC Project",
+      "note": "Open-source PLC ecosystem source used to evaluate vendor-neutral control alternatives.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openplc-security-paper",
+      "title": "Security Issues on the OpenPLC Project and Corresponding Solutions",
+      "url": "https://arxiv.org/abs/2509.22664",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research context on OpenPLC security and readiness limitations for industrial use.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "px4-home",
+      "title": "PX4 Autopilot",
+      "url": "https://px4.io/",
+      "kind": "open-source-project",
+      "publisher": "PX4 / Dronecode",
+      "note": "Open-source autopilot source for unmanned-vehicle flight-control alternatives.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "px4-github",
+      "title": "PX4 Autopilot Software",
+      "url": "https://github.com/PX4/PX4-Autopilot",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Repository source for PX4's public autopilot software stack.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ardupilot-home",
+      "title": "ArduPilot",
+      "url": "https://ardupilot.org/",
+      "kind": "open-source-project",
+      "publisher": "ArduPilot Project",
+      "note": "Open-source autopilot source for drones, planes, rovers, boats, and other vehicles.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ardupilot-github",
+      "title": "ArduPilot Source Code",
+      "url": "https://github.com/ArduPilot/ardupilot",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Repository source for ArduPilot's public autopilot software stack.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Parker-Hannifin registry bundle with two products: motion and control systems, and aerospace systems. The refresh uses Parker investor filings, current market-data sources, and open-source control/autopilot projects to support metrics, alternatives, and disruption concepts."
+}
+tokens used
+34,492

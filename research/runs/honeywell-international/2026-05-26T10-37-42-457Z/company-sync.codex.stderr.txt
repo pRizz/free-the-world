@@ -1,0 +1,1762 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63dc-9c82-77f2-952e-0d67bb62c464
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: honeywell-international
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "honeywell-international",
+  "name": "Honeywell International",
+  "ticker": "HON",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "industrials",
+  "industryId": "industrial-conglomerates",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/honeywell/marketcap/",
+  "description": "Honeywell International supplies aerospace, automation, building technology, and energy transition products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Honeywell Forge",
+    "Aerospace systems"
+  ],
+  "seedSourceUrls": [
+    "https://investor.honeywell.com/",
+    "https://companiesmarketcap.com/honeywell/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:37:45.204340Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.204349Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.205276Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.205282Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.206245Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.206250Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.207070Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.207077Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.207928Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.207935Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.209493Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.209498Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.164061Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.164074Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.164779Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.164785Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.165536Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.165545Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.166381Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.166387Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.167183Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.167192Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.168669Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.168675Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll use the company manifest queue guidance for the expected registry shape, then verify current public sources before returning the JSON.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md && pwd && rg --files content src | head -80" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+/Users/peterryszkiewicz/Repos/free-the-world
+src/routes/mirrors.tsx
+src/routes/about.tsx
+content/companies/meta-platforms/bundle.json
+content/companies/ge-aerospace/bundle.json
+src/routes/companies/[companySlug]/products/[productSlug].tsx
+src/routes/companies/[companySlug]/products/index.tsx
+src/routes/companies/[companySlug]/index.tsx
+src/routes/companies/index.tsx
+src/routes/methodology.tsx
+src/routes/404.tsx
+content/companies/kla/bundle.json
+src/entry-server.tsx
+src/routes/insights/disruption-concepts.tsx
+src/routes/insights/alternative-pressure.tsx
+src/routes/insights/post-bubble.tsx
+src/routes/insights/capital-at-risk.tsx
+src/routes/insights/index.tsx
+src/routes/insights/market-cap-disruption.tsx
+src/routes/index.tsx
+src/global.d.ts
+content/companies/arista-networks/bundle.json
+content/companies/cisco-systems/bundle.json
+content/companies/exxon-mobil/bundle.json
+src/shims/source-map-js.ts
+content/companies/ge-vernova/bundle.json
+content/companies/amazon/bundle.json
+content/companies/jpmorgan-chase/bundle.json
+content/companies/coca-cola/bundle.json
+content/companies/nextera-energy/bundle.json
+content/companies/lam-research/bundle.json
+content/companies/corning/bundle.json
+content/companies/intuitive-surgical/bundle.json
+content/companies/morgan-stanley/bundle.json
+src/lib/domain/metrics.ts
+src/lib/domain/formatters.ts
+src/lib/domain/company-metrics.test.ts
+src/lib/domain/ipo.test.ts
+src/lib/domain/company-metrics.ts
+src/lib/domain/scoring.ts
+src/lib/domain/selectors.ts
+src/lib/domain/types.ts
+src/lib/domain/insights.test.ts
+src/lib/domain/formatters.test.ts
+src/lib/domain/market-cap-snapshots.ts
+src/lib/domain/ipo.ts
+src/lib/domain/insights.ts
+src/lib/domain/table-state.ts
+src/lib/domain/content-types.ts
+src/lib/config.ts
+src/lib/theme.ts
+content/companies/goldman-sachs/bundle.json
+content/companies/mastercard/bundle.json
+content/companies/netflix/bundle.json
+content/companies/citigroup/bundle.json
+content/companies/amgen/bundle.json
+content/companies/thermo-fisher-scientific/bundle.json
+content/companies/microsoft/bundle.json
+content/companies/applied-materials/bundle.json
+src/components/homepage-infographics/registry.ts
+src/components/homepage-infographics/disruption-concepts-preview.tsx
+src/components/homepage-infographics/types.ts
+src/components/homepage-infographics/alternative-pressure-preview.tsx
+src/components/homepage-infographics/rotation.test.ts
+src/components/homepage-infographics/post-bubble-preview.tsx
+src/components/homepage-infographics/market-cap-disruption-preview.tsx
+src/components/homepage-infographics/rotation.ts
+src/components/homepage-infographics/rotating-homepage-infographic.tsx
+src/components/homepage-infographics/capital-at-risk-preview.tsx
+src/components/company-table.tsx
+src/components/source-list.tsx
+src/components/seo.tsx
+src/components/newsletter-signup.tsx
+src/components/site-shell.tsx
+src/components/repository-link.tsx
+src/components/company-table-toolbar.tsx
+src/components/product-implementation-dialog.tsx
+content/companies/t-mobile-us/bundle.json
+src/lib/content/products.ts
+src/lib/content/technology-waves.ts
+src/lib/content/sources.ts
+
+2026-05-26T10:37:49.211212Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:49.211226Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:49.211568Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:49.211571Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:49.211887Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:49.211895Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:49.212213Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:49.212218Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:49.212636Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:49.212639Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:49.213350Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:49.213353Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Honeywell 2025 annual report Form 10-K Aerospace Automation Building Automation Energy and Sustainability Solutions revenue segments ...
+web search: 
+web search: OpenRemote open source IoT platform building energy management official ...
+web search: 
+web search: Honeywell 2025 annual report net income revenue 2025 annual report ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "honeywell-international",
+      "name": "Honeywell International",
+      "ticker": "HON",
+      "rankApprox": 88,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "industrials",
+      "industryId": "industrial-conglomerates",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/honeywell/marketcap/",
+      "description": "Honeywell International supplies aerospace, automation, building technology, and energy-transition products for industrial, commercial, and government customers.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Honeywell reports across aerospace technologies, industrial automation, building automation, and energy and sustainability lines, with products ranging from avionics and propulsion systems to controls, sensors, industrial software, and process technology.",
+            "The company is in the middle of a major portfolio simplification: it has separated Advanced Materials and has announced plans to separate Automation and Aerospace into distinct public companies, targeted for the second half of 2026."
+          ]
+        },
+        {
+          "title": "Strategic exposure",
+          "paragraphs": [
+            "Honeywell's moat is strongest where installed equipment, safety certification, service networks, control software, and mission-critical operations make replacement expensive.",
+            "Its decentralization exposure is mixed: building and industrial software can be pressured by open IoT and energy-management stacks, while certified aerospace systems remain far harder to replace with community-driven alternatives."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Honeywell benefits from long-cycle industrial relationships, certified aerospace components, installed building controls, proprietary process know-how, and software that sits close to operational data. These are not simple consumer-switching moats; they are embedded in regulated assets and facilities where downtime, safety, and vendor accountability matter.",
+        "The planned separations may make each business easier to value and focus, but they do not eliminate the underlying moat mechanisms. Aerospace still depends on certification and aftermarket support, while automation depends on integration depth, domain expertise, and enterprise procurement trust."
+      ],
+      "decentralizationNarrative": [
+        "The most plausible decentralized pressure is in building automation, energy optimization, and non-certified industrial IoT, where open platforms can connect devices, publish telemetry, and run local control agents without forcing every site into a single vendor cloud.",
+        "Aerospace is less decentralizable in the near term because flight-critical systems require certification, safety cases, quality systems, and long support cycles. Open autopilot ecosystems are meaningful in drones, robotics, research, and some unmanned systems, but they are not drop-in replacements for Honeywell's certified commercial aviation portfolio."
+      ],
+      "sourceIds": [
+        "honeywell-2025-annual-report",
+        "honeywell-2025-separation-announcement",
+        "companiesmarketcap-honeywell-2026",
+        "stockanalysis-hon-2026"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy",
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; market data refreshed on 2026-05-26.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Certified aerospace products, installed automation systems, service relationships, and operational software create high switching costs and strong procurement trust, though the portfolio split may expose each moat more clearly.",
+          "sourceIds": [
+            "honeywell-2025-annual-report",
+            "honeywell-2025-separation-announcement"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Building and industrial IoT layers can be partly decentralized through open telemetry, local control, and federated energy management, but certified aerospace and safety-critical process controls remain difficult to replace.",
+          "sourceIds": [
+            "honeywell-forge-product",
+            "doe-volttron",
+            "px4-docs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Honeywell remains profitable across mission-critical industrial and aerospace segments, with the 2025 annual report and 2025 results showing substantial revenue and segment profit generation.",
+          "sourceIds": [
+            "honeywell-2025-annual-report",
+            "honeywell-q4-2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 35,
+          "rationale": "StockAnalysis showed a trailing P/E in the mid-30s in late May 2026; public quote services vary with price, EPS basis, and timing, so this should be treated as a point-in-time approximation.",
+          "sourceIds": [
+            "stockanalysis-hon-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 141810000000,
+          "rationale": "CompaniesMarketCap listed Honeywell's market capitalization at about $141.81 billion in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-honeywell-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "honeywell-forge",
+        "name": "Honeywell Forge",
+        "category": "Industrial and building IoT software",
+        "homepageUrl": "https://www.honeywell.com/us/en/solutions/honeywell-forge",
+        "summary": "Honeywell Forge is Honeywell's cross-industry IoT and AI-enabled operations platform for industrial, building, aerospace, and digital-service workflows.",
+        "whyItMatters": "Forge is the software layer that can deepen Honeywell's control over operational data, optimization logic, and customer workflows across facilities and industrial assets.",
+        "replacementSketch": [
+          "A lightweight replacement path would start with open device gateways, local telemetry, and site-owned dashboards for energy, equipment, and occupancy data.",
+          "The stronger challenge is not merely open-source software; it is an ecosystem of integrators, building owners, and energy operators that can reuse control agents, share verified performance models, and avoid single-vendor dependence."
+        ],
+        "sourceIds": [
+          "honeywell-forge-product",
+          "honeywell-forge-buildings",
+          "openremote-product",
+          "doe-volttron"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "openremote",
+            "name": "OpenRemote",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openremote.io/product/",
+            "repoUrl": "https://github.com/openremote/openremote",
+            "summary": "OpenRemote is a 100% open-source IoT device-management platform for manufacturers, integrators, governments, buildings, cities, fleets, and energy systems.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenRemote presents itself as 100% open source and publishes its platform code on GitHub.",
+                "sourceIds": [
+                  "openremote-product",
+                  "openremote-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It can run as a site or integrator-controlled IoT layer, reducing dependence on a single proprietary building or industrial cloud, though deployments may still be centrally operated.",
+                "sourceIds": [
+                  "openremote-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project targets professional IoT, building, city, and energy-management use cases and offers a broad platform rather than a narrow prototype.",
+                "sourceIds": [
+                  "openremote-product",
+                  "openremote-building-management"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source licensing and local integrator control can reduce software lock-in and recurring vendor-cloud leverage, though implementation still requires professional integration.",
+                "sourceIds": [
+                  "openremote-product",
+                  "openremote-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openremote-product",
+              "openremote-github",
+              "openremote-building-management"
+            ]
+          },
+          {
+            "slug": "eclipse-volttron",
+            "name": "Eclipse VOLTTRON",
+            "kind": "open-source",
+            "homepageUrl": "https://www.energy.gov/eere/buildings/volttron",
+            "summary": "VOLTTRON is an open-source execution and communications platform for building sensing, control, grid services, and distributed energy research.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The Department of Energy describes VOLTTRON as open source, and Eclipse describes it as an open distributed control and sensing platform.",
+                "sourceIds": [
+                  "doe-volttron",
+                  "eclipse-volttron"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "VOLTTRON's agent-based device drivers and message bus fit local building control, grid integration, and multi-site experimentation without requiring a single proprietary operator.",
+                "sourceIds": [
+                  "doe-volttron",
+                  "eclipse-volttron"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "It is credible for research, pilots, and specialized building-control deployments, but it is less packaged as an enterprise commercial replacement than proprietary industrial platforms.",
+                "sourceIds": [
+                  "doe-volttron"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "The platform was conceived for low-cost software-only building automation for small and medium commercial buildings, though integration and maintenance costs remain site-specific.",
+                "sourceIds": [
+                  "doe-volttron"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "doe-volttron",
+              "eclipse-volttron"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-building-control-agents",
+            "name": "Federated building-control agents",
+            "summary": "Building owners and local integrators could deploy open control agents that connect BACnet, MODBUS, OpenADR, and MQTT devices, then federate only selected telemetry and optimization results across campuses or regional energy programs.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "microgrid-coordination"
+            ],
+            "thesis": "This shifts market power away from a single vendor-controlled operations cloud and toward interoperable site operators who can swap analytics, controls, and service providers without replacing every endpoint.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and local control rather than Bitcoin: each building or campus keeps operational authority while sharing signed telemetry and control outcomes with peers, utilities, or service markets.",
+            "coordinationMechanism": "Building owners, integrators, and energy aggregators coordinate through shared device schemas, local agents, federated registries, and opt-in demand-response or performance programs.",
+            "verificationOrTrustModel": "Telemetry can be signed by site gateways, reconciled against utility meters and device logs, and audited by third-party measurement and verification rules; spoofing is constrained by cross-checking device-level data, meter data, and occupancy or weather context.",
+            "failureModes": [
+              "Legacy building systems may expose inconsistent controls or incomplete telemetry.",
+              "Facilities teams may prefer accountable single-vendor support over a federated stack.",
+              "Cybersecurity and liability requirements can slow adoption in critical buildings."
+            ],
+            "adoptionPath": [
+              "Start with non-critical monitoring and energy dashboards in small and medium commercial buildings.",
+              "Add closed-loop optimization for HVAC, lighting, and demand response after operators trust telemetry quality.",
+              "Federate verified performance data across portfolios to support shared analytics and energy-market participation."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "honeywell-forge-product",
+              "honeywell-forge-buildings"
+            ],
+            "enablerSourceIds": [
+              "doe-volttron",
+              "eclipse-volttron",
+              "openremote-product"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept uses local control agents and federated coordination instead of a single proprietary cloud.",
+                "sourceIds": [
+                  "doe-volttron",
+                  "eclipse-volttron"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open building protocols and agent platforms make coordination technically credible, but governance across owners, utilities, and integrators remains hard.",
+                "sourceIds": [
+                  "doe-volttron",
+                  "openremote-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Monitoring and advisory control are feasible today; fully autonomous control across heterogeneous buildings is harder and must pass cybersecurity and safety review.",
+                "sourceIds": [
+                  "doe-volttron",
+                  "honeywell-forge-buildings"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This can pressure Forge-like software in price-sensitive and integrator-led buildings, but large enterprise accounts may still value Honeywell's bundled hardware, software, and service accountability.",
+                "sourceIds": [
+                  "honeywell-forge-product",
+                  "openremote-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "aerospace-systems",
+        "name": "Aerospace systems",
+        "category": "Aerospace avionics, engines, and aircraft systems",
+        "homepageUrl": "https://aerospace.honeywell.com/us/en/products-and-services/products",
+        "summary": "Honeywell Aerospace supplies aircraft engines, avionics, navigation, communications, safety, sensing, and other systems for commercial, business, defense, and space customers.",
+        "whyItMatters": "Aerospace systems anchor one of Honeywell's deepest moats because certification, reliability, installed fleets, and aftermarket support make replacement cycles long and high-stakes.",
+        "replacementSketch": [
+          "Open aerospace stacks are most credible first in drones, autonomous vehicles, research platforms, and non-passenger systems where certification burdens are lower.",
+          "Over time, open avionics interfaces, open autopilot stacks, and local manufacturing of non-critical parts could chip away at proprietary integration layers, but flight-critical commercial systems remain a slow and regulated frontier."
+        ],
+        "sourceIds": [
+          "honeywell-aerospace-products",
+          "honeywell-aerospace-industry",
+          "px4-docs",
+          "ardupilot-home"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "px4-autopilot",
+            "name": "PX4 Autopilot",
+            "kind": "open-source",
+            "homepageUrl": "https://px4.io/",
+            "repoUrl": "https://github.com/PX4/PX4-Autopilot",
+            "summary": "PX4 is an open-source flight-control stack for drones and other unmanned vehicles, hosted by Dronecode and supported by a vendor-neutral ecosystem.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "PX4 is documented as BSD-3 licensed, vendor neutral, and open source, with public source code and documentation.",
+                "sourceIds": [
+                  "px4-docs",
+                  "px4-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "PX4 reduces dependence on proprietary drone flight stacks by supporting shared hardware standards, open middleware, and community-maintained integrations.",
+                "sourceIds": [
+                  "px4-docs",
+                  "px4-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "PX4 is widely used across drone, industrial, defense, and research use cases, but it is not a certified replacement for commercial aircraft avionics.",
+                "sourceIds": [
+                  "px4-docs",
+                  "px4-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open software and compatible hardware can lower development and switching costs for unmanned systems, though certification, ruggedization, and integration still dominate serious aerospace programs.",
+                "sourceIds": [
+                  "px4-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "px4-home",
+              "px4-docs",
+              "px4-github"
+            ]
+          },
+          {
+            "slug": "ardupilot",
+            "name": "ArduPilot",
+            "kind": "open-source",
+            "homepageUrl": "https://ardupilot.org/",
+            "summary": "ArduPilot is an open-source autopilot software system for vehicles including aircraft, copters, rovers, boats, and submarines.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "ArduPilot describes itself as an open-source autopilot software system with public project infrastructure.",
+                "sourceIds": [
+                  "ardupilot-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It enables a broad community of developers and operators to adapt vehicle-control software without depending on one proprietary vendor.",
+                "sourceIds": [
+                  "ardupilot-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "ArduPilot is mature for many unmanned and hobbyist-to-professional systems, but it is not positioned as a certified commercial aircraft avionics replacement.",
+                "sourceIds": [
+                  "ardupilot-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open autopilot software can reduce experimentation and platform costs for autonomous vehicles, but production aerospace systems still require hardware, assurance, and compliance investment.",
+                "sourceIds": [
+                  "ardupilot-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "ardupilot-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-unmanned-aerospace-stack",
+            "name": "Open unmanned aerospace stack",
+            "summary": "Open autopilot, ground-control, simulation, and hardware-reference ecosystems can let drone makers, researchers, and specialized operators build aircraft control systems without buying a vertically integrated proprietary avionics stack.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "The initial pressure is not on certified airliner avionics; it is on the lower-regulation edge of aerospace where open stacks can compound faster than proprietary programs and create a talent, hardware, and integration base that slowly moves upmarket.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared source code, open hardware standards, and vendor-neutral coordination rather than Bitcoin. Operators can choose manufacturers, integrators, and software maintainers independently.",
+            "coordinationMechanism": "Developers coordinate through public repositories, open protocols such as MAVLink, hardware compatibility standards, simulation tooling, and foundations or working groups that keep the ecosystem from depending on one supplier.",
+            "verificationOrTrustModel": "Flight logs, software-in-the-loop simulation, hardware-in-the-loop tests, reproducible firmware builds, and field-test evidence constrain false claims, but formal certification still requires separate safety assurance and compliance processes.",
+            "failureModes": [
+              "Open stacks may remain concentrated in unmanned systems and fail to cross into certified passenger aviation.",
+              "Fragmented hardware quality can undermine trust if integrators ship poorly tested configurations.",
+              "Export controls, defense requirements, and aviation certification can favor established vendors."
+            ],
+            "adoptionPath": [
+              "Expand open autopilot use in drones, research aircraft, inspection platforms, and defense-adjacent unmanned systems.",
+              "Standardize validated hardware and software configurations with public test evidence.",
+              "Move selected non-flight-critical functions and eventually certified subsystems into open-interface aerospace programs."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "honeywell-aerospace-products",
+              "honeywell-aerospace-industry"
+            ],
+            "enablerSourceIds": [
+              "px4-docs",
+              "px4-home",
+              "ardupilot-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open repositories, open protocols, and compatible hardware standards reduce dependence on one aerospace systems vendor for unmanned platforms.",
+                "sourceIds": [
+                  "px4-docs",
+                  "ardupilot-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "PX4 and ArduPilot already coordinate broad developer and operator ecosystems, making the mechanism credible in unmanned systems.",
+                "sourceIds": [
+                  "px4-docs",
+                  "ardupilot-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Implementation is feasible in drones and autonomous vehicles, but much less feasible for certified commercial aircraft systems without expensive assurance work.",
+                "sourceIds": [
+                  "px4-docs",
+                  "honeywell-aerospace-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept pressures Honeywell mainly at the edge of aerospace and future unmanned systems, not its core certified commercial and defense installed base.",
+                "sourceIds": [
+                  "honeywell-aerospace-products",
+                  "px4-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "distributed-spares-and-test-cells",
+            "name": "Distributed aerospace spares and test cells",
+            "summary": "A network of qualified local manufacturers could use open fixtures, additive manufacturing, printed electronics, and shared inspection recipes to produce non-critical aerospace spares and test equipment closer to maintenance sites.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "open-hardware",
+              "local-materials-processing",
+              "3d-printing"
+            ],
+            "thesis": "If more low-criticality parts, tooling, and electronics fixtures can be locally fabricated and verified, some aftermarket leverage moves from OEM-controlled supply chains toward certified local production networks.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is manufacturing-side: open process recipes, shared quality evidence, and local production nodes matter more than payment rails. Bitcoin is not central unless used later for settlement or reputation bonds.",
+            "coordinationMechanism": "Maintenance shops, certified suppliers, design-file maintainers, and inspectors coordinate through approved part libraries, machine-qualified recipes, serialized production records, and third-party audit markets.",
+            "verificationOrTrustModel": "Trust depends on material traceability, calibrated machines, non-destructive inspection, signed production logs, and regulator-accepted quality systems; cheating is constrained by audit trails, destructive sampling, and liability exposure.",
+            "failureModes": [
+              "Regulators and OEMs may block broad use of locally fabricated aerospace parts.",
+              "Material consistency and inspection costs may erase local-production savings.",
+              "Open design files for aerospace parts may be limited by IP, export controls, and safety liability."
+            ],
+            "adoptionPath": [
+              "Begin with ground-support tooling, fixtures, cabin-adjacent components, and other non-flight-critical parts.",
+              "Build shared qualification data for machines, materials, and inspection processes.",
+              "Expand only where regulators, insurers, and operators accept the quality model."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "honeywell-aerospace-products",
+              "honeywell-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "px4-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept explicitly distributes manufacturing and inspection across local qualified operators rather than central OEM supply chains.",
+                "sourceIds": [
+                  "honeywell-aerospace-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 4,
+                "rationale": "The coordination model is plausible but depends on regulators, insurers, and OEM interfaces that are not yet broadly open.",
+                "sourceIds": [
+                  "honeywell-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 3,
+                "rationale": "Non-critical tooling and fixtures are feasible first, while certified flight parts face major material, testing, and regulatory barriers.",
+                "sourceIds": [
+                  "honeywell-aerospace-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 3,
+                "rationale": "Pressure is likely narrow and slow because Honeywell's aerospace moat is tied to certification, installed fleets, and aftermarket accountability.",
+                "sourceIds": [
+                  "honeywell-2025-annual-report",
+                  "honeywell-aerospace-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "honeywell-2025-annual-report",
+      "title": "Honeywell 2025 Annual Report",
+      "url": "https://investor.honeywell.com/static-files/c7f9f713-d9e0-4a93-9b2d-a90f1ab588cb",
+      "kind": "annual-report",
+      "publisher": "Honeywell International",
+      "note": "Primary source for business segments, financial profile, risks, and portfolio context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "honeywell-q4-2025-results",
+      "title": "Honeywell Reports Fourth Quarter 2025 Results",
+      "url": "https://www.honeywell.com/us/en/press/2026/01/honeywell-reports-fourth-quarter-2025-results-with-adjusted-sales-and-adjusted-earnings-above-high-end-of-guidance-issues-2026-outlook",
+      "kind": "investor-relations",
+      "publisher": "Honeywell International",
+      "note": "Recent company results source for segment performance and 2026 outlook context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "honeywell-2025-separation-announcement",
+      "title": "Honeywell Announces Intent to Separate Automation and Aerospace",
+      "url": "https://investor.honeywell.com/news-releases/news-release-details/honeywell-announces-intent-separate-automation-and-aerospace",
+      "kind": "investor-relations",
+      "publisher": "Honeywell International",
+      "note": "Primary source for the planned separation of Automation and Aerospace and the three-company portfolio plan.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "honeywell-segment-realignment-2025",
+      "title": "Honeywell Announces Updated Business Segment Structure Ahead of Aerospace Spin-Off",
+      "url": "https://www.honeywell.com/us/en/press/2025/10/honeywell-announces-updated-business-segment-structure-ahead-of-aerospace-spin-off",
+      "kind": "investor-relations",
+      "publisher": "Honeywell International",
+      "note": "Supports post-realignment automation and aerospace structure context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-honeywell-2026",
+      "title": "Honeywell (HON) Market Capitalization",
+      "url": "https://companiesmarketcap.com/honeywell/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time market capitalization source used for the May 2026 snapshot refresh.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-hon-2026",
+      "title": "Honeywell International Stock Price and Overview",
+      "url": "https://stockanalysis.com/stocks/hon/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Supplemental point-in-time market data source for valuation metrics such as P/E.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "honeywell-forge-product",
+      "title": "Honeywell Forge",
+      "url": "https://www.honeywell.com/us/en/solutions/honeywell-forge",
+      "kind": "product-page",
+      "publisher": "Honeywell International",
+      "note": "Primary product source for Honeywell Forge positioning, capabilities, and target industries.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "honeywell-forge-buildings",
+      "title": "Honeywell Unveils Honeywell Forge for Buildings",
+      "url": "https://www.honeywell.com/us/en/press/2023/05/honeywell-unveils-honeywell-forge-for-buildings-and-expands-sustainability-focused-applications",
+      "kind": "product-page",
+      "publisher": "Honeywell International",
+      "note": "Source for Forge for Buildings scope across sustainability, operational efficiency, safety, security, and resilience outcomes.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "honeywell-aerospace-products",
+      "title": "Honeywell Aerospace Products and Services",
+      "url": "https://aerospace.honeywell.com/us/en/products-and-services/products",
+      "kind": "product-page",
+      "publisher": "Honeywell Aerospace",
+      "note": "Primary product source for Honeywell aerospace categories and systems.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "honeywell-aerospace-industry",
+      "title": "Aerospace Technologies, Solutions and Services",
+      "url": "https://www.honeywell.com/us/en/industries/aerospace",
+      "kind": "product-page",
+      "publisher": "Honeywell International",
+      "note": "Supports Honeywell aerospace positioning across engines, flight decks, navigation, defense, and related systems.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openremote-product",
+      "title": "Open Source Enterprise IoT Platform",
+      "url": "https://www.openremote.io/product/",
+      "kind": "open-source-project",
+      "publisher": "OpenRemote",
+      "note": "Open-source IoT platform source for building, energy, and device-management alternatives to proprietary operations software.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openremote-github",
+      "title": "openremote/openremote GitHub Repository",
+      "url": "https://github.com/openremote/openremote",
+      "kind": "open-source-project",
+      "publisher": "OpenRemote",
+      "note": "Repository source confirming OpenRemote's public platform code and IoT feature scope.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openremote-building-management",
+      "title": "OpenRemote Building Management System",
+      "url": "https://www.openremote.io/building-managemement-system-bms-open-source/",
+      "kind": "open-source-project",
+      "publisher": "OpenRemote",
+      "note": "Supports OpenRemote's applicability to building management, on-premise gateways, and energy monitoring.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "doe-volttron",
+      "title": "VOLTTRON",
+      "url": "https://www.energy.gov/eere/buildings/volttron",
+      "kind": "technical-docs",
+      "publisher": "U.S. Department of Energy",
+      "note": "Government source describing VOLTTRON as an open-source IoT platform for building control, grid services, and low-cost building automation.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "eclipse-volttron",
+      "title": "Eclipse VOLTTRON",
+      "url": "https://www.eclipse.org/community/eclipse_newsletter/2018/october/volttron.php",
+      "kind": "technical-docs",
+      "publisher": "Eclipse Foundation",
+      "note": "Technical source for VOLTTRON's distributed control, sensing, device-driver, and message-bus model.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "px4-home",
+      "title": "PX4 Autopilot",
+      "url": "https://px4.io/",
+      "kind": "open-source-project",
+      "publisher": "Dronecode Foundation",
+      "note": "Project homepage for the open-source PX4 flight-control ecosystem.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "px4-docs",
+      "title": "PX4 Autopilot User Guide",
+      "url": "https://docs.px4.io/",
+      "kind": "technical-docs",
+      "publisher": "PX4 Autopilot",
+      "note": "Technical documentation source for PX4 licensing, architecture, hardware support, interoperability, and autonomy features.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "px4-github",
+      "title": "PX4/PX4-Autopilot GitHub Repository",
+      "url": "https://github.com/PX4/PX4-Autopilot",
+      "kind": "open-source-project",
+      "publisher": "PX4 Autopilot",
+      "note": "Repository source for PX4's public autopilot software codebase.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ardupilot-home",
+      "title": "ArduPilot",
+      "url": "https://ardupilot.org/",
+      "kind": "open-source-project",
+      "publisher": "ArduPilot",
+      "note": "Project source for ArduPilot as an open-source autopilot system for multiple vehicle types.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Honeywell International bundle covering Honeywell Forge and Aerospace systems. The strongest decentralization pressure is in open building and industrial IoT stacks; aerospace disruption is credible mainly in unmanned systems and speculative distributed spares rather than certified commercial avionics."
+}
+tokens used
+37,180

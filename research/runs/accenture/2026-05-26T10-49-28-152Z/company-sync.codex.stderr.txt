@@ -1,0 +1,1413 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63e7-5fe2-73b0-9668-17d6f82d8871
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: accenture
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "accenture",
+  "name": "Accenture",
+  "ticker": "ACN",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "it-consulting-services",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/accenture/marketcap/",
+  "description": "Accenture provides consulting, technology services, managed services, and outsourcing.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Accenture Cloud First",
+    "Accenture Song"
+  ],
+  "seedSourceUrls": [
+    "https://investor.accenture.com/",
+    "https://companiesmarketcap.com/accenture/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:49:29.288397Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:29.288412Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:29.288929Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:29.288934Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:29.289424Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:29.289429Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:29.289929Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:29.289934Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:29.290317Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:29.290321Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:29.291159Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:29.291163Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:30.069030Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:30.069044Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:30.069406Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:30.069410Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:30.069756Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:30.069760Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:30.070104Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:30.070107Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:30.070447Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:30.070453Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:49:30.071174Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:49:30.071177Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Accenture 2025 annual report revenue operating income consulting managed services ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "accenture",
+      "name": "Accenture",
+      "ticker": "ACN",
+      "rankApprox": 90,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "it-consulting-services",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/accenture/marketcap/",
+      "description": "Accenture provides consulting, technology services, managed services, cloud transformation, outsourcing, and digital experience services for large enterprises and public-sector clients.",
+      "overview": [
+        {
+          "title": "Enterprise services integrator",
+          "paragraphs": [
+            "Accenture is a global professional-services company built around consulting, technology implementation, managed services, operations, and industry-specific transformation programs.",
+            "Its scale comes less from owning a single proprietary software platform and more from trusted enterprise relationships, delivery capacity, partner certifications, procurement access, and the ability to manage large multi-year transformation work."
+          ]
+        },
+        {
+          "title": "Cloud and experience focus",
+          "paragraphs": [
+            "Accenture Cloud First packages cloud migration, modernization, security, data, and managed services around major hyperscaler and enterprise software ecosystems.",
+            "Accenture Song applies design, marketing, commerce, data, and technology capabilities to customer experience and brand transformation programs."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Accenture's moat is operational and relationship-heavy: global delivery scale, thousands of specialized practitioners, deep client procurement relationships, and privileged standing with large technology partners make it difficult for smaller firms to displace in complex enterprise programs.",
+        "The moat is not absolute because much of the underlying technical work uses widely available platforms, open-source components, and public cloud services. Clients can unbundle pieces of delivery when they have strong internal engineering governance or when open tooling reduces reliance on systems integrators."
+      ],
+      "decentralizationNarrative": [
+        "Accenture is moderately decentralizable because the company coordinates people, process, and vendor ecosystems rather than manufacturing scarce physical assets or operating a closed consumer network.",
+        "The hardest parts to decentralize are trust, accountability, compliance, enterprise sales, and program management at Fortune 500 scale. Open-source stacks, federated delivery networks, and verifiable service marketplaces can pressure portions of the model, but they do not yet fully replace the board-level risk transfer that large clients buy from Accenture."
+      ],
+      "sourceIds": [
+        "accenture-ir-2025",
+        "accenture-annual-report-2025",
+        "accenture-cloud-first-2020",
+        "accenture-song-2022",
+        "stockanalysis-acn-market-cap-2026"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Accenture has durable enterprise relationships, global delivery scale, repeat procurement access, and major ecosystem partner status, but it depends heavily on human services and third-party platforms rather than exclusive technical ownership.",
+          "sourceIds": [
+            "accenture-annual-report-2025",
+            "accenture-ir-2025"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 6,
+          "rationale": "Consulting and implementation work can be decomposed across open-source tooling, independent specialists, and federated delivery networks, though enterprise accountability and compliance still favor large integrators.",
+          "sourceIds": [
+            "accenture-annual-report-2025",
+            "cncf-kubernetes",
+            "opentofu-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Accenture reported fiscal 2025 revenue of about $69.7 billion and operating income of about $10.2 billion, showing strong recurring profitability for a services-heavy business.",
+          "sourceIds": [
+            "accenture-annual-report-2025"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 14,
+          "rationale": "Recent market-data snapshots in May 2026 placed Accenture's trailing valuation around the low-to-mid teens P/E range, so 14 is a rounded current estimate rather than an audited figure.",
+          "sourceIds": [
+            "stockanalysis-acn-market-cap-2026",
+            "macrotrends-acn-pe-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 110000000000,
+          "rationale": "Recent May 2026 market-data pages placed Accenture's market capitalization at roughly $110 billion, with daily variation across providers.",
+          "sourceIds": [
+            "stockanalysis-acn-market-cap-2026",
+            "macrotrends-acn-market-cap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "accenture-cloud-first",
+        "name": "Accenture Cloud First",
+        "category": "Cloud transformation and managed services",
+        "homepageUrl": "https://www.accenture.com/us-en/services/cloud/cloud-first",
+        "summary": "Accenture Cloud First is Accenture's cloud transformation business, combining cloud migration, application modernization, security, data, AI, and managed services around major enterprise platforms.",
+        "whyItMatters": "It represents the integrator layer that turns public cloud and enterprise software into large transformation programs, capturing budget that might otherwise flow to internal platform teams or smaller specialist firms.",
+        "replacementSketch": [
+          "A credible replacement path is not a single product. It is an open platform-engineering stack where clients standardize on Kubernetes, OpenTofu, open observability, internal developer portals, and documented reference architectures.",
+          "Independent specialists, cooperatives, and client-owned platform teams can then compete for modular delivery work instead of routing an entire cloud operating model through one global systems integrator."
+        ],
+        "sourceIds": [
+          "accenture-cloud-first-2020",
+          "accenture-annual-report-2025"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "kubernetes",
+            "name": "Kubernetes",
+            "kind": "open-source",
+            "homepageUrl": "https://kubernetes.io/",
+            "repoUrl": "https://github.com/kubernetes/kubernetes",
+            "summary": "Kubernetes is an open-source system for automating deployment, scaling, and management of containerized applications.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "Kubernetes is an open-source CNCF project with public code, governance, documentation, and a broad contributor ecosystem.",
+                "sourceIds": [
+                  "cncf-kubernetes"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "It reduces dependency on any single integrator or cloud provider by giving organizations a portable control plane for container workloads.",
+                "sourceIds": [
+                  "cncf-kubernetes"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 9,
+                "rationale": "Kubernetes is production-proven across enterprise and cloud environments, though it still requires skilled operations.",
+                "sourceIds": [
+                  "cncf-kubernetes"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "It can reduce lock-in and improve workload portability, but poor implementation can add operational cost rather than remove it.",
+                "sourceIds": [
+                  "cncf-kubernetes"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "cncf-kubernetes"
+            ]
+          },
+          {
+            "slug": "opentofu",
+            "name": "OpenTofu",
+            "kind": "open-source",
+            "homepageUrl": "https://opentofu.org/",
+            "repoUrl": "https://github.com/opentofu/opentofu",
+            "summary": "OpenTofu is an open-source infrastructure-as-code tool for provisioning and managing cloud and infrastructure resources.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "OpenTofu is developed as an open-source project with public code and documentation.",
+                "sourceIds": [
+                  "opentofu-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Infrastructure-as-code lets clients retain portable, reviewable infrastructure definitions instead of depending entirely on integrator-owned runbooks.",
+                "sourceIds": [
+                  "opentofu-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "It is suitable for real infrastructure automation, though adoption depends on organizational maturity and provider compatibility.",
+                "sourceIds": [
+                  "opentofu-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Reusable infrastructure definitions reduce repeated consulting labor and improve competitive bidding for implementation work.",
+                "sourceIds": [
+                  "opentofu-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "opentofu-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "verifiable-cloud-delivery-marketplace",
+            "name": "Verifiable Cloud Delivery Marketplace",
+            "summary": "A federated marketplace could let certified independent cloud teams bid on scoped migration, platform, security, and modernization work using public evidence of delivery quality rather than relying on a single global integrator brand.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "proof-of-work"
+            ],
+            "thesis": "Cloud transformation budget becomes more contestable when work is decomposed into audited modules with portable infrastructure code, open runbooks, and verifiable completion evidence.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters because buyers and delivery teams coordinate through open reputation, escrow, and evidence standards instead of a central consulting firm. Proof-of-work can be used narrowly as an anti-spam and stake-weighting primitive for provider listings, dispute submissions, or audit challenges.",
+            "coordinationMechanism": "Enterprise buyers publish scoped work packages, providers submit signed bids and credentials, and independent auditors verify deliverables against infrastructure-as-code repositories, runbooks, security checks, and service-level evidence.",
+            "verificationOrTrustModel": "Cheating is constrained by signed work artifacts, reproducible infrastructure definitions, independent audit trails, escrow release milestones, and public reputation penalties for failed delivery. Collusion remains possible if auditors and vendors are not independently selected.",
+            "failureModes": [
+              "Large clients may still prefer one accountable prime contractor for legal, procurement, and risk-transfer reasons.",
+              "Quality metrics can be gamed if delivery evidence measures checklist completion instead of operational outcomes."
+            ],
+            "adoptionPath": [
+              "Start with non-core cloud migration, FinOps, security remediation, and platform-engineering work packages where outcomes are easy to inspect.",
+              "Expand into managed service pools once buyers trust shared audit standards, escrow mechanics, and provider reputation history."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "accenture-cloud-first-2020",
+              "accenture-annual-report-2025"
+            ],
+            "enablerSourceIds": [
+              "cncf-kubernetes",
+              "opentofu-docs",
+              "linux-foundation-open-source-guides"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model directly distributes cloud delivery across many providers while keeping work portable through open infrastructure and audit artifacts.",
+                "sourceIds": [
+                  "cncf-kubernetes",
+                  "opentofu-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Marketplace coordination is plausible for scoped tasks, but enterprise procurement, liability, and security approval slow adoption.",
+                "sourceIds": [
+                  "accenture-annual-report-2025",
+                  "linux-foundation-open-source-guides"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The technical pieces already exist in open infrastructure tooling, but trustworthy audit, insurance, and dispute resolution are harder organizational layers.",
+                "sourceIds": [
+                  "cncf-kubernetes",
+                  "opentofu-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "It pressures Accenture's modular cloud delivery work more than its highest-risk strategic transformation and managed-service contracts.",
+                "sourceIds": [
+                  "accenture-cloud-first-2020",
+                  "accenture-annual-report-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "accenture-song",
+        "name": "Accenture Song",
+        "category": "Digital experience, marketing, commerce, and design services",
+        "homepageUrl": "https://www.accenture.com/us-en/about/accenture-song-index",
+        "summary": "Accenture Song is Accenture's design, marketing, commerce, data, and customer-experience services business.",
+        "whyItMatters": "It captures transformation spend where brand, customer data, commerce platforms, and digital product design meet, tying creative strategy to enterprise-scale technology implementation.",
+        "replacementSketch": [
+          "The lightweight replacement path is a client-owned composable experience stack using open CMS, open analytics where possible, portable design systems, and smaller specialist studios.",
+          "Open-source publishing and commerce tools can reduce platform lock-in, while federated creative and development networks can compete for specific campaigns, journeys, and product improvements."
+        ],
+        "sourceIds": [
+          "accenture-song-2022",
+          "accenture-annual-report-2025"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "drupal",
+            "name": "Drupal",
+            "kind": "open-source",
+            "homepageUrl": "https://www.drupal.org/",
+            "repoUrl": "https://git.drupalcode.org/project/drupal",
+            "summary": "Drupal is an open-source content management platform used for complex websites and digital experiences.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "Drupal is an open-source project with public code, modules, documentation, and community governance.",
+                "sourceIds": [
+                  "drupal-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It lets organizations own and extend their content platform without depending entirely on proprietary experience suites.",
+                "sourceIds": [
+                  "drupal-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 9,
+                "rationale": "Drupal is mature and widely used for enterprise content management, though implementation complexity still creates demand for expert services.",
+                "sourceIds": [
+                  "drupal-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open licensing and a module ecosystem can lower vendor lock-in, but high-quality design, migration, and governance still require skilled labor.",
+                "sourceIds": [
+                  "drupal-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "drupal-project"
+            ]
+          },
+          {
+            "slug": "wordpress",
+            "name": "WordPress",
+            "kind": "open-source",
+            "homepageUrl": "https://wordpress.org/",
+            "repoUrl": "https://github.com/WordPress/wordpress-develop",
+            "summary": "WordPress is an open-source publishing platform and CMS with a large plugin and theme ecosystem.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "WordPress is open-source software with public releases, code, documentation, and a large contributor ecosystem.",
+                "sourceIds": [
+                  "wordpress-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "It enables self-hosted publishing and reduces dependence on proprietary digital experience platforms for many web use cases.",
+                "sourceIds": [
+                  "wordpress-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "WordPress is mature and broadly deployed, although enterprise security, governance, and performance depend on disciplined implementation.",
+                "sourceIds": [
+                  "wordpress-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "A large open ecosystem and broad labor market can reduce switching and implementation costs for content-heavy digital properties.",
+                "sourceIds": [
+                  "wordpress-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "wordpress-project"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-creative-ops-network",
+            "name": "Federated Creative Operations Network",
+            "summary": "A federated network of independent studios, open-source implementers, analytics specialists, and content operators could compete with large experience consultancies by sharing portable design-system components, public work credentials, and auditable delivery records.",
+            "angleIds": [
+              "federation",
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "Customer-experience work becomes less dependent on a single agency-integrator when brand systems, content models, analytics conventions, and deployment pipelines are portable across many specialized teams.",
+            "bitcoinOrDecentralizationRole": "The core role is federation rather than Bitcoin: independent teams coordinate through shared standards, portable credentials, and cooperative governance while clients retain ownership of design assets and platform code.",
+            "coordinationMechanism": "Clients publish briefs and product-backlog slices; studios and implementers contribute signed work packages against shared design-system and CMS repositories; reviewers score accessibility, performance, conversion, and maintainability outcomes.",
+            "verificationOrTrustModel": "Trust comes from public version history, signed contributor identities, reproducible builds, design-token diffs, analytics instrumentation reviews, and client-controlled deployment approvals. False claims are constrained by artifact-level inspection, but subjective creative quality remains hard to standardize.",
+            "failureModes": [
+              "Brand strategy and executive-level creative direction may still benefit from a single accountable lead agency.",
+              "Federated teams can fragment the customer experience if governance of design tokens, content models, and analytics events is weak."
+            ],
+            "adoptionPath": [
+              "Begin with open CMS migrations, design-system maintenance, accessibility remediation, and performance optimization work.",
+              "Move toward cooperative campaign execution once shared creative governance and measurable outcome reporting are trusted."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "accenture-song-2022",
+              "accenture-annual-report-2025"
+            ],
+            "enablerSourceIds": [
+              "drupal-project",
+              "wordpress-project",
+              "linux-foundation-open-source-guides"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept distributes creative and implementation work across many teams while keeping assets and systems portable.",
+                "sourceIds": [
+                  "drupal-project",
+                  "wordpress-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Federated production is credible for implementation and maintenance, but subjective creative leadership and brand accountability are harder to decentralize.",
+                "sourceIds": [
+                  "accenture-song-2022",
+                  "linux-foundation-open-source-guides"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "Open CMS tools, public repositories, design systems, and remote delivery practices already exist, but integrated governance is the main constraint.",
+                "sourceIds": [
+                  "drupal-project",
+                  "wordpress-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "It can pressure modular digital experience delivery, but Accenture Song remains advantaged in large bundled transformation programs that combine strategy, technology, and enterprise procurement.",
+                "sourceIds": [
+                  "accenture-song-2022",
+                  "accenture-annual-report-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "accenture-ir-2025",
+      "title": "Accenture Investor Relations",
+      "url": "https://investor.accenture.com/",
+      "kind": "investor-relations",
+      "publisher": "Accenture",
+      "note": "Primary investor-relations entry point for company filings, earnings materials, and shareholder information.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "accenture-annual-report-2025",
+      "title": "Accenture 2025 Annual Report",
+      "url": "https://investor.accenture.com/~/media/Files/A/accenture-v4/investors/home/annual-report-2025.pdf",
+      "kind": "annual-report",
+      "publisher": "Accenture",
+      "note": "Primary source for Accenture's business description, operating model, revenue, operating income, risks, and segment-level context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "accenture-cloud-first-2020",
+      "title": "Accenture Cloud First Launches With $3 Billion Investment",
+      "url": "https://newsroom.accenture.com/news/2020/accenture-cloud-first-launches-with-3-billion-investment-to-accelerate-clients-move-to-cloud-and-digital-transformation",
+      "kind": "product-page",
+      "publisher": "Accenture",
+      "note": "Company source describing the scope and strategic intent of Accenture Cloud First.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "accenture-song-2022",
+      "title": "Accenture Announces Accenture Song",
+      "url": "https://newsroom.accenture.com/news/accenture-announces-accenture-interactives-evolution.htm",
+      "kind": "product-page",
+      "publisher": "Accenture",
+      "note": "Company source for Accenture Song's positioning as Accenture's creative, technology, and experience services business.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-acn-market-cap-2026",
+      "title": "Accenture Market Cap and Net Worth",
+      "url": "https://stockanalysis.com/stocks/acn/market-cap/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Recent market-data reference for Accenture market capitalization around the May 2026 review date.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "macrotrends-acn-market-cap-2026",
+      "title": "Accenture Market Cap 2012-2026",
+      "url": "https://www.macrotrends.net/stocks/charts/ACN/accenture/market-cap",
+      "kind": "market-data",
+      "publisher": "Macrotrends",
+      "note": "Secondary market-data reference used to sanity-check Accenture's market capitalization range.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "macrotrends-acn-pe-2026",
+      "title": "Accenture PE Ratio 2012-2026",
+      "url": "https://www.macrotrends.net/stocks/charts/ACN/accenture/pe-ratio",
+      "kind": "market-data",
+      "publisher": "Macrotrends",
+      "note": "Market-data source for recent Accenture P/E ratio estimates.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "cncf-kubernetes",
+      "title": "Kubernetes",
+      "url": "https://www.cncf.io/projects/kubernetes/",
+      "kind": "open-source-project",
+      "publisher": "Cloud Native Computing Foundation",
+      "note": "Open-source cloud orchestration alternative relevant to client-owned platform engineering.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "opentofu-docs",
+      "title": "OpenTofu Documentation",
+      "url": "https://opentofu.org/docs/",
+      "kind": "technical-docs",
+      "publisher": "OpenTofu",
+      "note": "Open-source infrastructure-as-code documentation relevant to portable cloud delivery and reduced integrator dependence.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "drupal-project",
+      "title": "Drupal",
+      "url": "https://www.drupal.org/",
+      "kind": "open-source-project",
+      "publisher": "Drupal Association",
+      "note": "Open-source CMS alternative for enterprise digital experience and content operations.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "wordpress-project",
+      "title": "WordPress.org",
+      "url": "https://wordpress.org/",
+      "kind": "open-source-project",
+      "publisher": "WordPress.org",
+      "note": "Open-source publishing and CMS ecosystem relevant to client-owned digital experience stacks.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "linux-foundation-open-source-guides",
+      "title": "Open Source Guides for the Enterprise",
+      "url": "https://www.linuxfoundation.org/resources/open-source-guides",
+      "kind": "analysis",
+      "publisher": "Linux Foundation",
+      "note": "General analysis source for enterprise open-source governance and collaboration models.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Accenture registry bundle with two products: Accenture Cloud First and Accenture Song. The refresh emphasizes Accenture's services moat, open cloud and CMS alternatives, and decentralization concepts based on federated delivery, verifiable work artifacts, and cooperative creative operations."
+}
+tokens used
+37,211

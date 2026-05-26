@@ -1,0 +1,811 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63e4-d4be-7152-adb5-a13927c239c7
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: stryker
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "stryker",
+  "name": "Stryker",
+  "ticker": "SYK",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "health-care",
+  "industryId": "pharma-medtech",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/stryker/marketcap/",
+  "description": "Stryker makes medical and surgical equipment, orthopedic implants, and neurotechnology products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Mako robotic-arm assisted surgery",
+    "Triathlon knee system"
+  ],
+  "seedSourceUrls": [
+    "https://investors.stryker.com/",
+    "https://companiesmarketcap.com/stryker/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:46:42.583293Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:42.583309Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:42.583692Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:42.583699Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:42.584123Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:42.584127Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:42.584542Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:42.584548Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:42.585015Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:42.585019Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:42.585831Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:42.585835Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:43.350437Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:43.350452Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:43.350841Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:43.350846Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:43.351163Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:43.351168Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:43.351540Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:43.351546Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:43.351919Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:43.351923Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:46:43.352733Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:46:43.352736Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify Stryker’s current investor/product facts and market data first, then return only the requested JSON object.
+web search: 
+web search: Stryker 2025 annual report Mako Triathlon knee system sales products ...
+web search: 
+web search: CompaniesMarketCap Stryker market cap 2026 ...
+web search: 
+web search: open source surgical robot Raven II open source platform ...
+web search: 
+web search: Stryker PE ratio May 2026 SYK ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"stryker","name":"Stryker","ticker":"SYK","rankApprox":88,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top100"],"sectorId":"health-care","industryId":"pharma-medtech","companiesMarketCapUrl":"https://companiesmarketcap.com/stryker/marketcap/","description":"Stryker makes orthopedic implants, surgical equipment, neurotechnology products, and software-enabled surgical platforms for hospitals and clinicians.","overview":[{"title":"Business mix","paragraphs":["Stryker operates as a global medical technology company with two reporting segments: MedSurg and Neurotechnology, and Orthopaedics. Its product base spans surgical equipment, navigation, endoscopy, emergency care, neurovascular devices, spinal implants, trauma products, hip implants, knee implants, and robotic-arm assisted orthopedic surgery.","The company’s 2025 Form 10-K reported $25.116 billion of net sales, with growth supported by procedure demand, capital equipment, implants, and acquisitions. Mako SmartRobotics and Triathlon knees sit inside a broader hospital-facing commercial system that combines regulated hardware, clinical training, surgeon relationships, service, and implant pull-through."]},{"title":"Registry relevance","paragraphs":["Stryker is a useful Free The World case because the products are physical, highly regulated, and clinically embedded rather than simple software monopolies. That makes near-term displacement difficult, but it also clarifies where open biomedical models, distributed fabrication, transparent robotics platforms, and cooperative clinical purchasing could exert pressure over time."]}],"moatNarrative":["Stryker’s moat is strong because medical devices compound regulatory clearances, hospital procurement relationships, surgeon training, clinical evidence, field service, proprietary instrument sets, and implant ecosystem lock-in. Mako adds a capital-equipment layer that can reinforce Triathlon and other implant franchises by tying preoperative planning, haptic execution, training, and procedural workflows to Stryker’s system.","The moat is not absolute. Hospitals are cost-sensitive, governments scrutinize medical spending, and orthopedic robotics is an active competitive field. However, switching from an installed robotic platform or validated implant system is slow because replacement requires clinical confidence, workflow retraining, service support, and regulatory evidence rather than only lower component cost."],"decentralizationNarrative":["Stryker’s core products are only moderately decentralizable in the near term. Joint implants and surgical robots must meet demanding safety, sterility, reliability, traceability, cybersecurity, and regulatory requirements, so an open file or low-cost local workshop is not enough to replace a commercial system used in surgery.","The credible decentralization path is indirect: open biomechanical datasets, open surgical robotics research platforms, shared validation protocols, modular training tools, distributed production of non-implant instruments and anatomical models, and cooperative purchasing networks can reduce information asymmetry and some cost pressure. Actual implant manufacturing remains the hardest layer because quality systems and liability remain centralized constraints."],"sourceIds":["stryker-2025-10k","stryker-mako-page","stryker-triathlon-page","stockanalysis-syk-2026-05-22","macrotrends-syk-marketcap-2026"],"technologyWaveIds":["additive-manufacturing","microfactories"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; refreshed on 2026-05-26 with 2025 Form 10-K, current market data, and product-source checks.","inputMetrics":{"moat":{"value":88,"rationale":"High score reflects regulated medical-device approvals, surgeon training, hospital procurement cycles, service networks, proprietary robotic workflows, and implant ecosystem lock-in around products such as Mako and Triathlon.","sourceIds":["stryker-2025-10k","stryker-mako-page","stryker-triathlon-page"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizability":{"value":31,"rationale":"Open models and research robotics can pressure parts of the workflow, but clinically implanted devices and surgical robots require regulatory clearance, quality systems, sterility, traceability, and liability support that remain difficult to decentralize.","sourceIds":["stryker-2025-10k","openknee-paper","raven-ii-ros"],"confidence":"high","lastReviewedOn":"2026-05-26"},"profitability":{"value":75,"rationale":"Stryker reported large positive earnings on $25.116 billion of 2025 net sales, indicating a profitable scaled medtech franchise despite ongoing R&D, selling, regulatory, and acquisition costs.","sourceIds":["stryker-2025-10k"],"confidence":"high","lastReviewedOn":"2026-05-26"},"peRatio":{"value":36.63,"rationale":"StockAnalysis reported a trailing P/E ratio of 36.63 for SYK at the May 22, 2026 close.","sourceIds":["stockanalysis-syk-2026-05-22"],"confidence":"high","lastReviewedOn":"2026-05-26"},"marketCap":{"value":121330000000,"rationale":"StockAnalysis reported a $121.33 billion market capitalization for Stryker at the May 22, 2026 close; market-cap services varied around this range in May 2026, so this uses the most specific recent point source.","sourceIds":["stockanalysis-syk-2026-05-22","macrotrends-syk-marketcap-2026"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},"products":[{"slug":"mako-smartrobotics","name":"Mako SmartRobotics","category":"Robotic-arm assisted orthopedic surgery platform","homepageUrl":"https://www.stryker.com/us/en/joint-replacement/systems/mako-robotic-arm-assisted-surgery.html","summary":"Mako is Stryker’s robotic-arm assisted surgical platform for orthopedic procedures, including knee, hip, and spine applications with planning, guidance, haptic boundaries, and integration with Stryker implant systems.","whyItMatters":"Mako can reinforce Stryker’s orthopedic franchise by embedding implants, planning software, cameras, robotic hardware, surgeon training, service contracts, and hospital workflows into a single operating-room platform.","replacementSketch":["A credible open replacement would not begin as a fully cleared commercial surgical robot. It would start as an open research and simulation stack for planning, navigation, instrument tracking, and procedure rehearsal, then move into validated modules that hospitals can inspect, test, and procure without single-vendor lock-in.","The practical pressure point is transparency and modularity: open robotics research, interoperable imaging and navigation interfaces, independently validated safety cases, and cooperative hospital purchasing could weaken proprietary platform lock-in even if final clinical deployment remains tightly regulated."],"sourceIds":["stryker-mako-page","stryker-2025-10k"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"raven-ii-open-surgical-robotics","name":"Raven II open surgical robotics platform","kind":"open-source","homepageUrl":"https://www.ros.org/news/2012/01/raven-ii-open-source-surgical-robots.html","summary":"Raven II is an open surgical robotics research platform built around ROS-era open robotics tooling and shared academic development rather than a closed commercial surgical robot stack.","metrics":{"openness":{"value":78,"rationale":"Raven II was explicitly designed as an open platform for surgical robotics research and used open robotics software foundations, although it is not a ready commercial replacement for Mako.","sourceIds":["raven-ii-ros","raven-open-platform-paper"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":57,"rationale":"It decentralizes research and prototyping across labs but does not by itself decentralize regulated hospital deployment, service, or liability.","sourceIds":["raven-ii-ros","raven-open-platform-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"readiness":{"value":24,"rationale":"The platform is valuable for research and shared development, but it is not a clinically cleared drop-in replacement for orthopedic robotic-arm assisted surgery.","sourceIds":["raven-ii-ros","raven-open-platform-paper"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":51,"rationale":"Open research tooling can reduce duplication and lower experimentation costs, but surgical-grade hardware, validation, sterilization, and regulatory work remain expensive.","sourceIds":["raven-ii-ros","raven-open-platform-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"sourceIds":["raven-ii-ros","raven-open-platform-paper"]}],"disruptionConcepts":[{"slug":"open-orthopedic-robotics-validation-network","name":"Open orthopedic robotics validation network","summary":"Hospitals, universities, and independent labs could coordinate around open surgical robotics benchmarks, shared procedure datasets, simulator environments, and auditable safety cases so robotic planning and guidance modules are validated outside a single vendor’s closed evidence loop.","angleIds":["decentralized-coordination","open-hardware","cooperative-production"],"thesis":"The concept changes market structure by shifting part of surgical robotics trust from proprietary vendor claims toward shared, inspectable validation infrastructure that hospitals and researchers can use to compare modules, negotiate procurement, and accelerate alternatives.","bitcoinOrDecentralizationRole":"Decentralization matters through multi-institution validation and shared governance, not through Bitcoin. The key role is reducing single-vendor control over evidence, benchmarks, and interoperability claims.","coordinationMechanism":"Hospitals, academic labs, surgeons, and device engineers publish benchmark tasks, anonymized planning datasets, simulation results, and test protocols through a governed consortium; vendors or open teams can submit modules for reproducible evaluation.","verificationOrTrustModel":"Cheating is constrained by reproducible test harnesses, signed dataset versions, independent lab replication, audit logs for submitted results, and conflict-of-interest disclosure. The main weakness is that benchmark success still does not equal regulatory clearance or real-world clinical performance.","failureModes":["Regulators and hospitals may not accept consortium benchmarks as sufficient evidence for procurement or clinical use.","Large vendors could participate selectively while keeping the most important interfaces and data closed.","Patient privacy and liability constraints could limit the quality of shared surgical datasets."],"adoptionPath":["Start with non-clinical simulation benchmarks for orthopedic planning, tracking, and haptic-boundary accuracy using open research robots and public biomechanics models.","Add hospital-led procurement language that rewards interoperable data export, independent validation, and service portability.","Use validated open modules first in training, rehearsal, and preoperative planning before any clinical robotic control pathway."],"confidence":"medium","problemSourceIds":["stryker-mako-page","stryker-2025-10k"],"enablerSourceIds":["raven-ii-ros","raven-open-platform-paper","openknee-paper"],"metrics":{"decentralizationFit":{"value":69,"rationale":"The concept decentralizes validation, benchmarking, and procurement knowledge, though final surgical deployment remains institutionally controlled.","sourceIds":["raven-ii-ros","openknee-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":61,"rationale":"Academic surgical robotics and open biomechanics communities already show shared-platform behavior, but sustaining hospital-grade governance is harder.","sourceIds":["raven-ii-ros","raven-open-platform-paper","openknee-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":48,"rationale":"Simulation and benchmarking are feasible now; regulated clinical integration would require much longer safety, cybersecurity, and quality-system work.","sourceIds":["raven-open-platform-paper","stryker-2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":42,"rationale":"The concept pressures evidence and interoperability moats more than installed robot hardware, so its near-term commercial pressure is moderate.","sourceIds":["stryker-mako-page","raven-ii-ros"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},{"slug":"cooperative-robotic-surgery-service-layer","name":"Cooperative robotic surgery service layer","summary":"A hospital cooperative could jointly own service playbooks, technician training, spare-part qualification, uptime reporting, and procurement templates for robotic surgery platforms, weakening vendor lock-in around maintenance and lifecycle economics even when the clinical robot remains proprietary.","angleIds":["cooperative-production","decentralized-coordination","recycling-and-reuse"],"thesis":"The concept moves bargaining power from individual hospitals buying closed capital equipment toward a pooled operating layer that standardizes service expectations, repair evidence, and lifecycle-cost transparency across institutions.","bitcoinOrDecentralizationRole":"The decentralized component is cooperative governance among hospitals and service operators. Bitcoin or Lightning is not central because the bottleneck is regulated service accountability rather than payment settlement.","coordinationMechanism":"Hospitals pool anonymized uptime, maintenance, training, and cost data; qualified service providers and biomedical engineering teams share reusable procedures and parts-qualification evidence under a cooperative governance model.","verificationOrTrustModel":"False reporting is limited by cross-hospital audit trails, work-order evidence, technician credentialing, serial-number traceability, and random third-party audits. Collusion risk remains if vendors or service providers dominate the cooperative’s governance.","failureModes":["Right-to-repair and warranty restrictions may prevent meaningful independent service on surgical robots.","Hospitals may hesitate to share operational data connected to adverse events or downtime.","A cooperative service layer cannot replace proprietary software updates or regulatory responsibilities controlled by the device maker."],"adoptionPath":["Begin with non-sensitive lifecycle cost benchmarking and procurement templates for robotic surgery capital equipment.","Add shared technician training for non-invasive maintenance and uptime reporting that does not modify cleared clinical functions.","Use the cooperative data to negotiate more open service terms, data export, and spare-part access in future purchasing cycles."],"confidence":"speculative","problemSourceIds":["stryker-mako-page","stryker-2025-10k"],"enablerSourceIds":["nih-3d-about","raven-ii-ros"],"metrics":{"decentralizationFit":{"value":58,"rationale":"The approach decentralizes service knowledge and purchasing power but remains bounded by proprietary devices and medical-device regulation.","sourceIds":["stryker-2025-10k","raven-ii-ros"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":55,"rationale":"Hospitals already coordinate through purchasing groups and clinical networks, but sharing detailed service and uptime evidence for surgical robots would require trust and governance.","sourceIds":["stryker-2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":39,"rationale":"Data pooling and procurement templates are feasible; independent repair or parts qualification for surgical robotics faces legal, technical, and regulatory barriers.","sourceIds":["stryker-mako-page","stryker-2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":36,"rationale":"This would pressure service economics and contract terms more than the clinical robot’s core proprietary control stack.","sourceIds":["stryker-mako-page"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}}]},{"slug":"triathlon-knee-system","name":"Triathlon Total Knee System","category":"Orthopedic knee implant system","homepageUrl":"https://www.stryker.com/ae/en/joint-replacement/products/triathlon-total-knee-system/index-eu.html","summary":"Triathlon is Stryker’s total knee replacement system, designed as a primary knee implant platform and used in manual and robotic-assisted orthopedic procedures.","whyItMatters":"Knee implants are high-stakes regulated products where surgeon familiarity, instrumentation, clinical data, hospital purchasing, and compatibility with robotic workflows can reinforce long product lifecycles and vendor preference.","replacementSketch":["A realistic open replacement is unlikely to be a home-fabricated implant. The nearer path is open preoperative modeling, shared implant-performance datasets, transparent registry analysis, and distributed production of anatomical models or non-implant instruments that lower planning and training costs.","Over time, open biomechanics models and additive manufacturing may support more modular and locally tailored implant design, but clinical-grade manufacturing, sterilization, post-market surveillance, and liability still need formal regulated infrastructure."],"sourceIds":["stryker-triathlon-page","stryker-2025-10k"],"technologyWaveIds":["additive-manufacturing","microfactories"],"alternatives":[{"slug":"openknee","name":"Open Knee(s)","kind":"open-source","homepageUrl":"https://simtk.org/projects/openknee","summary":"Open Knee(s) is a free and open-source library of specimen-specific knee models and related digital assets for finite element analysis of the knee joint.","metrics":{"openness":{"value":85,"rationale":"The project and related paper describe a free and open-source library of knee models and digital assets built with open tools.","sourceIds":["openknee-paper"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":63,"rationale":"Open knee models decentralize research, simulation, and design evaluation, though they do not replace regulated implant manufacturing or clinical distribution.","sourceIds":["openknee-paper"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":34,"rationale":"Open Knee(s) is useful for research and modeling rather than as a clinically approved total knee implant system.","sourceIds":["openknee-paper"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":57,"rationale":"Open models can reduce duplicated research and precompetitive design costs, but implant-grade materials, manufacturing validation, and clinical evidence remain expensive.","sourceIds":["openknee-paper","stryker-triathlon-page"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"sourceIds":["openknee-paper"]},{"slug":"nih-3d-biomedical-models","name":"NIH 3D biomedical model repository","kind":"open-source","homepageUrl":"https://3d.nih.gov/about","summary":"NIH 3D is a free public platform for discovering, sharing, and downloading biomedical 3D print and visualization files, including anatomical, prosthetic, medical-device, and research models.","metrics":{"openness":{"value":80,"rationale":"NIH 3D is a free public repository built to share biomedical 3D models and visualization resources.","sourceIds":["nih-3d-about"],"confidence":"high","lastReviewedOn":"2026-05-26"},"decentralizationFit":{"value":59,"rationale":"It supports distributed access to biomedical models and educational fabrication, but it is not a regulated implant manufacturing network.","sourceIds":["nih-3d-about","nih-3d-enable"],"confidence":"high","lastReviewedOn":"2026-05-26"},"readiness":{"value":46,"rationale":"The repository is ready for education, research, visualization, and selected assistive-device workflows, but not for direct replacement of total knee implants.","sourceIds":["nih-3d-about","nih-3d-enable"],"confidence":"high","lastReviewedOn":"2026-05-26"},"costLeverage":{"value":62,"rationale":"Shared printable models can reduce training, visualization, and prototyping costs, especially for anatomical models and assistive devices.","sourceIds":["nih-3d-about","nih-3d-enable"],"confidence":"medium","lastReviewedOn":"2026-05-26"}},"sourceIds":["nih-3d-about","nih-3d-enable"]}],"disruptionConcepts":[{"slug":"open-knee-implant-evidence-commons","name":"Open knee implant evidence commons","summary":"A public-interest evidence commons could combine open knee biomechanics models, registry-style outcome data, simulator pipelines, and transparent implant-design benchmarks to make knee replacement performance easier to compare across vendors and designs.","angleIds":["decentralized-coordination","open-hardware","3d-printing"],"thesis":"The concept changes market structure by making the evaluation layer more open. If surgeons, hospitals, payers, and researchers can inspect design assumptions and outcome evidence independently, proprietary implant branding has less room to substitute for measurable performance.","bitcoinOrDecentralizationRole":"Decentralization is the core mechanism: many institutions contribute models, outcome data, and benchmark results under shared governance. Bitcoin is not central because the trust problem is clinical evidence quality rather than payment rails.","coordinationMechanism":"Academic labs, hospitals, registries, and patient-safety groups coordinate around shared data schemas, de-identified outcomes, open finite-element models, and reproducible analysis pipelines.","verificationOrTrustModel":"Data integrity is constrained through de-identification protocols, registry audits, reproducible code, versioned model files, independent replication, and disclosure of funding or device-company conflicts. The biggest weakness is incomplete or biased clinical data submission.","failureModes":["Outcome data may be fragmented, non-standardized, or restricted by privacy and contractual limits.","Simulation benchmarks may overfit measurable mechanics while missing surgeon technique, patient selection, or long-term biological response.","Incumbents may use proprietary registry data and marketing evidence to remain more persuasive than open benchmarks."],"adoptionPath":["Expand open knee model libraries and publish reproducible benchmark tasks for implant alignment, wear assumptions, and patient-specific geometry.","Link open modeling outputs to de-identified registry and post-market surveillance datasets where lawful and clinically appropriate.","Use evidence-commons participation as a procurement and reimbursement signal before attempting any open implant design pathway."],"confidence":"medium","problemSourceIds":["stryker-triathlon-page","stryker-2025-10k"],"enablerSourceIds":["openknee-paper","nih-3d-about"],"metrics":{"decentralizationFit":{"value":72,"rationale":"The concept decentralizes evidence generation and model inspection across institutions, even though manufacturing remains regulated.","sourceIds":["openknee-paper","nih-3d-about"],"confidence":"high","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":60,"rationale":"Open biomedical model repositories and open knee modeling show credible primitives, but clinical registry coordination is institutionally difficult.","sourceIds":["openknee-paper","nih-3d-about"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":52,"rationale":"The modeling layer is feasible now; linking it to high-quality longitudinal clinical outcomes and procurement decisions is slower and governance-heavy.","sourceIds":["openknee-paper","stryker-2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":45,"rationale":"Transparent evidence could pressure implant selection and pricing, but it would not immediately replace Stryker’s cleared products, sales force, or instrumentation ecosystem.","sourceIds":["stryker-triathlon-page","openknee-paper"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}},{"slug":"distributed-surgical-planning-and-training-fabrication","name":"Distributed surgical planning and training fabrication","summary":"Local hospital labs, universities, and certified service bureaus could use open biomedical model repositories and additive manufacturing to produce patient-specific anatomical models, rehearsal jigs, and training tools around knee replacement workflows, reducing dependence on vendor-controlled education and planning collateral.","angleIds":["decentralized-manufacturing","3d-printing","home-microfactory","open-hardware"],"thesis":"The concept shifts some value from proprietary implant-adjacent services toward local fabrication and open training infrastructure, making hospitals less dependent on device vendors for every model, demo, and rehearsal workflow.","bitcoinOrDecentralizationRole":"The decentralization role is distributed manufacturing and open hardware documentation. Bitcoin or Lightning is not necessary because the scarce resource is validated fabrication quality, not settlement.","coordinationMechanism":"Hospitals, educators, biomedical engineers, and certified print shops share validated model files, material specifications, quality checks, and training curricula through open repositories and local production networks.","verificationOrTrustModel":"Trust depends on file provenance, version control, printer calibration records, material traceability, dimensional inspection, and clear labeling that printed aids are for training or planning unless separately cleared for clinical use.","failureModes":["Printed tools could be misused clinically without appropriate clearance or quality controls.","Hospitals may lack staff, quality systems, or budgets to run reliable local fabrication programs.","Vendor-provided training bundles may remain more convenient than maintaining open local workflows."],"adoptionPath":["Use NIH 3D-style repositories for education and anatomy visualization in non-clinical settings.","Build hospital maker-lab protocols for anatomical models and surgical rehearsal aids with explicit use limitations.","Expand toward certified local service bureaus for non-implant instruments or planning aids only where regulatory classification and quality systems support it."],"confidence":"medium","problemSourceIds":["stryker-triathlon-page","stryker-2025-10k"],"enablerSourceIds":["nih-3d-about","nih-3d-enable","openknee-paper"],"metrics":{"decentralizationFit":{"value":68,"rationale":"Distributed model fabrication and open training assets fit decentralized manufacturing well, while implanted devices remain centralized.","sourceIds":["nih-3d-about","nih-3d-enable"],"confidence":"high","lastReviewedOn":"2026-05-26"},"coordinationCredibility":{"value":58,"rationale":"Open biomedical repositories and maker communities already coordinate around shared files, but hospital-grade validation adds process overhead.","sourceIds":["nih-3d-about","nih-3d-enable"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"implementationFeasibility":{"value":56,"rationale":"Training models and visualization aids are feasible with current 3D printing; clinical-use instruments require more regulatory and quality work.","sourceIds":["nih-3d-about","nih-3d-enable"],"confidence":"medium","lastReviewedOn":"2026-05-26"},"incumbentPressure":{"value":37,"rationale":"This pressures educational and planning support rather than the implant itself, so it is a partial cost and workflow challenge rather than a direct replacement.","sourceIds":["stryker-triathlon-page","nih-3d-about"],"confidence":"medium","lastReviewedOn":"2026-05-26"}}}]}]},"sources":[{"id":"stryker-2025-10k","title":"Stryker Corporation 2025 Form 10-K","url":"https://www.sec.gov/Archives/edgar/data/310764/000031076426000010/syk-20251231.htm","kind":"regulatory-filing","publisher":"U.S. Securities and Exchange Commission","note":"Primary filing for Stryker’s 2025 business description, segments, net sales, profitability, and risk context.","accessedOn":"2026-05-26"},{"id":"stryker-mako-page","title":"Mako SmartRobotics Overview","url":"https://www.stryker.com/us/en/joint-replacement/systems/mako-robotic-arm-assisted-surgery.html","kind":"product-page","publisher":"Stryker","note":"Official product page describing Mako applications, Mako 4, robotic-arm assisted surgery features, global procedure scale, patents, and integration with Stryker guidance systems.","accessedOn":"2026-05-26"},{"id":"stryker-triathlon-page","title":"Triathlon Total Knee System","url":"https://www.stryker.com/ae/en/joint-replacement/products/triathlon-total-knee-system/index-eu.html","kind":"product-page","publisher":"Stryker","note":"Official product page for the Triathlon total knee replacement system and its design positioning.","accessedOn":"2026-05-26"},{"id":"stockanalysis-syk-2026-05-22","title":"Stryker Corporation (SYK) Stock Price, Statistics, and Valuation","url":"https://stockanalysis.com/stocks/syk/","kind":"market-data","publisher":"StockAnalysis","note":"Recent market data source for May 22, 2026 market capitalization, trailing P/E ratio, revenue, net income, and share count.","accessedOn":"2026-05-26"},{"id":"macrotrends-syk-marketcap-2026","title":"Stryker Market Cap 2012-2026","url":"https://www.macrotrends.net/stocks/charts/SYK/stryker/market-cap","kind":"market-data","publisher":"MacroTrends","note":"Cross-check source for May 2026 Stryker market capitalization range and industry summary.","accessedOn":"2026-05-26"},{"id":"raven-ii-ros","title":"Raven II open-source surgical robots","url":"https://www.ros.org/news/2012/01/raven-ii-open-source-surgical-robots.html","kind":"technical-docs","publisher":"ROS.org","note":"Evidence for an open surgical robotics research platform using shared robotics tooling and multi-lab collaboration.","accessedOn":"2026-05-26"},{"id":"raven-open-platform-paper","title":"Raven: Open Surgical Robotic Platforms","url":"https://arxiv.org/abs/1906.11747","kind":"analysis","publisher":"arXiv","note":"Technical paper describing Raven surgical robots as open research platforms serving the surgical robotics community.","accessedOn":"2026-05-26"},{"id":"openknee-paper","title":"Open Knee(s): A Free and Open Source Library of Specimen-Specific Models and Related Digital Assets for Finite Element Analysis of the Knee Joint","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC9832097/","kind":"analysis","publisher":"PMC","note":"Peer-reviewed open-access source for open knee biomechanics models and digital assets relevant to implant-design transparency and simulation.","accessedOn":"2026-05-26"},{"id":"nih-3d-about","title":"NIH 3D About","url":"https://3d.nih.gov/about","kind":"technical-docs","publisher":"National Institutes of Health","note":"Official source describing NIH 3D as a free platform for biomedical 3D print and visualization files, tutorials, and model sharing.","accessedOn":"2026-05-26"},{"id":"nih-3d-enable","title":"NIH 3D e-NABLE Collection","url":"https://3d.nih.gov/collections/prosthetics?tab=search","kind":"technical-docs","publisher":"National Institutes of Health","note":"Source showing open-source prosthetic and assistive-device model sharing through a biomedical repository and maker community.","accessedOn":"2026-05-26"}],"summaryMarkdown":"Prepared a new Stryker registry bundle with two product entries: Mako SmartRobotics and Triathlon Total Knee System. The refresh emphasizes Stryker’s strong regulated medtech moat, low-to-moderate decentralizability, current May 2026 market data, and credible open research or distributed-manufacturing pressure points rather than pretending open projects are direct clinical replacements."}
+tokens used
+37,497

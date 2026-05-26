@@ -1,0 +1,2072 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63dc-9c8b-7770-9aa2-f0454d1acdd6
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: deere-company
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "deere-company",
+  "name": "Deere & Company",
+  "ticker": "DE",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "industrials",
+  "industryId": "construction-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/deere-company/marketcap/",
+  "description": "Deere & Company makes agricultural, construction, forestry, and turf equipment.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "John Deere tractors",
+    "John Deere Operations Center"
+  ],
+  "seedSourceUrls": [
+    "https://investor.deere.com/",
+    "https://companiesmarketcap.com/deere-company/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:37:45.204333Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.204348Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.205274Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.205282Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.206277Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.206282Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.207108Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.207113Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.208043Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.208048Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:45.209614Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:45.209618Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.215730Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.215745Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.216494Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.216504Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.217298Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.217305Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.217955Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.217960Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.218633Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.218637Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:46.219976Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:46.219983Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll use the company manifest queue workflow for the registry shape, then verify Deere’s current public sources and produce only the requested JSON in the final response.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+
+exec
+/bin/zsh -lc 'rg --files content src tests | head -200' in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+src/routes/mirrors.tsx
+src/routes/about.tsx
+tests/e2e/insights.e2e.ts
+tests/e2e/hydration.e2e.ts
+tests/e2e/support.ts
+tests/e2e/insights-mobile.e2e.ts
+tests/e2e/registry-mobile.e2e.ts
+tests/e2e/smoke.e2e.ts
+tests/e2e/registry.e2e.ts
+tests/e2e/registry-ipo.e2e.ts
+tests/e2e/company-pages.e2e.ts
+src/routes/companies/[companySlug]/products/[productSlug].tsx
+src/routes/companies/[companySlug]/products/index.tsx
+src/routes/companies/[companySlug]/index.tsx
+src/routes/companies/index.tsx
+src/routes/methodology.tsx
+src/routes/404.tsx
+content/companies/meta-platforms/bundle.json
+tests/unit/scripts/deploy-log.test.ts
+tests/unit/scripts/aws-deploy.test.ts
+tests/unit/scripts/archive-pages-artifact.test.ts
+tests/unit/scripts/market-cap-snapshots.test.ts
+tests/unit/scripts/deploy-config.test.ts
+tests/unit/scripts/build-metadata.test.ts
+tests/unit/scripts/github-pages.test.ts
+tests/unit/scripts/deploy-artifact.test.ts
+tests/unit/scripts/deploy-setup.test.ts
+src/routes/insights/disruption-concepts.tsx
+src/routes/insights/alternative-pressure.tsx
+src/routes/insights/post-bubble.tsx
+src/routes/insights/capital-at-risk.tsx
+src/routes/insights/index.tsx
+src/routes/insights/market-cap-disruption.tsx
+src/routes/index.tsx
+src/global.d.ts
+content/companies/ge-aerospace/bundle.json
+tests/unit/content/company-pipeline.test.ts
+tests/unit/content/ralph.test.ts
+tests/unit/content/ralph-loop.test.ts
+tests/unit/content/sync-all.test.ts
+tests/unit/content/company-intake.test.ts
+tests/unit/content/company-prompts.test.ts
+tests/unit/content/company-intake-funnel.test.ts
+tests/unit/content/compiler.test.ts
+tests/unit/content/fixtures.ts
+src/lib/domain/metrics.ts
+src/lib/domain/formatters.ts
+src/lib/domain/company-metrics.test.ts
+src/lib/domain/ipo.test.ts
+src/lib/domain/company-metrics.ts
+src/lib/domain/scoring.ts
+src/lib/domain/selectors.ts
+src/lib/domain/types.ts
+src/lib/domain/insights.test.ts
+src/lib/domain/formatters.test.ts
+src/lib/domain/market-cap-snapshots.ts
+src/lib/domain/ipo.ts
+src/lib/domain/insights.ts
+src/lib/domain/table-state.ts
+src/lib/domain/content-types.ts
+src/lib/content-graph.ts
+content/companies/kla/bundle.json
+src/lib/config.ts
+src/lib/theme.ts
+content/companies/arista-networks/bundle.json
+src/lib/generated/market-cap-snapshots.ts
+src/lib/generated/content-graph.ts
+src/lib/content/products.ts
+src/lib/content/technology-waves.ts
+src/lib/content/sources.ts
+src/lib/content/site.ts
+src/lib/content/newsletter.ts
+src/lib/content/companies.ts
+src/lib/content/sectors.ts
+src/lib/utils.ts
+src/lib/site-routes.ts
+src/lib/market-cap-snapshots.ts
+src/lib/deployment-config.ts
+content/companies/exxon-mobil/bundle.json
+src/shims/source-map-js.ts
+src/entry-server.tsx
+content/companies/cisco-systems/bundle.json
+content/companies/corning/bundle.json
+content/companies/goldman-sachs/bundle.json
+content/companies/thermo-fisher-scientific/bundle.json
+src/components/homepage-infographics/registry.ts
+src/components/homepage-infographics/disruption-concepts-preview.tsx
+src/components/homepage-infographics/types.ts
+src/components/homepage-infographics/alternative-pressure-preview.tsx
+src/components/homepage-infographics/rotation.test.ts
+src/components/homepage-infographics/post-bubble-preview.tsx
+src/components/homepage-infographics/market-cap-disruption-preview.tsx
+src/components/homepage-infographics/rotation.ts
+src/components/homepage-infographics/rotating-homepage-infographic.tsx
+src/components/homepage-infographics/capital-at-risk-preview.tsx
+content/companies/amgen/bundle.json
+src/components/company-table.tsx
+src/components/source-list.tsx
+src/components/seo.tsx
+src/components/newsletter-signup.tsx
+src/components/site-shell.tsx
+src/components/repository-link.tsx
+src/components/company-table-toolbar.tsx
+src/components/product-implementation-dialog.tsx
+content/companies/unitedhealth-group/bundle.json
+content/companies/oracle/bundle.json
+src/components/ui/select.tsx
+src/components/ui/collapsible.tsx
+src/components/ui/checkbox.tsx
+src/components/ui/button.tsx
+src/components/ui/separator.tsx
+src/components/ui/table.tsx
+src/components/ui/badge.tsx
+src/components/ui/dialog.tsx
+src/components/ui/label.tsx
+src/components/ui/text-field.tsx
+src/components/ui/card.tsx
+content/companies/abbott-laboratories/bundle.json
+content/companies/coca-cola/bundle.json
+src/components/insights/alternative-pressure-mobile-cards.tsx
+src/components/insights/pressure-heatmap.tsx
+src/components/insights/bar-comparison-chart.tsx
+src/components/insights/quadrant-chart.tsx
+src/components/insights/post-bubble-mobile-list.tsx
+src/components/insights/insight-kpi-strip.tsx
+src/components/insights/dumbbell-chart.tsx
+src/components/insights/capital-at-risk-mobile-list.tsx
+src/components/insights/chart-legend.tsx
+content/companies/att/bundle.json
+content/companies/microsoft/bundle.json
+src/components/company-panels/source-summary-card.tsx
+src/components/company-panels/disruption-concepts-panel.tsx
+src/components/company-panels/alternative-table.tsx
+src/components/company-panels/index.ts
+src/components/company-panels/technology-wave-panel.tsx
+src/components/company-panels/metadata-panel.tsx
+src/components/company-panels/metrics-panel.tsx
+src/components/company-panels/products-panel.tsx
+src/components/company-panels/product-overview-panel.tsx
+content/companies/boeing/bundle.json
+src/entry-client.tsx
+src/app.tsx
+src/app.css
+content/companies/bank-of-america/bundle.json
+src/components/blocks/filter-panel.tsx
+src/components/blocks/metadata-grid.tsx
+src/components/blocks/action-row.tsx
+src/components/blocks/empty-state.tsx
+src/components/blocks/metric-card.tsx
+src/components/blocks/source-card.tsx
+src/components/blocks/content-card.tsx
+src/components/blocks/page-header.tsx
+content/companies/morgan-stanley/bundle.json
+content/companies/pepsico/bundle.json
+content/companies/citigroup/bundle.json
+content/companies/advanced-micro-devices/bundle.json
+content/companies/qualcomm/bundle.json
+content/companies/t-mobile-us/bundle.json
+content/companies/intuitive-surgical/bundle.json
+content/companies/verizon-communications/bundle.json
+content/companies/seagate-technology/bundle.json
+content/companies/western-digital/bundle.json
+content/companies/rtx/bundle.json
+content/companies/applied-materials/bundle.json
+content/companies/nvidia/bundle.json
+content/companies/costco/bundle.json
+content/companies/philip-morris-international/bundle.json
+content/companies/abbvie/bundle.json
+content/companies/micron-technology/bundle.json
+content/companies/tesla/bundle.json
+content/companies/berkshire-hathaway/bundle.json
+content/companies/amphenol/bundle.json
+content/companies/palantir-technologies/bundle.json
+content/companies/analog-devices/bundle.json
+content/companies/blackrock/bundle.json
+content/companies/lam-research/bundle.json
+content/companies/linde/bundle.json
+content/companies/eli-lilly/bundle.json
+content/companies/american-express/bundle.json
+content/companies/ge-vernova/bundle.json
+content/companies/alphabet/bundle.json
+content/companies/gilead-sciences/bundle.json
+content/companies/nextera-energy/bundle.json
+content/companies/union-pacific/bundle.json
+content/companies/palo-alto-networks/bundle.json
+content/companies/tjx-companies/bundle.json
+content/companies/jpmorgan-chase/bundle.json
+content/companies/netflix/bundle.json
+content/companies/texas-instruments/bundle.json
+content/companies/caterpillar/bundle.json
+content/companies/dropbox/bundle.json
+content/companies/broadcom/bundle.json
+content/companies/visa/bundle.json
+content/companies/amazon/bundle.json
+content/taxonomy/concept-angles.json
+content/taxonomy/industries.json
+content/taxonomy/sectors.json
+content/taxonomy/indices.json
+content/taxonomy/regions.json
+content/taxonomy/technology-waves.json
+
+2026-05-26T10:37:50.374912Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:50.374928Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:50.375272Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:50.375276Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:50.375603Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:50.375605Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:50.375950Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:50.375956Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:50.376277Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:50.376280Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:37:50.376965Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:37:50.376968Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Deere 2025 annual report net sales net income operations center precision agriculture source ...
+web search: 
+web search: Open Source Ecology tractor LifeTrac open source farm equipment ...
+web search: 
+web search: Deere 2025 10-K annual report SEC net sales net income fiscal 2025 ...
+web search: 
+web search: https://companiesmarketcap.com/deere-company/marketcap/
+web search: 
+web search: https://companiesmarketcap.com/deere-company/marketcap/
+web search: 
+web search: John Deere tractors official agriculture page product ...
+codex
+I’ve confirmed the schema style and am using current primary sources where possible: Deere’s 2025 10-K/earnings pages, Deere product/data pages, CompaniesMarketCap, and project sources for open agriculture alternatives.
+exec
+/bin/zsh -lc "sed -n '1,140p' content/companies/ge-aerospace/bundle.json" in /Users/peterryszkiewicz/Repos/free-the-world
+exec
+/bin/zsh -lc "sed -n '1,180p' content/companies/caterpillar/bundle.json" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "ge-aerospace",
+    "name": "GE Aerospace",
+    "ticker": "GE",
+    "rankApprox": 30,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top35"
+    ],
+    "sectorId": "industrials",
+    "industryId": "aerospace-defense",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/general-electric/marketcap/",
+    "description": "A U.S. aerospace manufacturer focused on commercial and defense aircraft engines, propulsion systems, and high-value aftermarket services.",
+    "overview": [
+      {
+        "title": "Commercial And Defense Propulsion",
+        "paragraphs": [
+          "GE Aerospace positions itself as a leading supplier of jet and turboprop engines plus related systems for commercial, military, business, and general aviation aircraft. Its commercial portfolio spans major narrowbody and widebody engine families, while its defense business covers fighter, rotorcraft, transport, and marine propulsion.",
+          "The company is not just selling original equipment. Its installed-base economics are central: management says it is building off an installed base of 80,000 engines and 2.3 billion commercial flight hours, while services, diagnostics, overhaul capacity, and durability upgrades deepen customer dependence over long lifecycles."
+        ]
+      },
+      {
+        "title": "Demand, Backlog, And Financial Profile",
+        "paragraphs": [
+          "GE Aerospace's 2025 annual report describes robust demand across both engines and services, with total orders up 32% year over year and backlog rising by nearly $20 billion to roughly $190 billion. The same report says operating profit rose 25% to $9.1 billion and free cash flow rose 24% to $7.7 billion.",
+          "Market data sources in March 2026 put GE Aerospace around a $306 billion market capitalization with a trailing P/E in the high-30s to roughly 40 range. That combination implies the market is paying for a durable aerospace franchise with strong service cash flows, but also expecting continued execution and long-cycle demand resilience."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "GE Aerospace's moat is rooted in certification-heavy propulsion platforms, long engine development cycles, and an enormous installed base that feeds decades of maintenance, repair, overhaul, diagnostics, and parts revenue. Once an engine family wins on an airframe, airlines and lessors inherit a deep dependency on OEM tooling, engineering data, approved repairs, and lifecycle upgrades.",
+      "That moat is reinforced by global service infrastructure, proprietary operational data from tens of thousands of engines, and the capital intensity of advanced propulsion R&D. Management's own commentary on multi-year investment payback, durable backlog, and supplier coordination shows a business that benefits from scale, qualification barriers, and customer reluctance to switch critical propulsion ecosystems."
+    ],
+    "decentralizationNarrative": [
+      "GE Aerospace's core businesses are difficult to decentralize because modern jet propulsion depends on tightly controlled certification, materials science, safety culture, and globally coordinated support networks. Aircraft engines are among the least forgiving product categories for casual substitution, so full stack disruption is structurally hard.",
+      "The weaker flank is around unbundling pieces of the service and manufacturing perimeter. Additive manufacturing, open telemetry tooling, shared diagnostics workflows, localized repair capacity, and more modular digital maintenance stacks could gradually erode some aftermarket lock-in even if they do not displace OEM-certified engine cores anytime soon."
+    ],
+    "sourceIds": [
+      "src-ge-home",
+      "src-ge-commercial",
+      "src-ge-annual-2025",
+      "src-ge-collab-insight",
+      "src-ge-colibrium",
+      "src-cmc-marketcap",
+      "src-macrotrends-pe"
+    ],
+    "technologyWaveIds": [
+      "additive-manufacturing",
+      "microfactories"
+    ],
+    "snapshotNote": "Snapshot prepared for a March 2026 publishable refresh using GE Aerospace investor materials, official product pages, and March 2026 market-data references.",
+    "inputMetrics": {
+      "moat": {
+        "value": 9,
+        "rationale": "Certification barriers, long engine program cycles, a stated installed base of 80,000 engines, and a large service footprint create unusually durable lock-in and recurring aftermarket leverage.",
+        "sourceIds": [
+          "src-ge-annual-2025",
+          "src-ge-commercial",
+          "src-ge-collab-insight"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "decentralizability": {
+        "value": 2,
+        "rationale": "Core aircraft propulsion remains hard to decentralize because of certification, safety, and materials constraints, though service analytics and some component manufacturing edges are more contestable.",
+        "sourceIds": [
+          "src-ge-annual-2025",
+          "src-ge-colibrium"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "profitability": {
+        "value": 8,
+        "rationale": "The 2025 annual report states operating profit increased 25% to $9.1 billion and free cash flow increased 24% to $7.7 billion, indicating a very strong earnings profile.",
+        "sourceIds": [
+          "src-ge-annual-2025"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "peRatio": {
+        "value": 38.75,
+        "rationale": "MacroTrends lists GE Aerospace's trailing P/E at 38.75 as of February 13, 2026, and CompaniesMarketCap shows March 2026 P/E-related market data in a similar elevated valuation range.",
+        "sourceIds": [
+          "src-macrotrends-pe"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "marketCap": {
+        "value": 306560000000,
+        "rationale": "CompaniesMarketCap lists GE Aerospace at about $306.56 billion market capitalization in March 2026.",
+        "sourceIds": [
+          "src-cmc-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-24"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "commercial-aircraft-engines",
+      "name": "Commercial Aircraft Engines",
+      "category": "aircraft propulsion",
+      "homepageUrl": "https://www.geaerospace.com/commercial/engines",
+      "summary": "GE Aerospace supplies major commercial jet engine families across narrowbody, widebody, and regional aircraft programs.",
+      "whyItMatters": "Winning engine positions on major airframes creates decades of OEM influence over maintenance, upgrades, parts qualification, and airline operating economics.",
+      "replacementSketch": [
+        "A realistic replacement path does not start with fully open jet engines appearing overnight. It starts by opening the surrounding manufacturing, repair, and validation stack so more certified operators can fabricate, inspect, refurbish, and qualify a larger share of components locally.",
+        "Over time, additive manufacturing, richer digital traceability, and localized repair networks could push more value out of the OEM-controlled perimeter even if complete propulsion-system substitution remains rare."
+      ],
+      "sourceIds": [
+        "src-ge-commercial",
+        "src-ge-annual-2025",
+        "src-ge-colibrium"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "microfactories"
+      ],
+      "alternatives": [],
+      "disruptionConcepts": [
+        {
+          "slug": "distributed-certified-component-fabrication",
+          "name": "Distributed Certified Component Fabrication",
+          "summary": "A credible wedge against the incumbent engine ecosystem is not open-source turbofans replacing GE overnight, but a distributed manufacturing network for non-core and eventually select higher-value certified components. GE's own annual report highlights supply constraints and long development paybacks, while its Colibrium Additive business shows additive manufacturing is already strategic inside the aerospace toolchain. That combination suggests the market could shift toward more localized, digitally controlled fabrication and repair for approved parts.",
+          "angleIds": [
+            "decentralized-manufacturing",
+            "3d-printing",
+            "open-hardware"
+          ],
+          "thesis": "If approved component production and repair become more distributed, part of the aftermarket value now captured through OEM-controlled scarcity and centralized supplier orchestration shifts toward a broader manufacturing network.",
+          "bitcoinOrDecentralizationRole": "The decentralization is mainly in manufacturing and qualification rather than payments. Open hardware design files, shared process specifications, and multi-party traceability matter more than forcing Bitcoin into the mechanism.",
+          "coordinationMechanism": "Certified repair stations, specialized machine shops, material suppliers, and airworthiness authorities coordinate through shared digital process packages, serialized part histories, and approved build parameters for bounded part classes.",
+
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "caterpillar",
+    "name": "Caterpillar",
+    "ticker": "CAT",
+    "rankApprox": 30,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top35"
+    ],
+    "sectorId": "industrials",
+    "industryId": "construction-machinery",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/caterpillar/marketcap/",
+    "description": "World's leading manufacturer of construction and mining equipment, diesel and natural gas engines, and industrial gas turbines, supported by Cat Financial's global equipment financing.",
+    "overview": [
+      {
+        "title": "Business Overview",
+        "paragraphs": [
+          "Founded in 1925 from the merger of Holt Manufacturing and C.L. Best Tractor Co., Caterpillar has spent a century building and supporting the machines that move earth, extract ore, and generate power in the most demanding environments on the planet. Headquartered in Irving, Texas, the company reported roughly $67 billion in revenue in 2023—a record—before settling back to approximately $64–65 billion in 2024 as construction end-markets cooled.",
+          "Three reportable segments divide the business: Construction Industries (wheel loaders, excavators, dozers, and compactors for building and infrastructure work), Resource Industries (ultra-class mining trucks, hydraulic shovels, and draglines for extractive industries), and Energy & Transportation (Cat and Perkins engines, Solar Turbines gas turbines, and generator sets for oil and gas, power generation, and rail customers). Financial Products—the Cat Financial captive lender—finances the equipment that the rest of the company builds."
+        ]
+      },
+      {
+        "title": "Products and Scale",
+        "paragraphs": [
+          "The Cat product range spans a breadth that is nearly impossible for a competitor to replicate: from one-ton mini excavators to the 400-ton-payload 797F mining truck, and from 6-kilowatt standby generators to 22-megawatt Solar Turbines gas turbines. The Perkins brand extends Cat's engine reach into agricultural and lighter industrial applications. This range allows Cat to supply an entire job site—earthmoving, compaction, material handling, and on-site power—from a single vendor, which is a meaningful procurement convenience for large capital project operators.",
+          "The aftermarket parts and service business is the crown jewel. Cat's global installed base generates a durable annuity of replacement parts, Cat Certified Rebuild services, and dealer labor revenue that is structurally higher-margin than new equipment sales. Cat has publicly targeted growing total services revenues to $28 billion by 2026, up from roughly $20 billion in 2019—a strategy that smooths the cyclical volatility inherent in capital equipment manufacturing."
+        ]
+      },
+      {
+        "title": "The Dealer Network as Competitive Moat",
+        "paragraphs": [
+          "Caterpillar sells through approximately 160 independent but Cat-exclusive dealers operating roughly 2,800 branches worldwide. Dealers provide local parts availability—often with a 24-hour delivery guarantee—as well as financing, rental fleets, and field service. Because dealers carry only Cat product lines, their commercial incentives are perfectly aligned with the manufacturer's, creating a distribution and service network that a new entrant would need decades to replicate.",
+          "The dealer relationship also generates proprietary customer data: utilization hours, service histories, financing behavior, and trade-in cycles flow back to Cat's systems, informing product development and digital platform ambitions. More machines in the field means more data, better diagnostics, stickier customer relationships, and stronger resistance to competitive displacement."
+        ]
+      },
+      {
+        "title": "Autonomy and the Mine of the Future",
+        "paragraphs": [
+          "Caterpillar has been deploying autonomous haulage systems in large open-pit mines since the early 2010s, accumulating a fleet that has surpassed one billion tonnes hauled without a human driver. Its MineStar Command platform dispatches, monitors, and controls fleets of 793 and 797 series trucks at iron ore, copper, and oil sands operations for customers including BHP, Rio Tinto, and Codelco. Autonomous trucks operate around the clock without fatigue, with tighter path adherence and reduced tire and brake wear.",
+          "Cat's accumulated operational dataset from millions of connected machine-hours is a proprietary training corpus for autonomous control systems and predictive maintenance models. The autonomy platform is expanding beyond mining into autonomous compaction and machine control on construction sites, extending the moat into Cat's largest segment."
+        ]
+      },
+      {
+        "title": "Financial Profile",
+        "paragraphs": [
+          "Caterpillar's 2023 adjusted operating profit margin reached approximately 22–23%, a record reflecting disciplined pricing power exercised through the post-pandemic equipment supercycle. The company generated over $7 billion in free cash flow that year, supporting buybacks and dividend increases uninterrupted for more than 30 consecutive years—qualifying Cat as a Dividend Aristocrat. Adjusted earnings per share exceeded $21 in 2023.",
+          "Revenue is geographically diversified, with North America comprising roughly half of sales and the balance spread across Europe, Middle East, Africa, Asia-Pacific, and Latin America. The AI data center buildout is driving incremental orders for Cat standby and prime power generators, partially offsetting softness in construction end-markets in 2024."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Caterpillar's competitive moat is one of the most durable in heavy industry, built on five interlocking pillars. The most important is the exclusive dealer network: approximately 160 independent dealers operating roughly 2,800 branches worldwide, carrying only Cat products, offering 24-hour parts availability and field service. A competitor would require decades and billions of dollars to replicate this infrastructure. Dealer economic alignment—single-brand exclusivity—is a structural advantage no other OEM fully replicates at this scale.",
+      "The second pillar is the aftermarket annuity: Cat equipment has a 20–40-year working life, and every machine sold generates decades of replacement parts, Cat Certified Rebuild services, and dealer labor revenue at margins structurally above new equipment sales. The third is the autonomy and data flywheel: MineStar Command's 1+ billion tonnes of autonomous haulage data is a proprietary training corpus that compounds as the fleet grows. The fourth is brand trust—in markets where equipment failure means mine shutdowns costing millions of dollars per day, the Cat brand carries a genuine risk premium. The fifth is product breadth: Cat can supply an entire job site from a single OEM, simplifying procurement and training for large capital project operators."
+    ],
+    "decentralizationNarrative": [
+      "Caterpillar's core businesses are among the least susceptible to decentralizing technology waves of any S&P 500 company. A 400-ton mining truck cannot be manufactured in a microfactory; the materials science, hydraulic systems, electronics integration, safety certifications, and supply chain required to build large earthmoving equipment represent profound barriers to distributed production. The dealer service network is a physical, relationship-based moat that cannot be disrupted by a digital platform or open-source design.",
+      "The most developed open-source alternative—Open Source Ecology's Global Village Construction Set—includes conceptual bulldozer and tractor designs but targets small community applications at a fraction of Cat's machine capability. Additive manufacturing could gradually erode the aftermarket parts margin for long-tail specialty components over a 10–20-year horizon, but structural components at mining scale cannot be 3D-printed. Distributed solar and battery storage pose a very long-term displacement risk for Cat's generator sets in grid-connected applications; however, the current AI data center buildout is amplifying rather than reducing demand for Cat's power systems."
+    ],
+    "sourceIds": [
+      "cat-investor-relations",
+      "cat-corporate-website",
+      "cat-market-cap",
+      "cat-sec-edgar",
+      "cat-autonomy",
+      "cat-minestar",
+      "cat-sustainability"
+    ],
+    "technologyWaveIds": [
+      "additive-manufacturing",
+      "distributed-energy"
+    ],
+    "snapshotNote": "Financial metrics reflect Caterpillar's 2023 record results and 2024 moderation. Market cap and P/E are approximate estimates based on the March 2026 S&P 500 ranks 26–35 snapshot; verify current values at companiesmarketcap.com.",
+    "inputMetrics": {
+      "moat": {
+        "value": 8.5,
+        "rationale": "Exclusive dealer network (~160 dealers, ~2,800 branches, 24-hr parts guarantee), multi-decade aftermarket annuity, MineStar autonomy data flywheel with 1B+ tonnes hauled, century-old brand trust premium, and product breadth enabling single-OEM job site supply. No competitor has fully replicated this combination.",
+        "sourceIds": [
+          "cat-investor-relations",
+          "cat-corporate-website",
+          "cat-autonomy"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-19"
+      },
+      "decentralizability": {
+        "value": 2,
+        "rationale": "Large mining trucks and construction equipment cannot be manufactured in microfactories; safety regulations, materials requirements, and service infrastructure requirements make distributed production practically impossible at commercial scale. Open Source Ecology's GVCS is the most developed open-source alternative but covers only small-scale, low-capability machines.",
+        "sourceIds": [
+          "cat-corporate-website",
+          "ose-website"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-19"
+      },
+      "profitability": {
+        "value": 8,
+        "rationale": "2023 adjusted operating margin ~22–23% (record), free cash flow >$7B, 30+ consecutive dividend increases qualifying Cat as a Dividend Aristocrat, A/A2 credit rating. 2024 moderated as construction markets softened but Energy & Transportation remained resilient.",
+        "sourceIds": [
+          "cat-investor-relations",
+          "cat-sec-edgar"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-19"
+      },
+      "peRatio": {
+        "value": 17,
+        "rationale": "Approximate trailing P/E in the 15–20x range, reflecting cyclical industrial valuation after the 2023 earnings peak; verify current ratio at investors.caterpillar.com.",
+        "sourceIds": [
+          "cat-market-cap"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-03-19"
+      },
+      "marketCap": {
+        "value": 150,
+        "rationale": "Approximate market cap of ~$145–160 billion based on the March 2026 S&P 500 ranks 26–35 snapshot; verify current value at companiesmarketcap.com/caterpillar/marketcap/.",
+        "sourceIds": [
+          "cat-market-cap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-19"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "cat-construction-equipment",
+      "name": "Cat Construction Equipment",
+      "category": "Heavy Earthmoving & Construction Machinery",
+      "homepageUrl": "https://www.caterpillar.com/en/brands/cat.html",
+      "summary": "Wheel loaders, track-type tractors (dozers), excavators, backhoe loaders, motor graders, compactors, and skid steer loaders for building construction, infrastructure, and road building—the core of Cat's revenue.",
+      "whyItMatters": "Cat sets the global standard for large earthmoving on infrastructure, commercial real estate, and transportation projects. The Cat brand and dealer network's 24-hour parts guarantee make it the risk-minimizing choice for large capital projects worldwide, where equipment downtime costs millions of dollars per day.",
+      "replacementSketch": [
+        "Open-source alternatives remain far from commercial scale. Open Source Ecology's Global Village Construction Set provides open CAD designs for small-scale dozers and tractors suited for community and agricultural use; these machines are not commercially viable at construction project scale but represent the philosophical foundation for a decentralized future of locally fabricated machinery.",
+        "Additive manufacturing offers a partial long-horizon path: 3D-printing of wear parts and low-stress components could reduce aftermarket lock-in at the tail end of Cat's parts catalog. Full machine decentralization requires advances in structural-component printing, open-source drivetrain certification, and community-scale safety validation that do not yet exist at commercial readiness."
+      ],
+      "sourceIds": [
+        "cat-corporate-website",
+        "cat-investor-relations",
+        "ose-website"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "ose-gvcs",
+          "name": "Open Source Ecology – Global Village Construction Set",
+          "kind": "open-source",
+          "homepageUrl": "https://www.opensourceecology.org/",
+          "repoUrl": "https://github.com/opensourceecology",
+          "summary": "An open-source library of ~50 industrial machine designs—including a bulldozer, backhoe, and tractor—intended for local fabrication from flat-cut steel and off-the-shelf components. Designed for small farming communities and low-income rural settings, not commercial construction.",
+          "metrics": {
+            "openness": {
+              "value": 10,
+              "rationale": "Fully open-source CAD files, build instructions, and design philosophy; freely licensed for anyone to build and modify.",
+              "sourceIds": [
+                "ose-website"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-19"
+            },
+            "decentralizationFit": {
+              "value": 9,
+              "rationale": "Designed specifically for local fabrication, community resilience, and self-sufficiency; embodies the decentralized production ethos.",
+              "sourceIds": [
+                "ose-website"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-19"
+            },
+            "readiness": {
+              "value": 2,
+              "rationale": "Machines are functional at small scale and have been built by volunteers, but lack the reliability, safety certification, and performance required for commercial construction projects.",
+              "sourceIds": [
+                "ose-website"
+
+2026-05-26T10:38:28.279522Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:38:28.279535Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:38:28.279872Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:38:28.279877Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:38:28.280237Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:38:28.280240Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:38:28.280564Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:38:28.280569Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:38:28.280884Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:38:28.280890Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:38:28.281595Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:38:28.281598Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:14.825096Z  WARN codex_core::session::turn: stream disconnected - retrying sampling request (1/5 in 208ms)...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "deere-company",
+      "name": "Deere & Company",
+      "ticker": "DE",
+      "rankApprox": 88,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "industrials",
+      "industryId": "construction-machinery",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/deere-company/marketcap/",
+      "description": "Deere & Company manufactures agricultural, construction, forestry, turf, and precision-technology equipment under the John Deere brand.",
+      "overview": [
+        {
+          "title": "Equipment And Precision Agriculture",
+          "paragraphs": [
+            "Deere & Company is a global machinery manufacturer centered on production agriculture, small agriculture and turf, construction, forestry, and financial services. Its John Deere brand anchors tractors, combines, sprayers, loaders, excavators, forestry machines, parts, service, and software-enabled equipment management.",
+            "The company increasingly presents itself as a precision-agriculture and autonomy platform, not only a steel-and-hydraulics manufacturer. Operations Center, machine connectivity, guidance, data sharing, and automation features make Deere a system integrator for farms and jobsites."
+          ]
+        },
+        {
+          "title": "Financial Profile",
+          "paragraphs": [
+            "Deere's fiscal 2025 results showed the cyclicality of agricultural machinery demand: net sales and revenues declined from the 2023 peak, but the company remained highly profitable relative to most industrial manufacturers. Its scale, financing arm, dealer channel, and parts/service installed base help cushion downturns.",
+            "Market data in May 2026 placed Deere around the low-to-mid $140 billion market-cap range with a trailing valuation below many technology platform companies, reflecting both a high-quality franchise and the market's awareness of farm-equipment cyclicality."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Deere's moat rests on brand trust in mission-critical farm seasons, a dense dealer and service network, large installed base, captive financing, integrated parts availability, and increasingly proprietary software workflows around machine data, guidance, and fleet operations. A farmer who standardizes around Deere equipment inherits compatible implements, trained operators, repair knowledge, financing relationships, and accumulated operational data.",
+        "The moat is strongest where physical equipment, dealer support, and digital agronomy workflows reinforce each other. Deere does not need every software feature to be irreplaceable; the switching cost comes from downtime risk, service geography, machine resale value, and the operational disruption of moving a fleet and farm-data workflow to another ecosystem."
+      ],
+      "decentralizationNarrative": [
+        "Deere is more decentralizable than aerospace or large mining equipment but less decentralizable than pure software. Small tractors, implement attachments, retrofit guidance, and farm-data tools are plausible targets for open hardware, local fabrication, and open-source software. Large combines, high-horsepower tractors, emissions-compliant engines, hydraulic systems, safety certification, and dealer service coverage remain difficult for distributed production to replicate.",
+        "The credible disruption path is therefore modular: open guidance systems, open telemetry, farmer-controlled data stores, cooperative repair networks, locally fabricated implements, and eventually microfactory-built low-horsepower machines. These pressure the edges of Deere's lock-in without pretending that a complete high-end tractor or combine ecosystem can be replaced immediately."
+      ],
+      "sourceIds": [
+        "src-deere-investor-relations",
+        "src-deere-2025-10k",
+        "src-deere-operations-center",
+        "src-deere-tractors",
+        "src-deere-marketcap"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "printed-electronics",
+        "additive-manufacturing"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; metrics reviewed against Deere investor materials, product pages, and May 2026 market-data references.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Brand trust, dealer service coverage, financing, installed-base parts demand, precision-agriculture software, and machine-data workflows create high practical switching costs for farm and construction customers.",
+          "sourceIds": [
+            "src-deere-2025-10k",
+            "src-deere-investor-relations",
+            "src-deere-operations-center"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Open guidance software, farm-data tools, repair networks, and small-scale open machinery can decentralize parts of the stack, but high-horsepower machines, emissions systems, hydraulics, certification, and service coverage remain hard to reproduce locally.",
+          "sourceIds": [
+            "src-deere-tractors",
+            "src-agopengps",
+            "src-ose-lifetrac",
+            "src-farmos"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Fiscal 2025 results show Deere remained strongly profitable despite lower equipment demand, indicating durable margins but meaningful cyclicality compared with asset-light platform businesses.",
+          "sourceIds": [
+            "src-deere-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 29.8,
+          "rationale": "CompaniesMarketCap showed Deere trading around a high-20s to low-30s P/E range in May 2026; treat as point-in-time market data.",
+          "sourceIds": [
+            "src-deere-marketcap"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 143000000000,
+          "rationale": "CompaniesMarketCap placed Deere's market capitalization around $143 billion in May 2026, consistent with inclusion in the S&P 500 ranks 76-100 snapshot.",
+          "sourceIds": [
+            "src-deere-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "john-deere-tractors",
+        "name": "John Deere Tractors",
+        "category": "agricultural machinery",
+        "homepageUrl": "https://www.deere.com/en/tractors/",
+        "summary": "John Deere tractors span compact, utility, row-crop, and high-horsepower machines used for tillage, planting, hauling, mowing, loader work, and other farm operations.",
+        "whyItMatters": "Tractors are the physical anchor of farm mechanization and a gateway into implements, parts, financing, dealer service, guidance systems, and recurring precision-agriculture software workflows.",
+        "replacementSketch": [
+          "The realistic replacement path starts with smaller machines, implements, repairable subsystems, and retrofit controls rather than immediate displacement of Deere's largest tractors. Open guidance, open hardware attachments, and local fabrication can reduce dependence on proprietary bundles around the edges.",
+          "Over a longer horizon, microfactories and shared open designs could support regional production of low-horsepower tractors and specialized implements, while cooperative service networks handle maintenance and parts."
+        ],
+        "sourceIds": [
+          "src-deere-tractors",
+          "src-deere-2025-10k",
+          "src-ose-lifetrac",
+          "src-agopengps"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "additive-manufacturing",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-source-ecology-lifetrac",
+            "name": "Open Source Ecology LifeTrac",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourceecology.org/gvcs/gvcs-machine-index/lifetrac/",
+            "repoUrl": "https://github.com/opensourceecology",
+            "summary": "An open-source tractor concept within Open Source Ecology's Global Village Construction Set, aimed at modular local fabrication and community-scale agricultural use.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project publishes open machine designs and documentation as part of an explicitly open-source hardware program.",
+                "sourceIds": [
+                  "src-ose-lifetrac"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "LifeTrac is designed around local fabrication, modular repair, and community-scale production rather than centralized OEM manufacturing.",
+                "sourceIds": [
+                  "src-ose-lifetrac"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 2,
+                "rationale": "It is a compelling open-hardware direction but not a commercial substitute for modern Deere row-crop or high-horsepower tractors.",
+                "sourceIds": [
+                  "src-ose-lifetrac"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Local fabrication and repair could lower costs for simple machines and parts, though capability and reliability tradeoffs remain substantial.",
+                "sourceIds": [
+                  "src-ose-lifetrac"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "src-ose-lifetrac"
+            ]
+          },
+          {
+            "slug": "agopengps",
+            "name": "AgOpenGPS",
+            "kind": "open-source",
+            "homepageUrl": "https://agopengps.com/",
+            "repoUrl": "https://github.com/farmerbriantee/AgOpenGPS",
+            "summary": "Open-source GPS guidance and autosteer software for agricultural equipment, enabling farmers to retrofit precision-guidance capabilities outside a closed OEM stack.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "AgOpenGPS publishes open-source software and community documentation for GPS guidance and autosteer workflows.",
+                "sourceIds": [
+                  "src-agopengps"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The system shifts guidance capability toward farmer-owned hardware, community knowledge, and retrofit installation instead of a single OEM control plane.",
+                "sourceIds": [
+                  "src-agopengps"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is already used by technically capable farmers and tinkerers, but installation, support, and liability are less turnkey than Deere's integrated systems.",
+                "sourceIds": [
+                  "src-agopengps"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Retrofit guidance can avoid some proprietary precision-agriculture costs and extend useful life for mixed-brand or older machinery.",
+                "sourceIds": [
+                  "src-agopengps"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "src-agopengps"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-open-tractor-retrofit-network",
+            "name": "Cooperative Open Tractor Retrofit Network",
+            "summary": "A cooperative network of farmers, rural repair shops, and small fabricators could standardize open retrofit kits for guidance, diagnostics, implement control, and selected replacement parts. The concept does not require replacing Deere tractors outright; it weakens lock-in by making older and mixed-brand machines more useful outside a proprietary precision-agriculture bundle.",
+            "angleIds": [
+              "open-hardware",
+              "cooperative-production",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "If farmers can extend equipment life and add precision features through open retrofit kits, Deere loses some pricing power around integrated guidance, parts, and upgrade cycles.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is open hardware and cooperative production, not Bitcoin. Shared designs, repair knowledge, and locally accountable installers matter more than a payment protocol for this market structure.",
+            "coordinationMechanism": "Farmers publish field-tested configurations, repair shops validate install recipes, fabricators produce standardized brackets and electronics enclosures, and cooperatives aggregate demand for components.",
+            "verificationOrTrustModel": "Reputation is constrained through install logs, field-performance records, public bills of materials, serialized kit versions, and cooperative warranty pools. Fraudulent parts or fake installs are constrained by local accountability and machine-level audit trails, though not eliminated.",
+            "failureModes": [
+              "Liability and safety concerns could prevent adoption beyond technically sophisticated users.",
+              "Fragmented hardware versions could make support expensive and reduce reliability during critical planting or harvest windows."
+            ],
+            "adoptionPath": [
+              "Start with retrofit guidance and diagnostics on older tractors where OEM upgrade economics are weakest.",
+              "Expand into standardized open implement controllers, locally fabricated brackets, and cooperative parts catalogs."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-deere-tractors",
+              "src-deere-operations-center"
+            ],
+            "enablerSourceIds": [
+              "src-agopengps",
+              "src-ose-lifetrac"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept moves control toward farmer-owned equipment, open repair knowledge, and local installers rather than a closed OEM stack.",
+                "sourceIds": [
+                  "src-agopengps",
+                  "src-ose-lifetrac"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Farmer forums, open-source project communities, and rural repair shops already coordinate around retrofit equipment, but scaling warranties and support remains hard.",
+                "sourceIds": [
+                  "src-agopengps"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Guidance and diagnostics retrofits are feasible today; open tractor-scale fabrication is much less mature and should be treated as a long-horizon extension.",
+                "sourceIds": [
+                  "src-agopengps",
+                  "src-ose-lifetrac"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The pressure is meaningful on aftermarket upgrades, repairability, and smaller equipment segments, but it is unlikely to displace Deere's high-end tractor franchise soon.",
+                "sourceIds": [
+                  "src-deere-2025-10k",
+                  "src-deere-tractors"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "john-deere-operations-center",
+        "name": "John Deere Operations Center",
+        "category": "farm operations software",
+        "homepageUrl": "https://www.deere.com/en/technology-products/precision-ag-technology/data-management/operations-center/",
+        "summary": "John Deere Operations Center is a cloud-based farm-management platform for machine, field, agronomic, and work data connected to John Deere equipment and partner tools.",
+        "whyItMatters": "Operations Center is the software layer that turns connected machines into a data ecosystem, making Deere more than an equipment vendor and increasing switching costs for farms that depend on integrated records, guidance, and job workflows.",
+        "replacementSketch": [
+          "A replacement does not need to copy Deere's full cloud product. It can start as farmer-controlled data infrastructure: open field records, open APIs, local-first storage, and adapters to machine telemetry from multiple brands.",
+          "The strongest path is a federated stack where farmers, agronomists, cooperatives, and equipment operators exchange permissioned data without forcing every workflow through one OEM account system."
+        ],
+        "sourceIds": [
+          "src-deere-operations-center",
+          "src-farmos",
+          "src-openteam",
+          "src-isoblue"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "farmos",
+            "name": "farmOS",
+            "kind": "open-source",
+            "homepageUrl": "https://farmos.org/",
+            "repoUrl": "https://github.com/farmOS/farmOS",
+            "summary": "An open-source farm recordkeeping and management platform for planning, tracking, and managing farm assets, observations, logs, and data.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "farmOS is an open-source project with public code, documentation, and a community governance model.",
+                "sourceIds": [
+                  "src-farmos"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Self-hosting and open data models let farmers or cooperatives control records rather than relying entirely on a single OEM cloud.",
+                "sourceIds": [
+                  "src-farmos"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "farmOS is usable today for farm records and planning, though it does not replace every Deere machine-integration feature out of the box.",
+                "sourceIds": [
+                  "src-farmos"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source deployment and farmer-controlled data can reduce software lock-in and preserve flexibility across equipment brands.",
+                "sourceIds": [
+                  "src-farmos"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "src-farmos"
+            ]
+          },
+          {
+            "slug": "openteam",
+            "name": "OpenTEAM",
+            "kind": "hybrid",
+            "homepageUrl": "https://openteam.community/",
+            "summary": "A collaborative ecosystem for interoperable agricultural tools, data, and soil-health measurement that emphasizes open-source and farmer-centered technology.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenTEAM emphasizes open-source tools and interoperability, though the ecosystem includes multiple projects and institutional partners rather than one repo-only product.",
+                "sourceIds": [
+                  "src-openteam"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model is explicitly ecosystem-based, supporting shared tools and farmer-centered data coordination rather than one proprietary control plane.",
+                "sourceIds": [
+                  "src-openteam"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "OpenTEAM is credible as a coordination ecosystem, but it is less of a turnkey replacement for Deere's machine-integrated operations product.",
+                "sourceIds": [
+                  "src-openteam"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Interoperable tools and shared data infrastructure can reduce vendor lock-in, though deployment still requires institutional and technical coordination.",
+                "sourceIds": [
+                  "src-openteam"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "src-openteam"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-farmer-owned-operations-graph",
+            "name": "Federated Farmer-Owned Operations Graph",
+            "summary": "A federated farm-operations graph would let farmers keep machine, field, work-order, input, yield, and soil records in farmer-controlled stores while granting permissioned access to agronomists, co-ops, lenders, equipment operators, and software tools. Deere-like machine integration remains valuable, but the system of record shifts away from a single OEM cloud.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "If the durable record of farm operations becomes portable and federation-friendly, Deere's cloud platform becomes one participant in the workflow rather than the default owner of farm operational memory.",
+            "bitcoinOrDecentralizationRole": "Federation and decentralized coordination are central. Bitcoin is not required for the base mechanism, though payment rails could later support machine-to-machine services or data-market incentives.",
+            "coordinationMechanism": "Farmers host or delegate data stores, agronomists and cooperatives run compatible services, equipment adapters publish normalized telemetry, and permission grants define who can read, write, or verify specific records.",
+            "verificationOrTrustModel": "Records are constrained through signed device events, timestamped work logs, audit trails, role-based permissions, and cross-checks among machine telemetry, field boundaries, input purchases, and yield records. Spoofing remains possible if sensors or operators collude.",
+            "failureModes": [
+              "Interoperability work could stall if equipment vendors limit data export or change APIs.",
+              "Farmers may prefer turnkey OEM support over managing identity, permissions, hosting, and data quality across multiple tools."
+            ],
+            "adoptionPath": [
+              "Begin with farmOS/OpenTEAM-style records for planning, compliance, and soil-health workflows outside the Deere cloud.",
+              "Add machine telemetry bridges, cooperative hosting, and standardized permissioning so farmers can mix OEM tools with independent services."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "src-deere-operations-center"
+            ],
+            "enablerSourceIds": [
+              "src-farmos",
+              "src-openteam",
+              "src-isoblue"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept moves the system of record to farmer-controlled or cooperative infrastructure while preserving interoperability with multiple tools.",
+                "sourceIds": [
+                  "src-farmos",
+                  "src-openteam"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open farm-management and agricultural data communities already exist, but broad adoption requires durable standards, support, and integrations with real machine telemetry.",
+                "sourceIds": [
+                  "src-farmos",
+                  "src-openteam",
+                  "src-isoblue"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Open farm records and data platforms are practical today; robust multi-brand machine event ingestion and permissioning remain the hard integration layer.",
+                "sourceIds": [
+                  "src-farmos",
+                  "src-isoblue"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "A successful farmer-owned data layer would directly pressure Operations Center's lock-in, though Deere's integrated hardware support would still be valuable.",
+                "sourceIds": [
+                  "src-deere-operations-center",
+                  "src-farmos",
+                  "src-openteam"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "src-deere-investor-relations",
+      "title": "Deere & Company Investor Relations",
+      "url": "https://investor.deere.com/",
+      "kind": "investor-relations",
+      "publisher": "Deere & Company",
+      "note": "Primary investor gateway for Deere financial reports, releases, presentations, and company materials.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-deere-2025-10k",
+      "title": "Deere & Company 2025 Form 10-K",
+      "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000315189&type=10-K",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary regulatory source for Deere's business segments, risk factors, fiscal 2025 performance, and profitability context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-deere-operations-center",
+      "title": "John Deere Operations Center",
+      "url": "https://www.deere.com/en/technology-products/precision-ag-technology/data-management/operations-center/",
+      "kind": "product-page",
+      "publisher": "John Deere",
+      "note": "Official product page for Deere's farm operations, machine, field, and data-management software platform.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-deere-tractors",
+      "title": "John Deere Tractors",
+      "url": "https://www.deere.com/en/tractors/",
+      "kind": "product-page",
+      "publisher": "John Deere",
+      "note": "Official product page describing Deere's tractor portfolio across agricultural and utility use cases.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-deere-marketcap",
+      "title": "Deere & Company Market Cap",
+      "url": "https://companiesmarketcap.com/deere-company/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time market capitalization and valuation reference for the S&P 500 top-100 snapshot.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-ose-lifetrac",
+      "title": "Open Source Ecology LifeTrac",
+      "url": "https://www.opensourceecology.org/gvcs/gvcs-machine-index/lifetrac/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open-hardware tractor concept used as a credible but early-stage decentralized machinery alternative.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-agopengps",
+      "title": "AgOpenGPS",
+      "url": "https://agopengps.com/",
+      "kind": "open-source-project",
+      "publisher": "AgOpenGPS",
+      "note": "Open-source agricultural GPS guidance and autosteer project relevant to tractor retrofit and precision-agriculture decentralization.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-farmos",
+      "title": "farmOS",
+      "url": "https://farmos.org/",
+      "kind": "open-source-project",
+      "publisher": "farmOS",
+      "note": "Open-source farm-management and recordkeeping platform used as an alternative to proprietary farm data systems.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-openteam",
+      "title": "OpenTEAM",
+      "url": "https://openteam.community/",
+      "kind": "analysis",
+      "publisher": "OpenTEAM",
+      "note": "Agricultural technology ecosystem focused on interoperable, open, farmer-centered tools and data coordination.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "src-isoblue",
+      "title": "ISOBlue Open-Source Agricultural Machinery Data Logger",
+      "url": "https://github.com/ISOBlue/isoblue",
+      "kind": "open-source-project",
+      "publisher": "ISOBlue",
+      "note": "Open-source agricultural machinery data-logging project relevant to independent machine telemetry and farmer-owned data workflows.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a publishable Deere & Company registry bundle with two products: John Deere Tractors and John Deere Operations Center. The refresh emphasizes Deere's dealer, service, financing, installed-base, and precision-agriculture moat while treating open tractor hardware, retrofit guidance, farmOS, OpenTEAM, and open telemetry as credible but partial decentralization paths."
+}
+tokens used
+77,815

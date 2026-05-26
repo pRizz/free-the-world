@@ -1,0 +1,1448 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63de-9882-7f93-ab9c-19be7a8d38f1
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: prologis
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "prologis",
+  "name": "Prologis",
+  "ticker": "PLD",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "real-estate",
+  "industryId": "industrial-reits",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/prologis/marketcap/",
+  "description": "Prologis is an industrial REIT focused on logistics real estate and related energy and mobility services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Logistics real estate",
+    "Prologis Essentials"
+  ],
+  "seedSourceUrls": [
+    "https://ir.prologis.com/",
+    "https://companiesmarketcap.com/prologis/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:39:53.998162Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:53.998174Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:53.998648Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:53.998655Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:53.999103Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:53.999110Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:53.999635Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:53.999641Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:53.999989Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:53.999993Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:54.000705Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:54.000708Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:54.879248Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:54.879262Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:54.879616Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:54.879620Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:54.879971Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:54.879975Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:54.880330Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:54.880334Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:54.880932Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:54.880936Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:39:54.881680Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:39:54.881684Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Prologis 2025 annual report logistics real estate essentials energy mobility services ...
+web search: 
+web search: OpenEMS open source energy management system homepage ...
+web search: 
+web search: Prologis PE ratio May 2026 ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "prologis",
+      "name": "Prologis",
+      "ticker": "PLD",
+      "rankApprox": 90,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "real-estate",
+      "industryId": "industrial-reits",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/prologis/marketcap/",
+      "description": "Prologis is an industrial REIT focused on logistics real estate, customer operations services, energy solutions, mobility infrastructure, and related private-capital platforms.",
+      "overview": [
+        {
+          "title": "Global logistics real estate platform",
+          "paragraphs": [
+            "Prologis owns and manages a large global logistics real estate platform serving thousands of customers across warehouse, fulfillment, and distribution use cases.",
+            "The company has increasingly positioned the platform as more than leased square footage, combining real estate with energy, mobility, data infrastructure, and private-capital capabilities."
+          ]
+        },
+        {
+          "title": "Adjacency into customer infrastructure",
+          "paragraphs": [
+            "Prologis Essentials packages operational services such as racking, forklifts, generators, solar, EV charging, and other site-level infrastructure around the company's logistics facilities.",
+            "That adjacency increases customer switching costs because warehouse location, power access, leasing, and operational equipment can become bundled into a single landlord relationship."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Prologis' moat is built around scarce logistics locations, a very large global portfolio, customer relationships with major shippers and retailers, access to low-cost capital, and the ability to develop or reposition sites near dense consumption markets.",
+        "The moat is not software-like absolute control: tenants can move, build-to-suit competition exists, and warehouse demand cycles with trade, interest rates, and supply-chain investment. Still, location scarcity and scale make replacement slow and capital intensive."
+      ],
+      "decentralizationNarrative": [
+        "The real estate layer is difficult to decentralize because it depends on land, zoning, grid interconnection, financing, and long-lived physical assets. Open software can improve warehouse operations, but it cannot cheaply recreate urban infill logistics portfolios.",
+        "The more promising decentralization pressure sits around the service bundle: open energy management, interoperable EV charging, local solar, cooperative warehouse ownership, and open automation stacks can reduce dependence on one integrated landlord-service provider."
+      ],
+      "sourceIds": [
+        "prologis-annual-report-2025",
+        "prologis-shareholder-letter-2025",
+        "prologis-essentials",
+        "companiesmarketcap-prologis-marketcap",
+        "stockanalysis-prologis-pe"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; market data refreshed on 2026-05-26 using CompaniesMarketCap and StockAnalysis.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "Scarce logistics locations, a 1.3B+ square-foot global platform, more than 6,500 customers, private-capital scale, and energy/mobility adjacencies support a strong but physical-asset-bound moat.",
+          "sourceIds": [
+            "prologis-annual-report-2025",
+            "prologis-shareholder-letter-2025"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 31,
+          "rationale": "Land ownership, zoning, financing, and grid access make the core warehouse portfolio hard to decentralize, though customer energy, charging, and automation services are more open to protocol and open-source substitution.",
+          "sourceIds": [
+            "prologis-annual-report-2025",
+            "prologis-essentials",
+            "openems-homepage",
+            "open-charge-alliance-ocpp"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 77,
+          "rationale": "Prologis reported durable earnings, strong occupancy, positive same-store NOI growth, and full-year 2025 Core FFO per share of $5.86 excluding net promote expense, indicating strong REIT profitability despite capital intensity.",
+          "sourceIds": [
+            "prologis-fy2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 36.74,
+          "rationale": "StockAnalysis listed Prologis' trailing P/E ratio at 36.74 around the May 22, 2026 close; REIT valuation should also be assessed against FFO/AFFO, so this is a conventional equity metric rather than a complete valuation view.",
+          "sourceIds": [
+            "stockanalysis-prologis-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 136020000000,
+          "rationale": "CompaniesMarketCap reported Prologis' market capitalization at approximately $136.02 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-prologis-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "logistics-real-estate",
+        "name": "Logistics real estate",
+        "category": "Industrial real estate",
+        "homepageUrl": "https://www.prologis.com/",
+        "summary": "Global warehouse, fulfillment, and distribution facilities positioned near major consumption and transportation markets.",
+        "whyItMatters": "Logistics real estate controls where goods are staged, sorted, charged, repaired, and dispatched, so it shapes the physical cost structure of e-commerce, retail distribution, and industrial supply chains.",
+        "replacementSketch": [
+          "A credible replacement would not be a single website or app. It would combine shared ownership of warehouse nodes, transparent local availability data, interoperable automation, and financing models that let smaller operators pool demand.",
+          "Open tools can reduce dependency on proprietary site services, but the land and permitting layer means replacement would be gradual and geographically uneven."
+        ],
+        "sourceIds": [
+          "prologis-annual-report-2025",
+          "prologis-shareholder-letter-2025"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "opentcs",
+            "name": "openTCS",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opentcs.org/en/index.html",
+            "repoUrl": "https://github.com/openTCS/opentcs",
+            "summary": "Open-source transportation control software for automated guided vehicles and other non-continuous conveyors inside industrial facilities.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "The project publishes source code under an open-source license and is maintained by Fraunhofer IML.",
+                "sourceIds": [
+                  "opentcs-homepage",
+                  "opentcs-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 55,
+                "rationale": "openTCS decentralizes a warehouse automation control layer, but it does not replace ownership of the warehouse site or broader leasing platform.",
+                "sourceIds": [
+                  "opentcs-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 68,
+                "rationale": "The software targets real AGV and conveyor control use cases and is maintained by a logistics research institute, but deployment still requires systems integration and facility-specific engineering.",
+                "sourceIds": [
+                  "opentcs-homepage",
+                  "opentcs-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 61,
+                "rationale": "Open automation control can reduce vendor lock-in and integration costs for smaller facilities, though hardware, safety certification, and installation remain expensive.",
+                "sourceIds": [
+                  "opentcs-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "opentcs-homepage",
+              "opentcs-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-warehouse-capacity-exchange",
+            "name": "Federated warehouse capacity exchange",
+            "summary": "A federated network of independently owned warehouses, 3PLs, and local cooperatives could publish standardized capacity, equipment, power, and service-level data into interoperable markets rather than forcing shippers into vertically bundled landlord platforms.",
+            "angleIds": [
+              "federation",
+              "peer-to-peer-marketplace",
+              "cooperative-production"
+            ],
+            "thesis": "The concept shifts market structure from a few scaled landlords bundling space and services toward many smaller operators coordinating through shared discovery, reputation, and contracting rails.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated listing, reputation, and settlement rather than Bitcoin as a required base layer; local operators could retain control of facilities while participating in shared capacity markets.",
+            "coordinationMechanism": "Warehouses publish machine-readable capacity, dock windows, handling equipment, energy availability, and pricing; shippers or 3PLs route demand through federated brokers that can interoperate across regional networks.",
+            "verificationOrTrustModel": "Reputation, signed facility attestations, booking deposits, carrier check-ins, IoT-backed occupancy events, and dispute histories constrain fake listings and nonperformance, while repeated local transactions make reputation costly to abandon.",
+            "failureModes": [
+              "Large shippers may still prefer a single balance-sheet-backed landlord for reliability and indemnity.",
+              "Facility data can be spoofed or selectively reported unless occupancy, insurance, safety, and fulfillment records are independently auditable.",
+              "Local zoning and capital constraints can prevent enough high-quality nodes from joining in dense urban markets."
+            ],
+            "adoptionPath": [
+              "Start with overflow storage, seasonal capacity, and regional 3PL networks where switching costs are lower.",
+              "Standardize facility metadata, service-level terms, and dispute resolution before attempting mission-critical fulfillment commitments.",
+              "Layer cooperative financing or shared ownership on top of proven high-utilization nodes."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "prologis-annual-report-2025",
+              "prologis-shareholder-letter-2025"
+            ],
+            "enablerSourceIds": [
+              "opentcs-homepage"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "A federated capacity market directly reduces dependence on a single scaled landlord by letting independent sites coordinate supply.",
+                "sourceIds": [
+                  "prologis-annual-report-2025",
+                  "opentcs-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "Capacity marketplaces and logistics software are plausible, but trust, liability, quality control, and shipper procurement preferences are significant coordination barriers.",
+                "sourceIds": [
+                  "prologis-shareholder-letter-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 50,
+                "rationale": "Software standards and open automation can be built now, but matching Prologis' location quality and financing scale requires slow physical-world adoption.",
+                "sourceIds": [
+                  "prologis-annual-report-2025",
+                  "opentcs-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 47,
+                "rationale": "The concept could pressure overflow and service margins before it threatens core infill assets, because Prologis' prime locations remain scarce.",
+                "sourceIds": [
+                  "prologis-annual-report-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "local-microfulfillment-and-repair-cells",
+            "name": "Local microfulfillment and repair cells",
+            "summary": "Distributed microfactories and local repair cells could move a subset of spare parts, returns processing, light assembly, and customization closer to end users, reducing dependence on large centralized logistics nodes for long-tail inventory.",
+            "angleIds": [
+              "home-microfactory",
+              "decentralized-manufacturing",
+              "recycling-and-reuse",
+              "local-materials-processing"
+            ],
+            "thesis": "If more products can be repaired, refurbished, customized, or fabricated locally, the demand profile for some centralized warehouse space shifts from storing finished goods toward coordinating designs, materials, and local production capacity.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is manufacturing and repair locality: open designs, local operators, and reusable materials reduce the need for a central owner to intermediate every physical flow.",
+            "coordinationMechanism": "Manufacturers, local shops, and customers coordinate through open design files, inventory recipes, repair records, quality standards, and local fulfillment directories.",
+            "verificationOrTrustModel": "Quality is constrained through signed design versions, serial-number repair logs, materials traceability, customer reputation, and destructive or sample testing for safety-critical components.",
+            "failureModes": [
+              "Only a limited subset of goods are suitable for local fabrication or repair without industrial tooling.",
+              "Warranty, liability, certification, and materials quality requirements may keep many products in centralized supply chains.",
+              "Local cells may be less cost efficient than high-throughput regional warehouses for standardized goods."
+            ],
+            "adoptionPath": [
+              "Begin with returns triage, refurbishment, packaging reuse, spare parts, fixtures, and non-safety-critical custom components.",
+              "Use open automation and local materials workflows to improve unit economics before expanding into regulated or high-liability products."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "prologis-annual-report-2025"
+            ],
+            "enablerSourceIds": [
+              "opentcs-homepage"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 67,
+                "rationale": "Local production and repair cells directly decentralize parts of inventory handling and fulfillment, but only for product categories that tolerate local manufacturing.",
+                "sourceIds": [
+                  "opentcs-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 45,
+                "rationale": "The coordination model is plausible for repair and spare parts, but broad adoption depends on standard design files, trust, quality control, and manufacturer participation.",
+                "sourceIds": [
+                  "prologis-annual-report-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 39,
+                "rationale": "Open automation exists, but broad microfactory substitution for logistics real estate remains early and constrained by tooling, materials, and certification.",
+                "sourceIds": [
+                  "opentcs-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 35,
+                "rationale": "This would pressure selected long-tail logistics flows rather than Prologis' core high-throughput distribution footprint in the near term.",
+                "sourceIds": [
+                  "prologis-annual-report-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "prologis-essentials",
+        "name": "Prologis Essentials",
+        "category": "Logistics services and site infrastructure",
+        "homepageUrl": "https://www.prologis.com/essentials-solutions",
+        "summary": "A suite of operational, energy, mobility, and sustainability services packaged for Prologis customers, including warehouse equipment, solar, EV charging, and related site solutions.",
+        "whyItMatters": "Essentials lets Prologis extend from landlord into operating infrastructure, increasing customer dependence on the company's bundled services around power, charging, automation, and warehouse setup.",
+        "replacementSketch": [
+          "The realistic replacement is an interoperable stack of open energy management, open EV charging protocols, transparent equipment procurement, and independent local installers.",
+          "Customers would still need physical installation and support, but open standards can make those services portable across landlords and sites."
+        ],
+        "sourceIds": [
+          "prologis-essentials",
+          "prologis-annual-report-2025"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "Open-source energy management platform for orchestrating renewable generation, storage, grid connection, and loads.",
+            "metrics": {
+              "openness": {
+                "value": 91,
+                "rationale": "OpenEMS describes itself as a free and open-source energy management system and publishes its software on GitHub.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "It supports distributed energy orchestration across generation, storage, grid, and load assets, fitting localized energy control well.",
+                "sourceIds": [
+                  "openems-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "The project presents an active community and production-oriented modular architecture, though commercial deployments still need hardware integration and operations support.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open energy management can reduce vendor lock-in for solar, storage, and load-control services and improve bargaining power with installers.",
+                "sourceIds": [
+                  "openems-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openems-homepage",
+              "openems-github"
+            ]
+          },
+          {
+            "slug": "ocpp",
+            "name": "Open Charge Point Protocol",
+            "kind": "protocol",
+            "homepageUrl": "https://openchargealliance.org/protocols/open-charge-point-protocol/",
+            "summary": "Open protocol for communication between EV charge points and central management systems, designed to support interoperable charging infrastructure.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "OCPP is published by the Open Charge Alliance as a standardized protocol for EV charging communication, with independent implementations available.",
+                "sourceIds": [
+                  "open-charge-alliance-ocpp",
+                  "openocpp-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 73,
+                "rationale": "A protocol layer helps charger owners avoid single-vendor management systems and supports multi-operator charging networks.",
+                "sourceIds": [
+                  "open-charge-alliance-ocpp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 78,
+                "rationale": "OCPP is widely treated as a charging interoperability standard, though real deployments still depend on certification, security, and backend quality.",
+                "sourceIds": [
+                  "open-charge-alliance-ocpp",
+                  "openocpp-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Interoperability can reduce lock-in and improve hardware procurement flexibility, but installation, utility interconnection, and demand charges remain major cost drivers.",
+                "sourceIds": [
+                  "open-charge-alliance-ocpp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "open-charge-alliance-ocpp",
+              "openocpp-homepage"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "tenant-owned-energy-and-charging-stack",
+            "name": "Tenant-owned energy and charging stack",
+            "summary": "Warehouse tenants could use open energy management and interoperable EV charging protocols to own or competitively source solar, storage, load control, and fleet charging services instead of accepting a landlord-controlled bundle.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "open-energy-hardware",
+              "microgrid-coordination"
+            ],
+            "thesis": "The concept turns Essentials-style bundled infrastructure into a portable, standards-based tenant capability, pressuring Prologis' ability to capture service margin on energy and charging.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central through local generation, tenant-controlled energy management, and interoperable charging standards; Bitcoin is not necessary for the mechanism.",
+            "coordinationMechanism": "Tenants, landlords, installers, chargers, batteries, solar assets, and fleet operators coordinate through open EMS integrations, OCPP-compatible charging management, utility tariffs, and site-level operating rules.",
+            "verificationOrTrustModel": "Metered energy flows, charger transaction logs, signed device telemetry, utility bills, and equipment certification constrain false reporting; independent audits can compare generated, stored, consumed, and billed energy.",
+            "failureModes": [
+              "Landlord roof rights, lease terms, and interconnection queues can prevent tenants from controlling energy assets.",
+              "Open protocols do not automatically solve cybersecurity, uptime, or fleet charging support obligations.",
+              "Utilities and demand charges may make economics unattractive at some sites."
+            ],
+            "adoptionPath": [
+              "Start with OCPP-compatible fleet chargers and OpenEMS-managed storage at sites where tenants already control enough electrical infrastructure.",
+              "Expand into landlord-tenant contracts that preserve tenant data access, hardware portability, and competitive service procurement.",
+              "Aggregate multiple sites into virtual power plant or demand-response programs once telemetry and dispatch controls are trusted."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "prologis-essentials",
+              "prologis-annual-report-2025"
+            ],
+            "enablerSourceIds": [
+              "openems-homepage",
+              "open-charge-alliance-ocpp",
+              "openocpp-homepage"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 80,
+                "rationale": "The model directly moves energy and charging control from a bundled landlord service toward tenant-controlled distributed assets and open protocols.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "open-charge-alliance-ocpp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 65,
+                "rationale": "The technical coordination primitives exist, but site access, utility interconnection, and lease rights remain hard constraints.",
+                "sourceIds": [
+                  "prologis-essentials",
+                  "openems-homepage",
+                  "open-charge-alliance-ocpp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 62,
+                "rationale": "Open EMS and OCPP-compatible charging are deployable today, though industrial-scale fleet charging requires careful engineering and support.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "open-charge-alliance-ocpp",
+                  "openocpp-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 56,
+                "rationale": "This could pressure Prologis' energy and mobility service bundle faster than it pressures core rent, because interoperability gives tenants more procurement leverage.",
+                "sourceIds": [
+                  "prologis-essentials",
+                  "prologis-shareholder-letter-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "prologis-annual-report-2025",
+      "title": "2025 Annual Report",
+      "url": "https://www.prologis.com/annual-report-2025",
+      "kind": "annual-report",
+      "publisher": "Prologis",
+      "note": "Primary company source for scale, customers, square footage, energy milestones, and business positioning.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "prologis-shareholder-letter-2025",
+      "title": "2025 Annual Report: Letter to Shareholders",
+      "url": "https://www.prologis.com/shareholder-letter-2025",
+      "kind": "investor-relations",
+      "publisher": "Prologis",
+      "note": "Explains Prologis' strategy of combining logistics real estate, energy, digital infrastructure, and private capital capabilities.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "prologis-essentials",
+      "title": "Warehousing Solutions: Prologis Essentials",
+      "url": "https://www.prologis.com/essentials-solutions",
+      "kind": "product-page",
+      "publisher": "Prologis",
+      "note": "Official product page for Prologis' customer operations, energy, mobility, and site-solution services.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "prologis-fy2025-results",
+      "title": "Prologis Reports Fourth Quarter and Full-Year 2025 Results",
+      "url": "https://www.prologis.com/sites/corporate/files/documents/2026/01/2026-01-21-Prologis-Reports-Fourth-Quarter-and-Full-Year-2025-Results.pdf",
+      "kind": "investor-relations",
+      "publisher": "Prologis",
+      "note": "Financial release used for Core FFO, earnings guidance, occupancy, and same-store NOI context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-prologis-marketcap",
+      "title": "Prologis (PLD) - Market capitalization",
+      "url": "https://companiesmarketcap.com/prologis/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization source for the refreshed registry snapshot.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-prologis-pe",
+      "title": "Prologis (PLD) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/pld/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for trailing P/E ratio and public equity valuation context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openems-homepage",
+      "title": "OpenEMS - Open Source Energy Management System",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association",
+      "note": "Open-source energy management alternative relevant to Prologis' energy and site-infrastructure services.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS GitHub Repository",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Repository evidence for OpenEMS' open-source implementation and modular architecture.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "open-charge-alliance-ocpp",
+      "title": "OCPP: Open Charge Point Protocol",
+      "url": "https://openchargealliance.org/protocols/open-charge-point-protocol/",
+      "kind": "technical-docs",
+      "publisher": "Open Charge Alliance",
+      "note": "Protocol source for interoperable EV charging infrastructure and charger-management coordination.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openocpp-homepage",
+      "title": "OpenOCPP - Open-source embedded software for EV chargers",
+      "url": "https://openocpp.com/",
+      "kind": "open-source-project",
+      "publisher": "ChargeLab",
+      "note": "Open-source OCPP implementation source supporting the feasibility of interoperable EV charging stacks.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "opentcs-homepage",
+      "title": "openTCS - The open transportation control system",
+      "url": "https://www.opentcs.org/en/index.html",
+      "kind": "open-source-project",
+      "publisher": "Fraunhofer Institute for Material Flow and Logistics",
+      "note": "Open-source warehouse and industrial transport control system relevant to decentralized logistics operations.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "opentcs-github",
+      "title": "openTCS GitHub Repository",
+      "url": "https://github.com/openTCS/opentcs",
+      "kind": "open-source-project",
+      "publisher": "openTCS",
+      "note": "Repository evidence for openTCS source availability and license status.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Prologis bundle with two products: Logistics real estate and Prologis Essentials. The strongest decentralization pressure is not direct replacement of the warehouse portfolio, but open energy, charging, automation, and federated capacity coordination around the physical sites."
+}
+tokens used
+31,790

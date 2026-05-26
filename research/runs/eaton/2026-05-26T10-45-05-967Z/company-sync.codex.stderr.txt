@@ -1,0 +1,2171 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63e3-6041-7073-a8b6-21efba140059
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: eaton
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "eaton",
+  "name": "Eaton",
+  "ticker": "ETN",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "industrials",
+  "industryId": "electrical-equipment",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/eaton/marketcap/",
+  "description": "Eaton provides electrical, aerospace, vehicle, and industrial power management products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Power distribution equipment",
+    "EV charging infrastructure"
+  ],
+  "seedSourceUrls": [
+    "https://www.eaton.com/us/en-us/company/investor-relations.html",
+    "https://companiesmarketcap.com/eaton/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:45:08.724952Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.724966Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.725319Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.725324Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.725713Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.725718Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.726142Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.726147Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.726469Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.726473Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.727087Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.727089Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.585928Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.585938Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.586303Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.586310Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.586653Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.586657Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.586990Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.586995Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.587332Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.587335Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.588041Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.588045Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll use the company manifest workflow guidance for this registry entry, then verify Eaton-specific facts from primary/current sources before returning the JSON only.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md && rg --files content/manifests | head -20" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+content/manifests/companies/home-depot.json
+content/manifests/companies/progressive.json
+content/manifests/companies/walmart.json
+content/manifests/companies/analog-devices.json
+content/manifests/companies/nvidia.json
+content/manifests/companies/charles-schwab.json
+content/manifests/companies/gilead-sciences.json
+content/manifests/companies/abbvie.json
+content/manifests/companies/abbott-laboratories.json
+content/manifests/companies/welltower.json
+content/manifests/companies/arista-networks.json
+content/manifests/companies/eli-lilly.json
+content/manifests/companies/prologis.json
+content/manifests/companies/conocophillips.json
+content/manifests/companies/danaher.json
+content/manifests/companies/johnson-johnson.json
+content/manifests/companies/berkshire-hathaway.json
+content/manifests/companies/coca-cola.json
+content/manifests/companies/amphenol.json
+content/manifests/companies/jpmorgan-chase.json
+
+2026-05-26T10:45:12.740315Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:12.740328Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:12.740677Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:12.740682Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:12.741097Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:12.741101Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:12.741450Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:12.741453Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:12.741789Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:12.741792Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:12.742555Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:12.742558Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I found the intake skill is mainly for queueing files, but this prompt asks for a publishable refresh object. I’m checking nearby published company bundles so the returned shape and scoring style match the registry.
+exec
+/bin/zsh -lc "sed -n '1,220p' content/manifests/companies/amphenol.json" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "slug": "amphenol",
+  "name": "Amphenol",
+  "ticker": "APH",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top75"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "communications-equipment",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/amphenol/marketcap/",
+  "description": "Amphenol designs and manufactures interconnect, sensor, antenna, cable, and related electronic components for communications, industrial, automotive, aerospace, defense, and IT datacom markets.",
+  "technologyWaveIds": [
+    "printed-electronics",
+    "microfactories",
+    "additive-manufacturing"
+  ],
+  "maybeIpo": null,
+  "seedProductNames": [
+    "Interconnect products",
+    "Antenna solutions"
+  ],
+  "seedSourceUrls": [
+    "https://www.amphenol.com/products",
+    "https://investors.amphenol.com/news-and-events/news-details/2026/Amphenol-Reports-Record-Fourth-Quarter-and-Full-Year-2025-Results/default.aspx",
+    "https://companiesmarketcap.com/amphenol/marketcap/",
+    "https://stockanalysis.com/stocks/aph/statistics/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 51-75."
+}
+
+exec
+/bin/zsh -lc "sed -n '1,220p' content/manifests/companies/caterpillar.json 2>/dev/null || true" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "slug": "caterpillar",
+  "name": "Caterpillar",
+  "ticker": "CAT",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top35"
+  ],
+  "sectorId": "industrials",
+  "industryId": "construction-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/caterpillar/marketcap/",
+  "description": "World's leading manufacturer of construction and mining equipment, diesel and natural gas engines, and industrial gas turbines, supported by Cat Financial's global equipment financing.",
+  "technologyWaveIds": [
+    "additive-manufacturing",
+    "distributed-energy"
+  ],
+  "maybeIpo": null,
+  "seedProductNames": [
+    "Cat Construction Equipment",
+    "Cat Mining Trucks & MineStar Autonomy",
+    "Cat Generator Sets & Power Systems",
+    "Cat Financial"
+  ],
+  "seedSourceUrls": [
+    "https://investors.caterpillar.com/",
+    "https://www.caterpillar.com/",
+    "https://companiesmarketcap.com/caterpillar/marketcap/",
+    "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0000018230&type=10-K&dateb=&owner=include&count=10",
+    "https://www.caterpillar.com/en/brands/cat/autonomy.html",
+    "https://www.minestar.com/",
+    "https://www.caterpillar.com/en/company/sustainability.html"
+  ],
+  "notes": "Queued from the March 13, 2026 FinanceCharts S&P 500 market-cap snapshot ranks 26-35."
+}
+
+exec
+/bin/zsh -lc "sed -n '1,260p' src/lib/domain/content-types.ts" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+import type {
+  Alternative,
+  Company,
+  CompanyIpo,
+  ConceptAngle,
+  DisruptionConcept,
+  DisruptionException,
+  IndexDefinition,
+  Industry,
+  MetricAssessment,
+  Product,
+  Region,
+  Sector,
+  SourceCitation,
+  TechnologyWave,
+} from "~/lib/domain/types";
+
+export const companyInputMetricIds = [
+  "moat",
+  "decentralizability",
+  "profitability",
+  "peRatio",
+  "marketCap",
+] as const;
+
+export type CompanyInputMetricId = (typeof companyInputMetricIds)[number];
+
+export const researchTaskIds = [
+  "company-overview",
+  "moat-analysis",
+  "decentralization-analysis",
+  "product-alternatives",
+  "implementation-prompts",
+  "source-gathering",
+  "company-sync",
+] as const;
+
+export type ResearchTaskId = (typeof researchTaskIds)[number];
+export type RalphProviderId = "claude" | "codex";
+export type RalphProviderPreference = RalphProviderId | "auto" | "both";
+export type RalphSyncMode = "dry-run" | "publish";
+export const syncBatchTargetIds = ["published", "all", "stale"] as const;
+export type SyncBatchTargetId = (typeof syncBatchTargetIds)[number];
+export type ManifestQueueStatus = "queued";
+export type ResearchTargetSource = "canonical" | "queued";
+export type UnverifiedCompanyRequestStatus = "pending" | "prepared" | "completed" | "failed";
+export type CompanyIntakeAlreadyResearchedMode = "skip" | "refresh";
+export type UnverifiedCompanyIssueCode =
+  | "already-queued"
+  | "already-researched"
+  | "ambiguous"
+  | "draft-validation-failed"
+  | "duplicate-candidate"
+  | "duplicate-input"
+  | "invalid"
+  | "provider-failure";
+
+export interface CompanyManifest {
+  schemaVersion: 1;
+  slug: string;
+  name: string;
+  ticker: string;
+  regionId: string;
+  indexIds: string[];
+  sectorId: string;
+  industryId: string;
+  companiesMarketCapUrl: string;
+  description: string;
+  technologyWaveIds: string[];
+  maybeIpo?: CompanyIpo | null;
+  seedProductNames?: string[];
+  seedSourceUrls?: string[];
+  notes?: string;
+}
+
+export interface ManifestQueueEntry {
+  schemaVersion: 1;
+  status: ManifestQueueStatus;
+  createdOn: string;
+  batchId?: string;
+  groupLabel?: string;
+  requestNotes?: string;
+  manifest: CompanyManifest;
+}
+
+export interface UnverifiedCompanyIssue {
+  sourceItem: string;
+  code: UnverifiedCompanyIssueCode;
+  detail: string;
+  maybeCandidateSlug?: string;
+}
+
+export interface PreparedCompanyCandidate {
+  sourceItem: string;
+  slug: string;
+  name: string;
+  ticker: string;
+}
+
+export interface UnverifiedCompanyRequest {
+  schemaVersion: 1;
+  requestId: string;
+  status: UnverifiedCompanyRequestStatus;
+  createdOn: string;
+  updatedOn: string;
+  rawInput: string;
+  rawItems: string[];
+  batchId: string;
+  groupLabel: string;
+  alreadyResearchedMode: CompanyIntakeAlreadyResearchedMode;
+  requestNotes?: string;
+  preparedCandidates: PreparedCompanyCandidate[];
+  skippedItems: UnverifiedCompanyIssue[];
+  queuedSlugs: string[];
+  promotedSlugs: string[];
+  completedCompanySlugs: string[];
+  lastSummaryJson?: string;
+  lastSummaryMarkdown?: string;
+  lastLoopRunDirs: string[];
+  lastSyncRunDirs: string[];
+}
+
+export interface ResearchLoopTarget {
+  companySlug: string;
+  targetSource: ResearchTargetSource;
+  batchId?: string;
+  manifest: CompanyManifest;
+  queueEntry?: ManifestQueueEntry;
+}
+
+export interface RawAlternativeRecord extends Omit<Alternative, "productSlug"> {}
+
+export interface RawDisruptionConceptRecord
+  extends Omit<DisruptionConcept, "productSlug" | "sourceIds"> {}
+
+export interface RawProductRecord {
+  slug: string;
+  name: string;
+  category: string;
+  homepageUrl: string;
+  summary: string;
+  whyItMatters: string;
+  replacementSketch: string[];
+  maybeDisruptionException?: DisruptionException;
+  sourceIds: string[];
+  technologyWaveIds: string[];
+  alternatives: RawAlternativeRecord[];
+  disruptionConcepts: RawDisruptionConceptRecord[];
+}
+
+export interface RawCompanyRecord extends Omit<Company, "productSlugs" | "metrics"> {
+  inputMetrics: Record<CompanyInputMetricId, MetricAssessment>;
+}
+
+export interface CompanyBundle {
+  schemaVersion: 1;
+  company: RawCompanyRecord;
+  products: RawProductRecord[];
+}
+
+export interface ContentGraph {
+  regions: Region[];
+  indices: IndexDefinition[];
+  sectors: Sector[];
+  industries: Industry[];
+  technologyWaves: TechnologyWave[];
+  conceptAngles: ConceptAngle[];
+  companies: Company[];
+  products: Product[];
+  alternatives: Alternative[];
+  disruptionConcepts: DisruptionConcept[];
+  sources: SourceCitation[];
+}
+
+export interface ImplementationPromptArtifact {
+  productSlug: string;
+  companySlug: string;
+  generatedOn: string;
+  markdown: string;
+}
+
+export interface LoadedImplementationPromptArtifact extends ImplementationPromptArtifact {
+  sourceFile: string;
+  issues: string[];
+}
+
+export interface ImplementationPromptsPayload {
+  schemaVersion: 1;
+  companySlug: string;
+  prompts: ImplementationPromptArtifact[];
+}
+
+export interface ResearchTaskDefinition {
+  id: ResearchTaskId;
+  label: string;
+  templateFile: string;
+  outputSuffix: string;
+}
+
+export interface ResearchTaskResult {
+  taskId: ResearchTaskId;
+  provider: RalphProviderId | "local";
+  promptFile: string;
+  rawOutputFile: string;
+  normalizedFile?: string;
+  validationFile?: string;
+  notesFile?: string;
+  exitCode: number;
+  success: boolean;
+  timedOut?: boolean;
+  generatedOn: string;
+}
+
+export interface ResearchRunManifest {
+  schemaVersion: 1;
+  runId: string;
+  companySlug: string;
+  targetSource?: ResearchTargetSource;
+  batchId?: string;
+  mode: RalphSyncMode;
+  requestedProvider: RalphProviderPreference;
+  resolvedProviders: RalphProviderId[];
+  taskResults: ResearchTaskResult[];
+  generatedOn: string;
+  publishedBundleFile?: string;
+  publishedSourceIds?: string[];
+  commitSha?: string;
+}
+
+export interface RalphProviderConfig {
+  command: string;
+  args: string[];
+  env?: Record<string, string>;
+  timeoutMs?: number;
+}
+
+export interface RalphProvidersFile {
+  schemaVersion: 1;
+  defaultProviderOrder: RalphProviderId[];
+  providers: Record<RalphProviderId, RalphProviderConfig>;
+}
+
+export interface CompanySyncPayload {
+  schemaVersion: 1;
+  bundle: CompanyBundle;
+  sources: SourceCitation[];
+  summaryMarkdown?: string;
+}
+
+2026-05-26T10:45:18.328568Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:18.328580Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:18.328904Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:18.328907Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:18.329355Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:18.329358Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:18.329714Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:18.329717Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:18.330059Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:18.330063Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:18.330778Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:18.330781Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Eaton 2025 annual report electrical Americas Electrical Global Aerospace Vehicle eMobility revenue ...
+web search: 
+web search: Eaton 2025 annual report net sales operating profit 2025 ...
+web search: 
+web search: Eaton electrical distribution power distribution products official switchgear transformers UPS ...
+2026-05-26T10:45:50.084162Z  WARN codex_analytics::client: failed to send events request: error sending request for url (https://chatgpt.com/backend-api/codex/analytics-events/events)
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "eaton",
+      "name": "Eaton",
+      "ticker": "ETN",
+      "rankApprox": 90,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "industrials",
+      "industryId": "electrical-equipment",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/eaton/marketcap/",
+      "description": "Eaton is an intelligent power management company supplying electrical, aerospace, mobility, and industrial power products for buildings, data centers, utilities, aircraft, vehicles, and industrial customers.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Eaton reports through Electrical Americas, Electrical Global, Aerospace, and Mobility after combining its legacy Vehicle and eMobility activities. Its electrical franchises sell power distribution, circuit protection, power quality, wiring, utility distribution, data center, and energy infrastructure products.",
+            "The company is positioned around electrification, data-center capacity, grid modernization, aerospace demand, and industrial power management rather than a single consumer-facing platform."
+          ]
+        },
+        {
+          "title": "Current momentum",
+          "paragraphs": [
+            "Eaton reported record 2025 sales of about $27.4 billion, record segment margins, and strong backlog growth in Electrical and Aerospace, with management citing AI data centers, reindustrialization, infrastructure spending, and aerospace markets as major demand drivers.",
+            "That demand profile gives Eaton stronger near-term pricing and capacity advantages than many commodity equipment suppliers, but it also leaves the company exposed to cyclical capital spending, electrical supply-chain constraints, and standards-driven interoperability pressure."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Eaton's moat comes from certified product lines, installed-base trust, channel relationships, engineering support, service networks, and the cost of failure in electrical infrastructure. Customers buying switchgear, breakers, power quality systems, battery energy storage, or EV charging hardware often value reliability, code compliance, and accountable vendors over the lowest bill of materials.",
+        "The moat is meaningful but not absolute. Many product categories are standards-based, competitively supplied, and exposed to second-sourcing, local manufacturing, and open energy-management software over time. Eaton's strongest defenses are qualification, integration, and service rather than proprietary network effects."
+      ],
+      "decentralizationNarrative": [
+        "Eaton sells into markets that are themselves becoming more distributed: microgrids, building energy systems, EV charging, on-site storage, and distributed energy resources. That creates openings for open controllers, federated monitoring, community procurement, and local fabrication around the edges of the stack.",
+        "Full decentralization is constrained by safety certification, utility interconnection, high-voltage manufacturing, warranties, and liability. The most credible pressure is not a home-built substitute for all Eaton hardware, but modular open hardware, open telemetry, open energy management, and local repair networks that reduce dependence on closed vendor control planes."
+      ],
+      "sourceIds": [
+        "eaton-2025-annual-report",
+        "eaton-2025-results",
+        "eaton-low-voltage-distribution",
+        "eaton-xstorage",
+        "eaton-green-motion-dc",
+        "companiesmarketcap-eaton",
+        "stockanalysis-etn-statistics"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy",
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100.",
+      "inputMetrics": {
+        "moat": {
+          "value": 78,
+          "rationale": "Certified electrical infrastructure, channel depth, engineering support, installed-base trust, and record backlog give Eaton a strong industrial moat, though many categories remain standards-based and competitively supplied.",
+          "sourceIds": [
+            "eaton-2025-annual-report",
+            "eaton-2025-results",
+            "eaton-low-voltage-distribution"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 46,
+          "rationale": "Power distribution and charging hardware can be made more modular and open at the control, monitoring, procurement, and repair layers, but certified electrical equipment has safety, liability, and utility-interconnection barriers.",
+          "sourceIds": [
+            "eaton-low-voltage-distribution",
+            "eaton-xstorage",
+            "openems-project",
+            "openevse-github"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 82,
+          "rationale": "Eaton reported record 2025 earnings, adjusted earnings per share, operating cash flow, free cash flow, and segment margins, supporting a high profitability score.",
+          "sourceIds": [
+            "eaton-2025-results",
+            "eaton-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 39.28,
+          "rationale": "StockAnalysis listed Eaton's trailing PE ratio at 39.28 in May 2026; valuation data changes daily, so this is treated as market-data dependent.",
+          "sourceIds": [
+            "stockanalysis-etn-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 151960000000,
+          "rationale": "CompaniesMarketCap listed Eaton's May 2026 market capitalization at about $151.96 billion.",
+          "sourceIds": [
+            "companiesmarketcap-eaton"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "power-distribution-equipment",
+        "name": "Power distribution equipment",
+        "category": "Electrical infrastructure",
+        "homepageUrl": "https://www.eaton.com/us/en-us/products/low-voltage-power-distribution-control-systems.html",
+        "summary": "Eaton sells low-voltage and medium-voltage distribution, switchgear, circuit protection, transformers, monitoring, and control systems used to distribute and manage electrical power in buildings, industrial facilities, utilities, and data centers.",
+        "whyItMatters": "Power distribution equipment is a core choke point for electrification, data centers, microgrids, backup power, and local energy resilience because unsafe or unavailable electrical infrastructure can block deployment even when generation and storage are available.",
+        "replacementSketch": [
+          "The near-term free-world replacement path is modular rather than total: open planning tools, open telemetry, open energy management, documented interfaces, community procurement, and repairable hardware around certified components.",
+          "Over a longer horizon, more local manufacturing of enclosures, monitoring boards, wiring harnesses, and low-risk accessory modules could pressure closed service models while certified high-energy components remain more centralized."
+        ],
+        "sourceIds": [
+          "eaton-low-voltage-distribution",
+          "eaton-xstorage",
+          "pandapower-project",
+          "openems-project",
+          "open-power-quality"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy management platform for coordinating renewable generation, storage, grid interaction, and controllable loads.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "The project publishes source code and documentation for a modular open energy management platform.",
+                "sourceIds": [
+                  "openems-project",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "OpenEMS targets local edge energy management, which fits distributed energy resources and microgrid coordination better than a closed vendor cloud.",
+                "sourceIds": [
+                  "openems-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "The platform is active and documented, but deployment still requires integrator skill and compatible field hardware.",
+                "sourceIds": [
+                  "openems-project",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Open software can reduce licensing and lock-in costs for energy coordination, while certified electrical hardware remains a major cost center.",
+                "sourceIds": [
+                  "openems-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openems-project",
+              "openems-github"
+            ]
+          },
+          {
+            "slug": "pandapower",
+            "name": "pandapower",
+            "kind": "open-source",
+            "homepageUrl": "https://www.pandapower.org/",
+            "repoUrl": "https://github.com/e2nIEE/pandapower",
+            "summary": "pandapower is a BSD-licensed Python tool for electric power system modeling, analysis, and optimization.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "pandapower is published as free and open-source software under a BSD license with a public repository.",
+                "sourceIds": [
+                  "pandapower-project",
+                  "pandapower-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 62,
+                "rationale": "Open grid modeling reduces dependence on proprietary engineering tools, but it does not directly replace certified physical equipment.",
+                "sourceIds": [
+                  "pandapower-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 76,
+                "rationale": "The project is documented, widely usable in Python workflows, and supports standard power-system analysis tasks.",
+                "sourceIds": [
+                  "pandapower-project",
+                  "pandapower-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 58,
+                "rationale": "Free modeling tools can lower engineering and feasibility-study costs, but hardware procurement and installation still dominate deployment budgets.",
+                "sourceIds": [
+                  "pandapower-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "pandapower-project",
+              "pandapower-github"
+            ]
+          },
+          {
+            "slug": "open-power-quality",
+            "name": "Open Power Quality",
+            "kind": "open-source",
+            "homepageUrl": "https://openpowerquality.org/",
+            "summary": "Open Power Quality is an open-source hardware and software project for low-cost distributed power-quality data collection, analysis, and visualization.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "The project describes itself as open-source hardware and software for distributed power-quality monitoring.",
+                "sourceIds": [
+                  "open-power-quality"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "Distributed low-cost monitoring can move grid observability toward sites, campuses, and communities rather than only centralized utility or vendor systems.",
+                "sourceIds": [
+                  "open-power-quality"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 50,
+                "rationale": "The project is useful for monitoring and research, but it is not a full substitute for commercial protection or distribution equipment.",
+                "sourceIds": [
+                  "open-power-quality"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Low-cost monitoring can improve diagnostics and maintenance without buying a proprietary monitoring stack, though it does not remove certified equipment costs.",
+                "sourceIds": [
+                  "open-power-quality"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "open-power-quality"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-microgrid-control-plane",
+            "name": "Open microgrid control plane",
+            "summary": "Community buildings, campuses, and small industrial sites could coordinate batteries, solar, EV chargers, controllable loads, and certified switchgear through open energy-management software rather than a single-vendor control plane.",
+            "angleIds": [
+              "microgrid-coordination",
+              "open-energy-hardware",
+              "distributed-energy-generation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure shifts from closed integrated electrical systems toward interoperable certified hardware plus open site-level coordination, reducing vendor lock-in while preserving safety-critical equipment standards.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through local edge control, open telemetry, and multi-vendor coordination rather than Bitcoin. Each site can keep control logic and energy data locally while sharing only the signals needed for procurement, maintenance, or demand response.",
+            "coordinationMechanism": "Building owners, installers, DER operators, and equipment vendors publish device capabilities and operating constraints into an open controller. Local operators choose dispatch policies and can federate aggregated flexibility with utilities or energy-service providers.",
+            "verificationOrTrustModel": "Meters, inverter data, breaker telemetry, and battery management systems provide cross-checks against reported dispatch. Critical actions remain bounded by certified hardware protections, operator permissions, and audit logs, while third-party inspectors can validate installation and settings.",
+            "failureModes": [
+              "Open controllers still need professional commissioning and can create safety or reliability risks if they command equipment outside certified operating envelopes.",
+              "Vendors may keep important telemetry, firmware, or warranties closed, limiting practical interoperability.",
+              "Utility interconnection rules and cyber-security requirements can slow adoption even when the software is ready."
+            ],
+            "adoptionPath": [
+              "Start with monitoring-only deployments using open tools alongside certified Eaton or peer equipment.",
+              "Add local optimization for batteries, solar, EV chargers, and controllable loads where equipment exposes safe APIs.",
+              "Standardize procurement requirements around open telemetry, documented controls, and local fallback modes."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "eaton-low-voltage-distribution",
+              "eaton-xstorage"
+            ],
+            "enablerSourceIds": [
+              "openems-project",
+              "pandapower-project",
+              "open-power-quality"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "The concept directly moves energy coordination and observability to local operators and interoperable edge systems.",
+                "sourceIds": [
+                  "openems-project",
+                  "open-power-quality"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 66,
+                "rationale": "OpenEMS, pandapower, and monitoring projects make the control and planning layer credible, but field integration remains difficult.",
+                "sourceIds": [
+                  "openems-project",
+                  "pandapower-project",
+                  "open-power-quality"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 58,
+                "rationale": "Software and monitoring primitives exist, while safety certification, installer skill, and device API access are the hard constraints.",
+                "sourceIds": [
+                  "openems-project",
+                  "eaton-xstorage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 54,
+                "rationale": "This pressures Eaton's closed control and service layers more than its core certified electrical hardware franchise.",
+                "sourceIds": [
+                  "eaton-low-voltage-distribution",
+                  "eaton-xstorage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "local-repairable-distribution-accessories",
+            "name": "Local repairable distribution accessories",
+            "summary": "Local workshops and integrators could fabricate or refurbish non-critical electrical accessories such as enclosures, brackets, harnesses, monitoring adapters, labeling systems, and low-energy interface boards around certified distribution gear.",
+            "angleIds": [
+              "home-microfactory",
+              "decentralized-manufacturing",
+              "recycling-and-reuse",
+              "open-hardware"
+            ],
+            "thesis": "The market shifts at the margins from full-stack replacement purchases toward repair, retrofit, and locally adapted accessory ecosystems that extend equipment life and reduce dependence on proprietary spares.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing is the central mechanism: open designs, local fabrication, and repair documentation let many small operators serve installed infrastructure without waiting for a single OEM supply chain.",
+            "coordinationMechanism": "Installers, facility managers, and local fabricators coordinate through shared BOMs, CAD files, compatibility notes, and inspection records. Procurement favors documented parts with traceable materials and clear fitment boundaries.",
+            "verificationOrTrustModel": "Only low-risk and non-critical parts are eligible. Fitment, material ratings, inspection photos, serial-numbered work orders, and local electrical sign-off constrain fake fulfillment, while certified protective devices remain untouched.",
+            "failureModes": [
+              "A blurry boundary between accessories and safety-critical components could create unacceptable liability.",
+              "Open designs may not match evolving equipment tolerances, environmental ratings, or code requirements.",
+              "Local repair networks need disciplined documentation and inspection practices to avoid poor-quality substitutions."
+            ],
+            "adoptionPath": [
+              "Begin with open documentation and local fabrication for non-energized accessories and monitoring mounts.",
+              "Add refurbishment loops for reusable enclosures and modular monitoring adapters.",
+              "Create procurement policies that distinguish certified power components from open, inspectable accessory layers."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "eaton-low-voltage-distribution"
+            ],
+            "enablerSourceIds": [
+              "open-power-quality",
+              "pandapower-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Local repair and fabrication distribute capability across many workshops, but only for non-critical layers around certified equipment.",
+                "sourceIds": [
+                  "open-power-quality"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 48,
+                "rationale": "Shared documentation and inspection workflows are plausible, but the ecosystem is less mature than open energy-management software.",
+                "sourceIds": [
+                  "open-power-quality",
+                  "pandapower-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 42,
+                "rationale": "The feasible scope is limited by electrical codes, liability, and warranty boundaries, making this practical only at the accessory and monitoring edges.",
+                "sourceIds": [
+                  "eaton-low-voltage-distribution"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 38,
+                "rationale": "This would reduce spare-parts lock-in and service friction but would not seriously displace Eaton's certified switchgear, breakers, or transformers.",
+                "sourceIds": [
+                  "eaton-low-voltage-distribution"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "green-motion-ev-charging-infrastructure",
+        "name": "Green Motion EV charging infrastructure",
+        "category": "EV charging",
+        "homepageUrl": "https://www.eaton.com/us/en-us/skuPage.GMDC50-CCS.html",
+        "summary": "Eaton's Green Motion EV charging line includes AC and DC charging products for fleets, facilities, corridor charging, depot charging, and commercial sites.",
+        "whyItMatters": "EV charging is a coordination layer between vehicles, buildings, grids, payments, and energy management; closed hardware or management systems can create lock-in for site hosts and drivers.",
+        "replacementSketch": [
+          "Open EV charging alternatives are most credible for residential, small commercial, prototyping, and energy-aware charging contexts where open firmware, documented APIs, and local automation matter.",
+          "For high-power public fast charging, open systems are more likely to pressure software, monitoring, payment, and repair layers before replacing certified power electronics and service contracts outright."
+        ],
+        "sourceIds": [
+          "eaton-green-motion-dc",
+          "eaton-ev-charging",
+          "openevse-github",
+          "openevse-site",
+          "ocpp-security-survey"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "openevse",
+            "name": "OpenEVSE",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openevse.com/",
+            "repoUrl": "https://github.com/OpenEVSE",
+            "summary": "OpenEVSE publishes open-source EV charging station hardware and firmware used by makers, integrators, and open energy-monitoring communities.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenEVSE publishes firmware and hardware-related repositories and describes its source materials as openly shared.",
+                "sourceIds": [
+                  "openevse-github",
+                  "openevse-site"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Open firmware and local control fit household, workshop, and small-site charging setups better than cloud-dependent vendor charging.",
+                "sourceIds": [
+                  "openevse-github",
+                  "openevse-site"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 66,
+                "rationale": "OpenEVSE has active public repositories and products, but high-power commercial and fleet deployments have certification, support, and reliability requirements beyond hobbyist installations.",
+                "sourceIds": [
+                  "openevse-github",
+                  "openevse-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Open hardware and firmware can lower lock-in and repair costs for AC charging, though installation, electrical work, and certification remain material costs.",
+                "sourceIds": [
+                  "openevse-github",
+                  "openevse-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openevse-github",
+              "openevse-site"
+            ]
+          },
+          {
+            "slug": "ocpp-based-open-charging-stack",
+            "name": "OCPP-based open charging stack",
+            "kind": "protocol",
+            "homepageUrl": "https://openchargealliance.org/protocols/open-charge-point-protocol/",
+            "summary": "Open Charge Point Protocol provides a vendor-neutral communications model between charge points and management systems, enabling more substitutable charging networks when implemented with open tooling.",
+            "metrics": {
+              "openness": {
+                "value": 72,
+                "rationale": "OCPP is an industry protocol intended for charge-point to management-system interoperability, though individual implementations may remain proprietary.",
+                "sourceIds": [
+                  "ocpp-protocol",
+                  "ocpp-security-survey"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "Protocol interoperability can reduce single-vendor lock-in for charging networks, but many deployments still centralize control in a network operator.",
+                "sourceIds": [
+                  "ocpp-protocol",
+                  "ocpp-security-survey"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 74,
+                "rationale": "OCPP is widely recognized in EV charging, but security and implementation quality vary across products and operators.",
+                "sourceIds": [
+                  "ocpp-protocol",
+                  "ocpp-security-survey"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 60,
+                "rationale": "Interoperability can improve vendor switching and software competition, while charger hardware, site work, and grid upgrades still dominate capital cost.",
+                "sourceIds": [
+                  "ocpp-protocol",
+                  "ocpp-security-survey"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "ocpp-protocol",
+              "ocpp-security-survey"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-local-ev-charging-cooperatives",
+            "name": "Federated local EV charging cooperatives",
+            "summary": "Neighborhoods, workplaces, fleets, and small businesses could deploy interoperable chargers managed by local cooperatives, using open charger firmware, OCPP-compatible software, and transparent energy-settlement rules instead of relying on a single national charging network.",
+            "angleIds": [
+              "federation",
+              "peer-to-peer-marketplace",
+              "cooperative-production",
+              "microgrid-coordination"
+            ],
+            "thesis": "Charging shifts from vertically integrated hardware plus network subscriptions toward locally owned infrastructure that can federate roaming, maintenance, pricing, and demand-response without surrendering control to one vendor.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central through federated operators and peer-to-peer site ownership. Lightning could be added for instant low-fee charging settlement, but the core mechanism is interoperability and cooperative governance rather than a token.",
+            "coordinationMechanism": "Site hosts publish charger availability, price rules, connector types, uptime records, and grid constraints. Drivers, fleets, and roaming hubs route sessions across trusted local operators, while cooperatives pool maintenance and procurement.",
+            "verificationOrTrustModel": "Chargers produce signed session logs and meter readings, operators reconcile utility meter data against charger telemetry, and reputation or escrow rules penalize false availability, spoofed sessions, or nonfunctional stations. OCPP security weaknesses require hardened deployments, certificate management, and independent uptime audits.",
+            "failureModes": [
+              "Small operators may fail to maintain uptime, payment support, accessibility, or customer service at the level drivers expect.",
+              "OCPP and charger-management implementations can be insecure or inconsistent if certificates, firmware updates, and network boundaries are poorly managed.",
+              "Roaming and payment interoperability can become fragmented without common governance."
+            ],
+            "adoptionPath": [
+              "Begin with private fleets, workplaces, multifamily buildings, and community sites where users and operators already know each other.",
+              "Standardize open APIs, OCPP profiles, maintenance logs, and energy-pricing disclosure.",
+              "Federate trusted local networks for roaming and demand response once uptime and settlement are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "eaton-green-motion-dc",
+              "eaton-ev-charging",
+              "ocpp-security-survey"
+            ],
+            "enablerSourceIds": [
+              "openevse-github",
+              "openevse-site",
+              "ocpp-protocol"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 80,
+                "rationale": "Local ownership, federation, and protocol-based interoperability directly reduce dependence on one charging-network operator.",
+                "sourceIds": [
+                  "openevse-github",
+                  "ocpp-protocol"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "The coordination pattern is credible because open charger projects and OCPP exist, but payment, support, and roaming governance remain difficult.",
+                "sourceIds": [
+                  "openevse-github",
+                  "ocpp-protocol",
+                  "ocpp-security-survey"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 56,
+                "rationale": "Feasible first in AC and small commercial contexts; high-power public fast charging requires much harder site, utility, certification, and service execution.",
+                "sourceIds": [
+                  "eaton-green-motion-dc",
+                  "openevse-site"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "This can pressure network software, monitoring, and service economics, but Eaton's certified charging hardware and electrical integration remain defensible.",
+                "sourceIds": [
+                  "eaton-green-motion-dc",
+                  "eaton-ev-charging"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "solar-aware-open-home-and-depot-charging",
+            "name": "Solar-aware open home and depot charging",
+            "summary": "Open EVSE hardware and open energy-management software could coordinate EV charging with rooftop solar, batteries, building loads, and time-varying tariffs so households and depots can optimize charging locally without a proprietary charger cloud.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "open-energy-hardware",
+              "microgrid-coordination",
+              "decentralized-coordination"
+            ],
+            "thesis": "The value of EV charging shifts from standalone charger sales toward open coordination between chargers, solar, batteries, building loads, and local grid signals.",
+            "bitcoinOrDecentralizationRole": "The decentralized role is local energy sovereignty: the user or depot controls charging logic and data locally. Bitcoin or Lightning is not required unless the system later sells surplus charging access to outsiders.",
+            "coordinationMechanism": "Local controllers read solar output, battery state, building load, tariff windows, and vehicle needs, then adjust charge current and schedules across chargers. Installers coordinate through open configurations and reusable templates.",
+            "verificationOrTrustModel": "Utility meter data, inverter telemetry, charger session logs, and battery data can be reconciled to verify that claimed solar self-consumption or demand reduction actually occurred. The main weakness is device API reliability and calibration rather than economic spoofing.",
+            "failureModes": [
+              "Vehicle, charger, inverter, and battery APIs may not expose enough real-time control for robust optimization.",
+              "Poorly configured load management can overload circuits or miss charging deadlines.",
+              "Certification and warranty boundaries can limit how deeply open controllers interact with commercial equipment."
+            ],
+            "adoptionPath": [
+              "Deploy open AC chargers and local monitoring in homes or small depots with solar and predictable charging schedules.",
+              "Connect charger control to open energy-management software and site meters.",
+              "Expand to multi-charger load balancing, demand response, and fleet scheduling after local safety constraints are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "eaton-ev-charging",
+              "eaton-xstorage"
+            ],
+            "enablerSourceIds": [
+              "openevse-github",
+              "openevse-site",
+              "openems-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The concept keeps energy optimization local and interoperable across chargers, solar, storage, and building loads.",
+                "sourceIds": [
+                  "openevse-github",
+                  "openems-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 68,
+                "rationale": "Open EVSE and open energy-management primitives support the mechanism, especially for AC charging and smaller sites.",
+                "sourceIds": [
+                  "openevse-github",
+                  "openems-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 64,
+                "rationale": "Homes and depots are feasible early adopters, while utility programs and mixed-vendor device APIs add integration complexity.",
+                "sourceIds": [
+                  "openevse-site",
+                  "openems-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "This pressures proprietary smart-charging software and AC charger lock-in more than Eaton's high-power DC charging and electrical infrastructure position.",
+                "sourceIds": [
+                  "eaton-green-motion-dc",
+                  "eaton-ev-charging"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "eaton-2025-annual-report",
+      "title": "Eaton 2025 Annual Report",
+      "url": "https://www.eaton.com/content/dam/eaton/company/investor-relations/annual-report/eaton-2025-annual-report.pdf",
+      "kind": "annual-report",
+      "publisher": "Eaton",
+      "note": "Primary filing-style source for Eaton segments, business description, financial results, and risk context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "eaton-2025-results",
+      "title": "Eaton Reports Record Fourth Quarter 2025 Results",
+      "url": "https://www.eaton.com/us/en-us/company/news-insights/news-releases/2026/eaton-reports-record-fourth-quarter-2025-results.html",
+      "kind": "investor-relations",
+      "publisher": "Eaton",
+      "note": "Company release summarizing 2025 sales, earnings, margins, cash flow, backlog, orders, and 2026 outlook.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "eaton-low-voltage-distribution",
+      "title": "Low-voltage power distribution and control systems",
+      "url": "https://www.eaton.com/us/en-us/products/low-voltage-power-distribution-control-systems.html",
+      "kind": "product-page",
+      "publisher": "Eaton",
+      "note": "Product source for Eaton's low-voltage electrical distribution, monitoring, and control equipment.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "eaton-xstorage",
+      "title": "xStorage battery energy storage system",
+      "url": "https://www.eaton.com/us/en-us/catalog/energy-storage/xstorage-battery-energy-storage-system.html",
+      "kind": "product-page",
+      "publisher": "Eaton",
+      "note": "Product source for Eaton's battery storage, microgrid, EV integration, and distributed energy positioning.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "eaton-green-motion-dc",
+      "title": "Eaton Green Motion 50-150kW DC EV Charger",
+      "url": "https://www.eaton.com/us/en-us/skuPage.GMDC50-CCS.html",
+      "kind": "product-page",
+      "publisher": "Eaton",
+      "note": "Product source for Eaton's commercial DC fast-charging hardware.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "eaton-ev-charging",
+      "title": "EV charging | Electric Vehicles and EV charging",
+      "url": "https://www.eaton.com/ca/en-gb/products/emobility/ev-charging.html",
+      "kind": "product-page",
+      "publisher": "Eaton",
+      "note": "Eaton product overview for Green Motion AC and DC EV charging infrastructure.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "companiesmarketcap-eaton",
+      "title": "Eaton (ETN) Market capitalization",
+      "url": "https://companiesmarketcap.com/eaton/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization source used for the registry market-cap metric and CompaniesMarketCap URL.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-etn-statistics",
+      "title": "Eaton Corporation (ETN) Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/etn/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for trailing PE ratio and valuation context.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openevse-github",
+      "title": "OpenEVSE GitHub organization",
+      "url": "https://github.com/openevse",
+      "kind": "open-source-project",
+      "publisher": "OpenEVSE",
+      "note": "Open-source repositories for EV charging station hardware, firmware, and related software.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openevse-site",
+      "title": "OpenEVSE Electric Vehicle Charging Solutions",
+      "url": "https://www.openevse.com/",
+      "kind": "product-page",
+      "publisher": "OpenEVSE",
+      "note": "Project and product source describing OpenEVSE's open-source charging station hardware and software.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openems-project",
+      "title": "OpenEMS - Open Source Energy Management System",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association",
+      "note": "Open-source energy management platform relevant to microgrid and distributed energy coordination.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS GitHub repository",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Public source repository for the OpenEMS energy management platform.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "pandapower-project",
+      "title": "pandapower",
+      "url": "https://www.pandapower.org/",
+      "kind": "open-source-project",
+      "publisher": "pandapower",
+      "note": "Open-source power-system modeling, analysis, and optimization project used as an alternative planning and analysis layer.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "pandapower-github",
+      "title": "e2nIEE/pandapower",
+      "url": "https://github.com/e2nIEE/pandapower",
+      "kind": "open-source-project",
+      "publisher": "pandapower contributors",
+      "note": "Public source repository for the pandapower power-system analysis project.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "open-power-quality",
+      "title": "Open Power Quality",
+      "url": "https://openpowerquality.org/",
+      "kind": "open-source-project",
+      "publisher": "Open Power Quality",
+      "note": "Open-source hardware and software project for distributed power-quality monitoring.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ocpp-protocol",
+      "title": "Open Charge Point Protocol",
+      "url": "https://openchargealliance.org/protocols/open-charge-point-protocol/",
+      "kind": "technical-docs",
+      "publisher": "Open Charge Alliance",
+      "note": "Protocol source for vendor-neutral EV charge point communication and management-system interoperability.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "ocpp-security-survey",
+      "title": "Electric Vehicle Charging: A Survey on the Security Issues and Challenges of the Open Charge Point Protocol",
+      "url": "https://arxiv.org/abs/2207.01950",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Technical analysis source for OCPP security and trust-model risks in open EV charging coordination.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Eaton registry bundle with two products: power distribution equipment and Green Motion EV charging infrastructure. The refresh uses Eaton primary sources for business and product claims, market-data sources for valuation, and open-source energy/charging projects for credible decentralized alternatives and disruption concepts."
+}
+tokens used
+41,142

@@ -1,0 +1,1526 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e63e3-6041-7251-b342-72da44f925b9
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: chubb
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "chubb",
+  "name": "Chubb",
+  "ticker": "CB",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "financials",
+  "industryId": "property-casualty-insurance",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/chubb/marketcap/",
+  "description": "Chubb provides commercial and personal property and casualty insurance, accident and health insurance, and reinsurance.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Commercial insurance",
+    "Personal risk services"
+  ],
+  "seedSourceUrls": [
+    "https://investors.chubb.com/",
+    "https://companiesmarketcap.com/chubb/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-26T10:45:08.289098Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.289110Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.289722Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.289728Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.290284Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.290289Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.290738Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.290742Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.291200Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.291210Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:08.292764Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:08.292773Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.302273Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.302283Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.302614Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.302619Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.302937Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.302941Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.303261Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.303264Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.303570Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.303574Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-26T10:45:09.304288Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-26T10:45:09.304292Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Chubb 2024 annual report commercial personal property casualty accident health reinsurance SEC 10-K net income 2024 ...
+web search: 
+web search: Chubb personal risk services homeowners valuable articles official ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "chubb",
+      "name": "Chubb",
+      "ticker": "CB",
+      "rankApprox": 90,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "financials",
+      "industryId": "property-casualty-insurance",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/chubb/marketcap/",
+      "description": "Chubb provides commercial and personal property and casualty insurance, accident and health insurance, life insurance, and reinsurance globally.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Chubb is one of the largest publicly traded property and casualty insurers, with operations spanning commercial P&C, personal lines, accident and health, life insurance, agriculture, and reinsurance.",
+            "Its commercial franchise serves large corporate, middle-market, small-business, specialty, and multinational risks, while its personal franchise targets affluent households that value broad coverage, risk engineering, and claims service."
+          ]
+        },
+        {
+          "title": "Economic profile",
+          "paragraphs": [
+            "The company combines underwriting income with a large investment portfolio, so profitability depends on pricing discipline, catastrophe exposure, claims severity, reserve adequacy, and reinvestment yields.",
+            "Chubb's scale, broker relationships, underwriting data, ratings, regulatory licenses, and claims capabilities make it difficult for lightweight software-only challengers to replace directly."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Chubb's moat is strongest where underwriting judgment, balance-sheet credibility, regulatory approvals, and claims performance matter more than a commodity policy form. Enterprise buyers and high-net-worth households usually care about financial strength, claims responsiveness, admitted-market capacity, and specialist coverage terms, all of which reward scale and long operating history.",
+        "The moat is not absolute. Distribution workflows, policy administration, submissions, claims documentation, and risk-data exchange can be unbundled by open insurance software, interoperable standards, and broker- or member-owned placement networks. Those layers pressure expense ratios and switching costs even if regulated risk capital remains harder to decentralize."
+      ],
+      "decentralizationNarrative": [
+        "Insurance is only partly decentralizable because regulated capital, actuarial reserving, claims adjudication, and catastrophe risk pooling still require trusted institutions and legal accountability. Fully peer-to-peer insurance remains hard when losses are correlated, data is asymmetric, and claimants need enforceable payment promises.",
+        "The most credible decentralization path is narrower: open-source policy and claims infrastructure, standardized insurance data exchange, verifiable property and loss credentials, mutual or cooperative pools for simpler risks, and on-chain or federated capital markets for specialty reinsurance. These mechanisms can reduce dependence on single carrier platforms without pretending that all insurance capital can disappear."
+      ],
+      "sourceIds": [
+        "chubb-2024-annual-report",
+        "chubb-commercial-insurance",
+        "chubb-personal-insurance",
+        "stockanalysis-chubb-market-cap",
+        "stockanalysis-chubb-statistics"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Chubb benefits from scale, ratings-sensitive buyer trust, broker distribution, underwriting expertise, claims infrastructure, and regulated balance-sheet capacity across complex commercial and affluent personal lines.",
+          "sourceIds": [
+            "chubb-2024-annual-report",
+            "chubb-commercial-insurance",
+            "chubb-personal-insurance"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Insurance workflows and data exchange can decentralize, but regulated risk capital, reserve adequacy, catastrophe exposure, and claims obligations remain difficult to move into purely open or peer-to-peer structures.",
+          "sourceIds": [
+            "chubb-2024-annual-report",
+            "bind-standard",
+            "nayms-docs",
+            "insureconnect-paper"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Chubb reported strong 2024 profitability, including multibillion-dollar net income and an underwriting-focused business model that benefits from disciplined pricing and investment income.",
+          "sourceIds": [
+            "chubb-2024-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "peRatio": {
+          "value": 11.58,
+          "rationale": "StockAnalysis reported Chubb's trailing P/E ratio at 11.58 around the May 2026 market-data snapshot.",
+          "sourceIds": [
+            "stockanalysis-chubb-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        },
+        "marketCap": {
+          "value": 127180000000,
+          "rationale": "StockAnalysis reported Chubb's market capitalization at about $127.18 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-chubb-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-26"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "commercial-insurance",
+        "name": "Commercial insurance",
+        "category": "Commercial property and casualty insurance",
+        "homepageUrl": "https://www.chubb.com/us-en/businesses.html",
+        "summary": "Chubb sells business insurance across small business, middle market, large corporate, specialty, multinational, property, liability, workers compensation, cyber, financial lines, and other commercial risks.",
+        "whyItMatters": "Commercial insurance is a core Chubb profit pool and a hard-to-replace operating system for businesses that need claims payment certainty, broker access, contract compliance, and specialist underwriting.",
+        "replacementSketch": [
+          "A realistic replacement does not start by recreating Chubb's entire balance sheet. It starts by making broker submissions, policy administration, risk data, claims files, and renewal workflows portable through open software and open standards.",
+          "For simpler or highly specialized risks, mutual pools, captive-like cooperatives, and transparent reinsurance marketplaces could sit behind those workflows, gradually reducing dependence on one incumbent carrier for every layer of the stack."
+        ],
+        "sourceIds": [
+          "chubb-commercial-insurance",
+          "chubb-2024-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openkoda",
+            "name": "Openkoda",
+            "kind": "open-source",
+            "homepageUrl": "https://openkoda.com/",
+            "repoUrl": "https://github.com/openkoda/openkoda",
+            "summary": "Openkoda is an MIT-licensed business application platform with insurance templates for policy management, claims management, embedded insurance, and related back-office workflows.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project publishes source code on GitHub under an MIT license and emphasizes code ownership and no vendor lock-in.",
+                "sourceIds": [
+                  "openkoda-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "Openkoda can decentralize carrier and broker software ownership, but it does not itself decentralize underwriting capital or claims-payment guarantees.",
+                "sourceIds": [
+                  "openkoda-platform",
+                  "openkoda-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The platform has active public materials and reusable insurance modules, but replacing enterprise carrier systems still requires significant implementation and compliance work.",
+                "sourceIds": [
+                  "openkoda-platform",
+                  "openkoda-policy-management"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source licensing and reusable templates can reduce software licensing and customization costs for brokers, MGAs, and insurers compared with proprietary core platforms.",
+                "sourceIds": [
+                  "openkoda-policy-management",
+                  "openkoda-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openkoda-platform",
+              "openkoda-policy-management",
+              "openkoda-github"
+            ]
+          },
+          {
+            "slug": "bind-standard",
+            "name": "BIND Standard",
+            "kind": "protocol",
+            "homepageUrl": "https://bind-standard.org/",
+            "summary": "BIND is an open data interoperability standard that models insurance resources such as insureds, submissions, quotes, policies, coverages, and claims.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "BIND is positioned as an open insurance data standard rather than a closed vendor portal.",
+                "sourceIds": [
+                  "bind-standard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "A shared data model can let brokers, MGAs, carriers, and service providers exchange insurance records without centralizing workflow inside one incumbent platform.",
+                "sourceIds": [
+                  "bind-standard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The standard defines useful insurance resources, but market impact depends on adoption by production systems and counterparties.",
+                "sourceIds": [
+                  "bind-standard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Interoperable schemas can reduce integration and rekeying costs, though they do not remove underwriting or claims expenses.",
+                "sourceIds": [
+                  "bind-standard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "bind-standard"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-commercial-risk-placement",
+            "name": "Federated commercial risk placement network",
+            "summary": "A broker- and MGA-operated network could use open insurance schemas, self-hosted policy software, and shared quote/submission protocols to make commercial risk placement portable across carriers, mutual pools, and specialty capital providers.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept weakens incumbent lock-in in distribution and workflow by shifting submissions, policy records, endorsements, and claims files into interoperable infrastructure controlled by market participants instead of a single carrier or software vendor.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and data portability, not through a token. Each broker, MGA, carrier, or pool can run its own node or system while exchanging standardized submissions, quotes, policies, and claims events.",
+            "coordinationMechanism": "Brokers originate standardized submissions, carriers and pools return structured quotes, and policy or claims events are synced through shared schemas and auditable message trails. Open-source policy systems can provide local administration while BIND-like resources provide interoperability.",
+            "verificationOrTrustModel": "Participants sign submissions and responses, attach provenance to exposure data and claims documents, and retain audit logs. Cheating is constrained by broker licensing, carrier appointments, counterparty reputation, signed records, and reconciliation against policy and claims ledgers, though legal enforcement still happens off-chain.",
+            "failureModes": [
+              "Large carriers may refuse meaningful interoperability if it weakens proprietary distribution leverage.",
+              "Bad exposure data, soft-market pricing, or catastrophe correlation can still bankrupt poorly capitalized pools.",
+              "Standards fragmentation could recreate lock-in if each vendor implements incompatible extensions."
+            ],
+            "adoptionPath": [
+              "Start with broker-owned submission and renewal workflows for narrow commercial lines where data fields are standardized.",
+              "Add self-hosted policy and claims administration for MGAs and mutual pools using open-source core software.",
+              "Connect specialty carriers, captives, and reinsurance markets once signed data trails and operational controls are reliable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "chubb-commercial-insurance",
+              "chubb-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "bind-standard",
+              "openkoda-platform",
+              "openkoda-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model distributes workflow and data control across brokers, MGAs, carriers, and pools while leaving regulated capital with licensed entities.",
+                "sourceIds": [
+                  "bind-standard",
+                  "openkoda-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Insurance already depends on multi-party coordination among brokers, carriers, reinsurers, and claims vendors; open schemas make the coordination mechanism plausible.",
+                "sourceIds": [
+                  "bind-standard",
+                  "chubb-commercial-insurance"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Open-source insurance software and data standards exist, but production deployment would require adoption, compliance controls, integrations, and governance.",
+                "sourceIds": [
+                  "openkoda-policy-management",
+                  "bind-standard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept pressures expense ratios and workflow lock-in more than Chubb's core underwriting balance sheet.",
+                "sourceIds": [
+                  "chubb-2024-annual-report",
+                  "openkoda-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "on-chain-specialty-risk-capital",
+            "name": "On-chain specialty risk capital market",
+            "summary": "A regulated marketplace for specialty insurance and reinsurance could tokenize participation in defined risk cells, giving capital providers transparent exposure, premium, claims, and settlement records for narrow risks that are easier to model than broad admitted-market P&C.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept changes market structure by making some specialty risk capacity more modular and tradable, reducing dependence on a small set of incumbent balance sheets for every layer of risk transfer.",
+            "bitcoinOrDecentralizationRole": "The central role is decentralized coordination of capital, policy records, and settlement rather than Bitcoin specifically. Smart contracts can represent policy participation, collateral, premium flows, and claims settlement for eligible risks.",
+            "coordinationMechanism": "Originators create policy opportunities, underwriters define risk and pricing terms, capital providers fund segregated cells or portfolios, and claims administrators trigger settlement according to documented policy rules.",
+            "verificationOrTrustModel": "Smart contracts can enforce collateralization and payment flows, while regulated administrators, audits, signed policy documents, and independent claims adjusters handle off-chain facts. Fraud resistance depends on identity checks, exposure verification, claims evidence, and governance over disputed losses.",
+            "failureModes": [
+              "Regulatory approval and insurance licensing requirements can limit who may underwrite or sell coverage.",
+              "On-chain transparency may be insufficient if loss facts and claims adjustments remain subjective or off-chain.",
+              "Capital could flee after large losses, leaving the model less stable than diversified incumbent balance sheets."
+            ],
+            "adoptionPath": [
+              "Begin with specialty, parametric, or crypto-native risks where participants already accept digital settlement and narrower coverage definitions.",
+              "Use regulated entities and audited smart contracts for collateral, premium, and claims-payment transparency.",
+              "Expand only where claims evidence and reserving discipline prove durable through a full loss cycle."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "chubb-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "nayms-docs",
+              "nayms-quantstamp"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "A marketplace can distribute specialty risk funding among many capital providers, but underwriting, regulation, and claims administration remain partially centralized.",
+                "sourceIds": [
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Nayms documents an on-chain model for creating, underwriting, tokenizing, trading, and settling insurance policies, demonstrating a credible coordination primitive.",
+                "sourceIds": [
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Smart-contract infrastructure and audits exist, but regulated insurance deployment, claims governance, and capital-cycle resilience remain hard.",
+                "sourceIds": [
+                  "nayms-docs",
+                  "nayms-quantstamp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept is more likely to pressure narrow specialty and reinsurance niches than Chubb's full commercial P&C franchise in the near term.",
+                "sourceIds": [
+                  "chubb-2024-annual-report",
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "personal-risk-services",
+        "name": "Personal risk services",
+        "category": "Personal lines and high-net-worth insurance",
+        "homepageUrl": "https://www.chubb.com/us-en/individuals-families.html",
+        "summary": "Chubb offers personal insurance for individuals and families, including homeowners, valuables, auto, umbrella, travel, cyber, and related risk-management and claims services.",
+        "whyItMatters": "The franchise targets households with complex assets and high expectations for claims service, where trust, breadth of coverage, risk prevention, and financial strength can matter more than headline premium.",
+        "replacementSketch": [
+          "Open alternatives are more plausible around data portability, home-risk prevention, claims documentation, and policy administration than around replacing all admitted homeowners insurance capacity.",
+          "A decentralized challenger would likely begin as a verified property-risk and claims-data layer used by mutuals, brokers, and local pools, then compete for narrower covers such as deductibles, valuables, preventive maintenance, or parametric catastrophe add-ons."
+        ],
+        "sourceIds": [
+          "chubb-personal-insurance",
+          "chubb-valuables-coverage"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openkoda-personal-lines-stack",
+            "name": "Openkoda personal-lines stack",
+            "kind": "open-source",
+            "homepageUrl": "https://openkoda.com/insurance-policy-management-software/",
+            "repoUrl": "https://github.com/openkoda/openkoda",
+            "summary": "Openkoda's policy, claims, and administration modules can be adapted for personal-lines workflows, customer records, claims documents, renewals, and insurer or agency operations.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Openkoda's core repository is MIT-licensed and publicly available.",
+                "sourceIds": [
+                  "openkoda-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "It can shift software control to agencies, MGAs, mutuals, or local operators, but does not by itself decentralize the admitted insurance promise.",
+                "sourceIds": [
+                  "openkoda-policy-management",
+                  "openkoda-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The modules are plausible building blocks, but a personal-lines carrier replacement would still need rating, filing, claims, compliance, and capital infrastructure.",
+                "sourceIds": [
+                  "openkoda-policy-management"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open-source administration can reduce platform lock-in and customization costs for smaller insurers, agencies, or mutual programs.",
+                "sourceIds": [
+                  "openkoda-platform",
+                  "openkoda-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            },
+            "sourceIds": [
+              "openkoda-policy-management",
+              "openkoda-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "verifiable-home-risk-credential-network",
+            "name": "Verifiable home risk credential network",
+            "summary": "A homeowner-controlled credential network could store verified roof condition, wildfire mitigation, inspections, repairs, valuations, ownership records, and claims evidence so households can carry trusted risk data between insurers, mutuals, brokers, and disaster-recovery services.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "The concept reduces insurer data lock-in by making risk-prevention and claims evidence portable, especially for homeowners facing volatile catastrophe underwriting and repeated inspections.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through self-sovereign identity, verifiable credentials, federated storage, and tamper-evident evidence rather than a payment token. Bitcoin or Lightning is not central unless later used for deductibles, escrow, or small claims settlement.",
+            "coordinationMechanism": "Homeowners, contractors, inspectors, insurers, brokers, and claims adjusters issue or consume signed credentials. A household grants selective access to evidence when shopping coverage, proving mitigation, or filing a claim.",
+            "verificationOrTrustModel": "Credentials are signed by licensed or reputation-scored issuers, linked to property identifiers, timestamped, and cross-checked against photos, invoices, satellite imagery, sensor readings, and claims records. Cheating is constrained by issuer reputation, auditability, revocation lists, and insurer sampling, but some facts still require physical inspection.",
+            "failureModes": [
+              "Insurers may discount credentials unless issuers, data formats, and liability rules are standardized.",
+              "Fraudulent contractors or manipulated images could poison the data without strong issuer governance.",
+              "Privacy concerns may limit homeowner willingness to share detailed property and claims histories."
+            ],
+            "adoptionPath": [
+              "Start with wildfire, roof, water-leak, and valuable-article documentation where prevention and proof materially affect underwriting or claims.",
+              "Let brokers and mutuals accept the credentials for quote intake and renewal discounts.",
+              "Expand into claim packets and disaster recovery once issuers and insurers agree on evidence standards."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "chubb-personal-insurance",
+              "chubb-valuables-coverage"
+            ],
+            "enablerSourceIds": [
+              "insureconnect-paper",
+              "bind-standard"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model shifts evidence control toward homeowners and federated issuers while allowing multiple insurers and mutuals to consume the same credentials.",
+                "sourceIds": [
+                  "insureconnect-paper",
+                  "bind-standard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The cited InsureConnect research combines decentralized identifiers, verifiable credentials, satellite imagery, Hyperledger Fabric, and IPFS for property-insurance workflows.",
+                "sourceIds": [
+                  "insureconnect-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The technical primitives are documented, but adoption requires insurer trust, issuer governance, privacy controls, and integration with policy and claims systems.",
+                "sourceIds": [
+                  "insureconnect-paper",
+                  "bind-standard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Portable evidence can reduce switching friction and improve risk selection for smaller pools, but it does not replace Chubb's financial strength or high-touch claims service.",
+                "sourceIds": [
+                  "chubb-personal-insurance",
+                  "insureconnect-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          },
+          {
+            "slug": "community-parametric-catastrophe-mutual",
+            "name": "Community parametric catastrophe mutual",
+            "summary": "Local households exposed to wildfire, wind, flood, or earthquake risk could form cooperative add-on pools that pay predefined benefits when objective triggers are met, using open policy administration and transparent reserves rather than replacing full homeowners coverage.",
+            "angleIds": [
+              "cooperative-production",
+              "peer-to-peer-marketplace",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept targets coverage gaps, high deductibles, or mitigation incentives around catastrophe exposure, where incumbent admitted carriers may restrict capacity or raise prices.",
+            "bitcoinOrDecentralizationRole": "Decentralized coordination matters through cooperative governance, transparent reserve accounting, and objective trigger publication. Bitcoin or Lightning could later support member payments or emergency disbursements, but it is not required for the core mechanism.",
+            "coordinationMechanism": "Members pay premiums or contributions into a governed pool, objective data providers publish event triggers, and administrators release fixed benefits according to rules approved by the cooperative.",
+            "verificationOrTrustModel": "Parametric triggers reduce subjective claims handling by relying on external event data such as hazard maps, weather stations, satellite observations, or government disaster records. Fraud risk moves from individual claim inflation to trigger manipulation, data-provider capture, inadequate reserves, and governance abuse.",
+            "failureModes": [
+              "Basis risk can leave members unpaid after real losses if the trigger is not met.",
+              "A severe correlated catastrophe can exhaust community reserves without reinsurance.",
+              "Regulators may treat the mutual as insurance, requiring licenses, filings, reserves, and consumer protections."
+            ],
+            "adoptionPath": [
+              "Launch as a supplemental mutual or deductible-assistance pool for a narrow peril and geography.",
+              "Use open administration software and public reserve reporting to build trust.",
+              "Add reinsurance or specialty capital only after the pool has credible loss data and governance."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "chubb-personal-insurance"
+            ],
+            "enablerSourceIds": [
+              "openkoda-policy-management",
+              "nayms-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "A cooperative pool distributes governance and risk-sharing among members, though it still needs regulated administration and possibly reinsurance.",
+                "sourceIds": [
+                  "openkoda-policy-management",
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The coordination mechanism is plausible for narrow supplemental covers, but correlated catastrophe risk and member governance are hard.",
+                "sourceIds": [
+                  "chubb-personal-insurance",
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Open policy administration and transparent settlement tools exist, but actuarial pricing, regulation, and reinsurance would be major implementation barriers.",
+                "sourceIds": [
+                  "openkoda-policy-management",
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The model can pressure supplemental catastrophe and deductible products, but it is unlikely to displace affluent homeowners coverage in the near term.",
+                "sourceIds": [
+                  "chubb-personal-insurance"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-26"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "chubb-2024-annual-report",
+      "title": "Chubb Limited 2024 Annual Report",
+      "url": "https://investors.chubb.com/files/doc_financials/2024/ar/2024-Chubb-Limited-Annual-Report-Final.pdf",
+      "kind": "annual-report",
+      "publisher": "Chubb Limited",
+      "note": "Primary source for Chubb's business segments, underwriting profile, risk factors, and 2024 financial performance.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "chubb-commercial-insurance",
+      "title": "Commercial Insurance",
+      "url": "https://www.chubb.com/us-en/businesses.html",
+      "kind": "product-page",
+      "publisher": "Chubb",
+      "note": "Describes Chubb's U.S. commercial insurance offering across small business, middle market, large corporate, and industry-specific risks.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "chubb-personal-insurance",
+      "title": "Insurance for Individuals & Families",
+      "url": "https://www.chubb.com/us-en/individuals-families.html",
+      "kind": "product-page",
+      "publisher": "Chubb",
+      "note": "Describes Chubb's personal insurance and risk-management services for individuals and families.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "chubb-valuables-coverage",
+      "title": "Chubb Personal Insurance Valuable Articles Coverage",
+      "url": "https://www.chubb.com/cpiebcontent/cpihomepage/pdf/resourceCenter/072010_Valuables%20Coverage.pdf",
+      "kind": "product-page",
+      "publisher": "Chubb",
+      "note": "Supports the personal-lines discussion with an example of Chubb's valuables coverage and high-net-worth personal risk focus.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-chubb-market-cap",
+      "title": "Chubb Market Cap",
+      "url": "https://stockanalysis.com/stocks/cb/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Provides a current market capitalization reference for Chubb around the registry refresh date.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "stockanalysis-chubb-statistics",
+      "title": "Chubb Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/cb/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Provides valuation metrics including trailing P/E used for the input metrics.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openkoda-platform",
+      "title": "Openkoda Insurtech Platform",
+      "url": "https://openkoda.com/",
+      "kind": "open-source-project",
+      "publisher": "Openkoda",
+      "note": "Describes Openkoda as an open-source insurance application platform with code ownership and no vendor lock-in.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openkoda-policy-management",
+      "title": "Insurance Policy Management Software",
+      "url": "https://openkoda.com/insurance-policy-management-software/",
+      "kind": "open-source-project",
+      "publisher": "Openkoda",
+      "note": "Documents Openkoda's insurance policy management capabilities for brokers, MGAs, agencies, and related insurance workflows.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "openkoda-github",
+      "title": "openkoda/openkoda GitHub Repository",
+      "url": "https://github.com/openkoda/openkoda",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Public repository showing Openkoda's MIT-licensed source code and insurance-related templates.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "bind-standard",
+      "title": "BIND Standard",
+      "url": "https://bind-standard.org/",
+      "kind": "technical-docs",
+      "publisher": "BIND Standard",
+      "note": "Open insurance interoperability standard used as an enabler for federated submissions, policies, coverages, and claims data.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "nayms-docs",
+      "title": "What is Nayms?",
+      "url": "https://docs.nayms.com/",
+      "kind": "technical-docs",
+      "publisher": "Nayms",
+      "note": "Documents an Ethereum smart-contract marketplace for creating, underwriting, tokenizing, trading, and settling insurance policies on-chain.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "nayms-quantstamp",
+      "title": "Nayms Quantstamp Verification Certificate",
+      "url": "https://certificate.quantstamp.com/full/nayms.pdf",
+      "kind": "technical-docs",
+      "publisher": "Quantstamp",
+      "note": "Provides third-party smart-contract audit context for the on-chain insurance-marketplace enabler.",
+      "accessedOn": "2026-05-26"
+    },
+    {
+      "id": "insureconnect-paper",
+      "title": "InsureConnect: Blockchain and Digital Identity for the Property Insurance Market",
+      "url": "https://arxiv.org/abs/2605.02824",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research source for verifiable credentials, decentralized identifiers, IPFS, and blockchain-backed property-insurance workflows.",
+      "accessedOn": "2026-05-26"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Chubb registry bundle with two products: commercial insurance and personal risk services. The strongest decentralization pressure appears in open insurance administration, interoperable insurance data standards, verifiable property-risk credentials, cooperative supplemental pools, and narrow on-chain specialty risk markets rather than a direct full-stack replacement for Chubb's regulated balance sheet."
+}
+tokens used
+28,288
