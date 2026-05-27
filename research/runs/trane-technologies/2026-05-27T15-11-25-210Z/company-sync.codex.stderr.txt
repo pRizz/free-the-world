@@ -1,0 +1,1663 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e69fd-8e9e-7943-a39b-ef15c682e599
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: trane-technologies
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "trane-technologies",
+  "name": "Trane Technologies",
+  "ticker": "TT",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "industrials",
+  "industryId": "industrial-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/trane-technologies/marketcap/",
+  "description": "Trane Technologies makes heating, ventilation, air conditioning, refrigeration, and building climate systems.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Trane",
+    "Thermo King"
+  ],
+  "seedSourceUrls": [
+    "https://investors.tranetechnologies.com/",
+    "https://companiesmarketcap.com/trane-technologies/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T15:11:26.313615Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:26.313628Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:26.314163Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:26.314169Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:26.314602Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:26.314606Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:26.315000Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:26.315004Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:26.315512Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:26.315517Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:26.316457Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:26.316462Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:27.127697Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:27.127711Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:27.128064Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:27.128069Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:27.128409Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:27.128415Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:27.128755Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:27.128758Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:27.129098Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:27.129104Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:11:27.129836Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:11:27.129840Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify Trane’s current company/product facts and a small set of open/decentralized alternatives, then return only the JSON object as requested.
+web search: 
+web search: Trane Technologies 2025 annual report Form 10-K brands Trane Thermo King revenue operating margin ...
+web search: 
+web search: open source building energy management system HVAC controls OpenEMS VOLTTRON ...
+web search: 
+web search: Trane commercial HVAC products building automation systems official ...
+web search: 
+web search: open source cold chain temperature monitoring IoT refrigeration fleet ...
+2026-05-27T15:12:00.657374Z  WARN codex_core_plugins::startup_sync: git sync failed for curated plugin sync; falling back to GitHub HTTP error=git ls-remote curated plugins repo timed out after 30s git_binary="git"
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "trane-technologies",
+      "name": "Trane Technologies",
+      "ticker": "TT",
+      "rankApprox": 121,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "industrials",
+      "industryId": "industrial-machinery",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/trane-technologies/marketcap/",
+      "description": "Trane Technologies makes heating, ventilation, air conditioning, refrigeration, and building climate systems through brands including Trane and Thermo King.",
+      "overview": [
+        {
+          "title": "Climate equipment and controls",
+          "paragraphs": [
+            "Trane Technologies is a climate-control company focused on commercial HVAC, residential HVAC, transport refrigeration, building automation, controls, service, and related energy-management systems.",
+            "Its core brands, Trane and Thermo King, give it exposure to installed building infrastructure, refrigerated transport fleets, and ongoing service relationships where reliability, compliance, energy efficiency, and lifecycle support matter."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Trane Technologies has a strong industrial moat because HVAC and transport refrigeration are capital-intensive, safety-sensitive, service-heavy categories with long asset lives and high switching costs once equipment, controls, technicians, and maintenance contracts are embedded.",
+        "The moat is reinforced by brand reputation, dealer and service networks, building automation integration, regulatory familiarity, and a large installed base, though it is less absolute than a software platform moat because customers can specify multi-vendor systems and open protocols at replacement cycles."
+      ],
+      "decentralizationNarrative": [
+        "The company is not structurally decentralized: it manufactures complex physical systems, relies on proprietary product lines, and sells through professional channels where certification, warranty, and service coverage are central.",
+        "Decentralization pressure is most plausible around controls, telemetry, energy optimization, monitoring, semantic building data, and local service coordination rather than a near-term open replacement for compressors, chillers, rooftop units, or transport refrigeration hardware."
+      ],
+      "sourceIds": [
+        "trane-our-story",
+        "trane-2025-annual-report",
+        "trane-controls-page",
+        "thermo-king-home",
+        "stockanalysis-statistics",
+        "stockanalysis-financials",
+        "companiesmarketcap-pe"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "HVAC and transport refrigeration combine engineered equipment, installed-base service, professional channel relationships, controls integration, compliance requirements, and brand trust, all of which make displacement difficult.",
+          "sourceIds": [
+            "trane-2025-annual-report",
+            "trane-controls-page",
+            "thermo-king-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Core equipment manufacturing remains centralized and certification-heavy, but building data models, local energy management, monitoring, and controls interoperability create credible partial decentralization paths.",
+          "sourceIds": [
+            "trane-controls-page",
+            "project-haystack-home",
+            "openems-github",
+            "openenergymonitor-heatpump"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "The company reported about $21.3 billion of 2025 revenue and roughly $4.0 billion of operating income, indicating strong industrial profitability and operating leverage.",
+          "sourceIds": [
+            "stockanalysis-financials",
+            "trane-2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 34.9,
+          "rationale": "CompaniesMarketCap reported a trailing P/E ratio of about 34.9 for Trane Technologies in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 99700000000,
+          "rationale": "StockAnalysis reported Trane Technologies market capitalization at approximately $99.70 billion near late May 2026, consistent with its placement in the S&P 500 top-125 snapshot range.",
+          "sourceIds": [
+            "stockanalysis-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "trane-commercial-hvac-and-controls",
+        "name": "Trane commercial HVAC and controls",
+        "category": "Commercial HVAC, building automation, and energy controls",
+        "homepageUrl": "https://www.trane.com/commercial/north-america/us/en.html",
+        "summary": "Trane sells commercial HVAC equipment, building automation systems, controls, smart thermostats, analytics, and service offerings for buildings and facilities.",
+        "whyItMatters": "Commercial HVAC is a major energy load and a long-lived infrastructure layer, so whoever controls equipment, telemetry, optimization, and service workflows can shape building operating costs and retrofit choices for years.",
+        "replacementSketch": [
+          "The credible open replacement is not a simple cloned chiller or rooftop unit. It is a stack of interoperable sensors, open building metadata, local energy-management software, open controls gateways, and local contractors who can maintain mixed-vendor equipment without being locked into a single vendor's software surface.",
+          "Over time, open monitoring and optimization can let owners buy physical equipment more competitively while retaining independent control of data, schedules, demand response, and fault detection."
+        ],
+        "sourceIds": [
+          "trane-controls-page",
+          "project-haystack-home",
+          "project-haystack-doe",
+          "openems-github",
+          "openenergymonitor-heatpump"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "project-haystack",
+            "name": "Project Haystack",
+            "kind": "open-source",
+            "homepageUrl": "https://project-haystack.org/",
+            "repoUrl": "https://github.com/Project-Haystack",
+            "summary": "Project Haystack is an open-source semantic modeling effort for building, HVAC, energy, lighting, and IoT data.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project describes its conventions and intellectual property as open source and freely usable under an open license model.",
+                "sourceIds": [
+                  "project-haystack-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "A shared semantic layer reduces dependence on one building automation vendor by making point data more portable across tools, integrators, and analytics systems.",
+                "sourceIds": [
+                  "project-haystack-home",
+                  "project-haystack-doe"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Haystack is documented, industry-facing, and already used around building automation and energy-management workflows, though it is a data model rather than a full equipment replacement.",
+                "sourceIds": [
+                  "project-haystack-home",
+                  "project-haystack-doe"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Standardized building data can lower integration and analytics costs, but savings depend on owner specifications, vendor support, and integrator execution.",
+                "sourceIds": [
+                  "project-haystack-home",
+                  "project-haystack-doe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "project-haystack-home",
+              "project-haystack-doe"
+            ]
+          },
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy management platform for monitoring, controlling, and integrating storage, renewables, heat pumps, EV charging, tariffs, and related devices.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The OpenEMS project is published as an open-source energy management system with source code available on GitHub.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Its edge/backend architecture is designed around decentralized site controllers that can coordinate local devices and aggregate across sites.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OpenEMS has a modular architecture and documented use cases, but production deployment still requires compatible hardware, integration work, and energy-domain expertise.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open energy orchestration can reduce vendor lock-in and improve use of local generation, storage, tariffs, and flexible loads such as heat pumps.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openems-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-building-energy-control-stack",
+            "name": "Open building energy control stack",
+            "summary": "Building owners specify open telemetry, open semantic models, and local energy controllers as the persistent control layer, while HVAC hardware becomes a replaceable component inside a mixed-vendor building system.",
+            "angleIds": [
+              "open-energy-hardware",
+              "microgrid-coordination",
+              "decentralized-coordination"
+            ],
+            "thesis": "If energy optimization, schedules, diagnostics, and demand-response coordination live in an owner-controlled open stack, proprietary HVAC vendors lose some control over data, analytics, and lifecycle service economics.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through open data models, local controllers, and multi-party building operations rather than Bitcoin. Each building or campus can operate its own control node while sharing standard semantics with contractors, utilities, and analytics providers.",
+            "coordinationMechanism": "Owners, integrators, equipment vendors, and energy-service providers coordinate through Haystack-modeled points, local OpenEMS-style controllers, published control policies, and auditable service contracts.",
+            "verificationOrTrustModel": "Sensor readings are cross-checked against equipment telemetry, utility meter data, controller logs, and maintenance records. Integrators can be required to preserve open point mappings and exportable histories so claims about efficiency or faults can be independently reviewed.",
+            "failureModes": [
+              "Poor commissioning or bad point mapping can make an open stack unreliable even when the software is open.",
+              "Major equipment warranties and safety requirements may still force reliance on certified vendor service.",
+              "Utilities and building owners may resist control changes if cybersecurity and liability responsibilities are unclear."
+            ],
+            "adoptionPath": [
+              "Start with monitoring and semantic tagging on existing Trane and non-Trane equipment.",
+              "Add local optimization for heat pumps, storage, tariffs, and demand response without replacing major equipment.",
+              "At retrofit cycles, specify equipment that exposes interoperable controls and avoids closed data traps."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "trane-controls-page",
+              "project-haystack-doe"
+            ],
+            "enablerSourceIds": [
+              "project-haystack-home",
+              "openems-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept moves control and data ownership from one equipment vendor toward building owners, local controllers, and competing integrators.",
+                "sourceIds": [
+                  "project-haystack-home",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Open building metadata and local energy management are documented primitives, though coordination still depends on procurement specifications and professional commissioning.",
+                "sourceIds": [
+                  "project-haystack-doe",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Monitoring and optimization are feasible today, but deep closed-loop control across commercial HVAC assets requires careful integration, cybersecurity, and liability management.",
+                "sourceIds": [
+                  "trane-controls-page",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "This would not eliminate Trane equipment demand, but it could pressure proprietary controls, analytics, and service capture.",
+                "sourceIds": [
+                  "trane-controls-page",
+                  "project-haystack-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "local-heat-pump-performance-commons",
+            "name": "Local heat pump performance commons",
+            "summary": "Open heat-pump monitoring kits and shared performance datasets help households, contractors, and building owners compare real-world system performance, expose poor installs, and coordinate local retrofit practices.",
+            "angleIds": [
+              "open-energy-hardware",
+              "cooperative-production",
+              "distributed-energy-generation"
+            ],
+            "thesis": "Transparent field data can weaken brand-led and dealer-led information asymmetry by making comfort, efficiency, and installation quality visible across many sites.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is a commons of owner-controlled measurement and local contractor accountability. Bitcoin is not central unless future incentive systems pay verified energy savings or demand flexibility.",
+            "coordinationMechanism": "Building owners install open monitoring hardware, publish normalized performance metrics, and use community or cooperative buyer groups to reward contractors and equipment choices that perform well in comparable buildings.",
+            "verificationOrTrustModel": "Thermal output, electric input, flow temperature, outdoor temperature, and runtime data can be cross-checked by independent sensors and raw logs. Public methods and open hardware make it harder for vendors or installers to hide bad performance behind proprietary dashboards.",
+            "failureModes": [
+              "Measurement quality varies with sensor placement, calibration, and installation competence.",
+              "Residential and small-commercial systems differ enough that naive rankings could mislead buyers.",
+              "Manufacturers may still dominate warranty, parts, and technician certification."
+            ],
+            "adoptionPath": [
+              "Deploy open heat-pump monitoring on early adopter homes and small commercial buildings.",
+              "Publish comparable local performance benchmarks and installer scorecards.",
+              "Use purchasing groups and municipal retrofit programs to specify transparent monitoring and open data export."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "trane-our-story",
+              "trane-controls-page"
+            ],
+            "enablerSourceIds": [
+              "openenergymonitor-heatpump"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept decentralizes performance knowledge and buyer coordination, although it does not decentralize compressor manufacturing itself.",
+                "sourceIds": [
+                  "openenergymonitor-heatpump"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open monitoring is practical, but translating measurements into trusted buyer coordination requires data governance and normalization.",
+                "sourceIds": [
+                  "openenergymonitor-heatpump"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "OpenEnergyMonitor documents heat-pump monitoring approaches using open hardware and software, making pilots realistic.",
+                "sourceIds": [
+                  "openenergymonitor-heatpump"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Transparent performance data can pressure service quality and procurement, but it is unlikely to displace major HVAC manufacturers directly in the near term.",
+                "sourceIds": [
+                  "trane-our-story",
+                  "openenergymonitor-heatpump"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "thermo-king-transport-refrigeration",
+        "name": "Thermo King transport refrigeration",
+        "category": "Transport refrigeration and cold-chain climate control",
+        "homepageUrl": "https://www.thermoking.com/",
+        "summary": "Thermo King provides transport refrigeration and temperature-control systems for trucks, trailers, containers, rail, buses, and other mobile cold-chain applications.",
+        "whyItMatters": "Cold-chain transport protects food, medicine, and other temperature-sensitive goods, so the market rewards uptime, compliance, monitoring, service coverage, and fleet visibility.",
+        "replacementSketch": [
+          "A credible open alternative begins with monitoring, telemetry, compliance logs, and fleet orchestration rather than replacing the refrigeration unit itself.",
+          "Open IoT platforms and low-cost sensor networks can let shippers, carriers, and receivers coordinate cold-chain custody, exception handling, and proof of temperature integrity across mixed refrigeration hardware."
+        ],
+        "sourceIds": [
+          "thermo-king-home",
+          "openremote-home",
+          "openremote-github",
+          "openfn-cold-chain",
+          "kuzzle-cold-chain"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "openremote",
+            "name": "OpenRemote",
+            "kind": "open-source",
+            "homepageUrl": "https://openremote.io/",
+            "repoUrl": "https://github.com/openremote/openremote",
+            "summary": "OpenRemote is a 100% open-source IoT platform for integrating devices, rules, dashboards, asset management, energy management, and fleet telematics use cases.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenRemote presents itself as a 100% open-source IoT platform and publishes its source code on GitHub.",
+                "sourceIds": [
+                  "openremote-home",
+                  "openremote-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It can support device and fleet data integration without requiring a single refrigeration vendor's telematics system.",
+                "sourceIds": [
+                  "openremote-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The platform is mature enough for IoT and fleet-style deployments, but cold-chain refrigeration control still requires sensors, gateways, installation, and compliance workflows.",
+                "sourceIds": [
+                  "openremote-home",
+                  "openremote-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "An open IoT layer can reduce telematics lock-in and enable mixed-fleet monitoring, though refrigeration hardware and maintenance remain expensive.",
+                "sourceIds": [
+                  "openremote-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openremote-home",
+              "openremote-github"
+            ]
+          },
+          {
+            "slug": "openfn-cold-chain-workflows",
+            "name": "OpenFn cold-chain workflows",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openfn.org/cold-chain-monitoring",
+            "summary": "OpenFn provides open-source workflow automation for cold-chain monitoring integrations, including temperature summaries, alarm information, and health-system logistics data exchange.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenFn emphasizes open-source adaptors and workflow automation for cold-chain monitoring integrations.",
+                "sourceIds": [
+                  "openfn-cold-chain"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It can connect independent cold-chain systems and public-health logistics tools, but it is more of an integration layer than a decentralized hardware platform.",
+                "sourceIds": [
+                  "openfn-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The workflows address real cold-chain monitoring data exchange, but broader refrigerated transport replacement would require devices, operations, and fleet integration.",
+                "sourceIds": [
+                  "openfn-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open integrations can lower coordination and reporting costs, but they do not directly reduce refrigeration-unit capital cost.",
+                "sourceIds": [
+                  "openfn-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openfn-cold-chain"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-cold-chain-custody-network",
+            "name": "Open cold-chain custody network",
+            "summary": "Carriers, shippers, receivers, and inspectors use open IoT telemetry and shared workflow standards to prove temperature custody across mixed refrigeration hardware, reducing dependence on a single OEM telematics stack.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "open-hardware"
+            ],
+            "thesis": "If cold-chain proof moves to open sensors, open workflows, and multi-party custody logs, refrigeration hardware vendors retain mechanical value but lose some leverage over fleet data, compliance reporting, and service routing.",
+            "bitcoinOrDecentralizationRole": "Decentralization is the useful mechanism: many carriers and cargo owners can coordinate around interoperable telemetry and custody records. Bitcoin or Lightning could later settle penalties or bonuses for verified delivery, but it is not required for the base concept.",
+            "coordinationMechanism": "Sensor gateways publish temperature, humidity, door, power, GPS, and alarm events into an open IoT/workflow layer. Shippers define lane requirements, carriers accept jobs, receivers verify receipt conditions, and service providers bid on exceptions.",
+            "verificationOrTrustModel": "Data is checked against redundant sensors, timestamps, GPS traces, device identity, gateway logs, and receiver-side measurements. Tamper-evident hardware seals and independent spot checks can limit spoofing, while raw telemetry exports allow dispute review.",
+            "failureModes": [
+              "Sensor spoofing, poor calibration, or gateway outages can undermine trust in custody records.",
+              "Regulated pharmaceutical and food customers may require certified devices and validated procedures before accepting open telemetry.",
+              "Fleet operators may resist integration work unless insurance, compliance, or spoilage savings are immediate."
+            ],
+            "adoptionPath": [
+              "Start with passive monitoring overlays on existing Thermo King and mixed-vendor refrigerated fleets.",
+              "Connect alarm workflows to shipper, receiver, and service-provider systems through open adaptors.",
+              "Add marketplace-style exception handling where verified nearby technicians or carriers can respond to failures."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "thermo-king-home"
+            ],
+            "enablerSourceIds": [
+              "openremote-github",
+              "openfn-cold-chain",
+              "kuzzle-cold-chain"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept shifts cold-chain visibility and coordination toward multi-party open telemetry rather than a single OEM or fleet platform.",
+                "sourceIds": [
+                  "openremote-github",
+                  "openfn-cold-chain"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Open IoT platforms and cold-chain workflow integrations exist, but trust and liability standards would need careful deployment.",
+                "sourceIds": [
+                  "openremote-github",
+                  "openfn-cold-chain",
+                  "kuzzle-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Monitoring overlays are feasible today; direct refrigeration control and certified compliance workflows are harder.",
+                "sourceIds": [
+                  "openremote-home",
+                  "kuzzle-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Open custody telemetry can pressure proprietary telematics and service workflows, but does not quickly replace Thermo King's refrigeration units or service network.",
+                "sourceIds": [
+                  "thermo-king-home",
+                  "openremote-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "local-reefer-repair-and-sensor-microfactory",
+            "name": "Local reefer repair and sensor microfactory",
+            "summary": "Local workshops use open sensor modules, printable fixtures, shared repair recipes, and standardized telemetry kits to maintain refrigerated transport assets and retrofit older units for better monitoring.",
+            "angleIds": [
+              "home-microfactory",
+              "decentralized-manufacturing",
+              "recycling-and-reuse",
+              "open-hardware"
+            ],
+            "thesis": "If small shops can fabricate brackets, enclosures, sensor harnesses, and monitoring retrofits locally, OEM service networks face pressure in the long tail of maintenance, refurbishment, and compliance upgrades.",
+            "bitcoinOrDecentralizationRole": "The core mechanism is decentralized manufacturing and repair, not Bitcoin. Open fabrication files, local quality records, and reusable sensor designs let more workshops participate without waiting for a central OEM channel.",
+            "coordinationMechanism": "Fleet operators publish retrofit and repair needs, local shops use shared build files and tested BOMs, and operators accept work based on documented telemetry performance and post-install inspection.",
+            "verificationOrTrustModel": "Repairs are verified through before-and-after temperature stability, sensor calibration logs, photos of installed parts, part serials, and follow-up telemetry under real loads. Failed shops lose preferred status in the coordination network.",
+            "failureModes": [
+              "Safety, refrigerant handling, and warranty constraints limit which components can be locally fabricated or serviced.",
+              "Open retrofit kits may not survive harsh vibration, weather, and temperature cycling without strong validation.",
+              "OEM parts and certified technicians remain necessary for many compressor, refrigerant, and control failures."
+            ],
+            "adoptionPath": [
+              "Begin with non-invasive sensor and monitoring retrofits for older refrigerated trucks and trailers.",
+              "Publish validated fixture, enclosure, and harness designs that local shops can fabricate.",
+              "Expand into refurbishment and reuse programs for components that do not compromise refrigeration safety or certification."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "thermo-king-home"
+            ],
+            "enablerSourceIds": [
+              "openremote-github",
+              "kuzzle-cold-chain"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Local fabrication and repair would distribute part of the service and retrofit function, but the refrigeration core remains specialized.",
+                "sourceIds": [
+                  "openremote-github",
+                  "kuzzle-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The coordination model is plausible for monitoring retrofits and fixtures, but weaker for regulated refrigeration service.",
+                "sourceIds": [
+                  "thermo-king-home",
+                  "kuzzle-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Sensor retrofits are feasible; broader local microfactory repair depends on validation, durability, and certification that are not yet proven at scale.",
+                "sourceIds": [
+                  "openremote-github",
+                  "kuzzle-cold-chain"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept could pressure service margins and retrofit channels, but it is unlikely to threaten new-unit refrigeration sales soon.",
+                "sourceIds": [
+                  "thermo-king-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "trane-our-story",
+      "title": "Our Story",
+      "url": "https://www.tranetechnologies.com/en/index/our-story.html",
+      "kind": "investor-relations",
+      "publisher": "Trane Technologies",
+      "note": "Company overview identifying Trane and Thermo King as strategic climate innovation brands.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "trane-2025-annual-report",
+      "title": "2025 Annual Report",
+      "url": "https://s2.q4cdn.com/950394465/files/doc_financials/2025/ar/Trane-technologies-annual-report-web-ready-final.pdf",
+      "kind": "annual-report",
+      "publisher": "Trane Technologies",
+      "note": "Primary annual reporting source for company business mix, financials, and risk context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "trane-2025-results",
+      "title": "Trane Technologies Reports Strong Fourth-Quarter and Full-Year 2025 Results",
+      "url": "https://www.nasdaq.com/press-release/trane-technologies-reports-strong-fourth-quarter-and-full-year-2025-results-robust",
+      "kind": "investor-relations",
+      "publisher": "Nasdaq / Trane Technologies",
+      "note": "Earnings release source for 2025 revenue, operating income, bookings, backlog, and 2026 outlook context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "trane-controls-page",
+      "title": "Controls & Automation",
+      "url": "https://www.trane.com/commercial/north-america/us/en/controls.html",
+      "kind": "product-page",
+      "publisher": "Trane Commercial HVAC",
+      "note": "Product source for Trane building automation, controls, Tracer SC+, Synchrony, Air-Fi, and thermostat offerings.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "thermo-king-home",
+      "title": "Thermo King North America",
+      "url": "https://www.thermoking.com/",
+      "kind": "product-page",
+      "publisher": "Thermo King",
+      "note": "Product source for Thermo King transport refrigeration and temperature-controlled transport positioning.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-statistics",
+      "title": "Trane Technologies (TT) Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/tt/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for late-May 2026 market capitalization and valuation snapshot.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-financials",
+      "title": "Trane Technologies (TT) Financials & Income Statement",
+      "url": "https://stockanalysis.com/stocks/tt/financials/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Financial data source for revenue and operating income metrics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-pe",
+      "title": "Trane Technologies (TT) P/E Ratio",
+      "url": "https://companiesmarketcap.com/trane-technologies/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for the May 2026 trailing P/E ratio.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "project-haystack-home",
+      "title": "Project Haystack",
+      "url": "https://project-haystack.org/",
+      "kind": "open-source-project",
+      "publisher": "Project Haystack",
+      "note": "Open-source building, HVAC, energy, and IoT semantic data modeling source.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "project-haystack-doe",
+      "title": "Project Haystack - Metadata for the Masses",
+      "url": "https://www.energy.gov/eere/buildings/project-haystack-metadata-masses",
+      "kind": "analysis",
+      "publisher": "U.S. Department of Energy",
+      "note": "DOE source describing Haystack as an open-source HVAC and building metadata schema used in EMIS, analytics, fault detection, and control applications.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS - Open Source Energy Management System",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Open-source energy management platform source for decentralized edge control, renewables, storage, heat pumps, tariffs, and device integration.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openenergymonitor-heatpump",
+      "title": "Open-source Heatpump Monitor",
+      "url": "https://github.com/openenergymonitor/HeatpumpMonitor",
+      "kind": "open-source-project",
+      "publisher": "OpenEnergyMonitor",
+      "note": "Open hardware and software source for heat-pump performance monitoring.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openremote-home",
+      "title": "OpenRemote",
+      "url": "https://openremote.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenRemote",
+      "note": "Open-source IoT platform source relevant to fleet, asset, and energy-management telemetry.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openremote-github",
+      "title": "OpenRemote GitHub Repository",
+      "url": "https://github.com/openremote/openremote",
+      "kind": "open-source-project",
+      "publisher": "OpenRemote",
+      "note": "Source repository describing OpenRemote as an open-source IoT platform for devices, rules, dashboards, asset management, energy management, and fleet telematics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openfn-cold-chain",
+      "title": "Cold Chain Monitoring",
+      "url": "https://www.openfn.org/cold-chain-monitoring",
+      "kind": "open-source-project",
+      "publisher": "OpenFn",
+      "note": "Open-source workflow source for cold-chain equipment monitoring integrations and data exchange.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "kuzzle-cold-chain",
+      "title": "Break in the Cold Chain",
+      "url": "https://kuzzle.io/break-cold-chain/",
+      "kind": "technical-docs",
+      "publisher": "Kuzzle",
+      "note": "Technical source describing open-source IoT cold-chain monitoring architecture and real-time anomaly detection use cases.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Trane Technologies registry bundle with Trane commercial HVAC and Thermo King transport refrigeration as the primary products, emphasizing open building data, local energy controls, open heat-pump monitoring, and open cold-chain telemetry as the most credible decentralization paths."
+}
+tokens used
+37,399

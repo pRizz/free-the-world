@@ -1,0 +1,606 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "synopsys",
+      "name": "Synopsys",
+      "ticker": "SNPS",
+      "rankApprox": 110,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/synopsys/marketcap/",
+      "description": "Synopsys provides electronic design automation software, semiconductor IP, verification tools, and broader silicon-to-systems engineering software.",
+      "overview": [
+        {
+          "title": "Business",
+          "paragraphs": [
+            "Synopsys is one of the core infrastructure vendors for semiconductor design, offering EDA software, verification platforms, silicon IP, and related services used to design and validate complex chips and systems.",
+            "The company expanded its strategic scope through the Ansys acquisition, which adds multiphysics simulation and product-design software to its chip-design stack."
+          ]
+        },
+        {
+          "title": "Registry fit",
+          "paragraphs": [
+            "Synopsys belongs in the registry because chip design tooling is a high-leverage bottleneck: proprietary EDA flows and licensed IP influence who can design, verify, and commercialize advanced silicon.",
+            "The most credible decentralization pressure comes from open RTL-to-GDS toolchains, open standards such as RISC-V, shared verification infrastructure, and community-maintained IP blocks, though leading-edge signoff remains difficult to decentralize."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Synopsys has a strong moat built on workflow lock-in, verification depth, foundry qualification, a broad IP catalog, long customer relationships, and the high cost of failed silicon. Chip teams are conservative because tool defects, model gaps, or IP integration failures can turn into expensive tapeout mistakes.",
+        "The moat is reinforced by scale. Synopsys can invest across EDA, verification, silicon IP, AI-assisted design, and simulation while supporting customers across many process nodes and markets."
+      ],
+      "decentralizationNarrative": [
+        "Synopsys is only partly decentralizable today. Open-source EDA has become credible for education, digital ASIC experimentation, mature-node designs, and reproducible RTL-to-GDS flows, but advanced commercial nodes still depend on proprietary process design kits, signoff models, support contracts, and closed foundry interfaces.",
+        "Decentralization pressure is more plausible as a wedge than a full replacement: open flows can lower the floor for new chip designers, open IP can reduce licensing friction for commodity blocks, and federated benchmark infrastructure can make tool quality more transparent."
+      ],
+      "sourceIds": [
+        "synopsys-2025-10k",
+        "synopsys-eda-page",
+        "synopsys-designware-page",
+        "stockanalysis-snps-marketcap"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125; market data refreshed against public market-data pages available near the May 2026 review date.",
+      "inputMetrics": {
+        "moat": {
+          "value": 9,
+          "rationale": "EDA and semiconductor IP have unusually high switching costs because customers depend on qualified flows, foundry relationships, verification coverage, technical support, and silicon-proven IP where errors can create costly tapeout failures.",
+          "sourceIds": [
+            "synopsys-2025-10k",
+            "synopsys-eda-page",
+            "synopsys-designware-page"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 5,
+          "rationale": "Open RTL-to-GDS tooling and open ISA/IP ecosystems create real decentralization pressure at mature nodes and early design stages, but advanced-node signoff, proprietary PDKs, and commercial support requirements still limit complete replacement.",
+          "sourceIds": [
+            "openroad-github",
+            "openlane-docs",
+            "riscv-about",
+            "synopsys-2025-10k"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Synopsys remains a large, revenue-generating software and IP business, but recent GAAP profitability is distorted by acquisition and integration effects around Ansys, making the normalized margin profile stronger than near-term net income alone suggests.",
+          "sourceIds": [
+            "synopsys-2025-results",
+            "synopsys-2025-10k"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 98,
+          "rationale": "A market capitalization around $97.6 billion compared with depressed recent GAAP net income implies a high trailing earnings multiple; the figure is approximate because acquisition effects make trailing earnings noisy.",
+          "sourceIds": [
+            "stockanalysis-snps-marketcap",
+            "stockanalysis-snps-financials"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 97560000000,
+          "rationale": "Public market-data pages reported Synopsys market capitalization near $97.56 billion in mid-May 2026, close to the review window for this registry refresh.",
+          "sourceIds": [
+            "stockanalysis-snps-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "synopsys-eda",
+        "name": "Synopsys EDA",
+        "category": "Electronic design automation",
+        "homepageUrl": "https://www.synopsys.com/silicon-design.html",
+        "summary": "Synopsys EDA is a suite of software and verification tools used to design, simulate, implement, and validate complex semiconductor chips.",
+        "whyItMatters": "EDA tools are a gatekeeper layer for chip creation: they determine who can move from RTL and architecture ideas to manufacturable silicon with acceptable risk.",
+        "replacementSketch": [
+          "The realistic replacement path starts with open RTL-to-GDS flows for mature nodes, reproducible design examples, shared benchmarks, and increasingly capable synthesis, place-and-route, DRC, and visualization tools.",
+          "For leading-edge designs, open tooling is more likely to complement proprietary signoff before it replaces it, especially where closed PDKs, foundry qualification, and support obligations remain decisive."
+        ],
+        "sourceIds": [
+          "synopsys-eda-page",
+          "synopsys-2025-10k",
+          "openroad-github",
+          "openlane-docs"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "synopsys-eda-openroad",
+            "name": "OpenROAD",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/The-OpenROAD-Project/OpenROAD",
+            "repoUrl": "https://github.com/The-OpenROAD-Project/OpenROAD",
+            "summary": "OpenROAD is an open-source RTL-to-GDS application and flow for digital chip implementation.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The core toolchain is developed in public repositories with source code, documentation, and regression-oriented workflows.",
+                "sourceIds": [
+                  "openroad-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "OpenROAD directly reduces dependence on proprietary implementation tools for supported digital flows, especially at mature nodes and in educational or experimental tapeouts.",
+                "sourceIds": [
+                  "openroad-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "OpenROAD is active and usable for real flows, but broad commercial replacement is constrained by process support, signoff expectations, and customer support depth.",
+                "sourceIds": [
+                  "openroad-github",
+                  "openlane-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source implementation tooling can substantially reduce experimentation and learning costs compared with fully proprietary EDA seats.",
+                "sourceIds": [
+                  "openroad-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openroad-github"
+            ]
+          },
+          {
+            "slug": "openlane",
+            "name": "OpenLane",
+            "kind": "open-source",
+            "homepageUrl": "https://openlane2.readthedocs.io/en/latest/",
+            "repoUrl": "https://github.com/efabless/openlane2",
+            "summary": "OpenLane is an extensible open-source ASIC implementation flow that integrates open and commercial EDA tools around reproducible digital design flows.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenLane is documented publicly and structured as an extensible flow that can integrate open-source tools and user-defined plugins.",
+                "sourceIds": [
+                  "openlane-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It packages chip implementation workflows in a way that helps smaller teams reproduce flows without relying entirely on one proprietary vendor stack.",
+                "sourceIds": [
+                  "openlane-docs",
+                  "openroad-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The flow is usable for supported designs and process contexts, but commercial readiness depends on node, PDK access, and signoff requirements.",
+                "sourceIds": [
+                  "openlane-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "A packaged open flow lowers setup and iteration costs for learners, researchers, and mature-node digital ASIC projects.",
+                "sourceIds": [
+                  "openlane-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openlane-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-eda-benchmark-network",
+            "name": "Federated open EDA benchmark network",
+            "summary": "A public network of open designs, reproducible flows, tool versions, PDK-compatible test cases, timing results, area results, and tapeout evidence could make EDA quality more transparent and less dependent on private vendor claims.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market shifts from closed vendor trust toward public, repeatable evidence about which tools work for which designs and process contexts.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated benchmark hosting, independent reproducibility, and multi-party validation of flow results rather than through payments as the core mechanism.",
+            "coordinationMechanism": "Designers, universities, foundries, and open-source maintainers publish signed benchmark runs, tool versions, constraints, and generated artifacts into mirrored registries.",
+            "verificationOrTrustModel": "Cheating is constrained by reproducible containers, public inputs, deterministic tool versions where possible, signed run metadata, and independent reruns by unrelated maintainers; private PDK restrictions remain a major limitation.",
+            "failureModes": [
+              "Benchmark designs may not represent commercial complexity or advanced-node constraints.",
+              "Closed PDKs and foundry confidentiality can prevent full public reproducibility."
+            ],
+            "adoptionPath": [
+              "Start with mature-node public PDKs and open RTL cores where full reproducibility is possible.",
+              "Add foundry- or university-hosted benchmark partitions that disclose enough metadata to compare quality without exposing restricted process details."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "synopsys-2025-10k",
+              "synopsys-eda-page"
+            ],
+            "enablerSourceIds": [
+              "openroad-github",
+              "openlane-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept distributes trust across many independent benchmark publishers and rerunners instead of relying on one vendor's closed validation claims.",
+                "sourceIds": [
+                  "openroad-github",
+                  "openlane-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open-source EDA communities already coordinate around repositories and regression suites, but broad foundry participation would be harder.",
+                "sourceIds": [
+                  "openroad-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The tooling primitives exist, but producing high-quality benchmarks across nodes and use cases requires sustained curation.",
+                "sourceIds": [
+                  "openroad-github",
+                  "openlane-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Transparent benchmarks pressure incumbent pricing and claims at the low-to-mid end, but do not immediately replace advanced commercial signoff.",
+                "sourceIds": [
+                  "synopsys-2025-10k",
+                  "openroad-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "designware-ip",
+        "name": "DesignWare IP",
+        "category": "Semiconductor intellectual property",
+        "homepageUrl": "https://www.synopsys.com/designware",
+        "summary": "DesignWare IP is Synopsys' portfolio of silicon-proven semiconductor IP, including interface IP, security IP, embedded processors, foundation IP, memories, subsystems, and SoC infrastructure.",
+        "whyItMatters": "Reusable semiconductor IP reduces time-to-market and integration risk, but proprietary IP licensing can concentrate control over common chip building blocks.",
+        "replacementSketch": [
+          "The practical replacement pattern is not a single clone of DesignWare, but a growing commons of open ISA specifications, reusable RTL cores, open verification collateral, and shared hardening experience.",
+          "Open IP is strongest where standards are public and process dependence is manageable; analog, high-speed interface, memory, and advanced-node hard macros remain much harder to decentralize."
+        ],
+        "sourceIds": [
+          "synopsys-designware-page",
+          "riscv-about",
+          "lowrisc-ibex",
+          "openhw-group"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "designware-ip-risc-v",
+            "name": "RISC-V",
+            "kind": "protocol",
+            "homepageUrl": "https://riscv.org/",
+            "summary": "RISC-V is an open standard instruction set architecture that enables implementers to build compatible processor cores without relying on a proprietary ISA license.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "RISC-V is an open standard ISA with public specifications and a broad member ecosystem.",
+                "sourceIds": [
+                  "riscv-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "An open ISA reduces dependence on proprietary instruction-set licensors and lets many organizations create interoperable cores.",
+                "sourceIds": [
+                  "riscv-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "RISC-V is commercially adopted, though readiness varies by performance tier, software stack, verification maturity, and product domain.",
+                "sourceIds": [
+                  "riscv-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "The open ISA can reduce licensing friction and enable reusable cores across startups, academic teams, and established vendors.",
+                "sourceIds": [
+                  "riscv-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "riscv-about"
+            ]
+          },
+          {
+            "slug": "lowrisc-ibex",
+            "name": "lowRISC Ibex",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/lowRISC/ibex",
+            "repoUrl": "https://github.com/lowRISC/ibex",
+            "summary": "Ibex is an open-source 32-bit RISC-V CPU core suitable for embedded control use cases.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The core is developed in a public repository with open RTL and documentation.",
+                "sourceIds": [
+                  "lowrisc-ibex"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open RTL lets teams inspect, adapt, verify, and integrate a processor core without proprietary black-box licensing.",
+                "sourceIds": [
+                  "lowrisc-ibex",
+                  "riscv-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "Ibex is credible for embedded-class use cases, but it does not replace the full breadth of commercial processor, interface, and hard-IP portfolios.",
+                "sourceIds": [
+                  "lowrisc-ibex"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "For appropriate embedded use cases, open CPU RTL can reduce licensing and evaluation friction compared with proprietary embedded cores.",
+                "sourceIds": [
+                  "lowrisc-ibex"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "lowrisc-ibex"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-ip-assurance-cooperative",
+            "name": "Open IP assurance cooperative",
+            "summary": "A cooperative could maintain open silicon IP blocks with shared verification suites, public integration reports, formal proofs where feasible, security review history, and process-porting notes, giving buyers a lower-risk path to use open IP.",
+            "angleIds": [
+              "cooperative-production",
+              "open-hardware",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure changes when reusable IP quality assurance becomes a shared public-good service rather than a proprietary bundle sold by a few vendors.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative governance and open verification artifacts; Bitcoin is not central unless later used for bounty escrow or paid review markets.",
+            "coordinationMechanism": "Chip designers, verification engineers, universities, and sponsors fund specific IP blocks, verification milestones, bug bounties, and porting work through cooperative budgets and transparent maintainer processes.",
+            "verificationOrTrustModel": "Trust comes from public RTL, versioned test suites, formal checks where applicable, issue histories, signed releases, independent audits, and silicon bring-up reports; the model remains weaker for analog or process-specific hard macros.",
+            "failureModes": [
+              "Open IP maintainers may lack funding for long-term support and liability expectations.",
+              "Some high-value IP blocks require process-specific analog expertise that is difficult to publish openly."
+            ],
+            "adoptionPath": [
+              "Begin with digital infrastructure blocks and embedded RISC-V cores where open RTL and simulation are practical.",
+              "Expand into shared verification collateral, security review, and foundry-specific integration notes for mature nodes."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "synopsys-designware-page"
+            ],
+            "enablerSourceIds": [
+              "riscv-about",
+              "lowrisc-ibex",
+              "openhw-group"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "A cooperative open IP model directly distributes ownership, maintenance, and validation across many users instead of a single IP licensor.",
+                "sourceIds": [
+                  "riscv-about",
+                  "lowrisc-ibex",
+                  "openhw-group"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open hardware and RISC-V communities already coordinate around specifications and cores, but support expectations for production IP are demanding.",
+                "sourceIds": [
+                  "riscv-about",
+                  "openhw-group"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Digital IP and verification collateral are feasible; broad replacement of commercial hard IP and high-speed interface IP is substantially harder.",
+                "sourceIds": [
+                  "synopsys-designware-page",
+                  "lowrisc-ibex"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "Open, assured commodity IP could pressure licensing for simpler blocks, but Synopsys retains strong advantages in silicon-proven advanced IP and support.",
+                "sourceIds": [
+                  "synopsys-designware-page",
+                  "riscv-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "synopsys-2025-10k",
+      "title": "Synopsys 2025 Annual Report on Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/883241/000088324125000010/synopsysinc-2025arsfiling.pdf",
+      "kind": "annual-report",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary filing source for business description, risk context, segments, and financial framing.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "synopsys-2025-results",
+      "title": "Synopsys Posts Financial Results for Fourth Quarter and Fiscal Year 2025",
+      "url": "https://investor.synopsys.com/news/news-details/2025/Synopsys-Posts-Financial-Results-for-Fourth-Quarter-and-Fiscal-Year-2025/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Synopsys",
+      "note": "Investor release used for recent revenue and profitability context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "synopsys-eda-page",
+      "title": "Electronic Design Automation (EDA)",
+      "url": "https://www.synopsys.com/silicon-design.html",
+      "kind": "product-page",
+      "publisher": "Synopsys",
+      "note": "Product source describing Synopsys' EDA positioning and silicon design tool suite.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "synopsys-designware-page",
+      "title": "Semiconductor IP – Silicon IP | Synopsys IP",
+      "url": "https://www.synopsys.com/designware",
+      "kind": "product-page",
+      "publisher": "Synopsys",
+      "note": "Product source for DesignWare IP categories and value proposition.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-snps-marketcap",
+      "title": "Synopsys (SNPS) Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/snps/market-cap/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Market-data source for approximate May 2026 market capitalization.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-snps-financials",
+      "title": "Synopsys (SNPS) Financials & Income Statement",
+      "url": "https://stockanalysis.com/stocks/snps/financials/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Market-data source used for approximate revenue and earnings context when estimating valuation metrics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openroad-github",
+      "title": "The OpenROAD Project",
+      "url": "https://github.com/The-OpenROAD-Project/OpenROAD",
+      "kind": "open-source-project",
+      "publisher": "The OpenROAD Project",
+      "note": "Open-source RTL-to-GDS toolchain used as a credible EDA alternative and decentralization enabler.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openlane-docs",
+      "title": "OpenLane Documentation",
+      "url": "https://openlane2.readthedocs.io/en/latest/getting_started/newcomers/index.html",
+      "kind": "technical-docs",
+      "publisher": "OpenLane",
+      "note": "Technical documentation for an extensible open ASIC implementation flow.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "riscv-about",
+      "title": "RISC-V International",
+      "url": "https://riscv.org/",
+      "kind": "technical-docs",
+      "publisher": "RISC-V International",
+      "note": "Open-standard ISA source used for semiconductor IP decentralization analysis.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "lowrisc-ibex",
+      "title": "Ibex RISC-V Core",
+      "url": "https://github.com/lowRISC/ibex",
+      "kind": "open-source-project",
+      "publisher": "lowRISC",
+      "note": "Open-source RISC-V CPU core used as a concrete open IP alternative.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openhw-group",
+      "title": "OpenHW Group",
+      "url": "https://www.openhwgroup.org/",
+      "kind": "open-source-project",
+      "publisher": "OpenHW Group",
+      "note": "Open hardware ecosystem source for collaborative processor IP development and verification.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared new Synopsys bundle with two product entries: Synopsys EDA and DesignWare IP. The refresh emphasizes strong proprietary EDA/IP moats, partial decentralization pressure from OpenROAD/OpenLane and RISC-V/open IP, and keeps IPO data null because both IPO date and IPO market cap were not jointly source-supported."
+}

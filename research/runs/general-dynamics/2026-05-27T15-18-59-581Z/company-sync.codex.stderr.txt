@@ -1,0 +1,1615 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6a04-7e12-7740-9b69-50907e946a87
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: general-dynamics
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "general-dynamics",
+  "name": "General Dynamics",
+  "ticker": "GD",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "industrials",
+  "industryId": "aerospace-defense",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/general-dynamics/marketcap/",
+  "description": "General Dynamics makes aerospace, defense, shipbuilding, combat systems, and technology products and services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Gulfstream",
+    "Virginia-class submarines"
+  ],
+  "seedSourceUrls": [
+    "https://investorrelations.gd.com/",
+    "https://companiesmarketcap.com/general-dynamics/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T15:19:01.836437Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.836447Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.837303Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.837310Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.838054Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.838061Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.838747Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.838752Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.839413Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.839419Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.840815Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.840821Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.736832Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.736839Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.737319Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.737325Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.737872Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.737876Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.738381Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.738386Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.738900Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.738903Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.739939Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.739944Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: General Dynamics 2024 annual report business segments Gulfstream submarines revenue operating earnings 2024 ...
+web search: 
+web search: Gulfstream official G700 G800 business aircraft page ...
+web search: 
+web search: CompaniesMarketCap General Dynamics market cap May 2026 ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "general-dynamics",
+      "name": "General Dynamics",
+      "ticker": "GD",
+      "rankApprox": 110,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "industrials",
+      "industryId": "aerospace-defense",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/general-dynamics/marketcap/",
+      "description": "General Dynamics makes aerospace, defense, shipbuilding, combat systems, and technology products and services for government and commercial customers.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "General Dynamics operates across aerospace, marine systems, combat systems, and technologies, combining Gulfstream business aviation with major U.S. defense platforms and services.",
+            "Its 2025 annual report shows revenue of $52.6 billion and net earnings of $4.2 billion, with demand supported by large defense programs, business-jet deliveries, and long-cycle government contracts."
+          ]
+        },
+        {
+          "title": "Strategic position",
+          "paragraphs": [
+            "The company is unusually hard to decentralize directly because its highest-value products depend on certification, classified requirements, nuclear shipbuilding infrastructure, supplier qualification, and government procurement channels.",
+            "The most credible open-system pressure is therefore indirect: open engineering tools, distributed fabrication, autonomous vehicle stacks, and cooperative maintenance networks can erode peripheral design, prototyping, training, inspection, and sustainment layers before they challenge prime-contract production."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "General Dynamics has a strong moat built on regulated aerospace certification, defense contracting relationships, capital-intensive shipyards, classified program access, and decades of platform-specific engineering knowledge.",
+        "Virginia-class and Columbia-class submarine work is especially concentrated because nuclear submarine production requires scarce shipyard capacity, nuclear-qualified processes, a deep supplier base, and U.S. Navy trust that cannot be replicated quickly by open projects or ordinary commercial competitors."
+      ],
+      "decentralizationNarrative": [
+        "Direct substitution of Gulfstream aircraft or nuclear submarines by decentralized alternatives is low in the near term. Safety certification, liability, export controls, classified systems, propulsion constraints, and procurement rules keep most production inside tightly governed institutions.",
+        "Decentralization is more plausible around the edges: open aircraft design software, open autopilot stacks, underwater robotics, local fabrication, and cooperative maintenance could make smaller aircraft, drones, unmanned underwater systems, inspection tools, and parts workflows more competitive over time."
+      ],
+      "sourceIds": [
+        "gd-2025-annual-report",
+        "gd-investor-relations",
+        "stockanalysis-gd-market-cap-2026",
+        "financecharts-gd-pe-2026",
+        "gulfstream-g700",
+        "electric-boat-virginia"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125; rankApprox is retained as an approximate registry placement rather than a live market ranking.",
+      "inputMetrics": {
+        "moat": {
+          "value": 88,
+          "rationale": "Defense prime contracting, nuclear submarine construction, certified aerospace production, and large installed platforms create very high switching costs and barriers to entry.",
+          "sourceIds": [
+            "gd-2025-annual-report",
+            "electric-boat-virginia"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 22,
+          "rationale": "The core products are capital-intensive, regulated, safety-critical, and often defense-controlled, although adjacent design, robotics, inspection, and fabrication layers can decentralize.",
+          "sourceIds": [
+            "gd-2025-annual-report",
+            "nasa-openvsp",
+            "ardupilot-ardusub"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 72,
+          "rationale": "General Dynamics reported $4.2 billion of 2025 net earnings on $52.6 billion of revenue, indicating durable profitability across its combined commercial aerospace and defense portfolio.",
+          "sourceIds": [
+            "gd-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 21.59,
+          "rationale": "FinanceCharts reported General Dynamics' P/E ratio at 21.59 as of May 22, 2026; valuation metrics move daily, so this is a point-in-time market-data input.",
+          "sourceIds": [
+            "financecharts-gd-pe-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 92590000000,
+          "rationale": "StockAnalysis reported General Dynamics' market capitalization at $92.59 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-gd-market-cap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "gulfstream",
+        "name": "Gulfstream",
+        "category": "Business aviation",
+        "homepageUrl": "https://www.gulfstream.com/en/aircraft",
+        "summary": "Gulfstream is General Dynamics' business-jet brand, including large-cabin and long-range aircraft such as the G700 and G800.",
+        "whyItMatters": "Gulfstream concentrates high-end aircraft design, certification, manufacturing, support, and customer relationships in a premium aviation platform that is difficult for smaller operators to replicate.",
+        "replacementSketch": [
+          "A realistic open replacement is not a clone of a Gulfstream jet. It begins with open aircraft design tools, shared simulation models, modular avionics experiments, and regional aircraft or unmanned systems that can be developed by smaller teams.",
+          "Over time, cooperative ownership, open maintenance documentation, and distributed fabrication for non-critical parts could reduce dependence on vertically controlled premium aircraft ecosystems, especially outside the highest-end intercontinental jet segment."
+        ],
+        "sourceIds": [
+          "gulfstream-aircraft",
+          "gulfstream-g700",
+          "nasa-openvsp",
+          "openvsp-github"
+        ],
+        "technologyWaveIds": [
+          "additive-manufacturing",
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "openvsp",
+            "name": "OpenVSP",
+            "kind": "open-source",
+            "homepageUrl": "https://openvsp.org/",
+            "repoUrl": "https://github.com/OpenVSP/OpenVSP",
+            "summary": "OpenVSP is an open-source parametric aircraft geometry tool originally developed by NASA for conceptual aircraft modeling and analysis.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "The project publishes source code on GitHub and is available under the NASA Open Source Agreement.",
+                "sourceIds": [
+                  "openvsp-github",
+                  "nasa-openvsp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "Open design tooling helps distribute early-stage aircraft concept work, though it does not decentralize certification or production by itself.",
+                "sourceIds": [
+                  "nasa-openvsp",
+                  "openvsp-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "NASA documents OpenVSP as an established aircraft geometry and analysis tool with training material, but it remains a design tool rather than a complete aircraft manufacturing stack.",
+                "sourceIds": [
+                  "nasa-openvsp-ground-school",
+                  "nasa-openvsp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 62,
+                "rationale": "Free conceptual design software can reduce early design costs for researchers, startups, and education, but aircraft certification and production remain expensive.",
+                "sourceIds": [
+                  "nasa-openvsp",
+                  "openvsp-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "nasa-openvsp",
+              "openvsp-github",
+              "nasa-openvsp-ground-school"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-aircraft-design-cooperatives",
+            "name": "Open aircraft design cooperatives",
+            "summary": "Open aircraft design cooperatives would use shared parametric models, simulation workflows, maintenance knowledge, and pooled procurement to lower the cost of developing smaller aircraft, drones, cabin modules, and support tooling outside the closed premium-jet ecosystem.",
+            "angleIds": [
+              "open-hardware",
+              "cooperative-production",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "The first pressure point is not replacing a G700; it is shifting aircraft design and sustainment know-how from proprietary engineering silos toward reusable, inspectable, community-maintained design assets.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing matters through shared design files, distributed contributors, local fabrication partners, and cooperative governance; Bitcoin is not central to this mechanism.",
+            "coordinationMechanism": "Designers, maintainers, operators, and fabricators coordinate around versioned aircraft models, test results, certification artifacts, and cooperative purchasing agreements.",
+            "verificationOrTrustModel": "Trust depends on reproducible simulation outputs, independent engineering review, traceable part provenance, documented test results, and regulatory certification for any flight-critical use.",
+            "failureModes": [
+              "Open design files may stop at conceptual models and fail to cross the certification, liability, and production-quality gap.",
+              "Fragmented contributors could produce inconsistent engineering assumptions without disciplined review and test infrastructure."
+            ],
+            "adoptionPath": [
+              "Start with education, research, drone, and experimental-aircraft communities using open design tools for non-critical components and prototypes.",
+              "Move into cooperative maintenance tooling, cabin fixtures, training simulators, and small certified aircraft subsystems where documentation and traceability can be managed."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "gulfstream-g700",
+              "gd-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "nasa-openvsp",
+              "openvsp-github",
+              "nasa-openvsp-ground-school"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "The concept distributes design and support knowledge, but final aircraft certification and production remain centralized.",
+                "sourceIds": [
+                  "nasa-openvsp",
+                  "openvsp-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 55,
+                "rationale": "Open-source software workflows are credible for shared models and tools, but aviation-grade review and liability require stronger institutions.",
+                "sourceIds": [
+                  "openvsp-github",
+                  "nasa-openvsp-ground-school"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 48,
+                "rationale": "Open aircraft modeling is already available, but turning it into certified physical aircraft or major subsystems is expensive and slow.",
+                "sourceIds": [
+                  "nasa-openvsp",
+                  "gulfstream-g700"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 34,
+                "rationale": "This pressures education, prototyping, small aircraft, and maintenance layers more than Gulfstream's highest-end long-range jet franchise.",
+                "sourceIds": [
+                  "gulfstream-aircraft",
+                  "nasa-openvsp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "distributed-aircraft-support-microfactories",
+            "name": "Distributed aircraft support microfactories",
+            "summary": "A network of certified local fabrication and repair cells could use open tooling, additive manufacturing, and traceable production records to make non-flight-critical fixtures, tooling, cabin parts, ground-support equipment, and training devices closer to operators.",
+            "angleIds": [
+              "home-microfactory",
+              "decentralized-manufacturing",
+              "open-hardware",
+              "local-materials-processing"
+            ],
+            "thesis": "The market structure changes if aircraft support becomes less dependent on centralized OEM-controlled supply chains for every low-risk part, tool, and fixture.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing is the core role: local shops coordinate around validated designs, quality records, and shared production recipes rather than a single factory.",
+            "coordinationMechanism": "Operators publish demand for approved parts or tools, certified shops bid to fabricate them, and shared registries track design version, material lot, inspection data, and installation context.",
+            "verificationOrTrustModel": "Cheating is constrained through digital part histories, inspection records, qualified-machine logs, material certificates, and audits by operators or regulators; flight-critical parts would require stricter certification gates.",
+            "failureModes": [
+              "Aviation regulators and insurers may reject locally fabricated parts without costly approval pathways.",
+              "Counterfeit or poorly inspected parts could create safety risks if provenance controls are weak."
+            ],
+            "adoptionPath": [
+              "Begin with ground-support tools, cabin mockups, training fixtures, and non-installed equipment where safety risk is lower.",
+              "Expand to approved non-critical interior and maintenance parts only after repeatable inspection and traceability systems are proven."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "gulfstream-aircraft",
+              "gd-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "ose-gvcs",
+              "nasa-openvsp",
+              "openvsp-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "Local fabrication cells and open production recipes fit decentralization well for peripheral aircraft support items.",
+                "sourceIds": [
+                  "ose-gvcs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 45,
+                "rationale": "Marketplace-style coordination is plausible, but aviation quality systems make trust and approval more demanding than ordinary fabrication.",
+                "sourceIds": [
+                  "ose-gvcs",
+                  "gulfstream-aircraft"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 38,
+                "rationale": "The enabling microfactory idea exists, but certified aerospace production requires specialized materials, documentation, inspections, and liability coverage.",
+                "sourceIds": [
+                  "ose-gvcs",
+                  "gd-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 30,
+                "rationale": "Pressure would start in tooling and support workflows rather than core aircraft manufacturing or brand-driven aircraft sales.",
+                "sourceIds": [
+                  "gulfstream-aircraft",
+                  "gd-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "virginia-class-submarines",
+        "name": "Virginia-class submarines",
+        "category": "Naval shipbuilding",
+        "homepageUrl": "https://www.gdeb.com/about/oursubmarines/virginia/",
+        "summary": "Virginia-class submarines are nuclear-powered U.S. Navy attack submarines built through a teaming arrangement involving General Dynamics Electric Boat and HII's Newport News Shipbuilding.",
+        "whyItMatters": "The program anchors General Dynamics' marine systems moat because nuclear submarine design, construction, lifecycle support, and supplier coordination are among the most constrained industrial capabilities in the U.S. defense base.",
+        "replacementSketch": [
+          "There is no honest open-source replacement for a nuclear attack submarine. The realistic substitute pressure comes from smaller unmanned underwater vehicles, open autopilot stacks, modular sensors, and distributed maritime surveillance systems.",
+          "Those systems would not replace strategic undersea platforms, but they could take over inspection, mapping, harbor monitoring, training, decoy, and some surveillance missions that otherwise reinforce large prime-contractor programs."
+        ],
+        "sourceIds": [
+          "electric-boat-virginia",
+          "electric-boat-submarines",
+          "gd-virginia-block-v-contract",
+          "ardupilot-ardusub",
+          "meco-open-auv"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "ardusub",
+            "name": "ArduSub",
+            "kind": "open-source",
+            "homepageUrl": "https://ardupilot.org/sub/",
+            "repoUrl": "https://github.com/ArduPilot/ardupilot",
+            "summary": "ArduSub is the underwater-vehicle variant of the ArduPilot open-source autopilot platform for submersible ROVs.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "ArduSub is part of the open-source ArduPilot ecosystem with public documentation and source code.",
+                "sourceIds": [
+                  "ardupilot-ardusub",
+                  "ardupilot-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "An open underwater autopilot lets many builders develop and operate ROVs without depending on a single proprietary control stack.",
+                "sourceIds": [
+                  "ardupilot-ardusub"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 62,
+                "rationale": "The documentation describes an advanced open-source autopilot for submersible ROVs, but it is not a military submarine platform or complete vehicle system.",
+                "sourceIds": [
+                  "ardupilot-ardusub",
+                  "ardupilot-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open autopilot software can reduce control-system costs for research, inspection, and hobbyist underwater vehicles, even though sensors, pressure housings, and marine operations remain costly.",
+                "sourceIds": [
+                  "ardupilot-ardusub"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "ardupilot-ardusub",
+              "ardupilot-docs"
+            ]
+          },
+          {
+            "slug": "meco-open-source-auv",
+            "name": "MeCO Open-Source AUV",
+            "kind": "open-source",
+            "homepageUrl": "https://arxiv.org/abs/2503.10928",
+            "summary": "MeCO is a medium-cost open-source autonomous underwater vehicle research platform intended to support underwater robotics development.",
+            "metrics": {
+              "openness": {
+                "value": 72,
+                "rationale": "The project is presented as an open-source AUV research platform, though publication maturity and ecosystem depth are lower than ArduPilot.",
+                "sourceIds": [
+                  "meco-open-auv"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Open AUV designs can distribute underwater robotics experimentation across labs and smaller operators.",
+                "sourceIds": [
+                  "meco-open-auv"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 42,
+                "rationale": "The system is a research platform rather than a mature industrial or defense procurement substitute.",
+                "sourceIds": [
+                  "meco-open-auv"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 58,
+                "rationale": "A medium-cost open AUV could lower underwater robotics experimentation costs, but marine-grade components and operations remain a major constraint.",
+                "sourceIds": [
+                  "meco-open-auv"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "meco-open-auv"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-underwater-robotics-swarms",
+            "name": "Open underwater robotics swarms",
+            "summary": "Open underwater robotics swarms would use low-cost ROVs and AUVs, open autopilot software, and shared sensor packages to perform inspection, mapping, harbor monitoring, environmental sensing, and training tasks that do not require a nuclear submarine.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "The concept shifts some undersea capability from rare capital ships toward many smaller, replaceable, locally operated vehicles coordinated by open software and shared mission protocols.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through many independent builders and operators using interoperable control stacks and mission data formats; Bitcoin is not necessary for the core mechanism.",
+            "coordinationMechanism": "Operators coordinate fleets through shared mission plans, telemetry standards, local launch points, and registries of vehicle capabilities, sensor calibration, and completed survey areas.",
+            "verificationOrTrustModel": "False reporting is constrained through signed mission logs, overlapping survey passes, raw sensor-data publication, cross-validation between vehicles, and audit trails tying each dataset to a vehicle and operator.",
+            "failureModes": [
+              "Small vehicles cannot match the endurance, stealth, payload, or classified combat systems of nuclear submarines.",
+              "Underwater communication, navigation drift, spoofing, and vehicle loss can make swarm coordination unreliable in contested environments."
+            ],
+            "adoptionPath": [
+              "Adopt open ROVs and AUVs for inspection, training, academic research, environmental monitoring, and port infrastructure surveys.",
+              "Expand into cooperative maritime-domain-awareness networks where many local operators contribute verifiable underwater observations."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "electric-boat-virginia",
+              "gd-virginia-block-v-contract"
+            ],
+            "enablerSourceIds": [
+              "ardupilot-ardusub",
+              "meco-open-auv",
+              "ardupilot-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "Open control software and smaller underwater vehicles can be built and operated by many independent groups.",
+                "sourceIds": [
+                  "ardupilot-ardusub",
+                  "meco-open-auv"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "Multi-vehicle coordination is plausible for inspection and sensing, but underwater communications and localization are hard constraints.",
+                "sourceIds": [
+                  "ardupilot-docs",
+                  "meco-open-auv"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 60,
+                "rationale": "Open ROV and AUV building blocks exist today, though reliable open swarms at operational scale remain challenging.",
+                "sourceIds": [
+                  "ardupilot-ardusub",
+                  "meco-open-auv"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 36,
+                "rationale": "The concept can pressure inspection, training, and sensing missions, but not core nuclear attack submarine procurement.",
+                "sourceIds": [
+                  "electric-boat-virginia",
+                  "ardupilot-ardusub"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "distributed-submarine-sustainment-tooling",
+            "name": "Distributed submarine sustainment tooling",
+            "summary": "Distributed sustainment tooling would use open hardware practices, additive manufacturing, and local fabrication cells to produce inspection fixtures, training rigs, mockups, robotic maintenance aids, and non-sensitive support equipment for shipyards and suppliers.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "open-hardware",
+              "local-materials-processing",
+              "recycling-and-reuse"
+            ],
+            "thesis": "Even if submarine hulls and nuclear systems stay centralized, support tooling and supplier workflows can become more modular, auditable, and locally produced.",
+            "bitcoinOrDecentralizationRole": "The relevant role is decentralized manufacturing and verifiable provenance, not Bitcoin: many qualified shops could fabricate support assets from shared, controlled design packages.",
+            "coordinationMechanism": "Shipyards, suppliers, and qualified local fabricators coordinate through approved design libraries, inspection templates, material records, and demand signals for tooling and support equipment.",
+            "verificationOrTrustModel": "Cheating is constrained by material certificates, dimensional inspection, machine logs, acceptance tests, configuration control, and buyer audits; sensitive or nuclear-grade items remain outside the open layer.",
+            "failureModes": [
+              "Export controls, classification, and Navy quality rules could prevent meaningful openness in many submarine-related workflows.",
+              "Local fabrication may add coordination overhead if qualification standards are inconsistent across shops."
+            ],
+            "adoptionPath": [
+              "Start with non-sensitive fixtures, training equipment, mockups, inspection aids, and robotic tooling for supplier development.",
+              "Use proven traceability and inspection workflows to expand toward more qualified but still non-critical support components."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "electric-boat-submarines",
+              "gd-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "ose-gvcs",
+              "ardupilot-ardusub"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 62,
+                "rationale": "Distributed fabrication fits support tooling better than nuclear submarine production itself.",
+                "sourceIds": [
+                  "ose-gvcs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 44,
+                "rationale": "Qualified supplier coordination is credible in principle, but defense quality systems and security rules are substantial barriers.",
+                "sourceIds": [
+                  "gd-2025-annual-report",
+                  "electric-boat-submarines"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 40,
+                "rationale": "Local fabrication and open hardware practices exist, but applying them inside submarine sustainment requires strict approvals and configuration control.",
+                "sourceIds": [
+                  "ose-gvcs",
+                  "electric-boat-submarines"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 28,
+                "rationale": "This may reduce bottlenecks in support tooling but is unlikely to weaken General Dynamics' prime role in nuclear submarine design and construction.",
+                "sourceIds": [
+                  "electric-boat-virginia",
+                  "gd-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "gd-investor-relations",
+      "title": "General Dynamics Investor Relations",
+      "url": "https://investorrelations.gd.com/",
+      "kind": "investor-relations",
+      "publisher": "General Dynamics",
+      "note": "Primary investor-relations hub for company financial releases and annual reports.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "gd-2025-annual-report",
+      "title": "General Dynamics 2025 Annual Report",
+      "url": "https://s22.q4cdn.com/891946778/files/doc_financials/2025/ar/GD_2025-Annual-Report.pdf",
+      "kind": "annual-report",
+      "publisher": "General Dynamics",
+      "note": "Primary source for 2025 revenue, net earnings, business mix, risks, backlog, and segment context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-gd-market-cap-2026",
+      "title": "General Dynamics Market Cap",
+      "url": "https://stockanalysis.com/stocks/gd/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Point-in-time market capitalization input used for registry metrics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "financecharts-gd-pe-2026",
+      "title": "General Dynamics PE Ratio",
+      "url": "https://www.financecharts.com/stocks/GD/value/pe-ratio",
+      "kind": "market-data",
+      "publisher": "FinanceCharts",
+      "note": "Point-in-time P/E ratio input used for valuation context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "gulfstream-aircraft",
+      "title": "Gulfstream Aircraft",
+      "url": "https://www.gulfstream.com/en/aircraft",
+      "kind": "product-page",
+      "publisher": "Gulfstream Aerospace",
+      "note": "Primary product page for Gulfstream's aircraft lineup.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "gulfstream-g700",
+      "title": "Gulfstream G700",
+      "url": "https://www.gulfstream.com/en/aircraft/gulfstream-g700/",
+      "kind": "product-page",
+      "publisher": "Gulfstream Aerospace",
+      "note": "Product details for a flagship Gulfstream large-cabin business jet.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "electric-boat-virginia",
+      "title": "Virginia-Class Submarines",
+      "url": "https://www.gdeb.com/about/oursubmarines/virginia/",
+      "kind": "product-page",
+      "publisher": "General Dynamics Electric Boat",
+      "note": "Primary source for General Dynamics Electric Boat's Virginia-class submarine role and program description.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "electric-boat-submarines",
+      "title": "General Dynamics Electric Boat Submarines",
+      "url": "https://gdeb.com/about/oursubmarines/",
+      "kind": "product-page",
+      "publisher": "General Dynamics Electric Boat",
+      "note": "Context on Electric Boat's nuclear submarine design, construction, and lifecycle support work.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "gd-virginia-block-v-contract",
+      "title": "General Dynamics Electric Boat Awarded U.S. Navy Fifth Block Virginia-Class Submarines Contract",
+      "url": "https://www.gd.com/Articles/2019/12/02/general-dynamics-electric-boat-awarded-us-navy-fifth-block-virginia-class-submarines-contract",
+      "kind": "investor-relations",
+      "publisher": "General Dynamics",
+      "note": "Documents the scale of a Virginia-class submarine procurement award and the strategic importance of submarine production cadence.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nasa-openvsp",
+      "title": "Vehicle Sketch Pad (VSP)",
+      "url": "https://software.nasa.gov/software/LAR-17491-1",
+      "kind": "technical-docs",
+      "publisher": "NASA",
+      "note": "NASA software catalog entry describing VSP/OpenVSP as an open-source aircraft geometry tool.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nasa-openvsp-ground-school",
+      "title": "OpenVSP Ground School",
+      "url": "https://www.nasa.gov/software/openvsp-ground-school/",
+      "kind": "technical-docs",
+      "publisher": "NASA",
+      "note": "NASA tutorial resource for users of the Open Vehicle Sketch Pad parametric geometry design tool.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openvsp-github",
+      "title": "OpenVSP GitHub Repository",
+      "url": "https://github.com/OpenVSP/OpenVSP",
+      "kind": "open-source-project",
+      "publisher": "OpenVSP",
+      "note": "Source repository and license reference for OpenVSP.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ardupilot-ardusub",
+      "title": "Introduction to Sub",
+      "url": "https://ardupilot.org/sub/docs/introduction.html",
+      "kind": "technical-docs",
+      "publisher": "ArduPilot",
+      "note": "Documentation for ArduSub, the open-source autopilot system for submersible ROVs.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ardupilot-docs",
+      "title": "ArduPilot Documentation",
+      "url": "https://ardupilot.ardupilot.org/ardupilot/index.html",
+      "kind": "technical-docs",
+      "publisher": "ArduPilot",
+      "note": "Broader ArduPilot documentation describing vehicle firmware options including Sub.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "meco-open-auv",
+      "title": "Design and Development of the MeCO Open-Source Autonomous Underwater Vehicle",
+      "url": "https://arxiv.org/abs/2503.10928",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research source for a medium-cost open-source AUV platform relevant to decentralized underwater robotics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ose-gvcs",
+      "title": "Global Village Construction Set",
+      "url": "https://www.opensourceecology.org/gvcs/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open hardware and microfactory reference for decentralized production concepts.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new General Dynamics registry bundle with two products: Gulfstream and Virginia-class submarines. The refresh emphasizes General Dynamics' very high moat from certified aerospace and nuclear shipbuilding, while treating decentralization as most credible in adjacent open design, underwater robotics, and distributed support tooling rather than direct one-for-one replacement."
+}
+tokens used
+32,979

@@ -1,0 +1,1712 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6a0a-956b-7c11-96ec-233ec29192c2
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: blackstone
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "blackstone",
+  "name": "Blackstone",
+  "ticker": "BX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/blackstone/marketcap/",
+  "description": "Blackstone is an alternative asset manager focused on private equity, real estate, credit, infrastructure, and hedge fund strategies.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Blackstone Real Estate",
+    "Blackstone Credit"
+  ],
+  "seedSourceUrls": [
+    "https://ir.blackstone.com/",
+    "https://companiesmarketcap.com/blackstone/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T15:25:41.028413Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.028427Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.029329Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.029336Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.030184Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.030193Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.031056Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.031065Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.031806Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.031812Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.033404Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.033410Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.061522Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.061529Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.062055Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.062060Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.062544Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.062549Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.063043Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.063047Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.063543Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.063546Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.064656Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.064661Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll use the company manifest queue guidance for the registry shape, then verify Blackstone and candidate open/decentralized references before returning the JSON only.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md && rg --files content/manifests | head -20" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+content/manifests/companies/lockheed-martin.json
+content/manifests/companies/home-depot.json
+content/manifests/companies/progressive.json
+content/manifests/companies/constellation-energy.json
+content/manifests/companies/walmart.json
+content/manifests/companies/general-dynamics.json
+content/manifests/companies/analog-devices.json
+content/manifests/companies/nvidia.json
+content/manifests/companies/charles-schwab.json
+content/manifests/companies/williams-companies.json
+content/manifests/companies/gilead-sciences.json
+content/manifests/companies/abbvie.json
+content/manifests/companies/abbott-laboratories.json
+content/manifests/companies/welltower.json
+content/manifests/companies/arista-networks.json
+content/manifests/companies/eli-lilly.json
+content/manifests/companies/prologis.json
+content/manifests/companies/conocophillips.json
+content/manifests/companies/danaher.json
+content/manifests/companies/johnson-johnson.json
+
+2026-05-27T15:25:45.213374Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:45.213384Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:45.213721Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:45.213727Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:45.214078Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:45.214082Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:45.214486Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:45.214490Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:45.214845Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:45.214849Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:45.215593Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:45.215595Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Blackstone annual report 2025 assets under management real estate credit ...
+web search: 
+web search: finance: BX
+web search: 
+web search: companiesmarketcap Blackstone market cap May 2026 BX ...
+web search: 
+web search: Portfolio Performance open source portfolio management software GitHub ...
+web search: 
+web search: site:blackstone.com business real estate Blackstone Real Estate official ...
+web search: 
+web search: tokenized real estate decentralized marketplace source 2025 report ...
+web search: 
+web search: private credit market growth illiquidity transparency source 2025 IMF ...
+2026-05-27T15:26:46.790079Z  WARN codex_analytics::client: failed to send events request: error sending request for url (https://chatgpt.com/backend-api/codex/analytics-events/events)
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "blackstone",
+      "name": "Blackstone",
+      "ticker": "BX",
+      "rankApprox": 120,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/blackstone-group/marketcap/",
+      "description": "Blackstone is a global alternative asset manager focused on real estate, private equity, credit and insurance, infrastructure, secondaries, life sciences, growth equity, and hedge fund strategies.",
+      "overview": [
+        {
+          "title": "Scale and business mix",
+          "paragraphs": [
+            "Blackstone manages one of the largest alternative-asset platforms in the world, with reported total assets under management of about $1.27 trillion at year-end 2025.",
+            "Its scale is concentrated in capital-intensive, institutionally gated markets including real estate, private equity, credit and insurance, infrastructure, secondaries, and multi-asset investing."
+          ]
+        },
+        {
+          "title": "Real estate and credit exposure",
+          "paragraphs": [
+            "Blackstone Real Estate reported $315 billion of investor capital under management and a $618 billion global real estate portfolio, giving the firm proprietary information across major property types and markets.",
+            "Blackstone Credit and Insurance reported $520 billion across its credit platform, spanning corporate credit, real estate debt, insurance-oriented assets, and asset-based credit."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Blackstone's moat comes from scale, long institutional relationships, brand trust, deal access, private-market underwriting data, distribution into private wealth channels, and the ability to raise and deploy very large funds across cycles.",
+        "The moat is not a software network effect in the usual sense. It is a capital-formation and execution moat: investors allocate to Blackstone because of track record and access, while sellers and borrowers value its ability to close complex transactions."
+      ],
+      "decentralizationNarrative": [
+        "Blackstone is difficult to decentralize directly because its core products bundle regulated fund formation, fiduciary duties, underwriting, portfolio construction, leverage, servicing, and investor reporting into managed vehicles.",
+        "The pressure points are narrower but real: open analytics can reduce information asymmetry, tokenized or cooperative ownership can lower access barriers for specific assets, and decentralized credit protocols can automate parts of capital formation and servicing where legal claims and verification are strong enough."
+      ],
+      "sourceIds": [
+        "blackstone-ir",
+        "blackstone-2025-results",
+        "blackstone-real-estate",
+        "blackstone-credit",
+        "companiesmarketcap-blackstone",
+        "stockanalysis-bx"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination",
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125; market data refreshed on 2026-05-27 using public market-cap pages.",
+      "inputMetrics": {
+        "moat": {
+          "value": 88,
+          "rationale": "Blackstone combines trillion-dollar AUM scale, global institutional relationships, sector-specialist teams, proprietary portfolio data, and deep access to private transactions that smaller challengers cannot easily replicate.",
+          "sourceIds": [
+            "blackstone-2025-results",
+            "blackstone-real-estate",
+            "blackstone-credit"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 34,
+          "rationale": "Some analytics, reporting, fractional ownership, and credit-market coordination layers can decentralize, but Blackstone's core regulated fund-management, underwriting, leverage, and fiduciary functions remain hard to replace with open protocols.",
+          "sourceIds": [
+            "blackstone-2025-results",
+            "imf-private-credit-2025",
+            "bis-tokenized-real-estate"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "Blackstone reported strong 2025 distributable earnings and remains profitable, though earnings depend partly on market cycles, realizations, fee-related performance revenues, and asset values.",
+          "sourceIds": [
+            "blackstone-2025-results",
+            "stockanalysis-bx"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 31.39,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 31.39 for BX in May 2026; valuation is market-sensitive and should be treated as a point-in-time input.",
+          "sourceIds": [
+            "stockanalysis-bx"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 144850000000,
+          "rationale": "CompaniesMarketCap listed Blackstone Group at approximately $144.85 billion of market capitalization in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-blackstone"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "blackstone-real-estate",
+        "name": "Blackstone Real Estate",
+        "category": "Alternative asset management",
+        "homepageUrl": "https://www.blackstone.com/our-businesses/real-estate/",
+        "summary": "Blackstone Real Estate invests in real estate equity and debt strategies across global property markets.",
+        "whyItMatters": "The platform channels institutional and private-wealth capital into large real estate portfolios, shaping ownership, financing, data access, and pricing in major property markets.",
+        "replacementSketch": [
+          "A credible replacement path would not be a single open-source clone of Blackstone. It would combine open property analytics, transparent energy and operating data, local asset operators, and narrower investment vehicles that are easier for investors to inspect.",
+          "For smaller assets, federated syndication and tokenized reporting could let investors finance properties without routing every decision through a dominant global manager, while still preserving legal entities, compliance, custody, and professional operations."
+        ],
+        "sourceIds": [
+          "blackstone-real-estate",
+          "better-lbnl",
+          "bis-tokenized-real-estate"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "better-lbnl-os",
+            "name": "BETTER-LBNL-OS",
+            "kind": "open-source",
+            "homepageUrl": "https://better.lbl.gov/",
+            "repoUrl": "https://github.com/LBNL-ETA/better-lbnl-os",
+            "summary": "Open-source building energy analytics software that benchmarks buildings and estimates energy and cost savings opportunities.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "The project publishes its analytical engine as open-source software and explicitly allows adoption, redevelopment, and redistribution.",
+                "sourceIds": [
+                  "better-lbnl"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 61,
+                "rationale": "It decentralizes part of property intelligence by making energy benchmarking and retrofit analytics available outside proprietary owner-manager stacks.",
+                "sourceIds": [
+                  "better-lbnl"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "The tool is live, documented, and used for building and portfolio energy analytics, but it addresses operations intelligence rather than full real estate investment management.",
+                "sourceIds": [
+                  "better-lbnl"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Open analytics can reduce audit and benchmarking costs for smaller owners and cooperatives, especially where proprietary energy-management tooling is a barrier.",
+                "sourceIds": [
+                  "better-lbnl"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "better-lbnl"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-property-syndicates",
+            "name": "Federated Property Syndicates",
+            "summary": "Local operators form property-specific syndicates that publish standardized operating, rent, debt, capex, and energy data into shared ledgers while investors hold legally compliant fractional interests through narrowly scoped entities.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "federation"
+            ],
+            "thesis": "Instead of capital aggregating first into a giant manager and then into opaque private funds, more underwriting can happen around transparent property-level vehicles with portable reporting standards and competing local operators.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated disclosure, investor coordination, and tamper-evident property records rather than through Bitcoin itself. Tokenization or ledger-based records can reduce reporting asymmetry, but legal ownership and compliance still sit in conventional entities.",
+            "coordinationMechanism": "Sponsors list property vehicles with standardized data rooms; investors subscribe through compliant portals; operators publish monthly metrics; independent service providers verify rent rolls, debt service, occupancy, energy data, and capex milestones.",
+            "verificationOrTrustModel": "Fraud is constrained by third-party audits, lender and bank-statement reconciliation, property-title records, insurer and tax records, signed operator attestations, and append-only reporting logs. The model still depends on legal enforcement for property rights and securities compliance.",
+            "failureModes": [
+              "Secondary liquidity may remain thin even if ownership is tokenized.",
+              "Bad operators can still manipulate off-chain data before it reaches a ledger.",
+              "Securities law, custody, accreditation, and transfer restrictions can prevent open participation."
+            ],
+            "adoptionPath": [
+              "Start with small commercial or multifamily assets where local operators already have a track record.",
+              "Standardize reporting templates for rent rolls, debt, capex, occupancy, and energy performance.",
+              "Add compliant fractional ownership and controlled secondary transfers only after audit and servicing workflows are dependable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "blackstone-real-estate",
+              "bis-tokenized-real-estate"
+            ],
+            "enablerSourceIds": [
+              "bis-tokenized-real-estate",
+              "better-lbnl"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "The concept moves capital formation and reporting from one dominant manager toward many property-level sponsors and verifiers.",
+                "sourceIds": [
+                  "bis-tokenized-real-estate",
+                  "better-lbnl"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "The workflow is plausible for narrow assets, but investor onboarding, compliance, title, custody, and servicing remain coordination-heavy.",
+                "sourceIds": [
+                  "bis-tokenized-real-estate"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 54,
+                "rationale": "Tokenized real estate and open building analytics already exist, but integrating them into compliant, liquid, trusted property vehicles remains operationally difficult.",
+                "sourceIds": [
+                  "bis-tokenized-real-estate",
+                  "better-lbnl"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "The concept pressures smaller real estate funds and access fees more than Blackstone's largest opportunistic and institutional vehicles.",
+                "sourceIds": [
+                  "blackstone-real-estate",
+                  "bis-tokenized-real-estate"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "open-building-performance-underwriting",
+            "name": "Open Building Performance Underwriting",
+            "summary": "Open energy, retrofit, and operating analytics become a shared underwriting layer for property buyers, tenants, lenders, and local retrofit providers, making asset performance easier to compare outside proprietary real estate platforms.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "open-energy-hardware",
+              "microgrid-coordination",
+              "decentralized-coordination"
+            ],
+            "thesis": "If building-level operating data and retrofit economics become cheaper and more standardized, some of the information advantage held by very large real estate owners weakens, especially for energy-intensive assets.",
+            "bitcoinOrDecentralizationRole": "The decentralized role is open energy-data coordination, not a forced cryptocurrency mechanism. Local building owners, tenants, lenders, and retrofit contractors can coordinate around common analytics and measurement standards.",
+            "coordinationMechanism": "Owners publish utility and building metadata; open analytics benchmark performance; retrofit providers bid against measured savings; lenders price retrofit loans against verified building-level improvements.",
+            "verificationOrTrustModel": "Cheating is constrained through utility-bill reconciliation, meter data, equipment invoices, pre/post benchmarking, and independent measurement and verification. The largest weakness is that physical building data remains off-chain and can be incomplete.",
+            "failureModes": [
+              "Many buildings lack clean meter, occupancy, or equipment data.",
+              "Savings estimates can be overstated when occupancy, weather, or tenant behavior changes.",
+              "Open analytics do not solve acquisition sourcing, zoning, property management, or financing complexity."
+            ],
+            "adoptionPath": [
+              "Use open benchmarking for municipal, nonprofit, cooperative, and smaller commercial portfolios.",
+              "Tie retrofit financing to standardized measurement and verification outputs.",
+              "Let syndicates and lenders reuse the same performance data in underwriting and investor reporting."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "blackstone-real-estate"
+            ],
+            "enablerSourceIds": [
+              "better-lbnl",
+              "hyperledger-carbon-accounting"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "The concept decentralizes property intelligence and retrofit coordination, but not ownership or asset management by itself.",
+                "sourceIds": [
+                  "better-lbnl",
+                  "hyperledger-carbon-accounting"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Building owners, lenders, contractors, and public-sector programs already coordinate around energy benchmarking, though standards and data quality vary.",
+                "sourceIds": [
+                  "better-lbnl"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 69,
+                "rationale": "Open building analytics and carbon-accounting tools exist; the harder part is institutional adoption and reliable data ingestion across fragmented property portfolios.",
+                "sourceIds": [
+                  "better-lbnl",
+                  "hyperledger-carbon-accounting"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 39,
+                "rationale": "This mostly reduces information asymmetry and operating-cost advantages; it does not directly replace Blackstone's ability to raise capital or buy large portfolios.",
+                "sourceIds": [
+                  "blackstone-real-estate",
+                  "better-lbnl"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "blackstone-credit",
+        "name": "Blackstone Credit and Insurance",
+        "category": "Private credit and insurance asset management",
+        "homepageUrl": "https://www.blackstone.com/our-businesses/credit/",
+        "summary": "Blackstone Credit and Insurance manages private corporate credit, liquid corporate credit, infrastructure and asset-based credit, real estate debt, and insurance-oriented strategies.",
+        "whyItMatters": "Private credit is becoming a major channel for corporate and asset-backed financing outside the banking system, and Blackstone's scale gives it influence over borrower access, loan terms, investor allocation, and risk reporting.",
+        "replacementSketch": [
+          "Open and decentralized alternatives are most plausible in narrower credit markets where collateral, covenants, cash flows, and servicing can be standardized and independently verified.",
+          "A replacement would likely look like many specialized credit pools using transparent rules, open risk analytics, audited collateral feeds, and investor governance rather than a single universal private-credit protocol."
+        ],
+        "sourceIds": [
+          "blackstone-credit",
+          "imf-private-credit-2025",
+          "goldfinch-docs",
+          "skfolio"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "goldfinch",
+            "name": "Goldfinch",
+            "kind": "decentralized",
+            "homepageUrl": "https://docs.goldfinch.finance/goldfinch/goldfinch-v1/goldfinch-overview",
+            "summary": "A decentralized credit protocol for loans backed by off-chain assets rather than crypto collateral.",
+            "metrics": {
+              "openness": {
+                "value": 70,
+                "rationale": "Goldfinch publishes protocol documentation and developer materials, though real-world borrower underwriting still depends on off-chain entities and legal structures.",
+                "sourceIds": [
+                  "goldfinch-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The protocol coordinates investors, borrowers, and pools on-chain, making it more structurally decentralized than a traditional private-credit manager.",
+                "sourceIds": [
+                  "goldfinch-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 52,
+                "rationale": "It demonstrates a working model for off-chain credit pools, but institutional-scale private credit still requires stronger servicing, compliance, disclosure, and recovery infrastructure.",
+                "sourceIds": [
+                  "goldfinch-docs",
+                  "imf-private-credit-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 57,
+                "rationale": "On-chain pooling and reporting can reduce some coordination and transparency costs, but borrower sourcing, underwriting, legal enforcement, and defaults remain expensive.",
+                "sourceIds": [
+                  "goldfinch-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "goldfinch-docs"
+            ]
+          },
+          {
+            "slug": "skfolio",
+            "name": "skfolio",
+            "kind": "open-source",
+            "homepageUrl": "https://skfoliolabs.com/",
+            "repoUrl": "https://github.com/skfolio/skfolio",
+            "summary": "An open-source Python library for portfolio optimization and risk management built on the scikit-learn API.",
+            "metrics": {
+              "openness": {
+                "value": 91,
+                "rationale": "The project is open source, published on GitHub, and distributed under a permissive BSD license.",
+                "sourceIds": [
+                  "skfolio"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 44,
+                "rationale": "It decentralizes access to portfolio construction and risk tooling but does not itself create a decentralized lending marketplace.",
+                "sourceIds": [
+                  "skfolio"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 73,
+                "rationale": "The project presents production-oriented optimization and risk-management capabilities, but users must supply data, governance, execution, and compliance layers.",
+                "sourceIds": [
+                  "skfolio"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Open optimization tooling can reduce dependence on proprietary analytics stacks for smaller funds, allocators, and research teams.",
+                "sourceIds": [
+                  "skfolio"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "skfolio"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "transparent-private-credit-pools",
+            "name": "Transparent Private Credit Pools",
+            "summary": "Borrowers raise debt from specialized on-chain or federated pools where covenant data, payment status, collateral reports, and pool-level risk metrics are published on a standardized schedule.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "Private credit's scale is partly a response to banks pulling back, but its opacity and illiquidity create room for narrower markets where investors can inspect standardized loan data and coordinate outside a dominant manager.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters by separating capital pooling, servicing, data publication, and investor governance. Bitcoin is not central unless payment rails or treasury collateral specifically use it; the more important primitive is transparent multi-party coordination.",
+            "coordinationMechanism": "Borrowers submit pool proposals; underwriters and servicers publish diligence; investors allocate capital to specific pools; payment agents update loan performance; governance sets concentration limits, servicing rules, and default actions.",
+            "verificationOrTrustModel": "Cash receipts are reconciled against bank or stablecoin payment records; collateral and covenant reports are signed by independent agents; smart contracts automate waterfall calculations where possible. Fraud risk remains where borrower financials and collateral values are off-chain.",
+            "failureModes": [
+              "Weak borrower disclosure can recreate private-credit opacity on a new technical stack.",
+              "Default workouts still require legal enforcement and human negotiation.",
+              "Open participation can concentrate risk if investors chase yield without underwriting discipline."
+            ],
+            "adoptionPath": [
+              "Begin with invoice, equipment, trade-finance, or asset-backed pools where collateral and cash flows are easier to verify.",
+              "Add independent servicers, auditors, and standardized covenant feeds before broadening investor access.",
+              "Use open risk models and pool-level reporting to compete first on transparency rather than raw scale."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "imf-private-credit-2025",
+              "blackstone-credit"
+            ],
+            "enablerSourceIds": [
+              "goldfinch-docs",
+              "skfolio"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "The concept directly shifts capital allocation and reporting from a centralized private-credit manager toward borrower-specific pools and independent verifiers.",
+                "sourceIds": [
+                  "goldfinch-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 56,
+                "rationale": "Decentralized credit protocols show the coordination pattern, but robust off-chain underwriting, recovery, and compliance remain hard.",
+                "sourceIds": [
+                  "goldfinch-docs",
+                  "imf-private-credit-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 51,
+                "rationale": "The technical components exist, but institutional-quality credit requires reliable data, servicing, legal enforcement, and investor-protection controls.",
+                "sourceIds": [
+                  "goldfinch-docs",
+                  "imf-private-credit-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 49,
+                "rationale": "Transparent pools could pressure fees and access in standardized private-credit niches, but Blackstone's largest corporate and insurance-linked mandates still benefit from scale and relationships.",
+                "sourceIds": [
+                  "blackstone-credit",
+                  "imf-private-credit-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "open-credit-risk-underwriting-stack",
+            "name": "Open Credit Risk Underwriting Stack",
+            "summary": "Open-source portfolio optimization, stress testing, and covenant-monitoring tools let smaller allocators and cooperatives evaluate private-credit exposures without relying entirely on manager-supplied analytics.",
+            "angleIds": [
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "If allocators can independently model credit pools, stress losses, and compare covenant packages, the manager's informational advantage narrows and capital can coordinate around transparent risk standards.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is shared verification and cooperative risk modeling. Open models allow investors, auditors, and servicers to inspect assumptions, challenge marks, and coordinate around common risk views.",
+            "coordinationMechanism": "Investors contribute anonymized pool data, open models compute comparable risk metrics, servicers publish covenant events, and allocator groups maintain shared stress scenarios and model governance.",
+            "verificationOrTrustModel": "Model inputs are checked against loan documents, payment records, covenant certificates, and third-party valuation marks. The main trust weakness is that models can still be wrong when private-market marks lag reality.",
+            "failureModes": [
+              "Open models can create false confidence if input data is stale or biased.",
+              "Private loan documents may restrict data sharing.",
+              "Investors may still prefer brand-name managers during stress even when open analytics are available."
+            ],
+            "adoptionPath": [
+              "Start with public or voluntarily disclosed credit pools and synthetic stress tests.",
+              "Create shared data schemas for covenant, collateral, payment, and valuation fields.",
+              "Attach open analytics to transparent credit pools and allocator due-diligence workflows."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "imf-private-credit-2025"
+            ],
+            "enablerSourceIds": [
+              "skfolio",
+              "openbb-odp"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 57,
+                "rationale": "The concept decentralizes risk analysis and diligence but does not decentralize lending capital by itself.",
+                "sourceIds": [
+                  "skfolio",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 60,
+                "rationale": "Shared analytics and open data integrations are practical, though private-credit data rights and standardization are significant barriers.",
+                "sourceIds": [
+                  "skfolio",
+                  "openbb-odp",
+                  "imf-private-credit-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 67,
+                "rationale": "Open-source risk and data tools are mature enough for pilots; the hard part is securing comparable private-credit data and governance.",
+                "sourceIds": [
+                  "skfolio",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 42,
+                "rationale": "Better allocator analytics can pressure opacity and fees, but it is more likely to complement than replace large credit managers in the near term.",
+                "sourceIds": [
+                  "blackstone-credit",
+                  "imf-private-credit-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "blackstone-ir",
+      "title": "Blackstone Investor Relations",
+      "url": "https://ir.blackstone.com/",
+      "kind": "investor-relations",
+      "publisher": "Blackstone",
+      "note": "Primary investor-relations entry point for company filings, earnings materials, and investor updates.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "blackstone-2025-results",
+      "title": "Blackstone Reports Fourth Quarter and Full Year 2025 Results",
+      "url": "https://www.blackstone.com/wp-content/uploads/sites/2/2026/01/Blackstone4Q25EarningsPressRelease.pdf",
+      "kind": "investor-relations",
+      "publisher": "Blackstone",
+      "note": "Provides 2025 AUM, distributable earnings, and business performance context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "blackstone-real-estate",
+      "title": "Blackstone Real Estate",
+      "url": "https://www.blackstone.com/our-businesses/real-estate/",
+      "kind": "product-page",
+      "publisher": "Blackstone",
+      "note": "Primary source for Blackstone Real Estate strategy, investor capital under management, and global real estate portfolio figures.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "blackstone-credit",
+      "title": "Blackstone Credit and Insurance",
+      "url": "https://www.blackstone.com/our-businesses/credit/",
+      "kind": "product-page",
+      "publisher": "Blackstone",
+      "note": "Primary source for Blackstone Credit and Insurance scope, AUM, issuer count, and strategy areas.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-blackstone",
+      "title": "Market capitalization of Blackstone Group (BX)",
+      "url": "https://companiesmarketcap.com/blackstone-group/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time market capitalization and global market-cap rank reference.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-bx",
+      "title": "Blackstone Inc. (BX) Stock Price and Overview",
+      "url": "https://stockanalysis.com/stocks/bx/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Supplemental market data including P/E ratio, market cap, revenue, net income, and IPO date context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "better-lbnl",
+      "title": "BETTER Building Energy Analytics",
+      "url": "https://better.lbl.gov/",
+      "kind": "open-source-project",
+      "publisher": "Lawrence Berkeley National Laboratory",
+      "note": "Open-source building energy analytics project relevant to decentralized property performance analysis.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "hyperledger-carbon-accounting",
+      "title": "Hyperledger Labs Blockchain Carbon Accounting",
+      "url": "https://github.com/hyperledger-labs/blockchain-carbon-accounting",
+      "kind": "open-source-project",
+      "publisher": "Hyperledger Labs",
+      "note": "Open-source climate and emissions accounting tools relevant to verified building and portfolio performance reporting.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "bis-tokenized-real-estate",
+      "title": "When bricks meet bytes: does tokenisation fill gaps in traditional real estate markets?",
+      "url": "https://www.bis.org/publ/work1311.htm",
+      "kind": "analysis",
+      "publisher": "Bank for International Settlements",
+      "note": "Analysis of tokenized real estate market structure, liquidity, and traditional-market gaps.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "imf-private-credit-2025",
+      "title": "Global Financial Stability Report, October 2025",
+      "url": "https://www.imf.org/en/-/media/files/publications/gfsr/2025/october/english/text.pdf",
+      "kind": "analysis",
+      "publisher": "International Monetary Fund",
+      "note": "Provides context on private-credit growth, illiquidity, transparency concerns, and financial-stability risks.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "goldfinch-docs",
+      "title": "Goldfinch V1 Overview",
+      "url": "https://docs.goldfinch.finance/goldfinch/goldfinch-v1/goldfinch-overview",
+      "kind": "technical-docs",
+      "publisher": "Goldfinch",
+      "note": "Documents a decentralized credit protocol for loans backed by off-chain collateral and investor-funded pools.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "skfolio",
+      "title": "skfolio Open Source Portfolio Optimization and Risk Management",
+      "url": "https://skfoliolabs.com/",
+      "kind": "open-source-project",
+      "publisher": "Skfolio Labs",
+      "note": "Open-source portfolio optimization and risk-management library relevant to independent credit and allocation analytics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openbb-odp",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source financial data integration platform for local, auditable analytics workflows.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Blackstone registry bundle with two core products: Blackstone Real Estate and Blackstone Credit and Insurance. The refresh emphasizes Blackstone's capital-formation moat, limited but meaningful decentralization pressure from open property analytics, tokenized/federated real estate syndication, transparent credit pools, and open credit-risk tooling."
+}
+tokens used
+53,649

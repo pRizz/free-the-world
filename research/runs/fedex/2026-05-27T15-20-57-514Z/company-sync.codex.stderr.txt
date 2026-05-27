@@ -1,0 +1,853 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6a06-4a40-7fb3-8145-4767b5efef1b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: fedex
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "fedex",
+  "name": "FedEx",
+  "ticker": "FDX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "industrials",
+  "industryId": "air-freight-logistics",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/fedex/marketcap/",
+  "description": "FedEx provides parcel delivery, express transportation, freight, and logistics services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "FedEx Express",
+    "FedEx Ground"
+  ],
+  "seedSourceUrls": [
+    "https://investors.fedex.com/",
+    "https://companiesmarketcap.com/fedex/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T15:20:58.650156Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:58.650168Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:58.650553Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:58.650557Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:58.650990Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:58.650995Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:58.651398Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:58.651404Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:58.651768Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:58.651772Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:58.652739Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:58.652745Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:59.409766Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:59.409778Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:59.410111Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:59.410115Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:59.410446Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:59.410452Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:59.410786Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:59.410790Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:59.411139Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:59.411142Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:20:59.411814Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:20:59.411817Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: FedEx 2025 annual report revenue operating income segments FedEx Express Ground Freight ...
+web search: 
+web search: OpenStreetMap official about open data map license ...
+web search: 
+web search: FedEx PE ratio May 2026 FDX ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"fedex","name":"FedEx","ticker":"FDX","rankApprox":112,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top125"],"sectorId":"industrials","industryId":"air-freight-logistics","companiesMarketCapUrl":"https://companiesmarketcap.com/fedex/marketcap/","description":"FedEx provides parcel delivery, express transportation, freight, and logistics services through a global transportation network.","overview":[{"title":"Business profile","paragraphs":["FedEx is one of the world's largest parcel and logistics networks, built around time-definite express transportation, domestic ground delivery, freight, and related business services.","The company reports through Federal Express, FedEx Freight, and corporate and eliminations, with its air, ground, sorting, tracking, and pickup-and-delivery infrastructure forming the core operating system behind the brand."]},{"title":"Registry posture","paragraphs":["FedEx is not a software platform in the narrow sense, but its moat depends heavily on physical network density, operational data, route optimization, tracking, brand trust, and enterprise shipping integrations.","Open-source routing, open mapping, cooperative delivery networks, and federated shipment visibility tools can pressure parts of the stack, but replacing nationwide time-definite delivery requires capital, labor coordination, aircraft, hubs, compliance, and service reliability at large scale."]}],"moatNarrative":["FedEx has a strong physical-network moat: aircraft capacity, hubs, vehicles, contracted and employed labor, enterprise shipper relationships, brand recognition, tracking infrastructure, and decades of operational learning all compound together.","The moat is not absolute. Parcel delivery has meaningful competition, customers can multi-home across carriers, and FedEx's own filings show profitability can be pressured by volume mix, fuel surcharges, labor, and freight-cycle weakness."],"decentralizationNarrative":["The most realistic decentralization pressure is not a clone of FedEx's global express network. It is a modular erosion pattern: open route planning, open address and map data, interoperable shipment events, local courier cooperatives, and peer-to-peer capacity markets can replace narrow lanes or last-mile use cases first.","Long-haul air express and nationwide service guarantees remain hard to decentralize because the trust model is physical, regulated, and capital intensive. Local logistics, same-day delivery, exception handling, and underserved geographies are better initial targets for open or cooperative alternatives."],"sourceIds":["fedex-2025-annual-report","fedex-investor-overview","companiesmarketcap-fedex-marketcap","stockanalysis-fedex-pe","graphhopper-github","openlogistics-foundation"],"technologyWaveIds":["microfactories","bitcoin-native-coordination"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125.","inputMetrics":{"moat":{"value":82,"rationale":"FedEx combines global brand trust, aircraft and hub infrastructure, route density, enterprise shipping relationships, and integrated tracking; these assets are expensive to reproduce, although competition and cyclicality keep the moat below the strongest platform monopolies.","sourceIds":["fedex-2025-annual-report","fedex-investor-overview"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizability":{"value":38,"rationale":"Open routing, open maps, cooperative couriers, and federated shipment data can decentralize slices of logistics, but global express delivery still depends on capital-heavy assets, labor networks, regulatory compliance, and dense physical operations.","sourceIds":["fedex-2025-annual-report","graphhopper-github","openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"profitability":{"value":62,"rationale":"FedEx remains profitable and reported large-scale revenue with positive operating income, but its filings and earnings materials show operating income pressure from freight weakness, fuel, mix, and transformation costs.","sourceIds":["fedex-2025-annual-report","fedex-q4-fy2025-results"],"confidence":"high","lastReviewedOn":"2026-05-27"},"peRatio":{"value":21.1,"rationale":"CompaniesMarketCap reported FedEx's trailing P/E ratio at about 21.1 in May 2026, broadly consistent with other market-data snapshots around the same date.","sourceIds":["companiesmarketcap-fedex-pe","stockanalysis-fedex-pe"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"marketCap":{"value":92800000000,"rationale":"StockAnalysis reported FedEx market capitalization of about $92.8 billion on May 21, 2026; nearby market-data sources reported values in the high-$80B to low-$90B range, so this is treated as a current approximate market cap.","sourceIds":["stockanalysis-fedex-marketcap","companiesmarketcap-fedex-marketcap"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},"products":[{"slug":"fedex-express","name":"FedEx Express","category":"Time-definite parcel and air express logistics","homepageUrl":"https://www.fedex.com/en-us/shipping/express.html","summary":"FedEx Express provides time-definite domestic and international shipping using FedEx's air-and-ground express network.","whyItMatters":"Express delivery is the most capital-intensive and reliability-sensitive part of FedEx's brand, where speed, tracking, customs handling, pickup density, and delivery guarantees reinforce incumbent advantage.","replacementSketch":["A realistic open replacement starts with narrower lanes: local pickup orchestration, open routing, shared shipment-event standards, and cooperative operators that coordinate capacity without surrendering all dispatch logic to a single carrier.","For longer-distance express, decentralized systems are more likely to complement FedEx by federating independent couriers and regional carriers than to immediately replace global air infrastructure."],"sourceIds":["fedex-express-page","fedex-2025-annual-report","graphhopper-github","openlogistics-foundation"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"graphhopper","name":"GraphHopper","kind":"open-source","homepageUrl":"https://www.graphhopper.com/open-source/","repoUrl":"https://github.com/graphhopper/graphhopper","summary":"GraphHopper is an Apache-2.0 open-source routing engine that uses OpenStreetMap and supports routing, map matching, isochrones, and vehicle profiles.","metrics":{"openness":{"value":91,"rationale":"The core routing engine is published on GitHub under the Apache-2.0 license.","sourceIds":["graphhopper-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":64,"rationale":"GraphHopper lets operators self-host routing and build on open map data, but it does not itself provide a decentralized courier marketplace or trust layer.","sourceIds":["graphhopper-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":78,"rationale":"The project is mature enough for production routing use and supports routing, map matching, and multiple profiles, though parcel logistics still needs dispatch, proof-of-delivery, payments, and operations software around it.","sourceIds":["graphhopper-github","graphhopper-open-source"],"confidence":"high","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":70,"rationale":"Self-hosted routing can reduce dependence on proprietary logistics APIs and help small operators coordinate routes, but it does not remove vehicle, labor, insurance, or facility costs.","sourceIds":["graphhopper-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["graphhopper-github","graphhopper-open-source"]},{"slug":"open-logistics-foundation","name":"Open Logistics Foundation","kind":"hybrid","homepageUrl":"https://openlogisticsfoundation.org/","summary":"The Open Logistics Foundation provides a neutral platform for logistics companies to collaboratively develop open-source logistics software.","metrics":{"openness":{"value":78,"rationale":"The foundation's stated purpose is collaborative open-source software development for logistics, though individual project maturity and licensing vary by module.","sourceIds":["openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":58,"rationale":"Shared open logistics components reduce single-vendor dependence, but foundation-led collaboration is not the same as a peer-to-peer delivery network.","sourceIds":["openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":55,"rationale":"The foundation has industry participation and a clear logistics focus, but it is better viewed as enabling infrastructure than a direct carrier replacement.","sourceIds":["openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":60,"rationale":"Reusable logistics software can lower integration and coordination costs for smaller operators, but physical delivery economics still dominate total cost.","sourceIds":["openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["openlogistics-foundation"]}],"disruptionConcepts":[{"slug":"federated-express-capacity-market","name":"Federated express capacity market","summary":"A network of independent couriers, regional carriers, lockers, and line-haul operators could publish capacity, service levels, and shipment events into interoperable registries, letting shippers buy time-definite service across multiple operators without a single carrier owning the whole route.","angleIds":["decentralized-coordination","peer-to-peer-marketplace","federation"],"thesis":"FedEx's bundled network advantage weakens if routing, service commitments, tracking events, and exception handling become interoperable across many operators.","bitcoinOrDecentralizationRole":"Decentralization matters through federated identity, shared shipment-event schemas, and multi-party settlement. Bitcoin or Lightning could support escrow and fast settlement for small operators, but the core mechanism is federated logistics coordination rather than a monetary thesis.","coordinationMechanism":"Shippers post service requirements, operators publish verified capacity and lane coverage, routing software composes multi-leg options, and settlement splits payment across pickup, line-haul, locker, and final-mile participants.","verificationOrTrustModel":"Operators would sign custody scans, timestamp handoffs, and delivery evidence; escrow releases against agreed events; reputation is tied to persistent operator identities; and disputed shipments require audit trails from scans, photos, geolocation, and customer confirmations.","failureModes":["Service-level guarantees may fail when no single party controls every leg.","Operators could collude on capacity or misreport scans unless audits and penalties are credible.","Insurance, customs, hazardous-materials rules, and claims handling may force centralized governance for many shipments."],"adoptionPath":["Start with local and regional same-day lanes where independent courier capacity already exists.","Add interoperable tracking events and escrow settlement for multi-operator routes.","Expand into business-to-business express lanes before attempting consumer nationwide guarantees."],"confidence":"medium","problemSourceIds":["fedex-2025-annual-report","fedex-express-page"],"enablerSourceIds":["graphhopper-github","openlogistics-foundation"],"metrics":{"decentralizationFit":{"value":72,"rationale":"The model explicitly shifts dispatch, fulfillment, and settlement from one carrier to a federation of operators.","sourceIds":["openlogistics-foundation","graphhopper-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":56,"rationale":"Routing engines and open logistics collaboration support the coordination layer, but real-world custody, claims, and service guarantees remain hard.","sourceIds":["graphhopper-github","openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":49,"rationale":"A regional prototype is feasible with existing routing and tracking tools, while national time-definite service would require major operational density and governance.","sourceIds":["fedex-2025-annual-report","graphhopper-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":45,"rationale":"The concept can pressure high-margin local and regional lanes, but FedEx's air network, enterprise contracts, and brand reliability limit near-term displacement.","sourceIds":["fedex-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},{"slug":"open-source-exception-routing-layer","name":"Open-source exception routing layer","summary":"An open routing and shipment-exception layer could help merchants dynamically choose local couriers, pickup points, lockers, or regional carriers when centralized networks are delayed, expensive, or poorly matched to a delivery promise.","angleIds":["federation","decentralized-coordination"],"thesis":"FedEx loses some pricing and data leverage if merchants can treat carrier networks as interchangeable modules selected by open rules instead of defaulting to one vertically integrated carrier stack.","bitcoinOrDecentralizationRole":"The decentralization role is interoperability: merchants retain their own routing policies and shipment data while coordinating with multiple carriers through open APIs. Bitcoin is not central unless used later for cross-operator settlement.","coordinationMechanism":"Merchants or 3PLs self-host routing and rules engines, ingest carrier availability and delivery constraints, and select the best operator for each parcel or exception case.","verificationOrTrustModel":"Trust comes from carrier event feeds, signed webhook events where available, merchant-controlled audit logs, customer confirmations, and reconciliation against invoices and service-level claims.","failureModes":["Open software cannot create physical delivery capacity where no operator exists.","Carrier data quality may be inconsistent or restricted by proprietary APIs.","Large shippers may still prefer incumbent discounts over modular carrier selection."],"adoptionPath":["Deploy for merchants with multi-carrier shipping and recurring delivery exceptions.","Use open routing and map data to evaluate local courier and pickup-point options.","Standardize event schemas so merchants can compare service performance across operators."],"confidence":"medium","problemSourceIds":["fedex-2025-annual-report"],"enablerSourceIds":["graphhopper-github","openlogistics-foundation"],"metrics":{"decentralizationFit":{"value":61,"rationale":"The concept decentralizes decision-making and data control for shippers, though it still uses conventional carriers.","sourceIds":["graphhopper-github","openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":68,"rationale":"Multi-carrier routing and exception management are narrower and more credible than replacing the full FedEx network.","sourceIds":["graphhopper-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":66,"rationale":"Open routing engines and logistics collaboration make a prototype practical, with the main work in integrations, service rules, and operational adoption.","sourceIds":["graphhopper-github","openlogistics-foundation"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":42,"rationale":"This pressures FedEx's default-carrier position and data lock-in more than its underlying physical infrastructure.","sourceIds":["fedex-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]},{"slug":"fedex-ground","name":"FedEx Ground","category":"Domestic ground parcel delivery","homepageUrl":"https://www.fedex.com/en-us/shipping/ground.html","summary":"FedEx Ground provides day-definite ground parcel delivery for residential and commercial shipments in the United States and Canada.","whyItMatters":"Ground delivery is where route density, local station coverage, pickup frequency, contractor and driver operations, and last-mile reliability convert scale into cost advantage.","replacementSketch":["The strongest replacement path is local-first: cooperative courier fleets, open routing, shared pickup points, neighborhood lockers, and merchant-owned delivery rules that reduce dependence on a single parcel carrier.","The replacement does not need to match every FedEx lane to matter; it can start by taking dense urban routes, same-day local commerce, returns, and specialty delivery categories."],"sourceIds":["fedex-ground-page","fedex-2025-annual-report","opentripplanner-official","graphhopper-github"],"technologyWaveIds":["microfactories"],"alternatives":[{"slug":"opentripplanner","name":"OpenTripPlanner","kind":"open-source","homepageUrl":"https://www.opentripplanner.org/","repoUrl":"https://github.com/opentripplanner/OpenTripPlanner","summary":"OpenTripPlanner is an open-source multimodal trip-planning project that combines open-standard data such as OpenStreetMap and GTFS for transportation network analysis.","metrics":{"openness":{"value":88,"rationale":"OpenTripPlanner is described by its maintainers as a family of open-source software projects, with source code available on GitHub.","sourceIds":["opentripplanner-official","opentripplanner-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":55,"rationale":"It supports self-hosted, open-standard transport planning, but it is primarily passenger and multimodal analysis software rather than a parcel-delivery network.","sourceIds":["opentripplanner-official"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":70,"rationale":"The project has a long-running user and developer community and powers real journey-planning services, though parcel logistics would require adaptation.","sourceIds":["opentripplanner-official"],"confidence":"high","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":54,"rationale":"Open multimodal planning can lower route-analysis costs for civic or cooperative delivery experiments, but it is not a complete delivery operations stack.","sourceIds":["opentripplanner-official"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["opentripplanner-official","opentripplanner-github"]},{"slug":"graphhopper","name":"GraphHopper","kind":"open-source","homepageUrl":"https://www.graphhopper.com/open-source/","repoUrl":"https://github.com/graphhopper/graphhopper","summary":"GraphHopper is an open-source routing engine for OpenStreetMap that can be self-hosted for route calculation, map matching, and vehicle-specific routing.","metrics":{"openness":{"value":91,"rationale":"The routing engine is available on GitHub under the Apache-2.0 license.","sourceIds":["graphhopper-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":66,"rationale":"Self-hosted routing over OpenStreetMap gives local operators control over routing logic and avoids dependence on a single proprietary route-planning vendor.","sourceIds":["graphhopper-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":78,"rationale":"GraphHopper supports production-grade routing primitives, although dispatch, proof of delivery, customer service, and liability still need separate systems.","sourceIds":["graphhopper-github","graphhopper-open-source"],"confidence":"high","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":72,"rationale":"Open routing can reduce software and API costs for small fleets and cooperatives, while leaving labor, vehicles, insurance, and parcel handling as the main cost base.","sourceIds":["graphhopper-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["graphhopper-github","graphhopper-open-source"]}],"disruptionConcepts":[{"slug":"neighborhood-delivery-cooperatives","name":"Neighborhood delivery cooperatives","summary":"Local merchants, couriers, pickup points, and customers could coordinate through cooperative delivery networks that use open routing and shared service rules to handle dense neighborhood delivery, returns, and same-day commerce without defaulting every parcel to a national carrier.","angleIds":["cooperative-production","decentralized-coordination","peer-to-peer-marketplace"],"thesis":"FedEx Ground's advantage is strongest at national scale, but dense local routes can be carved out if merchants and couriers coordinate demand, capacity, routing, and trust locally.","bitcoinOrDecentralizationRole":"Decentralization matters through cooperative ownership and local operator coordination. Lightning could be useful for instant courier payouts or small delivery fees, but the central mechanism is shared local governance and open routing.","coordinationMechanism":"Merchants batch local orders, couriers bid or accept route bundles, neighborhood pickup points act as consolidation nodes, and open routing software assigns stops based on capacity and service windows.","verificationOrTrustModel":"Each parcel handoff is scanned or signed by the responsible operator, delivery photos and customer confirmations close the job, and cooperative governance can suspend operators with repeated failures or disputed events.","failureModes":["Local cooperatives may struggle to maintain service quality during demand spikes.","Route density may be too low outside cities or merchant clusters.","Claims, theft, insurance, and customer support can overwhelm volunteer or lightly capitalized operators."],"adoptionPath":["Begin with merchant districts, campuses, or dense neighborhoods that already have repeat local demand.","Add returns and pickup-point consolidation to increase route density.","Use performance records to negotiate with regional carriers for intercity legs."],"confidence":"medium","problemSourceIds":["fedex-ground-page","fedex-2025-annual-report"],"enablerSourceIds":["graphhopper-github","opentripplanner-official"],"metrics":{"decentralizationFit":{"value":76,"rationale":"The concept moves ownership and dispatch toward local merchants and couriers rather than a single national carrier.","sourceIds":["graphhopper-github","opentripplanner-official"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":60,"rationale":"Open routing and local batching are credible, but cooperative governance and claims handling are nontrivial.","sourceIds":["graphhopper-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":58,"rationale":"A neighborhood or merchant-district pilot is feasible with existing routing tools, but scaling service consistency is difficult.","sourceIds":["graphhopper-github","fedex-ground-page"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":50,"rationale":"This could pressure FedEx in dense local commerce, returns, and same-day niches, but it will not quickly replace national parcel coverage.","sourceIds":["fedex-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},{"slug":"microfactory-local-fulfillment-loop","name":"Microfactory local fulfillment loop","summary":"As small-scale fabrication and local repair networks improve, some shipments can be avoided altogether: parts, fixtures, packaging, and simple goods are produced or refurbished near demand, then delivered by local couriers instead of moving through national parcel networks.","angleIds":["decentralized-manufacturing","home-microfactory","recycling-and-reuse"],"thesis":"A portion of FedEx Ground volume is vulnerable not to another carrier but to demand destruction: local production and repair reduce the number of long-distance parcels that need national delivery.","bitcoinOrDecentralizationRole":"The decentralization role is distributed production and local fulfillment rather than Bitcoin. Open design files, local fabrication cells, and repair loops shift coordination away from centralized inventory and shipping networks.","coordinationMechanism":"Customers or merchants request parts or goods, local workshops fabricate or refurbish them from approved design files, and local courier networks handle short-distance fulfillment.","verificationOrTrustModel":"Quality is constrained through signed design versions, material specs, test checklists, customer inspection, and reputation for local makers; higher-risk goods need certification or licensed production.","failureModes":["Many goods are not economically or legally suitable for local fabrication.","Quality assurance and liability can block adoption in safety-critical categories.","Material supply chains may still require conventional shipping."],"adoptionPath":["Start with low-risk replacement parts, fixtures, packaging, and repair categories.","Bundle local fabrication with neighborhood delivery cooperatives.","Expand only where design-file licensing, quality checks, and material availability are reliable."],"confidence":"speculative","problemSourceIds":["fedex-ground-page","fedex-2025-annual-report"],"enablerSourceIds":["openlogistics-foundation"],"metrics":{"decentralizationFit":{"value":70,"rationale":"The concept reduces centralized shipping demand by moving some production and repair closer to users.","sourceIds":["openlogistics-foundation"],"confidence":"speculative","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":42,"rationale":"Local production and courier coordination are plausible in narrow categories, but broad substitution for parcel volume is uncertain.","sourceIds":["fedex-2025-annual-report"],"confidence":"speculative","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":38,"rationale":"The model is feasible only for selected goods with simple fabrication, available materials, and manageable liability.","sourceIds":["fedex-ground-page"],"confidence":"speculative","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":34,"rationale":"It could reduce parcel demand at the margin, but FedEx's core volumes include many goods that still require centralized manufacturing or long-distance movement.","sourceIds":["fedex-2025-annual-report"],"confidence":"speculative","lastReviewedOn":"2026-05-27"}}}]}]},"sources":[{"id":"fedex-2025-annual-report","title":"FedEx 2025 Annual Report","url":"https://s21.q4cdn.com/665674268/files/doc_financials/2025/ar/Annual-Report.pdf","kind":"annual-report","publisher":"FedEx Corporation","note":"Primary source for FedEx's business description, segment structure, operating results, risks, and profitability context.","accessedOn":"2026-05-27"},{"id":"fedex-investor-overview","title":"FedEx Company Overview","url":"https://investors.fedex.com/company-overview/mission-and-goals/default.aspx","kind":"investor-relations","publisher":"FedEx Corporation","note":"Investor-relations overview describing FedEx's operating companies and service revenue profile.","accessedOn":"2026-05-27"},{"id":"fedex-q4-fy2025-results","title":"FedEx Reports Fourth Quarter and Full-Year Fiscal 2025 Results","url":"https://investor.fedex.com/news-and-events/investor-news/investor-news-details/2025/FedEx-Reports-Fourth-Quarter-Diluted-EPS-of-6-88-and-Adjusted-Diluted-EPS-of-6-07/default.aspx","kind":"investor-relations","publisher":"FedEx Corporation","note":"Company earnings release used for recent profitability and segment-performance context.","accessedOn":"2026-05-27"},{"id":"fedex-express-page","title":"FedEx Express Shipping Services","url":"https://www.fedex.com/en-us/shipping/express.html","kind":"product-page","publisher":"FedEx Corporation","note":"Product page for FedEx Express time-definite shipping services.","accessedOn":"2026-05-27"},{"id":"fedex-ground-page","title":"FedEx Ground Shipping Services","url":"https://www.fedex.com/en-us/shipping/ground.html","kind":"product-page","publisher":"FedEx Corporation","note":"Product page for FedEx Ground day-definite domestic ground delivery services.","accessedOn":"2026-05-27"},{"id":"companiesmarketcap-fedex-marketcap","title":"FedEx Market Cap","url":"https://companiesmarketcap.com/fedex/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap.com","note":"Market-data source linked by the manifest for current market capitalization context.","accessedOn":"2026-05-27"},{"id":"stockanalysis-fedex-marketcap","title":"FedEx Market Cap & Net Worth","url":"https://stockanalysis.com/stocks/fdx/market-cap/","kind":"market-data","publisher":"Stock Analysis","note":"Recent market capitalization snapshot used to estimate FedEx's current market value.","accessedOn":"2026-05-27"},{"id":"companiesmarketcap-fedex-pe","title":"FedEx P/E Ratio","url":"https://companiesmarketcap.com/fedex/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap.com","note":"Market-data source for FedEx trailing P/E ratio in May 2026.","accessedOn":"2026-05-27"},{"id":"stockanalysis-fedex-pe","title":"FedEx Stock Price & Overview","url":"https://stockanalysis.com/stocks/fdx/","kind":"market-data","publisher":"Stock Analysis","note":"Cross-check source for FedEx valuation metrics including P/E ratio.","accessedOn":"2026-05-27"},{"id":"graphhopper-github","title":"GraphHopper Routing Engine GitHub Repository","url":"https://github.com/graphhopper/graphhopper","kind":"open-source-project","publisher":"GraphHopper","note":"Primary repository for the Apache-2.0 open-source routing engine used as a logistics-routing alternative component.","accessedOn":"2026-05-27"},{"id":"graphhopper-open-source","title":"Open Source at GraphHopper","url":"https://www.graphhopper.com/open-source/","kind":"technical-docs","publisher":"GraphHopper","note":"Project overview describing GraphHopper routing and jsprit as open-source routing and vehicle-routing tools.","accessedOn":"2026-05-27"},{"id":"opentripplanner-official","title":"OpenTripPlanner","url":"https://www.opentripplanner.org/","kind":"open-source-project","publisher":"OpenTripPlanner","note":"Official project page for open-source multimodal trip planning and transportation network analysis.","accessedOn":"2026-05-27"},{"id":"opentripplanner-github","title":"OpenTripPlanner GitHub Repository","url":"https://github.com/opentripplanner/OpenTripPlanner","kind":"open-source-project","publisher":"OpenTripPlanner","note":"Source repository for OpenTripPlanner, used to support openness and readiness scoring.","accessedOn":"2026-05-27"},{"id":"openlogistics-foundation","title":"Open Logistics Foundation","url":"https://openlogisticsfoundation.org/","kind":"analysis","publisher":"Open Logistics Foundation","note":"Source for open-source collaboration in logistics and interoperable logistics-software ecosystem context.","accessedOn":"2026-05-27"}],"summaryMarkdown":"Prepared a new FedEx registry bundle with sourced company metrics, FedEx Express and FedEx Ground product coverage, open logistics alternatives, and two disruption concepts per product focused on federated logistics, open routing, cooperative last-mile delivery, and speculative local production demand reduction."}
+tokens used
+30,235

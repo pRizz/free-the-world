@@ -1,0 +1,2414 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6a04-7e11-7d00-a4ad-49415dd6563b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: duke-energy
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "duke-energy",
+  "name": "Duke Energy",
+  "ticker": "DUK",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "utilities",
+  "industryId": "electric-utilities",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/duke-energy/marketcap/",
+  "description": "Duke Energy is a regulated electric and natural gas utility company serving U.S. customers.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Electric utilities",
+    "Natural gas utilities"
+  ],
+  "seedSourceUrls": [
+    "https://investors.duke-energy.com/",
+    "https://companiesmarketcap.com/duke-energy/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T15:19:01.818681Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.818690Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.819329Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.819336Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.819997Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.820003Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.820629Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.820637Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.821298Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.821303Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.822780Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.822785Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.732979Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.732989Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.733506Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.733511Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.734098Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.734105Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.734594Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.734598Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.735093Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.735097Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.736164Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.736168Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll use the company manifest queue guidance for the registry shape, then verify Duke Energy and any open/decentralized replacements against current sources before returning the JSON.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md && pwd && rg --files content src | head -80" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+/Users/peterryszkiewicz/Repos/free-the-world
+src/routes/mirrors.tsx
+src/routes/about.tsx
+src/routes/companies/[companySlug]/products/[productSlug].tsx
+src/routes/companies/[companySlug]/products/index.tsx
+src/routes/companies/[companySlug]/index.tsx
+src/routes/companies/index.tsx
+src/routes/methodology.tsx
+src/routes/404.tsx
+content/companies/pfizer/bundle.json
+src/routes/insights/disruption-concepts.tsx
+src/routes/insights/alternative-pressure.tsx
+src/routes/insights/post-bubble.tsx
+src/routes/insights/capital-at-risk.tsx
+src/routes/insights/index.tsx
+src/routes/insights/market-cap-disruption.tsx
+src/routes/index.tsx
+src/global.d.ts
+content/companies/meta-platforms/bundle.json
+content/companies/ge-aerospace/bundle.json
+src/lib/domain/metrics.ts
+src/lib/domain/formatters.ts
+src/lib/domain/company-metrics.test.ts
+src/lib/domain/ipo.test.ts
+src/lib/domain/company-metrics.ts
+src/lib/domain/scoring.ts
+src/lib/domain/selectors.ts
+src/lib/domain/types.ts
+src/lib/domain/insights.test.ts
+src/lib/domain/formatters.test.ts
+src/lib/domain/market-cap-snapshots.ts
+src/lib/domain/ipo.ts
+src/lib/domain/insights.ts
+src/lib/domain/table-state.ts
+src/lib/domain/content-types.ts
+src/lib/config.ts
+src/lib/theme.ts
+content/companies/kla/bundle.json
+content/companies/parker-hannifin/bundle.json
+src/lib/content/products.ts
+src/lib/content/technology-waves.ts
+src/lib/content/sources.ts
+src/lib/content/site.ts
+src/lib/content/newsletter.ts
+src/lib/content/companies.ts
+src/lib/content/sectors.ts
+src/lib/utils.ts
+src/lib/site-routes.ts
+src/lib/market-cap-snapshots.ts
+src/lib/deployment-config.ts
+src/lib/content-graph.ts
+content/companies/arista-networks/bundle.json
+src/lib/generated/market-cap-snapshots.ts
+src/lib/generated/content-graph.ts
+content/companies/welltower/bundle.json
+src/shims/source-map-js.ts
+src/entry-server.tsx
+content/companies/exxon-mobil/bundle.json
+content/companies/corning/bundle.json
+src/components/homepage-infographics/registry.ts
+src/components/homepage-infographics/disruption-concepts-preview.tsx
+src/components/homepage-infographics/types.ts
+src/components/homepage-infographics/alternative-pressure-preview.tsx
+src/components/homepage-infographics/rotation.test.ts
+src/components/homepage-infographics/post-bubble-preview.tsx
+src/components/homepage-infographics/market-cap-disruption-preview.tsx
+src/components/homepage-infographics/rotation.ts
+src/components/homepage-infographics/rotating-homepage-infographic.tsx
+src/components/homepage-infographics/capital-at-risk-preview.tsx
+src/components/company-table.tsx
+src/components/source-list.tsx
+src/components/seo.tsx
+src/components/newsletter-signup.tsx
+src/components/site-shell.tsx
+src/components/repository-link.tsx
+src/components/company-table-toolbar.tsx
+src/components/product-implementation-dialog.tsx
+content/companies/thermo-fisher-scientific/bundle.json
+src/components/ui/select.tsx
+src/components/ui/collapsible.tsx
+src/components/ui/checkbox.tsx
+
+2026-05-27T15:19:06.028110Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:06.028121Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:06.028435Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:06.028442Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:06.028758Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:06.028764Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:06.029070Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:06.029073Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:06.029376Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:06.029379Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:06.030075Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:06.030078Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+The skill is mostly about intake mechanics; here the user wants the publishable bundle object, so I’m using it only to align with repo conventions and examples, not writing files in this read-only sandbox.
+exec
+/bin/zsh -lc "sed -n '1,240p' src/lib/domain/content-types.ts" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+import type {
+  Alternative,
+  Company,
+  CompanyIpo,
+  ConceptAngle,
+  DisruptionConcept,
+  DisruptionException,
+  IndexDefinition,
+  Industry,
+  MetricAssessment,
+  Product,
+  Region,
+  Sector,
+  SourceCitation,
+  TechnologyWave,
+} from "~/lib/domain/types";
+
+export const companyInputMetricIds = [
+  "moat",
+  "decentralizability",
+  "profitability",
+  "peRatio",
+  "marketCap",
+] as const;
+
+export type CompanyInputMetricId = (typeof companyInputMetricIds)[number];
+
+export const researchTaskIds = [
+  "company-overview",
+  "moat-analysis",
+  "decentralization-analysis",
+  "product-alternatives",
+  "implementation-prompts",
+  "source-gathering",
+  "company-sync",
+] as const;
+
+export type ResearchTaskId = (typeof researchTaskIds)[number];
+export type RalphProviderId = "claude" | "codex";
+export type RalphProviderPreference = RalphProviderId | "auto" | "both";
+export type RalphSyncMode = "dry-run" | "publish";
+export const syncBatchTargetIds = ["published", "all", "stale"] as const;
+export type SyncBatchTargetId = (typeof syncBatchTargetIds)[number];
+export type ManifestQueueStatus = "queued";
+export type ResearchTargetSource = "canonical" | "queued";
+export type UnverifiedCompanyRequestStatus = "pending" | "prepared" | "completed" | "failed";
+export type CompanyIntakeAlreadyResearchedMode = "skip" | "refresh";
+export type UnverifiedCompanyIssueCode =
+  | "already-queued"
+  | "already-researched"
+  | "ambiguous"
+  | "draft-validation-failed"
+  | "duplicate-candidate"
+  | "duplicate-input"
+  | "invalid"
+  | "provider-failure";
+
+export interface CompanyManifest {
+  schemaVersion: 1;
+  slug: string;
+  name: string;
+  ticker: string;
+  regionId: string;
+  indexIds: string[];
+  sectorId: string;
+  industryId: string;
+  companiesMarketCapUrl: string;
+  description: string;
+  technologyWaveIds: string[];
+  maybeIpo?: CompanyIpo | null;
+  seedProductNames?: string[];
+  seedSourceUrls?: string[];
+  notes?: string;
+}
+
+export interface ManifestQueueEntry {
+  schemaVersion: 1;
+  status: ManifestQueueStatus;
+  createdOn: string;
+  batchId?: string;
+  groupLabel?: string;
+  requestNotes?: string;
+  manifest: CompanyManifest;
+}
+
+export interface UnverifiedCompanyIssue {
+  sourceItem: string;
+  code: UnverifiedCompanyIssueCode;
+  detail: string;
+  maybeCandidateSlug?: string;
+}
+
+export interface PreparedCompanyCandidate {
+  sourceItem: string;
+  slug: string;
+  name: string;
+  ticker: string;
+}
+
+export interface UnverifiedCompanyRequest {
+  schemaVersion: 1;
+  requestId: string;
+  status: UnverifiedCompanyRequestStatus;
+  createdOn: string;
+  updatedOn: string;
+  rawInput: string;
+  rawItems: string[];
+  batchId: string;
+  groupLabel: string;
+  alreadyResearchedMode: CompanyIntakeAlreadyResearchedMode;
+  requestNotes?: string;
+  preparedCandidates: PreparedCompanyCandidate[];
+  skippedItems: UnverifiedCompanyIssue[];
+  queuedSlugs: string[];
+  promotedSlugs: string[];
+  completedCompanySlugs: string[];
+  lastSummaryJson?: string;
+  lastSummaryMarkdown?: string;
+  lastLoopRunDirs: string[];
+  lastSyncRunDirs: string[];
+}
+
+export interface ResearchLoopTarget {
+  companySlug: string;
+  targetSource: ResearchTargetSource;
+  batchId?: string;
+  manifest: CompanyManifest;
+  queueEntry?: ManifestQueueEntry;
+}
+
+export interface RawAlternativeRecord extends Omit<Alternative, "productSlug"> {}
+
+export interface RawDisruptionConceptRecord
+  extends Omit<DisruptionConcept, "productSlug" | "sourceIds"> {}
+
+export interface RawProductRecord {
+  slug: string;
+  name: string;
+  category: string;
+  homepageUrl: string;
+  summary: string;
+  whyItMatters: string;
+  replacementSketch: string[];
+  maybeDisruptionException?: DisruptionException;
+  sourceIds: string[];
+  technologyWaveIds: string[];
+  alternatives: RawAlternativeRecord[];
+  disruptionConcepts: RawDisruptionConceptRecord[];
+}
+
+export interface RawCompanyRecord extends Omit<Company, "productSlugs" | "metrics"> {
+  inputMetrics: Record<CompanyInputMetricId, MetricAssessment>;
+}
+
+export interface CompanyBundle {
+  schemaVersion: 1;
+  company: RawCompanyRecord;
+  products: RawProductRecord[];
+}
+
+export interface ContentGraph {
+  regions: Region[];
+  indices: IndexDefinition[];
+  sectors: Sector[];
+  industries: Industry[];
+  technologyWaves: TechnologyWave[];
+  conceptAngles: ConceptAngle[];
+  companies: Company[];
+  products: Product[];
+  alternatives: Alternative[];
+  disruptionConcepts: DisruptionConcept[];
+  sources: SourceCitation[];
+}
+
+export interface ImplementationPromptArtifact {
+  productSlug: string;
+  companySlug: string;
+  generatedOn: string;
+  markdown: string;
+}
+
+export interface LoadedImplementationPromptArtifact extends ImplementationPromptArtifact {
+  sourceFile: string;
+  issues: string[];
+}
+
+export interface ImplementationPromptsPayload {
+  schemaVersion: 1;
+  companySlug: string;
+  prompts: ImplementationPromptArtifact[];
+}
+
+export interface ResearchTaskDefinition {
+  id: ResearchTaskId;
+  label: string;
+  templateFile: string;
+  outputSuffix: string;
+}
+
+export interface ResearchTaskResult {
+  taskId: ResearchTaskId;
+  provider: RalphProviderId | "local";
+  promptFile: string;
+  rawOutputFile: string;
+  normalizedFile?: string;
+  validationFile?: string;
+  notesFile?: string;
+  exitCode: number;
+  success: boolean;
+  timedOut?: boolean;
+  generatedOn: string;
+}
+
+export interface ResearchRunManifest {
+  schemaVersion: 1;
+  runId: string;
+  companySlug: string;
+  targetSource?: ResearchTargetSource;
+  batchId?: string;
+  mode: RalphSyncMode;
+  requestedProvider: RalphProviderPreference;
+  resolvedProviders: RalphProviderId[];
+  taskResults: ResearchTaskResult[];
+  generatedOn: string;
+  publishedBundleFile?: string;
+  publishedSourceIds?: string[];
+  commitSha?: string;
+}
+
+export interface RalphProviderConfig {
+  command: string;
+  args: string[];
+  env?: Record<string, string>;
+  timeoutMs?: number;
+}
+
+export interface RalphProvidersFile {
+  schemaVersion: 1;
+  defaultProviderOrder: RalphProviderId[];
+  providers: Record<RalphProviderId, RalphProviderConfig>;
+
+exec
+/bin/zsh -lc "sed -n '1,260p' content/companies/exxon-mobil/bundle.json" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "exxon-mobil",
+    "name": "Exxon Mobil",
+    "ticker": "XOM",
+    "rankApprox": 17,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top20"
+    ],
+    "sectorId": "energy",
+    "industryId": "integrated-oil-gas",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/exxon-mobil/marketcap/",
+    "description": "Integrated energy company spanning upstream oil and gas production, refining, chemicals, lubricants, and branded fuel distribution.",
+    "overview": [
+      {
+        "title": "Integrated energy platform",
+        "paragraphs": [
+          "Exxon Mobil operates across upstream production, product manufacturing, chemicals, lubricants, and lower-emissions initiatives, giving it a broad position across the hydrocarbon value chain.",
+          "Its corporate materials emphasize the combination of advantaged resource positions, refining and logistics scale, brand distribution, and technology-led operations as the foundation of its business model."
+        ]
+      },
+      {
+        "title": "Scale and current earnings base",
+        "paragraphs": [
+          "ExxonMobil reported 2025 earnings of $28.8 billion, cash flow from operations of $52.0 billion, production volumes of 4.7 million oil-equivalent barrels per day, and record refinery throughput since the Exxon-Mobil merger.",
+          "Market-data sources place Exxon Mobil at roughly $631.6 billion in market capitalization in March 2026, keeping it inside the S&P 500 top-20 market-cap cohort referenced by this registry snapshot."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Exxon Mobil's moat is built on capital intensity, reserve access, integrated refining and chemicals infrastructure, logistics, regulatory know-how, and globally recognized fuel brands. Those layers reinforce one another: low-cost upstream barrels feed large-scale downstream assets, which in turn support supply reliability and branded distribution.",
+      "The moat is also financial. Even with cyclical commodity exposure, ExxonMobil still generated very large 2025 earnings and operating cash flow, which help fund buybacks, dividends, and multi-year project pipelines that smaller challengers cannot easily match."
+    ],
+    "decentralizationNarrative": [
+      "Exxon Mobil is structurally vulnerable where transport energy demand can be displaced rather than where oil extraction is directly replicated. Distributed solar, storage, open EV charging, and local energy-management stacks can chip away at retail fuel demand without needing to recreate an integrated oil major.",
+      "That said, the company remains harder to disrupt at the extraction and refining layer than at the end-use energy-services layer. Decentralization pressure is more credible as demand substitution and local coordination than as a near-term one-for-one replacement of upstream oil and gas operations."
+    ],
+    "sourceIds": [
+      "src-exxon-overview",
+      "src-exxon-results-2025",
+      "src-exxon-upstream",
+      "src-exxon-downstream",
+      "src-xom-marketcap",
+      "src-xom-statistics"
+    ],
+    "technologyWaveIds": [
+      "distributed-energy"
+    ],
+    "snapshotNote": "Refreshed for a publishable March 2026 registry snapshot using official ExxonMobil materials plus March 2026 market-data references.",
+    "inputMetrics": {
+      "moat": {
+        "value": 8,
+        "rationale": "Exxon Mobil combines reserve access, large upstream and refining assets, logistics, branded retail distribution, and very large cash generation, which together create a durable incumbent position.",
+        "sourceIds": [
+          "src-exxon-overview",
+          "src-exxon-results-2025",
+          "src-exxon-downstream"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "decentralizability": {
+        "value": 3,
+        "rationale": "Distributed energy can pressure transport-fuel demand, but Exxon Mobil's core upstream and refining businesses remain difficult to replace directly with open or local systems today.",
+        "sourceIds": [
+          "src-exxon-upstream",
+          "src-exxon-downstream",
+          "src-evcc-docs",
+          "src-oem-docs",
+          "src-openevse-site"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "profitability": {
+        "value": 8,
+        "rationale": "The company reported $28.8 billion of 2025 earnings and $52.0 billion of operating cash flow, indicating strong absolute profitability despite commodity cyclicality.",
+        "sourceIds": [
+          "src-exxon-results-2025",
+          "src-exxon-investor"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "peRatio": {
+        "value": 22.62,
+        "rationale": "StockAnalysis listed Exxon Mobil at a trailing P/E ratio of 22.62 in March 2026.",
+        "sourceIds": [
+          "src-xom-statistics"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-03-24"
+      },
+      "marketCap": {
+        "value": 631.59,
+        "rationale": "CompaniesMarketCap listed Exxon Mobil at about $631.59 billion in market capitalization in March 2026, ranking it around 17th globally.",
+        "sourceIds": [
+          "src-xom-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-03-24"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "exxon-mobil-upstream-production",
+      "name": "Upstream production",
+      "category": "oil-and-gas-production",
+      "homepageUrl": "https://corporate.exxonmobil.com/who-we-are/our-global-organization/business-divisions/upstream",
+      "summary": "Large-scale oil and natural gas exploration and production across unconventional, conventional, deepwater, heavy oil, and LNG assets.",
+      "whyItMatters": "Upstream production is the resource base that feeds Exxon Mobil's integrated system and underwrites much of its earnings power.",
+      "replacementSketch": [
+        "Near-term disruption is more likely to come from reducing fossil-fuel demand than from directly reproducing Exxon Mobil's upstream system with an open alternative.",
+        "Open local energy stacks, electrification, and efficiency can erode some downstream demand over time, but a credible decentralized substitute for global hydrocarbon extraction remains weak today."
+      ],
+      "maybeDisruptionException": {
+        "reason": "A source-backed, honest one-for-one decentralized replacement for Exxon Mobil's upstream oil and gas production is not yet credible. The business depends on geology, mineral rights, permitting, specialized equipment, safety systems, and very large project finance; current decentralization pressure acts indirectly by lowering fuel demand rather than directly replacing upstream extraction.",
+        "sourceIds": [
+          "src-exxon-upstream",
+          "src-exxon-results-2025"
+        ],
+        "lastReviewedOn": "2026-03-24"
+      },
+      "sourceIds": [
+        "src-exxon-upstream",
+        "src-exxon-results-2025"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "alternatives": [],
+      "disruptionConcepts": []
+    },
+    {
+      "slug": "exxon-and-mobil-fuels",
+      "name": "Exxon and Mobil fuels",
+      "category": "transportation-fuels",
+      "homepageUrl": "https://corporate.exxonmobil.com/who-we-are/our-global-organization/business-divisions/downstream",
+      "summary": "Branded gasoline, diesel, and related retail and commercial fuel distribution sold through Exxon, Mobil, and Esso networks.",
+      "whyItMatters": "Retail and commercial fuels translate Exxon Mobil's refining and logistics scale into everyday customer relationships and recurring transport-energy demand.",
+      "replacementSketch": [
+        "A credible replacement path does not mimic a branded fuel network; it sidesteps it with electric mobility powered by local solar, storage, and open charging controls.",
+        "The practical stack is modular: open monitoring, open EV charging hardware, and local charging orchestration let households, fleets, and small sites substitute purchased liquid fuels with self-managed electricity."
+      ],
+      "sourceIds": [
+        "src-exxon-downstream",
+        "src-evcc-docs",
+        "src-oem-docs",
+        "src-openevse-site",
+        "src-openevse-repo"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "alternatives": [
+        {
+          "slug": "evcc",
+          "name": "evcc",
+          "kind": "open-source",
+          "homepageUrl": "https://evcc.io/en/",
+          "summary": "Open-source energy-management software focused on solar-aware EV charging, dynamic tariffs, and local control.",
+          "metrics": {
+            "openness": {
+              "value": 8,
+              "rationale": "evcc presents itself as open source and community-driven, with documentation describing local installation and broad hardware integrations.",
+              "sourceIds": [
+                "src-evcc-home",
+                "src-evcc-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "It helps households or small sites coordinate charging around local solar generation and tariffs instead of relying on a centralized fuel-retail model.",
+              "sourceIds": [
+                "src-evcc-home",
+                "src-evcc-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "The project documents support for many chargers, vehicles, batteries, and meters, indicating current real-world deployability.",
+              "sourceIds": [
+                "src-evcc-docs",
+                "src-evcc-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "Software-driven solar surplus charging can shift vehicle energy consumption toward self-generated or cheaper electricity, reducing recurring fuel spend.",
+              "sourceIds": [
+                "src-evcc-home",
+                "src-evcc-solar"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+            }
+          },
+          "sourceIds": [
+            "src-evcc-home",
+            "src-evcc-docs",
+            "src-evcc-solar"
+          ]
+        },
+        {
+          "slug": "exxon-and-mobil-fuels-openevse",
+          "name": "OpenEVSE",
+          "kind": "open-source",
+          "homepageUrl": "https://www.openevse.com/about-us.html",
+          "repoUrl": "https://github.com/OpenEVSE/open_evse",
+          "summary": "Open-source EV charging hardware and firmware designed for flexible, locally controlled charging deployments.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "OpenEVSE publishes hardware and firmware as open source, and the firmware repository is GPL-licensed.",
+              "sourceIds": [
+                "src-openevse-site",
+                "src-openevse-repo"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "Open charging hardware shifts transport-energy control toward households, workshops, and local operators instead of centralized liquid-fuel retail networks.",
+              "sourceIds": [
+                "src-openevse-site",
+                "src-openevse-repo"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "OpenEVSE documents commercially sold charging stations and mature firmware used in deployed charging products.",
+              "sourceIds": [
+                "src-openevse-site",
+                "src-openevse-repo"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "DIY or modular open charging hardware can reduce equipment lock-in and support lower-cost vehicle energy when paired with home or site electricity generation.",
+              "sourceIds": [
+                "src-openevse-site",
+                "src-openevse-repo"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-03-24"
+
+exec
+/bin/zsh -lc "sed -n '1,260p' content/companies/welltower/bundle.json" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "welltower",
+    "name": "Welltower",
+    "ticker": "WELL",
+    "rankApprox": 100,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top100"
+    ],
+    "sectorId": "real-estate",
+    "industryId": "health-care-reits",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/welltower/marketcap/",
+    "description": "Welltower is a health care REIT that owns and invests in senior housing, triple-net health care assets, and outpatient medical properties.",
+    "overview": [
+      {
+        "title": "Business Mix",
+        "paragraphs": [
+          "Welltower reports through Seniors Housing Operating, Triple-net, and Outpatient Medical segments, with senior housing producing the largest share of revenue and operating activity.",
+          "The company pairs real estate ownership with operator relationships, capital access, acquisitions, dispositions, and funds-management structures focused on aging-population health care infrastructure."
+        ]
+      },
+      {
+        "title": "2026 Snapshot",
+        "paragraphs": [
+          "CompaniesMarketCap reported Welltower at roughly $152.59 billion of market capitalization in May 2026, while StockAnalysis reported $152.60 billion as of May 22, 2026.",
+          "Welltower's 2025 annual report showed $10.84 billion of total revenue, $936.8 million of net income attributable to common stockholders, and $4.35 billion of consolidated NOI for 2025."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Welltower's moat comes from scale, access to equity and debt capital, operating data across a large senior housing footprint, relationships with health care and senior housing operators, and the difficulty of assembling regulated, need-driven real estate portfolios in attractive markets.",
+      "The moat is not primarily technological. It depends on capital allocation, demographic demand, zoning and entitlement friction, operator execution, balance sheet strength, and property-level performance."
+    ],
+    "decentralizationNarrative": [
+      "The most credible decentralization pressure is not a software clone of Welltower. It is a shift from institutional ownership toward resident-owned senior housing cooperatives, community land trusts, local nonprofit ownership, and open operational software that lowers the administrative burden of smaller operators.",
+      "Outpatient medical real estate is harder to decentralize because care delivery requires regulated clinical workflows, payer relationships, tenant credit, and specialized facilities. Open data, open clinic software, and community-owned facilities can improve bargaining power at the edges, but they do not immediately replace institutional capital at scale."
+    ],
+    "sourceIds": [
+      "welltower-2025-annual-report",
+      "welltower-q4-2025-results",
+      "companiesmarketcap-welltower-marketcap",
+      "stockanalysis-welltower-statistics"
+    ],
+    "technologyWaveIds": [],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; refreshed on 2026-05-27 using current investor, annual-report, and market-data sources.",
+    "inputMetrics": {
+      "moat": {
+        "value": 8,
+        "rationale": "Large health care real estate scale, capital access, operator relationships, and acquisition capacity create a strong institutional moat, though it is less protected by proprietary technology than by assets and financing.",
+        "sourceIds": [
+          "welltower-2025-annual-report",
+          "welltower-q4-2025-results"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "decentralizability": {
+        "value": 3,
+        "rationale": "Ownership and care infrastructure can be partially localized through cooperatives, nonprofit ownership, community land trusts, and open software, but regulated real estate capital and operator execution are hard to decentralize quickly.",
+        "sourceIds": [
+          "welltower-2025-annual-report",
+          "hud-senior-housing-coop-case-study",
+          "openemr-homepage"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "profitability": {
+        "value": 6,
+        "rationale": "Welltower reported positive 2025 net income attributable to common stockholders and substantial consolidated NOI, but REIT economics are capital-intensive and GAAP earnings are affected by depreciation, acquisitions, dispositions, and financing costs.",
+        "sourceIds": [
+          "welltower-2025-annual-report"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "peRatio": {
+        "value": 106.66,
+        "rationale": "StockAnalysis reported a trailing PE ratio of 106.66; for a REIT this is less informative than FFO-based valuation, so confidence is marked speculative.",
+        "sourceIds": [
+          "stockanalysis-welltower-statistics"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "marketCap": {
+        "value": 152590000000,
+        "rationale": "CompaniesMarketCap reported Welltower's May 2026 market capitalization at $152.59 billion, consistent with StockAnalysis' $152.60 billion figure as of May 22, 2026.",
+        "sourceIds": [
+          "companiesmarketcap-welltower-marketcap",
+          "stockanalysis-welltower-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-27"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "senior-housing-portfolio",
+      "name": "Senior housing portfolio",
+      "category": "Health care real estate",
+      "homepageUrl": "https://welltower.com/",
+      "summary": "Welltower owns and invests in senior housing communities operated by partner operators, with the Seniors Housing Operating segment representing the company's largest operating segment.",
+      "whyItMatters": "Senior housing combines shelter, services, care-adjacent operations, and demographic demand, making ownership structure and operator incentives important to affordability, resilience, and resident agency.",
+      "replacementSketch": [
+        "A decentralized replacement would likely emerge as a patchwork of resident-owned cooperatives, nonprofit developments, community land trusts, and smaller local operators rather than a single REIT-scale substitute.",
+        "Open administrative tooling, transparent operating benchmarks, and pooled procurement could let smaller communities compete with institutional owners on cost and resident control while still relying on professional care and property management."
+      ],
+      "sourceIds": [
+        "welltower-2025-annual-report",
+        "welltower-q4-2025-results",
+        "hud-senior-housing-coop-case-study",
+        "senior-cooperative-foundation"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "senior-housing-cooperatives",
+          "name": "Senior housing cooperatives",
+          "kind": "cooperative",
+          "homepageUrl": "https://seniorcoops.org/",
+          "summary": "Resident-owned senior housing cooperatives use member ownership and democratic governance as an alternative to purely investor-owned senior living real estate.",
+          "metrics": {
+            "openness": {
+              "value": 6,
+              "rationale": "The model is organizational rather than open-source, but resident ownership and shared governance make the operating structure more transparent than conventional landlord ownership.",
+              "sourceIds": [
+                "senior-cooperative-foundation",
+                "hud-senior-housing-coop-case-study"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "Resident-owned properties shift control from centralized institutional capital toward local member governance.",
+              "sourceIds": [
+                "senior-cooperative-foundation",
+                "hud-senior-housing-coop-case-study"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "readiness": {
+              "value": 6,
+              "rationale": "HUD and senior cooperative examples show the model is real, but it remains geographically uneven and requires development, financing, and governance capacity.",
+              "sourceIds": [
+                "hud-senior-housing-coop-case-study",
+                "senior-cooperative-foundation"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "costLeverage": {
+              "value": 6,
+              "rationale": "Resident ownership can reduce extractive rent pressure, but affordability still depends on land, construction, financing, operations, and public subsidy conditions.",
+              "sourceIds": [
+                "hud-senior-housing-coop-case-study"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          },
+          "sourceIds": [
+            "senior-cooperative-foundation",
+            "hud-senior-housing-coop-case-study"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "resident-owned-senior-housing-network",
+          "name": "Resident-owned senior housing network",
+          "summary": "A network of resident-owned senior housing cooperatives could pool operating playbooks, procurement, reserve planning, and benchmarking while keeping property-level control with residents and local nonprofit sponsors.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination"
+          ],
+          "thesis": "The market structure changes when senior housing is financed and governed as resident-controlled infrastructure rather than as a portfolio asset optimized for institutional capital returns.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through local ownership and federated coordination, not through Bitcoin. Shared standards and cooperative purchasing can let many small properties coordinate without surrendering ownership to a single REIT.",
+          "coordinationMechanism": "Resident boards, nonprofit sponsors, service providers, and lenders coordinate through shared governance templates, pooled purchasing agreements, and comparable property-level performance reporting.",
+          "verificationOrTrustModel": "Audited financial statements, resident elections, reserve studies, inspection records, and transparent service contracts reduce the risk that operators or boards misreport property condition, costs, or occupancy.",
+          "failureModes": [
+            "Resident boards may lack the expertise to supervise complex care-adjacent operations without strong professional management.",
+            "Financing and land acquisition can remain too expensive for cooperatives in the same markets where institutional REITs are strongest."
+          ],
+          "adoptionPath": [
+            "Start with affordable senior housing preservation projects and nonprofit-sponsored cooperative conversions.",
+            "Create shared operating templates, procurement pools, and resident-governance training that lower the burden for new communities."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "welltower-2025-annual-report",
+            "welltower-q4-2025-results"
+          ],
+          "enablerSourceIds": [
+            "hud-senior-housing-coop-case-study",
+            "senior-cooperative-foundation"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "The concept directly shifts ownership and governance toward local resident-members.",
+              "sourceIds": [
+                "hud-senior-housing-coop-case-study",
+                "senior-cooperative-foundation"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Senior housing cooperatives already exist, but scaling a reliable network of financing, operations, and governance support remains difficult.",
+              "sourceIds": [
+                "hud-senior-housing-coop-case-study",
+                "senior-cooperative-foundation"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "implementationFeasibility": {
+              "value": 5,
+              "rationale": "The model is feasible for targeted properties and preservation deals, but development costs, regulation, staffing, and care needs constrain broad substitution.",
+              "sourceIds": [
+                "hud-senior-housing-coop-case-study",
+                "welltower-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "incumbentPressure": {
+              "value": 4,
+              "rationale": "Cooperatives can pressure affordability and governance narratives, but they are unlikely to match Welltower's acquisition scale and capital access quickly.",
+              "sourceIds": [
+                "companiesmarketcap-welltower-marketcap",
+                "hud-senior-housing-coop-case-study"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "outpatient-medical-properties",
+      "name": "Outpatient medical properties",
+      "category": "Health care real estate",
+      "homepageUrl": "https://welltower.com/",
+      "summary": "Welltower's outpatient medical portfolio consists primarily of medical office buildings and outpatient health care real estate leased to health care providers.",
+      "whyItMatters": "Outpatient medical buildings sit at the intersection of local care access, tenant credit, health system strategy, and specialized real estate ownership.",
+      "replacementSketch": [
+        "A credible open alternative is not a direct property clone, but a locally governed clinic stack: community-owned facilities, open-source practice software, open geospatial planning, and transparent lease economics.",
+        "This could help independent clinics and community health groups reduce dependence on institutional landlords where they can secure local capital, land, and compliance expertise."
+      ],
+      "sourceIds": [
+
+2026-05-27T15:19:13.379815Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:13.379823Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:13.380175Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:13.380180Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:13.380504Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:13.380508Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:13.380813Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:13.380816Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:13.381117Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:13.381122Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:13.381785Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:13.381791Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Duke Energy 2025 annual report revenue net income electric utilities natural gas customers ...
+web search: 
+web search: Duke Energy 2025 annual report customers electric natural gas regulated utilities ...
+web search: 
+web search: https://companiesmarketcap.com/duke-energy/marketcap/
+web search: 
+web search: site:investors.duke-energy.com 2025 annual report Duke Energy 8.6 million customers ...
+web search: 
+web search: https://stockanalysis.com/stocks/duk/statistics/
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "duke-energy",
+      "name": "Duke Energy",
+      "ticker": "DUK",
+      "rankApprox": 110,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "utilities",
+      "industryId": "electric-utilities",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/duke-energy/marketcap/",
+      "description": "Duke Energy is a regulated electric and natural gas utility holding company serving customers across the Carolinas, Florida, Indiana, Ohio and Kentucky.",
+      "overview": [
+        {
+          "title": "Regulated Utility Footprint",
+          "paragraphs": [
+            "Duke Energy describes itself as one of America's largest energy holding companies, with electric utilities serving 8.7 million customers and owning 55,700 megawatts of energy capacity.",
+            "Its natural gas utilities serve about 1.6 million customers in North Carolina, South Carolina, Ohio and Kentucky, giving the company a large regulated delivery footprint across electricity and gas."
+          ]
+        },
+        {
+          "title": "2026 Snapshot",
+          "paragraphs": [
+            "CompaniesMarketCap reported Duke Energy at roughly $97.42 billion of market capitalization in May 2026, while StockAnalysis reported roughly $97.46 billion around the same review window.",
+            "StockAnalysis listed trailing twelve month revenue of $32.72 billion, net income of $5.08 billion and a trailing PE ratio of 19.22 as of May 27, 2026."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Duke Energy's moat is based on regulated service territories, transmission and distribution infrastructure, generation assets, customer relationships, and the capital-market access needed to fund very large utility investment programs.",
+        "The moat is strong but politically constrained. Utilities can earn regulated returns on approved investments, but rate cases, fuel-cost recovery, reliability obligations, storm exposure and public affordability pressure keep the business from behaving like an unconstrained monopoly."
+      ],
+      "decentralizationNarrative": [
+        "The credible decentralization pressure is demand-side and grid-edge rather than a direct clone of a regulated utility. Rooftop solar, batteries, heat pumps, EV charging controls, demand response, open energy management software and microgrid coordination can reduce how much centralized generation and gas throughput customers need.",
+        "Full replacement is difficult because poles, wires, substations, dispatch, interconnection, restoration and regulated reliability obligations remain natural-monopoly functions. Decentralized systems are most credible when they interoperate with the grid and shift marginal load, resilience and control toward homes, campuses and communities."
+      ],
+      "sourceIds": [
+        "duke-ir-overview",
+        "duke-2025-annual-report",
+        "duke-2025-results",
+        "companiesmarketcap-duke-marketcap",
+        "stockanalysis-duke-marketcap",
+        "stockanalysis-duke-statistics"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125; refreshed on 2026-05-27 using Duke Energy investor materials, 2025 annual-report references and current market-data sources.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Regulated service territories, large generation capacity, electric and gas distribution infrastructure, rate-base investment opportunities and capital access create a strong incumbent moat.",
+          "sourceIds": [
+            "duke-ir-overview",
+            "duke-2025-annual-report",
+            "duke-2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Distributed energy, demand response and open energy-management stacks can decentralize part of the customer-side energy function, but utility-scale wires, reliability coordination and regulated service obligations remain difficult to decentralize fully.",
+          "sourceIds": [
+            "duke-ir-overview",
+            "openems-homepage",
+            "openems-github",
+            "openadr-overview"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "StockAnalysis reported $5.08 billion of trailing twelve month net income on $32.72 billion of revenue, indicating strong absolute profitability for a regulated utility, though capital expenditures and debt needs remain large.",
+          "sourceIds": [
+            "stockanalysis-duke-statistics"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 19.22,
+          "rationale": "StockAnalysis listed Duke Energy's trailing PE ratio at 19.22; as a utility valuation snapshot this is useful but still market-sensitive.",
+          "sourceIds": [
+            "stockanalysis-duke-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 97420000000,
+          "rationale": "CompaniesMarketCap reported Duke Energy's May 2026 market capitalization at $97.42 billion, broadly consistent with StockAnalysis' roughly $97.46 billion valuation.",
+          "sourceIds": [
+            "companiesmarketcap-duke-marketcap",
+            "stockanalysis-duke-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "regulated-electric-utility-service",
+        "name": "Regulated electric utility service",
+        "category": "electric-utility-service",
+        "homepageUrl": "https://www.duke-energy.com/home",
+        "summary": "Duke Energy provides regulated electric generation, transmission and distribution service across multiple U.S. states.",
+        "whyItMatters": "Electric utility service is essential infrastructure, and its ownership, dispatch, interconnection and pricing rules shape household resilience, industrial growth, grid decarbonization and local control.",
+        "replacementSketch": [
+          "A realistic replacement path is not a single open-source utility. It is a grid-edge stack of distributed generation, batteries, open energy management, automated demand response and community-scale coordination that lowers dependence on centralized generation additions.",
+          "The public grid would still matter, but more decisions about load shifting, resilience and local generation could move to households, campuses, municipalities and aggregators using interoperable tools."
+        ],
+        "sourceIds": [
+          "duke-ir-overview",
+          "duke-demand-response-2025",
+          "openems-homepage",
+          "openems-github",
+          "openadr-overview"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy management platform for integrating storage, renewable generation, EV charging, heat pumps, tariffs and local control.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenEMS publishes its code on GitHub and describes itself as a free and open-source energy management system.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The project is designed around decentralized edge systems and local energy management for renewable generation, storage, loads and devices.",
+                "sourceIds": [
+                  "openems-github",
+                  "openems-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OpenEMS reports productive systems, pilot projects, labs, a professional association and a public developer community, though deployment still requires compatible hardware and integration expertise.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Local energy management can shift consumption toward self-generated power, storage and dynamic tariffs, reducing exposure to peak pricing and centralized infrastructure costs where regulations allow.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openems-homepage",
+              "openems-github"
+            ]
+          },
+          {
+            "slug": "openadr",
+            "name": "OpenADR",
+            "kind": "protocol",
+            "homepageUrl": "https://www.openadr.org/overview",
+            "summary": "OpenADR is an open smart-grid communication standard for automated demand response and distributed energy resource management.",
+            "metrics": {
+              "openness": {
+                "value": 7,
+                "rationale": "OpenADR is an open standard with alliance-led certification and developer resources rather than a single open-source application.",
+                "sourceIds": [
+                  "openadr-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It lets utilities, operators and customer-side systems exchange interoperable price, reliability and DER-management signals instead of relying on one-off proprietary demand-response integrations.",
+                "sourceIds": [
+                  "openadr-overview",
+                  "openadr-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "OpenADR 2.0 certified products and adoption across multiple regions make it a deployable standard for demand response and DER coordination.",
+                "sourceIds": [
+                  "openadr-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Automated demand response can reduce peak-load costs and avoid stranded proprietary systems, but savings depend on program design, tariffs and customer participation.",
+                "sourceIds": [
+                  "openadr-overview",
+                  "openadr-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openadr-overview",
+              "openadr-faq"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-grid-edge-utility",
+            "name": "Federated grid-edge utility",
+            "summary": "Homes, campuses and municipal sites could run interoperable local energy controllers that coordinate rooftop solar, batteries, EV charging, heat pumps and flexible loads, then aggregate capacity through open demand-response standards.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "open-energy-hardware",
+              "federation"
+            ],
+            "thesis": "The market structure changes when incremental capacity and reliability are supplied partly by coordinated customer-side resources instead of almost entirely by utility-owned generation and wires investments.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated local controllers, open standards and site-level ownership. Bitcoin is not central to this mechanism because the core constraint is physical dispatch and interconnection rather than censorship-resistant payments.",
+            "coordinationMechanism": "Local OpenEMS-style controllers manage devices on site, OpenADR-style signals communicate price or reliability events, and aggregators or municipal programs bundle verified flexible capacity into utility or wholesale-market programs.",
+            "verificationOrTrustModel": "Telemetry from meters, inverters, batteries and controllers can be reconciled against baseline methods, event logs and settlement data; certification and audits reduce spoofed response claims, but baseline manipulation remains a known weakness.",
+            "failureModes": [
+              "Regulatory rules may block aggregation, compensation or interconnection at the scale needed to pressure utility capital plans.",
+              "Cybersecurity, device fragmentation and customer opt-out behavior can reduce reliability during peak events.",
+              "Baseline gaming or bad telemetry can overstate delivered demand response."
+            ],
+            "adoptionPath": [
+              "Start with commercial campuses, municipal buildings and high-load residential programs that already have controllable devices.",
+              "Use open demand-response standards and certified devices to expand from pilot programs into dispatchable portfolios."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "duke-ir-overview",
+              "duke-demand-response-2025"
+            ],
+            "enablerSourceIds": [
+              "openems-homepage",
+              "openems-github",
+              "openadr-overview"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept shifts generation, storage and load-control decisions toward many customer-owned sites while preserving grid interoperability.",
+                "sourceIds": [
+                  "openems-github",
+                  "openadr-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "OpenADR provides a mature coordination pattern for automated demand response, and OpenEMS provides local control primitives, but large-scale program design is still utility- and regulator-dependent.",
+                "sourceIds": [
+                  "openadr-overview",
+                  "openadr-faq",
+                  "openems-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software and standards exist, but deployments require device integration, cybersecurity, tariff alignment, interconnection approvals and customer acquisition.",
+                "sourceIds": [
+                  "openems-github",
+                  "openadr-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Grid-edge portfolios can reduce peak capacity needs and customer dependence at the margin, but they do not eliminate Duke Energy's wires, restoration and reliability role.",
+                "sourceIds": [
+                  "duke-ir-overview",
+                  "duke-demand-response-2025",
+                  "openadr-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "natural-gas-utility-service",
+        "name": "Natural gas utility service",
+        "category": "natural-gas-utility-service",
+        "homepageUrl": "https://www.duke-energy.com/home",
+        "summary": "Duke Energy provides regulated natural gas utility service through its gas distribution operations.",
+        "whyItMatters": "Natural gas distribution ties homes and businesses to centralized fuel infrastructure for heating, cooking, industrial process needs and backup generation.",
+        "replacementSketch": [
+          "The strongest replacement path is demand substitution: efficient electric heat pumps, thermal storage, building controls and local renewable generation reduce gas throughput rather than recreating a decentralized gas network.",
+          "Open energy-management software can coordinate electrified heating with solar, batteries, tariffs and demand-response signals so gas displacement does not simply create unmanaged electric peaks."
+        ],
+        "sourceIds": [
+          "duke-ir-overview",
+          "duke-2025-annual-report",
+          "openems-homepage",
+          "openems-github"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "openems-thermal-electrification",
+            "name": "OpenEMS thermal electrification stack",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS can coordinate heat pumps, renewable generation, storage and tariffs as part of a customer-side electrification stack.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenEMS is published as a free and open-source platform with public source code.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It moves thermal energy scheduling and energy optimization toward local sites instead of leaving fuel choice and peak demand entirely to centralized utility planning.",
+                "sourceIds": [
+                  "openems-github",
+                  "openems-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "OpenEMS supports heat pumps and real deployments, but a full gas-displacement project also requires building retrofits, equipment installation and tariff support.",
+                "sourceIds": [
+                  "openems-github",
+                  "openems-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Coordinated heat pumps can reduce fossil-fuel purchases and shift electric load, but economics depend on building envelope, gas prices, electric rates and incentives.",
+                "sourceIds": [
+                  "openems-github",
+                  "openems-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openems-homepage",
+              "openems-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "neighborhood-thermal-electrification-cooperative",
+            "name": "Neighborhood thermal electrification cooperative",
+            "summary": "A neighborhood-scale cooperative could coordinate heat-pump retrofits, weatherization, shared contractor procurement, thermal storage and local energy controls to retire gas load block by block while managing new electric peaks.",
+            "angleIds": [
+              "cooperative-production",
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "open-energy-hardware"
+            ],
+            "thesis": "The market structure changes when gas demand is reduced by locally organized electrification and shared procurement rather than by customers individually accepting the incumbent utility's fuel mix and infrastructure path.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative ownership, open control systems and local energy coordination. Bitcoin is not necessary because the hard problem is retrofit coordination, measurement and dispatch, not settlement censorship.",
+            "coordinationMechanism": "Residents, building owners, contractors, lenders and local governments coordinate through a cooperative retrofit program, shared technical standards, pooled purchasing and site controllers that schedule heating around local generation, storage and grid events.",
+            "verificationOrTrustModel": "Utility meter data, gas-meter retirement records, equipment commissioning documents, controller logs and before/after weather-normalized consumption can verify delivered reductions; third-party inspections reduce false retrofit claims.",
+            "failureModes": [
+              "Upfront retrofit costs and split incentives between landlords and tenants can stall adoption.",
+              "Poorly coordinated electrification can increase winter electric peaks and create new utility investment needs.",
+              "Verification can be noisy because weather, occupancy and building-envelope quality strongly affect heating demand."
+            ],
+            "adoptionPath": [
+              "Begin with municipal buildings, schools, multifamily properties and willing neighborhoods where procurement and financing can be bundled.",
+              "Pair heat-pump installations with open energy management, weatherization and demand-response enrollment to prove winter peak control."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "duke-ir-overview",
+              "duke-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openems-homepage",
+              "openems-github",
+              "openadr-overview"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept shifts thermal-energy decisions and procurement toward local cooperative structures and customer-owned equipment.",
+                "sourceIds": [
+                  "openems-github",
+                  "openems-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Cooperative procurement and open control software are credible, but coordinating many buildings, contractors and utility programs is operationally hard.",
+                "sourceIds": [
+                  "openems-homepage",
+                  "openadr-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The needed equipment and software exist, but retrofit costs, permitting, winter peak management and customer participation limit near-term feasibility.",
+                "sourceIds": [
+                  "openems-github",
+                  "duke-ir-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Gas-throughput reduction can pressure long-term gas infrastructure economics, but Duke Energy's regulated electric business can also benefit from well-managed electrification load growth.",
+                "sourceIds": [
+                  "duke-ir-overview",
+                  "duke-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "duke-ir-overview",
+      "title": "Duke Energy Corporation - Investor Relations",
+      "url": "https://investors.duke-energy.com/overview/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Duke Energy",
+      "note": "Current company overview with electric and natural gas customer counts, generation capacity and corporate description.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "duke-2025-annual-report",
+      "title": "Duke Energy 2025 Annual Report",
+      "url": "https://s201.q4cdn.com/583395453/files/doc_financials/2026/ar/Duke-Energy-2025-Annual-Report-vFINAL.pdf",
+      "kind": "annual-report",
+      "publisher": "Duke Energy",
+      "note": "Annual-report source for regulated electric and natural gas operations, business mix and financial context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "duke-2025-results",
+      "title": "Duke Energy reports fourth-quarter and full-year 2025 financial results",
+      "url": "https://news.duke-energy.com/releases/duke-energy-reports-fourth-quarter-and-full-year-2025-financial-results",
+      "kind": "investor-relations",
+      "publisher": "Duke Energy News Center",
+      "note": "Company-published 2025 results release and business overview for the refresh period.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "duke-demand-response-2025",
+      "title": "Duke Energy thanks customers for help managing the power grid through hot temperatures",
+      "url": "https://investors.duke-energy.com/news/news-details/2025/Duke-Energy-thanks-customers-for-help-managing-the-power-grid-through-hot-temperatures/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Duke Energy",
+      "note": "Documents Duke Energy customer demand-response participation, relevant to grid-edge alternatives.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-duke-marketcap",
+      "title": "Market capitalization of Duke Energy (DUK)",
+      "url": "https://companiesmarketcap.com/duke-energy/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap source used for registry valuation and snapshot alignment.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-duke-marketcap",
+      "title": "Duke Energy (DUK) Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/duk/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Secondary market-cap reference for cross-checking Duke Energy valuation.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-duke-statistics",
+      "title": "Duke Energy (DUK) Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/duk/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Reference for PE ratio, revenue, net income, debt and other valuation statistics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openems-homepage",
+      "title": "OpenEMS - Open Energy Management System",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association e.V.",
+      "note": "Project source for open-source local energy-management capabilities and community maturity.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS - Open Source Energy Management System",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Repository source for architecture, local energy management, supported device categories and open-source status.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openadr-overview",
+      "title": "About OpenADR",
+      "url": "https://www.openadr.org/overview",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Standards source for open automated demand response and distributed energy resource coordination.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openadr-faq",
+      "title": "OpenADR FAQ",
+      "url": "https://www.openadr.org/faq",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Explains demand response and OpenADR's role in standardizing automated programs.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a publishable Duke Energy bundle with two products: regulated electric utility service and natural gas utility service. The refresh emphasizes distributed-energy pressure through OpenEMS, OpenADR, grid-edge coordination and thermal electrification rather than forcing a direct one-for-one utility replacement."
+}
+tokens used
+60,730

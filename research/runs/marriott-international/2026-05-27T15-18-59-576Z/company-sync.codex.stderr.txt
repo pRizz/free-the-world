@@ -1,0 +1,853 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6a04-7e13-7251-abb8-0d73f4100c80
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: marriott-international
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "marriott-international",
+  "name": "Marriott International",
+  "ticker": "MAR",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "consumer-discretionary",
+  "industryId": "hotels-resorts-lodging",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/marriott/marketcap/",
+  "description": "Marriott International franchises, manages, and licenses hotels, resorts, and lodging brands worldwide.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Marriott Bonvoy",
+    "Ritz-Carlton"
+  ],
+  "seedSourceUrls": [
+    "https://marriott.gcs-web.com/",
+    "https://companiesmarketcap.com/marriott/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T15:19:01.815400Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.815416Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.816228Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.816233Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.816914Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.816918Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.817636Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.817639Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.818359Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.818364Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:01.819824Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:01.819828Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.846811Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.846820Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.847136Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.847140Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.847451Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.847455Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.847767Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.847770Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.848095Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.848098Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:19:02.848889Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:19:02.848891Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Marriott International 2025 annual report Form 10-K rooms loyalty Bonvoy ...
+web search: 
+web search: Marriott market cap May 25 2026 CompaniesMarketCap ...
+web search: 
+web search: BeWelcome open source hospitality exchange source code GitHub ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"marriott-international","name":"Marriott International","ticker":"MAR","rankApprox":116,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top125"],"sectorId":"consumer-discretionary","industryId":"hotels-resorts-lodging","companiesMarketCapUrl":"https://companiesmarketcap.com/marriott-international/marketcap/","description":"Marriott International franchises, manages, and licenses hotels, resorts, branded residences, timeshare properties, and lodging brands worldwide.","overview":[{"title":"Business model","paragraphs":["Marriott is an asset-light lodging platform built around owned brands, franchise and management contracts, loyalty demand, and reservation infrastructure rather than primarily owning hotels. Its value is concentrated in brand standards, distribution, elite-status incentives, owner relationships, and operating know-how across a very large global room base.","The company reports more than thirty brands and uses Marriott Bonvoy as the connective layer across direct booking, points, elite recognition, co-branded cards, and partner travel experiences. That makes the company less a single hotel operator than a large demand-routing and trust layer for property owners and travelers."]},{"title":"Registry relevance","paragraphs":["Marriott belongs in the registry because its moat is partly a coordination moat: guests, franchisees, hotel owners, payment partners, and travel distributors all benefit from the same loyalty and brand network. Free or decentralized replacements are therefore most plausible at the edges first, especially independent lodging software, hospitality-exchange networks, cooperative booking rails, and open reputation systems.","The Ritz-Carlton side of the company represents the premium brand layer, where decentralization is harder because service consistency, capital intensity, location scarcity, and brand assurance matter more than software alone. The credible pressure point is not a quick clone of luxury hotels, but a gradual unbundling of booking, reputation, property-management, and guest-recognition infrastructure."]}],"moatNarrative":["Marriott's moat is strong because it combines global brand recognition, a large room and development pipeline, a major loyalty program, direct-booking economics, and long-term franchise and management relationships. The company can route demand to hotel owners while preserving capital-light economics, which raises switching costs for owners and guests at the same time.","The moat is not absolute. Individual hotel rooms are local physical assets, and independent operators can adopt modern property-management, channel-management, and direct-booking tools. The harder part to replicate is the global trust, procurement, loyalty, and elite-recognition system that makes guests choose the brand before comparing individual properties."],"decentralizationNarrative":["Marriott is only moderately decentralizable because the physical stay requires local operations, compliance, cleaning, staffing, maintenance, and service recovery. Those local functions can be run by independent or cooperative operators, but travelers still need reliable discovery, payment, reputation, and dispute-resolution layers.","The most credible decentralized pressure comes from federated hospitality exchange, open property-management software, open travel data standards, and peer-to-peer or cooperative booking systems that let independent lodging providers coordinate without surrendering demand relationships to a dominant brand or online travel intermediary. Bitcoin or Lightning can matter for global settlement and deposits, but federation, open source, and reputation portability are more central than monetary rails alone."],"sourceIds":["marriott-2025-results","marriott-2024-10k","marriott-bonvoy-page","companiesmarketcap-marriott","stockanalysis-marriott"],"technologyWaveIds":["bitcoin-native-coordination"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125.","inputMetrics":{"moat":{"value":86,"rationale":"Marriott has a large global lodging system, more than thirty brands, an asset-light franchise and management model, and a loyalty program that reinforces direct demand and owner switching costs.","sourceIds":["marriott-2025-results","marriott-2024-10k","marriott-bonvoy-page"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizability":{"value":46,"rationale":"Local lodging operations can be independent and software-enabled, but global brand assurance, loyalty recognition, service consistency, and franchise-owner coordination are difficult to decentralize quickly.","sourceIds":["marriott-2024-10k","opentravel-hospitality","openhospitality-network"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"profitability":{"value":82,"rationale":"Marriott reported full-year 2025 net income of $2.601 billion and adjusted EBITDA of $5.383 billion, showing strong profitability from a fee-heavy lodging platform.","sourceIds":["marriott-2025-results"],"confidence":"high","lastReviewedOn":"2026-05-27"},"peRatio":{"value":34.9,"rationale":"Approximate valuation using a market capitalization near $93.28 billion and 2025 reported net income of $2.601 billion; this is a rough trailing earnings multiple rather than a live quote feed.","sourceIds":["companiesmarketcap-marriott","marriott-2025-results"],"confidence":"speculative","lastReviewedOn":"2026-05-27"},"marketCap":{"value":93280000000,"rationale":"CompaniesMarketCap listed Marriott International at about $93.28 billion in market capitalization as of May 2026.","sourceIds":["companiesmarketcap-marriott"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},"products":[{"slug":"marriott-bonvoy","name":"Marriott Bonvoy","category":"hotel loyalty and direct booking network","homepageUrl":"https://www.marriott.com/loyalty.mi","summary":"Marriott Bonvoy is Marriott's loyalty, direct-booking, points, elite-status, and travel-experience program across its lodging portfolio.","whyItMatters":"Bonvoy is the demand and identity layer that ties Marriott's brands, owners, guests, co-branded cards, and travel partners together, making it a central part of the company's network moat.","replacementSketch":["A free-world replacement would begin as interoperable lodging identity: portable guest reputation, stay history, verified reviews, deposits, refunds, and loyalty balances that are not locked inside one hotel group.","Independent hotels, host networks, and cooperatives could then plug into common booking and reputation protocols while competing on property quality, local service, and price rather than paying for access to a closed loyalty graph."],"sourceIds":["marriott-bonvoy-page","marriott-help-bonvoy","marriott-2024-10k"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"bewelcome","name":"BeWelcome","kind":"open-source","homepageUrl":"https://www.bewelcome.org/","repoUrl":"https://github.com/BeWelcome/rox","summary":"BeWelcome is a free, nonprofit, democratic, open-source hospitality exchange community for travelers and hosts.","metrics":{"openness":{"value":91,"rationale":"The project describes itself as free, open source, nonprofit, and democratic, and its main codebase is published on GitHub under GPL-2.0.","sourceIds":["bewelcome-github","bewelcome-getactive"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":68,"rationale":"BeWelcome reduces dependence on commercial lodging intermediaries through community hosting, but the current service is still organized around a shared platform rather than a fully federated protocol.","sourceIds":["bewelcome-github","openhospitality-network"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":67,"rationale":"The network is live and maintained, but it is a hospitality-exchange substitute for some travel needs rather than a full replacement for paid hotel loyalty, elite benefits, or guaranteed commercial lodging inventory.","sourceIds":["bewelcome-github","bewelcome-getactive"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":83,"rationale":"Free hospitality exchange can materially reduce lodging costs for compatible trips, though it trades away standardized hotel service, guaranteed availability, and commercial amenities.","sourceIds":["bewelcome-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["bewelcome-github","bewelcome-getactive"]},{"slug":"trustroots","name":"Trustroots","kind":"open-source","homepageUrl":"https://www.trustroots.org/","repoUrl":"https://github.com/Trustroots/trustroots","summary":"Trustroots is an AGPL-licensed traveler hospitality community for sharing, hosting, and meeting people, with stated interest in decentralization through Nostr.","metrics":{"openness":{"value":88,"rationale":"Trustroots publishes its source code on GitHub under the AGPL-3.0 license.","sourceIds":["trustroots-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":73,"rationale":"The project is currently a platform, but its repository notes a medium-term decentralization plan using the Nostr protocol and an interest in making the service forkable.","sourceIds":["trustroots-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":58,"rationale":"Trustroots is live and mission-aligned, but it serves non-commercial hospitality exchange rather than mainstream hotel booking and loyalty use cases.","sourceIds":["trustroots-github","trustroots-wiki"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":79,"rationale":"Hospitality exchange can avoid hotel costs for suitable travelers, but availability, safety expectations, and service guarantees are not comparable to a commercial lodging program.","sourceIds":["trustroots-github","trustroots-wiki"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["trustroots-github","trustroots-wiki"]}],"disruptionConcepts":[{"slug":"federated-lodging-reputation-wallet","name":"Federated lodging reputation wallet","summary":"A portable lodging identity and reputation layer could let guests carry verified stay history, host references, deposits, and dispute outcomes across independent hotels, host communities, and cooperative booking networks instead of rebuilding trust inside each corporate loyalty program.","angleIds":["federation","decentralized-coordination"],"thesis":"The market structure changes if trust and status become portable across lodging providers, weakening the lock-in effect of a single hotel group's loyalty graph and direct-booking funnel.","bitcoinOrDecentralizationRole":"Federation is central: multiple lodging communities or booking operators can exchange signed attestations without one owner of the identity graph. Bitcoin or Lightning could optionally support deposits, refunds, and cross-border settlement, but the core mechanism is portable reputation rather than token speculation.","coordinationMechanism":"Guests, hosts, hotels, and booking cooperatives issue signed stay, payment, review, and dispute attestations to a user-controlled wallet. Participating properties decide which issuers they trust, while directories index available stays without owning the guest's full history.","verificationOrTrustModel":"Cheating is constrained by issuer signatures, revocation registries, stake or bond requirements for commercial operators, duplicate-account checks, and dispute records that travel with the credential. The system still needs governance for false complaints, compromised issuers, and collusive review rings.","failureModes":["Large hotel groups may refuse portability because loyalty lock-in is strategically valuable.","Privacy-preserving credentials are difficult to design without enabling fake or selectively hidden reputation.","Small operators may lack the service-recovery capacity that branded hotel programs provide."],"adoptionPath":["Start with independent hotels, hostels, and hospitality-exchange communities that already lack a global loyalty database.","Add verified stay credentials, portable reviews, and deposit/refund workflows for direct bookings.","Federate directories and booking cooperatives so guests can search inventory while keeping identity and reputation portable."],"confidence":"medium","problemSourceIds":["marriott-bonvoy-page","marriott-2024-10k"],"enablerSourceIds":["openhospitality-network","trustroots-github","bewelcome-github"],"metrics":{"decentralizationFit":{"value":78,"rationale":"The concept directly moves guest identity and reputation away from a single corporate loyalty database toward interoperable communities and providers.","sourceIds":["openhospitality-network","trustroots-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":61,"rationale":"Federated hospitality exchange work and open-source communities show aligned primitives, but commercial hotels would need standards, liability handling, and incentives to participate.","sourceIds":["openhospitality-network","opentravel-hospitality"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":57,"rationale":"The technical pieces are plausible, but verified credentials, fraud controls, privacy, and dispute interoperability create meaningful implementation complexity.","sourceIds":["trustroots-github","openhospitality-network"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":52,"rationale":"Pressure would likely begin with independent lodging and budget travel rather than immediately displacing Bonvoy's premium elite-status and brand benefits.","sourceIds":["marriott-bonvoy-page","marriott-2024-10k"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},{"slug":"lightning-direct-booking-cooperative","name":"Lightning direct-booking cooperative","summary":"A cooperative booking network could use open hotel data standards, self-hosted booking engines, and instant low-fee settlement to help independent properties sell directly while sharing discovery, reputation, and dispute tooling.","angleIds":["lightning","peer-to-peer-marketplace","cooperative-production"],"thesis":"The market structure changes if independent properties can pool discovery and trust without surrendering the guest relationship to a hotel brand or dominant intermediary.","bitcoinOrDecentralizationRole":"Lightning matters as a settlement and deposit rail for international guests and small operators, especially where card fees, chargebacks, or cross-border settlement are painful. Cooperative governance and open standards matter more for inventory and reputation coordination.","coordinationMechanism":"Properties publish rates and availability through open schemas, accept deposits or full payment through interoperable rails, and share a cooperative dispute and reputation service. Guests search through multiple front ends that query the same open inventory layer.","verificationOrTrustModel":"Double-booking is constrained through signed availability updates, reservation holds with expirations, payment proofs, and audit logs from property-management systems. Fraudulent listings are constrained through property verification, operator bonds, guest feedback, and cooperative removal processes.","failureModes":["Inventory synchronization failures could produce double bookings and destroy trust.","Regulatory, tax, refund, and consumer-protection requirements vary by jurisdiction.","Lightning payment UX and refund handling may still be too unfamiliar for mainstream travelers."],"adoptionPath":["Integrate with open or self-hosted property-management tools used by small hotels and guesthouses.","Launch in one region or travel niche where direct booking economics are compelling.","Add cooperative marketing, portable reputation, and standardized dispute handling once inventory quality is reliable."],"confidence":"medium","problemSourceIds":["marriott-2024-10k","marriott-bonvoy-page"],"enablerSourceIds":["opentravel-hospitality","hoteldruid","repull"],"metrics":{"decentralizationFit":{"value":72,"rationale":"The model shifts distribution and settlement toward independent properties and cooperative governance instead of one centralized loyalty and booking platform.","sourceIds":["opentravel-hospitality","hoteldruid"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":59,"rationale":"Open travel message standards and open property-management tools exist, but creating reliable shared inventory, refunds, and dispute handling remains operationally hard.","sourceIds":["opentravel-hospitality","hoteldruid","repull"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":54,"rationale":"A narrow regional or niche rollout is feasible, but a broad network would need strong integrations, support operations, payments compliance, and anti-fraud systems.","sourceIds":["hoteldruid","opentravel-hospitality"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":49,"rationale":"This could pressure commission and direct-booking economics for independent lodging, but it is unlikely to quickly replicate Bonvoy's global loyalty benefits or brand assurance.","sourceIds":["marriott-bonvoy-page","marriott-2024-10k"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]},{"slug":"ritz-carlton","name":"Ritz-Carlton","category":"luxury hotel and resort brand","homepageUrl":"https://www.ritzcarlton.com/","summary":"Ritz-Carlton is Marriott's luxury hotel, resort, residence, and branded hospitality platform focused on premium service, locations, and brand assurance.","whyItMatters":"Ritz-Carlton shows the hardest part of Marriott to decentralize: luxury hospitality depends on scarce real estate, trusted service standards, staff training, design, and a brand promise that guests pay to avoid uncertainty.","replacementSketch":["A realistic replacement is not a quick open-source clone of a luxury hotel brand. The nearer path is a network of independent premium inns, villas, boutique hotels, and retreats that share open operations tooling, portable guest preferences, transparent reviews, and cooperative quality standards.","Over time, open property-management and booking infrastructure could lower the cost of running high-quality independent lodging while federated reputation and cooperative auditing provide some of the trust currently supplied by luxury brands."],"sourceIds":["ritz-carlton-page","marriott-2024-10k"],"technologyWaveIds":[],"alternatives":[{"slug":"hoteldruid","name":"HotelDruid","kind":"open-source","homepageUrl":"https://www.hoteldruid.com/","summary":"HotelDruid is free and open-source hotel property-management software with reservation, room, rate, point-of-sale, statistics, booking-engine, and channel-management features.","metrics":{"openness":{"value":86,"rationale":"HotelDruid describes itself as free and open-source hotel management software.","sourceIds":["hoteldruid"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":63,"rationale":"It helps individual lodging operators run reservations and direct booking without relying entirely on closed vendor stacks, though it is software infrastructure rather than a complete luxury brand substitute.","sourceIds":["hoteldruid"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":72,"rationale":"HotelDruid is released software with documented hotel-management features and a recent version release, making it more production-ready than speculative protocol concepts.","sourceIds":["hoteldruid"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":69,"rationale":"Self-hosted or free hotel-management software can reduce software and commission dependence for smaller operators, but labor, real estate, service, and guest acquisition remain expensive.","sourceIds":["hoteldruid"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["hoteldruid"]}],"disruptionConcepts":[{"slug":"cooperative-luxury-inn-standard","name":"Cooperative luxury inn standard","summary":"Independent premium properties could form a cooperative quality network using open property-management systems, transparent audits, portable guest preferences, and shared service playbooks to offer some brand assurance without being owned by a single hotel company.","angleIds":["cooperative-production","decentralized-coordination"],"thesis":"The market structure changes if luxury trust becomes a shared certification and operations layer for independent properties rather than a proprietary brand hierarchy controlled by one franchisor or manager.","bitcoinOrDecentralizationRole":"Decentralization matters through cooperative governance, portable reputation, and shared operational standards. Bitcoin is not central, though escrow or bond mechanisms could support deposits and operator accountability.","coordinationMechanism":"Member properties adopt common service and data standards, run compatible booking and property-management tools, submit to peer or third-party audits, and participate in shared dispute and guest-preference systems.","verificationOrTrustModel":"Quality claims are constrained through recurring audits, signed guest reviews tied to verified stays, transparent incident records, member bonds, and expulsion rules. The model remains vulnerable to inconsistent enforcement and reputation capture by larger members.","failureModes":["Luxury guests may still prefer a known global brand over cooperative certification.","Service quality depends on training and culture, not just software or audits.","A cooperative can become bureaucratic or captured by the largest member properties."],"adoptionPath":["Begin with independent boutique hotels, inns, retreats, and villas already serving premium guests.","Standardize property-management exports, verified-stay reviews, and minimum service guarantees.","Add cooperative purchasing, training, audit, and guest-recognition programs once the network has enough trusted properties."],"confidence":"medium","problemSourceIds":["ritz-carlton-page","marriott-2024-10k"],"enablerSourceIds":["hoteldruid","opentravel-hospitality"],"metrics":{"decentralizationFit":{"value":66,"rationale":"The concept decentralizes brand assurance across independent properties, though it still requires governance and central coordination for standards and audits.","sourceIds":["hoteldruid","opentravel-hospitality"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":56,"rationale":"Open hotel software and travel standards support the data layer, but luxury-quality governance and audit credibility are harder than basic booking interoperability.","sourceIds":["hoteldruid","opentravel-hospitality"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":51,"rationale":"A small premium cooperative is feasible, but matching Ritz-Carlton consistency across geographies requires significant training, capital, and operations discipline.","sourceIds":["ritz-carlton-page","hoteldruid"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":37,"rationale":"The concept can improve independent luxury competitiveness but is unlikely to displace a globally recognized premium brand quickly.","sourceIds":["ritz-carlton-page","marriott-2024-10k"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},{"slug":"local-resilience-premium-stays","name":"Local-resilience premium stays","summary":"A second pressure point is locally resilient premium lodging: properties that combine open energy controls, local food and repair loops, and transparent sustainability data to compete on autonomy and place-based quality rather than standardized global luxury branding.","angleIds":["distributed-energy-generation","open-energy-hardware","local-materials-processing"],"thesis":"The market structure changes if premium travelers and retreat buyers value verifiable local resilience, energy independence, and repairability as part of hospitality quality, giving smaller operators a defensible non-brand axis of competition.","bitcoinOrDecentralizationRole":"Bitcoin is not central. The decentralization role is physical: local energy, open control systems, local materials loops, and auditable operating data reduce dependence on centralized utility, procurement, and brand-standard supply chains.","coordinationMechanism":"Independent properties coordinate through shared open hardware specifications, energy-management playbooks, maintenance recipes, supplier directories, and verified performance disclosures for energy, water, waste, and local sourcing.","verificationOrTrustModel":"False sustainability or resilience claims are constrained through meter-backed reporting, public audit trails, guest-visible performance dashboards, third-party inspections, and equipment attestations. The weakness is that reporting standards can still be gamed or made too complex for guests to evaluate.","failureModes":["Capital costs for energy, water, and building upgrades may exceed the near-term booking premium.","Local regulations and building codes can slow deployment.","Travelers may care more about location, service, and status than resilience metrics."],"adoptionPath":["Start with eco-lodges, retreats, and independent resorts where resilience is already part of the guest promise.","Publish open operating metrics and equipment recipes that other properties can copy.","Build booking filters and cooperative certification around verified resilience rather than generic sustainability marketing."],"confidence":"speculative","problemSourceIds":["ritz-carlton-page","marriott-2024-10k"],"enablerSourceIds":["hoteldruid","opentravel-hospitality"],"metrics":{"decentralizationFit":{"value":61,"rationale":"The concept decentralizes some physical infrastructure and operating know-how, but it does not directly replace Marriott's brand, loyalty, or global distribution moat.","sourceIds":["hoteldruid","opentravel-hospitality"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":43,"rationale":"Open hospitality data and property software can expose metrics, but shared verification of energy and local-sourcing claims is still immature.","sourceIds":["opentravel-hospitality","hoteldruid"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":39,"rationale":"Individual properties can implement pieces today, but an interoperable open standard for premium resilience claims would require hardware, auditing, and consumer-demand development.","sourceIds":["hoteldruid"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":31,"rationale":"This is a niche differentiation path that may pressure selected resort and retreat categories, not the core Ritz-Carlton luxury-brand moat in the near term.","sourceIds":["ritz-carlton-page","marriott-2024-10k"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]}]},"sources":[{"id":"marriott-2025-results","title":"Marriott International Reports Fourth Quarter and Full Year 2025 Results","url":"https://marriott.gcs-web.com/news-releases/news-release-details/marriott-international-reports-fourth-quarter-and-full-year-2025","kind":"investor-relations","publisher":"Marriott International","note":"Primary source for 2025 net income, adjusted EBITDA, RevPAR, room growth expectations, and current operating performance.","accessedOn":"2026-05-27"},{"id":"marriott-2024-10k","title":"Marriott International 2024 Form 10-K","url":"https://marriott.gcs-web.com/sec-filings/sec-filing/10-k/0001628280-25-004818","kind":"annual-report","publisher":"Marriott International","note":"Annual filing used for business model, brand, franchise, management, loyalty, risk, and lodging-system context.","accessedOn":"2026-05-27"},{"id":"marriott-bonvoy-page","title":"Discover Marriott Bonvoy","url":"https://www.marriott.com/loyalty.mi","kind":"product-page","publisher":"Marriott International","note":"Official product page for Marriott Bonvoy loyalty, booking, and member benefits.","accessedOn":"2026-05-27"},{"id":"marriott-help-bonvoy","title":"What is the Marriott Bonvoy Program?","url":"https://help.marriott.com/s/article/what-is-marriott-bonvoy-loyalty-program","kind":"product-page","publisher":"Marriott International","note":"Marriott help-center source describing Bonvoy as a travel program with hotel brands and experiences.","accessedOn":"2026-05-27"},{"id":"ritz-carlton-page","title":"The Ritz-Carlton Official Website","url":"https://www.ritzcarlton.com/","kind":"product-page","publisher":"Marriott International","note":"Official brand source for Ritz-Carlton luxury hotel and resort positioning.","accessedOn":"2026-05-27"},{"id":"companiesmarketcap-marriott","title":"Marriott International Market Capitalization","url":"https://companiesmarketcap.com/marriott-international/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-cap source for Marriott's May 2026 approximate valuation.","accessedOn":"2026-05-27"},{"id":"stockanalysis-marriott","title":"Marriott International Stock Price and Overview","url":"https://stockanalysis.com/stocks/mar/","kind":"market-data","publisher":"StockAnalysis","note":"Market-data cross-check for ticker, public-company status, and valuation context.","accessedOn":"2026-05-27"},{"id":"bewelcome-github","title":"BeWelcome GitHub Organization","url":"https://github.com/BeWelcome","kind":"open-source-project","publisher":"BeWelcome","note":"Open-source source for BeWelcome's hospitality-exchange code and project positioning.","accessedOn":"2026-05-27"},{"id":"bewelcome-getactive","title":"Help BeWelcome","url":"https://beta.bewelcome.org/about/getactive","kind":"technical-docs","publisher":"BeWelcome","note":"Project documentation stating BeWelcome is volunteer-run, free of charge, and open source.","accessedOn":"2026-05-27"},{"id":"trustroots-github","title":"Trustroots GitHub Repository","url":"https://github.com/Trustroots/trustroots","kind":"open-source-project","publisher":"Trustroots","note":"Source for Trustroots licensing, hospitality-exchange function, and stated decentralization direction through Nostr.","accessedOn":"2026-05-27"},{"id":"trustroots-wiki","title":"Start Rooting - Trustroots Wiki","url":"https://wiki.trustroots.org/wiki/Start_Rooting","kind":"analysis","publisher":"Trustroots Wiki","note":"Context source for hospitality exchange as accommodation sharing and non-commercial host coordination.","accessedOn":"2026-05-27"},{"id":"openhospitality-network","title":"Open Hospitality Network","url":"https://openhospitality.network/","kind":"technical-docs","publisher":"Open Hospitality Network","note":"Source for federated hospitality-exchange goals, open governance, open source software, and protocol/library aspirations.","accessedOn":"2026-05-27"},{"id":"opentravel-hospitality","title":"OpenTravel Hospitality","url":"https://opentravel.org/hospitality/","kind":"technical-docs","publisher":"OpenTravel Alliance","note":"Source for hospitality interoperability standards and electronic distribution message structure.","accessedOn":"2026-05-27"},{"id":"hoteldruid","title":"HotelDruid Hotel Management Software","url":"https://www.hoteldruid.com/","kind":"open-source-project","publisher":"DigitalDruid.Net","note":"Open-source hotel-management and booking-engine software source used as an independent lodging infrastructure alternative.","accessedOn":"2026-05-27"},{"id":"repull","title":"Repull - Build Vacation Rental Tools Without Code, or via API","url":"https://repull.dev/","kind":"open-source-project","publisher":"Repull","note":"Source for open-source vacation-rental channel-management and revenue-management tooling relevant to independent lodging infrastructure.","accessedOn":"2026-05-27"}],"summaryMarkdown":"Prepared a new Marriott International bundle focused on Marriott Bonvoy and Ritz-Carlton. The strongest decentralization paths are federated lodging reputation, cooperative direct booking, open hotel-management tooling, and independent premium-property standards rather than a direct clone of Marriott's global brand network."}
+tokens used
+21,641

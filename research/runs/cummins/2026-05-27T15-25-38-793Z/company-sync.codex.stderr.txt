@@ -1,0 +1,1584 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6a0a-9577-7940-b80b-7847c6203cf0
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: cummins
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "cummins",
+  "name": "Cummins",
+  "ticker": "CMI",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "industrials",
+  "industryId": "industrial-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/cummins/marketcap/",
+  "description": "Cummins designs and manufactures diesel, natural gas, electric, and hydrogen powertrain and power generation systems.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Cummins engines",
+    "Accelera by Cummins"
+  ],
+  "seedSourceUrls": [
+    "https://investor.cummins.com/",
+    "https://companiesmarketcap.com/cummins/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T15:25:41.037612Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.037623Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.038479Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.038487Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.039371Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.039377Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.040197Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.040216Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.040938Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.040943Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:41.042485Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:41.042490Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.408607Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.408621Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.408956Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.408963Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.409289Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.409293Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.409617Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.409623Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.409951Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.409954Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T15:25:42.410660Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T15:25:42.410663Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Cummins 2024 annual report net income revenue engines power systems Accelera ...
+web search: 
+web search: Cummins engines product page diesel natural gas engines homepage ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "cummins",
+      "name": "Cummins",
+      "ticker": "CMI",
+      "rankApprox": 117,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "industrials",
+      "industryId": "industrial-machinery",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/cummins/marketcap/",
+      "description": "Cummins designs, manufactures, distributes, and services engines, components, power generation systems, and zero-emissions power technologies for commercial and industrial markets.",
+      "overview": [
+        {
+          "title": "Industrial Power Platform",
+          "paragraphs": [
+            "Cummins is a long-established industrial power company with segments spanning Engine, Distribution, Components, Power Systems, and Accelera. Its core business remains tied to diesel, natural gas, alternative-fuel engines, aftertreatment, controls, power generation, and global service infrastructure.",
+            "The company is also using Accelera to pursue battery systems, fuel cells, ePowertrain systems, and electrolyzers, giving Cummins exposure to fleet electrification, hydrogen production, and zero-emission heavy-duty applications while preserving its incumbent engine and service base."
+          ]
+        },
+        {
+          "title": "Market Position",
+          "paragraphs": [
+            "Cummins benefits from deep OEM relationships, installed-base service demand, regulatory expertise, manufacturing scale, and a service network that reaches heavy-duty, off-highway, marine, mining, rail, power generation, and industrial customers.",
+            "Its market position is not software-like: engines, generators, battery packs, and fuel-cell systems require capital-intensive supply chains, certification, warranty support, and field service. That lowers near-term decentralizability but leaves room for open controls, modular repair ecosystems, microgrid coordination, and localized fabrication over time."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Cummins has a strong industrial moat because powertrain and power-generation buyers value reliability, duty-cycle performance, emissions compliance, OEM integration, parts availability, and service coverage. Those advantages are difficult for small entrants to replicate quickly in regulated heavy-duty markets.",
+        "The moat is less absolute where energy systems become more modular. Open battery management, open energy management, local repair, standardized power electronics, and distributed manufacturing can erode some control-layer and aftermarket leverage even if certified engines and large-scale manufacturing remain hard to decentralize."
+      ],
+      "decentralizationNarrative": [
+        "Cummins' core engine business is physically centralized and compliance-heavy, making direct one-for-one open replacement difficult. The most realistic decentralization pressure comes from open controls, local refurbishment, modular hydraulic or generator packages, and repairable power units for smaller industrial applications.",
+        "Accelera points toward a different vulnerability: batteries, microgrids, fuel cells, and electrolyzers can be coordinated through more open control layers. Community-scale energy systems, open-source energy management, and auditable local maintenance networks could compete with closed vendor stacks even when core electrochemical hardware remains industrial."
+      ],
+      "sourceIds": [
+        "cummins-2025-annual-report",
+        "cummins-engines-page",
+        "accelera-home",
+        "stockanalysis-cmi-2026-05-22"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125; refreshed using public company, product, open-source, and market-data sources reviewed on 2026-05-27.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Cummins has durable advantages in heavy-duty powertrain engineering, emissions compliance, OEM integration, parts distribution, and a global service network, though modular energy systems and open controls create some pressure at the edge.",
+          "sourceIds": [
+            "cummins-2025-annual-report",
+            "cummins-engines-page"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Large engines, generators, fuel cells, and electrolyzers are capital-intensive and regulated, but control software, energy management, maintenance knowledge, and smaller power modules are plausible decentralization surfaces.",
+          "sourceIds": [
+            "cummins-engines-page",
+            "accelera-home",
+            "openems-home",
+            "ose-power-cube"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Recent market data shows positive earnings and a high-teens to low-twenties return-on-equity profile, while Cummins' annual reporting describes record recent operating results despite restructuring charges in Accelera.",
+          "sourceIds": [
+            "stockanalysis-cmi-2026-05-22",
+            "forbes-cmi-2026-05-22",
+            "cummins-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 33.22,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 33.22 for CMI at the May 22, 2026 close.",
+          "sourceIds": [
+            "stockanalysis-cmi-2026-05-22"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 88250000000,
+          "rationale": "StockAnalysis and Forbes both showed Cummins' market capitalization at approximately $88.25 billion around the May 22, 2026 market close.",
+          "sourceIds": [
+            "stockanalysis-cmi-2026-05-22",
+            "forbes-cmi-2026-05-22"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "cummins-engines",
+        "name": "Cummins engines",
+        "category": "Industrial and commercial engines",
+        "homepageUrl": "https://www.cummins.com/engines",
+        "summary": "Cummins sells diesel, natural gas, and alternative-fuel engines for on-highway, off-highway, marine, mining, oil and gas, rail, industrial, and power-generation applications.",
+        "whyItMatters": "Engines are the foundation of Cummins' installed base and service moat, and they shape how heavy equipment, fleets, and industrial operators access reliable mechanical and electrical power.",
+        "replacementSketch": [
+          "The most credible open replacement path starts below the largest certified highway engines: modular power units, open engine controls, repairable generator packages, and local maintenance networks for farms, workshops, microfactories, and small industrial sites.",
+          "For regulated heavy-duty applications, open projects are more likely to pressure diagnostics, controls, serviceability, and subsystem interoperability before replacing Cummins-scale engines outright."
+        ],
+        "sourceIds": [
+          "cummins-engines-page",
+          "freeems-openhub",
+          "secu3-home",
+          "ose-power-cube"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "freeems",
+            "name": "FreeEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openhub.net/p/freeems",
+            "summary": "FreeEMS is a free programmable engine-management project focused on electronic fuel injection and ignition control.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project is described as a free programmable engine-control solution, but it is not a complete certified heavy-duty engine platform.",
+                "sourceIds": [
+                  "freeems-openhub"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "Open engine control can reduce dependence on proprietary ECUs and diagnostics, but physical engines, emissions compliance, and field validation remain centralized bottlenecks.",
+                "sourceIds": [
+                  "freeems-openhub"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 3,
+                "rationale": "FreeEMS is relevant as an open control layer, not as a production-ready replacement for Cummins commercial engines.",
+                "sourceIds": [
+                  "freeems-openhub"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open controls can lower experimentation and repair costs for small operators, but heavy-duty certification and hardware costs limit broad cost leverage.",
+                "sourceIds": [
+                  "freeems-openhub"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "freeems-openhub"
+            ]
+          },
+          {
+            "slug": "open-source-ecology-power-cube",
+            "name": "Open Source Ecology Power Cube",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourceecology.org/portfolio/power-cube/",
+            "summary": "The Power Cube is an open-source modular hydraulic power unit concept built around an engine and hydraulic pump for equipment and microfactory use.",
+            "metrics": {
+              "openness": {
+                "value": 7,
+                "rationale": "Open Source Ecology publishes the Power Cube as an open hardware-style build with documentation, though maturity varies by version.",
+                "sourceIds": [
+                  "ose-power-cube",
+                  "ose-power-cube-doc"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The design targets modular local power for distributed production equipment, aligning directly with decentralized manufacturing and repair.",
+                "sourceIds": [
+                  "ose-power-cube"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 3,
+                "rationale": "The Power Cube is documented as prototype-stage and is not a certified industrial replacement for Cummins engines.",
+                "sourceIds": [
+                  "ose-power-cube"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Local fabrication and modular repair can reduce dependence on proprietary service channels in small-scale settings, but performance and compliance limitations constrain adoption.",
+                "sourceIds": [
+                  "ose-power-cube"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "ose-power-cube",
+              "ose-power-cube-doc"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-repairable-power-unit-network",
+            "name": "Open Repairable Power Unit Network",
+            "summary": "A network of local workshops could maintain open, modular power units for farms, small contractors, disaster response teams, and microfactories, using published designs, auditable parts lists, shared test procedures, and interoperable control modules instead of depending entirely on proprietary engine-service channels.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "open-hardware",
+              "cooperative-production",
+              "home-microfactory"
+            ],
+            "thesis": "The concept shifts some value from branded engines and authorized service networks toward local fabrication, repair, refurbishment, and interchangeable power modules for smaller industrial use cases.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing matters more than Bitcoin here: the key change is that many local operators can build, repair, validate, and exchange modules using shared open designs and cooperative service records.",
+            "coordinationMechanism": "Workshops publish build logs, parts substitutions, test results, and maintenance histories; buyers choose local operators based on verified service records, compatibility profiles, and community reputation.",
+            "verificationOrTrustModel": "Cheating is constrained by standardized load tests, serial-numbered components, signed maintenance records, public failure reports, and customer-verifiable run-hour data, though emissions and safety compliance would still require jurisdiction-specific certification.",
+            "failureModes": [
+              "Open designs may not meet durability, emissions, noise, or safety requirements for many commercial settings.",
+              "Local builders could under-test critical components, creating reliability and liability problems.",
+              "Parts availability and quality control may remain dependent on centralized suppliers."
+            ],
+            "adoptionPath": [
+              "Start with non-road, low-risk workshop, farm, education, and disaster-response power modules.",
+              "Standardize open test procedures, parts interchange formats, and maintenance logs.",
+              "Move toward cooperative purchasing, local refurbishment, and certified regional service cells for larger equipment classes."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "cummins-engines-page",
+              "cummins-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "ose-power-cube",
+              "ose-power-cube-doc",
+              "freeems-openhub",
+              "secu3-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model distributes fabrication, maintenance, and service knowledge across local workshops rather than concentrating control in a single engine OEM.",
+                "sourceIds": [
+                  "ose-power-cube",
+                  "freeems-openhub"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Shared designs and logs are plausible, but verified quality, liability, and certification coordination remain hard.",
+                "sourceIds": [
+                  "ose-power-cube-doc",
+                  "secu3-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Small modular power units are feasible, but replacing Cummins-grade certified engines is much harder.",
+                "sourceIds": [
+                  "ose-power-cube",
+                  "cummins-engines-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Pressure would begin in fringe, small-scale, repair-heavy niches rather than Cummins' most regulated high-volume engine markets.",
+                "sourceIds": [
+                  "cummins-engines-page",
+                  "ose-power-cube"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "accelera-by-cummins",
+        "name": "Accelera by Cummins",
+        "category": "Zero-emissions power systems",
+        "homepageUrl": "https://www.accelerazero.com/",
+        "summary": "Accelera by Cummins offers battery systems, fuel cells, ePowertrain systems, and electrolyzers for commercial, industrial, and hydrogen-related energy applications.",
+        "whyItMatters": "Accelera is Cummins' bridge from combustion-centered industrial power into electrified and hydrogen-based heavy-duty power systems, where control software, energy management, and modular integration are more open to disruption.",
+        "replacementSketch": [
+          "A realistic replacement path does not require open projects to manufacture every battery cell, fuel cell, or electrolyzer. It can begin by opening the energy-management layer around storage, loads, chargers, renewable generation, and fleet operations.",
+          "Over time, open battery management, microgrid control, modular fuel-cell simulation, and transparent dispatch markets could reduce lock-in around proprietary vendor stacks for distributed power sites."
+        ],
+        "sourceIds": [
+          "accelera-home",
+          "openems-home",
+          "openems-github",
+          "foxbms-home",
+          "pymgrid-paper"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy-management platform for orchestrating renewable generation, storage, grid connections, and loads.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenEMS publishes an open-source platform and public GitHub repository for energy-management applications.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The platform is explicitly oriented toward decentralized energy management across storage, generation, grid, and consumption.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OpenEMS presents itself as a modular platform with an international community and production-oriented energy-management use cases.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open energy management can reduce vendor lock-in and improve interoperability for distributed energy sites, though hardware and integration costs remain significant.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openems-home",
+              "openems-github"
+            ]
+          },
+          {
+            "slug": "foxbms",
+            "name": "foxBMS",
+            "kind": "open-source",
+            "homepageUrl": "https://foxbms.org/",
+            "summary": "foxBMS is a free and open battery-management-system development platform for lithium-ion, redox-flow, and fuel-cell-related research and development.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "foxBMS describes itself as a free and open platform for battery-management-system development.",
+                "sourceIds": [
+                  "foxbms-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Open BMS technology improves inspectability and interoperability for storage systems, but cells, packs, safety certification, and manufacturing remain specialized.",
+                "sourceIds": [
+                  "foxbms-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The platform has long-running institutional development and practical examples, but it is primarily an R&D and reference platform rather than a turnkey heavy-duty commercial product.",
+                "sourceIds": [
+                  "foxbms-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open BMS designs can reduce duplicated engineering and improve maintainability, but battery certification and pack integration dominate total cost in commercial use.",
+                "sourceIds": [
+                  "foxbms-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "foxbms-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-microgrid-dispatch",
+            "name": "Federated Open Microgrid Dispatch",
+            "summary": "Community energy sites, depots, farms, and industrial facilities could coordinate batteries, fuel cells, generators, chargers, renewables, and flexible loads through open-source energy-management nodes rather than closed vendor stacks, making the control layer portable across hardware vendors.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "open-energy-hardware",
+              "federation"
+            ],
+            "thesis": "The concept changes the market structure by separating the dispatch and coordination layer from proprietary power hardware, giving site owners more bargaining power over batteries, fuel cells, electrolyzers, chargers, and service providers.",
+            "bitcoinOrDecentralizationRole": "Federation and decentralized energy coordination are central: local controllers retain autonomy while exchanging state, bids, capacity, and maintenance data with neighboring sites or fleet operators.",
+            "coordinationMechanism": "Each site runs an open controller that schedules local storage, generation, and demand; federated peers share capacity offers, curtailment needs, maintenance status, and settlement data through interoperable APIs.",
+            "verificationOrTrustModel": "Meters, inverter logs, signed controller events, independent telemetry, and periodic audits constrain false dispatch claims. The weakest points are meter tampering, proprietary device firmware, and disputes over baseline consumption.",
+            "failureModes": [
+              "Interoperability may be blocked by proprietary inverters, chargers, batteries, or warranty restrictions.",
+              "Cybersecurity requirements for critical energy systems could raise deployment costs.",
+              "Local markets may fail without enough flexible load, storage, or trusted metering."
+            ],
+            "adoptionPath": [
+              "Deploy open energy-management software at single commercial sites with mixed storage, solar, generators, and chargers.",
+              "Add federated coordination across campuses, depots, and community microgrids.",
+              "Standardize measurement, settlement, and warranty-safe integration profiles for multi-vendor power hardware."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "accelera-home",
+              "cummins-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openems-home",
+              "openems-github",
+              "pymgrid-paper"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept distributes energy-control decisions across local nodes and reduces dependence on a single vendor's cloud or controller.",
+                "sourceIds": [
+                  "openems-home",
+                  "pymgrid-paper"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "OpenEMS and microgrid simulation work support the technical plausibility of modular dispatch, though real-world settlement and device integration remain challenging.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github",
+                  "pymgrid-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Single-site control is already plausible with open EMS tools; federated multi-site operation adds cybersecurity, metering, and regulatory complexity.",
+                "sourceIds": [
+                  "openems-home",
+                  "pymgrid-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "Open dispatch pressures proprietary control and service layers more than the underlying batteries, fuel cells, or electrolyzers.",
+                "sourceIds": [
+                  "accelera-home",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "open-battery-and-fuel-cell-reference-stack",
+            "name": "Open Battery and Fuel-Cell Reference Stack",
+            "summary": "An open reference stack for battery management, fuel-cell modeling, and site-level energy control could let integrators validate mixed-vendor electric and hydrogen systems before committing to a single branded platform.",
+            "angleIds": [
+              "open-energy-hardware",
+              "decentralized-coordination",
+              "recycling-and-reuse"
+            ],
+            "thesis": "The concept weakens vendor lock-in by making pack behavior, fuel-cell operation, degradation modeling, reuse decisions, and control interfaces more inspectable and portable across suppliers.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is technical and operational rather than monetary: independent labs, fleets, and refurbishers can coordinate around shared models, test profiles, and open interfaces.",
+            "coordinationMechanism": "Researchers, pack builders, fleet operators, and refurbishers contribute test data, reference designs, simulation models, and compatibility profiles to a shared open stack.",
+            "verificationOrTrustModel": "Claims are checked through reproducible test procedures, versioned datasets, signed firmware builds, independent lab validation, and comparison against field telemetry. False or cherry-picked data remains a risk where operators withhold failures.",
+            "failureModes": [
+              "Safety-critical battery and fuel-cell systems may require certification beyond what open reference projects can provide.",
+              "Manufacturers may restrict access to low-level firmware, diagnostics, or warranty data.",
+              "Open models may lag fast-changing chemistries, pack designs, and commercial duty cycles."
+            ],
+            "adoptionPath": [
+              "Use open BMS and fuel-cell models in R&D, education, and second-life battery evaluation.",
+              "Build compatibility profiles for storage, fuel-cell, inverter, and energy-management integrations.",
+              "Create independent validation labs and cooperative refurbishing networks for commercial energy assets."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "accelera-home",
+              "cummins-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "foxbms-home",
+              "alphapem-paper",
+              "open-fuel-cell-reference-paper",
+              "openems-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Shared reference designs and models distribute knowledge across labs, integrators, and refurbishers instead of concentrating diagnostics inside vendors.",
+                "sourceIds": [
+                  "foxbms-home",
+                  "alphapem-paper",
+                  "open-fuel-cell-reference-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open research and BMS projects show a basis for shared technical coordination, but commercial data sharing and certification are hard.",
+                "sourceIds": [
+                  "foxbms-home",
+                  "alphapem-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Reference stacks are feasible for modeling, testing, and R&D; production deployment in heavy-duty safety-critical systems is slower.",
+                "sourceIds": [
+                  "foxbms-home",
+                  "open-fuel-cell-reference-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The pressure is meaningful on diagnostics, integration, reuse, and serviceability, but less direct on Cummins' manufacturing scale.",
+                "sourceIds": [
+                  "accelera-home",
+                  "foxbms-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "cummins-2025-annual-report",
+      "title": "Cummins 2025 Annual Report",
+      "url": "https://investor.cummins.com/sec-filings/annual-reports/content/0001104659-26-039182/0001104659-26-039182.pdf",
+      "kind": "annual-report",
+      "publisher": "Cummins Inc.",
+      "note": "Primary annual-report source for segments, strategy, financial context, and Accelera restructuring context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cummins-engines-page",
+      "title": "Engines",
+      "url": "https://www.cummins.com/engines",
+      "kind": "product-page",
+      "publisher": "Cummins Inc.",
+      "note": "Company product page describing Cummins diesel, natural gas, alternative-fuel engines and served applications.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "accelera-home",
+      "title": "Accelera by Cummins",
+      "url": "https://www.accelerazero.com/",
+      "kind": "product-page",
+      "publisher": "Accelera by Cummins",
+      "note": "Product source for Accelera battery systems, fuel cells, ePowertrain systems, and electrolyzers.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-cmi-2026-05-22",
+      "title": "Cummins Inc. (CMI) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/cmi/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for market capitalization, P/E ratio, revenue, net income, and company segment summary around the May 22, 2026 close.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "forbes-cmi-2026-05-22",
+      "title": "Cummins | CMI Stock Price, Company Overview & News",
+      "url": "https://www.forbes.com/companies/cummins/",
+      "kind": "market-data",
+      "publisher": "Forbes",
+      "note": "Secondary market-data source for market capitalization, P/E ratio, margins, and profitability metrics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "freeems-openhub",
+      "title": "The FreeEMS Open Source Project",
+      "url": "https://openhub.net/p/freeems",
+      "kind": "open-source-project",
+      "publisher": "Open Hub",
+      "note": "Open-source engine-management project used as an alternative control-layer reference for combustion engines.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "secu3-home",
+      "title": "SECU-3 Open Source Engine Management System",
+      "url": "https://www.secu-3.org/en/",
+      "kind": "open-source-project",
+      "publisher": "SECU-3",
+      "note": "Open-source ignition and fuel-injection control project used as supporting evidence for open engine-control feasibility.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ose-power-cube",
+      "title": "Power Cube",
+      "url": "https://www.opensourceecology.org/portfolio/power-cube/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open hardware-style modular hydraulic power-unit project relevant to decentralized small-scale power equipment.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ose-power-cube-doc",
+      "title": "Power Cube Fabrication Manual",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Open_Source_Ecology_-_Powercube_-_Fabricaion_Manual.pdf",
+      "kind": "technical-docs",
+      "publisher": "Open Source Ecology",
+      "note": "Build documentation source for the Open Source Ecology Power Cube concept.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openems-home",
+      "title": "OpenEMS",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association",
+      "note": "Open-source energy-management platform source for decentralized battery, grid, renewable, and load orchestration.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS GitHub Repository",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Public repository for the OpenEMS modular energy-management platform.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "foxbms-home",
+      "title": "foxBMS",
+      "url": "https://foxbms.org/",
+      "kind": "open-source-project",
+      "publisher": "Fraunhofer IISB / foxBMS",
+      "note": "Open battery-management-system platform relevant to battery and fuel-cell-adjacent energy-system openness.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "pymgrid-paper",
+      "title": "pymgrid: An Open-Source Python Microgrid Simulator for Applied Artificial Intelligence Research",
+      "url": "https://arxiv.org/abs/2011.08004",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research source supporting open microgrid simulation and control experimentation.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "alphapem-paper",
+      "title": "AlphaPEM: an open-source dynamic 1D physics-based PEM fuel cell model for embedded applications",
+      "url": "https://arxiv.org/abs/2407.12373",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research source for open fuel-cell modeling as an enabler for transparent hydrogen-system development.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "open-fuel-cell-reference-paper",
+      "title": "Free open reference implementation of a two-phase PEM fuel cell model",
+      "url": "https://arxiv.org/abs/1811.09811",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research source supporting open reference implementations for fuel-cell modeling and validation.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Cummins bundle with two products: Cummins engines and Accelera by Cummins. The refresh uses Cummins annual/product sources, market-data sources, and open-source alternatives around engine controls, modular power units, open energy management, battery management, and fuel-cell modeling."
+}
+tokens used
+28,127
