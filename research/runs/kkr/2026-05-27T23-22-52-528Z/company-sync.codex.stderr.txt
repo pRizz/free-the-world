@@ -1,0 +1,1528 @@
+2026-05-27T23:22:52.594452Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6bbf-8014-7bc0-ad09-8ab3a8329fed
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: kkr
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "kkr",
+  "name": "KKR",
+  "ticker": "KKR",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top150"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/kkr/marketcap/",
+  "description": "KKR is a global investment firm managing private equity, credit, infrastructure, real estate, and insurance-related assets.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "KKR Private Equity",
+    "KKR Credit"
+  ],
+  "seedSourceUrls": [
+    "https://www.kkr.com/about",
+    "https://ir.kkr.com/",
+    "https://companiesmarketcap.com/kkr/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T23:22:54.828791Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.828809Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.829647Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.829656Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.830295Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.830302Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.830954Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.830962Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.831578Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.831584Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.832878Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.832883Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:57.706986Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:57.706995Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:57.707391Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:57.707398Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:57.707797Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:57.707803Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:57.708157Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:57.708161Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:57.708495Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:57.708498Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:57.709289Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:57.709296Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: KKR 2024 annual report assets under management fee related earnings market cap ...
+web search: 
+web search: KKR market cap companiesmarketcap May 2026 ...
+web search: 
+web search: open source private credit protocol decentralized lending real world assets GitHub ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "kkr",
+      "name": "KKR",
+      "ticker": "KKR",
+      "rankApprox": 140,
+      "maybeIpo": {
+        "date": "2010-07-15",
+        "dateSourceIds": [
+          "stockanalysis-kkr-profile-2026"
+        ],
+        "marketCap": {
+          "value": 2090000000,
+          "rationale": "StockAnalysis lists KKR's IPO date as July 15, 2010 and its market-cap history notes market capitalization of about $2.09 billion since that date.",
+          "sourceIds": [
+            "stockanalysis-kkr-market-cap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      },
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top150"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/kkr/marketcap/",
+      "description": "KKR is a global investment firm managing private equity, credit, infrastructure, real estate, capital markets, strategic holdings, and insurance-related assets.",
+      "overview": [
+        {
+          "title": "Business Mix",
+          "paragraphs": [
+            "KKR operates as a diversified alternative asset manager with strategies spanning private equity, credit, infrastructure, real estate, capital markets, insurance, and strategic holdings.",
+            "The firm raises and manages capital for institutions, wealth clients, and insurance balance sheets, then earns management fees, transaction fees, incentive fees, carried interest, and investment income from its own balance-sheet participation."
+          ]
+        },
+        {
+          "title": "Registry Relevance",
+          "paragraphs": [
+            "KKR is not a consumer software platform, but it is a powerful capital allocation intermediary. Its moat comes from fundraising relationships, brand trust with limited partners, proprietary deal flow, underwriting talent, balance-sheet scale, and the ability to structure complex private-market transactions.",
+            "The decentralization question is therefore less about replacing one app and more about whether open data standards, federated diligence networks, protocol credit markets, cooperative ownership vehicles, and transparent investor reporting can reduce dependence on a small set of private-market gatekeepers."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "KKR's moat is strong because alternative asset management rewards reputation, long fund track records, institutional relationships, repeat access to large transactions, and the ability to provide capital across equity, credit, infrastructure, real estate, and insurance channels. Those advantages compound as larger platforms see more opportunities and can syndicate or hold more risk.",
+        "The moat is not absolute. KKR remains exposed to market cycles, fundraising conditions, investment performance, credit losses, regulation, and the reputational risk that comes with opaque private assets. Still, the platform's scale and breadth make it materially harder to displace than a single-strategy manager."
+      ],
+      "decentralizationNarrative": [
+        "KKR's core function is coordination: finding capital, underwriting private opportunities, structuring deals, monitoring assets, and allocating returns. Some of that work can be pressured by open data, transparent fund administration, standardized cap tables, federated diligence, and protocol-based credit markets.",
+        "The harder-to-decentralize parts are judgment, accountability, negotiated control rights, regulatory compliance, and distressed-workout execution. Decentralized alternatives can chip away at information asymmetry and smaller-market access first, but they are unlikely to replicate KKR's large institutional private equity platform in the near term."
+      ],
+      "sourceIds": [
+        "kkr-about-2026",
+        "kkr-invest-2026",
+        "kkr-2025-10k",
+        "stockanalysis-kkr-profile-2026",
+        "stockanalysis-kkr-market-cap-2026"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150.",
+      "inputMetrics": {
+        "moat": {
+          "value": 86,
+          "rationale": "KKR benefits from scale, brand, fund track record, institutional distribution, complex transaction capability, permanent and insurance-linked capital, and multi-asset deal flow.",
+          "sourceIds": [
+            "kkr-about-2026",
+            "kkr-invest-2026",
+            "kkr-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 38,
+          "rationale": "Some reporting, research, cap-table, syndication, and credit-market functions can be opened or protocolized, but institutional private equity still depends heavily on trust, negotiated governance, regulation, active ownership, and balance-sheet scale.",
+          "sourceIds": [
+            "kkr-invest-2026",
+            "open-cap-table-format-2026",
+            "openbb-odp-2026",
+            "aave-docs-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "KKR reports recurring fee-related earnings and investment income across a scaled alternative asset platform, though GAAP results and carried interest remain sensitive to valuation and realization cycles.",
+          "sourceIds": [
+            "kkr-2025-10k",
+            "stockanalysis-kkr-profile-2026"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 21.07,
+          "rationale": "Macrotrends listed KKR's P/E ratio at 21.07 as of May 22, 2026; another market-data source listed a higher trailing P/E earlier in May, so this is treated as market-data-sensitive.",
+          "sourceIds": [
+            "macrotrends-kkr-pe-2026",
+            "stockanalysis-kkr-profile-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 84440000000,
+          "rationale": "StockAnalysis reported KKR market capitalization of $84.44 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-kkr-market-cap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "kkr-private-equity",
+        "name": "KKR Private Equity",
+        "category": "Alternative asset management",
+        "homepageUrl": "https://www.kkr.com/invest",
+        "summary": "KKR's private equity platform invests client and firm capital into private companies through buyouts, growth equity, strategic holdings, and related ownership strategies.",
+        "whyItMatters": "Private equity shapes ownership, governance, leverage, labor incentives, and strategic direction for companies that may be economically important even when they are not publicly traded.",
+        "replacementSketch": [
+          "The realistic open alternative is not a clone of a large buyout fund. It starts with open diligence, interoperable cap-table data, transparent reporting, and smaller investor-owned syndicates that can finance businesses with less dependence on closed institutional gatekeepers.",
+          "Over time, standardized private-market data and cooperative ownership vehicles could make more private investment opportunities legible to communities, employees, customers, and smaller allocators."
+        ],
+        "sourceIds": [
+          "kkr-invest-2026",
+          "kkr-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb-platform",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB provides open-source investment research and data tooling that can help analysts build transparent research workflows instead of relying entirely on closed financial terminals.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB describes its Open Data Platform as an open-source toolset and publishes code through GitHub.",
+                "sourceIds": [
+                  "openbb-odp-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 42,
+                "rationale": "Open research tooling decentralizes analysis capacity, but it does not itself supply committed capital, governance rights, or deal execution.",
+                "sourceIds": [
+                  "openbb-odp-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "The platform is usable today for financial research and integrations, though private equity replacement requires additional legal, diligence, and transaction infrastructure.",
+                "sourceIds": [
+                  "openbb-odp-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 76,
+                "rationale": "Open-source research infrastructure can reduce tooling costs and improve auditability for smaller analysts and syndicates.",
+                "sourceIds": [
+                  "openbb-odp-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openbb-odp-2026"
+            ]
+          },
+          {
+            "slug": "open-cap-table-format",
+            "name": "Open Cap Table Format",
+            "kind": "protocol",
+            "homepageUrl": "https://www.opencaptablecoalition.com/format",
+            "repoUrl": "https://github.com/Open-Cap-Table-Coalition/Open-Cap-Format-OCF",
+            "summary": "Open Cap Table Format is an open standard for capitalization data exchange, making private-company ownership records more portable and interoperable.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "The project is described as an open-source format for standardizing capitalization data.",
+                "sourceIds": [
+                  "open-cap-table-format-2026",
+                  "open-cap-table-docs-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 55,
+                "rationale": "Portable cap-table records reduce vendor lock-in and improve interoperability, but they do not decentralize capital allocation by themselves.",
+                "sourceIds": [
+                  "open-cap-table-format-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 62,
+                "rationale": "The format exists and is documented, but adoption across private-market workflows remains the main readiness constraint.",
+                "sourceIds": [
+                  "open-cap-table-docs-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Standardized ownership data can lower switching, reconciliation, and diligence costs for private-company financing workflows.",
+                "sourceIds": [
+                  "open-cap-table-format-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "open-cap-table-format-2026",
+              "open-cap-table-docs-2026"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-private-equity-diligence-network",
+            "name": "Federated Private Equity Diligence Network",
+            "summary": "A federated diligence network would let independent analysts, operators, employees, and local investors publish structured private-company data, cap-table records, governance terms, operating KPIs, and investment memos under portable data standards. Instead of replacing KKR's capital overnight, it would reduce the information advantage that large private-market firms hold over smaller allocators.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "If private-company data becomes more portable, auditable, and collaboratively maintained, some smaller buyout, growth, and recapitalization opportunities could be financed by networks of aligned investors rather than only by large closed-end funds.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated data ownership and multi-party publishing rather than through a token as the primary asset. Bitcoin or Lightning could optionally support paid analyst attestations, but the core mechanism is interoperable private-market data and reputation.",
+            "coordinationMechanism": "Companies, advisors, investors, analysts, and employee groups coordinate around standardized cap-table files, structured diligence packets, contributor reputation, and permissioned data rooms that can be exported between providers.",
+            "verificationOrTrustModel": "Cap-table data is checked against signed company records, legal documents, administrator exports, and investor confirmations. Analyst claims carry provenance, version history, and reputation, while conflicting submissions are flagged for review instead of silently merged.",
+            "failureModes": [
+              "Private companies may refuse to share enough information for the network to be useful.",
+              "Legal liability and securities regulations may limit who can access or act on diligence materials.",
+              "Reputation systems may favor well-known firms and recreate existing gatekeeping."
+            ],
+            "adoptionPath": [
+              "Start with open cap-table portability and standardized diligence templates for startups and lower-middle-market companies.",
+              "Add federated analyst workspaces, audit trails, and investor reputation for smaller syndicates.",
+              "Expand into cooperative or employee-aligned acquisition vehicles once legal and reporting workflows mature."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "kkr-invest-2026",
+              "kkr-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "open-cap-table-format-2026",
+              "open-cap-table-docs-2026",
+              "openbb-odp-2026"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 62,
+                "rationale": "The concept directly attacks information concentration and workflow lock-in, though capital formation and legal accountability remain partly centralized.",
+                "sourceIds": [
+                  "open-cap-table-format-2026",
+                  "openbb-odp-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 55,
+                "rationale": "Open standards and collaborative research tools make coordination plausible, but private-market confidentiality and compliance are significant constraints.",
+                "sourceIds": [
+                  "open-cap-table-docs-2026",
+                  "kkr-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 58,
+                "rationale": "The software and data-standard layer is feasible today; the harder part is integrating legal workflows, investor suitability, and company consent.",
+                "sourceIds": [
+                  "open-cap-table-format-2026",
+                  "openbb-odp-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 44,
+                "rationale": "This would pressure smaller and more standardized private deals before it pressures KKR's largest negotiated buyouts.",
+                "sourceIds": [
+                  "kkr-invest-2026",
+                  "kkr-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "kkr-credit",
+        "name": "KKR Credit",
+        "category": "Private credit and lending",
+        "homepageUrl": "https://www.kkr.com/invest",
+        "summary": "KKR Credit provides private credit, direct lending, asset-based finance, opportunistic credit, and related strategies for institutional, wealth, and insurance-linked capital.",
+        "whyItMatters": "Private credit has become a major non-bank funding channel, shifting credit decisions, pricing, covenants, and workout power toward large asset managers and away from public markets or traditional banks.",
+        "replacementSketch": [
+          "The most credible open replacement starts in narrower, collateralized, data-rich lending markets where underwriting inputs can be standardized and monitored by multiple parties.",
+          "Protocol credit markets and federated risk committees could make some lending more transparent, but large corporate direct lending still needs legal enforcement, covenants, restructuring expertise, and borrower relationships."
+        ],
+        "sourceIds": [
+          "kkr-invest-2026",
+          "kkr-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "aave",
+            "name": "Aave",
+            "kind": "protocol",
+            "homepageUrl": "https://aave.com/",
+            "repoUrl": "https://github.com/aave",
+            "summary": "Aave is an open-source decentralized finance protocol for non-custodial lending and borrowing of crypto assets.",
+            "metrics": {
+              "openness": {
+                "value": 84,
+                "rationale": "Aave is widely documented as an open-source DeFi protocol with public smart-contract infrastructure.",
+                "sourceIds": [
+                  "aave-docs-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Aave coordinates lending and borrowing through protocol rules rather than a traditional intermediary, although governance, oracle, and collateral risks remain.",
+                "sourceIds": [
+                  "aave-docs-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "Aave is live and mature for crypto-collateralized lending, but it is not a direct substitute for large private corporate credit.",
+                "sourceIds": [
+                  "aave-docs-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Automated lending pools can reduce intermediation costs for supported collateral types, but risk management costs reappear through liquidation, oracle, and governance design.",
+                "sourceIds": [
+                  "aave-docs-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "aave-docs-2026"
+            ]
+          },
+          {
+            "slug": "ethereum-credit-guild",
+            "name": "Ethereum Credit Guild",
+            "kind": "protocol",
+            "homepageUrl": "https://creditguild.org/",
+            "repoUrl": "https://github.com/volt-protocol/ethereum-credit-guild",
+            "summary": "Ethereum Credit Guild is a decentralized lending protocol focused on scaling on-chain lending without trusted oracle price feeds.",
+            "metrics": {
+              "openness": {
+                "value": 78,
+                "rationale": "The project points users to open protocol code and documentation.",
+                "sourceIds": [
+                  "ethereum-credit-guild-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 80,
+                "rationale": "The protocol is explicitly designed around decentralized lending and reducing trusted oracle assumptions.",
+                "sourceIds": [
+                  "ethereum-credit-guild-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 46,
+                "rationale": "It is relevant as an experimental credit-market design, but it is much narrower and less institutionally proven than private credit platforms.",
+                "sourceIds": [
+                  "ethereum-credit-guild-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 58,
+                "rationale": "Oracle-minimized protocol lending can reduce some infrastructure dependencies, but adoption and risk liquidity remain uncertain.",
+                "sourceIds": [
+                  "ethereum-credit-guild-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "ethereum-credit-guild-2026"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-private-credit-risk-pools",
+            "name": "Federated Private Credit Risk Pools",
+            "summary": "Federated private credit pools would combine standardized borrower disclosures, independent risk committees, public loan-performance reporting, and programmable participation rules. They would target smaller, asset-backed or cash-flow lending markets before attempting to compete with large sponsor-backed direct lending.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "federation"
+            ],
+            "thesis": "By separating credit underwriting, capital contribution, servicing, and monitoring into auditable roles, smaller lenders could coordinate around shared credit opportunities without handing all market power to one asset manager.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters by distributing underwriting and monitoring across independent participants. Bitcoin or Lightning could support settlement, proof-of-payment, or fee flows in narrower markets, but the central mechanism is federated risk governance and transparent performance data.",
+            "coordinationMechanism": "Borrowers submit standardized financial and collateral data; underwriters publish signed risk opinions; lenders allocate into pools with clear covenants; servicers report performance; and disputes or defaults move through predefined governance and legal workflows.",
+            "verificationOrTrustModel": "Borrower data is checked against bank feeds, audited statements, collateral registries, invoices, and third-party attestations. Loan performance is reported on a shared ledger or append-only data feed, while underwriters lose reputation or bonded stakes for negligent or fraudulent claims.",
+            "failureModes": [
+              "Real-world collateral enforcement still depends on courts, contracts, and jurisdiction-specific servicing.",
+              "Underwriters may collude with borrowers unless incentives, audits, and liability are strong.",
+              "Transparent data may reduce fraud but also expose sensitive borrower information."
+            ],
+            "adoptionPath": [
+              "Begin with small asset-backed loans, receivables, or equipment finance where collateral and payment streams are easier to verify.",
+              "Add independent risk committees, bonded underwriter attestations, and standardized default reporting.",
+              "Expand to larger private credit only after servicing, covenant enforcement, and institutional reporting are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "kkr-invest-2026",
+              "kkr-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "aave-docs-2026",
+              "ethereum-credit-guild-2026",
+              "openbb-odp-2026"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "The concept directly decentralizes underwriting, funding, monitoring, and reporting roles while keeping legal enforcement explicit.",
+                "sourceIds": [
+                  "aave-docs-2026",
+                  "ethereum-credit-guild-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "DeFi lending demonstrates automated coordination for digital collateral, but real-world private credit requires harder off-chain verification and servicing.",
+                "sourceIds": [
+                  "aave-docs-2026",
+                  "ethereum-credit-guild-2026",
+                  "kkr-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 48,
+                "rationale": "The software and reporting layer is feasible, but borrower verification, legal enforceability, and default handling make implementation materially harder than crypto-collateralized lending.",
+                "sourceIds": [
+                  "aave-docs-2026",
+                  "ethereum-credit-guild-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "If successful, these pools would pressure transparent, smaller, and more standardized credit products before challenging KKR's largest bespoke lending relationships.",
+                "sourceIds": [
+                  "kkr-invest-2026",
+                  "kkr-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "kkr-about-2026",
+      "title": "We are a Global Investment Firm Driven by Shared Success",
+      "url": "https://www.kkr.com/about",
+      "kind": "investor-relations",
+      "publisher": "KKR",
+      "note": "Primary company overview describing KKR's global investment platform and client base.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "kkr-invest-2026",
+      "title": "Our Investment Solutions: Discover KKR's Offerings and Expertise",
+      "url": "https://www.kkr.com/invest",
+      "kind": "product-page",
+      "publisher": "KKR",
+      "note": "Primary source for KKR investment businesses, including private equity, credit, infrastructure, real estate, wealth, and insurance-linked solutions.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "kkr-2025-10k",
+      "title": "KKR & Co. Inc. 2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001404912/000140491226000007/kkr-20251231.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Regulatory filing used for business model, segment, risk, AUM, fee, and profitability context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-kkr-profile-2026",
+      "title": "KKR & Co. Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/kkr/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data profile used for IPO date, exchange, sector, valuation, and company summary context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-kkr-market-cap-2026",
+      "title": "KKR & Co. Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/kkr/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market capitalization source reporting KKR market cap of $84.44 billion as of May 22, 2026 and historical market-cap context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "macrotrends-kkr-pe-2026",
+      "title": "KKR PE Ratio 2012-2026",
+      "url": "https://www.macrotrends.net/stocks/charts/KKR/kkr/pe-ratio",
+      "kind": "market-data",
+      "publisher": "Macrotrends",
+      "note": "Market-data source for current and historical KKR price-to-earnings ratio.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openbb-odp-2026",
+      "title": "Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source financial research and data-integration tooling used as an enabling alternative for transparent investment analysis.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "open-cap-table-format-2026",
+      "title": "OCT Format",
+      "url": "https://www.opencaptablecoalition.com/format",
+      "kind": "technical-docs",
+      "publisher": "Open Cap Table Coalition",
+      "note": "Open capitalization-data standard relevant to private-market interoperability and diligence workflows.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "open-cap-table-docs-2026",
+      "title": "Open Cap Table Format Documentation",
+      "url": "https://open-cap-table-coalition.github.io/Open-Cap-Format-OCF/",
+      "kind": "technical-docs",
+      "publisher": "Open Cap Table Coalition",
+      "note": "Technical documentation for the Open Cap Table Format used to support the federated private-equity diligence concept.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "aave-docs-2026",
+      "title": "Aave Documentation",
+      "url": "https://aave.com/docs",
+      "kind": "technical-docs",
+      "publisher": "Aave",
+      "note": "Technical documentation for an open-source decentralized lending protocol used as an enabling reference for protocol credit markets.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ethereum-credit-guild-2026",
+      "title": "Ethereum Credit Guild",
+      "url": "https://creditguild.org/",
+      "kind": "open-source-project",
+      "publisher": "Ethereum Credit Guild",
+      "note": "Open-source decentralized lending project used as a reference point for oracle-minimized protocol credit design.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new KKR bundle with sourced company metrics, two core products, open/protocol alternatives, and credible decentralization concepts focused on federated private-market diligence and federated private-credit risk pools."
+}
+2026-05-27T23:24:39.948259Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 42117: No such process (os error 3)
+2026-05-27T23:24:39.948265Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 42107: No such process (os error 3)
+2026-05-27T23:24:39.948264Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 42110: No such process (os error 3)
+2026-05-27T23:24:39.948258Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 42106: No such process (os error 3)
+tokens used
+41,422

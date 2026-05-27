@@ -1,0 +1,905 @@
+2026-05-27T23:31:08.986992Z ERROR codex_core_skills::manager: failed to install system skills: io error while write system skill file: No such file or directory (os error 2)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6bc7-131b-7d80-9a34-7bdca162db91
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: northrop-grumman
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "northrop-grumman",
+  "name": "Northrop Grumman",
+  "ticker": "NOC",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top150"
+  ],
+  "sectorId": "industrials",
+  "industryId": "aerospace-defense",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/northrop-grumman/marketcap/",
+  "description": "Northrop Grumman develops aerospace, defense, space, cybersecurity, and mission systems for government and commercial customers.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "B-21 Raider",
+    "Global Hawk"
+  ],
+  "seedSourceUrls": [
+    "https://www.northropgrumman.com/who-we-are",
+    "https://investor.northropgrumman.com/",
+    "https://companiesmarketcap.com/northrop-grumman/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T23:31:11.454673Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.454686Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.455538Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.455546Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.456160Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.456166Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.456875Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.456882Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.457485Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.457490Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.459243Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.459249Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.352599Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.352606Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.353271Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.353280Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.353940Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.353949Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.354583Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.354589Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.355167Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.355171Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.356283Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.356290Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Northrop Grumman 2024 annual report net earnings sales backlog B-21 Global Hawk ...
+web search: 
+web search: Department of Defense Replicator initiative all-domain attritable autonomous systems official ...
+web search: 
+web search: Northrop Grumman 2025 annual report sales net earnings backlog 2025 ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"northrop-grumman","name":"Northrop Grumman","ticker":"NOC","rankApprox":138,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top150"],"sectorId":"industrials","industryId":"aerospace-defense","companiesMarketCapUrl":"https://companiesmarketcap.com/northrop-grumman/marketcap/","description":"Northrop Grumman is a U.S. aerospace and defense prime contractor that develops aircraft, space systems, missile defense, cyber, mission systems, and autonomous platforms for government and allied customers.","overview":[{"title":"Business Position","paragraphs":["Northrop Grumman operates as a defense prime across Aeronautics Systems, Defense Systems, Mission Systems, and Space Systems, with demand tied heavily to U.S. and allied defense budgets.","The company reported 2025 sales of about $42.0 billion, net earnings of about $4.2 billion, and a record backlog of $95.7 billion, underscoring long-cycle government demand and high switching costs."]},{"title":"Registry Focus","paragraphs":["The strongest Free The World comparison is not a direct consumer substitute, but a shift from bespoke prime-contractor platforms toward modular, open, federated, and attritable systems where capability is assembled from interoperable software, sensors, airframes, and manufacturing cells.","B-21 Raider and Global Hawk represent two sides of this moat: high-end stealth aerospace integration and high-altitude autonomous ISR. Both are difficult to decentralize, but both face pressure from open autonomy stacks, distributed manufacturing, and swarm economics."]}],"moatNarrative":["Northrop Grumman's moat is extremely strong because national-security procurement rewards certification history, classified program access, systems integration experience, cleared workforces, export controls, and decades-long sustainment relationships.","The B-21 program, Global Hawk sustainment activity, and record backlog show how the company compounds advantage through programs that are hard for new entrants to bid, finance, certify, and support at scale."],"decentralizationNarrative":["Northrop Grumman's core defense platforms are among the least naturally decentralizable products in the registry because performance depends on classified designs, restricted supply chains, sensitive sensors, and government-controlled procurement.","The decentralization path is indirect: open autonomy software, modular payload buses, federated mission-planning tools, and distributed small-batch manufacturing can pressure the economics of some missions, especially ISR and attritable autonomy, without replacing strategic stealth bombers outright."],"sourceIds":["northrop-2025-annual-report","northrop-b21-page","northrop-global-hawk-page","companiesmarketcap-noc-marketcap","companiesmarketcap-noc-pe"],"technologyWaveIds":["additive-manufacturing","printed-electronics","microfactories"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; refreshed on 2026-05-27 with 2025 financials and current market-data references.","inputMetrics":{"moat":{"value":92,"rationale":"Defense-prime status, classified program access, record $95.7 billion backlog, and high-end aircraft and space integration create very high barriers to entry.","sourceIds":["northrop-2025-annual-report","northrop-b21-page"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizability":{"value":18,"rationale":"Core programs rely on classified requirements, export controls, prime-contractor procurement, and complex safety-critical hardware; only adjacent autonomy, payload, and manufacturing layers are meaningfully decentralizable.","sourceIds":["northrop-b21-page","northrop-global-hawk-page","dod-replicator-release","px4-docs","ose-gvcs"],"confidence":"high","lastReviewedOn":"2026-05-27"},"profitability":{"value":72,"rationale":"Northrop reported about $4.2 billion of 2025 net earnings on about $42.0 billion of sales, indicating durable profitability but with program-specific margin risk.","sourceIds":["northrop-2025-annual-report"],"confidence":"high","lastReviewedOn":"2026-05-27"},"peRatio":{"value":21.9,"rationale":"CompaniesMarketCap reported a trailing P/E ratio of about 21.9 for Northrop Grumman as of May 2026.","sourceIds":["companiesmarketcap-noc-pe"],"confidence":"speculative","lastReviewedOn":"2026-05-27"},"marketCap":{"value":78910000000,"rationale":"CompaniesMarketCap reported Northrop Grumman's market capitalization at about $78.91 billion in late May 2026.","sourceIds":["companiesmarketcap-noc-marketcap"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},"products":[{"slug":"b-21-raider","name":"B-21 Raider","category":"Stealth bomber aircraft","homepageUrl":"https://www.northropgrumman.com/what-we-do/aircraft/b-21-raider","summary":"B-21 Raider is Northrop Grumman's next-generation stealth bomber program for the U.S. Air Force.","whyItMatters":"The program embodies the strongest form of defense-prime lock-in: classified design, stealth manufacturing, mission-system integration, nuclear-capable strategic requirements, and long-term sustainment.","replacementSketch":["No open project credibly replaces a strategic stealth bomber today. The plausible pressure comes from mission substitution: cheaper autonomous systems, distributed sensing, and modular payloads taking over some strike, decoy, reconnaissance, and electronic-warfare tasks.","Open manufacturing and autonomy stacks could lower the cost of non-stealth supporting systems, but the B-21's nuclear and penetrating-strike role remains far outside present decentralized capability."],"sourceIds":["northrop-b21-page","northrop-2025-annual-report","dod-replicator-release"],"technologyWaveIds":["additive-manufacturing","microfactories","printed-electronics"],"alternatives":[{"slug":"open-source-ecology-gvcs","name":"Open Source Ecology Global Village Construction Set","kind":"open-source","homepageUrl":"https://www.opensourceecology.org/gvcs/","summary":"An open hardware and manufacturing toolkit aimed at making core industrial machines reproducible in local workshops and microfactories.","metrics":{"openness":{"value":86,"rationale":"The project publishes open hardware and production concepts for distributed fabrication tooling.","sourceIds":["ose-gvcs"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":76,"rationale":"Its core purpose is local production capacity rather than centralized factory dependence, though it is not defense-certified aerospace manufacturing.","sourceIds":["ose-gvcs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":32,"rationale":"Useful as an enabling manufacturing concept, but far from certified aerospace production or classified platform replacement.","sourceIds":["ose-gvcs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":58,"rationale":"Distributed fabrication can reduce tooling and repair barriers for simpler components, but it does not collapse the cost of stealth aircraft integration.","sourceIds":["ose-gvcs"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["ose-gvcs"]}],"disruptionConcepts":[{"slug":"attritable-open-systems-mission-substitution","name":"Attritable Open-Systems Mission Substitution","summary":"Instead of replacing a strategic bomber directly, allied buyers could shift some missions to large numbers of cheaper autonomous systems assembled from modular airframes, open interfaces, and interoperable command software.","angleIds":["decentralized-coordination","open-hardware","decentralized-manufacturing"],"thesis":"The market structure changes if more mission value moves from a few exquisite prime-contractor platforms toward many lower-cost systems whose payloads, autonomy, and manufacturing can be competed separately.","bitcoinOrDecentralizationRole":"Decentralization matters through multi-vendor modularity and distributed production, not through Bitcoin payments. Open interfaces reduce single-prime dependency and allow smaller manufacturers and software teams to supply swappable subsystems.","coordinationMechanism":"Government buyers define open interface requirements, vendors certify compatible payloads and autonomy modules, and operators compose mission packages from approved components.","verificationOrTrustModel":"Compliance would depend on government test ranges, cryptographic software signing, provenance records for components, and mission-data audits. This constrains fake fulfillment but still depends on centralized military certification.","failureModes":["Strategic stealth and nuclear missions may remain irreducibly centralized and classified.","Open interfaces can be narrowed by incumbents through procurement language or integration bottlenecks.","Attritable systems may underperform in contested electronic-warfare environments."],"adoptionPath":["Start with decoys, ISR, electronic-warfare support, and standoff payload delivery rather than nuclear or penetrating bomber missions.","Require open mission-system interfaces and modular payload certification in selected defense procurements.","Scale qualified vendors through repeatable production lots and field feedback."],"confidence":"medium","problemSourceIds":["northrop-b21-page","northrop-2025-annual-report"],"enablerSourceIds":["dod-replicator-release","px4-docs","ose-gvcs"],"metrics":{"decentralizationFit":{"value":55,"rationale":"The concept decentralizes supporting mission production and integration, but not the strategic bomber role itself.","sourceIds":["dod-replicator-release","ose-gvcs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":52,"rationale":"DoD's Replicator framing supports multi-vendor attritable autonomy, but procurement and certification remain centralized.","sourceIds":["dod-replicator-release"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":46,"rationale":"Open autonomy and microfactory tooling exist, but ruggedized defense deployment, secure communications, and airworthiness are hard constraints.","sourceIds":["px4-docs","ose-gvcs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":42,"rationale":"The concept pressures some mission spend around the bomber, but the B-21's core strategic role remains highly protected.","sourceIds":["northrop-b21-page","dod-replicator-release"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]},{"slug":"global-hawk","name":"Global Hawk","category":"High-altitude unmanned ISR aircraft","homepageUrl":"https://www.northropgrumman.com/what-we-do/air/global-hawk/","summary":"Global Hawk is a high-altitude, long-endurance unmanned aircraft system for wide-area intelligence, surveillance, and reconnaissance.","whyItMatters":"It shows Northrop Grumman's advantage in autonomous aircraft, ISR payload integration, mission operations, and sustainment for government customers.","replacementSketch":["Open autopilot stacks and lower-cost fixed-wing drones can replace some training, research, mapping, and local ISR needs, but they do not match Global Hawk's altitude, endurance, payload, security, or military certification.","The most plausible disruption is a federated ISR mesh: many smaller open or modular aircraft, sensors, and ground stations coordinating coverage instead of relying on a small number of exquisite HALE aircraft."],"sourceIds":["northrop-global-hawk-page","northrop-airborne-isr-page","px4-docs","ardupilot-home","paparazzi-docs"],"technologyWaveIds":["printed-electronics","microfactories","additive-manufacturing"],"alternatives":[{"slug":"px4-autopilot","name":"PX4 Autopilot","kind":"open-source","homepageUrl":"https://docs.px4.io/main/","repoUrl":"https://github.com/PX4/PX4-Autopilot","summary":"An open-source autopilot stack for drones and unmanned vehicles, commonly used with MAVLink, QGroundControl, Pixhawk hardware, and robotics integrations.","metrics":{"openness":{"value":94,"rationale":"PX4 is published as an open-source autopilot project with public code and documentation.","sourceIds":["px4-docs","px4-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":70,"rationale":"It enables many builders and operators to develop unmanned systems without a single proprietary aircraft vendor, though deployment still depends on hardware, spectrum, and airspace rules.","sourceIds":["px4-docs"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":68,"rationale":"PX4 is mature for small UAS and robotics experimentation, but not a ready replacement for HALE military ISR platforms.","sourceIds":["px4-docs","open-uav-survey"],"confidence":"high","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":74,"rationale":"Open flight software and commodity-compatible hardware lower prototyping and small-UAS integration costs compared with bespoke closed systems.","sourceIds":["px4-docs","open-uav-survey"],"confidence":"high","lastReviewedOn":"2026-05-27"}},"sourceIds":["px4-docs","px4-github"]},{"slug":"ardupilot","name":"ArduPilot","kind":"open-source","homepageUrl":"https://ardupilot.org/","repoUrl":"https://github.com/ArduPilot/ardupilot","summary":"An open-source autopilot system supporting multicopters, fixed-wing aircraft, rovers, boats, submarines, and other autonomous vehicles.","metrics":{"openness":{"value":94,"rationale":"ArduPilot publishes open-source software and documentation for multiple vehicle classes.","sourceIds":["ardupilot-home","ardupilot-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":72,"rationale":"The project lets many independent builders operate and modify autonomous vehicles without depending on one prime contractor.","sourceIds":["ardupilot-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":72,"rationale":"ArduPilot is mature for many UAV and robotics applications, while still far below Global Hawk-class endurance, payload, and certification.","sourceIds":["ardupilot-home","open-uav-survey"],"confidence":"high","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":78,"rationale":"Open software, broad hardware support, and community tooling reduce the cost of experimentation, repair, and small-platform deployment.","sourceIds":["ardupilot-home","ardupilot-github"],"confidence":"high","lastReviewedOn":"2026-05-27"}},"sourceIds":["ardupilot-home","ardupilot-github"]},{"slug":"paparazzi-uav","name":"Paparazzi UAV","kind":"open-source","homepageUrl":"https://docs.paparazziuav.org/","summary":"A free and open-source hardware and software project for unmanned air vehicles, including airborne autopilot and ground-station functions.","metrics":{"openness":{"value":90,"rationale":"Paparazzi describes itself as a free and open-source hardware and software UAS project.","sourceIds":["paparazzi-docs"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":68,"rationale":"It supports independent UAS experimentation and modification outside a single proprietary vendor stack.","sourceIds":["paparazzi-docs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":54,"rationale":"Useful for research and small UAS development, but less broadly deployed than PX4 or ArduPilot and not a HALE ISR replacement.","sourceIds":["paparazzi-docs","open-uav-survey"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":66,"rationale":"Open airframe-control and ground-station tooling can lower small-UAS development costs, but payload and airframe economics still dominate larger missions.","sourceIds":["paparazzi-docs"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["paparazzi-docs"]}],"disruptionConcepts":[{"slug":"federated-open-isr-mesh","name":"Federated Open ISR Mesh","summary":"A network of smaller open-autonomy aircraft, ground stations, and sensor nodes could coordinate regional surveillance tasks without relying on a single high-end HALE platform for every mission.","angleIds":["federation","decentralized-coordination","open-hardware"],"thesis":"ISR procurement becomes less concentrated if coverage can be assembled from many interoperable lower-cost nodes, with competition at the aircraft, payload, ground-station, analytics, and maintenance layers.","bitcoinOrDecentralizationRole":"Federation is central: independent operators and agencies can run compatible nodes, share signed observations, and avoid one proprietary command stack. Bitcoin is not necessary for the core mechanism.","coordinationMechanism":"Operators publish availability, sensor capability, airspace constraints, and tasking responses through federated mission servers; buyers request coverage and receive signed data products from multiple nodes.","verificationOrTrustModel":"Sensor reports can be cross-checked across overlapping aircraft, ground sensors, time-stamped telemetry, signed firmware attestations, and audit logs. Spoofing risk remains significant in contested environments.","failureModes":["Small platforms may lack altitude, endurance, weather tolerance, and payload quality.","Federated data-sharing can leak sensitive collection priorities.","Electronic warfare and GPS denial can degrade low-cost autonomous systems faster than hardened military platforms."],"adoptionPath":["Deploy open-autonomy systems for civil mapping, disaster response, border-adjacent logistics, and training missions first.","Add signed telemetry, federated tasking, and multi-sensor corroboration for higher-trust ISR workflows.","Use defense procurement only where mission risk tolerates attritable or non-exquisite platforms."],"confidence":"medium","problemSourceIds":["northrop-global-hawk-page","northrop-airborne-isr-page"],"enablerSourceIds":["px4-docs","ardupilot-home","paparazzi-docs","open-uav-survey"],"metrics":{"decentralizationFit":{"value":72,"rationale":"The mesh model distributes aircraft ownership, software operation, and sensor tasking across many nodes.","sourceIds":["px4-docs","ardupilot-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":60,"rationale":"Open autopilot ecosystems and federated server patterns make coordination plausible, but military-grade data assurance remains hard.","sourceIds":["px4-docs","paparazzi-docs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":58,"rationale":"Small UAS autonomy is mature enough for limited ISR, but HALE endurance, secure payloads, and contested operations remain major gaps.","sourceIds":["northrop-global-hawk-page","open-uav-survey"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":57,"rationale":"The concept can pressure lower-end ISR and training budgets, though Global Hawk's high-altitude long-endurance niche remains defensible.","sourceIds":["northrop-global-hawk-page","px4-docs","ardupilot-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},{"slug":"open-autonomy-production-coops","name":"Open Autonomy Production Cooperatives","summary":"Regional cooperatives could assemble, repair, and operate standardized small UAS using open autopilot software, commodity sensors, and shared manufacturing recipes, reducing dependence on single-vendor sustainment chains for non-classified missions.","angleIds":["cooperative-production","decentralized-manufacturing","home-microfactory","open-hardware"],"thesis":"Sustainment economics change when parts, repairs, and airframe iteration move closer to operators instead of flowing through a prime-contractor depot model.","bitcoinOrDecentralizationRole":"The decentralization role is local production and cooperative governance. Payment rails are secondary; the key shift is shared ownership of designs, tooling, and maintenance knowledge.","coordinationMechanism":"Co-ops maintain approved build recipes, pool testing equipment, share failure reports, and certify local operators against common maintenance and flight standards.","verificationOrTrustModel":"Build logs, part provenance, firmware hashes, test-flight records, and peer audits can reduce fake fulfillment. The model still requires external certification for regulated airspace or defense missions.","failureModes":["Quality variation across local shops can create safety failures.","Export controls and military certification may block many use cases.","Open designs may be copied without sustaining the maintenance commons."],"adoptionPath":["Begin with non-classified inspection, mapping, training, emergency response, and environmental monitoring missions.","Standardize airframes and maintenance logs around open autopilot stacks.","Graduate selected co-ops into government-approved supplier pools for low-risk UAS categories."],"confidence":"speculative","problemSourceIds":["northrop-global-hawk-page"],"enablerSourceIds":["ardupilot-home","px4-docs","ose-gvcs"],"metrics":{"decentralizationFit":{"value":78,"rationale":"The model directly distributes production, repair, and operations among local organizations.","sourceIds":["ose-gvcs","ardupilot-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":48,"rationale":"Open-source communities and co-op production are plausible, but aviation quality systems and liability make coordination difficult.","sourceIds":["ose-gvcs","open-uav-survey"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":44,"rationale":"The enabling tools exist for small UAS, but repeatable airworthiness, sensor calibration, and secure mission operations are still hard.","sourceIds":["px4-docs","ardupilot-home","ose-gvcs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":46,"rationale":"This can erode lower-end sustainment and local ISR spend, but it is unlikely to displace Global Hawk-class platforms soon.","sourceIds":["northrop-global-hawk-page","ose-gvcs"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]}]},"sources":[{"id":"northrop-2025-annual-report","title":"Northrop Grumman 2025 Annual Report","url":"https://www.northropgrumman.com/who-we-are/annual-reports","kind":"annual-report","publisher":"Northrop Grumman","note":"Primary source for 2025 sales, earnings, backlog, business segments, and strategic positioning.","accessedOn":"2026-05-27"},{"id":"northrop-b21-page","title":"B-21 Raider","url":"https://www.northropgrumman.com/what-we-do/aircraft/b-21-raider","kind":"product-page","publisher":"Northrop Grumman","note":"Official product page for the B-21 Raider program.","accessedOn":"2026-05-27"},{"id":"northrop-global-hawk-page","title":"Global Hawk","url":"https://www.northropgrumman.com/what-we-do/air/global-hawk/","kind":"product-page","publisher":"Northrop Grumman","note":"Official product page describing Global Hawk as a high-altitude, long-endurance unmanned ISR system.","accessedOn":"2026-05-27"},{"id":"northrop-airborne-isr-page","title":"Airborne ISR","url":"https://www.northropgrumman.com/what-we-do/mission-solutions/airborne-isr","kind":"product-page","publisher":"Northrop Grumman","note":"Official page for Northrop Grumman airborne ISR capabilities and platform-agnostic mission solutions.","accessedOn":"2026-05-27"},{"id":"companiesmarketcap-noc-marketcap","title":"Northrop Grumman Market Cap","url":"https://companiesmarketcap.com/northrop-grumman/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market capitalization reference for the registry snapshot.","accessedOn":"2026-05-27"},{"id":"companiesmarketcap-noc-pe","title":"Northrop Grumman P/E Ratio","url":"https://companiesmarketcap.com/northrop-grumman/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Trailing P/E ratio reference for valuation metric.","accessedOn":"2026-05-27"},{"id":"dod-replicator-release","title":"Deputy Secretary of Defense Kathleen Hicks Announces Additional Replicator All-Domain Attritable Autonomous Capabilities","url":"https://www.defense.gov/News/Releases/Release/Article/3963289/deputy-secretary-of-defense-kathleen-hicks-announces-additional-replicator-all/","kind":"analysis","publisher":"U.S. Department of Defense","note":"Reference for defense demand shifting toward attritable autonomous systems and broader supplier participation.","accessedOn":"2026-05-27"},{"id":"px4-docs","title":"PX4 User Guide","url":"https://docs.px4.io/main/","kind":"technical-docs","publisher":"PX4 Autopilot Project","note":"Documentation for the PX4 open-source autopilot ecosystem and related drone software components.","accessedOn":"2026-05-27"},{"id":"px4-github","title":"PX4 Autopilot Software","url":"https://github.com/PX4/PX4-Autopilot","kind":"open-source-project","publisher":"PX4 Autopilot Project","note":"Repository for the PX4 open-source autopilot stack.","accessedOn":"2026-05-27"},{"id":"ardupilot-home","title":"ArduPilot","url":"https://ardupilot.org/","kind":"technical-docs","publisher":"ArduPilot Project","note":"Documentation and project overview for the ArduPilot open-source vehicle autopilot system.","accessedOn":"2026-05-27"},{"id":"ardupilot-github","title":"ArduPilot Source Repository","url":"https://github.com/ArduPilot/ardupilot","kind":"open-source-project","publisher":"ArduPilot Project","note":"Repository for ArduPilot flight-control software across multiple vehicle classes.","accessedOn":"2026-05-27"},{"id":"paparazzi-docs","title":"Paparazzi UAV","url":"https://docs.paparazziuav.org/","kind":"technical-docs","publisher":"Paparazzi UAV Project","note":"Documentation for the Paparazzi free and open-source UAS hardware and software project.","accessedOn":"2026-05-27"},{"id":"open-uav-survey","title":"A Survey of Open-Source UAV Autopilots","url":"https://www.mdpi.com/2079-9292/13/23/4785/html","kind":"analysis","publisher":"Electronics","note":"Survey evidence that open-source UAV autopilot projects such as ArduPilot and PX4 remain relevant and widely used.","accessedOn":"2026-05-27"},{"id":"ose-gvcs","title":"Global Village Construction Set","url":"https://www.opensourceecology.org/gvcs/","kind":"open-source-project","publisher":"Open Source Ecology","note":"Open hardware and microfactory reference for distributed manufacturing concepts.","accessedOn":"2026-05-27"}],"summaryMarkdown":"Prepared a new Northrop Grumman bundle focused on B-21 Raider and Global Hawk, with defense-prime moat scoring, current 2025 financials, market-data metrics, open-autonomy alternatives, and documented disruption concepts around attritable systems, federated ISR, and distributed production."}
+2026-05-27T23:32:46.483383Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 72831: No such process (os error 3)
+2026-05-27T23:32:46.483376Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 72836: No such process (os error 3)
+2026-05-27T23:32:46.483390Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 72835: No such process (os error 3)
+2026-05-27T23:32:46.483401Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 72825: No such process (os error 3)
+tokens used
+33,112

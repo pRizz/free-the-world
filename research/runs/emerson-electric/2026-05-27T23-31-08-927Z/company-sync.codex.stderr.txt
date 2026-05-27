@@ -1,0 +1,903 @@
+2026-05-27T23:31:08.989088Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6bc7-131b-7692-a63e-3d0623f4f8c5
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: emerson-electric
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "emerson-electric",
+  "name": "Emerson Electric",
+  "ticker": "EMR",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top150"
+  ],
+  "sectorId": "industrials",
+  "industryId": "industrial-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/emerson-electric/marketcap/",
+  "description": "Emerson Electric provides automation technology, control systems, measurement instruments, and industrial software.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "DeltaV",
+    "Rosemount"
+  ],
+  "seedSourceUrls": [
+    "https://www.emerson.com/en-us/about-us",
+    "https://www.emerson.com/en-us/investors",
+    "https://companiesmarketcap.com/emerson-electric/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T23:31:11.571669Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.571683Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.572239Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.572246Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.572787Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.572790Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.573280Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.573286Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.573701Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.573706Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:11.574558Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:11.574561Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.417938Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.417950Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.418209Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.418216Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.418483Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.418485Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.418750Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.418759Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.419015Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.419020Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:31:12.419585Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:31:12.419591Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Emerson Electric 2025 annual report DeltaV Rosemount annual report profitability market cap ...
+web search: 
+web search: Emerson 2025 annual report SEC 10-K net sales adjusted segment DeltaV Rosemount automation ...
+web search: 
+web search: Rosemount measurement instrumentation Emerson official product page pressure transmitter ...
+web search: 
+web search: openDAQ open source data acquisition official ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"emerson-electric","name":"Emerson Electric","ticker":"EMR","rankApprox":126,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top150"],"sectorId":"industrials","industryId":"industrial-machinery","companiesMarketCapUrl":"https://companiesmarketcap.com/emerson/marketcap/","description":"Emerson Electric provides industrial automation technology, control systems, measurement instrumentation, and software for process and discrete industries.","overview":[{"title":"Business Profile","paragraphs":["Emerson is a global automation company whose portfolio spans control systems, measurement devices, valves, software, and lifecycle services for industrial customers.","Its core public-market story is now more concentrated around automation after portfolio reshaping, including DeltaV distributed control systems and Rosemount measurement instrumentation."]},{"title":"Registry Lens","paragraphs":["The company has durable installed-base advantages because industrial automation systems are safety-critical, expensive to validate, and deeply embedded in plant operations.","The decentralization opportunity is not a direct consumer replacement story; it is about open protocols, open controllers, interoperable data acquisition, and local integrators weakening closed automation stacks over time."]}],"moatNarrative":["Emerson's moat is strongest where equipment qualification, regulatory requirements, process uptime, service relationships, and long replacement cycles matter. DeltaV and Rosemount products are not casually swapped once a plant has standardized around them.","The moat is partially exposed to open industrial software and protocol standardization, but the incumbent advantage remains high because production plants value certified reliability, support, cybersecurity hardening, and vendor accountability."],"decentralizationNarrative":["Open-source PLC runtimes, SCADA/HMI software, OPC UA stacks, and modular data-acquisition projects can reduce dependence on a single industrial automation vendor for smaller plants, labs, education, brownfield monitoring, and non-safety-critical systems.","The strongest decentralization path is federated and open-hardware-adjacent rather than Bitcoin-native: local integrators, plant operators, and equipment makers can coordinate around auditable open protocols, shared reference designs, and interoperable edge gateways."],"sourceIds":["emerson-2025-10k","emerson-deltav","emerson-rosemount-2051","companiesmarketcap-emerson","stockanalysis-emr-statistics"],"technologyWaveIds":["printed-electronics","microfactories"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; refreshed with public sources reviewed on 2026-05-27.","inputMetrics":{"moat":{"value":8,"rationale":"Industrial automation and instrumentation have high switching costs, safety and uptime requirements, long asset lives, and service-led installed-base advantages.","sourceIds":["emerson-2025-10k","emerson-deltav","emerson-rosemount-2051"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizability":{"value":4,"rationale":"Parts of monitoring, HMI, protocol translation, and small-controller use cases can decentralize through open software and hardware, but certified process-control deployments remain difficult to replace.","sourceIds":["openplc-project","fuxa-github","open62541-home","emerson-deltav"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"profitability":{"value":8,"rationale":"Emerson reported fiscal 2025 net sales of about $18.0 billion and net earnings attributable to common stockholders of about $2.3 billion.","sourceIds":["emerson-2025-10k"],"confidence":"high","lastReviewedOn":"2026-05-27"},"peRatio":{"value":31.22,"rationale":"StockAnalysis reported Emerson's trailing P/E ratio at 31.22 in its current valuation statistics snapshot.","sourceIds":["stockanalysis-emr-statistics"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"marketCap":{"value":75560000000,"rationale":"StockAnalysis reported Emerson's market capitalization at about $75.56 billion in its current statistics snapshot.","sourceIds":["stockanalysis-emr-statistics","companiesmarketcap-emerson"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},"products":[{"slug":"deltav","name":"DeltaV","category":"Distributed control system and industrial automation platform","homepageUrl":"https://www.emerson.com/en/automation-systems/deltav","summary":"DeltaV is Emerson's industrial automation platform for monitoring, controlling, and optimizing complex process-industry operations.","whyItMatters":"DeltaV anchors Emerson's automation moat because process plants standardize control logic, operator workflows, historian data, and maintenance practices around the platform.","replacementSketch":["A practical replacement path starts at the edge: open PLC runtimes, open SCADA/HMI screens, OPC UA gateways, and interoperable historians for small or non-safety-critical systems.","Over time, local integrators could package validated open-control reference architectures for specific industries, but full replacement of certified process-control systems would require long validation cycles and strong liability models."],"sourceIds":["emerson-deltav","emerson-2025-10k"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"openplc","name":"OpenPLC","kind":"open-source","homepageUrl":"https://openplcproject.github.io/","repoUrl":"https://github.com/thiagoralves/OpenPLC_v3","summary":"OpenPLC is an open-source PLC runtime and toolchain used for industrial automation education, prototyping, and research.","metrics":{"openness":{"value":9,"rationale":"The project publishes source code and positions itself as a free and open-source PLC platform.","sourceIds":["openplc-project","openplc-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":7,"rationale":"OpenPLC lets users run controller logic on commodity or compatible hardware rather than relying only on closed vendor controllers.","sourceIds":["openplc-project"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":5,"rationale":"It is useful for education, prototypes, research, and small deployments, but it is not a drop-in replacement for certified large-plant DCS deployments.","sourceIds":["openplc-project","openplc-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":8,"rationale":"Commodity hardware and open software can sharply reduce experimentation and training costs compared with proprietary automation stacks.","sourceIds":["openplc-project"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["openplc-project","openplc-github"]},{"slug":"fuxa","name":"FUXA","kind":"open-source","homepageUrl":"https://github.com/frangoteam/FUXA","repoUrl":"https://github.com/frangoteam/FUXA","summary":"FUXA is an open-source web-based SCADA, HMI, dashboard, and process-visualization platform.","metrics":{"openness":{"value":9,"rationale":"The public repository describes FUXA as an open-source SCADA/HMI platform with community contributions.","sourceIds":["fuxa-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":6,"rationale":"It can move visualization and monitoring workflows toward self-hosted, modifiable software controlled by plant operators or local integrators.","sourceIds":["fuxa-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":5,"rationale":"It is active and usable for visualization, but mission-critical industrial control requires careful validation, security review, and integration work.","sourceIds":["fuxa-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":7,"rationale":"Open web-based HMI software can lower licensing and customization costs for monitoring-heavy use cases.","sourceIds":["fuxa-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["fuxa-github"]},{"slug":"open62541","name":"open62541","kind":"open-source","homepageUrl":"https://open62541.org/","repoUrl":"https://github.com/open62541/open62541","summary":"open62541 is an open-source implementation of OPC UA for industrial communication.","metrics":{"openness":{"value":9,"rationale":"The project is an open-source OPC UA implementation licensed under MPLv2.","sourceIds":["open62541-home","open62541-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":8,"rationale":"Open OPC UA components support interoperable machine-to-machine communication without forcing all participants into one vendor's stack.","sourceIds":["open62541-home","open62541-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":7,"rationale":"The project is mature enough for embedded and industrial communication use cases, though deployment still requires engineering and security validation.","sourceIds":["open62541-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":7,"rationale":"Open protocol implementations reduce integration costs and can make vendor-neutral gateways economically practical.","sourceIds":["open62541-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["open62541-home","open62541-github"]}],"disruptionConcepts":[{"slug":"federated-open-process-automation-stack","name":"Federated Open Process Automation Stack","summary":"A federation of local integrators, plant operators, and equipment makers could assemble validated open PLC, SCADA, historian, and OPC UA components into repeatable control packages for smaller facilities and brownfield monitoring.","angleIds":["federation","decentralized-coordination","open-hardware"],"thesis":"The market shifts from single-vendor automation suites toward interoperable packages maintained by many local operators and verified against shared test profiles.","bitcoinOrDecentralizationRole":"Decentralization matters through federated governance and vendor-neutral protocol implementations, not through a token. Open-source components let operators inspect, fork, and self-host critical layers.","coordinationMechanism":"Integrators publish reference architectures, conformance tests, and deployment recipes; plants choose certified local operators; vendors compete on support, hardening, and domain-specific modules.","verificationOrTrustModel":"Trust comes from reproducible builds, signed releases, public issue tracking, conformance testing against industrial protocols, site acceptance tests, and independent safety review for each deployment.","failureModes":["Open components may not meet safety, cybersecurity, uptime, or liability requirements for high-consequence process control.","Fragmented integrator quality could create inconsistent deployments and weak long-term maintenance.","Incumbents can retain control through certifications, installed-base service contracts, and proprietary advanced control features."],"adoptionPath":["Start with training rigs, labs, non-critical monitoring, and brownfield data acquisition.","Standardize open OPC UA gateways and HMI screens around existing proprietary controllers.","Package validated reference designs for narrow industry use cases before attempting higher-criticality control loops."],"confidence":"medium","problemSourceIds":["emerson-deltav","emerson-2025-10k"],"enablerSourceIds":["openplc-project","fuxa-github","open62541-home"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The concept directly replaces a monolithic control stack with federated, self-hosted, interoperable components.","sourceIds":["openplc-project","fuxa-github","open62541-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":6,"rationale":"Open-source projects and protocol standards provide a credible coordination base, but certification and liability coordination remain hard.","sourceIds":["open62541-home","openplc-project"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":5,"rationale":"Feasible for labs, education, small systems, and monitoring layers; much harder for full process-control replacement in regulated plants.","sourceIds":["openplc-project","fuxa-github","emerson-deltav"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":5,"rationale":"Pressure is meaningful at the edge and in low-criticality deployments, but Emerson's installed base and validation advantages remain strong.","sourceIds":["emerson-2025-10k","emerson-deltav"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]},{"slug":"rosemount","name":"Rosemount","category":"Industrial measurement instrumentation","homepageUrl":"https://www.emerson.com/en-us/catalog/rosemount-sku-2051-level-transmitter","summary":"Rosemount is Emerson's measurement instrumentation brand, including pressure, temperature, level, and flow devices used in industrial operations.","whyItMatters":"Industrial measurement devices are the physical sensing layer that feeds control systems, asset monitoring, safety workflows, and process optimization.","replacementSketch":["Open sensor and data-acquisition projects can replace or supplement proprietary instrumentation in education, environmental monitoring, labs, agriculture, and low-risk industrial telemetry.","For hazardous, certified, or high-accuracy process applications, open alternatives would need ruggedized hardware, calibration traceability, documentation, and clear accountability before they can pressure Rosemount's core installed base."],"sourceIds":["emerson-rosemount-2051","emerson-2025-10k"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"opendaq","name":"OpenDAQ","kind":"open-source","homepageUrl":"https://opendaq.org/","summary":"OpenDAQ is an open-source hardware and software initiative for data acquisition tasks and modular measurement systems.","metrics":{"openness":{"value":8,"rationale":"The project describes open specifications for hardware, software, and firmware modules around data acquisition.","sourceIds":["opendaq-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":7,"rationale":"Modular open data-acquisition hardware can let labs, educators, and local operators build measurement systems without depending on a single instrumentation vendor.","sourceIds":["opendaq-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":4,"rationale":"The project is directionally relevant but less mature than commercial certified instrumentation for harsh industrial process environments.","sourceIds":["opendaq-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":7,"rationale":"Open modular DAQ designs can reduce prototyping, education, and custom measurement costs where certification is not the dominant requirement.","sourceIds":["opendaq-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["opendaq-home"]},{"slug":"fieldkit","name":"FieldKit","kind":"open-source","homepageUrl":"https://www.fieldkit.org/","summary":"FieldKit is an open-source environmental sensing platform built around open firmware and hardware standards.","metrics":{"openness":{"value":8,"rationale":"FieldKit describes itself as built on open firmware and hardware standards for reproducibility and customization.","sourceIds":["fieldkit-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":7,"rationale":"It supports distributed sensing by letting field operators build and customize measurement networks outside proprietary instrumentation stacks.","sourceIds":["fieldkit-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":5,"rationale":"It is more relevant for environmental and research sensing than certified industrial process control, but it demonstrates practical open sensing patterns.","sourceIds":["fieldkit-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":7,"rationale":"Open sensor networks can lower the cost of broad monitoring deployments where industrial-grade certification is not required.","sourceIds":["fieldkit-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["fieldkit-home"]}],"disruptionConcepts":[{"slug":"local-open-instrumentation-calibration-network","name":"Local Open Instrumentation Calibration Network","summary":"A network of local fabricators, labs, and integrators could build open measurement modules, publish calibration records, and sell verified sensing kits for lower-risk industrial and environmental monitoring applications.","angleIds":["open-hardware","decentralized-manufacturing","local-materials-processing","decentralized-coordination"],"thesis":"Instrumentation competition shifts from proprietary device catalogs toward locally assembled, auditable sensing modules backed by shared calibration and documentation practices.","bitcoinOrDecentralizationRole":"The decentralization role is distributed manufacturing and verification: local operators can fabricate, repair, and calibrate devices while publishing evidence that buyers and maintainers can inspect.","coordinationMechanism":"Design maintainers publish reference hardware, firmware, and test procedures; local labs perform calibration; buyers choose modules by documented accuracy, environmental rating, and maintenance history.","verificationOrTrustModel":"Calibration certificates, signed firmware releases, traceable test fixtures, serial-numbered build records, and periodic cross-checks against reference instruments constrain fake fulfillment and inaccurate claims.","failureModes":["Open devices may fail ruggedness, hazardous-area, accuracy, or regulatory requirements for Emerson's core process markets.","Calibration networks can become inconsistent unless reference standards and audit practices are strong.","Low-volume local production may struggle to match incumbent reliability, documentation, and support depth."],"adoptionPath":["Begin with research, education, environmental monitoring, agriculture, and non-critical industrial telemetry.","Add interoperable gateways so open sensors can feed existing DCS, SCADA, and historian systems.","Develop certified local calibration partners and ruggedized reference designs for narrow process niches."],"confidence":"speculative","problemSourceIds":["emerson-rosemount-2051","emerson-2025-10k"],"enablerSourceIds":["opendaq-home","fieldkit-home","ents-home"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The concept uses open hardware and local calibration networks to move sensing capacity away from centralized proprietary vendors.","sourceIds":["opendaq-home","fieldkit-home","ents-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":5,"rationale":"Open sensing projects show the primitives, but a trustworthy industrial calibration marketplace would need stronger institutions and standards.","sourceIds":["opendaq-home","fieldkit-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":4,"rationale":"Feasible for low-risk and research sensing; speculative for certified industrial instrumentation because ruggedness and traceability requirements are high.","sourceIds":["emerson-rosemount-2051","opendaq-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":4,"rationale":"Pressure is likely first in peripheral monitoring and custom telemetry, not in Emerson's highest-value certified process instrumentation base.","sourceIds":["emerson-rosemount-2051","emerson-2025-10k"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]}]},"sources":[{"id":"emerson-2025-10k","title":"Emerson Electric Co. 2025 Form 10-K","url":"https://ir.emerson.com/sec-filings/all-sec-filings/content/0000032604-25-000087/0000032604-25-000087.pdf","kind":"annual-report","publisher":"Emerson Electric Co.","note":"Primary source for fiscal 2025 revenue, earnings, business description, risks, and automation portfolio context.","accessedOn":"2026-05-27"},{"id":"emerson-deltav","title":"DeltaV Automation Platform","url":"https://www.emerson.com/en/automation-systems/deltav","kind":"product-page","publisher":"Emerson Electric Co.","note":"Official product page describing DeltaV as Emerson's industrial automation platform for monitoring, control, and optimization.","accessedOn":"2026-05-27"},{"id":"emerson-rosemount-2051","title":"Rosemount 2051 Pressure Transmitter","url":"https://www.emerson.com/en-us/catalog/rosemount-sku-2051-level-transmitter","kind":"product-page","publisher":"Emerson Electric Co.","note":"Official Rosemount product page documenting Emerson's industrial pressure measurement instrumentation.","accessedOn":"2026-05-27"},{"id":"companiesmarketcap-emerson","title":"Emerson Market Capitalization","url":"https://companiesmarketcap.com/emerson/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap.com","note":"Market-cap reference for the company snapshot.","accessedOn":"2026-05-27"},{"id":"stockanalysis-emr-statistics","title":"Emerson Electric Co. Statistics and Valuation","url":"https://stockanalysis.com/stocks/emr/statistics/","kind":"market-data","publisher":"StockAnalysis","note":"Current market capitalization and trailing P/E reference used for input metrics.","accessedOn":"2026-05-27"},{"id":"openplc-project","title":"OpenPLC Project","url":"https://openplcproject.github.io/","kind":"open-source-project","publisher":"OpenPLC Project","note":"Open-source PLC platform relevant to open industrial control alternatives.","accessedOn":"2026-05-27"},{"id":"openplc-github","title":"OpenPLC GitHub Organization","url":"https://github.com/openplcproject","kind":"open-source-project","publisher":"GitHub / OpenPLC Project","note":"Source repository presence for the OpenPLC ecosystem.","accessedOn":"2026-05-27"},{"id":"fuxa-github","title":"FUXA Web-Based Process Visualization","url":"https://github.com/frangoteam/FUXA","kind":"open-source-project","publisher":"GitHub / frangoteam","note":"Open-source SCADA/HMI/dashboard software relevant to DeltaV-adjacent visualization alternatives.","accessedOn":"2026-05-27"},{"id":"open62541-home","title":"open62541","url":"https://open62541.org/index.html","kind":"open-source-project","publisher":"open62541 Project","note":"Open-source OPC UA stack for industrial communication and interoperability.","accessedOn":"2026-05-27"},{"id":"open62541-github","title":"open62541 GitHub Repository","url":"https://github.com/open62541/open62541","kind":"open-source-project","publisher":"GitHub / open62541","note":"Source repository for the open62541 OPC UA implementation.","accessedOn":"2026-05-27"},{"id":"opendaq-home","title":"OpenDAQ Data Acquisition for Everyone","url":"https://opendaq.org/","kind":"open-source-project","publisher":"OpenDAQ","note":"Open hardware and software data-acquisition initiative relevant to open instrumentation alternatives.","accessedOn":"2026-05-27"},{"id":"fieldkit-home","title":"FieldKit","url":"https://www.fieldkit.org/","kind":"open-source-project","publisher":"FieldKit","note":"Open environmental sensing platform illustrating distributed open sensing patterns.","accessedOn":"2026-05-27"},{"id":"ents-home","title":"ENTS Environmental Networked Sensing","url":"https://jlab-sensing.github.io/ENTS/","kind":"open-source-project","publisher":"ENTS Project","note":"Open-source hardware, firmware, and software ecosystem for extensible sensor networks.","accessedOn":"2026-05-27"}],"summaryMarkdown":"Prepared a new Emerson Electric bundle focused on DeltaV and Rosemount. The refresh uses Emerson's 2025 10-K, official product pages, current market-data sources, and open industrial automation/sensing projects as evidence."}
+tokens used
+41,222

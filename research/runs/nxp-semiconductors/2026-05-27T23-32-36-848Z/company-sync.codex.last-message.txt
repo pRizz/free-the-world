@@ -1,0 +1,615 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "nxp-semiconductors",
+      "name": "NXP Semiconductors",
+      "ticker": "NXPI",
+      "rankApprox": 138,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top150"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "semiconductors",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/nxp-semiconductors/marketcap/",
+      "description": "NXP Semiconductors designs and sells semiconductors for automotive, industrial, mobile, communications infrastructure, and IoT markets.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "NXP is a global semiconductor supplier with a large automotive franchise and additional exposure to Industrial & IoT, Mobile, and Communication Infrastructure & Other end markets.",
+            "The company reports one operating segment, but its end-market disclosure shows automotive as the largest demand pool, with 2025 automotive revenue of $7.116 billion out of total 2025 revenue of $12.269 billion."
+          ]
+        },
+        {
+          "title": "Product concentration",
+          "paragraphs": [
+            "The S32 automotive platform and i.MX applications processors anchor NXP's positioning in software-defined vehicles, edge AI, industrial control, embedded Linux, and long-lifecycle device programs.",
+            "These product families are not simple commodity chips: customers depend on qualification, long-term availability, safety and security features, software stacks, reference designs, documentation, and ecosystem support."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "NXP's moat is strongest where semiconductor qualification cycles, automotive safety requirements, embedded software support, and long product lifetimes make replacement slow and risky. Its S32 and i.MX families benefit from customer design-ins, vendor tooling, security blocks, and multi-year platform commitments.",
+        "The moat is not absolute. Open instruction sets, open-source silicon IP, open EDA flows, and modular embedded Linux ecosystems can reduce some design lock-in over time, especially for less safety-critical edge systems and for organizations able to fund their own integration and validation."
+      ],
+      "decentralizationNarrative": [
+        "NXP's core business remains centralized around proprietary silicon, controlled roadmaps, and certified supply chains. That structure is hard to decentralize in the near term because fabrication, automotive qualification, and safety assurance require capital-intensive coordination.",
+        "The best decentralization pressure comes from open RISC-V cores, reproducible EDA flows, shared reference boards, open embedded software stacks, and pooled validation data. These do not immediately replace NXP's automotive-grade products, but they can weaken closed-platform leverage in development boards, edge compute, industrial controllers, and eventually selected vehicle subsystems."
+      ],
+      "sourceIds": [
+        "nxp-2025-10k",
+        "nxp-fy2025-results",
+        "companiesmarketcap-nxp-marketcap",
+        "stockanalysis-nxpi-overview"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150.",
+      "inputMetrics": {
+        "moat": {
+          "value": 78,
+          "rationale": "Automotive and embedded semiconductor design-ins create durable switching costs through qualification, long lifecycle support, safety/security requirements, and vendor software ecosystems.",
+          "sourceIds": [
+            "nxp-2025-10k",
+            "nxp-s32-product",
+            "nxp-imx-product"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 34,
+          "rationale": "Physical semiconductor manufacturing, safety certification, and automotive supply chains are centralized and capital intensive, though open RISC-V IP and open EDA flows create credible pressure in selected embedded markets.",
+          "sourceIds": [
+            "nxp-2025-10k",
+            "openhw-corev",
+            "openroad-project"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 70,
+          "rationale": "NXP reported 2025 gross profit of $6.716 billion, or 54.7% of revenue, showing strong semiconductor gross margins despite a down revenue year.",
+          "sourceIds": [
+            "nxp-2025-10k",
+            "nxp-fy2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 28.63,
+          "rationale": "StockAnalysis listed NXP's trailing P/E ratio at 28.63 in May 2026.",
+          "sourceIds": [
+            "stockanalysis-nxpi-overview"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 75580000000,
+          "rationale": "CompaniesMarketCap listed NXP Semiconductors at approximately $75.58 billion in market capitalization as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-nxp-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "s32-processors",
+        "name": "S32 processors",
+        "category": "Automotive processors and microcontrollers",
+        "homepageUrl": "https://www.nxp.com/products/processors-and-microcontrollers/arm-based-processors-and-mcus/s32-automotive-platform:S32",
+        "summary": "NXP's S32 platform is a family of automotive processors and microcontrollers used for software-defined vehicle, zonal, central compute, networking, real-time control, and safety-oriented vehicle architectures.",
+        "whyItMatters": "S32 matters because software-defined vehicles concentrate more vehicle functions into fewer high-performance compute and networking nodes, making processor platforms a strategic control point for automakers and suppliers.",
+        "replacementSketch": [
+          "A credible replacement path would not start by cloning NXP's automotive-grade silicon. It would start with open reference architectures, shared validation collateral, open RISC-V cores, open firmware, and commodity boards that let suppliers prototype vehicle functions without binding early to one proprietary silicon roadmap.",
+          "Over time, pooled validation, reusable safety cases, and open chip design flows could move selected body-control, gateway, and non-critical vehicle functions toward more auditable and multi-sourced silicon."
+        ],
+        "sourceIds": [
+          "nxp-s32-product",
+          "nxp-s32-coreride",
+          "nxp-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics"
+        ],
+        "alternatives": [
+          {
+            "slug": "openhw-core-v",
+            "name": "OpenHW CORE-V",
+            "kind": "open-source",
+            "homepageUrl": "https://openhwfoundation.org/about-us/core-v-risc-v-cores/",
+            "repoUrl": "https://github.com/openhwgroup/core-v-cores",
+            "summary": "OpenHW CORE-V is a family of permissively licensed open-source RISC-V cores and related processor subsystem work maintained through the OpenHW ecosystem.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "The cores are published as open-source RISC-V processor IP with public repositories and documentation.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "openhw-corev-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Open processor IP can reduce dependence on a single proprietary silicon vendor, though fabrication, safety certification, and integration remain centralized bottlenecks.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "nxp-s32-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 46,
+                "rationale": "CORE-V is credible engineering infrastructure, but it is not a drop-in replacement for an automotive-qualified S32 device with NXP's safety, security, tooling, and support package.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "openhw-cva6-docs",
+                  "nxp-s32-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 62,
+                "rationale": "Open IP can lower licensing and experimentation barriers for custom SoCs, but total cost remains dominated by integration, verification, tapeout, certification, and supply-chain execution.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openhw-corev",
+              "openhw-corev-github",
+              "openhw-cva6-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-automotive-controller-validation",
+            "name": "Federated automotive controller validation commons",
+            "summary": "A coalition of automakers, suppliers, labs, and open silicon projects could maintain shared reference designs, conformance suites, safety evidence templates, and reproducible firmware images for non-critical and progressively higher-criticality vehicle controllers.",
+            "angleIds": [
+              "federation",
+              "open-hardware",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept attacks the integration and validation moat around proprietary automotive silicon platforms by making qualification evidence more reusable across vendors and designs.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated governance and shared validation artifacts rather than through payments. Multiple labs and suppliers contribute test evidence and reference implementations without one processor vendor controlling the roadmap.",
+            "coordinationMechanism": "Participants coordinate through a shared certification profile, open test repositories, signed releases, reference boards, and independent lab attestations tied to specific hardware and firmware versions.",
+            "verificationOrTrustModel": "Test artifacts are reproducibly built, signed by labs, linked to hardware bills of materials, and cross-checked by multiple independent implementers. Fraud is constrained by public test vectors, audit trails, and revocation of lab attestations when results cannot be reproduced.",
+            "failureModes": [
+              "Automotive safety certification may remain too liability-heavy for open shared evidence to meaningfully reduce design-in friction.",
+              "Large automakers may still prefer single-vendor accountability for critical vehicle functions.",
+              "Open reference designs may lag proprietary platforms on performance, security modules, diagnostics, and long-term availability."
+            ],
+            "adoptionPath": [
+              "Start with development boards, gateway prototypes, and non-safety-critical body or telemetry functions.",
+              "Publish shared conformance suites and reproducible firmware builds for a narrow class of RISC-V controllers.",
+              "Expand only after independent labs and early OEM programs validate that shared evidence reduces integration cost without weakening safety."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "nxp-s32-product",
+              "nxp-s32-coreride"
+            ],
+            "enablerSourceIds": [
+              "openhw-corev",
+              "openroad-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "The concept explicitly distributes validation and implementation across suppliers, labs, and open hardware projects.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "Open-source hardware communities already coordinate processor IP and tooling, but automotive-grade certification adds heavier governance and liability constraints.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "nxp-s32-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 42,
+                "rationale": "Technically plausible for lower-criticality vehicle functions, but difficult for high-criticality domains because silicon, toolchains, safety cases, and support obligations are demanding.",
+                "sourceIds": [
+                  "nxp-s32-product",
+                  "openhw-cva6-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 50,
+                "rationale": "Pressure is most likely at the edges of the S32 market where openness and multi-sourcing matter more than fully integrated proprietary automotive platforms.",
+                "sourceIds": [
+                  "nxp-s32-product",
+                  "nxp-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "imx-applications-processors",
+        "name": "i.MX applications processors",
+        "category": "Embedded applications processors",
+        "homepageUrl": "https://www.nxp.com/imx",
+        "summary": "NXP's i.MX applications processors are Arm-based embedded processors used across consumer, industrial, automotive, multimedia, edge AI, and embedded Linux designs.",
+        "whyItMatters": "i.MX matters because long-lifecycle embedded systems often standardize around a processor family, board support package, memory interface, accelerator mix, and software ecosystem for many years.",
+        "replacementSketch": [
+          "The realistic open replacement path is a modular embedded compute stack: open RISC-V application cores, open board designs, mainline-friendly Linux support, transparent accelerator interfaces, and reproducible EDA flows.",
+          "This would be strongest for industrial gateways, kiosks, robotics, and edge AI devices where customers value software portability and source availability more than the full vendor-managed lifecycle of a proprietary embedded processor family."
+        ],
+        "sourceIds": [
+          "nxp-imx-product",
+          "nxp-imx93-product",
+          "nxp-imx9-product"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "openhw-cva6",
+            "name": "OpenHW CVA6",
+            "kind": "open-source",
+            "homepageUrl": "https://docs.openhwgroup.org/projects/cva6-user-manual/",
+            "repoUrl": "https://github.com/openhwgroup/cva6",
+            "summary": "CVA6 is an open-source, application-class RISC-V CPU core project under the OpenHW CORE-V family.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "CVA6 is documented as an open-source application-class RISC-V CPU core with public documentation and project materials.",
+                "sourceIds": [
+                  "openhw-cva6-docs",
+                  "openhw-corev"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "An open application-class core can support multi-party SoC development and reduce dependence on proprietary CPU IP, but full SoC production still relies on centralized fabs and integration teams.",
+                "sourceIds": [
+                  "openhw-cva6-docs",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 40,
+                "rationale": "CVA6 is relevant to application-class embedded compute, but it is not a complete substitute for i.MX processors with NXP's integrated peripherals, NPUs, security features, product longevity program, and board support ecosystem.",
+                "sourceIds": [
+                  "openhw-cva6-docs",
+                  "nxp-imx-product",
+                  "nxp-imx93-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 60,
+                "rationale": "Open CPU IP can lower licensing and research barriers, especially when combined with open EDA, but custom silicon economics still require significant design, verification, and manufacturing spend.",
+                "sourceIds": [
+                  "openhw-cva6-docs",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openhw-cva6-docs",
+              "openhw-corev"
+            ]
+          },
+          {
+            "slug": "lowrisc-ibex",
+            "name": "lowRISC Ibex",
+            "kind": "open-source",
+            "homepageUrl": "https://lowrisc.org/ibex/",
+            "repoUrl": "https://github.com/lowRISC/ibex",
+            "summary": "Ibex is a small, configurable, open-source 32-bit RISC-V processor core maintained by lowRISC.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "lowRISC describes Ibex as an Apache 2.0 licensed open-source RISC-V embedded processor, with public source code and documentation.",
+                "sourceIds": [
+                  "lowrisc-ibex",
+                  "lowrisc-ibex-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "Ibex is more suitable for embedded control blocks than full i.MX-class applications processing, but it supports a more open and inspectable silicon design path.",
+                "sourceIds": [
+                  "lowrisc-ibex",
+                  "nxp-imx-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 44,
+                "rationale": "Ibex is a mature open embedded core, but it does not provide the full multimedia, Linux, memory, security, and accelerator platform offered by i.MX processors.",
+                "sourceIds": [
+                  "lowrisc-ibex",
+                  "nxp-imx9-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 58,
+                "rationale": "For smaller embedded control functions, an open core can reduce licensing friction and enable custom integration, though it does not eliminate tapeout and validation costs.",
+                "sourceIds": [
+                  "lowrisc-ibex",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "lowrisc-ibex",
+              "lowrisc-ibex-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-edge-ai-module-commons",
+            "name": "Open edge AI module commons",
+            "summary": "An open embedded compute commons could combine RISC-V application cores, public carrier-board designs, reusable Linux distributions, open accelerator interfaces, and reproducible chip-design flows to create a multi-vendor alternative path for edge AI modules.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-manufacturing",
+              "home-microfactory"
+            ],
+            "thesis": "The concept shifts embedded processor competition away from single-vendor processor families and toward reusable open modules that local manufacturers and smaller hardware firms can adapt without waiting for a proprietary roadmap.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is open hardware and distributed manufacturing, not Bitcoin. The key change is that board files, CPU IP, validation data, firmware, and manufacturing recipes become shared infrastructure.",
+            "coordinationMechanism": "Designers coordinate through versioned reference designs, open-source silicon IP repositories, published board files, shared test suites, and manufacturer qualification profiles for module vendors.",
+            "verificationOrTrustModel": "Trust depends on reproducible builds, public schematics, signed firmware images, conformance test logs, and independent labs validating that specific board and silicon revisions match the published design. Weaknesses remain around counterfeit parts and incomplete accelerator documentation.",
+            "failureModes": [
+              "Open RISC-V application cores may not match i.MX-class performance, power management, graphics, video, security, and NPU integration quickly enough.",
+              "Fragmented boards and distributions could recreate the same integration burden that proprietary vendors currently absorb.",
+              "Manufacturing quality and long-term component availability may be too uneven for industrial customers."
+            ],
+            "adoptionPath": [
+              "Begin with industrial gateways, robotics controllers, lab automation, and educational edge AI kits.",
+              "Standardize open carrier boards, thermal profiles, firmware signing, and Linux images across several module vendors.",
+              "Move into more demanding industrial deployments once procurement teams can buy interoperable modules from multiple qualified suppliers."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "nxp-imx-product",
+              "nxp-imx93-product",
+              "nxp-imx9-product"
+            ],
+            "enablerSourceIds": [
+              "openhw-cva6-docs",
+              "lowrisc-ibex",
+              "openroad-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The concept directly enables multiple manufacturers and designers to share open hardware, software, and validation assets.",
+                "sourceIds": [
+                  "openhw-cva6-docs",
+                  "lowrisc-ibex",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Open-source processor IP and EDA projects show that distributed coordination is feasible, but a module commons would need stronger release discipline and hardware qualification.",
+                "sourceIds": [
+                  "openhw-corev",
+                  "openroad-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 48,
+                "rationale": "Feasible for development kits and selected industrial edge devices, but challenging for full i.MX-class feature parity and long lifecycle guarantees.",
+                "sourceIds": [
+                  "nxp-imx-product",
+                  "openhw-cva6-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 54,
+                "rationale": "The strongest pressure would be in lower-volume embedded systems that value openness and second sourcing; NXP's highest-assurance, long-lifecycle customers would be slower to move.",
+                "sourceIds": [
+                  "nxp-imx-product",
+                  "nxp-imx93-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nxp-2025-10k",
+      "title": "NXP Semiconductors 2025 Form 10-K",
+      "url": "https://investors.nxp.com/static-files/b13fb583-5f3f-4d27-8cb3-bc2566615fad",
+      "kind": "regulatory-filing",
+      "publisher": "NXP Semiconductors",
+      "note": "Primary filing for business description, end-market revenue, gross profit, operating structure, and risk context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nxp-fy2025-results",
+      "title": "NXP Semiconductors Reports Fourth Quarter and Full-Year 2025 Results",
+      "url": "https://investors.nxp.com/news-releases/news-release-details/nxp-semiconductors-reports-fourth-quarter-and-full-year-2025",
+      "kind": "investor-relations",
+      "publisher": "NXP Semiconductors",
+      "note": "Investor release with 2025 revenue by end market and profitability context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-nxp-marketcap",
+      "title": "NXP Semiconductors Market Capitalization",
+      "url": "https://companiesmarketcap.com/nxp-semiconductors/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap reference used for the May 2026 snapshot value.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-nxpi-overview",
+      "title": "NXP Semiconductors Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/nxpi/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Supplemental market data source for P/E ratio and current public-company metrics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nxp-s32-product",
+      "title": "S32 Automotive Platform",
+      "url": "https://www.nxp.com/products/processors-and-microcontrollers/arm-based-processors-and-mcus/s32-automotive-platform:S32",
+      "kind": "product-page",
+      "publisher": "NXP Semiconductors",
+      "note": "Product source for S32 automotive platform positioning, software-defined vehicle use cases, and ecosystem support.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nxp-s32-coreride",
+      "title": "NXP Breaks Through Integration Barriers for Software-Defined Vehicle Development with Open S32 CoreRide Platform",
+      "url": "https://investors.nxp.com/news-releases/news-release-details/nxp-breaks-through-integration-barriers-software-defined-vehicle/",
+      "kind": "investor-relations",
+      "publisher": "NXP Semiconductors",
+      "note": "Source for NXP's positioning of S32 CoreRide in software-defined vehicle development.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nxp-imx-product",
+      "title": "i.MX Applications Processors",
+      "url": "https://www.nxp.com/imx",
+      "kind": "product-page",
+      "publisher": "NXP Semiconductors",
+      "note": "Product source for i.MX applications processor scope, supported markets, and longevity positioning.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nxp-imx93-product",
+      "title": "i.MX 93 Applications Processor Family",
+      "url": "https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-9-processors/i-mx-93-applications-processor-family-arm-cortex-a55-ml-acceleration-power-efficient-mpu:i.MX93",
+      "kind": "product-page",
+      "publisher": "NXP Semiconductors",
+      "note": "Product source for i.MX 93 edge ML, security, and industrial/automotive qualification positioning.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nxp-imx9-product",
+      "title": "i.MX 9 Applications Processors",
+      "url": "https://www.nxp.com/products/processors-and-microcontrollers/arm-processors/i-mx-applications-processors/i-mx-9-processors:IMX9-PROCESSORS",
+      "kind": "product-page",
+      "publisher": "NXP Semiconductors",
+      "note": "Product source for i.MX 9 edge computing, NPU, interface, and qualification context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openhw-corev",
+      "title": "CORE-V Open Source RISC-V Cores",
+      "url": "https://openhwfoundation.org/about-us/core-v-risc-v-cores/",
+      "kind": "open-source-project",
+      "publisher": "OpenHW Foundation",
+      "note": "Source for open-source RISC-V core alternatives and open silicon decentralization pressure.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openhw-corev-github",
+      "title": "OpenHW Group CORE-V Cores GitHub Repository",
+      "url": "https://github.com/openhwgroup/core-v-cores",
+      "kind": "open-source-project",
+      "publisher": "OpenHW Group",
+      "note": "Repository source for CORE-V public source availability.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openhw-cva6-docs",
+      "title": "CVA6 Application Class RISC-V CPU Core Documentation",
+      "url": "https://docs.openhwgroup.org/projects/cva6-user-manual/",
+      "kind": "technical-docs",
+      "publisher": "OpenHW Group",
+      "note": "Technical documentation for CVA6 as an open application-class RISC-V CPU core.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "lowrisc-ibex",
+      "title": "Ibex CPU",
+      "url": "https://lowrisc.org/ibex/",
+      "kind": "open-source-project",
+      "publisher": "lowRISC",
+      "note": "Source for Ibex as an Apache 2.0 licensed open-source embedded RISC-V core.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "lowrisc-ibex-github",
+      "title": "lowRISC Ibex GitHub Repository",
+      "url": "https://github.com/lowRISC/ibex",
+      "kind": "open-source-project",
+      "publisher": "lowRISC",
+      "note": "Repository source for Ibex public source code.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openroad-project",
+      "title": "OpenROAD Open-Source RTL-to-GDSII EDA Flow",
+      "url": "https://openroad.ergodex.ai/",
+      "kind": "open-source-project",
+      "publisher": "OpenROAD Project",
+      "note": "Source for open EDA tooling that can lower barriers to open silicon design and verification.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new NXP Semiconductors registry bundle with two product entries: S32 processors and i.MX applications processors. The refresh uses NXP filings and product pages for company/product facts, CompaniesMarketCap and StockAnalysis for market metrics, and OpenHW, lowRISC, and OpenROAD sources for open silicon alternatives and disruption concepts."
+}

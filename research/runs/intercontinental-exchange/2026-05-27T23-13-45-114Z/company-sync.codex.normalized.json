@@ -1,0 +1,593 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "intercontinental-exchange",
+      "name": "Intercontinental Exchange",
+      "ticker": "ICE",
+      "rankApprox": 126,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top150"
+      ],
+      "sectorId": "financials",
+      "industryId": "financial-exchanges-data",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/intercontinental-exchange/marketcap/",
+      "description": "Intercontinental Exchange operates exchanges, clearing houses, market data services, fixed income analytics, and mortgage technology infrastructure.",
+      "overview": [
+        {
+          "title": "Exchange and data infrastructure",
+          "paragraphs": [
+            "Intercontinental Exchange owns and operates a portfolio of regulated exchanges and clearing houses, including the New York Stock Exchange, alongside data, connectivity, analytics, and workflow products used by financial institutions.",
+            "Its 2024 business mix shows the durability of the model: exchange net revenues were about $5.0 billion, fixed income and data services revenue was about $2.3 billion, and mortgage technology revenue was about $2.0 billion."
+          ]
+        },
+        {
+          "title": "Regulated network effects",
+          "paragraphs": [
+            "ICE benefits from venue liquidity, listings, clearing relationships, proprietary data rights, benchmark and reference-data workflows, and regulatory trust. Those moats are hard to copy because users need reliable execution, compliance, identifiers, settlement, and data continuity rather than just software features."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "ICE's moat is strong because it combines exchange liquidity, clearing infrastructure, market-data ownership, listings, and institutional workflow integration. The NYSE franchise and ICE's energy, financial, fixed income, and mortgage data assets create switching costs that are legal, operational, and reputational rather than purely technical.",
+        "Open-source matching engines and analytics stacks can reproduce parts of the software surface, but they do not automatically reproduce regulated venue licenses, market-maker participation, issuer relationships, clearing guarantees, historical data depth, or institutional compliance acceptance."
+      ],
+      "decentralizationNarrative": [
+        "ICE is not especially decentralizable at the full-company level because regulated securities markets and clearing houses concentrate trust, rule enforcement, surveillance, and settlement finality in licensed institutions. The most realistic decentralization pressure is modular: open execution engines, open data tooling, open identifiers, and peer-to-peer or federated market infrastructure at the edges.",
+        "The strongest Free The World angle is not that a permissionless system simply replaces NYSE tomorrow. It is that open matching, open symbology, auditability, self-hosted analytics, and protocol-based settlement can reduce dependency on proprietary data and venue infrastructure in narrower markets before pressuring larger incumbents."
+      ],
+      "sourceIds": [
+        "ice-about",
+        "ice-2024-results",
+        "companiesmarketcap-ice"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150.",
+      "inputMetrics": {
+        "moat": {
+          "value": 88,
+          "rationale": "Regulated exchange licenses, clearing infrastructure, NYSE listings, liquidity concentration, proprietary data, and institutional workflow embedding create a very durable moat.",
+          "sourceIds": [
+            "ice-about",
+            "ice-2024-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 32,
+          "rationale": "Software components such as matching engines, FIX connectivity, analytics, and identifiers are decentralizable, but regulated securities exchange and clearing functions remain heavily centralized.",
+          "sourceIds": [
+            "ice-about",
+            "exchange-core",
+            "libtrading"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 82,
+          "rationale": "ICE reported 2024 consolidated net revenues of $9.279 billion, consolidated operating margin of 46%, and adjusted operating margin of 59%, with especially high margins in the exchanges segment.",
+          "sourceIds": [
+            "ice-2024-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 21.5,
+          "rationale": "Estimated from a May 2026 market capitalization around $84.66 billion and recent annual net income near $3.9 billion; use as a rough valuation input, not a primary sourced ratio.",
+          "sourceIds": [
+            "companiesmarketcap-ice",
+            "stockanalysis-ice-financials"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 84660000000,
+          "rationale": "CompaniesMarketCap reported Intercontinental Exchange market capitalization of $84.66 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-ice"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "nyse",
+        "name": "NYSE",
+        "category": "Securities exchange and listings venue",
+        "homepageUrl": "https://www.nyse.com/",
+        "summary": "The New York Stock Exchange is ICE's flagship equities listings and trading venue.",
+        "whyItMatters": "NYSE concentrates issuer listings, market liquidity, auction mechanics, market data, and regulatory trust in one of the world's most important capital-market venues.",
+        "replacementSketch": [
+          "A realistic open replacement starts with narrower markets: community securities, private placements, tokenized funds, local energy credits, or other assets where participants can accept open rulebooks and transparent settlement before reaching national-scale public equities.",
+          "Open matching engines, FIX connectivity, transparent surveillance logs, and open identifiers can reduce dependence on proprietary venue stacks, but a full NYSE substitute would still need issuer trust, market-maker depth, legal recognition, and credible clearing."
+        ],
+        "sourceIds": [
+          "ice-about",
+          "ice-2024-results",
+          "nyse-home"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "exchange-core",
+            "name": "exchange-core",
+            "kind": "open-source",
+            "homepageUrl": "https://exchange-core.github.io/exchange-core/",
+            "repoUrl": "https://github.com/exchange-core/exchange-core",
+            "summary": "Open-source Java matching engine with order books, risk control, accounting, journaling, snapshots, and trading/admin APIs.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "The project publishes source code and documentation for the core exchange engine.",
+                "sourceIds": [
+                  "exchange-core"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 63,
+                "rationale": "It can power independent trading venues, but it does not by itself solve settlement, regulation, issuer onboarding, or market-data governance.",
+                "sourceIds": [
+                  "exchange-core"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 58,
+                "rationale": "The engine documents high-throughput matching, risk, journaling, and tests, but production exchange operation requires substantial surrounding infrastructure.",
+                "sourceIds": [
+                  "exchange-core"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open exchange-core software can lower the software cost of launching specialized venues, though compliance and liquidity costs remain high.",
+                "sourceIds": [
+                  "exchange-core"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "exchange-core"
+            ]
+          },
+          {
+            "slug": "libtrading",
+            "name": "Libtrading",
+            "kind": "open-source",
+            "homepageUrl": "https://www.libtrading.org/",
+            "repoUrl": "https://github.com/libtrading/libtrading",
+            "summary": "Open-source low-latency C API implementing FIX, FIX/FAST, and exchange connectivity protocols.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "Libtrading is published as open-source software under a permissive license.",
+                "sourceIds": [
+                  "libtrading"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 55,
+                "rationale": "Open connectivity libraries help independent venues and participants interoperate, but they are a component rather than a full decentralized market.",
+                "sourceIds": [
+                  "libtrading"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 52,
+                "rationale": "The project documents FIX and FAST support and performance claims, but it is a low-level library requiring integration and maintenance.",
+                "sourceIds": [
+                  "libtrading"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Open protocol tooling can reduce proprietary connectivity costs for smaller venues and trading-system builders.",
+                "sourceIds": [
+                  "libtrading"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "libtrading"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-specialized-exchange-network",
+            "name": "Federated specialized exchange network",
+            "summary": "A network of smaller regulated or semi-regulated venues could use open matching engines, shared FIX-compatible connectivity, open identifiers, and portable audit logs to list narrower asset classes before challenging broad public-equity venues.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The market structure shifts from one dominant national venue stack toward interoperable specialized venues whose rulebooks, matching behavior, identifiers, and audit trails are inspectable and portable.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and portable verification rather than Bitcoin as a required settlement asset. Bitcoin or Lightning could be useful only for fee settlement or collateral rails in markets where that is legally acceptable.",
+            "coordinationMechanism": "Issuers, brokers, market makers, and venue operators coordinate through shared open protocols, standardized identifiers, published rulebooks, and reciprocal routing agreements.",
+            "verificationOrTrustModel": "Matching engines publish deterministic event logs, venues sign order and trade events, independent auditors replay logs, and participants monitor rule compliance. Legal enforcement and licensed operators remain necessary for securities markets.",
+            "failureModes": [
+              "Liquidity may remain concentrated at incumbent venues because issuers and market makers value depth over openness.",
+              "Regulators may require centralized accountability that limits federation.",
+              "Open logs can prove matching behavior but cannot alone prevent manipulative trading or off-venue collusion."
+            ],
+            "adoptionPath": [
+              "Start with low-liquidity private or specialized assets where incumbent exchange advantages are weaker.",
+              "Use open-source matching and connectivity components to prove transparent execution and reduce launch cost.",
+              "Add regulated custody, clearing, surveillance, and issuer onboarding only after narrower venues demonstrate durable liquidity."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ice-about",
+              "ice-2024-results"
+            ],
+            "enablerSourceIds": [
+              "exchange-core",
+              "libtrading",
+              "openfigi"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Federated venues and open audit trails directly reduce single-operator dependency, though legal accountability remains centralized per venue.",
+                "sourceIds": [
+                  "exchange-core",
+                  "libtrading"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "FIX-style connectivity and open identifiers are credible coordination primitives, but issuer, broker, and market-maker adoption is hard.",
+                "sourceIds": [
+                  "libtrading",
+                  "openfigi"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 47,
+                "rationale": "The software pieces exist, but regulated exchange operations, surveillance, custody, and clearing make implementation difficult.",
+                "sourceIds": [
+                  "exchange-core",
+                  "libtrading"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 45,
+                "rationale": "Pressure is plausible in specialized or thinly served markets, but not strong enough to threaten NYSE's core public-equity franchise soon.",
+                "sourceIds": [
+                  "ice-2024-results"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "ice-data-services",
+        "name": "ICE Data Services",
+        "category": "Financial market data and analytics",
+        "homepageUrl": "https://www.ice.com/data-services",
+        "summary": "ICE Data Services provides exchange data, fixed income evaluations, reference data, analytics, connectivity, and workflow tools.",
+        "whyItMatters": "Market data and reference data are embedded in trading, risk, valuation, reporting, and compliance workflows, giving ICE recurring revenue and high institutional switching costs.",
+        "replacementSketch": [
+          "Open replacements are most credible in research, identifiers, and workflow tooling rather than in every proprietary exchange data feed. Open symbology, public-data adapters, self-hosted analytics, and reproducible valuation pipelines can weaken proprietary bundling.",
+          "The key replacement path is progressive unbundling: use open identifiers and open analytics first, then add more public, cooperative, or protocol-sourced datasets where proprietary licenses are not legally required."
+        ],
+        "sourceIds": [
+          "ice-data-services-launch",
+          "ice-2024-results",
+          "openbb",
+          "openfigi"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "ice-data-services-openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "Open-source financial data platform and integration toolkit for analysts, quants, AI agents, and research dashboards.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB publishes an open-source platform and repository for data integrations and financial research workflows.",
+                "sourceIds": [
+                  "openbb"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 54,
+                "rationale": "Self-hosted and open integrations reduce vendor lock-in, but many underlying datasets may still come from centralized or licensed providers.",
+                "sourceIds": [
+                  "openbb"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "OpenBB is a mature developer-facing platform for integrating and consuming financial data, though it does not replace regulated exchange feeds wholesale.",
+                "sourceIds": [
+                  "openbb"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 73,
+                "rationale": "Open tooling and local workflows can reduce dependence on expensive terminals and proprietary analytics for many research and internal workflow use cases.",
+                "sourceIds": [
+                  "openbb"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openbb"
+            ]
+          },
+          {
+            "slug": "ice-data-services-openfigi",
+            "name": "OpenFIGI",
+            "kind": "protocol",
+            "homepageUrl": "https://www.openfigi.com/api/overview",
+            "summary": "Open identifier and API system for mapping financial instruments to Financial Instrument Global Identifiers.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "OpenFIGI provides public API access to an open symbology system for financial instrument identification.",
+                "sourceIds": [
+                  "openfigi"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 62,
+                "rationale": "Open identifiers improve portability across data vendors and venues, even though the service itself is not a fully decentralized network.",
+                "sourceIds": [
+                  "openfigi"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 76,
+                "rationale": "The API and documentation support practical identifier mapping across many financial instruments.",
+                "sourceIds": [
+                  "openfigi"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 60,
+                "rationale": "Open symbology reduces identifier lock-in and reconciliation costs, but it does not provide full market data or analytics by itself.",
+                "sourceIds": [
+                  "openfigi"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openfigi"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-financial-data-cooperative",
+            "name": "Open financial data cooperative",
+            "summary": "A cooperative data network could combine open identifiers, self-hosted analytics, reproducible data pipelines, and member-contributed datasets to reduce dependence on proprietary bundled data services.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "The market shifts from proprietary data bundles toward member-governed data pipelines where provenance, transformations, and access rules are transparent and portable.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central through cooperative governance, federated data nodes, signed datasets, and portable identifiers. Bitcoin or Lightning could support metered data payments, but the primary mechanism is open governance and verifiable provenance.",
+            "coordinationMechanism": "Members contribute connectors, datasets, corrections, and validation jobs; node operators publish signed snapshots; users consume standardized APIs and can choose between competing hosts.",
+            "verificationOrTrustModel": "Datasets are versioned, signed, reproducible from documented inputs where licenses permit, and checked by independent validators. Reputation and access rights can be tied to contribution history and audit outcomes.",
+            "failureModes": [
+              "Exchange-licensed real-time data may remain contractually closed and unavailable to cooperative redistribution.",
+              "Data quality can degrade if contributors lack incentives to correct edge cases.",
+              "Governance capture by large members could recreate vendor-style control."
+            ],
+            "adoptionPath": [
+              "Begin with public filings, open identifiers, delayed data, macro data, and member-owned research datasets.",
+              "Build adapters into open analytics tools so analysts can switch workflows without replacing every data source at once.",
+              "Add paid cooperative tiers for validation, support, and specialized datasets while keeping schemas and provenance portable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ice-data-services-launch",
+              "ice-2024-results"
+            ],
+            "enablerSourceIds": [
+              "openbb",
+              "openfigi"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Federated hosting, cooperative governance, and open identifiers directly reduce dependence on one data vendor.",
+                "sourceIds": [
+                  "openbb",
+                  "openfigi"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 64,
+                "rationale": "OpenBB-style integrations and OpenFIGI-style identifiers provide credible coordination primitives, but incentives for high-quality contributed data remain difficult.",
+                "sourceIds": [
+                  "openbb",
+                  "openfigi"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 61,
+                "rationale": "The open tooling exists for research and integration workflows, but legal limits around proprietary feeds constrain scope.",
+                "sourceIds": [
+                  "openbb",
+                  "openfigi"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "The concept can pressure lower-end analytics, research, and reference-data workflows, but ICE's licensed exchange and fixed-income data franchises remain hard to displace.",
+                "sourceIds": [
+                  "ice-2024-results",
+                  "ice-data-services-launch"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "ice-about",
+      "title": "About ICE",
+      "url": "https://www.ice.com/about",
+      "kind": "product-page",
+      "publisher": "Intercontinental Exchange",
+      "note": "Primary company overview describing ICE's exchanges, data services, financial technology, and mortgage technology footprint.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ice-2024-results",
+      "title": "Intercontinental Exchange Reports Strong Full Year 2024 Results",
+      "url": "https://s2.q4cdn.com/154085107/files/doc_financials/2024/q4/4Q24-Earnings-Press-Release_vFinal.pdf",
+      "kind": "investor-relations",
+      "publisher": "Intercontinental Exchange",
+      "note": "Primary financial source for 2024 segment revenue, margins, recurring revenue, and business mix.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-ice",
+      "title": "Intercontinental Exchange (ICE) Market Capitalization",
+      "url": "https://companiesmarketcap.com/intercontinental-exchange/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization reference used for the registry snapshot valuation input.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-ice-financials",
+      "title": "Intercontinental Exchange Financials",
+      "url": "https://stockanalysis.com/stocks/ice/financials/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Secondary market-data source used to sanity-check recent net income for the rough P/E estimate.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nyse-home",
+      "title": "NYSE",
+      "url": "https://www.nyse.com/",
+      "kind": "product-page",
+      "publisher": "New York Stock Exchange",
+      "note": "Product homepage for ICE's flagship equities exchange and listings venue.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ice-data-services-launch",
+      "title": "Intercontinental Exchange Launches Expanded ICE Data Services",
+      "url": "https://ir.theice.com/press/news-details/2016/Intercontinental-Exchange-Launches-Expanded-ICE-Data-Services/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Intercontinental Exchange",
+      "note": "Primary source describing the combination of exchange data, valuations, analytics, desktop tools, and connectivity under ICE Data Services.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "exchange-core",
+      "title": "exchange-core",
+      "url": "https://exchange-core.github.io/exchange-core/",
+      "kind": "open-source-project",
+      "publisher": "exchange-core project",
+      "note": "Open-source matching engine reference for exchange infrastructure alternatives and disruption concepts.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "libtrading",
+      "title": "Libtrading",
+      "url": "https://www.libtrading.org/",
+      "kind": "open-source-project",
+      "publisher": "Libtrading developers",
+      "note": "Open-source FIX and exchange-connectivity library relevant to interoperable trading infrastructure.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openbb",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source financial data and analytics tooling relevant to alternatives for proprietary market-data workflows.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openfigi",
+      "title": "OpenFIGI API Overview",
+      "url": "https://www.openfigi.com/api/overview",
+      "kind": "technical-docs",
+      "publisher": "OpenFIGI",
+      "note": "Open symbology and identifier mapping source used for market-data decentralization concepts.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Intercontinental Exchange registry bundle with NYSE and ICE Data Services as core products, grounded in ICE financial disclosures, market-cap data, and open alternatives for matching, connectivity, identifiers, and financial data workflows."
+}

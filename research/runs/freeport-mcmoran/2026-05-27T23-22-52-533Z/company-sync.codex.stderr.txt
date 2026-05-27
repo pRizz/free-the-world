@@ -1,0 +1,1350 @@
+2026-05-27T23:22:52.593915Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6bbf-8014-7211-8241-ecbb2750a16d
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: freeport-mcmoran
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "freeport-mcmoran",
+  "name": "Freeport-McMoRan",
+  "ticker": "FCX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top150"
+  ],
+  "sectorId": "materials",
+  "industryId": "copper-diversified-metals",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/freeport-mcmoran/marketcap/",
+  "description": "Freeport-McMoRan mines copper, gold, molybdenum, and other metals through operations in North America, South America, and Indonesia.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Copper",
+    "Molybdenum"
+  ],
+  "seedSourceUrls": [
+    "https://fcx.com/about",
+    "https://investors.fcx.com/",
+    "https://companiesmarketcap.com/freeport-mcmoran/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T23:22:54.805133Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.805146Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.805825Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.805830Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.806478Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.806486Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.807107Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.807113Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.807844Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.807852Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:54.809251Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:54.809257Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:55.648599Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:55.648610Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:55.649083Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:55.649088Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:55.649598Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:55.649603Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:55.650158Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:55.650163Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:55.650700Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:55.650704Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:22:55.651745Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:22:55.651748Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Freeport-McMoRan 2024 annual report copper molybdenum operations revenue net income ...
+web search: 
+web search: copper recycling can be recycled repeatedly without loss of performance Copper Alliance ...
+web search: 
+web search: Freeport-McMoRan 2024 form 10-k annual report net income copper sales 2024 ...
+web search: 
+web search: USGS molybdenum recycling spent catalysts alloy scrap molybdenum 2025
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "freeport-mcmoran",
+      "name": "Freeport-McMoRan",
+      "ticker": "FCX",
+      "rankApprox": 126,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top150"
+      ],
+      "sectorId": "materials",
+      "industryId": "copper-diversified-metals",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/freeport-mcmoran/marketcap/",
+      "description": "Freeport-McMoRan mines copper, gold, molybdenum, and other metals through large-scale operations in North America, South America, and Indonesia.",
+      "overview": [
+        {
+          "title": "Business",
+          "paragraphs": [
+            "Freeport-McMoRan is a large international metals producer centered on copper, with meaningful gold and molybdenum exposure from long-lived mining assets.",
+            "Its portfolio includes the Grasberg minerals district in Indonesia, the Morenci district in Arizona, Cerro Verde in Peru, other copper mines in the Americas, and dedicated molybdenum mines in Colorado."
+          ]
+        },
+        {
+          "title": "Commodity Exposure",
+          "paragraphs": [
+            "Copper is the core strategic product because electrification, grids, data centers, construction, and industrial equipment all rely on high-conductivity metal supply.",
+            "Molybdenum is smaller but strategically relevant because it is used in steel and specialty alloys, catalysts, lubricants, pigments, and other chemical applications."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Freeport-McMoRan's moat comes from scarce mineral reserves, permits, geology, processing know-how, capital intensity, and operating scale rather than from consumer brand or software lock-in.",
+        "The moat is strong because large copper deposits are difficult to discover, permit, finance, build, and operate. It is not absolute because the output is commodity metal priced in global markets and partly substitutable through recycling, thrift, and new supply."
+      ],
+      "decentralizationNarrative": [
+        "Primary copper and molybdenum mining is inherently hard to decentralize because ore bodies, concentrators, smelters, tailings systems, water rights, and environmental controls require large fixed assets.",
+        "The more credible decentralization pressure sits downstream: higher scrap recovery, local materials processing, open foundry tooling, transparent material provenance, and cooperative recycling networks that reduce marginal dependence on new mine output."
+      ],
+      "sourceIds": [
+        "fcx-about",
+        "fcx-2024-10k",
+        "stockanalysis-fcx-2026",
+        "companiesmarketcap-fcx-pe-2026"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Large, long-lived copper and molybdenum assets, including Grasberg, Morenci, Cerro Verde, and Colorado molybdenum mines, create high barriers through geology, permitting, capital intensity, processing infrastructure, and operating expertise.",
+          "sourceIds": [
+            "fcx-about",
+            "fcx-2024-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Primary mine production is location-bound and capital intensive, but copper and molybdenum scrap recovery, open foundry tooling, and local materials processing can decentralize part of the downstream supply chain.",
+          "sourceIds": [
+            "fcx-about",
+            "copper-alliance-recycling",
+            "usgs-molybdenum-2025",
+            "ose-induction-furnace"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Freeport-McMoRan reported net income attributable to common stock of about $1.9 billion in 2024 and operating cash flows of about $7.2 billion, though commodity price exposure keeps profitability cyclical.",
+          "sourceIds": [
+            "fcx-2024-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 32.8,
+          "rationale": "CompaniesMarketCap reported a trailing P/E ratio of about 32.8 for Freeport-McMoRan as of May 2026; market-data pages move daily, so this is a point-in-time estimate.",
+          "sourceIds": [
+            "companiesmarketcap-fcx-pe-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 89110000000,
+          "rationale": "StockAnalysis reported Freeport-McMoRan market capitalization of about $89.11 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-fcx-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "copper",
+        "name": "Copper",
+        "category": "Industrial metal",
+        "homepageUrl": "https://www.fcx.com/about",
+        "summary": "Copper is Freeport-McMoRan's core product and is sold into electrical, construction, industrial, transportation, and infrastructure markets.",
+        "whyItMatters": "Copper is a bottleneck material for electrification, grid expansion, data centers, motors, wiring, renewable energy, and industrial equipment.",
+        "replacementSketch": [
+          "A realistic replacement path is not a direct substitute for primary copper, but a layered reduction of dependence on new mined supply through higher scrap capture, local remelting, design-for-reuse, and more transparent material flows.",
+          "Open hardware foundry tools and cooperative scrap networks could make small-scale recovery and casting more practical, while large industrial users still rely on certified refined copper for high-spec electrical applications."
+        ],
+        "sourceIds": [
+          "fcx-about",
+          "fcx-2024-10k",
+          "copper-alliance-recycling"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-source-ecology-induction-furnace",
+            "name": "Open Source Ecology Induction Furnace",
+            "kind": "open-source",
+            "homepageUrl": "https://wiki.opensourceecology.org/wiki/Induction_Furnace",
+            "summary": "Open Source Ecology documents an open induction furnace concept for melting electrically conductive metals as part of a broader open hardware foundry stack.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project is documented as open hardware on the Open Source Ecology wiki, though maturity and completeness vary by subsystem.",
+                "sourceIds": [
+                  "ose-induction-furnace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Local metal melting and casting directly support distributed materials processing, especially for scrap streams and repair parts.",
+                "sourceIds": [
+                  "ose-induction-furnace",
+                  "ose-foundry"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 3,
+                "rationale": "The concept is documented and plausible for makers or workshops, but it is not a drop-in replacement for certified industrial copper refining or large-scale mine output.",
+                "sourceIds": [
+                  "ose-induction-furnace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Using local scrap can reduce material and logistics costs in some repair and casting contexts, but quality control and energy costs limit broad substitution.",
+                "sourceIds": [
+                  "copper-alliance-recycling",
+                  "ose-induction-furnace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "ose-induction-furnace",
+              "ose-foundry"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-copper-urban-mining",
+            "name": "Cooperative Copper Urban Mining",
+            "summary": "A federated network of local scrap collectors, electricians, demolition contractors, repair shops, and small foundries could recover copper from buildings, motors, wiring, electronics, and industrial equipment, then route it into certified regional processors or lower-spec local casting loops.",
+            "angleIds": [
+              "recycling-and-reuse",
+              "local-materials-processing",
+              "cooperative-production"
+            ],
+            "thesis": "If copper demand rises faster than primary mines can respond, higher-trust local recovery networks can pressure miners by capturing more end-of-life metal and shortening the path from scrap to usable feedstock.",
+            "bitcoinOrDecentralizationRole": "The decentralization mechanism is cooperative materials coordination rather than Bitcoin. Shared registries, open grading rules, and interoperable local processors reduce dependence on a few large centralized scrap buyers.",
+            "coordinationMechanism": "Participants publish available scrap lots, grade claims, location, contamination notes, and chain-of-custody records into a shared marketplace; processors bid for lots or issue standing prices by grade.",
+            "verificationOrTrustModel": "Cheating is constrained through weight tickets, photo evidence, random assay sampling, reputation histories, processor dispute records, and independent material certificates for higher-value lots.",
+            "failureModes": [
+              "Copper purity and contamination risk can make local processing unsuitable for high-spec electrical uses.",
+              "Scrap theft, false grade claims, and collusive pricing can undermine trust unless verification is strong.",
+              "Recycling cannot fully replace new mine supply while electrification demand is growing."
+            ],
+            "adoptionPath": [
+              "Start with transparent local scrap aggregation for demolition, electrical contractors, and repair shops.",
+              "Add assay-backed grading, processor reputation, and cooperative ownership for regional recovery hubs.",
+              "Connect proven hubs to manufacturers that can design products around certified recycled copper inputs."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "fcx-2024-10k",
+              "copper-alliance-recycling"
+            ],
+            "enablerSourceIds": [
+              "copper-alliance-recycling",
+              "ose-foundry",
+              "ose-induction-furnace"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model distributes collection, sorting, and some processing across local operators rather than centralizing all supply in primary mines.",
+                "sourceIds": [
+                  "copper-alliance-recycling",
+                  "ose-foundry"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Scrap markets already coordinate buyers and sellers, but stronger shared grading and verification would be needed for a more open cooperative model.",
+                "sourceIds": [
+                  "copper-alliance-recycling"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Collection and recycling are already established, while open local processing and trusted certification are the harder parts.",
+                "sourceIds": [
+                  "copper-alliance-recycling",
+                  "ose-induction-furnace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Recycling can reduce marginal demand for primary copper but is unlikely to eliminate the need for large mines during a demand growth cycle.",
+                "sourceIds": [
+                  "copper-alliance-recycling",
+                  "fcx-2024-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "molybdenum",
+        "name": "Molybdenum",
+        "category": "Specialty industrial metal",
+        "homepageUrl": "https://www.fcx.com/operations/north-america",
+        "summary": "Molybdenum is produced by Freeport-McMoRan from dedicated mines and as a byproduct of copper operations, serving steel, alloy, catalyst, lubricant, pigment, and chemical markets.",
+        "whyItMatters": "Molybdenum improves strength, hardness, corrosion resistance, and high-temperature performance in alloys and is also used in important chemical and catalyst applications.",
+        "replacementSketch": [
+          "The credible open replacement path is not replacing molybdenum chemistry itself, but recovering more molybdenum from catalysts, ferrous scrap, and superalloy scrap.",
+          "A more open recovery loop would combine better tracking of molybdenum-bearing materials, shared processing recipes where safe, and regional processors that can aggregate specialized waste streams."
+        ],
+        "sourceIds": [
+          "fcx-about",
+          "fcx-north-america",
+          "usgs-molybdenum-2025"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [],
+        "disruptionConcepts": [
+          {
+            "slug": "molybdenum-bearing-scrap-recovery-network",
+            "name": "Molybdenum-Bearing Scrap Recovery Network",
+            "summary": "A specialized recovery network could identify molybdenum-bearing catalysts, ferrous scrap, and superalloy scrap earlier in the waste stream, aggregate them transparently, and route them to qualified hydrometallurgical or metallurgical processors.",
+            "angleIds": [
+              "recycling-and-reuse",
+              "local-materials-processing",
+              "decentralized-coordination"
+            ],
+            "thesis": "Better coordination around molybdenum-bearing waste can reduce dependence on primary molybdenum production by making dispersed catalyst and alloy scrap easier to find, verify, price, and process.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is a shared coordination layer for small holders and processors, not a token-first design. If payments or escrow are needed, open payment rails could help, but the core mechanism is materials traceability and processor interoperability.",
+            "coordinationMechanism": "Refiners, machine shops, chemical plants, scrap yards, and alloy users register eligible molybdenum-bearing materials with grade estimates, origin, hazardous-handling requirements, and pickup or processing terms.",
+            "verificationOrTrustModel": "Trust depends on chain-of-custody records, safety documentation for spent catalysts, processor audits, assay sampling, hazardous-waste compliance records, and penalties for false declarations.",
+            "failureModes": [
+              "Spent catalysts may be hazardous and require regulated handling that small local operators cannot provide.",
+              "Low volumes and mixed alloys can make recovery economics unattractive outside dense industrial regions.",
+              "Open coordination does not remove the need for qualified processors and environmental controls."
+            ],
+            "adoptionPath": [
+              "Map local sources of molybdenum-bearing catalysts, ferrous scrap, and superalloy scrap.",
+              "Create standardized intake records, assay workflows, and processor directories for compliant recovery.",
+              "Pool volumes through cooperative or municipal-industrial hubs until processors can bid efficiently."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "usgs-molybdenum-2025",
+              "fcx-north-america"
+            ],
+            "enablerSourceIds": [
+              "usgs-molybdenum-2025",
+              "molybdenum-catalyst-recovery-2025"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The model decentralizes identification and aggregation of molybdenum-bearing scrap, while actual refining remains specialized.",
+                "sourceIds": [
+                  "usgs-molybdenum-2025"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The materials are identifiable and recyclable, but hazardous catalysts and mixed alloy streams require careful compliance and verification.",
+                "sourceIds": [
+                  "usgs-molybdenum-2025",
+                  "molybdenum-catalyst-recovery-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Recovery routes exist, but practical deployment depends on local industrial density, assay capacity, and regulated handling.",
+                "sourceIds": [
+                  "usgs-molybdenum-2025",
+                  "molybdenum-catalyst-recovery-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Recycling can matter at the margin, but Freeport's primary and byproduct molybdenum position remains protected by mine scale and established industrial demand.",
+                "sourceIds": [
+                  "fcx-north-america",
+                  "usgs-molybdenum-2025"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "fcx-about",
+      "title": "Overview",
+      "url": "https://www.fcx.com/about",
+      "kind": "investor-relations",
+      "publisher": "Freeport-McMoRan",
+      "note": "Company overview describing Freeport-McMoRan as a leading international metals company with copper, gold, and molybdenum reserves and major assets including Grasberg, Morenci, and Cerro Verde.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fcx-north-america",
+      "title": "North America Operations",
+      "url": "https://www.fcx.com/operations/north-america",
+      "kind": "investor-relations",
+      "publisher": "Freeport-McMoRan",
+      "note": "Documents Freeport-McMoRan's North American copper mines and Colorado molybdenum mines.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fcx-2024-10k",
+      "title": "Freeport-McMoRan 2024 Form 10-K",
+      "url": "https://fortune.com/company-assets/1947/quartr/annual-report-10-k-5637b-2025-02-14-10-32-03.pdf",
+      "kind": "annual-report",
+      "publisher": "Freeport-McMoRan",
+      "note": "Annual filing source for 2024 results, reserves, operating cash flow, net income, segment exposure, and commodity sales context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-fcx-2026",
+      "title": "Freeport-McMoRan Market Cap",
+      "url": "https://stockanalysis.com/stocks/fcx/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Point-in-time market capitalization estimate used for the market-cap input metric.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-fcx-pe-2026",
+      "title": "Freeport-McMoRan P/E Ratio",
+      "url": "https://companiesmarketcap.com/freeport-mcmoran/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time trailing P/E ratio source for valuation context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "copper-alliance-recycling",
+      "title": "Copper Recycling",
+      "url": "https://internationalcopper.org/resource/copper-recycling/",
+      "kind": "analysis",
+      "publisher": "International Copper Association",
+      "note": "Explains copper's repeated recyclability and lower-energy recycling profile, supporting copper circularity concepts.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ose-induction-furnace",
+      "title": "Induction Furnace",
+      "url": "https://wiki.opensourceecology.org/wiki/Induction_Furnace",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open hardware documentation for an induction furnace concept relevant to local metal melting and foundry workflows.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ose-foundry",
+      "title": "Foundry",
+      "url": "https://wiki.opensourceecology.org/wiki/Foundry",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open Source Ecology foundry page describing conversion of scrap metal into useful cast parts.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "usgs-molybdenum-2025",
+      "title": "Molybdenum Statistics and Information",
+      "url": "https://www.usgs.gov/centers/nmic/molybdenum-statistics-and-information",
+      "kind": "analysis",
+      "publisher": "U.S. Geological Survey",
+      "note": "USGS source for molybdenum uses and recycling context, including alloy and catalyst applications.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "molybdenum-catalyst-recovery-2025",
+      "title": "Acid-Free Process for Selective and Efficient Recovery of Molybdenum from Spent Hydrodesulfurization Catalysts",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0301479725010059",
+      "kind": "analysis",
+      "publisher": "Journal of Environmental Management",
+      "note": "Recent technical literature supporting the feasibility and constraints of molybdenum recovery from spent catalysts.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Freeport-McMoRan bundle with copper and molybdenum products, sourced financial metrics, and disruption concepts focused on recycling, local materials processing, and cooperative recovery rather than forced software-style decentralization."
+}
+tokens used
+55,332

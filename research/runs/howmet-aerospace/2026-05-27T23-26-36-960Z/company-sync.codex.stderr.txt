@@ -1,0 +1,1413 @@
+2026-05-27T23:26:37.019827Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6bc2-ecae-71e0-8e09-4065a3acd613
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: howmet-aerospace
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "howmet-aerospace",
+  "name": "Howmet Aerospace",
+  "ticker": "HWM",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top150"
+  ],
+  "sectorId": "industrials",
+  "industryId": "aerospace-defense",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/howmet-aerospace/marketcap/",
+  "description": "Howmet Aerospace manufactures engineered metal components for aerospace, defense, commercial transportation, and industrial markets.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Jet engine components",
+    "Aerospace fastening systems"
+  ],
+  "seedSourceUrls": [
+    "https://www.howmet.com/about-us/",
+    "https://investors.howmet.com/",
+    "https://companiesmarketcap.com/howmet-aerospace/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T23:26:39.235707Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.235721Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.236585Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.236591Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.237286Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.237292Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.238021Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.238026Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.238759Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.238768Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.240386Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.240394Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.959916Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.959927Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.960245Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.960249Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.960563Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.960568Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.960889Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.960893Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.961278Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.961284Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:26:39.961958Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:26:39.961963Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify current company/product facts and market metrics from primary or market-data sources, then return only the JSON object.
+web search: 
+web search: Howmet Aerospace 2025 annual report engineered products fastening systems engine products revenue operating income ...
+web search: 
+web search: NASA additive manufacturing aerospace metal parts certification powder bed fusion source ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "howmet-aerospace",
+      "name": "Howmet Aerospace",
+      "ticker": "HWM",
+      "rankApprox": 126,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top150"
+      ],
+      "sectorId": "industrials",
+      "industryId": "aerospace-defense",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/howmet-aerospace/marketcap/",
+      "description": "Howmet Aerospace manufactures engineered metal components, fastening systems, titanium structures, and forged aluminum wheels for aerospace, defense, commercial transportation, and industrial markets.",
+      "overview": [
+        {
+          "title": "Engineered aerospace metals supplier",
+          "paragraphs": [
+            "Howmet's core businesses supply highly engineered parts for aircraft engines, airframes, industrial gas turbines, defense platforms, commercial transportation, and industrial equipment.",
+            "Its product lines include aero engine airfoils, rings, disks and forgings, titanium mill products and structures, aerospace and industrial fastening systems, and forged aluminum heavy-duty truck wheels."
+          ]
+        },
+        {
+          "title": "Aerospace-led demand base",
+          "paragraphs": [
+            "The company reported that aerospace markets represented the majority of revenue in recent annual filings, with growth tied to commercial aerospace, defense aerospace, gas turbines, and engine spares.",
+            "That exposure makes Howmet a specialized industrial supplier rather than a consumer-facing brand: its moat depends on qualified materials, process know-how, customer approvals, and long-cycle aerospace production programs."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Howmet's moat is strongest where metallurgy, process control, certification, and customer qualification matter. Engine components, titanium structures, and aerospace fasteners are not easy to swap because customers need repeatable performance, traceability, and approved supply chains.",
+        "The company also claims leading positions in aerospace fastening systems and forged aluminum heavy-duty truck wheels, which suggests scale and customer embeddedness in several niche industrial markets rather than a single broad platform monopoly."
+      ],
+      "decentralizationNarrative": [
+        "Howmet's products are physically decentralizable in the long run because advanced metal printing, CNC fabrication, and open microfactory tooling keep improving. However, aerospace-grade parts remain hard to decentralize because material allowables, fatigue behavior, inspection, qualification records, and liability are central to adoption.",
+        "The most credible decentralization pressure is therefore not immediate home production of certified flight hardware. It is a gradual shift toward distributed prototyping, repair tooling, non-flight components, aftermarket fixtures, and eventually certified regional production cells with shared process recipes and auditable quality data."
+      ],
+      "sourceIds": [
+        "howmet-about-us",
+        "howmet-2025-10k",
+        "stockanalysis-market-cap",
+        "stockanalysis-statistics"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; refreshed with public company, market-data, and additive-manufacturing sources reviewed on 2026-05-27.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "Aerospace and defense components require specialized metallurgy, qualification, traceability, and customer approvals; Howmet also reports leading positions in aerospace fastening systems and forged aluminum truck wheels.",
+          "sourceIds": [
+            "howmet-about-us",
+            "howmet-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 24,
+          "rationale": "Metal additive manufacturing and open fabrication tooling are improving, but certified aerospace engine parts and fasteners remain constrained by safety-critical materials data, qualification, inspection, and liability requirements.",
+          "sourceIds": [
+            "nasa-am-certification",
+            "nasa-am-handbook",
+            "howmet-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 74,
+          "rationale": "Howmet reported 2025 net income of about $1.5 billion, up from 2024, with growth attributed to commercial aerospace, defense aerospace, gas turbines, and engine spares.",
+          "sourceIds": [
+            "howmet-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 60.64,
+          "rationale": "StockAnalysis reported a trailing P/E ratio near 60.64 in May 2026, indicating a high current valuation relative to trailing earnings.",
+          "sourceIds": [
+            "stockanalysis-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 102650000000,
+          "rationale": "StockAnalysis reported Howmet Aerospace market capitalization of approximately $102.65 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "engine-products",
+        "name": "Engine Products",
+        "category": "Aerospace engine components",
+        "homepageUrl": "https://www.howmet.com/about-us/",
+        "summary": "Howmet produces aero engine and industrial gas turbine components such as airfoils, rings, disks, forgings, and coated superalloy parts.",
+        "whyItMatters": "Jet engine and turbine components sit near the hardest end of industrial manufacturing because they combine extreme operating conditions, advanced alloys, process control, inspection, and long qualification cycles.",
+        "replacementSketch": [
+          "Near-term replacement pressure is likely to come from open process knowledge, shared simulation workflows, and smaller metal additive manufacturing cells for prototypes, tooling, and non-critical spares.",
+          "Flight-critical engine hardware would still need certified material data, inspection records, and customer or regulator approval, so decentralized alternatives should be treated as long-horizon infrastructure rather than immediate substitutes."
+        ],
+        "sourceIds": [
+          "howmet-about-us",
+          "howmet-2025-10k",
+          "nasa-am-certification",
+          "nasa-am-handbook"
+        ],
+        "technologyWaveIds": [
+          "additive-manufacturing",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "rotoforge",
+            "name": "Rotoforge",
+            "kind": "open-source",
+            "homepageUrl": "https://rotoforge.com/",
+            "summary": "Rotoforge presents an open-source desktop-scale platform for printing metal, plastic, and ceramic materials, aimed at making metal additive experimentation more accessible.",
+            "metrics": {
+              "openness": {
+                "value": 78,
+                "rationale": "The project describes itself as free and open-source hardware and software.",
+                "sourceIds": [
+                  "rotoforge"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "A desktop-scale metal-capable platform fits decentralized prototyping and local experimentation, though not certified aerospace production by itself.",
+                "sourceIds": [
+                  "rotoforge",
+                  "nasa-am-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 28,
+                "rationale": "The approach is promising for experimentation, but aerospace-grade engine parts require validated process control, materials data, and qualification.",
+                "sourceIds": [
+                  "rotoforge",
+                  "nasa-am-handbook"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 62,
+                "rationale": "If workable, lower-cost metal printing can reduce prototyping and tooling barriers, but flight-critical production costs remain dominated by validation and quality systems.",
+                "sourceIds": [
+                  "rotoforge",
+                  "nasa-am-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "rotoforge"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "certified-regional-metal-am-cells",
+            "name": "Certified regional metal additive manufacturing cells",
+            "summary": "A distributed network of qualified metal additive manufacturing cells could make selected aerospace-adjacent parts, fixtures, tooling, and eventually lower-risk flight components closer to demand while sharing auditable process recipes, inspection data, and material allowables.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "3d-printing",
+              "local-materials-processing"
+            ],
+            "thesis": "The market structure changes if qualification data and process control can travel across many smaller certified production cells instead of being locked inside a few vertically integrated suppliers.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is primarily manufacturing-side: local operators use shared process packages, common inspection protocols, and auditable production records rather than relying on one centralized factory.",
+            "coordinationMechanism": "Aircraft operators, part designers, qualified production cells, and inspectors coordinate through approved digital work instructions, machine qualification records, serialized batches, and acceptance-test data tied to each part lot.",
+            "verificationOrTrustModel": "Cheating is constrained by material certificates, machine logs, destructive test coupons, non-destructive inspection, customer audits, and regulator-accepted qualification procedures. The weak point is that fake or incomplete production records can still enter the chain unless audits and custody controls are strong.",
+            "failureModes": [
+              "Certification and liability requirements may keep most flight-critical parts centralized for much longer than the fabrication technology itself implies.",
+              "Different machines, powders, operators, and post-processing steps can produce non-equivalent fatigue behavior even when geometry matches."
+            ],
+            "adoptionPath": [
+              "Start with fixtures, tooling, ground-support equipment, prototypes, and non-flight replacement parts where qualification burden is lower.",
+              "Move into certified low-criticality parts only after repeatable process windows, material allowables, inspection methods, and customer approval workflows are established."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "howmet-about-us",
+              "howmet-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "nasa-am-certification",
+              "nasa-am-handbook",
+              "america-makes-am-rfp"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Distributed qualified cells directly attack centralized production geography while preserving the process discipline aerospace requires.",
+                "sourceIds": [
+                  "america-makes-am-rfp",
+                  "nasa-am-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "Aerospace already coordinates through quality systems and supplier approvals, but extending equivalency across independent cells remains difficult.",
+                "sourceIds": [
+                  "nasa-am-certification",
+                  "nasa-am-handbook"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 42,
+                "rationale": "The enabling technologies exist, but aerospace material qualification, fatigue data, and audit burden make implementation slow.",
+                "sourceIds": [
+                  "nasa-am-certification",
+                  "nasa-am-handbook"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "Pressure is meaningful in prototyping, tooling, and spare-part workflows, but less immediate for Howmet's highest-value engine hardware.",
+                "sourceIds": [
+                  "howmet-about-us",
+                  "nasa-am-certification"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "fastening-systems",
+        "name": "Fastening Systems",
+        "category": "Aerospace and industrial fasteners",
+        "homepageUrl": "https://www.howmet.com/about-us/",
+        "summary": "Howmet supplies aerospace fastening systems and industrial fasteners used across aircraft, engines, gas turbines, vehicles, construction equipment, and other industrial markets.",
+        "whyItMatters": "Fasteners look small but matter structurally: aerospace and industrial customers need predictable strength, compatibility, traceability, and approved part histories.",
+        "replacementSketch": [
+          "Open fabrication can help local workshops make brackets, fixtures, adapters, and some non-critical mechanical hardware, reducing dependence on proprietary supply channels for low-risk parts.",
+          "Aerospace-grade fasteners remain harder to displace because qualification, material traceability, fatigue performance, and customer approvals are part of the product."
+        ],
+        "sourceIds": [
+          "howmet-about-us",
+          "howmet-fastening-systems",
+          "opensourceecology-cnc-torch-table"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-source-ecology-cnc-torch-table",
+            "name": "Open Source Ecology CNC Torch/Router Table",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourceecology.org/portfolio/cnc-torch-table/",
+            "summary": "Open Source Ecology documents a computer-controlled metal cutting table intended to let workshops fabricate precision metal parts with open hardware methods.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "Open Source Ecology publishes open hardware designs and documentation for workshop-scale fabrication tools.",
+                "sourceIds": [
+                  "opensourceecology-cnc-torch-table",
+                  "opensourceecology-fef-workshop"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "The tooling is explicitly workshop-scale and supports local metal fabrication, though it does not directly replace certified aerospace fastener production.",
+                "sourceIds": [
+                  "opensourceecology-cnc-torch-table"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 40,
+                "rationale": "The tool is relevant for local fabrication and repair ecosystems, but aerospace fastening requires specialized forming, materials, coatings, inspection, and approvals.",
+                "sourceIds": [
+                  "opensourceecology-cnc-torch-table",
+                  "howmet-fastening-systems"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Local CNC cutting can reduce the cost and lead time for many metal parts and fixtures, even if certified fasteners remain specialized.",
+                "sourceIds": [
+                  "opensourceecology-cnc-torch-table"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "opensourceecology-cnc-torch-table",
+              "opensourceecology-fef-workshop"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-fastener-repair-and-fixture-microfactories",
+            "name": "Open fastener repair and fixture microfactories",
+            "summary": "Local fabrication shops equipped with open CNC, inspection, and documentation workflows could produce non-flight brackets, adapters, fixtures, and repair hardware around fastener ecosystems, gradually eroding dependence on centralized catalog suppliers for lower-risk industrial use cases.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "open-hardware",
+              "home-microfactory"
+            ],
+            "thesis": "The market changes first around the edge of certified fasteners: if workshops can fabricate validated supporting hardware locally, customers rely less on centralized suppliers for every small metal component in maintenance and repair workflows.",
+            "bitcoinOrDecentralizationRole": "The role is decentralized manufacturing rather than Bitcoin: open hardware designs and local fabrication cells make capability portable across many operators.",
+            "coordinationMechanism": "Designers publish fabrication files, local shops manufacture parts, customers submit dimensional and material requirements, and communities maintain shared recipes for common repair and fixture needs.",
+            "verificationOrTrustModel": "Dimensional inspection, material labeling, load testing for non-critical parts, peer-reviewed design files, and customer acceptance records reduce false claims. This model is weak for safety-critical aerospace fasteners unless formal qualification and traceability are added.",
+            "failureModes": [
+              "Local shops may overclaim suitability for safety-critical fasteners without the required materials, coatings, fatigue testing, or approvals.",
+              "Open designs may fragment across incompatible materials, tolerances, and machine capabilities."
+            ],
+            "adoptionPath": [
+              "Begin with workshop fixtures, maintenance aids, transport equipment, brackets, and non-critical industrial hardware.",
+              "Build shared inspection templates and material traceability practices before attempting regulated or safety-critical applications."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "howmet-about-us",
+              "howmet-fastening-systems"
+            ],
+            "enablerSourceIds": [
+              "opensourceecology-cnc-torch-table",
+              "opensourceecology-fef-workshop"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Open workshop-scale fabrication directly supports local production of adjacent metal parts and repair hardware.",
+                "sourceIds": [
+                  "opensourceecology-cnc-torch-table",
+                  "opensourceecology-fef-workshop"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 55,
+                "rationale": "Shared files, workshop builds, and community documentation are credible for non-critical hardware, but regulated fasteners require stronger governance.",
+                "sourceIds": [
+                  "opensourceecology-cnc-torch-table",
+                  "howmet-fastening-systems"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 60,
+                "rationale": "The fabrication tooling is practical for many metal parts, while the concept deliberately avoids claiming near-term replacement of certified aerospace fasteners.",
+                "sourceIds": [
+                  "opensourceecology-cnc-torch-table"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 38,
+                "rationale": "Pressure is real around lower-risk industrial parts and maintenance workflows, but Howmet's aerospace fastener moat remains protected by qualification and traceability.",
+                "sourceIds": [
+                  "howmet-about-us",
+                  "howmet-fastening-systems"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "howmet-about-us",
+      "title": "About Us",
+      "url": "https://www.howmet.com/about-us/",
+      "kind": "product-page",
+      "publisher": "Howmet Aerospace",
+      "note": "Company-operated overview of Howmet's engine products, engineered structures, fastening systems, and forged wheels businesses.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "howmet-fastening-systems",
+      "title": "About Us",
+      "url": "https://www.hfsindustrial.com/us/about-us",
+      "kind": "product-page",
+      "publisher": "Howmet Fastening Systems",
+      "note": "Describes Howmet Fastening Systems' industrial and transportation fastening markets and product integrity framing.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "howmet-2025-10k",
+      "title": "Form 10-K for Howmet Aerospace Inc. filed 02/12/2026",
+      "url": "https://www.howmet.com/wp-content/uploads/sites/3/2026/05/yearend202510k.pdf",
+      "kind": "annual-report",
+      "publisher": "Howmet Aerospace",
+      "note": "Primary annual filing for 2025 financial performance, market exposure, and segment discussion.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-market-cap",
+      "title": "Howmet Aerospace Market Cap",
+      "url": "https://stockanalysis.com/stocks/hwm/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data reference for Howmet's May 2026 market capitalization.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-statistics",
+      "title": "Howmet Aerospace Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/hwm/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data reference for trailing valuation metrics including P/E ratio.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nasa-am-certification",
+      "title": "NASA's Approach to Additive Manufacturing Certification",
+      "url": "https://ntrs.nasa.gov/api/citations/20220012358/downloads/Qualification%20of%20Additively%20Manufactured%20Aerospace%20Hardware%206030%20Training.pdf",
+      "kind": "technical-docs",
+      "publisher": "NASA Technical Reports Server",
+      "note": "Technical source for why additively manufactured aerospace hardware requires certification and trust in process, materials, and inspection.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nasa-am-handbook",
+      "title": "NASA Technical Handbook: Additive Manufacturing Requirements for Spaceflight Systems",
+      "url": "https://standards.nasa.gov/sites/default/files/standards/NASA/Baseline/0/NASA-HDBK-5026-Final-8-12-2024.pdf",
+      "kind": "technical-docs",
+      "publisher": "NASA",
+      "note": "Technical reference for metallic additive manufacturing process and fatigue considerations relevant to aerospace-grade parts.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "america-makes-am-rfp",
+      "title": "America Makes RFP: Demonstrating Additive Manufacturing Equivalency and Interoperability for Defense",
+      "url": "https://www.americamakes.us/wp-content/uploads/2025/03/AAMI-Program-RFP-3-2025.pdf",
+      "kind": "analysis",
+      "publisher": "America Makes",
+      "note": "Documents active interest in additive manufacturing equivalency, interoperability, and distributed manufacturing for defense supply chains.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "rotoforge",
+      "title": "Rotoforge",
+      "url": "https://rotoforge.com/",
+      "kind": "open-source-project",
+      "publisher": "Rotoforge",
+      "note": "Open-source hardware/software metal, plastic, and ceramic 3D printer project used as a speculative decentralized fabrication alternative.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opensourceecology-cnc-torch-table",
+      "title": "CNC Torch/Router Table",
+      "url": "https://www.opensourceecology.org/portfolio/cnc-torch-table/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open hardware fabrication tool relevant to local metal-part production and microfactory concepts.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opensourceecology-fef-workshop",
+      "title": "FeF Workshop",
+      "url": "https://wiki.opensourceecology.org/wiki/FeF_Workshop",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Describes Open Source Ecology's flexible fabrication facility and related open industrial tools.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Howmet Aerospace registry bundle with two product entries: Engine Products and Fastening Systems. The refresh emphasizes Howmet's certification-heavy aerospace moat while adding credible decentralized-manufacturing concepts grounded in metal additive manufacturing, open fabrication tooling, and aerospace qualification constraints."
+}
+2026-05-27T23:28:10.989807Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 55770: No such process (os error 3)
+2026-05-27T23:28:10.989871Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 55795: No such process (os error 3)
+2026-05-27T23:28:10.989814Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 55769: No such process (os error 3)
+2026-05-27T23:28:10.989845Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 55773: No such process (os error 3)
+tokens used
+35,694

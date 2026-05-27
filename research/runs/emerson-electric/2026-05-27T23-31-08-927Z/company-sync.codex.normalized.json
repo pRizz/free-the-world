@@ -1,0 +1,685 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "emerson-electric",
+      "name": "Emerson Electric",
+      "ticker": "EMR",
+      "rankApprox": 126,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top150"
+      ],
+      "sectorId": "industrials",
+      "industryId": "industrial-machinery",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/emerson/marketcap/",
+      "description": "Emerson Electric provides industrial automation technology, control systems, measurement instrumentation, and software for process and discrete industries.",
+      "overview": [
+        {
+          "title": "Business Profile",
+          "paragraphs": [
+            "Emerson is a global automation company whose portfolio spans control systems, measurement devices, valves, software, and lifecycle services for industrial customers.",
+            "Its core public-market story is now more concentrated around automation after portfolio reshaping, including DeltaV distributed control systems and Rosemount measurement instrumentation."
+          ]
+        },
+        {
+          "title": "Registry Lens",
+          "paragraphs": [
+            "The company has durable installed-base advantages because industrial automation systems are safety-critical, expensive to validate, and deeply embedded in plant operations.",
+            "The decentralization opportunity is not a direct consumer replacement story; it is about open protocols, open controllers, interoperable data acquisition, and local integrators weakening closed automation stacks over time."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Emerson's moat is strongest where equipment qualification, regulatory requirements, process uptime, service relationships, and long replacement cycles matter. DeltaV and Rosemount products are not casually swapped once a plant has standardized around them.",
+        "The moat is partially exposed to open industrial software and protocol standardization, but the incumbent advantage remains high because production plants value certified reliability, support, cybersecurity hardening, and vendor accountability."
+      ],
+      "decentralizationNarrative": [
+        "Open-source PLC runtimes, SCADA/HMI software, OPC UA stacks, and modular data-acquisition projects can reduce dependence on a single industrial automation vendor for smaller plants, labs, education, brownfield monitoring, and non-safety-critical systems.",
+        "The strongest decentralization path is federated and open-hardware-adjacent rather than Bitcoin-native: local integrators, plant operators, and equipment makers can coordinate around auditable open protocols, shared reference designs, and interoperable edge gateways."
+      ],
+      "sourceIds": [
+        "emerson-2025-10k",
+        "emerson-deltav",
+        "emerson-rosemount-2051",
+        "companiesmarketcap-emerson",
+        "stockanalysis-emr-statistics"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; refreshed with public sources reviewed on 2026-05-27.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Industrial automation and instrumentation have high switching costs, safety and uptime requirements, long asset lives, and service-led installed-base advantages.",
+          "sourceIds": [
+            "emerson-2025-10k",
+            "emerson-deltav",
+            "emerson-rosemount-2051"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Parts of monitoring, HMI, protocol translation, and small-controller use cases can decentralize through open software and hardware, but certified process-control deployments remain difficult to replace.",
+          "sourceIds": [
+            "openplc-project",
+            "fuxa-github",
+            "open62541-home",
+            "emerson-deltav"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Emerson reported fiscal 2025 net sales of about $18.0 billion and net earnings attributable to common stockholders of about $2.3 billion.",
+          "sourceIds": [
+            "emerson-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 31.22,
+          "rationale": "StockAnalysis reported Emerson's trailing P/E ratio at 31.22 in its current valuation statistics snapshot.",
+          "sourceIds": [
+            "stockanalysis-emr-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 75560000000,
+          "rationale": "StockAnalysis reported Emerson's market capitalization at about $75.56 billion in its current statistics snapshot.",
+          "sourceIds": [
+            "stockanalysis-emr-statistics",
+            "companiesmarketcap-emerson"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "deltav",
+        "name": "DeltaV",
+        "category": "Distributed control system and industrial automation platform",
+        "homepageUrl": "https://www.emerson.com/en/automation-systems/deltav",
+        "summary": "DeltaV is Emerson's industrial automation platform for monitoring, controlling, and optimizing complex process-industry operations.",
+        "whyItMatters": "DeltaV anchors Emerson's automation moat because process plants standardize control logic, operator workflows, historian data, and maintenance practices around the platform.",
+        "replacementSketch": [
+          "A practical replacement path starts at the edge: open PLC runtimes, open SCADA/HMI screens, OPC UA gateways, and interoperable historians for small or non-safety-critical systems.",
+          "Over time, local integrators could package validated open-control reference architectures for specific industries, but full replacement of certified process-control systems would require long validation cycles and strong liability models."
+        ],
+        "sourceIds": [
+          "emerson-deltav",
+          "emerson-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "openplc",
+            "name": "OpenPLC",
+            "kind": "open-source",
+            "homepageUrl": "https://openplcproject.github.io/",
+            "repoUrl": "https://github.com/thiagoralves/OpenPLC_v3",
+            "summary": "OpenPLC is an open-source PLC runtime and toolchain used for industrial automation education, prototyping, and research.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project publishes source code and positions itself as a free and open-source PLC platform.",
+                "sourceIds": [
+                  "openplc-project",
+                  "openplc-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "OpenPLC lets users run controller logic on commodity or compatible hardware rather than relying only on closed vendor controllers.",
+                "sourceIds": [
+                  "openplc-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "It is useful for education, prototypes, research, and small deployments, but it is not a drop-in replacement for certified large-plant DCS deployments.",
+                "sourceIds": [
+                  "openplc-project",
+                  "openplc-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Commodity hardware and open software can sharply reduce experimentation and training costs compared with proprietary automation stacks.",
+                "sourceIds": [
+                  "openplc-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openplc-project",
+              "openplc-github"
+            ]
+          },
+          {
+            "slug": "fuxa",
+            "name": "FUXA",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/frangoteam/FUXA",
+            "repoUrl": "https://github.com/frangoteam/FUXA",
+            "summary": "FUXA is an open-source web-based SCADA, HMI, dashboard, and process-visualization platform.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The public repository describes FUXA as an open-source SCADA/HMI platform with community contributions.",
+                "sourceIds": [
+                  "fuxa-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It can move visualization and monitoring workflows toward self-hosted, modifiable software controlled by plant operators or local integrators.",
+                "sourceIds": [
+                  "fuxa-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "It is active and usable for visualization, but mission-critical industrial control requires careful validation, security review, and integration work.",
+                "sourceIds": [
+                  "fuxa-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open web-based HMI software can lower licensing and customization costs for monitoring-heavy use cases.",
+                "sourceIds": [
+                  "fuxa-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "fuxa-github"
+            ]
+          },
+          {
+            "slug": "open62541",
+            "name": "open62541",
+            "kind": "open-source",
+            "homepageUrl": "https://open62541.org/",
+            "repoUrl": "https://github.com/open62541/open62541",
+            "summary": "open62541 is an open-source implementation of OPC UA for industrial communication.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project is an open-source OPC UA implementation licensed under MPLv2.",
+                "sourceIds": [
+                  "open62541-home",
+                  "open62541-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Open OPC UA components support interoperable machine-to-machine communication without forcing all participants into one vendor's stack.",
+                "sourceIds": [
+                  "open62541-home",
+                  "open62541-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project is mature enough for embedded and industrial communication use cases, though deployment still requires engineering and security validation.",
+                "sourceIds": [
+                  "open62541-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open protocol implementations reduce integration costs and can make vendor-neutral gateways economically practical.",
+                "sourceIds": [
+                  "open62541-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "open62541-home",
+              "open62541-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-process-automation-stack",
+            "name": "Federated Open Process Automation Stack",
+            "summary": "A federation of local integrators, plant operators, and equipment makers could assemble validated open PLC, SCADA, historian, and OPC UA components into repeatable control packages for smaller facilities and brownfield monitoring.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "open-hardware"
+            ],
+            "thesis": "The market shifts from single-vendor automation suites toward interoperable packages maintained by many local operators and verified against shared test profiles.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated governance and vendor-neutral protocol implementations, not through a token. Open-source components let operators inspect, fork, and self-host critical layers.",
+            "coordinationMechanism": "Integrators publish reference architectures, conformance tests, and deployment recipes; plants choose certified local operators; vendors compete on support, hardening, and domain-specific modules.",
+            "verificationOrTrustModel": "Trust comes from reproducible builds, signed releases, public issue tracking, conformance testing against industrial protocols, site acceptance tests, and independent safety review for each deployment.",
+            "failureModes": [
+              "Open components may not meet safety, cybersecurity, uptime, or liability requirements for high-consequence process control.",
+              "Fragmented integrator quality could create inconsistent deployments and weak long-term maintenance.",
+              "Incumbents can retain control through certifications, installed-base service contracts, and proprietary advanced control features."
+            ],
+            "adoptionPath": [
+              "Start with training rigs, labs, non-critical monitoring, and brownfield data acquisition.",
+              "Standardize open OPC UA gateways and HMI screens around existing proprietary controllers.",
+              "Package validated reference designs for narrow industry use cases before attempting higher-criticality control loops."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "emerson-deltav",
+              "emerson-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "openplc-project",
+              "fuxa-github",
+              "open62541-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly replaces a monolithic control stack with federated, self-hosted, interoperable components.",
+                "sourceIds": [
+                  "openplc-project",
+                  "fuxa-github",
+                  "open62541-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open-source projects and protocol standards provide a credible coordination base, but certification and liability coordination remain hard.",
+                "sourceIds": [
+                  "open62541-home",
+                  "openplc-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Feasible for labs, education, small systems, and monitoring layers; much harder for full process-control replacement in regulated plants.",
+                "sourceIds": [
+                  "openplc-project",
+                  "fuxa-github",
+                  "emerson-deltav"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Pressure is meaningful at the edge and in low-criticality deployments, but Emerson's installed base and validation advantages remain strong.",
+                "sourceIds": [
+                  "emerson-2025-10k",
+                  "emerson-deltav"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "rosemount",
+        "name": "Rosemount",
+        "category": "Industrial measurement instrumentation",
+        "homepageUrl": "https://www.emerson.com/en-us/catalog/rosemount-sku-2051-level-transmitter",
+        "summary": "Rosemount is Emerson's measurement instrumentation brand, including pressure, temperature, level, and flow devices used in industrial operations.",
+        "whyItMatters": "Industrial measurement devices are the physical sensing layer that feeds control systems, asset monitoring, safety workflows, and process optimization.",
+        "replacementSketch": [
+          "Open sensor and data-acquisition projects can replace or supplement proprietary instrumentation in education, environmental monitoring, labs, agriculture, and low-risk industrial telemetry.",
+          "For hazardous, certified, or high-accuracy process applications, open alternatives would need ruggedized hardware, calibration traceability, documentation, and clear accountability before they can pressure Rosemount's core installed base."
+        ],
+        "sourceIds": [
+          "emerson-rosemount-2051",
+          "emerson-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "opendaq",
+            "name": "OpenDAQ",
+            "kind": "open-source",
+            "homepageUrl": "https://opendaq.org/",
+            "summary": "OpenDAQ is an open-source hardware and software initiative for data acquisition tasks and modular measurement systems.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project describes open specifications for hardware, software, and firmware modules around data acquisition.",
+                "sourceIds": [
+                  "opendaq-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Modular open data-acquisition hardware can let labs, educators, and local operators build measurement systems without depending on a single instrumentation vendor.",
+                "sourceIds": [
+                  "opendaq-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "The project is directionally relevant but less mature than commercial certified instrumentation for harsh industrial process environments.",
+                "sourceIds": [
+                  "opendaq-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open modular DAQ designs can reduce prototyping, education, and custom measurement costs where certification is not the dominant requirement.",
+                "sourceIds": [
+                  "opendaq-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "opendaq-home"
+            ]
+          },
+          {
+            "slug": "fieldkit",
+            "name": "FieldKit",
+            "kind": "open-source",
+            "homepageUrl": "https://www.fieldkit.org/",
+            "summary": "FieldKit is an open-source environmental sensing platform built around open firmware and hardware standards.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "FieldKit describes itself as built on open firmware and hardware standards for reproducibility and customization.",
+                "sourceIds": [
+                  "fieldkit-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It supports distributed sensing by letting field operators build and customize measurement networks outside proprietary instrumentation stacks.",
+                "sourceIds": [
+                  "fieldkit-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "It is more relevant for environmental and research sensing than certified industrial process control, but it demonstrates practical open sensing patterns.",
+                "sourceIds": [
+                  "fieldkit-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open sensor networks can lower the cost of broad monitoring deployments where industrial-grade certification is not required.",
+                "sourceIds": [
+                  "fieldkit-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "fieldkit-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "local-open-instrumentation-calibration-network",
+            "name": "Local Open Instrumentation Calibration Network",
+            "summary": "A network of local fabricators, labs, and integrators could build open measurement modules, publish calibration records, and sell verified sensing kits for lower-risk industrial and environmental monitoring applications.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-manufacturing",
+              "local-materials-processing",
+              "decentralized-coordination"
+            ],
+            "thesis": "Instrumentation competition shifts from proprietary device catalogs toward locally assembled, auditable sensing modules backed by shared calibration and documentation practices.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is distributed manufacturing and verification: local operators can fabricate, repair, and calibrate devices while publishing evidence that buyers and maintainers can inspect.",
+            "coordinationMechanism": "Design maintainers publish reference hardware, firmware, and test procedures; local labs perform calibration; buyers choose modules by documented accuracy, environmental rating, and maintenance history.",
+            "verificationOrTrustModel": "Calibration certificates, signed firmware releases, traceable test fixtures, serial-numbered build records, and periodic cross-checks against reference instruments constrain fake fulfillment and inaccurate claims.",
+            "failureModes": [
+              "Open devices may fail ruggedness, hazardous-area, accuracy, or regulatory requirements for Emerson's core process markets.",
+              "Calibration networks can become inconsistent unless reference standards and audit practices are strong.",
+              "Low-volume local production may struggle to match incumbent reliability, documentation, and support depth."
+            ],
+            "adoptionPath": [
+              "Begin with research, education, environmental monitoring, agriculture, and non-critical industrial telemetry.",
+              "Add interoperable gateways so open sensors can feed existing DCS, SCADA, and historian systems.",
+              "Develop certified local calibration partners and ruggedized reference designs for narrow process niches."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "emerson-rosemount-2051",
+              "emerson-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "opendaq-home",
+              "fieldkit-home",
+              "ents-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept uses open hardware and local calibration networks to move sensing capacity away from centralized proprietary vendors.",
+                "sourceIds": [
+                  "opendaq-home",
+                  "fieldkit-home",
+                  "ents-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Open sensing projects show the primitives, but a trustworthy industrial calibration marketplace would need stronger institutions and standards.",
+                "sourceIds": [
+                  "opendaq-home",
+                  "fieldkit-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Feasible for low-risk and research sensing; speculative for certified industrial instrumentation because ruggedness and traceability requirements are high.",
+                "sourceIds": [
+                  "emerson-rosemount-2051",
+                  "opendaq-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Pressure is likely first in peripheral monitoring and custom telemetry, not in Emerson's highest-value certified process instrumentation base.",
+                "sourceIds": [
+                  "emerson-rosemount-2051",
+                  "emerson-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "emerson-2025-10k",
+      "title": "Emerson Electric Co. 2025 Form 10-K",
+      "url": "https://ir.emerson.com/sec-filings/all-sec-filings/content/0000032604-25-000087/0000032604-25-000087.pdf",
+      "kind": "annual-report",
+      "publisher": "Emerson Electric Co.",
+      "note": "Primary source for fiscal 2025 revenue, earnings, business description, risks, and automation portfolio context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "emerson-deltav",
+      "title": "DeltaV Automation Platform",
+      "url": "https://www.emerson.com/en/automation-systems/deltav",
+      "kind": "product-page",
+      "publisher": "Emerson Electric Co.",
+      "note": "Official product page describing DeltaV as Emerson's industrial automation platform for monitoring, control, and optimization.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "emerson-rosemount-2051",
+      "title": "Rosemount 2051 Pressure Transmitter",
+      "url": "https://www.emerson.com/en-us/catalog/rosemount-sku-2051-level-transmitter",
+      "kind": "product-page",
+      "publisher": "Emerson Electric Co.",
+      "note": "Official Rosemount product page documenting Emerson's industrial pressure measurement instrumentation.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-emerson",
+      "title": "Emerson Market Capitalization",
+      "url": "https://companiesmarketcap.com/emerson/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap.com",
+      "note": "Market-cap reference for the company snapshot.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-emr-statistics",
+      "title": "Emerson Electric Co. Statistics and Valuation",
+      "url": "https://stockanalysis.com/stocks/emr/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Current market capitalization and trailing P/E reference used for input metrics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openplc-project",
+      "title": "OpenPLC Project",
+      "url": "https://openplcproject.github.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenPLC Project",
+      "note": "Open-source PLC platform relevant to open industrial control alternatives.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openplc-github",
+      "title": "OpenPLC GitHub Organization",
+      "url": "https://github.com/openplcproject",
+      "kind": "open-source-project",
+      "publisher": "GitHub / OpenPLC Project",
+      "note": "Source repository presence for the OpenPLC ecosystem.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fuxa-github",
+      "title": "FUXA Web-Based Process Visualization",
+      "url": "https://github.com/frangoteam/FUXA",
+      "kind": "open-source-project",
+      "publisher": "GitHub / frangoteam",
+      "note": "Open-source SCADA/HMI/dashboard software relevant to DeltaV-adjacent visualization alternatives.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "open62541-home",
+      "title": "open62541",
+      "url": "https://open62541.org/index.html",
+      "kind": "open-source-project",
+      "publisher": "open62541 Project",
+      "note": "Open-source OPC UA stack for industrial communication and interoperability.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "open62541-github",
+      "title": "open62541 GitHub Repository",
+      "url": "https://github.com/open62541/open62541",
+      "kind": "open-source-project",
+      "publisher": "GitHub / open62541",
+      "note": "Source repository for the open62541 OPC UA implementation.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opendaq-home",
+      "title": "OpenDAQ Data Acquisition for Everyone",
+      "url": "https://opendaq.org/",
+      "kind": "open-source-project",
+      "publisher": "OpenDAQ",
+      "note": "Open hardware and software data-acquisition initiative relevant to open instrumentation alternatives.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fieldkit-home",
+      "title": "FieldKit",
+      "url": "https://www.fieldkit.org/",
+      "kind": "open-source-project",
+      "publisher": "FieldKit",
+      "note": "Open environmental sensing platform illustrating distributed open sensing patterns.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ents-home",
+      "title": "ENTS Environmental Networked Sensing",
+      "url": "https://jlab-sensing.github.io/ENTS/",
+      "kind": "open-source-project",
+      "publisher": "ENTS Project",
+      "note": "Open-source hardware, firmware, and software ecosystem for extensible sensor networks.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Emerson Electric bundle focused on DeltaV and Rosemount. The refresh uses Emerson's 2025 10-K, official product pages, current market-data sources, and open industrial automation/sensing projects as evidence."
+}

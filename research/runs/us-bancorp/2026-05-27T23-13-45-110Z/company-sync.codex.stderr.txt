@@ -1,0 +1,1703 @@
+2026-05-27T23:13:45.180120Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6bb7-25b9-7800-8d32-8a5a1742ba4b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: us-bancorp
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "us-bancorp",
+  "name": "U.S. Bancorp",
+  "ticker": "USB",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top150"
+  ],
+  "sectorId": "financials",
+  "industryId": "diversified-banks",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/us-bancorp/marketcap/",
+  "description": "U.S. Bancorp provides consumer banking, business banking, payments, wealth management, and institutional financial services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "U.S. Bank",
+    "Elavon"
+  ],
+  "seedSourceUrls": [
+    "https://www.usbank.com/about-us-bank.html",
+    "https://ir.usbank.com/",
+    "https://companiesmarketcap.com/us-bancorp/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T23:13:47.744052Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:47.744062Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:47.744700Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:47.744704Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:47.745337Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:47.745340Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:47.745965Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:47.745970Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:47.746623Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:47.746627Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:47.748149Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:47.748154Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:48.614353Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:48.614362Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:48.614975Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:48.614981Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:48.615664Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:48.615670Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:48.616233Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:48.616239Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:48.616772Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:48.616777Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T23:13:48.618005Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T23:13:48.618008Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify current U.S. Bancorp facts and source the registry fields before composing the JSON, since the request depends on publishable current market and product data.
+web search: 
+web search: U.S. Bancorp 2024 annual report net income total assets payments Elavon ...
+web search: 
+web search: Mojaloop open source payment platform financial inclusion official ...
+web search: 
+web search: U.S. Bancorp market cap May 2026 CompaniesMarketCap USB PE ratio ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "us-bancorp",
+      "name": "U.S. Bancorp",
+      "ticker": "USB",
+      "rankApprox": 138,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top150"
+      ],
+      "sectorId": "financials",
+      "industryId": "diversified-banks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/us-bancorp/marketcap/",
+      "description": "U.S. Bancorp provides consumer banking, business banking, payments, wealth management, and institutional financial services.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "U.S. Bancorp is the holding company for U.S. Bank, a large U.S. commercial bank serving consumers, businesses, institutions, and government clients through banking, lending, payments, wealth management, and corporate services.",
+            "Its payments exposure is unusually important for a bank of its type: Elavon is a wholly owned subsidiary and merchant acquiring platform serving businesses across the United States, Europe, and Canada."
+          ]
+        },
+        {
+          "title": "Registry relevance",
+          "paragraphs": [
+            "The company sits at the intersection of deposit custody, card issuing, merchant acquiring, payment routing, risk management, and regulated trust. Those functions are hard to replace with a single open system, but individual layers can be pressured by open payment networks, federated custody, and interoperable community banking software."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "U.S. Bancorp's moat comes from regulatory licensing, deposit relationships, credit underwriting history, branch and digital distribution, embedded business banking relationships, and payment acceptance infrastructure. Banking customers face meaningful switching costs because payments, lending, treasury management, payroll, merchant acquiring, cards, and compliance workflows often sit together.",
+        "Elavon adds a distinct merchant-services moat: merchant acquiring depends on risk controls, card-network relationships, software integrations, settlement reliability, and support for many business categories. That infrastructure is capital-intensive and compliance-heavy, which favors scaled incumbents."
+      ],
+      "decentralizationNarrative": [
+        "The most realistic decentralization pressure is modular rather than total displacement. Open payment rails, community custody, interoperable account software, and privacy-preserving digital cash can reduce dependence on vertically integrated banks for everyday payments and local financial coordination.",
+        "Full replacement remains difficult because lending, insured deposits, consumer protection, fraud liability, sanctions compliance, and regulated settlement require institutional accountability. The strongest alternatives therefore attack narrow functions: local account ledgers, instant push payments, private small-value payments, and community-level custody."
+      ],
+      "sourceIds": [
+        "usbank-about",
+        "usbank-2025-annual-report",
+        "companiesmarketcap-usb",
+        "elavon-about"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; market data refreshed against late-May 2026 public market sources.",
+      "inputMetrics": {
+        "moat": {
+          "value": 4,
+          "rationale": "Large regulated banking operations, deposit relationships, payments scale, merchant acquiring infrastructure, and compliance requirements create high switching costs and entry barriers.",
+          "sourceIds": [
+            "usbank-2025-annual-report",
+            "usbank-about",
+            "elavon-about"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 2,
+          "rationale": "Payments, account ledgers, and community custody can be modularized, but insured deposits, regulated lending, bank supervision, fraud liability, and broad financial compliance remain hard to decentralize fully.",
+          "sourceIds": [
+            "usbank-2025-annual-report",
+            "mojaloop-docs",
+            "fedimint-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 4,
+          "rationale": "The 2025 annual report showed multi-billion-dollar net income and diversified earnings across banking, wealth, corporate, commercial, institutional, and payment services.",
+          "sourceIds": [
+            "usbank-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 12.05,
+          "rationale": "Macrotrends reported a U.S. Bancorp P/E ratio of 12.05 as of May 21, 2026; public market multiples move daily and should be treated as a snapshot.",
+          "sourceIds": [
+            "macrotrends-usb-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 85110000000,
+          "rationale": "CompaniesMarketCap reported U.S. Bancorp market capitalization of $85.11 billion in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-usb"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "us-bank",
+        "name": "U.S. Bank",
+        "category": "Retail, business, wealth, and institutional banking",
+        "homepageUrl": "https://www.usbank.com/",
+        "summary": "U.S. Bank is the operating bank brand for U.S. Bancorp, providing deposit accounts, lending, cards, business banking, treasury services, wealth management, and institutional services.",
+        "whyItMatters": "The bank is the core customer relationship layer where deposits, credit, cards, identity, payments, underwriting, and regulated trust are bundled together.",
+        "replacementSketch": [
+          "A credible replacement path would not start as a full national bank clone. It would begin with local or affinity-based account ledgers, open payment routing, self-custodied or federated wallets, and cooperative financial service providers that handle narrow functions well.",
+          "Over time, those pieces could reduce dependence on a single bank interface for small-value payments, shared community funds, local commerce, and basic account-like services, while regulated banks remain important for insured deposits, lending, and compliance-heavy activity."
+        ],
+        "sourceIds": [
+          "usbank-about",
+          "usbank-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "cyclos",
+            "name": "Cyclos",
+            "kind": "open-source",
+            "homepageUrl": "https://www.cyclos.org/",
+            "summary": "Cyclos provides payment and online banking software used for banks, barter networks, remittances, time banks, LETS, and community currencies.",
+            "metrics": {
+              "openness": {
+                "value": 4,
+                "rationale": "Cyclos publicly describes an open-source front end and community-currency tooling, though some commercial deployment features may depend on the vendor's offering.",
+                "sourceIds": [
+                  "cyclos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 3,
+                "rationale": "It is well aligned with local and community currency systems, but deployments still commonly rely on an operator rather than fully decentralized custody.",
+                "sourceIds": [
+                  "cyclos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "The project describes production use across hundreds of social currencies and includes mobile, online banking, ecommerce, POS, and card-related features.",
+                "sourceIds": [
+                  "cyclos-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 3,
+                "rationale": "Open and configurable community banking software can reduce coordination costs for local financial networks, but it does not remove compliance, custody, or support costs.",
+                "sourceIds": [
+                  "cyclos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "cyclos-home"
+            ]
+          },
+          {
+            "slug": "fedimint",
+            "name": "Fedimint",
+            "kind": "protocol",
+            "homepageUrl": "https://fedimint.org/",
+            "repoUrl": "https://github.com/fedimint/fedimint",
+            "summary": "Fedimint is an open-source federated e-cash protocol for Bitcoin that lets communities run federations, issue private e-cash claims, and interoperate with Lightning or on-chain Bitcoin.",
+            "metrics": {
+              "openness": {
+                "value": 5,
+                "rationale": "Fedimint is published as an open-source protocol with public code and developer documentation.",
+                "sourceIds": [
+                  "fedimint-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 4,
+                "rationale": "Custody is shared among federation guardians instead of a single bank, though users still trust the federation rather than holding all funds directly.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedi-ecash"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 2,
+                "rationale": "Fedimint is usable by technical communities and wallet builders, but it is not a mainstream replacement for insured bank accounts or broad consumer banking.",
+                "sourceIds": [
+                  "fedimint-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 4,
+                "rationale": "Federated e-cash can make small payments and community custody cheaper than traditional account infrastructure, especially when combined with Lightning.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedi-lightning"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "fedimint-home",
+              "fedi-ecash",
+              "fedi-lightning"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-federated-bank-accounts",
+            "name": "Community federated account networks",
+            "summary": "Local associations, worker groups, churches, neighborhood groups, or small merchants could operate federated custody and account-like wallets for small balances, while using Lightning or on-chain Bitcoin for settlement in and out of the community.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "This shifts the lowest-value banking functions from a national bank account interface toward community-operated custody and payment ledgers, pressuring banks on everyday payments and relationship ownership even if regulated lending and insured deposits remain bank-led.",
+            "bitcoinOrDecentralizationRole": "Bitcoin provides the reserve asset and final settlement rail; Lightning provides low-cost external payments; federation distributes operational trust across multiple guardians rather than one bank operator.",
+            "coordinationMechanism": "Community guardians run federation software, publish membership and reserve policies, onboard users, and route payments through e-cash, Lightning gateways, and on-chain settlement.",
+            "verificationOrTrustModel": "Users can verify federation rules, guardian identities, and visible reserve movements, but they still rely on federation honesty and operational competence. Multi-guardian custody reduces single-operator abuse but does not eliminate collusion or insolvency risk.",
+            "failureModes": [
+              "Federation guardians can collude, lose keys, or run fractional reserves without sufficient external auditing.",
+              "Regulatory treatment of community custody and money transmission may block or limit adoption.",
+              "Mainstream users may reject Bitcoin volatility unless stable accounting layers or hedging tools are added."
+            ],
+            "adoptionPath": [
+              "Start with small community funds, mutual-aid wallets, event payments, or merchant loyalty balances where users already know the operators.",
+              "Add Lightning gateways and better audit tooling, then expand into merchant acceptance and local payroll-like disbursements."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "usbank-about",
+              "usbank-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "fedimint-home",
+              "fedi-ecash",
+              "fedi-lightning"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 4,
+                "rationale": "The mechanism directly replaces single-bank custody for small balances with multi-guardian community custody and open settlement rails.",
+                "sourceIds": [
+                  "fedimint-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 3,
+                "rationale": "Federations provide a coherent coordination model, but governance, audit practices, and legal accountability remain unresolved for mainstream use.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedi-ecash"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 3,
+                "rationale": "The core software exists, but regulated deployment, user experience, reserve management, and dispute handling are still difficult.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedi-lightning"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 2,
+                "rationale": "This can pressure small payments and community account relationships, but it does not yet challenge U.S. Bank's lending, insured deposits, corporate banking, or wealth-management moat.",
+                "sourceIds": [
+                  "usbank-2025-annual-report",
+                  "fedimint-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "local-open-banking-cooperatives",
+            "name": "Local open banking cooperatives",
+            "summary": "Municipalities, cooperatives, and community finance groups could use open banking and payment software to operate local ledgers, social currencies, member accounts, and merchant payment acceptance without building a full proprietary bank stack.",
+            "angleIds": [
+              "cooperative-production",
+              "peer-to-peer-marketplace",
+              "decentralized-coordination"
+            ],
+            "thesis": "This narrows the role of large banks by moving some account, local commerce, and community-credit coordination into member-governed software networks.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not central here; the decentralization role is cooperative governance and local control over account rules, currency issuance, merchant participation, and fee schedules.",
+            "coordinationMechanism": "A cooperative or municipal operator runs the ledger, merchants and members join under published rules, and local governance sets transaction fees, acceptance criteria, and redemption policies.",
+            "verificationOrTrustModel": "Transparent ledgers, member governance, operator audits, and clear redemption rules constrain abuse. The model still depends on the cooperative operator's solvency, cybersecurity, and legal compliance.",
+            "failureModes": [
+              "Local currencies may struggle with liquidity, merchant acceptance, and redemption credibility.",
+              "A cooperative operator can become a new centralized bottleneck if governance is weak.",
+              "Compliance costs can erase the cost advantage for regulated financial activity."
+            ],
+            "adoptionPath": [
+              "Begin with closed-loop community currencies, time banks, local benefit disbursement, or merchant loyalty networks.",
+              "Integrate with bank accounts and instant payment rails for redemption, then add cooperative lending or savings features where legally permitted."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "usbank-about"
+            ],
+            "enablerSourceIds": [
+              "cyclos-home",
+              "mojaloop-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 3,
+                "rationale": "The model decentralizes control to local operators and member governance, though each deployment is still operator-administered.",
+                "sourceIds": [
+                  "cyclos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 4,
+                "rationale": "Community currencies, LETS, time banks, and local payment networks are established coordination patterns supported by existing software.",
+                "sourceIds": [
+                  "cyclos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 3,
+                "rationale": "Software exists, but legal, compliance, liquidity, and trust requirements vary sharply by jurisdiction and use case.",
+                "sourceIds": [
+                  "cyclos-home",
+                  "mojaloop-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 2,
+                "rationale": "Local cooperative systems can reduce dependence on bank-controlled account interfaces for narrow use cases, but they are unlikely to displace large-bank lending and deposit products at national scale soon.",
+                "sourceIds": [
+                  "usbank-2025-annual-report",
+                  "cyclos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "elavon",
+        "name": "Elavon",
+        "category": "Merchant acquiring and payment processing",
+        "homepageUrl": "https://www.elavon.com/",
+        "summary": "Elavon is U.S. Bancorp's merchant acquiring and payment processing business, providing end-to-end payment acceptance solutions for businesses in the United States, Europe, and Canada.",
+        "whyItMatters": "Merchant acquiring is a key control point in commerce: it shapes payment acceptance costs, settlement timing, fraud handling, chargeback workflows, software integrations, and merchant dependence on card-network rails.",
+        "replacementSketch": [
+          "A replacement path would start with payment methods that move value directly from payer to merchant over open or interoperable rails, with merchant software handling invoices, receipts, refunds, and reconciliation.",
+          "For mainstream merchants, the transition would likely be hybrid: card acceptance remains in place, while open instant payments, privacy-preserving digital cash, or Lightning-style settlement compete for low-margin, small-ticket, cross-border, or community-commerce transactions."
+        ],
+        "sourceIds": [
+          "elavon-about",
+          "usbank-embedded-payments",
+          "usbank-payment-solutions"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "mojaloop",
+            "name": "Mojaloop",
+            "kind": "open-source",
+            "homepageUrl": "https://mojaloop.io/",
+            "repoUrl": "https://github.com/mojaloop",
+            "summary": "Mojaloop is open-source software for building interoperable inclusive instant payment systems that connect financial institutions and digital financial service providers.",
+            "metrics": {
+              "openness": {
+                "value": 5,
+                "rationale": "Mojaloop is maintained as free, open-source software and public-good infrastructure by the Mojaloop Foundation.",
+                "sourceIds": [
+                  "mojaloop-home",
+                  "mojaloop-mission"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 3,
+                "rationale": "Mojaloop decentralizes participation across financial institutions and payment providers, but typically depends on a scheme operator and settlement partner.",
+                "sourceIds": [
+                  "mojaloop-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "The platform is documented for inclusive instant payment systems and participant risk management, making it more mature than a research-only payment concept.",
+                "sourceIds": [
+                  "mojaloop-docs",
+                  "mojaloop-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 4,
+                "rationale": "Its stated purpose is to lower the cost to build, maintain, and modify inclusive instant payment systems.",
+                "sourceIds": [
+                  "mojaloop-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "mojaloop-home",
+              "mojaloop-docs",
+              "mojaloop-mission"
+            ]
+          },
+          {
+            "slug": "gnu-taler",
+            "name": "GNU Taler",
+            "kind": "open-source",
+            "homepageUrl": "https://www.taler.net/",
+            "repoUrl": "https://git.taler.net/",
+            "summary": "GNU Taler is a free-software electronic payment system designed for privacy-friendly online transactions while keeping merchants auditable.",
+            "metrics": {
+              "openness": {
+                "value": 5,
+                "rationale": "GNU Taler is a GNU free-software payment system with public documentation and code.",
+                "sourceIds": [
+                  "gnu-taler-home",
+                  "gnu-taler-paper"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 2,
+                "rationale": "Taler improves openness and payer privacy, but it still uses exchanges and banking integration rather than a fully decentralized settlement model.",
+                "sourceIds": [
+                  "gnu-taler-home",
+                  "gnu-taler-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 3,
+                "rationale": "The project is active and documented, but merchant and bank adoption remains limited relative to incumbent card acquiring.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 3,
+                "rationale": "A free-software payment stack can lower software dependence and support small online payments, though adoption and regulated exchange operations still carry cost.",
+                "sourceIds": [
+                  "gnu-taler-home",
+                  "gnu-taler-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "gnu-taler-home",
+              "gnu-taler-paper"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-instant-merchant-payment-rails",
+            "name": "Open instant merchant payment rails",
+            "summary": "Merchants, banks, wallets, and payment service providers could coordinate over open instant-payment infrastructure instead of relying primarily on vertically integrated card acquiring stacks.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "If merchant payments shift toward open push-payment rails, acquiring value moves away from proprietary acceptance networks and toward interoperable routing, risk rules, software integration, and settlement services.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not essential to this concept; the decentralization role is interoperable participation by many financial institutions and wallets under common open payment rules.",
+            "coordinationMechanism": "A scheme operator or payment hub onboards participants, manages identifiers, risk limits, participant status, settlement windows, and dispute processes, while merchants and wallets connect through standardized APIs.",
+            "verificationOrTrustModel": "Participant onboarding, net debit caps, settlement controls, transaction signing, and operator monitoring constrain fake payments and liquidity failures. The main weakness is reliance on the scheme operator and regulated participants.",
+            "failureModes": [
+              "A scheme operator can become a centralized chokepoint or political control point.",
+              "Fraud, refunds, chargebacks, and consumer protection may be weaker than mature card-network processes unless carefully designed.",
+              "Merchant software adoption can lag if card acceptance remains easier and more universal."
+            ],
+            "adoptionPath": [
+              "Deploy first in domestic instant-payment systems, government disbursements, bill payments, or mobile-money interoperability where fees and inclusion matter most.",
+              "Add merchant checkout integrations, reconciliation tooling, and fraud workflows that make open push payments competitive with card acquiring."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "elavon-about",
+              "usbank-payment-solutions"
+            ],
+            "enablerSourceIds": [
+              "mojaloop-home",
+              "mojaloop-docs",
+              "mojaloop-mission"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 3,
+                "rationale": "The model opens participation across many institutions and providers, but still usually depends on a central scheme operator.",
+                "sourceIds": [
+                  "mojaloop-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 4,
+                "rationale": "Mojaloop documents participant onboarding, financial institution interconnection, settlement integration, and risk controls for inclusive instant payment systems.",
+                "sourceIds": [
+                  "mojaloop-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "The enabling software and documentation exist, though market deployment still requires operators, regulators, banks, and wallet providers to coordinate.",
+                "sourceIds": [
+                  "mojaloop-home",
+                  "mojaloop-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 3,
+                "rationale": "Open instant payments can pressure merchant acquiring fees and settlement value pools, especially in low-margin or mobile-first markets, but card networks and incumbent acquirers retain strong acceptance and risk-management advantages.",
+                "sourceIds": [
+                  "elavon-about",
+                  "mojaloop-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "privacy-preserving-merchant-cash",
+            "name": "Privacy-preserving merchant digital cash",
+            "summary": "Merchants could accept free-software digital cash that protects payer privacy while preserving auditable merchant income, reducing dependence on card acquirers for small online transactions.",
+            "angleIds": [
+              "decentralized-coordination"
+            ],
+            "thesis": "This separates merchant payment acceptance from proprietary card acquiring by giving merchants a privacy-preserving electronic cash option for small-value online transactions.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not central; the decentralization role is free-software payment infrastructure and reduced dependence on proprietary card processors. The trust model still includes regulated exchanges or banking partners.",
+            "coordinationMechanism": "Customers withdraw digital cash from an exchange, merchants accept signed payments, and exchanges redeem merchant receipts into bank money while preserving payer privacy.",
+            "verificationOrTrustModel": "Cryptographic signatures and exchange redemption prevent double-spending, while merchant identification supports auditability and tax compliance. The model relies on exchange solvency and integration with banks or payment institutions.",
+            "failureModes": [
+              "Without bank and merchant adoption, the payment method remains niche.",
+              "Exchange operators become compliance and availability chokepoints.",
+              "Consumers may not value payment privacy enough to switch from cards and wallets."
+            ],
+            "adoptionPath": [
+              "Start with online merchants, public-sector pilots, donations, digital goods, or privacy-sensitive checkout flows.",
+              "Expand through wallet integrations, merchant plugins, and bank or payment-institution partnerships."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "elavon-about",
+              "usbank-embedded-payments"
+            ],
+            "enablerSourceIds": [
+              "gnu-taler-home",
+              "gnu-taler-paper"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 2,
+                "rationale": "GNU Taler is open and privacy-preserving, but settlement still depends on exchanges and banking partners rather than decentralized consensus.",
+                "sourceIds": [
+                  "gnu-taler-home",
+                  "gnu-taler-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 3,
+                "rationale": "The payer-merchant-exchange model is technically coherent and documented, but requires institutional adoption to coordinate at scale.",
+                "sourceIds": [
+                  "gnu-taler-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 3,
+                "rationale": "The software and design exist, but merchant plugins, wallet distribution, exchange operations, and regulatory adoption remain material barriers.",
+                "sourceIds": [
+                  "gnu-taler-home",
+                  "gnu-taler-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 2,
+                "rationale": "The concept can pressure small online payments and privacy-sensitive checkout, but it is unlikely to threaten Elavon's broad merchant acquiring franchise without major ecosystem adoption.",
+                "sourceIds": [
+                  "elavon-about",
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "usbank-about",
+      "title": "About U.S. Bank",
+      "url": "https://www.usbank.com/about-us-bank.html",
+      "kind": "product-page",
+      "publisher": "U.S. Bank",
+      "note": "Company overview source for U.S. Bancorp's banking, payments, wealth, and institutional service lines.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "usbank-2025-annual-report",
+      "title": "U.S. Bancorp 2025 Annual Report",
+      "url": "https://www.usbank.com/content/dam/usbank/en/documents/pdfs/about-us-bank/2025-annual-report.pdf",
+      "kind": "annual-report",
+      "publisher": "U.S. Bancorp",
+      "note": "Primary financial and business-segment source for profitability, operating scale, and regulatory context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-usb",
+      "title": "U.S. Bancorp (USB) Market Capitalization",
+      "url": "https://companiesmarketcap.com/us-bancorp/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization snapshot used for the registry market-cap metric.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "macrotrends-usb-pe",
+      "title": "U.S. Bancorp PE Ratio 2012-2026",
+      "url": "https://www.macrotrends.net/stocks/charts/USB/us-bancorp/pe-ratio",
+      "kind": "market-data",
+      "publisher": "Macrotrends",
+      "note": "Public market valuation snapshot used for the P/E ratio metric.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "elavon-about",
+      "title": "About Elavon",
+      "url": "https://www.elavon.com/about-elavon.html",
+      "kind": "product-page",
+      "publisher": "Elavon",
+      "note": "Product source for Elavon's role as U.S. Bancorp's merchant acquiring and payment-processing brand.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "usbank-embedded-payments",
+      "title": "U.S. Bank Expands Embedded Payments Suite to Power Efficient, Secure Transactions",
+      "url": "https://ir.usbank.com/news-events/news/news-details/2025/U-S--Bank-Expands-Embedded-Payments-Suite-to-Power-Efficient-Secure-Transactions/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "U.S. Bancorp Investor Relations",
+      "note": "Investor-relations source describing U.S. Bank embedded payment solutions and Elavon's role in merchant acquiring.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "usbank-payment-solutions",
+      "title": "Merchant Services & Payment Processing Solutions",
+      "url": "https://www.usbank.com/business-banking/business-payment-solutions",
+      "kind": "product-page",
+      "publisher": "U.S. Bank",
+      "note": "Product source for U.S. Bank merchant services and payment-processing offerings powered by Elavon.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "mojaloop-home",
+      "title": "Mojaloop",
+      "url": "https://mojaloop.io/",
+      "kind": "open-source-project",
+      "publisher": "Mojaloop Foundation",
+      "note": "Primary project source for Mojaloop's open-source inclusive instant payment system positioning.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "mojaloop-docs",
+      "title": "Introduction to Mojaloop",
+      "url": "https://docs.mojaloop.io/product/features/ml-feature-list.html",
+      "kind": "technical-docs",
+      "publisher": "Mojaloop Foundation",
+      "note": "Technical documentation for Mojaloop's financial institution interconnection, participant management, and risk-control model.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "mojaloop-mission",
+      "title": "Mojaloop Foundation Mission",
+      "url": "https://mojaloop.io/foundation/mission/",
+      "kind": "analysis",
+      "publisher": "Mojaloop Foundation",
+      "note": "Foundation source explaining Mojaloop's public-good and financial-inclusion mission.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "gnu-taler-home",
+      "title": "GNU Taler",
+      "url": "https://www.taler.net/",
+      "kind": "open-source-project",
+      "publisher": "GNU Taler",
+      "note": "Primary source for GNU Taler's free-software, privacy-friendly electronic payment system.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "gnu-taler-paper",
+      "title": "Enabling Secure Web Payments with GNU Taler",
+      "url": "https://www.taler.net/papers/taler2016space.pdf",
+      "kind": "technical-docs",
+      "publisher": "GNU Taler",
+      "note": "Technical design source for GNU Taler's privacy and merchant-auditability model.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Primary source for Fedimint's open-source federated e-cash protocol for Bitcoin.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fedi-ecash",
+      "title": "What is eCash?",
+      "url": "https://support.fedi.xyz/hc/en-us/articles/28540916006034-What-is-eCash",
+      "kind": "technical-docs",
+      "publisher": "Fedi",
+      "note": "Explains Fedimint-style e-cash, Bitcoin backing, blind signatures, and community custody tradeoffs.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fedi-lightning",
+      "title": "Lightning",
+      "url": "https://fedibtc.github.io/fedi-docs/docs/fedi/payments/lightning/",
+      "kind": "technical-docs",
+      "publisher": "Fedi",
+      "note": "Documents how Fedimint e-cash can interoperate with Lightning through gateways.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cyclos-home",
+      "title": "Cyclos Payment Software",
+      "url": "https://www.cyclos.org/",
+      "kind": "open-source-project",
+      "publisher": "Cyclos",
+      "note": "Source for Cyclos banking, payment, community currency, mobile banking, online banking, ecommerce, and POS capabilities.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new U.S. Bancorp registry bundle with U.S. Bank and Elavon as the core products, sourced late-May 2026 market data, 2025 annual-report financial context, and open/decentralized alternatives including Cyclos, Fedimint, Mojaloop, and GNU Taler."
+}
+2026-05-27T23:15:47.688097Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 27098: No such process (os error 3)
+2026-05-27T23:15:47.688161Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 27089: No such process (os error 3)
+2026-05-27T23:15:47.688198Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 27086: No such process (os error 3)
+2026-05-27T23:15:47.688214Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 27087: No such process (os error 3)
+tokens used
+42,617
