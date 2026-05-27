@@ -1,0 +1,598 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "cme-group",
+      "name": "CME Group",
+      "ticker": "CME",
+      "rankApprox": 113,
+      "maybeIpo": {
+        "date": "2002-12-06",
+        "dateSourceIds": [
+          "stockanalysis-cme-profile-2026"
+        ],
+        "marketCap": {
+          "value": 1240000000,
+          "rationale": "StockAnalysis lists CME Group's IPO date as December 6, 2002 and its historical market capitalization on that date as about $1.24 billion.",
+          "sourceIds": [
+            "stockanalysis-cme-marketcap-2026",
+            "stockanalysis-cme-profile-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      },
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "financials",
+      "industryId": "financial-exchanges-data",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/cme-group/marketcap/",
+      "description": "CME Group operates derivatives exchanges, electronic trading infrastructure, market data products, and central counterparty clearing services for futures, options, cash, and OTC markets.",
+      "overview": [
+        {
+          "title": "Exchange and clearing infrastructure",
+          "paragraphs": [
+            "CME Group is a core market-structure company rather than a consumer financial brand. Its main value comes from operating regulated venues, matching and distributing orders through CME Globex, and clearing the resulting trades through CME Clearing.",
+            "The company spans major derivatives asset classes including interest rates, equity indexes, foreign exchange, agricultural commodities, energy, and metals, with electronic trading generating the overwhelming majority of contract volume."
+          ]
+        },
+        {
+          "title": "Network effects",
+          "paragraphs": [
+            "The business benefits from liquidity concentration, clearing-member connectivity, regulatory trust, risk-management rulebooks, market data entitlements, and deep integration into brokers and institutional workflows.",
+            "Those advantages are difficult to replicate, but they also reveal the centralization point: price discovery, matching, market data permissioning, and default-risk mutualization are coordinated through a small number of regulated infrastructures."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "CME Group has a very strong moat because derivatives markets compound liquidity: more participants improve price discovery, tighter spreads attract more flow, and clearing-member relationships reinforce the venue. The company also owns mission-critical post-trade infrastructure and market data rights that are embedded in institutional workflows.",
+        "The moat is not purely software. It includes licenses, rulebooks, default-management procedures, margin models, operational trust, and the credibility of a central counterparty that can mutualize losses through clearing members. That makes displacement slow even when open-source trading or risk tools improve."
+      ],
+      "decentralizationNarrative": [
+        "CME Group is only moderately decentralizable today. Open protocols, open-source FIX engines, and open risk libraries can replace parts of the software stack around connectivity, order routing, pricing, and margin analytics, but they do not by themselves recreate a regulated clearinghouse or a globally trusted derivatives liquidity pool.",
+        "The more credible decentralization path is gradual unbundling: open connectivity, federated member-operated venues, transparent risk engines, and collateral mechanisms that reduce dependence on one venue operator. Full replacement would require credible default handling, surveillance, governance, regulatory acceptance, and enough liquidity to overcome incumbent network effects."
+      ],
+      "sourceIds": [
+        "cme-2025-10k",
+        "cme-globex-page",
+        "cme-clearing-page",
+        "cme-financial-safeguards",
+        "stockanalysis-cme-profile-2026",
+        "stockanalysis-cme-marketcap-2026"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125.",
+      "inputMetrics": {
+        "moat": {
+          "value": 92,
+          "rationale": "CME combines liquidity network effects, regulated exchange status, central counterparty clearing, proprietary market data, clearing-member relationships, and deeply embedded broker connectivity.",
+          "sourceIds": [
+            "cme-2025-10k",
+            "cme-globex-page",
+            "cme-clearing-page",
+            "cme-financial-safeguards"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 39,
+          "rationale": "Trading connectivity and risk analytics can be opened or federated, but trusted price discovery, liquidity concentration, margining, default management, and regulated clearing remain hard to decentralize.",
+          "sourceIds": [
+            "cme-globex-page",
+            "cme-clearing-page",
+            "cme-financial-safeguards",
+            "quickfixj-home",
+            "opengamma-strata-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 88,
+          "rationale": "CME's trailing net income of roughly $4.24 billion on trailing revenue of about $6.74 billion implies very high profitability for a market infrastructure company.",
+          "sourceIds": [
+            "stockanalysis-cme-profile-2026",
+            "cme-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 24.75,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 24.75 for CME Group in its May 2026 statistics page.",
+          "sourceIds": [
+            "stockanalysis-cme-statistics-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 105530000000,
+          "rationale": "StockAnalysis reported CME Group market capitalization of $105.53 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-cme-marketcap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "cme-globex",
+        "name": "CME Globex",
+        "category": "Electronic derivatives trading platform",
+        "homepageUrl": "https://www.cmegroup.com/globex/",
+        "summary": "CME Globex is CME Group's electronic trading platform for listed derivatives, BrokerTec, EBS, and related market instruments.",
+        "whyItMatters": "Globex is a central venue for price discovery, order matching, connectivity, and market-data distribution across globally important futures and options markets.",
+        "replacementSketch": [
+          "A practical replacement would not start as a full CME clone. It would begin with open connectivity, transparent matching rules, auditable market-data feeds, and member-operated venues serving narrower contract sets.",
+          "The hard part is not writing matching-engine software. It is achieving liquidity, rulebook legitimacy, surveillance, clearing integration, operational uptime, and enough broker adoption for traders to treat the venue as a serious market."
+        ],
+        "sourceIds": [
+          "cme-globex-page",
+          "cme-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "quickfixj",
+            "name": "QuickFIX/J",
+            "kind": "open-source",
+            "homepageUrl": "https://quickfixj.org/",
+            "repoUrl": "https://github.com/quickfix-j/quickfixj",
+            "summary": "QuickFIX/J is an open-source Java implementation of the FIX protocol used for exchange connectivity, order routing, and market-data messaging.",
+            "metrics": {
+              "openness": {
+                "value": 91,
+                "rationale": "QuickFIX/J is presented as an open-source FIX engine with source code available and broad FIX-version support.",
+                "sourceIds": [
+                  "quickfixj-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "It decentralizes exchange connectivity tooling by letting firms operate their own FIX stack, but it does not replace liquidity, venue governance, or clearing.",
+                "sourceIds": [
+                  "quickfixj-home",
+                  "cme-globex-page"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 78,
+                "rationale": "FIX is a mature market protocol and QuickFIX/J supports major FIX versions and production-oriented session features.",
+                "sourceIds": [
+                  "quickfixj-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Open-source connectivity can reduce vendor dependence and integration costs for trading firms, though exchange access and market data fees remain separate.",
+                "sourceIds": [
+                  "quickfixj-home",
+                  "cme-globex-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "quickfixj-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-derivatives-venue-network",
+            "name": "Federated Derivatives Venue Network",
+            "summary": "A federation of member-operated matching venues could use open FIX-compatible connectivity, shared contract specifications, public rulebooks, and cryptographic audit logs to compete first in narrower derivatives markets where incumbent liquidity is less absolute.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept shifts exchange power from one venue operator toward interoperable member venues that share standards, surveillance evidence, and market-data publication while competing on fees and resilience.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and open coordination rather than Bitcoin settlement. Bitcoin or proof-of-work could be used only as an optional timestamping or anti-spam layer for order-event attestations, not as the core trading asset.",
+            "coordinationMechanism": "Brokers and market makers connect through open FIX gateways, venues publish compatible contract specs and deterministic matching rules, and a federation governance process admits operators, audits uptime, and coordinates market-data schemas.",
+            "verificationOrTrustModel": "Each venue signs order-entry, cancel, match, and market-data events into append-only logs. Independent watchers compare venue-published books against participant receipts, flag sequence gaps, and require dispute evidence before federation-level sanctions.",
+            "failureModes": [
+              "Liquidity may remain trapped on incumbent venues because market makers prefer the deepest order book.",
+              "Federation governance could become cartel-like if large brokers control admission or surveillance rules.",
+              "Regulators may reject fragmented derivatives markets without a clear default-management and surveillance framework."
+            ],
+            "adoptionPath": [
+              "Start with non-systemic or niche contracts where incumbent liquidity is thinner and margin requirements are simpler.",
+              "Build broker integrations with open FIX tooling and publish public conformance tests for matching and market-data logs.",
+              "Add interoperable clearing or cross-margin arrangements only after venue-level auditability and operational resilience are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "cme-globex-page",
+              "cme-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "quickfixj-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Federated venues directly reduce dependence on a single matching platform while preserving exchange-like rules and broker connectivity.",
+                "sourceIds": [
+                  "cme-globex-page",
+                  "quickfixj-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "Open FIX connectivity is credible, but shared governance, market surveillance, and liquidity coordination are difficult to bootstrap.",
+                "sourceIds": [
+                  "quickfixj-home",
+                  "cme-globex-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 48,
+                "rationale": "The software primitives are plausible, but production-grade exchange operations, regulatory approval, and broker adoption are major barriers.",
+                "sourceIds": [
+                  "cme-globex-page",
+                  "quickfixj-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 42,
+                "rationale": "Pressure would likely begin in narrow markets and fee-sensitive connectivity layers rather than immediately displacing CME's major benchmark futures liquidity.",
+                "sourceIds": [
+                  "cme-2025-10k",
+                  "cme-globex-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "cme-clearing",
+        "name": "CME Clearing",
+        "category": "Central counterparty clearing",
+        "homepageUrl": "https://www.cmegroup.com/solutions/clearing.html",
+        "summary": "CME Clearing provides central counterparty clearing, settlement, margining, collateral management, and default-risk safeguards for CME Group markets.",
+        "whyItMatters": "Clearing is the institutional trust layer behind derivatives trading: it mutualizes counterparty risk, calls margin, manages defaults, and turns bilateral exposure into standardized cleared obligations.",
+        "replacementSketch": [
+          "A replacement path would likely start with open risk models and member-auditable margin calculations rather than immediate replacement of the clearinghouse balance sheet.",
+          "Over time, a cooperative or federated clearing layer could combine transparent margin engines, segregated collateral custody, default-fund governance, and real-time proof of member obligations, but it would still need legal enforceability and regulator confidence."
+        ],
+        "sourceIds": [
+          "cme-clearing-page",
+          "cme-financial-safeguards",
+          "cme-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "cme-clearing-opengamma-strata",
+            "name": "OpenGamma Strata",
+            "kind": "open-source",
+            "homepageUrl": "https://strata.opengamma.io/",
+            "repoUrl": "https://github.com/OpenGamma/Strata",
+            "summary": "OpenGamma Strata is an open-source analytics and market-risk library for derivatives valuation and risk workflows.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "Strata is documented as an open-source analytics and market-risk library with a public repository.",
+                "sourceIds": [
+                  "opengamma-strata-docs",
+                  "opengamma-strata-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 50,
+                "rationale": "Open risk analytics can make member-side margin and valuation checks more independent, but Strata is not a clearinghouse or default-management system.",
+                "sourceIds": [
+                  "opengamma-strata-docs",
+                  "cme-clearing-page"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "Strata is positioned as a production-grade foundation layer for derivatives analytics, though it addresses analytics rather than full clearing operations.",
+                "sourceIds": [
+                  "opengamma-strata-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Open analytics can reduce proprietary model dependence and improve independent risk checks, but clearing fees, collateral costs, and regulatory capital are not eliminated.",
+                "sourceIds": [
+                  "opengamma-strata-docs",
+                  "cme-clearing-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "opengamma-strata-docs",
+              "opengamma-strata-github"
+            ]
+          },
+          {
+            "slug": "open-source-risk-engine",
+            "name": "Open Source Risk Engine",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourcerisk.org/",
+            "repoUrl": "https://github.com/OpenSourceRisk/Engine",
+            "summary": "Open Source Risk Engine provides open derivatives valuation and risk analytics, including support for multiple risk classes.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "ORE's code is hosted publicly and the project is described as an open-source risk engine.",
+                "sourceIds": [
+                  "ore-github",
+                  "ore-lseg-page"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 52,
+                "rationale": "ORE supports transparent risk calculations that clearing members can audit independently, but it does not itself provide legal novation, default funds, or settlement finality.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "cme-financial-safeguards"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 69,
+                "rationale": "ORE covers valuation and risk analytics across derivatives and bonds, but production clearing replacement would require substantial surrounding operational and legal infrastructure.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "ore-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Open risk engines can reduce black-box model dependence and vendor costs for independent margin replication, though they do not remove collateral or default-fund requirements.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "cme-financial-safeguards"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "ore-lseg-page",
+              "ore-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-clearing-risk-layer",
+            "name": "Cooperative Clearing Risk Layer",
+            "summary": "A cooperative clearing-risk layer would let clearing members independently run open margin and stress models, publish signed risk attestations, and coordinate default-fund governance through a shared rulebook before attempting full central-counterparty replacement.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "The concept attacks the opacity and concentration of clearing risk by making margin methodology, stress scenarios, member attestations, and default-fund governance more transparent and member-verifiable.",
+            "bitcoinOrDecentralizationRole": "The core role is decentralized coordination among clearing members, not Bitcoin payments. A public timestamping chain could anchor attestations, but the important change is shared verifiability of risk calculations and obligations.",
+            "coordinationMechanism": "Members run the same open risk engine against standardized portfolios, publish signed margin and stress outputs, reconcile discrepancies through federation rules, and govern default-fund contributions through cooperative voting weighted by exposure and risk.",
+            "verificationOrTrustModel": "Cheating is constrained by deterministic model versions, signed input files, independent reruns by other members, third-party audits, and penalties for mismatched portfolio or collateral attestations. Legal enforceability still depends on contracts and regulators.",
+            "failureModes": [
+              "Open models may understate tail risk if members converge on convenient assumptions.",
+              "Large members could dominate governance and weaken mutualized-loss discipline.",
+              "Transparent risk calculations do not automatically create settlement finality or emergency liquidity during a default."
+            ],
+            "adoptionPath": [
+              "Use open engines first for independent margin replication and dispute resolution around existing cleared portfolios.",
+              "Form a member cooperative that publishes model versions, stress scenarios, and signed daily aggregate risk attestations.",
+              "Pilot limited clearing of narrow products only after collateral custody, default waterfalls, and legal rulebooks are accepted."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "cme-clearing-page",
+              "cme-financial-safeguards"
+            ],
+            "enablerSourceIds": [
+              "opengamma-strata-docs",
+              "ore-lseg-page",
+              "ore-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 69,
+                "rationale": "The concept decentralizes risk verification and governance among members, although legal clearing remains hard to distribute fully.",
+                "sourceIds": [
+                  "cme-financial-safeguards",
+                  "ore-lseg-page",
+                  "opengamma-strata-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "Clearing members already coordinate through default funds and rulebooks, but moving that coordination into a cooperative open-model structure would face incentives and governance challenges.",
+                "sourceIds": [
+                  "cme-financial-safeguards",
+                  "cme-clearing-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 45,
+                "rationale": "Open risk engines exist, but default management, collateral custody, legal novation, and regulator approval make full implementation difficult.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "opengamma-strata-docs",
+                  "cme-financial-safeguards"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "Open margin replication can pressure model opacity and fees, but it is unlikely to quickly displace CME Clearing's trusted central counterparty role.",
+                "sourceIds": [
+                  "cme-clearing-page",
+                  "cme-financial-safeguards",
+                  "ore-lseg-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "cme-2025-10k",
+      "title": "CME Group 2025 Form 10-K",
+      "url": "https://investor.cmegroup.com/static-files/a2aa7030-1c4c-44a5-88b1-1379b9d5276f",
+      "kind": "annual-report",
+      "publisher": "CME Group",
+      "note": "Primary filing for business description, volume mix, market infrastructure role, and risk factors.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cme-globex-page",
+      "title": "Globex: Electronic Trading",
+      "url": "https://www.cmegroup.com/globex/",
+      "kind": "product-page",
+      "publisher": "CME Group",
+      "note": "Product page describing CME Globex access, electronic trading role, connectivity, certification, and market coverage.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cme-clearing-page",
+      "title": "Clearing",
+      "url": "https://www.cmegroup.com/solutions/clearing.html",
+      "kind": "product-page",
+      "publisher": "CME Group",
+      "note": "Product page describing CME Clearing as a central counterparty clearing provider and margin-services platform.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cme-financial-safeguards",
+      "title": "Financial Safeguards",
+      "url": "https://www.cmegroup.com/clearing/risk-management/financial-safeguards.html",
+      "kind": "technical-docs",
+      "publisher": "CME Group",
+      "note": "Explains CME Clearing margin cycles, guaranty fund structure, and Cover 2 default-risk standard.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-cme-profile-2026",
+      "title": "CME Group Inc. (CME) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/cme/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data profile used for ticker, IPO date, revenue, net income, shares, and current valuation context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-cme-marketcap-2026",
+      "title": "CME Group Market Cap",
+      "url": "https://stockanalysis.com/stocks/cme/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market capitalization source for current market cap and historical market cap near IPO.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-cme-statistics-2026",
+      "title": "CME Group Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/cme/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Valuation source for trailing P/E and share statistics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "quickfixj-home",
+      "title": "QuickFIX/J",
+      "url": "https://quickfixj.org/",
+      "kind": "open-source-project",
+      "publisher": "QuickFIX/J",
+      "note": "Open-source FIX engine source used as a plausible open replacement component for exchange connectivity and order-routing infrastructure.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opengamma-strata-docs",
+      "title": "Strata Documentation",
+      "url": "https://strata.opengamma.io/",
+      "kind": "technical-docs",
+      "publisher": "OpenGamma",
+      "note": "Documentation for OpenGamma Strata, an open-source analytics and market-risk library relevant to derivatives risk workflows.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opengamma-strata-github",
+      "title": "OpenGamma Strata GitHub Repository",
+      "url": "https://github.com/OpenGamma/Strata",
+      "kind": "open-source-project",
+      "publisher": "OpenGamma",
+      "note": "Public source repository for Strata.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ore-lseg-page",
+      "title": "Open Source Risk Engine",
+      "url": "https://www.lseg.com/en/post-trade/solutions/advise/open-source-risk-engine",
+      "kind": "analysis",
+      "publisher": "LSEG",
+      "note": "Describes ORE as an open-source risk engine for valuation and risk analytics across derivatives and bonds.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ore-github",
+      "title": "Open Source Risk Engine GitHub Repository",
+      "url": "https://github.com/OpenSourceRisk/Engine",
+      "kind": "open-source-project",
+      "publisher": "Open Source Risk",
+      "note": "Public source repository for Open Source Risk Engine.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new CME Group registry bundle with two products: CME Globex and CME Clearing. The refresh emphasizes CME's exchange-and-clearing moat, uses open FIX and open risk engines as partial replacements, and includes one credible decentralization concept for each product."
+}

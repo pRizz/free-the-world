@@ -1,0 +1,1450 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6b5d-ff5c-7713-a173-e9f4d8a3d802
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: cme-group
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "cme-group",
+  "name": "CME Group",
+  "ticker": "CME",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "financials",
+  "industryId": "financial-exchanges-data",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/cme-group/marketcap/",
+  "description": "CME Group operates derivatives exchanges and clearing services for futures and options markets.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "CME Globex",
+    "CME Clearing"
+  ],
+  "seedSourceUrls": [
+    "https://investor.cmegroup.com/",
+    "https://companiesmarketcap.com/cme-group/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T21:36:24.303283Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.303298Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.303636Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.303640Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.304003Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.304010Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.304441Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.304446Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.304776Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.304779Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.305428Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.305431Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.961703Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.961718Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.962053Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.962059Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.962409Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.962412Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.962773Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.962779Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.963123Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.963127Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:36:24.963860Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:36:24.963863Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: CME Group annual report 2025 Globex Clearing revenue operating margin market cap IPO date ...
+web search: 
+web search: CME Globex electronic trading platform source CME Group ...
+web search: 
+web search: OpenGamma Strata open source analytics library derivatives source ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "cme-group",
+      "name": "CME Group",
+      "ticker": "CME",
+      "rankApprox": 113,
+      "maybeIpo": {
+        "date": "2002-12-06",
+        "dateSourceIds": [
+          "stockanalysis-cme-profile-2026"
+        ],
+        "marketCap": {
+          "value": 1240000000,
+          "rationale": "StockAnalysis lists CME Group's IPO date as December 6, 2002 and its historical market capitalization on that date as about $1.24 billion.",
+          "sourceIds": [
+            "stockanalysis-cme-marketcap-2026",
+            "stockanalysis-cme-profile-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      },
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "financials",
+      "industryId": "financial-exchanges-data",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/cme-group/marketcap/",
+      "description": "CME Group operates derivatives exchanges, electronic trading infrastructure, market data products, and central counterparty clearing services for futures, options, cash, and OTC markets.",
+      "overview": [
+        {
+          "title": "Exchange and clearing infrastructure",
+          "paragraphs": [
+            "CME Group is a core market-structure company rather than a consumer financial brand. Its main value comes from operating regulated venues, matching and distributing orders through CME Globex, and clearing the resulting trades through CME Clearing.",
+            "The company spans major derivatives asset classes including interest rates, equity indexes, foreign exchange, agricultural commodities, energy, and metals, with electronic trading generating the overwhelming majority of contract volume."
+          ]
+        },
+        {
+          "title": "Network effects",
+          "paragraphs": [
+            "The business benefits from liquidity concentration, clearing-member connectivity, regulatory trust, risk-management rulebooks, market data entitlements, and deep integration into brokers and institutional workflows.",
+            "Those advantages are difficult to replicate, but they also reveal the centralization point: price discovery, matching, market data permissioning, and default-risk mutualization are coordinated through a small number of regulated infrastructures."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "CME Group has a very strong moat because derivatives markets compound liquidity: more participants improve price discovery, tighter spreads attract more flow, and clearing-member relationships reinforce the venue. The company also owns mission-critical post-trade infrastructure and market data rights that are embedded in institutional workflows.",
+        "The moat is not purely software. It includes licenses, rulebooks, default-management procedures, margin models, operational trust, and the credibility of a central counterparty that can mutualize losses through clearing members. That makes displacement slow even when open-source trading or risk tools improve."
+      ],
+      "decentralizationNarrative": [
+        "CME Group is only moderately decentralizable today. Open protocols, open-source FIX engines, and open risk libraries can replace parts of the software stack around connectivity, order routing, pricing, and margin analytics, but they do not by themselves recreate a regulated clearinghouse or a globally trusted derivatives liquidity pool.",
+        "The more credible decentralization path is gradual unbundling: open connectivity, federated member-operated venues, transparent risk engines, and collateral mechanisms that reduce dependence on one venue operator. Full replacement would require credible default handling, surveillance, governance, regulatory acceptance, and enough liquidity to overcome incumbent network effects."
+      ],
+      "sourceIds": [
+        "cme-2025-10k",
+        "cme-globex-page",
+        "cme-clearing-page",
+        "cme-financial-safeguards",
+        "stockanalysis-cme-profile-2026",
+        "stockanalysis-cme-marketcap-2026"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125.",
+      "inputMetrics": {
+        "moat": {
+          "value": 92,
+          "rationale": "CME combines liquidity network effects, regulated exchange status, central counterparty clearing, proprietary market data, clearing-member relationships, and deeply embedded broker connectivity.",
+          "sourceIds": [
+            "cme-2025-10k",
+            "cme-globex-page",
+            "cme-clearing-page",
+            "cme-financial-safeguards"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 39,
+          "rationale": "Trading connectivity and risk analytics can be opened or federated, but trusted price discovery, liquidity concentration, margining, default management, and regulated clearing remain hard to decentralize.",
+          "sourceIds": [
+            "cme-globex-page",
+            "cme-clearing-page",
+            "cme-financial-safeguards",
+            "quickfixj-home",
+            "opengamma-strata-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 88,
+          "rationale": "CME's trailing net income of roughly $4.24 billion on trailing revenue of about $6.74 billion implies very high profitability for a market infrastructure company.",
+          "sourceIds": [
+            "stockanalysis-cme-profile-2026",
+            "cme-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 24.75,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 24.75 for CME Group in its May 2026 statistics page.",
+          "sourceIds": [
+            "stockanalysis-cme-statistics-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 105530000000,
+          "rationale": "StockAnalysis reported CME Group market capitalization of $105.53 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-cme-marketcap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "cme-globex",
+        "name": "CME Globex",
+        "category": "Electronic derivatives trading platform",
+        "homepageUrl": "https://www.cmegroup.com/globex/",
+        "summary": "CME Globex is CME Group's electronic trading platform for listed derivatives, BrokerTec, EBS, and related market instruments.",
+        "whyItMatters": "Globex is a central venue for price discovery, order matching, connectivity, and market-data distribution across globally important futures and options markets.",
+        "replacementSketch": [
+          "A practical replacement would not start as a full CME clone. It would begin with open connectivity, transparent matching rules, auditable market-data feeds, and member-operated venues serving narrower contract sets.",
+          "The hard part is not writing matching-engine software. It is achieving liquidity, rulebook legitimacy, surveillance, clearing integration, operational uptime, and enough broker adoption for traders to treat the venue as a serious market."
+        ],
+        "sourceIds": [
+          "cme-globex-page",
+          "cme-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "quickfixj",
+            "name": "QuickFIX/J",
+            "kind": "open-source",
+            "homepageUrl": "https://quickfixj.org/",
+            "repoUrl": "https://github.com/quickfix-j/quickfixj",
+            "summary": "QuickFIX/J is an open-source Java implementation of the FIX protocol used for exchange connectivity, order routing, and market-data messaging.",
+            "metrics": {
+              "openness": {
+                "value": 91,
+                "rationale": "QuickFIX/J is presented as an open-source FIX engine with source code available and broad FIX-version support.",
+                "sourceIds": [
+                  "quickfixj-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "It decentralizes exchange connectivity tooling by letting firms operate their own FIX stack, but it does not replace liquidity, venue governance, or clearing.",
+                "sourceIds": [
+                  "quickfixj-home",
+                  "cme-globex-page"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 78,
+                "rationale": "FIX is a mature market protocol and QuickFIX/J supports major FIX versions and production-oriented session features.",
+                "sourceIds": [
+                  "quickfixj-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Open-source connectivity can reduce vendor dependence and integration costs for trading firms, though exchange access and market data fees remain separate.",
+                "sourceIds": [
+                  "quickfixj-home",
+                  "cme-globex-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "quickfixj-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-derivatives-venue-network",
+            "name": "Federated Derivatives Venue Network",
+            "summary": "A federation of member-operated matching venues could use open FIX-compatible connectivity, shared contract specifications, public rulebooks, and cryptographic audit logs to compete first in narrower derivatives markets where incumbent liquidity is less absolute.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept shifts exchange power from one venue operator toward interoperable member venues that share standards, surveillance evidence, and market-data publication while competing on fees and resilience.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and open coordination rather than Bitcoin settlement. Bitcoin or proof-of-work could be used only as an optional timestamping or anti-spam layer for order-event attestations, not as the core trading asset.",
+            "coordinationMechanism": "Brokers and market makers connect through open FIX gateways, venues publish compatible contract specs and deterministic matching rules, and a federation governance process admits operators, audits uptime, and coordinates market-data schemas.",
+            "verificationOrTrustModel": "Each venue signs order-entry, cancel, match, and market-data events into append-only logs. Independent watchers compare venue-published books against participant receipts, flag sequence gaps, and require dispute evidence before federation-level sanctions.",
+            "failureModes": [
+              "Liquidity may remain trapped on incumbent venues because market makers prefer the deepest order book.",
+              "Federation governance could become cartel-like if large brokers control admission or surveillance rules.",
+              "Regulators may reject fragmented derivatives markets without a clear default-management and surveillance framework."
+            ],
+            "adoptionPath": [
+              "Start with non-systemic or niche contracts where incumbent liquidity is thinner and margin requirements are simpler.",
+              "Build broker integrations with open FIX tooling and publish public conformance tests for matching and market-data logs.",
+              "Add interoperable clearing or cross-margin arrangements only after venue-level auditability and operational resilience are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "cme-globex-page",
+              "cme-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "quickfixj-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "Federated venues directly reduce dependence on a single matching platform while preserving exchange-like rules and broker connectivity.",
+                "sourceIds": [
+                  "cme-globex-page",
+                  "quickfixj-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "Open FIX connectivity is credible, but shared governance, market surveillance, and liquidity coordination are difficult to bootstrap.",
+                "sourceIds": [
+                  "quickfixj-home",
+                  "cme-globex-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 48,
+                "rationale": "The software primitives are plausible, but production-grade exchange operations, regulatory approval, and broker adoption are major barriers.",
+                "sourceIds": [
+                  "cme-globex-page",
+                  "quickfixj-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 42,
+                "rationale": "Pressure would likely begin in narrow markets and fee-sensitive connectivity layers rather than immediately displacing CME's major benchmark futures liquidity.",
+                "sourceIds": [
+                  "cme-2025-10k",
+                  "cme-globex-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "cme-clearing",
+        "name": "CME Clearing",
+        "category": "Central counterparty clearing",
+        "homepageUrl": "https://www.cmegroup.com/solutions/clearing.html",
+        "summary": "CME Clearing provides central counterparty clearing, settlement, margining, collateral management, and default-risk safeguards for CME Group markets.",
+        "whyItMatters": "Clearing is the institutional trust layer behind derivatives trading: it mutualizes counterparty risk, calls margin, manages defaults, and turns bilateral exposure into standardized cleared obligations.",
+        "replacementSketch": [
+          "A replacement path would likely start with open risk models and member-auditable margin calculations rather than immediate replacement of the clearinghouse balance sheet.",
+          "Over time, a cooperative or federated clearing layer could combine transparent margin engines, segregated collateral custody, default-fund governance, and real-time proof of member obligations, but it would still need legal enforceability and regulator confidence."
+        ],
+        "sourceIds": [
+          "cme-clearing-page",
+          "cme-financial-safeguards",
+          "cme-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "opengamma-strata",
+            "name": "OpenGamma Strata",
+            "kind": "open-source",
+            "homepageUrl": "https://strata.opengamma.io/",
+            "repoUrl": "https://github.com/OpenGamma/Strata",
+            "summary": "OpenGamma Strata is an open-source analytics and market-risk library for derivatives valuation and risk workflows.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "Strata is documented as an open-source analytics and market-risk library with a public repository.",
+                "sourceIds": [
+                  "opengamma-strata-docs",
+                  "opengamma-strata-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 50,
+                "rationale": "Open risk analytics can make member-side margin and valuation checks more independent, but Strata is not a clearinghouse or default-management system.",
+                "sourceIds": [
+                  "opengamma-strata-docs",
+                  "cme-clearing-page"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "Strata is positioned as a production-grade foundation layer for derivatives analytics, though it addresses analytics rather than full clearing operations.",
+                "sourceIds": [
+                  "opengamma-strata-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Open analytics can reduce proprietary model dependence and improve independent risk checks, but clearing fees, collateral costs, and regulatory capital are not eliminated.",
+                "sourceIds": [
+                  "opengamma-strata-docs",
+                  "cme-clearing-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "opengamma-strata-docs",
+              "opengamma-strata-github"
+            ]
+          },
+          {
+            "slug": "open-source-risk-engine",
+            "name": "Open Source Risk Engine",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourcerisk.org/",
+            "repoUrl": "https://github.com/OpenSourceRisk/Engine",
+            "summary": "Open Source Risk Engine provides open derivatives valuation and risk analytics, including support for multiple risk classes.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "ORE's code is hosted publicly and the project is described as an open-source risk engine.",
+                "sourceIds": [
+                  "ore-github",
+                  "ore-lseg-page"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 52,
+                "rationale": "ORE supports transparent risk calculations that clearing members can audit independently, but it does not itself provide legal novation, default funds, or settlement finality.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "cme-financial-safeguards"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 69,
+                "rationale": "ORE covers valuation and risk analytics across derivatives and bonds, but production clearing replacement would require substantial surrounding operational and legal infrastructure.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "ore-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Open risk engines can reduce black-box model dependence and vendor costs for independent margin replication, though they do not remove collateral or default-fund requirements.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "cme-financial-safeguards"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "ore-lseg-page",
+              "ore-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-clearing-risk-layer",
+            "name": "Cooperative Clearing Risk Layer",
+            "summary": "A cooperative clearing-risk layer would let clearing members independently run open margin and stress models, publish signed risk attestations, and coordinate default-fund governance through a shared rulebook before attempting full central-counterparty replacement.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "The concept attacks the opacity and concentration of clearing risk by making margin methodology, stress scenarios, member attestations, and default-fund governance more transparent and member-verifiable.",
+            "bitcoinOrDecentralizationRole": "The core role is decentralized coordination among clearing members, not Bitcoin payments. A public timestamping chain could anchor attestations, but the important change is shared verifiability of risk calculations and obligations.",
+            "coordinationMechanism": "Members run the same open risk engine against standardized portfolios, publish signed margin and stress outputs, reconcile discrepancies through federation rules, and govern default-fund contributions through cooperative voting weighted by exposure and risk.",
+            "verificationOrTrustModel": "Cheating is constrained by deterministic model versions, signed input files, independent reruns by other members, third-party audits, and penalties for mismatched portfolio or collateral attestations. Legal enforceability still depends on contracts and regulators.",
+            "failureModes": [
+              "Open models may understate tail risk if members converge on convenient assumptions.",
+              "Large members could dominate governance and weaken mutualized-loss discipline.",
+              "Transparent risk calculations do not automatically create settlement finality or emergency liquidity during a default."
+            ],
+            "adoptionPath": [
+              "Use open engines first for independent margin replication and dispute resolution around existing cleared portfolios.",
+              "Form a member cooperative that publishes model versions, stress scenarios, and signed daily aggregate risk attestations.",
+              "Pilot limited clearing of narrow products only after collateral custody, default waterfalls, and legal rulebooks are accepted."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "cme-clearing-page",
+              "cme-financial-safeguards"
+            ],
+            "enablerSourceIds": [
+              "opengamma-strata-docs",
+              "ore-lseg-page",
+              "ore-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 69,
+                "rationale": "The concept decentralizes risk verification and governance among members, although legal clearing remains hard to distribute fully.",
+                "sourceIds": [
+                  "cme-financial-safeguards",
+                  "ore-lseg-page",
+                  "opengamma-strata-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "Clearing members already coordinate through default funds and rulebooks, but moving that coordination into a cooperative open-model structure would face incentives and governance challenges.",
+                "sourceIds": [
+                  "cme-financial-safeguards",
+                  "cme-clearing-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 45,
+                "rationale": "Open risk engines exist, but default management, collateral custody, legal novation, and regulator approval make full implementation difficult.",
+                "sourceIds": [
+                  "ore-lseg-page",
+                  "opengamma-strata-docs",
+                  "cme-financial-safeguards"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "Open margin replication can pressure model opacity and fees, but it is unlikely to quickly displace CME Clearing's trusted central counterparty role.",
+                "sourceIds": [
+                  "cme-clearing-page",
+                  "cme-financial-safeguards",
+                  "ore-lseg-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "cme-2025-10k",
+      "title": "CME Group 2025 Form 10-K",
+      "url": "https://investor.cmegroup.com/static-files/a2aa7030-1c4c-44a5-88b1-1379b9d5276f",
+      "kind": "annual-report",
+      "publisher": "CME Group",
+      "note": "Primary filing for business description, volume mix, market infrastructure role, and risk factors.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cme-globex-page",
+      "title": "Globex: Electronic Trading",
+      "url": "https://www.cmegroup.com/globex/",
+      "kind": "product-page",
+      "publisher": "CME Group",
+      "note": "Product page describing CME Globex access, electronic trading role, connectivity, certification, and market coverage.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cme-clearing-page",
+      "title": "Clearing",
+      "url": "https://www.cmegroup.com/solutions/clearing.html",
+      "kind": "product-page",
+      "publisher": "CME Group",
+      "note": "Product page describing CME Clearing as a central counterparty clearing provider and margin-services platform.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cme-financial-safeguards",
+      "title": "Financial Safeguards",
+      "url": "https://www.cmegroup.com/clearing/risk-management/financial-safeguards.html",
+      "kind": "technical-docs",
+      "publisher": "CME Group",
+      "note": "Explains CME Clearing margin cycles, guaranty fund structure, and Cover 2 default-risk standard.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-cme-profile-2026",
+      "title": "CME Group Inc. (CME) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/cme/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data profile used for ticker, IPO date, revenue, net income, shares, and current valuation context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-cme-marketcap-2026",
+      "title": "CME Group Market Cap",
+      "url": "https://stockanalysis.com/stocks/cme/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market capitalization source for current market cap and historical market cap near IPO.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-cme-statistics-2026",
+      "title": "CME Group Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/cme/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Valuation source for trailing P/E and share statistics.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "quickfixj-home",
+      "title": "QuickFIX/J",
+      "url": "https://quickfixj.org/",
+      "kind": "open-source-project",
+      "publisher": "QuickFIX/J",
+      "note": "Open-source FIX engine source used as a plausible open replacement component for exchange connectivity and order-routing infrastructure.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opengamma-strata-docs",
+      "title": "Strata Documentation",
+      "url": "https://strata.opengamma.io/",
+      "kind": "technical-docs",
+      "publisher": "OpenGamma",
+      "note": "Documentation for OpenGamma Strata, an open-source analytics and market-risk library relevant to derivatives risk workflows.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opengamma-strata-github",
+      "title": "OpenGamma Strata GitHub Repository",
+      "url": "https://github.com/OpenGamma/Strata",
+      "kind": "open-source-project",
+      "publisher": "OpenGamma",
+      "note": "Public source repository for Strata.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ore-lseg-page",
+      "title": "Open Source Risk Engine",
+      "url": "https://www.lseg.com/en/post-trade/solutions/advise/open-source-risk-engine",
+      "kind": "analysis",
+      "publisher": "LSEG",
+      "note": "Describes ORE as an open-source risk engine for valuation and risk analytics across derivatives and bonds.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ore-github",
+      "title": "Open Source Risk Engine GitHub Repository",
+      "url": "https://github.com/OpenSourceRisk/Engine",
+      "kind": "open-source-project",
+      "publisher": "Open Source Risk",
+      "note": "Public source repository for Open Source Risk Engine.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new CME Group registry bundle with two products: CME Globex and CME Clearing. The refresh emphasizes CME's exchange-and-clearing moat, uses open FIX and open risk engines as partial replacements, and includes one credible decentralization concept for each product."
+}
+tokens used
+51,225

@@ -52,7 +52,10 @@ test("product detail page renders the product thesis and alternatives section", 
 test("product detail page opens the implementation prompt modal", async ({ page }) => {
   await gotoRoute(page, "/companies/apple/products/apple-icloud");
 
-  await page.getByRole("button", { name: "Implement Now!" }).click();
+  const implementButton = page.getByRole("button", { name: "Implement Now!" });
+  await expect(implementButton).toHaveAttribute("data-implementation-dialog-ready", "true");
+
+  await implementButton.click();
 
   await expect(
     page.getByRole("heading", { name: "Implement iCloud as a free-future project" }),

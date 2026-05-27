@@ -1,5 +1,5 @@
 import type { VariantProps } from "class-variance-authority";
-import { createEffect, createSignal } from "solid-js";
+import { createEffect, createSignal, onMount } from "solid-js";
 import { ActionRow } from "~/components/blocks/action-row";
 import { Button, type buttonVariants } from "~/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "~/components/ui/dialog";
@@ -19,8 +19,13 @@ export function ProductImplementationDialog(props: {
   buttonVariant?: VariantProps<typeof buttonVariants>["variant"];
 }) {
   const [isOpen, setIsOpen] = createSignal(false);
+  const [isReady, setIsReady] = createSignal(false);
   const [copyState, setCopyState] = createSignal<"idle" | "copied" | "manual">("idle");
   let promptTextArea: HTMLTextAreaElement | undefined;
+
+  onMount(() => {
+    setIsReady(true);
+  });
 
   createEffect(() => {
     if (!isOpen()) {
@@ -46,8 +51,11 @@ export function ProductImplementationDialog(props: {
   return (
     <>
       <Button
+        type="button"
         variant={props.buttonVariant ?? "primary"}
         size={props.buttonSize ?? "md"}
+        aria-haspopup="dialog"
+        data-implementation-dialog-ready={isReady() ? "true" : "false"}
         onClick={() => setIsOpen(true)}
       >
         {props.buttonLabel ?? "Implement Now!"}

@@ -1,0 +1,1462 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6b56-5de3-7350-9697-2c97d5edbdb2
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: bank-of-new-york-mellon
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "bank-of-new-york-mellon",
+  "name": "Bank of New York Mellon",
+  "ticker": "BK",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/bank-of-new-york-mellon/marketcap/",
+  "description": "Bank of New York Mellon provides custody, asset servicing, wealth management, and investment management services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "BNY Pershing",
+    "BNY Mellon Investment Management"
+  ],
+  "seedSourceUrls": [
+    "https://www.bny.com/corporate/global/en/investor-relations.html",
+    "https://companiesmarketcap.com/bank-of-new-york-mellon/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T21:28:04.137070Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.137084Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.137559Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.137565Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.137947Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.137951Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.138441Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.138447Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.138808Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.138813Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.139500Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.139503Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.738772Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.738788Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.739166Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.739176Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.739678Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.739689Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.740224Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.740231Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.740615Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.740639Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T21:28:04.741471Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T21:28:04.741479Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: BNY 2024 annual report assets under custody administration investment management Pershing ...
+web search: 
+web search: OpenGamma Strata open source analytics repo ...
+web search: 
+web search: https://companiesmarketcap.com/bny-mellon/marketcap/
+web search: 
+web search: BNY PE ratio May 2026 CompaniesMarketCap ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "bank-of-new-york-mellon",
+      "name": "Bank of New York Mellon",
+      "ticker": "BK",
+      "rankApprox": 112,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/bny-mellon/marketcap/",
+      "description": "Bank of New York Mellon provides custody, asset servicing, clearing, wealth technology, investment management, and related financial infrastructure services.",
+      "overview": [
+        {
+          "title": "Financial infrastructure at custody scale",
+          "paragraphs": [
+            "BNY is one of the core back-office institutions in global finance, reporting $52.1 trillion of assets under custody and/or administration and $2.0 trillion of assets under management at year-end 2024.",
+            "Its business spans securities services, market and wealth services, investment and wealth management, and related technology platforms that sit behind broker-dealers, asset managers, institutions, advisors, and wealthy clients."
+          ]
+        },
+        {
+          "title": "Pershing and investment management",
+          "paragraphs": [
+            "BNY Pershing supplies clearing, custody, settlement, trading, data, and advisor technology to wealth and institutional clients, including the Wove platform for wealth management workflows.",
+            "BNY Investments gives the company a large asset-management layer on top of its custody and servicing position, creating a combined moat from scale, client trust, regulation, data, and operational integration."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "BNY's moat is unusually operational rather than consumer-facing: regulated trust, balance-sheet strength, custody scale, clearing connectivity, compliance infrastructure, and deep client integration are difficult for new entrants to replicate quickly.",
+        "The company's role as a neutral infrastructure provider is reinforced by switching costs. Asset managers, broker-dealers, advisors, and institutions depend on reliable settlement, reporting, custody records, controls, and regulatory workflows, so replacement decisions carry high operational risk."
+      ],
+      "decentralizationNarrative": [
+        "The most plausible decentralization pressure is not a retail app replacing BNY directly. It is a long transition toward interoperable custody records, tokenized assets, open analytics, portable advisor data, and more standardized settlement rails that reduce the need for proprietary platform gravity.",
+        "Even with tokenization and open-source tooling, regulated custody and fiduciary accountability remain hard to decentralize. Open protocols can pressure data access, reconciliation, analytics, and settlement workflows, but BNY's compliance and institutional trust roles are likely to remain sticky."
+      ],
+      "sourceIds": [
+        "bny-2024-annual-report",
+        "bny-pershing-clearing-custody",
+        "bny-wove-platform",
+        "companiesmarketcap-bny",
+        "stockanalysis-bny"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125; refreshed with public company, product, market-data, and open-source sources on 2026-05-27.",
+      "inputMetrics": {
+        "moat": {
+          "value": 88,
+          "rationale": "BNY combines very large custody and administration scale, regulated trust infrastructure, clearing and settlement operations, wealth-platform integration, and long-lived institutional client relationships.",
+          "sourceIds": [
+            "bny-2024-annual-report",
+            "bny-pershing-clearing-custody",
+            "bny-wove-platform"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 34,
+          "rationale": "Analytics, data integration, reporting, and some settlement workflows can move toward open or tokenized rails, but custody, fiduciary responsibility, regulatory controls, and institutional risk management remain centralized and permissioned.",
+          "sourceIds": [
+            "bny-2024-annual-report",
+            "sec-tokenized-municipal-sandbox",
+            "openbb-open-data-platform"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "BNY reported record 2024 revenue and net income, expanded profitability, and strong fee-centric infrastructure economics across custody, servicing, and investment management.",
+          "sourceIds": [
+            "bny-2024-annual-report",
+            "stockanalysis-bny"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 17.5,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 17.50 for BNY at the May 26, 2026 close.",
+          "sourceIds": [
+            "stockanalysis-bny"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 97030000000,
+          "rationale": "StockAnalysis reported BNY market capitalization of approximately $97.03 billion as of May 26, 2026; CompaniesMarketCap reported roughly $94.14 billion for May 2026, so the rounded current value uses the fresher dated market-data source.",
+          "sourceIds": [
+            "stockanalysis-bny",
+            "companiesmarketcap-bny"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "bny-pershing",
+        "name": "BNY Pershing",
+        "category": "Clearing, custody, settlement, and wealth technology",
+        "homepageUrl": "https://www.bny.com/pershing/us/en/solutions.html",
+        "summary": "BNY Pershing provides clearing, custody, trading, settlement, financing, investment, data, and advisor-platform services for wealth and institutional firms.",
+        "whyItMatters": "Pershing sits close to the operational core of brokerage and wealth management, where custody records, settlement workflows, advisor tools, client reporting, and data integrations determine how portable and competitive financial services can become.",
+        "replacementSketch": [
+          "A realistic replacement path starts with open analytics, portable advisor data, standardized APIs, and auditable reconciliation layers around the incumbent custodian rather than a sudden full substitute for regulated custody.",
+          "Over time, tokenized settlement experiments, cooperative custody utilities, and open-source portfolio infrastructure could reduce dependency on a single proprietary platform for data, workflows, and client experience."
+        ],
+        "sourceIds": [
+          "bny-pershing-clearing-custody",
+          "bny-pershing-at-a-glance-q1-2026",
+          "bny-wove-platform"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "opengamma-strata",
+            "name": "OpenGamma Strata",
+            "kind": "open-source",
+            "homepageUrl": "https://strata.opengamma.io/",
+            "repoUrl": "https://github.com/OpenGamma/Strata",
+            "summary": "Open-source market risk and analytics library for financial instruments, useful as a transparent calculation layer around trading, risk, and portfolio workflows.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "Strata is documented as an open-source analytics and market-risk library and has a public repository.",
+                "sourceIds": [
+                  "opengamma-strata-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 45,
+                "rationale": "It decentralizes analytics and calculation transparency, but it does not replace custody, settlement, or regulated clearing functions by itself.",
+                "sourceIds": [
+                  "opengamma-strata-docs",
+                  "bny-pershing-clearing-custody"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 72,
+                "rationale": "It is a mature domain library for quantitative finance, though using it in institutional workflows still requires integration, controls, and validated data pipelines.",
+                "sourceIds": [
+                  "opengamma-strata-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open analytics can reduce dependence on proprietary calculation stacks and improve auditability, especially for firms with engineering capacity.",
+                "sourceIds": [
+                  "opengamma-strata-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "opengamma-strata-docs"
+            ]
+          },
+          {
+            "slug": "openbb-open-data-platform",
+            "name": "OpenBB Open Data Platform",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "Open-source financial data integration tooling that helps teams standardize data access and consume it locally through multiple analytical interfaces.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB describes the Open Data Platform as an AGPL open-source toolset with GitHub-based distribution.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "It supports local-first financial data integration and reduces vendor lock-in, but does not provide regulated custody or settlement.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 68,
+                "rationale": "It is usable for analysts and engineers, with multiple consumption layers, but institutional deployment still depends on data licenses, controls, and internal governance.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 74,
+                "rationale": "Standardized open data integrations can reduce duplicate vendor integrations and make financial analysis workflows more portable.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openbb-open-data-platform"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-custody-data-and-settlement-network",
+            "name": "Federated custody data and settlement network",
+            "summary": "A federated network of regulated custodians, broker-dealers, and client-authorized data nodes could standardize custody records, advisor data, reconciliation events, and tokenized settlement messages without requiring every participant to use one proprietary platform.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure shifts from custodian-owned workflow gravity toward portable data, shared reconciliation standards, and interoperable settlement workflows, making custody providers compete more on service quality and balance-sheet trust than lock-in.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters as a federated control model: firms maintain regulated responsibilities while shared protocols reduce single-platform dependency. Bitcoin is not central unless used later as a neutral collateral or final-settlement asset.",
+            "coordinationMechanism": "Custodians, broker-dealers, advisors, data vendors, and clients coordinate through common schemas, signed event logs, API gateways, and governance rules for permissioning, revocation, dispute handling, and reconciliation.",
+            "verificationOrTrustModel": "Records are constrained by cryptographic signatures, independent reconciliation between participant ledgers, regulator-auditable logs, client authorization, and delivery-versus-payment controls for tokenized settlement pilots. The model still depends on regulated entities honoring legal custody obligations.",
+            "failureModes": [
+              "Large incumbents may resist portability if it weakens platform economics.",
+              "Tokenized settlement standards may fragment across jurisdictions and asset classes.",
+              "Operational liability for bad data, failed reconciliation, or mistaken entitlement records may be hard to allocate."
+            ],
+            "adoptionPath": [
+              "Start with read-only advisor and client data portability around existing custodians.",
+              "Add shared reconciliation logs for corporate actions, balances, and trade status.",
+              "Pilot permissioned tokenized settlement for narrow asset classes where delivery-versus-payment benefits are clear."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "bny-pershing-clearing-custody",
+              "bny-wove-platform"
+            ],
+            "enablerSourceIds": [
+              "sec-tokenized-municipal-sandbox",
+              "openbb-open-data-platform"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "Federation can reduce platform lock-in while preserving regulated custodial accountability.",
+                "sourceIds": [
+                  "bny-wove-platform",
+                  "sec-tokenized-municipal-sandbox"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "Custody and settlement participants already coordinate through standards and regulated processes, but incentives to open proprietary advisor and custody data remain mixed.",
+                "sourceIds": [
+                  "bny-pershing-clearing-custody",
+                  "sec-tokenized-municipal-sandbox"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 49,
+                "rationale": "The technical primitives exist, but legal finality, liability, interoperability, cybersecurity, and regulator acceptance make implementation slow.",
+                "sourceIds": [
+                  "sec-tokenized-municipal-sandbox",
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "The concept pressures data and workflow lock-in more than BNY's core custody trust and scale advantages.",
+                "sourceIds": [
+                  "bny-2024-annual-report",
+                  "bny-wove-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "bny-investments",
+        "name": "BNY Investments",
+        "category": "Investment management",
+        "homepageUrl": "https://www.bny.com/investments/us/en.html",
+        "summary": "BNY Investments is BNY's global asset-management business, offering investment strategies and solutions across affiliated investment firms and client segments.",
+        "whyItMatters": "Asset-management scale influences fees, portfolio construction, retirement outcomes, distribution access, and the degree to which investment research and strategy remain controlled by large institutional platforms.",
+        "replacementSketch": [
+          "Open-source research, portfolio analytics, and optimization tools can let advisors, cooperatives, and smaller managers reproduce parts of the institutional research stack without buying a full proprietary platform.",
+          "The harder-to-replace layer is fiduciary packaging, regulatory compliance, distribution, client trust, and institutional mandate governance, so disruption is likely to arrive as modular pressure rather than a clean substitute."
+        ],
+        "sourceIds": [
+          "bny-2024-annual-report",
+          "bny-investments-about"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "Open-source investment research platform and data tooling for financial analysis, market data workflows, and analyst productivity.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB publishes open-source financial research and data tooling with public project distribution.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 54,
+                "rationale": "It decentralizes access to research tooling and data integration, but it does not itself supply fiduciary management, custody, or regulated fund wrappers.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "bny-investments-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "The toolset is practical for analysts and engineers, with local and integration-oriented workflows, while institutional controls must be built around it.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 78,
+                "rationale": "Open research tooling can lower the cost of financial analysis and reduce dependence on expensive proprietary terminals or data-workflow platforms.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openbb-open-data-platform"
+            ]
+          },
+          {
+            "slug": "skfolio",
+            "name": "skfolio",
+            "kind": "open-source",
+            "homepageUrl": "https://skfoliolabs.com/",
+            "repoUrl": "https://github.com/skfolio/skfolio",
+            "summary": "Open-source portfolio optimization and risk-management library for quantitative multi-asset allocation workflows.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "skfolio is presented as an open-source library for portfolio optimization and risk management with a public repository.",
+                "sourceIds": [
+                  "skfolio-labs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 48,
+                "rationale": "It opens part of the quantitative portfolio construction stack, but does not decentralize fund distribution, custody, or fiduciary governance.",
+                "sourceIds": [
+                  "skfolio-labs",
+                  "bny-investments-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 66,
+                "rationale": "The library targets quantitative finance use cases and is plausible for research and internal tooling, though production fiduciary deployment needs validation and governance.",
+                "sourceIds": [
+                  "skfolio-labs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Open portfolio optimization can reduce the cost of replicating parts of institutional asset-allocation research.",
+                "sourceIds": [
+                  "skfolio-labs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "skfolio-labs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-open-model-asset-management",
+            "name": "Cooperative open-model asset management",
+            "summary": "A cooperative asset-management stack could combine open-source research tools, public model documentation, shared risk analytics, and member governance so smaller advisors, communities, or retirement groups can inspect and adapt portfolio strategies instead of relying entirely on opaque institutional managers.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure changes when portfolio models, data pipelines, and risk logic become inspectable shared infrastructure, reducing the information advantage of large asset managers while leaving regulated custody and fiduciary wrappers to specialized operators.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative governance and transparent model production rather than through Bitcoin settlement. Bitcoin or Lightning could support contribution rewards or fee routing, but they are not required for the core mechanism.",
+            "coordinationMechanism": "Researchers, advisors, clients, and compliance reviewers coordinate through open repositories, model review boards, signed releases, transparent performance reporting, and cooperative voting on mandate constraints and fee use.",
+            "verificationOrTrustModel": "Model changes are versioned, independently reproducible, and backtested against public methodology. Cheating is constrained by signed releases, third-party audit, transparent fee flows, and separation between model authors, fiduciary approvers, and custodians.",
+            "failureModes": [
+              "Open models can still be misunderstood, overfit, or marketed irresponsibly.",
+              "Retail or community governance may lack the expertise to manage drawdowns and mandate changes.",
+              "Data licenses, compliance review, and fiduciary liability can recreate centralized gatekeepers."
+            ],
+            "adoptionPath": [
+              "Begin with open research notebooks, risk dashboards, and model portfolios for educational and advisor-support use.",
+              "Add cooperative review, documented mandates, and third-party audit for model changes.",
+              "Partner with regulated advisors, custodians, and fund administrators for compliant implementation."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "bny-2024-annual-report",
+              "bny-investments-about"
+            ],
+            "enablerSourceIds": [
+              "openbb-open-data-platform",
+              "skfolio-labs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 61,
+                "rationale": "The concept decentralizes research, model review, and governance, but still needs regulated fiduciary and custody partners.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "skfolio-labs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 55,
+                "rationale": "Open-source workflows and cooperative governance are credible for research production, but investment mandates and compliance decisions require professional oversight.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "skfolio-labs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 58,
+                "rationale": "The research and analytics layer is feasible today; the hard part is packaging it into compliant, trusted, and durable investment services.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "skfolio-labs",
+                  "bny-investments-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "Open tools can pressure fees and transparency, but BNY's institutional distribution, compliance, and trust advantages remain meaningful.",
+                "sourceIds": [
+                  "bny-2024-annual-report",
+                  "bny-investments-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "bny-2024-annual-report",
+      "title": "BNY 2024 Annual Report",
+      "url": "https://www.bny.com/corporate/global/en/investor-relations/annual-report-2024.html",
+      "kind": "annual-report",
+      "publisher": "BNY",
+      "note": "Primary source for BNY's 2024 financial performance, assets under custody and/or administration, assets under management, segment context, and profitability narrative.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "bny-pershing-clearing-custody",
+      "title": "Clearing & Custody Solutions for Wealth Services",
+      "url": "https://www.bny.com/pershing/us/en/solutions/clearing-and-custody-solutions.html",
+      "kind": "product-page",
+      "publisher": "BNY Pershing",
+      "note": "Product source for Pershing's bank/trust and brokerage custody, advisory, operations, technology, and integrated wealth-services positioning.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "bny-pershing-at-a-glance-q1-2026",
+      "title": "1Q26 BNY Pershing At A Glance",
+      "url": "https://www.bny.com/assets/pershing/documents/pdfs/bny-pershing-at-a-glance-q1-26.pdf",
+      "kind": "product-page",
+      "publisher": "BNY Pershing",
+      "note": "Pershing scale source for 2026 custody, asset-management, client-asset, clearing, custody, trading, settlement, data, and consulting positioning.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "bny-wove-platform",
+      "title": "Wove Integrated Wealth Management Platform",
+      "url": "https://www.bny.com/pershing/us/en/platforms/wove.html",
+      "kind": "product-page",
+      "publisher": "BNY Pershing",
+      "note": "Product source for Wove's wealth operating-system, data, API, marketplace, advisor, investor, and integration claims.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "bny-investments-about",
+      "title": "BNY Investments About Us",
+      "url": "https://www.bny.com/investments/dk/en/individual/about-us.html",
+      "kind": "product-page",
+      "publisher": "BNY Investments",
+      "note": "Product source for BNY Investments' global asset-manager positioning and reported scale.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-bny",
+      "title": "BNY Mellon (Bank of New York Mellon) Market Capitalization",
+      "url": "https://companiesmarketcap.com/bny-mellon/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for BNY market capitalization, global rank, share price, and historical market-cap context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-bny",
+      "title": "The Bank of New York Mellon Corporation Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/bny/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for current market capitalization, P/E ratio, revenue, net income, EPS, exchange, ticker, and company profile data.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "opengamma-strata-docs",
+      "title": "OpenGamma Strata Documentation",
+      "url": "https://strata.opengamma.io/",
+      "kind": "technical-docs",
+      "publisher": "OpenGamma",
+      "note": "Open-source financial analytics source for a transparent market-risk and analytics library relevant to institutional portfolio and trading workflows.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openbb-open-data-platform",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source source for financial data integration, local-first analysis, standardized data access, and reduced vendor lock-in.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "skfolio-labs",
+      "title": "skfolio Labs Open Source Portfolio Optimization & Risk Management",
+      "url": "https://skfoliolabs.com/",
+      "kind": "open-source-project",
+      "publisher": "skfolio Labs",
+      "note": "Open-source source for portfolio optimization, risk management, stress testing, and quantitative asset-allocation tooling.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "sec-tokenized-municipal-sandbox",
+      "title": "Tokenized Municipal Instruments Under Distributed Ledger Technology: A Regulatory Sandbox Framework for Market Modernization",
+      "url": "https://www.sec.gov/files/tokenized-municipal-instruments-sandbox-113025.pdf",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Regulatory source for tokenized securities, distributed ledger settlement, delivery-versus-payment workflows, and sandbox considerations.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Bank of New York Mellon bundle with two products: BNY Pershing and BNY Investments. The refresh emphasizes BNY's custody and financial-infrastructure moat, constrained decentralization potential, and credible open-source or federated pressure points around data portability, analytics, settlement workflows, and cooperative model production."
+}
+tokens used
+59,308

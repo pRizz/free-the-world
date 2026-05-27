@@ -1,0 +1,1614 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e6b8b-9714-7491-837a-c162a289ebf5
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: southern-company
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "southern-company",
+  "name": "Southern Company",
+  "ticker": "SO",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top125"
+  ],
+  "sectorId": "utilities",
+  "industryId": "electric-utilities",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/southern-company/marketcap/",
+  "description": "Southern Company is a regulated utility holding company providing electricity and natural gas services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Georgia Power",
+    "Alabama Power"
+  ],
+  "seedSourceUrls": [
+    "https://investor.southerncompany.com/",
+    "https://companiesmarketcap.com/southern-company/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T22:26:11.845807Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:11.845818Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:11.846239Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:11.846243Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:11.846615Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:11.846620Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:11.847067Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:11.847071Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:11.847467Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:11.847475Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:11.848150Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:11.848153Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:12.700304Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:12.700318Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:12.700673Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:12.700680Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:12.701015Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:12.701019Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:12.701373Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:12.701380Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:12.701735Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:12.701738Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T22:26:12.702477Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T22:26:12.702480Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify Southern Company’s current filings, investor materials, market data, and credible open/decentralized energy enablers, then return only the requested JSON.
+web search: 
+web search: Southern Company 2025 annual report 10-K regulated electric utilities Georgia Power Alabama Power ...
+web search: 
+web search: OpenEMS open source energy management system distributed energy resources ...
+web search: 
+web search: Southern Company 2025 annual report net income earnings per share 2025 revenue ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "southern-company",
+      "name": "Southern Company",
+      "ticker": "SO",
+      "rankApprox": 112,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top125"
+      ],
+      "sectorId": "utilities",
+      "industryId": "electric-utilities",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/southern-company/marketcap/",
+      "description": "Southern Company is a regulated U.S. electric and natural gas utility holding company serving customers through operating utilities, wholesale generation, distributed energy, and related infrastructure businesses.",
+      "overview": [
+        {
+          "title": "Regulated utility platform",
+          "paragraphs": [
+            "Southern Company owns regulated electric utilities in Georgia, Alabama, and Mississippi, natural gas distribution utilities in four states, and additional wholesale power, distributed energy, telecommunications, and energy services businesses.",
+            "The company's core operating model is built around capital-intensive generation, transmission, distribution, and regulated cost recovery rather than a consumer-facing software or marketplace platform."
+          ]
+        },
+        {
+          "title": "Scale and capital cycle",
+          "paragraphs": [
+            "Southern Company reported $4.3 billion of consolidated net income attributable to Southern Company in 2025 and continued to invest in regulated utility infrastructure across its electric and gas businesses.",
+            "As of late May 2026, CompaniesMarketCap reported a market capitalization of about $106.6 billion, placing Southern Company among the larger U.S. public utilities in the S&P 500 top-125 snapshot."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Southern Company's moat is strongest where regulation, franchise service territories, grid assets, customer relationships, and the physical difficulty of duplicating transmission and distribution infrastructure reinforce one another.",
+        "The business is not immune to distributed generation, demand response, storage, or customer-owned energy systems, but those technologies tend to pressure load growth, capital planning, and control surfaces more than they immediately replace the incumbent utility."
+      ],
+      "decentralizationNarrative": [
+        "The most credible decentralization pressure is not a one-for-one replacement of Georgia Power or Alabama Power. It is a gradual shift toward customer-owned generation, local storage, open demand-response controls, microgrid coordination, and third-party energy management that reduces the utility's monopoly over dispatch decisions at the edge.",
+        "Because the grid still requires reliability coordination, interconnection, metering, billing, and regulatory oversight, decentralized alternatives are most plausible as interoperable layers around the incumbent grid rather than full standalone substitutes in the near term."
+      ],
+      "sourceIds": [
+        "southern-2025-annual-report",
+        "southern-our-companies",
+        "companiesmarketcap-so-marketcap",
+        "southern-q1-2026-earnings"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 101-125; refreshed with Southern Company 2025 annual-report information and May 2026 market-cap data.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Regulated service territories, physical grid infrastructure, generation assets, customer scale, and state-level cost recovery create a durable utility moat, though distributed energy and demand response can erode some edge-control leverage over time.",
+          "sourceIds": [
+            "southern-2025-annual-report",
+            "southern-our-companies"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Electricity consumption, monitoring, demand response, distributed generation, and microgrid coordination can decentralize meaningfully, but safe bulk power delivery remains infrastructure-heavy and tightly regulated.",
+          "sourceIds": [
+            "southern-2025-annual-report",
+            "openadr-about",
+            "openems-github",
+            "lfenergy-gxf"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Southern Company reported $4.3 billion of consolidated net income attributable to Southern Company for 2025 and $1.4 billion of earnings for the first quarter of 2026, showing large positive earnings despite capital intensity.",
+          "sourceIds": [
+            "southern-2025-annual-report",
+            "southern-q1-2026-earnings"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 25,
+          "rationale": "Approximate market-cap-to-2025-net-income ratio using CompaniesMarketCap's roughly $106.6 billion market cap and Southern Company's reported $4.3 billion 2025 net income; this is a simplified earnings multiple, not a live quoted P/E.",
+          "sourceIds": [
+            "companiesmarketcap-so-marketcap",
+            "southern-2025-annual-report"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 106580000000,
+          "rationale": "CompaniesMarketCap reported Southern Company's market capitalization at approximately $106.58 billion in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-so-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "georgia-power",
+        "name": "Georgia Power",
+        "category": "regulated electric utility",
+        "homepageUrl": "https://www.georgiapower.com/",
+        "summary": "Georgia Power is Southern Company's regulated electric utility serving customers in Georgia through generation, transmission, distribution, customer service, and rate-regulated infrastructure investment.",
+        "whyItMatters": "Georgia Power is central to Southern Company's regulated electric utility exposure and illustrates how incumbent utilities combine monopoly service obligations, physical infrastructure, regulatory oversight, and long-lived generation assets.",
+        "replacementSketch": [
+          "A realistic free-the-world replacement path would begin at the grid edge: open energy monitoring, customer-owned solar and storage, interoperable demand response, and community microgrid software that can coordinate with the utility instead of depending entirely on utility-owned control systems.",
+          "Over time, more homes, campuses, and commercial sites could become dispatchable resources, reducing the utility's exclusive control over when supply and demand are balanced while still relying on the broader grid for backup, settlement, and reliability."
+        ],
+        "sourceIds": [
+          "southern-our-companies",
+          "southern-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/OpenEMS/openems",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy management platform for monitoring, controlling, and integrating storage, renewables, EV charging, heat pumps, tariffs, and other local energy devices.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project publishes its source code openly on GitHub and describes itself as an open-source energy management system.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "OpenEMS runs local edge components and targets site-level control of batteries, renewables, EV charging, and flexible devices, making it well aligned with distributed energy coordination.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The project is mature enough to document edge, backend, and UI components, but replacing regulated utility functions requires integration, certified hardware, interconnection rules, and operational support.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open software can reduce vendor lock-in and enable local optimization, but the largest costs remain hardware, installation, interconnection, maintenance, and financing.",
+                "sourceIds": [
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openems-github"
+            ]
+          },
+          {
+            "slug": "openadr",
+            "name": "OpenADR",
+            "kind": "protocol",
+            "homepageUrl": "https://www.openadr.org/about-us",
+            "summary": "OpenADR is an open information-exchange model and smart-grid standard for automated demand response and distributed energy resource coordination.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenADR is presented by the OpenADR Alliance as an open, interoperable model and standard for demand response and DER signaling.",
+                "sourceIds": [
+                  "openadr-about",
+                  "openadr-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The standard supports two-way signals between grid operators and many distributed loads, storage devices, EV chargers, and other DER endpoints.",
+                "sourceIds": [
+                  "openadr-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OpenADR is a recognized demand-response and DER communication standard, though implementation quality depends on certified devices, program design, and utility integration.",
+                "sourceIds": [
+                  "openadr-about",
+                  "openadr-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Interoperable demand-response signaling can avoid single-vendor lock-in and reduce peak-related costs, but it does not eliminate the need for grid assets or compensated customer participation.",
+                "sourceIds": [
+                  "openadr-about",
+                  "openadr-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openadr-about",
+              "openadr-faq"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-der-flexibility-market",
+            "name": "Open DER flexibility market",
+            "summary": "Georgia homes, businesses, campuses, batteries, EV chargers, and solar systems could participate in an interoperable flexibility market that dispatches verified load reduction, storage discharge, and local generation during grid stress rather than relying only on utility-owned peaking resources.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "microgrid-coordination",
+              "distributed-energy-generation"
+            ],
+            "thesis": "The market structure shifts from a vertically integrated utility dispatching mostly centralized assets to many customer-owned resources bidding measurable flexibility into utility, aggregator, or community programs.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through ownership and dispatch control at the edge: customers or local operators own the assets, while open protocols and auditable telemetry let many coordinators participate without a single proprietary platform owning the whole control plane.",
+            "coordinationMechanism": "Sites enroll dispatchable devices through open demand-response or energy-management software; aggregators publish event signals, participants respond automatically, and settlement pays resources for verified capacity, energy, or avoided peak demand.",
+            "verificationOrTrustModel": "Baseline methods, meter telemetry, device attestations, and event logs compare promised load changes with measured behavior; repeated underperformance reduces future capacity accreditation and payments. The weakest point is still baseline gaming, so independent meter data and transparent program rules are essential.",
+            "failureModes": [
+              "Participants may spoof baselines or overstate available flexible capacity if telemetry and settlement rules are weak.",
+              "Regulatory programs may favor incumbent utility-controlled demand response over open aggregators.",
+              "Cybersecurity failures in device control systems could create reliability risks."
+            ],
+            "adoptionPath": [
+              "Start with commercial buildings, campuses, municipal loads, batteries, EV chargers, and thermostats that can respond to standardized demand-response events.",
+              "Expand to community-level resource aggregation and distribution-aware dispatch once telemetry, settlement, and interconnection rules mature."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "southern-2025-annual-report",
+              "southern-q1-2026-earnings"
+            ],
+            "enablerSourceIds": [
+              "openadr-about",
+              "openadr-faq",
+              "openems-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept moves useful grid capacity toward customer-owned and third-party-operated assets coordinated through interoperable systems.",
+                "sourceIds": [
+                  "openadr-faq",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Demand-response and DER standards exist, but market rules, settlement design, distribution constraints, and utility integration remain hard.",
+                "sourceIds": [
+                  "openadr-about",
+                  "openadr-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The required software and device-control primitives are documented, but full deployment depends on metering, cybersecurity, tariffs, aggregator access, and regulatory approval.",
+                "sourceIds": [
+                  "openadr-faq",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "A credible flexibility market can reduce the need for some utility-owned peak capacity and proprietary edge controls, but it does not replace the regulated wires business.",
+                "sourceIds": [
+                  "southern-2025-annual-report",
+                  "openadr-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "community-microgrid-cooperatives",
+            "name": "Community microgrid cooperatives",
+            "summary": "Neighborhoods, campuses, and municipal facilities could organize cooperative microgrids using local solar, storage, open controllers, and transparent governance to keep critical loads running and coordinate imports and exports with the wider Georgia grid.",
+            "angleIds": [
+              "cooperative-production",
+              "microgrid-coordination",
+              "open-energy-hardware",
+              "distributed-energy-generation"
+            ],
+            "thesis": "The utility remains important for interconnection and backup, but some resilience, generation, and dispatch decisions move to locally governed infrastructure instead of centralized planning alone.",
+            "bitcoinOrDecentralizationRole": "The core role is cooperative and decentralized energy ownership, not Bitcoin. Open controllers, local governance, and shared operating rules make the microgrid less dependent on a single utility or proprietary vendor for every dispatch decision.",
+            "coordinationMechanism": "Members fund or host generation and storage assets, elect governance rules, define priority loads, and use energy-management software to coordinate local dispatch, billing, and grid import/export decisions.",
+            "verificationOrTrustModel": "Revenue-grade meters, inverter logs, battery telemetry, and open audit trails verify production, consumption, and reserve commitments; governance documents and interconnection agreements constrain unilateral misuse.",
+            "failureModes": [
+              "Capital costs and interconnection delays may block deployment before community benefits are visible.",
+              "Local governance can fail if member incentives diverge or if one anchor customer dominates decisions.",
+              "Extreme weather or prolonged outages can exceed local generation and storage capacity."
+            ],
+            "adoptionPath": [
+              "Begin with campuses, hospitals, municipal facilities, and resilience hubs where critical-load value justifies upfront engineering.",
+              "Standardize open controller stacks, metering templates, and cooperative governance documents for repeatable neighborhood deployments."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "southern-2025-annual-report",
+              "southern-our-companies"
+            ],
+            "enablerSourceIds": [
+              "lfenergy-gxf",
+              "openems-github",
+              "nrel-der-dispatch"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Community microgrids directly decentralize ownership, resilience planning, and some dispatch control while still coordinating with the bulk grid.",
+                "sourceIds": [
+                  "lfenergy-gxf",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Open-source control and dispatch tools exist, but cooperative governance, utility interconnection, and settlement are difficult to standardize.",
+                "sourceIds": [
+                  "lfenergy-gxf",
+                  "nrel-der-dispatch"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Technically feasible for bounded sites and campuses, but broader residential deployment remains constrained by capital costs, permitting, protection engineering, and regulation.",
+                "sourceIds": [
+                  "openems-github",
+                  "nrel-der-dispatch"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Microgrids can reduce outage exposure and shift some investment away from centralized assets, but most deployments still need the incumbent grid for backup and market access.",
+                "sourceIds": [
+                  "southern-2025-annual-report",
+                  "lfenergy-gxf"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "alabama-power",
+        "name": "Alabama Power",
+        "category": "regulated electric utility",
+        "homepageUrl": "https://www.alabamapower.com/",
+        "summary": "Alabama Power is Southern Company's regulated electric utility serving Alabama customers through generation, transmission, distribution, and customer programs.",
+        "whyItMatters": "Alabama Power represents a classic vertically integrated regulated utility model where infrastructure ownership, customer obligation, state regulation, and grid reliability responsibilities create a strong incumbent position.",
+        "replacementSketch": [
+          "A plausible replacement path starts with open, local energy intelligence: meters, building controls, solar, storage, and demand-response software that lets customers reduce peaks and coordinate flexible load.",
+          "The incumbent grid would still matter, but open DER coordination could let customers and communities supply more resilience and flexibility themselves instead of waiting for every improvement to arrive through utility capital plans."
+        ],
+        "sourceIds": [
+          "southern-our-companies",
+          "southern-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "lf-energy-gxf",
+            "name": "LF Energy Grid eXchange Fabric",
+            "kind": "open-source",
+            "homepageUrl": "https://lfenergy.org/projects/gxf/",
+            "repoUrl": "https://github.com/osgp",
+            "summary": "Grid eXchange Fabric is an LF Energy open-source platform for monitoring and controlling public-space hardware, including use cases such as microgrids, smart metering, public lighting, and distribution automation.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "GXF is an LF Energy open-source project with public repositories and a stated focus on open standards and avoiding vendor lock-in.",
+                "sourceIds": [
+                  "lfenergy-gxf",
+                  "gxf-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "GXF supports field-device monitoring and control across microgrids, smart metering, and distribution automation, which fits decentralized grid-edge coordination.",
+                "sourceIds": [
+                  "lfenergy-gxf"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The project describes real public use cases, but deployment in a regulated utility territory still requires systems integration, cybersecurity review, and operational acceptance.",
+                "sourceIds": [
+                  "lfenergy-gxf"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open-source field-device coordination can reduce vendor lock-in and expand third-party support options, though hardware, integration, and utility operations remain costly.",
+                "sourceIds": [
+                  "lfenergy-gxf"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "lfenergy-gxf",
+              "gxf-github"
+            ]
+          },
+          {
+            "slug": "openenergymonitor",
+            "name": "OpenEnergyMonitor",
+            "kind": "open-source",
+            "homepageUrl": "https://openenergymonitor.org/",
+            "summary": "OpenEnergyMonitor is an open-source energy monitoring ecosystem for measuring, logging, and visualizing energy use and distributed renewable generation.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenEnergyMonitor is documented as an open-source hardware and software effort around energy monitoring and analysis.",
+                "sourceIds": [
+                  "openenergymonitor-p2p"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Local energy monitoring gives households and small sites independent visibility into load and generation, but monitoring alone is less disruptive than dispatch control.",
+                "sourceIds": [
+                  "openenergymonitor-p2p"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The project has a long-running ecosystem, but consumer and utility-grade readiness depends on hardware availability, installation quality, and integration with control systems.",
+                "sourceIds": [
+                  "openenergymonitor-p2p"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open monitoring can cheaply reveal waste, support self-hosted analysis, and help owners size DER investments without relying on proprietary utility portals.",
+                "sourceIds": [
+                  "openenergymonitor-p2p"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openenergymonitor-p2p"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-home-energy-operating-system",
+            "name": "Open home energy operating system",
+            "summary": "An open home energy stack could combine self-hosted monitoring, controllable loads, rooftop solar, batteries, EV charging, and open demand-response signals so households and small businesses optimize consumption and sell flexibility without being locked into a single utility or device vendor.",
+            "angleIds": [
+              "open-energy-hardware",
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "decentralized-coordination"
+            ],
+            "thesis": "Customer premises become active energy nodes rather than passive meters, reducing the utility's control over edge data, load shaping, and behind-the-meter investment decisions.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is local ownership of monitoring data, controls, and energy assets. Bitcoin is not necessary for the core mechanism; open hardware, open software, and interoperable standards are the important primitives.",
+            "coordinationMechanism": "Local devices publish telemetry to a home or site controller, which optimizes loads against prices, weather, solar production, battery state, and demand-response events; aggregators or cooperatives can coordinate many sites when owners opt in.",
+            "verificationOrTrustModel": "Device-level telemetry, utility meter reads, signed event logs, and periodic reconciliation verify whether sites delivered promised reductions or exports. Fraud risk remains if device telemetry is trusted without independent meter comparison.",
+            "failureModes": [
+              "Consumer installations may be too fragmented for reliable aggregation without strong interoperability profiles.",
+              "Utilities or regulators may limit export compensation or third-party aggregation.",
+              "Low-income households may be excluded if financing and installation models are not solved."
+            ],
+            "adoptionPath": [
+              "Deploy open monitoring and self-hosted dashboards for households and small commercial sites.",
+              "Add controllable loads, batteries, EV chargers, and standardized demand-response enrollment once local telemetry is reliable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "southern-2025-annual-report",
+              "southern-our-companies"
+            ],
+            "enablerSourceIds": [
+              "openenergymonitor-p2p",
+              "openems-github",
+              "openadr-faq"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept gives customers local ownership of telemetry, control logic, and flexible energy assets.",
+                "sourceIds": [
+                  "openenergymonitor-p2p",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Monitoring, EMS, and demand-response standards exist, but coordinating many heterogeneous homes remains operationally difficult.",
+                "sourceIds": [
+                  "openadr-faq",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The pieces are practical for technically capable users and pilots, but mass-market deployment needs simpler installation, financing, cybersecurity, and support.",
+                "sourceIds": [
+                  "openenergymonitor-p2p",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Open home energy systems can reduce peak load and customer dependence on utility portals, but they do not replace transmission, distribution, or regulated reliability obligations.",
+                "sourceIds": [
+                  "southern-2025-annual-report",
+                  "openadr-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "distribution-aware-open-source-grid-control",
+            "name": "Distribution-aware open-source grid control",
+            "summary": "Utilities, municipalities, and third-party operators could use open-source field-device control platforms to coordinate meters, switches, public lighting, batteries, DERs, and microgrids across distribution networks without relying on a single proprietary vendor stack.",
+            "angleIds": [
+              "decentralized-coordination",
+              "microgrid-coordination",
+              "open-energy-hardware"
+            ],
+            "thesis": "The competitive pressure is on proprietary grid software and closed device-control layers, making the utility's operational software stack more substitutable even if the wires remain regulated infrastructure.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is vendor-neutral coordination among many field devices and operators. Open standards and open-source implementations matter more than cryptocurrency settlement for this concept.",
+            "coordinationMechanism": "A utility, city, cooperative, or aggregator deploys an open field-device platform that exposes standardized commands, telemetry, role permissions, and audit logs for approved devices and services.",
+            "verificationOrTrustModel": "Access control, signed commands, event logs, integration tests, and telemetry reconciliation verify that field devices executed authorized actions. The main trust challenge is cybersecurity hardening and operational accountability across many parties.",
+            "failureModes": [
+              "Open-source software does not automatically satisfy utility-grade cybersecurity and reliability requirements.",
+              "Incumbent vendors may retain control through proprietary devices, contracts, or certification barriers.",
+              "Poorly governed multi-party access could create operational confusion during outages."
+            ],
+            "adoptionPath": [
+              "Pilot open field-device control in bounded use cases such as public lighting, smart metering, or a campus microgrid.",
+              "Extend to distribution automation and DER coordination after security, permissions, and operational playbooks are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "southern-2025-annual-report",
+              "southern-our-companies"
+            ],
+            "enablerSourceIds": [
+              "lfenergy-gxf",
+              "gxf-github",
+              "nrel-der-dispatch"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open field-device coordination reduces dependence on one proprietary control vendor and allows more parties to build around shared infrastructure.",
+                "sourceIds": [
+                  "lfenergy-gxf",
+                  "gxf-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "GXF documents public-space hardware control use cases and open-source governance, but regulated utility operations require rigorous integration and security processes.",
+                "sourceIds": [
+                  "lfenergy-gxf"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Bounded pilots are feasible, but broad distribution automation is a high-consequence environment with certification, reliability, and operational barriers.",
+                "sourceIds": [
+                  "lfenergy-gxf",
+                  "nrel-der-dispatch"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "This pressures software procurement and device-control lock-in more than the utility's regulated asset base or franchise territory.",
+                "sourceIds": [
+                  "southern-2025-annual-report",
+                  "lfenergy-gxf"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "southern-2025-annual-report",
+      "title": "Southern Company 2025 Annual Report",
+      "url": "https://s27.q4cdn.com/273397814/files/doc_financials/2025/ar/2025-Annual-Report.pdf",
+      "kind": "annual-report",
+      "publisher": "Southern Company",
+      "note": "Primary annual-report source for Southern Company's 2025 net income, regulated utility structure, operating businesses, risk factors, and capital-intensive business model.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "southern-our-companies",
+      "title": "Our Companies",
+      "url": "https://www.southerncompany.com/about/our-business/our-companies.html",
+      "kind": "investor-relations",
+      "publisher": "Southern Company",
+      "note": "Company overview source describing Southern Company's electric utilities, natural gas utilities, wholesale energy, distributed energy, telecommunications, and national customer footprint.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "southern-q1-2026-earnings",
+      "title": "Southern Company reports first-quarter 2026 earnings",
+      "url": "https://www.prnewswire.com/news-releases/southern-company-reports-first-quarter-2026-earnings-302758132.html",
+      "kind": "investor-relations",
+      "publisher": "Southern Company",
+      "note": "Recent earnings release used to corroborate 2026 profitability and current operating context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-so-marketcap",
+      "title": "Southern Company (SO) - Market capitalization",
+      "url": "https://companiesmarketcap.com/southern-company/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for Southern Company's May 2026 market capitalization estimate and registry snapshot sizing.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openadr-about",
+      "title": "About OpenADR",
+      "url": "https://www.openadr.org/about-us",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Technical and standards source describing OpenADR as an open, secure, two-way information exchange model for smart-grid demand response and DER coordination.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openadr-faq",
+      "title": "OpenADR FAQ",
+      "url": "https://www.openadr.org/faq",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Technical source explaining OpenADR demand-response and distributed energy resource use cases, including renewables, storage, EV batteries, charging infrastructure, and flexible loads.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS - Open Source Energy Management System",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Open-source project source for local and site-level energy management involving storage, renewables, EV charging, heat pumps, tariffs, and edge control.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "lfenergy-gxf",
+      "title": "Grid eXchange Fabric - LF Energy",
+      "url": "https://lfenergy.org/projects/gxf/",
+      "kind": "open-source-project",
+      "publisher": "LF Energy",
+      "note": "Open-source project source for field-device monitoring and control across microgrids, smart metering, public lighting, and distribution automation use cases.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "gxf-github",
+      "title": "Grid eXchange Fabric GitHub organization",
+      "url": "https://github.com/osgp",
+      "kind": "open-source-project",
+      "publisher": "Grid eXchange Fabric",
+      "note": "Repository source for GXF code and project structure, formerly known as Open Smart Grid Platform.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "nrel-der-dispatch",
+      "title": "Real-Time Distributed Energy Resource Energy Dispatch Using Distributed Control",
+      "url": "https://www.nrel.gov/research/software/real-time-distributed-energy-resource-energy-dispatch-using-distributed-control",
+      "kind": "open-source-project",
+      "publisher": "National Renewable Energy Laboratory",
+      "note": "Open-source software source for distributed control and real-time dispatch of distributed energy resources such as distributed photovoltaic systems.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openenergymonitor-p2p",
+      "title": "Open Energy Monitor",
+      "url": "https://wiki.p2pfoundation.net/Open_Energy_Monitor",
+      "kind": "analysis",
+      "publisher": "P2P Foundation Wiki",
+      "note": "Background source describing OpenEnergyMonitor as an open-source hardware and software project for energy monitoring, energy efficiency, and distributed renewable microgeneration.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Refreshed Southern Company as a regulated electric utility holding company with Georgia Power and Alabama Power as core products. Added open DER, demand-response, microgrid, and open field-device-control concepts using OpenEMS, OpenADR, LF Energy GXF, NREL DER dispatch, and OpenEnergyMonitor as supporting sources."
+}
+tokens used
+42,356
