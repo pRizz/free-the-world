@@ -1,0 +1,1433 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e69b1-1319-7260-8957-b917522f253e
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: crowdstrike
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "crowdstrike",
+  "name": "CrowdStrike",
+  "ticker": "CRWD",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "software-cloud",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/crowdstrike/marketcap/",
+  "description": "CrowdStrike provides cloud-based cybersecurity software for endpoint, identity, cloud, and threat protection.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Falcon platform",
+    "CrowdStrike Charlotte AI"
+  ],
+  "seedSourceUrls": [
+    "https://ir.crowdstrike.com/",
+    "https://companiesmarketcap.com/crowdstrike/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T13:47:54.337114Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:54.337131Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:54.337515Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:54.337521Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:54.338130Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:54.338135Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:54.338541Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:54.338547Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:54.338917Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:54.338920Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:54.339776Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:54.339779Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:55.170991Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:55.171004Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:55.171360Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:55.171364Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:55.171806Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:55.171812Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:55.172151Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:55.172156Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:55.172489Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:55.172492Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:47:55.173184Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:47:55.173188Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify CrowdStrike’s current investor/product facts and pick only sources that can support the metrics and replacement analysis, then return the JSON directly.
+web search: 
+web search: CrowdStrike annual report 2025 form 10-k revenue profitability Falcon platform Charlotte AI ...
+web search: 
+web search: Wazuh open source endpoint security XDR SIEM documentation GitHub ...
+web search: 
+web search: CrowdStrike IPO date offering price shares prospectus June 2019 market cap ...
+web search: 
+web search: https://ir.crowdstrike.com/static-files/5ec13e28-5688-4dec-a446-d746a9990808
+web search: 
+web search: CrowdStrike PE ratio May 27 2026 StockAnalysis
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "crowdstrike",
+      "name": "CrowdStrike",
+      "ticker": "CRWD",
+      "rankApprox": 92,
+      "maybeIpo": {
+        "date": "2019-06-12",
+        "dateSourceIds": [
+          "crowdstrike-ipo-pricing-2019"
+        ],
+        "marketCap": {
+          "value": 11410000000,
+          "rationale": "StockAnalysis reports CrowdStrike's market cap on its first Nasdaq trading date, June 12, 2019, as approximately $11.41 billion.",
+          "sourceIds": [
+            "stockanalysis-crwd-market-cap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      },
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/crowdstrike/marketcap/",
+      "description": "CrowdStrike provides cloud-delivered cybersecurity software for endpoint, identity, cloud, SIEM, threat intelligence, and AI-assisted security operations.",
+      "overview": [
+        {
+          "title": "Business",
+          "paragraphs": [
+            "CrowdStrike sells the Falcon platform, a cloud-native cybersecurity platform built around endpoint agents, threat intelligence, telemetry, automation, and adjacent modules for identity, cloud, exposure management, SIEM, and managed detection.",
+            "The company monetizes primarily through subscription software, with product expansion driven by module attach, Falcon Flex purchasing, managed services, and newer AI-assisted workflows such as Charlotte AI."
+          ]
+        },
+        {
+          "title": "Current position",
+          "paragraphs": [
+            "CrowdStrike remains a high-growth security software company, but its fiscal 2026 10-K still reported a GAAP net loss and explicitly warned that sustained profitability is not assured.",
+            "Its market capitalization and public ranking reflect strong investor expectations for platform consolidation in cybersecurity, AI-assisted security operations, and continued endpoint telemetry advantages."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "CrowdStrike's moat is strongest where Falcon is deeply embedded across endpoints, cloud workloads, identity signals, threat intelligence, workflows, and analyst routines. Security buyers value speed, managed response, integrations, and accountability, so switching costs rise as more telemetry and response playbooks live inside Falcon.",
+        "The moat is not purely technical. It depends on brand trust, incident-response credibility, accumulated detection data, channel relationships, and procurement consolidation. Those advantages are meaningful, but they also create pressure if customers perceive lock-in, price escalation, or opaque detection logic."
+      ],
+      "decentralizationNarrative": [
+        "CrowdStrike is structurally centralized: customers send security telemetry into a vendor-operated cloud platform, depend on proprietary detections and models, and coordinate response through a commercial control plane.",
+        "Open-source and federated security stacks can decentralize pieces of this market by letting organizations self-host telemetry, share indicators through open communities, inspect rules, and coordinate response across trusted groups. The hard part is matching CrowdStrike's operational polish, managed response, endpoint coverage, and threat-intelligence feedback loop."
+      ],
+      "sourceIds": [
+        "crowdstrike-2026-10k",
+        "crowdstrike-falcon-platform",
+        "crowdstrike-charlotte-ai",
+        "stockanalysis-crwd-market-cap-2026"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; refreshed on May 27, 2026 with public investor, product, market-data, and open-source project sources.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Falcon benefits from endpoint deployment depth, module expansion, threat telemetry, analyst workflows, managed response reputation, and customer switching costs.",
+          "sourceIds": [
+            "crowdstrike-2026-10k",
+            "crowdstrike-falcon-platform",
+            "crowdstrike-charlotte-ai"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Cybersecurity telemetry, rules, threat sharing, and response workflows can be self-hosted or federated, but enterprise-grade endpoint protection and managed response remain difficult to decentralize without sacrificing accountability and coverage.",
+          "sourceIds": [
+            "crowdstrike-falcon-platform",
+            "wazuh-github",
+            "misp-features"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 4,
+          "rationale": "CrowdStrike's fiscal 2026 10-K reported a GAAP net loss of $162.5 million for fiscal 2026 after a smaller loss in fiscal 2025 and net income in fiscal 2024, indicating strong growth but uneven GAAP profitability.",
+          "sourceIds": [
+            "crowdstrike-2026-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": -876,
+          "rationale": "CompaniesMarketCap reported a negative trailing P/E ratio near -876 in May 2026, consistent with negative trailing GAAP earnings; the value is volatile and should be treated as a rough market-data snapshot.",
+          "sourceIds": [
+            "companiesmarketcap-crwd-pe-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 166160000000,
+          "rationale": "StockAnalysis reported CrowdStrike market capitalization of $166.16 billion as of May 27, 2026, with ranking around #92.",
+          "sourceIds": [
+            "stockanalysis-crwd-market-cap-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "falcon-platform",
+        "name": "Falcon platform",
+        "category": "Cloud endpoint security and XDR platform",
+        "homepageUrl": "https://www.crowdstrike.com/en-us/platform/",
+        "summary": "Falcon is CrowdStrike's cloud-native cybersecurity platform for endpoint protection, detection and response, identity, cloud security, threat intelligence, SIEM, and automation.",
+        "whyItMatters": "Falcon is the core product surface that lets CrowdStrike consolidate many security tools into one vendor-operated platform, making it the center of the company's moat and decentralization risk.",
+        "replacementSketch": [
+          "A practical open replacement would combine an open endpoint agent, self-hosted SIEM/XDR, open detection rules, threat-intelligence sharing, and response automation operated by the customer or a trusted service provider.",
+          "This would not immediately replicate CrowdStrike's managed response quality or proprietary detection graph, but it would reduce dependence on a single closed cloud platform and make security logic more inspectable."
+        ],
+        "sourceIds": [
+          "crowdstrike-falcon-platform",
+          "crowdstrike-2026-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "wazuh",
+            "name": "Wazuh",
+            "kind": "open-source",
+            "homepageUrl": "https://wazuh.com/",
+            "repoUrl": "https://github.com/wazuh/wazuh",
+            "summary": "Wazuh is a free and open-source security platform for threat prevention, detection, response, XDR, SIEM, endpoint monitoring, and cloud workload protection.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project publishes source code and describes itself as a free and open-source security platform.",
+                "sourceIds": [
+                  "wazuh-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Wazuh can be self-hosted and operated by individual organizations or service providers, reducing dependence on a single vendor cloud.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "wazuh-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Wazuh documents broad endpoint, SIEM, XDR, vulnerability, file-integrity, and log-analysis capabilities and is positioned for production security operations.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "wazuh-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source licensing and self-hosting can materially lower software lock-in costs, though teams still need infrastructure and security operations expertise.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "wazuh-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "wazuh-github",
+              "wazuh-docs"
+            ]
+          },
+          {
+            "slug": "osquery",
+            "name": "osquery",
+            "kind": "open-source",
+            "homepageUrl": "https://osquery.io/",
+            "repoUrl": "https://github.com/osquery/osquery",
+            "summary": "osquery exposes operating-system state as SQL tables for endpoint instrumentation, monitoring, and analytics.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The osquery repository is public and the project is built around open endpoint instrumentation.",
+                "sourceIds": [
+                  "osquery-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Organizations can deploy osquery as a local telemetry layer and route results into self-hosted or federated analytics pipelines.",
+                "sourceIds": [
+                  "osquery-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "osquery is a strong endpoint visibility primitive, but it is not a full managed EDR/XDR platform by itself.",
+                "sourceIds": [
+                  "osquery-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "It can reduce telemetry collection costs and vendor dependence, but teams must still build or buy detection, alerting, and response layers.",
+                "sourceIds": [
+                  "osquery-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "osquery-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-xdr-cooperatives",
+            "name": "Federated XDR cooperatives",
+            "summary": "Security teams could run self-hosted endpoint telemetry and detection stacks while joining federated threat-sharing communities that publish signed indicators, rules, incident patterns, and response playbooks across member organizations.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "The market structure shifts from one dominant vendor cloud accumulating telemetry and detection logic to many interoperable operators sharing inspectable intelligence and response knowledge.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated governance and interoperable threat sharing rather than Bitcoin itself; each organization can keep operational control while benefiting from pooled intelligence.",
+            "coordinationMechanism": "Members publish signed indicators, detection rules, ATT&CK mappings, and incident reports into shared MISP-style communities, while local Wazuh or osquery deployments consume, test, and tune them.",
+            "verificationOrTrustModel": "Contributors can be reputation-scored by historical false-positive rates, peer review, cryptographic signing, reproducible rule tests, and cross-organization corroboration before high-severity rules are trusted automatically.",
+            "failureModes": [
+              "Federated communities may lag commercial vendors on zero-day telemetry, reverse engineering, and high-touch incident response.",
+              "Poorly governed sharing groups can spread noisy indicators, sensitive data, or rules that attackers learn to evade."
+            ],
+            "adoptionPath": [
+              "Start with self-hosted Wazuh or osquery telemetry for less critical workloads while retaining commercial EDR on high-risk endpoints.",
+              "Join sector or regional threat-sharing communities and gradually move more detection content into open, peer-reviewed rule pipelines."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "crowdstrike-falcon-platform",
+              "crowdstrike-2026-10k"
+            ],
+            "enablerSourceIds": [
+              "wazuh-github",
+              "osquery-github",
+              "misp-features"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept explicitly distributes telemetry control and intelligence governance across many operators.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "misp-features"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "MISP-style threat sharing and open SIEM/XDR tools already exist, but high-quality cooperative governance is uneven.",
+                "sourceIds": [
+                  "misp-features",
+                  "wazuh-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software primitives are available, but enterprise deployment, tuning, and incident-response maturity remain significant barriers.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "osquery-github",
+                  "misp-features"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This can pressure pricing and lock-in for capable teams, but it is unlikely to displace CrowdStrike quickly for organizations buying managed outcomes.",
+                "sourceIds": [
+                  "crowdstrike-falcon-platform",
+                  "wazuh-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "crowdstrike-charlotte-ai",
+        "name": "CrowdStrike Charlotte AI",
+        "category": "AI security analyst and agentic SOC automation",
+        "homepageUrl": "https://www.crowdstrike.com/en-us/platform/charlotte-ai/",
+        "summary": "Charlotte AI is CrowdStrike's AI security analyst and agentic workflow layer for triage, investigation, response, automation, and guided security operations inside Falcon.",
+        "whyItMatters": "Charlotte AI extends CrowdStrike's moat from telemetry and detections into analyst workflows, SOC automation, and AI-assisted decision making, making Falcon harder to replace once teams adapt their processes around it.",
+        "replacementSketch": [
+          "A credible open replacement would combine self-hosted security telemetry, open threat-intelligence platforms, transparent playbooks, local or inspectable LLM tooling, and strict human approval for response actions.",
+          "The near-term opportunity is not to beat Charlotte AI on polish, but to make AI-assisted SOC workflows auditable, portable, and less dependent on a single proprietary telemetry lake."
+        ],
+        "sourceIds": [
+          "crowdstrike-charlotte-ai",
+          "crowdstrike-charlotte-ai-launch"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "misp",
+            "name": "MISP",
+            "kind": "open-source",
+            "homepageUrl": "https://www.misp-project.org/",
+            "repoUrl": "https://github.com/MISP/MISP",
+            "summary": "MISP is an open-source threat-intelligence sharing platform for storing, correlating, sharing, and operationalizing indicators, reports, and threat knowledge.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "MISP is explicitly described as an open-source threat-sharing platform.",
+                "sourceIds": [
+                  "misp-features"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "MISP supports community-based threat-intelligence sharing across independently operated organizations and instances.",
+                "sourceIds": [
+                  "misp-features"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "MISP is mature for threat-intelligence sharing and correlation, though it is not a full AI SOC assistant without additional tooling.",
+                "sourceIds": [
+                  "misp-features"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source deployment can reduce threat-intelligence platform lock-in, but organizations still need analysts, integrations, hosting, and governance.",
+                "sourceIds": [
+                  "misp-features"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "misp-features"
+            ]
+          },
+          {
+            "slug": "wazuh",
+            "name": "Wazuh",
+            "kind": "open-source",
+            "homepageUrl": "https://wazuh.com/",
+            "repoUrl": "https://github.com/wazuh/wazuh",
+            "summary": "Wazuh provides the open SIEM/XDR telemetry and alerting layer that an AI-assisted SOC workflow could query, enrich, and automate.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Wazuh publishes source code and positions itself as a free and open-source security platform.",
+                "sourceIds": [
+                  "wazuh-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "A self-hosted Wazuh deployment keeps alert data and response control under the operator's governance.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "wazuh-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Wazuh has production-oriented XDR/SIEM capabilities, but AI analyst behavior requires additional orchestration and model controls.",
+                "sourceIds": [
+                  "wazuh-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source telemetry and SIEM infrastructure can reduce the software cost base for AI-assisted SOC workflows.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "wazuh-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "wazuh-github",
+              "wazuh-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "auditable-soc-agent-network",
+            "name": "Auditable SOC agent network",
+            "summary": "Instead of a proprietary AI analyst embedded in one vendor platform, organizations could run local AI agents over self-hosted telemetry, open threat intelligence, and signed playbooks, with every recommendation traceable to evidence and every response action requiring explicit authorization.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "AI SOC automation becomes a portable coordination layer over open security data rather than a proprietary feature that deepens dependence on a single security cloud.",
+            "bitcoinOrDecentralizationRole": "The key role is decentralization and federation: each operator keeps telemetry custody and can share vetted playbooks or intelligence with peers without centralizing all SOC context in one vendor.",
+            "coordinationMechanism": "Organizations publish signed playbooks, enriched indicators, incident timelines, and model-evaluation results to trusted communities; local agents query Wazuh, MISP, and other tools before proposing or executing actions.",
+            "verificationOrTrustModel": "Every agent output must cite telemetry, rule hits, indicator sources, and playbook versions; high-risk actions require human approval, and shared playbooks are tested against reproducible cases before promotion.",
+            "failureModes": [
+              "Local AI agents can hallucinate or overfit to incomplete telemetry if grounding and approvals are weak.",
+              "Federated playbook sharing can leak sensitive operational details or normalize unsafe response automation."
+            ],
+            "adoptionPath": [
+              "Use open SIEM and threat-intelligence tools as a read-only evidence base for analyst copilots.",
+              "Add signed, peer-reviewed playbooks and restricted response actions only after audit logs and rollback procedures are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "crowdstrike-charlotte-ai",
+              "crowdstrike-charlotte-ai-launch"
+            ],
+            "enablerSourceIds": [
+              "wazuh-github",
+              "misp-features"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept keeps telemetry and action authority local while sharing intelligence and playbooks through federated communities.",
+                "sourceIds": [
+                  "wazuh-github",
+                  "misp-features"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open threat-sharing and SIEM/XDR components are credible, but shared AI playbook governance is still emerging.",
+                "sourceIds": [
+                  "misp-features",
+                  "wazuh-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The workflow is technically feasible with current open security tooling, but reliable AI triage, evaluation, and authorization controls require careful engineering.",
+                "sourceIds": [
+                  "crowdstrike-charlotte-ai",
+                  "wazuh-github",
+                  "misp-features"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Auditable open SOC agents could pressure Charlotte AI among privacy-sensitive and cost-sensitive teams, but CrowdStrike's integrated data and response layer remains a strong advantage.",
+                "sourceIds": [
+                  "crowdstrike-charlotte-ai",
+                  "wazuh-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "crowdstrike-2026-10k",
+      "title": "CrowdStrike Holdings, Inc. Form 10-K for Fiscal Year Ended January 31, 2026",
+      "url": "https://ir.crowdstrike.com/static-files/5ec13e28-5688-4dec-a446-d746a9990808",
+      "kind": "annual-report",
+      "publisher": "CrowdStrike Investor Relations",
+      "note": "Primary source for business model, Falcon platform risk factors, growth commentary, and fiscal 2026 GAAP profitability.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "crowdstrike-falcon-platform",
+      "title": "CrowdStrike Falcon Platform",
+      "url": "https://www.crowdstrike.com/en-us/platform/",
+      "kind": "product-page",
+      "publisher": "CrowdStrike",
+      "note": "Product source for Falcon platform positioning and module consolidation.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "crowdstrike-charlotte-ai",
+      "title": "Charlotte AI: Agentic Analyst for Cybersecurity",
+      "url": "https://www.crowdstrike.com/en-us/platform/charlotte-ai/",
+      "kind": "product-page",
+      "publisher": "CrowdStrike",
+      "note": "Product source for Charlotte AI triage, agentic workflow, governance, and SOC automation claims.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "crowdstrike-charlotte-ai-launch",
+      "title": "CrowdStrike Introduces Charlotte AI to Deliver Generative AI-Powered Cybersecurity",
+      "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-introduces-charlotte-ai-deliver-generative-ai",
+      "kind": "investor-relations",
+      "publisher": "CrowdStrike Investor Relations",
+      "note": "Launch source describing Charlotte AI as a generative AI security analyst for the Falcon platform.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "crowdstrike-ipo-pricing-2019",
+      "title": "CrowdStrike Announces Pricing of Initial Public Offering",
+      "url": "https://ir.crowdstrike.com/news-releases/news-release-details/crowdstrike-announces-pricing-initial-public-offering/",
+      "kind": "investor-relations",
+      "publisher": "CrowdStrike Investor Relations",
+      "note": "Primary source for IPO pricing, expected first trading date, ticker, and offering details.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-crwd-market-cap-2026",
+      "title": "CrowdStrike Market Cap",
+      "url": "https://stockanalysis.com/stocks/crwd/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis.com",
+      "note": "Market-data source for May 27, 2026 market capitalization, approximate ranking, and historical first-day market capitalization.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-crwd-pe-2026",
+      "title": "CrowdStrike P/E Ratio",
+      "url": "https://companiesmarketcap.com/crowdstrike/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap.com",
+      "note": "Market-data source for approximate trailing P/E ratio snapshot in May 2026.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "wazuh-github",
+      "title": "Wazuh GitHub Repository",
+      "url": "https://github.com/wazuh/wazuh",
+      "kind": "open-source-project",
+      "publisher": "Wazuh",
+      "note": "Open-source project source for Wazuh's endpoint agent, manager, and threat prevention, detection, and response capabilities.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "wazuh-docs",
+      "title": "Getting Started with Wazuh",
+      "url": "https://documentation.wazuh.com/current/getting-started/index.html",
+      "kind": "technical-docs",
+      "publisher": "Wazuh",
+      "note": "Technical documentation source for Wazuh's XDR/SIEM positioning, architecture, and deployment model.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "osquery-github",
+      "title": "osquery GitHub Repository",
+      "url": "https://github.com/osquery/osquery",
+      "kind": "open-source-project",
+      "publisher": "osquery",
+      "note": "Open-source project source for SQL-powered endpoint instrumentation and monitoring.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "misp-features",
+      "title": "MISP Features and Functionalities",
+      "url": "https://www.misp-project.org/features/",
+      "kind": "technical-docs",
+      "publisher": "MISP Project",
+      "note": "Technical source for open-source threat-intelligence sharing, correlation, and community defense capabilities.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new CrowdStrike registry bundle with two products: Falcon platform and Charlotte AI. The strongest open replacements are Wazuh, osquery, and MISP; disruption concepts focus on federated XDR cooperatives and auditable SOC agent networks rather than forcing a Bitcoin mechanism where it is not central."
+}
+tokens used
+62,267

@@ -1,0 +1,1430 @@
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: deere-company
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "deere-company",
+  "name": "Deere & Company",
+  "ticker": "DE",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "industrials",
+  "industryId": "construction-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/deere-company/marketcap/",
+  "description": "Deere & Company makes agricultural, construction, forestry, turf, and precision-technology equipment under the John Deere brand.",
+  "technologyWaveIds": [
+    "microfactories",
+    "printed-electronics"
+  ],
+  "maybeIpo": null,
+  "seedProductNames": [
+    "John Deere tractors",
+    "John Deere Operations Center"
+  ],
+  "seedSourceUrls": [
+    "https://s22.q4cdn.com/253594569/files/doc_downloads/2025/12/Deere-Company-2025-10-K.pdf",
+    "https://www.deere.com/operationscenter",
+    "https://companiesmarketcap.com/deere-company/marketcap/",
+    "https://www.fb.org/news-release/afbf-signs-right-to-repair-memorandum-of-understanding-with-john-deere"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "deere-company",
+    "name": "Deere & Company",
+    "ticker": "DE",
+    "rankApprox": 88,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top100"
+    ],
+    "sectorId": "industrials",
+    "industryId": "construction-machinery",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/deere-company/marketcap/",
+    "description": "Deere & Company makes agricultural, construction, forestry, turf, and precision-technology equipment under the John Deere brand.",
+    "overview": [
+      {
+        "title": "Industrial machinery platform",
+        "paragraphs": [
+          "Deere is a global machinery manufacturer organized around production and precision agriculture, small agriculture and turf, construction and forestry, and financial services. Its equipment footprint spans tractors, combines, sprayers, loaders, excavators, forestry machines, turf equipment, parts, dealer service, and equipment financing.",
+          "The company increasingly sells machinery as a connected operating stack. Precision-ag products such as John Deere Operations Center, connected displays, guidance, data tools, and dealer support deepen the relationship between the machine, the farm record, and the service channel."
+        ]
+      },
+      {
+        "title": "Cycle exposure",
+        "paragraphs": [
+          "Deere remains exposed to agricultural income, construction demand, equipment replacement cycles, credit conditions, and dealer inventory discipline. Fiscal 2025 revenue and net income declined from the peak cycle, but the company remained highly profitable and continued to report large global equipment franchises."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Deere's moat is strongest where brand trust, dealer density, parts availability, financing, machine reliability, resale values, and precision-ag software reinforce each other. The installed base matters because farmers and contractors cannot afford long downtime during narrow operating windows.",
+      "The moat is not purely physical. Data workflows, proprietary diagnostics, trained dealer technicians, embedded displays, and integrated agronomic tools can make the machine ecosystem harder to leave even when competing equipment is technically capable."
+    ],
+    "decentralizationNarrative": [
+      "Deere is less decentralizable than a pure software company because heavy machinery needs capital-intensive manufacturing, compliance, durable parts, field service, and safety-critical engineering. However, portions of the stack are vulnerable to open alternatives: farm records, path planning, autonomy research, repair documentation, replacement parts, and small-scale machinery designs.",
+      "The most credible decentralizing pressure is not a single open tractor replacing a high-horsepower Deere fleet tomorrow. It is a layered ecosystem of open repair rights, open farm data tools, shared autonomy libraries, local fabrication for simpler implements, and cooperative service networks that reduce dependence on one vertically integrated equipment vendor."
+    ],
+    "sourceIds": [
+      "deere-2025-10k",
+      "deere-operations-center",
+      "companiesmarketcap-deere",
+      "afbf-deere-right-to-repair"
+    ],
+    "technologyWaveIds": [
+      "microfactories",
+      "printed-electronics"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; refreshed with public market, investor, product, right-to-repair, and open-source agriculture sources accessed on 2026-05-27.",
+    "inputMetrics": {
+      "moat": {
+        "value": 86,
+        "rationale": "Very strong brand, dealer, service, financing, parts, resale, and precision-ag ecosystem advantages; right-to-repair pressure and cycle exposure prevent a perfect score.",
+        "sourceIds": [
+          "deere-2025-10k",
+          "deere-operations-center",
+          "afbf-deere-right-to-repair"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "decentralizability": {
+        "value": 34,
+        "rationale": "Core high-horsepower agricultural and construction machinery is capital-intensive and service-heavy, but farm-data workflows, repair tooling, autonomy software, and smaller implements have credible open or cooperative substitutes.",
+        "sourceIds": [
+          "deere-2025-10k",
+          "farmos",
+          "fields2cover-github",
+          "ose-lifetrac"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "profitability": {
+        "value": 72,
+        "rationale": "Fiscal 2025 net income attributable to Deere was about $5.0 billion on a down-cycle year, indicating durable profitability despite machinery-market cyclicality.",
+        "sourceIds": [
+          "deere-2025-10k"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "peRatio": {
+        "value": 28.55,
+        "rationale": "Approximate market capitalization of $143.52 billion divided by fiscal 2025 net income attributable to Deere of about $5.027 billion; this is a rough trailing earnings multiple and not a live valuation feed.",
+        "sourceIds": [
+          "companiesmarketcap-deere",
+          "deere-2025-10k"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-27"
+      },
+      "marketCap": {
+        "value": 143520000000,
+        "rationale": "CompaniesMarketCap reported Deere & Company market capitalization of about $143.52 billion in May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-deere"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-27"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "john-deere-tractors",
+      "name": "John Deere tractors",
+      "category": "Agricultural equipment",
+      "homepageUrl": "https://www.deere.com/en/tractors/",
+      "summary": "John Deere tractors are the company's flagship agricultural machines, ranging from compact and utility tractors to high-horsepower row-crop and specialty tractors.",
+      "whyItMatters": "Tractors are durable, expensive, uptime-critical machines at the center of farm operations, and Deere's control over equipment, software, diagnostics, parts, and service makes them a major test case for decentralized repair and open machinery ecosystems.",
+      "replacementSketch": [
+        "A realistic replacement path starts with open repair access, independent diagnostics, interoperable implements, and locally serviceable components rather than an immediate one-for-one replacement for every Deere model.",
+        "Open-hardware tractors and modular fabrication projects can cover simpler, smaller, or community-scale use cases first, while cooperative repair networks and parts fabrication reduce the dependency surface around existing Deere fleets."
+      ],
+      "sourceIds": [
+        "deere-2025-10k",
+        "afbf-deere-right-to-repair",
+        "ose-lifetrac"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "printed-electronics"
+      ],
+      "alternatives": [
+        {
+          "slug": "opensourceecology-lifetrac",
+          "name": "Open Source Ecology LifeTrac",
+          "kind": "open-source",
+          "homepageUrl": "https://wiki.opensourceecology.org/wiki/LifeTrac",
+          "repoUrl": "https://wiki.opensourceecology.org/wiki/LifeTrac",
+          "summary": "LifeTrac is an Open Source Ecology tractor project described as a low-cost, multipurpose, open-source tractor with modular design goals and fabrication documentation.",
+          "metrics": {
+            "openness": {
+              "value": 82,
+              "rationale": "The project publishes open wiki documentation and design rationale, though maturity and current maintenance are weaker than mainstream software projects.",
+              "sourceIds": [
+                "ose-lifetrac"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "decentralizationFit": {
+              "value": 76,
+              "rationale": "The project is explicitly aimed at open, locally understandable machinery and modular repair rather than a dealer-controlled equipment stack.",
+              "sourceIds": [
+                "ose-lifetrac"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "readiness": {
+              "value": 24,
+              "rationale": "LifeTrac is best treated as an experimental or educational open-hardware project, not a production substitute for modern high-horsepower Deere tractors.",
+              "sourceIds": [
+                "ose-lifetrac"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "costLeverage": {
+              "value": 58,
+              "rationale": "Open documentation and modularity could lower repair and fabrication barriers for narrow use cases, but industrial-grade reliability and certification remain costly.",
+              "sourceIds": [
+                "ose-lifetrac"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          },
+          "sourceIds": [
+            "ose-lifetrac"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "cooperative-right-to-repair-service-grid",
+          "name": "Cooperative right-to-repair service grid",
+          "summary": "A farmer-owned cooperative service network could pool diagnostic tooling, repair manuals, parts knowledge, technician training, and verified repair histories across mixed equipment fleets. The goal is not to clone Deere's full manufacturing base, but to weaken the captive-service portion of the moat by making independent repair more reliable, auditable, and locally available.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination",
+            "recycling-and-reuse"
+          ],
+          "thesis": "If farmers can coordinate trusted independent service, shared parts sourcing, and repair documentation, Deere's dealer-channel lock-in weakens even while Deere continues to sell premium machines.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative ownership, shared knowledge bases, and distributed technician networks. Bitcoin is not central; the critical mechanism is reducing dependence on a single OEM-approved repair path.",
+          "coordinationMechanism": "Farmers, independent shops, and cooperative technicians coordinate through a shared repair registry, pooled subscriptions to authorized tools where available, parts inventories, incident reports, and local service commitments during planting and harvest windows.",
+          "verificationOrTrustModel": "Repairs are logged against machine identifiers with technician attestations, parts provenance, photos, and customer sign-off. Reputation scores and cooperative dispute processes constrain low-quality work, while repeated failures or falsified records trigger removal from the network.",
+          "failureModes": [
+            "OEM software access remains limited or expensive despite right-to-repair agreements.",
+            "Poor repair work can create safety, emissions, warranty, or resale-value problems.",
+            "Cooperative governance may be too slow during peak farm-service windows."
+          ],
+          "adoptionPath": [
+            "Start with common maintenance, diagnostics, parts sourcing, and documentation workflows for existing Deere fleets.",
+            "Expand into pooled technician training, verified repair histories, and regional spare-parts exchanges."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "afbf-deere-right-to-repair",
+            "deere-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "afbf-deere-right-to-repair"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 73,
+              "rationale": "The concept directly moves repair knowledge and service capacity from a concentrated dealer channel toward farmer and independent-shop coordination.",
+              "sourceIds": [
+                "afbf-deere-right-to-repair"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "coordinationCredibility": {
+              "value": 62,
+              "rationale": "Farm cooperatives and independent repair shops are familiar institutions, but coordinating tooling, liability, and documentation across regions is operationally demanding.",
+              "sourceIds": [
+                "afbf-deere-right-to-repair"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "implementationFeasibility": {
+              "value": 58,
+              "rationale": "The model can begin with documentation and common repairs, but access to proprietary software, safety constraints, and emissions systems limit the addressable scope.",
+              "sourceIds": [
+                "afbf-deere-right-to-repair"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "incumbentPressure": {
+              "value": 64,
+              "rationale": "A successful network would pressure dealer service margins and lock-in, though it would not immediately displace Deere's machinery manufacturing advantage.",
+              "sourceIds": [
+                "deere-2025-10k",
+                "afbf-deere-right-to-repair"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          }
+        },
+        {
+          "slug": "open-modular-utility-tractor-cell",
+          "name": "Open modular utility tractor cell",
+          "summary": "An open-hardware microfactory model could target compact and utility tractor niches with modular frames, common hydraulic or electric drive components, open controllers, and locally fabricated implements. It would avoid competing head-on with Deere's largest tractors and instead attack simpler jobs where repairability, local fabrication, and customization matter more than maximum sophistication.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-manufacturing",
+            "home-microfactory"
+          ],
+          "thesis": "Open modular machinery can undercut parts and service dependence in smaller agricultural and land-management jobs, creating a bottom-up pressure point beneath Deere's premium product stack.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is manufacturing and design-file openness: shared BOMs, fabrication notes, controller code, and local workshop knowledge. Bitcoin or Lightning could be used for marketplace settlement, but they are not necessary to the core mechanism.",
+          "coordinationMechanism": "Design maintainers, local fabricators, farmers, and implement builders coordinate around versioned design files, verified BOM substitutions, build logs, and local service groups that improve designs through field feedback.",
+          "verificationOrTrustModel": "Builds are checked through published test protocols, component traceability, peer review of modifications, and operational logs. The weak point is that hardware quality cannot be guaranteed by open documentation alone; local certification and testing discipline matter.",
+          "failureModes": [
+            "Open tractors may fail to meet reliability, safety, emissions, financing, and dealer-support expectations for commercial farms.",
+            "Fragmented designs could produce incompatible parts and uneven field performance.",
+            "Local fabrication may be uneconomic versus used commercial equipment in many regions."
+          ],
+          "adoptionPath": [
+            "Begin with low-speed utility, homestead, educational, and specialty-farm use cases where uptime risk is lower.",
+            "Standardize modules, publish field-test results, and grow regional fabrication and repair cells around proven configurations."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "deere-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "ose-lifetrac"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 82,
+              "rationale": "The concept is fundamentally about open hardware, local production, and reducing OEM dependence for simpler machinery categories.",
+              "sourceIds": [
+                "ose-lifetrac"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "coordinationCredibility": {
+              "value": 43,
+              "rationale": "Open hardware communities can coordinate designs, but heavy equipment requires more disciplined testing, liability handling, and quality control than software.",
+              "sourceIds": [
+                "ose-lifetrac"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "implementationFeasibility": {
+              "value": 31,
+              "rationale": "Prototype and educational builds are plausible; commercially reliable farm machines at scale remain difficult without mature manufacturing and service operations.",
+              "sourceIds": [
+                "ose-lifetrac"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "incumbentPressure": {
+              "value": 38,
+              "rationale": "Near-term pressure is limited to smaller and specialty use cases, but it can still chip away at parts, implements, and repair assumptions around the lower end of the market.",
+              "sourceIds": [
+                "ose-lifetrac",
+                "deere-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "john-deere-operations-center",
+      "name": "John Deere Operations Center",
+      "category": "Precision agriculture software",
+      "homepageUrl": "https://www.deere.com/operationscenter",
+      "summary": "John Deere Operations Center is Deere's online farm management platform for accessing, managing, and analyzing farm, field, machine, and operations data across web, tablet, and phone workflows.",
+      "whyItMatters": "Operations Center turns Deere equipment into a connected data platform, increasing switching costs by linking machine performance, field records, work planning, agronomic decisions, and dealer-supported precision-ag services.",
+      "replacementSketch": [
+        "A replacement ecosystem would likely combine open farm recordkeeping, farmer-controlled data permissions, open path-planning tools, and interoperable machine data connectors.",
+        "The decentralized version does not need to copy every Deere feature at once. It can start by giving farmers a self-hosted or cooperative data layer that survives equipment changes and supports independent agronomists, service shops, and autonomy tools."
+      ],
+      "sourceIds": [
+        "deere-operations-center",
+        "farmos",
+        "fields2cover-github"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "john-deere-operations-center-farmos",
+          "name": "farmOS",
+          "kind": "open-source",
+          "homepageUrl": "https://farmos.org/",
+          "repoUrl": "https://github.com/farmOS/farmOS",
+          "summary": "farmOS is a free and open-source web application for farm management, planning, recordkeeping, and agricultural data organization.",
+          "metrics": {
+            "openness": {
+              "value": 91,
+              "rationale": "farmOS describes itself as free and open source under the GNU General Public License, with code available through the farmOS GitHub organization.",
+              "sourceIds": [
+                "farmos"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "decentralizationFit": {
+              "value": 78,
+              "rationale": "Self-hostable farm recordkeeping gives farmers and communities more control over operational data than a single-vendor cloud workflow.",
+              "sourceIds": [
+                "farmos"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "readiness": {
+              "value": 67,
+              "rationale": "farmOS is an established web application for farm management and records, but it is not a full replacement for every OEM-integrated precision-ag function.",
+              "sourceIds": [
+                "farmos"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "costLeverage": {
+              "value": 76,
+              "rationale": "Free software and self-hosting can reduce dependence on proprietary farm-data subscriptions and make integrations cheaper for smaller operators.",
+              "sourceIds": [
+                "farmos"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            }
+          },
+          "sourceIds": [
+            "farmos"
+          ]
+        },
+        {
+          "slug": "fields2cover",
+          "name": "Fields2Cover",
+          "kind": "open-source",
+          "homepageUrl": "https://fields2cover.github.io/",
+          "repoUrl": "https://github.com/Fields2Cover/Fields2Cover",
+          "summary": "Fields2Cover is an open-source coverage path planning library for autonomous agricultural vehicles and field operations.",
+          "metrics": {
+            "openness": {
+              "value": 88,
+              "rationale": "The project is published as an open-source GitHub repository and documented as an open-source agricultural coverage path planning library.",
+              "sourceIds": [
+                "fields2cover-github",
+                "fields2cover-paper"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "decentralizationFit": {
+              "value": 69,
+              "rationale": "Open path-planning libraries reduce dependence on proprietary vehicle guidance stacks and allow independent robotics teams to build interoperable field automation tools.",
+              "sourceIds": [
+                "fields2cover-github",
+                "fields2cover-paper"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "readiness": {
+              "value": 55,
+              "rationale": "The library has documented algorithms and research validation, but production deployment still requires sensors, vehicle integration, safety systems, and field support.",
+              "sourceIds": [
+                "fields2cover-github",
+                "fields2cover-paper"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "costLeverage": {
+              "value": 62,
+              "rationale": "Reusable open planning algorithms can lower R&D costs for smaller autonomy projects, though hardware integration remains expensive.",
+              "sourceIds": [
+                "fields2cover-github",
+                "fields2cover-paper"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          },
+          "sourceIds": [
+            "fields2cover-github",
+            "fields2cover-paper"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "farmer-owned-data-cooperative",
+          "name": "Farmer-owned data cooperative",
+          "summary": "A farmer-owned data cooperative could combine self-hosted farm records, permissioned agronomist access, machine-data imports, and shared benchmarking without handing the canonical farm operating record to one equipment vendor. Deere machines can remain in the fleet, but the system of record becomes portable.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination",
+            "federation"
+          ],
+          "thesis": "If farm operations data becomes portable and cooperatively governed, Deere's software layer becomes less able to bind farmers to Deere equipment, dealers, and precision-ag services.",
+          "bitcoinOrDecentralizationRole": "Federation and cooperative governance are central: farms keep local or cooperative control while sharing selected datasets. Bitcoin is not required; the trust model depends on access control, audit logs, and member governance.",
+          "coordinationMechanism": "Farmers, agronomists, equipment integrators, and service providers coordinate through federated farmOS-style instances, shared schemas, role-based permissions, and cooperative policies for aggregate benchmarks or data resale.",
+          "verificationOrTrustModel": "Data provenance is tracked by import source, timestamp, user role, and machine or sensor identifier. Aggregate reports require member consent, reproducible transformations, and audit trails so false records or unauthorized resale can be challenged.",
+          "failureModes": [
+            "Machine-data import quality may remain limited by proprietary formats or API access.",
+            "Cooperatives may struggle to fund support, cybersecurity, and integrations at the level farmers expect.",
+            "Bad data or inconsistent schemas can reduce benchmark value."
+          ],
+          "adoptionPath": [
+            "Start with crop records, field boundaries, task logs, inputs, and agronomist collaboration in self-hosted or cooperative farmOS deployments.",
+            "Add machine imports, open guidance libraries, benchmark governance, and service-provider integrations once the farm-controlled record is trusted."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "deere-operations-center"
+          ],
+          "enablerSourceIds": [
+            "farmos"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 80,
+              "rationale": "The concept shifts the canonical farm data layer from a single equipment vendor to farmer-controlled or federated systems.",
+              "sourceIds": [
+                "deere-operations-center",
+                "farmos"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "coordinationCredibility": {
+              "value": 66,
+              "rationale": "Cooperative data governance is plausible in agriculture, and farmOS provides a concrete open-source base, but interoperability and governance are hard.",
+              "sourceIds": [
+                "farmos"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "implementationFeasibility": {
+              "value": 61,
+              "rationale": "Recordkeeping and permissions are feasible now; full machine-data parity with Deere's native stack depends on integrations and vendor data access.",
+              "sourceIds": [
+                "farmos",
+                "deere-operations-center"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "incumbentPressure": {
+              "value": 58,
+              "rationale": "A portable farm record weakens software lock-in but does not remove Deere's equipment, dealer, or financing advantages.",
+              "sourceIds": [
+                "deere-operations-center",
+                "deere-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          }
+        },
+        {
+          "slug": "open-autonomy-guidance-stack",
+          "name": "Open autonomy and guidance stack",
+          "summary": "Open guidance, coverage path planning, and field-operation libraries could form a shared autonomy layer for retrofits, smaller robotics firms, and mixed fleets. Rather than relying entirely on Deere's precision-ag stack, farmers and integrators could use open algorithms for path planning, documentation, and machine coordination where safety and integration requirements are manageable.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-coordination",
+            "decentralized-manufacturing"
+          ],
+          "thesis": "Open autonomy components can reduce the software moat around precision agriculture by making core planning primitives available to independent equipment builders, retrofitters, and cooperative service networks.",
+          "bitcoinOrDecentralizationRole": "The relevant decentralization mechanism is open technical infrastructure and multi-vendor coordination. Bitcoin is not central unless later used for machine-to-machine settlement between autonomous service providers.",
+          "coordinationMechanism": "Researchers, robotics firms, retrofitters, and cooperatives coordinate through open repositories, reference datasets, field-test reports, and integration profiles for vehicles, sensors, and farm-management systems.",
+          "verificationOrTrustModel": "Trust depends on reproducible algorithms, simulation tests, field trials, safety envelopes, versioned maps, and operator review. Cheating is less about financial fraud and more about unsafe or false performance claims, which are constrained by auditable test results and deployment logs.",
+          "failureModes": [
+            "Safety-critical autonomy requires much more validation than open path planning alone provides.",
+            "Closed vehicle controllers and sensor integrations can block practical deployment on incumbent machines.",
+            "Fragmented open projects may not match the polish, support, and liability coverage of OEM offerings."
+          ],
+          "adoptionPath": [
+            "Use open path planning in research, simulation, and low-risk autonomous field tasks.",
+            "Integrate with farm records and retrofitted machines, then expand into cooperative service fleets where operators can validate safety and performance locally."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "deere-operations-center",
+            "deere-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "fields2cover-github",
+            "fields2cover-paper"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 72,
+              "rationale": "Open planning libraries let non-OEM actors build shared autonomy capabilities rather than depending only on Deere-controlled precision-ag software.",
+              "sourceIds": [
+                "fields2cover-github",
+                "fields2cover-paper"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "coordinationCredibility": {
+              "value": 59,
+              "rationale": "Open robotics projects can coordinate around repositories and papers, but field deployment requires strong integration discipline and safety practices.",
+              "sourceIds": [
+                "fields2cover-github",
+                "fields2cover-paper"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "implementationFeasibility": {
+              "value": 52,
+              "rationale": "Coverage path planning is documented and available, but production autonomy requires sensors, controllers, fail-safes, support, and regulatory acceptance.",
+              "sourceIds": [
+                "fields2cover-github",
+                "fields2cover-paper"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            },
+            "incumbentPressure": {
+              "value": 55,
+              "rationale": "Open autonomy primitives pressure Deere's software differentiation over time, but Deere's integrated machines and service organization remain strong advantages.",
+              "sourceIds": [
+                "deere-operations-center",
+                "fields2cover-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-27"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
+
+Current referenced sources:
+```json
+[
+  {
+    "id": "afbf-deere-right-to-repair",
+    "title": "AFBF Signs Right to Repair Memorandum of Understanding with John Deere",
+    "url": "https://www.fb.org/news-release/afbf-signs-right-to-repair-memorandum-of-understanding-with-john-deere",
+    "kind": "analysis",
+    "publisher": "American Farm Bureau Federation",
+    "note": "Source documenting the 2023 right-to-repair memorandum and the repair-access issue around Deere equipment.",
+    "accessedOn": "2026-05-27"
+  },
+  {
+    "id": "companiesmarketcap-deere",
+    "title": "Deere & Company (John Deere) Market Capitalization",
+    "url": "https://companiesmarketcap.com/deere-company/marketcap/",
+    "kind": "market-data",
+    "publisher": "CompaniesMarketCap",
+    "note": "Market-data source for Deere's May 2026 market capitalization used in snapshot metrics.",
+    "accessedOn": "2026-05-27"
+  },
+  {
+    "id": "deere-2025-10k",
+    "title": "Deere & Company 2025 Annual Report on Form 10-K",
+    "url": "https://s22.q4cdn.com/253594569/files/doc_downloads/2025/12/Deere-Company-2025-10-K.pdf",
+    "kind": "annual-report",
+    "publisher": "Deere & Company",
+    "note": "Primary filing source for Deere's business segments, fiscal 2025 financials, operating context, and risk profile.",
+    "accessedOn": "2026-05-27"
+  },
+  {
+    "id": "deere-operations-center",
+    "title": "John Deere Operations Center",
+    "url": "https://www.deere.com/operationscenter",
+    "kind": "product-page",
+    "publisher": "John Deere",
+    "note": "Official product page describing Deere's online farm management and precision-agriculture data platform.",
+    "accessedOn": "2026-05-27"
+  },
+  {
+    "id": "farmos",
+    "title": "farmOS",
+    "url": "https://farmos.org/",
+    "kind": "open-source-project",
+    "publisher": "farmOS",
+    "note": "Free and open-source farm management software used as a credible farmer-controlled alternative to proprietary farm recordkeeping workflows.",
+    "accessedOn": "2026-05-27"
+  },
+  {
+    "id": "fields2cover-github",
+    "title": "Fields2Cover GitHub Repository",
+    "url": "https://github.com/Fields2Cover/Fields2Cover",
+    "kind": "open-source-project",
+    "publisher": "Fields2Cover",
+    "note": "Open-source coverage path planning library for agricultural vehicles and autonomy tooling.",
+    "accessedOn": "2026-05-27"
+  },
+  {
+    "id": "fields2cover-paper",
+    "title": "Fields2Cover: An Open-Source Coverage Path Planning Library for Unmanned Agricultural Vehicles",
+    "url": "https://arxiv.org/abs/2210.07838",
+    "kind": "technical-docs",
+    "publisher": "arXiv",
+    "note": "Technical source supporting the readiness and scope of open coverage path planning for agricultural vehicles.",
+    "accessedOn": "2026-05-27"
+  },
+  {
+    "id": "ose-lifetrac",
+    "title": "LifeTrac",
+    "url": "https://wiki.opensourceecology.org/wiki/LifeTrac",
+    "kind": "open-source-project",
+    "publisher": "Open Source Ecology",
+    "note": "Open-hardware tractor project used as the strongest plausible open alternative for small-scale or experimental tractor replacement concepts.",
+    "accessedOn": "2026-05-27"
+  }
+]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.

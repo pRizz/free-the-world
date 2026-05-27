@@ -1,0 +1,811 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e69d2-dfe0-7fb3-9705-d165772bf3af
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: starbucks
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "starbucks",
+  "name": "Starbucks",
+  "ticker": "SBUX",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "consumer-discretionary",
+  "industryId": "restaurants",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/starbucks/marketcap/",
+  "description": "Starbucks operates and licenses coffeehouses and sells coffee, tea, beverages, and food.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Starbucks Rewards",
+    "Starbucks coffee"
+  ],
+  "seedSourceUrls": [
+    "https://investor.starbucks.com/",
+    "https://companiesmarketcap.com/starbucks/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T14:24:49.351844Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:49.351857Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:49.352301Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:49.352306Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:49.352654Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:49.352662Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:49.352987Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:49.352991Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:49.353333Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:49.353336Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:49.354011Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:49.354015Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:50.401264Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:50.401277Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:50.401638Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:50.401643Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:50.401965Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:50.401971Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:50.402306Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:50.402310Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:50.402631Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:50.402634Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:24:50.403349Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:24:50.403352Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll verify Starbucks facts and source URLs first, then return only the requested JSON object.
+web search: 
+web search: Starbucks 2024 annual report revenue stores rewards members SEC 10-K ...
+web search: 
+web search: finance: SBUX
+web search: 
+web search: CompaniesMarketCap Starbucks market cap May 2026 SBUX ...
+web search: 
+web search: Open Loyalty open source loyalty platform GitHub ...
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"starbucks","name":"Starbucks","ticker":"SBUX","rankApprox":88,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top100"],"sectorId":"consumer-discretionary","industryId":"restaurants","companiesMarketCapUrl":"https://companiesmarketcap.com/starbucks/marketcap/","description":"Starbucks operates and licenses coffeehouses and sells coffee, tea, beverages, food, packaged coffee, and ready-to-drink products worldwide.","overview":[{"title":"Business footprint","paragraphs":["Starbucks is a global specialty coffee retailer with company-operated stores, licensed stores, packaged coffee, ready-to-drink products, and a large digital loyalty channel. Its scale comes from a dense store estate, a recognizable brand, supplier relationships, store-format know-how, and a rewards app that directs customer frequency.","The company remains a physical retail and food-service business rather than a pure technology platform. Its moat is meaningful, but much of the core product can be replicated locally by independent cafes, cooperative roasters, open point-of-sale software, and direct coffee sourcing networks."]},{"title":"Registry thesis","paragraphs":["The strongest replacement surface is not a one-for-one open-source Starbucks clone. It is a stack of local cafes, cooperative purchasing, transparent coffee sourcing, open loyalty software, and interoperable payment or rewards rails that reduce dependence on a single branded chain.","Starbucks is hard to decentralize at the exact brand-experience layer, but easier to pressure at the commodity coffee, cafe operations, loyalty, and community-commerce layers."]}],"moatNarrative":["Starbucks has a strong consumer brand, a global retail footprint, a large loyalty program, licensed-store economics, and operational routines that independent cafes cannot instantly match. Its 2025 investor materials describe more than 40,000 global stores and tens of millions of active Starbucks Rewards members in the U.S. and China, which gives the company purchasing leverage and a direct customer channel.","The moat is not absolute. Coffee, tea, prepared beverages, and cafe seating are highly replicable, and local operators can compete on place, community, quality, labor practices, and sourcing transparency. Starbucks' advantage is more about scale, convenience, habit, and brand trust than proprietary technology."],"decentralizationNarrative":["A decentralized alternative to Starbucks would likely combine local ownership, shared procurement, open operational tooling, and portable customer identity or rewards rather than trying to make every shop identical. Open-source food-commerce and farm-management projects show that local food networks can coordinate producers, hubs, and buyers without a single national retailer owning the relationship.","The digital rewards surface is especially decentralizable because loyalty balances, offers, cafe discovery, and ordering can be represented by interoperable software and payment rails. The hard part is adoption: consumers value convenience and consistency, while independent operators need simple software, fraud controls, and enough participating locations to make portable rewards useful."],"sourceIds":["starbucks-2025-annual-report","starbucks-2025-proxy","stockanalysis-sbux-market-cap-2026","stockanalysis-sbux-overview-2026"],"technologyWaveIds":["bitcoin-native-coordination","microfactories"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100.","inputMetrics":{"moat":{"value":78,"rationale":"Global brand recognition, a large store base, licensed relationships, purchasing scale, and tens of millions of active rewards members create a strong consumer and distribution moat, though the underlying cafe product remains replicable.","sourceIds":["starbucks-2025-annual-report","starbucks-2025-proxy"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizability":{"value":61,"rationale":"Coffee roasting, cafe operations, loyalty, ordering, and local-food sourcing can be decomposed across independent operators and open software, but Starbucks' convenience, brand trust, real estate footprint, and consistency are harder to decentralize.","sourceIds":["starbucks-2025-annual-report","open-food-network-github","farmos-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"profitability":{"value":59,"rationale":"Starbucks remains profitable, but recent investor materials show pressure from labor, marketing, pricing, store investments, and operating-margin compression, making profitability solid but not exceptional for a mature global retailer.","sourceIds":["starbucks-2025-annual-report"],"confidence":"high","lastReviewedOn":"2026-05-27"},"peRatio":{"value":78.69,"rationale":"StockAnalysis reported a P/E ratio of 78.69 for SBUX in late May 2026, implying a high market multiple relative to current earnings.","sourceIds":["stockanalysis-sbux-overview-2026"],"confidence":"speculative","lastReviewedOn":"2026-05-27"},"marketCap":{"value":117510000000,"rationale":"StockAnalysis reported Starbucks' market capitalization at about $117.51 billion around May 22, 2026; market capitalization moves with the share price and should be treated as a point-in-time market-data estimate.","sourceIds":["stockanalysis-sbux-overview-2026","stockanalysis-sbux-market-cap-2026"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},"products":[{"slug":"starbucks-rewards","name":"Starbucks Rewards","category":"Loyalty and ordering platform","homepageUrl":"https://www.starbucks.com/rewards","summary":"Starbucks Rewards is the company's loyalty, ordering, payment, and promotion layer for repeat customers.","whyItMatters":"The program turns Starbucks' store footprint into a direct digital channel, increases switching costs, and gives the company a way to steer frequency, offers, stored value, and customer behavior.","replacementSketch":["A credible replacement would let independent cafes issue portable points or stamps, accept open payments, and participate in shared discovery without surrendering customer relationships to a dominant app operator.","The lightweight version is open-source loyalty software for a single cafe. The stronger version is a federated cafe network where balances, offers, and receipts are interoperable across participating shops."],"sourceIds":["starbucks-2025-proxy","openperks-home","open-loyalty-github","odoo-loyalty-docs"],"technologyWaveIds":["bitcoin-native-coordination"],"alternatives":[{"slug":"openperks","name":"OpenPerks","kind":"open-source","homepageUrl":"https://www.openperks.org/","repoUrl":"https://github.com/OpenPerks","summary":"OpenPerks presents itself as an open-source, blockchain-based customer loyalty platform with tokenized rewards and APIs for integration into existing systems.","metrics":{"openness":{"value":72,"rationale":"The project advertises open-source code and public documentation, though production maturity and adoption appear limited compared with enterprise loyalty platforms.","sourceIds":["openperks-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":67,"rationale":"Tokenized reward balances and wallet support can reduce dependence on one loyalty database, but the deployment can still be operated centrally by each merchant or network.","sourceIds":["openperks-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"readiness":{"value":45,"rationale":"OpenPerks appears suitable for experimentation or small integrations, but the available public signals do not prove broad retail-scale reliability.","sourceIds":["openperks-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":60,"rationale":"Self-hosted open-source loyalty software can reduce vendor lock-in and per-merchant platform fees, but integration, support, wallet UX, and compliance still create real costs.","sourceIds":["openperks-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["openperks-home"]},{"slug":"odoo-pos-loyalty","name":"Odoo Point of Sale Loyalty","kind":"hybrid","homepageUrl":"https://www.odoo.com/documentation/17.0/applications/sales/point_of_sale/pricing/loyalty.html","summary":"Odoo's point-of-sale loyalty tooling lets merchants configure points, rewards, pricing rules, and checkout redemption inside an integrated retail stack.","metrics":{"openness":{"value":58,"rationale":"Odoo has an open-source community lineage and public documentation, but its current ecosystem mixes community and proprietary enterprise features, so openness depends on deployment choices.","sourceIds":["odoo-loyalty-docs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":46,"rationale":"Odoo can help independent cafes self-host operations and loyalty, but it does not by itself create a federated rewards network across operators.","sourceIds":["odoo-loyalty-docs"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":74,"rationale":"The documented POS loyalty feature is operationally closer to what a small retailer would need than more experimental token systems.","sourceIds":["odoo-loyalty-docs"],"confidence":"high","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":63,"rationale":"Open and self-hostable retail software can lower vendor dependence for cafes, though implementation and hosting costs remain.","sourceIds":["odoo-loyalty-docs"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["odoo-loyalty-docs"]}],"disruptionConcepts":[{"slug":"federated-cafe-rewards","name":"Federated Cafe Rewards","summary":"Independent cafes could share a portable loyalty protocol where customers earn and redeem rewards across a federation of local shops, while each operator keeps its own brand, pricing, menu, and customer relationship.","angleIds":["federation","decentralized-coordination"],"thesis":"The market structure shifts from one chain-owned app controlling loyalty and customer data to a federation of cafes that can interoperate without becoming a single franchise.","bitcoinOrDecentralizationRole":"Federation matters more than Bitcoin here. The core role is shared identity, portable reward balances, and interoperable offer rules across independent operators. Bitcoin or Lightning could be added for settlement, but it is not required for the base mechanism.","coordinationMechanism":"Cafe operators join a common protocol, publish reward rules, and settle redemptions through shared software. Customers hold portable accounts or wallets, while participating shops verify balances at checkout through compatible POS integrations.","verificationOrTrustModel":"Each redemption creates a signed receipt that participating operators can reconcile. Fraud is constrained by spend-linked issuance, per-merchant redemption limits, auditable ledgers, and dispute rules for chargebacks or fake transactions. The weakest point is still collusion between a merchant and fake customers unless the federation audits outlier issuance patterns.","failureModes":["Too few participating cafes would make rewards feel less useful than Starbucks' single app.","POS integration friction could block adoption by small operators.","Shared fraud governance may become bureaucratic if issuance and redemption disputes grow."],"adoptionPath":["Start with a city-level cafe association using one open POS or loyalty integration.","Add portable customer accounts and receipt-based rewards across participating shops.","Introduce shared settlement and fraud analytics once redemption volume is meaningful."],"confidence":"medium","problemSourceIds":["starbucks-2025-proxy"],"enablerSourceIds":["openperks-home","open-loyalty-github","odoo-loyalty-docs"],"metrics":{"decentralizationFit":{"value":76,"rationale":"A federated rewards protocol directly moves customer loyalty from one centralized app to many interoperating local operators.","sourceIds":["openperks-home","open-loyalty-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":58,"rationale":"The software primitives exist, but cafe-by-cafe onboarding, governance, and POS integration are non-trivial coordination barriers.","sourceIds":["openperks-home","odoo-loyalty-docs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":57,"rationale":"A small local pilot is feasible with existing loyalty and POS tools, while national-scale interoperability would require stronger standards and support.","sourceIds":["openperks-home","odoo-loyalty-docs"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":50,"rationale":"This could weaken Starbucks' loyalty lock-in locally, but it would not immediately match Starbucks' footprint, brand, convenience, or promotional budget.","sourceIds":["starbucks-2025-proxy"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},{"slug":"lightning-cafe-stamps","name":"Lightning Cafe Stamps","summary":"A cafe network could use Lightning or ecash-style vouchers for low-friction rewards, prepaid balances, and instant settlement between customers and independent shops, making loyalty balances more portable and less dependent on one app database.","angleIds":["lightning","bitcoin","decentralized-coordination"],"thesis":"Rewards become spendable claims or discounts that can move through open payment infrastructure rather than being trapped inside a single chain's loyalty system.","bitcoinOrDecentralizationRole":"Lightning provides open, low-fee payment rails for small-value cafe transactions and could support instant settlement of rewards or prepaid balances between customers, merchants, and local cafe networks.","coordinationMechanism":"Customers pay or collect rewards through wallet-compatible invoices or vouchers. Cafes publish accepted reward terms, and federation software maps receipts to stamps, discounts, or prepaid balances.","verificationOrTrustModel":"Settlement is verified through payment receipts and merchant-signed reward issuance. Double-spending is limited by payment finality and voucher redemption checks. The model still needs privacy-preserving anti-abuse controls so merchants cannot mint rewards without real sales.","failureModes":["Mainstream customers may reject wallet complexity for small coffee purchases.","Tax, accounting, and consumer-protection treatment of tokenized rewards can complicate deployment.","Volatile or poorly designed reward instruments could feel worse than ordinary points."],"adoptionPath":["Begin with Lightning payments and ordinary receipt-based stamps at a few independent cafes.","Add prepaid balances or vouchers once wallet UX and accounting are stable.","Federate settlement between participating cafes only after a local network has repeat usage."],"confidence":"speculative","problemSourceIds":["starbucks-2025-proxy"],"enablerSourceIds":["openperks-home"],"metrics":{"decentralizationFit":{"value":72,"rationale":"Open payment rails and portable reward claims reduce reliance on a chain-owned stored-value and loyalty database.","sourceIds":["openperks-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":47,"rationale":"The mechanism is coherent, but consumer wallet adoption and merchant accounting are significant practical hurdles.","sourceIds":["openperks-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":42,"rationale":"Payment pilots are feasible, but rewards, tax treatment, refunds, and support workflows make a polished cafe network difficult.","sourceIds":["openperks-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":41,"rationale":"It could appeal to values-aligned independent cafes, but near-term pressure on Starbucks would be limited unless the user experience becomes invisible to mainstream customers.","sourceIds":["starbucks-2025-proxy"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]},{"slug":"starbucks-coffee","name":"Starbucks coffee","category":"Coffee, beverages, and cafe retail","homepageUrl":"https://www.starbucks.com/menu","summary":"Starbucks' core product is specialty coffee and related beverages sold through company-operated stores, licensed stores, grocery channels, and foodservice partnerships.","whyItMatters":"Coffee is the physical anchor of Starbucks' brand and store traffic. It is also the most decentralizable part of the business because beans, roasting, brewing, and cafe service can be coordinated by local operators and producer networks.","replacementSketch":["A practical replacement is a local cafe and roaster network using open food-commerce software, transparent sourcing records, and shared back-office tooling to compete on freshness, ownership, and community presence.","The more ambitious version links producers, roasters, cafes, and customers through open marketplaces and farm records so more value accrues to growers and local operators instead of a branded chain intermediary."],"sourceIds":["starbucks-2025-annual-report","open-food-network-github","open-food-network-home","farmos-home"],"technologyWaveIds":["microfactories"],"alternatives":[{"slug":"open-food-network","name":"Open Food Network","kind":"open-source","homepageUrl":"https://openfoodnetwork.net/","repoUrl":"https://github.com/openfoodfoundation/openfoodnetwork","summary":"Open Food Network is a free and open-source marketplace platform for local food producers, food hubs, co-ops, independent food businesses, and buyers.","metrics":{"openness":{"value":90,"rationale":"The project describes itself as free and open source, with public code on GitHub and a not-for-profit network structure.","sourceIds":["open-food-network-github","open-food-network-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":82,"rationale":"Its model connects many independent producers, hubs, and buyers rather than centralizing commerce under one retailer.","sourceIds":["open-food-network-github"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":68,"rationale":"The platform is real and documented, but applying it specifically to cafe coffee supply and consumer beverage demand would require local operating work.","sourceIds":["open-food-network-github","open-food-network-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":70,"rationale":"Shared open marketplace software can lower platform costs and keep more margin with producers and local hubs, though physical logistics still dominate coffee economics.","sourceIds":["open-food-network-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["open-food-network-github","open-food-network-home"]},{"slug":"farmos","name":"farmOS","kind":"open-source","homepageUrl":"https://farmos.org/","repoUrl":"https://github.com/farmos","summary":"farmOS is a free and open-source web application for farm management, planning, and record keeping.","metrics":{"openness":{"value":92,"rationale":"farmOS states that its server and related code are free and open source under the GNU GPL, with code available through the farmOS GitHub organization.","sourceIds":["farmos-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"decentralizationFit":{"value":70,"rationale":"Farm-level record keeping helps producers own and share operational data without depending on a dominant buyer's private supply-chain system.","sourceIds":["farmos-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"readiness":{"value":65,"rationale":"farmOS is a usable farm-management platform, but it is an enabling tool rather than a complete coffee retail replacement.","sourceIds":["farmos-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"costLeverage":{"value":58,"rationale":"Open farm records can improve traceability and coordination, but they do not by themselves solve roasting, cafe operations, import logistics, or demand generation.","sourceIds":["farmos-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"}},"sourceIds":["farmos-home"]}],"disruptionConcepts":[{"slug":"local-coffee-coop-marketplace","name":"Local Coffee Cooperative Marketplace","summary":"A network of independent cafes, roasters, food hubs, and producer groups could use open marketplace software to coordinate sourcing, wholesale ordering, subscriptions, and pickup, giving local coffee ecosystems some of the convenience and consistency that Starbucks centralizes.","angleIds":["cooperative-production","peer-to-peer-marketplace","decentralized-coordination"],"thesis":"Starbucks' centralized brand and procurement model is pressured by a cooperative network where cafes and roasters share demand aggregation, local discovery, and transparent sourcing without becoming one chain.","bitcoinOrDecentralizationRole":"The decentralization role is cooperative market coordination rather than Bitcoin. Independent operators use shared software and governance to aggregate supply and demand while preserving local ownership.","coordinationMechanism":"Producers and roasters list offerings, cafes and consumers order through local hubs, and cooperative rules govern membership, fees, delivery windows, and quality standards.","verificationOrTrustModel":"Trust comes from producer profiles, order histories, batch records, cooperative audits, and customer feedback. Cheating is constrained by traceable lots, repeat relationships, and the ability to delist sellers, though third-party certification may still be needed for origin or labor claims.","failureModes":["Coffee imports and roasting logistics may be too complex for many local food hubs.","A cooperative network may struggle to match Starbucks' convenience, hours, store density, and marketing budget.","Quality variation across independent cafes could weaken consumer trust."],"adoptionPath":["Start with local roasters and independent cafes using open marketplace software for subscriptions and wholesale ordering.","Add producer-origin records and cafe discovery for consumers who care about transparent sourcing.","Form regional purchasing cooperatives once enough shops share demand for beans, packaging, equipment, or training."],"confidence":"medium","problemSourceIds":["starbucks-2025-annual-report"],"enablerSourceIds":["open-food-network-github","open-food-network-home","farmos-home"],"metrics":{"decentralizationFit":{"value":80,"rationale":"The concept directly replaces one national chain relationship with many producer, roaster, hub, cafe, and customer relationships coordinated by open software.","sourceIds":["open-food-network-github","farmos-home"],"confidence":"high","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":62,"rationale":"Open Food Network already targets local food coordination, but adapting it to coffee-specific imports, roasting, and cafe demand requires additional operating institutions.","sourceIds":["open-food-network-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":60,"rationale":"A local pilot is feasible with existing marketplace and farm-record tools, while multi-region supply-chain coordination is harder.","sourceIds":["open-food-network-github","farmos-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":46,"rationale":"This can pressure Starbucks locally on authenticity and sourcing, but it does not quickly replicate the chain's density, convenience, or app-driven habit loop.","sourceIds":["starbucks-2025-annual-report","starbucks-2025-proxy"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}},{"slug":"micro-roastery-playbook","name":"Open Micro-Roastery Playbook","summary":"Small roasters and cafes could share open operating playbooks, equipment recipes, sourcing templates, and quality-control data so local operators can replicate more of Starbucks' consistency without adopting its ownership model.","angleIds":["decentralized-manufacturing","home-microfactory","open-hardware"],"thesis":"The chain advantage in standardized preparation and process know-how weakens if independent cafes can use shared, open operating recipes and small-scale production systems to reach reliable quality at lower coordination cost.","bitcoinOrDecentralizationRole":"Bitcoin is not central. The important mechanism is decentralized manufacturing and open operational knowledge: small operators use shared designs, process data, and quality checks instead of relying on a central brand's proprietary training and equipment stack.","coordinationMechanism":"Roasters, baristas, equipment maintainers, and cafe operators contribute recipes, calibration data, training materials, and sourcing notes to a shared commons. Local operators adapt the playbooks while publishing performance and quality feedback.","verificationOrTrustModel":"Quality claims can be checked through shared cupping protocols, batch logs, equipment calibration records, and customer reviews. The model remains vulnerable to inconsistent execution and unverifiable origin claims unless independent audits or trusted local associations emerge.","failureModes":["Open recipes do not solve prime real estate, labor scheduling, or brand awareness.","Small operators may lack capital for equipment even when knowledge is open.","Quality and food-safety practices can drift without local audit capacity."],"adoptionPath":["Publish open cafe operations templates and roasting quality-control workflows for independent shops.","Link the playbook to farmOS-style lot records and Open Food Network-style purchasing pages.","Build local training and equipment-maintenance cooperatives around the shared standards."],"confidence":"speculative","problemSourceIds":["starbucks-2025-annual-report"],"enablerSourceIds":["farmos-home","open-food-network-github"],"metrics":{"decentralizationFit":{"value":74,"rationale":"Open operating knowledge and small-scale production tooling let many local operators replicate capabilities that a chain normally centralizes.","sourceIds":["farmos-home","open-food-network-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"coordinationCredibility":{"value":49,"rationale":"The knowledge-sharing model is plausible, but maintaining consistent standards across independent cafes is socially and operationally difficult.","sourceIds":["farmos-home"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"implementationFeasibility":{"value":52,"rationale":"Publishing playbooks and templates is easy; producing reliable cafe-level execution and shared quality auditing is the hard part.","sourceIds":["farmos-home","open-food-network-github"],"confidence":"medium","lastReviewedOn":"2026-05-27"},"incumbentPressure":{"value":38,"rationale":"The concept improves independent cafe capability, but Starbucks' real estate, brand, convenience, and rewards network would remain strong advantages.","sourceIds":["starbucks-2025-annual-report","starbucks-2025-proxy"],"confidence":"medium","lastReviewedOn":"2026-05-27"}}}]}]},"sources":[{"id":"starbucks-2025-annual-report","title":"Starbucks Fiscal 2025 Annual Report","url":"https://s203.q4cdn.com/326826266/files/doc_financials/2025/ar/Starbucks-Corporation_2025-Annual-Report-Web-Ready.pdf","kind":"annual-report","publisher":"Starbucks Corporation","note":"Primary source for Starbucks' business description, store model, revenue mix, operating performance, and fiscal-year context.","accessedOn":"2026-05-27"},{"id":"starbucks-2025-proxy","title":"Starbucks 2025 Proxy Statement","url":"https://s203.q4cdn.com/326826266/files/doc_financials/2024/ar/Starbucks-2025-Proxy-Statement.pdf","kind":"regulatory-filing","publisher":"Starbucks Corporation","note":"Provides investor-facing operating highlights including store-count and Starbucks Rewards membership context.","accessedOn":"2026-05-27"},{"id":"stockanalysis-sbux-overview-2026","title":"Starbucks Corporation (SBUX) Stock Price and Overview","url":"https://stockanalysis.com/stocks/sbux/","kind":"market-data","publisher":"StockAnalysis","note":"Market-data reference for current market capitalization and P/E ratio around the review date.","accessedOn":"2026-05-27"},{"id":"stockanalysis-sbux-market-cap-2026","title":"Starbucks Market Cap and Net Worth","url":"https://stockanalysis.com/stocks/sbux/market-cap/","kind":"market-data","publisher":"StockAnalysis","note":"Point-in-time market capitalization history and market-cap estimate for Starbucks.","accessedOn":"2026-05-27"},{"id":"openperks-home","title":"OpenPerks Home","url":"https://www.openperks.org/","kind":"open-source-project","publisher":"OpenPerks","note":"Open-source loyalty-platform reference for tokenized and API-driven customer rewards concepts.","accessedOn":"2026-05-27"},{"id":"open-loyalty-github","title":"Open Loyalty GitHub Organization","url":"https://github.com/OpenLoyalty","kind":"open-source-project","publisher":"Open Loyalty","note":"Public repositories for loyalty and distributed-ledger reward components relevant to open loyalty alternatives.","accessedOn":"2026-05-27"},{"id":"odoo-loyalty-docs","title":"Odoo Point of Sale Loyalty Programs Documentation","url":"https://www.odoo.com/documentation/17.0/applications/sales/point_of_sale/pricing/loyalty.html","kind":"technical-docs","publisher":"Odoo","note":"Documents practical POS loyalty features for independent retail operators.","accessedOn":"2026-05-27"},{"id":"open-food-network-github","title":"Open Food Network GitHub Repository","url":"https://github.com/openfoodfoundation/openfoodnetwork","kind":"open-source-project","publisher":"Open Food Foundation","note":"Open-source marketplace software for connecting local producers, food hubs, independent businesses, and buyers.","accessedOn":"2026-05-27"},{"id":"open-food-network-home","title":"Open Food Network","url":"https://openfoodnetwork.net/","kind":"open-source-project","publisher":"Open Food Network","note":"Project homepage describing Open Food Network as a free and open-source marketplace for local food networks.","accessedOn":"2026-05-27"},{"id":"farmos-home","title":"farmOS","url":"https://farmos.org/","kind":"open-source-project","publisher":"farmOS","note":"Open-source farm-management and record-keeping platform relevant to decentralized sourcing and traceability concepts.","accessedOn":"2026-05-27"}],"summaryMarkdown":"Prepared a new Starbucks registry bundle with two products: Starbucks Rewards and Starbucks coffee. The refresh emphasizes Starbucks' brand, store, and loyalty moat while mapping plausible open loyalty, federated cafe, cooperative marketplace, and local coffee production alternatives."}
+tokens used
+49,872

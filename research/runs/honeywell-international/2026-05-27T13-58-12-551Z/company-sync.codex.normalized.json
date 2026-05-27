@@ -1,0 +1,678 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "honeywell-international",
+      "name": "Honeywell International",
+      "ticker": "HON",
+      "rankApprox": 88,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "industrials",
+      "industryId": "industrial-conglomerates",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/honeywell/marketcap/",
+      "description": "Honeywell International supplies aerospace technologies, industrial automation, building automation, and energy and sustainability solutions.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Honeywell is a diversified industrial technology company organized around aerospace technologies, industrial automation, building automation, and energy and sustainability solutions.",
+            "The company reported 2025 sales across large installed-base businesses, including aerospace systems, controls, sensors, safety, productivity, process technology, and building automation."
+          ]
+        },
+        {
+          "title": "Strategic transition",
+          "paragraphs": [
+            "Honeywell has announced plans to separate Honeywell Aerospace into an independent public company, which would make the remaining Honeywell more concentrated in automation, buildings, and process technology.",
+            "That transition matters for this registry because the aerospace business has stronger certification and aftermarket moats, while automation software and building controls are more exposed to open IoT, digital-twin, and edge-management substitutes."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Honeywell's moat is strongest where safety certification, long product life cycles, switching costs, installed service networks, and integration into mission-critical operations make replacement slow. Aerospace systems, avionics, APUs, building controls, and industrial automation products are often embedded in regulated or high-downtime environments.",
+        "The moat is weaker at the software orchestration layer. Platforms such as Honeywell Forge benefit from domain expertise and integration with Honeywell equipment, but open IoT, digital-twin, and edge frameworks can contest parts of the stack when buyers prefer vendor-neutral data models and self-hosted operations."
+      ],
+      "decentralizationNarrative": [
+        "Honeywell's physical hardware businesses are difficult to decentralize quickly because aviation, industrial safety, and building systems require certification, reliability testing, warranties, and service accountability.",
+        "The most credible decentralization pressure is modular rather than total replacement: open digital twins, protocol adapters, local system integrators, open-source flight stacks for unmanned vehicles, and community-maintained edge software can reduce dependence on a single vendor's control plane."
+      ],
+      "sourceIds": [
+        "hon-2025-annual-report",
+        "hon-q4-2025-results",
+        "hon-stockanalysis-2026-05-21",
+        "hon-aerospace-spinoff-2026"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories",
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; market data reviewed on 2026-05-27.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Honeywell sells mission-critical aerospace, automation, and building systems with deep installed bases, long qualification cycles, and high operational switching costs.",
+          "sourceIds": [
+            "hon-2025-annual-report",
+            "hon-aerospace-spinoff-2026",
+            "hon-aerospace-page"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "The company's software and IoT layers can be partially replaced by open digital-twin and edge stacks, but certified aerospace and industrial control hardware remains hard to decentralize.",
+          "sourceIds": [
+            "hon-forge-page",
+            "eclipse-ditto",
+            "thingsboard",
+            "px4"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Honeywell reported 2025 net income attributable to Honeywell of about $5.1 billion and large profitable segment operations across aerospace, building automation, and energy and sustainability.",
+          "sourceIds": [
+            "hon-q4-2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 34.97,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 34.97 for HON at the May 21, 2026 close.",
+          "sourceIds": [
+            "hon-stockanalysis-2026-05-21"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 141810000000,
+          "rationale": "StockAnalysis reported Honeywell's market capitalization at $141.81 billion at the May 21, 2026 close.",
+          "sourceIds": [
+            "hon-stockanalysis-2026-05-21"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "honeywell-forge",
+        "name": "Honeywell Forge",
+        "category": "Industrial IoT and operations software",
+        "homepageUrl": "https://www.honeywell.com/us/en/solutions/honeywell-forge",
+        "summary": "Honeywell Forge is an AI-enabled industrial IoT platform for operations across industrial, building, and aerospace environments.",
+        "whyItMatters": "Forge is Honeywell's software control plane for turning equipment telemetry, operational data, and domain-specific analytics into recurring digital services.",
+        "replacementSketch": [
+          "A credible replacement path would not copy Forge as one monolithic suite. It would combine open digital-twin middleware, open IoT device management, protocol adapters, and local integrator services around customer-owned operational data.",
+          "The realistic wedge is vendor-neutral visibility and workflow automation for facilities or plants that already have mixed equipment fleets and want to avoid locking analytics, dashboards, and maintenance workflows to one supplier."
+        ],
+        "sourceIds": [
+          "hon-forge-page",
+          "eclipse-ditto",
+          "thingsboard",
+          "fiware"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories",
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "eclipse-ditto",
+            "name": "Eclipse Ditto",
+            "kind": "open-source",
+            "homepageUrl": "https://eclipse.dev/ditto/",
+            "repoUrl": "https://github.com/eclipse-ditto/ditto",
+            "summary": "Eclipse Ditto is an open-source framework for building digital twins of IoT-connected devices using standard web APIs.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Ditto is an Eclipse open-source project with a public repository and documented digital-twin APIs.",
+                "sourceIds": [
+                  "eclipse-ditto"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "It helps separate device representation and application workflows from a single proprietary industrial software vendor, though deployment governance still depends on the operator.",
+                "sourceIds": [
+                  "eclipse-ditto"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project documents HTTP, WebSocket, MQTT, AMQP, and Kafka integration patterns suitable for production IoT middleware, but it is not a full end-to-end industrial operations suite.",
+                "sourceIds": [
+                  "eclipse-ditto"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source middleware can lower licensing and switching costs for customers willing to assemble the surrounding data, security, UI, and integration layers.",
+                "sourceIds": [
+                  "eclipse-ditto"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "eclipse-ditto"
+            ]
+          },
+          {
+            "slug": "honeywell-forge-thingsboard",
+            "name": "ThingsBoard",
+            "kind": "open-source",
+            "homepageUrl": "https://thingsboard.io/",
+            "repoUrl": "https://github.com/thingsboard/thingsboard",
+            "summary": "ThingsBoard is an open-source IoT platform for device connectivity, data collection, processing, visualization, and device management.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "ThingsBoard offers an open-source IoT platform with public code and documented MQTT, CoAP, and HTTP device connectivity.",
+                "sourceIds": [
+                  "thingsboard"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Self-hosted deployments can reduce dependence on a single vendor cloud, though many buyers will still centralize operations in one tenant.",
+                "sourceIds": [
+                  "thingsboard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "ThingsBoard supports common IoT protocols, dashboards, rule processing, and industrial monitoring use cases, making it a practical alternative for parts of the Forge surface area.",
+                "sourceIds": [
+                  "thingsboard"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source deployment and modular integration can reduce software licensing pressure and make migration incremental.",
+                "sourceIds": [
+                  "thingsboard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "thingsboard"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-industrial-digital-twins",
+            "name": "Federated industrial digital twins",
+            "summary": "A federation of operator-owned digital-twin services could let factories, refineries, campuses, and building portfolios share telemetry schemas, maintenance events, and optimization recipes without sending every workflow through a single proprietary industrial cloud.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure shifts from vendor-owned industrial software suites toward interoperable local twin nodes maintained by plant owners, integrators, and equipment vendors.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated data custody and portable schemas rather than through Bitcoin. Each operator can run its own node while exchanging selected state, alerts, and model outputs with partners.",
+            "coordinationMechanism": "Operators publish agreed device models, maintenance taxonomies, and event streams through open APIs; integrators compete on connectors, analytics, and support contracts rather than exclusive platform ownership.",
+            "verificationOrTrustModel": "Signed device telemetry, auditable connector logs, role-based access policies, and cross-checks against local historian data constrain spoofing and false reporting. The weak point remains physical sensor integrity and insider access.",
+            "failureModes": [
+              "Industrial buyers may prefer accountable single-vendor support over a federated stack.",
+              "Open schemas can fragment if major equipment vendors refuse to maintain compatible adapters.",
+              "Safety-critical control loops may remain outside the federation, limiting the addressable surface."
+            ],
+            "adoptionPath": [
+              "Start with read-only monitoring, asset registry, and maintenance workflow overlays for mixed-vendor facilities.",
+              "Add write-back controls only after site-by-site validation, cybersecurity review, and clear operational responsibility."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "hon-forge-page"
+            ],
+            "enablerSourceIds": [
+              "eclipse-ditto",
+              "thingsboard",
+              "fiware"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "A federated twin architecture directly reduces dependence on one proprietary control plane while preserving local operational control.",
+                "sourceIds": [
+                  "eclipse-ditto",
+                  "fiware"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The coordination model is technically credible because open APIs and IoT protocols exist, but industrial governance and liability are hard.",
+                "sourceIds": [
+                  "eclipse-ditto",
+                  "thingsboard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Read-only and advisory deployments are feasible today; closed equipment interfaces and cybersecurity requirements make deeper automation slower.",
+                "sourceIds": [
+                  "hon-forge-page",
+                  "thingsboard"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "This can pressure software margins and lock-in, but Honeywell retains hardware, domain expertise, and services advantages.",
+                "sourceIds": [
+                  "hon-forge-page",
+                  "hon-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "aerospace-systems",
+        "name": "Aerospace systems",
+        "category": "Avionics, propulsion, power, and flight systems",
+        "homepageUrl": "https://www.honeywell.com/us/en/industries/aerospace",
+        "summary": "Honeywell Aerospace supplies avionics, auxiliary power units, propulsion, electric power, flight safety, navigation, thermal management, and related services for commercial, defense, business aviation, and space customers.",
+        "whyItMatters": "Aerospace systems are among Honeywell's highest-moat products because they combine certified hardware, software, long-term aircraft programs, safety regulation, and aftermarket support.",
+        "replacementSketch": [
+          "Open alternatives are most credible in unmanned aircraft, research vehicles, simulation, and non-certified subsystems rather than near-term replacement of certified commercial avionics or APUs.",
+          "Over time, open autopilot stacks, modular avionics interfaces, and distributed manufacturing of non-critical components can pressure the lower end of the aerospace systems market and create reference designs that incumbents must interoperate with."
+        ],
+        "sourceIds": [
+          "hon-aerospace-page",
+          "hon-aerospace-spinoff-2026",
+          "px4",
+          "ardupilot"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "px4-autopilot",
+            "name": "PX4 Autopilot",
+            "kind": "open-source",
+            "homepageUrl": "https://px4.io/",
+            "repoUrl": "https://github.com/PX4/PX4-Autopilot",
+            "summary": "PX4 is an open-source flight control software stack for drones and other unmanned vehicles, hosted by the Dronecode Foundation.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "PX4 is publicly developed as open-source flight-control software with open documentation and a public repository.",
+                "sourceIds": [
+                  "px4"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "PX4 enables many manufacturers, researchers, and integrators to build unmanned vehicle systems without relying on a single avionics vendor.",
+                "sourceIds": [
+                  "px4"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "PX4 is widely used for drones and research platforms, but it is not a direct certified replacement for commercial aircraft avionics.",
+                "sourceIds": [
+                  "px4"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open software and broad compatible hardware support can sharply lower prototyping and small unmanned-system development costs.",
+                "sourceIds": [
+                  "px4"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "px4"
+            ]
+          },
+          {
+            "slug": "ardupilot",
+            "name": "ArduPilot",
+            "kind": "open-source",
+            "homepageUrl": "https://ardupilot.org/",
+            "repoUrl": "https://github.com/ArduPilot/ardupilot",
+            "summary": "ArduPilot is an open-source autopilot software suite for unmanned aircraft, rovers, boats, submarines, and antenna trackers.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "ArduPilot is developed in public as open-source autopilot software with extensive community documentation.",
+                "sourceIds": [
+                  "ardupilot"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The project lets independent builders and integrators assemble vehicle control systems without a vertically integrated proprietary avionics supplier.",
+                "sourceIds": [
+                  "ardupilot"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "ArduPilot is mature for unmanned and experimental systems, but certification and support requirements limit direct substitution in commercial aviation.",
+                "sourceIds": [
+                  "ardupilot"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Community software and commodity flight-controller hardware can materially reduce development cost for drones and robotics.",
+                "sourceIds": [
+                  "ardupilot"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "ardupilot"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-unmanned-avionics-stack",
+            "name": "Open unmanned avionics stack",
+            "summary": "Open autopilot software, commodity flight controllers, open simulation, and shared safety cases can create a lower-cost avionics ecosystem for drones, robotic aircraft, and eventually selected non-critical aviation functions.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-coordination"
+            ],
+            "thesis": "The lower end of aerospace systems shifts from certified incumbent bundles toward modular stacks assembled by vehicle makers, integrators, and research communities.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through open software governance and interoperable hardware ecosystems. Bitcoin is not central to this mechanism.",
+            "coordinationMechanism": "Developers coordinate through public repositories, standards-compatible telemetry, simulation environments, hardware compatibility lists, and integrator-maintained vehicle profiles.",
+            "verificationOrTrustModel": "Trust comes from reproducible builds, hardware-in-the-loop testing, flight logs, public issue tracking, simulation regression suites, and operator-specific validation. It does not remove the need for formal certification in safety-critical aircraft.",
+            "failureModes": [
+              "Certification barriers may keep open stacks out of crewed commercial aviation for a long time.",
+              "Fragmented hardware quality can produce inconsistent safety outcomes.",
+              "Defense and commercial customers may require indemnification and support contracts that community projects cannot provide directly."
+            ],
+            "adoptionPath": [
+              "Expand in drones, research aircraft, inspection vehicles, and training systems where open stacks already fit the mission profile.",
+              "Build certified wrappers, validated hardware reference designs, and commercial support organizations for narrowly scoped aviation functions."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "hon-aerospace-page",
+              "hon-aerospace-spinoff-2026"
+            ],
+            "enablerSourceIds": [
+              "px4",
+              "ardupilot"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open autopilot ecosystems distribute development and integration across many actors instead of one avionics vendor.",
+                "sourceIds": [
+                  "px4",
+                  "ardupilot"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Public repositories, documentation, and foundation-backed governance make coordination credible for unmanned systems.",
+                "sourceIds": [
+                  "px4",
+                  "ardupilot"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Implementation is feasible for drones and experimental platforms but much less feasible for certified commercial avionics.",
+                "sourceIds": [
+                  "px4",
+                  "hon-aerospace-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Pressure is meaningful in unmanned and research markets, but Honeywell's certified aerospace systems and aftermarket base remain hard to displace.",
+                "sourceIds": [
+                  "hon-aerospace-spinoff-2026",
+                  "px4"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "distributed-aerospace-spares-and-test-cells",
+            "name": "Distributed aerospace spares and test cells",
+            "summary": "Additive manufacturing, open inspection recipes, and local test cells could move selected non-critical aerospace spare parts and fixtures closer to maintenance operators, reducing dependence on centralized parts channels for low-risk components.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "3d-printing",
+              "local-materials-processing"
+            ],
+            "thesis": "A portion of aerospace aftermarket value shifts from centralized OEM parts distribution toward qualified local production and verification networks.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing is central here; Bitcoin is not. The system depends on local fabrication, shared production recipes, and independently auditable quality records.",
+            "coordinationMechanism": "Maintenance operators, certified print shops, and inspectors coordinate through approved design files, material specifications, serial-numbered production records, and shared qualification data.",
+            "verificationOrTrustModel": "Cheating is constrained by material traceability, non-destructive inspection, machine logs, signed work orders, and regulator- or OEM-approved quality procedures. The hardest weakness is proving equivalence for flight-critical parts.",
+            "failureModes": [
+              "Regulators may limit local fabrication to tooling, fixtures, cabin parts, or non-critical spares.",
+              "Material variability and printer calibration can undermine repeatability.",
+              "OEMs may use intellectual-property rights and warranty terms to restrict independent production."
+            ],
+            "adoptionPath": [
+              "Start with ground-support tooling, fixtures, cabin components, and obsolete non-critical parts.",
+              "Advance only where material data, inspection records, and certification pathways support controlled local production."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "hon-aerospace-page",
+              "hon-aerospace-spinoff-2026"
+            ],
+            "enablerSourceIds": [
+              "hon-aerospace-page"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Local fabrication can decentralize parts availability, but aviation certification keeps the model tightly constrained.",
+                "sourceIds": [
+                  "hon-aerospace-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Maintenance records and inspection workflows provide a coordination basis, but shared qualification networks are still immature.",
+                "sourceIds": [
+                  "hon-aerospace-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Feasible for low-risk parts and tooling; speculative for broader aircraft systems because safety certification and materials control are demanding.",
+                "sourceIds": [
+                  "hon-aerospace-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "This could nibble at aftermarket logistics but is unlikely to threaten Honeywell's core certified systems in the near term.",
+                "sourceIds": [
+                  "hon-aerospace-spinoff-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "hon-2025-annual-report",
+      "title": "Honeywell 2025 Annual Report",
+      "url": "https://investor.honeywell.com/static-files/c7f9f713-d9e0-4a93-9b2d-a90f1ab588cb",
+      "kind": "annual-report",
+      "publisher": "Honeywell International Inc.",
+      "note": "Primary annual-report source for Honeywell's business segments, strategy, risk context, and 2025 financial reporting.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "hon-q4-2025-results",
+      "title": "Honeywell Reports Fourth Quarter 2025 Results",
+      "url": "https://investor.honeywell.com/news-releases/news-release-details/honeywell-reports-fourth-quarter-2025-results-adjusted-sales-and",
+      "kind": "investor-relations",
+      "publisher": "Honeywell International Inc.",
+      "note": "Investor release used for 2025 sales, net income, segment sales, and profitability context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "hon-stockanalysis-2026-05-21",
+      "title": "Honeywell International Inc. (HON) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/hon/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for HON market capitalization and trailing P/E ratio around the registry snapshot.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "hon-aerospace-spinoff-2026",
+      "title": "Honeywell Announces Filing of Form 10 Registration Statement for Planned Spin-Off of Honeywell Aerospace",
+      "url": "https://investor.honeywell.com/news-releases/news-release-details/honeywell-announces-filing-form-10-registration-statement",
+      "kind": "investor-relations",
+      "publisher": "Honeywell International Inc.",
+      "note": "Source for Honeywell Aerospace segment composition, 2025 net sales by aerospace sub-business, and planned separation context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "hon-forge-page",
+      "title": "Honeywell Forge",
+      "url": "https://www.honeywell.com/us/en/solutions/honeywell-forge",
+      "kind": "product-page",
+      "publisher": "Honeywell",
+      "note": "Product source describing Forge as an AI-enabled IoT platform for industrial, building, and aerospace operations.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "hon-aerospace-page",
+      "title": "Aerospace Technologies, Solutions and Services",
+      "url": "https://www.honeywell.com/us/en/industries/aerospace",
+      "kind": "product-page",
+      "publisher": "Honeywell",
+      "note": "Product source for Honeywell aerospace systems, including engines, APUs, avionics, flight decks, safety, and related technologies.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "eclipse-ditto",
+      "title": "Eclipse Ditto",
+      "url": "https://eclipse.dev/ditto/",
+      "kind": "open-source-project",
+      "publisher": "Eclipse Foundation",
+      "note": "Open-source digital-twin framework used as a plausible replacement component for proprietary industrial IoT platforms.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "thingsboard",
+      "title": "ThingsBoard Open-source IoT Platform",
+      "url": "https://thingsboard.io/",
+      "kind": "open-source-project",
+      "publisher": "ThingsBoard",
+      "note": "Open-source IoT platform source for device connectivity, processing, visualization, SCADA, and self-hostable industrial monitoring.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fiware",
+      "title": "FIWARE Open Source Platform",
+      "url": "https://www.fiware.org/",
+      "kind": "open-source-project",
+      "publisher": "FIWARE Foundation",
+      "note": "Open-source smart-solution, digital-twin, and data-space platform used as an enabler for federated industrial data systems.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "px4",
+      "title": "PX4 Autopilot",
+      "url": "https://px4.io/",
+      "kind": "open-source-project",
+      "publisher": "Dronecode Foundation",
+      "note": "Open-source flight-control software source for drones and unmanned vehicles.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "ardupilot",
+      "title": "ArduPilot Documentation",
+      "url": "https://ardupilot.org/",
+      "kind": "open-source-project",
+      "publisher": "ArduPilot",
+      "note": "Open-source autopilot suite source for unmanned vehicles and robotics.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Honeywell International bundle with two products: Honeywell Forge and Aerospace systems. The strongest decentralization pressure is modular: open digital twins and IoT platforms for Forge, and open unmanned avionics stacks for the lower end of aerospace systems. Core certified aerospace and industrial hardware remain high-moat."
+}

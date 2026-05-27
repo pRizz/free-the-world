@@ -1,0 +1,1449 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e699f-c890-79f1-8b38-fd0fba0201b4
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: altria-group
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "altria-group",
+  "name": "Altria Group",
+  "ticker": "MO",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "consumer-staples",
+  "industryId": "tobacco",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/altria-group/marketcap/",
+  "description": "Altria Group sells tobacco, oral nicotine, and related smoke-free products in the United States.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Marlboro",
+    "on!"
+  ],
+  "seedSourceUrls": [
+    "https://investor.altria.com/",
+    "https://companiesmarketcap.com/altria-group/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T13:29:01.253290Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:01.253305Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:01.253644Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:01.253649Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:01.254044Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:01.254049Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:01.254430Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:01.254435Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:01.254766Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:01.254769Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:01.255542Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:01.255545Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:02.512612Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:02.512625Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:02.512928Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:02.512934Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:02.513234Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:02.513237Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:02.513521Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:02.513523Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:02.513807Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:02.513810Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T13:29:02.514418Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T13:29:02.514421Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: Altria 2025 annual report Marlboro on nicotine products revenue operating income 2025 ...
+web search: 
+web search: open source quit smoking app GitHub ...
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "altria-group",
+      "name": "Altria Group",
+      "ticker": "MO",
+      "rankApprox": 88,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "consumer-staples",
+      "industryId": "tobacco",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/altria-group/marketcap/",
+      "description": "Altria Group sells tobacco, oral nicotine, e-vapor, and related smoke-free products in the United States.",
+      "overview": [
+        {
+          "title": "Business Profile",
+          "paragraphs": [
+            "Altria is a U.S.-focused nicotine company built around smokeable tobacco, oral tobacco and nicotine pouches, and e-vapor products. Its portfolio includes Marlboro cigarettes, Copenhagen and Skoal smokeless tobacco, on! oral nicotine pouches, and NJOY e-vapor products.",
+            "The company remains highly cash-generative because cigarette and smokeless tobacco brands carry pricing power, distribution scale, and regulatory barriers. At the same time, the long-term volume trend for U.S. cigarettes is structurally negative, and Altria is trying to migrate profit pools toward FDA-authorized smoke-free products."
+          ]
+        },
+        {
+          "title": "Registry Lens",
+          "paragraphs": [
+            "Altria's strongest moat is not technical infrastructure; it is brand equity, retail distribution, adult-consumer habit formation, regulatory compliance capacity, and capital allocation. Those advantages are difficult for new nicotine sellers to replicate, but they are less defensible against public-health substitution, cessation tools, and reduced-demand coordination.",
+            "Open or decentralized alternatives are unlikely to replicate Marlboro as a consumer product in a desirable way. The more credible disruption path is demand-side: open cessation tools, community accountability, privacy-preserving health tracking, and cooperative support systems that reduce dependence on branded nicotine rather than competing as another nicotine vendor."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Altria has a durable incumbent position in U.S. nicotine because its core brands, especially Marlboro, have long-standing consumer recognition and broad retail availability. FDA regulation also raises the cost and uncertainty of bringing new tobacco or nicotine products to market, which can protect compliant incumbents with large legal, scientific, and distribution organizations.",
+        "The moat is constrained by secular cigarette-volume declines, health-risk awareness, litigation exposure, illicit or unauthorized competitors, and the possibility that nicotine consumers migrate to lower-risk or non-combustible categories where Altria does not own the leading brand."
+      ],
+      "decentralizationNarrative": [
+        "Altria is a poor fit for direct decentralization because its products are regulated consumables with age restrictions, controlled manufacturing, and significant public-health externalities. A decentralized Marlboro clone would not be an attractive registry outcome.",
+        "The more credible decentralization vector is outside Altria's product stack: open-source cessation apps, peer support, federated public-health communities, and locally trusted verification of progress can attack demand without requiring a new centralized nicotine brand."
+      ],
+      "sourceIds": [
+        "altria-2025-annual-report",
+        "altria-2025-results",
+        "companiesmarketcap-altria-2026-05-22",
+        "stockanalysis-altria-2026-05-22",
+        "cdc-adult-smoking-2023",
+        "fda-authorized-nicotine-pouches-2026"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Altria combines leading tobacco brands, retail distribution scale, pricing power, and costly regulatory compliance, but secular cigarette-volume decline and smoke-free category shifts keep the moat from being absolute.",
+          "sourceIds": [
+            "altria-2025-annual-report",
+            "altria-2025-results",
+            "cdc-adult-smoking-2023",
+            "fda-authorized-nicotine-pouches-2026"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 2,
+          "rationale": "The regulated nicotine-product business is centralized by design, with manufacturing controls, age-gated distribution, FDA authorization pathways, and liability exposure. Decentralized pressure is more plausible through cessation and support systems than through replicated nicotine products.",
+          "sourceIds": [
+            "altria-2025-annual-report",
+            "fda-authorized-nicotine-pouches-2026",
+            "cdc-adult-smoking-2023"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 9,
+          "rationale": "Altria's 2025 reporting shows a mature, high-margin nicotine business with substantial operating income despite volume pressure in smokeable products.",
+          "sourceIds": [
+            "altria-2025-results",
+            "altria-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 15.4,
+          "rationale": "Approximate trailing P/E calculated from StockAnalysis market capitalization of about $123.4 billion and reported trailing net income of about $8.03 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-altria-2026-05-22"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 123400000000,
+          "rationale": "CompaniesMarketCap reported Altria's market capitalization at approximately $123.40 billion on May 22, 2026.",
+          "sourceIds": [
+            "companiesmarketcap-altria-2026-05-22"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "marlboro",
+        "name": "Marlboro",
+        "category": "Cigarettes",
+        "homepageUrl": "https://www.marlboro.com/",
+        "summary": "Marlboro is Altria's flagship U.S. cigarette brand and the core of its smokeable-products profit pool.",
+        "whyItMatters": "Marlboro represents the most concentrated part of Altria's historical moat: a high-recognition combustible tobacco brand with strong retail presence, pricing power, and exposure to long-term public-health pressure.",
+        "replacementSketch": [
+          "The registry-relevant replacement is not another cigarette brand. The more defensible replacement is an open, privacy-preserving quit stack that helps smokers reduce or stop use without handing behavioral data to a proprietary addiction or advertising platform.",
+          "A credible free-world pathway combines open-source quit tracking, federated peer support, local public-health groups, and optional verifiable incentives for progress. That attacks the demand side of Marlboro's moat rather than trying to decentralize cigarette manufacturing."
+        ],
+        "sourceIds": [
+          "altria-2025-annual-report",
+          "altria-2025-results",
+          "cdc-adult-smoking-2023",
+          "marlboro-product-site"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "quitsmoke",
+            "name": "QuitSmoke",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/nepaliparadox/quitsmoke",
+            "repoUrl": "https://github.com/nepaliparadox/quitsmoke",
+            "summary": "An open-source React Native and Expo quit-smoking companion focused on free, non-subscription cessation support.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project publishes source code on GitHub and is positioned as a free open-source quit-smoking app.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "The app can run as a user-controlled tool, but the project is still a conventional app rather than a federated protocol.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "The project is publicly available, but it is a small open-source app rather than an established clinical cessation platform.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Free software can undercut subscription quit apps and make cessation support available without new nicotine-product purchases.",
+                "sourceIds": [
+                  "quitsmoke-github",
+                  "cdc-adult-smoking-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "quitsmoke-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-quit-cooperatives",
+            "name": "Federated Quit Cooperatives",
+            "summary": "A network of local cessation groups, clinicians, and open-source app maintainers could coordinate support without a single proprietary behavioral-data platform. Members keep personal tracking data locally or with a trusted community server, while groups share evidence-based program templates and aggregate outcomes.",
+            "angleIds": [
+              "federation",
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "Marlboro's moat depends partly on persistent consumer demand and habit reinforcement. Federated cessation cooperatives shift the competitive target from nicotine-product substitution to demand reduction owned by users and communities.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters because cessation support requires trust, privacy, and local legitimacy. Federation lets communities run their own support nodes while still sharing program improvements and non-identifying outcome data.",
+            "coordinationMechanism": "Participants join local or online quit groups, use open tools to track progress, and share anonymized milestones with community moderators, clinicians, or peer sponsors. Program templates and software updates can be maintained openly across groups.",
+            "verificationOrTrustModel": "Progress claims are primarily self-reported, but groups can reduce gaming through peer sponsorship, optional clinician confirmation, privacy-preserving streak proofs, and aggregate-only reporting. The system should avoid public leaderboards that reward false claims or shame relapses.",
+            "failureModes": [
+              "Self-reported abstinence can be inaccurate without invasive testing.",
+              "Volunteer moderation quality may vary widely across federated communities.",
+              "Clinical guidance, crisis support, and medication advice require professional oversight that open communities may not provide consistently."
+            ],
+            "adoptionPath": [
+              "Start with open-source quit tracking and small peer groups using local-first data storage.",
+              "Add federated templates for group meetings, relapse support, and anonymized outcome reporting.",
+              "Partner with public-health organizations that can provide evidence review without owning the user data layer."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "cdc-adult-smoking-2023",
+              "altria-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "quitsmoke-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept moves support, data custody, and governance toward local groups and interoperable open tools rather than one central app vendor.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Peer support and open tooling are credible, but outcome verification and clinical consistency remain hard.",
+                "sourceIds": [
+                  "cdc-adult-smoking-2023",
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software layer is feasible with existing open-source app patterns, while clinical governance and privacy-preserving reporting require careful execution.",
+                "sourceIds": [
+                  "quitsmoke-github",
+                  "cdc-adult-smoking-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Successful cessation systems pressure cigarette demand, but they do not directly replace the retail convenience or pharmacological role of nicotine products.",
+                "sourceIds": [
+                  "cdc-adult-smoking-2023",
+                  "altria-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "lightning-funded-cessation-rewards",
+            "name": "Lightning-Funded Cessation Rewards",
+            "summary": "A public-health or employer-funded rewards pool could use low-fee digital payments to reward verified cessation milestones while preserving user choice of apps and support groups. The model is not a nicotine replacement; it is an incentive layer that makes quitting economically tangible.",
+            "angleIds": [
+              "lightning",
+              "bitcoin",
+              "decentralized-coordination"
+            ],
+            "thesis": "Small milestone rewards can redirect some consumer behavior away from branded cigarettes by making cessation progress immediately valuable and portable across support providers.",
+            "bitcoinOrDecentralizationRole": "Lightning is relevant because cessation milestones can be frequent and low-value, and users should not need a proprietary rewards wallet controlled by one health-platform vendor.",
+            "coordinationMechanism": "Sponsors fund reward pools, users enroll through compatible quit tools, and approved verifiers attest to milestones. Payments are released to users or support groups when agreed evidence thresholds are met.",
+            "verificationOrTrustModel": "Verification could combine self-reports, peer or sponsor attestations, optional biochemical testing where appropriate, and fraud limits such as delayed payouts, capped rewards, and verifier reputation. False reporting remains a central weakness.",
+            "failureModes": [
+              "Financial incentives can be gamed if verification is weak.",
+              "Biochemical testing can be costly, invasive, or impractical for frequent milestones.",
+              "Rewards may help initiation but fail to sustain long-term abstinence without support."
+            ],
+            "adoptionPath": [
+              "Pilot with small employer or community health pools and voluntary peer verification.",
+              "Add optional stronger verification for larger milestones.",
+              "Standardize open attestations so users can switch quit apps or groups without losing history."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "cdc-adult-smoking-2023",
+              "altria-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "quitsmoke-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The model can avoid a single rewards platform if attestations and payments are portable, but many pilots would still rely on trusted sponsors.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Sponsors, users, and verifiers can coordinate around milestone payments, but fraud resistance is not solved by payments alone.",
+                "sourceIds": [
+                  "cdc-adult-smoking-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Low-value payment infrastructure is feasible, but trustworthy cessation verification and sponsor adoption are difficult.",
+                "sourceIds": [
+                  "quitsmoke-github",
+                  "cdc-adult-smoking-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept could reduce cigarette demand at the margin, but Altria's scale and consumer habit loops make large direct pressure uncertain.",
+                "sourceIds": [
+                  "altria-2025-annual-report",
+                  "cdc-adult-smoking-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "on",
+        "name": "on!",
+        "category": "Oral nicotine pouches",
+        "homepageUrl": "https://www.onnicotine.com/",
+        "summary": "on! is Altria's oral nicotine pouch brand, sold as a smoke-free nicotine product through Helix Innovations.",
+        "whyItMatters": "on! is part of Altria's effort to shift from combustible cigarettes toward smoke-free nicotine categories, where regulatory authorization, adult switching, and youth-access controls shape the competitive boundary.",
+        "replacementSketch": [
+          "The closest aligned replacement is again demand-side rather than a decentralized nicotine pouch. Open cessation tools can help users taper or quit nicotine without locking progress data into a proprietary platform.",
+          "For adults who already use nicotine, a free-world stack would emphasize transparent risk information, user-controlled tracking, and community support rather than a new branded pouch marketplace."
+        ],
+        "sourceIds": [
+          "altria-2025-annual-report",
+          "fda-authorized-nicotine-pouches-2026",
+          "on-plus-nationwide-2026",
+          "on-product-site"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "quitsmoke",
+            "name": "QuitSmoke",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/nepaliparadox/quitsmoke",
+            "repoUrl": "https://github.com/nepaliparadox/quitsmoke",
+            "summary": "An open-source cessation app that can be adapted for nicotine reduction tracking rather than brand-specific pouch consumption.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The source code is publicly available on GitHub and the project is presented as free and open source.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "The app supports user-controlled behavior tracking, but it is not itself a decentralized health protocol.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "The app is available as an open-source project, but adapting it to pouch-specific tapering and evidence-backed cessation workflows would require further work.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "A free cessation tool can reduce dependence on recurring nicotine purchases, though it does not replace the pharmacological experience of nicotine pouches.",
+                "sourceIds": [
+                  "quitsmoke-github",
+                  "fda-authorized-nicotine-pouches-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "quitsmoke-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-nicotine-taper-protocols",
+            "name": "Open Nicotine Taper Protocols",
+            "summary": "Open, clinically reviewed taper templates could help adult nicotine users reduce pouch dependence while keeping tracking data local and portable. Instead of replacing on! with another proprietary pouch, the concept standardizes transparent reduction plans that any app or support group can implement.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "If adult users can coordinate around open taper plans and portable progress records, the long-term value of a branded pouch relationship weakens because the endpoint is reduced dependence rather than brand loyalty.",
+            "bitcoinOrDecentralizationRole": "Decentralization is useful for portability and trust: users should be able to move between apps, clinicians, and peer groups without surrendering sensitive usage histories to a nicotine seller or a single health-app operator.",
+            "coordinationMechanism": "Clinicians, public-health reviewers, and open-source maintainers publish versioned taper templates. Users and support groups select a plan, track daily pouch or nicotine exposure, and share only the attestations needed for support or incentives.",
+            "verificationOrTrustModel": "The system relies on local logs, optional peer or clinician review, and transparent plan versions. It cannot fully prove consumption reduction without invasive testing, so it should treat verification as support-oriented rather than punitive.",
+            "failureModes": [
+              "Open taper templates could be misused as medical advice without proper clinical review.",
+              "Users can underreport consumption or switch to other nicotine sources.",
+              "A tapering protocol may be less attractive than branded products that satisfy immediate cravings."
+            ],
+            "adoptionPath": [
+              "Publish pouch-neutral taper templates with clear disclaimers and clinician review.",
+              "Add local-first tracking support to open cessation apps.",
+              "Federate anonymized outcome summaries so communities can improve templates without centralizing raw behavior data."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "fda-authorized-nicotine-pouches-2026",
+              "on-plus-nationwide-2026",
+              "cdc-adult-smoking-2023"
+            ],
+            "enablerSourceIds": [
+              "quitsmoke-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept uses open protocols and portable records rather than a single proprietary cessation platform.",
+                "sourceIds": [
+                  "quitsmoke-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Versioned protocols and federated support groups are credible, but clinical review and misuse controls are necessary.",
+                "sourceIds": [
+                  "cdc-adult-smoking-2023",
+                  "fda-authorized-nicotine-pouches-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software and template layers are feasible; the hard part is validated health guidance and adoption by users who may not intend to quit.",
+                "sourceIds": [
+                  "quitsmoke-github",
+                  "cdc-adult-smoking-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The pressure is indirect because on! competes in a regulated nicotine category and taper tools only matter for users who want to reduce or stop usage.",
+                "sourceIds": [
+                  "on-plus-nationwide-2026",
+                  "fda-authorized-nicotine-pouches-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "community-verified-harm-reduction-registry",
+            "name": "Community-Verified Harm Reduction Registry",
+            "summary": "A federated registry could help adult users and public-health groups compare nicotine-product authorization status, risk disclosures, and cessation pathways without relying on manufacturer marketing pages. The goal is not to create a new pouch product, but to make switching and quitting decisions more transparent.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Altria benefits when product information and brand narratives remain tightly coupled to retail marketing. A public, federated evidence registry would shift some decision power toward users, clinicians, and independent reviewers.",
+            "bitcoinOrDecentralizationRole": "Federation matters more than Bitcoin here: independent communities can host and verify product-status records while syncing public references to FDA authorizations, health warnings, and cessation resources.",
+            "coordinationMechanism": "Public-health groups, clinicians, and open-source maintainers maintain product records that reference official FDA and company disclosures. Local communities can add jurisdiction-specific age, access, and cessation information.",
+            "verificationOrTrustModel": "Records must cite primary sources such as FDA authorization lists and manufacturer disclosures. Moderators reject uncited claims, preserve source histories, and flag conflicts of interest from vendors or advocates.",
+            "failureModes": [
+              "Registry maintainers may lack the resources to keep product authorization and enforcement status current.",
+              "Health-risk interpretation can become politicized or captured by advocacy groups.",
+              "Users seeking nicotine may ignore neutral disclosures in favor of convenience or brand familiarity."
+            ],
+            "adoptionPath": [
+              "Start with FDA authorization status and plain-language risk summaries for major pouch brands.",
+              "Add local cessation resources and open taper templates.",
+              "Federate mirrors maintained by public-health groups, universities, and community organizations."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "fda-authorized-nicotine-pouches-2026",
+              "on-plus-nationwide-2026"
+            ],
+            "enablerSourceIds": [
+              "quitsmoke-github",
+              "fda-authorized-nicotine-pouches-2026"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "A federated evidence registry can distribute curation and hosting, though it still depends on centralized primary regulators for authorization facts.",
+                "sourceIds": [
+                  "fda-authorized-nicotine-pouches-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Source-cited public registries are practical, but durable moderation and conflict-of-interest controls are required.",
+                "sourceIds": [
+                  "fda-authorized-nicotine-pouches-2026",
+                  "cdc-adult-smoking-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The technical implementation is straightforward because the registry can begin as source-cited structured data; governance and maintenance are the main constraints.",
+                "sourceIds": [
+                  "fda-authorized-nicotine-pouches-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 3,
+                "rationale": "Better information can weaken marketing asymmetry but is unlikely to substantially displace a national retail nicotine brand on its own.",
+                "sourceIds": [
+                  "on-plus-nationwide-2026",
+                  "fda-authorized-nicotine-pouches-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "altria-2025-annual-report",
+      "title": "Altria Group 2025 Annual Report",
+      "url": "https://www.sec.gov/Archives/edgar/data/764180/000076418026000052/annualreportaltriagroup25a.pdf",
+      "kind": "annual-report",
+      "publisher": "Altria Group / SEC",
+      "note": "Primary annual filing for Altria's business mix, risks, segment discussion, and smoke-free strategy.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "altria-2025-results",
+      "title": "Altria Reports 2025 Fourth-Quarter and Full-Year Results; Provides 2026 Earnings Guidance",
+      "url": "https://investor.altria.com/press-releases/news-details/2026/Altria-Reports-2025-Fourth-Quarter-and-Full-Year-Results-Provides-2026-Earnings-Guidance/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Altria Group",
+      "note": "Investor release supporting 2025 revenue, operating income, segment performance, and guidance context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-altria-2026-05-22",
+      "title": "Altria Group (MO) Market Capitalization",
+      "url": "https://companiesmarketcap.com/altria-group/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap source for the registry snapshot, showing Altria at about $123.40 billion as of May 22, 2026.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-altria-2026-05-22",
+      "title": "Altria Group Market Cap and Statistics",
+      "url": "https://stockanalysis.com/stocks/mo/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Secondary market-data source used for market capitalization, trailing net income context, and approximate P/E calculation.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "cdc-adult-smoking-2023",
+      "title": "Notes from the Field: Tobacco Product Use Among Adults — United States, 2017–2023",
+      "url": "https://www.cdc.gov/mmwr/volumes/74/wr/mm7407a3.htm",
+      "kind": "analysis",
+      "publisher": "Centers for Disease Control and Prevention",
+      "note": "Public-health source documenting long-term adult cigarette smoking decline and the continuing burden of tobacco use.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "fda-authorized-nicotine-pouches-2026",
+      "title": "Nicotine Pouch Products Authorized by the FDA",
+      "url": "https://www.fda.gov/tobacco-products/market-and-distribute-tobacco-product/nicotine-pouch-products-authorized-fda",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Food and Drug Administration",
+      "note": "Regulatory source for FDA-authorized nicotine pouch products, including on! products.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "on-plus-nationwide-2026",
+      "title": "on! PLUS Expands Nationwide Retail Availability",
+      "url": "https://www.nasdaq.com/press-release/plustm-expands-nationwide-retail-availability-2026-03-23",
+      "kind": "investor-relations",
+      "publisher": "Altria Group / Nasdaq",
+      "note": "Company release describing on! PLUS as a Helix Innovations oral nicotine pouch product and noting FDA authorization and nationwide retail expansion.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "marlboro-product-site",
+      "title": "Marlboro Official Product Site",
+      "url": "https://www.marlboro.com/",
+      "kind": "product-page",
+      "publisher": "Philip Morris USA",
+      "note": "Official consumer product site for Marlboro in the United States.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "on-product-site",
+      "title": "on! Nicotine Official Product Site",
+      "url": "https://www.onnicotine.com/",
+      "kind": "product-page",
+      "publisher": "Helix Innovations / Altria Group",
+      "note": "Official consumer product site for on! oral nicotine pouches.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "quitsmoke-github",
+      "title": "QuitSmoke Open-Source Quit-Smoking App",
+      "url": "https://github.com/nepaliparadox/quitsmoke",
+      "kind": "open-source-project",
+      "publisher": "GitHub / nepaliparadox",
+      "note": "Open-source quit-smoking app used as a plausible free-software alternative for cessation support rather than nicotine-product replication.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Altria Group registry bundle with Marlboro and on! as product entries. The refresh treats direct decentralized nicotine manufacturing as a poor fit and focuses disruption analysis on open cessation tools, federated support, transparent harm-reduction records, and optional incentive coordination."
+}
+tokens used
+48,293

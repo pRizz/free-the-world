@@ -1,0 +1,1706 @@
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e69cf-d28b-7a31-b31b-b87e5a38540d
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: sp-global
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "sp-global",
+  "name": "S&P Global",
+  "ticker": "SPGI",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top100"
+  ],
+  "sectorId": "financials",
+  "industryId": "financial-exchanges-data",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/sp-global/marketcap/",
+  "description": "S&P Global provides credit ratings, benchmarks, analytics, and financial market data.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "S&P Global Ratings",
+    "S&P Dow Jones Indices"
+  ],
+  "seedSourceUrls": [
+    "https://investor.spglobal.com/",
+    "https://companiesmarketcap.com/sp-global/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-27T14:21:29.345574Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:29.345584Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:29.345988Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:29.345993Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:29.346391Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:29.346394Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:29.346771Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:29.346776Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:29.347140Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:29.347144Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:29.347801Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:29.347804Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:30.203788Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:30.203805Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:30.204159Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:30.204164Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:30.204542Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:30.204549Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:30.204903Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:30.204907Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:30.205282Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:30.205286Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:30.206038Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:30.206042Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+codex
+I’ll use the company manifest queue guidance, then verify current public sources before composing the JSON. Since the workspace is read-only here, I’ll return the publishable bundle rather than writing it.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md && rg --files content src | sed -n '1,120p'" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+src/entry-server.tsx
+src/global.d.ts
+src/entry-client.tsx
+src/app.tsx
+src/app.css
+src/routes/mirrors.tsx
+src/routes/about.tsx
+content/taxonomy/concept-angles.json
+content/taxonomy/industries.json
+content/taxonomy/sectors.json
+content/taxonomy/indices.json
+content/taxonomy/regions.json
+content/taxonomy/technology-waves.json
+src/routes/insights/disruption-concepts.tsx
+src/routes/insights/alternative-pressure.tsx
+src/routes/insights/post-bubble.tsx
+src/routes/insights/capital-at-risk.tsx
+src/routes/insights/index.tsx
+src/routes/insights/market-cap-disruption.tsx
+src/routes/index.tsx
+src/routes/methodology.tsx
+src/routes/404.tsx
+src/routes/companies/index.tsx
+src/lib/domain/metrics.ts
+src/lib/domain/formatters.ts
+src/lib/domain/company-metrics.test.ts
+src/lib/domain/ipo.test.ts
+src/lib/domain/company-metrics.ts
+src/lib/domain/scoring.ts
+src/lib/domain/selectors.ts
+src/lib/domain/types.ts
+src/lib/domain/insights.test.ts
+src/lib/domain/formatters.test.ts
+src/lib/domain/market-cap-snapshots.ts
+src/lib/domain/ipo.ts
+src/lib/domain/insights.ts
+src/lib/domain/table-state.ts
+src/lib/domain/content-types.ts
+src/lib/config.ts
+src/lib/theme.ts
+content/companies/pfizer/bundle.json
+content/companies/newmont/bundle.json
+src/shims/source-map-js.ts
+src/components/homepage-infographics/registry.ts
+src/components/homepage-infographics/disruption-concepts-preview.tsx
+src/components/homepage-infographics/types.ts
+src/components/homepage-infographics/alternative-pressure-preview.tsx
+src/components/homepage-infographics/rotation.test.ts
+src/components/homepage-infographics/post-bubble-preview.tsx
+src/components/homepage-infographics/market-cap-disruption-preview.tsx
+src/components/homepage-infographics/rotation.ts
+src/components/homepage-infographics/rotating-homepage-infographic.tsx
+src/components/homepage-infographics/capital-at-risk-preview.tsx
+src/components/company-table.tsx
+src/components/source-list.tsx
+src/components/seo.tsx
+src/components/newsletter-signup.tsx
+src/components/site-shell.tsx
+src/components/repository-link.tsx
+src/components/company-table-toolbar.tsx
+src/components/product-implementation-dialog.tsx
+content/companies/accenture/bundle.json
+src/routes/companies/[companySlug]/products/[productSlug].tsx
+content/companies/meta-platforms/bundle.json
+src/components/ui/select.tsx
+src/components/ui/collapsible.tsx
+src/routes/companies/[companySlug]/products/index.tsx
+src/routes/companies/[companySlug]/index.tsx
+src/components/ui/checkbox.tsx
+src/components/ui/button.tsx
+src/components/ui/separator.tsx
+src/components/ui/table.tsx
+src/components/ui/badge.tsx
+src/components/ui/dialog.tsx
+src/components/ui/label.tsx
+src/components/ui/text-field.tsx
+src/components/ui/card.tsx
+content/companies/coca-cola/bundle.json
+content/companies/docusign/bundle.json
+content/manifests/companies/home-depot.json
+src/lib/content/products.ts
+content/manifests/companies/progressive.json
+src/lib/content/technology-waves.ts
+content/manifests/companies/walmart.json
+src/lib/content/sources.ts
+content/manifests/companies/analog-devices.json
+src/lib/content/site.ts
+content/manifests/companies/nvidia.json
+src/lib/content/newsletter.ts
+src/lib/content/companies.ts
+content/manifests/companies/charles-schwab.json
+content/manifests/companies/gilead-sciences.json
+content/manifests/companies/abbvie.json
+content/manifests/companies/abbott-laboratories.json
+content/manifests/companies/welltower.json
+content/manifests/companies/arista-networks.json
+content/manifests/companies/eli-lilly.json
+src/lib/content/sectors.ts
+content/manifests/companies/prologis.json
+content/companies/ge-aerospace/bundle.json
+content/manifests/companies/conocophillips.json
+content/manifests/companies/danaher.json
+content/manifests/companies/johnson-johnson.json
+content/manifests/companies/berkshire-hathaway.json
+content/manifests/companies/coca-cola.json
+content/manifests/companies/amphenol.json
+content/manifests/companies/jpmorgan-chase.json
+content/manifests/companies/crowdstrike.json
+content/manifests/companies/parker-hannifin.json
+content/manifests/companies/texas-instruments.json
+content/manifests/companies/dropbox.json
+content/manifests/companies/meta-platforms.json
+content/manifests/companies/american-express.json
+content/manifests/companies/pfizer.json
+content/manifests/companies/union-pacific.json
+content/manifests/companies/microsoft.json
+content/manifests/companies/thermo-fisher-scientific.json
+content/manifests/companies/tjx-companies.json
+content/manifests/companies/pepsico.json
+content/manifests/companies/unitedhealth-group.json
+
+2026-05-27T14:21:33.820293Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:33.820301Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:33.820639Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:33.820642Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:33.820965Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:33.820971Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:33.821289Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:33.821296Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:33.821606Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:33.821609Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-27T14:21:33.822398Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-27T14:21:33.822401Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search: 
+web search: S&P Global annual report 2025 revenue operating profit segments ratings indices market intelligence commodity insights ...
+web search: 
+web search: CompaniesMarketCap S&P Global market cap SPGI PE ratio 2026 ...
+web search: 
+web search: OpenBB Platform GitHub open source investment research platform ...
+web search: 
+web search: https://www.spglobal.com/content/dam/spglobal/corporate/en/annual-reports/2025/annual-report-2025.pdf
+web search: 
+web search: 'Revenue increased' in https://www.spglobal.com/content/dam/spglobal/corporate/en/annual-reports/2025/annual-report-2025.pdf
+web search: 
+web search: https://www.spglobal.com/content/dam/spglobal/corporate/en/annual-reports/2025/annual-report-2025.pdf
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "sp-global",
+      "name": "S&P Global",
+      "ticker": "SPGI",
+      "rankApprox": 90,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top100"
+      ],
+      "sectorId": "financials",
+      "industryId": "financial-exchanges-data",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/sp-global/marketcap/",
+      "description": "S&P Global provides credit ratings, benchmarks, analytics, and financial market data for capital, commodity, and automotive markets.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "S&P Global operates a high-margin information business built around credit ratings, market intelligence, energy data, mobility data, and S&P Dow Jones Indices.",
+            "Its 2025 annual report shows $15.3 billion of revenue and $6.5 billion of operating profit, with Ratings and Indices contributing especially strong segment margins."
+          ]
+        },
+        {
+          "title": "Data and benchmark control",
+          "paragraphs": [
+            "The company monetizes proprietary data, ratings, benchmarks, index licensing, surveillance, analytics, and workflow products embedded in institutional finance.",
+            "Its own 2025 annual-report letter says proprietary benchmarks, data, and tools comprise more than 95% of revenue, underscoring the centrality of trusted information rights."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "S&P Global has a very strong moat because its ratings, benchmark brands, index methodologies, proprietary datasets, and enterprise workflow integrations are deeply embedded in regulated and institutional finance.",
+        "The Indices segment is particularly durable because assets tracking S&P Dow Jones benchmarks generate asset-linked fees, derivative royalties, licensing revenue, and data subscriptions. The Ratings segment is similarly entrenched because debt issuers and investors treat rating coverage and surveillance as part of market infrastructure."
+      ],
+      "decentralizationNarrative": [
+        "The company is not easily decentralized in the short term because trust in credit ratings and benchmark indices depends on legal recognition, institutional adoption, liability management, methodology governance, and long historical datasets.",
+        "Open identifiers, open data platforms, reproducible index methodologies, public filings, and federated analyst networks can pressure parts of the stack, but they are more credible as complements or category challengers than immediate replacements for S&P Global's official ratings and flagship benchmark licensing."
+      ],
+      "sourceIds": [
+        "spgi-2025-annual-report",
+        "spgi-2025-ceo-letter",
+        "companiesmarketcap-spgi-marketcap",
+        "stockanalysis-spgi-statistics"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 76-100; market-cap and valuation refreshed on 2026-05-27.",
+      "inputMetrics": {
+        "moat": {
+          "value": 92,
+          "rationale": "Ratings, index benchmarks, proprietary datasets, enterprise workflow integrations, and regulatory-grade trust create a very strong institutional moat.",
+          "sourceIds": [
+            "spgi-2025-annual-report",
+            "spgi-2025-ceo-letter"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "decentralizability": {
+          "value": 36,
+          "rationale": "Some analytics and data-integration layers can be rebuilt with open tools, but official ratings and benchmark licensing depend on trusted governance, legal acceptance, and large network effects.",
+          "sourceIds": [
+            "spgi-2025-annual-report",
+            "openbb-open-data-platform",
+            "openfigi-overview"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "profitability": {
+          "value": 90,
+          "rationale": "S&P Global reported a 42% operating margin in 2025, while Ratings and Indices reported 64% and 69% operating margins, respectively.",
+          "sourceIds": [
+            "spgi-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "peRatio": {
+          "value": 26.11,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 26.11 for SPGI around the review date.",
+          "sourceIds": [
+            "stockanalysis-spgi-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        },
+        "marketCap": {
+          "value": 122090000000,
+          "rationale": "CompaniesMarketCap reported S&P Global's May 26, 2026 market capitalization at approximately $122.09 billion.",
+          "sourceIds": [
+            "companiesmarketcap-spgi-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "sp-global-ratings",
+        "name": "S&P Global Ratings",
+        "category": "Credit ratings, research, and analytics",
+        "homepageUrl": "https://www.spglobal.com/ratings/en/products/index",
+        "summary": "S&P Global Ratings provides credit ratings, surveillance, research, and analytics for issuers and debt instruments.",
+        "whyItMatters": "Credit ratings influence issuer access to capital, bond pricing, investor mandates, structured-finance markets, and regulatory risk workflows.",
+        "replacementSketch": [
+          "A realistic open replacement starts around issuer and instrument data: public filings, open identifiers, covenant metadata, historical defaults, and reproducible credit models that analysts can inspect.",
+          "Official rating substitution is harder. The near-term pressure point is transparent shadow ratings and independent surveillance that help investors compare proprietary agency opinions against open evidence."
+        ],
+        "sourceIds": [
+          "spgi-2025-annual-report",
+          "spgi-ratings-products",
+          "openfigi-overview",
+          "openbb-open-data-platform"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb-open-data-platform",
+            "name": "OpenBB Open Data Platform",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp/",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB provides an AGPL-licensed open-source data integration framework for building standardized local financial data workflows.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB describes the Open Data Platform as AGPL-licensed and available from GitHub.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 62,
+                "rationale": "It can reduce vendor lock-in by letting teams integrate multiple data sources locally, but it does not itself provide decentralized credit-rating governance.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "The project is usable for financial data workflows, but replacing regulated credit ratings requires additional data, governance, models, and market acceptance.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "spgi-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 76,
+                "rationale": "Open local integrations can reduce dependence on bundled proprietary terminals and duplicated data engineering, though premium source data may still carry costs.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openbb-open-data-platform"
+            ]
+          },
+          {
+            "slug": "openfigi",
+            "name": "OpenFIGI",
+            "kind": "protocol",
+            "homepageUrl": "https://www.openfigi.com/about/overview",
+            "summary": "OpenFIGI is an open data standard and API for persistent financial instrument identification across asset classes.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "OpenFIGI states that FIGI is an open data standard with MIT open-source declaration embedded in the standard.",
+                "sourceIds": [
+                  "openfigi-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Open identifiers make it easier for independent datasets, models, and rating workflows to interoperate without relying on proprietary symbology.",
+                "sourceIds": [
+                  "openfigi-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 82,
+                "rationale": "The identifier standard is mature and covers many asset classes, but it is an enabling layer rather than a full ratings replacement.",
+                "sourceIds": [
+                  "openfigi-overview",
+                  "openfigi-api-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Open symbology reduces mapping friction and vendor lock-in, but users still need issuer data, analytics, and governance.",
+                "sourceIds": [
+                  "openfigi-overview",
+                  "openfigi-api-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openfigi-overview",
+              "openfigi-api-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-credit-rating-network",
+            "name": "Federated Open Credit Rating Network",
+            "summary": "A federation of independent credit analysts, data providers, and model maintainers publishes reproducible issuer and instrument risk assessments tied to open identifiers and public evidence.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Credit-risk assessment shifts from a small set of agency-branded opinions toward inspectable, competing methodologies that investors can audit and combine.",
+            "bitcoinOrDecentralizationRole": "Federation matters more than Bitcoin here: independent nodes can host models, data transforms, analyst notes, and governance records while remaining interoperable through open identifiers and shared evidence formats.",
+            "coordinationMechanism": "Issuers, investors, analysts, and model maintainers coordinate through open schemas for issuers, securities, assumptions, rating histories, and dispute records. Users subscribe to the analyst groups and model families they trust.",
+            "verificationOrTrustModel": "Every rating output links to source filings, instrument identifiers, model versions, analyst attestations, and historical performance. Cheating is constrained by reproducible calculations, public challenge periods, signed analyst records, and ex-post default-performance scoring, though subjective judgment remains hard to fully verify.",
+            "failureModes": [
+              "Institutional investors may still require nationally recognized rating agency coverage for mandates or regulation.",
+              "Open analyst networks could fragment into low-quality or conflicted rating shops without strong reputation and conflict-disclosure rules.",
+              "Public data may be insufficient for private credit, structured products, or issuers with limited disclosure."
+            ],
+            "adoptionPath": [
+              "Start with shadow ratings for liquid public corporate issuers using SEC filings, market prices, covenant data, and open identifiers.",
+              "Publish historical backtests and default studies so investors can compare open model performance against agency ratings.",
+              "Add paid analyst cooperatives and institutional governance only after the open data and methodology layer is credible."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "spgi-2025-annual-report",
+              "spgi-ratings-products"
+            ],
+            "enablerSourceIds": [
+              "openfigi-overview",
+              "openbb-open-data-platform"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Ratings can be split into data, models, review, and governance across multiple independent operators, although official regulatory recognition remains centralized.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "openfigi-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "Open identifiers and data platforms support coordination, but market-wide trust in analyst quality and liability handling would take years to build.",
+                "sourceIds": [
+                  "openfigi-overview",
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 52,
+                "rationale": "Shadow ratings for public issuers are feasible; replacing official rating agency roles is much harder due to mandates, regulation, and issuer-paid market norms.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "spgi-ratings-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "The concept can pressure transparency and analytics pricing, but S&P Global's official brand, surveillance relationships, and market acceptance remain powerful.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "spgi-2025-ceo-letter"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "sp-dow-jones-indices",
+        "name": "S&P Dow Jones Indices",
+        "category": "Financial indices and benchmarks",
+        "homepageUrl": "https://www.spglobal.com/spdji/en/",
+        "summary": "S&P Dow Jones Indices maintains benchmark indices and licenses them for investment products, derivatives, data subscriptions, and analytics.",
+        "whyItMatters": "Its benchmarks, especially the S&P 500, shape passive investing, derivatives markets, performance measurement, asset-allocation decisions, and fund licensing economics.",
+        "replacementSketch": [
+          "A lighter open replacement would publish transparent index rules, reproducible constituent files, open identifiers, and open-source calculation code for non-official benchmarks.",
+          "The harder challenge is investable adoption: ETF sponsors, exchanges, and asset managers need governance, continuity, compliance controls, and brand trust before moving meaningful assets away from flagship benchmarks."
+        ],
+        "sourceIds": [
+          "spgi-2025-annual-report",
+          "spdji-us-equity-indices",
+          "openfigi-overview",
+          "openbb-open-data-platform"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb-open-data-platform",
+            "name": "OpenBB Open Data Platform",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp/",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB can serve as open infrastructure for sourcing, standardizing, and analyzing market data used in custom benchmark research.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "The OpenBB Open Data Platform is described as AGPL-licensed and open-source.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 60,
+                "rationale": "It supports local and standardized integrations, but index governance and licensing still need separate institutional structures.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 68,
+                "rationale": "It is ready as a data and analytics layer but not as a full benchmark administrator.",
+                "sourceIds": [
+                  "openbb-open-data-platform",
+                  "spgi-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Open integrations can lower the cost of building custom research benchmarks, although licensed market data and investable-index administration remain costly.",
+                "sourceIds": [
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openbb-open-data-platform"
+            ]
+          },
+          {
+            "slug": "openfigi",
+            "name": "OpenFIGI",
+            "kind": "protocol",
+            "homepageUrl": "https://www.openfigi.com/about/overview",
+            "summary": "OpenFIGI supplies open instrument identifiers that can support reproducible constituent mapping and benchmark calculation.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "FIGI is presented as an open data standard with open-source licensing language embedded in the standard.",
+                "sourceIds": [
+                  "openfigi-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Open identifiers let independent benchmark publishers, exchanges, and users reference the same instruments without proprietary mapping dependence.",
+                "sourceIds": [
+                  "openfigi-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "readiness": {
+                "value": 82,
+                "rationale": "The standard and API are mature enabling infrastructure, though not a benchmark methodology or governance system by themselves.",
+                "sourceIds": [
+                  "openfigi-overview",
+                  "openfigi-api-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open security identifiers reduce mapping and reconciliation costs for benchmark replication, but do not eliminate market-data licensing or fund-administration costs.",
+                "sourceIds": [
+                  "openfigi-overview",
+                  "openfigi-api-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            },
+            "sourceIds": [
+              "openfigi-overview",
+              "openfigi-api-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-benchmark-cooperative",
+            "name": "Open Benchmark Cooperative",
+            "summary": "A cooperative benchmark administrator publishes open index methodologies, signed constituent decisions, reproducible calculation code, and fee-light licenses for asset managers and researchers.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "Benchmark economics move from proprietary brand licensing toward transparent shared administration where users pay for governance, audit, and continuity rather than opaque index ownership.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared governance and reproducible publication, not through payments. A cooperative structure can let asset managers, researchers, and data providers fund benchmark maintenance without a single benchmark owner extracting all licensing rent.",
+            "coordinationMechanism": "Members vote on methodology rules, elect methodology committees, fund audits, and publish signed index files on a predictable schedule. ETF sponsors and exchanges can license the benchmark under transparent terms.",
+            "verificationOrTrustModel": "Constituent eligibility, weights, corporate-action treatment, and rebalances are computed from versioned data inputs and open code. External auditors and members can recompute results; signed releases and public incident logs constrain silent methodology drift.",
+            "failureModes": [
+              "Flagship benchmarks depend on brand trust and product liquidity that are difficult to bootstrap.",
+              "Open index files still require licensed exchange and corporate-action data in many production contexts.",
+              "Member governance can be captured by large asset managers unless voting and conflict rules are carefully designed."
+            ],
+            "adoptionPath": [
+              "Launch research-only open benchmarks for broad equity exposures where users can compare performance against proprietary benchmarks.",
+              "Add audited daily production files, corporate-action governance, and service-level commitments.",
+              "Seek first investable products through smaller ETF sponsors or direct-indexing platforms before challenging flagship S&P Dow Jones benchmarks."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "spgi-2025-annual-report",
+              "spdji-us-equity-indices"
+            ],
+            "enablerSourceIds": [
+              "openfigi-overview",
+              "openbb-open-data-platform"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "Index governance and calculation can be shared across cooperative members with open rules and recomputable outputs.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "openfigi-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 61,
+                "rationale": "Cooperative benchmark governance is plausible, but adoption requires asset managers, exchanges, data vendors, and auditors to coordinate around service reliability.",
+                "sourceIds": [
+                  "spdji-us-equity-indices",
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 57,
+                "rationale": "Research benchmarks are feasible with open tooling; investable benchmark administration requires stricter controls, data rights, and compliance operations.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "openfigi-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 50,
+                "rationale": "Open benchmarks could pressure custom-index and direct-indexing economics, but the S&P 500 brand and linked product ecosystem remain formidable.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "spdji-us-equity-indices"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          },
+          {
+            "slug": "proof-of-reserve-index-data-feeds",
+            "name": "Proof-of-Reserve Index Data Feeds",
+            "summary": "Index publishers and fund issuers expose machine-verifiable benchmark constituents, weights, corporate actions, and portfolio holdings so investors can verify tracking claims without trusting a single data terminal.",
+            "angleIds": [
+              "proof-of-work",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure shifts from closed benchmark and fund reporting toward independently verifiable index replication and tracking-error monitoring.",
+            "bitcoinOrDecentralizationRole": "Proof-of-work can act as a neutral timestamping and anti-spam anchor for signed benchmark files, fund holdings attestations, and challenge submissions, while decentralized mirrors keep historical index records independently available.",
+            "coordinationMechanism": "Benchmark publishers release signed index states; fund issuers release signed portfolio attestations; independent verifiers recompute tracking differences and publish challenges when weights, constituents, or corporate actions diverge.",
+            "verificationOrTrustModel": "Cheating is constrained by cryptographic signatures, content-addressed archives, reproducible index calculations, and public challenge logs. The model cannot prove hidden off-chain positions unless custodians or administrators also provide attestations.",
+            "failureModes": [
+              "Funds may resist frequent holdings disclosure because of trading, front-running, or regulatory constraints.",
+              "Timestamping does not guarantee source data quality or legal compliance.",
+              "Investors may still prefer branded benchmark licenses over technically verifiable but lesser-known alternatives."
+            ],
+            "adoptionPath": [
+              "Start with voluntary proof files for research indices and direct-indexing portfolios.",
+              "Add fund-level attestations for transparent ETFs where holdings disclosure already exists.",
+              "Build third-party verifier dashboards that compare official index files, open benchmark files, and fund holdings over time."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "spgi-2025-annual-report",
+              "spdji-us-equity-indices"
+            ],
+            "enablerSourceIds": [
+              "openfigi-overview",
+              "openfigi-api-docs",
+              "openbb-open-data-platform"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "Distributed publication and independent verification fit the benchmark transparency problem, though legal benchmark administration remains centralized.",
+                "sourceIds": [
+                  "openfigi-overview",
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "coordinationCredibility": {
+                "value": 48,
+                "rationale": "The technical pieces are credible, but issuer, fund, custodian, and benchmark-provider participation is uncertain.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "spdji-us-equity-indices"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "implementationFeasibility": {
+                "value": 50,
+                "rationale": "Signed files, open identifiers, and verifier dashboards are feasible; comprehensive proof of fund positions and corporate-action treatment requires broader operational buy-in.",
+                "sourceIds": [
+                  "openfigi-overview",
+                  "openfigi-api-docs",
+                  "openbb-open-data-platform"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              },
+              "incumbentPressure": {
+                "value": 42,
+                "rationale": "The concept can raise transparency expectations but is unlikely to displace S&P Dow Jones index licensing without investable product adoption.",
+                "sourceIds": [
+                  "spgi-2025-annual-report",
+                  "spdji-us-equity-indices"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "spgi-2025-annual-report",
+      "title": "S&P Global 2025 Annual Report",
+      "url": "https://www.spglobal.com/content/dam/spglobal/corporate/en/annual-reports/2025/annual-report-2025.pdf",
+      "kind": "annual-report",
+      "publisher": "S&P Global",
+      "note": "Primary source for 2025 revenue, operating profit, Ratings economics, Indices economics, and business descriptions.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "spgi-2025-ceo-letter",
+      "title": "S&P Global 2025 Annual Report CEO Letter",
+      "url": "https://www.spglobal.com/en/annual-reports/2025/ceo-letter",
+      "kind": "investor-relations",
+      "publisher": "S&P Global",
+      "note": "Supports the moat narrative around proprietary benchmarks, data, tools, and trusted market brands.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "spgi-ratings-products",
+      "title": "S&P Global Ratings Products",
+      "url": "https://www.spglobal.com/ratings/en/products/index",
+      "kind": "product-page",
+      "publisher": "S&P Global Ratings",
+      "note": "Product source for S&P Global Ratings offerings and credit-rating workflow context.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "spdji-us-equity-indices",
+      "title": "U.S. Equity Indices",
+      "url": "https://www.spglobal.com/spdji/en/index-family/equity/us-equity/",
+      "kind": "product-page",
+      "publisher": "S&P Dow Jones Indices",
+      "note": "Product source showing S&P Dow Jones Indices benchmark families and linked investable products.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "companiesmarketcap-spgi-marketcap",
+      "title": "S&P Global (SPGI) Market Capitalization",
+      "url": "https://companiesmarketcap.com/sp-global/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap source for SPGI around the May 2026 snapshot refresh.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "stockanalysis-spgi-statistics",
+      "title": "S&P Global Statistics",
+      "url": "https://stockanalysis.com/stocks/spgi/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Valuation source for trailing P/E and cross-check market capitalization.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openbb-open-data-platform",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp/",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source financial data integration alternative relevant to market data, analytics, and reproducible benchmark or credit workflows.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openfigi-overview",
+      "title": "OpenFIGI Overview",
+      "url": "https://www.openfigi.com/about/overview",
+      "kind": "technical-docs",
+      "publisher": "OpenFIGI",
+      "note": "Open financial instrument identifier standard relevant to interoperable market data, ratings, and benchmark replication.",
+      "accessedOn": "2026-05-27"
+    },
+    {
+      "id": "openfigi-api-docs",
+      "title": "OpenFIGI API Documentation",
+      "url": "https://www.openfigi.com/api/documentation",
+      "kind": "technical-docs",
+      "publisher": "OpenFIGI",
+      "note": "Technical API documentation for mapping identifiers and supporting reproducible financial-data workflows.",
+      "accessedOn": "2026-05-27"
+    }
+  ],
+  "summaryMarkdown": "Prepared a net-new S&P Global bundle with two core products: S&P Global Ratings and S&P Dow Jones Indices. The refresh emphasizes strong incumbent moats in ratings, benchmarks, proprietary data, and index licensing, while identifying open data platforms, OpenFIGI, federated rating models, cooperative benchmarks, and proof-style index verification as plausible pressure vectors."
+}
+tokens used
+54,365
