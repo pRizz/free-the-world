@@ -1,0 +1,516 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "waste-management",
+    "name": "Waste Management",
+    "ticker": "WM",
+    "rankApprox": 138,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top150"
+    ],
+    "sectorId": "industrials",
+    "industryId": "waste-management-services",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/waste-management/marketcap/",
+    "description": "Waste Management provides waste collection, recycling, landfill, transfer, environmental, and renewable energy services across North America.",
+    "overview": [
+      {
+        "title": "Business footprint",
+        "paragraphs": [
+          "WM is the largest publicly traded U.S. waste and environmental services company, with a core business built around collection routes, transfer stations, landfills, recycling facilities, and landfill-gas-to-energy assets.",
+          "The company serves residential, municipal, commercial, industrial, and healthcare customers, making its network valuable because waste volumes require dense local routing, permitted disposal capacity, and long-term municipal or commercial contracts."
+        ]
+      },
+      {
+        "title": "Sustainability growth",
+        "paragraphs": [
+          "WM is investing in recycling automation and renewable natural gas projects, using landfill gas and recovered materials to add growth layers on top of the traditional collection and disposal franchise.",
+          "These investments improve the incumbent's economics but also highlight where open optimization tools, local materials processing, and cooperative collection models could attack narrower parts of the stack."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "WM's moat is unusually physical: route density, fleet utilization, transfer infrastructure, landfill ownership, municipal contracts, regulatory permits, and customer switching friction reinforce one another. A new entrant cannot simply clone a landfill, permitted hauling network, or decade-scale municipality relationship.",
+      "The company's 2025 financials show durable profitability, with roughly $25.2 billion in revenue, $2.7 billion in net income, and about $2.8 billion in free cash flow, supporting the view that WM has meaningful pricing power and scale advantages."
+    ],
+    "decentralizationNarrative": [
+      "The whole WM business is not easy to decentralize because mixed municipal solid waste still needs regulated collection, safety controls, transfer logistics, and disposal capacity. Most households and municipalities value reliability more than ideological openness.",
+      "The more plausible decentralization pressure is modular: open route optimization for smaller haulers, cooperative procurement for neighborhoods or municipalities, transparent contamination and pickup verification, local composting, repair, reuse, and open materials-processing loops that reduce what must enter centralized disposal."
+    ],
+    "sourceIds": [
+      "wm-2025-10k",
+      "wm-home-services",
+      "wm-residential-services",
+      "wm-marketcap-2026",
+      "wm-financials-2026",
+      "wm-pe-2026"
+    ],
+    "technologyWaveIds": [
+      "microfactories"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; financial and market data refreshed May 29, 2026.",
+    "inputMetrics": {
+      "moat": {
+        "value": 88,
+        "rationale": "Route density, fleet scale, permitted landfill capacity, recycling infrastructure, municipal contracts, and regulatory barriers create a strong local-network moat.",
+        "sourceIds": [
+          "wm-2025-10k",
+          "wm-financials-2026"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "decentralizability": {
+        "value": 38,
+        "rationale": "Some software, routing, marketplace, reuse, composting, and recycling-planning layers can decentralize, but core waste collection and disposal remain capital-intensive and regulated.",
+        "sourceIds": [
+          "wm-2025-10k",
+          "wm-residential-services",
+          "graphhopper-open-source",
+          "swolfpy-github"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "profitability": {
+        "value": 78,
+        "rationale": "FY 2025 net income of about $2.7 billion on about $25.2 billion of revenue and positive free cash flow show strong profitability for an asset-heavy industrial services company.",
+        "sourceIds": [
+          "wm-financials-2026"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "peRatio": {
+        "value": 30.9,
+        "rationale": "CompaniesMarketCap reported a TTM P/E ratio of 30.9 for WM as of May 2026.",
+        "sourceIds": [
+          "wm-pe-2026"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "marketCap": {
+        "value": 86090000000,
+        "rationale": "CompaniesMarketCap reported WM market capitalization of $86.09 billion as of May 2026.",
+        "sourceIds": [
+          "wm-marketcap-2026"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-29"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "wm-residential-trash-service",
+      "name": "WM Residential Trash Service",
+      "category": "Residential waste collection",
+      "homepageUrl": "https://www.wm.com/us/en/home",
+      "summary": "Weekly household trash, bulk pickup, dumpster, and related residential waste services.",
+      "whyItMatters": "Residential collection is the customer-visible edge of WM's route-density moat and often operates through municipal, HOA, or neighborhood-level procurement choices.",
+      "replacementSketch": [
+        "A realistic replacement is not one household buying a truck; it is a locally coordinated hauler, cooperative, municipality, or neighborhood buying group using open routing, transparent service records, and shared procurement to reduce dependence on a single national operator.",
+        "Open-source routing and vehicle-routing solvers can make smaller operators more competent, but they still need permits, drivers, trucks, transfer access, insurance, and reliable customer support."
+      ],
+      "sourceIds": [
+        "wm-residential-services",
+        "wm-home-services"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "graphhopper-jsprit",
+          "name": "GraphHopper and jsprit",
+          "kind": "open-source",
+          "homepageUrl": "https://www.graphhopper.com/open-source/",
+          "repoUrl": "https://github.com/graphhopper/jsprit",
+          "summary": "Open routing and vehicle-routing optimization components that can support independent or municipal collection-route planning.",
+          "metrics": {
+            "openness": {
+              "value": 86,
+              "rationale": "GraphHopper describes its routing engine and jsprit vehicle-routing solver as open-source projects with public repositories.",
+              "sourceIds": [
+                "graphhopper-open-source"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 62,
+              "rationale": "Open routing tools reduce software lock-in for smaller haulers and public agencies, but do not replace physical fleet and disposal infrastructure.",
+              "sourceIds": [
+                "graphhopper-open-source"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 72,
+              "rationale": "The projects are mature enough for routing and optimization use cases, though production waste operations need local integration and dispatch workflows.",
+              "sourceIds": [
+                "graphhopper-open-source"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 66,
+              "rationale": "Better routing can lower miles, fuel, labor hours, and missed-service costs for small fleets, but disposal and vehicle costs remain dominant.",
+              "sourceIds": [
+                "graphhopper-open-source",
+                "datakind-soil-routing"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "graphhopper-open-source",
+            "datakind-soil-routing"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "cooperative-open-route-hauling",
+          "name": "Cooperative open-route hauling",
+          "summary": "Neighborhoods, HOAs, or municipalities coordinate demand and publish service requirements into an open route-optimization stack, allowing local haulers to bid and operate with auditable pickup records instead of relying on a single national incumbent.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept attacks WM's customer aggregation and dispatch software layers, not its landfill assets, by making smaller local operators more credible and easier for municipalities to coordinate.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through shared procurement, open route data, and multi-operator coordination rather than through Bitcoin payments.",
+          "coordinationMechanism": "Residents or a municipality aggregate stops, service windows, bin types, and exceptions; haulers bid on zones; route plans are generated with open tools; service records are shared back to the customer group.",
+          "verificationOrTrustModel": "Pickup completion can be checked through timestamped driver scans, bin RFID or QR codes, truck GPS traces, customer dispute windows, and public service-level reporting. Collusion is constrained by rebidding zones and publishing performance data, though privacy controls are required.",
+          "failureModes": [
+            "Local haulers may lack trucks, insurance, transfer access, or labor capacity to match incumbent reliability.",
+            "Municipal contracting rules and franchise agreements can block competitive neighborhood-level procurement."
+          ],
+          "adoptionPath": [
+            "Start with HOAs, small municipalities, campuses, or commercial districts where one buyer can aggregate enough stops.",
+            "Use open routing and transparent missed-pickup reporting to prove service reliability before expanding into larger municipal contracts."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "wm-residential-services",
+            "wm-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "graphhopper-open-source",
+            "datakind-soil-routing"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 68,
+              "rationale": "The model decentralizes procurement and dispatch among local operators while leaving disposal infrastructure partly centralized.",
+              "sourceIds": [
+                "graphhopper-open-source",
+                "datakind-soil-routing"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 61,
+              "rationale": "Vehicle-routing tooling and municipal aggregation are credible, but customer service, missed pickups, and contract administration are operationally demanding.",
+              "sourceIds": [
+                "datakind-soil-routing",
+                "wm-residential-services"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 55,
+              "rationale": "Software is available, but fleets, permits, insurance, transfer-station access, and local political buy-in remain hard constraints.",
+              "sourceIds": [
+                "wm-2025-10k",
+                "graphhopper-open-source"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 42,
+              "rationale": "It can pressure pricing and service quality in contestable local markets, but it does not undermine WM's landfill network or large municipal scale.",
+              "sourceIds": [
+                "wm-2025-10k",
+                "wm-marketcap-2026"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "wm-recycling",
+      "name": "WM Recycling",
+      "category": "Recycling and materials recovery",
+      "homepageUrl": "https://www.wm.com/us/en/recycle-right/recycling-101",
+      "summary": "Residential and commercial recycling services, material recovery, recycling education, and automation investments.",
+      "whyItMatters": "Recycling is where centralized material recovery meets local behavior: contamination, sorting economics, commodity prices, and logistics determine whether material is recovered or discarded.",
+      "replacementSketch": [
+        "Open tools cannot replace large material recovery facilities overnight, but they can help communities model collection choices, contamination costs, local reuse, composting, and smaller-scale materials recovery before material reaches a WM facility.",
+        "The strongest replacement path is a layered one: better local separation, open decision support, cooperative reuse markets, and small recycling or reprocessing cells for plastics, organics, and durable goods."
+      ],
+      "sourceIds": [
+        "wm-home-services",
+        "wm-sustainability-2025",
+        "wm-2025-10k"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "swolfpy",
+          "name": "SwolfPy",
+          "kind": "open-source",
+          "homepageUrl": "https://swolfpy-project.github.io/",
+          "repoUrl": "https://github.com/SwolfPy-Project/swolfpy",
+          "summary": "A free, open-source municipal solid waste life-cycle assessment and optimization framework.",
+          "metrics": {
+            "openness": {
+              "value": 88,
+              "rationale": "The project is publicly hosted, free software, and licensed under GPL-2.0.",
+              "sourceIds": [
+                "swolfpy-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 58,
+              "rationale": "It supports independent planning and comparison of waste-system choices, though it is a decision-support tool rather than an operating network.",
+              "sourceIds": [
+                "swolfpy-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 54,
+              "rationale": "SwolfPy documents models for landfill, waste-to-energy, composting, recycling, transfer, and collection, but adoption requires technical expertise.",
+              "sourceIds": [
+                "swolfpy-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 52,
+              "rationale": "Optimization can reveal lower-cost or lower-impact system designs, but savings depend on local contracts, contamination, infrastructure, and commodity markets.",
+              "sourceIds": [
+                "swolfpy-github",
+                "wm-sustainability-2025"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "swolfpy-github"
+          ]
+        },
+        {
+          "slug": "wm-recycling-precious-plastic",
+          "name": "Precious Plastic",
+          "kind": "open-source",
+          "homepageUrl": "https://www.preciousplastic.com/",
+          "summary": "An open-hardware and community model for small-scale plastic recycling and reuse.",
+          "metrics": {
+            "openness": {
+              "value": 78,
+              "rationale": "Precious Plastic is widely documented as an open-hardware recycling project with shared designs and community replication.",
+              "sourceIds": [
+                "precious-plastic"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "The model is explicitly local and community-scale, shifting some plastic recovery and reuse away from centralized material recovery.",
+              "sourceIds": [
+                "precious-plastic"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 45,
+              "rationale": "It is practical for selected plastics and education-oriented loops but not a full replacement for municipal-scale mixed recycling.",
+              "sourceIds": [
+                "precious-plastic",
+                "wm-sustainability-2025"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 49,
+              "rationale": "Local reuse can reduce hauling and disposal for narrow material streams, but labor, quality control, and feedstock consistency limit scale.",
+              "sourceIds": [
+                "precious-plastic"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "precious-plastic"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "local-recycling-decision-layer",
+          "name": "Local recycling decision layer",
+          "summary": "Municipalities, campuses, and neighborhoods use open waste-system modeling to decide which materials should be collected centrally, processed locally, composted, repaired, reused, or excluded from recycling streams before they create contamination and sorting costs.",
+          "angleIds": [
+            "recycling-and-reuse",
+            "local-materials-processing",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept shifts value upstream from centralized recycling facilities toward local separation, planning, and materials routing decisions.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is local decision-making with open models and shared material data, not tokenized recycling claims.",
+          "coordinationMechanism": "Local operators publish accepted materials, contamination data, pickup outcomes, and downstream destinations; planners use open LCA and optimization tools to compare scenarios and update collection rules.",
+          "verificationOrTrustModel": "Material claims are checked against weigh tickets, contamination audits, facility receipts, sample inspections, and public dashboards. False diversion claims are constrained by matching collection weights to downstream processor receipts, though full chain-of-custody remains expensive.",
+          "failureModes": [
+            "Household contamination and inconsistent sorting behavior can erase the benefits of better planning.",
+            "Commodity price swings may make locally preferred recycling pathways uneconomic."
+          ],
+          "adoptionPath": [
+            "Start with a municipality, school district, campus, or zero-waste district willing to publish material-flow data.",
+            "Use open modeling to remove low-value streams, improve source separation, and route high-value streams to local processors or reuse partners."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "wm-sustainability-2025",
+            "wm-home-services"
+          ],
+          "enablerSourceIds": [
+            "swolfpy-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 70,
+              "rationale": "The concept moves planning and some processing choices closer to communities while still using centralized processors where efficient.",
+              "sourceIds": [
+                "swolfpy-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 59,
+              "rationale": "Municipal and campus waste data can be coordinated, but reliable contamination audits and downstream receipts are operationally burdensome.",
+              "sourceIds": [
+                "swolfpy-github",
+                "wm-sustainability-2025"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 57,
+              "rationale": "Open planning tools exist, but local data collection and stakeholder alignment are the hard parts.",
+              "sourceIds": [
+                "swolfpy-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 46,
+              "rationale": "It can reduce volumes and improve bargaining power for selected streams, but WM's large-scale recycling and disposal network remains useful.",
+              "sourceIds": [
+                "wm-2025-10k",
+                "wm-sustainability-2025"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        },
+        {
+          "slug": "community-plastic-microfactories",
+          "name": "Community plastic microfactories",
+          "summary": "Local workshops, schools, maker spaces, or cooperatives process selected clean plastic streams into simple products or 3D-printing inputs using open hardware, diverting narrow high-control streams before they enter mixed recycling.",
+          "angleIds": [
+            "open-hardware",
+            "home-microfactory",
+            "recycling-and-reuse",
+            "local-materials-processing"
+          ],
+          "thesis": "The concept does not replace municipal recycling; it creates small local loops for materials that can be reliably separated and reused without national-scale sorting.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through open hardware, locally owned production, and transparent material flows rather than through a blockchain payment rail.",
+          "coordinationMechanism": "Participants separate acceptable plastics, local operators verify type and cleanliness, workshops process material, and buyers purchase standardized local products or feedstock.",
+          "verificationOrTrustModel": "Cheating is constrained by physical inspection, resin-identification tests, batch labeling, product-quality checks, and rejecting contaminated material. The model remains vulnerable to inconsistent feedstock and weak local demand.",
+          "failureModes": [
+            "Only a subset of clean plastics are suitable, so the model can be oversold as a general recycling replacement.",
+            "Small-scale equipment may struggle with safety, quality control, emissions, labor intensity, and product-market fit."
+          ],
+          "adoptionPath": [
+            "Begin with clean, high-visibility streams such as school or event plastics where separation can be controlled.",
+            "Standardize a few local products, publish batch results, and expand only where buyers value local recycled material."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "wm-sustainability-2025",
+            "wm-home-services"
+          ],
+          "enablerSourceIds": [
+            "precious-plastic",
+            "swolfpy-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 76,
+              "rationale": "Open hardware and local processing directly move selected recovery loops away from centralized facilities.",
+              "sourceIds": [
+                "precious-plastic"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 49,
+              "rationale": "Community collection and inspection can work for controlled streams, but mixed household plastics are much harder to coordinate.",
+              "sourceIds": [
+                "precious-plastic",
+                "wm-home-services"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 43,
+              "rationale": "Open hardware exists, but reliable operations require safety practices, trained operators, clean feedstock, and real product demand.",
+              "sourceIds": [
+                "precious-plastic"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 32,
+              "rationale": "The pressure is narrow because it affects selected plastics and education loops, not the main economics of municipal mixed recycling.",
+              "sourceIds": [
+                "wm-sustainability-2025",
+                "precious-plastic"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

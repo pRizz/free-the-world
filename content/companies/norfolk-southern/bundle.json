@@ -1,0 +1,527 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "norfolk-southern",
+    "name": "Norfolk Southern",
+    "ticker": "NSC",
+    "rankApprox": 140,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top150"
+    ],
+    "sectorId": "industrials",
+    "industryId": "rail-transportation",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/norfolk-southern/marketcap/",
+    "description": "Norfolk Southern operates a freight railroad network serving merchandise, intermodal, coal, automotive, and industrial customers in the eastern United States.",
+    "overview": [
+      {
+        "title": "Network Footprint",
+        "paragraphs": [
+          "Norfolk Southern is a major U.S. Class I freight railroad with a network spanning roughly 19,200 route miles across 22 states and the District of Columbia.",
+          "The company connects industrial sites, warehouses, ports, intermodal terminals, and transload facilities, giving shippers access to eastern U.S. rail corridors and connections with other carriers."
+        ]
+      },
+      {
+        "title": "Business Mix",
+        "paragraphs": [
+          "The railroad earns revenue from merchandise, intermodal, coal, automotive, and industrial freight. Its competitive position is tied to owned infrastructure, terminal access, service reliability, safety performance, and long-lived customer logistics relationships.",
+          "Thoroughbred Direct Intermodal Services extends the network into brokerage-like intermodal services for third-party logistics companies, brokers, steamship lines, and trucking companies."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Norfolk Southern's moat is primarily physical and regulatory. A 19,200-mile eastern U.S. rail network, port and industrial connections, terminal capacity, dispatching systems, rights-of-way, and long-lived track assets are difficult to duplicate.",
+      "The moat is not absolute. Service failures, safety incidents, truck competition, customer concentration in certain lanes, and open logistics data could erode pricing power at the margin, but replacing the underlying rail corridor network is far harder than replacing a software product."
+    ],
+    "decentralizationNarrative": [
+      "The rail network itself is structurally centralized because dispatch, track ownership, safety compliance, terminal control, and capital investment sit with a small number of Class I operators.",
+      "Decentralization pressure is more plausible around data, planning, first-mile and final-mile coordination, transload marketplaces, and open network intelligence than around replacing the core mainline railroad with a peer-to-peer physical alternative."
+    ],
+    "sourceIds": [
+      "ns-company-overview",
+      "ns-rail-network",
+      "ns-2025-results",
+      "companiesmarketcap-nsc-marketcap",
+      "companiesmarketcap-nsc-pe"
+    ],
+    "technologyWaveIds": [],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; refreshed with company, market-data, and open-rail sources reviewed on 2026-05-29.",
+    "inputMetrics": {
+      "moat": {
+        "value": 88,
+        "rationale": "Owned rail corridors, terminals, port connections, regulatory barriers, and capital intensity create a very strong physical infrastructure moat.",
+        "sourceIds": [
+          "ns-company-overview",
+          "ns-rail-network"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "decentralizability": {
+        "value": 22,
+        "rationale": "Core railroad operations require centralized dispatch, safety compliance, track control, and heavy capital assets, though surrounding data and logistics workflows are more decentralizable.",
+        "sourceIds": [
+          "ns-rail-network",
+          "openrailwaymap-wiki",
+          "osrd-github"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "profitability": {
+        "value": 80,
+        "rationale": "Norfolk Southern reported about $12.2 billion of 2025 revenue and about $2.9 billion of net income, indicating strong profitability despite railroad cyclicality and safety-related costs.",
+        "sourceIds": [
+          "ns-2025-results",
+          "stockanalysis-nsc-financials"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "peRatio": {
+        "value": 26.1,
+        "rationale": "CompaniesMarketCap reported a trailing P/E ratio of about 26.1 for Norfolk Southern as of May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-nsc-pe"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "marketCap": {
+        "value": 70640000000,
+        "rationale": "CompaniesMarketCap reported Norfolk Southern's market capitalization at approximately $70.64 billion in May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-nsc-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-29"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "norfolk-southern-railway",
+      "name": "Norfolk Southern Railway",
+      "category": "Freight rail network",
+      "homepageUrl": "https://www.norfolksouthern.com/en/ship-by-rail/our-rail-network",
+      "summary": "Norfolk Southern Railway is the company's core freight railroad network across the eastern United States.",
+      "whyItMatters": "The railway is a high-leverage logistics backbone for industrial shippers, ports, intermodal lanes, energy customers, automotive supply chains, and bulk commodities.",
+      "replacementSketch": [
+        "A realistic replacement path is not a parallel private railroad. It is an open coordination layer around routing, capacity analysis, terminal transparency, shipper choice, and interoperable rail data that reduces dependence on a single carrier's proprietary planning surfaces.",
+        "Open infrastructure maps and open-source railway planning tools could let public agencies, short lines, shippers, and communities reason about capacity, bottlenecks, and service alternatives without relying entirely on incumbent railroad data products."
+      ],
+      "sourceIds": [
+        "ns-rail-network",
+        "ns-company-overview"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "norfolk-southern-railway-openrailwaymap",
+          "name": "OpenRailwayMap",
+          "kind": "open-source",
+          "homepageUrl": "https://www.openrailwaymap.org/",
+          "repoUrl": "https://github.com/OpenRailwayMap/OpenRailwayMap",
+          "summary": "OpenRailwayMap is an open railway infrastructure map built on OpenStreetMap data, with rail-specific layers such as infrastructure, speed, signaling, electrification, and gauge.",
+          "metrics": {
+            "openness": {
+              "value": 92,
+              "rationale": "The project is open source and built on openly contributed OpenStreetMap rail data.",
+              "sourceIds": [
+                "openrailwaymap-wiki"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 78,
+              "rationale": "Distributed mappers can improve rail infrastructure data outside a single railroad-controlled data silo.",
+              "sourceIds": [
+                "openrailwaymap-wiki",
+                "openrailwaymap-app"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 60,
+              "rationale": "It is useful for public infrastructure visibility but is not a dispatching or freight operations replacement.",
+              "sourceIds": [
+                "openrailwaymap-wiki"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 55,
+              "rationale": "Open rail data can lower analysis and planning costs, but it does not replace expensive rights-of-way, terminals, locomotives, or compliance operations.",
+              "sourceIds": [
+                "openrailwaymap-wiki",
+                "ns-rail-network"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "openrailwaymap-wiki",
+            "openrailwaymap-app"
+          ]
+        },
+        {
+          "slug": "osrd",
+          "name": "OSRD",
+          "kind": "open-source",
+          "homepageUrl": "https://osrd.fr/en/",
+          "repoUrl": "https://github.com/OpenRailAssociation/osrd",
+          "summary": "OSRD is an open-source web application for railway infrastructure design, capacity analysis, timetabling, simulation, and short-term path requests.",
+          "metrics": {
+            "openness": {
+              "value": 90,
+              "rationale": "OSRD is public open-source software hosted by the OpenRail Association with source code available on GitHub.",
+              "sourceIds": [
+                "osrd-home",
+                "osrd-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 65,
+              "rationale": "It can shift planning and capacity analysis capabilities toward public agencies and multiple operators, though physical dispatch still depends on infrastructure managers.",
+              "sourceIds": [
+                "osrd-home",
+                "osrd-governance"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 62,
+              "rationale": "The project is actively developed and used in railway contexts, but its interfaces remain under active change and it is not a turnkey replacement for a Class I railroad operating stack.",
+              "sourceIds": [
+                "osrd-github",
+                "osrd-governance"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 68,
+              "rationale": "Open-source planning and simulation can reduce software licensing and vendor lock-in for network analysis and timetable planning.",
+              "sourceIds": [
+                "osrd-home",
+                "osrd-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "osrd-home",
+            "osrd-github",
+            "osrd-governance"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-open-rail-capacity-layer",
+          "name": "Federated Open Rail Capacity Layer",
+          "summary": "A federated rail-capacity layer would combine open infrastructure maps, open-source timetable simulation, public terminal data, and shipper-reported service signals so customers and public agencies can compare routing options and identify bottlenecks without relying only on incumbent railroad portals.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept weakens the information moat around routing, capacity, and service quality while leaving the physical railroad intact.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated data publishing and multi-party validation rather than through Bitcoin payments. Different agencies, shippers, short lines, ports, and software operators can publish interoperable datasets and analyses.",
+          "coordinationMechanism": "Participants publish route, terminal, interchange, delay, and capacity observations into interoperable feeds; planners run open simulations and reconcile disputes through provenance-aware datasets.",
+          "verificationOrTrustModel": "Cheating is constrained by source provenance, cross-checks against public maps, shipper evidence, timestamped terminal observations, and statistical anomaly detection. The model remains weaker where only the incumbent carrier has direct operational telemetry.",
+          "failureModes": [
+            "Incumbent railroads may withhold the operational data needed for accurate real-time capacity estimates.",
+            "Open map data can be incomplete or stale in yards, private sidings, and industrial spurs.",
+            "Safety-critical dispatch cannot be crowdsourced without regulatory approval and certified systems."
+          ],
+          "adoptionPath": [
+            "Start with non-safety-critical corridor maps, terminal transparency, service-quality reporting, and scenario planning.",
+            "Add open-source capacity simulations for public agencies, ports, short lines, and large shippers.",
+            "Use procurement, regulatory reporting, and public infrastructure grants to normalize interoperable rail data feeds."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "ns-rail-network",
+            "ns-company-overview"
+          ],
+          "enablerSourceIds": [
+            "openrailwaymap-wiki",
+            "osrd-github",
+            "osrd-home"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 70,
+              "rationale": "The concept decentralizes planning intelligence and data visibility, but not track ownership or certified dispatch authority.",
+              "sourceIds": [
+                "openrailwaymap-wiki",
+                "osrd-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 58,
+              "rationale": "Open mapping and open simulation tools exist, but multi-party freight rail data governance would be difficult and politically sensitive.",
+              "sourceIds": [
+                "openrailwaymap-wiki",
+                "osrd-governance"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 52,
+              "rationale": "Non-safety-critical analytics are feasible, while operational dispatch integration would require high trust, standards, and regulatory acceptance.",
+              "sourceIds": [
+                "osrd-github",
+                "ns-rail-network"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 42,
+              "rationale": "Better transparency could pressure service quality and customer bargaining, but it would not quickly replace the physical railway moat.",
+              "sourceIds": [
+                "ns-company-overview",
+                "openrailwaymap-wiki"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        },
+        {
+          "slug": "short-line-and-transload-cooperative-market",
+          "name": "Short-Line and Transload Cooperative Market",
+          "summary": "A cooperative freight marketplace could let short lines, transload operators, warehouses, trucking companies, ports, and shippers coordinate rail-adjacent moves with open service data and shared governance, reducing dependence on a single Class I railroad's customer interface for first-mile and final-mile options.",
+          "angleIds": [
+            "cooperative-production",
+            "peer-to-peer-marketplace",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept shifts competitive pressure to the edges of the network by making first-mile, final-mile, storage, transload, and interchange services easier to discover and combine.",
+          "bitcoinOrDecentralizationRole": "Bitcoin is not central. The decentralization role is cooperative governance and peer-to-peer matching among rail-adjacent operators that already own trucks, warehouses, sidings, and transload capacity.",
+          "coordinationMechanism": "Operators list verified facilities, equipment, service windows, commodity capabilities, and pricing rules; shippers request moves; cooperative members settle disputes and maintain shared service-quality records.",
+          "verificationOrTrustModel": "Fraud is constrained through facility verification, insurance and operating authority checks, shipment milestone evidence, customer attestations, and penalties for false availability or failed fulfillment.",
+          "failureModes": [
+            "Class I railroad interchange constraints may still determine whether a move is viable.",
+            "Small operators may lack digital maturity or incentives to publish accurate availability.",
+            "A marketplace can improve discovery without solving track congestion, labor availability, or regulatory bottlenecks."
+          ],
+          "adoptionPath": [
+            "Begin with transload and warehouse discovery around existing rail-served industrial sites and ports.",
+            "Add short-line and drayage coordination for lanes where shippers already face fragmented vendor search.",
+            "Move toward cooperative purchasing, shared software, and service-level benchmarking once enough operators participate."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "ns-rail-network",
+            "ns-first-final-mile"
+          ],
+          "enablerSourceIds": [
+            "openrailroad",
+            "openrailwaymap-wiki"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "The model distributes discovery and coordination across many logistics operators instead of routing all customer interaction through a single incumbent portal.",
+              "sourceIds": [
+                "ns-first-final-mile",
+                "openrailroad"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 56,
+              "rationale": "Facility and service marketplaces are credible, but freight rail coordination still depends on carrier interchange rules and operational data access.",
+              "sourceIds": [
+                "ns-first-final-mile",
+                "ns-rail-network"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 60,
+              "rationale": "A non-dispatch marketplace can be implemented with existing web, geospatial, and verification tooling, though adoption by fragmented operators is the hard part.",
+              "sourceIds": [
+                "openrailwaymap-wiki",
+                "openrailroad"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 38,
+              "rationale": "It can pressure margins and customer lock-in at the network edge, but the mainline railroad remains the bottleneck for many moves.",
+              "sourceIds": [
+                "ns-rail-network",
+                "ns-first-final-mile"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "thoroughbred-direct-intermodal-services",
+      "name": "Thoroughbred Direct Intermodal Services",
+      "category": "Intermodal logistics services",
+      "homepageUrl": "https://www.ns-direct.com/",
+      "summary": "Thoroughbred Direct Intermodal Services is a Norfolk Southern subsidiary providing intermodal transportation solutions to third-party logistics companies, brokers, steamship lines, and trucking companies.",
+      "whyItMatters": "Intermodal logistics is where rail, trucking, ports, brokers, and shippers meet; better coordination can move freight off highways and improve network utilization.",
+      "replacementSketch": [
+        "The most plausible open replacement is a protocol-like intermodal coordination layer rather than a single competing broker. Shippers, drayage providers, warehouses, transload sites, and rail partners could publish standardized capacity and milestone data.",
+        "Open scheduling, map, and facility data could reduce search costs and make smaller operators more visible, while still relying on physical railroads and trucking companies to move freight."
+      ],
+      "sourceIds": [
+        "tdis-overview",
+        "ns-first-final-mile"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "openrailroad",
+          "name": "Open Railroad",
+          "kind": "open-source",
+          "homepageUrl": "https://openrailroad.org/",
+          "summary": "Open Railroad is an initiative focused on open-source infrastructure, technology, software, standards, and common processes for the rail industry.",
+          "metrics": {
+            "openness": {
+              "value": 78,
+              "rationale": "The initiative is explicitly organized around open-source rail industry technology and common processes.",
+              "sourceIds": [
+                "openrailroad"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 62,
+              "rationale": "Open standards and shared software can reduce dependence on proprietary railroad or broker systems, though they do not create physical capacity.",
+              "sourceIds": [
+                "openrailroad"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 36,
+              "rationale": "It is more of an ecosystem and standards direction than a mature direct replacement for intermodal brokerage services.",
+              "sourceIds": [
+                "openrailroad"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 52,
+              "rationale": "Open rail software and process standards could lower integration costs for small operators and shippers.",
+              "sourceIds": [
+                "openrailroad"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "openrailroad"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-intermodal-capacity-protocol",
+          "name": "Open Intermodal Capacity Protocol",
+          "summary": "An open intermodal capacity protocol would standardize how terminals, drayage carriers, warehouses, transload operators, brokers, and shippers publish available slots, equipment constraints, commodity capabilities, shipment milestones, and exception events.",
+          "angleIds": [
+            "decentralized-coordination",
+            "peer-to-peer-marketplace",
+            "federation"
+          ],
+          "thesis": "The concept reduces broker and carrier portal lock-in by turning intermodal coordination into an interoperable data and matching layer.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated publication and peer-to-peer matching. Bitcoin or Lightning could be added later for small access fees or escrow, but they are not required for the core mechanism.",
+          "coordinationMechanism": "Each participant runs or uses a compatible endpoint to publish verified capacity, receive tenders, update milestones, and expose exception events to authorized counterparties.",
+          "verificationOrTrustModel": "The system constrains false reporting through identity verification, insurance and authority checks, signed status events, customer confirmations, and reputation penalties for missed pickups or fabricated capacity.",
+          "failureModes": [
+            "Large railroads or terminal operators may refuse to publish high-quality capacity data.",
+            "Participants may game availability to attract tenders they cannot fulfill.",
+            "Standardization is difficult across commodities, terminals, carriers, and private contracts."
+          ],
+          "adoptionPath": [
+            "Pilot with non-sensitive facility directories, service-area data, and appointment availability.",
+            "Add milestone events and exception reporting for participating drayage, warehouse, and transload operators.",
+            "Use cooperative governance or industry associations to maintain schemas, dispute rules, and certification."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "tdis-overview",
+            "ns-first-final-mile"
+          ],
+          "enablerSourceIds": [
+            "openrailroad",
+            "openrailwaymap-wiki"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 76,
+              "rationale": "A federated protocol lets many logistics operators coordinate without a single broker or railroad-controlled interface.",
+              "sourceIds": [
+                "tdis-overview",
+                "openrailroad"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 61,
+              "rationale": "The participants and coordination need are real, but shared standards and reliable data incentives are the main adoption challenge.",
+              "sourceIds": [
+                "tdis-overview",
+                "ns-first-final-mile",
+                "openrailroad"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 58,
+              "rationale": "The software layer is feasible with existing web and logistics data tooling; market adoption and data rights are harder than the technical build.",
+              "sourceIds": [
+                "openrailroad",
+                "openrailwaymap-wiki"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 45,
+              "rationale": "The protocol could reduce customer dependence on proprietary intermodal portals and brokers, but rail line-haul capacity remains concentrated.",
+              "sourceIds": [
+                "tdis-overview",
+                "ns-rail-network"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

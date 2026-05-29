@@ -1,0 +1,661 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "johnson-controls-international",
+    "name": "Johnson Controls International",
+    "ticker": "JCI",
+    "rankApprox": 126,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top150"
+    ],
+    "sectorId": "industrials",
+    "industryId": "building-products-controls",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/johnson-controls/marketcap/",
+    "description": "Johnson Controls International provides building automation, HVAC, fire, security, and energy-efficiency systems and services for commercial and institutional facilities.",
+    "overview": [
+      {
+        "title": "Business scope",
+        "paragraphs": [
+          "Johnson Controls sells building controls, HVAC equipment, fire and security systems, and connected services for commercial buildings, campuses, data centers, industrial sites, and public-sector facilities.",
+          "Its core strategic surface is the operating layer of buildings: controllers, sensors, field devices, service contracts, analytics, and enterprise software that help owners manage comfort, energy use, safety, and uptime."
+        ]
+      },
+      {
+        "title": "Registry relevance",
+        "paragraphs": [
+          "Johnson Controls matters to the Free The World registry because building automation is a high-friction market where proprietary integration, installed equipment, compliance requirements, and long service relationships can keep owners locked into a vendor stack.",
+          "Open data models, open building protocols, edge energy-management software, and shared commissioning knowledge create credible pressure against closed building-management systems, even when life-safety and enterprise reliability requirements limit how quickly replacement can happen."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Johnson Controls has a strong moat from its installed base, dealer and service networks, large-project procurement relationships, domain-specific controls expertise, and the operational risk customers face when changing critical building systems.",
+      "The moat is reinforced by the fact that commercial building automation is not just software. It combines field hardware, commissioning labor, cybersecurity, compliance, long asset lives, and ongoing service response."
+    ],
+    "decentralizationNarrative": [
+      "The company is only moderately decentralizable in the near term because hospitals, campuses, data centers, and office portfolios need reliable controls, certified fire and security systems, and accountable service providers.",
+      "The longer-term decentralization path is more credible at the data and control-interface layer: open metadata schemas, BACnet/Modbus/MQTT bridges, local edge controllers, and federated energy-management applications can let owners mix vendors and avoid a single proprietary supervisory layer."
+    ],
+    "sourceIds": [
+      "jci-fy2025-10k",
+      "jci-openblue",
+      "jci-metasys",
+      "companiesmarketcap-jci-marketcap",
+      "companiesmarketcap-jci-pe"
+    ],
+    "technologyWaveIds": [
+      "distributed-energy",
+      "printed-electronics",
+      "microfactories"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150; market data reviewed against public market-data pages in May 2026.",
+    "inputMetrics": {
+      "moat": {
+        "value": 78,
+        "rationale": "The company controls a large installed base of building systems and service relationships in operationally sensitive facilities, but open protocols and owner pressure for interoperability prevent the moat from being absolute.",
+        "sourceIds": [
+          "jci-fy2025-10k",
+          "jci-openblue",
+          "jci-metasys"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "decentralizability": {
+        "value": 49,
+        "rationale": "Building operations can be decentralized at the data, analytics, and supervisory-control layers, but certified safety systems, field commissioning, and enterprise support requirements keep full replacement difficult.",
+        "sourceIds": [
+          "jci-metasys",
+          "project-haystack",
+          "brick-schema",
+          "eclipse-volttron"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "profitability": {
+        "value": 72,
+        "rationale": "Johnson Controls reported profitable fiscal 2025 operations with multibillion-dollar net sales and net income, indicating a durable earnings base after portfolio actions.",
+        "sourceIds": [
+          "jci-fy2025-10k",
+          "jci-fy2025-results"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "peRatio": {
+        "value": 24.9,
+        "rationale": "CompaniesMarketCap reported a trailing P/E ratio of 24.9 for Johnson Controls as of May 2026; other market-data providers may differ because of earnings definitions and timing.",
+        "sourceIds": [
+          "companiesmarketcap-jci-pe"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "marketCap": {
+        "value": 84410000000,
+        "rationale": "CompaniesMarketCap reported Johnson Controls at approximately $84.41 billion in market capitalization as of May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-jci-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-29"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "openblue",
+      "name": "OpenBlue",
+      "category": "smart-building software and services",
+      "homepageUrl": "https://www.johnsoncontrols.com/openblue",
+      "summary": "OpenBlue is Johnson Controls' smart-building ecosystem for connecting building systems, data, AI, remote services, and optimization workflows across facilities and portfolios.",
+      "whyItMatters": "It sits above many building subsystems and can become the operating and analytics layer that determines how owners see energy, comfort, equipment performance, and service opportunities.",
+      "replacementSketch": [
+        "A credible open replacement would not need to clone OpenBlue as a single suite. It could combine open building metadata, local edge agents, open protocol adapters, and portfolio dashboards that let owners retain control over their operational data.",
+        "The practical path is hybrid: start with read-only observability and energy analytics, then move toward verified control actions in lower-risk loads before attempting mission-critical supervisory control."
+      ],
+      "sourceIds": [
+        "jci-openblue",
+        "project-haystack",
+        "brick-schema",
+        "eclipse-volttron"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "alternatives": [
+        {
+          "slug": "eclipse-volttron",
+          "name": "Eclipse VOLTTRON",
+          "kind": "open-source",
+          "homepageUrl": "https://volttron.org/about/about/",
+          "repoUrl": "https://github.com/VOLTTRON/volttron",
+          "summary": "Open-source platform for distributed sensing, control, analytics, and energy-management agents in buildings and grid-interactive systems.",
+          "metrics": {
+            "openness": {
+              "value": 88,
+              "rationale": "VOLTTRON is distributed as an open-source Eclipse Foundation project.",
+              "sourceIds": [
+                "eclipse-volttron"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "Its agent-based architecture can run on small computers or cloud nodes, making it suitable for distributed building and energy-control deployments.",
+              "sourceIds": [
+                "eclipse-volttron"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 58,
+              "rationale": "It is a real open project with building-energy use cases, but enterprise readiness depends on integration, support, cybersecurity, and commissioning capability.",
+              "sourceIds": [
+                "eclipse-volttron"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 66,
+              "rationale": "Open software and commodity edge hardware can reduce dependence on proprietary analytics layers, though engineering labor remains material.",
+              "sourceIds": [
+                "eclipse-volttron"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "eclipse-volttron"
+          ]
+        },
+        {
+          "slug": "project-haystack",
+          "name": "Project Haystack",
+          "kind": "open-source",
+          "homepageUrl": "https://www.project-haystack.org/",
+          "summary": "Open-source semantic modeling and web-service conventions for making building, IoT, energy, HVAC, lighting, and environmental-system data easier to use across tools.",
+          "metrics": {
+            "openness": {
+              "value": 90,
+              "rationale": "Project Haystack describes itself as an open-source initiative with open intellectual-property licensing.",
+              "sourceIds": [
+                "project-haystack"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 69,
+              "rationale": "Open semantic tags reduce dependence on one vendor's naming conventions and make multi-tool building analytics more portable.",
+              "sourceIds": [
+                "project-haystack"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 72,
+              "rationale": "Haystack is a mature data-modeling layer, but it is a standard and ecosystem component rather than a complete OpenBlue replacement by itself.",
+              "sourceIds": [
+                "project-haystack",
+                "project-haystack-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 73,
+              "rationale": "Standardized tagging can lower the recurring labor cost of mapping building data into analytics and reporting systems.",
+              "sourceIds": [
+                "project-haystack"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "project-haystack",
+            "project-haystack-docs"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-building-energy-agents",
+          "name": "Federated building energy agents",
+          "summary": "A building owner or community of owners could run local open-source control agents that publish standardized telemetry, negotiate demand-response actions, and coordinate comfort and energy optimization without handing the portfolio's operational layer to one vendor.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination",
+            "microgrid-coordination"
+          ],
+          "thesis": "The market shifts from proprietary portfolio software toward interoperable local agents and shared data models that compete on analytics quality, not lock-in.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated ownership of control nodes and metadata, not through Bitcoin. Each facility keeps local authority while sharing limited, standardized signals for portfolio and grid coordination.",
+          "coordinationMechanism": "Building operators, integrators, utilities, and software maintainers coordinate through open metadata profiles, signed control policies, and site-level agents that can accept or reject optimization requests.",
+          "verificationOrTrustModel": "Telemetry can be checked against local meter data, device histories, and signed agent logs; control actions can be constrained by site policies, manual overrides, and audit trails. The model still depends on good commissioning and trustworthy sensors.",
+          "failureModes": [
+            "Bad metadata or poor commissioning can make automated control unsafe or ineffective.",
+            "Enterprise customers may still prefer a single accountable vendor for cybersecurity, uptime, and support.",
+            "Utility or market incentives may be too weak to justify integration work."
+          ],
+          "adoptionPath": [
+            "Deploy read-only open telemetry and tagging alongside existing Johnson Controls systems.",
+            "Add local analytics for fault detection, energy reporting, and demand-response recommendations.",
+            "Permit bounded automated control of flexible loads after site operators validate policies and rollback procedures."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "jci-openblue",
+            "jci-metasys"
+          ],
+          "enablerSourceIds": [
+            "eclipse-volttron",
+            "project-haystack",
+            "brick-schema"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 75,
+              "rationale": "Local agents and open metadata directly reduce dependence on a central vendor platform.",
+              "sourceIds": [
+                "eclipse-volttron",
+                "project-haystack"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 63,
+              "rationale": "The coordination pattern is credible for telemetry and demand response, but harder for safety-critical or comfort-sensitive control.",
+              "sourceIds": [
+                "eclipse-volttron",
+                "brick-schema"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 58,
+              "rationale": "Open platforms and schemas exist, but field integration, cybersecurity, and support remain significant barriers.",
+              "sourceIds": [
+                "eclipse-volttron",
+                "project-haystack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 60,
+              "rationale": "This can pressure analytics and supervisory software margins, though it does not immediately replace Johnson Controls hardware or service contracts.",
+              "sourceIds": [
+                "jci-openblue",
+                "eclipse-volttron"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        },
+        {
+          "slug": "owner-controlled-building-data-commons",
+          "name": "Owner-controlled building data commons",
+          "summary": "Large property owners could require all vendors to publish building telemetry into open Haystack or Brick models, creating portable datasets that independent analytics, maintenance, insurance, and energy-service providers can compete over.",
+          "angleIds": [
+            "decentralized-coordination",
+            "federation"
+          ],
+          "thesis": "The high-value layer moves from proprietary dashboards to owner-controlled, standardized operational data that makes vendor switching and multi-vendor analytics easier.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is data custody and federation: each owner controls its operational model and can share limited views with chosen service providers without accepting one universal platform.",
+          "coordinationMechanism": "Owners specify open semantic data requirements in procurement, integrators map equipment and points into common schemas, and analytics vendors compete against the same permissioned dataset.",
+          "verificationOrTrustModel": "Data quality is constrained through schema validation, commissioning tests, reconciliation against meters and equipment schedules, and audit logs for mappings and changes. The weakest point is still manual point mapping.",
+          "failureModes": [
+            "Owners may lack enough technical leverage to enforce open data requirements across vendors.",
+            "Semantic standards can fragment or be implemented inconsistently.",
+            "Open data access does not automatically provide safe write-control authority."
+          ],
+          "adoptionPath": [
+            "Start with open read-only tagging requirements for new building projects and retrofits.",
+            "Use independent analytics and fault detection against the owner-controlled model.",
+            "Expand procurement language to require bidirectional interoperability for non-life-safety systems."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "jci-openblue",
+            "jci-metasys"
+          ],
+          "enablerSourceIds": [
+            "project-haystack",
+            "project-haystack-docs",
+            "brick-schema"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 70,
+              "rationale": "Owner-controlled open models reduce platform lock-in while preserving local governance.",
+              "sourceIds": [
+                "project-haystack",
+                "brick-schema"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 68,
+              "rationale": "Procurement specifications and shared schemas are a practical coordination mechanism for sophisticated real-estate owners and integrators.",
+              "sourceIds": [
+                "project-haystack",
+                "brick-schema"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 66,
+              "rationale": "The enabling standards exist today, but retrofit mapping and governance are labor-intensive.",
+              "sourceIds": [
+                "project-haystack",
+                "brick-schema"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 57,
+              "rationale": "Open data requirements pressure proprietary analytics lock-in more than they threaten Johnson Controls' field hardware and service footprint.",
+              "sourceIds": [
+                "jci-openblue",
+                "project-haystack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "metasys",
+      "name": "Metasys",
+      "category": "building automation system",
+      "homepageUrl": "https://www.johnsoncontrols.com/building-automation-and-controls/metasys",
+      "summary": "Metasys is Johnson Controls' building automation system for monitoring and controlling HVAC, energy, and facility operations across buildings and campuses.",
+      "whyItMatters": "A building automation system can become a durable control point because it connects physical equipment, operators, service contractors, and energy-management decisions.",
+      "replacementSketch": [
+        "An open replacement would most likely emerge as a layered stack: open field protocols, commodity controllers, local gateway software, open metadata, and owner-controlled supervisory interfaces.",
+        "The near-term replacement opportunity is strongest for overlays, retrofits, monitoring, and noncritical control loops rather than certified life-safety or deeply integrated enterprise deployments."
+      ],
+      "sourceIds": [
+        "jci-metasys",
+        "openbms",
+        "brick-schema",
+        "project-haystack"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories",
+        "distributed-energy"
+      ],
+      "alternatives": [
+        {
+          "slug": "openbms",
+          "name": "OpenBMS",
+          "kind": "open-source",
+          "homepageUrl": "https://www.openbms.io/",
+          "summary": "Community-driven, vendor-neutral building management system concept focused on BACnet, MQTT, modern IoT protocols, and open interoperable building ecosystems.",
+          "metrics": {
+            "openness": {
+              "value": 76,
+              "rationale": "OpenBMS presents itself as open-source and vendor-neutral, though maturity and governance require further diligence.",
+              "sourceIds": [
+                "openbms"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 71,
+              "rationale": "The project's focus on BACnet, MQTT, and vendor-neutral integration aligns with decentralized building control and owner choice.",
+              "sourceIds": [
+                "openbms"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 38,
+              "rationale": "It is plausible as an open BMS direction, but public evidence of production-grade readiness is thinner than for standards such as Haystack or Brick.",
+              "sourceIds": [
+                "openbms"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 60,
+              "rationale": "If mature, open BMS software could reduce licensing and vendor-lock costs, but integration labor remains the dominant cost.",
+              "sourceIds": [
+                "openbms"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "openbms"
+          ]
+        },
+        {
+          "slug": "brick-schema",
+          "name": "Brick Schema",
+          "kind": "open-source",
+          "homepageUrl": "https://brickschema.org/",
+          "repoUrl": "https://github.com/BrickSchema/Brick",
+          "summary": "Open-source ontology for describing building assets, equipment, points, and relationships in a consistent vendor-neutral model.",
+          "metrics": {
+            "openness": {
+              "value": 89,
+              "rationale": "Brick is explicitly described as an open-source effort with public documentation and development.",
+              "sourceIds": [
+                "brick-schema"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 68,
+              "rationale": "A vendor-neutral ontology helps owners and integrators move building data across tools, but it is not a complete control system by itself.",
+              "sourceIds": [
+                "brick-schema"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 70,
+              "rationale": "Brick is suitable as a semantic layer for building analytics and integration projects, though deployment still depends on project-specific mapping.",
+              "sourceIds": [
+                "brick-schema"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 69,
+              "rationale": "Standardized models can lower repeated integration and analytics costs across buildings and vendors.",
+              "sourceIds": [
+                "brick-schema"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "brick-schema"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-controller-retrofit-kits",
+          "name": "Open controller retrofit kits",
+          "summary": "A distributed ecosystem of integrators could use open controller designs, commodity gateways, and shared commissioning recipes to retrofit older building equipment into open BACnet, Modbus, or MQTT control layers without replacing the full building automation system at once.",
+          "angleIds": [
+            "open-hardware",
+            "decentralized-manufacturing",
+            "home-microfactory"
+          ],
+          "thesis": "Control hardware and commissioning knowledge become more reproducible, reducing the advantage of proprietary controller ecosystems and localizing parts of the integration market.",
+          "bitcoinOrDecentralizationRole": "The relevant mechanism is decentralized manufacturing and open hardware, not Bitcoin. Local integrators can fabricate, assemble, or configure standardized gateways and controller modules closer to the building site.",
+          "coordinationMechanism": "Design maintainers publish open hardware references and firmware profiles; integrators adapt them to local equipment; building owners specify accepted open interfaces and commissioning evidence.",
+          "verificationOrTrustModel": "Installations are verified through commissioning checklists, point-to-point tests, signed firmware images, configuration hashes, and operational trend logs. Safety-critical control still needs certified components and professional review.",
+          "failureModes": [
+            "Certification and liability requirements can block open controllers in regulated systems.",
+            "Cheap hardware may fail enterprise cybersecurity or uptime expectations.",
+            "Fragmented local implementations could recreate integration complexity."
+          ],
+          "adoptionPath": [
+            "Begin with monitoring gateways and noncritical equipment telemetry.",
+            "Standardize reusable controller and gateway profiles for common HVAC retrofit patterns.",
+            "Move into bounded control loops where failure consequences are manageable and rollback is simple."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "jci-metasys"
+          ],
+          "enablerSourceIds": [
+            "openbms",
+            "project-haystack",
+            "brick-schema"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 77,
+              "rationale": "Open hardware and local integrator replication directly reduce dependence on proprietary controller supply chains.",
+              "sourceIds": [
+                "openbms",
+                "brick-schema"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 52,
+              "rationale": "The coordination mechanism is plausible for retrofits and monitoring, but certification, cybersecurity, and liability make broad adoption difficult.",
+              "sourceIds": [
+                "jci-metasys",
+                "openbms"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 45,
+              "rationale": "Open protocols and schemas exist, but reliable field hardware, installer training, and support infrastructure are nontrivial.",
+              "sourceIds": [
+                "openbms",
+                "project-haystack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 54,
+              "rationale": "A successful retrofit ecosystem would pressure proprietary controls in smaller and older buildings before challenging large enterprise campuses.",
+              "sourceIds": [
+                "jci-metasys",
+                "openbms"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        },
+        {
+          "slug": "cooperative-demand-flexibility-market",
+          "name": "Cooperative demand-flexibility market",
+          "summary": "Buildings running open supervisory agents could pool flexible HVAC, storage, and load-shifting capacity into a cooperative marketplace that sells verified demand flexibility while keeping control authority at each facility.",
+          "angleIds": [
+            "cooperative-production",
+            "microgrid-coordination",
+            "distributed-energy-generation",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "Building automation shifts from a closed facility-management cost center into a coordinated energy-flexibility network owned by participating sites or local cooperatives.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative dispatch and local energy coordination. Lightning could eventually support fast settlement for small flexibility events, but it is not required for the core mechanism.",
+          "coordinationMechanism": "Sites publish available flexibility windows, comfort constraints, and baseline data to a cooperative operator; dispatch instructions are accepted by local agents and settled based on measured performance.",
+          "verificationOrTrustModel": "Performance is checked against interval meter data, baselines, device telemetry, signed dispatch records, and penalties for nonperformance. Baseline gaming and collusion remain hard problems.",
+          "failureModes": [
+            "Baselines can be manipulated unless measurement rules are strict.",
+            "Local comfort complaints may override dispatched flexibility.",
+            "Regulatory and utility market access rules may prevent small buildings from participating directly."
+          ],
+          "adoptionPath": [
+            "Aggregate read-only telemetry and estimate flexible load potential across participating buildings.",
+            "Run opt-in manual or semi-automated demand-response events with conservative comfort constraints.",
+            "Use verified performance history to enter larger utility, microgrid, or local energy programs."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "jci-openblue",
+            "jci-metasys"
+          ],
+          "enablerSourceIds": [
+            "eclipse-volttron",
+            "project-haystack",
+            "brick-schema"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 72,
+              "rationale": "Each building keeps local control while coordinating flexible load through a shared cooperative mechanism.",
+              "sourceIds": [
+                "eclipse-volttron",
+                "project-haystack"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 60,
+              "rationale": "Demand-response aggregation is credible, but cooperative governance and measurement rules need strong execution.",
+              "sourceIds": [
+                "eclipse-volttron",
+                "brick-schema"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 55,
+              "rationale": "Open energy-control software and building metadata standards help, but market integration and measurement are hard.",
+              "sourceIds": [
+                "eclipse-volttron",
+                "project-haystack"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 50,
+              "rationale": "This creates a new value pool around open coordination rather than directly replacing Metasys in core facility control.",
+              "sourceIds": [
+                "jci-metasys",
+                "eclipse-volttron"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,443 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "csx",
+    "name": "CSX",
+    "ticker": "CSX",
+    "rankApprox": 138,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top150"
+    ],
+    "sectorId": "industrials",
+    "industryId": "rail-transportation",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/csx/marketcap/",
+    "description": "CSX operates a freight railroad network serving merchandise, intermodal, coal, automotive, and agricultural customers in the eastern United States.",
+    "overview": [
+      {
+        "title": "Freight Rail Network",
+        "paragraphs": [
+          "CSX is a large North American rail-based freight transportation company whose operating subsidiary, CSX Transportation, serves customers across the eastern United States and parts of Canada.",
+          "The company reports a network of roughly 20,000 route miles and ships a diverse mix of merchandise, intermodal, coal, automotive, agricultural, and other freight."
+        ]
+      },
+      {
+        "title": "Business Mix",
+        "paragraphs": [
+          "CSX's core product is not a single software platform but controlled access to rail corridors, terminals, locomotives, crews, dispatching, and intermodal connections.",
+          "That makes the registry question less about replacing a consumer application and more about which layers of rail visibility, scheduling, documentation, and local logistics coordination could be opened around a capital-intensive railroad."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "CSX's moat is structurally strong because railroads depend on scarce rights-of-way, terminals, regulatory approvals, dispatching expertise, and a dense shipper network that cannot be replicated quickly by software alone.",
+      "The company also has meaningful operating leverage: its 2025 annual report showed $14.1 billion of revenue and a 32.1% operating margin even during a softer freight year, evidence that the asset base still produces durable cash flows."
+    ],
+    "decentralizationNarrative": [
+      "Full replacement of CSX's railroad is not realistically decentralizable in the near term because track ownership, safety regulation, train control, dispatching, and liability require high coordination and capital concentration.",
+      "The more plausible decentralization surface is around complements: open rail infrastructure data, federated shipment documentation, cooperative short-line coordination, shared terminal visibility, and peer-to-peer logistics markets that reduce dependence on a single railroad's customer portal."
+    ],
+    "sourceIds": [
+      "csx-about-us",
+      "csx-company-overview",
+      "csx-2025-annual-report",
+      "stockanalysis-csx-market-cap",
+      "companiesmarketcap-csx-pe"
+    ],
+    "technologyWaveIds": [],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 126-150.",
+    "inputMetrics": {
+      "moat": {
+        "value": 88,
+        "rationale": "Rail corridors, terminals, dispatching, safety compliance, and customer density create high barriers to entry; open data can pressure service layers but not quickly replicate the physical network.",
+        "sourceIds": [
+          "csx-about-us",
+          "csx-company-overview",
+          "csx-2025-annual-report"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "decentralizability": {
+        "value": 22,
+        "rationale": "The physical railroad is difficult to decentralize, but shipment visibility, open infrastructure mapping, logistics documentation, and short-line coordination layers are more open to federated or cooperative alternatives.",
+        "sourceIds": [
+          "csx-company-overview",
+          "openrailwaymap",
+          "open-logistics-ecmr"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "profitability": {
+        "value": 76,
+        "rationale": "CSX remained strongly profitable in 2025 with revenue of about $14.1 billion, operating margin of 32.1%, and diluted EPS of $1.54 despite year-over-year pressure.",
+        "sourceIds": [
+          "csx-2025-annual-report"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "peRatio": {
+        "value": 27.9,
+        "rationale": "CompaniesMarketCap reported a trailing P/E ratio of about 27.9 as of May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-csx-pe"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-29"
+      },
+      "marketCap": {
+        "value": 84580000000,
+        "rationale": "StockAnalysis reported CSX market capitalization of approximately $84.58 billion on May 22, 2026.",
+        "sourceIds": [
+          "stockanalysis-csx-market-cap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-05-29"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "csx-transportation",
+      "name": "CSX Transportation",
+      "category": "Freight railroad network",
+      "homepageUrl": "https://www.csx.com/index.cfm/about-us/",
+      "summary": "CSX Transportation is the company's core Class I freight railroad operation, moving bulk, merchandise, automotive, agricultural, and other freight across a large eastern North American network.",
+      "whyItMatters": "The railroad is the central moat: it controls physical corridors, terminals, dispatching, service planning, and rail access for shippers that need lower-cost long-haul freight movement.",
+      "replacementSketch": [
+        "A credible open replacement would not rebuild CSX overnight. It would start by opening the coordination layers around rail: infrastructure data, local industrial switching, terminal status, shipment documentation, and short-line interchange discovery.",
+        "Over time, cooperatives of shippers, short lines, terminals, and regional logistics providers could use shared standards to make some freight lanes less dependent on a single Class I interface."
+      ],
+      "sourceIds": [
+        "csx-about-us",
+        "csx-company-overview"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "csx-transportation-openrailwaymap",
+          "name": "OpenRailwayMap",
+          "kind": "open-source",
+          "homepageUrl": "https://openrailwaymap.app/",
+          "repoUrl": "https://github.com/hiddewie/OpenRailwayMap-vector",
+          "summary": "OpenRailwayMap is an open mapping project that renders railway infrastructure, speed limits, train protection, electrification, and gauge data from OpenStreetMap and OpenHistoricalMap.",
+          "metrics": {
+            "openness": {
+              "value": 90,
+              "rationale": "The project is open source and built on openly contributed map data, making it a strong public infrastructure-data layer.",
+              "sourceIds": [
+                "openrailwaymap"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 70,
+              "rationale": "It decentralizes rail infrastructure knowledge rather than rail operations, which is useful for planning, auditing, and local coordination.",
+              "sourceIds": [
+                "openrailwaymap"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 58,
+              "rationale": "The project is usable today as an infrastructure map, but it is not a dispatch, booking, or shipment-management system.",
+              "sourceIds": [
+                "openrailwaymap"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 44,
+              "rationale": "Open mapping can reduce data-access and planning friction, but it does not remove the capital cost of tracks, terminals, locomotives, or crews.",
+              "sourceIds": [
+                "openrailwaymap",
+                "csx-company-overview"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "openrailwaymap"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-short-line-capacity-commons",
+          "name": "Federated Short-Line Capacity Commons",
+          "summary": "A federation of short-line railroads, shipper-owned sidings, public ports, and regional terminals could publish open service, interchange, and capacity data into a shared rail logistics commons. The goal would be to make local rail options discoverable and contractable without every shipper negotiating through a closed Class I-facing workflow.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination",
+            "cooperative-production"
+          ],
+          "thesis": "The concept does not erase Class I railroads, but it weakens their information and coordination advantage by letting smaller rail operators and shippers expose capacity, service commitments, and interchange options through open standards.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated publication and governance: each operator controls its own data and commitments while interoperating through common schemas and reputation records. Bitcoin is not central unless later used for escrow or machine settlement.",
+          "coordinationMechanism": "Rail operators, ports, warehouses, and shippers publish signed availability, service windows, interchange rules, and lane constraints to interoperable nodes; brokers and shippers query the network and form contracts with participating operators.",
+          "verificationOrTrustModel": "False capacity claims would be constrained by signed operator identities, historical fulfillment records, shipment event attestations from counterparties, and dispute logs visible to federation members. Physical movement still requires regulated rail paperwork and carrier acceptance.",
+          "failureModes": [
+            "Class I interchange bottlenecks could still block many lanes even if short-line discovery improves.",
+            "Participants may under-share data because capacity, rates, and service reliability are commercially sensitive.",
+            "Safety, liability, and regulatory requirements limit how quickly open coordination can become operational control."
+          ],
+          "adoptionPath": [
+            "Start with non-sensitive public infrastructure, interchange, and terminal capability data.",
+            "Add authenticated service-window and capacity publication for voluntary short-line and port participants.",
+            "Layer on standardized shipment events, dispute records, and cooperative purchasing for recurring shipper lanes."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "csx-company-overview",
+            "csx-about-us"
+          ],
+          "enablerSourceIds": [
+            "openrailwaymap",
+            "open-logistics-ecmr"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "The mechanism distributes data publication and logistics discovery across many operators instead of relying on a single railroad portal.",
+              "sourceIds": [
+                "openrailwaymap",
+                "open-logistics-ecmr"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 55,
+              "rationale": "Federated logistics documentation and open infrastructure data exist, but rail capacity contracting needs operator adoption and trust frameworks.",
+              "sourceIds": [
+                "open-logistics-ecmr",
+                "openrailwaymap"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 46,
+              "rationale": "A discovery and documentation layer is feasible; operational dispatch and carrier obligations remain much harder.",
+              "sourceIds": [
+                "csx-company-overview",
+                "open-logistics-ecmr"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 38,
+              "rationale": "The concept pressures customer interface and local-lane discovery more than CSX's core track ownership and long-haul network economics.",
+              "sourceIds": [
+                "csx-2025-annual-report",
+                "csx-company-overview"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "csx-intermodal",
+      "name": "CSX Intermodal",
+      "category": "Intermodal freight service",
+      "homepageUrl": "https://www.csx.com/index.cfm/customers/intermodal/",
+      "summary": "CSX Intermodal connects rail linehaul with containerized freight flows that rely on terminals, drayage, documentation, scheduling, and shipment visibility.",
+      "whyItMatters": "Intermodal is where railroad economics meet truck, port, warehouse, and shipper coordination, making it a practical surface for open logistics standards and federated marketplaces.",
+      "replacementSketch": [
+        "The replacement path is a shared intermodal coordination stack: open shipment documents, auditable container events, neutral terminal appointment APIs, and marketplace routing across rail, truck, port, and warehouse operators.",
+        "Such a system would still buy rail movement from carriers where needed, but it would reduce lock-in around booking, visibility, and coordination workflows."
+      ],
+      "sourceIds": [
+        "csx-about-us",
+        "csx-2025-annual-report"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "open-logistics-foundation-ecmr",
+          "name": "Open Logistics Foundation eCMR",
+          "kind": "open-source",
+          "homepageUrl": "https://openlogisticsfoundation.org/ecmr/",
+          "summary": "The Open Logistics Foundation's eCMR work provides open-source software for electronic consignment-note processes, forming a reusable logistics documentation building block.",
+          "metrics": {
+            "openness": {
+              "value": 86,
+              "rationale": "The foundation states that software developed within it is open source, and eCMR is positioned as an open logistics standard implementation.",
+              "sourceIds": [
+                "open-logistics-ecmr"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 62,
+              "rationale": "Open consignment documents can support multi-party logistics workflows without every participant depending on one proprietary carrier portal.",
+              "sourceIds": [
+                "open-logistics-ecmr"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 55,
+              "rationale": "The project is a practical documentation component, but it is not by itself a full intermodal booking, dispatch, or terminal operating system.",
+              "sourceIds": [
+                "open-logistics-ecmr"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 52,
+              "rationale": "Standardized electronic documents can reduce integration and administration costs across carriers and shippers, though linehaul and terminal costs remain physical.",
+              "sourceIds": [
+                "open-logistics-ecmr",
+                "csx-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "open-logistics-ecmr"
+          ]
+        },
+        {
+          "slug": "opentcs",
+          "name": "openTCS",
+          "kind": "open-source",
+          "homepageUrl": "https://opentcs.org/",
+          "repoUrl": "https://github.com/openTCS/opentcs",
+          "summary": "openTCS is an open transportation control system for automated guided vehicles and other non-continuous conveyors, maintained by Fraunhofer IML.",
+          "metrics": {
+            "openness": {
+              "value": 88,
+              "rationale": "The source code is available under an open-source license, and the GitHub repository describes the original source code as MIT licensed.",
+              "sourceIds": [
+                "opentcs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "decentralizationFit": {
+              "value": 46,
+              "rationale": "It opens a terminal and yard automation layer, but deployments are still local operator-controlled systems rather than a decentralized network.",
+              "sourceIds": [
+                "opentcs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "readiness": {
+              "value": 64,
+              "rationale": "openTCS is an established control-system project for AGVs and mobile robots, though adapting it to rail intermodal yards would require integration work.",
+              "sourceIds": [
+                "opentcs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "costLeverage": {
+              "value": 48,
+              "rationale": "Open yard automation software may lower integration costs for terminals, but equipment, safety systems, and site-specific integration remain expensive.",
+              "sourceIds": [
+                "opentcs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          },
+          "sourceIds": [
+            "opentcs"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-intermodal-settlement-and-visibility-network",
+          "name": "Open Intermodal Settlement and Visibility Network",
+          "summary": "A federated intermodal network could combine open consignment documents, signed shipment events, terminal appointment data, and optional escrow settlement so shippers, drayage carriers, terminals, and rail operators coordinate container moves without relying entirely on a single carrier's closed visibility stack.",
+          "angleIds": [
+            "federation",
+            "peer-to-peer-marketplace",
+            "decentralized-coordination"
+          ],
+          "thesis": "The market structure changes if shipment status, handoffs, exceptions, and payment evidence become portable across carriers and terminals, making intermodal coordination more like an interoperable network than a set of siloed portals.",
+          "bitcoinOrDecentralizationRole": "The core role is decentralized coordination through federated event logs and portable identities. Bitcoin or Lightning could be added for small exception fees, escrow release, or machine-to-machine settlement, but the concept does not require Bitcoin as the base mechanism.",
+          "coordinationMechanism": "Each participant signs shipment events such as gate-in, lift, rail departure, interchange, gate-out, exception, and proof of delivery. Market participants subscribe to the events they are authorized to see and settle obligations when required events are observed.",
+          "verificationOrTrustModel": "Cheating is constrained by multi-party event corroboration, terminal scans, carrier signatures, time-stamped document state, and dispute workflows. The weakest point is still physical event truth: sensors and counterparties must be trusted enough to attest that a container actually moved.",
+          "failureModes": [
+            "Large carriers may resist portable event data if it weakens customer lock-in.",
+            "Terminal data quality and inconsistent appointment systems could make event normalization difficult.",
+            "Fraudulent scans, delayed events, and identity compromise remain risks without strong operational controls."
+          ],
+          "adoptionPath": [
+            "Begin with open eCMR-style documentation and non-sensitive shipment milestones for voluntary lanes.",
+            "Add terminal and drayage event adapters, portable shipper identities, and standardized exception codes.",
+            "Introduce escrow, automated claims packets, and marketplace matching for lanes where participants trust the event model."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "csx-about-us",
+            "csx-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "open-logistics-ecmr",
+            "opentcs"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 68,
+              "rationale": "A federated event and document network distributes visibility across shippers, carriers, terminals, and drayage operators.",
+              "sourceIds": [
+                "open-logistics-ecmr"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "coordinationCredibility": {
+              "value": 60,
+              "rationale": "Open logistics documentation and open transport-control components exist, but intermodal participants would need commercial alignment and standard event semantics.",
+              "sourceIds": [
+                "open-logistics-ecmr",
+                "opentcs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "implementationFeasibility": {
+              "value": 52,
+              "rationale": "A visibility and documentation layer is technically feasible before deeper dispatch integration; direct terminal and railroad operational integration is harder.",
+              "sourceIds": [
+                "open-logistics-ecmr",
+                "opentcs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            },
+            "incumbentPressure": {
+              "value": 45,
+              "rationale": "The concept could reduce portal and data lock-in around intermodal service, but it would still depend on incumbent rail carriers for many long-haul moves.",
+              "sourceIds": [
+                "csx-2025-annual-report",
+                "csx-about-us"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-05-29"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
