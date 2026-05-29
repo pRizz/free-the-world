@@ -1,0 +1,1505 @@
+2026-05-29T13:14:49.884943Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e73df-89b1-7db0-95f6-87cce9e6d38d
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: illinois-tool-works
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "illinois-tool-works",
+  "name": "Illinois Tool Works",
+  "ticker": "ITW",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top175"
+  ],
+  "sectorId": "industrials",
+  "industryId": "industrial-machinery",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/illinois-tool-works/marketcap/",
+  "description": "Illinois Tool Works is a diversified manufacturer of engineered components, equipment, consumables, and specialty products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Hobart",
+    "Miller Electric"
+  ],
+  "seedSourceUrls": [
+    "https://investor.itw.com/",
+    "https://www.itw.com/business-segments/",
+    "https://companiesmarketcap.com/illinois-tool-works/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 151-175."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-29T13:14:53.088110Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.088119Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.088930Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.088936Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.089627Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.089645Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.090428Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.090433Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.091186Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.091192Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.092596Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.092601Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.078041Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.078054Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.078560Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.078565Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.079067Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.079071Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.079604Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.079609Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.080104Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.080109Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.081328Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.081331Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search:
+web search: Illinois Tool Works 2025 annual report segments Hobart Miller Electric operating segments
+web search:
+web search: Miller Electric official welding equipment ITW
+web search:
+web search: https://s204.q4cdn.com/218186261/files/doc_financials/2025/ar/2025-annual-report.pdf
+web search:
+web search: 'Operating Revenue' in https://s204.q4cdn.com/218186261/files/doc_financials/2025/ar/2025-annual-report.pdf
+web search:
+web search: 'The Company is a global manufacturer' in https://s204.q4cdn.com/218186261/files/doc_financials/2025/ar/2025-annual-report.pdf
+web search:
+web search: https://s204.q4cdn.com/218186261/files/doc_financials/2025/ar/2025-annual-report.pdf
+web search:
+web search: open source food processing equipment hardware slicer mixer commercial kitchen
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "illinois-tool-works",
+      "name": "Illinois Tool Works",
+      "ticker": "ITW",
+      "rankApprox": 163,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top175"
+      ],
+      "sectorId": "industrials",
+      "industryId": "industrial-machinery",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/illinois-tool-works/marketcap/",
+      "description": "Illinois Tool Works is a diversified global manufacturer of industrial products and equipment across automotive, food equipment, test and measurement, welding, polymers, construction, and specialty product markets.",
+      "overview": [
+        {
+          "title": "Diversified industrial platform",
+          "paragraphs": [
+            "Illinois Tool Works operates a decentralized portfolio of industrial businesses organized into seven reported segments: Automotive OEM, Food Equipment, Test & Measurement and Electronics, Welding, Polymers & Fluids, Construction Products, and Specialty Products.",
+            "The company reported $16.04 billion of 2025 operating revenue and $4.22 billion of operating income, with notable branded platforms including Hobart in food equipment and Miller in welding."
+          ]
+        },
+        {
+          "title": "Manufacturing and service model",
+          "paragraphs": [
+            "ITW's businesses sell equipment, consumables, components, software, and service into industrial and commercial end markets where reliability, uptime, product qualification, and local support matter.",
+            "The Food Equipment segment combines commercial kitchen equipment with maintenance and repair service, while Welding sells arc welding equipment, consumables, and accessories into fabrication, construction, energy, MRO, industrial capital goods, and automotive markets."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "ITW's moat comes from a diversified portfolio of branded niche businesses, customer-specific engineering, installed equipment bases, consumables, service relationships, and manufacturing know-how. Its 2025 operating margin of 26.3% and segment margins above 30% in Welding indicate pricing power and operational discipline rather than commodity exposure alone.",
+        "The moat is not absolute: many products use broadly available raw materials such as steel, resins, and chemicals, and the company itself discloses risks from raw material pricing, product differentiation, intellectual property protection, and new-product execution. Still, certification, uptime requirements, dealer and service networks, and switching costs make rapid displacement difficult in core commercial and industrial settings."
+      ],
+      "decentralizationNarrative": [
+        "ITW is more decentralizable than a pure software platform but less decentralizable than a generic commodity manufacturer. Welding tools, food preparation equipment, and repair components can be pushed toward local fabrication, open controls, shared maintenance documentation, and regional service cooperatives, especially where buyers value repairability over brand integration.",
+        "The largest decentralization limits are safety certification, sanitation requirements, liability, durable power electronics, specialized consumables, and the trust buyers place in established service networks. Open hardware, microfactory tooling, and local repair loops can pressure portions of the value chain before they credibly replace the full enterprise product and support bundle."
+      ],
+      "sourceIds": [
+        "itw-2025-annual-report",
+        "itw-welding-segment",
+        "itw-food-equipment-group",
+        "hobart-facts-figures",
+        "stockanalysis-itw-market-cap"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "additive-manufacturing",
+        "printed-electronics"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 151-175; market metrics refreshed on 2026-05-29 using latest available public market data.",
+      "inputMetrics": {
+        "moat": {
+          "value": 78,
+          "rationale": "High margins, branded niche platforms, installed bases, consumables, service relationships, intellectual property, and qualification requirements support a durable moat, though raw materials and some equipment categories remain technically replicable.",
+          "sourceIds": [
+            "itw-2025-annual-report",
+            "itw-welding-segment",
+            "hobart-facts-figures"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "decentralizability": {
+          "value": 42,
+          "rationale": "Local fabrication, repair cooperatives, and open hardware can pressure selected equipment and service niches, but safety, sanitation, reliability, certification, and consumable ecosystems limit near-term displacement.",
+          "sourceIds": [
+            "itw-2025-annual-report",
+            "ose-welder",
+            "open-source-hardware-overview"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "profitability": {
+          "value": 86,
+          "rationale": "ITW reported $4.216 billion of 2025 operating income on $16.044 billion of operating revenue, a 26.3% operating margin, and $3.066 billion of net income.",
+          "sourceIds": [
+            "itw-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "peRatio": {
+          "value": 23.7,
+          "rationale": "Approximate trailing P/E calculated from a $72.56 billion market capitalization divided by 2025 net income of $3.066 billion; this is a registry estimate rather than a quoted exchange metric.",
+          "sourceIds": [
+            "stockanalysis-itw-market-cap",
+            "itw-2025-annual-report"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "marketCap": {
+          "value": 72560000000,
+          "rationale": "StockAnalysis reported Illinois Tool Works market capitalization of $72.56 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-itw-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "hobart-commercial-food-equipment",
+        "name": "Hobart Commercial Food Equipment",
+        "category": "commercial food equipment",
+        "homepageUrl": "https://www.hobartcorp.com/",
+        "summary": "Hobart is ITW's commercial food equipment brand, spanning warewashing, cooking, food preparation, waste technology, chemicals, water treatment, and service.",
+        "whyItMatters": "Commercial kitchens rely on durable, certifiable equipment and fast service, making Hobart a strong example of ITW's branded equipment-and-service moat.",
+        "replacementSketch": [
+          "A realistic replacement path starts with open repair documentation, commodity sensors, modular controllers, and local service cooperatives around existing kitchen equipment rather than immediate replacement of certified commercial machines.",
+          "Over time, open designs for simple food preparation, cleaning, water treatment, and heat recovery modules could let restaurants, schools, and local fabricators source repairable equipment without being locked into a single branded service channel."
+        ],
+        "sourceIds": [
+          "itw-2025-annual-report",
+          "itw-food-equipment-group",
+          "hobart-facts-figures",
+          "open-source-hardware-overview"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-source-ecology-food-processing",
+            "name": "Open Source Ecology Food Processing Tools",
+            "kind": "open-source",
+            "homepageUrl": "https://wiki.opensourceecology.org/wiki/Open_Source_Pasteurization_Machine",
+            "summary": "Open Source Ecology documents open food-processing and industrial machine concepts that can be studied, modified, and locally built by distributed producers.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "The project publishes wiki-based designs and documentation intended for open replication, though individual machine maturity varies widely.",
+                "sourceIds": [
+                  "ose-pasteurization-machine",
+                  "open-source-hardware-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The model is explicitly aligned with local fabrication and community production rather than centralized branded equipment supply.",
+                "sourceIds": [
+                  "ose-pasteurization-machine",
+                  "open-source-hardware-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 24,
+                "rationale": "Open food-processing machine documentation is useful for experimentation and education but is not a drop-in replacement for certified commercial kitchen equipment and service coverage.",
+                "sourceIds": [
+                  "ose-pasteurization-machine",
+                  "hobart-facts-figures"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 55,
+                "rationale": "Local fabrication and repair can reduce dependence on proprietary parts for simpler modules, but compliance, stainless fabrication, controls, and support still create real costs.",
+                "sourceIds": [
+                  "ose-pasteurization-machine",
+                  "itw-food-equipment-group"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "ose-pasteurization-machine",
+              "open-source-hardware-overview"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-commercial-kitchen-repair-network",
+            "name": "Cooperative Commercial Kitchen Repair Network",
+            "summary": "Restaurants, schools, caterers, and independent technicians could coordinate around open repair records, shared parts cross-references, refurbishing workflows, and locally fabricated non-critical components to reduce dependence on a single equipment-service channel.",
+            "angleIds": [
+              "cooperative-production",
+              "open-hardware",
+              "recycling-and-reuse"
+            ],
+            "thesis": "The market structure changes if buyers treat commercial kitchen equipment as maintainable local infrastructure rather than a bundled brand-and-service dependency.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared repair knowledge, cooperative technician governance, and distributed local parts production; Bitcoin is not central to the mechanism.",
+            "coordinationMechanism": "Kitchen operators, technicians, fabricators, and parts suppliers coordinate through a federated registry of equipment models, service histories, compatible parts, refurbishment lots, and verified technician reputations.",
+            "verificationOrTrustModel": "Technician credentials, signed repair logs, photo evidence, part provenance, and buyer feedback constrain false claims; high-risk sanitation or electrical repairs still require licensed inspection and jurisdiction-specific compliance.",
+            "failureModes": [
+              "Commercial sanitation and safety certification may prevent use of locally fabricated parts in critical systems.",
+              "Manufacturers can restrict diagnostic tooling, firmware access, or parts availability.",
+              "Small operators may lack enough local repair density to sustain cooperative inventory."
+            ],
+            "adoptionPath": [
+              "Start with non-critical maintenance records, cross-compatible consumables, refurbished common components, and technician-owned documentation.",
+              "Expand into cooperative purchasing, certified refurbishment programs, and open controller retrofits for aging equipment where regulations allow."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "itw-food-equipment-group",
+              "hobart-facts-figures",
+              "itw-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "open-source-hardware-overview",
+              "ose-pasteurization-machine"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 67,
+                "rationale": "Repair, refurbishment, and parts knowledge can be distributed among local operators even when complete equipment manufacturing remains centralized.",
+                "sourceIds": [
+                  "open-source-hardware-overview",
+                  "hobart-facts-figures"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "The parties already exist in local service markets, but shared records, credentialing, and liability handling are non-trivial coordination problems.",
+                "sourceIds": [
+                  "itw-food-equipment-group",
+                  "hobart-facts-figures"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "implementationFeasibility": {
+                "value": 52,
+                "rationale": "Documentation, parts interchange, and refurbishment workflows are feasible before full open equipment replacement, but regulatory and warranty barriers limit scope.",
+                "sourceIds": [
+                  "open-source-hardware-overview",
+                  "itw-food-equipment-group"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "incumbentPressure": {
+                "value": 39,
+                "rationale": "The concept can pressure service margins and aftermarket parts but is unlikely to displace new certified Hobart equipment broadly in the near term.",
+                "sourceIds": [
+                  "itw-food-equipment-group",
+                  "hobart-facts-figures"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "miller-electric-welding-equipment",
+        "name": "Miller Electric Welding Equipment",
+        "category": "welding equipment and consumables",
+        "homepageUrl": "https://www.millerwelds.com/",
+        "summary": "Miller is ITW's welding platform for arc welding equipment, consumables, accessories, safety gear, and related industrial welding systems.",
+        "whyItMatters": "Welding equipment sits close to the bottleneck of local fabrication: if welding tools become more open, repairable, and locally manufacturable, more industrial production can move toward distributed workshops.",
+        "replacementSketch": [
+          "Open replacement pressure is most credible at the edges: open controller retrofits, repairable power electronics, published maintenance procedures, and locally serviceable accessories rather than immediate substitution for high-duty certified industrial welding systems.",
+          "A mature open welding stack would pair documented hardware, commodity consumables, safety procedures, local fabrication training, and cooperative quality assurance so small workshops can maintain production capacity without full dependence on branded equipment ecosystems."
+        ],
+        "sourceIds": [
+          "itw-2025-annual-report",
+          "itw-welding-segment",
+          "ose-welder",
+          "ose-welder-portfolio",
+          "reactorforge"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "printed-electronics",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-source-ecology-welder",
+            "name": "Open Source Ecology Welder",
+            "kind": "open-source",
+            "homepageUrl": "https://wiki.opensourceecology.org/wiki/Welder",
+            "summary": "Open Source Ecology's welder project documents an open welding machine concept as part of a broader local-production toolchain.",
+            "metrics": {
+              "openness": {
+                "value": 84,
+                "rationale": "The welder is documented in an open project wiki with components, intended product ecology, and replication-oriented sections.",
+                "sourceIds": [
+                  "ose-welder",
+                  "ose-welder-portfolio"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "The project is explicitly framed around local fabrication and a distributed industrial toolchain rather than centralized equipment supply.",
+                "sourceIds": [
+                  "ose-welder",
+                  "open-source-hardware-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 20,
+                "rationale": "The OSE welder is described as research or planning stage, so it is not ready to replace industrial Miller welders in demanding production environments.",
+                "sourceIds": [
+                  "ose-welder",
+                  "ose-welder-portfolio"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 50,
+                "rationale": "If matured, open documentation and commodity components could reduce lifecycle and repair costs, but power electronics, safety, duty cycle, and consumables remain demanding.",
+                "sourceIds": [
+                  "ose-welder",
+                  "itw-welding-segment"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "ose-welder",
+              "ose-welder-portfolio"
+            ]
+          },
+          {
+            "slug": "reactorforge-induction-heating-platform",
+            "name": "ReactorForge Induction Heating Platform",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/ThingEngineer/ReactorForge",
+            "repoUrl": "https://github.com/ThingEngineer/ReactorForge",
+            "summary": "ReactorForge is an open-source high-power induction heating hardware project relevant to local metalworking, repair, and fabrication workflows adjacent to welding.",
+            "metrics": {
+              "openness": {
+                "value": 78,
+                "rationale": "The project is hosted publicly as an open-source hardware platform for high-power induction heating.",
+                "sourceIds": [
+                  "reactorforge"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "Open induction heating can support small workshop metalworking and repair, though it is an adjacent tool rather than a direct welder replacement.",
+                "sourceIds": [
+                  "reactorforge",
+                  "open-source-hardware-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 38,
+                "rationale": "The project targets real-world heavy use but remains a specialist open hardware build, not a certified mass-market welding machine.",
+                "sourceIds": [
+                  "reactorforge"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 46,
+                "rationale": "Open designs can reduce repair and learning costs for capable builders, but high-power electronics still require expertise and quality components.",
+                "sourceIds": [
+                  "reactorforge"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "reactorforge"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-microfactory-welding-stack",
+            "name": "Open Microfactory Welding Stack",
+            "summary": "A distributed fabrication network could combine open welder designs, open power-electronics modules, shared welding procedures, commodity consumables, local training, and third-party inspection to make small workshops less dependent on proprietary welding equipment ecosystems.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "open-hardware",
+              "home-microfactory"
+            ],
+            "thesis": "The market changes if welding capacity becomes part of an open microfactory stack that local workshops can build, repair, audit, and improve instead of purchasing as closed branded equipment.",
+            "bitcoinOrDecentralizationRole": "Decentralized manufacturing is central because welding is a foundational capability for local production; Bitcoin is not necessary unless future marketplaces use payments or bonds for job settlement.",
+            "coordinationMechanism": "Design maintainers publish hardware revisions and procedures; local builders certify builds against test coupons; workshops share verified machine profiles, repair histories, and consumable recipes through a federated registry.",
+            "verificationOrTrustModel": "Trust depends on destructive and non-destructive weld tests, signed calibration records, operator credentials, published bills of materials, and independent inspection for critical jobs. Fake fulfillment is constrained by physical test artifacts and customer acceptance records, but high-stakes welds still require formal certification.",
+            "failureModes": [
+              "Open welder projects may not reach industrial duty cycle, safety, electromagnetic compliance, or reliability requirements.",
+              "Poorly trained operators can create dangerous welds even with good hardware.",
+              "Consumables, power electronics, and safety gear may remain cheaper or safer from established vendors."
+            ],
+            "adoptionPath": [
+              "Begin with open repair, controller retrofits, welding positioners, training rigs, and low-risk fabrication tasks in makerspaces and small workshops.",
+              "Move toward certified open machine designs, cooperative consumables purchasing, shared test labs, and local job marketplaces for non-critical fabrication before entering regulated industrial work."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "itw-welding-segment",
+              "itw-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "ose-welder",
+              "ose-welder-portfolio",
+              "reactorforge",
+              "open-source-hardware-overview"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "Welding is a core local fabrication capability, and open hardware directly supports distributed workshop autonomy.",
+                "sourceIds": [
+                  "ose-welder",
+                  "open-source-hardware-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "Workshops can coordinate around designs, test coupons, and inspection records, but quality assurance for structural welding is hard and locally uneven.",
+                "sourceIds": [
+                  "itw-welding-segment",
+                  "ose-welder"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "implementationFeasibility": {
+                "value": 43,
+                "rationale": "Open welding and power-electronics projects exist, but moving from prototypes and adjacent tools to safe industrial-grade welders requires substantial engineering and certification work.",
+                "sourceIds": [
+                  "ose-welder",
+                  "ose-welder-portfolio",
+                  "reactorforge"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "incumbentPressure": {
+                "value": 47,
+                "rationale": "The concept could pressure repair, education, low-end fabrication, and parts of the small-shop market before challenging Miller's high-reliability industrial applications.",
+                "sourceIds": [
+                  "itw-welding-segment",
+                  "ose-welder"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "itw-2025-annual-report",
+      "title": "Illinois Tool Works 2025 Annual Report",
+      "url": "https://s204.q4cdn.com/218186261/files/doc_financials/2025/ar/2025-annual-report.pdf",
+      "kind": "annual-report",
+      "publisher": "Illinois Tool Works",
+      "note": "Primary source for business description, segments, revenue, operating income, net income, margins, risk factors, and brand references.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "itw-welding-segment",
+      "title": "ITW Welding Business Segment Overview",
+      "url": "https://www.itw.com/about-itw/business-segments/welding/",
+      "kind": "investor-relations",
+      "publisher": "Illinois Tool Works",
+      "note": "Official description of ITW's Welding segment, applications, and Miller brand positioning.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "itw-food-equipment-group",
+      "title": "ITW Food Equipment Group",
+      "url": "https://www.itwfoodequipment.com/",
+      "kind": "product-page",
+      "publisher": "ITW Food Equipment Group",
+      "note": "Official source for ITW's commercial food equipment brands, product categories, sustainability claims, and ENERGY STAR certified equipment footprint.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "hobart-facts-figures",
+      "title": "HOBART Facts & Figures",
+      "url": "https://www.hobart-export.com/about-us/about-us/facts-figures",
+      "kind": "product-page",
+      "publisher": "HOBART",
+      "note": "Official Hobart source describing the brand's commercial warewashing, cooking, food preparation, waste technology, service, and ITW ownership.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "stockanalysis-itw-market-cap",
+      "title": "Illinois Tool Works Market Cap",
+      "url": "https://stockanalysis.com/stocks/itw/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market data source for the latest available ITW market capitalization used in registry metrics.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ose-welder",
+      "title": "Welder",
+      "url": "https://wiki.opensourceecology.org/wiki/Welder",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open-source welder documentation used to assess decentralization potential and readiness for welding alternatives.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ose-welder-portfolio",
+      "title": "Open Source Welder",
+      "url": "https://www.opensourceecology.org/portfolio/welder/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Project status source indicating the open-source welder is in planning stage.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "reactorforge",
+      "title": "ReactorForge: High Power Induction Heating Platform",
+      "url": "https://github.com/ThingEngineer/ReactorForge",
+      "kind": "open-source-project",
+      "publisher": "ThingEngineer",
+      "note": "Open-source high-power induction heating hardware project relevant to local metalworking and fabrication tooling.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ose-pasteurization-machine",
+      "title": "Open Source Pasteurization Machine",
+      "url": "https://wiki.opensourceecology.org/wiki/Open_Source_Pasteurization_Machine",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open food-processing machine documentation used as a limited, early-stage comparator for commercial food equipment decentralization.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "open-source-hardware-overview",
+      "title": "Open-source Hardware",
+      "url": "https://en.wikipedia.org/wiki/Open-source_hardware",
+      "kind": "analysis",
+      "publisher": "Wikipedia",
+      "note": "General background source for open hardware principles and scope across physical product categories.",
+      "accessedOn": "2026-05-29"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Illinois Tool Works bundle with Hobart and Miller Electric coverage, current 2025 annual-report metrics, market-cap refresh, and disruption concepts focused on cooperative repair, open hardware, and decentralized microfactory fabrication."
+}
+2026-05-29T13:16:42.091250Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41964: No such process (os error 3)
+2026-05-29T13:16:42.092819Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41953: No such process (os error 3)
+2026-05-29T13:16:42.092820Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41956: No such process (os error 3)
+2026-05-29T13:16:42.096250Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41959: No such process (os error 3)
+tokens used
+56,901

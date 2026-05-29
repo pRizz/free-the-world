@@ -1,0 +1,1487 @@
+2026-05-29T13:14:49.884913Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+OpenAI Codex v0.132.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e73df-89b1-7290-811a-ff67a614626c
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: ecolab
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "ecolab",
+  "name": "Ecolab",
+  "ticker": "ECL",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top175"
+  ],
+  "sectorId": "materials",
+  "industryId": "specialty-chemicals-coatings",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/ecolab/marketcap/",
+  "description": "Ecolab provides water, hygiene, infection prevention, and process treatment products and services for commercial and industrial customers.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Nalco Water",
+    "Ecolab cleaning and sanitation products"
+  ],
+  "seedSourceUrls": [
+    "https://investor.ecolab.com/",
+    "https://www.ecolab.com/solutions",
+    "https://companiesmarketcap.com/ecolab/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 151-175."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-05-29T13:14:53.081460Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.081473Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.082232Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.082239Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.083000Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.083008Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.083732Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.083738Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.084403Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.084408Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:53.085984Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:53.085988Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.082787Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.082792Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.083276Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.083281Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.083818Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.083824Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.084327Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.084333Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.084862Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.084866Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+2026-05-29T13:14:54.085972Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path must not contain '..'
+2026-05-29T13:14:54.085977Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path must not contain '..'
+web search:
+web search: Ecolab 2024 annual report water hygiene infection prevention process treatment sales operating income
+web search:
+web search: Ecolab 2025 annual report 2025 10-K net sales operating income 2026
+web search:
+web search: open source water treatment monitoring platform industrial water quality open hardware
+web search:
+web search: WHO Guide to Local Production WHO-recommended Handrub Formulations PDF
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "ecolab",
+      "name": "Ecolab",
+      "ticker": "ECL",
+      "rankApprox": 163,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top175"
+      ],
+      "sectorId": "materials",
+      "industryId": "specialty-chemicals-coatings",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/ecolab/marketcap/",
+      "description": "Ecolab provides water, hygiene, infection prevention, and process treatment products and services for commercial and industrial customers.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "Ecolab is a global provider of water, hygiene, infection prevention, purification, and process treatment solutions serving institutional, industrial, health care, life sciences, food, beverage, and other commercial customers.",
+            "The company combines specialty chemistry, field service, monitoring technology, and operating know-how, making the offering less like a commodity chemical catalog and more like an embedded operating system for customer facilities."
+          ]
+        },
+        {
+          "title": "Scale and economics",
+          "paragraphs": [
+            "Ecolab reported 2025 net sales of about $16.1 billion and net income from continuing operations attributable to Ecolab of about $2.1 billion, with Q1 2026 results showing continued sales growth and adjusted operating income growth.",
+            "Its valuation reflects a premium specialty-services profile: market-data sources around late May 2026 placed market capitalization in the low-to-mid $70 billion range and trailing earnings multiples in the mid-30s."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Ecolab's moat is built around route density, regulatory and safety expertise, switching costs inside customer operations, proprietary chemistries, and a large technical sales-and-service workforce. Customers in food, hospitality, health care, manufacturing, and water-intensive industries often buy outcomes and compliance confidence, not just product volume.",
+        "The strongest moat elements are the installed base, account relationships, service protocols, and data accumulated around customer sites. The weaker flank is that some measurement, monitoring, formulation, and training layers can be unbundled by open hardware, open protocols, and locally produced sanitation chemistry where regulatory requirements are manageable."
+      ],
+      "decentralizationNarrative": [
+        "Ecolab is not naturally decentralizable in the way a software platform or financial network is. Its core value depends on validated chemistry, logistics, service technicians, safety data, regulatory compliance, and industrial account trust.",
+        "The realistic decentralization pressure is selective: open water-quality monitoring, open treatment-design software, public sanitation formulations, cooperative procurement, and local verification networks can reduce dependence on a single vendor for lower-risk use cases. High-liability food safety, health care, and process-critical industrial sites would still require audited quality systems and accountable operators."
+      ],
+      "sourceIds": [
+        "ecolab-2025-annual-report",
+        "ecolab-q1-2026-10q",
+        "ecolab-solutions",
+        "ycharts-ecl-market-data"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 151-175.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "High switching costs, embedded service relationships, technical expertise, compliance burden, global scale, and specialty chemistry create a strong moat, though portions of monitoring and lower-risk formulation can be modularized.",
+          "sourceIds": [
+            "ecolab-2025-annual-report",
+            "ecolab-solutions"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "decentralizability": {
+          "value": 38,
+          "rationale": "The business is physical, regulated, and service-heavy, but open water monitoring, local handrub production, and open treatment-design tooling show credible decentralization paths for selected workflows.",
+          "sourceIds": [
+            "ecolab-2025-annual-report",
+            "watertap-open-source",
+            "who-handrub-guide",
+            "rriv-open-water-monitoring"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "Ecolab reported about $2.1 billion of 2025 net income from continuing operations attributable to Ecolab on about $16.1 billion of net sales, and Q1 2026 filings reported continued adjusted operating income growth.",
+          "sourceIds": [
+            "ecolab-2025-annual-report",
+            "ecolab-q1-2026-10q"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "peRatio": {
+          "value": 35.5,
+          "rationale": "YCharts reported Ecolab's PE ratio at 35.50 for May 27, 2026; market-data services vary with share price and earnings basis.",
+          "sourceIds": [
+            "ycharts-ecl-market-data"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "marketCap": {
+          "value": 73890000000,
+          "rationale": "YCharts reported Ecolab market capitalization of $73.89 billion alongside its May 27, 2026 PE-ratio snapshot.",
+          "sourceIds": [
+            "ycharts-ecl-market-data"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "nalco-water",
+        "name": "Nalco Water",
+        "category": "Industrial water treatment and process optimization",
+        "homepageUrl": "https://www.ecolab.com/nalco-water",
+        "summary": "Nalco Water is Ecolab's industrial water business, providing treatment programs, monitoring, chemistry, and process support for water-intensive facilities.",
+        "whyItMatters": "Water treatment sits inside critical industrial processes, so customers value uptime, compliance, safety, energy efficiency, and verified performance more than low upfront product cost.",
+        "replacementSketch": [
+          "A partial replacement path would not start by copying all of Nalco Water. It would begin with open water-quality sensing, open treatment-train modeling, transparent data custody, and local service operators who can prove measured outcomes.",
+          "For lower-risk municipal, agricultural, restoration, and light industrial contexts, open hardware and open software could reduce dependence on black-box monitoring and proprietary optimization layers while still leaving high-liability chemical supply and compliance work to certified providers."
+        ],
+        "sourceIds": [
+          "ecolab-nalco-water",
+          "ecolab-environmental-cleaning",
+          "ecolab-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "watertap",
+            "name": "WaterTAP",
+            "kind": "open-source",
+            "homepageUrl": "https://www.nawihub.org/knowledge/watertap/",
+            "repoUrl": "https://github.com/watertap-org/watertap",
+            "summary": "WaterTAP is an open-source Python platform for technoeconomic assessment of water treatment trains.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "The project is explicitly described as open-source and publishes a software repository.",
+                "sourceIds": [
+                  "watertap-open-source"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 54,
+                "rationale": "It supports independent evaluation and design of water treatment options, but it is modeling software rather than a distributed treatment service network.",
+                "sourceIds": [
+                  "watertap-open-source"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 58,
+                "rationale": "Useful for engineering analysis and planning, but not a turnkey field-service replacement for industrial water treatment.",
+                "sourceIds": [
+                  "watertap-open-source"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 66,
+                "rationale": "Open modeling can reduce consulting and vendor-evaluation costs by making treatment-train tradeoffs more transparent.",
+                "sourceIds": [
+                  "watertap-open-source"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "watertap-open-source"
+            ]
+          },
+          {
+            "slug": "bika-water",
+            "name": "Bika Water",
+            "kind": "open-source",
+            "homepageUrl": "https://water.bikalabs.com/",
+            "summary": "Bika Water is an open-source LIMS configuration for water quality and environmental testing workflows.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "Bika presents the water product as part of its open-source LIMS suite.",
+                "sourceIds": [
+                  "bika-water-lims"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "Open lab information management helps independent labs and local operators manage testing without a proprietary enterprise stack.",
+                "sourceIds": [
+                  "bika-water-lims"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 62,
+                "rationale": "The software is mature enough for lab workflow evaluation, though deployment and validation still require domain expertise.",
+                "sourceIds": [
+                  "bika-water-lims"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 61,
+                "rationale": "Open LIMS tooling can reduce software lock-in for testing and compliance documentation, but does not replace chemistry, field labor, or regulatory certification.",
+                "sourceIds": [
+                  "bika-water-lims"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "bika-water-lims"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-water-ops-cooperative",
+            "name": "Open Water Ops Cooperative",
+            "summary": "A cooperative network of local water technicians could use open sensors, open treatment-modeling software, and shared operating playbooks to serve smaller facilities that do not need a fully proprietary industrial water program.",
+            "angleIds": [
+              "cooperative-production",
+              "open-hardware",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept attacks the monitoring, diagnostics, and service-coordination layer rather than trying to duplicate Ecolab's entire chemistry portfolio.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared ownership of playbooks, sensor designs, testing records, and technician reputation across independent local operators. Bitcoin is not central to the mechanism.",
+            "coordinationMechanism": "Facility owners contract with local certified operators; operators publish standard measurement schemas and treatment logs; labs, auditors, and customers can compare outcomes across sites.",
+            "verificationOrTrustModel": "Cheating is constrained through calibrated sensors, retained lab samples, signed maintenance logs, independent spot testing, and customer-visible trend dashboards. The model remains vulnerable when sensor calibration or sample custody is weak.",
+            "failureModes": [
+              "Regulated and process-critical customers may require a single accountable vendor with deep balance-sheet backing.",
+              "Open monitoring does not solve specialty chemical sourcing, liability insurance, or emergency response coverage."
+            ],
+            "adoptionPath": [
+              "Start with non-critical monitoring and treatment optimization for small municipal, agricultural, restoration, and light-industrial sites.",
+              "Add certification, insurance pools, shared procurement, and independent audit partners before pursuing higher-liability industrial accounts."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ecolab-nalco-water",
+              "ecolab-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "watertap-open-source",
+              "rriv-open-water-monitoring",
+              "bika-water-lims"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "The concept distributes sensing, operations, and records across local operators, but still depends on certification and accountable service entities.",
+                "sourceIds": [
+                  "rriv-open-water-monitoring",
+                  "watertap-open-source"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "Cooperative service networks and open testing records are credible, but customer acquisition, liability, and operator quality control are hard.",
+                "sourceIds": [
+                  "bika-water-lims",
+                  "ecolab-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "implementationFeasibility": {
+                "value": 52,
+                "rationale": "Open tools exist for parts of the stack, but integrating sensors, lab workflows, treatment design, procurement, and field service is operationally complex.",
+                "sourceIds": [
+                  "watertap-open-source",
+                  "rriv-open-water-monitoring",
+                  "bika-water-lims"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "incumbentPressure": {
+                "value": 44,
+                "rationale": "Pressure would likely be strongest in underserved or cost-sensitive segments, not in Ecolab's most demanding multinational industrial accounts.",
+                "sourceIds": [
+                  "ecolab-2025-annual-report",
+                  "ecolab-nalco-water"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "ecolab-cleaning-sanitation-products",
+        "name": "Ecolab cleaning and sanitation products",
+        "category": "Commercial cleaning, sanitation, and infection prevention",
+        "homepageUrl": "https://www.ecolab.com/solutions",
+        "summary": "Ecolab sells commercial cleaning, sanitation, hygiene, and infection-prevention products and programs for food service, hospitality, health care, food processing, and industrial facilities.",
+        "whyItMatters": "These products affect food safety, infection control, brand protection, worker safety, and regulatory compliance, which gives trusted suppliers meaningful leverage inside customer operations.",
+        "replacementSketch": [
+          "The credible open replacement is selective: public formulations, local production, open QA procedures, and transparent training materials can serve hand hygiene and lower-risk sanitation workflows.",
+          "For restaurants, hospitals, food plants, and other high-liability settings, any open or cooperative replacement must prove ingredient quality, correct dilution, traceability, labeling, worker training, and auditability before it can compete with an incumbent program."
+        ],
+        "sourceIds": [
+          "ecolab-solutions",
+          "ecolab-environmental-cleaning",
+          "who-handrub-guide",
+          "who-local-production-analysis"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "who-recommended-handrub-formulations",
+            "name": "WHO-recommended handrub formulations",
+            "kind": "protocol",
+            "homepageUrl": "https://www.who.int/publications/i/item/WHO-IER-PSP-2010.5",
+            "summary": "WHO publishes locally producible alcohol-based handrub formulations with production and safety guidance.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "The formulations and local-production guidance are publicly published by WHO for broad use.",
+                "sourceIds": [
+                  "who-handrub-guide"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The protocol explicitly supports local production rather than centralized branded supply, though it covers handrub rather than the full commercial sanitation catalog.",
+                "sourceIds": [
+                  "who-handrub-guide",
+                  "who-local-production-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 71,
+                "rationale": "WHO-cited evidence found local production feasible at surveyed sites, but procurement, staff training, quality control, and dispenser logistics remain barriers.",
+                "sourceIds": [
+                  "who-local-production-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 74,
+                "rationale": "WHO analysis found the formulations less expensive than marketed alcohol-based handrubs in the surveyed context.",
+                "sourceIds": [
+                  "who-local-production-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "who-handrub-guide",
+              "who-local-production-analysis"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "local-sanitation-formulary-network",
+            "name": "Local Sanitation Formulary Network",
+            "summary": "A network of certified local producers could manufacture a narrow catalog of public-domain sanitation products, starting with WHO-style handrub, while using shared QA, labeling, batch records, and audit templates.",
+            "angleIds": [
+              "cooperative-production",
+              "local-materials-processing",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept turns parts of sanitation supply from branded centralized procurement into locally auditable production, lowering cost and improving resilience for standardized products.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through local production, cooperative QA, and shared records. Bitcoin or Lightning could later handle settlement between facilities, producers, and auditors, but it is not necessary for the first version.",
+            "coordinationMechanism": "Facilities buy from certified local formulators; formulators follow public recipes and batch procedures; independent labs and auditors verify product concentration, contaminants, labeling, and training compliance.",
+            "verificationOrTrustModel": "Trust depends on batch-level records, ingredient certificates, concentration testing, retained samples, lot traceability, and third-party spot audits. Fraud is constrained by random lab testing and customer-visible batch histories, but cannot be eliminated without strong local enforcement.",
+            "failureModes": [
+              "Improper concentration, contamination, labeling errors, or dispenser misuse can create safety failures.",
+              "The model is limited to relatively standardized products and does not replace Ecolab's full cleaning chemistry, on-site service, or regulated infection-prevention programs."
+            ],
+            "adoptionPath": [
+              "Begin with hospitals, schools, NGOs, and public agencies that already use WHO-style formulations or need resilient emergency supply.",
+              "Expand into cooperative procurement and QA for adjacent low-risk cleaners only after local producers prove repeatable testing, labeling, and training performance."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ecolab-solutions",
+              "ecolab-environmental-cleaning"
+            ],
+            "enablerSourceIds": [
+              "who-handrub-guide",
+              "who-local-production-analysis"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Local production and cooperative QA directly reduce dependence on a single branded supplier for a narrow product class.",
+                "sourceIds": [
+                  "who-handrub-guide",
+                  "who-local-production-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "coordinationCredibility": {
+                "value": 60,
+                "rationale": "The production model is documented and feasible, but coordinating QA, procurement, training, and liability across many local producers is difficult.",
+                "sourceIds": [
+                  "who-local-production-analysis"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "implementationFeasibility": {
+                "value": 66,
+                "rationale": "WHO documents practical local production and published evidence found feasibility across surveyed sites, though barriers remain in skills, inputs, dispensers, and quality control.",
+                "sourceIds": [
+                  "who-handrub-guide",
+                  "who-local-production-analysis"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "incumbentPressure": {
+                "value": 39,
+                "rationale": "The concept can pressure commodity hand hygiene and emergency supply, but Ecolab's broader commercial sanitation moat includes service, training, compliance, and specialized chemistries.",
+                "sourceIds": [
+                  "ecolab-solutions",
+                  "ecolab-environmental-cleaning",
+                  "who-local-production-analysis"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "ecolab-2025-annual-report",
+      "title": "Ecolab 2025 Annual Report",
+      "url": "https://s204.q4cdn.com/218790897/files/doc_financials/2025/ar/2025-Annual-Report.pdf",
+      "kind": "annual-report",
+      "publisher": "Ecolab",
+      "note": "Primary source for 2025 sales, profitability, business description, segments, risk profile, and financial scale.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ecolab-q1-2026-10q",
+      "title": "Ecolab Form 10-Q for the quarter ended March 31, 2026",
+      "url": "https://www.sec.gov/Archives/edgar/data/31462/000110465926056737/ecl-20260331x10q.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary filing for the most recent quarterly operating and financial update available in the refresh window.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ecolab-solutions",
+      "title": "Ecolab Solutions",
+      "url": "https://www.ecolab.com/solutions",
+      "kind": "product-page",
+      "publisher": "Ecolab",
+      "note": "Official product and solution directory for Ecolab's water, hygiene, infection-prevention, and process-treatment offerings.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ecolab-nalco-water",
+      "title": "Nalco Water",
+      "url": "https://www.ecolab.com/nalco-water",
+      "kind": "product-page",
+      "publisher": "Ecolab",
+      "note": "Official Ecolab page for the Nalco Water business and its water-treatment positioning.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ecolab-environmental-cleaning",
+      "title": "Environmental Cleaning Solutions",
+      "url": "https://www.ecolab.com/nalco-water/solutions/environmental-cleaning-solutions",
+      "kind": "product-page",
+      "publisher": "Ecolab",
+      "note": "Official source describing Ecolab environmental cleaning programs, chemistry, monitoring, software, and training.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "ycharts-ecl-market-data",
+      "title": "Ecolab Market Cap and PE Ratio",
+      "url": "https://ycharts.com/companies/ECL/pe_ratio",
+      "kind": "market-data",
+      "publisher": "YCharts",
+      "note": "Market-data snapshot used for late-May 2026 market capitalization and PE-ratio inputs.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "watertap-open-source",
+      "title": "WaterTAP",
+      "url": "https://www.nawihub.org/knowledge/watertap/",
+      "kind": "open-source-project",
+      "publisher": "National Alliance for Water Innovation",
+      "note": "Open-source Python platform for technoeconomic assessment of water treatment trains.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "bika-water-lims",
+      "title": "Bika Water",
+      "url": "https://water.bikalabs.com/",
+      "kind": "open-source-project",
+      "publisher": "Bika Labs",
+      "note": "Open-source LIMS configuration for water quality and environmental testing workflows.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "rriv-open-water-monitoring",
+      "title": "River Restoration Intelligence and Verification",
+      "url": "https://www.rriv.org/",
+      "kind": "open-source-project",
+      "publisher": "RRIV",
+      "note": "Open-source hardware and software platform for lower-cost water-quality monitoring and citizen-science deployments.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "who-handrub-guide",
+      "title": "Guide to Local Production: WHO-recommended Handrub Formulations",
+      "url": "https://www.who.int/publications/i/item/WHO-IER-PSP-2010.5",
+      "kind": "technical-docs",
+      "publisher": "World Health Organization",
+      "note": "Public formulation and production guidance for locally produced alcohol-based handrub.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "who-local-production-analysis",
+      "title": "Local production of WHO-recommended alcohol-based handrubs: feasibility, advantages, barriers and costs",
+      "url": "https://www.who.int/publications/i/item/BLT-12-117085-Journal",
+      "kind": "analysis",
+      "publisher": "World Health Organization",
+      "note": "Evidence source on feasibility, cost advantages, and barriers for local production of WHO-recommended handrub formulations.",
+      "accessedOn": "2026-05-29"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Ecolab registry bundle with two product surfaces: Nalco Water and Ecolab cleaning and sanitation products. The strongest decentralization angles are selective rather than total replacement: open water monitoring and treatment-design tooling for water operations, plus local-production protocols and cooperative QA for standardized sanitation products."
+}
+2026-05-29T13:16:31.514846Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41972: No such process (os error 3)
+2026-05-29T13:16:31.514846Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41954: No such process (os error 3)
+2026-05-29T13:16:31.514858Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41962: No such process (os error 3)
+2026-05-29T13:16:31.516432Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to kill MCP process group 41955: No such process (os error 3)
+tokens used
+46,306

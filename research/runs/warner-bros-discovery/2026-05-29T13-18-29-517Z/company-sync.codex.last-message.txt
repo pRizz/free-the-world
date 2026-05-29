@@ -1,0 +1,610 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "warner-bros-discovery",
+      "name": "Warner Bros. Discovery",
+      "ticker": "WBD",
+      "rankApprox": 163,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top175"
+      ],
+      "sectorId": "communication-services",
+      "industryId": "entertainment",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/warner-bros-discovery/marketcap/",
+      "description": "Warner Bros. Discovery is a global media and entertainment company with film, television, streaming, sports, news, and cable network businesses.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Warner Bros. Discovery combines the Warner Bros. studio, HBO and HBO Max streaming, Discovery lifestyle and factual networks, CNN, TNT Sports, and related television and licensing assets.",
+            "The company's strategic center of gravity has shifted toward streaming and studio franchises, while legacy linear networks remain cash-generative but structurally pressured by pay-TV subscriber declines."
+          ]
+        },
+        {
+          "title": "Registry relevance",
+          "paragraphs": [
+            "WBD is useful for the registry because it bundles two distinct centralization patterns: subscription access to a large proprietary media library and studio-scale control over film production, franchise financing, and distribution windows.",
+            "The strongest open alternatives do not replace blockbuster IP directly, but they can decentralize hosting, home media control, creator distribution, and parts of the production toolchain."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "WBD's moat comes from recognizable franchises, deep content libraries, premium HBO branding, studio relationships, distribution rights, and the capital required to finance global films and series.",
+        "That moat is weaker on commodity streaming infrastructure and user experience: open media servers and federated video platforms can reproduce hosting and playback primitives, but not the rights portfolio, marketing reach, or exclusive theatrical pipeline."
+      ],
+      "decentralizationNarrative": [
+        "The most credible decentralization pressure is not a single open clone of HBO Max or Warner Bros. Pictures. It is a stack of open media servers, federated video distribution, open production tools, and cooperative financing that lets smaller catalogs reach audiences without accepting a dominant streaming gatekeeper.",
+        "The main constraint is rights and discovery. Open infrastructure can reduce hosting and coordination costs, but premium scripted entertainment still depends on financing, talent coordination, licensing, moderation, and trusted revenue settlement."
+      ],
+      "sourceIds": [
+        "wbd-ir-home",
+        "wbd-brands",
+        "wbd-fy2025-results",
+        "companiesmarketcap-wbd-marketcap",
+        "companiesmarketcap-wbd-pe"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 151-175.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "WBD controls major entertainment brands, a large owned and licensed content library, HBO/HBO Max distribution, Warner Bros. studios, and global television networks, creating a durable content and rights moat despite industry pressure.",
+          "sourceIds": [
+            "wbd-brands",
+            "wbd-fy2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Streaming delivery and creator distribution can be decentralized, but premium film and television rights, franchise ownership, marketing, and production finance remain highly centralized.",
+          "sourceIds": [
+            "wbd-brands",
+            "jellyfin-docs",
+            "peertube-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "profitability": {
+          "value": 5,
+          "rationale": "WBD has a profitable and growing streaming segment but still faces material pressure from domestic linear pay-TV subscriber declines and restructuring around legacy network economics.",
+          "sourceIds": [
+            "wbd-fy2025-results"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "peRatio": {
+          "value": 135,
+          "rationale": "CompaniesMarketCap reported WBD's trailing P/E ratio at about 135 as of May 2026, implying positive but thin trailing earnings relative to market value.",
+          "sourceIds": [
+            "companiesmarketcap-wbd-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-05-29"
+        },
+        "marketCap": {
+          "value": 68050000000,
+          "rationale": "Market data services reported WBD market capitalization around $68 billion in late May 2026; this value is rounded for registry scoring.",
+          "sourceIds": [
+            "companiesmarketcap-wbd-marketcap",
+            "macrotrends-wbd-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-05-29"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "max",
+        "name": "HBO Max",
+        "category": "Subscription streaming video",
+        "homepageUrl": "https://www.max.com/",
+        "summary": "HBO Max is WBD's flagship subscription streaming service, combining HBO programming, Warner Bros. films and series, Discovery content, and other network brands.",
+        "whyItMatters": "It is the company's main direct-to-consumer interface and a central example of proprietary catalog bundling, subscription access, and platform-controlled discovery.",
+        "replacementSketch": [
+          "A realistic open replacement would separate personal media control from public creator distribution. Households and small organizations could use self-hosted media libraries for owned content while creators and communities publish through federated video servers.",
+          "This does not recreate HBO's premium rights library, but it can reduce dependence on a single subscription gatekeeper for discovery, hosting, archival access, and niche creator economics."
+        ],
+        "sourceIds": [
+          "wbd-brands",
+          "wbd-fy2025-results",
+          "axios-hbo-max-rebrand"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "jellyfin",
+            "name": "Jellyfin",
+            "kind": "open-source",
+            "homepageUrl": "https://jellyfin.org/",
+            "repoUrl": "https://github.com/jellyfin/jellyfin",
+            "summary": "Jellyfin is a free software media system for managing and streaming a user's own media library.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Jellyfin is developed as free software with source code available for the server and related clients.",
+                "sourceIds": [
+                  "jellyfin-docs",
+                  "jellyfin-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Jellyfin gives users local or self-hosted control over media libraries, but it does not provide a federated rights marketplace or global content network.",
+                "sourceIds": [
+                  "jellyfin-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project is actively usable for home and small-server media streaming, though it is not a full substitute for licensed subscription catalogs.",
+                "sourceIds": [
+                  "jellyfin-docs",
+                  "jellyfin-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Self-hosting can lower recurring platform fees for users who already own or control their media, shifting cost toward storage and bandwidth.",
+                "sourceIds": [
+                  "jellyfin-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "jellyfin-docs",
+              "jellyfin-github"
+            ]
+          },
+          {
+            "slug": "peertube",
+            "name": "PeerTube",
+            "kind": "decentralized",
+            "homepageUrl": "https://joinpeertube.org/",
+            "repoUrl": "https://github.com/Chocobozzz/PeerTube",
+            "summary": "PeerTube is a free, ActivityPub-federated video platform using self-hosted instances and peer-assisted streaming.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "PeerTube is open source and publishes its code and documentation for self-hosted video platforms.",
+                "sourceIds": [
+                  "peertube-docs",
+                  "peertube-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "PeerTube explicitly uses ActivityPub federation so multiple independently operated video platforms can interoperate.",
+                "sourceIds": [
+                  "peertube-docs",
+                  "peertube-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "PeerTube is viable for independent video hosting and federation, but it does not match the catalog licensing, DRM, or mainstream device footprint of major subscription streamers.",
+                "sourceIds": [
+                  "peertube-docs",
+                  "peertube-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Federation and peer-assisted playback can reduce the bandwidth burden on a single platform operator, especially for community-scale video libraries.",
+                "sourceIds": [
+                  "peertube-about"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "peertube-docs",
+              "peertube-about",
+              "peertube-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-rights-aware-streaming-coops",
+            "name": "Federated rights-aware streaming cooperatives",
+            "summary": "Independent creators, libraries, educators, and small studios could run interoperable video instances that federate discovery while settling access through portable memberships, creator splits, or Lightning-native micropayments.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "lightning"
+            ],
+            "thesis": "The concept weakens the idea that subscription video discovery and hosting must be concentrated inside one global catalog owner.",
+            "bitcoinOrDecentralizationRole": "Federation allows independent servers to share metadata and audiences, while Lightning can support low-friction payments for rentals, tips, memberships, or per-title access without forcing every creator into a single billing platform.",
+            "coordinationMechanism": "Creators or curators publish to local instances, instances federate metadata through ActivityPub, users subscribe to trusted communities, and payment rules route revenue to rights holders or hosting cooperatives.",
+            "verificationOrTrustModel": "Instances can sign metadata, publish rights attestations, maintain transparent moderation policies, and use payment receipts or access tokens to prove fulfillment. Fraud is constrained by reputation, instance-level blocking, auditable payout records, and the ability to migrate to other servers.",
+            "failureModes": [
+              "Large licensed catalogs may refuse to participate because they prefer exclusive distribution and strong DRM.",
+              "Federated moderation and rights verification can break down if bad instances spoof ownership or ignore takedown obligations.",
+              "Mainstream audiences may still prefer bundled catalogs and polished device integrations."
+            ],
+            "adoptionPath": [
+              "Start with independent film catalogs, public media archives, education libraries, and creator-owned series that do not need studio-scale rights clearance.",
+              "Add interoperable payment, portable subscription, and rights metadata layers once small networks prove demand."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "wbd-fy2025-results",
+              "axios-hbo-max-rebrand"
+            ],
+            "enablerSourceIds": [
+              "peertube-docs",
+              "peertube-about"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The mechanism directly replaces a single service catalog with many interoperable instances and portable user relationships.",
+                "sourceIds": [
+                  "peertube-docs",
+                  "peertube-faq"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "ActivityPub federation is proven for video metadata and comments, but rights settlement and paid access require additional governance and tooling.",
+                "sourceIds": [
+                  "peertube-docs",
+                  "peertube-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The hosting and federation primitives exist, but reliable rights attestations, payment UX, device support, and legal workflows remain hard.",
+                "sourceIds": [
+                  "peertube-docs",
+                  "peertube-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This would pressure niche and independent streaming catalogs more than HBO-scale tentpole franchises in the near term.",
+                "sourceIds": [
+                  "wbd-fy2025-results",
+                  "peertube-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "warner-bros-pictures",
+        "name": "Warner Bros. Pictures",
+        "category": "Film studio and theatrical entertainment",
+        "homepageUrl": "https://www.warnerbros.com/movies",
+        "summary": "Warner Bros. Pictures is WBD's film studio brand for theatrical releases, franchise films, and related motion-picture production and distribution.",
+        "whyItMatters": "It represents studio-scale control over financing, production pipelines, intellectual property, theatrical windows, and downstream streaming value.",
+        "replacementSketch": [
+          "The open replacement is not a single studio clone. It is a production pipeline where open tools, shared assets, cooperative financing, and direct distribution let smaller teams make high-quality films without relying on a vertically integrated studio.",
+          "That path is strongest for animation, documentary, education, and niche narrative projects. It is weaker for franchise-scale spectacle, global marketing, talent packaging, and theatrical booking."
+        ],
+        "sourceIds": [
+          "wbd-brands",
+          "blender-open-movies",
+          "blender-studio-tools"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "blender-studio-open-movies",
+            "name": "Blender Studio Open Movies",
+            "kind": "open-source",
+            "homepageUrl": "https://studio.blender.org/",
+            "summary": "Blender Studio produces open movies and open production assets around the free and open-source Blender creation suite.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Blender is free and open source, and Blender Studio documents open movie production workflows and assets.",
+                "sourceIds": [
+                  "blender-home",
+                  "blender-studio-tools",
+                  "blender-open-movies"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Open tools and assets reduce dependence on closed studio toolchains, though production finance and distribution can still remain centralized.",
+                "sourceIds": [
+                  "blender-studio-tools",
+                  "blender-open-movies"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "Blender is production-capable and has been used for open film projects, but the model is best suited to teams that can manage their own financing and distribution.",
+                "sourceIds": [
+                  "blender-home",
+                  "blender-studio-tools"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open production software and reusable assets can materially lower tooling costs for animation and visual production teams.",
+                "sourceIds": [
+                  "blender-home",
+                  "blender-open-movies"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              }
+            },
+            "sourceIds": [
+              "blender-home",
+              "blender-studio-tools",
+              "blender-open-movies"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-open-film-studios",
+            "name": "Cooperative open film studios",
+            "summary": "Open production tools, reusable asset libraries, transparent budgets, and cooperative ownership could let creators finance and distribute film projects without surrendering control to a major studio gatekeeper.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept moves leverage from centralized studio financing and IP ownership toward networks of creators, fans, and service providers that coordinate around transparent production milestones.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared ownership, open production assets, and portable distribution rather than through Bitcoin as a mandatory base layer. Bitcoin or Lightning could help with global pledges and revenue splits, but the core mechanism is cooperative production governance.",
+            "coordinationMechanism": "Creators publish production plans, budgets, asset needs, and milestone deliverables; backers and service providers fund or contribute against those milestones; completed assets and films are released under agreed licensing terms.",
+            "verificationOrTrustModel": "Milestones can be verified through public work-in-progress repositories, asset provenance, signed contributor agreements, transparent budgets, and escrowed release of funds after community or third-party review.",
+            "failureModes": [
+              "Open financing may not support blockbuster budgets, star talent, or large marketing campaigns.",
+              "Rights and contributor agreements can become complex when many participants contribute assets or labor.",
+              "Quality control may suffer if governance prioritizes participation over editorial authority."
+            ],
+            "adoptionPath": [
+              "Begin with animation shorts, documentaries, fan-funded pilots, and educational media where open tooling and transparent production provide immediate cost leverage.",
+              "Build repeatable cooperative templates for budgeting, licensing, contributor attribution, and revenue sharing before attempting larger narrative productions."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "wbd-brands"
+            ],
+            "enablerSourceIds": [
+              "blender-home",
+              "blender-studio-tools",
+              "blender-open-movies"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The model decentralizes production ownership, tooling, and asset reuse, though distribution and audience aggregation can still centralize.",
+                "sourceIds": [
+                  "blender-studio-tools",
+                  "blender-open-movies"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open movie projects demonstrate that distributed production assets and workflows can work, but cooperative financing and rights governance are harder than tool adoption.",
+                "sourceIds": [
+                  "blender-open-movies",
+                  "blender-studio-tools"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software and open-content precedent exist, but professional production management, legal templates, and distribution relationships remain bottlenecks.",
+                "sourceIds": [
+                  "blender-home",
+                  "blender-studio-tools"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "This can pressure smaller studio projects and animation tooling economics, but it is unlikely to displace Warner Bros. franchise films soon.",
+                "sourceIds": [
+                  "wbd-brands",
+                  "blender-open-movies"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-05-29"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "wbd-ir-home",
+      "title": "Warner Bros. Discovery Investor Relations",
+      "url": "https://ir.wbd.com/",
+      "kind": "investor-relations",
+      "publisher": "Warner Bros. Discovery",
+      "note": "Primary investor-relations entry point for company disclosures.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "wbd-brands",
+      "title": "Warner Bros. Discovery Brands",
+      "url": "https://www.wbd.com/brands",
+      "kind": "product-page",
+      "publisher": "Warner Bros. Discovery",
+      "note": "Company-maintained brand directory used to identify WBD's major studio, streaming, network, and entertainment properties.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "wbd-fy2025-results",
+      "title": "Warner Bros. Discovery Reports Fourth-Quarter and Full-Year 2025 Results",
+      "url": "https://s201.q4cdn.com/336605034/files/doc_earnings/2025/q4/earnings-result/WBD-4Q25-Earnings-Release.pdf",
+      "kind": "investor-relations",
+      "publisher": "Warner Bros. Discovery",
+      "note": "Financial release supporting streaming subscriber scale, profitability context, and continuing linear-network pressure.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "companiesmarketcap-wbd-marketcap",
+      "title": "Warner Bros. Discovery Market Cap",
+      "url": "https://companiesmarketcap.com/warner-bros-discovery/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap source linked from the queued manifest.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "companiesmarketcap-wbd-pe",
+      "title": "Warner Bros. Discovery P/E Ratio",
+      "url": "https://companiesmarketcap.com/warner-bros-discovery/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Trailing P/E ratio reference for valuation scoring.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "macrotrends-wbd-marketcap",
+      "title": "Warner Bros Discovery Market Cap 2012-2026",
+      "url": "https://www.macrotrends.net/stocks/charts/WBD/warner-bros-discovery/market-cap",
+      "kind": "market-data",
+      "publisher": "Macrotrends",
+      "note": "Secondary market-cap reference used to cross-check late-May 2026 valuation range.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "axios-hbo-max-rebrand",
+      "title": "WBD renames Max to HBO Max",
+      "url": "https://www.axios.com/2025/05/14/wbd-renames-max-to-hbo-max",
+      "kind": "analysis",
+      "publisher": "Axios",
+      "note": "Context on the Max to HBO Max brand shift and WBD's streaming positioning.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "jellyfin-docs",
+      "title": "Jellyfin Documentation Introduction",
+      "url": "https://jellyfin.org/docs/index.html",
+      "kind": "technical-docs",
+      "publisher": "Jellyfin",
+      "note": "Official documentation describing Jellyfin as a free software media system.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "jellyfin-github",
+      "title": "Jellyfin Server Backend and API",
+      "url": "https://github.com/jellyfin/jellyfin",
+      "kind": "open-source-project",
+      "publisher": "Jellyfin",
+      "note": "Source repository for Jellyfin's server backend and API.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "peertube-docs",
+      "title": "PeerTube ActivityPub Documentation",
+      "url": "https://docs.joinpeertube.org/api/activitypub",
+      "kind": "technical-docs",
+      "publisher": "PeerTube",
+      "note": "Official documentation for PeerTube's ActivityPub federation behavior.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "peertube-about",
+      "title": "About PeerTube",
+      "url": "https://peertube.tv/about/peertube",
+      "kind": "technical-docs",
+      "publisher": "PeerTube",
+      "note": "Official overview describing PeerTube as a self-hosted, ActivityPub-federated video streaming platform using browser-based peer-to-peer streaming.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "peertube-faq",
+      "title": "PeerTube FAQ",
+      "url": "https://joinpeertube.org/en/faq/",
+      "kind": "technical-docs",
+      "publisher": "PeerTube",
+      "note": "FAQ explaining PeerTube's multi-instance federation model.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "peertube-github",
+      "title": "PeerTube GitHub Repository",
+      "url": "https://github.com/Chocobozzz/PeerTube",
+      "kind": "open-source-project",
+      "publisher": "PeerTube",
+      "note": "Source repository for the ActivityPub-federated video platform.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "blender-home",
+      "title": "Blender",
+      "url": "https://www.blender.org/",
+      "kind": "open-source-project",
+      "publisher": "Blender Foundation",
+      "note": "Official Blender site describing the free and open-source 3D creation suite.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "blender-studio-tools",
+      "title": "Blender Studio Tools Overview",
+      "url": "https://studio.blender.org/tools/overview/introduction",
+      "kind": "technical-docs",
+      "publisher": "Blender Studio",
+      "note": "Overview of Blender Studio's open production tooling and workflow documentation.",
+      "accessedOn": "2026-05-29"
+    },
+    {
+      "id": "blender-open-movies",
+      "title": "Sintel, the Durian Open Movie Project",
+      "url": "https://durian.blender.org/about/",
+      "kind": "analysis",
+      "publisher": "Blender Foundation",
+      "note": "Open movie example showing Blender Foundation's use of film projects to validate and improve open production tooling.",
+      "accessedOn": "2026-05-29"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new WBD bundle with two products: HBO Max for proprietary streaming distribution and Warner Bros. Pictures for studio-scale film production. Strong open/decentralized alternatives are Jellyfin, PeerTube, and Blender Studio Open Movies; disruption concepts focus on federated streaming cooperatives and cooperative open film studios."
+}
