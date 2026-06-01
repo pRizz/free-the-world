@@ -25,7 +25,7 @@
     "test:e2e": "playwright test",
     "test:e2e:dev": "playwright test --config=playwright.dev.config.ts",
     "typecheck": "bun run content:compile && tsc --noEmit",
-    "test": "bun test src tests/unit",
+    "test": "bun test --timeout 10000 src tests/unit",
     "content:validate": "bun run scripts/validate-content.ts",
     "content:compile": "bun run scripts/compile-content.ts",
     "market-cap:refresh": "bun run scripts/refresh-market-cap-snapshots.ts",

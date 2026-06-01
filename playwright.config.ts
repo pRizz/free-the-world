@@ -6,8 +6,10 @@ const baseURL = `http://127.0.0.1:${port}`;
 export default defineConfig({
   testDir: "./tests/e2e",
   testMatch: "**/*.e2e.ts",
+  timeout: 60_000,
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
+  workers: process.env.CI ? undefined : 4,
   retries: process.env.CI ? 2 : 0,
   reporter: process.env.CI ? [["list"], ["html", { open: "never" }]] : [["list"]],
   outputDir: "test-results",

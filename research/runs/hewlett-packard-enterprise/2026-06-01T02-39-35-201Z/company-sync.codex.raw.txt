@@ -1,0 +1,769 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "hewlett-packard-enterprise",
+      "name": "Hewlett Packard Enterprise",
+      "ticker": "HPE",
+      "rankApprox": 190,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top200"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "technology-hardware",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/hewlett-packard-enterprise/marketcap/",
+      "description": "Hewlett Packard Enterprise provides servers, storage, networking, edge computing, hybrid cloud, AI systems, and related enterprise technology services.",
+      "overview": [
+        {
+          "title": "Enterprise infrastructure portfolio",
+          "paragraphs": [
+            "Hewlett Packard Enterprise sells enterprise infrastructure across compute, storage, networking, edge, hybrid cloud, AI systems, and financial services. Its fiscal 2025 results highlight a larger post-Juniper portfolio and a business increasingly organized around Cloud & AI, Networking, Hybrid Cloud, Server, and Financial Services segments.",
+            "The company is relevant to the registry because its products sit close to the physical and control-plane layers of enterprise computing: servers, rack systems, storage, networking gear, cloud management, and consumption-based infrastructure services."
+          ]
+        },
+        {
+          "title": "Hybrid cloud and AI push",
+          "paragraphs": [
+            "HPE GreenLake is the company's hybrid-cloud operating and consumption platform, positioned as a unified experience for managing workloads across private infrastructure, edge locations, colocation, and public-cloud-adjacent environments.",
+            "HPE's recent investor materials emphasize GreenLake annualized revenue run-rate growth and a large installed customer base, while its fiscal 2025 reporting also shows that profitability can be uneven when acquisitions, AI-system demand, and goodwill impairments reshape the portfolio."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "HPE's moat comes from enterprise procurement relationships, validated hardware supply chains, support contracts, financing, global services, and compatibility expectations around mission-critical infrastructure. ProLiant, GreenLake, Aruba and Juniper networking, storage, and AI systems are bought as much for lifecycle assurance and vendor accountability as for raw feature parity.",
+        "The moat is not absolute. Server hardware has commodity pressure, hyperscalers and ODMs influence data-center design, and open infrastructure software can reduce control-plane lock-in. HPE's defensibility is strongest where customers value integrated support, compliance, financing, and a single accountable vendor."
+      ],
+      "decentralizationNarrative": [
+        "HPE is partially decentralizable at the hardware and cloud-control layers because servers, rack designs, management firmware, and cloud orchestration can be specified or implemented through open projects. Open Compute Project hardware specifications, OpenBMC-style firmware, OpenStack, Kubernetes, and OpenNebula all point toward infrastructure stacks that can be operated outside a single vendor platform.",
+        "The hard part is not proving that open alternatives exist; it is matching enterprise reliability, security certification, supply-chain availability, hardware lifecycle management, and support escalation. Decentralized infrastructure pressure is therefore more likely to compress margins and weaken lock-in than to erase HPE's role quickly."
+      ],
+      "sourceIds": [
+        "hpe-2025-10k",
+        "hpe-q4-2025-results",
+        "hpe-greenlake-page",
+        "companiesmarketcap-hpe"
+      ],
+      "technologyWaveIds": [
+        "printed-electronics",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200; refreshed with fiscal 2025 company filings and May 2026 market-cap references.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Enterprise infrastructure customers value HPE's validated hardware, global support, financing, procurement relationships, and integrated portfolio, but server hardware and cloud control planes face commodity and open-stack pressure.",
+          "sourceIds": [
+            "hpe-2025-10k",
+            "hpe-greenlake-page",
+            "ocp-server-project",
+            "openstack-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 6,
+          "rationale": "Servers and private-cloud control planes can be replaced in part by open hardware specifications, open firmware, and open-source cloud software, but enterprise support, certification, and lifecycle assurance remain difficult to decentralize fully.",
+          "sourceIds": [
+            "ocp-server-project",
+            "openbmc-github",
+            "openstack-home",
+            "opennebula-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 4,
+          "rationale": "HPE reported record quarterly revenue and strong non-GAAP operating performance in fiscal 2025, but GAAP earnings were pressured by portfolio transition costs and impairment effects, making current profitability mixed.",
+          "sourceIds": [
+            "hpe-2025-10k",
+            "hpe-q4-2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "Recent market-data screens list HPE's trailing P/E as not meaningful, consistent with depressed GAAP earnings in the reviewed period.",
+          "sourceIds": [
+            "stockanalysis-hpe-statistics",
+            "hpe-2025-10k"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 39400000000,
+          "rationale": "CompaniesMarketCap listed HPE's market capitalization at about $39.40 billion as of May 2026; other market-data sources varied materially in late May 2026, so this uses the provided manifest's market-cap source for consistency.",
+          "sourceIds": [
+            "companiesmarketcap-hpe",
+            "stockanalysis-hpe-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "hpe-proliant",
+        "name": "HPE ProLiant",
+        "category": "Enterprise servers",
+        "homepageUrl": "https://www.hpe.com/us/en/servers/proliant-servers.html",
+        "summary": "HPE ProLiant is HPE's enterprise server family for rack, tower, edge, and workload-specific compute deployments.",
+        "whyItMatters": "ProLiant represents one of HPE's core physical infrastructure franchises: standardized enterprise compute sold with vendor validation, lifecycle support, management tooling, and integration into broader HPE infrastructure offers.",
+        "replacementSketch": [
+          "A realistic replacement path starts with workload-by-workload substitution rather than a full enterprise rip-and-replace. Organizations can use open hardware specifications, commodity x86 or ARM servers, open firmware where available, and open management tooling for less specialized workloads.",
+          "For regulated or mission-critical workloads, the near-term pressure is likely to come from buyers demanding more open firmware, serviceable designs, transparent supply chains, and multi-vendor rack compatibility instead of accepting a single proprietary lifecycle."
+        ],
+        "sourceIds": [
+          "hpe-proliant-page",
+          "hpe-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "printed-electronics",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-compute-project-server",
+            "name": "Open Compute Project Server",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opencompute.org/projects/server",
+            "summary": "The Open Compute Project Server Project publishes open server specifications and design work intended to standardize and open data-center hardware architectures.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OCP's server work is explicitly organized around open specifications and accepted designs for scale computing infrastructure.",
+                "sourceIds": [
+                  "ocp-server-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open server specifications reduce dependence on a single branded hardware vendor and help multiple manufacturers, operators, and buyers coordinate around compatible designs.",
+                "sourceIds": [
+                  "ocp-server-project",
+                  "ocp-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "OCP designs are mature in hyperscale and data-center contexts, but adoption still requires compatible facilities, supply chains, integration skill, and workload-specific validation.",
+                "sourceIds": [
+                  "ocp-server-project",
+                  "ocp-products-supermicro"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Standardized designs can increase supplier competition and reduce bespoke vendor lock-in, though realized savings depend on scale and operational capability.",
+                "sourceIds": [
+                  "ocp-server-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "ocp-server-project",
+              "ocp-overview"
+            ]
+          },
+          {
+            "slug": "openbmc",
+            "name": "OpenBMC",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openbmc.org/",
+            "repoUrl": "https://github.com/openbmc/openbmc",
+            "summary": "OpenBMC is an open-source baseboard management controller firmware stack used to manage and monitor server hardware.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenBMC is developed as an open-source firmware project with public source code and documentation.",
+                "sourceIds": [
+                  "openbmc-github",
+                  "openbmc-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open management firmware weakens proprietary control over server serviceability and monitoring, but it still depends on board support and vendor enablement.",
+                "sourceIds": [
+                  "openbmc-home",
+                  "openbmc-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "OpenBMC is production-relevant in server ecosystems, but readiness varies by hardware platform, vendor support, and enterprise validation requirements.",
+                "sourceIds": [
+                  "openbmc-home",
+                  "openbmc-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open firmware can reduce lock-in and improve serviceability, though it does not by itself replace the cost of validated server hardware and support.",
+                "sourceIds": [
+                  "openbmc-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openbmc-home",
+              "openbmc-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-server-cooperative-fabrication",
+            "name": "Open Server Cooperative Fabrication",
+            "summary": "A buyer-led cooperative could pool demand for OCP-compatible servers, open firmware support, repair documentation, and verified regional assembly, creating a credible procurement path for organizations that want enterprise hardware without deep dependence on a single branded OEM.",
+            "angleIds": [
+              "open-hardware",
+              "cooperative-production",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "Enterprise server margins and lock-in weaken if buyers can coordinate around open designs, validated local assemblers, shared spare-parts pools, and open firmware rather than buying a fully proprietary lifecycle from one vendor.",
+            "bitcoinOrDecentralizationRole": "The central mechanism is decentralized manufacturing and open hardware, not Bitcoin. Decentralization matters because multiple certified assemblers, repair operators, and firmware maintainers can serve the same specification without a single vendor controlling the full lifecycle.",
+            "coordinationMechanism": "Large buyers publish demand commitments, approved bills of materials, firmware baselines, and acceptance tests through a cooperative procurement body. Regional manufacturers and repair providers bid against the same open specification and earn preferred status through delivery history and audit results.",
+            "verificationOrTrustModel": "Hardware batches are verified through serial-number attestation, reproducible firmware builds where possible, third-party conformance tests, burn-in records, and buyer-visible repair histories. Collusion risk is constrained by multi-supplier bidding and random audit sampling, but the model still depends on credible labs and disciplined procurement governance.",
+            "failureModes": [
+              "Open designs may not match the newest proprietary AI, security, or serviceability features quickly enough for demanding enterprise buyers.",
+              "Regional assemblers could fail to meet warranty, security, or supply-chain assurance expectations without expensive certification infrastructure.",
+              "Large buyers may still prefer one accountable vendor when outages, firmware defects, or compliance issues create career risk."
+            ],
+            "adoptionPath": [
+              "Start with non-mission-critical internal compute, lab clusters, CI workloads, and research environments that can tolerate more operational responsibility.",
+              "Build cooperative purchasing power around standardized racks, open BMC firmware, shared spares, and third-party validation labs.",
+              "Expand into regulated or production workloads only after support contracts, security attestations, and incident escalation paths are mature."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "hpe-proliant-page",
+              "hpe-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "ocp-server-project",
+              "openbmc-home",
+              "ocp-products-supermicro"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model directly shifts hardware design, assembly, firmware, and repair from one branded vendor toward a multi-party open specification ecosystem.",
+                "sourceIds": [
+                  "ocp-server-project",
+                  "openbmc-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "OCP shows that open server coordination is possible, but extending that into cooperative procurement with reliable enterprise support is organizationally demanding.",
+                "sourceIds": [
+                  "ocp-server-project",
+                  "ocp-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The technical ingredients exist, but certified manufacturing, firmware maintenance, support escalation, and warranty handling create real execution burden.",
+                "sourceIds": [
+                  "ocp-server-project",
+                  "openbmc-github",
+                  "ocp-products-supermicro"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "The concept could pressure pricing, repairability, and procurement terms, though HPE's enterprise support and validated-platform moat would remain meaningful.",
+                "sourceIds": [
+                  "hpe-2025-10k",
+                  "ocp-server-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "hpe-greenlake",
+        "name": "HPE GreenLake",
+        "category": "Hybrid cloud platform",
+        "homepageUrl": "https://www.hpe.com/us/en/greenlake.html",
+        "summary": "HPE GreenLake is HPE's hybrid cloud and consumption-based infrastructure platform for managing cloud services, private infrastructure, and edge environments.",
+        "whyItMatters": "GreenLake is central to HPE's effort to turn enterprise infrastructure into a cloud-like operating model, pairing hardware, software, services, and recurring consumption economics.",
+        "replacementSketch": [
+          "A replacement path for GreenLake would combine open-source cloud orchestration, Kubernetes, OpenStack or OpenNebula, open observability, and service providers that compete on operations rather than proprietary control planes.",
+          "The most credible alternatives will not merely install open software. They need strong identity, billing, capacity planning, compliance reporting, upgrade automation, and support workflows so enterprise buyers can treat the stack as operationally accountable."
+        ],
+        "sourceIds": [
+          "hpe-greenlake-page",
+          "hpe-q4-2025-results",
+          "hpe-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openstack",
+            "name": "OpenStack",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openstack.org/",
+            "repoUrl": "https://opendev.org/openstack",
+            "summary": "OpenStack is an open-source cloud platform for building and operating private and public cloud infrastructure.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenStack is explicitly an open-source cloud infrastructure platform with public project governance and source repositories.",
+                "sourceIds": [
+                  "openstack-home",
+                  "openstack-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "OpenStack enables organizations and service providers to run cloud infrastructure outside a single proprietary vendor control plane.",
+                "sourceIds": [
+                  "openstack-home",
+                  "openstack-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "OpenStack is mature and production-proven, but successful deployment still requires substantial operator skill or a managed-service partner.",
+                "sourceIds": [
+                  "openstack-home",
+                  "rackspace-openstack-business"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "OpenStack can reduce licensing and vendor-lock-in leverage, although operations, support, and integration costs remain significant.",
+                "sourceIds": [
+                  "openstack-home",
+                  "rackspace-openstack-business"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openstack-home",
+              "openstack-docs"
+            ]
+          },
+          {
+            "slug": "opennebula",
+            "name": "OpenNebula",
+            "kind": "open-source",
+            "homepageUrl": "https://opennebula.io/",
+            "repoUrl": "https://github.com/OpenNebula/one",
+            "summary": "OpenNebula is an open-source cloud and edge computing platform for managing private, hybrid, and edge infrastructure.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenNebula provides a community edition and public source code under an open-source model.",
+                "sourceIds": [
+                  "opennebula-home",
+                  "opennebula-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "OpenNebula supports private, hybrid, and edge cloud operation outside a single proprietary cloud platform.",
+                "sourceIds": [
+                  "opennebula-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "OpenNebula is a real operating platform, but ecosystem depth and enterprise familiarity are narrower than the largest cloud stacks.",
+                "sourceIds": [
+                  "opennebula-home",
+                  "opennebula-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "A lighter open cloud stack can reduce dependence on proprietary consumption platforms, especially for smaller private and edge deployments.",
+                "sourceIds": [
+                  "opennebula-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "opennebula-home",
+              "opennebula-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-hybrid-cloud-marketplace",
+            "name": "Federated Open Hybrid Cloud Marketplace",
+            "summary": "A federation of regional operators could offer OpenStack, OpenNebula, Kubernetes, storage, and backup services through common APIs, transparent service-level attestations, and portable workload templates, competing with proprietary hybrid-cloud platforms by making capacity and operations substitutable across providers.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "GreenLake's strategic leverage weakens if enterprises can buy managed private and edge cloud capacity from many interoperable operators without giving one vendor durable control over the operating model.",
+            "bitcoinOrDecentralizationRole": "The core role is federation rather than Bitcoin. Independent cloud operators coordinate through shared APIs, templates, service definitions, and audit artifacts so customers can move workloads or split capacity across providers without a single controlling platform.",
+            "coordinationMechanism": "Operators publish service catalogs, capacity zones, compliance profiles, and price terms into a federated registry. Customers deploy signed workload templates and can shift demand among operators that satisfy required latency, jurisdiction, support, and security policies.",
+            "verificationOrTrustModel": "Trust is based on signed service attestations, reproducible deployment manifests, third-party security audits, uptime logs, portable backups, and customer-controlled identity. Spoofed capacity or false service claims are constrained by escrowed onboarding tests, ongoing probes, and operator reputation, but deep infrastructure audits remain expensive.",
+            "failureModes": [
+              "Federated operators may not provide the same procurement simplicity, liability coverage, or support depth as HPE GreenLake.",
+              "Common APIs can drift, making portability weaker than promised once storage, networking, identity, and compliance details are included.",
+              "Customers may resist multi-operator governance because accountability is less clear during outages."
+            ],
+            "adoptionPath": [
+              "Begin with developer platforms, sovereign cloud pilots, research clusters, and edge workloads where open control and locality matter.",
+              "Standardize workload templates, identity integration, billing records, backup portability, and audit artifacts across participating operators.",
+              "Move into mainstream enterprise workloads after managed support, compliance evidence, and incident escalation become predictable."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "hpe-greenlake-page",
+              "hpe-q4-2025-results"
+            ],
+            "enablerSourceIds": [
+              "openstack-home",
+              "opennebula-home",
+              "rackspace-openstack-business"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly replaces a single-vendor hybrid-cloud control plane with a federation of interoperable operators and open platforms.",
+                "sourceIds": [
+                  "openstack-home",
+                  "opennebula-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open cloud platforms and managed OpenStack offerings prove the pieces exist, but cross-provider federation with consistent service guarantees is still hard.",
+                "sourceIds": [
+                  "openstack-home",
+                  "rackspace-openstack-business"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Implementation can start with existing open cloud stacks and managed-service providers, though identity, billing, compliance, and incident response need disciplined standardization.",
+                "sourceIds": [
+                  "openstack-docs",
+                  "opennebula-home",
+                  "rackspace-openstack-business"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "A credible federation would pressure GreenLake's lock-in and pricing, but HPE's integrated hardware, support, financing, and enterprise-account relationships remain meaningful advantages.",
+                "sourceIds": [
+                  "hpe-greenlake-page",
+                  "hpe-q4-2025-results",
+                  "openstack-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          },
+          {
+            "slug": "lightning-metered-edge-compute-coordination",
+            "name": "Lightning-Metered Edge Compute Coordination",
+            "summary": "A more speculative model would let small edge operators sell verified bursts of compute, storage, and network services using open cloud software and low-friction machine-to-machine settlement, creating a capacity market for local workloads that do not require a global hyperscaler or a single enterprise platform.",
+            "angleIds": [
+              "lightning",
+              "peer-to-peer-marketplace",
+              "decentralized-coordination"
+            ],
+            "thesis": "If edge capacity can be metered, verified, and settled cheaply, some GreenLake-style consumption economics could shift from vendor-managed infrastructure contracts toward open markets of smaller operators.",
+            "bitcoinOrDecentralizationRole": "Lightning matters only for settlement of small, frequent usage events between customers, brokers, and edge operators. The decentralization value comes from enabling many independent operators to offer capacity without a central platform owning every billing and trust relationship.",
+            "coordinationMechanism": "Customers publish workload requirements and spending limits; edge operators advertise available capacity, jurisdiction, latency, and hardware profiles; brokers match jobs to operators and settle metered usage through payment channels or aggregated invoices.",
+            "verificationOrTrustModel": "The system would need signed telemetry, remote attestation where hardware supports it, workload receipts, redundant probes, customer-controlled encryption, and dispute windows before final settlement. It remains vulnerable to spoofed benchmarks, selective service degradation, and weak attestation on heterogeneous hardware.",
+            "failureModes": [
+              "Enterprise workloads may not tolerate the weaker accountability and inconsistent hardware profiles of a peer-to-peer edge market.",
+              "Reliable metering and remote attestation across heterogeneous edge infrastructure may be too complex for near-term adoption.",
+              "Lightning settlement solves payments but not security, compliance, data locality, or support liability."
+            ],
+            "adoptionPath": [
+              "Start with cacheable, stateless, low-risk workloads such as build runners, test jobs, media processing, or local inference experiments.",
+              "Add verifiable metering, encrypted workload packaging, operator reputation, and dispute handling before supporting sensitive workloads.",
+              "Use enterprise adoption only where edge locality and cost flexibility outweigh the need for one vendor's end-to-end support contract."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "hpe-greenlake-page",
+              "hpe-q4-2025-results"
+            ],
+            "enablerSourceIds": [
+              "openstack-home",
+              "opennebula-home",
+              "lightning-network-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The model is explicitly multi-operator and peer-to-peer, but only for workloads that can tolerate distributed capacity and variable trust assumptions.",
+                "sourceIds": [
+                  "openstack-home",
+                  "opennebula-home",
+                  "lightning-network-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 4,
+                "rationale": "The payment and open-cloud pieces exist, but a trusted marketplace for heterogeneous edge capacity remains immature.",
+                "sourceIds": [
+                  "lightning-network-docs",
+                  "opennebula-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Technically plausible for narrow workloads, but enterprise-grade metering, attestation, compliance, and support liability are unresolved.",
+                "sourceIds": [
+                  "openstack-docs",
+                  "lightning-network-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Near-term pressure on GreenLake would be limited to experimental edge workloads, with more serious impact requiring major advances in trust and operations.",
+                "sourceIds": [
+                  "hpe-greenlake-page",
+                  "lightning-network-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "hpe-2025-10k",
+      "title": "HPE 2025 Annual Report on Form 10-K",
+      "url": "https://annualmeeting.hpe.com/2026/10k/",
+      "kind": "annual-report",
+      "publisher": "Hewlett Packard Enterprise",
+      "note": "Primary company filing for fiscal 2025 business description, segment context, risks, and financial performance.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "hpe-q4-2025-results",
+      "title": "HPE reports fiscal 2025 fourth quarter results",
+      "url": "https://www.hpe.com/us/en/newsroom/press-release/2025/12/hpe-reports-fiscal-2025-fourth-quarter-results.html",
+      "kind": "investor-relations",
+      "publisher": "Hewlett Packard Enterprise",
+      "note": "Investor release summarizing fiscal 2025 Q4 revenue, ARR, cash flow, and portfolio momentum.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "hpe-greenlake-page",
+      "title": "HPE GreenLake",
+      "url": "https://www.hpe.com/us/en/greenlake.html",
+      "kind": "product-page",
+      "publisher": "Hewlett Packard Enterprise",
+      "note": "Official HPE product page describing GreenLake as a hybrid cloud platform.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "hpe-proliant-page",
+      "title": "HPE ProLiant servers",
+      "url": "https://www.hpe.com/us/en/servers/proliant-servers.html",
+      "kind": "product-page",
+      "publisher": "Hewlett Packard Enterprise",
+      "note": "Official HPE product page for the ProLiant enterprise server family.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "companiesmarketcap-hpe",
+      "title": "Market capitalization of Hewlett Packard Enterprise (HPE)",
+      "url": "https://companiesmarketcap.com/hewlett-packard-enterprise/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Provided manifest market-cap reference for HPE's May 2026 market capitalization.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "stockanalysis-hpe-marketcap",
+      "title": "Hewlett Packard Enterprise Company (HPE) Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/hpe/market-cap/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Secondary market-cap reference showing late-May 2026 market-cap variation.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "stockanalysis-hpe-statistics",
+      "title": "Hewlett Packard Enterprise Company (HPE) Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/hpe/statistics/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Market-data reference for valuation fields including P/E ratio status.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "ocp-server-project",
+      "title": "Server Project",
+      "url": "https://www.opencompute.org/projects/server",
+      "kind": "technical-docs",
+      "publisher": "Open Compute Project",
+      "note": "Primary reference for OCP's open server specification work.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "ocp-overview",
+      "title": "What is the Open Compute Project?",
+      "url": "https://www.opencompute.org/files/OCP-Overview-2019.pdf",
+      "kind": "analysis",
+      "publisher": "Open Compute Project",
+      "note": "Overview of OCP's open hardware and systems-management mission.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "ocp-products-supermicro",
+      "title": "Supermicro CloudDC SuperServer SYS-112C-TN",
+      "url": "https://www.opencompute.org/products/569/supermicro-clouddc-superserver-sys-112c-tn",
+      "kind": "product-page",
+      "publisher": "Open Compute Project",
+      "note": "Example of an OCP-recognized server product illustrating readiness of open data-center hardware designs.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openbmc-home",
+      "title": "OpenBMC",
+      "url": "https://www.openbmc.org/",
+      "kind": "open-source-project",
+      "publisher": "OpenBMC Project",
+      "note": "Official project page for open-source server management firmware.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openbmc-github",
+      "title": "openbmc/openbmc",
+      "url": "https://github.com/openbmc/openbmc",
+      "kind": "open-source-project",
+      "publisher": "OpenBMC Project",
+      "note": "Public source repository for the OpenBMC firmware stack.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openstack-home",
+      "title": "Open Source Cloud Computing Infrastructure",
+      "url": "https://www.openstack.org/",
+      "kind": "open-source-project",
+      "publisher": "OpenInfra Foundation",
+      "note": "Official OpenStack project site describing open-source cloud infrastructure.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openstack-docs",
+      "title": "OpenStack Documentation",
+      "url": "https://docs.openstack.org/",
+      "kind": "technical-docs",
+      "publisher": "OpenInfra Foundation",
+      "note": "Technical documentation for deploying and operating OpenStack services.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "rackspace-openstack-business",
+      "title": "Rackspace launches OpenStack Business private cloud service",
+      "url": "https://www.itpro.com/cloud/private-cloud/rackspace-openstack-business-private-cloud-open-source",
+      "kind": "analysis",
+      "publisher": "ITPro",
+      "note": "Recent analysis of a managed OpenStack private-cloud offering positioned around open-source control and reduced lock-in.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "opennebula-home",
+      "title": "OpenNebula",
+      "url": "https://opennebula.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenNebula Systems",
+      "note": "Official OpenNebula project and product site for open private, hybrid, and edge cloud management.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "opennebula-github",
+      "title": "OpenNebula/one",
+      "url": "https://github.com/OpenNebula/one",
+      "kind": "open-source-project",
+      "publisher": "OpenNebula",
+      "note": "Public source repository for OpenNebula.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "lightning-network-docs",
+      "title": "Lightning Network Documentation",
+      "url": "https://docs.lightning.engineering/",
+      "kind": "technical-docs",
+      "publisher": "Lightning Labs",
+      "note": "Technical reference for Lightning payment channels and low-friction Bitcoin settlement concepts used in the speculative edge-compute coordination concept.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new publishable HPE registry bundle with two products: HPE ProLiant and HPE GreenLake. The refresh uses HPE fiscal 2025 reporting, official product pages, market-cap references, and open infrastructure sources to score moat, decentralizability, profitability, valuation, and credible open or decentralized alternatives."
+}

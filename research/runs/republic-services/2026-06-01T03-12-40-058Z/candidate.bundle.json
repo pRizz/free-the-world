@@ -1,0 +1,449 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "republic-services",
+    "name": "Republic Services",
+    "ticker": "RSG",
+    "rankApprox": 188,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top200"
+    ],
+    "sectorId": "industrials",
+    "industryId": "waste-management-services",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/republic-services/marketcap/",
+    "description": "Republic Services provides recycling, solid waste collection, transfer, disposal, and environmental services in the United States.",
+    "overview": [
+      {
+        "title": "Business footprint",
+        "paragraphs": [
+          "Republic Services is a large U.S. environmental services company built around collection routes, transfer stations, landfills, recycling centers, and environmental solutions.",
+          "Its 2025 Form 10-K reported 377 collection operations, 255 transfer stations, 79 recycling centers, and a collection business that represented about 68% of total revenue."
+        ]
+      },
+      {
+        "title": "Revenue mix",
+        "paragraphs": [
+          "Residential collection is a visible customer-facing business, but Republic's economics also depend on small-container, large-container, transfer, landfill, environmental solutions, and recycling processing revenue.",
+          "The company reported $16.591 billion of 2025 revenue and $2.139 billion of net income attributable to Republic Services, showing a durable, profitable physical-infrastructure franchise."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "Republic's moat is mainly physical and contractual: route density, permitted disposal capacity, transfer stations, fleet scale, municipal and commercial contracts, regulatory compliance, and customer switching costs reinforce one another.",
+      "Landfill and transfer-station permitting can take years and is often opposed locally, which makes the incumbent network difficult to replicate even when local customers dislike pricing or service quality."
+    ],
+    "decentralizationNarrative": [
+      "The full business is not easy to decentralize because mixed municipal solid waste still needs safe collection, regulated transfer, permitted disposal, insurance, drivers, trucks, and reliable service continuity.",
+      "The strongest decentralization pressure is modular: open route optimization, cooperative procurement, transparent pickup verification, local reuse markets, composting, and smaller recycling or materials-processing loops that reduce dependence on centralized disposal."
+    ],
+    "sourceIds": [
+      "republic-2025-10k",
+      "republic-residential-services",
+      "republic-marketcap-2026",
+      "republic-pe-2026"
+    ],
+    "technologyWaveIds": [
+      "microfactories"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200; market data reviewed on 2026-06-01.",
+    "inputMetrics": {
+      "moat": {
+        "value": 86,
+        "rationale": "High route density, vertically integrated collection-transfer-landfill infrastructure, long-lived permits, municipal contracts, and regulatory barriers make the core service hard to displace at scale.",
+        "sourceIds": [
+          "republic-2025-10k"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-01"
+      },
+      "decentralizability": {
+        "value": 38,
+        "rationale": "Waste collection and disposal have local and cooperative attack surfaces, but the regulated physical network and safety requirements limit full decentralization.",
+        "sourceIds": [
+          "republic-2025-10k",
+          "graphhopper-open-source",
+          "swolfpy-project"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-01"
+      },
+      "profitability": {
+        "value": 72,
+        "rationale": "Republic reported 2025 net income attributable to Republic Services of $2.139 billion on $16.591 billion of revenue, or about a 12.9% net margin.",
+        "sourceIds": [
+          "republic-2025-10k"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-01"
+      },
+      "peRatio": {
+        "value": 29.48,
+        "rationale": "CompaniesMarketCap reported Republic Services' trailing P/E ratio as 29.4767 as of May 2026.",
+        "sourceIds": [
+          "republic-pe-2026"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-06-01"
+      },
+      "marketCap": {
+        "value": 61660000000,
+        "rationale": "CompaniesMarketCap reported a $61.66 billion market capitalization for Republic Services as of May 2026.",
+        "sourceIds": [
+          "republic-marketcap-2026"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-06-01"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "republic-residential-waste-collection",
+      "name": "Republic Residential Waste Collection",
+      "category": "Residential waste collection",
+      "homepageUrl": "https://www.republicservices.com/residents",
+      "summary": "Recurring residential trash, recycling, bulk pickup, and dumpster rental services for households and local communities.",
+      "whyItMatters": "Residential collection is the public-facing edge of Republic's route-density moat and often depends on city, HOA, or neighborhood procurement decisions.",
+      "replacementSketch": [
+        "A realistic replacement is not one household buying a truck; it is a local hauler, municipality, cooperative, or neighborhood buying group using open routing and transparent service records to coordinate pickup more efficiently.",
+        "The hard parts remain permits, vehicles, labor, insurance, disposal access, and reliability, so open software is most credible when paired with local operators that already know the physical service constraints."
+      ],
+      "sourceIds": [
+        "republic-residential-services",
+        "republic-2025-10k"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "republic-residential-waste-collection-graphhopper-jsprit",
+          "name": "GraphHopper and jsprit",
+          "kind": "open-source",
+          "homepageUrl": "https://www.graphhopper.com/open-source/",
+          "repoUrl": "https://github.com/graphhopper/jsprit",
+          "summary": "Open-source routing and vehicle-routing optimization components that can support local waste-route planning.",
+          "metrics": {
+            "openness": {
+              "value": 86,
+              "rationale": "GraphHopper describes its routing engine and jsprit vehicle-routing solver as open-source projects, and jsprit is publicly available on GitHub.",
+              "sourceIds": [
+                "graphhopper-open-source",
+                "jsprit-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "decentralizationFit": {
+              "value": 72,
+              "rationale": "Self-hosted routing and optimization can help municipalities, cooperatives, and independent haulers plan routes without relying on a national operator's internal systems.",
+              "sourceIds": [
+                "graphhopper-open-source",
+                "jsprit-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "readiness": {
+              "value": 74,
+              "rationale": "The tools are mature enough for routing and vehicle-routing use cases, though waste-service deployments still need domain-specific constraints and operations integration.",
+              "sourceIds": [
+                "graphhopper-open-source",
+                "jsprit-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "costLeverage": {
+              "value": 66,
+              "rationale": "Open optimization can reduce planning and dispatch costs for smaller operators, but trucks, drivers, permits, and disposal fees still dominate the cost base.",
+              "sourceIds": [
+                "republic-2025-10k",
+                "graphhopper-open-source"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            }
+          },
+          "sourceIds": [
+            "graphhopper-open-source",
+            "jsprit-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "cooperative-hauler-routing-network",
+          "name": "Cooperative Hauler Routing Network",
+          "summary": "A municipality, neighborhood association, or cooperative hauler network could combine open routing, shared service records, and collective procurement to make smaller local operators more competitive against Republic's route-density advantage.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept shifts bargaining power from a single national waste vendor toward local operators and buyers that can coordinate routes, service levels, and procurement transparently.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters as shared governance and open planning infrastructure rather than as a token system; the core gain is that route and service data are portable across local operators.",
+          "coordinationMechanism": "Households, HOAs, municipalities, and haulers coordinate through published pickup zones, service commitments, route plans, exception reports, and contract terms.",
+          "verificationOrTrustModel": "Pickup events can be verified with timestamped driver logs, customer confirmations, container scans, route GPS traces, and public missed-pickup dispute workflows; cheating is constrained by cross-checking operator claims against customer and route evidence.",
+          "failureModes": [
+            "Small haulers may still lack transfer-station access, insurance, capital, and labor reliability.",
+            "Municipal procurement rules and incumbent contracts can block switching even when open routing proves operationally credible."
+          ],
+          "adoptionPath": [
+            "Start with a pilot for bulky waste, recycling pickup, or a small neighborhood route where service failures are visible.",
+            "Expand into municipal or HOA procurement once route performance, missed-pickup handling, and disposal access are proven."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "republic-residential-services",
+            "republic-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "graphhopper-open-source",
+            "jsprit-github"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 74,
+              "rationale": "The concept directly distributes route planning and procurement across local buyers and operators instead of depending on a single national service stack.",
+              "sourceIds": [
+                "graphhopper-open-source",
+                "jsprit-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "coordinationCredibility": {
+              "value": 62,
+              "rationale": "Open vehicle-routing tools make the coordination problem credible, but real-world service reliability still depends on local operations and contract execution.",
+              "sourceIds": [
+                "graphhopper-open-source",
+                "republic-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "implementationFeasibility": {
+              "value": 58,
+              "rationale": "Software and route planning are feasible; permitting, vehicles, labor, insurance, and disposal access remain significant non-software barriers.",
+              "sourceIds": [
+                "republic-2025-10k",
+                "jsprit-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "incumbentPressure": {
+              "value": 48,
+              "rationale": "The concept can pressure residential and municipal contracts locally, but it does not replace Republic's landfill, transfer, and environmental-solutions network.",
+              "sourceIds": [
+                "republic-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-01"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "republic-recycling-services",
+      "name": "Republic Recycling Services",
+      "category": "Recycling and materials recovery",
+      "homepageUrl": "https://www.republicservices.com/",
+      "summary": "Recycling collection, processing, commodity sales, and related materials-management services.",
+      "whyItMatters": "Recycling is a smaller but strategically important part of Republic's network because it shapes diversion, customer sustainability goals, and how much material ultimately flows into centralized disposal.",
+      "replacementSketch": [
+        "A credible replacement path is layered: better local separation, open waste-system modeling, cooperative reuse markets, and small recycling workspaces for plastics or durable materials before they reach centralized facilities.",
+        "Open tools cannot replace large material recovery facilities overnight, but they can help communities decide which streams should be reused, composted, recycled locally, or still sent to industrial processors."
+      ],
+      "sourceIds": [
+        "republic-2025-10k",
+        "precious-plastic",
+        "swolfpy-project"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "alternatives": [
+        {
+          "slug": "republic-recycling-services-swolfpy",
+          "name": "SwolfPy",
+          "kind": "open-source",
+          "homepageUrl": "https://swolfpy-project.github.io/",
+          "repoUrl": "https://github.com/SwolfPy-Project/swolfpy",
+          "summary": "A free, open-source municipal solid waste life-cycle assessment and optimization framework.",
+          "metrics": {
+            "openness": {
+              "value": 90,
+              "rationale": "SwolfPy describes itself as free and open-source, and its repository is public with GPL licensing.",
+              "sourceIds": [
+                "swolfpy-project",
+                "swolfpy-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "decentralizationFit": {
+              "value": 64,
+              "rationale": "It supports transparent local analysis of waste-system options, though it is a decision-support framework rather than a complete operating network.",
+              "sourceIds": [
+                "swolfpy-project",
+                "swolfpy-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "readiness": {
+              "value": 60,
+              "rationale": "The project is usable for modeling and optimization, but adoption depends on technical users, local data quality, and integration with planning workflows.",
+              "sourceIds": [
+                "swolfpy-project",
+                "swolfpy-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "costLeverage": {
+              "value": 58,
+              "rationale": "Open modeling can improve procurement and system design decisions, but it does not directly eliminate collection, processing, or commodity-market costs.",
+              "sourceIds": [
+                "swolfpy-project",
+                "republic-2025-10k"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            }
+          },
+          "sourceIds": [
+            "swolfpy-project",
+            "swolfpy-github"
+          ]
+        },
+        {
+          "slug": "republic-recycling-services-precious-plastic",
+          "name": "Precious Plastic",
+          "kind": "open-source",
+          "homepageUrl": "https://www.preciousplastic.com/",
+          "summary": "An open community model for small-scale plastic recycling workspaces, machines, knowledge, and local recycling businesses.",
+          "metrics": {
+            "openness": {
+              "value": 82,
+              "rationale": "Precious Plastic presents machines, starter kits, academy resources, community spaces, and Creative Commons-shared content for local recycling.",
+              "sourceIds": [
+                "precious-plastic"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "decentralizationFit": {
+              "value": 78,
+              "rationale": "The model explicitly pushes recycling capacity into local workspaces, machine shops, collectors, and community points.",
+              "sourceIds": [
+                "precious-plastic"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "readiness": {
+              "value": 54,
+              "rationale": "The community and machine patterns are practical for selected plastic streams, but they are not a complete municipal recycling replacement.",
+              "sourceIds": [
+                "precious-plastic",
+                "republic-2025-10k"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "costLeverage": {
+              "value": 56,
+              "rationale": "Local reuse can lower disposal and transport dependence for suitable plastics, but sorting, contamination, labor, and product-market demand limit broad cost leverage.",
+              "sourceIds": [
+                "precious-plastic",
+                "republic-2025-10k"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            }
+          },
+          "sourceIds": [
+            "precious-plastic"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-local-materials-loop",
+          "name": "Open Local Materials Loop",
+          "summary": "A community could combine open waste-system modeling with local plastic recycling workspaces and cooperative reuse markets to keep selected materials out of centralized recycling and disposal streams.",
+          "angleIds": [
+            "recycling-and-reuse",
+            "local-materials-processing",
+            "cooperative-production"
+          ],
+          "thesis": "The concept attacks the incumbent's volume funnel by reducing the amount of recoverable material that must be collected, transferred, and processed through a centralized network.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is local materials processing and cooperative production: tools, process knowledge, and operating capacity move closer to households, schools, makerspaces, and local businesses.",
+          "coordinationMechanism": "Residents, collectors, workspace operators, buyers, and municipalities coordinate through accepted-material lists, drop-off schedules, contamination rules, product demand, and public diversion reporting.",
+          "verificationOrTrustModel": "Material acceptance can be verified through weigh-ins, batch photos, contamination inspections, product output records, and public diversion ledgers; false diversion claims are constrained by reconciling inbound weights, rejected material, and finished goods.",
+          "failureModes": [
+            "Many recyclable streams are contaminated, low value, or unsafe for small-scale processing.",
+            "Local workshops may lack steady demand for recycled products and may not meet municipal reliability or safety expectations."
+          ],
+          "adoptionPath": [
+            "Begin with narrow plastic or durable-goods streams where contamination is manageable and local product demand exists.",
+            "Use open LCA and cost modeling to decide which streams should scale locally and which should remain with industrial processors."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "republic-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "swolfpy-project",
+            "precious-plastic"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 80,
+              "rationale": "The concept explicitly moves processing and reuse decisions into local, interoperable, community-scale loops.",
+              "sourceIds": [
+                "precious-plastic",
+                "swolfpy-project"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "coordinationCredibility": {
+              "value": 58,
+              "rationale": "Precious Plastic and SwolfPy document plausible local recycling and modeling primitives, but operational coordination across residents, workshops, and municipalities is difficult.",
+              "sourceIds": [
+                "precious-plastic",
+                "swolfpy-project"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "implementationFeasibility": {
+              "value": 52,
+              "rationale": "Small-scale recycling is feasible for selected streams, while contamination, safety, permitting, and end-market demand limit broad deployment.",
+              "sourceIds": [
+                "precious-plastic",
+                "republic-2025-10k"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-01"
+            },
+            "incumbentPressure": {
+              "value": 42,
+              "rationale": "Local materials loops can reduce some recycling and disposal volumes, but they are unlikely to displace Republic's full recycling and waste infrastructure in the near term.",
+              "sourceIds": [
+                "republic-2025-10k",
+                "precious-plastic"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-01"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

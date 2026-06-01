@@ -10,8 +10,10 @@ test("registry search filters the company table", async ({ page }) => {
   await expect(page.getByRole("status")).toHaveText(/\d+ compan(?:y|ies) shown/);
   await expect(searchInput).toBeVisible();
 
-  await searchInput.fill("Microsoft");
+  await searchInput.click();
+  await searchInput.pressSequentially("Microsoft");
 
+  await expect(searchInput).toHaveValue("Microsoft");
   await expect(page.getByRole("status")).toHaveText("1 company shown");
 
   const microsoftRow = page.getByRole("row", { name: /Microsoft/i });
