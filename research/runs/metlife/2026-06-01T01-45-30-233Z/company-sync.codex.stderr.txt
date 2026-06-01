@@ -1,0 +1,1613 @@
+2026-06-01T01:45:30.661485Z  WARN codex_core::shell_snapshot: Failed to delete shell snapshot at "/Users/peterryszkiewicz/.codex/shell_snapshots/019e80d9-1341-7f03-af6e-09cb08ae1574.1780278170464086000.sh": Os { code: 2, kind: NotFound, message: "No such file or directory" }
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e80db-8404-7711-aff2-ef1d48f6d70f
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: metlife
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "metlife",
+  "name": "MetLife",
+  "ticker": "MET",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top200"
+  ],
+  "sectorId": "financials",
+  "industryId": "life-insurance",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/metlife/marketcap/",
+  "description": "MetLife provides insurance, annuities, employee benefits, and asset management services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Life insurance",
+    "Employee benefits"
+  ],
+  "seedSourceUrls": [
+    "https://www.metlife.com/",
+    "https://investor.metlife.com/",
+    "https://companiesmarketcap.com/metlife/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-01T01:45:33.734220Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.734238Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.735130Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.735136Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.736050Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.736055Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.736876Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.736883Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.737617Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.737624Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.739298Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:33.739306Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.624128Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.624137Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.624510Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.624515Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.624965Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.624971Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.625338Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.625344Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.625682Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.625688Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.626410Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:45:34.626415Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll verify current MetLife facts and a small set of defensible open/decentralized alternatives before returning the JSON.
+web search:
+web search: MetLife 2024 annual report products life insurance employee benefits adjusted earnings market cap
+web search:
+web search: open source insurance administration platform openIMIS
+web search:
+web search: peer to peer insurance blockchain mutual insurance research
+web search:
+web search: MetLife life insurance product page term whole universal
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "metlife",
+      "name": "MetLife",
+      "ticker": "MET",
+      "rankApprox": 176,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top200"
+      ],
+      "sectorId": "financials",
+      "industryId": "life-insurance",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/metlife/marketcap/",
+      "description": "MetLife provides insurance, annuities, employee benefits, and asset management services.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "MetLife is a global financial services company built around insurance, annuities, employee benefits, and asset management. Its public materials emphasize group and individual life, accident and health, dental, pension, and retirement products sold through employers, brokers, agents, and institutional channels.",
+            "The company’s scale comes from regulated balance-sheet capacity, actuarial underwriting, distribution relationships, claims administration, and investment management rather than from a single software product."
+          ]
+        },
+        {
+          "title": "Registry posture",
+          "paragraphs": [
+            "For the Free The World registry, MetLife is best treated as a high-moat financial incumbent whose core products are difficult to decentralize completely because insurance promises require capital, regulation, claims governance, and long-lived trust.",
+            "The most credible disruption pressure is not a one-for-one open-source replacement for MetLife, but modular pressure from open policy administration, digital public-good insurance rails, cooperative risk pools, and parametric coverage primitives."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "MetLife’s moat is substantial because insurance is capital intensive, heavily regulated, and trust dependent. The firm benefits from brand recognition, employer and broker distribution, actuarial data, claims operations, investment income, and the ability to absorb long-duration liabilities.",
+        "Its 2024 annual report shows a diversified business across Group Benefits, Retirement and Income Solutions, Asia, Latin America, EMEA, MetLife Holdings, and asset management, which makes the company less exposed to a single product cycle than narrower insurance platforms."
+      ],
+      "decentralizationNarrative": [
+        "MetLife is only moderately decentralizable. Software can decentralize enrollment, administration, claims intake, identity, and pooled-risk coordination, but the regulated promise to pay still depends on solvency, reserves, underwriting discipline, and dispute resolution.",
+        "The most plausible open alternatives are partial substitutes: open insurance administration systems for governments and cooperatives, self-hosted HR and benefits tooling for employers, and decentralized or parametric risk-sharing systems for narrow, objectively verifiable risks."
+      ],
+      "sourceIds": [
+        "metlife-2024-10k",
+        "metlife-insurance-products",
+        "metlife-employee-benefits",
+        "stockanalysis-met-market-cap",
+        "stockanalysis-met-statistics"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Insurance scale, regulatory capital, actuarial expertise, employer and broker distribution, claims operations, and investment management create a durable moat that is hard for small entrants to replicate.",
+          "sourceIds": [
+            "metlife-2024-10k",
+            "metlife-employee-benefits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Administration, enrollment, claims workflows, and narrower mutual-risk products can be decentralized, but broad life insurance and employee benefit guarantees still require regulated capital, actuarial controls, and legally enforceable claims processes.",
+          "sourceIds": [
+            "metlife-2024-10k",
+            "openimis-home",
+            "nexus-mutual-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "MetLife reported adjusted earnings available to common shareholders of about $5.8 billion for 2024, indicating a profitable scaled franchise despite insurance-market cyclicality and investment volatility.",
+          "sourceIds": [
+            "metlife-2024-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 8.8,
+          "rationale": "StockAnalysis reported valuation statistics for MET in late May 2026; the score reflects a low public-market earnings multiple typical of mature life insurers rather than a high-growth technology valuation.",
+          "sourceIds": [
+            "stockanalysis-met-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 54090000000,
+          "rationale": "StockAnalysis reported MetLife market capitalization of approximately $54.09 billion in late May 2026.",
+          "sourceIds": [
+            "stockanalysis-met-market-cap",
+            "stockanalysis-met-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "life-insurance",
+        "name": "Life insurance",
+        "category": "Insurance",
+        "homepageUrl": "https://www.metlife.com/insurance/",
+        "summary": "MetLife offers life insurance products including term life, group universal life, group variable universal life, and accidental death and dismemberment coverage.",
+        "whyItMatters": "Life insurance is a core household-risk product where customers trade premiums today for a legally enforceable future claim payment, making trust, solvency, and claims governance central to the value proposition.",
+        "replacementSketch": [
+          "A free-world replacement would start with narrower, transparent risk pools instead of trying to clone all of MetLife. Open administration software, auditable reserve reporting, cooperative governance, and standardized policy terms could reduce dependency on opaque carrier systems.",
+          "For broad life insurance, a full replacement remains difficult. The credible near-term path is complementary pressure from member-owned mutual structures and open tooling that makes smaller regulated insurers, cooperatives, or public-interest programs cheaper to run."
+        ],
+        "sourceIds": [
+          "metlife-insurance-products",
+          "metlife-life-products",
+          "metlife-2024-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openimis",
+            "name": "openIMIS",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openimis.org/",
+            "repoUrl": "https://github.com/openimis",
+            "summary": "openIMIS is an open-source digital public good for administering health financing and social protection schemes, including health insurance and employment injury insurance.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project describes itself as open source and publishes its organization and code on GitHub.",
+                "sourceIds": [
+                  "openimis-home",
+                  "openimis-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "openIMIS decentralizes software ownership and implementation capacity, but the schemes it administers still need institutional payers, rules, and governance.",
+                "sourceIds": [
+                  "openimis-home",
+                  "openimis-what"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "openIMIS reports deployment across multiple countries and tens of millions of beneficiaries, though its strongest fit is health financing and social protection rather than U.S. retail life insurance.",
+                "sourceIds": [
+                  "openimis-home",
+                  "openimis-what"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source administration can reduce licensing and vendor lock-in costs for schemes that can adapt the platform to their regulatory context.",
+                "sourceIds": [
+                  "openimis-home",
+                  "openimis-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openimis-home",
+              "openimis-github"
+            ]
+          },
+          {
+            "slug": "nexus-mutual",
+            "name": "Nexus Mutual",
+            "kind": "decentralized",
+            "homepageUrl": "https://nexusmutual.io/",
+            "summary": "Nexus Mutual is a decentralized insurance alternative where members share risk through a mutual model, primarily focused on crypto-native cover rather than traditional life insurance.",
+            "metrics": {
+              "openness": {
+                "value": 6,
+                "rationale": "The protocol publishes public documentation and operates as a decentralized mutual, though it is not a general-purpose open-source replacement for regulated life insurance.",
+                "sourceIds": [
+                  "nexus-mutual-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The core model is member risk sharing rather than a centralized insurer balance sheet, making it a strong conceptual fit for decentralized insurance mechanisms.",
+                "sourceIds": [
+                  "nexus-mutual-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "Nexus Mutual is live for crypto-native cover but does not replace mainstream life insurance, employer benefits, or regulated consumer insurance obligations.",
+                "sourceIds": [
+                  "nexus-mutual-docs",
+                  "nexus-mutual-faq"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Member-owned risk sharing can reduce some intermediary costs, but capital costs, coverage limits, claims assessment, and regulatory constraints remain material.",
+                "sourceIds": [
+                  "nexus-mutual-docs",
+                  "soa-decentralized-insurance"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "nexus-mutual-docs",
+              "nexus-mutual-faq"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "member-owned-life-risk-pools",
+            "name": "Member-owned life risk pools",
+            "summary": "A cooperative insurer or mutual-aid network could use open policy administration, transparent reserve reporting, and member governance to handle narrow life or income-protection products for well-defined communities before expanding into broader regulated coverage.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept shifts some insurance power from large carrier balance sheets and opaque administration platforms toward member-owned pools that can audit rules, reserves, and claims outcomes.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through member governance, open administration software, auditable ledgers, and portable policy records. Bitcoin is not central unless used later for reserve attestations or cross-border settlement.",
+            "coordinationMechanism": "Members join a legally structured cooperative or mutual, pay premiums into a pooled reserve, elect or delegate claims governance, and use open software to administer enrollment, policy records, claims, and reporting.",
+            "verificationOrTrustModel": "Claims would still require legal documentation, identity checks, beneficiary validation, and actuarial reserve controls. Fraud is constrained by member identity, audit trails, external audits, and regulated capital requirements, not by software alone.",
+            "failureModes": [
+              "The pool may be too small or correlated to price mortality risk safely.",
+              "Regulators may require capital, licensing, and consumer-protection controls that limit pure peer-to-peer operation.",
+              "Member governance can be captured or become too slow for claim disputes."
+            ],
+            "adoptionPath": [
+              "Start with narrow supplemental benefits or community mutual-aid products where policy terms are simple.",
+              "Use openIMIS-style administration primitives and public reporting to lower operating costs.",
+              "Partner with a licensed insurer or reinsurer until the cooperative can satisfy solvency and regulatory requirements directly."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "metlife-2024-10k",
+              "metlife-insurance-products"
+            ],
+            "enablerSourceIds": [
+              "openimis-home",
+              "openimis-what",
+              "nexus-mutual-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "A mutual structure and open administration can move governance and software control closer to members, though regulated reserves remain centralized at the pool level.",
+                "sourceIds": [
+                  "openimis-home",
+                  "nexus-mutual-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Mutual insurance and social-protection administration are established patterns, but broad life products require disciplined underwriting and dispute handling.",
+                "sourceIds": [
+                  "openimis-what",
+                  "soa-decentralized-insurance"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The software and governance primitives exist, but licensing, actuarial modeling, reinsurance, and capital requirements make implementation materially harder than a normal software launch.",
+                "sourceIds": [
+                  "metlife-2024-10k",
+                  "openimis-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "This could pressure administrative margins and trust narratives in narrow communities, but it is unlikely to displace MetLife’s broad life-insurance franchise quickly.",
+                "sourceIds": [
+                  "metlife-2024-10k",
+                  "openimis-what"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "employee-benefits",
+        "name": "Employee benefits",
+        "category": "Employee Benefits",
+        "homepageUrl": "https://www.metlife.com/business-and-brokers/employee-benefits/",
+        "summary": "MetLife sells employer benefit programs including group accident and health, dental, disability, life, legal, vision, pet, and related benefit products.",
+        "whyItMatters": "Employee benefits sit at the intersection of employer procurement, worker financial security, healthcare access, payroll, identity, claims workflows, and broker distribution.",
+        "replacementSketch": [
+          "A replacement path would separate benefit choice, enrollment, HR records, and claims administration from a single carrier bundle. Employers could combine self-hosted HR systems, open benefit marketplaces, and portable employee-controlled credentials with licensed carriers or cooperative plans.",
+          "The key change is modularity: workers and employers would not need to accept a closed benefit stack just because the underlying insurance product comes from a large carrier."
+        ],
+        "sourceIds": [
+          "metlife-employee-benefits",
+          "metlife-insurance-products",
+          "metlife-2024-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "horilla-hrms",
+            "name": "Horilla HRMS",
+            "kind": "open-source",
+            "homepageUrl": "https://www.horilla.com/",
+            "repoUrl": "https://github.com/horilla-opensource/horilla",
+            "summary": "Horilla is an open-source HRMS that can help organizations manage employee data and HR workflows, making it a partial open substitute for the HR administration layer around benefits.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Horilla presents itself as open-source HR software and publishes a public GitHub repository.",
+                "sourceIds": [
+                  "horilla-home",
+                  "horilla-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "Self-hosted HR tooling improves employer control and portability, but it does not decentralize underwriting or claims capital.",
+                "sourceIds": [
+                  "horilla-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The project is usable for HR workflows, but benefit-carrier integrations, compliance, payroll, and claims workflows would still need local implementation.",
+                "sourceIds": [
+                  "horilla-home",
+                  "horilla-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Self-hosting and code ownership can reduce SaaS lock-in for HR administration, especially for organizations able to maintain the system.",
+                "sourceIds": [
+                  "horilla-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "horilla-home",
+              "horilla-github"
+            ]
+          },
+          {
+            "slug": "openimis-social-protection",
+            "name": "openIMIS social protection modules",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openimis.org/",
+            "repoUrl": "https://github.com/openimis",
+            "summary": "openIMIS can administer social protection programs, health insurance, employment injury insurance, vouchers, cash transfers, and beneficiary management, making it relevant to public-interest benefit administration.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "openIMIS is described as open source and provides public project repositories.",
+                "sourceIds": [
+                  "openimis-home",
+                  "openimis-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The platform can let public agencies, schemes, and local implementers control benefit administration software rather than relying on proprietary carrier systems.",
+                "sourceIds": [
+                  "openimis-home",
+                  "openimis-what"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project reports broad real-world use, but its fit is strongest for health financing and social protection rather than U.S. employer benefit brokerage.",
+                "sourceIds": [
+                  "openimis-home",
+                  "openimis-what"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source public-good infrastructure can lower implementation cost and avoid proprietary lock-in for benefit administration schemes.",
+                "sourceIds": [
+                  "openimis-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openimis-home",
+              "openimis-what",
+              "openimis-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-benefits-marketplace",
+            "name": "Federated benefits marketplace",
+            "summary": "A federation of employers, worker groups, brokers, and benefit providers could publish interoperable benefit catalogs, eligibility credentials, and enrollment events so employees can compare and carry benefit records across employers without a single carrier-controlled portal.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept weakens the bundled-carrier portal by making benefit selection, enrollment data, and worker credentials portable across employers and providers.",
+            "bitcoinOrDecentralizationRole": "Federation matters more than Bitcoin here. Decentralized identifiers, portable credentials, and federated catalogs let multiple benefit operators interoperate without one company owning the user account, catalog, and enrollment flow.",
+            "coordinationMechanism": "Employers publish plan eligibility and contribution rules, providers publish benefit products, brokers or cooperatives curate catalogs, and employees authorize credential-backed enrollment or changes through interoperable software.",
+            "verificationOrTrustModel": "Eligibility is verified with employer-signed credentials, plan terms are versioned and auditable, and enrollment events are logged with consent receipts. Cheating is constrained by issuer signatures, revocation lists, audit trails, and reconciliation against payroll and carrier records.",
+            "failureModes": [
+              "Employer, broker, and carrier incentives may favor closed portals and proprietary integrations.",
+              "Credential standards and privacy rules may fragment across jurisdictions.",
+              "The marketplace can still become centralized if one network controls the directory or identity layer."
+            ],
+            "adoptionPath": [
+              "Begin with small employers using open HRMS software and a limited set of voluntary benefits.",
+              "Add portable employee credentials for eligibility, enrollment status, and dependent verification.",
+              "Federate multiple employer groups and cooperative benefit providers once reconciliation and privacy controls are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "metlife-employee-benefits",
+              "metlife-insurance-products"
+            ],
+            "enablerSourceIds": [
+              "horilla-home",
+              "openimis-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Federated catalogs and portable credentials directly reduce dependence on one carrier or employer portal.",
+                "sourceIds": [
+                  "horilla-home",
+                  "openimis-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "HRMS and social-protection platforms show that benefit records can be administered in software, but cross-carrier federation requires standards and incentives that are not yet default.",
+                "sourceIds": [
+                  "horilla-home",
+                  "openimis-what"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software pieces are plausible, but integration with payroll, carriers, brokers, privacy rules, and employer procurement cycles makes rollout complex.",
+                "sourceIds": [
+                  "metlife-employee-benefits",
+                  "horilla-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept could pressure portal lock-in and broker-carrier bundling, but MetLife would remain a likely underwriter or product provider inside many marketplaces.",
+                "sourceIds": [
+                  "metlife-employee-benefits",
+                  "metlife-2024-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "metlife-2024-10k",
+      "title": "MetLife 2024 Annual Report on Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/1099219/000109921925000044/met-20241231.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary filing for MetLife business description, segment context, and 2024 financial performance.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "metlife-insurance-products",
+      "title": "Insurance and Employee Benefits",
+      "url": "https://www.metlife.com/insurance/",
+      "kind": "product-page",
+      "publisher": "MetLife",
+      "note": "Company product page describing consumer and workplace insurance and benefit categories.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "metlife-employee-benefits",
+      "title": "Employee Benefits",
+      "url": "https://www.metlife.com/business-and-brokers/employee-benefits/",
+      "kind": "product-page",
+      "publisher": "MetLife",
+      "note": "MetLife page describing employer benefit offerings including accident and health, dental, disability, life, and legal services.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "metlife-life-products",
+      "title": "Individual Life Insurance Policy Types",
+      "url": "https://www.metlife.com/support-and-manage/current-customers/individual-life-insurance/products/",
+      "kind": "product-page",
+      "publisher": "MetLife",
+      "note": "MetLife support page identifying term, whole, universal, and variable universal life insurance policy types.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "stockanalysis-met-market-cap",
+      "title": "MetLife Market Cap",
+      "url": "https://stockanalysis.com/stocks/met/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data reference for current MetLife market capitalization.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "stockanalysis-met-statistics",
+      "title": "MetLife Statistics and Valuation",
+      "url": "https://stockanalysis.com/stocks/met/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data reference for valuation and market capitalization context.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openimis-home",
+      "title": "openIMIS Home Page",
+      "url": "https://www.openimis.org/",
+      "kind": "open-source-project",
+      "publisher": "openIMIS Initiative",
+      "note": "Open-source digital public-good platform for health financing and social protection administration.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openimis-what",
+      "title": "What is openIMIS?",
+      "url": "https://openimis.org/what-openimis",
+      "kind": "technical-docs",
+      "publisher": "openIMIS Initiative",
+      "note": "Explains openIMIS use cases, implementation scope, and beneficiary scale.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openimis-github",
+      "title": "openIMIS GitHub Organization",
+      "url": "https://github.com/openimis",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Public repositories for the openIMIS open-source software ecosystem.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nexus-mutual-docs",
+      "title": "The Nexus Mutual Protocol",
+      "url": "https://docs.nexusmutual.io/protocol/",
+      "kind": "technical-docs",
+      "publisher": "Nexus Mutual",
+      "note": "Documentation for a decentralized insurance alternative based on member risk sharing.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nexus-mutual-faq",
+      "title": "Nexus Mutual FAQ",
+      "url": "https://nexusmutual.io/faq",
+      "kind": "technical-docs",
+      "publisher": "Nexus Mutual",
+      "note": "FAQ context for Nexus Mutual cover products and claims process.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "soa-decentralized-insurance",
+      "title": "Decentralized Insurance",
+      "url": "https://www.soa.org/4aa5c3/globalassets/assets/files/resources/research-report/2022/decentralized-ins-alt.pdf",
+      "kind": "analysis",
+      "publisher": "Society of Actuaries",
+      "note": "Actuarial analysis of decentralized insurance models, including parametric structures and oracle needs.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "horilla-home",
+      "title": "Horilla Open Source HR Software",
+      "url": "https://www.horilla.com/",
+      "kind": "open-source-project",
+      "publisher": "Horilla",
+      "note": "Open-source HRMS project relevant to the administration layer of employee benefits.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "horilla-github",
+      "title": "Horilla GitHub Repository",
+      "url": "https://github.com/horilla-opensource/horilla",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Public source repository for Horilla HRMS.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new MetLife registry bundle with two products: life insurance and employee benefits. The strongest open/decentralized substitutes are partial replacements for administration and coordination layers rather than direct full-stack replacements for regulated insurance capital."
+}
+2026-06-01T01:47:18.051411Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e80db-86c5-7ed3-a8b7-805113099fc2 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+36,548

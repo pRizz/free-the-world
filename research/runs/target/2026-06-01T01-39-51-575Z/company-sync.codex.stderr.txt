@@ -1,0 +1,1596 @@
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e80d6-58f3-7a00-96f4-a0173c849ab6
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: target
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "target",
+  "name": "Target",
+  "ticker": "TGT",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top200"
+  ],
+  "sectorId": "consumer-discretionary",
+  "industryId": "broadline-retail",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/target/marketcap/",
+  "description": "Target operates U.S. general merchandise stores and digital retail channels selling apparel, home, food, beauty, electronics, and household products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Target stores",
+    "Target.com"
+  ],
+  "seedSourceUrls": [
+    "https://www.target.com/",
+    "https://investors.target.com/",
+    "https://companiesmarketcap.com/target/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-01T01:39:52.983228Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.983251Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.983656Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.983663Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.984123Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.984128Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.984532Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.984538Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.984898Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.984904Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.985620Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:52.985624Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.642179Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.642195Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.642558Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.642566Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.642944Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.642952Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.643284Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.643290Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.643639Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.643646Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.644498Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:53.644504Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Target 2025 annual report net sales operating income stores digital sales
+web search:
+web search: companiesmarketcap Target market cap P/E ratio 2026
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "target",
+      "name": "Target",
+      "ticker": "TGT",
+      "rankApprox": 190,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top200"
+      ],
+      "sectorId": "consumer-discretionary",
+      "industryId": "broadline-retail",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/target/marketcap/",
+      "description": "Target operates U.S. general merchandise stores and digital retail channels selling apparel, home, food, beauty, electronics, and household products.",
+      "overview": [
+        {
+          "title": "Business Model",
+          "paragraphs": [
+            "Target is a large-format U.S. retailer built around owned brands, curated national-brand assortments, grocery and essentials traffic, and a store network that doubles as fulfillment infrastructure for pickup, Drive Up, same-day delivery, and ship-from-store orders.",
+            "The company reports more than $100 billion in annual net sales, with digital channels and same-day services acting as complements to stores rather than a separate pure e-commerce model."
+          ]
+        },
+        {
+          "title": "Strategic Position",
+          "paragraphs": [
+            "Target's moat comes from real estate, supplier relationships, private-label merchandising, loyalty data, omnichannel fulfillment, and consumer trust in a convenient one-stop shopping format.",
+            "The model is less structurally decentralized than a peer-to-peer marketplace because Target centrally controls merchandising standards, pricing, inventory, fulfillment rules, payment rails, and customer data."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Target has a meaningful but not unassailable retail moat. Its nearly national store footprint, fulfillment-from-store operating model, private-label portfolio, and recognized brand give it scale advantages that local stores and small online merchants cannot easily replicate.",
+        "The moat is moderated by fierce competition from Walmart, Amazon, Costco, grocery chains, dollar stores, specialty retailers, and direct-to-consumer brands. Target's recent sales volatility shows that traffic, discretionary demand, and execution quality can move quickly against the business despite its scale."
+      ],
+      "decentralizationNarrative": [
+        "Target's core retail function is partially decentralizable at the edges: local merchants, co-ops, open-source commerce stacks, mutual-aid buying clubs, repair networks, resale loops, and community fulfillment nodes can replace slices of what a big-box retailer provides.",
+        "The hardest parts to decentralize are the convenience bundle and operational reliability: broad inventory, predictable returns, payment acceptance, safety standards, supplier compliance, last-mile logistics, and quality control across thousands of product categories."
+      ],
+      "sourceIds": [
+        "target-2025-annual-report",
+        "target-q4-2025-earnings",
+        "target-marketcap-stockanalysis",
+        "target-pe-companiesmarketcap"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Target has durable advantages from brand recognition, large-format stores, omnichannel fulfillment, owned brands, and supplier scale, but these are constrained by intense retail competition and recent comparable-sales pressure.",
+          "sourceIds": [
+            "target-2025-annual-report",
+            "target-q4-2025-earnings"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 5,
+          "rationale": "Many retail functions can be unbundled into local commerce, open-source storefronts, cooperative fulfillment, and resale networks, but the full Target convenience bundle remains operationally difficult to decentralize.",
+          "sourceIds": [
+            "target-2025-annual-report",
+            "open-food-network",
+            "medusajs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 6,
+          "rationale": "Target remains profitable at large scale, but operating income and comparable sales have been under pressure, making profitability solid rather than exceptional for a scaled retailer.",
+          "sourceIds": [
+            "target-2025-annual-report",
+            "target-q4-2025-earnings"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 15.4406,
+          "rationale": "CompaniesMarketCap reported Target's trailing price-to-earnings ratio at about 15.44 based on its latest financial reports and stock price.",
+          "sourceIds": [
+            "target-pe-companiesmarketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 55760000000,
+          "rationale": "StockAnalysis reported Target's market capitalization at approximately $55.76 billion on April 9, 2026; this is used as a recent public-market reference for the registry snapshot.",
+          "sourceIds": [
+            "target-marketcap-stockanalysis"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "target-stores",
+        "name": "Target stores",
+        "category": "Physical retail and omnichannel fulfillment",
+        "homepageUrl": "https://www.target.com/store-locator/find-stores",
+        "summary": "Target's store network sells general merchandise and groceries while serving as local fulfillment infrastructure for pickup, Drive Up, same-day delivery, and ship-from-store orders.",
+        "whyItMatters": "The stores are Target's strongest strategic asset because they combine merchandising, customer acquisition, local inventory, returns, and fulfillment density in one physical network.",
+        "replacementSketch": [
+          "A decentralized replacement would not look like one national big-box clone. It would combine local co-ops, independent shops, open-source point-of-sale and inventory tools, shared pickup lockers, community delivery networks, resale loops, and small fulfillment nodes.",
+          "The practical wedge is category-by-category: food, household essentials, local crafts, repairable goods, refurbished electronics, and community bulk purchasing can move first, while long-tail general merchandise remains harder."
+        ],
+        "sourceIds": [
+          "target-2025-annual-report",
+          "target-q4-2025-earnings",
+          "open-food-network"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-food-network",
+            "name": "Open Food Network",
+            "kind": "cooperative",
+            "homepageUrl": "https://www.openfoodnetwork.org/",
+            "repoUrl": "https://github.com/openfoodfoundation/openfoodnetwork",
+            "summary": "Open Food Network is an open-source platform for local food enterprises, producers, food hubs, and community food distribution networks.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project is open source and publishes its code on GitHub, making it inspectable, forkable, and adaptable by local food networks.",
+                "sourceIds": [
+                  "open-food-network",
+                  "open-food-network-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The platform is designed around distributed local producers, food hubs, and community-scale coordination rather than a single national retailer.",
+                "sourceIds": [
+                  "open-food-network"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is operational for food networks, but it covers a narrower category scope than Target's broadline retail model.",
+                "sourceIds": [
+                  "open-food-network"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Local coordination can reduce intermediary overhead and improve producer economics, though it may lose some of Target's scale purchasing and logistics efficiencies.",
+                "sourceIds": [
+                  "open-food-network"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "open-food-network",
+              "open-food-network-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-neighborhood-retail-mesh",
+            "name": "Cooperative neighborhood retail mesh",
+            "summary": "A network of local co-ops, independent stores, pickup lockers, maker spaces, and neighborhood delivery operators could pool procurement, inventory visibility, loyalty, and fulfillment through open software instead of routing demand through one national retailer.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "Target's store moat weakens if consumers can get essentials, local goods, pickup convenience, and returns through interoperable neighborhood operators that share infrastructure without sharing ownership.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters because governance, inventory, and fulfillment would be split across local operators. Bitcoin or Lightning could help with low-friction settlement between stores, couriers, and buying clubs, but it is optional rather than the core primitive.",
+            "coordinationMechanism": "Local merchants publish inventory and pickup capacity into shared catalogs; co-ops negotiate category purchasing; couriers and locker operators accept fulfillment jobs; buyers route orders by price, proximity, trust score, and availability.",
+            "verificationOrTrustModel": "Operators would use signed order events, auditable pickup scans, buyer dispute windows, reputation histories, and escrow or delayed settlement for new merchants. The weakest point is still physical quality control, so higher-risk categories would need local inspection or cooperative underwriting.",
+            "failureModes": [
+              "Fragmented operators may fail to match Target's reliability, returns convenience, and assortment breadth.",
+              "Shared catalogs are vulnerable to stale inventory, fake availability, or local collusion without disciplined auditing and penalties."
+            ],
+            "adoptionPath": [
+              "Start with food, household staples, and local pickup categories where community networks already exist.",
+              "Add shared loyalty, returns handling, courier dispatch, and bulk purchasing as enough local operators join."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "target-2025-annual-report",
+              "target-q4-2025-earnings"
+            ],
+            "enablerSourceIds": [
+              "open-food-network",
+              "open-food-network-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept moves retail ownership, fulfillment, and product selection from one national operator to interoperable local participants.",
+                "sourceIds": [
+                  "open-food-network"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open Food Network shows that local food commerce can coordinate digitally, but broadline retail adds harder inventory, returns, and service-level complexity.",
+                "sourceIds": [
+                  "open-food-network",
+                  "target-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The software and local-commerce patterns exist, but matching Target's operational depth would require disciplined standards, dense merchant participation, and shared fulfillment infrastructure.",
+                "sourceIds": [
+                  "open-food-network",
+                  "target-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "This can pressure selected categories and local loyalty, but it is unlikely to displace the whole Target store bundle quickly.",
+                "sourceIds": [
+                  "target-q4-2025-earnings"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          },
+          {
+            "slug": "local-repair-resale-and-microfactory-loop",
+            "name": "Local repair, resale, and microfactory loop",
+            "summary": "A neighborhood production and reuse loop could divert demand for some household goods, apparel accessories, fixtures, toys, replacement parts, and small hardware away from centralized retail by combining repair benches, resale catalogs, 3D printing, and small-batch local fabrication.",
+            "angleIds": [
+              "home-microfactory",
+              "recycling-and-reuse",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "If more goods can be repaired, refurbished, customized, or fabricated locally, Target's role as a default replacement-purchase destination becomes less automatic in selected categories.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is manufacturing and reuse rather than financial settlement: local operators coordinate repair capacity, part designs, refurbished inventory, and quality attestations without depending on a central retailer.",
+            "coordinationMechanism": "Consumers submit repair or replacement requests; local technicians, refurbishers, and makers bid or claim jobs; open part libraries and inventory feeds route work to nearby fabrication or resale nodes.",
+            "verificationOrTrustModel": "Quality is constrained through repair logs, serialized refurbished items, design-file provenance, customer acceptance windows, and reputation-weighted technicians. Fraud remains possible when goods are misgraded or parts are unsafe, so sensitive categories need certification.",
+            "failureModes": [
+              "Local fabrication may be too slow, expensive, or inconsistent for many broadline retail categories.",
+              "Safety, warranty, and liability rules can prevent open repair or local production from scaling in regulated goods."
+            ],
+            "adoptionPath": [
+              "Begin with low-risk categories such as storage accessories, simple household parts, toys, fixtures, decor, and refurbished small electronics.",
+              "Expand through libraries of verified designs, local repair co-ops, and neighborhood resale pickup points."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "target-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "reprap",
+              "open-source-ecology"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept distributes production and reuse across local technicians, makers, and refurbishers instead of relying on centralized purchasing and replenishment.",
+                "sourceIds": [
+                  "reprap",
+                  "open-source-ecology"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Repair and maker communities exist, but broad consumer retail requires stronger cataloging, service guarantees, and liability handling.",
+                "sourceIds": [
+                  "reprap",
+                  "open-source-ecology"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "The enabling primitives are real but unevenly mature; many Target categories still favor mass manufacturing, brand assurance, and centralized logistics.",
+                "sourceIds": [
+                  "target-2025-annual-report",
+                  "reprap"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The pressure is plausible in replacement parts, repairable goods, and resale-sensitive categories, but not across the whole store base.",
+                "sourceIds": [
+                  "target-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "target-com",
+        "name": "Target.com",
+        "category": "E-commerce marketplace and digital retail",
+        "homepageUrl": "https://www.target.com/",
+        "summary": "Target.com is Target's digital storefront for first-party online retail, store pickup, same-day services, loyalty integration, and the Target Plus third-party marketplace.",
+        "whyItMatters": "Target.com extends the company's store network into online discovery, ordering, fulfillment choice, loyalty data, advertising, and marketplace expansion.",
+        "replacementSketch": [
+          "A credible open replacement is a toolkit rather than a single destination: independent merchants can use open-source commerce infrastructure, federated catalogs, portable customer identities, and cooperative fulfillment to build local or category-specific storefronts.",
+          "The near-term opportunity is to give merchants and communities Target-like ordering and pickup features without requiring Target-like central ownership."
+        ],
+        "sourceIds": [
+          "target-2025-annual-report",
+          "target-q4-2025-earnings",
+          "medusajs"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "medusajs",
+            "name": "Medusa",
+            "kind": "open-source",
+            "homepageUrl": "https://medusajs.com/",
+            "repoUrl": "https://github.com/medusajs/medusa",
+            "summary": "Medusa is an open-source commerce platform for building custom digital storefronts, checkout flows, product catalogs, and order-management backends.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Medusa publishes its source code and documentation, making it a strong open-source foundation for custom commerce systems.",
+                "sourceIds": [
+                  "medusajs",
+                  "medusajs-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Medusa can help independent merchants avoid closed SaaS commerce stacks, but deployments are usually controlled by each operator rather than federated by default.",
+                "sourceIds": [
+                  "medusajs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "The platform is mature enough for real commerce builds, although replacing Target.com requires merchant acquisition, fulfillment, trust, and payments beyond the software.",
+                "sourceIds": [
+                  "medusajs",
+                  "medusajs-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open-source infrastructure can reduce platform rent and enable tailored workflows for merchants, though operating costs remain for hosting, payment processing, support, and fulfillment.",
+                "sourceIds": [
+                  "medusajs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "medusajs",
+              "medusajs-github"
+            ]
+          },
+          {
+            "slug": "sharetribe",
+            "name": "Sharetribe",
+            "kind": "open-source",
+            "homepageUrl": "https://www.sharetribe.com/",
+            "repoUrl": "https://github.com/sharetribe/sharetribe",
+            "summary": "Sharetribe provides open-source marketplace software for building multi-vendor marketplaces and peer-to-peer commerce communities.",
+            "metrics": {
+              "openness": {
+                "value": 7,
+                "rationale": "Sharetribe has an open-source marketplace codebase that can be self-hosted or adapted, although its current commercial offering also includes hosted services.",
+                "sourceIds": [
+                  "sharetribe-github",
+                  "sharetribe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Marketplace software supports many sellers transacting through a shared venue, which is closer to decentralized commerce than a single first-party retailer.",
+                "sourceIds": [
+                  "sharetribe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is suitable for marketplace launches, but a Target-scale substitute would still need trust, logistics, catalog depth, and consumer demand.",
+                "sourceIds": [
+                  "sharetribe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Shared marketplace infrastructure can lower go-to-market costs for local or niche sellers, but fulfillment and customer service remain major cost centers.",
+                "sourceIds": [
+                  "sharetribe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "sharetribe",
+              "sharetribe-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-commerce-catalog",
+            "name": "Federated commerce catalog",
+            "summary": "A federated commerce protocol could let independent storefronts, co-ops, and local merchants publish products, inventory, pickup options, returns policies, and trust attestations into interoperable catalogs that shoppers can search through many front ends.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "Target.com loses some gatekeeping power if product discovery, ordering, loyalty, and fulfillment routing become portable across many independently operated storefronts.",
+            "bitcoinOrDecentralizationRole": "Federation is the central mechanism: sellers keep their own storefronts and data while interoperating through shared catalog and order standards. Lightning could support low-cost settlement for small merchants or couriers, but it is not required for the core catalog layer.",
+            "coordinationMechanism": "Merchants publish signed product, price, inventory, and service-level records; buyer agents or storefronts aggregate offers; fulfillment nodes advertise pickup, delivery, and returns capacity; dispute and reputation records follow merchant identities across front ends.",
+            "verificationOrTrustModel": "Signed merchant records, inventory freshness proofs, escrow for new sellers, buyer confirmations, fulfillment scans, and reputation portability constrain fake listings and non-fulfillment. The model still depends on dispute resolution and cannot fully eliminate bad local merchants.",
+            "failureModes": [
+              "Consumers may prefer one accountable retailer over a federation of uneven merchants.",
+              "Search ranking, fraud prevention, and returns handling could re-centralize around dominant front ends."
+            ],
+            "adoptionPath": [
+              "Start with niche and local categories where sellers already maintain independent storefronts.",
+              "Add portable identity, shared pickup points, reputation, and returns standards to make cross-store shopping feel coherent."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "target-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "medusajs",
+              "sharetribe"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly separates storefront ownership, catalog publication, fulfillment, and consumer interfaces across many operators.",
+                "sourceIds": [
+                  "medusajs",
+                  "sharetribe"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open-source commerce and marketplace software provide building blocks, but true federation requires standards and adoption across independent merchants.",
+                "sourceIds": [
+                  "medusajs",
+                  "sharetribe"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software layer is feasible, while consumer trust, product data quality, and physical fulfillment remain the main barriers.",
+                "sourceIds": [
+                  "medusajs",
+                  "target-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "A federated catalog could pressure Target.com in local, specialty, resale, and long-tail categories, but Target's brand and store fulfillment advantages would remain strong.",
+                "sourceIds": [
+                  "target-2025-annual-report",
+                  "target-q4-2025-earnings"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "target-2025-annual-report",
+      "title": "2025 Annual Report",
+      "url": "https://corporate.target.com/investors/annual/2025-annual-report/financials",
+      "kind": "annual-report",
+      "publisher": "Target Corporation",
+      "note": "Primary company source for annual sales, profitability, store and digital-channel context, and business-model description.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "target-q4-2025-earnings",
+      "title": "Target Corporation Reports Fourth Quarter and Full-Year 2025 Earnings",
+      "url": "https://www.sec.gov/Archives/edgar/data/27419/000002741926000012/a2025q4ex-99.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Company earnings release furnished to the SEC with full-year 2025 sales, operating-income, comparable-sales, and digital-sales commentary.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "target-marketcap-stockanalysis",
+      "title": "Target Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/tgt/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Recent public-market capitalization reference for Target.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "target-pe-companiesmarketcap",
+      "title": "Target (TGT) - P/E ratio",
+      "url": "https://companiesmarketcap.com/target/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for Target's trailing price-to-earnings ratio.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "open-food-network",
+      "title": "Open Food Network",
+      "url": "https://www.openfoodnetwork.org/",
+      "kind": "open-source-project",
+      "publisher": "Open Food Network",
+      "note": "Open-source local food commerce platform used as a cooperative alternative pattern for decentralized retail.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "open-food-network-github",
+      "title": "openfoodfoundation/openfoodnetwork",
+      "url": "https://github.com/openfoodfoundation/openfoodnetwork",
+      "kind": "open-source-project",
+      "publisher": "Open Food Foundation",
+      "note": "Repository evidence for Open Food Network's open-source implementation.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "medusajs",
+      "title": "Medusa",
+      "url": "https://medusajs.com/",
+      "kind": "open-source-project",
+      "publisher": "Medusa",
+      "note": "Open-source commerce platform used as an alternative to closed e-commerce infrastructure.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "medusajs-github",
+      "title": "medusajs/medusa",
+      "url": "https://github.com/medusajs/medusa",
+      "kind": "open-source-project",
+      "publisher": "Medusa",
+      "note": "Repository evidence for Medusa's open-source commerce platform.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "sharetribe",
+      "title": "Sharetribe",
+      "url": "https://www.sharetribe.com/",
+      "kind": "open-source-project",
+      "publisher": "Sharetribe",
+      "note": "Marketplace software source for multi-vendor and peer-to-peer commerce replacement patterns.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "sharetribe-github",
+      "title": "sharetribe/sharetribe",
+      "url": "https://github.com/sharetribe/sharetribe",
+      "kind": "open-source-project",
+      "publisher": "Sharetribe",
+      "note": "Repository evidence for Sharetribe's open-source marketplace codebase.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "reprap",
+      "title": "RepRap",
+      "url": "https://reprap.org/wiki/RepRap",
+      "kind": "technical-docs",
+      "publisher": "RepRap Project",
+      "note": "Documentation for open 3D-printing and self-replicating fabrication concepts relevant to local microfactory disruption.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "open-source-ecology",
+      "title": "Open Source Ecology",
+      "url": "https://www.opensourceecology.org/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open hardware and distributed production reference for local fabrication and repair-loop concepts.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Target registry bundle with two products: Target stores and Target.com. The refresh emphasizes Target's store-backed omnichannel moat, moderate decentralizability, and credible open/cooperative alternatives through Open Food Network, Medusa, and Sharetribe, with disruption concepts for cooperative neighborhood retail, local repair/resale microfactories, and federated commerce catalogs."
+}
+2026-06-01T01:41:26.892273Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e80d6-5a5b-7f43-8a09-83eb16e2604e hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+25,638

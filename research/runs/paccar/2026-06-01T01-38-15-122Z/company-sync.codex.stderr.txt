@@ -1,0 +1,1734 @@
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e80d4-e038-7730-8a50-949d01fc6e0e
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: paccar
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "paccar",
+  "name": "PACCAR",
+  "ticker": "PCAR",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top200"
+  ],
+  "sectorId": "industrials",
+  "industryId": "commercial-vehicle-manufacturers",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/paccar/marketcap/",
+  "description": "PACCAR designs, manufactures, and supports light-, medium-, and heavy-duty trucks under brands including Kenworth, Peterbilt, and DAF.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Kenworth trucks",
+    "Peterbilt trucks"
+  ],
+  "seedSourceUrls": [
+    "https://www.paccar.com/",
+    "https://investor.paccar.com/",
+    "https://companiesmarketcap.com/paccar/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-01T01:38:17.233870Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.233894Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.234415Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.234422Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.234939Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.234946Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.235830Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.235835Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.236366Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.236371Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.237447Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.237454Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.966209Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.966222Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.966760Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.966768Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.967585Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.967592Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.967948Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.967955Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.968419Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.968424Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.969309Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:38:17.969314Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: PACCAR 2025 annual report revenue net income Kenworth Peterbilt DAF parts financial services
+web search:
+web search: PACCAR PE ratio May 2026 PCAR
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "paccar",
+      "name": "PACCAR",
+      "ticker": "PCAR",
+      "rankApprox": 190,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top200"
+      ],
+      "sectorId": "industrials",
+      "industryId": "commercial-vehicle-manufacturers",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/paccar/marketcap/",
+      "description": "PACCAR designs, manufactures, and supports light-, medium-, and heavy-duty trucks under the Kenworth, Peterbilt, and DAF nameplates.",
+      "overview": [
+        {
+          "title": "Business",
+          "paragraphs": [
+            "PACCAR is a global commercial-vehicle manufacturer with premium truck brands in North America and Europe, supported by proprietary engines, aftermarket parts, financing, leasing, and information-technology services.",
+            "The company reported 2025 net sales and revenues of $28.44 billion, 144,000 truck deliveries, and 87 consecutive years of net profit, highlighting the durability of its dealer, parts, and finance model through truck-cycle downturns."
+          ]
+        },
+        {
+          "title": "Market Position",
+          "paragraphs": [
+            "Kenworth and Peterbilt give PACCAR a high-value position in North American Class 8 and vocational trucking, while DAF extends the platform into Europe and export markets.",
+            "PACCAR's moat is not only truck assembly scale; it also depends on brand trust, dealer coverage, parts availability, financing relationships, regulatory certification, and fleet uptime economics."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "PACCAR has a strong industrial moat because truck buyers value durability, dealer support, residual value, financing availability, parts uptime, and regulatory compliance. Those advantages are difficult for small entrants to replicate quickly, especially for heavy-duty fleets where downtime is expensive.",
+        "The moat is partly cyclical: new-truck demand can soften sharply, but PACCAR's aftermarket parts and financial services businesses provide recurring profit pools that dampen the cycle."
+      ],
+      "decentralizationNarrative": [
+        "A fully decentralized replacement for PACCAR's heavy-duty trucks is not near-term credible at fleet scale because crash safety, emissions, service coverage, warranty support, financing, and high-volume manufacturing remain capital-intensive.",
+        "The most plausible decentralization pressure is modular and local: open drivetrain controllers, open battery-management systems, repairable chassis designs, cooperative service networks, and localized fabrication of non-safety-critical components can reduce dependence on single-vendor parts and closed diagnostic systems over time."
+      ],
+      "sourceIds": [
+        "paccar-about",
+        "paccar-ir-overview",
+        "paccar-2025-annual-report",
+        "companiesmarketcap-paccar"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "printed-electronics",
+        "additive-manufacturing"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200; market data reviewed again on June 1, 2026.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Premium truck brands, dealer coverage, parts distribution, finance relationships, regulatory compliance, and long operating history create a strong moat in commercial vehicles.",
+          "sourceIds": [
+            "paccar-about",
+            "paccar-ir-overview",
+            "paccar-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Complete heavy-truck replacement is capital- and compliance-intensive, but repair, components, controls, service coordination, and some local fabrication layers are meaningfully decentralizable.",
+          "sourceIds": [
+            "paccar-about",
+            "amdc",
+            "foxbms",
+            "ose-lifetrac"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "PACCAR reported 2025 net income of $2.38 billion and cites 87 consecutive years of net profit, despite lower truck demand in 2025.",
+          "sourceIds": [
+            "paccar-2025-annual-report",
+            "paccar-ir-overview"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 23.77,
+          "rationale": "Public.com reported a PACCAR P/E ratio of 23.77 as of May 18, 2026.",
+          "sourceIds": [
+            "public-paccar-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 57540000000,
+          "rationale": "CompaniesMarketCap reported PACCAR's market capitalization at $57.54 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-paccar"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "kenworth-trucks",
+        "name": "Kenworth trucks",
+        "category": "Commercial trucks",
+        "homepageUrl": "https://www.kenworth.com/",
+        "summary": "Kenworth builds premium commercial trucks for North America, Mexico, Australia, and export markets.",
+        "whyItMatters": "Kenworth is one of PACCAR's core premium truck brands and represents the fleet, dealer, service, and parts network that makes heavy-duty truck manufacturing difficult to decentralize.",
+        "replacementSketch": [
+          "A practical open replacement would not start as a full Class 8 clone. It would begin with open, modular subsystems for electric drivetrain control, battery management, diagnostics, telematics, and repair documentation.",
+          "Over time, regional builders and fleet cooperatives could assemble standardized vocational or yard-duty platforms from open chassis, power electronics, and serviceable parts, using certified local partners for safety-critical fabrication."
+        ],
+        "sourceIds": [
+          "paccar-about",
+          "kenworth-home",
+          "paccar-ir-overview"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "printed-electronics",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "osvehicle-tabby",
+            "name": "OSVehicle TABBY EVO",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openmotors.co/download/",
+            "summary": "TABBY EVO is an open-source hardware vehicle platform that publishes downloadable vehicle design materials for experimental electric vehicle builds.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project explicitly offers open-source vehicle platform design downloads.",
+                "sourceIds": [
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "It supports distributed experimentation with vehicle platforms, but it is not a production heavy-truck ecosystem.",
+                "sourceIds": [
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 3,
+                "rationale": "The design is useful as a reference platform, but it is not a road-ready replacement for certified commercial trucks.",
+                "sourceIds": [
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "Open design files can reduce early prototyping and integration costs, but commercial truck certification and production remain expensive.",
+                "sourceIds": [
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "osvehicle-tabby"
+            ]
+          },
+          {
+            "slug": "foxbms",
+            "name": "foxBMS",
+            "kind": "open-source",
+            "homepageUrl": "https://foxbms.org/",
+            "summary": "foxBMS is an open-source battery-management-system hardware and software platform for lithium-ion battery applications.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "foxBMS describes itself as a fully open-source BMS development platform with open hardware and software.",
+                "sourceIds": [
+                  "foxbms"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Open BMS tooling can decentralize electric drivetrain development and repair, though it covers only one subsystem.",
+                "sourceIds": [
+                  "foxbms"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The platform is mature enough for development kits and prototypes, but vehicle production readiness depends on certification and integration.",
+                "sourceIds": [
+                  "foxbms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open battery-management tooling can reduce vendor lock-in and prototyping expense for electric vehicle platforms.",
+                "sourceIds": [
+                  "foxbms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "foxbms"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "fleet-cooperative-open-ev-truck-platform",
+            "name": "Fleet cooperative open EV truck platform",
+            "summary": "Regional fleets, repair shops, and component suppliers could coordinate around an open electric vocational-truck architecture, starting with yard tractors, municipal vehicles, and short-haul duty cycles where range and service geography are bounded.",
+            "angleIds": [
+              "open-hardware",
+              "cooperative-production",
+              "decentralized-manufacturing"
+            ],
+            "thesis": "The market structure shifts from vertically controlled branded truck platforms toward certified open modules assembled and serviced by regional cooperatives.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through open hardware, shared specifications, cooperative governance, and multi-shop serviceability rather than through a payment token.",
+            "coordinationMechanism": "Fleet operators publish duty-cycle requirements, regional builders certify assemblies against shared specifications, and repair shops contribute field failure data and validated parts substitutions.",
+            "verificationOrTrustModel": "Safety-critical modules would require independent inspection, serial-numbered parts, documented torque and weld records, and audit trails for repairs; cooperative reputation is backed by warranty pools and fleet acceptance testing.",
+            "failureModes": [
+              "Certification costs may overwhelm small manufacturers before volume arrives.",
+              "Open designs may lag incumbent uptime, dealer coverage, and residual-value confidence.",
+              "Liability allocation across designers, local builders, and repair shops could be difficult."
+            ],
+            "adoptionPath": [
+              "Start with off-road, depot, yard, and municipal duty cycles where routes are predictable.",
+              "Standardize open power electronics, BMS, diagnostics, and replaceable body modules.",
+              "Use cooperative service networks to prove uptime before moving into broader highway applications."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "paccar-about",
+              "paccar-ir-overview"
+            ],
+            "enablerSourceIds": [
+              "foxbms",
+              "amdc",
+              "osvehicle-tabby"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Open vehicle subsystems and cooperative service networks directly reduce dependence on a single OEM-controlled platform.",
+                "sourceIds": [
+                  "foxbms",
+                  "amdc",
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Fleet cooperatives and repair networks are plausible, but certification, liability, and capital coordination remain hard.",
+                "sourceIds": [
+                  "paccar-ir-overview",
+                  "foxbms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Open powertrain components exist, but complete heavy-duty truck integration and regulatory approval are much harder than component prototyping.",
+                "sourceIds": [
+                  "amdc",
+                  "foxbms",
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept could pressure closed diagnostics and parts economics in niches, but it is unlikely to displace PACCAR's core highway-truck business soon.",
+                "sourceIds": [
+                  "paccar-about",
+                  "paccar-ir-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          },
+          {
+            "slug": "local-repair-and-parts-microfactory-network",
+            "name": "Local repair and parts microfactory network",
+            "summary": "A distributed network of certified repair shops could fabricate or refurbish selected non-safety-critical truck parts locally, sharing open CAD files, inspection procedures, and performance feedback.",
+            "angleIds": [
+              "home-microfactory",
+              "local-materials-processing",
+              "recycling-and-reuse"
+            ],
+            "thesis": "Aftermarket value shifts from OEM-controlled replacement channels toward verified local production and refurbishment loops for selected parts.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is local fabrication and shared verification data; Bitcoin or Lightning could support small settlement between shops, but it is not central to the mechanical thesis.",
+            "coordinationMechanism": "Fleets post part demand, local shops bid on fabrication or refurbishment, and shared specifications define material, tolerance, inspection, and warranty requirements.",
+            "verificationOrTrustModel": "Parts would be constrained by material certificates, dimensional scans, destructive sample testing, installation records, and fleet feedback; high-risk safety parts remain excluded until formal certification exists.",
+            "failureModes": [
+              "Counterfeit or under-tested parts could create safety and liability failures.",
+              "OEM warranties and regulatory requirements may limit adoption.",
+              "Local production may not beat centralized parts cost for high-volume components."
+            ],
+            "adoptionPath": [
+              "Begin with brackets, covers, fixtures, interior components, and service tooling.",
+              "Add refurbishment loops for expensive assemblies with measurable inspection criteria.",
+              "Create fleet-approved catalogs of parts that can be locally fabricated without warranty or safety conflicts."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "paccar-about",
+              "paccar-ir-overview"
+            ],
+            "enablerSourceIds": [
+              "ose-lifetrac",
+              "osvehicle-tabby"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Localized fabrication and refurbishment can decentralize parts supply for selected components, though not for regulated safety-critical systems.",
+                "sourceIds": [
+                  "ose-lifetrac",
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 4,
+                "rationale": "The workflow is plausible for repair tooling and low-risk parts, but broad commercial-truck adoption requires strict quality governance.",
+                "sourceIds": [
+                  "paccar-about",
+                  "ose-lifetrac"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Local fabrication is feasible for simple parts and tools, but high-duty-cycle truck components need material controls and inspection discipline.",
+                "sourceIds": [
+                  "ose-lifetrac",
+                  "osvehicle-tabby"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 3,
+                "rationale": "The concept pressures aftermarket margins at the edge, but PACCAR's dealer network and parts logistics remain strong for critical components.",
+                "sourceIds": [
+                  "paccar-ir-overview",
+                  "paccar-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "peterbilt-trucks",
+        "name": "Peterbilt trucks",
+        "category": "Commercial trucks",
+        "homepageUrl": "https://www.peterbilt.com/",
+        "summary": "Peterbilt designs and manufactures premium commercial vehicles for U.S. and Canadian fleet and vocational markets.",
+        "whyItMatters": "Peterbilt is a major PACCAR brand with a loyal customer base and deep dealer support, making it a useful proxy for the incumbent strength of premium heavy trucks.",
+        "replacementSketch": [
+          "A decentralized alternative would most likely target narrow-duty vocational segments first, using open electric drivetrain modules, transparent diagnostics, and cooperative maintenance records.",
+          "Instead of copying Peterbilt's full brand-and-dealer model, challengers could compete on repair autonomy, lower lock-in, rebuildable modules, and local service participation."
+        ],
+        "sourceIds": [
+          "paccar-about",
+          "peterbilt-home",
+          "paccar-ir-overview"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "printed-electronics",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "amdc",
+            "name": "Advanced Motor Drive Controller",
+            "kind": "open-source",
+            "homepageUrl": "https://amdc.dev/",
+            "summary": "AMDC is an open-source hardware and firmware platform for electric machine control research and development.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "AMDC states that its hardware design files and firmware are freely available.",
+                "sourceIds": [
+                  "amdc"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Open motor-control hardware can reduce dependence on proprietary drivetrain controllers, though it is a component-level substitute.",
+                "sourceIds": [
+                  "amdc"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The platform is research-oriented and capable, but production commercial-vehicle use would require industrialization and certification.",
+                "sourceIds": [
+                  "amdc"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open motor-control tooling can lower experimentation costs for electric drivetrains and reduce black-box controller lock-in.",
+                "sourceIds": [
+                  "amdc"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "amdc"
+            ]
+          },
+          {
+            "slug": "open-source-ecology-lifetrac",
+            "name": "Open Source Ecology LifeTrac",
+            "kind": "open-source",
+            "homepageUrl": "https://wiki.opensourceecology.org/wiki/LifeTrac",
+            "summary": "LifeTrac is an open-source, modular tractor project intended as a low-cost workhorse platform for local fabrication and repair.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Open Source Ecology publishes LifeTrac design and fabrication information as an open-source tractor project.",
+                "sourceIds": [
+                  "ose-lifetrac"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The project is explicitly oriented toward local fabrication, modularity, repairability, and distributed production.",
+                "sourceIds": [
+                  "ose-lifetrac",
+                  "ose-tractor"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 2,
+                "rationale": "LifeTrac is a prototype/open-fabrication reference, not a road-certified commercial truck replacement.",
+                "sourceIds": [
+                  "ose-lifetrac"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 5,
+                "rationale": "The open design could lower learning and fabrication costs for rugged local machinery, but heavy-duty road use has much higher requirements.",
+                "sourceIds": [
+                  "ose-lifetrac",
+                  "ose-tractor"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "ose-lifetrac",
+              "ose-tractor"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-diagnostics-and-fleet-maintenance-federation",
+            "name": "Open diagnostics and fleet maintenance federation",
+            "summary": "Fleet owners and independent shops could federate maintenance records, diagnostic schemas, repair procedures, and parts-performance data to reduce dependence on closed OEM service channels.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "recycling-and-reuse"
+            ],
+            "thesis": "Control shifts from OEM-centered dealer networks toward interoperable maintenance data and independent service providers that can verify repairs across fleets.",
+            "bitcoinOrDecentralizationRole": "The core role is federation: many shops and fleets maintain interoperable records without one service platform owning the entire maintenance history.",
+            "coordinationMechanism": "Fleets, shops, and component vendors publish signed maintenance events, failure reports, and repair procedures into interoperable registries that can be queried by authorized buyers and mechanics.",
+            "verificationOrTrustModel": "Records are signed by the shop, linked to vehicle identity and part serials, and checked against inspection outcomes, warranty claims, and fleet telematics; suspicious shops lose federation trust and warranty-pool access.",
+            "failureModes": [
+              "OEMs may restrict diagnostic access or warranty recognition.",
+              "False repair records could still occur if inspections and identity controls are weak.",
+              "Fleet data privacy concerns may slow sharing."
+            ],
+            "adoptionPath": [
+              "Begin with independent shops sharing non-sensitive repair procedures and failure patterns.",
+              "Add fleet-controlled maintenance passports for used-truck resale and warranty substantiation.",
+              "Expand to verified refurbished parts and cross-shop warranty pools."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "paccar-about",
+              "paccar-ir-overview"
+            ],
+            "enablerSourceIds": [
+              "amdc",
+              "foxbms"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Federated diagnostics and maintenance records directly reduce dependence on centralized OEM service channels.",
+                "sourceIds": [
+                  "paccar-about",
+                  "amdc",
+                  "foxbms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Independent repair networks and fleet maintenance systems already exist, but shared trust and data standards would need governance.",
+                "sourceIds": [
+                  "paccar-ir-overview",
+                  "foxbms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The data-federation layer is easier than building trucks, but diagnostic access, standards, and OEM restrictions are material barriers.",
+                "sourceIds": [
+                  "paccar-about",
+                  "amdc"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Better independent repair data could pressure parts and service lock-in without immediately replacing PACCAR truck sales.",
+                "sourceIds": [
+                  "paccar-ir-overview",
+                  "paccar-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          },
+          {
+            "slug": "modular-electric-retrofit-kits",
+            "name": "Modular electric retrofit kits",
+            "summary": "Open, certified retrofit kits could electrify selected diesel vocational trucks through standardized battery, motor-control, charging, and diagnostics modules installed by regional shops.",
+            "angleIds": [
+              "open-energy-hardware",
+              "open-hardware",
+              "distributed-energy-generation"
+            ],
+            "thesis": "Fleet transition value moves from buying an entirely new OEM truck toward upgrading existing chassis with open energy and drivetrain modules.",
+            "bitcoinOrDecentralizationRole": "The decentralizing force is open energy hardware and local installation capacity; energy coordination could later integrate depot solar, batteries, and microgrid controls.",
+            "coordinationMechanism": "Component makers publish certified module interfaces, installers qualify vehicles and routes, and fleets share operating data that improves retrofit sizing and reliability.",
+            "verificationOrTrustModel": "Installations are verified by battery health reports, charger logs, road tests, serial-numbered components, and independent safety inspections before fleet deployment.",
+            "failureModes": [
+              "Retrofitted trucks may have limited range, payload, or reliability for demanding routes.",
+              "Certification and insurance requirements could block multi-shop installation.",
+              "Battery supply and residual-value uncertainty may make new OEM vehicles more attractive."
+            ],
+            "adoptionPath": [
+              "Target depot-based vocational trucks with predictable routes and overnight charging.",
+              "Use open BMS and motor-control platforms to prototype transparent retrofit modules.",
+              "Pair retrofits with local solar, storage, and charger controls for lower operating costs."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "paccar-about",
+              "paccar-ir-overview"
+            ],
+            "enablerSourceIds": [
+              "foxbms",
+              "amdc"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Retrofit kits and open energy hardware let local installers participate in fleet electrification instead of relying only on new OEM vehicles.",
+                "sourceIds": [
+                  "foxbms",
+                  "amdc"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Regional installers and fleet pilots are plausible, but certification, warranty, and insurance coordination are significant.",
+                "sourceIds": [
+                  "paccar-about",
+                  "foxbms"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Open battery and motor-control platforms support development, but reliable heavy-truck retrofit packages are technically demanding.",
+                "sourceIds": [
+                  "foxbms",
+                  "amdc"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Retrofits could defer new-truck purchases in narrow use cases, but broad pressure on PACCAR depends on range, uptime, and regulatory acceptance.",
+                "sourceIds": [
+                  "paccar-ir-overview",
+                  "paccar-about"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "paccar-about",
+      "title": "Get to Know PACCAR",
+      "url": "https://www.paccar.com/about-us/get-to-know-paccar/",
+      "kind": "investor-relations",
+      "publisher": "PACCAR",
+      "note": "Describes PACCAR's brands, products, parts support, financial services, and dealer network.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "paccar-ir-overview",
+      "title": "PACCAR Investor Relations Overview",
+      "url": "https://investors.paccar.com/overview/",
+      "kind": "investor-relations",
+      "publisher": "PACCAR",
+      "note": "Provides business positioning, 2025 revenues, truck deliveries, profitability history, and comments on parts and financial services.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "paccar-2025-annual-report",
+      "title": "PACCAR 2025 Annual Report",
+      "url": "https://s202.q4cdn.com/173635405/files/doc_financials/2025/ar/e1a25c96-1d69-4d5b-aeac-a4e6d240708b.pdf",
+      "kind": "annual-report",
+      "publisher": "PACCAR",
+      "note": "Primary financial filing source for 2025 net sales, revenues, net income, and segment context.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "companiesmarketcap-paccar",
+      "title": "Paccar (PCAR) Market Capitalization",
+      "url": "https://companiesmarketcap.com/paccar/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization source used for the snapshot market-cap metric.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "public-paccar-pe",
+      "title": "PACCAR P/E Ratio",
+      "url": "https://public.com/stocks/pcar/pe-ratio",
+      "kind": "market-data",
+      "publisher": "Public.com",
+      "note": "Market-data source for PACCAR's reported P/E ratio in May 2026.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "kenworth-home",
+      "title": "Kenworth Trucks",
+      "url": "https://www.kenworth.com/",
+      "kind": "product-page",
+      "publisher": "Kenworth",
+      "note": "Official product brand site for PACCAR's Kenworth truck line.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "peterbilt-home",
+      "title": "Peterbilt",
+      "url": "https://www.peterbilt.com/",
+      "kind": "product-page",
+      "publisher": "Peterbilt",
+      "note": "Official product brand site for PACCAR's Peterbilt truck line.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "osvehicle-tabby",
+      "title": "Download the TABBY EVO Open Source Designs",
+      "url": "https://www.openmotors.co/download/",
+      "kind": "open-source-project",
+      "publisher": "Open Motors",
+      "note": "Open-source vehicle platform reference relevant to distributed vehicle design and prototyping.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "foxbms",
+      "title": "foxBMS - The Most Advanced Open Source BMS Platform",
+      "url": "https://foxbms.org/",
+      "kind": "open-source-project",
+      "publisher": "foxBMS",
+      "note": "Open-source battery-management-system platform relevant to electric truck subsystem decentralization.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "amdc",
+      "title": "Advanced Motor Drive Controller",
+      "url": "https://amdc.dev/",
+      "kind": "open-source-project",
+      "publisher": "AMDC",
+      "note": "Open-source hardware and firmware platform for electric motor control.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "ose-lifetrac",
+      "title": "LifeTrac",
+      "url": "https://wiki.opensourceecology.org/wiki/LifeTrac",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open-source tractor and local fabrication reference for decentralized heavy-equipment concepts.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "ose-tractor",
+      "title": "Tractor",
+      "url": "https://www.opensourceecology.org/portfolio/tractor/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Summarizes LifeTrac as a low-cost open-source tractor and discusses conversion potential toward truck-like use cases.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new PACCAR bundle with two core products, sourced financial and market metrics, open vehicle/powertrain alternatives, and disruption concepts focused on open EV platforms, local parts fabrication, federated maintenance, and modular retrofits."
+}
+2026-06-01T01:40:00.378978Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e80d4-e269-7d11-bf2c-5de4d66322c7 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+29,037

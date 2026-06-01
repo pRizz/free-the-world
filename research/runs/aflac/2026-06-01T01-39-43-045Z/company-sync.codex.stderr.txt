@@ -1,0 +1,1453 @@
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e80d6-39c7-7d52-92d3-b8e77eb851cf
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: aflac
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "aflac",
+  "name": "Aflac",
+  "ticker": "AFL",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top200"
+  ],
+  "sectorId": "financials",
+  "industryId": "life-insurance",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/aflac/marketcap/",
+  "description": "Aflac sells supplemental health and life insurance products in the United States and Japan.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Supplemental health insurance",
+    "Cancer insurance"
+  ],
+  "seedSourceUrls": [
+    "https://www.aflac.com/",
+    "https://investors.aflac.com/",
+    "https://companiesmarketcap.com/aflac/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-01T01:39:45.082361Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.082387Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.082747Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.082754Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.083163Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.083168Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.083475Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.083480Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.083796Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.083801Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.084434Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.084440Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.842635Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.842650Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.842944Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.842951Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.843325Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.843332Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.843619Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.843623Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.843901Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.843905Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.844575Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T01:39:45.844582Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Aflac 2025 annual report supplemental health life insurance Japan United States
+web search:
+web search: openIMIS open source health financing insurance management system
+web search:
+web search: Aflac PE ratio May 2026 stockanalysis
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "aflac",
+      "name": "Aflac",
+      "ticker": "AFL",
+      "rankApprox": 188,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top200"
+      ],
+      "sectorId": "financials",
+      "industryId": "life-insurance",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/aflac/marketcap/",
+      "description": "Aflac sells supplemental health and life insurance products in the United States and Japan.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "Aflac is a supplemental insurance carrier centered on products that pay cash benefits to policyholders when illness, injury, or covered events create out-of-pocket costs.",
+            "The company operates mainly through Aflac Japan and Aflac U.S., with Japan historically important to the franchise and U.S. products distributed through employer and individual channels."
+          ]
+        },
+        {
+          "title": "Registry lens",
+          "paragraphs": [
+            "Aflac's moat is built less on a scarce physical asset and more on licensed insurance operations, actuarial discipline, brand recognition, distribution relationships, capital strength, and regulatory compliance.",
+            "Because the product is risk pooling and claims payment, credible open alternatives are more likely to appear first as cooperative benefit pools, open administration software, transparent claims workflows, and community financing layers than as a direct one-for-one consumer brand replacement."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Aflac benefits from a long-running brand in supplemental insurance, employer-channel distribution, actuarial data, regulatory approvals, and the capital base needed to underwrite claims. These are meaningful barriers because insurance competitors must combine trust, licensing, reserves, compliance, and claims operations before they can compete at scale.",
+        "The moat is not absolute. Supplemental benefits are modular, customers can compare policies, and administration software is increasingly separable from underwriting capital. The strongest part of the incumbent position is therefore the regulated balance sheet and distribution network, not the basic idea of pooling risk for defined health events."
+      ],
+      "decentralizationNarrative": [
+        "Insurance is difficult to decentralize because claims adjudication, fraud control, reserves, and consumer protection rules require accountable operators. A purely peer-to-peer replacement for Aflac-style products would face adverse selection, regulatory, and trust problems immediately.",
+        "The more credible decentralization path is hybrid: open-source benefit administration, cooperative or association-based pools, transparent reserves, federated claims review, and auditable payout rules. Those mechanisms can reduce vendor lock-in and localize governance while still leaving underwriting, licensing, and solvency constraints as hard limits."
+      ],
+      "sourceIds": [
+        "aflac-2025-10k",
+        "aflac-cancer-product",
+        "companiesmarketcap-aflac",
+        "stockanalysis-aflac-overview",
+        "openimis-overview",
+        "openimis-software"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 176-200.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Aflac has durable insurance-specific advantages in brand, distribution, actuarial experience, regulatory approvals, claims operations, and capital strength, but supplemental products remain more modular and substitutable than core infrastructure monopolies.",
+          "sourceIds": [
+            "aflac-2025-10k",
+            "aflac-cancer-product"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "The administrative and governance layers of supplemental health financing can be made more open or cooperative, but underwriting, solvency, licensing, reserves, and fraud control make full decentralization hard.",
+          "sourceIds": [
+            "aflac-2025-10k",
+            "openimis-overview",
+            "openimis-software"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Aflac remained profitable in recent filings and public financial summaries, with mature insurer economics supported by premiums, investments, and disciplined capital return, although reported earnings can move with investment and currency effects.",
+          "sourceIds": [
+            "aflac-2025-10k",
+            "stockanalysis-aflac-overview"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 13.38,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 13.38 for Aflac around the May 22, 2026 market close; valuation multiples are market-sensitive and should be refreshed before publication.",
+          "sourceIds": [
+            "stockanalysis-aflac-overview"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 59990000000,
+          "rationale": "CompaniesMarketCap and StockAnalysis both placed Aflac near a $60 billion market capitalization in late May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-aflac",
+            "stockanalysis-aflac-overview"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "supplemental-health-insurance",
+        "name": "Supplemental health insurance",
+        "category": "Insurance",
+        "homepageUrl": "https://www.aflac.com/",
+        "summary": "Aflac supplemental insurance products pay cash benefits intended to help policyholders cover costs that primary health coverage may not fully absorb.",
+        "whyItMatters": "Supplemental insurance sits between household financial resilience and the gaps left by employer benefits, public coverage, deductibles, coinsurance, lost wages, travel, and other indirect costs.",
+        "replacementSketch": [
+          "A realistic open replacement would not simply clone Aflac as another centralized insurer. It would start with transparent benefit rules, open-source enrollment and claims software, cooperative governance, and regulated or partnered risk-bearing entities.",
+          "Local associations, unions, employers, or community benefit groups could pool defined risks while using shared software and auditable claims workflows to reduce administrative lock-in."
+        ],
+        "sourceIds": [
+          "aflac-2025-10k",
+          "openimis-overview",
+          "openimis-software"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openimis",
+            "name": "openIMIS",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openimis.org/",
+            "repoUrl": "https://github.com/openimis",
+            "summary": "openIMIS is open-source software for administering health financing and social protection programs, including beneficiary, provider, payer, and claims workflows.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "openIMIS is described as open-source, free to use, modify, and redistribute, with public project infrastructure and community participation.",
+                "sourceIds": [
+                  "openimis-overview",
+                  "openimis-software",
+                  "openimis-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It can reduce dependence on proprietary insurance administration platforms, but it does not itself decentralize underwriting capital, solvency, or regulatory accountability.",
+                "sourceIds": [
+                  "openimis-software"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project reports real deployments across countries and millions of beneficiaries, making it more mature than a concept-stage insurance tool.",
+                "sourceIds": [
+                  "openimis-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open, reusable administration software can reduce implementation costs for benefit schemes, especially where proprietary insurance administration systems are expensive or overbuilt.",
+                "sourceIds": [
+                  "openimis-software"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openimis-overview",
+              "openimis-software",
+              "openimis-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-cooperative-benefit-pools",
+            "name": "Federated cooperative benefit pools",
+            "summary": "Employer groups, unions, local associations, or health cooperatives could run defined supplemental benefit pools on open administration software, federating claims standards and actuarial templates while keeping reserves and governance local.",
+            "angleIds": [
+              "federation",
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept pressures Aflac by separating policy administration and claims workflow from a single national brand, letting smaller regulated or semi-regulated groups operate transparent benefit pools with shared tooling.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated governance and shared open software rather than through Bitcoin as a base layer; the main shift is from one carrier-controlled operating stack to interoperable cooperative schemes.",
+            "coordinationMechanism": "Participants enroll through a local sponsor, contribute premiums or dues into a managed pool, use shared benefit rules, and process claims through openIMIS-like workflows that connect beneficiaries, providers, payers, and reviewers.",
+            "verificationOrTrustModel": "Fraud controls would depend on identity checks, provider attestations, documented medical events, claims review, reserve audits, and public reporting of pool solvency and payout ratios. Federation can publish shared rules, but licensed local operators would still need legal accountability.",
+            "failureModes": [
+              "Small pools can suffer from adverse selection, underpricing, correlated claims, or weak reserves.",
+              "Claims review may become inconsistent or politicized if cooperative governance lacks professional actuarial and compliance discipline.",
+              "Regulatory treatment could block lightly capitalized groups from offering products that look like insurance."
+            ],
+            "adoptionPath": [
+              "Start with narrow cash-benefit products sponsored by employers, unions, or associations.",
+              "Use open administration software for enrollment, benefit schedules, claims intake, and reporting.",
+              "Add professional actuarial review, reinsurance, reserve audits, and jurisdiction-specific licensing before expanding benefit scope."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "aflac-2025-10k",
+              "aflac-cancer-product"
+            ],
+            "enablerSourceIds": [
+              "openimis-overview",
+              "openimis-software"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept distributes administration and governance across local sponsors while using shared standards, though underwriting remains constrained by regulation and capital requirements.",
+                "sourceIds": [
+                  "openimis-software"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Cooperative benefit administration is plausible with open software and local sponsors, but credible reserves, actuarial pricing, and regulator acceptance are substantial coordination hurdles.",
+                "sourceIds": [
+                  "openimis-overview",
+                  "aflac-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The software primitives exist, but a compliant supplemental insurance replacement requires legal, actuarial, claims, and capital infrastructure beyond the open-source stack.",
+                "sourceIds": [
+                  "openimis-software",
+                  "aflac-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "This could pressure administration margins and niche employer groups, but it is unlikely to displace a large regulated insurer quickly.",
+                "sourceIds": [
+                  "aflac-2025-10k",
+                  "openimis-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "cancer-insurance",
+        "name": "Cancer insurance",
+        "category": "Insurance",
+        "homepageUrl": "https://www.aflac.com/individuals/products/cancer-insurance.aspx",
+        "summary": "Aflac cancer insurance is a supplemental health policy that pays cash benefits for covered cancer-related costs, including diagnosis, treatment, and continuing care.",
+        "whyItMatters": "Cancer can create large nonmedical and out-of-pocket costs even when a person has primary health insurance, so cash-benefit coverage targets a concrete household liquidity problem.",
+        "replacementSketch": [
+          "The closest open replacement would be a disease-specific mutual aid or cooperative benefit pool with transparent eligibility, contributions, reserves, and payout schedules.",
+          "Open software could handle enrollment, benefit schedules, claims intake, and reporting, while licensed partners, auditors, or reinsurers handle solvency and consumer-protection obligations."
+        ],
+        "sourceIds": [
+          "aflac-cancer-product",
+          "openimis-overview",
+          "openimis-software"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openimis-health-insurance",
+            "name": "openIMIS Health Insurance",
+            "kind": "open-source",
+            "homepageUrl": "https://openimis.org/health-insurance",
+            "repoUrl": "https://github.com/openimis",
+            "summary": "openIMIS Health Insurance supports health financing workflows such as beneficiary management, benefit packages, providers, claims generation, claims review, claims processing, and monitoring.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "openIMIS is presented as open-source software and a digital public good with public project infrastructure.",
+                "sourceIds": [
+                  "openimis-overview",
+                  "openimis-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It supports independent health financing schemes and can reduce proprietary platform dependence, but it is an administration layer rather than a decentralized insurer.",
+                "sourceIds": [
+                  "openimis-health-insurance",
+                  "openimis-software"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "openIMIS reports use in health insurance and related programs across multiple countries and millions of beneficiaries.",
+                "sourceIds": [
+                  "openimis-overview",
+                  "openimis-health-insurance"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Reusable open software for benefit, provider, and claims administration can lower startup and switching costs for disease-specific benefit programs.",
+                "sourceIds": [
+                  "openimis-software",
+                  "openimis-health-insurance"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openimis-overview",
+              "openimis-health-insurance",
+              "openimis-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "auditable-disease-specific-mutual-aid",
+            "name": "Auditable disease-specific mutual aid",
+            "summary": "A disease-specific pool could publish clear benefit schedules, reserve policies, claims statistics, and governance rules while using open health-financing software to administer cancer-related cash benefits.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "Cancer coverage is narrower than general health insurance, which makes it a better candidate for transparent cooperative pooling than broad medical risk. The market structure shifts from opaque proprietary supplemental policies toward auditable, member-governed benefit pools.",
+            "bitcoinOrDecentralizationRole": "The central role is decentralized governance and auditability, not forced tokenization. Bitcoin or Lightning could be useful for low-cost contribution collection or emergency payouts in some contexts, but the core mechanism is cooperative risk pooling with transparent administration.",
+            "coordinationMechanism": "Members contribute to a defined pool, sponsors or cooperatives set benefit schedules, claims reviewers verify covered events, and federation-level templates allow multiple local pools to share actuarial and operational standards.",
+            "verificationOrTrustModel": "Cancer claims would require medical documentation, provider verification, duplicate-claim checks, reserve audits, and published pool-level statistics. Cheating is constrained by claim documentation and independent review, while collusion risk is reduced through rotating reviewers and external audits.",
+            "failureModes": [
+              "Cancer incidence risk and treatment-cost variability can overwhelm small pools without reinsurance or conservative reserve policy.",
+              "Members may misunderstand mutual-aid limits if the product is marketed like guaranteed insurance.",
+              "Medical privacy requirements can conflict with public transparency unless reporting is carefully aggregated."
+            ],
+            "adoptionPath": [
+              "Pilot with a narrow benefit schedule such as diagnosis cash benefits and treatment travel support.",
+              "Use openIMIS-style administration for beneficiary records, benefit packages, claims review, and reporting.",
+              "Add audited reserves, reinsurance, privacy controls, and jurisdiction-specific compliance before broader consumer rollout."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "aflac-cancer-product"
+            ],
+            "enablerSourceIds": [
+              "openimis-overview",
+              "openimis-health-insurance",
+              "openimis-software"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Disease-specific mutual aid can localize governance and make administration transparent, though medical verification and solvency obligations still need professional controls.",
+                "sourceIds": [
+                  "aflac-cancer-product",
+                  "openimis-health-insurance"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "The narrower benefit category improves coordination credibility, but reserve management and member trust remain hard problems.",
+                "sourceIds": [
+                  "aflac-cancer-product",
+                  "openimis-software"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Open health-financing software can support administration, but a compliant cancer benefit pool still needs actuarial pricing, privacy controls, claims review, and regulatory analysis.",
+                "sourceIds": [
+                  "openimis-health-insurance",
+                  "aflac-cancer-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "A transparent cooperative model could pressure niche supplemental products, but Aflac's brand, distribution, and regulated balance sheet remain strong advantages.",
+                "sourceIds": [
+                  "aflac-2025-10k",
+                  "aflac-cancer-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "aflac-2025-10k",
+      "title": "Aflac Incorporated 2025 Form 10-K",
+      "url": "https://s24.q4cdn.com/367535798/files/doc_financials/2025/ar/FINAL-AFL-12-31-25_Form-10K.pdf",
+      "kind": "annual-report",
+      "publisher": "Aflac Incorporated",
+      "note": "Primary annual filing for business segments, product positioning, financial performance, and risk context.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "aflac-cancer-product",
+      "title": "Cancer Insurance",
+      "url": "https://www.aflac.com/individuals/products/cancer-insurance.aspx",
+      "kind": "product-page",
+      "publisher": "Aflac",
+      "note": "Official product page describing Aflac cancer insurance as supplemental coverage that pays cash benefits for cancer-related costs.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "companiesmarketcap-aflac",
+      "title": "Aflac (AFL) Market Capitalization",
+      "url": "https://companiesmarketcap.com/aflac/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap source used by the queued manifest and registry snapshot.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "stockanalysis-aflac-overview",
+      "title": "Aflac (AFL) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/afl/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Supplemental market-data source for market capitalization and valuation multiple cross-checks.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openimis-overview",
+      "title": "What is openIMIS?",
+      "url": "https://openimis.org/what-openimis",
+      "kind": "open-source-project",
+      "publisher": "openIMIS",
+      "note": "Describes openIMIS as open-source software for health financing and social protection programs with real-world deployment scale.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openimis-software",
+      "title": "Get to know the software",
+      "url": "https://www.openimis.org/get-know-software",
+      "kind": "technical-docs",
+      "publisher": "openIMIS",
+      "note": "Explains the openIMIS software capabilities for beneficiaries, benefit packages, providers, claims generation, review, processing, and reporting.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openimis-health-insurance",
+      "title": "Health Insurance",
+      "url": "https://openimis.org/health-insurance",
+      "kind": "technical-docs",
+      "publisher": "openIMIS",
+      "note": "Documents openIMIS health-insurance use cases and interoperability context.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openimis-github",
+      "title": "openIMIS GitHub Organization",
+      "url": "https://github.com/openimis",
+      "kind": "open-source-project",
+      "publisher": "openIMIS",
+      "note": "Public source-code organization for openIMIS project repositories.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Aflac registry bundle with two products: supplemental health insurance and cancer insurance. The strongest open alternative is openIMIS as an administration layer, with disruption concepts focused on federated cooperative benefit pools and auditable disease-specific mutual aid rather than a forced direct insurer clone."
+}
+2026-06-01T01:41:05.224812Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e80d6-3be4-72b2-a00c-c5160dc75354 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+31,074
