@@ -214,6 +214,51 @@ test("normalizeCompanySyncPayload fills omitted product collection fields", () =
   ]);
 });
 
+test("normalizeCompanySyncPayload removes unknown concept angle ids", () => {
+  const payload = {
+    schemaVersion: 1,
+    bundle: {
+      schemaVersion: 1,
+      company: {
+        slug: "fixtureco",
+        name: "Fixture Co",
+        ticker: "FIX",
+        maybeIpo: null,
+      },
+      products: [
+        {
+          slug: "fixture-product",
+          alternatives: [],
+          disruptionConcepts: [
+            {
+              slug: "fixture-concept",
+              angleIds: ["open-hardware", "printed-electronics"],
+            },
+          ],
+        },
+      ],
+    },
+    sources: [],
+  } as unknown as CompanySyncPayload;
+
+  const normalized = normalizeCompanySyncPayload(payload, {
+    conceptAngles: [
+      {
+        id: "open-hardware",
+        label: "Open Hardware",
+        summary: "Uses openly shared hardware designs.",
+      },
+    ],
+  });
+
+  expect(normalized.payload.bundle.products[0]?.disruptionConcepts[0]?.angleIds).toEqual([
+    "open-hardware",
+  ]);
+  expect(normalized.notes).toEqual([
+    "Removed invalid concept angle id(s) printed-electronics from disruption concept fixture-concept.",
+  ]);
+});
+
 test("dedupeCompanySyncPayloadSlugs prefixes colliding slugs", () => {
   const existingBundles: CompanyBundle[] = [
     {

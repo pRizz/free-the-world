@@ -1,0 +1,621 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "autozone",
+      "name": "AutoZone",
+      "ticker": "AZO",
+      "rankApprox": 210,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "consumer-discretionary",
+      "industryId": "automotive-parts-retail",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/autozone/marketcap/",
+      "description": "AutoZone retails and distributes aftermarket automotive replacement parts, maintenance items, accessories, and private-label products across the Americas.",
+      "overview": [
+        {
+          "title": "Business footprint",
+          "paragraphs": [
+            "AutoZone is a large automotive aftermarket retailer and distributor with 7,657 stores in the Americas as of August 30, 2025.",
+            "The company generated fiscal 2025 net sales of $18.9 billion and operating profit of $3.6 billion, with domestic commercial sales representing 31.7% of domestic sales."
+          ]
+        },
+        {
+          "title": "Brand and distribution model",
+          "paragraphs": [
+            "AutoZone combines national store density, commercial delivery, customer service, fitment data, and exclusive in-house brands such as Duralast.",
+            "Its moat depends less on proprietary manufacturing and more on procurement, inventory availability, local store operations, and customer trust at the point of repair."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "AutoZone has a strong physical distribution moat: thousands of stores, dense local inventory, commercial delivery routes, and a brand that customers associate with urgent repair availability.",
+        "The moat is durable for time-sensitive parts and batteries, but it is not absolute. Many products are sourced from third-party manufacturers or private-label suppliers, and the long tail of replacement parts can be attacked by better open fitment data, cooperative inventory pooling, remanufacturing, and localized fabrication."
+      ],
+      "decentralizationNarrative": [
+        "AutoZone is moderately decentralizable because much of the underlying value is matching vehicles to commodity or semi-commodity parts, keeping inventory near customers, and routing fulfillment efficiently.",
+        "The hard parts are liability, warranty administration, fitment accuracy, safety-critical quality control, hazardous battery handling, and trust in the seller. Those constraints favor hybrid cooperative networks and verifiable local inventory before they favor fully decentralized marketplaces."
+      ],
+      "sourceIds": [
+        "autozone-2025-10k",
+        "autozone-duralast-battery-guide",
+        "companiesmarketcap-autozone-marketcap",
+        "companiesmarketcap-autozone-pe"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "additive-manufacturing",
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; market data refreshed against CompaniesMarketCap in June 2026.",
+      "inputMetrics": {
+        "moat": {
+          "value": 78,
+          "rationale": "AutoZone combines national store density, commercial sales infrastructure, inventory availability, exclusive in-house brands, and high customer urgency in repair categories.",
+          "sourceIds": [
+            "autozone-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 48,
+          "rationale": "Parts matching, local inventory, repair knowledge, and remanufacturing can be decentralized, but warranty, safety, fitment accuracy, hazardous materials handling, and fast fulfillment keep meaningful centralized advantages.",
+          "sourceIds": [
+            "autozone-2025-10k",
+            "partkeepr-project",
+            "precious-plastic-machines"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 82,
+          "rationale": "Fiscal 2025 operating profit was $3.6 billion on $18.9 billion of net sales, indicating strong profitability despite a year-over-year operating profit decline.",
+          "sourceIds": [
+            "autozone-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 20,
+          "rationale": "CompaniesMarketCap reported AutoZone's trailing P/E ratio at about 20.0 in June 2026.",
+          "sourceIds": [
+            "companiesmarketcap-autozone-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 48040000000,
+          "rationale": "CompaniesMarketCap reported AutoZone's market capitalization at $48.04 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-autozone-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "autozone-parts-retail",
+        "name": "AutoZone parts retail",
+        "category": "Automotive replacement parts retail",
+        "homepageUrl": "https://www.autozone.com/",
+        "summary": "AutoZone sells aftermarket automotive replacement parts, maintenance items, and accessories through stores, commercial delivery, and digital channels.",
+        "whyItMatters": "The product is the core retail and distribution layer that connects vehicle owners and repair shops to replacement parts when speed, fitment, and availability matter.",
+        "replacementSketch": [
+          "A plausible replacement is not a single store clone. It is a cooperative network of local repair shops, makerspaces, salvage yards, remanufacturers, and small distributors sharing inventory, fitment knowledge, and fulfillment standards.",
+          "Open inventory tools and community-maintained vehicle-part data could reduce dependence on a single retailer, while local fabrication and refurbishment handle a narrow but growing set of low-risk components."
+        ],
+        "sourceIds": [
+          "autozone-2025-10k",
+          "partkeepr-project",
+          "openstreetmap-wiki"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "partkeepr",
+            "name": "PartKeepr",
+            "kind": "open-source",
+            "homepageUrl": "https://www.partkeepr.org/",
+            "repoUrl": "https://github.com/partkeepr/PartKeepr",
+            "summary": "Open-source inventory management software that can track parts, stock levels, manufacturers, distributors, attachments, parameters, and barcode workflows.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "The project publishes source code under an open-source license and documents itself as open-source inventory management.",
+                "sourceIds": [
+                  "partkeepr-project",
+                  "partkeepr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "It can help small shops and local groups manage inventory independently, but it does not itself provide a marketplace, fitment database, or fulfillment network.",
+                "sourceIds": [
+                  "partkeepr-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 42,
+                "rationale": "PartKeepr is functional but the main GitHub repository was archived in 2025, reducing confidence for a modern production deployment without maintenance work.",
+                "sourceIds": [
+                  "partkeepr-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 63,
+                "rationale": "Shared open inventory tooling can reduce duplicate purchasing and expose local stock, but cost savings depend on local operators and integrations.",
+                "sourceIds": [
+                  "partkeepr-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "partkeepr-project",
+              "partkeepr-github"
+            ]
+          },
+          {
+            "slug": "openstreetmap",
+            "name": "OpenStreetMap",
+            "kind": "open-source",
+            "homepageUrl": "https://www.openstreetmap.org/",
+            "summary": "Community-maintained open geographic data that can support local repair, salvage, parts pickup, and delivery discovery layers.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "OpenStreetMap creates and distributes free geographic data and is maintained by a contributor community.",
+                "sourceIds": [
+                  "openstreetmap-wiki"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "Open geodata helps decentralized operators publish and discover local repair resources without a single proprietary map owner.",
+                "sourceIds": [
+                  "openstreetmap-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 82,
+                "rationale": "OpenStreetMap is mature and widely used, though it is an enabling data layer rather than a complete auto-parts replacement.",
+                "sourceIds": [
+                  "openstreetmap-wiki"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 55,
+                "rationale": "Open location data can reduce discovery and routing dependence on proprietary platforms, but it does not solve inventory procurement by itself.",
+                "sourceIds": [
+                  "openstreetmap-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openstreetmap-wiki"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-local-parts-coops",
+            "name": "Federated local parts cooperatives",
+            "summary": "Repair shops, local distributors, salvage yards, and community workshops could federate inventory, vehicle fitment notes, pickup options, and warranty history so buyers can source common parts locally without relying on one national retailer.",
+            "angleIds": [
+              "federation",
+              "peer-to-peer-marketplace",
+              "cooperative-production"
+            ],
+            "thesis": "AutoZone's store-density advantage weakens if independent local operators can expose comparable inventory availability and trust signals through a shared protocol.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and cooperative ownership: each local operator controls its inventory and reputation while interoperating through common data formats rather than a single platform owner.",
+            "coordinationMechanism": "Participating shops publish signed stock, price, fitment, pickup, and service-area data to federated catalogs; buyers or mechanics query nearby suppliers and route orders to the best verified operator.",
+            "verificationOrTrustModel": "Operators build reputation through completed orders, return outcomes, fitment-error rates, and warranty resolution records. False inventory can be penalized by deposits, delisting, or reduced ranking, but the model still needs strong dispute handling.",
+            "failureModes": [
+              "Bad fitment data could create costly returns or unsafe repairs.",
+              "Local suppliers may not maintain enough inventory depth to match urgent national-chain availability.",
+              "Warranty enforcement across independent operators could be inconsistent."
+            ],
+            "adoptionPath": [
+              "Start with non-safety-critical maintenance items and shop-to-shop inventory sharing.",
+              "Add shared fitment notes, standardized return policies, and local pickup routing.",
+              "Expand into remanufactured and salvage-backed SKUs once quality and warranty standards are proven."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "autozone-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "partkeepr-project",
+              "openstreetmap-wiki"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "Inventory ownership and fulfillment can remain local while shared protocols coordinate discovery and trust.",
+                "sourceIds": [
+                  "partkeepr-project",
+                  "openstreetmap-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "Open inventory and geodata primitives exist, but automotive fitment, warranty, and returns require domain-specific governance.",
+                "sourceIds": [
+                  "partkeepr-project",
+                  "openstreetmap-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 54,
+                "rationale": "A narrow local pilot is feasible, but matching AutoZone's breadth and speed across categories would be difficult.",
+                "sourceIds": [
+                  "autozone-2025-10k",
+                  "partkeepr-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "The concept can pressure margin and local loyalty in selected categories, but it is unlikely to displace the full chain in urgent repair needs soon.",
+                "sourceIds": [
+                  "autozone-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          },
+          {
+            "slug": "local-fabrication-and-reuse-loops",
+            "name": "Local fabrication and reuse loops for slow-moving parts",
+            "summary": "For selected brackets, clips, knobs, housings, plastic trim, fixtures, and low-risk accessories, local workshops could combine open repair files, recycled materials, additive manufacturing, and salvage inventory to replace some long-tail retail SKUs.",
+            "angleIds": [
+              "decentralized-manufacturing",
+              "3d-printing",
+              "recycling-and-reuse",
+              "home-microfactory"
+            ],
+            "thesis": "AutoZone's long-tail inventory advantage is most vulnerable where the part is low-risk, slow-moving, easy to inspect, and cheaper to fabricate or refurbish locally than to stock nationally.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is manufacturing and reuse, not Bitcoin. The market structure changes when many small operators can produce or refurbish niche parts near demand using shared designs and local materials.",
+            "coordinationMechanism": "Vehicle owners, repair shops, and makerspaces coordinate through shared design repositories, local job queues, and quality-rated fabrication providers; salvage yards feed reusable components and material streams.",
+            "verificationOrTrustModel": "Trust depends on part-class restrictions, material traceability, test fixtures, dimensional checks, photos, and local reputation. Safety-critical parts would remain out of scope until certification and liability models mature.",
+            "failureModes": [
+              "Material quality and dimensional accuracy may be insufficient for automotive heat, vibration, and safety requirements.",
+              "Intellectual-property and design-file availability may limit coverage.",
+              "Local fabrication economics may fail for cheap mass-produced parts."
+            ],
+            "adoptionPath": [
+              "Begin with non-structural accessories, trim, organizer parts, and tool fixtures.",
+              "Use maker and repair communities to validate designs and publish inspection criteria.",
+              "Expand only into more demanding parts where documented testing and liability coverage exist."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "autozone-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "precious-plastic-machines",
+              "open-source-ecology-microfactory"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "The concept directly shifts selected production and reuse from centralized stocking toward local operators.",
+                "sourceIds": [
+                  "precious-plastic-machines",
+                  "open-source-ecology-microfactory"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 44,
+                "rationale": "Open recycling and microfactory precedents exist, but automotive-grade design sharing and certification remain immature.",
+                "sourceIds": [
+                  "precious-plastic-machines",
+                  "open-source-ecology-microfactory"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 38,
+                "rationale": "Feasible for a narrow set of low-risk parts, but broad automotive coverage is constrained by materials, fitment, liability, and testing.",
+                "sourceIds": [
+                  "autozone-2025-10k",
+                  "precious-plastic-machines"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 35,
+                "rationale": "Pressure is likely limited to long-tail and low-risk categories rather than high-volume batteries, brakes, fluids, or safety-critical parts.",
+                "sourceIds": [
+                  "autozone-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "duralast-batteries",
+        "name": "Duralast batteries",
+        "category": "Automotive batteries",
+        "homepageUrl": "https://www.autozone.com/batteries-starting-and-charging/battery/b/brand/duralast",
+        "summary": "Duralast is AutoZone's in-house automotive battery line, with standard, Gold, and Platinum tiers sold through AutoZone's retail network.",
+        "whyItMatters": "Starter batteries are a high-urgency replacement category where brand trust, fitment, warranty handling, core returns, and store availability strongly influence customer choice.",
+        "replacementSketch": [
+          "A decentralized replacement would likely start as local battery testing, refurbishment, reuse, and recycling networks rather than open-source manufacturing of starter batteries from scratch.",
+          "Over time, open energy hardware and community battery-service cooperatives could separate diagnostics, warranty records, and recycling from AutoZone's closed retail relationship."
+        ],
+        "sourceIds": [
+          "autozone-duralast-battery-guide",
+          "autozone-duralast-product",
+          "autozone-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "precious-plastic",
+            "name": "Precious Plastic",
+            "kind": "open-source",
+            "homepageUrl": "https://www.preciousplastic.com/solutions/machines/overview",
+            "summary": "Open-source plastic recycling machine designs and a community marketplace for small-scale recycling operators.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "Precious Plastic presents machine designs and community resources for building or buying recycling machines.",
+                "sourceIds": [
+                  "precious-plastic-machines"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 62,
+                "rationale": "It supports distributed recycling capacity, which is relevant to casings and local material loops, but not a complete lead-acid battery replacement.",
+                "sourceIds": [
+                  "precious-plastic-machines"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 60,
+                "rationale": "The machinery ecosystem is usable for plastic recycling, but automotive battery handling requires separate hazardous-materials expertise.",
+                "sourceIds": [
+                  "precious-plastic-machines"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 45,
+                "rationale": "Local recycling can reduce waste and some material costs, but it does not replace the electrochemical manufacturing and warranty layer of starter batteries.",
+                "sourceIds": [
+                  "precious-plastic-machines",
+                  "autozone-duralast-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "precious-plastic-machines"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-battery-service-and-recycling",
+            "name": "Cooperative battery service and recycling networks",
+            "summary": "Independent repair shops, recyclers, and community energy operators could coordinate battery testing, core collection, refurbishment decisions, and recycling credits through a shared service network.",
+            "angleIds": [
+              "cooperative-production",
+              "recycling-and-reuse",
+              "distributed-energy-generation",
+              "open-energy-hardware"
+            ],
+            "thesis": "AutoZone's battery advantage is strongest in availability and warranty trust, but a cooperative network could compete by making diagnostics, core value, reuse, and recycling transparent across local operators.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative service ownership and open battery records. Bitcoin is not central; the useful primitive is shared verification of tests, cores, and recycling outcomes across independent operators.",
+            "coordinationMechanism": "Participating shops publish battery test results, core intake, refurbishment eligibility, and recycling handoff records; customers receive portable warranty and recycling-credit records tied to the battery rather than to one retailer.",
+            "verificationOrTrustModel": "Cheating is constrained through timestamped test data, serial or receipt references, recycler confirmations, customer dispute windows, and operator reputation. The model remains vulnerable if testing equipment is poorly calibrated or recycler reporting is false.",
+            "failureModes": [
+              "Hazardous materials rules and warranty liability may prevent small operators from scaling safely.",
+              "Refurbished starter batteries may not meet customer reliability expectations.",
+              "Without large purchasing volume, cooperative networks may struggle to match retail battery pricing."
+            ],
+            "adoptionPath": [
+              "Start with testing, jump-start support, core collection, and recycling transparency.",
+              "Add portable warranty records and shop-to-shop battery availability discovery.",
+              "Pilot refurbished or second-life offerings only where regulation, safety testing, and customer disclosure are strong."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "autozone-duralast-battery-guide",
+              "autozone-duralast-product"
+            ],
+            "enablerSourceIds": [
+              "precious-plastic-machines",
+              "open-source-ecology-microfactory"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 66,
+                "rationale": "Battery service, testing, core logistics, and recycling can be coordinated locally even if cell manufacturing remains centralized.",
+                "sourceIds": [
+                  "autozone-duralast-product",
+                  "precious-plastic-machines"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 52,
+                "rationale": "The coordination problem is credible because battery cores and testing are observable, but trust depends on standards and recycler confirmations.",
+                "sourceIds": [
+                  "autozone-duralast-battery-guide",
+                  "precious-plastic-machines"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 48,
+                "rationale": "Testing and core collection are feasible; refurbishment and second-life offerings face safety, liability, and quality barriers.",
+                "sourceIds": [
+                  "autozone-duralast-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 42,
+                "rationale": "This could pressure service transparency and core economics, but AutoZone's availability and warranty footprint remain strong.",
+                "sourceIds": [
+                  "autozone-2025-10k",
+                  "autozone-duralast-battery-guide"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "autozone-2025-10k",
+      "title": "AutoZone Fiscal 2025 Form 10-K",
+      "url": "https://about.autozone.com/node/28806/html",
+      "kind": "annual-report",
+      "publisher": "AutoZone, Inc.",
+      "note": "Primary source for fiscal 2025 revenue, operating profit, store count, commercial sales, employee count, and private-label brand discussion.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "autozone-duralast-battery-guide",
+      "title": "How to Choose the Right Duralast Car Battery",
+      "url": "https://www.autozone.com/diy/battery/get-the-right-battery-for-your-vehicle",
+      "kind": "product-page",
+      "publisher": "AutoZone",
+      "note": "AutoZone product guidance describing Duralast, Duralast Gold, and Duralast Platinum battery tiers and warranties.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "autozone-duralast-product",
+      "title": "Duralast Group Size U1R Battery 8AMU1R-DL",
+      "url": "https://www.autozone.com/p/duralast-battery-8amu1r-dl/1382511",
+      "kind": "product-page",
+      "publisher": "AutoZone",
+      "note": "Representative Duralast product page documenting warranty, specifications, core charge, and product positioning.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "companiesmarketcap-autozone-marketcap",
+      "title": "AutoZone (AZO) Market Capitalization",
+      "url": "https://companiesmarketcap.com/autozone/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap reference used for current valuation and snapshot refresh.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "companiesmarketcap-autozone-pe",
+      "title": "AutoZone (AZO) P/E Ratio",
+      "url": "https://companiesmarketcap.com/autozone/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data reference for trailing P/E ratio.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "partkeepr-project",
+      "title": "PartKeepr - Open Source Inventory Management",
+      "url": "https://www.partkeepr.org/",
+      "kind": "open-source-project",
+      "publisher": "PartKeepr",
+      "note": "Open-source inventory management project relevant to decentralized local parts inventory coordination.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "partkeepr-github",
+      "title": "partkeepr/PartKeepr GitHub Repository",
+      "url": "https://github.com/partkeepr/PartKeepr",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Repository source for licensing, project status, and maintenance-readiness caveats.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openstreetmap-wiki",
+      "title": "OpenStreetMap Wiki",
+      "url": "https://wiki.openstreetmap.org/",
+      "kind": "technical-docs",
+      "publisher": "OpenStreetMap Foundation and contributors",
+      "note": "Open geodata reference for decentralized local discovery and routing concepts.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "precious-plastic-machines",
+      "title": "Precious Plastic Recycling Machines",
+      "url": "https://www.preciousplastic.com/solutions/machines/overview",
+      "kind": "open-source-project",
+      "publisher": "Precious Plastic",
+      "note": "Open recycling-machine ecosystem used as an enabling primitive for local material reuse concepts.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "open-source-ecology-microfactory",
+      "title": "Open Source Microfactory",
+      "url": "https://wiki.opensourceecology.org/wiki/Universities/Open_Source_Microfactory",
+      "kind": "technical-docs",
+      "publisher": "Open Source Ecology",
+      "note": "Reference for distributed microfactory framing and local production concepts.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared new AutoZone registry bundle with two products, sourced market and operating metrics, one open-source inventory alternative, open geodata and recycling enablers, and disruption concepts focused on federated parts co-ops, local fabrication/reuse loops, and cooperative battery service networks."
+}

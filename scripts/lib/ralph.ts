@@ -18,7 +18,7 @@ import type {
   ResearchTaskResult,
   SyncBatchTargetId,
 } from "../../src/lib/domain/content-types";
-import type { SourceCitation, TechnologyWave } from "../../src/lib/domain/types";
+import type { ConceptAngle, SourceCitation, TechnologyWave } from "../../src/lib/domain/types";
 import { getManifestFile } from "./company-intake";
 import {
   compileContent,
@@ -765,10 +765,16 @@ export async function buildImplementationPromptPayload(options: {
   return payload;
 }
 
-export function normalizeCompanySyncPayload(payload: CompanySyncPayload) {
+export function normalizeCompanySyncPayload(
+  payload: CompanySyncPayload,
+  options: { conceptAngles?: ConceptAngle[] } = {},
+) {
   const normalizedPayload = structuredClone(payload) as CompanySyncPayload;
   const notes: string[] = [];
   const maybeIpo = normalizedPayload.bundle.company.maybeIpo;
+  const validConceptAngleIds = options.conceptAngles
+    ? new Set(options.conceptAngles.map((angle) => angle.id))
+    : null;
 
   if (typeof maybeIpo === "string") {
     normalizedPayload.bundle.company.maybeIpo = null;
@@ -790,6 +796,31 @@ export function normalizeCompanySyncPayload(payload: CompanySyncPayload) {
       notes.push(
         `Defaulted product ${product.slug} disruptionConcepts to an empty array because the payload omitted the field.`,
       );
+    }
+
+    if (validConceptAngleIds) {
+      for (const disruptionConcept of product.disruptionConcepts) {
+        const originalAngleIds = disruptionConcept.angleIds;
+        if (!Array.isArray(originalAngleIds)) {
+          continue;
+        }
+
+        const validAngleIds = originalAngleIds.filter((angleId) =>
+          validConceptAngleIds.has(angleId),
+        );
+        const invalidAngleIds = originalAngleIds.filter(
+          (angleId) => !validConceptAngleIds.has(angleId),
+        );
+
+        if (invalidAngleIds.length === 0) {
+          continue;
+        }
+
+        disruptionConcept.angleIds = validAngleIds;
+        notes.push(
+          `Removed invalid concept angle id(s) ${invalidAngleIds.join(", ")} from disruption concept ${disruptionConcept.slug}.`,
+        );
+      }
     }
   }
 
@@ -1295,7 +1326,9 @@ export async function syncCompany(options: SyncCompanyOptions): Promise<SyncComp
     if (success) {
       try {
         const extractedPayload = extractJsonPayload(execution.rawOutput) as CompanySyncPayload;
-        const normalizationResult = normalizeCompanySyncPayload(extractedPayload);
+        const normalizationResult = normalizeCompanySyncPayload(extractedPayload, {
+          conceptAngles: raw.conceptAngles,
+        });
         const dedupeResult = dedupeCompanySyncPayloadSlugs(
           normalizationResult.payload,
           raw.bundles,

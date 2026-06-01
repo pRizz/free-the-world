@@ -1,0 +1,580 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "nasdaq",
+      "name": "Nasdaq",
+      "ticker": "NDAQ",
+      "rankApprox": 210,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "financials",
+      "industryId": "financial-exchanges-data",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/nasdaq/marketcap/",
+      "description": "Nasdaq operates securities exchanges and provides market technology, financial data, analytics, and index services.",
+      "overview": [
+        {
+          "title": "Exchange, Data, and Financial Technology Operator",
+          "paragraphs": [
+            "Nasdaq is no longer only an equity exchange operator: its 2025 reporting groups revenue across Capital Access Platforms, Financial Technology, Market Services, and other revenue, with net revenue after transaction-based expenses of $5.249 billion.",
+            "Its franchise combines regulated trading venues, listings, market data, index licensing, workflow tools, and technology sold to banks, brokers, regulators, and other market operators."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Nasdaq's moat comes from regulated venue status, liquidity concentration, issuer relationships, index brand equity, proprietary market data, and deeply embedded financial technology contracts. These are hard to replicate because market participants value reliability, legal certainty, connectivity, and network depth.",
+        "The moat is not absolute. Equity markets are structurally multi-venue, regulators continue to scrutinize market data access and consolidation, and open-source analytics stacks can chip away at some workflow and research dependencies even when they cannot replace regulated exchange operations directly."
+      ],
+      "decentralizationNarrative": [
+        "The core exchange business is difficult to decentralize because regulated securities trading depends on licensed venues, broker-dealer access, clearing, surveillance, market integrity rules, and enforceable audit trails.",
+        "The surrounding data, analytics, benchmark construction, and market-infrastructure layers are more decentralizable. Open identifiers, open analytics libraries, federated data publication, and transparent methodology tooling can reduce dependence on proprietary terminals and benchmark administrators at the edges."
+      ],
+      "sourceIds": [
+        "nasdaq-2025-10k",
+        "nasdaq-north-american-markets",
+        "nasdaq-global-indexes",
+        "stockanalysis-ndaq"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "Nasdaq combines licensed exchanges, major liquidity pools, market data, index products, and enterprise financial technology, creating strong regulatory and network barriers.",
+          "sourceIds": [
+            "nasdaq-2025-10k",
+            "nasdaq-north-american-markets"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 38,
+          "rationale": "Regulated securities execution and listing markets are hard to decentralize, but data, identifiers, analytics, and benchmark tooling can be opened or federated around the regulated core.",
+          "sourceIds": [
+            "sec-market-data-modernization",
+            "openbb-github",
+            "openfigi-benefits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "Nasdaq reported 2025 net income attributable to Nasdaq of $1.788 billion on $5.249 billion of revenues less transaction-based expenses.",
+          "sourceIds": [
+            "nasdaq-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 27.24,
+          "rationale": "StockAnalysis reported a trailing PE ratio of 27.24 for NDAQ in late May 2026.",
+          "sourceIds": [
+            "stockanalysis-ndaq"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 51130000000,
+          "rationale": "StockAnalysis reported Nasdaq's market capitalization at about $51.13 billion in late May 2026.",
+          "sourceIds": [
+            "stockanalysis-ndaq"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "nasdaq-stock-market",
+        "name": "Nasdaq Stock Market",
+        "category": "securities exchange",
+        "homepageUrl": "https://www.nasdaqtrader.com/Trader.aspx?id=TradingUSEquities",
+        "summary": "The Nasdaq Stock Market is a major U.S. electronic equities trading venue with order execution, quoting, routing, and market-data products.",
+        "whyItMatters": "The exchange concentrates liquidity, issuer visibility, market data, and regulated execution infrastructure for a large share of U.S. equities trading.",
+        "replacementSketch": [
+          "A realistic replacement path is not a single unlicensed peer-to-peer exchange for public securities. The nearer-term opening is modular: transparent matching-engine software, open audit logs, portable identifiers, and competing data consolidators around regulated venues.",
+          "Over time, broker consortia, cooperatives, or public-interest venues could use open-source exchange infrastructure and public market-data standards to reduce dependence on proprietary venue economics while still satisfying securities-law obligations."
+        ],
+        "sourceIds": [
+          "nasdaq-trader-equities",
+          "nasdaq-north-american-markets",
+          "sec-market-data-modernization",
+          "finra-cat"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "marketcetera",
+            "name": "Marketcetera",
+            "kind": "open-source",
+            "homepageUrl": "https://www.marketcetera.com/",
+            "repoUrl": "https://github.com/Marketcetera/marketcetera",
+            "summary": "Open-source algorithmic trading platform software that can connect trading strategies to brokers and market venues.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "The project publishes source code and documentation and describes itself as an open-source trading platform.",
+                "sourceIds": [
+                  "marketcetera-home",
+                  "marketcetera-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 46,
+                "rationale": "It decentralizes trading tooling for firms and individuals but does not itself replace regulated exchange, clearing, or listing infrastructure.",
+                "sourceIds": [
+                  "marketcetera-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 58,
+                "rationale": "It is usable software for algorithmic trading workflows, though far from a drop-in replacement for a national securities exchange.",
+                "sourceIds": [
+                  "marketcetera-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Open-source trading infrastructure can reduce proprietary platform dependence for execution tooling and strategy automation.",
+                "sourceIds": [
+                  "marketcetera-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "marketcetera-home",
+              "marketcetera-github",
+              "marketcetera-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-consolidated-market-data-layer",
+            "name": "Federated Consolidated Market Data Layer",
+            "summary": "A public-interest market-data layer would let regulated venues, competing consolidators, brokers, and self-aggregators publish and verify standardized equity data feeds with open schemas, portable identifiers, and reproducible audit trails.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept pressures Nasdaq's proprietary market-data economics by shifting more value from exclusive venue-controlled feeds toward interoperable, verifiable, multi-provider data consolidation.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation among competing consolidators and self-aggregators rather than through a token. Bitcoin-style timestamping or proof-of-work could be used only as an optional anchoring layer for public feed digests, not as the core trading mechanism.",
+            "coordinationMechanism": "Venues publish standardized event streams, consolidators subscribe and normalize them, brokers validate feed quality, and regulators define the minimum data and latency requirements.",
+            "verificationOrTrustModel": "Each data producer signs event batches, consolidators publish deterministic transforms, and independent self-aggregators compare reconstructed feeds against venue submissions and regulatory audit records.",
+            "failureModes": [
+              "Latency-sensitive traders may still pay for proprietary direct feeds if public consolidated feeds remain slower.",
+              "Regulatory governance could be captured by the same incumbent venues that supply the data."
+            ],
+            "adoptionPath": [
+              "Start with open schemas, public replay files, and independent reference implementations for consolidated equity data.",
+              "Expand into regulator-recognized competing consolidators and broker self-aggregation workflows."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "sec-market-data-modernization",
+              "nasdaq-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "openfigi-benefits",
+              "openbb-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "The mechanism directly replaces single-administrator data bottlenecks with competing consolidators and self-aggregators.",
+                "sourceIds": [
+                  "sec-market-data-modernization"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 68,
+                "rationale": "The SEC has already defined competing consolidator and self-aggregator concepts, giving the coordination model a regulatory foothold.",
+                "sourceIds": [
+                  "sec-market-data-modernization"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 62,
+                "rationale": "The technical pieces are feasible, but real adoption depends on market-data governance, latency economics, and incumbent compliance.",
+                "sourceIds": [
+                  "sec-market-data-modernization",
+                  "openfigi-benefits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 61,
+                "rationale": "It would pressure data margins and information asymmetry more than Nasdaq's regulated matching and listings franchise.",
+                "sourceIds": [
+                  "nasdaq-2025-10k",
+                  "sec-market-data-modernization"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "nasdaq-indexes",
+        "name": "Nasdaq Indexes",
+        "category": "financial indexes and benchmarks",
+        "homepageUrl": "https://www.nasdaq.com/global-indexes",
+        "summary": "Nasdaq Global Indexes designs, calculates, licenses, and distributes market benchmarks used by asset managers, product sponsors, and investors.",
+        "whyItMatters": "Index methodologies influence ETF construction, asset allocation, benchmarking, and the licensing economics behind passive investment products.",
+        "replacementSketch": [
+          "The most plausible open replacement is transparent benchmark construction: public methodology code, open identifiers, reproducible calculation notebooks, and community or cooperative governance for non-regulated indexes.",
+          "Regulated and investable benchmarks still need operational controls, licensing clarity, and dependable calculation agents, so open alternatives are more likely to start with research indexes and custom portfolios before challenging marquee licensed benchmarks."
+        ],
+        "sourceIds": [
+          "nasdaq-global-indexes",
+          "nasdaq-index-watch",
+          "nasdaq-2025-10k"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "Open-source financial data platform and toolset for integrating market data into research, analytics, and AI workflows.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "OpenBB publishes its platform source code and describes the Open Data Platform as an open-source toolset.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 55,
+                "rationale": "It can decentralize analytics and data-integration workflows, but it is not itself a benchmark administrator or regulated index provider.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "It is a maintained platform for analysts and developers, suitable for research and internal tooling rather than direct replacement of licensed indexes.",
+                "sourceIds": [
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Open data tooling can reduce dependence on closed terminals and proprietary index research workflows.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openbb-github",
+              "openbb-odp"
+            ]
+          },
+          {
+            "slug": "quantlib",
+            "name": "QuantLib",
+            "kind": "open-source",
+            "homepageUrl": "https://www.quantlib.org/",
+            "repoUrl": "https://github.com/lballabio/QuantLib",
+            "summary": "Free and open-source quantitative finance library for modeling, pricing, trading, and risk-management workflows.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "QuantLib presents itself as a free and open-source library and publishes source code for quantitative finance workflows.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 48,
+                "rationale": "It decentralizes financial modeling capability but does not provide index governance, official calculation, or benchmark licensing.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 76,
+                "rationale": "QuantLib is mature enough for sophisticated valuation and risk workflows, though index replacement would require additional governance and data infrastructure.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Reusable open analytics code can lower the cost of benchmark research and custom index prototyping.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "quantlib-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-methodology-index-cooperatives",
+            "name": "Open Methodology Index Cooperatives",
+            "summary": "Asset owners, researchers, and product sponsors could coordinate around openly published index methodologies, public security identifiers, reproducible calculation code, and cooperative governance for transparent benchmark families.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept weakens benchmark licensing lock-in by separating transparent methodology design and reproducible calculation from proprietary index brands.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is cooperative governance and reproducible public calculation, not Bitcoin. A public timestamping layer could anchor methodology versions and rebalance files, but the core value comes from open governance and auditability.",
+            "coordinationMechanism": "Members propose methodologies, maintain calculation code, vote on rule changes, and publish signed rebalance files and constituent histories for users and product sponsors.",
+            "verificationOrTrustModel": "Independent users can rerun the published code against disclosed input data, compare hashes of rebalance outputs, and audit governance records for methodology changes.",
+            "failureModes": [
+              "Major ETF sponsors may still prefer established index brands for distribution and legal certainty.",
+              "Open benchmark governance can become slow or politicized if methodology changes affect member economics."
+            ],
+            "adoptionPath": [
+              "Begin with non-investable research indexes and transparent model portfolios using open identifiers and public data.",
+              "Move toward licensed cooperative benchmarks where calculation agents, auditors, and product sponsors share governance."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "nasdaq-global-indexes",
+              "nasdaq-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "openbb-github",
+              "quantlib-home",
+              "openfigi-benefits"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Open methodology, shared code, and cooperative governance directly reduce dependence on one benchmark administrator.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openfigi-benefits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "The software and identifier primitives exist, but durable benchmark governance and liability allocation are harder than publishing code.",
+                "sourceIds": [
+                  "openbb-github",
+                  "quantlib-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 64,
+                "rationale": "Research-grade open indexes are feasible now; regulated, investable benchmarks require stronger controls, audit, and licensing frameworks.",
+                "sourceIds": [
+                  "nasdaq-global-indexes",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "Open index tooling can pressure custom research and niche benchmark economics, but marquee indexes retain brand and distribution advantages.",
+                "sourceIds": [
+                  "nasdaq-global-indexes",
+                  "nasdaq-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nasdaq-2025-10k",
+      "title": "Nasdaq 2025 Form 10-K",
+      "url": "https://ir.nasdaq.com/static-files/8f3e2b75-fce8-460b-8c9f-9ced29db8c42",
+      "kind": "annual-report",
+      "publisher": "Nasdaq Investor Relations",
+      "note": "Primary source for 2025 segment revenue, net revenue, profitability, and business mix.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-north-american-markets",
+      "title": "North American Markets, Trading Solutions & Services",
+      "url": "https://www.nasdaq.com/solutions/north-american-markets",
+      "kind": "product-page",
+      "publisher": "Nasdaq",
+      "note": "Company product page describing Nasdaq's North American trading venues and exchange services.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-trader-equities",
+      "title": "The NASDAQ Stock Market",
+      "url": "https://nasdaqtrader.com/Trader.aspx?id=TradingUSEquities",
+      "kind": "product-page",
+      "publisher": "Nasdaq Trader",
+      "note": "Operational product page for Nasdaq's U.S. equities trading venue.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-global-indexes",
+      "title": "Nasdaq Global Index Solutions",
+      "url": "https://www.nasdaq.com/global-indexes",
+      "kind": "product-page",
+      "publisher": "Nasdaq",
+      "note": "Product page for Nasdaq's global index business and benchmark offerings.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-index-watch",
+      "title": "Nasdaq Global Index Watch",
+      "url": "https://indexes.nasdaq.com/",
+      "kind": "product-page",
+      "publisher": "Nasdaq",
+      "note": "Index directory and data portal illustrating Nasdaq's index distribution footprint.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "stockanalysis-ndaq",
+      "title": "Nasdaq (NDAQ) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/ndaq/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market data source for late-May 2026 market capitalization and PE ratio.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "sec-market-data-modernization",
+      "title": "SEC Adopts Rules to Modernize Key Market Infrastructure Responsible for Collecting, Consolidating, and Disseminating Equity Market Data",
+      "url": "https://www.sec.gov/newsroom/press-releases/2020-311",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Regulatory source for competing consolidators, self-aggregators, and market-data decentralization context.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "finra-cat",
+      "title": "Consolidated Audit Trail (CAT)",
+      "url": "https://www.finra.org/rules-guidance/key-topics/consolidated-audit-trail-cat",
+      "kind": "regulatory-filing",
+      "publisher": "FINRA",
+      "note": "Regulatory context for audit trail requirements across exchange-listed equities and options.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "marketcetera-home",
+      "title": "Marketcetera",
+      "url": "https://www.marketcetera.com/",
+      "kind": "open-source-project",
+      "publisher": "Marketcetera",
+      "note": "Open-source algorithmic trading platform considered as partial infrastructure alternative.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "marketcetera-docs",
+      "title": "Welcome to Marketcetera",
+      "url": "https://www.marketcetera.com/docs/intro/",
+      "kind": "technical-docs",
+      "publisher": "Marketcetera",
+      "note": "Documentation source for Marketcetera's platform scope and licensing claims.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "marketcetera-github",
+      "title": "Marketcetera GitHub Repository",
+      "url": "https://github.com/Marketcetera/marketcetera",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Repository source for Marketcetera's open-source trading platform code.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openbb-odp",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "product-page",
+      "publisher": "OpenBB",
+      "note": "Product source describing OpenBB's open-source data integration platform.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openbb-github",
+      "title": "OpenBB GitHub Repository",
+      "url": "https://github.com/OpenBB-finance/OpenBB",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Repository source for OpenBB's open-source financial data platform.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "quantlib-home",
+      "title": "QuantLib",
+      "url": "https://www.quantlib.org/",
+      "kind": "open-source-project",
+      "publisher": "QuantLib",
+      "note": "Open-source quantitative finance library used as an analytics and benchmark-calculation primitive.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openfigi-benefits",
+      "title": "OpenFIGI Benefits",
+      "url": "https://www.openfigi.com/about/benefits",
+      "kind": "technical-docs",
+      "publisher": "OpenFIGI",
+      "note": "Open financial-instrument identifier source supporting portable data and benchmark workflows.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Nasdaq registry bundle with two products: Nasdaq Stock Market and Nasdaq Indexes. The refresh emphasizes Nasdaq's regulated exchange and data moat while identifying credible open/federated pressure points in market data, trading infrastructure, and transparent benchmark methodology."
+}

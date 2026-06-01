@@ -1,0 +1,1555 @@
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8179-d649-70c0-b994-cffe162f6f2f
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: nasdaq
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "nasdaq",
+  "name": "Nasdaq",
+  "ticker": "NDAQ",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "financials",
+  "industryId": "financial-exchanges-data",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/nasdaq/marketcap/",
+  "description": "Nasdaq operates securities exchanges and provides market technology, financial data, analytics, and index services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Nasdaq Stock Market",
+    "Nasdaq Indexes"
+  ],
+  "seedSourceUrls": [
+    "https://www.nasdaq.com/",
+    "https://ir.nasdaq.com/",
+    "https://companiesmarketcap.com/nasdaq/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-01T04:38:27.457692Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.457714Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.458257Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.458264Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.458777Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.458785Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.459281Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.459288Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.459687Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.459692Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.460623Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:27.460630Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.128651Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.128664Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.129019Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.129027Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.129369Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.129377Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.129723Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.129729Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.130081Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.130086Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.130792Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-01T04:38:28.130797Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Nasdaq 2025 annual report annualreports 2024 10-K Nasdaq revenue net income Market Services Capital Access Financial Technology
+web search:
+web search: companiesmarketcap Nasdaq market cap NDAQ 2026 PE ratio
+web search:
+web search: Nasdaq stock market listing trading product page exchange services
+web search:
+web search: open source index calculation financial benchmark index methodology software
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "nasdaq",
+      "name": "Nasdaq",
+      "ticker": "NDAQ",
+      "rankApprox": 210,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "financials",
+      "industryId": "financial-exchanges-data",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/nasdaq/marketcap/",
+      "description": "Nasdaq operates securities exchanges and provides market technology, financial data, analytics, and index services.",
+      "overview": [
+        {
+          "title": "Exchange, Data, and Financial Technology Operator",
+          "paragraphs": [
+            "Nasdaq is no longer only an equity exchange operator: its 2025 reporting groups revenue across Capital Access Platforms, Financial Technology, Market Services, and other revenue, with net revenue after transaction-based expenses of $5.249 billion.",
+            "Its franchise combines regulated trading venues, listings, market data, index licensing, workflow tools, and technology sold to banks, brokers, regulators, and other market operators."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Nasdaq's moat comes from regulated venue status, liquidity concentration, issuer relationships, index brand equity, proprietary market data, and deeply embedded financial technology contracts. These are hard to replicate because market participants value reliability, legal certainty, connectivity, and network depth.",
+        "The moat is not absolute. Equity markets are structurally multi-venue, regulators continue to scrutinize market data access and consolidation, and open-source analytics stacks can chip away at some workflow and research dependencies even when they cannot replace regulated exchange operations directly."
+      ],
+      "decentralizationNarrative": [
+        "The core exchange business is difficult to decentralize because regulated securities trading depends on licensed venues, broker-dealer access, clearing, surveillance, market integrity rules, and enforceable audit trails.",
+        "The surrounding data, analytics, benchmark construction, and market-infrastructure layers are more decentralizable. Open identifiers, open analytics libraries, federated data publication, and transparent methodology tooling can reduce dependence on proprietary terminals and benchmark administrators at the edges."
+      ],
+      "sourceIds": [
+        "nasdaq-2025-10k",
+        "nasdaq-north-american-markets",
+        "nasdaq-global-indexes",
+        "stockanalysis-ndaq"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225.",
+      "inputMetrics": {
+        "moat": {
+          "value": 82,
+          "rationale": "Nasdaq combines licensed exchanges, major liquidity pools, market data, index products, and enterprise financial technology, creating strong regulatory and network barriers.",
+          "sourceIds": [
+            "nasdaq-2025-10k",
+            "nasdaq-north-american-markets"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "decentralizability": {
+          "value": 38,
+          "rationale": "Regulated securities execution and listing markets are hard to decentralize, but data, identifiers, analytics, and benchmark tooling can be opened or federated around the regulated core.",
+          "sourceIds": [
+            "sec-market-data-modernization",
+            "openbb-github",
+            "openfigi-benefits"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "Nasdaq reported 2025 net income attributable to Nasdaq of $1.788 billion on $5.249 billion of revenues less transaction-based expenses.",
+          "sourceIds": [
+            "nasdaq-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "peRatio": {
+          "value": 27.24,
+          "rationale": "StockAnalysis reported a trailing PE ratio of 27.24 for NDAQ in late May 2026.",
+          "sourceIds": [
+            "stockanalysis-ndaq"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-01"
+        },
+        "marketCap": {
+          "value": 51130000000,
+          "rationale": "StockAnalysis reported Nasdaq's market capitalization at about $51.13 billion in late May 2026.",
+          "sourceIds": [
+            "stockanalysis-ndaq"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-01"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "nasdaq-stock-market",
+        "name": "Nasdaq Stock Market",
+        "category": "securities exchange",
+        "homepageUrl": "https://www.nasdaqtrader.com/Trader.aspx?id=TradingUSEquities",
+        "summary": "The Nasdaq Stock Market is a major U.S. electronic equities trading venue with order execution, quoting, routing, and market-data products.",
+        "whyItMatters": "The exchange concentrates liquidity, issuer visibility, market data, and regulated execution infrastructure for a large share of U.S. equities trading.",
+        "replacementSketch": [
+          "A realistic replacement path is not a single unlicensed peer-to-peer exchange for public securities. The nearer-term opening is modular: transparent matching-engine software, open audit logs, portable identifiers, and competing data consolidators around regulated venues.",
+          "Over time, broker consortia, cooperatives, or public-interest venues could use open-source exchange infrastructure and public market-data standards to reduce dependence on proprietary venue economics while still satisfying securities-law obligations."
+        ],
+        "sourceIds": [
+          "nasdaq-trader-equities",
+          "nasdaq-north-american-markets",
+          "sec-market-data-modernization",
+          "finra-cat"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "marketcetera",
+            "name": "Marketcetera",
+            "kind": "open-source",
+            "homepageUrl": "https://www.marketcetera.com/",
+            "repoUrl": "https://github.com/Marketcetera/marketcetera",
+            "summary": "Open-source algorithmic trading platform software that can connect trading strategies to brokers and market venues.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "The project publishes source code and documentation and describes itself as an open-source trading platform.",
+                "sourceIds": [
+                  "marketcetera-home",
+                  "marketcetera-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 46,
+                "rationale": "It decentralizes trading tooling for firms and individuals but does not itself replace regulated exchange, clearing, or listing infrastructure.",
+                "sourceIds": [
+                  "marketcetera-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 58,
+                "rationale": "It is usable software for algorithmic trading workflows, though far from a drop-in replacement for a national securities exchange.",
+                "sourceIds": [
+                  "marketcetera-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 64,
+                "rationale": "Open-source trading infrastructure can reduce proprietary platform dependence for execution tooling and strategy automation.",
+                "sourceIds": [
+                  "marketcetera-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "marketcetera-home",
+              "marketcetera-github",
+              "marketcetera-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-consolidated-market-data-layer",
+            "name": "Federated Consolidated Market Data Layer",
+            "summary": "A public-interest market-data layer would let regulated venues, competing consolidators, brokers, and self-aggregators publish and verify standardized equity data feeds with open schemas, portable identifiers, and reproducible audit trails.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept pressures Nasdaq's proprietary market-data economics by shifting more value from exclusive venue-controlled feeds toward interoperable, verifiable, multi-provider data consolidation.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation among competing consolidators and self-aggregators rather than through a token. Bitcoin-style timestamping or proof-of-work could be used only as an optional anchoring layer for public feed digests, not as the core trading mechanism.",
+            "coordinationMechanism": "Venues publish standardized event streams, consolidators subscribe and normalize them, brokers validate feed quality, and regulators define the minimum data and latency requirements.",
+            "verificationOrTrustModel": "Each data producer signs event batches, consolidators publish deterministic transforms, and independent self-aggregators compare reconstructed feeds against venue submissions and regulatory audit records.",
+            "failureModes": [
+              "Latency-sensitive traders may still pay for proprietary direct feeds if public consolidated feeds remain slower.",
+              "Regulatory governance could be captured by the same incumbent venues that supply the data."
+            ],
+            "adoptionPath": [
+              "Start with open schemas, public replay files, and independent reference implementations for consolidated equity data.",
+              "Expand into regulator-recognized competing consolidators and broker self-aggregation workflows."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "sec-market-data-modernization",
+              "nasdaq-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "openfigi-benefits",
+              "openbb-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "The mechanism directly replaces single-administrator data bottlenecks with competing consolidators and self-aggregators.",
+                "sourceIds": [
+                  "sec-market-data-modernization"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 68,
+                "rationale": "The SEC has already defined competing consolidator and self-aggregator concepts, giving the coordination model a regulatory foothold.",
+                "sourceIds": [
+                  "sec-market-data-modernization"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 62,
+                "rationale": "The technical pieces are feasible, but real adoption depends on market-data governance, latency economics, and incumbent compliance.",
+                "sourceIds": [
+                  "sec-market-data-modernization",
+                  "openfigi-benefits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 61,
+                "rationale": "It would pressure data margins and information asymmetry more than Nasdaq's regulated matching and listings franchise.",
+                "sourceIds": [
+                  "nasdaq-2025-10k",
+                  "sec-market-data-modernization"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "nasdaq-indexes",
+        "name": "Nasdaq Indexes",
+        "category": "financial indexes and benchmarks",
+        "homepageUrl": "https://www.nasdaq.com/global-indexes",
+        "summary": "Nasdaq Global Indexes designs, calculates, licenses, and distributes market benchmarks used by asset managers, product sponsors, and investors.",
+        "whyItMatters": "Index methodologies influence ETF construction, asset allocation, benchmarking, and the licensing economics behind passive investment products.",
+        "replacementSketch": [
+          "The most plausible open replacement is transparent benchmark construction: public methodology code, open identifiers, reproducible calculation notebooks, and community or cooperative governance for non-regulated indexes.",
+          "Regulated and investable benchmarks still need operational controls, licensing clarity, and dependable calculation agents, so open alternatives are more likely to start with research indexes and custom portfolios before challenging marquee licensed benchmarks."
+        ],
+        "sourceIds": [
+          "nasdaq-global-indexes",
+          "nasdaq-index-watch",
+          "nasdaq-2025-10k"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "Open-source financial data platform and toolset for integrating market data into research, analytics, and AI workflows.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "OpenBB publishes its platform source code and describes the Open Data Platform as an open-source toolset.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openbb-odp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 55,
+                "rationale": "It can decentralize analytics and data-integration workflows, but it is not itself a benchmark administrator or regulated index provider.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "It is a maintained platform for analysts and developers, suitable for research and internal tooling rather than direct replacement of licensed indexes.",
+                "sourceIds": [
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Open data tooling can reduce dependence on closed terminals and proprietary index research workflows.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "openbb-github",
+              "openbb-odp"
+            ]
+          },
+          {
+            "slug": "quantlib",
+            "name": "QuantLib",
+            "kind": "open-source",
+            "homepageUrl": "https://www.quantlib.org/",
+            "repoUrl": "https://github.com/lballabio/QuantLib",
+            "summary": "Free and open-source quantitative finance library for modeling, pricing, trading, and risk-management workflows.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "QuantLib presents itself as a free and open-source library and publishes source code for quantitative finance workflows.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "decentralizationFit": {
+                "value": 48,
+                "rationale": "It decentralizes financial modeling capability but does not provide index governance, official calculation, or benchmark licensing.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "readiness": {
+                "value": 76,
+                "rationale": "QuantLib is mature enough for sophisticated valuation and risk workflows, though index replacement would require additional governance and data infrastructure.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Reusable open analytics code can lower the cost of benchmark research and custom index prototyping.",
+                "sourceIds": [
+                  "quantlib-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            },
+            "sourceIds": [
+              "quantlib-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-methodology-index-cooperatives",
+            "name": "Open Methodology Index Cooperatives",
+            "summary": "Asset owners, researchers, and product sponsors could coordinate around openly published index methodologies, public security identifiers, reproducible calculation code, and cooperative governance for transparent benchmark families.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept weakens benchmark licensing lock-in by separating transparent methodology design and reproducible calculation from proprietary index brands.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is cooperative governance and reproducible public calculation, not Bitcoin. A public timestamping layer could anchor methodology versions and rebalance files, but the core value comes from open governance and auditability.",
+            "coordinationMechanism": "Members propose methodologies, maintain calculation code, vote on rule changes, and publish signed rebalance files and constituent histories for users and product sponsors.",
+            "verificationOrTrustModel": "Independent users can rerun the published code against disclosed input data, compare hashes of rebalance outputs, and audit governance records for methodology changes.",
+            "failureModes": [
+              "Major ETF sponsors may still prefer established index brands for distribution and legal certainty.",
+              "Open benchmark governance can become slow or politicized if methodology changes affect member economics."
+            ],
+            "adoptionPath": [
+              "Begin with non-investable research indexes and transparent model portfolios using open identifiers and public data.",
+              "Move toward licensed cooperative benchmarks where calculation agents, auditors, and product sponsors share governance."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "nasdaq-global-indexes",
+              "nasdaq-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "openbb-github",
+              "quantlib-home",
+              "openfigi-benefits"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Open methodology, shared code, and cooperative governance directly reduce dependence on one benchmark administrator.",
+                "sourceIds": [
+                  "openbb-github",
+                  "openfigi-benefits"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "The software and identifier primitives exist, but durable benchmark governance and liability allocation are harder than publishing code.",
+                "sourceIds": [
+                  "openbb-github",
+                  "quantlib-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "implementationFeasibility": {
+                "value": 64,
+                "rationale": "Research-grade open indexes are feasible now; regulated, investable benchmarks require stronger controls, audit, and licensing frameworks.",
+                "sourceIds": [
+                  "nasdaq-global-indexes",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "Open index tooling can pressure custom research and niche benchmark economics, but marquee indexes retain brand and distribution advantages.",
+                "sourceIds": [
+                  "nasdaq-global-indexes",
+                  "nasdaq-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-01"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "nasdaq-2025-10k",
+      "title": "Nasdaq 2025 Form 10-K",
+      "url": "https://ir.nasdaq.com/static-files/8f3e2b75-fce8-460b-8c9f-9ced29db8c42",
+      "kind": "annual-report",
+      "publisher": "Nasdaq Investor Relations",
+      "note": "Primary source for 2025 segment revenue, net revenue, profitability, and business mix.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-north-american-markets",
+      "title": "North American Markets, Trading Solutions & Services",
+      "url": "https://www.nasdaq.com/solutions/north-american-markets",
+      "kind": "product-page",
+      "publisher": "Nasdaq",
+      "note": "Company product page describing Nasdaq's North American trading venues and exchange services.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-trader-equities",
+      "title": "The NASDAQ Stock Market",
+      "url": "https://nasdaqtrader.com/Trader.aspx?id=TradingUSEquities",
+      "kind": "product-page",
+      "publisher": "Nasdaq Trader",
+      "note": "Operational product page for Nasdaq's U.S. equities trading venue.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-global-indexes",
+      "title": "Nasdaq Global Index Solutions",
+      "url": "https://www.nasdaq.com/global-indexes",
+      "kind": "product-page",
+      "publisher": "Nasdaq",
+      "note": "Product page for Nasdaq's global index business and benchmark offerings.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "nasdaq-index-watch",
+      "title": "Nasdaq Global Index Watch",
+      "url": "https://indexes.nasdaq.com/",
+      "kind": "product-page",
+      "publisher": "Nasdaq",
+      "note": "Index directory and data portal illustrating Nasdaq's index distribution footprint.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "stockanalysis-ndaq",
+      "title": "Nasdaq (NDAQ) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/ndaq/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market data source for late-May 2026 market capitalization and PE ratio.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "sec-market-data-modernization",
+      "title": "SEC Adopts Rules to Modernize Key Market Infrastructure Responsible for Collecting, Consolidating, and Disseminating Equity Market Data",
+      "url": "https://www.sec.gov/newsroom/press-releases/2020-311",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Regulatory source for competing consolidators, self-aggregators, and market-data decentralization context.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "finra-cat",
+      "title": "Consolidated Audit Trail (CAT)",
+      "url": "https://www.finra.org/rules-guidance/key-topics/consolidated-audit-trail-cat",
+      "kind": "regulatory-filing",
+      "publisher": "FINRA",
+      "note": "Regulatory context for audit trail requirements across exchange-listed equities and options.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "marketcetera-home",
+      "title": "Marketcetera",
+      "url": "https://www.marketcetera.com/",
+      "kind": "open-source-project",
+      "publisher": "Marketcetera",
+      "note": "Open-source algorithmic trading platform considered as partial infrastructure alternative.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "marketcetera-docs",
+      "title": "Welcome to Marketcetera",
+      "url": "https://www.marketcetera.com/docs/intro/",
+      "kind": "technical-docs",
+      "publisher": "Marketcetera",
+      "note": "Documentation source for Marketcetera's platform scope and licensing claims.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "marketcetera-github",
+      "title": "Marketcetera GitHub Repository",
+      "url": "https://github.com/Marketcetera/marketcetera",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Repository source for Marketcetera's open-source trading platform code.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openbb-odp",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "product-page",
+      "publisher": "OpenBB",
+      "note": "Product source describing OpenBB's open-source data integration platform.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openbb-github",
+      "title": "OpenBB GitHub Repository",
+      "url": "https://github.com/OpenBB-finance/OpenBB",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Repository source for OpenBB's open-source financial data platform.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "quantlib-home",
+      "title": "QuantLib",
+      "url": "https://www.quantlib.org/",
+      "kind": "open-source-project",
+      "publisher": "QuantLib",
+      "note": "Open-source quantitative finance library used as an analytics and benchmark-calculation primitive.",
+      "accessedOn": "2026-06-01"
+    },
+    {
+      "id": "openfigi-benefits",
+      "title": "OpenFIGI Benefits",
+      "url": "https://www.openfigi.com/about/benefits",
+      "kind": "technical-docs",
+      "publisher": "OpenFIGI",
+      "note": "Open financial-instrument identifier source supporting portable data and benchmark workflows.",
+      "accessedOn": "2026-06-01"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Nasdaq registry bundle with two products: Nasdaq Stock Market and Nasdaq Indexes. The refresh emphasizes Nasdaq's regulated exchange and data moat while identifying credible open/federated pressure points in market data, trading infrastructure, and transparent benchmark methodology."
+}
+2026-06-01T04:40:03.612494Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8179-d794-7eb0-8e82-60ecf5e2e709 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+35,529
