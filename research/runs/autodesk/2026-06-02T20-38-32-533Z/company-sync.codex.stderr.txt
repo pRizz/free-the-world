@@ -1,0 +1,1609 @@
+2026-06-02T20:38:32.784461Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T20:38:32.789795Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a0f-34d0-7b11-bcb2-3d44776183bc
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: autodesk
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "autodesk",
+  "name": "Autodesk",
+  "ticker": "ADSK",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "software-cloud",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/autodesk/marketcap/",
+  "description": "Autodesk develops design, engineering, construction, manufacturing, and media software for professionals and enterprises.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "AutoCAD",
+    "Revit"
+  ],
+  "seedSourceUrls": [
+    "https://www.autodesk.com/",
+    "https://investors.autodesk.com/",
+    "https://companiesmarketcap.com/autodesk/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T20:38:39.903736Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.903755Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.904076Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.904082Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.904400Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.904405Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.904718Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.904724Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.905029Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.905036Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.905888Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:39.905893Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.112902Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.112914Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.113582Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.113587Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.114199Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.114210Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.114726Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.114733Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.115319Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.115326Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.116731Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:38:43.116737Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll verify Autodesk’s current investor/product facts and credible open alternatives before composing the JSON, then keep the output to the requested pure JSON only.
+web search:
+web search: Autodesk annual report 2025 Form 10-K revenue net income AutoCAD Revit
+web search:
+web search: FreeCAD official open source parametric 3D CAD homepage
+web search:
+web search: Bonsai BIM official open source Blender BIM homepage
+web search:
+web search: https://www.autodesk.com/products/autocad/overview
+web search:
+web search: https://companiesmarketcap.com/autodesk/pe-ratio/
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "autodesk",
+      "name": "Autodesk",
+      "ticker": "ADSK",
+      "rankApprox": 225,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "information-technology",
+      "industryId": "software-cloud",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/autodesk/marketcap/",
+      "description": "Autodesk develops design, engineering, construction, manufacturing, and media software for professionals and enterprises.",
+      "overview": [
+        {
+          "title": "Business",
+          "paragraphs": [
+            "Autodesk sells software used by architects, engineers, builders, manufacturers, infrastructure firms, and media creators, with flagship products including AutoCAD and Revit.",
+            "The business has shifted toward recurring subscriptions and cloud-connected workflows, which raises switching costs for professional teams that depend on shared file formats, standards, training, and project history."
+          ]
+        },
+        {
+          "title": "Registry relevance",
+          "paragraphs": [
+            "Autodesk is a strong fit for the registry because CAD and BIM tools sit upstream of physical production: drawings, building models, fabrication files, and construction coordination can all become chokepoints.",
+            "Open-source CAD, openBIM, IFC tooling, and local fabrication workflows create credible pressure on closed design stacks even when incumbents remain stronger for enterprise support and mature workflows."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Autodesk's moat comes from professional workflow lock-in, ecosystem depth, file-format gravity, training familiarity, enterprise procurement, and tight integration across design and construction disciplines.",
+        "AutoCAD's DWG-centered workflows and Revit's BIM collaboration patterns make migration difficult for firms that coordinate across many contractors, consultants, regulators, and legacy projects."
+      ],
+      "decentralizationNarrative": [
+        "Autodesk is not inherently decentralized: its commercial model depends on proprietary software, subscription licensing, and Autodesk-controlled product roadmaps.",
+        "The decentralization opportunity is strongest where open standards and open tools can let designers, fabricators, and owners keep project knowledge in portable formats such as DXF, STEP, and IFC, reducing dependence on one vendor for long-lived physical assets."
+      ],
+      "sourceIds": [
+        "autodesk-fy2025-10k",
+        "autodesk-autocad-product",
+        "autodesk-revit-product",
+        "companiesmarketcap-autodesk-marketcap",
+        "companiesmarketcap-autodesk-pe"
+      ],
+      "technologyWaveIds": [
+        "additive-manufacturing",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; market data refreshed on 2026-06-02.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Autodesk controls widely adopted professional CAD and BIM workflows, has deep product breadth, and benefits from switching costs around files, training, extensions, and cross-firm collaboration.",
+          "sourceIds": [
+            "autodesk-fy2025-10k",
+            "autodesk-autocad-product",
+            "autodesk-revit-product"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 5,
+          "rationale": "Design software can be decentralized through open formats, open-source modeling tools, and federated project repositories, but enterprise CAD and BIM workflows still require high reliability, interoperability, training, and support.",
+          "sourceIds": [
+            "freecad-homepage",
+            "librecad-homepage",
+            "bonsai-homepage",
+            "ifcopenshell-github",
+            "oda-homepage"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Autodesk reported substantial recurring software revenue and positive net income in its fiscal 2025 annual report, consistent with a profitable scaled software franchise.",
+          "sourceIds": [
+            "autodesk-fy2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 44.9,
+          "rationale": "CompaniesMarketCap reported Autodesk's trailing P/E ratio at about 44.9 as of June 2026.",
+          "sourceIds": [
+            "companiesmarketcap-autodesk-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 50240000000,
+          "rationale": "CompaniesMarketCap reported Autodesk's market capitalization at about $50.24 billion as of June 2026.",
+          "sourceIds": [
+            "companiesmarketcap-autodesk-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "autocad",
+        "name": "AutoCAD",
+        "category": "Computer-aided design software",
+        "homepageUrl": "https://www.autodesk.com/products/autocad/overview",
+        "summary": "AutoCAD is Autodesk's 2D and 3D drafting platform for CAD workflows across architecture, engineering, construction, manufacturing, and related technical fields.",
+        "whyItMatters": "AutoCAD matters because drawings and DWG-centered workflows are persistent coordination artifacts across firms, contractors, regulators, and asset owners.",
+        "replacementSketch": [
+          "For simpler 2D drafting and some technical modeling workflows, open-source tools such as LibreCAD and FreeCAD can reduce licensing dependency and preserve local control over files.",
+          "For professional migration, the practical replacement path is not a single clone; it is a stack of open formats, interoperable viewers, open-source modeling tools, and service providers that can support teams through project-by-project adoption."
+        ],
+        "sourceIds": [
+          "autodesk-autocad-product",
+          "librecad-homepage",
+          "freecad-homepage",
+          "oda-homepage"
+        ],
+        "technologyWaveIds": [
+          "additive-manufacturing",
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "librecad",
+            "name": "LibreCAD",
+            "kind": "open-source",
+            "homepageUrl": "https://www.librecad.org/",
+            "repoUrl": "https://github.com/LibreCAD/LibreCAD",
+            "summary": "LibreCAD is a free, open-source 2D CAD application for Windows, macOS, and Linux.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "LibreCAD is published as open-source software and its project materials describe it as GPLv2 and community supported.",
+                "sourceIds": [
+                  "librecad-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "LibreCAD can run locally and reduces vendor dependence for 2D drafting, though it does not provide a full enterprise collaboration network by itself.",
+                "sourceIds": [
+                  "librecad-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "LibreCAD is mature for 2D drafting but is not a full replacement for AutoCAD's broader 2D/3D, toolset, cloud, and enterprise workflows.",
+                "sourceIds": [
+                  "librecad-homepage",
+                  "autodesk-autocad-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 9,
+                "rationale": "A free local drafting tool can materially reduce subscription exposure for users whose needs fit 2D CAD workflows.",
+                "sourceIds": [
+                  "librecad-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "librecad-homepage"
+            ]
+          },
+          {
+            "slug": "freecad",
+            "name": "FreeCAD",
+            "kind": "open-source",
+            "homepageUrl": "https://www.freecad.org/",
+            "repoUrl": "https://github.com/FreeCAD/FreeCAD",
+            "summary": "FreeCAD is an open-source parametric 3D modeler focused on real-world objects and technical design.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "FreeCAD describes itself as an open-source parametric 3D modeler with no licensing fees or vendor lock-in.",
+                "sourceIds": [
+                  "freecad-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "FreeCAD supports local, inspectable, scriptable design workflows that align with open hardware and small-shop fabrication.",
+                "sourceIds": [
+                  "freecad-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "FreeCAD is credible for many technical tasks but remains weaker than AutoCAD for some standardized enterprise drafting, support, and collaboration workflows.",
+                "sourceIds": [
+                  "freecad-homepage",
+                  "autodesk-autocad-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 9,
+                "rationale": "FreeCAD's no-license-cost model gives strong cost leverage for makers, small firms, educators, and local fabrication users.",
+                "sourceIds": [
+                  "freecad-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "freecad-homepage"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-cad-fabrication-commons",
+            "name": "Open CAD Fabrication Commons",
+            "summary": "A shared ecosystem of open CAD models, validated DXF/STEP exports, local fabrication recipes, and paid support providers could shift some drafting value from proprietary licenses toward reusable community-owned design libraries.",
+            "angleIds": [
+              "decentralized-coordination",
+              "open-hardware",
+              "decentralized-manufacturing",
+              "3d-printing"
+            ],
+            "thesis": "AutoCAD's strongest market power weakens where drawings become portable, inspectable, and directly connected to local fabrication instead of being trapped inside one vendor's drafting environment.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is open coordination around portable design files and local fabrication capacity, not Bitcoin. Designers, workshops, and maintainers coordinate around shared files, version history, and reproducible manufacturing instructions.",
+            "coordinationMechanism": "Designers publish and fork parametric models, fabricators advertise supported machines and tolerances, and buyers select verified local producers for small runs, repair parts, or custom components.",
+            "verificationOrTrustModel": "Trust comes from reproducible geometry, published source files, fabrication logs, peer review, reputation history, and test builds; fraud is constrained by attaching deliverables to inspectable files and verifiable shipment or pickup records.",
+            "failureModes": [
+              "Professional liability and code compliance may still require certified proprietary workflows.",
+              "Open designs can fragment without strong maintainers, documentation, and compatibility testing.",
+              "DWG-heavy legacy projects may remain difficult to migrate cleanly."
+            ],
+            "adoptionPath": [
+              "Start with hobbyist, education, repair, and small-shop fabrication use cases where proprietary collaboration requirements are lighter.",
+              "Build libraries of validated parts and drawings that export reliably across FreeCAD, LibreCAD, and commercial tools.",
+              "Add paid support, training, and certification layers for small firms that want open workflows without absorbing all migration risk."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "autodesk-autocad-product",
+              "oda-homepage"
+            ],
+            "enablerSourceIds": [
+              "freecad-homepage",
+              "librecad-homepage"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept depends on open files, local tools, and distributed fabrication rather than a single SaaS control plane.",
+                "sourceIds": [
+                  "freecad-homepage",
+                  "librecad-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open-source project workflows and local fabrication markets are credible, but professional CAD coordination across firms is harder than community file sharing.",
+                "sourceIds": [
+                  "freecad-homepage",
+                  "librecad-homepage",
+                  "oda-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software and format primitives exist, but polishing them into reliable professional workflows requires sustained documentation, compatibility, and support.",
+                "sourceIds": [
+                  "freecad-homepage",
+                  "librecad-homepage",
+                  "oda-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept can pressure AutoCAD at the low and mid tiers, but Autodesk's enterprise ecosystem and legacy-file gravity remain strong.",
+                "sourceIds": [
+                  "autodesk-autocad-product",
+                  "autodesk-fy2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "revit",
+        "name": "Revit",
+        "category": "Building information modeling software",
+        "homepageUrl": "https://www.autodesk.com/products/revit/overview",
+        "summary": "Revit is Autodesk's BIM software for architecture, engineering, and construction teams designing and documenting buildings and infrastructure.",
+        "whyItMatters": "Revit matters because BIM models can become the operating record for buildings, tying design intent, quantities, documentation, coordination, and long-term facility data to a software ecosystem.",
+        "replacementSketch": [
+          "OpenBIM tools such as Bonsai and IfcOpenShell point toward a replacement path centered on native IFC authoring, portable building data, and automation rather than one proprietary BIM modeler.",
+          "The near-term alternative is strongest for teams that can structure projects around IFC, open validation, and smaller interoperable tools; highly integrated enterprise BIM delivery still favors mature incumbent platforms."
+        ],
+        "sourceIds": [
+          "autodesk-revit-product",
+          "bonsai-homepage",
+          "ifcopenshell-github",
+          "ifcopenshell-downloads"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "bonsai-bim",
+            "name": "Bonsai",
+            "kind": "open-source",
+            "homepageUrl": "https://bonsaibim.org/",
+            "repoUrl": "https://github.com/IfcOpenShell/IfcOpenShell",
+            "summary": "Bonsai is a free, open-source, native IFC authoring platform built on Blender and IfcOpenShell.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Bonsai describes itself as a free, open-source native IFC authoring platform, and IfcOpenShell is an open-source IFC library and geometry engine.",
+                "sourceIds": [
+                  "bonsai-homepage",
+                  "ifcopenshell-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Native IFC authoring and open-source tooling reduce dependence on a single BIM vendor and support portable building data.",
+                "sourceIds": [
+                  "bonsai-homepage",
+                  "ifcopenshell-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "Bonsai is credible and active for openBIM workflows, but Revit remains more mature for many large enterprise BIM coordination, documentation, and plugin ecosystems.",
+                "sourceIds": [
+                  "bonsai-homepage",
+                  "ifcopenshell-downloads",
+                  "autodesk-revit-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "A free openBIM authoring tool can materially reduce licensing exposure for teams able to work in IFC-centered workflows.",
+                "sourceIds": [
+                  "bonsai-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "bonsai-homepage",
+              "ifcopenshell-github"
+            ]
+          },
+          {
+            "slug": "ifcopenshell",
+            "name": "IfcOpenShell",
+            "kind": "open-source",
+            "homepageUrl": "https://ifcopenshell.org/",
+            "repoUrl": "https://github.com/IfcOpenShell/IfcOpenShell",
+            "summary": "IfcOpenShell is an open-source library and toolkit ecosystem for reading, writing, modifying, validating, and automating IFC-based BIM data.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "IfcOpenShell is described by its project as an open-source IFC library and geometry engine.",
+                "sourceIds": [
+                  "ifcopenshell-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "IfcOpenShell supports portable IFC workflows that can be automated outside a proprietary BIM application.",
+                "sourceIds": [
+                  "ifcopenshell-github",
+                  "ifcopenshell-downloads"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "IfcOpenShell is a strong toolkit and underpins Bonsai, but it is more infrastructure than a complete Revit-like end-user replacement by itself.",
+                "sourceIds": [
+                  "ifcopenshell-github",
+                  "ifcopenshell-downloads"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open IFC automation can reduce dependence on expensive proprietary seats for validation, conversion, reporting, and downstream model processing.",
+                "sourceIds": [
+                  "ifcopenshell-github",
+                  "ifcopenshell-downloads"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "ifcopenshell-github",
+              "ifcopenshell-downloads"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-openbim-project-ledger",
+            "name": "Federated OpenBIM Project Ledger",
+            "summary": "A federated openBIM coordination layer could let owners, architects, engineers, contractors, and facility managers exchange IFC models, issue records, validation results, and change history without making one proprietary BIM application the system of record.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "Revit's control point weakens if building owners and project teams treat portable IFC data, not a proprietary authoring environment, as the durable record for design, construction, and operations.",
+            "bitcoinOrDecentralizationRole": "The key role is federation: separate firms can operate their own repositories and validators while still exchanging signed model versions and issue records through shared openBIM protocols.",
+            "coordinationMechanism": "Each project participant publishes signed model packages, validation reports, clashes, and issue updates to a federated project space; owners define acceptance requirements and contractors submit evidence against them.",
+            "verificationOrTrustModel": "Trust is based on file hashes, signed submissions, IFC validation rules, IDS-style information requirements, model diffing, and auditable issue histories; cheating is constrained by requiring every payment or approval milestone to reference a reproducible model package.",
+            "failureModes": [
+              "Large projects may still need proprietary authoring tools for productivity and mature documentation.",
+              "OpenBIM validation can prove data consistency but not automatically prove engineering correctness.",
+              "Federated governance can fail if owners, contractors, and consultants do not agree on data requirements early."
+            ],
+            "adoptionPath": [
+              "Begin with public-sector, owner-led, or compliance-heavy projects that already require openBIM deliverables.",
+              "Use IfcOpenShell and Bonsai for validation, automation, and targeted authoring while allowing mixed proprietary and open tools.",
+              "Expand into facility management and renovation workflows where long-term data portability matters more than authoring-tool uniformity."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "autodesk-revit-product",
+              "autodesk-fy2025-10k"
+            ],
+            "enablerSourceIds": [
+              "bonsai-homepage",
+              "ifcopenshell-github",
+              "ifcopenshell-downloads"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "The concept explicitly moves the project record into federated openBIM repositories and portable IFC data.",
+                "sourceIds": [
+                  "bonsai-homepage",
+                  "ifcopenshell-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "AEC projects already require multi-party coordination, and IFC tooling gives a plausible shared data layer, but governance remains difficult.",
+                "sourceIds": [
+                  "autodesk-revit-product",
+                  "ifcopenshell-github",
+                  "ifcopenshell-downloads"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "OpenBIM tooling exists, but enterprise-grade project repositories, signatures, permissions, validation UX, and legal acceptance would require significant integration work.",
+                "sourceIds": [
+                  "bonsai-homepage",
+                  "ifcopenshell-github",
+                  "ifcopenshell-downloads"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "Owner-controlled openBIM records can reduce Revit lock-in, but Revit's authoring productivity and ecosystem remain strong for large professional teams.",
+                "sourceIds": [
+                  "autodesk-revit-product",
+                  "bonsai-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "autodesk-fy2025-10k",
+      "title": "Autodesk Fiscal Year 2025 Annual Report on Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/769397/000076939725000060/autodeskannualreportfy25.pdf",
+      "kind": "annual-report",
+      "publisher": "Autodesk / SEC",
+      "note": "Primary filing for Autodesk business description, product families, recurring revenue model, and profitability context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "autodesk-autocad-product",
+      "title": "Autodesk AutoCAD product overview",
+      "url": "https://www.autodesk.com/products/autocad/overview",
+      "kind": "product-page",
+      "publisher": "Autodesk",
+      "note": "Official AutoCAD product page describing 2D and 3D CAD workflows, DWG collaboration, toolsets, and subscription positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "autodesk-revit-product",
+      "title": "Autodesk Revit product overview",
+      "url": "https://www.autodesk.com/products/revit/overview",
+      "kind": "product-page",
+      "publisher": "Autodesk",
+      "note": "Official Revit product page describing BIM functionality and team coordination use cases.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-autodesk-marketcap",
+      "title": "Autodesk market capitalization",
+      "url": "https://companiesmarketcap.com/autodesk/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization and ranking reference for Autodesk as of June 2026.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-autodesk-pe",
+      "title": "Autodesk P/E ratio",
+      "url": "https://companiesmarketcap.com/autodesk/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Trailing P/E ratio reference for Autodesk as of June 2026.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "freecad-homepage",
+      "title": "FreeCAD: Your own 3D parametric modeler",
+      "url": "https://www.freecad.org/",
+      "kind": "open-source-project",
+      "publisher": "FreeCAD Project",
+      "note": "Official FreeCAD source for open-source parametric CAD capabilities and no-vendor-lock-in positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "librecad-homepage",
+      "title": "LibreCAD: Free Open Source 2D CAD",
+      "url": "https://www.librecad.org/",
+      "kind": "open-source-project",
+      "publisher": "LibreCAD Project",
+      "note": "Official LibreCAD source for open-source 2D CAD capabilities, licensing, and platform support.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "bonsai-homepage",
+      "title": "Bonsai: beautiful, detailed, and data-rich OpenBIM",
+      "url": "https://bonsaibim.org/",
+      "kind": "open-source-project",
+      "publisher": "Bonsai / IfcOpenShell community",
+      "note": "Official Bonsai source for free, open-source native IFC authoring on Blender and IfcOpenShell.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ifcopenshell-github",
+      "title": "IfcOpenShell GitHub repository",
+      "url": "https://github.com/IfcOpenShell/IfcOpenShell",
+      "kind": "open-source-project",
+      "publisher": "IfcOpenShell Project",
+      "note": "Repository source describing IfcOpenShell as an open-source IFC library, geometry engine, and ecosystem including Bonsai.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ifcopenshell-downloads",
+      "title": "IfcOpenShell downloads and tools",
+      "url": "https://ifcopenshell.org/downloads.html",
+      "kind": "technical-docs",
+      "publisher": "IfcOpenShell Project",
+      "note": "Technical source listing IfcOpenShell utilities and Bonsai as a graphical native IFC authoring environment.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "oda-homepage",
+      "title": "Open Design Alliance: Complete interoperability for CAD and BIM",
+      "url": "https://www.opendesign.com/",
+      "kind": "technical-docs",
+      "publisher": "Open Design Alliance",
+      "note": "Interoperability reference for DWG, DGN, Revit data, IFC, STEP, and related engineering-data formats.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared new Autodesk registry bundle with AutoCAD and Revit, focused open-source alternatives, and one disruption concept per product centered on open CAD fabrication and federated openBIM."
+}
+2026-06-02T20:40:26.216927Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a0f-359a-7343-aabd-2e6ba442f9d8 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+60,458

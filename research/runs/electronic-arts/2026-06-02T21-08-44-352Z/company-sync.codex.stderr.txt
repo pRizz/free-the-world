@@ -1,0 +1,1476 @@
+2026-06-02T21:08:44.612771Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T21:08:44.616424Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a2a-da54-7371-ac4d-66c4d3c517a5
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: electronic-arts
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "electronic-arts",
+  "name": "Electronic Arts",
+  "ticker": "EA",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "communication-services",
+  "industryId": "entertainment",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/electronic-arts/marketcap/",
+  "description": "Electronic Arts develops and publishes video games and live services across console, PC, and mobile platforms.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "EA Sports FC",
+    "The Sims"
+  ],
+  "seedSourceUrls": [
+    "https://www.ea.com/",
+    "https://ir.ea.com/",
+    "https://companiesmarketcap.com/electronic-arts/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T21:08:46.688231Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.688264Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.688659Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.688664Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.688984Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.688991Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.689319Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.689323Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.689704Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.689711Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.690610Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:46.690615Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486030Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486046Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486363Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486369Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486675Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486682Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486982Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.486987Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.487263Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.487270Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.487919Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:08:47.487923Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll refresh this as a sourced registry bundle and keep the output to pure JSON, so I’m going to verify current EA reporting, product pages, and credible open/decentralized alternatives before composing the object.
+web search:
+web search: Electronic Arts 2025 annual report net bookings EA Sports FC The Sims live services annual report
+web search:
+web search: EA SPORTS FC official product page Electronic Arts
+web search:
+web search: site:ir.ea.com annual report 2025 Electronic Arts Form 10-K fiscal 2025 net bookings live services
+web search:
+web search: Electronic Arts PE ratio May 2026 EA stockanalysis
+2026-06-02T21:09:21.797228Z  WARN codex_analytics::client: failed to send events request: error sending request for url (https://chatgpt.com/backend-api/codex/analytics-events/events)
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "electronic-arts",
+      "name": "Electronic Arts",
+      "ticker": "EA",
+      "rankApprox": 215,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "communication-services",
+      "industryId": "entertainment",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/electronic-arts/marketcap/",
+      "description": "Electronic Arts develops and publishes interactive entertainment, sports games, live services, and simulation franchises across console, PC, and mobile platforms.",
+      "overview": [
+        {
+          "title": "Business Snapshot",
+          "paragraphs": [
+            "Electronic Arts is one of the largest global publishers of interactive entertainment, with revenue split between full-game releases and recurring live services such as extra content, subscriptions, and in-game economies.",
+            "For fiscal 2026, EA reported $7.531 billion of net revenue, $8.026 billion of net bookings, and $887 million of net income, with live services and other revenue remaining the larger portion of the business."
+          ]
+        },
+        {
+          "title": "Strategic Position",
+          "paragraphs": [
+            "EA's strongest moats sit in licensed sports rights, long-running franchises, development scale, distribution relationships, and live-service player networks.",
+            "The proposed $55 billion take-private transaction announced in September 2025 reinforces the market value of EA's sports, simulation, and live-service catalog, but it also highlights how much of the company depends on controlled intellectual property and centrally operated services."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "EA has a strong moat because leading franchises such as EA SPORTS FC and The Sims combine brand recognition, player habit, content cadence, and years of accumulated production expertise. Sports titles add rights, likenesses, clubs, leagues, and data partnerships that are hard for community projects to replicate at AAA quality.",
+        "The moat is not absolute. Game engines, creator tools, open-source multiplayer infrastructure, and community-led mod ecosystems lower the cost of building credible alternatives, but they do not yet match EA's art budgets, licensing reach, cross-platform QA, or annualized live-service operations."
+      ],
+      "decentralizationNarrative": [
+        "EA's products are structurally centralized: the company controls game clients, content pipelines, player accounts, monetization, servers, matchmaking, and most official creator surfaces. That makes decentralization fit lower than for software categories where open protocols can replace the core product directly.",
+        "The most credible decentralization pressure is around community-owned game worlds, open simulation engines, federated multiplayer servers, open mod marketplaces, and verifiable digital economies. These can chip away at control of content and coordination even if they do not fully replace EA's flagship AAA experiences."
+      ],
+      "sourceIds": [
+        "ea-fy26-results",
+        "ea-acquisition-2025",
+        "companiesmarketcap-ea",
+        "stockanalysis-ea-statistics"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; refreshed with FY26 results and current market-data context on 2026-06-02.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "EA combines globally recognized franchises, live-service operations, sports and entertainment IP relationships, development scale, and multi-platform distribution; open alternatives exist but are far from matching its production quality and licensing reach.",
+          "sourceIds": [
+            "ea-fy26-results",
+            "ea-acquisition-2025",
+            "ea-fc-product",
+            "sims-product"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Game clients, official content, matchmaking, accounts, and monetization remain centralized, but open engines, fan reimplementations, modding, and federated server models can decentralize parts of creation and community operation.",
+          "sourceIds": [
+            "freeso-github",
+            "google-research-football",
+            "freeso-download"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 6,
+          "rationale": "EA reported $887 million of FY26 net income on $7.531 billion of net revenue, with strong operating cash flow, but net income declined year over year despite record net bookings.",
+          "sourceIds": [
+            "ea-fy26-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 57.26,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of about 57.26 in late May 2026; the pending acquisition and transaction pricing make this a less stable valuation signal than ordinary public-market trading.",
+          "sourceIds": [
+            "stockanalysis-ea-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 50580000000,
+          "rationale": "A current market-data source reported EA's market capitalization at approximately $50.58 billion as of May 29, 2026; the announced transaction values EA at about $55 billion enterprise value.",
+          "sourceIds": [
+            "companiesmarketcap-ea",
+            "ea-acquisition-2025"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "ea-sports-fc",
+        "name": "EA Sports FC",
+        "category": "Sports video game and live service",
+        "homepageUrl": "https://www.ea.com/games/ea-sports-fc/fc-26",
+        "summary": "EA Sports FC is EA's flagship global football game franchise, spanning premium releases, Ultimate Team-style live services, online play, mobile titles, and licensed football presentation.",
+        "whyItMatters": "The franchise is a major example of how licensed sports, player identity, live content, and virtual-item economies can concentrate fan engagement inside one publisher-controlled platform.",
+        "replacementSketch": [
+          "A credible replacement would start narrower than EA Sports FC: an open football simulation, community-run leagues, mod-friendly clubs and rosters, and transparent multiplayer infrastructure rather than full AAA broadcast authenticity on day one.",
+          "Over time, open tooling, shared physics models, creator-owned tournaments, and federated servers could let fans build persistent football worlds without depending on a single annualized publisher cadence."
+        ],
+        "sourceIds": [
+          "ea-fc-product",
+          "ea-fy26-results",
+          "google-research-football"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "google-research-football",
+            "name": "Google Research Football",
+            "kind": "open-source",
+            "homepageUrl": "https://github.com/google-research/football",
+            "repoUrl": "https://github.com/google-research/football",
+            "summary": "An open-source football simulation environment derived from Gameplay Football and designed for reinforcement-learning research rather than consumer AAA sports entertainment.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project is published as an open-source repository and is intended for public research use.",
+                "sourceIds": [
+                  "google-research-football"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "It demonstrates open simulation primitives that communities can inspect and extend, but it is not itself a federated consumer game network.",
+                "sourceIds": [
+                  "google-research-football"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 3,
+                "rationale": "The project is useful for research and simulation, but it is not a polished replacement for EA Sports FC's licensed consumer game experience.",
+                "sourceIds": [
+                  "google-research-football"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open code and reusable simulation models reduce research and prototyping costs for football AI, tactics, and game experiments.",
+                "sourceIds": [
+                  "google-research-football"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "google-research-football"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-football-league-sim",
+            "name": "Federated Football League Sim",
+            "summary": "A federated football game ecosystem could let independent servers host clubs, leagues, rosters, and tournaments using shared open simulation rules while still allowing local communities to customize assets, governance, and competition formats.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "EA's control over the annual game, official online modes, and live-service content could be pressured by a network where players and organizers can move between interoperable leagues instead of rebuilding identity inside one publisher account system.",
+            "bitcoinOrDecentralizationRole": "Federation matters more than Bitcoin here: the core disruption is portable identity, interoperable league rules, and independently operated servers. Bitcoin or Lightning could later support low-fee tournament entry or prize settlement, but it is not required for the first credible version.",
+            "coordinationMechanism": "Server operators publish league rules and season calendars, clubs register under shared schemas, and clients discover compatible leagues through signed server directories.",
+            "verificationOrTrustModel": "Match results would be signed by game servers and replay hashes, with disputes resolved by replay inspection and server reputation. Cheating remains a major risk unless clients, physics, and result submission are hardened.",
+            "failureModes": [
+              "Open projects may not secure enough art, animation, licensing, or UX quality to appeal beyond hobbyist communities.",
+              "Federated servers can fragment rules, rankings, and player liquidity, weakening the sense of one global competition."
+            ],
+            "adoptionPath": [
+              "Begin with open simulation, modded teams, and community tournaments for unlicensed clubs.",
+              "Add portable player identity, shared rankings, replay verification, and server discovery once gameplay quality is credible."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ea-fc-product",
+              "ea-fy26-results"
+            ],
+            "enablerSourceIds": [
+              "google-research-football"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Federated servers and portable leagues directly reduce dependence on a single publisher-operated sports platform.",
+                "sourceIds": [
+                  "google-research-football"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Community tournaments and open simulation rules are plausible, but global-scale matchmaking and anti-cheat remain hard.",
+                "sourceIds": [
+                  "google-research-football"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Open football simulation exists, but turning it into a consumer-grade, multiplayer, visually polished sports franchise is a large engineering and content challenge.",
+                "sourceIds": [
+                  "google-research-football",
+                  "ea-fc-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept could pressure community and modding expectations, but EA's licensed presentation and production scale remain very strong.",
+                "sourceIds": [
+                  "ea-fc-product",
+                  "ea-fy26-results"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "the-sims",
+        "name": "The Sims",
+        "category": "Life simulation game and creator platform",
+        "homepageUrl": "https://www.ea.com/games/the-sims/the-sims-4",
+        "summary": "The Sims is EA's long-running life simulation franchise built around household creation, social simulation, building, downloadable content, creator content, and community storytelling.",
+        "whyItMatters": "The Sims shows how a publisher can control a creator-heavy simulation world through official clients, expansion packs, marketplaces, and platform rules, even when player creativity supplies much of the long-term energy.",
+        "replacementSketch": [
+          "The strongest replacement path is not a single clone but an open life-simulation stack: inspectable simulation rules, moddable object systems, portable characters, and community-hosted worlds.",
+          "Fan reimplementations and open creator tools can preserve older simulation experiences and point toward a future where life-sim communities operate their own servers, assets, and marketplaces."
+        ],
+        "sourceIds": [
+          "sims-product",
+          "freeso-github",
+          "freeso-download"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "freeso",
+            "name": "FreeSO",
+            "kind": "open-source",
+            "homepageUrl": "https://freeso.org/download/",
+            "repoUrl": "https://github.com/riperiperi/FreeSO",
+            "summary": "FreeSO is an open-source reimplementation of The Sims Online engine using C# and MonoGame, enabling a fan-operated revival of the discontinued online Sims experience.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "The project publishes source code and identifies itself as a reimplementation of The Sims Online.",
+                "sourceIds": [
+                  "freeso-github",
+                  "freeso-download"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "FreeSO shifts control from EA's discontinued service toward a fan-maintained engine and community operation, though it still depends on legacy game concepts and assets.",
+                "sourceIds": [
+                  "freeso-github",
+                  "freeso-download"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "It is a real playable fan project, but it targets an older online Sims experience rather than matching the full breadth of modern The Sims 4 content and tooling.",
+                "sourceIds": [
+                  "freeso-download",
+                  "openhub-freeso"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "A reimplemented engine gives modders and preservation communities leverage that would be impossible through a closed discontinued service alone.",
+                "sourceIds": [
+                  "freeso-github",
+                  "openhub-freeso"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "freeso-github",
+              "freeso-download",
+              "openhub-freeso"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-life-sim-worlds",
+            "name": "Federated Life-Sim Worlds",
+            "summary": "A federated life-simulation ecosystem would let communities host interoperable neighborhoods, object catalogs, characters, and stories while preserving local moderation and creative norms.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The Sims' centralized control over clients, expansions, official marketplaces, and online surfaces could be weakened if players can carry characters, homes, objects, and social graphs across community-operated worlds.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central because the mechanism depends on independently hosted worlds and portable creative assets. Bitcoin is optional; Lightning could support creator payments, but federation and open asset schemas are the main unlocks.",
+            "coordinationMechanism": "Communities operate servers with shared object and character schemas, publish moderation and content policies, and exchange signed asset manifests so clients can join compatible neighborhoods.",
+            "verificationOrTrustModel": "Asset manifests, versioned object definitions, and signed server records reduce spoofed content and false ownership claims. Moderation remains local, with blocklists and allowlists for servers or asset packs.",
+            "failureModes": [
+              "Interoperable creative assets are hard to standardize without limiting the expressiveness that makes life-sim communities valuable.",
+              "Copyright and trademark constraints around EA's original assets can limit what fan projects can distribute."
+            ],
+            "adoptionPath": [
+              "Start with preservation-oriented reimplementations, open object editors, and community-hosted neighborhoods.",
+              "Evolve toward portable avatars, homes, object catalogs, and creator marketplaces governed by independent communities."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "sims-product"
+            ],
+            "enablerSourceIds": [
+              "freeso-github",
+              "freeso-download"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Federated worlds directly move control of simulation communities and creative assets away from one central publisher.",
+                "sourceIds": [
+                  "freeso-github",
+                  "freeso-download"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Fan reimplementations show community coordination is real, but durable governance, moderation, and asset portability are still difficult.",
+                "sourceIds": [
+                  "freeso-github",
+                  "openhub-freeso"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Engine reimplementation and community operation are demonstrated, but modern life-sim fidelity and cross-server interoperability would require substantial new work.",
+                "sourceIds": [
+                  "freeso-github",
+                  "freeso-download",
+                  "sims-product"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept pressures preservation, modding, and creator ownership more than it immediately replaces EA's polished, content-rich consumer product.",
+                "sourceIds": [
+                  "sims-product",
+                  "freeso-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "ea-fy26-results",
+      "title": "Electronic Arts Reports Q4 and FY26 Results",
+      "url": "https://ir.ea.com/press-releases/press-release-details/2026/Electronic-Arts-Reports-Q4-and-FY26-Results/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Electronic Arts Investor Relations",
+      "note": "Primary source for FY26 net revenue, net bookings, net income, live services mix, and product performance commentary.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ea-acquisition-2025",
+      "title": "EA Announces Agreement to be Acquired by PIF, Silver Lake, and Affinity Partners for $55 Billion",
+      "url": "https://news.ea.com/press-releases/press-releases-details/2025/EA-Announces-Agreement-to-be-Acquired-by-PIF-Silver-Lake-and-Affinity-Partners-for-55-Billion/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "Electronic Arts Newsroom",
+      "note": "Primary source for the September 2025 take-private agreement, $55 billion enterprise value, and per-share transaction context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-ea",
+      "title": "Electronic Arts Market Cap",
+      "url": "https://companiesmarketcap.com/electronic-arts/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data reference supplied in the manifest and used for current market-cap context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-ea-statistics",
+      "title": "Electronic Arts Statistics and Valuation",
+      "url": "https://stockanalysis.com/stocks/ea/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Used for trailing P/E and current valuation context near the refresh date.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ea-fc-product",
+      "title": "EA SPORTS FC 26 Home",
+      "url": "https://www.ea.com/games/ea-sports-fc/fc-26",
+      "kind": "product-page",
+      "publisher": "Electronic Arts",
+      "note": "Official product page for the current EA Sports FC franchise experience and distribution surfaces.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "sims-product",
+      "title": "The Sims 4 Home",
+      "url": "https://www.ea.com/games/the-sims/the-sims-4",
+      "kind": "product-page",
+      "publisher": "Electronic Arts",
+      "note": "Official product page for The Sims 4 and its current creator and platform positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "google-research-football",
+      "title": "Google Research Football",
+      "url": "https://github.com/google-research/football",
+      "kind": "open-source-project",
+      "publisher": "Google Research",
+      "note": "Open-source football simulation environment used as a credible enabling primitive for open football-game experimentation.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "freeso-github",
+      "title": "FreeSO GitHub Repository",
+      "url": "https://github.com/riperiperi/FreeSO",
+      "kind": "open-source-project",
+      "publisher": "FreeSO contributors",
+      "note": "Source repository for an open-source reimplementation of The Sims Online engine.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "freeso-download",
+      "title": "Download FreeSO and Register",
+      "url": "https://freeso.org/download/",
+      "kind": "product-page",
+      "publisher": "FreeSO",
+      "note": "Project page describing FreeSO as a C# and MonoGame reimplementation of The Sims Online engine.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openhub-freeso",
+      "title": "FreeSO Open Hub Project Profile",
+      "url": "https://openhub.net/p/FreeSO",
+      "kind": "analysis",
+      "publisher": "Open Hub",
+      "note": "Third-party project profile used for development-activity and contributor context around FreeSO.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Electronic Arts registry bundle with two products: EA Sports FC and The Sims. The refresh uses FY26 financials, current market-data context, official product pages, and open-source replacement primitives including Google Research Football and FreeSO."
+}
+2026-06-02T21:10:21.445671Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a2a-daf1-7f50-b074-2a377a6c1723 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+39,607

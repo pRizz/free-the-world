@@ -1,0 +1,1788 @@
+2026-06-02T21:19:18.384809Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T21:19:18.396957Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a34-865a-70e3-a7a9-67a439dac62a
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: exelon
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "exelon",
+  "name": "Exelon",
+  "ticker": "EXC",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "utilities",
+  "industryId": "electric-utilities",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/exelon/marketcap/",
+  "description": "Exelon is a regulated utility company delivering electricity and natural gas through local utility subsidiaries.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Electric utility service",
+    "Natural gas utility service"
+  ],
+  "seedSourceUrls": [
+    "https://www.exeloncorp.com/",
+    "https://investors.exeloncorp.com/",
+    "https://companiesmarketcap.com/exelon/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T21:19:20.861109Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.861131Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.861559Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.861566Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.861982Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.861989Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.862448Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.862454Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.862900Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.862907Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.863705Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:20.863711Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.661619Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.661636Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.662059Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.662066Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.662460Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.662464Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.662797Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.662803Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.663086Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.663091Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.663867Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:19:21.663872Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll verify Exelon’s current company facts and credible open/decentralized energy alternatives before producing the JSON, since this needs publishable sourced fields.
+web search:
+web search: Exelon 2024 annual report regulated utility subsidiaries electric gas service
+web search:
+web search: CompaniesMarketCap Exelon market cap June 2026 PE ratio
+web search:
+web search: community solar microgrid distributed energy resources NREL source
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "exelon",
+      "name": "Exelon",
+      "ticker": "EXC",
+      "rankApprox": 210,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "utilities",
+      "industryId": "electric-utilities",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/exelon/marketcap/",
+      "description": "Exelon is a regulated utility holding company delivering electricity and natural gas through six local transmission and distribution utilities in the United States.",
+      "overview": [
+        {
+          "title": "Regulated Utility Platform",
+          "paragraphs": [
+            "Exelon serves nearly 11 million customers through Atlantic City Electric, BGE, ComEd, Delmarva Power, PECO, and Pepco, making it one of the largest fully regulated utility platforms in the United States.",
+            "The company is centered on electric transmission and distribution, natural gas distribution, grid reliability, and regulated capital investment rather than competitive power generation."
+          ]
+        },
+        {
+          "title": "Customer Dependency",
+          "paragraphs": [
+            "For most customers, the local wires or gas distribution utility is not a normal competitive product choice. Service territories, rate proceedings, interconnection rules, and reliability obligations make Exelon's core services hard to bypass quickly.",
+            "Distributed generation, demand response, community solar, virtual power plants, and building electrification can reduce dependence on centralized utility assets, but they still often require coordination with the distribution grid."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Exelon's moat is rooted in regulated monopoly-like service territories, large physical distribution networks, franchise rights, rate-base economics, operational know-how, and the political difficulty of replacing incumbent grid operators.",
+        "The moat is not primarily a software or brand moat. It depends on regulation, capital planning, grid safety, and cost-of-service recovery, which makes disruption slower but also creates pressure when customers, regulators, or communities can defer capital spending through distributed alternatives."
+      ],
+      "decentralizationNarrative": [
+        "Electric delivery can be partially decentralized through rooftop and community solar, batteries, flexible load, microgrids, open energy management systems, and virtual power plants. These do not eliminate the grid, but they can shift some planning power from central utilities toward households, campuses, aggregators, and communities.",
+        "Natural gas distribution is less naturally decentralized because pipeline safety, fuel supply, and combustion appliances remain tightly coupled to utility infrastructure. The more credible decentralization path is substitution: electrified heat, open heat-pump controls, thermal networks, and demand-responsive buildings that reduce or eliminate gas throughput over time."
+      ],
+      "sourceIds": [
+        "exelon-company-profile-2026",
+        "exelon-2025-10k",
+        "stockanalysis-exc-valuation-2026"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "Regulated utility service territories, transmission and distribution assets, reliability obligations, and rate proceedings create a strong incumbent position that is difficult for ordinary competitors to displace.",
+          "sourceIds": [
+            "exelon-company-profile-2026",
+            "exelon-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Electric demand and generation can be partly decentralized with DERs, microgrids, and virtual power plants, but regulated grid delivery and gas distribution remain capital-intensive local infrastructure.",
+          "sourceIds": [
+            "doe-vpp-liftoff-2023",
+            "nrel-derms-2026",
+            "exelon-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "Exelon reported 2025 net income attributable to common shareholders of about $2.8 billion and adjusted operating earnings above its standalone utility expectations, indicating durable regulated earnings.",
+          "sourceIds": [
+            "exelon-2025-results",
+            "exelon-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 16.91,
+          "rationale": "StockAnalysis reported a trailing PE ratio of 16.91 for EXC around the June 2026 review window.",
+          "sourceIds": [
+            "stockanalysis-exc-valuation-2026"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 47300000000,
+          "rationale": "StockAnalysis reported Exelon's market capitalization at approximately $47.3 billion around the June 2026 review window.",
+          "sourceIds": [
+            "stockanalysis-exc-valuation-2026"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "electric-utility-service",
+        "name": "Electric utility service",
+        "category": "Regulated electricity delivery",
+        "homepageUrl": "https://www.exeloncorp.com/company",
+        "summary": "Exelon's electric utility subsidiaries deliver power through regulated local transmission and distribution networks.",
+        "whyItMatters": "Electric delivery is essential infrastructure, and its cost structure shapes household energy bills, electrification, distributed generation interconnection, and community resilience.",
+        "replacementSketch": [
+          "A realistic replacement path is not a single rival utility. It is a layered shift in which households, buildings, campuses, and communities own more generation, storage, and flexible load while using open control systems to coordinate with the grid.",
+          "The incumbent still operates wires in many scenarios, but less value is locked inside centralized planning if local resources can be measured, dispatched, and compensated reliably."
+        ],
+        "sourceIds": [
+          "exelon-company-profile-2026",
+          "doe-vpp-liftoff-2023",
+          "nrel-community-solar-2026",
+          "openems-project-2026",
+          "openadr-faq-2026"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy management platform for coordinating renewable generation, storage, charging, grid interaction, and flexible loads.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project publishes source code on GitHub and presents itself as an open-source energy management system with community and association governance.",
+                "sourceIds": [
+                  "openems-project-2026",
+                  "openems-github-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "OpenEMS is designed for decentralized coordination of storage, renewable generation, EV charging, grid signals, and loads at edge and backend layers.",
+                "sourceIds": [
+                  "openems-project-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project reports active contributors, production and lab use, and a mature modular architecture, though deployment still requires integration expertise.",
+                "sourceIds": [
+                  "openems-project-2026",
+                  "openems-github-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open control can reduce vendor lock-in and help optimize storage, tariffs, charging, and load flexibility, but hardware and installation costs remain material.",
+                "sourceIds": [
+                  "openems-project-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "openems-project-2026",
+              "openems-github-2026"
+            ]
+          },
+          {
+            "slug": "openadr",
+            "name": "OpenADR",
+            "kind": "protocol",
+            "homepageUrl": "https://www.openadr.org/",
+            "summary": "OpenADR is an open automated demand response standard for exchanging grid and load-flexibility signals between utilities, aggregators, and customer-side resources.",
+            "metrics": {
+              "openness": {
+                "value": 7,
+                "rationale": "OpenADR is a published demand-response standard with implementation resources and certification programs rather than a single proprietary platform.",
+                "sourceIds": [
+                  "openadr-faq-2026",
+                  "openadr-resources-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The protocol enables many customer-side devices and aggregators to respond to grid conditions without being owned by a single utility operator.",
+                "sourceIds": [
+                  "openadr-faq-2026",
+                  "openadr-program-guide-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "OpenADR has mature program guides, certification infrastructure, and demand-response use cases, though deployment depends on utility and device participation.",
+                "sourceIds": [
+                  "openadr-resources-2026",
+                  "openadr-program-guide-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Automated demand response can reduce peak capacity needs and defer infrastructure upgrades by coordinating flexible loads.",
+                "sourceIds": [
+                  "openadr-faq-2026",
+                  "doe-vpp-liftoff-2023"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "openadr-faq-2026",
+              "openadr-resources-2026",
+              "openadr-program-guide-2026"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-der-virtual-power-plant",
+            "name": "Community DER virtual power plant",
+            "summary": "Households, campuses, and community solar projects coordinate batteries, EV chargers, flexible appliances, rooftop solar, and shared solar subscriptions into a virtual power plant that can lower peak demand and provide utility-grade grid services.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "decentralized-coordination"
+            ],
+            "thesis": "If distributed resources can be dispatched credibly, part of the value now captured through centralized utility capital plans shifts toward customer-owned and community-owned assets.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through local asset ownership and multi-party dispatch, not through Bitcoin. The relevant change is that many independent resources coordinate as grid assets without being owned by the incumbent utility.",
+            "coordinationMechanism": "Customers enroll devices or subscriptions with an aggregator, cooperative, municipality, or community operator. The operator dispatches flexibility against grid events, tariff signals, or wholesale market opportunities and shares bill credits or payments with participants.",
+            "verificationOrTrustModel": "Smart meters, inverter telemetry, device logs, baselines, settlement rules, and audit rights constrain fake curtailment or false generation claims. The weakest point is baseline gaming, so programs need transparent measurement rules and penalties for nonperformance.",
+            "failureModes": [
+              "Utility interconnection delays or rate designs can limit customer economics.",
+              "Aggregator telemetry can be spoofed or overstate performance if measurement rules are weak.",
+              "Low-income and renter access can remain limited without community solar or financing structures."
+            ],
+            "adoptionPath": [
+              "Start with community solar subscriptions, demand-response programs, and batteries in constrained feeders.",
+              "Add open energy management and OpenADR-compatible control for flexible loads and EV charging.",
+              "Scale into feeder-level or municipal virtual power plants that can defer distribution upgrades."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "exelon-2025-10k",
+              "doe-vpp-liftoff-2023",
+              "nrel-community-solar-2026"
+            ],
+            "enablerSourceIds": [
+              "openems-project-2026",
+              "openadr-faq-2026",
+              "nrel-derms-2026"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Ownership and control move toward many customer-side resources, community projects, and aggregators while still using the distribution grid.",
+                "sourceIds": [
+                  "doe-vpp-liftoff-2023",
+                  "nrel-community-solar-2026",
+                  "nrel-derms-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "VPPs, OpenADR, DERMS research, and community solar programs provide credible coordination primitives, but local market rules and settlement remain uneven.",
+                "sourceIds": [
+                  "doe-vpp-liftoff-2023",
+                  "openadr-program-guide-2026",
+                  "nrel-derms-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The core hardware and software are already available, but utility interconnection, telemetry integration, cybersecurity, and regulatory approval slow rollout.",
+                "sourceIds": [
+                  "openems-project-2026",
+                  "openadr-faq-2026",
+                  "doe-vpp-liftoff-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "DER coordination can defer some rate-base growth and reduce peak infrastructure needs, but Exelon would still operate essential local wires.",
+                "sourceIds": [
+                  "exelon-2025-10k",
+                  "doe-vpp-liftoff-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "open-microgrid-resilience-coops",
+            "name": "Open microgrid resilience cooperatives",
+            "summary": "Neighborhoods, campuses, and public facilities use open microgrid controllers, shared solar, batteries, and flexible loads to form resilience cooperatives that can island during outages and coordinate with the utility grid during normal operations.",
+            "angleIds": [
+              "microgrid-coordination",
+              "open-energy-hardware",
+              "cooperative-production"
+            ],
+            "thesis": "Reliability value can move from utility-only restoration planning toward locally governed resilience assets that households and institutions can inspect, fund, and operate collectively.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is cooperative governance and open control. Bitcoin is not central unless a future project uses open payments for settlement between local participants.",
+            "coordinationMechanism": "Members finance shared solar, storage, switches, and controls through a cooperative, municipal program, or campus authority. Local controllers manage islanding, load priority, and reconnection under utility-approved interconnection rules.",
+            "verificationOrTrustModel": "Energy meters, inverter records, controller event logs, interconnection tests, and cooperative audits verify production, storage dispatch, and outage performance. Safety certification and utility inspection remain mandatory trust anchors.",
+            "failureModes": [
+              "Protection engineering and interconnection approvals can make small projects slow or expensive.",
+              "Poor governance can shift costs unfairly among cooperative members.",
+              "Open controllers still need rigorous cybersecurity and fail-safe behavior."
+            ],
+            "adoptionPath": [
+              "Deploy pilots at critical facilities, schools, and resilience hubs with clear outage-value use cases.",
+              "Use open energy management software and standard demand-response interfaces to coordinate normal grid support.",
+              "Expand to neighborhoods where outage risk, solar potential, and public financing make shared ownership attractive."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "exelon-company-profile-2026",
+              "nrel-derms-2026",
+              "doe-microgrids-2026"
+            ],
+            "enablerSourceIds": [
+              "openems-project-2026",
+              "openems-github-2026",
+              "doe-microgrids-2026"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Community microgrids localize part of generation, storage, outage resilience, and dispatch while preserving grid interconnection.",
+                "sourceIds": [
+                  "doe-microgrids-2026",
+                  "nrel-derms-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Microgrid and DERMS work is technically credible, but cooperative governance and utility approval are harder than software coordination alone.",
+                "sourceIds": [
+                  "nrel-derms-2026",
+                  "doe-microgrids-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Solar, storage, controls, and microgrid engineering are deployable, but capital cost, protection design, and permitting make the model slower than a pure software alternative.",
+                "sourceIds": [
+                  "doe-microgrids-2026",
+                  "openems-project-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Microgrids pressure reliability and resilience spending but usually complement rather than fully replace incumbent distribution networks.",
+                "sourceIds": [
+                  "exelon-2025-10k",
+                  "doe-microgrids-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "natural-gas-utility-service",
+        "name": "Natural gas utility service",
+        "category": "Regulated natural gas distribution",
+        "homepageUrl": "https://www.exeloncorp.com/company",
+        "summary": "Several Exelon utilities distribute natural gas to local customers through regulated delivery networks.",
+        "whyItMatters": "Gas distribution locks buildings into pipeline infrastructure, combustion appliances, rate-base investment, and long asset lives even as electrification and thermal-network options improve.",
+        "replacementSketch": [
+          "A credible replacement path is gradual fuel substitution rather than a decentralized gas network. Customers move space heating, water heating, and cooking to electric or shared thermal systems while using open controls to lower peak electric load.",
+          "The gas utility loses throughput and future capital needs if communities can coordinate electrification, heat pumps, thermal storage, and neighborhood-scale thermal networks without simply shifting all peak burden onto the electric grid."
+        ],
+        "sourceIds": [
+          "exelon-company-profile-2026",
+          "exelon-2025-10k",
+          "heishamon-project-2026",
+          "doe-vpp-liftoff-2023"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "heishamon",
+            "name": "HeishaMon",
+            "kind": "open-source",
+            "homepageUrl": "https://hogtronic.com/",
+            "repoUrl": "https://github.com/Egyras/HeishaMon",
+            "summary": "HeishaMon is an open-source hardware and firmware project that exposes Panasonic Aquarea heat-pump telemetry and control through local protocols such as MQTT.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project describes itself as open-source hardware, publishes firmware and hardware resources, and uses local interfaces rather than cloud-only control.",
+                "sourceIds": [
+                  "heishamon-project-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Open heat-pump control supports customer-owned electrification and local demand flexibility, though it does not replace utility-scale infrastructure by itself.",
+                "sourceIds": [
+                  "heishamon-project-2026",
+                  "doe-vpp-liftoff-2023"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The project reports deployed units and practical Home Assistant integration, but it is tied to specific heat-pump families and still requires technical installation.",
+                "sourceIds": [
+                  "heishamon-project-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open controls can improve heat-pump operation and demand response without proprietary subscriptions, but appliance replacement and installation costs dominate the economics.",
+                "sourceIds": [
+                  "heishamon-project-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "heishamon-project-2026"
+            ]
+          },
+          {
+            "slug": "openems-building-electrification",
+            "name": "OpenEMS building electrification stack",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS can coordinate batteries, EV charging, heat pumps, dynamic tariffs, and local energy assets that make building electrification less grid-punitive.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "OpenEMS publishes source code and presents a free open-source platform for energy management.",
+                "sourceIds": [
+                  "openems-project-2026",
+                  "openems-github-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Coordinating customer-side heat, storage, charging, and tariffs helps buildings substitute away from gas while participating in distributed grid flexibility.",
+                "sourceIds": [
+                  "openems-project-2026",
+                  "doe-vpp-liftoff-2023"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The platform is active and modular, though building-specific deployments require integrators and compatible devices.",
+                "sourceIds": [
+                  "openems-project-2026",
+                  "openems-github-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open optimization of heat, storage, EV charging, and dynamic tariffs can reduce operating cost and peak demand after electrification.",
+                "sourceIds": [
+                  "openems-project-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "openems-project-2026",
+              "openems-github-2026"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-building-electrification-vpp",
+            "name": "Open building electrification VPP",
+            "summary": "Buildings replace gas appliances with heat pumps and use open controls, local telemetry, storage, EV charging, and demand-response standards to avoid creating unmanaged electric peaks.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "open-energy-hardware",
+              "microgrid-coordination"
+            ],
+            "thesis": "Gas distribution becomes less essential when electrified buildings can participate as flexible grid resources rather than passive new electric loads.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is open, customer-controlled energy hardware and flexible-load coordination. Bitcoin is not necessary for the mechanism.",
+            "coordinationMechanism": "Homes and buildings run local controllers that expose heat-pump status, thermal flexibility, batteries, and EV charging to an aggregator or utility program through standards such as OpenADR.",
+            "verificationOrTrustModel": "Smart-meter data, device telemetry, temperature constraints, and event-performance settlement verify that buildings actually shift load without sacrificing service. Cheating is constrained by metered before-and-after consumption and device-level audit trails.",
+            "failureModes": [
+              "Poorly managed electrification can increase winter peak demand and trigger new grid spending.",
+              "Open heat-pump control is fragmented across appliance brands and protocols.",
+              "Customers may face high upfront retrofit costs and landlord-tenant incentive problems."
+            ],
+            "adoptionPath": [
+              "Begin with customers replacing failed gas equipment with heat pumps and local open controls.",
+              "Enroll flexible heating, water heating, storage, and EV charging in demand-response or VPP programs.",
+              "Use measured peak reductions to justify targeted gas-network retirement or avoided gas main replacement."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "exelon-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "heishamon-project-2026",
+              "openems-project-2026",
+              "openadr-faq-2026",
+              "doe-vpp-liftoff-2023"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Customer-side electrified loads become controllable local resources, reducing dependence on gas distribution while coordinating with the electric grid.",
+                "sourceIds": [
+                  "doe-vpp-liftoff-2023",
+                  "openems-project-2026",
+                  "heishamon-project-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "OpenADR, VPP programs, and open energy management systems make coordination plausible, but heat-pump control remains device-specific.",
+                "sourceIds": [
+                  "openadr-faq-2026",
+                  "openems-project-2026",
+                  "heishamon-project-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The necessary appliances and controls exist, but deployment depends on building retrofits, installer capacity, grid winter-peak planning, and customer economics.",
+                "sourceIds": [
+                  "heishamon-project-2026",
+                  "doe-vpp-liftoff-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "Successful electrification directly reduces gas throughput and future gas distribution capital needs, but only gradually and mostly during equipment replacement cycles.",
+                "sourceIds": [
+                  "exelon-2025-10k",
+                  "doe-vpp-liftoff-2023"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "community-thermal-energy-networks",
+            "name": "Community thermal energy networks",
+            "summary": "Neighborhoods replace individual gas heat with shared thermal loops and building heat pumps, shifting heating infrastructure from combustible fuel delivery toward locally governed thermal exchange.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "open-energy-hardware"
+            ],
+            "thesis": "Thermal networks can turn some gas-pipeline replacement decisions into community infrastructure decisions, weakening the default assumption that aging gas mains must be renewed.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is shared local infrastructure governance and transparent metering among connected buildings. Bitcoin is not central to the current adoption path.",
+            "coordinationMechanism": "A municipality, cooperative, utility affiliate, or building district funds and operates a shared water loop. Participants connect heat pumps and thermal meters, with costs allocated by connection fees, measured usage, or cooperative shares.",
+            "verificationOrTrustModel": "Thermal meters, loop temperature sensors, connection audits, and public tariff or cooperative accounting verify usage and cost allocation. Collusion risk is mainly governance-related rather than cryptographic.",
+            "failureModes": [
+              "High civil-work costs can make networks uneconomic outside dense or planned neighborhoods.",
+              "Governance can become utility-like if customers do not control tariff and investment decisions.",
+              "Retrofits require coordination across many property owners and local regulators."
+            ],
+            "adoptionPath": [
+              "Identify streets where gas mains are due for replacement and building heating loads are dense enough for a shared loop.",
+              "Pilot public buildings, multifamily housing, or campuses with transparent thermal metering.",
+              "Expand connection density and retire selected gas segments when reliability and economics are proven."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "exelon-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "thermal-energy-network-2026",
+              "doe-microgrids-2026"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Thermal networks localize heat infrastructure and can be cooperatively or municipally governed, but they are still shared physical networks.",
+                "sourceIds": [
+                  "thermal-energy-network-2026"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The coordination model is credible for dense districts, but multi-owner retrofits and tariff design are difficult.",
+                "sourceIds": [
+                  "thermal-energy-network-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 4,
+                "rationale": "Thermal networks are technically feasible but capital-intensive, site-specific, and dependent on public works coordination.",
+                "sourceIds": [
+                  "thermal-energy-network-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "Targeted gas-main retirement could pressure gas rate-base growth, but the approach is geographically narrow and slow to scale.",
+                "sourceIds": [
+                  "exelon-2025-10k",
+                  "thermal-energy-network-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "exelon-company-profile-2026",
+      "title": "About Exelon",
+      "url": "https://www.exeloncorp.com/company",
+      "kind": "investor-relations",
+      "publisher": "Exelon",
+      "note": "Company profile identifying Exelon's six regulated utilities and customer scale.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "exelon-2025-10k",
+      "title": "Exelon Corporation 2025 Form 10-K",
+      "url": "https://investors.exeloncorp.com/static-files/61aff639-a75f-4dc5-a4d8-2dbf0da602c9",
+      "kind": "annual-report",
+      "publisher": "Exelon",
+      "note": "Annual report source for regulated utility business model, financial performance, risk factors, and electric and gas delivery operations.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "exelon-2025-results",
+      "title": "Exelon Reports Fourth Quarter and Full Year 2025 Results and Initiates 2026 Financial Outlook",
+      "url": "https://www.exeloncorp.com/newsroom/exelon-reports-fourth-quarter-and-full-year-2025-results-and-initiates-2026-financial-outlook",
+      "kind": "investor-relations",
+      "publisher": "Exelon",
+      "note": "Investor release summarizing 2025 earnings and 2026 outlook.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-exc-valuation-2026",
+      "title": "Exelon Corporation (EXC) Statistics and Valuation",
+      "url": "https://stockanalysis.com/stocks/exc/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for current market capitalization and trailing PE ratio.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "doe-vpp-liftoff-2023",
+      "title": "DOE Releases New Report on Pathways to Commercial Liftoff for Virtual Power Plants",
+      "url": "https://www.energy.gov/node/4832933",
+      "kind": "analysis",
+      "publisher": "U.S. Department of Energy",
+      "note": "Defines virtual power plants as aggregations of distributed energy resources that can provide utility-grade grid services.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "nrel-community-solar-2026",
+      "title": "How Community Solar Works",
+      "url": "https://connector.nrel.gov/about/community-solar",
+      "kind": "analysis",
+      "publisher": "National Renewable Energy Laboratory",
+      "note": "Explains community solar subscriptions and bill-credit mechanics relevant to decentralized electricity access.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "nrel-derms-2026",
+      "title": "Distributed Energy Resource Management Systems",
+      "url": "https://www.nrel.gov/grid/distributed-energy-resource-management-systems",
+      "kind": "analysis",
+      "publisher": "National Renewable Energy Laboratory",
+      "note": "Research source for DERMS, autonomous controls, and community microgrid coordination.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "doe-microgrids-2026",
+      "title": "Solar Integration: Distributed Energy Resources and Microgrids",
+      "url": "https://www.energy.gov/cmei/systems/solar-integration-distributed-energy-resources-and-microgrids",
+      "kind": "analysis",
+      "publisher": "U.S. Department of Energy",
+      "note": "Federal overview of distributed energy resources and microgrids as resilience and solar integration tools.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openems-project-2026",
+      "title": "OpenEMS - Open Source Energy Management System",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association",
+      "note": "Primary project page for an open-source energy management system used to coordinate renewables, storage, grid interaction, and loads.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openems-github-2026",
+      "title": "OpenEMS GitHub Repository",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Source repository for OpenEMS software and project activity.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openadr-faq-2026",
+      "title": "OpenADR FAQ",
+      "url": "https://www.openadr.org/faq",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Explains automated demand response and the role of OpenADR in standardizing demand-side flexibility.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openadr-resources-2026",
+      "title": "OpenADR Resources",
+      "url": "https://www.openadr.org/resources",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Resource page for OpenADR standards, implementation materials, and related demand-response documentation.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openadr-program-guide-2026",
+      "title": "OpenADR Demand Response Program Guide",
+      "url": "https://www.openadr.org/demand-response-program-guide",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Program guide source for demand-response program structures and distributed energy resource use cases.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "heishamon-project-2026",
+      "title": "HeishaMon",
+      "url": "https://hogtronic.com/",
+      "kind": "open-source-project",
+      "publisher": "HogTronic",
+      "note": "Open-source hardware and firmware project for local heat-pump telemetry and control through MQTT and home automation integrations.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "thermal-energy-network-2026",
+      "title": "Thermal Energy Network",
+      "url": "https://en.wikipedia.org/wiki/Thermal_energy_network",
+      "kind": "analysis",
+      "publisher": "Wikipedia",
+      "note": "Background source describing thermal energy networks as shared loops connecting buildings with heat pumps.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared an Exelon registry refresh with two products: electric utility service and natural gas utility service. The strongest disruption paths are distributed DER/VPP coordination for electricity and open building electrification plus thermal networks for gas displacement."
+}
+2026-06-02T21:21:28.803519Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a34-874a-76a3-8b65-88ac5832bf26 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+36,563

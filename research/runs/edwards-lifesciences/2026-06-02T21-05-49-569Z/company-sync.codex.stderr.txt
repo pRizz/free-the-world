@@ -1,0 +1,1136 @@
+2026-06-02T21:05:49.809782Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T21:05:49.846482Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a28-2f75-77d0-91fc-df4202fe5219
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: edwards-lifesciences
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "edwards-lifesciences",
+  "name": "Edwards Lifesciences",
+  "ticker": "EW",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "health-care",
+  "industryId": "pharma-medtech",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/edwards-lifesciences/marketcap/",
+  "description": "Edwards Lifesciences develops medical technologies for structural heart disease and critical care monitoring.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "SAPIEN transcatheter heart valves",
+    "HemoSphere monitor"
+  ],
+  "seedSourceUrls": [
+    "https://www.edwards.com/",
+    "https://ir.edwards.com/",
+    "https://companiesmarketcap.com/edwards-lifesciences/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T21:05:51.814636Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.814660Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.815191Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.815201Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.815649Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.815657Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.816068Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.816075Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.816408Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.816412Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.817136Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:51.817144Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.485013Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.485030Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.485510Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.485518Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.485951Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.485956Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.486472Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.486479Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.487006Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.487011Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.487835Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:52.487841Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll use the company manifest workflow and verify the facts from primary/company, SEC or market-data sources before returning the JSON. Since this is a JSON-only deliverable, I’ll keep the final response to just the object.
+exec
+/bin/zsh -lc "pwd && rg --files | head -50 && sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+/Users/peterryszkiewicz/Repos/free-the-world
+src/routes/mirrors.tsx
+src/routes/about.tsx
+src/routes/companies/[companySlug]/products/[productSlug].tsx
+src/routes/companies/[companySlug]/products/index.tsx
+src/routes/companies/[companySlug]/index.tsx
+src/routes/companies/index.tsx
+src/routes/methodology.tsx
+src/routes/404.tsx
+src/entry-client.tsx
+AGENTS.md
+src/app.tsx
+playwright.config.ts
+playwright.dev.config.ts
+biome.json
+tsconfig.json
+src/global.d.ts
+bun.lock
+src/routes/index.tsx
+LICENSE
+src/app.css
+src/entry-server.tsx
+app.config.ts
+README.md
+src/lib/domain/metrics.ts
+src/lib/domain/formatters.ts
+src/lib/domain/company-metrics.test.ts
+src/lib/domain/ipo.test.ts
+src/lib/domain/company-metrics.ts
+src/lib/domain/scoring.ts
+src/lib/domain/selectors.ts
+src/lib/domain/types.ts
+src/lib/domain/insights.test.ts
+src/lib/domain/formatters.test.ts
+src/lib/domain/market-cap-snapshots.ts
+src/lib/domain/ipo.ts
+src/lib/domain/insights.ts
+src/lib/domain/table-state.ts
+src/lib/domain/content-types.ts
+src/lib/config.ts
+src/lib/theme.ts
+src/lib/content/products.ts
+src/lib/content/technology-waves.ts
+src/lib/content/sources.ts
+src/lib/content/site.ts
+src/lib/content/newsletter.ts
+src/lib/content/companies.ts
+src/lib/content/sectors.ts
+src/lib/utils.ts
+src/lib/site-routes.ts
+src/lib/market-cap-snapshots.ts
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+
+2026-06-02T21:05:55.625327Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.625347Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.625814Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.625825Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.626172Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.626179Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.626527Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.626531Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.626955Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.626961Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.627799Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:05:55.627805Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Edwards Lifesciences 2024 annual report structural heart critical care SAPIEN HemoSphere revenue
+web search:
+web search: Edwards Lifesciences 2024 annual report net income sales adjusted gross profit structural heart disease sales
+web search:
+web search: OpenWater Open-Motion hemodynamic platform open source architecture
+web search:
+web search: https://s27.q4cdn.com/788244549/files/doc_financials/2024/ar/EW-2024-Annual-Report-1.pdf
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"edwards-lifesciences","name":"Edwards Lifesciences","ticker":"EW","rankApprox":212,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top225"],"sectorId":"health-care","industryId":"pharma-medtech","companiesMarketCapUrl":"https://companiesmarketcap.com/edwards-lifesciences/marketcap/","description":"Edwards Lifesciences develops medical technologies for structural heart disease, including transcatheter heart valves and advanced monitoring platforms.","overview":[{"title":"Business Focus","paragraphs":["Edwards Lifesciences is a U.S.-based medtech company centered on structural heart disease. Its core franchises include transcatheter aortic valve replacement, transcatheter mitral and tricuspid therapies, and surgical structural heart products.","The company completed the sale of its Critical Care business in 2024, but HemoSphere remains a useful registry reference point because it shows how Edwards historically extended its device moat into hospital monitoring platforms, sensors, catheters, and decision-support software."]},{"title":"Market Position","paragraphs":["The SAPIEN platform anchors Edwards' largest revenue pool. The 2024 annual report says net sales were $5.4 billion and that growth was driven by TAVR and TMTT products, with higher SAPIEN platform sales contributing to TAVR growth.","Edwards' moat depends less on commodity manufacturing and more on clinical evidence, regulatory approvals, physician workflows, specialized delivery systems, tissue technologies, and hospital procurement relationships."]}],"moatNarrative":["Edwards has a strong medtech moat because structural-heart implants are high-risk, heavily regulated, clinically evidence-driven products. Hospitals and heart teams do not switch valve platforms casually when patient outcomes, training, delivery-system familiarity, reimbursement, and post-market evidence are central to adoption.","The company's high gross margin, large R&D commitment, FDA-cleared indications, and deep SAPIEN installed base point to durable pricing power. The moat is not absolute: device generations, rival clinical data, reimbursement pressure, and lower-cost manufacturing ecosystems can still erode portions of the value chain over time."],"decentralizationNarrative":["Edwards' implantable heart-valve business is intrinsically hard to decentralize because design, validation, sterile manufacturing, traceability, clinical trials, and regulatory approvals must be tightly controlled. Open hardware and local fabrication are much more plausible in preclinical research, education, surgical planning, and non-implantable monitoring than in direct valve replacement today.","The strongest decentralization pressure comes from open medical-device R&D, open simulation pipelines, and modular noninvasive monitoring platforms. These can reduce dependence on proprietary workflows around research, screening, training, and adjunct monitoring, but they are not yet credible substitutes for FDA-approved implantable valve systems."],"sourceIds":["edwards-2024-annual-report","edwards-sapien-3-page","edwards-hemosphere-page","companiesmarketcap-ew","stockanalysis-ew"],"technologyWaveIds":["additive-manufacturing","printed-electronics","microfactories"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; refreshed on 2026-06-02 with company, product, and market-data sources.","inputMetrics":{"moat":{"value":86,"rationale":"Structural-heart implants require clinical evidence, regulatory clearance, specialized delivery systems, trained heart teams, and hospital procurement trust. Edwards also reported 2024 sales growth driven by TAVR and TMTT products and invested 19% of net sales in R&D.","sourceIds":["edwards-2024-annual-report","edwards-sapien-3-page"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizability":{"value":24,"rationale":"Implantable valves have low decentralizability because safety, sterility, clinical validation, and regulatory controls are central. Adjacent monitoring and simulation workflows are more open to modular hardware and open-source tooling.","sourceIds":["edwards-sapien-3-page","openwater-docs","febio-finesse"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"profitability":{"value":82,"rationale":"The 2024 annual report reported $5.4 billion of net sales, $4.322 billion of gross profit, and gross profit equal to 79.5% of sales, supporting a high profitability score despite significant R&D and SG&A needs.","sourceIds":["edwards-2024-annual-report"],"confidence":"high","lastReviewedOn":"2026-06-02"},"peRatio":{"value":45.09,"rationale":"StockAnalysis listed Edwards Lifesciences' P/E ratio at 45.09 in its current company snapshot near the review date.","sourceIds":["stockanalysis-ew"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"marketCap":{"value":50180000000,"rationale":"CompaniesMarketCap listed Edwards Lifesciences at about $50.18 billion of market capitalization as of May 2026.","sourceIds":["companiesmarketcap-ew"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},"products":[{"slug":"sapien-transcatheter-heart-valves","name":"SAPIEN transcatheter heart valves","category":"Transcatheter structural-heart devices","homepageUrl":"https://www.edwards.com/healthcare-professionals/products-services/transcatheter-heart/transcatheter-sapien-3","summary":"Edwards' SAPIEN 3, SAPIEN 3 Ultra, and SAPIEN 3 Ultra RESILIA systems are transcatheter heart-valve platforms used for selected aortic stenosis and failed-bioprosthetic valve indications.","whyItMatters":"SAPIEN is central to Edwards' TAVR franchise and illustrates a high-stakes medical-device moat built around clinical evidence, regulatory approvals, specialized delivery systems, tissue technology, and physician workflow lock-in.","replacementSketch":["A realistic open alternative would not begin as a direct implantable valve replacement. It would start with open simulation, open surgical-planning models, transparent durability datasets, and shared manufacturing process research that lets hospitals, researchers, and regulators compare designs more independently.","Over a longer horizon, additive manufacturing and open biomechanics tooling could shift some value from proprietary device design toward validated design files, local planning workflows, and certified regional manufacturing partners. Implant approval and long-term durability remain the hard constraints."],"sourceIds":["edwards-sapien-3-page","edwards-2024-annual-report"],"technologyWaveIds":["additive-manufacturing","microfactories"],"alternatives":[{"slug":"febio-finesse-valve-modeling","name":"FEBio FINESSE valve modeling workflow","kind":"open-source","homepageUrl":"https://arxiv.org/abs/2407.09629","repoUrl":"https://github.com/febiosoftware/FEBio","summary":"An open-source finite-element approach for estimating in vivo heart-valve strains using image-derived geometry and FEBio-based biomechanics tooling.","metrics":{"openness":{"value":78,"rationale":"The workflow is built around open-source biomechanics tooling, though clinical datasets and device-specific validation remain separate constraints.","sourceIds":["febio-finesse"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":55,"rationale":"Open modeling can decentralize research, training, and design evaluation, but it does not decentralize regulated implant manufacturing by itself.","sourceIds":["febio-finesse"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"readiness":{"value":38,"rationale":"Useful for research and preclinical analysis, but not a patient-ready valve system or approved replacement for SAPIEN.","sourceIds":["febio-finesse"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":52,"rationale":"Open simulation can reduce duplicated research and planning costs, but clinical validation and manufacturing costs still dominate implant economics.","sourceIds":["febio-finesse","heart-valve-3d-printing-review"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["febio-finesse"]}],"disruptionConcepts":[{"slug":"open-valve-validation-commons","name":"Open valve validation commons","summary":"A federation of universities, hospitals, regulators, and certified labs could publish open structural-heart simulation workflows, anonymized geometry benchmarks, durability protocols, and reproducible valve-performance datasets. The goal would be to make valve design and comparison more transparent before any manufacturer seeks regulatory approval.","angleIds":["federation","open-hardware","decentralized-coordination"],"thesis":"The concept attacks the information moat around valve performance rather than trying to bypass regulation. If hospitals and researchers can compare candidate valve designs through shared models and transparent validation data, proprietary device makers face more pressure on evidence quality and pricing.","bitcoinOrDecentralizationRole":"Decentralization matters through federated data stewardship and reproducible open tooling, not through Bitcoin. Independent labs coordinate around shared protocols while retaining local control over datasets, test rigs, and publication decisions.","coordinationMechanism":"Participating sites submit de-identified geometries, bench-test results, and simulation outputs to a governed commons. Maintainers version protocols, publish benchmark suites, and require reproducibility packages for accepted results.","verificationOrTrustModel":"Results are constrained by signed lab attestations, reproducible simulation containers, protocol versioning, independent replication, and transparent conflict-of-interest disclosure. False reporting is limited by cross-lab replication and public inconsistency checks, but not eliminated.","failureModes":["Clinical datasets may remain too restricted for broad replication.","Manufacturers may refuse to share device-specific design parameters.","Simulation benchmarks may not predict long-term human durability well enough for procurement decisions."],"adoptionPath":["Begin with academic valve-modeling benchmarks and open simulation containers.","Add hospital and regulator participation for de-identified anatomy and bench-test protocol alignment.","Use the commons to support comparative evidence packages for new valve entrants and lower-cost regional manufacturers."],"confidence":"medium","problemSourceIds":["edwards-2024-annual-report","edwards-sapien-3-page"],"enablerSourceIds":["febio-finesse","tpvr-open-framework"],"metrics":{"decentralizationFit":{"value":62,"rationale":"The design-evidence layer can be federated across labs and hospitals even though final implant manufacturing remains regulated and centralized.","sourceIds":["febio-finesse","tpvr-open-framework"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":58,"rationale":"Academic open-source biomechanics workflows already exist, but governance across hospitals, regulators, and manufacturers would be difficult.","sourceIds":["febio-finesse","tpvr-open-framework"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":46,"rationale":"Research tooling is feasible now; clinically meaningful shared validation remains hard because of data access, liability, and regulatory barriers.","sourceIds":["febio-finesse","edwards-sapien-3-page"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":44,"rationale":"The concept could pressure evidence opacity and development costs, but it would not quickly replace Edwards' approved valve franchise.","sourceIds":["edwards-2024-annual-report","heart-valve-3d-printing-review"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"certified-regional-valve-microfoundries","name":"Certified regional valve microfoundries","summary":"A speculative regional-manufacturing model would pair open process recipes, additive-manufacturing research, and certified quality systems to produce patient-specific valve prototypes or planning models locally before progressing toward tightly controlled implantable components.","angleIds":["decentralized-manufacturing","3d-printing","local-materials-processing"],"thesis":"If additive manufacturing eventually meets durability, biocompatibility, and regulatory requirements, some structural-heart value could move from centralized proprietary factories toward certified regional manufacturing cells and open process libraries.","bitcoinOrDecentralizationRole":"The decentralization role is manufacturing and process transparency rather than cryptocurrency. Local certified operators would coordinate through shared validation protocols, traceable material lots, and auditable manufacturing records.","coordinationMechanism":"Hospitals, labs, and certified manufacturers would share design files, process windows, inspection data, and failure reports through a governed registry. Production rights would depend on meeting validated process and quality-system requirements.","verificationOrTrustModel":"Cheating is constrained by lot traceability, destructive sample testing, digital inspection records, independent audits, and regulator-visible quality logs. The model remains vulnerable if local operators cannot prove long-term durability and sterility at implant-grade standards.","failureModes":["3D-printed valves may fail durability, hydrodynamic, biocompatibility, or transcatheter-compatibility requirements.","Regulators may reject distributed manufacturing for high-risk implants.","Local cost advantages may disappear once full quality-system and liability costs are included."],"adoptionPath":["Use local fabrication first for anatomical models, training, and non-implantable test articles.","Move to certified bench-test coupons and preclinical prototypes under shared protocols.","Only pursue implantable components after long-term durability, sterility, and regulatory evidence are credible."],"confidence":"speculative","problemSourceIds":["edwards-sapien-3-page","edwards-2024-annual-report"],"enablerSourceIds":["heart-valve-3d-printing-review","open-source-medical-hardware"],"metrics":{"decentralizationFit":{"value":70,"rationale":"If the technical and regulatory hurdles were solved, regional manufacturing would materially decentralize production; today that remains speculative.","sourceIds":["heart-valve-3d-printing-review","open-source-medical-hardware"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":35,"rationale":"Open hardware communities and medical-device documentation practices exist, but implant-grade regional coordination is not yet proven.","sourceIds":["open-source-medical-hardware"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":22,"rationale":"Published reviews describe promise for 3D-printed valves but also note unresolved requirements around durability, hydrodynamics, biocompatibility, and transcatheter compatibility.","sourceIds":["heart-valve-3d-printing-review"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":30,"rationale":"Near-term pressure is low because Edwards' approved implant platforms remain protected by regulation and clinical evidence; long-term pressure could rise if additive manufacturing matures.","sourceIds":["edwards-sapien-3-page","heart-valve-3d-printing-review"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]},{"slug":"hemosphere-monitor","name":"HemoSphere monitor","category":"Advanced hemodynamic monitoring","homepageUrl":"https://www.edwards.com/ca-en/healthcare-professionals/products-services/hemodynamic-monitoring/hemosphere","summary":"HemoSphere is an advanced monitoring platform for hemodynamic and tissue-oxygenation parameters, with compatibility across cuffs, sensors, and catheters and decision-support features such as hypotension prediction when paired with compatible Acumen products.","whyItMatters":"The platform shows how a medical-device company can extend control from hardware into consumables, software, sensor compatibility, and clinical workflow data displays.","replacementSketch":["A decentralized replacement would be more plausible for research, triage, and lower-acuity monitoring than for fully regulated ICU use. The path starts with open sensor modules, transparent signal processing, reproducible validation datasets, and interoperable data export rather than a direct one-for-one hospital monitor clone.","As open optical and physiological sensing platforms mature, hospitals and researchers could mix certified modules from different vendors while preserving auditability, calibration records, and clinician-visible confidence indicators."],"sourceIds":["edwards-hemosphere-page"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"openwater-open-motion","name":"Openwater Open-Motion","kind":"open-source","homepageUrl":"https://docs.openwater.health/","repoUrl":"https://github.com/OpenwaterHealth","summary":"An open-source near-infrared optical imaging platform for noninvasive blood-flow and micro-motion measurement, with open hardware, firmware, and software documentation.","metrics":{"openness":{"value":86,"rationale":"Openwater states that its hardware, firmware, and software are fully open-source and points developers to public repositories and contribution paths.","sourceIds":["openwater-docs"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":72,"rationale":"The modular console and sensor architecture can support distributed research and customization, though clinical deployment would still need regulatory validation.","sourceIds":["openwater-docs","openwater-motion"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"readiness":{"value":42,"rationale":"The platform is positioned for builders and investigational medical-device innovation, not as a drop-in hospital replacement for HemoSphere.","sourceIds":["openwater-docs"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":68,"rationale":"Open designs and semiconductor-based sensing could lower research and customization costs, but clinical-grade manufacturing and validation remain expensive.","sourceIds":["openwater-docs","openwater-motion"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["openwater-docs","openwater-motion"]}],"disruptionConcepts":[{"slug":"open-hemodynamic-monitoring-network","name":"Open hemodynamic monitoring network","summary":"A modular open monitoring network could combine open optical sensing, commodity physiological sensors, transparent signal-processing models, and hospital-owned data pipelines to reduce dependence on proprietary bedside-monitor ecosystems.","angleIds":["open-hardware","federation","decentralized-coordination"],"thesis":"The concept shifts value away from a single proprietary monitor and toward validated modules, open algorithms, and interoperable hospital data infrastructure. It pressures device vendors on consumables, software lock-in, and data portability.","bitcoinOrDecentralizationRole":"Decentralization matters through federated device certification, open algorithm review, and hospital-controlled telemetry. Bitcoin is not central because the core problem is clinical validation and interoperability, not payments or censorship resistance.","coordinationMechanism":"Hospitals, researchers, and manufacturers publish module specifications, calibration protocols, and validation datasets. Certified modules advertise capabilities through open interfaces and feed signed data into hospital-controlled records.","verificationOrTrustModel":"Trust comes from calibration certificates, signed firmware builds, reproducible signal-processing code, independent validation studies, and audit logs that bind readings to device identity and sensor state. Spoofing is constrained by device attestation and cross-sensor consistency checks, but bad calibration or poor clinical validation remains a serious risk.","failureModes":["Open sensors may not match invasive or ICU-grade accuracy across patient populations.","Hospitals may prefer single-vendor accountability for liability and support.","Interoperability standards may fragment if vendors implement partial or incompatible profiles."],"adoptionPath":["Start in research and simulation labs with open optical and physiological sensing modules.","Add validated monitoring for lower-acuity settings and clinician-reviewed decision support.","Integrate certified modules into hospital telemetry and quality systems where accuracy evidence is strong enough."],"confidence":"medium","problemSourceIds":["edwards-hemosphere-page"],"enablerSourceIds":["openwater-docs","openwater-motion"],"metrics":{"decentralizationFit":{"value":74,"rationale":"Monitoring hardware and software can be modularized and federated more readily than implantable valves, especially around research and data workflows.","sourceIds":["openwater-docs"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":60,"rationale":"Openwater documents public repositories, contribution paths, and governance concepts, but clinical ecosystem coordination is still early.","sourceIds":["openwater-docs"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":52,"rationale":"Open sensing platforms exist, but hospital-grade validation, support, integration, and regulatory approval are substantial remaining work.","sourceIds":["openwater-docs","edwards-hemosphere-page"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":48,"rationale":"Open platforms could pressure research and lower-acuity monitoring workflows before they threaten proprietary ICU platforms directly.","sourceIds":["edwards-hemosphere-page","openwater-docs"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"cooperative-device-maintenance-and-consumables","name":"Cooperative device maintenance and consumables clearinghouse","summary":"Hospitals and biomedical engineering teams could form a cooperative clearinghouse for repair documentation, compatible accessories, calibration procedures, and validated consumable alternatives for monitoring platforms where regulation permits.","angleIds":["cooperative-production","open-hardware","peer-to-peer-marketplace"],"thesis":"The concept attacks the after-sale lock-in layer: service contracts, accessory compatibility, consumables, and opaque repair workflows. It would not replace HemoSphere outright, but it could reduce the margin power of closed monitoring ecosystems.","bitcoinOrDecentralizationRole":"Decentralization matters through cooperative ownership and peer-to-peer exchange of validated repair and compatibility knowledge. Bitcoin could support settlement in a cross-border parts marketplace, but it is not required for the core mechanism.","coordinationMechanism":"Member hospitals submit repair records, compatibility tests, calibration outcomes, and supplier performance data. A cooperative governance body approves shared procedures and flags unsafe or unsupported substitutions.","verificationOrTrustModel":"Trust is based on documented test results, member reputation, lot-level traceability, audit trails, and incident reporting. Fake fulfillment and unsafe parts are constrained by escrow, supplier bans, and required calibration evidence, but liability concerns remain high.","failureModes":["Manufacturer warranties and regulatory constraints may limit third-party repairs or consumables.","Hospitals may lack incentives to share failure and repair data publicly.","Unsafe substitutions could create patient risk and legal exposure."],"adoptionPath":["Begin with noncritical accessories, maintenance documentation, and biomedical engineering knowledge sharing.","Add cooperative purchasing for validated commodity parts where allowed.","Move toward open compatibility profiles and third-party service certification for monitoring modules."],"confidence":"medium","problemSourceIds":["edwards-hemosphere-page"],"enablerSourceIds":["open-source-medical-hardware","glia-docs"],"metrics":{"decentralizationFit":{"value":66,"rationale":"Repair, maintenance, and purchasing knowledge can be shared cooperatively without decentralizing every clinical function of the device.","sourceIds":["open-source-medical-hardware","glia-docs"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":56,"rationale":"Open medical hardware documentation and collaborative medical-device communities exist, but hospital procurement and liability coordination are difficult.","sourceIds":["glia-docs","open-source-medical-hardware"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":50,"rationale":"Feasible first for documentation and noncritical parts; much harder for sensors or consumables that affect clinical readings.","sourceIds":["edwards-hemosphere-page","open-source-medical-hardware"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":42,"rationale":"This would pressure service and accessory economics more than core monitor adoption, so incumbent pressure is moderate but bounded.","sourceIds":["edwards-hemosphere-page"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]}]},"sources":[{"id":"edwards-2024-annual-report","title":"Edwards Lifesciences 2024 Annual Report","url":"https://s27.q4cdn.com/788244549/files/doc_financials/2024/ar/EW-2024-Annual-Report-1.pdf","kind":"annual-report","publisher":"Edwards Lifesciences","note":"Primary source for company overview, 2024 sales, gross profit, R&D intensity, business lines, and TAVR/TMTT growth discussion.","accessedOn":"2026-06-02"},{"id":"edwards-sapien-3-page","title":"Transcatheter SAPIEN 3","url":"https://www.edwards.com/healthcare-professionals/products-services/transcatheter-heart/transcatheter-sapien-3","kind":"product-page","publisher":"Edwards Lifesciences","note":"Primary product source for SAPIEN 3, SAPIEN 3 Ultra, and SAPIEN 3 Ultra RESILIA indications and positioning.","accessedOn":"2026-06-02"},{"id":"edwards-hemosphere-page","title":"HemoSphere Advanced Monitoring Platform","url":"https://www.edwards.com/ca-en/healthcare-professionals/products-services/hemodynamic-monitoring/hemosphere","kind":"product-page","publisher":"Edwards Lifesciences","note":"Primary product source for HemoSphere monitoring capabilities, sensor and catheter compatibility, and decision-support positioning.","accessedOn":"2026-06-02"},{"id":"companiesmarketcap-ew","title":"Edwards Lifesciences Market Capitalization","url":"https://companiesmarketcap.com/edwards-lifesciences/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-data source for approximate May 2026 market capitalization used in the registry metrics.","accessedOn":"2026-06-02"},{"id":"stockanalysis-ew","title":"Edwards Lifesciences Stock Price & Overview","url":"https://stockanalysis.com/stocks/ew/","kind":"market-data","publisher":"StockAnalysis","note":"Market-data source for current valuation snapshot, including P/E ratio and revenue context.","accessedOn":"2026-06-02"},{"id":"openwater-docs","title":"Openwater Developer Documentation","url":"https://docs.openwater.health/","kind":"technical-docs","publisher":"Openwater","note":"Documents Openwater's open-source medical-device ecosystem, Open-Motion platform, public repositories, contribution model, and governance approach.","accessedOn":"2026-06-02"},{"id":"openwater-motion","title":"Open-Motion Hemodynamic Platform","url":"https://www.openwater.health/motion_booth","kind":"product-page","publisher":"Openwater","note":"Describes Open-Motion as a near-infrared hemodynamic platform for blood-flow, blood-volume, and micro-motion measurement using an open-source architecture.","accessedOn":"2026-06-02"},{"id":"febio-finesse","title":"FEBio FINESSE: An Open-Source Finite Element Simulation Approach to Estimate In Vivo Heart Valve Strains Using Shape Enforcement","url":"https://arxiv.org/abs/2407.09629","kind":"analysis","publisher":"arXiv","note":"Enabler source for open-source heart-valve biomechanics simulation and design-evaluation concepts.","accessedOn":"2026-06-02"},{"id":"tpvr-open-framework","title":"Integrated Open-Source Framework for Simulation of Transcatheter Pulmonary Valves in Native Right Ventricular Outflow Tracts","url":"https://arxiv.org/abs/2507.06337","kind":"analysis","publisher":"arXiv","note":"Enabler source for open-source simulation workflows around transcatheter pulmonary valve replacement planning and device selection.","accessedOn":"2026-06-02"},{"id":"heart-valve-3d-printing-review","title":"3D Printing of Heart Valves","url":"https://www.sciencedirect.com/science/article/abs/pii/S0167779923003232","kind":"analysis","publisher":"Trends in Biotechnology","note":"Research review used to bound the promise and current limitations of 3D-printed heart valves for decentralized-manufacturing concepts.","accessedOn":"2026-06-02"},{"id":"open-source-medical-hardware","title":"Open-Source Hardware for Medical Devices","url":"https://pmc.ncbi.nlm.nih.gov/articles/PMC4853539/","kind":"analysis","publisher":"PLOS Biology / PubMed Central","note":"Background source on open-source medical-device hardware opportunities, documentation, fabrication, and healthcare-specific challenges.","accessedOn":"2026-06-02"},{"id":"glia-docs","title":"Glia Documentation","url":"https://docs.glia.org/","kind":"technical-docs","publisher":"Glia","note":"Open medical hardware documentation source used for cooperative repair, documentation, and open-device ecosystem context.","accessedOn":"2026-06-02"}],"summaryMarkdown":"Prepared a new Edwards Lifesciences registry bundle focused on SAPIEN transcatheter valves and HemoSphere monitoring, with strong moat scoring for regulated structural-heart devices and cautious decentralization concepts around open simulation, open monitoring, and certified manufacturing ecosystems."}
+2026-06-02T21:07:32.386808Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a28-301e-7031-ad27-4a2de05102a6 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+54,980

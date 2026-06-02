@@ -1,0 +1,1645 @@
+2026-06-02T21:23:21.476682Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T21:23:21.488994Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a38-3bb0-7371-a674-a2e4ed3eeec2
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: fastenal
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "fastenal",
+  "name": "Fastenal",
+  "ticker": "FAST",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "industrials",
+  "industryId": "commercial-services-supplies",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/fastenal/marketcap/",
+  "description": "Fastenal distributes fasteners, tools, safety supplies, and industrial products through branches, onsite locations, and vending systems.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Fasteners",
+    "FAST Solutions vending"
+  ],
+  "seedSourceUrls": [
+    "https://www.fastenal.com/",
+    "https://investor.fastenal.com/",
+    "https://companiesmarketcap.com/fastenal/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T21:23:23.461252Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.461281Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.461800Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.461805Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.462380Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.462387Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.462983Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.462993Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.466774Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.466787Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.468139Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:23.468147Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.353283Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.353299Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.353715Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.353723Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.354036Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.354040Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.354328Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.354333Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.354788Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.354795Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.355451Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:23:24.355455Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Fastenal 2025 annual report net sales onsite locations vending FASTBin FMI
+web search:
+web search: Open Source Ecology machine library open source hardware fasteners bolts
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "fastenal",
+      "name": "Fastenal",
+      "ticker": "FAST",
+      "rankApprox": 210,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "industrials",
+      "industryId": "commercial-services-supplies",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/fastenal/marketcap/",
+      "description": "Fastenal distributes fasteners, tools, safety supplies, and industrial products through branches, onsite locations, managed inventory programs, and vending systems.",
+      "overview": [
+        {
+          "title": "Industrial Distribution Network",
+          "paragraphs": [
+            "Fastenal sells industrial and construction supplies, with fasteners, safety products, tools, and other maintenance items delivered through a dense branch, onsite, distribution, and digital fulfillment network.",
+            "The company has shifted from a branch-only model toward embedded customer sites, Fastenal Managed Inventory programs, vending devices, bin stock systems, and eBusiness channels that make replenishment more automated and sticky."
+          ]
+        },
+        {
+          "title": "Customer Embedded Supply",
+          "paragraphs": [
+            "Fastenal's strongest product is not any single screw or glove but the replenishment layer wrapped around commodity industrial supplies. Onsite locations, FASTVend, FASTBin, FASTStock, and related tools reduce stockouts and purchasing friction for factories and job sites.",
+            "That model creates operational convenience and data advantages, but it also leaves much of the physical product base exposed to open catalogs, local fabrication, cooperative purchasing, and interoperable inventory software over time."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Fastenal's moat comes from proximity, service density, procurement integration, and customer switching costs rather than proprietary control over the underlying goods. Its branch footprint, onsite staff, distribution centers, national accounts, and managed inventory technology make it difficult for a generic catalog distributor to replicate the full service bundle quickly.",
+        "The moat is moderate to strong because embedded replenishment touches production uptime, not just price. It is weaker at the part level: fasteners, safety items, and tools are often standardized, multi-sourced, and vulnerable to procurement unbundling if customers can coordinate purchasing, quality assurance, and replenishment independently."
+      ],
+      "decentralizationNarrative": [
+        "Fastenal is more decentralizable than many industrial incumbents because much of its catalog is standardized hardware and consumable supply rather than patented, high-complexity machinery. Local distributors, cooperatives, makerspaces, repair networks, and open inventory tools can replicate parts of the value chain.",
+        "The hard part is not listing bolts online; it is matching Fastenal's reliability, authenticated quality, job-site replenishment discipline, and working-capital convenience. Decentralized alternatives need open part specifications, local supplier reputation, shared inventory visibility, and verification mechanisms that make stock availability and part quality trustworthy."
+      ],
+      "sourceIds": [
+        "fastenal-2025-10k",
+        "fastenal-ir",
+        "stockanalysis-fast-market-cap",
+        "stockanalysis-fast-statistics"
+      ],
+      "technologyWaveIds": [
+        "microfactories",
+        "additive-manufacturing"
+      ],
+      "snapshotNote": "Prepared from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; operating and valuation inputs were refreshed against Fastenal's 2025 annual report and current market-data pages available in late May and early June 2026.",
+      "inputMetrics": {
+        "moat": {
+          "value": 72,
+          "rationale": "Fastenal has a durable service moat through onsite locations, branches, distribution centers, vending devices, managed inventory programs, and account integration, but many underlying products remain standardized and multi-sourced.",
+          "sourceIds": [
+            "fastenal-2025-10k",
+            "fastenal-ir"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 58,
+          "rationale": "Fasteners and industrial consumables are comparatively decentralizable through open catalogs, cooperative purchasing, and local fabrication, while authenticated quality, replenishment reliability, and customer-site service are harder to decentralize.",
+          "sourceIds": [
+            "fastenal-2025-10k",
+            "ose-gvcs",
+            "open-know-how"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 82,
+          "rationale": "Fastenal's annual report shows a profitable, cash-generative distributor with scale economics, recurring industrial demand, and mature operating discipline.",
+          "sourceIds": [
+            "fastenal-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 38.89,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 38.89 for FAST around the late-May 2026 market-data snapshot.",
+          "sourceIds": [
+            "stockanalysis-fast-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 50440000000,
+          "rationale": "StockAnalysis reported Fastenal market capitalization of about $50.44 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-fast-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "fasteners",
+        "name": "Fasteners",
+        "category": "Industrial supplies",
+        "homepageUrl": "https://www.fastenal.com/",
+        "summary": "Fastenal's core catalog includes threaded fasteners and related industrial components sold to manufacturers, construction firms, maintenance teams, and other commercial customers.",
+        "whyItMatters": "Fasteners are small, standardized, mission-critical inputs where stockouts can halt production even though the physical items are often commodity-like.",
+        "replacementSketch": [
+          "A credible replacement would combine open part specifications, interoperable catalogs, local stocking, cooperative purchasing, and quality documentation rather than trying to beat Fastenal only on unit price.",
+          "Local fabrication and open hardware methods matter most for long-tail brackets, jigs, fixtures, and non-critical parts; certified fasteners still need traceability and material assurance before decentralized supply can replace incumbent distributors in safety-sensitive contexts."
+        ],
+        "sourceIds": [
+          "fastenal-2025-10k",
+          "ose-gvcs",
+          "open-know-how"
+        ],
+        "technologyWaveIds": [
+          "microfactories",
+          "additive-manufacturing"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-source-ecology-gvcs",
+            "name": "Open Source Ecology GVCS",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourceecology.org/gvcs/",
+            "summary": "Open Source Ecology's Global Village Construction Set documents open industrial machines and production methods aimed at local, replicable manufacturing.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "The project explicitly publishes open designs and documentation for replicable industrial machines.",
+                "sourceIds": [
+                  "ose-gvcs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "Its core premise is local, distributed fabrication rather than centralized industrial supply.",
+                "sourceIds": [
+                  "ose-gvcs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 38,
+                "rationale": "The project is conceptually aligned but not a turnkey industrial fastener distributor with certified inventory and broad commercial service levels.",
+                "sourceIds": [
+                  "ose-gvcs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 62,
+                "rationale": "Local fabrication can reduce cost for certain fixtures, tools, and long-tail parts, but commodity fasteners already benefit from large-scale manufacturing.",
+                "sourceIds": [
+                  "ose-gvcs",
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "ose-gvcs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-fastener-spec-and-local-sourcing-network",
+            "name": "Open Fastener Spec and Local Sourcing Network",
+            "summary": "An open fastener network would publish standardized part records, material requirements, approved substitutes, inspection evidence, and local supplier availability so buyers can source commodity hardware from multiple verified local operators instead of depending on one embedded distributor.",
+            "angleIds": [
+              "decentralized-coordination",
+              "open-hardware",
+              "cooperative-production"
+            ],
+            "thesis": "The market structure shifts from distributor-controlled catalog and replenishment relationships toward shared part knowledge, pooled local demand, and supplier reputation that customers can carry between vendors.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through shared open catalogs, cooperative purchasing, and portable supplier reputation; Bitcoin is not central unless payment settlement or escrow is later added for cross-border suppliers.",
+            "coordinationMechanism": "Buyers publish approved part requirements and demand forecasts; local suppliers and co-ops bid to stock or manufacture; inventory nodes expose availability through interoperable feeds; customers choose by price, lead time, certification level, and reliability history.",
+            "verificationOrTrustModel": "The system would require lot records, material certificates, dimensional inspection reports, sample audits, buyer dispute history, and reputation that is tied to fulfilled orders. Cheating is constrained by public failure records, escrowed payments for new suppliers, and independent inspection for critical parts.",
+            "failureModes": [
+              "Safety-critical fasteners may remain unsuitable without certified metallurgy, liability coverage, and trusted inspection infrastructure.",
+              "Supplier reputation can be gamed if order history, inspection records, and dispute resolution are not portable and tamper-resistant."
+            ],
+            "adoptionPath": [
+              "Start with non-critical maintenance fasteners and shop supplies for makerspaces, repair shops, and small manufacturers.",
+              "Add cooperative purchasing groups and third-party inspection partners before expanding into higher-volume industrial buyers."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "fastenal-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "open-know-how",
+              "ose-gvcs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The concept directly decentralizes catalog control, supplier selection, and local stocking while preserving shared standards.",
+                "sourceIds": [
+                  "open-know-how",
+                  "ose-gvcs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 61,
+                "rationale": "Open hardware documentation and cooperative purchasing are credible primitives, but industrial quality assurance and liability coordination remain difficult.",
+                "sourceIds": [
+                  "open-know-how",
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 55,
+                "rationale": "Software, catalogs, and inspection workflows are feasible; broad replacement of certified industrial fastener distribution would take years.",
+                "sourceIds": [
+                  "open-know-how",
+                  "partkeepr-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 50,
+                "rationale": "The concept pressures long-tail catalog margins and customer lock-in but does not immediately replace Fastenal's service density or working-capital role.",
+                "sourceIds": [
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "microfactory-maintenance-parts-loop",
+            "name": "Microfactory Maintenance Parts Loop",
+            "summary": "Small workshops could use shared open designs, basic CNC tools, additive manufacturing, and recycled or locally processed materials to produce fixtures, brackets, bins, guards, and low-risk replacement parts near the point of use, reducing dependence on centralized distributor catalogs for long-tail maintenance needs.",
+            "angleIds": [
+              "home-microfactory",
+              "decentralized-manufacturing",
+              "recycling-and-reuse"
+            ],
+            "thesis": "The market shifts some maintenance spend from centralized stocked SKUs to locally fabricated parts, especially for custom or slow-moving items where lead time and minimum order quantity matter more than mass-production cost.",
+            "bitcoinOrDecentralizationRole": "The relevant decentralization role is local manufacturing capacity and open design reuse, not Bitcoin. Payment rails could be added, but the main structural change is distributed production of non-critical parts.",
+            "coordinationMechanism": "Factories, repair shops, and makerspaces share approved design files and bills of materials; local operators fabricate parts to spec; users feed back fit, durability, and revision data into shared catalogs.",
+            "verificationOrTrustModel": "Trust depends on versioned design files, machine calibration logs, material declarations, dimensional checks, and field-performance feedback. Critical parts would need external certification or remain outside scope.",
+            "failureModes": [
+              "Material strength, fatigue behavior, and liability constraints limit use for load-bearing or safety-critical components.",
+              "Local fabrication may be more expensive than centralized commodity supply for common high-volume fasteners."
+            ],
+            "adoptionPath": [
+              "Begin with jigs, bins, shop fixtures, protective covers, and non-critical replacement parts.",
+              "Build shared libraries of proven designs and local operator ratings before moving into more demanding maintenance components."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "fastenal-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "ose-gvcs",
+              "open-know-how"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "The concept directly replaces centralized sourcing for certain long-tail parts with local production and shared open designs.",
+                "sourceIds": [
+                  "ose-gvcs",
+                  "open-know-how"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "Open design standards and fabrication communities exist, but reliable industrial coordination across many local operators is still immature.",
+                "sourceIds": [
+                  "open-know-how",
+                  "ose-gvcs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 47,
+                "rationale": "The approach is feasible for non-critical parts but speculative for broader industrial maintenance supply because quality assurance and liability are unresolved.",
+                "sourceIds": [
+                  "ose-gvcs",
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 43,
+                "rationale": "Pressure would be strongest in custom and slow-moving categories, with limited near-term impact on commodity fastener volume.",
+                "sourceIds": [
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "fast-solutions-vending",
+        "name": "FAST Solutions vending",
+        "category": "Industrial vending and managed inventory",
+        "homepageUrl": "https://www.fastenal.com/fast/solutions",
+        "summary": "FAST Solutions combines vending machines, bin systems, stocking tools, and managed inventory technology to place consumables inside customer facilities and automate replenishment.",
+        "whyItMatters": "Industrial vending turns commodity supplies into a usage-data and replenishment platform, increasing switching costs and making Fastenal part of a customer's daily operating workflow.",
+        "replacementSketch": [
+          "A replacement would need open inventory software, barcode or sensor-based cabinets, supplier-neutral replenishment rules, and local service partners who can refill, repair, and audit inventory without locking the buyer to one distributor.",
+          "The near-term path is likely hybrid: open software and interoperable data first, then cooperative fulfillment or multi-supplier bidding once customers trust the usage data and service reliability."
+        ],
+        "sourceIds": [
+          "fastenal-2025-10k",
+          "partkeepr-github",
+          "partdb-github"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "part-db",
+            "name": "Part-DB",
+            "kind": "open-source",
+            "homepageUrl": "https://docs.part-db.de/",
+            "repoUrl": "https://github.com/Part-DB/Part-DB-server",
+            "summary": "Part-DB is an open-source inventory management system focused on parts tracking, stock control, and bill-of-material workflows.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "The project is published as open-source software with a public repository.",
+                "sourceIds": [
+                  "partdb-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 63,
+                "rationale": "Self-hosted inventory software gives organizations control over part records and stock data, though it does not itself provide a distributed supplier network.",
+                "sourceIds": [
+                  "partdb-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 58,
+                "rationale": "It is usable as inventory software but not a full industrial vending hardware, refill, and procurement service.",
+                "sourceIds": [
+                  "partdb-github",
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 65,
+                "rationale": "Self-hosted inventory tooling can reduce software lock-in and improve purchasing discipline, but hardware cabinets and replenishment labor still carry costs.",
+                "sourceIds": [
+                  "partdb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "partdb-github"
+            ]
+          },
+          {
+            "slug": "partkeepr",
+            "name": "PartKeepr",
+            "kind": "open-source",
+            "homepageUrl": "https://www.partkeepr.org/",
+            "repoUrl": "https://github.com/partkeepr/PartKeepr",
+            "summary": "PartKeepr is an open-source inventory management project originally designed for electronic components and parts tracking.",
+            "metrics": {
+              "openness": {
+                "value": 85,
+                "rationale": "The project source code and issue history are public, though the repository has been archived.",
+                "sourceIds": [
+                  "partkeepr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 56,
+                "rationale": "It supports self-managed inventory records but is not a federated procurement or vending network.",
+                "sourceIds": [
+                  "partkeepr-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 32,
+                "rationale": "The repository is archived and its dependency stack is dated, making it a weak current replacement despite its conceptual fit.",
+                "sourceIds": [
+                  "partkeepr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 42,
+                "rationale": "Open source licensing can reduce software cost, but maintenance burden and missing vending-service functionality limit leverage.",
+                "sourceIds": [
+                  "partkeepr-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "partkeepr-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "supplier-neutral-open-vending-stack",
+            "name": "Supplier-Neutral Open Vending Stack",
+            "summary": "An open vending stack would separate industrial inventory software, cabinet telemetry, replenishment rules, and supplier fulfillment so customers can keep usage data and invite multiple distributors or local service co-ops to compete for refill work.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "The market structure shifts from distributor-owned vending lock-in toward buyer-owned data and supplier-neutral replenishment, reducing the switching cost created by embedded hardware and usage history.",
+            "bitcoinOrDecentralizationRole": "Federation and decentralized coordination are central because each customer, service provider, and supplier can operate independent systems while sharing replenishment events and inventory state through open interfaces. Bitcoin is not required for the base mechanism.",
+            "coordinationMechanism": "Cabinets and bins publish signed usage events to a customer-controlled inventory system; approved suppliers subscribe to reorder opportunities; local refill operators accept service tasks; buyers set price, lead-time, brand, and substitution rules.",
+            "verificationOrTrustModel": "Telemetry is tied to device identity, physical cycle counts, refill photos, operator check-ins, and exception audits. Fraud is constrained by reconciling sensor events, purchase orders, delivery confirmations, and periodic manual counts.",
+            "failureModes": [
+              "Hardware integration across vending cabinets, scales, bins, and scanners may fragment without strong interoperability standards.",
+              "Local refill operators could miscount, substitute poor-quality products, or spoof service completion without audit discipline."
+            ],
+            "adoptionPath": [
+              "Deploy in small facilities that already manage parts with open-source inventory software and manual barcode workflows.",
+              "Add supplier bidding, service co-op refill routes, and cabinet telemetry once buyers trust the data model."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "fastenal-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "partdb-github",
+              "partkeepr-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "The design decentralizes data ownership, supplier choice, and refill operations while preserving coordinated replenishment.",
+                "sourceIds": [
+                  "partdb-github",
+                  "partkeepr-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 66,
+                "rationale": "Inventory software, barcode workflows, and procurement feeds are practical, but open standards for industrial vending telemetry remain the gating factor.",
+                "sourceIds": [
+                  "partdb-github",
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 60,
+                "rationale": "A minimal software-first version is feasible; full parity with Fastenal's hardware, service, and replenishment network is harder.",
+                "sourceIds": [
+                  "partdb-github",
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 57,
+                "rationale": "If customers own their inventory data and reorder logic, Fastenal's vending lock-in weakens, though its service network remains valuable.",
+                "sourceIds": [
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "proof-of-service-refill-market",
+            "name": "Proof-of-Service Refill Market",
+            "summary": "A refill market could let independent local operators service industrial cabinets and bins, with signed service events, buyer ratings, and payment release tied to verified replenishment rather than distributor employment.",
+            "angleIds": [
+              "peer-to-peer-marketplace",
+              "decentralized-coordination",
+              "proof-of-work"
+            ],
+            "thesis": "The embedded service labor around vending becomes a competitive local marketplace instead of a distributor-owned route network, pressuring the service side of Fastenal's moat.",
+            "bitcoinOrDecentralizationRole": "Proof-of-work is relevant only as an anti-spam or staking-adjacent primitive for scarce bidding and reputation defense; the main decentralization mechanism is a peer-to-peer service market with portable operator reputation.",
+            "coordinationMechanism": "Facilities post refill tasks with approved SKUs, access windows, and service levels; operators bid or subscribe to routes; suppliers stage inventory; payment is released after device telemetry, delivery evidence, and buyer acceptance align.",
+            "verificationOrTrustModel": "The market uses signed cabinet events, geofenced check-ins, package scans, refill photos, random audits, and buyer dispute windows. Fake fulfillment is constrained by inventory deltas and delayed reputation-weighted payment release.",
+            "failureModes": [
+              "Access control and workplace safety rules may prevent casual marketplace operators from entering industrial facilities.",
+              "Collusion between operators and receiving staff could still falsify counts unless audits and telemetry are strong."
+            ],
+            "adoptionPath": [
+              "Start with low-risk consumables in facilities that already use contractors for maintenance support.",
+              "Expand to route density in industrial parks where multiple buyers can share vetted local refill operators."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "fastenal-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "partdb-github",
+              "open-know-how"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "The concept decentralizes service labor and fulfillment coordination, though buyer access controls keep it from being fully open.",
+                "sourceIds": [
+                  "fastenal-2025-10k",
+                  "partdb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 48,
+                "rationale": "Marketplace coordination is plausible, but industrial access, insurance, and safety constraints make the model harder than consumer delivery.",
+                "sourceIds": [
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 42,
+                "rationale": "The software layer is feasible, but operational controls, liability, and trust requirements make real deployment speculative.",
+                "sourceIds": [
+                  "partdb-github",
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "It could pressure refill labor margins and supplier exclusivity in dense local markets, but Fastenal's national accounts and trusted staff limit near-term displacement.",
+                "sourceIds": [
+                  "fastenal-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "fastenal-2025-10k",
+      "title": "Fastenal 2025 Annual Report and Form 10-K",
+      "url": "https://s23.q4cdn.com/591718779/files/doc_financials/2025/Q4/2025-Annual-Report-and-10-K-with-Exhibits-Website-version.pdf",
+      "kind": "annual-report",
+      "publisher": "Fastenal",
+      "note": "Primary source for Fastenal's business model, locations, managed inventory programs, vending/bin technologies, sales mix, and profitability.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "fastenal-ir",
+      "title": "Fastenal Investor Relations",
+      "url": "https://investor.fastenal.com/",
+      "kind": "investor-relations",
+      "publisher": "Fastenal",
+      "note": "Investor-relations hub for company filings, releases, and operating updates.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "fastenal-solutions",
+      "title": "FAST Solutions",
+      "url": "https://www.fastenal.com/fast/solutions",
+      "kind": "product-page",
+      "publisher": "Fastenal",
+      "note": "Product page for Fastenal's managed inventory, vending, bin, and supply-chain service offerings.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-fast-market-cap",
+      "title": "Fastenal Market Cap and Net Worth",
+      "url": "https://stockanalysis.com/stocks/fast/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for Fastenal's late-May 2026 market capitalization.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-fast-statistics",
+      "title": "Fastenal Statistics and Valuation",
+      "url": "https://stockanalysis.com/stocks/fast/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for Fastenal valuation metrics including trailing P/E.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ose-gvcs",
+      "title": "Global Village Construction Set",
+      "url": "https://www.opensourceecology.org/gvcs/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open-source industrial-machine project used as an enabling reference for distributed fabrication and local production concepts.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "open-know-how",
+      "title": "Open Know-How",
+      "url": "https://www.internetofproduction.org/open-know-how",
+      "kind": "technical-docs",
+      "publisher": "Internet of Production Alliance",
+      "note": "Open data model for sharing hardware designs and documentation, relevant to open part catalogs and distributed manufacturing coordination.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "partkeepr-github",
+      "title": "PartKeepr Open Source Inventory Management",
+      "url": "https://github.com/partkeepr/PartKeepr",
+      "kind": "open-source-project",
+      "publisher": "PartKeepr",
+      "note": "Open-source inventory management project relevant to supplier-neutral parts tracking, with the caveat that the repository has been archived.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "partdb-github",
+      "title": "Part-DB Server",
+      "url": "https://github.com/Part-DB/Part-DB-server",
+      "kind": "open-source-project",
+      "publisher": "Part-DB",
+      "note": "Open-source parts inventory project used as a plausible software primitive for buyer-controlled inventory and replenishment workflows.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Fastenal bundle with two product surfaces: fasteners and FAST Solutions vending. The refresh emphasizes Fastenal's service and replenishment moat, while mapping credible decentralization pressure to open part catalogs, local fabrication, supplier-neutral inventory software, and cooperative refill/service models."
+}
+2026-06-02T21:25:02.691786Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a38-3c5c-7c43-ad02-9d27d526c468 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+42,916

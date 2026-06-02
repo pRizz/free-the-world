@@ -1,0 +1,1610 @@
+2026-06-02T20:53:32.176238Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T20:53:32.193071Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a1c-ee01-73d2-956c-376cecb932af
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: chipotle-mexican-grill
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "chipotle-mexican-grill",
+  "name": "Chipotle Mexican Grill",
+  "ticker": "CMG",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "consumer-discretionary",
+  "industryId": "restaurants",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/chipotle-mexican-grill/marketcap/",
+  "description": "Chipotle Mexican Grill operates fast-casual restaurants serving burritos, bowls, tacos, and salads under the Chipotle brand.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Chipotle restaurants",
+    "Chipotle digital ordering"
+  ],
+  "seedSourceUrls": [
+    "https://www.chipotle.com/",
+    "https://ir.chipotle.com/",
+    "https://companiesmarketcap.com/chipotle-mexican-grill/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T20:53:33.944950Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.944969Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.945304Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.945311Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.945632Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.945638Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.945940Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.945945Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.946254Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.946260Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.947067Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:33.947072Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.784759Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.784772Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.785156Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.785164Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.785489Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.785496Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.785839Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.785844Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.786199Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.786204Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.786937Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T20:53:34.786941Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Chipotle Mexican Grill 2024 annual report digital sales company operated restaurants
+web search:
+web search: open source restaurant POS system GitHub
+web search:
+web search: finance: CMG
+web search:
+web search: CompaniesMarketCap Chipotle Mexican Grill market cap June 2026 CMG PE ratio
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "chipotle-mexican-grill",
+      "name": "Chipotle Mexican Grill",
+      "ticker": "CMG",
+      "rankApprox": 210,
+      "maybeIpo": {
+        "date": "2006-01-26",
+        "dateSourceIds": [
+          "stockanalysis-cmg-market-cap"
+        ],
+        "marketCap": {
+          "value": 1430000000,
+          "rationale": "StockAnalysis reports Chipotle's market capitalization history beginning on January 26, 2006 at about $1.43 billion, matching the company's public-market debut period.",
+          "sourceIds": [
+            "stockanalysis-cmg-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      },
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top225"
+      ],
+      "sectorId": "consumer-discretionary",
+      "industryId": "restaurants",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/chipotle-mexican-grill/marketcap/",
+      "description": "Chipotle Mexican Grill operates fast-casual restaurants serving burritos, bowls, tacos, and salads under the Chipotle brand.",
+      "overview": [
+        {
+          "title": "Business model",
+          "paragraphs": [
+            "Chipotle is a company-operated fast-casual restaurant chain built around a focused menu, made-to-order service line, and digitally enabled pickup and delivery channels.",
+            "The company ended 2024 with 3,726 restaurants and continued to expand primarily through company-owned locations, which keeps operating control centralized but also exposes the business to labor, food, rent, and execution risk."
+          ]
+        },
+        {
+          "title": "Digital channel",
+          "paragraphs": [
+            "Chipotle's ordering stack is a meaningful part of the operating model: digital sales represented 35.1% of total food and beverage revenue in 2024.",
+            "That channel strengthens convenience, loyalty, menu testing, throughput, and customer data capture, but it is still anchored to a centralized brand, supply chain, and real-estate footprint."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Chipotle's moat comes from brand recognition, restaurant density, operating know-how, a simple high-throughput menu, digital ordering adoption, loyalty data, and a company-operated footprint that lets it standardize service and food quality.",
+        "The moat is real but not absolute. The food itself is not protected by patents, and independent restaurants, local chains, co-ops, and open ordering tools can imitate parts of the experience when they can coordinate sourcing, payments, pickup timing, and quality control."
+      ],
+      "decentralizationNarrative": [
+        "Chipotle is structurally centralized: the brand, menu standards, digital ordering system, labor model, store operations, and supplier relationships are coordinated by a single public company.",
+        "The most credible decentralization pressure would not be a one-for-one clone. It would come from federated local restaurants, food hubs, open POS and ordering software, cooperative ownership, and verifiable local sourcing networks that make independent operators easier to discover, coordinate, and trust."
+      ],
+      "sourceIds": [
+        "chipotle-2024-results",
+        "chipotle-ir-home",
+        "companiesmarketcap-cmg-marketcap",
+        "stockanalysis-cmg-market-cap",
+        "stockanalysis-cmg-overview"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination",
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225.",
+      "inputMetrics": {
+        "moat": {
+          "value": 74,
+          "rationale": "Strong brand, scale, digital ordering mix, loyalty data, and company-operated execution create a durable restaurant moat, though menu and service concepts remain replicable.",
+          "sourceIds": [
+            "chipotle-2024-results",
+            "chipotle-ir-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 34,
+          "rationale": "Restaurants can be locally owned and open-source ordering software exists, but Chipotle's advantage depends on a unified brand, standardized operations, real estate, labor execution, and supply-chain coordination.",
+          "sourceIds": [
+            "chipotle-2024-results",
+            "open-food-network-home",
+            "hosteleria-home"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 82,
+          "rationale": "Chipotle reported strong 2024 growth, a large restaurant base, and significant digital sales contribution, supporting a high profitability score for a scaled fast-casual operator.",
+          "sourceIds": [
+            "chipotle-2024-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 30,
+          "rationale": "StockAnalysis listed Chipotle at a P/E ratio of about 30.00 in May 2026.",
+          "sourceIds": [
+            "stockanalysis-cmg-overview"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 42070000000,
+          "rationale": "CompaniesMarketCap reported Chipotle's market capitalization at about $42.07 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-cmg-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "chipotle-restaurants",
+        "name": "Chipotle restaurants",
+        "category": "Fast-casual restaurant chain",
+        "homepageUrl": "https://www.chipotle.com/",
+        "summary": "A company-operated fast-casual restaurant network serving burritos, bowls, tacos, salads, and related menu items under a standardized national brand.",
+        "whyItMatters": "The restaurant footprint is the core of Chipotle's moat because it converts brand, real estate, labor systems, food procurement, and digital demand into repeat local transactions.",
+        "replacementSketch": [
+          "The most realistic replacement is not a single decentralized burrito chain, but a network of locally owned restaurants and food hubs using shared open software, cooperative procurement, and transparent sourcing to match some of Chipotle's convenience without central ownership.",
+          "Open commerce and POS tools could let local operators coordinate menus, pickup windows, loyalty, and supply relationships while keeping ownership and profits closer to communities."
+        ],
+        "sourceIds": [
+          "chipotle-main-site",
+          "chipotle-2024-results"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-food-network",
+            "name": "Open Food Network",
+            "kind": "open-source",
+            "homepageUrl": "https://openfoodnetwork.org/",
+            "repoUrl": "https://github.com/openfoodfoundation/openfoodnetwork",
+            "summary": "Open-source marketplace software for farmers, food producers, shops, and community food hubs.",
+            "metrics": {
+              "openness": {
+                "value": 91,
+                "rationale": "Open Food Network describes itself as an open-source platform and maintains public project code.",
+                "sourceIds": [
+                  "open-food-network-home",
+                  "open-food-network-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 83,
+                "rationale": "The platform is designed for local food enterprises, producers, and community hubs rather than a single centralized restaurant operator.",
+                "sourceIds": [
+                  "open-food-network-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "The software is active and usable for food networks, but it is not a turnkey substitute for a national fast-casual restaurant operating system.",
+                "sourceIds": [
+                  "open-food-network-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Shared open software can reduce marketplace and coordination costs for local food enterprises, though physical food preparation and retail operations remain capital and labor intensive.",
+                "sourceIds": [
+                  "open-food-network-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "open-food-network-home",
+              "open-food-network-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-fast-casual-food-hubs",
+            "name": "Cooperative fast-casual food hubs",
+            "summary": "A federation of locally owned restaurants and food hubs could share menus, procurement playbooks, open ordering tools, and reputation data while keeping ownership distributed among operators, workers, and suppliers.",
+            "angleIds": [
+              "cooperative-production",
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "Chipotle's centralized operating model is pressured if independent operators can share enough software, procurement knowledge, quality standards, and demand aggregation to offer similar convenience and trust without a single national owner.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated governance and cooperative ownership rather than Bitcoin. Shared protocols and open tools reduce dependence on a dominant ordering intermediary or franchise owner.",
+            "coordinationMechanism": "Restaurants, producers, and local hubs coordinate through shared open-source marketplace and ordering software, published participation rules, local governance, and interoperable menus, pickup windows, and supplier records.",
+            "verificationOrTrustModel": "Operators build trust through auditable sourcing records, customer reviews tied to fulfilled orders, cooperative membership rules, and local dispute processes. Fraud is constrained by repeat local relationships and removal from shared discovery channels.",
+            "failureModes": [
+              "Local hubs may fail to match Chipotle's speed, consistency, real-estate density, and brand familiarity.",
+              "Cooperative governance can be slower than centralized execution, especially when menu, labor, and sourcing standards conflict."
+            ],
+            "adoptionPath": [
+              "Start with local food hubs and independent restaurants that already use open marketplace software.",
+              "Add shared pickup, loyalty, supplier transparency, and kitchen operating templates for recurring fast-casual meals."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "chipotle-2024-results"
+            ],
+            "enablerSourceIds": [
+              "open-food-network-home",
+              "open-food-network-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "The concept shifts ownership, software, and supplier coordination toward federated local operators instead of one national brand.",
+                "sourceIds": [
+                  "open-food-network-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 61,
+                "rationale": "Open food marketplaces show credible coordination primitives, but standardized fast-casual execution across many independent operators is harder than marketplace discovery.",
+                "sourceIds": [
+                  "open-food-network-home",
+                  "chipotle-2024-results"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 58,
+                "rationale": "The software and local enterprise model exist, but operational replication of Chipotle's throughput, food safety, training, and quality consistency is difficult.",
+                "sourceIds": [
+                  "open-food-network-home",
+                  "chipotle-2024-results"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 45,
+                "rationale": "The pressure is strongest in local authenticity and community ownership, but Chipotle's national brand and store density remain major advantages.",
+                "sourceIds": [
+                  "chipotle-2024-results"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "chipotle-digital-ordering",
+        "name": "Chipotle digital ordering",
+        "category": "Restaurant digital ordering and loyalty",
+        "homepageUrl": "https://www.chipotle.com/order",
+        "summary": "Chipotle's digital ordering channel lets customers order for pickup or delivery through company-controlled web and mobile experiences.",
+        "whyItMatters": "Digital ordering represented a large share of Chipotle's revenue and reinforces convenience, loyalty, throughput, and customer data advantages.",
+        "replacementSketch": [
+          "Independent restaurants can replace parts of the digital ordering stack with self-hosted POS, QR ordering, kitchen display, and storefront tools.",
+          "A stronger decentralized version would make menus, pickup slots, reputation, payments, and order status interoperable across many local operators instead of routing demand through one brand or delivery aggregator."
+        ],
+        "sourceIds": [
+          "chipotle-order-page",
+          "chipotle-2024-results"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "hosteleria",
+            "name": "Hostelería",
+            "kind": "open-source",
+            "homepageUrl": "https://www.hosteleria.me/en",
+            "repoUrl": "https://github.com/rodolfomiranda/hosteleria",
+            "summary": "Self-hosted open-source restaurant management software with POS, QR ordering, kitchen display, and table management.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "Hostelería presents itself as MIT-licensed, open-source, and self-hosted with public GitHub access.",
+                "sourceIds": [
+                  "hosteleria-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "Self-hosting gives individual restaurants control over ordering and operations data rather than requiring a centralized SaaS intermediary.",
+                "sourceIds": [
+                  "hosteleria-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 61,
+                "rationale": "The project claims deployable restaurant POS and ordering features, but public evidence does not establish enterprise-scale reliability comparable to Chipotle's internal stack.",
+                "sourceIds": [
+                  "hosteleria-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 78,
+                "rationale": "Self-hosted open-source deployment can reduce per-location software fees and payment-routing dependence for smaller operators.",
+                "sourceIds": [
+                  "hosteleria-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "hosteleria-home"
+            ]
+          },
+          {
+            "slug": "tastyigniter",
+            "name": "TastyIgniter",
+            "kind": "open-source",
+            "homepageUrl": "https://tastyigniter.com/",
+            "repoUrl": "https://github.com/tastyigniter/TastyIgniter",
+            "summary": "Open-source, self-hosted restaurant online ordering and management software.",
+            "metrics": {
+              "openness": {
+                "value": 84,
+                "rationale": "TastyIgniter is distributed as an open-source restaurant ordering project with a public GitHub repository.",
+                "sourceIds": [
+                  "tastyigniter-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 69,
+                "rationale": "Self-hosted restaurant ordering improves operator control, though it is primarily single-operator software rather than a decentralized protocol.",
+                "sourceIds": [
+                  "tastyigniter-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 66,
+                "rationale": "The project targets restaurant online ordering and has an established public codebase, but it is not a full replacement for a national loyalty, fulfillment, and analytics platform.",
+                "sourceIds": [
+                  "tastyigniter-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 73,
+                "rationale": "Open-source restaurant ordering can reduce platform fees and vendor lock-in for independent restaurants.",
+                "sourceIds": [
+                  "tastyigniter-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "tastyigniter-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-restaurant-ordering-protocol",
+            "name": "Federated restaurant ordering protocol",
+            "summary": "A shared restaurant ordering protocol could let independent restaurants publish menus, availability, pickup windows, loyalty credentials, and order status through interoperable servers while keeping customer relationships and data under local operator control.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "Chipotle's digital advantage weakens if independent restaurants can plug into a common ordering network that offers reliable discovery and pickup coordination without surrendering demand, data, or payments to a centralized brand or aggregator.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central because each restaurant or cooperative can operate its own server while still participating in shared discovery and order-routing. Bitcoin is not required for the base mechanism.",
+            "coordinationMechanism": "Restaurants publish signed menu and availability data; customers or local discovery apps route orders to the restaurant's chosen server; fulfillment events update order status across interoperable clients.",
+            "verificationOrTrustModel": "Orders are tied to payment authorization, restaurant-signed fulfillment events, customer pickup confirmations, and reputation histories. Fake menus or spoofed availability can be constrained by domain verification, signed operator records, and client-side trust lists.",
+            "failureModes": [
+              "Interoperability standards may fragment before enough restaurants and ordering clients adopt them.",
+              "Fraud, refunds, substitutions, delivery handoffs, and food-safety disputes are harder to standardize than simple e-commerce checkout."
+            ],
+            "adoptionPath": [
+              "Begin with self-hosted ordering projects and independent restaurant associations that want lower platform fees.",
+              "Add shared schema, signed menu feeds, local discovery clients, and optional payment adapters."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "chipotle-2024-results",
+              "chipotle-order-page"
+            ],
+            "enablerSourceIds": [
+              "hosteleria-home",
+              "tastyigniter-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 86,
+                "rationale": "A federated protocol directly shifts menu publishing, ordering, and customer data away from a single centralized platform.",
+                "sourceIds": [
+                  "hosteleria-home",
+                  "tastyigniter-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 64,
+                "rationale": "Self-hosted restaurant ordering tools already exist, but cross-restaurant protocol adoption and dispute handling remain unsolved coordination problems.",
+                "sourceIds": [
+                  "hosteleria-home",
+                  "tastyigniter-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 62,
+                "rationale": "The software primitives are feasible, but production-grade ordering requires reliability, payments, refunds, menu sync, and support workflows.",
+                "sourceIds": [
+                  "hosteleria-home",
+                  "tastyigniter-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 52,
+                "rationale": "The concept could pressure digital-ordering lock-in and aggregator fees, but it does not directly replicate Chipotle's brand, food quality, or store density.",
+                "sourceIds": [
+                  "chipotle-2024-results"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "lightning-enabled-local-food-checkout",
+            "name": "Lightning-enabled local food checkout",
+            "summary": "Independent restaurants and food hubs could use open ordering software with Lightning-compatible payments for low-fee, fast settlement, reducing dependence on proprietary loyalty wallets and card-heavy payment stacks.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "Payment and loyalty infrastructure becomes less centralized if local food operators can settle directly with customers and suppliers while keeping ordering software self-hosted.",
+            "bitcoinOrDecentralizationRole": "Lightning is the settlement rail for small, frequent food purchases and can support direct customer-to-merchant payment without a proprietary platform wallet. Bitcoin's role is meaningful only if it reduces payment lock-in and enables portable loyalty or escrow-like flows.",
+            "coordinationMechanism": "Restaurants expose Lightning invoices through open ordering software; customers pay from compatible wallets; optional loyalty credentials are issued by restaurants or cooperatives and recognized by participating local operators.",
+            "verificationOrTrustModel": "Payment finality is verified by invoice settlement, while fulfillment is verified separately through restaurant-signed order status and pickup confirmation. The model does not solve food quality by itself and still needs refunds and dispute procedures.",
+            "failureModes": [
+              "Most customers still prefer cards or app wallets, so Lightning checkout may remain niche.",
+              "Refunds, taxes, accounting, volatility handling, and customer support can erase the operational simplicity unless tooling is mature."
+            ],
+            "adoptionPath": [
+              "Pilot as an optional checkout method for self-hosted ordering systems at independent restaurants.",
+              "Bundle payment receipts with portable loyalty credentials and local marketplace discovery."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "chipotle-2024-results",
+              "chipotle-order-page"
+            ],
+            "enablerSourceIds": [
+              "hosteleria-home",
+              "tastyigniter-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 73,
+                "rationale": "Direct settlement can reduce payment-platform dependence, especially when paired with self-hosted ordering.",
+                "sourceIds": [
+                  "hosteleria-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 48,
+                "rationale": "The mechanism is technically plausible but adoption depends on restaurants and customers accepting a non-mainstream payment flow.",
+                "sourceIds": [
+                  "hosteleria-home",
+                  "tastyigniter-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 55,
+                "rationale": "Adding Lightning invoices to open ordering software is feasible, but accounting, refunds, tax handling, and customer support add operational complexity.",
+                "sourceIds": [
+                  "hosteleria-home",
+                  "tastyigniter-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 36,
+                "rationale": "Payment decentralization alone is unlikely to threaten Chipotle materially unless it becomes part of a broader local ordering and loyalty network.",
+                "sourceIds": [
+                  "chipotle-2024-results"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "chipotle-main-site",
+      "title": "Chipotle Mexican Grill",
+      "url": "https://www.chipotle.com/",
+      "kind": "product-page",
+      "publisher": "Chipotle Mexican Grill",
+      "note": "Primary consumer-facing site for the restaurant brand and menu experience.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "chipotle-order-page",
+      "title": "Chipotle Order Online",
+      "url": "https://www.chipotle.com/order",
+      "kind": "product-page",
+      "publisher": "Chipotle Mexican Grill",
+      "note": "Primary product page for Chipotle's digital ordering flow.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "chipotle-ir-home",
+      "title": "Chipotle Investor Relations",
+      "url": "https://ir.chipotle.com/",
+      "kind": "investor-relations",
+      "publisher": "Chipotle Mexican Grill",
+      "note": "Investor relations hub for company filings, releases, and corporate disclosures.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "chipotle-2024-results",
+      "title": "Chipotle Announces Fourth Quarter and Full Year 2024 Results",
+      "url": "https://newsroom.chipotle.com/2025-02-04-CHIPOTLE-ANNOUNCES-FOURTH-QUARTER-AND-FULL-YEAR-2024-RESULTS",
+      "kind": "investor-relations",
+      "publisher": "Chipotle Mexican Grill",
+      "note": "Documents 2024 restaurant count, openings, revenue growth, and digital sales mix.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-cmg-marketcap",
+      "title": "Chipotle Mexican Grill (CMG) Market Capitalization",
+      "url": "https://companiesmarketcap.com/chipotle-mexican-grill/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization source used for the current market-cap metric and registry snapshot context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-cmg-market-cap",
+      "title": "Chipotle Mexican Grill Market Cap & Net Worth",
+      "url": "https://stockanalysis.com/stocks/cmg/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-cap history source supporting the public-market debut date and approximate IPO-era market capitalization.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-cmg-overview",
+      "title": "Chipotle Mexican Grill (CMG) Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/cmg/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source for market capitalization and P/E ratio cross-checks.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "open-food-network-home",
+      "title": "Open Food Network",
+      "url": "https://openfoodnetwork.org/",
+      "kind": "open-source-project",
+      "publisher": "Open Food Network",
+      "note": "Open-source local food marketplace platform used as a decentralized alternative reference.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "open-food-network-github",
+      "title": "Open Food Network GitHub Repository",
+      "url": "https://github.com/openfoodfoundation/openfoodnetwork",
+      "kind": "open-source-project",
+      "publisher": "Open Food Foundation",
+      "note": "Public source repository for Open Food Network.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "hosteleria-home",
+      "title": "Hostelería Open Source Restaurant Management System",
+      "url": "https://www.hosteleria.me/en",
+      "kind": "open-source-project",
+      "publisher": "Hostelería",
+      "note": "Self-hosted open-source restaurant POS, QR ordering, kitchen display, and table management reference.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "tastyigniter-github",
+      "title": "TastyIgniter GitHub Repository",
+      "url": "https://github.com/tastyigniter/TastyIgniter",
+      "kind": "open-source-project",
+      "publisher": "TastyIgniter",
+      "note": "Public repository for open-source restaurant online ordering software.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Chipotle Mexican Grill registry bundle with two products: the restaurant network and digital ordering. The refresh emphasizes Chipotle's centralized brand and operating moat while mapping credible open-source, federated, cooperative, and Lightning-enabled alternatives where they are most plausible."
+}
+2026-06-02T20:55:11.202903Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a1c-eeab-75a0-8c75-63ede8c31e0d hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+31,758

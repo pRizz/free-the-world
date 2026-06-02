@@ -1,0 +1,636 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "msci",
+    "name": "MSCI",
+    "ticker": "MSCI",
+    "rankApprox": 210,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top225"
+    ],
+    "sectorId": "financials",
+    "industryId": "financial-exchanges-data",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/msci/marketcap/",
+    "description": "MSCI provides investment indexes, portfolio analytics, risk models, ESG data, and private asset data to institutional investors.",
+    "overview": [
+      {
+        "title": "Business profile",
+        "paragraphs": [
+          "MSCI is a financial data and analytics company whose core franchises include equity indexes, portfolio analytics, Barra risk models, ESG and climate data, and private asset analytics.",
+          "The company benefits from institutional workflow embedment: asset managers, ETF issuers, asset owners, and risk teams use MSCI data and models for benchmarks, portfolio construction, reporting, and risk control."
+        ]
+      },
+      {
+        "title": "Revenue structure",
+        "paragraphs": [
+          "MSCI reports revenue across Index, Analytics, ESG and Climate, and All Other - Private Assets, with Index remaining the highest-margin strategic anchor because licensed benchmarks can scale across ETF and institutional products.",
+          "Its 2024 annual report said about $16.5 trillion in assets under management were benchmarked to MSCI indexes as of June 30, 2024, creating a powerful reference-data and brand moat."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "MSCI's moat is strongest where its indexes act as institutional standards rather than simple datasets. Once an asset owner, ETF issuer, consultant, or mandate references an MSCI benchmark, switching can require governance review, client communication, performance-history translation, and operational rewiring.",
+      "Barra risk models add another layer of stickiness because they are embedded in portfolio risk systems, factor exposure reporting, optimizer workflows, and compliance processes. Open tools can replicate pieces of analytics, but replacing the accepted benchmark or risk-model convention is harder than replacing software alone."
+    ],
+    "decentralizationNarrative": [
+      "MSCI's business is mostly informational and methodological, so parts of the stack are technically decentralizable: security masters, factor models, backtests, risk engines, benchmark construction, and data lineage can be implemented with open-source software and public or cooperative datasets.",
+      "The harder part is social coordination. Indexes are valuable because many institutions agree to use the same definitions. A decentralized replacement would need credible governance, transparent methodology changes, survivorship-bias controls, audited data pipelines, and enough adoption by allocators to become a shared reference point."
+    ],
+    "sourceIds": [
+      "msci-2024-annual-report",
+      "msci-home",
+      "msci-barra-models",
+      "companiesmarketcap-msci"
+    ],
+    "technologyWaveIds": [],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225.",
+    "inputMetrics": {
+      "moat": {
+        "value": 9,
+        "rationale": "MSCI has strong benchmark network effects, embedded analytics workflows, brand trust, and large AUM linked to its indexes, including roughly $16.5 trillion benchmarked to MSCI indexes as of June 30, 2024.",
+        "sourceIds": [
+          "msci-2024-annual-report"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-02"
+      },
+      "decentralizability": {
+        "value": 5,
+        "rationale": "The software and methodology layers can be made open, but institutional benchmark adoption, data licensing, governance trust, and regulatory workflow embedment make full decentralization difficult.",
+        "sourceIds": [
+          "msci-2024-annual-report",
+          "quantlib-home",
+          "openbb-odp"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-06-02"
+      },
+      "profitability": {
+        "value": 9,
+        "rationale": "MSCI reported high operating margins and recurring revenue characteristics, with 2025 financial summaries showing EBIT margin above 55% and net income around $1.3 billion.",
+        "sourceIds": [
+          "stockanalysis-msci-financials"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-02"
+      },
+      "peRatio": {
+        "value": 35,
+        "rationale": "Public market data sources show MSCI trading at a premium valuation; a mid-30s P/E estimate is directionally consistent with its high-margin recurring-data profile but should be refreshed from live market data before publication-sensitive use.",
+        "sourceIds": [
+          "macrotrends-msci-pe",
+          "companiesmarketcap-msci"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-06-02"
+      },
+      "marketCap": {
+        "value": 42800000000,
+        "rationale": "CompaniesMarketCap reported MSCI's market capitalization at about $42.80 billion as of May 2026.",
+        "sourceIds": [
+          "companiesmarketcap-msci"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-06-02"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "msci-indexes",
+      "name": "MSCI Indexes",
+      "category": "Investment benchmarks and index data",
+      "homepageUrl": "https://www.msci.com/indexes",
+      "summary": "MSCI Indexes provide global equity and thematic benchmarks used by asset managers, ETF issuers, asset owners, consultants, and institutional portfolio teams.",
+      "whyItMatters": "Benchmarks shape where passive and benchmark-aware capital flows, define institutional performance comparisons, and create common language for mandates and asset allocation.",
+      "replacementSketch": [
+        "A credible open replacement would combine transparent index methodology, open security identifiers, auditable corporate-action handling, public rebalancing logs, and governance that institutions can inspect.",
+        "The near-term replacement is unlikely to be a single open index brand displacing MSCI outright. A more plausible path is open benchmark infrastructure used first by smaller funds, researchers, DAOs, cooperatives, and allocators that value transparent methodology over incumbent brand acceptance."
+      ],
+      "sourceIds": [
+        "msci-indexes",
+        "msci-2024-annual-report",
+        "openfigi-features"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "msci-indexes-openfigi",
+          "name": "OpenFIGI",
+          "kind": "protocol",
+          "homepageUrl": "https://www.openfigi.com/",
+          "summary": "OpenFIGI provides an open financial instrument identifier and symbology mapping layer that can support transparent security master and benchmark data infrastructure.",
+          "metrics": {
+            "openness": {
+              "value": 8,
+              "rationale": "FIGI is presented as an open standard with public API access and broad instrument mapping coverage, though Bloomberg remains a central operator of the service.",
+              "sourceIds": [
+                "openfigi-features",
+                "bloomberg-openfigi-press"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "Open identifiers reduce lock-in and make federated benchmark data easier, but the mapping service itself is not fully decentralized.",
+              "sourceIds": [
+                "openfigi-features"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "OpenFIGI is already usable through web and API workflows for instrument mapping and metadata normalization.",
+              "sourceIds": [
+                "openfigi-api"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "costLeverage": {
+              "value": 7,
+              "rationale": "Free or low-friction identifier mapping lowers the cost of building security masters and research infrastructure, though it does not by itself supply full index methodology or licensed market data.",
+              "sourceIds": [
+                "openfigi-features"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            }
+          },
+          "sourceIds": [
+            "openfigi-features",
+            "openfigi-api"
+          ]
+        },
+        {
+          "slug": "openbb-platform",
+          "name": "OpenBB Platform",
+          "kind": "open-source",
+          "homepageUrl": "https://openbb.co/products/odp",
+          "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+          "summary": "OpenBB is an open-source investment research and data integration platform that can be used to assemble public-market research workflows and analytics interfaces.",
+          "metrics": {
+            "openness": {
+              "value": 8,
+              "rationale": "OpenBB describes its Open Data Platform as an open-source toolset, with source available through its GitHub organization and AGPL licensing for the ODP product.",
+              "sourceIds": [
+                "openbb-odp",
+                "openbb-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "decentralizationFit": {
+              "value": 5,
+              "rationale": "OpenBB supports local and standardized data integrations, but the quality and decentralization of any index replacement depends on external data sources and governance.",
+              "sourceIds": [
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "The platform is active and usable for research workflows, but it is not a ready-made institutional benchmark-governance replacement for MSCI indexes.",
+              "sourceIds": [
+                "openbb-odp",
+                "openbb-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "costLeverage": {
+              "value": 8,
+              "rationale": "Open research tooling can materially reduce the software cost of analytics and prototype benchmark construction compared with proprietary terminal-style workflows.",
+              "sourceIds": [
+                "openbb-odp"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            }
+          },
+          "sourceIds": [
+            "openbb-odp",
+            "openbb-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-open-index-governance",
+          "name": "Federated open index governance",
+          "summary": "A consortium of asset owners, researchers, exchanges, and open-data maintainers could publish transparent benchmark methodologies with auditable constituent files, corporate-action trails, public reconstitution discussions, and reproducible backtests.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept attacks MSCI's benchmark authority by shifting index trust from a proprietary brand to transparent, multi-party methodology governance and reproducible data pipelines.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated governance and public auditability, not through payments. Independent maintainers can mirror methodology files, rebalancing histories, and data lineage so no single vendor controls the benchmark record.",
+          "coordinationMechanism": "Participating institutions coordinate through versioned methodology repositories, public consultation windows, signed data releases, and governance votes for methodology changes.",
+          "verificationOrTrustModel": "Constituent changes, corporate actions, and index levels would be reproducibly calculated from published inputs; independent nodes could recompute index files, compare hashes, and flag unexplained deviations. The main weakness is that licensed market data inputs may still constrain full public reproducibility.",
+          "failureModes": [
+            "Institutional allocators may still prefer incumbent benchmark brands for mandate language and consultant acceptance.",
+            "High-quality real-time market data and corporate-action feeds may remain costly or licensing-restricted.",
+            "Governance capture by large participants could recreate the same centralization problem under a different label."
+          ],
+          "adoptionPath": [
+            "Start with transparent model portfolios and research indexes for smaller allocators, educators, and open finance communities.",
+            "Add audited calculation agents, public methodology reviews, and exchange or custodian integrations.",
+            "Win adoption in niche ETFs, separately managed accounts, and mandates that explicitly prioritize transparent benchmark governance."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "msci-2024-annual-report",
+            "msci-indexes"
+          ],
+          "enablerSourceIds": [
+            "openfigi-features",
+            "openbb-odp"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "Benchmark construction can be federated across governance, calculation, and audit roles, although market data dependencies remain a constraint.",
+              "sourceIds": [
+                "openfigi-features",
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Open repositories, public consultations, and reproducible files are credible coordination tools, but getting institutional users to treat them as authoritative is difficult.",
+              "sourceIds": [
+                "msci-2024-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "The technical stack is feasible with open identifiers and research tooling; the bottleneck is licensing, governance, and institutional acceptance.",
+              "sourceIds": [
+                "openfigi-api",
+                "openbb-odp"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "Open index governance could pressure fees and transparency in niches, but MSCI's entrenched benchmark role makes broad displacement slow.",
+              "sourceIds": [
+                "msci-2024-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            }
+          }
+        },
+        {
+          "slug": "proof-audited-benchmark-records",
+          "name": "Proof-audited benchmark records",
+          "summary": "Benchmark publishers and open-index communities could anchor reconstitution files, index-level calculations, and methodology versions in tamper-evident public records so users can verify that benchmark histories were not retroactively altered.",
+          "angleIds": [
+            "proof-of-work",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept changes benchmark trust from reputation-only assurance toward cryptographic and public-process assurance for index histories and methodology changes.",
+          "bitcoinOrDecentralizationRole": "Bitcoin or another proof-of-work anchored timestamping mechanism can provide a costly-to-rewrite chronology for methodology versions, constituent files, and calculation outputs without requiring a single registry operator to be trusted.",
+          "coordinationMechanism": "Index maintainers publish signed artifacts and anchor hashes on a recurring schedule; auditors, fund sponsors, and data users subscribe to feeds and independently verify that delivered files match the public record.",
+          "verificationOrTrustModel": "Cheating is constrained by signed releases, hash matching, independent recalculation, and timestamp ordering. The model does not prove that source market data was correct; it proves that published benchmark artifacts were not silently changed after release.",
+          "failureModes": [
+            "Users may not care enough about tamper evidence to switch from incumbent indexes.",
+            "The system can verify publication integrity but not all underlying data quality or methodology fairness.",
+            "Operational complexity could exceed the perceived benefit for ordinary benchmark users."
+          ],
+          "adoptionPath": [
+            "Begin with open research indexes and public methodology archives.",
+            "Add third-party auditors that verify anchored artifacts and publish exception reports.",
+            "Offer proof-audited benchmark feeds to funds and allocators that require stronger data-lineage controls."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "msci-indexes",
+            "msci-2024-annual-report"
+          ],
+          "enablerSourceIds": [
+            "openfigi-features"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "Timestamping and independent verification reduce reliance on a single publisher for historical integrity, but the index calculation organization may still be centralized.",
+              "sourceIds": [
+                "openfigi-features"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "coordinationCredibility": {
+              "value": 5,
+              "rationale": "The mechanism is technically credible but adoption depends on benchmark users valuing cryptographic audit trails enough to change procurement and governance practices.",
+              "sourceIds": [
+                "msci-2024-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "implementationFeasibility": {
+              "value": 7,
+              "rationale": "Publishing signed files and anchored hashes is straightforward compared with building a full benchmark franchise.",
+              "sourceIds": [
+                "openfigi-api"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "incumbentPressure": {
+              "value": 4,
+              "rationale": "This would pressure transparency and auditability more than it would directly replace MSCI's benchmark brand or distribution relationships.",
+              "sourceIds": [
+                "msci-2024-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "barra-risk-models",
+      "name": "Barra risk models",
+      "category": "Portfolio risk analytics",
+      "homepageUrl": "https://app2.msci.com/products/analytics/models/",
+      "summary": "Barra risk models estimate factor exposures, asset sensitivities, and portfolio risk across markets and asset classes for institutional investors.",
+      "whyItMatters": "Risk models influence how institutions size positions, control factor exposures, monitor active risk, and explain portfolio performance.",
+      "replacementSketch": [
+        "Open replacements can start with factor-model libraries, risk engines, and transparent research notebooks that let quants inspect assumptions instead of treating factor models as black boxes.",
+        "The practical replacement path is hybrid: open modeling and validation layers alongside licensed or public datasets, with institutions retaining proprietary overlays where they have domain-specific data."
+      ],
+      "sourceIds": [
+        "msci-barra-models",
+        "msci-barra-global-equity",
+        "quantlib-home",
+        "ore-home"
+      ],
+      "technologyWaveIds": [],
+      "alternatives": [
+        {
+          "slug": "barra-risk-models-quantlib",
+          "name": "QuantLib",
+          "kind": "open-source",
+          "homepageUrl": "https://www.quantlib.org/",
+          "repoUrl": "https://github.com/lballabio/QuantLib",
+          "summary": "QuantLib is a free and open-source quantitative finance library for modeling, pricing, trading, and risk management.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "QuantLib is explicitly described as free and open-source and has a long-running public codebase.",
+              "sourceIds": [
+                "quantlib-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "It enables local, inspectable analytics, but decentralization depends on data sourcing and user governance rather than the library alone.",
+              "sourceIds": [
+                "quantlib-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "readiness": {
+              "value": 8,
+              "rationale": "QuantLib is mature infrastructure used for real-life modeling, trading, and risk management tasks, though it is not a turnkey Barra factor-model clone.",
+              "sourceIds": [
+                "quantlib-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "costLeverage": {
+              "value": 8,
+              "rationale": "A free quantitative library lowers the cost of building internal models and risk tooling, especially for teams that can supply their own data and validation.",
+              "sourceIds": [
+                "quantlib-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            }
+          },
+          "sourceIds": [
+            "quantlib-home"
+          ]
+        },
+        {
+          "slug": "barra-risk-models-open-source-risk-engine",
+          "name": "Open Source Risk Engine",
+          "kind": "open-source",
+          "homepageUrl": "https://www.opensourcerisk.org/",
+          "summary": "Open Source Risk Engine extends QuantLib with simulation models, instruments, pricing engines, and risk analytics components.",
+          "metrics": {
+            "openness": {
+              "value": 8,
+              "rationale": "ORE is presented as open-source risk analytics software built on QuantLib.",
+              "sourceIds": [
+                "ore-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "It supports local and inspectable risk analytics but does not by itself decentralize market data, factor construction, or institutional validation.",
+              "sourceIds": [
+                "ore-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "ORE is a concrete risk-engine implementation, though Barra-style equity factor models and broad institutional workflow coverage would require additional work.",
+              "sourceIds": [
+                "ore-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "costLeverage": {
+              "value": 8,
+              "rationale": "Open simulation and pricing infrastructure can reduce dependence on proprietary analytics engines for teams with quantitative engineering capacity.",
+              "sourceIds": [
+                "ore-home",
+                "quantlib-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-02"
+            }
+          },
+          "sourceIds": [
+            "ore-home",
+            "quantlib-home"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-factor-risk-model-cooperative",
+          "name": "Open factor risk model cooperative",
+          "summary": "A cooperative of asset managers, researchers, and data engineers could maintain transparent factor definitions, model validation reports, and reproducible risk-model code that institutions can adapt and audit.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept weakens proprietary risk-model lock-in by making factor definitions, estimation choices, validation results, and model drift visible to users rather than controlled by a single vendor.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is cooperative model production and independent validation, not Bitcoin payments. Multiple institutions contribute tests, datasets where legally possible, and validation reports so model trust comes from reproducibility and peer review.",
+          "coordinationMechanism": "Members coordinate through model-version repositories, contribution rules, validation benchmarks, signed releases, and governance processes for adding or retiring factors.",
+          "verificationOrTrustModel": "Cheating is constrained by reproducible code, peer-reviewed validation, out-of-sample test suites, and public issue tracking for model failures. Private or licensed datasets remain a weak point because not every user can independently verify every input.",
+          "failureModes": [
+            "Institutions may be reluctant to share model improvements that they view as alpha-generating.",
+            "Licensed market and holdings data can limit full reproducibility.",
+            "A cooperative model may lag a proprietary vendor's support coverage across regions and asset classes."
+          ],
+          "adoptionPath": [
+            "Start with transparent equity factor models for public equities and educational or research users.",
+            "Add validation suites, governance, and adapters to common portfolio systems.",
+            "Expand into institution-grade model releases for smaller asset managers, consultants, and allocators that prefer auditability over vendor lock-in."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "msci-barra-models",
+            "msci-barra-global-equity"
+          ],
+          "enablerSourceIds": [
+            "quantlib-home",
+            "ore-home",
+            "openbb-odp"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "Risk model development can be distributed across contributors and validators, though data constraints limit full decentralization.",
+              "sourceIds": [
+                "quantlib-home",
+                "ore-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Open-source quantitative projects show the software pattern is credible, but sustained institutional contribution requires governance and incentives.",
+              "sourceIds": [
+                "quantlib-home",
+                "ore-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "Core analytics infrastructure exists, but a broad Barra-like factor model requires high-quality data, validation, documentation, and coverage across markets.",
+              "sourceIds": [
+                "msci-barra-global-equity",
+                "quantlib-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "Open models can pressure transparency and serve smaller teams, but MSCI's data quality, coverage, and institutional acceptance remain strong advantages.",
+              "sourceIds": [
+                "msci-barra-models"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            }
+          }
+        },
+        {
+          "slug": "federated-model-validation-market",
+          "name": "Federated model validation market",
+          "summary": "Independent validators could test risk models against agreed benchmark portfolios, stress scenarios, and realized outcomes, publishing signed scorecards for open and proprietary models without requiring all participants to reveal private holdings.",
+          "angleIds": [
+            "federation",
+            "peer-to-peer-marketplace",
+            "decentralized-coordination"
+          ],
+          "thesis": "The concept shifts market power from closed vendor claims toward a competitive validation layer where models are judged by transparent performance, coverage, and explainability metrics.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federated validators and direct market coordination between model builders, auditors, and users. Bitcoin or Lightning could be used for small bounties or validation payments, but it is not required for the core mechanism.",
+          "coordinationMechanism": "Model users submit standardized test portfolios or anonymized exposures; validators run agreed stress tests and publish signed scorecards; model builders compete on accuracy, coverage, explainability, and cost.",
+          "verificationOrTrustModel": "Validators are checked through reproducible test specifications, signed reports, competing audits, and reputation histories. Cheating is constrained by cross-validator comparisons, but private data and selective benchmark design can still bias results.",
+          "failureModes": [
+            "Anonymized portfolio tests may leak sensitive strategy information if poorly designed.",
+            "Validators could collude with model vendors or optimize for narrow public benchmarks.",
+            "Institutional buyers may still prefer one accountable vendor over a marketplace of validators."
+          ],
+          "adoptionPath": [
+            "Launch with open models and public benchmark portfolios.",
+            "Add paid third-party validation for smaller asset managers and consultants.",
+            "Create procurement-grade scorecards that let institutions compare proprietary and open risk models before vendor renewals."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "msci-barra-models"
+          ],
+          "enablerSourceIds": [
+            "quantlib-home",
+            "ore-home"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "Validation can be federated even when model vendors remain centralized, giving users multiple independent trust signals.",
+              "sourceIds": [
+                "quantlib-home",
+                "ore-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "coordinationCredibility": {
+              "value": 5,
+              "rationale": "A marketplace of validators is plausible, but standardizing tests and preventing validator capture would be hard.",
+              "sourceIds": [
+                "msci-barra-models"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "Stress testing and model validation are technically feasible with existing open risk engines, but privacy-preserving institutional workflows add complexity.",
+              "sourceIds": [
+                "ore-home",
+                "quantlib-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "Independent validation could weaken black-box trust, but it complements rather than immediately replaces MSCI's Barra model franchise.",
+              "sourceIds": [
+                "msci-barra-models",
+                "msci-2024-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-02"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

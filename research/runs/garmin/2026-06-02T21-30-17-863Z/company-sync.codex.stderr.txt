@@ -1,0 +1,1165 @@
+2026-06-02T21:30:18.119752Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T21:30:18.126370Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a3e-9749-73e3-aa20-62e00ede4bb5
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: garmin
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "garmin",
+  "name": "Garmin",
+  "ticker": "GRMN",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "information-technology",
+  "industryId": "technology-hardware",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/garmin/marketcap/",
+  "description": "Garmin designs and sells GPS-enabled wearables, navigation devices, avionics, marine electronics, and outdoor technology products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Garmin Forerunner",
+    "Garmin avionics"
+  ],
+  "seedSourceUrls": [
+    "https://www.garmin.com/",
+    "https://www.garmin.com/en-US/investors/",
+    "https://companiesmarketcap.com/garmin/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T21:30:19.769336Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.769361Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.769716Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.769723Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.770042Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.770047Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.770412Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.770419Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.770789Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.770796Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.774963Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:19.774986Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.450412Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.450427Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.450739Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.450746Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.451032Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.451038Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.451339Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.451344Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.451637Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.451643Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.452275Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:20.452279Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll use the company-manifest workflow context and verify current Garmin/product/source facts before returning the JSON. Since the workspace is read-only, I’ll only inspect and produce the refresh object.
+exec
+/bin/zsh -lc "sed -n '1,220p' .codex/skills/company-manifest-queue/SKILL.md && rg --files content src | head -80" in /Users/peterryszkiewicz/Repos/free-the-world
+ succeeded in 0ms:
+Loading ~/.zshenv
+Loading ~/.zshenv
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+src/routes/mirrors.tsx
+src/routes/about.tsx
+src/routes/companies/[companySlug]/products/[productSlug].tsx
+src/routes/companies/[companySlug]/products/index.tsx
+src/routes/companies/[companySlug]/index.tsx
+src/routes/companies/index.tsx
+src/routes/methodology.tsx
+src/routes/404.tsx
+src/entry-server.tsx
+src/entry-client.tsx
+src/app.css
+src/app.tsx
+src/global.d.ts
+src/routes/index.tsx
+src/lib/domain/metrics.ts
+src/lib/domain/formatters.ts
+src/lib/domain/company-metrics.test.ts
+src/lib/domain/ipo.test.ts
+src/lib/domain/company-metrics.ts
+src/lib/domain/scoring.ts
+src/lib/domain/selectors.ts
+src/lib/domain/types.ts
+src/lib/domain/insights.test.ts
+src/lib/domain/formatters.test.ts
+src/lib/domain/market-cap-snapshots.ts
+src/lib/domain/ipo.ts
+src/lib/domain/insights.ts
+src/lib/domain/table-state.ts
+src/lib/domain/content-types.ts
+src/lib/config.ts
+src/lib/theme.ts
+content/taxonomy/concept-angles.json
+content/taxonomy/industries.json
+content/taxonomy/sectors.json
+content/taxonomy/indices.json
+content/taxonomy/regions.json
+content/taxonomy/technology-waves.json
+src/lib/deployment-config.ts
+src/lib/content-graph.ts
+src/lib/content/products.ts
+src/lib/content/technology-waves.ts
+src/lib/content/sources.ts
+src/lib/content/site.ts
+src/lib/content/newsletter.ts
+src/lib/content/companies.ts
+src/lib/content/sectors.ts
+src/lib/utils.ts
+src/lib/site-routes.ts
+src/lib/market-cap-snapshots.ts
+src/shims/source-map-js.ts
+src/components/company-table-toolbar.tsx
+src/components/product-implementation-dialog.tsx
+src/lib/generated/market-cap-snapshots.ts
+src/lib/generated/content-graph.ts
+src/routes/insights/disruption-concepts.tsx
+src/routes/insights/alternative-pressure.tsx
+src/routes/insights/post-bubble.tsx
+src/routes/insights/capital-at-risk.tsx
+src/routes/insights/index.tsx
+src/routes/insights/market-cap-disruption.tsx
+src/components/homepage-infographics/registry.ts
+src/components/homepage-infographics/disruption-concepts-preview.tsx
+src/components/homepage-infographics/types.ts
+src/components/homepage-infographics/alternative-pressure-preview.tsx
+src/components/homepage-infographics/rotation.test.ts
+src/components/homepage-infographics/post-bubble-preview.tsx
+src/components/homepage-infographics/market-cap-disruption-preview.tsx
+src/components/homepage-infographics/rotation.ts
+src/components/homepage-infographics/rotating-homepage-infographic.tsx
+src/components/homepage-infographics/capital-at-risk-preview.tsx
+src/components/company-table.tsx
+src/components/source-list.tsx
+src/components/seo.tsx
+src/components/newsletter-signup.tsx
+src/components/ui/select.tsx
+src/components/site-shell.tsx
+src/components/ui/collapsible.tsx
+src/components/repository-link.tsx
+src/components/ui/checkbox.tsx
+src/components/ui/button.tsx
+
+2026-06-02T21:30:23.349407Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.349423Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.349734Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.349742Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.350100Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.350107Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.350431Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.350437Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.350791Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.350795Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.351573Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:30:23.351580Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Garmin 2025 annual report 2024 revenue gross margin segment fitness outdoor aviation marine auto
+web search:
+web search: https://www8.garmin.com/aboutGarmin/invRelations/reports/2025_Annual_Report.pdf
+web search:
+web search: 'As of' in https://companiesmarketcap.com/garmin/marketcap/
+web search:
+web search: https://companiesmarketcap.com/garmin/pe-ratio/
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"garmin","name":"Garmin","ticker":"GRMN","rankApprox":213,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top225"],"sectorId":"information-technology","industryId":"technology-hardware","companiesMarketCapUrl":"https://companiesmarketcap.com/garmin/marketcap/","description":"Garmin designs and sells GPS-enabled wearables, navigation devices, avionics, marine electronics, and outdoor technology products.","overview":[{"title":"Business Mix","paragraphs":["Garmin sells specialized electronics across fitness, outdoor, aviation, marine, and auto OEM markets, with fiscal 2025 net sales of about $7.25 billion and all five segments contributing revenue.","Fitness and outdoor products are the largest revenue pools, while aviation carries the highest segment gross margin, reflecting the value of certification, integration, and specialized reliability."]},{"title":"Strategic Position","paragraphs":["Garmin's moat comes from vertically integrated hardware, GNSS expertise, regulated avionics credibility, proprietary software services, and a trusted brand in activities where location, durability, and safety matter.","The company is not a pure software network monopoly, but its best businesses combine device quality, sensor data, maps, cockpit or sports workflows, and long product support cycles."]}],"moatNarrative":["Garmin has a strong but category-specific moat. In consumer wearables, its differentiation is durability, battery life, sports analytics, GPS accuracy, and athlete trust rather than an unavoidable network effect. Switching costs are moderate because users accumulate training history and app habits, but device replacement cycles keep competition active.","The aviation business is more defensible. Certified avionics, autopilots, flight displays, databases, and OEM relationships create higher barriers than ordinary consumer electronics, and Garmin's 2025 aviation gross margin of 75% shows the pricing power of specialized, regulated systems."],"decentralizationNarrative":["Garmin's consumer fitness stack is partially decentralizable because activity tracking, GPX/FIT files, Bluetooth sensors, maps, and local storage can be handled by open software when users accept rougher integration and weaker device support. The hard part is matching Garmin's polished watch hardware, battery life, proprietary analytics, and app ecosystem.","Certified aviation is much less directly decentralizable. Open autopilot stacks such as ArduPilot and PX4 demonstrate that open flight-control software can be credible in drones and experimental contexts, but certified general aviation requires liability management, hardware qualification, installation networks, safety cases, and regulator acceptance."],"sourceIds":["garmin-2025-annual-report","garmin-marketcap-2026","garmin-pe-ratio-2026","garmin-aviation-general","garmin-forerunner-category"],"technologyWaveIds":["printed-electronics","microfactories"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; market data refreshed on June 2, 2026.","inputMetrics":{"moat":{"value":78,"rationale":"Strong brand, specialized GPS hardware, regulated aviation integration, high aviation gross margins, and multi-segment distribution support a durable moat, though consumer wearables remain competitive.","sourceIds":["garmin-2025-annual-report","garmin-aviation-general"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizability":{"value":48,"rationale":"Fitness tracking and activity data can move toward open apps and local-first workflows, but certified avionics, proprietary watch firmware, and integrated hardware-service bundles limit direct decentralization.","sourceIds":["gadgetbridge-home","opentracks-home","ardupilot-home","px4-home","garmin-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"profitability":{"value":86,"rationale":"Fiscal 2025 operating income was about $1.88 billion on $7.25 billion of net sales, with consolidated gross margin of 59% and operating margin of 26%.","sourceIds":["garmin-2025-annual-report"],"confidence":"high","lastReviewedOn":"2026-06-02"},"peRatio":{"value":26,"rationale":"CompaniesMarketCap reported Garmin's trailing P/E ratio at about 26.0 as of June 2026.","sourceIds":["garmin-pe-ratio-2026"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"marketCap":{"value":45540000000,"rationale":"CompaniesMarketCap reported Garmin's market capitalization at about $45.54 billion as of June 2026, with an end-of-day June 1, 2026 figure around $45.66 billion.","sourceIds":["garmin-marketcap-2026"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},"products":[{"slug":"forerunner","name":"Garmin Forerunner","category":"GPS running smartwatches","homepageUrl":"https://www.garmin.com/en-US/c/forerunner-running-smartwatches/","summary":"Forerunner is Garmin's GPS running-watch line, combining wrist hardware, GNSS tracking, health sensors, training metrics, and Garmin Connect workflows.","whyItMatters":"It represents Garmin's consumer wearables moat: specialized hardware plus proprietary analytics and app lock-in around athletes' daily training data.","replacementSketch":["A credible replacement path starts with open device-bridge software, privacy-respecting sport tracking, and interoperable activity files rather than trying to clone every watch model at once.","Open apps can pressure Garmin Connect by letting users own exports, sync across communities, and preserve training history without depending entirely on a vendor cloud."],"sourceIds":["garmin-forerunner-category","garmin-2025-annual-report","gadgetbridge-home","opentracks-home"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"gadgetbridge","name":"Gadgetbridge","kind":"open-source","homepageUrl":"https://gadgetbridge.org/","repoUrl":"https://codeberg.org/Freeyourgadget/Gadgetbridge","summary":"Gadgetbridge is a free and open source Android app for pairing and managing watches and other gadgets without the vendor application.","metrics":{"openness":{"value":92,"rationale":"The project publishes source code and identifies itself as free and open source, with AGPLv3 licensing noted in its documentation.","sourceIds":["gadgetbridge-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":78,"rationale":"It reduces dependence on vendor apps and cloud services by managing device connections locally, though support varies by device and firmware protocol.","sourceIds":["gadgetbridge-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"readiness":{"value":62,"rationale":"Gadgetbridge is usable for many devices and documents Garmin protocol work, but full parity with Garmin Connect and every Forerunner capability is not guaranteed.","sourceIds":["gadgetbridge-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":72,"rationale":"The app can extend the usefulness of existing devices and avoid proprietary app dependence, but it does not replace the watch hardware itself.","sourceIds":["gadgetbridge-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["gadgetbridge-home"]},{"slug":"opentracks","name":"OpenTracks","kind":"open-source","homepageUrl":"https://opentracksapp.com/","repoUrl":"https://codeberg.org/OpenTracksApp/OpenTracks","summary":"OpenTracks is an open source sport tracking application focused on privacy, offline use, and user control of activity data.","metrics":{"openness":{"value":90,"rationale":"OpenTracks links to public source code and F-Droid distribution, and is positioned as a privacy-respecting tracking app.","sourceIds":["opentracks-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":74,"rationale":"It supports local activity tracking without analytics, Google Play Services, or cloud integration, shifting control of workout records back to the user.","sourceIds":["opentracks-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"readiness":{"value":68,"rationale":"It is ready as an activity tracking app, including offline maps and Bluetooth LE sensor support, but does not replace Garmin's full watch firmware and advanced training analytics.","sourceIds":["opentracks-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":70,"rationale":"It can run on commodity phones and sensors, lowering dependence on premium integrated watch-cloud bundles for some users.","sourceIds":["opentracks-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["opentracks-home"]}],"disruptionConcepts":[{"slug":"local-first-athlete-data-cooperative","name":"Local-first athlete data cooperative","summary":"A cooperative or federated training-data layer could let runners keep activity files, sensor histories, and training plans under user control while sharing selected data with coaches, clubs, apps, or marketplaces through explicit permissions.","angleIds":["federation","decentralized-coordination","cooperative-production"],"thesis":"The market structure shifts from watch-vendor-controlled clouds to user-owned activity records and interoperable coaching services, reducing Garmin Connect's ability to anchor hardware loyalty through data custody alone.","bitcoinOrDecentralizationRole":"Federation matters more than Bitcoin here: clubs, coaches, app hosts, and individuals can coordinate through interoperable servers or local-first storage instead of one proprietary account system.","coordinationMechanism":"Users sync activity files from watches, phones, or sensors into local wallets or federated servers; coaches, clubs, and app developers request scoped access; communities can publish compatible analysis modules and training plans.","verificationOrTrustModel":"Device signatures, file hashes, sensor provenance, and audit trails can reduce fake activity claims, while federated moderation and revocable permissions constrain abusive apps; the system still cannot fully prove all physical effort without trusted hardware or social verification.","failureModes":["Garmin and other vendors may restrict protocol access or degrade third-party sync support.","Athletes may prefer polished native analytics over portable but fragmented open workflows.","Anti-cheat guarantees are weaker without trusted device attestation."],"adoptionPath":["Start with export-compatible workflows around FIT, GPX, Bluetooth sensors, Gadgetbridge, and OpenTracks.","Add federated coaching, club leaderboards, and user-controlled data-sharing permissions before attempting dedicated open watch hardware."],"confidence":"medium","problemSourceIds":["garmin-forerunner-category","garmin-2025-annual-report"],"enablerSourceIds":["gadgetbridge-home","opentracks-home"],"metrics":{"decentralizationFit":{"value":78,"rationale":"The concept directly moves activity data and coaching relationships away from a single vendor cloud toward federated or local control.","sourceIds":["gadgetbridge-home","opentracks-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":62,"rationale":"Open activity formats, privacy-focused apps, and device-bridge software make the coordination layer plausible, but broad watch support and coach adoption remain uneven.","sourceIds":["gadgetbridge-home","opentracks-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":66,"rationale":"Software-first interoperability is feasible today, though full Garmin-grade analytics and hardware integration would take sustained community and commercial effort.","sourceIds":["gadgetbridge-home","opentracks-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":51,"rationale":"This would pressure Garmin Connect lock-in more than Garmin's premium hardware differentiation, so the incumbent impact is meaningful but bounded.","sourceIds":["garmin-2025-annual-report","garmin-forerunner-category"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"open-sensor-watch-microfactory","name":"Open sensor-watch microfactory","summary":"An open-hardware sports watch reference design could combine commodity GNSS, heart-rate, battery, enclosure, and firmware modules with small-batch local assembly, targeting repairability and data sovereignty rather than immediate premium parity.","angleIds":["open-hardware","home-microfactory","decentralized-manufacturing"],"thesis":"The market structure changes if long-tail sports wearables become locally repairable and customizable, weakening the need for every niche athlete to buy a closed premium model from a single global vendor.","bitcoinOrDecentralizationRole":"Decentralized manufacturing is the central mechanism: shared bills of materials, open firmware, and local assembly networks matter more than payment rails, though open marketplaces could coordinate parts and repair services.","coordinationMechanism":"Design maintainers publish validated reference designs; local shops source modules, print or machine enclosures, assemble devices, and publish test results; users choose firmware and analytics stacks compatible with open activity apps.","verificationOrTrustModel":"Community-maintained hardware test suites, reproducible firmware builds, published calibration procedures, and repair-shop reputation constrain low-quality builds, but waterproofing, battery safety, and sensor accuracy remain hard to verify remotely.","failureModes":["Open hardware may fail to match Garmin's battery life, ruggedness, waterproofing, GNSS performance, or industrial design.","Component sourcing and small-batch assembly may cost more than mass-produced Garmin devices.","Health and training metrics can be inaccurate without careful sensor validation."],"adoptionPath":["Begin with repair modules, straps, enclosures, and data-export firmware for existing devices where possible.","Move toward niche open sports watches for hobbyists, researchers, and privacy-focused athletes before competing in mainstream premium running watches."],"confidence":"speculative","problemSourceIds":["garmin-forerunner-category","garmin-2025-annual-report"],"enablerSourceIds":["gadgetbridge-home","opentracks-home"],"metrics":{"decentralizationFit":{"value":72,"rationale":"Open hardware and local assembly would decentralize production and repair, but still depend on specialized components and supply chains.","sourceIds":["gadgetbridge-home","opentracks-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":47,"rationale":"Open software communities exist, but coordinating reliable small-batch waterproof wearable hardware is substantially harder than app development.","sourceIds":["gadgetbridge-home","opentracks-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":38,"rationale":"Commodity electronics make prototypes plausible, but premium watch miniaturization, power management, sensor calibration, and ruggedization are difficult.","sourceIds":["garmin-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":34,"rationale":"Near-term pressure is mostly on niche users and repairability narratives, not Garmin's mainstream Forerunner volumes.","sourceIds":["garmin-2025-annual-report","garmin-forerunner-category"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]},{"slug":"garmin-avionics","name":"Garmin avionics","category":"Aircraft avionics and flight systems","homepageUrl":"https://www.garmin.com/en-US/c/aviation/general/","summary":"Garmin's aviation portfolio includes navigation and radios, autopilots, flight displays, integrated flight decks, datalinks, connectivity, weather, traffic, transponders, and aviation database services.","whyItMatters":"Avionics is a high-barrier Garmin business where certification, safety-critical reliability, OEM relationships, and installed-base support protect pricing power.","replacementSketch":["Open autopilot and flight-control projects can already replace some closed innovation loops in drones, research aircraft, experimental aircraft, and simulation workflows.","For certified general aviation, the plausible replacement is not an overnight open cockpit clone; it is an incremental path where open software, open simulation, shared safety cases, and modular hardware reduce dependence on single-vendor stacks over time."],"sourceIds":["garmin-aviation-general","garmin-2025-annual-report","ardupilot-home","px4-home"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"ardupilot","name":"ArduPilot","kind":"open-source","homepageUrl":"https://ardupilot.org/","repoUrl":"https://github.com/ArduPilot/ardupilot","summary":"ArduPilot is an open source autopilot system supporting multicopters, helicopters, fixed-wing aircraft, boats, submarines, rovers, and other vehicles.","metrics":{"openness":{"value":92,"rationale":"ArduPilot publishes source code and presents itself as an open source autopilot project.","sourceIds":["ardupilot-home","ardupilot-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":80,"rationale":"It lets builders, researchers, and operators use shared flight-control software across many vehicle types without relying on a single avionics vendor.","sourceIds":["ardupilot-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"readiness":{"value":72,"rationale":"ArduPilot is mature for drones, robotics, and experimental use cases, but it is not a drop-in certified replacement for Garmin general aviation avionics.","sourceIds":["ardupilot-home","garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":82,"rationale":"Open autopilot software running on accessible hardware can sharply reduce experimentation and integration costs outside certified cockpit environments.","sourceIds":["ardupilot-home"],"confidence":"high","lastReviewedOn":"2026-06-02"}},"sourceIds":["ardupilot-home","ardupilot-github"]},{"slug":"px4-autopilot","name":"PX4 Autopilot","kind":"open-source","homepageUrl":"https://px4.io/","repoUrl":"https://github.com/PX4/PX4-Autopilot","summary":"PX4 is an open source flight control software stack for drones and other unmanned vehicles, backed by the Dronecode ecosystem.","metrics":{"openness":{"value":91,"rationale":"PX4 describes itself as open source and maintains a public source repository.","sourceIds":["px4-home","px4-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":78,"rationale":"PX4 supports an ecosystem of users, developers, and hardware vendors around open flight-control software rather than one proprietary avionics stack.","sourceIds":["px4-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"readiness":{"value":70,"rationale":"PX4 is credible for drones and unmanned vehicles, but certified piloted-aircraft avionics replacement remains a different regulatory and safety problem.","sourceIds":["px4-home","garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":80,"rationale":"The open stack lowers development cost for autonomous vehicles, testing, and research compared with proprietary avionics development from scratch.","sourceIds":["px4-home","px4-github"],"confidence":"high","lastReviewedOn":"2026-06-02"}},"sourceIds":["px4-home","px4-github"]}],"disruptionConcepts":[{"slug":"open-certified-avionics-stack","name":"Open certified avionics stack","summary":"An open avionics pathway could reuse open autopilot software, open simulation, shared verification artifacts, and modular hardware to make certification evidence reusable across aircraft, shops, and operators rather than locked inside one vendor.","angleIds":["open-hardware","decentralized-coordination","cooperative-production"],"thesis":"If safety cases, test harnesses, and modular avionics designs become reusable public goods, the certified cockpit market becomes less dependent on one integrated vendor's proprietary stack and dealer ecosystem.","bitcoinOrDecentralizationRole":"Decentralized coordination is central: manufacturers, installers, pilots, insurers, and regulators coordinate around shared evidence, reproducible tests, and transparent configuration histories rather than opaque vendor claims.","coordinationMechanism":"A foundation or cooperative maintains reference architectures, simulation suites, hardware qualification data, installation templates, and change-control processes; certified installers contribute field data and receive reputation or certification credits.","verificationOrTrustModel":"Reproducible firmware builds, signed configuration baselines, independent lab test reports, flight-test telemetry, and regulator-auditable change logs constrain false claims; final trust still depends on accredited testing and aviation authority acceptance.","failureModes":["Certification cost and liability may remain too high for community-led avionics.","Open autopilot maturity in drones does not automatically translate to certified piloted aircraft.","Fragmented hardware variants could make safety cases difficult to reuse."],"adoptionPath":["Use open stacks in experimental aircraft, drones, simulators, and non-primary advisory systems.","Build shared certification artifacts for narrow functions before attempting integrated flight decks or certified autopilots."],"confidence":"speculative","problemSourceIds":["garmin-aviation-general","garmin-2025-annual-report"],"enablerSourceIds":["ardupilot-home","px4-home","ardupilot-github","px4-github"],"metrics":{"decentralizationFit":{"value":70,"rationale":"The concept explicitly shifts evidence, software, and integration knowledge from proprietary vendors into shared governance.","sourceIds":["ardupilot-home","px4-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":45,"rationale":"Open autopilot communities exist, but certified avionics coordination among regulators, insurers, installers, and manufacturers is difficult.","sourceIds":["ardupilot-home","px4-home","garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":32,"rationale":"The software base is real, but certification, redundancy, safety assurance, and liability make implementation far harder than ordinary open source deployment.","sourceIds":["garmin-aviation-general","ardupilot-home","px4-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":40,"rationale":"The concept could pressure Garmin at the margins in experimental and lower-cost avionics niches, but near-term impact on certified aviation revenue is limited.","sourceIds":["garmin-2025-annual-report","garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"community-aircraft-data-and-maintenance-network","name":"Community aircraft data and maintenance network","summary":"A federated maintenance, flight-data, and parts-compatibility network could let aircraft owners and independent shops pool anonymized reliability data, installation notes, and repair knowledge for avionics systems without depending entirely on vendor-controlled service channels.","angleIds":["federation","decentralized-coordination","peer-to-peer-marketplace"],"thesis":"Garmin's installed-base advantage weakens if owners and shops can coordinate trusted repair knowledge, compatibility records, and aftermarket service markets outside a closed vendor information loop.","bitcoinOrDecentralizationRole":"Federation and peer-to-peer coordination matter most; payments could be handled conventionally or with open rails, but the key decentralizing force is shared technical knowledge and reputation across independent maintainers.","coordinationMechanism":"Aircraft owners, A&P mechanics, avionics shops, and parts suppliers publish signed maintenance events, compatibility notes, repair outcomes, and availability data to interoperable registries with role-based privacy controls.","verificationOrTrustModel":"Mechanic license checks, aircraft logbook cross-references, signed work orders, escrow for parts transactions, reputation scores, and dispute records reduce fake fulfillment and bad repair claims, though privacy and liability constraints limit full transparency.","failureModes":["Participants may avoid sharing data because of liability, competitive concerns, or privacy.","Bad data could create safety risk if not carefully moderated and verified.","Vendors may restrict documentation or parts access."],"adoptionPath":["Start with non-sensitive compatibility notes, service bulletins, and independent shop directories.","Add verified maintenance outcomes, parts marketplace functions, and privacy-preserving reliability analytics as trust grows."],"confidence":"medium","problemSourceIds":["garmin-aviation-general","garmin-2025-annual-report"],"enablerSourceIds":["ardupilot-home","px4-home"],"metrics":{"decentralizationFit":{"value":66,"rationale":"A federated service network decentralizes maintenance knowledge and aftermarket coordination, though it does not replace the avionics hardware itself.","sourceIds":["garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":58,"rationale":"Independent mechanics and shops already coordinate around aircraft service needs, but a trusted shared data network must overcome liability and privacy barriers.","sourceIds":["garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":55,"rationale":"The software and marketplace layer is feasible, but aviation recordkeeping, licensing checks, and liability management require careful governance.","sourceIds":["garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":46,"rationale":"It would pressure service-channel dependence and information asymmetry more than Garmin's certified hardware and OEM relationships.","sourceIds":["garmin-2025-annual-report","garmin-aviation-general"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]}]},"sources":[{"id":"garmin-2025-annual-report","title":"Garmin 2025 Annual Report","url":"https://www8.garmin.com/aboutGarmin/invRelations/reports/2025_Annual_Report.pdf","kind":"annual-report","publisher":"Garmin Ltd.","note":"Primary source for fiscal 2025 revenue, segment mix, gross margins, operating income, and business context.","accessedOn":"2026-06-02"},{"id":"garmin-marketcap-2026","title":"Garmin (GRMN) Market Capitalization","url":"https://companiesmarketcap.com/garmin/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-cap and rank reference used for the June 2026 market-cap metric.","accessedOn":"2026-06-02"},{"id":"garmin-pe-ratio-2026","title":"Garmin (GRMN) P/E Ratio","url":"https://companiesmarketcap.com/garmin/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"P/E ratio reference for Garmin as of June 2026.","accessedOn":"2026-06-02"},{"id":"garmin-forerunner-category","title":"Forerunner Running Smartwatches","url":"https://www.garmin.com/en-US/c/forerunner-running-smartwatches/","kind":"product-page","publisher":"Garmin","note":"Product category source for Garmin's Forerunner running watch line.","accessedOn":"2026-06-02"},{"id":"garmin-aviation-general","title":"General Aviation Solutions","url":"https://www.garmin.com/en-US/c/aviation/general/","kind":"product-page","publisher":"Garmin","note":"Product category source for Garmin aviation systems, including navigation, radios, autopilots, flight displays, and related services.","accessedOn":"2026-06-02"},{"id":"gadgetbridge-home","title":"Gadgetbridge","url":"https://gadgetbridge.org/","kind":"open-source-project","publisher":"Gadgetbridge project","note":"Open source wearable-management alternative that reduces reliance on vendor applications and documents Garmin protocol work.","accessedOn":"2026-06-02"},{"id":"opentracks-home","title":"OpenTracksApp","url":"https://opentracksapp.com/","kind":"open-source-project","publisher":"OpenTracks project","note":"Open source privacy-focused sport tracking app used as an alternative for local-first activity tracking.","accessedOn":"2026-06-02"},{"id":"ardupilot-home","title":"ArduPilot","url":"https://ardupilot.org/","kind":"open-source-project","publisher":"ArduPilot project","note":"Open source autopilot project relevant to decentralized flight-control and avionics replacement concepts.","accessedOn":"2026-06-02"},{"id":"ardupilot-github","title":"ArduPilot GitHub Repository","url":"https://github.com/ArduPilot/ardupilot","kind":"open-source-project","publisher":"ArduPilot project","note":"Public source repository for ArduPilot.","accessedOn":"2026-06-02"},{"id":"px4-home","title":"PX4 Autopilot","url":"https://px4.io/","kind":"open-source-project","publisher":"PX4 / Dronecode","note":"Open source flight-control software project for drones and unmanned vehicles.","accessedOn":"2026-06-02"},{"id":"px4-github","title":"PX4-Autopilot GitHub Repository","url":"https://github.com/PX4/PX4-Autopilot","kind":"open-source-project","publisher":"PX4 project","note":"Public source repository for PX4 Autopilot.","accessedOn":"2026-06-02"}],"summaryMarkdown":"Prepared a new Garmin registry bundle with two product surfaces: Forerunner GPS running smartwatches and Garmin aviation systems. The refresh uses Garmin's 2025 annual report, CompaniesMarketCap market data, Garmin product pages, and open-source alternatives including Gadgetbridge, OpenTracks, ArduPilot, and PX4."}
+2026-06-02T21:31:53.333166Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a3e-97f4-7c52-9b72-718632a3df86 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+63,481

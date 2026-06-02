@@ -1,0 +1,974 @@
+2026-06-02T21:47:52.960513Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T21:47:52.969225Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a4e-af6c-7bd1-b10c-6103c73a5a3a
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: rockwell-automation
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "rockwell-automation",
+  "name": "Rockwell Automation",
+  "ticker": "ROK",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "industrials",
+  "industryId": "building-products-controls",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/rockwell-automation/marketcap/",
+  "description": "Rockwell Automation provides industrial automation hardware, software, and control systems for manufacturing and process industries.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Allen-Bradley",
+    "FactoryTalk"
+  ],
+  "seedSourceUrls": [
+    "https://www.rockwellautomation.com/",
+    "https://ir.rockwellautomation.com/",
+    "https://companiesmarketcap.com/rockwell-automation/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T21:47:54.876619Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.876642Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.876992Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.876997Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.877296Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.877302Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.877609Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.877613Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.877943Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.877951Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.878758Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:54.878763Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.683803Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.683820Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.684138Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.684146Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.684458Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.684463Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.684765Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.684771Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.685155Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.685160Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.685847Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:47:55.685856Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Rockwell Automation 2024 annual report FactoryTalk Allen-Bradley
+web search:
+web search: Rockwell Automation market cap June 2026 companiesmarketcap
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"rockwell-automation","name":"Rockwell Automation","ticker":"ROK","rankApprox":212,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top225"],"sectorId":"industrials","industryId":"building-products-controls","companiesMarketCapUrl":"https://companiesmarketcap.com/rockwell-automation/marketcap/","description":"Rockwell Automation provides industrial automation hardware, software, and control systems for manufacturing and process industries.","overview":[{"title":"Business mix","paragraphs":["Rockwell Automation sells industrial automation and digital transformation systems through hardware, control software, industrial software, and lifecycle services. Its best-known product families include Allen-Bradley controllers, drives, safety, sensing, and components, plus FactoryTalk software for production, analytics, visualization, and operations workflows.","The company benefits from installed-base inertia: industrial plants value reliability, trained integrators, certified components, vendor support, and compatibility across long-lived production lines. That makes replacement cycles slower than in ordinary enterprise software."]},{"title":"Registry framing","paragraphs":["The main Free The World question is not whether Rockwell's products are useful; factory automation is mission-critical infrastructure. The question is how much control can migrate from proprietary vendor stacks toward open control runtimes, interoperable engineering tools, auditable industrial software, and locally repairable automation hardware.","Rockwell remains a high-moat incumbent because the cost of downtime is large and plants are reluctant to change control architectures. Still, open PLC runtimes, IEC 61499 tooling, OPC UA-centered interoperability, open edge software, and distributed manufacturing primitives create credible pressure around non-safety-critical, educational, pilot, and brownfield-integration use cases."]}],"moatNarrative":["Rockwell's moat is strongest where plant uptime, certification, integrator training, long product lifecycles, and compatibility with existing control programs matter more than component cost. Allen-Bradley hardware and FactoryTalk software are embedded in procurement, maintenance, and operating procedures across many factories.","The moat is less absolute at the edge of the plant: monitoring, prototyping, non-critical automation, data collection, analytics, and simulation are more open to modular software and commodity hardware. Open projects can win first in those layers, then create long-term pressure on vendor lock-in by making interoperability and portability more normal."],"decentralizationNarrative":["Rockwell is not naturally decentralized: it sells branded, vendor-controlled hardware and software into professionally managed industrial sites. The decentralization opportunity is to separate plant automation into more interoperable layers: open engineering environments, portable control applications, open telemetry, community-maintained components, and local repair or fabrication networks.","The credible path is gradual. Open PLC and IEC 61499 ecosystems are most plausible for labs, education, pilots, non-critical controls, small manufacturers, and integration gateways before they challenge safety-certified and high-availability production control. Distributed manufacturing and open-hardware angles matter because factories are physical systems, but they require strong verification, documentation, and liability models before broad adoption."],"sourceIds":["rockwell-2025-annual-report","rockwell-home","rockwell-factorytalk","rockwell-allen-bradley","companiesmarketcap-rok","stockanalysis-rok-valuation"],"technologyWaveIds":["microfactories","printed-electronics"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; refreshed on 2026-06-02 with public company, product, market-data, and open-source ecosystem sources.","inputMetrics":{"moat":{"value":8,"rationale":"Rockwell has a deep installed base in high-stakes industrial automation, well-known Allen-Bradley and FactoryTalk brands, long-lived plant deployments, and switching costs tied to uptime, certification, integrator expertise, and maintenance procedures.","sourceIds":["rockwell-2025-annual-report","rockwell-allen-bradley","rockwell-factorytalk"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizability":{"value":5,"rationale":"Some layers can decentralize through open PLC runtimes, IEC 61499 engineering tools, OPC UA integrations, and open edge software, but safety-critical and high-availability plant control remains difficult to decentralize quickly because reliability, certification, support, and liability dominate buyer decisions.","sourceIds":["openplc-home","openplc-github","eclipse-4diac-home","eclipse-4diac-github","rockwell-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"profitability":{"value":7,"rationale":"Fiscal 2025 reporting shows Rockwell remained profitable on a multibillion-dollar revenue base, though industrial automation demand is cyclical and margins depend on product mix, software growth, and execution.","sourceIds":["rockwell-2025-annual-report","stockanalysis-rok-financials"],"confidence":"high","lastReviewedOn":"2026-06-02"},"peRatio":{"value":47.36,"rationale":"StockAnalysis reported a trailing P/E ratio of 47.36 in late May or early June 2026; valuation metrics are market-dependent and should be refreshed before investment use.","sourceIds":["stockanalysis-rok-valuation"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"marketCap":{"value":50320000000,"rationale":"CompaniesMarketCap reported Rockwell Automation market capitalization of about $50.32 billion as of May 2026.","sourceIds":["companiesmarketcap-rok"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},"products":[{"slug":"allen-bradley","name":"Allen-Bradley","category":"Industrial automation hardware and controls","homepageUrl":"https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html","summary":"Allen-Bradley is Rockwell Automation's core industrial hardware brand, spanning programmable controllers, drives, safety systems, sensors, motor control, industrial networking, and related plant-floor components.","whyItMatters":"Allen-Bradley systems sit close to real-world machines and production lines, so they shape how factories can be programmed, repaired, integrated, and modernized.","replacementSketch":["The realistic replacement path starts with open PLC and open control software for labs, small manufacturers, non-critical automation, and integration gateways rather than immediate displacement of certified production control systems.","Over time, open controller runtimes, open IEC 61499 engineering tools, commodity industrial PCs, and locally serviceable I/O modules can pressure proprietary hardware margins and make plant control programs more portable."],"sourceIds":["rockwell-allen-bradley","rockwell-2025-annual-report"],"technologyWaveIds":["printed-electronics","microfactories"],"alternatives":[{"slug":"openplc","name":"OpenPLC","kind":"open-source","homepageUrl":"https://openplcproject.github.io/","repoUrl":"https://github.com/thiagoralves/OpenPLC","summary":"OpenPLC is an open-source industrial controller project used for automation, education, and research.","metrics":{"openness":{"value":9,"rationale":"The controller software is publicly available as an open-source project with source code hosted on GitHub.","sourceIds":["openplc-home","openplc-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":7,"rationale":"OpenPLC can run outside a single vendor stack and gives users a path to inspect, adapt, and deploy control logic on compatible hardware, though industrial certification and support remain constraints.","sourceIds":["openplc-home","openplc-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"readiness":{"value":5,"rationale":"OpenPLC is credible for education, research, prototyping, and some small automation use cases, but broad production substitution for high-stakes Allen-Bradley deployments would require validation, support, and liability coverage.","sourceIds":["openplc-home","openplc-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":7,"rationale":"Open-source software and commodity-compatible control hardware can reduce licensing and vendor-lock-in costs for appropriate use cases, especially where certified enterprise support is not mandatory.","sourceIds":["openplc-home","openplc-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["openplc-home","openplc-github"]},{"slug":"eclipse-4diac","name":"Eclipse 4diac","kind":"open-source","homepageUrl":"https://eclipse.dev/4diac/","repoUrl":"https://github.com/eclipse-4diac","summary":"Eclipse 4diac provides an open-source IEC 61499 infrastructure for distributed industrial process measurement and control systems.","metrics":{"openness":{"value":9,"rationale":"Eclipse 4diac is an Eclipse Foundation open-source project with public repositories and an open standards orientation.","sourceIds":["eclipse-4diac-home","eclipse-4diac-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":8,"rationale":"IEC 61499 and 4diac are explicitly aimed at distributed automation and portable control applications, making them a strong fit for multi-vendor control architectures.","sourceIds":["eclipse-4diac-home","eclipse-4diac-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"readiness":{"value":6,"rationale":"The project has a long history and active tooling, but production use depends on compatible runtimes, engineering maturity, and plant-specific validation.","sourceIds":["eclipse-4diac-home","eclipse-4diac-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":6,"rationale":"Open engineering tools and portable runtimes can reduce vendor dependence, but adoption still carries integration, training, and assurance costs.","sourceIds":["eclipse-4diac-home","eclipse-4diac-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["eclipse-4diac-home","eclipse-4diac-github"]}],"disruptionConcepts":[{"slug":"open-certified-control-cells","name":"Open Certified Control Cells","summary":"A cooperative ecosystem packages open PLC runtimes, IEC 61499 tools, tested I/O recipes, and documented safety boundaries into small repeatable automation cells for non-critical and then progressively more demanding factory tasks.","angleIds":["open-hardware","decentralized-manufacturing","cooperative-production"],"thesis":"The concept weakens proprietary controller lock-in by shifting value from closed vendor catalogs toward audited, repeatable, locally serviceable control cells that small manufacturers and integrators can assemble and validate.","bitcoinOrDecentralizationRole":"Decentralized manufacturing matters because local integrators, repair shops, and small manufacturers can share tested bills of materials, controller images, and commissioning procedures instead of relying entirely on a single vendor's catalog and software stack.","coordinationMechanism":"Integrators publish reference cell designs, test procedures, firmware images, and maintenance notes in a shared registry; buyers select certified recipes and local operators provide installation, inspection, and support.","verificationOrTrustModel":"Trust depends on reproducible builds, signed controller images, third-party test logs, serial-numbered components, and documented commissioning checklists. Cheating is constrained by public recipes, audit trails, and buyer-visible acceptance tests, but safety-critical certification still requires formal external validation.","failureModes":["Open recipes may not meet plant safety, uptime, or insurance requirements for critical production lines.","Fragmented hardware variants can undermine repeatability unless the ecosystem converges on a small set of tested configurations."],"adoptionPath":["Start with education, lab automation, pilot lines, monitoring rigs, and non-critical machine control where downtime risk is bounded.","Expand through integrator-led reference deployments, formal test documentation, and compatibility layers for existing industrial networks."],"confidence":"medium","problemSourceIds":["rockwell-allen-bradley","rockwell-2025-annual-report"],"enablerSourceIds":["openplc-home","openplc-github","eclipse-4diac-home","eclipse-4diac-github"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The model deliberately distributes design, assembly, installation, and maintenance across open recipes and local operators rather than a single proprietary controller vendor.","sourceIds":["openplc-home","eclipse-4diac-home"],"confidence":"high","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":6,"rationale":"Open-source repositories, shared reference designs, and integrator communities are credible coordination primitives, but industrial liability and certification make coordination harder than in ordinary software.","sourceIds":["openplc-github","eclipse-4diac-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":6,"rationale":"The enabling tools exist, but translating them into repeatable industrial control cells requires hardware qualification, documentation, installer training, and clear safety boundaries.","sourceIds":["openplc-home","eclipse-4diac-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":5,"rationale":"Pressure is strongest in education, pilots, small manufacturers, and non-critical automation; Rockwell's installed base and certification advantages remain strong in major production systems.","sourceIds":["rockwell-2025-annual-report","rockwell-allen-bradley"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"local-repairable-industrial-io","name":"Local Repairable Industrial I/O","summary":"Distributed workshops use open electronics tooling, standardized enclosures, and documented test fixtures to repair, clone, or locally produce selected low-risk industrial I/O and interface modules that connect to open control runtimes.","angleIds":["printed-electronics","open-hardware","local-materials-processing","recycling-and-reuse"],"thesis":"If non-proprietary I/O modules and interface boards become locally repairable, some value migrates away from branded replacement parts and toward open maintenance networks with shorter supply chains.","bitcoinOrDecentralizationRole":"The decentralization role is physical: fabrication and repair capacity moves closer to factories. Bitcoin is not central; the more relevant mechanism is open hardware plus local materials recovery and auditable test records.","coordinationMechanism":"Factories, repair shops, and open-hardware maintainers coordinate through shared board files, BOMs, firmware, test fixtures, and acceptance criteria; local shops compete on turnaround time and documented quality.","verificationOrTrustModel":"Modules are accepted only after bench tests, electrical inspection, firmware hash checks, and plant-specific commissioning. Fraud is constrained by test artifacts, component traceability, and repeat-buyer reputation, but counterfeit parts and subtle reliability defects remain hard to eliminate.","failureModes":["Industrial temperature, electromagnetic compatibility, safety, and warranty requirements may block locally produced parts in many plants.","A small open-hardware ecosystem may not sustain enough testing coverage across the many I/O variants used in real factories."],"adoptionPath":["Begin with obsolete, non-critical, or monitoring-only interface boards where replacement scarcity is painful and failure risk is contained.","Move toward standardized open I/O modules for new small-scale automation cells once test fixtures, documentation, and maintenance practices mature."],"confidence":"speculative","problemSourceIds":["rockwell-allen-bradley","rockwell-2025-annual-report"],"enablerSourceIds":["openplc-home","eclipse-4diac-home"],"metrics":{"decentralizationFit":{"value":7,"rationale":"Local repair and open-hardware production decentralize maintenance and spare-parts availability, though critical certified modules remain hard to replace.","sourceIds":["openplc-home","eclipse-4diac-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":5,"rationale":"Open BOMs and test fixtures are plausible coordination tools, but industrial buyers need far stronger traceability and liability coverage than hobbyist hardware communities normally provide.","sourceIds":["openplc-github","eclipse-4diac-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":4,"rationale":"The concept depends on open electronics tooling and repeatable testing, but many industrial modules have demanding environmental, safety, and support requirements.","sourceIds":["rockwell-allen-bradley","rockwell-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":4,"rationale":"This would pressure margins and availability for selected low-risk modules before challenging Rockwell's core certified control systems.","sourceIds":["rockwell-allen-bradley","companiesmarketcap-rok"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]},{"slug":"factorytalk","name":"FactoryTalk","category":"Industrial software platform","homepageUrl":"https://www.rockwellautomation.com/en-us/products/software/factorytalk.html","summary":"FactoryTalk is Rockwell Automation's industrial software family for plant operations, visualization, analytics, digital twin, manufacturing execution, and connected enterprise workflows.","whyItMatters":"FactoryTalk sits above and around plant-floor control, making it a key layer for data access, operational visibility, scheduling, analytics, and integration between machines and business systems.","replacementSketch":["The strongest open replacement path is modular rather than one-for-one: open edge gateways collect industrial telemetry, open historians and dashboards expose plant data, and open control tooling keeps logic portable where feasible.","Open software can pressure FactoryTalk first in monitoring, visualization, data routing, simulation, and analytics, while regulated manufacturing execution and deeply integrated Rockwell deployments remain harder to displace."],"sourceIds":["rockwell-factorytalk","rockwell-2025-annual-report"],"technologyWaveIds":["microfactories"],"alternatives":[{"slug":"node-red","name":"Node-RED","kind":"open-source","homepageUrl":"https://nodered.org/","repoUrl":"https://github.com/node-red/node-red","summary":"Node-RED is an open-source low-code programming tool for wiring devices, APIs, and online services, often used for IoT and edge integration workflows.","metrics":{"openness":{"value":9,"rationale":"Node-RED is an open-source project with public source code and community-maintained packages.","sourceIds":["node-red-home","node-red-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":7,"rationale":"It lets operators build local flows and edge integrations without depending on one industrial software vendor, although governance and security depend on deployment practice.","sourceIds":["node-red-home","node-red-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"readiness":{"value":7,"rationale":"Node-RED is mature for integration, prototyping, edge automation, and data routing, but it is not a complete regulated MES or high-assurance industrial operations suite by itself.","sourceIds":["node-red-home","node-red-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":8,"rationale":"Open-source low-code flows can reduce integration cost and avoid some proprietary middleware licensing, especially for small edge and brownfield use cases.","sourceIds":["node-red-home"],"confidence":"high","lastReviewedOn":"2026-06-02"}},"sourceIds":["node-red-home","node-red-github"]},{"slug":"fledge","name":"Fledge","kind":"open-source","homepageUrl":"https://fledge-iot.readthedocs.io/","repoUrl":"https://github.com/fledge-iot/fledge","summary":"Fledge is an open-source industrial IoT edge platform for collecting, processing, buffering, and forwarding industrial data.","metrics":{"openness":{"value":8,"rationale":"Fledge is published as an open-source project with public documentation and repositories.","sourceIds":["fledge-docs","fledge-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":7,"rationale":"It supports local edge data handling and protocol integration, reducing dependence on a single centralized industrial software stack.","sourceIds":["fledge-docs","fledge-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"readiness":{"value":6,"rationale":"Fledge is credible for edge data collection and forwarding, but it replaces only part of the FactoryTalk surface and requires integration work.","sourceIds":["fledge-docs"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":7,"rationale":"Open edge collection and buffering can reduce proprietary gateway and integration costs where the deployment has enough technical support.","sourceIds":["fledge-docs","fledge-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["fledge-docs","fledge-github"]}],"disruptionConcepts":[{"slug":"federated-plant-data-cooperatives","name":"Federated Plant Data Cooperatives","summary":"Small and mid-sized manufacturers run local open edge nodes that collect production telemetry, keep sensitive data on site, and selectively share anonymized benchmarks, maintenance signals, and machine-learning features through a cooperative federation.","angleIds":["federation","cooperative-production","decentralized-coordination"],"thesis":"Factory software value shifts from a proprietary plant-wide suite toward federated data rights, shared analytics, and portable edge integrations controlled by operators rather than a single vendor.","bitcoinOrDecentralizationRole":"Federation is central: each plant retains its own node and data policy while participating in shared analytics. Bitcoin is not required unless payments or anti-spam incentives are added later for data-market settlement.","coordinationMechanism":"Plants join a cooperative, run approved edge connectors, define local data-sharing policies, and exchange aggregate benchmarks or model updates through federated services.","verificationOrTrustModel":"The system relies on signed edge agents, reproducible connector versions, data schemas, anomaly detection, audit logs, and cooperative governance. False reporting is constrained by cross-site consistency checks and reputation, though private plant data limits full external verification.","failureModes":["Plants may refuse to share enough comparable data for meaningful benchmarks.","Poor connector security or weak anonymization could leak sensitive production information."],"adoptionPath":["Start with non-sensitive telemetry such as uptime categories, energy consumption bands, and maintenance events across volunteer plants.","Add shared predictive-maintenance models and purchasing benchmarks once data schemas, governance, and privacy controls prove trustworthy."],"confidence":"medium","problemSourceIds":["rockwell-factorytalk","rockwell-2025-annual-report"],"enablerSourceIds":["node-red-home","fledge-docs"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The cooperative federation keeps plant data and software nodes locally controlled while enabling shared learning across many manufacturers.","sourceIds":["node-red-home","fledge-docs"],"confidence":"high","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":6,"rationale":"Open edge tools and federated governance are credible, but manufacturers must align on schemas, privacy, and incentives to share useful data.","sourceIds":["node-red-home","fledge-docs"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":6,"rationale":"Edge data collection is feasible today, while privacy-preserving benchmarking and cooperative governance are the harder parts.","sourceIds":["node-red-home","fledge-docs","fledge-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":6,"rationale":"This can pressure FactoryTalk in analytics, data routing, and benchmarking layers, though Rockwell retains advantage in integrated plant workflows and installed control environments.","sourceIds":["rockwell-factorytalk","rockwell-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"open-microfactory-ops-stack","name":"Open Microfactory Ops Stack","summary":"A lightweight open software stack combines edge telemetry, visual dashboards, open control-cell recipes, and cooperative maintenance records so microfactories can run production without buying a large proprietary industrial software suite.","angleIds":["home-microfactory","decentralized-manufacturing","open-hardware"],"thesis":"As small automated production cells become more common, the software requirement shifts from enterprise-scale plant suites toward composable, open, locally administered operations software.","bitcoinOrDecentralizationRole":"The decentralization role is in production ownership and operations: small shops can run auditable local manufacturing cells with shared open recipes and maintenance logs. Bitcoin is not central unless future machine-to-machine settlement is needed for supply or energy coordination.","coordinationMechanism":"Microfactory operators share production recipes, controller configurations, maintenance records, and quality checks through open registries while running local edge software for execution and monitoring.","verificationOrTrustModel":"Quality is verified through signed recipes, machine logs, inspection records, batch photos, and buyer acceptance tests. The weak point is physical-world verification: bad materials, skipped inspections, or manipulated logs may not be caught without independent audits.","failureModes":["Microfactories may lack the process discipline needed for repeatable industrial quality.","Open operations software may not cover regulated traceability, cybersecurity, or integration needs for more complex production."],"adoptionPath":["Deploy first for maker-scale manufacturing, repair shops, prototype lines, and local spare-part production.","Standardize recipes, inspection protocols, and audit trails so buyers can compare output across local operators."],"confidence":"speculative","problemSourceIds":["rockwell-factorytalk","rockwell-2025-annual-report"],"enablerSourceIds":["node-red-home","openplc-home","eclipse-4diac-home"],"metrics":{"decentralizationFit":{"value":8,"rationale":"The concept explicitly supports many locally operated production cells rather than centralized factories or one-vendor plant software.","sourceIds":["node-red-home","openplc-home","eclipse-4diac-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":5,"rationale":"Open recipes and maintenance records are plausible, but the ecosystem needs standards for quality, liability, and buyer trust.","sourceIds":["node-red-github","openplc-github","eclipse-4diac-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":5,"rationale":"The software primitives exist, but feature-complete microfactory operations require integration across controls, telemetry, quality, inventory, and traceability.","sourceIds":["node-red-home","fledge-docs","openplc-home"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":5,"rationale":"This pressures FactoryTalk where new small production cells do not need enterprise suite depth; it is less threatening to large Rockwell-standardized factories in the near term.","sourceIds":["rockwell-factorytalk","rockwell-2025-annual-report"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]}]},"sources":[{"id":"rockwell-home","title":"Rockwell Automation","url":"https://www.rockwellautomation.com/","kind":"product-page","publisher":"Rockwell Automation","note":"Primary company website for Rockwell's industrial automation and digital transformation positioning.","accessedOn":"2026-06-02"},{"id":"rockwell-2025-annual-report","title":"Rockwell Automation 2025 Annual Report","url":"https://www.rockwellautomation.com/content/dam/rockwell-automation/documents/pdf/company/about-us/ir/2025/ROK-AR-2025-Final.pdf","kind":"annual-report","publisher":"Rockwell Automation","note":"Primary annual-report source for business segments, risk factors, brand references, and financial context.","accessedOn":"2026-06-02"},{"id":"rockwell-allen-bradley","title":"Allen-Bradley Hardware","url":"https://www.rockwellautomation.com/en-us/products/hardware/allen-bradley.html","kind":"product-page","publisher":"Rockwell Automation","note":"Primary product-family page for Rockwell's Allen-Bradley industrial automation hardware.","accessedOn":"2026-06-02"},{"id":"rockwell-factorytalk","title":"FactoryTalk Software","url":"https://www.rockwellautomation.com/en-us/products/software/factorytalk.html","kind":"product-page","publisher":"Rockwell Automation","note":"Primary product-family page for Rockwell's FactoryTalk industrial software platform.","accessedOn":"2026-06-02"},{"id":"companiesmarketcap-rok","title":"Rockwell Automation (ROK) - Market capitalization","url":"https://companiesmarketcap.com/rockwell-automation/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-cap source used for the registry snapshot and current market-cap metric.","accessedOn":"2026-06-02"},{"id":"stockanalysis-rok-valuation","title":"Rockwell Automation (ROK) Statistics & Valuation","url":"https://stockanalysis.com/stocks/rok/statistics/","kind":"market-data","publisher":"StockAnalysis","note":"Market-data source for trailing P/E and valuation context.","accessedOn":"2026-06-02"},{"id":"stockanalysis-rok-financials","title":"Rockwell Automation (ROK) Financials","url":"https://stockanalysis.com/stocks/rok/financials/","kind":"market-data","publisher":"StockAnalysis","note":"Secondary financial-data source for revenue and profitability context.","accessedOn":"2026-06-02"},{"id":"openplc-home","title":"OpenPLC Project","url":"https://openplcproject.github.io/","kind":"open-source-project","publisher":"OpenPLC Project","note":"Open-source PLC project homepage used as an Allen-Bradley alternative and control-stack enabler.","accessedOn":"2026-06-02"},{"id":"openplc-github","title":"OpenPLC GitHub Repository","url":"https://github.com/thiagoralves/OpenPLC","kind":"open-source-project","publisher":"GitHub","note":"Source-code repository for OpenPLC, supporting openness and readiness assessment.","accessedOn":"2026-06-02"},{"id":"eclipse-4diac-home","title":"Eclipse 4diac","url":"https://eclipse.dev/4diac/","kind":"open-source-project","publisher":"Eclipse Foundation","note":"Open-source IEC 61499 industrial automation project used as a distributed control alternative.","accessedOn":"2026-06-02"},{"id":"eclipse-4diac-github","title":"Eclipse 4diac GitHub Organization","url":"https://github.com/eclipse-4diac","kind":"open-source-project","publisher":"GitHub","note":"Public repositories for Eclipse 4diac tooling and runtime components.","accessedOn":"2026-06-02"},{"id":"node-red-home","title":"Node-RED","url":"https://nodered.org/","kind":"open-source-project","publisher":"OpenJS Foundation","note":"Open-source low-code flow tool used as a FactoryTalk-adjacent edge integration alternative.","accessedOn":"2026-06-02"},{"id":"node-red-github","title":"Node-RED GitHub Repository","url":"https://github.com/node-red/node-red","kind":"open-source-project","publisher":"GitHub","note":"Public source repository for Node-RED, supporting openness and ecosystem assessment.","accessedOn":"2026-06-02"},{"id":"fledge-docs","title":"Fledge Documentation","url":"https://fledge-iot.readthedocs.io/","kind":"technical-docs","publisher":"Fledge Project","note":"Technical documentation for an open industrial IoT edge platform relevant to FactoryTalk replacement sketches.","accessedOn":"2026-06-02"},{"id":"fledge-github","title":"Fledge GitHub Repository","url":"https://github.com/fledge-iot/fledge","kind":"open-source-project","publisher":"GitHub","note":"Public source repository for Fledge, supporting openness and edge-platform assessment.","accessedOn":"2026-06-02"}],"summaryMarkdown":"Prepared a new Rockwell Automation bundle with Allen-Bradley and FactoryTalk coverage, two open alternatives per product, and disruption concepts focused on open control cells, local repairable I/O, federated plant data, and open microfactory operations."}
+2026-06-02T21:49:29.856350Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a4e-b029-73d1-a0e2-2ca5ab1c19be hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+25,778

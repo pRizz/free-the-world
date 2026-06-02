@@ -1,0 +1,978 @@
+2026-06-02T21:17:27.053249Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T21:17:27.062825Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a32-d2c2-7c83-93a4-3f528ed9aa94
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: entergy
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "entergy",
+  "name": "Entergy",
+  "ticker": "ETR",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top225"
+  ],
+  "sectorId": "utilities",
+  "industryId": "electric-utilities",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/entergy/marketcap/",
+  "description": "Entergy is an integrated energy company providing regulated electric utility service in the Gulf South region.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Electric utility service",
+    "Power generation"
+  ],
+  "seedSourceUrls": [
+    "https://www.entergy.com/",
+    "https://investors.entergy.com/",
+    "https://companiesmarketcap.com/entergy/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T21:17:31.524588Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.524610Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.525127Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.525135Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.525633Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.525638Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.526031Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.526038Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.526391Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.526397Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.527300Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:31.527307Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.316184Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.316204Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.316493Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.316500Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.316814Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.316821Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.317111Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.317118Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.317406Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.317410Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.318022Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T21:17:32.318027Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Entergy 2024 annual report regulated electric utility service Arkansas Louisiana Mississippi Texas
+web search:
+web search: https://investors.entergy.com/investors/financial-results-and-publications/annual-reports/default.aspx
+web search:
+web search: 'market cap' in https://companiesmarketcap.com/entergy/marketcap/
+web search:
+web search: https://companiesmarketcap.com/entergy/pe-ratio/
+codex
+{"schemaVersion":1,"bundle":{"schemaVersion":1,"company":{"slug":"entergy","name":"Entergy","ticker":"ETR","rankApprox":213,"maybeIpo":null,"regionId":"us","indexIds":["sp500-top225"],"sectorId":"utilities","industryId":"electric-utilities","companiesMarketCapUrl":"https://companiesmarketcap.com/entergy/marketcap/","description":"Entergy is an integrated electric utility holding company serving regulated utility customers in Arkansas, Louisiana, Mississippi, and Texas.","overview":[{"title":"Business","paragraphs":["Entergy operates regulated electric utility businesses across the Gulf South, with revenue tied to retail electricity service, fuel recovery, transmission and distribution investment, and regulated cost-recovery proceedings.","The company also owns substantial generation assets, including nuclear, gas, coal, and renewable resources, making its moat less about a consumer product brand and more about certificated service territories, grid infrastructure, regulatory relationships, and capital access."]},{"title":"Registry relevance","paragraphs":["Entergy is a useful registry target because the electric utility model is one of the clearest examples of a regulated infrastructure monopoly facing pressure from distributed energy resources, customer-owned generation, storage, and microgrid coordination software.","The credible disruption path is not a simple replacement by another centralized provider; it is a gradual unbundling of generation, resilience, dispatch, and customer coordination around local assets."]}],"moatNarrative":["Entergy's moat is high because electric utilities are capital-intensive, regulated networks with physical distribution assets, interconnection control, approved rates, and service obligations that are difficult for new entrants to replicate.","The moat is not absolute: behind-the-meter solar, storage, microgrids, and demand-flexibility software can reduce the amount of electricity customers buy from the utility and can shift resilience value toward local systems."],"decentralizationNarrative":["Electric utility service is decentralizable at the margin rather than fully replaceable in the near term. Customers, campuses, neighborhoods, and commercial sites can own generation and storage, coordinate loads, and exchange flexibility, but still often depend on the utility distribution grid for backup, interconnection, billing, and reliability.","The strongest decentralization angle is microgrid coordination: local DER owners can coordinate production, storage, demand response, and resilience services with open controls while using regulated interconnection rules and metering as the bridge to the legacy grid."],"sourceIds":["entergy-annual-reports","entergy-net-metering","doe-der-microgrids","companiesmarketcap-entergy-marketcap","companiesmarketcap-entergy-pe","companiesmarketcap-entergy-revenue"],"technologyWaveIds":["distributed-energy"],"snapshotNote":"Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 201-225; refreshed on 2026-06-02 with market data and distributed-energy source context.","inputMetrics":{"moat":{"value":86,"rationale":"Regulated electric utility territories, grid ownership, capital intensity, public-service obligations, and approved cost recovery create a very strong infrastructure moat.","sourceIds":["entergy-annual-reports","entergy-net-metering"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizability":{"value":54,"rationale":"Core transmission and distribution service remains centralized and regulated, but behind-the-meter generation, batteries, microgrids, and open energy management systems can decentralize meaningful parts of generation, resilience, and dispatch.","sourceIds":["doe-der-microgrids","entergy-net-metering","openems-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"profitability":{"value":67,"rationale":"Entergy is profitable but utility earnings are shaped by rate cases, fuel recovery, capital spending, storm costs, and regulatory timing rather than software-like margin expansion.","sourceIds":["companiesmarketcap-entergy-revenue","companiesmarketcap-entergy-pe","entergy-annual-reports"],"confidence":"high","lastReviewedOn":"2026-06-02"},"peRatio":{"value":27.04,"rationale":"CompaniesMarketCap reported Entergy's trailing P/E ratio at about 27.0 as of June 2026.","sourceIds":["companiesmarketcap-entergy-pe"],"confidence":"speculative","lastReviewedOn":"2026-06-02"},"marketCap":{"value":49260000000,"rationale":"CompaniesMarketCap listed Entergy's market capitalization at $49.26 billion as of June 2026, with an end-of-day Jun. 1, 2026 value of $48.06 billion also shown.","sourceIds":["companiesmarketcap-entergy-marketcap"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},"products":[{"slug":"electric-utility-service","name":"Electric utility service","category":"Regulated electricity service","homepageUrl":"https://www.entergy.com/","summary":"Regulated retail electricity service delivered through Entergy utility operating companies across the Gulf South.","whyItMatters":"This is the core monopoly-like customer relationship: households, businesses, and industrial users rely on Entergy for grid connection, metering, reliability, and retail supply.","replacementSketch":["A realistic replacement path starts with customer-owned or community-owned DER, batteries, and controllable loads reducing dependence on centralized generation while still using the distribution grid.","Open controls and transparent interconnection workflows could let local systems coordinate resilience and grid services without every customer being locked into a single utility-operated software stack."],"sourceIds":["entergy-annual-reports","entergy-net-metering","doe-der-microgrids"],"technologyWaveIds":["distributed-energy"],"alternatives":[{"slug":"openems","name":"OpenEMS","kind":"open-source","homepageUrl":"https://github.com/OpenEMS/openems","repoUrl":"https://github.com/OpenEMS/openems","summary":"OpenEMS is an open-source energy management platform for monitoring, controlling, and integrating storage, renewable generation, EV charging, heat pumps, and related devices.","metrics":{"openness":{"value":91,"rationale":"The project publishes source code on GitHub and identifies open-source licensing for the platform.","sourceIds":["openems-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":78,"rationale":"OpenEMS Edge can run on local devices while backend components aggregate decentralized edge systems, matching site-level DER coordination needs.","sourceIds":["openems-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"readiness":{"value":70,"rationale":"The project has active releases, documentation, and a substantial public repository, but production deployment still requires compatible hardware, integrators, and utility interconnection compliance.","sourceIds":["openems-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":65,"rationale":"Open software can reduce vendor lock-in for energy management, though physical equipment, installation, permitting, and utility compliance remain major cost drivers.","sourceIds":["openems-github","entergy-net-metering"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["openems-github"]},{"slug":"openremote-energy-management","name":"OpenRemote Energy Management","kind":"open-source","homepageUrl":"https://openremote.io/energy-management-open-source/","repoUrl":"https://github.com/openremote/openremote","summary":"OpenRemote provides an open-source IoT platform that can be used to build energy management systems and energy hubs.","metrics":{"openness":{"value":86,"rationale":"OpenRemote positions its platform as open source and maintains public project infrastructure for IoT and energy-management use cases.","sourceIds":["openremote-energy"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":70,"rationale":"It supports distributed IoT and energy hub deployments, which can coordinate local devices outside a single proprietary utility stack.","sourceIds":["openremote-energy"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"readiness":{"value":66,"rationale":"The platform is suitable for builders and integrators, but a utility-service replacement still depends on deployment design, hardware, cybersecurity, and regulatory approval.","sourceIds":["openremote-energy","entergy-net-metering"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":62,"rationale":"Open IoT tooling can lower software licensing and integration lock-in, while grid equipment and compliance costs remain significant.","sourceIds":["openremote-energy"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["openremote-energy"]}],"disruptionConcepts":[{"slug":"federated-neighborhood-microgrids","name":"Federated neighborhood microgrids","summary":"Neighborhoods, campuses, and commercial clusters use local solar, storage, controllable loads, and open energy management software to form microgrids that can island during outages and coordinate with the utility grid during normal operations.","angleIds":["distributed-energy-generation","microgrid-coordination","open-energy-hardware","decentralized-coordination"],"thesis":"The market structure shifts from a one-way utility supply relationship toward many local energy cells that buy, sell, store, and curtail power while using the regulated grid as a coordination and backup layer.","bitcoinOrDecentralizationRole":"Decentralization matters through local ownership and federated control of DER assets; Bitcoin or Lightning is not central unless later used for settlement between participants.","coordinationMechanism":"Participants coordinate through site controllers, shared operating rules, interconnection agreements, and software that dispatches batteries, generation, and controllable loads against local resilience and price signals.","verificationOrTrustModel":"Meters, inverter telemetry, signed device data, utility interconnection records, and settlement audits constrain fake generation or false load-response claims, while physical inspections and anti-islanding requirements address safety.","failureModes":["Interconnection queues, safety rules, and utility tariffs may limit export or islanding value.","Local governance can fail if participants disagree over cost sharing, outage priorities, or maintenance obligations.","Cybersecurity weaknesses in DER controllers could create grid-safety risks."],"adoptionPath":["Start with buildings and campuses that already have solar, batteries, backup generation, or high outage costs.","Add open energy-management software and certified interconnection equipment.","Aggregate multiple sites into a local flexibility or resilience program recognized by regulators and the utility."],"confidence":"medium","problemSourceIds":["entergy-net-metering","doe-der-microgrids"],"enablerSourceIds":["openems-github","openremote-energy","doe-der-microgrids"],"metrics":{"decentralizationFit":{"value":82,"rationale":"The concept directly moves generation, storage, and resilience decisions to local asset owners while preserving grid interconnection where needed.","sourceIds":["doe-der-microgrids","openems-github"],"confidence":"high","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":68,"rationale":"DER and microgrid coordination are documented and open EMS software exists, but settlement, safety, and multi-party governance are hard in regulated territories.","sourceIds":["doe-der-microgrids","entergy-net-metering","openems-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":61,"rationale":"The building blocks exist, but implementation depends on hardware, permitting, tariffs, cybersecurity, and utility interconnection approval.","sourceIds":["entergy-net-metering","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":58,"rationale":"Microgrids can reduce delivered energy sales and increase customer bargaining power, but Entergy would still own much of the distribution infrastructure and may earn regulated returns on grid upgrades.","sourceIds":["entergy-annual-reports","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"peer-to-peer-flexibility-market","name":"Peer-to-peer flexibility market","summary":"Customers with batteries, solar, flexible HVAC, EV chargers, or backup generators offer verified flexibility to neighbors, aggregators, or grid programs, creating a market for local capacity and load shifting rather than relying only on utility-owned generation.","angleIds":["peer-to-peer-marketplace","microgrid-coordination","decentralized-coordination"],"thesis":"The value pool shifts from centralized capacity planning toward many small resources that can be dispatched and compensated for local reliability, peak reduction, and outage recovery.","bitcoinOrDecentralizationRole":"Decentralization is central because independently owned devices coordinate through market rules and verifiable telemetry; Lightning could support low-value high-frequency settlement, but it is optional rather than required.","coordinationMechanism":"Device owners publish availability, aggregators or local markets clear flexibility requests, and participating devices receive dispatch signals and settlement based on metered performance.","verificationOrTrustModel":"Revenue is tied to measured before-and-after performance from meters and device telemetry; audits, baselines, cryptographic device identity, and penalties reduce spoofing or false curtailment claims.","failureModes":["Baseline manipulation can make demand response appear larger than it is.","Regulators may require utility or aggregator control rather than open peer-to-peer settlement.","Low participation density can make local markets too thin to matter."],"adoptionPath":["Deploy flexibility programs for commercial customers and DER owners with existing interval metering.","Standardize telemetry and settlement rules for batteries, EV chargers, and controllable loads.","Expand from aggregator-led programs toward local market clearing where regulation permits."],"confidence":"medium","problemSourceIds":["doe-der-microgrids","entergy-net-metering"],"enablerSourceIds":["openems-github","openremote-energy"],"metrics":{"decentralizationFit":{"value":76,"rationale":"The model distributes capacity and flexibility across customer-owned devices instead of relying only on utility-owned generation.","sourceIds":["doe-der-microgrids"],"confidence":"high","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":63,"rationale":"The technical coordination primitives are credible, but market design, baseline integrity, and regulatory permission remain major constraints.","sourceIds":["doe-der-microgrids","openems-github"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":57,"rationale":"Open EMS and IoT platforms can coordinate devices, but production deployment requires secure telemetry, tariffs, customer acquisition, and settlement operations.","sourceIds":["openems-github","openremote-energy"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":52,"rationale":"Flexibility markets pressure peak-generation and capacity-planning economics, but they are likely to complement rather than fully replace the regulated utility grid.","sourceIds":["entergy-annual-reports","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]},{"slug":"power-generation","name":"Power generation","category":"Electric generation portfolio","homepageUrl":"https://www.entergy.com/","summary":"Entergy's generation portfolio supplies electricity for regulated utility customers and includes large centralized assets requiring long-lived capital planning and regulatory recovery.","whyItMatters":"Generation is where distributed energy technologies can most visibly reduce centralized utility dependence, especially when local solar, batteries, and demand flexibility displace peak or backup capacity.","replacementSketch":["The near-term replacement sketch is not one household replacing a power plant; it is many small generation, storage, and flexible-load assets shaving peak demand, improving resilience, and reducing the need for some centralized capacity additions.","Open modeling, open controls, and community-scale ownership can make those local resources easier to plan, finance, and operate transparently."],"sourceIds":["entergy-annual-reports","doe-der-microgrids"],"technologyWaveIds":["distributed-energy"],"alternatives":[{"slug":"oemof","name":"Open Energy Modelling Framework","kind":"open-source","homepageUrl":"https://oemof.org/","repoUrl":"https://github.com/oemof/oemof","summary":"oemof is an open-source framework for modeling energy systems, useful for planning and comparing distributed generation, storage, and sector-coupled energy scenarios.","metrics":{"openness":{"value":90,"rationale":"oemof is described in open energy modeling literature as an open-source framework with a free-license approach.","sourceIds":["oemof-paper"],"confidence":"high","lastReviewedOn":"2026-06-02"},"decentralizationFit":{"value":64,"rationale":"Modeling software does not generate power itself, but it helps communities and planners evaluate decentralized generation and storage portfolios.","sourceIds":["oemof-paper","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"readiness":{"value":72,"rationale":"The framework is established for analysis and planning, though it must be paired with real projects, financing, hardware, and interconnection to affect Entergy's market.","sourceIds":["oemof-paper"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"costLeverage":{"value":58,"rationale":"Open planning tools reduce dependence on proprietary modeling workflows, but generation economics remain dominated by hardware, land, capital, and grid interconnection costs.","sourceIds":["oemof-paper","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"}},"sourceIds":["oemof-paper"]}],"disruptionConcepts":[{"slug":"community-owned-der-portfolios","name":"Community-owned DER portfolios","summary":"Community groups, municipalities, cooperatives, or campus operators plan and own portfolios of solar, storage, backup generation, and flexible demand that reduce reliance on utility-scale generation while still coordinating with the grid.","angleIds":["distributed-energy-generation","cooperative-production","microgrid-coordination"],"thesis":"Generation investment shifts from centralized utility capital plans toward locally financed portfolios that can compete on resilience, bill control, and avoided peak capacity.","bitcoinOrDecentralizationRole":"The main role is cooperative and decentralized ownership of energy assets; Bitcoin is not necessary for the basic mechanism, though open settlement rails could later support participant accounting.","coordinationMechanism":"Participants pool capital, site DER assets, model dispatch and resilience value, and use local operating agreements plus interconnection rules to coordinate export, consumption, and backup operation.","verificationOrTrustModel":"Generation output is verified through production meters, inverter logs, utility meters, and project audits; governance records constrain false ownership or benefit-allocation claims.","failureModes":["Project economics can fail if tariffs change or export credits are reduced.","Community governance may underfund maintenance or allocate benefits poorly.","Physical siting, permitting, and interconnection constraints can block otherwise sound projects."],"adoptionPath":["Use open modeling tools to identify high-value local generation and storage mixes.","Finance projects through municipal, cooperative, campus, or neighborhood ownership structures.","Integrate with open EMS controls and utility-approved interconnection equipment."],"confidence":"medium","problemSourceIds":["doe-der-microgrids","entergy-net-metering"],"enablerSourceIds":["oemof-paper","openems-github"],"metrics":{"decentralizationFit":{"value":80,"rationale":"Ownership, generation, and resilience planning move toward local groups rather than remaining solely with a centralized utility portfolio.","sourceIds":["doe-der-microgrids"],"confidence":"high","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":62,"rationale":"The model has credible technical primitives, but community finance and governance are difficult to execute well.","sourceIds":["doe-der-microgrids","oemof-paper"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":59,"rationale":"Solar, batteries, modeling tools, and EMS software exist, but the hardest barriers are interconnection, permitting, project finance, and utility tariff treatment.","sourceIds":["entergy-net-metering","openems-github","oemof-paper"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":55,"rationale":"Community DER can reduce energy and peak-capacity needs, but it is more likely to erode growth and capex assumptions than eliminate Entergy's grid role.","sourceIds":["entergy-annual-reports","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}},{"slug":"open-black-start-and-resilience-cells","name":"Open black-start and resilience cells","summary":"Local DER clusters use open controls to provide outage ride-through, islanding, and black-start support, turning generation from a centralized restoration sequence into a layered local resilience service.","angleIds":["microgrid-coordination","open-energy-hardware","distributed-energy-generation"],"thesis":"Reliability value shifts from centralized restoration alone toward local cells that can keep critical loads running and help restart broader grid segments after failures.","bitcoinOrDecentralizationRole":"Decentralization matters through local autonomous operation and open control surfaces; payment rails are secondary to safety, verification, and dispatch coordination.","coordinationMechanism":"Critical facilities, DER owners, and grid operators predefine islanding boundaries, priority loads, restoration procedures, and dispatch roles using certified controllers and operating plans.","verificationOrTrustModel":"Safety is enforced through certified anti-islanding equipment, utility-visible meters, relay settings, inspections, test events, and operational telemetry; false readiness claims are constrained by periodic drills and measured performance.","failureModes":["Unsafe islanding can endanger workers or damage equipment if controls fail.","Critical-load prioritization can become politically contentious.","The concept depends on regulators and utilities accepting local black-start participation."],"adoptionPath":["Begin with hospitals, water systems, data centers, schools, and municipal facilities that need outage resilience.","Deploy certified DER controls and run periodic islanding or resilience tests.","Connect multiple resilience cells into utility-recognized restoration and emergency-planning programs."],"confidence":"speculative","problemSourceIds":["doe-der-microgrids"],"enablerSourceIds":["openems-github","openremote-energy","doe-der-microgrids"],"metrics":{"decentralizationFit":{"value":74,"rationale":"The concept decentralizes resilience and restart capability while still requiring utility coordination for safety and restoration.","sourceIds":["doe-der-microgrids"],"confidence":"high","lastReviewedOn":"2026-06-02"},"coordinationCredibility":{"value":56,"rationale":"DER and black-start concepts are documented, but multi-party restoration coordination is safety-critical and institutionally difficult.","sourceIds":["doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"implementationFeasibility":{"value":50,"rationale":"Open control software helps, but certified protection equipment, operating procedures, drills, and utility acceptance make implementation challenging.","sourceIds":["openems-github","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"},"incumbentPressure":{"value":46,"rationale":"Local resilience cells pressure the utility's reliability monopoly narrative, but they may also become utility-supported resilience investments rather than pure substitutes.","sourceIds":["entergy-annual-reports","doe-der-microgrids"],"confidence":"medium","lastReviewedOn":"2026-06-02"}}}]}]},"sources":[{"id":"entergy-annual-reports","title":"Entergy Annual Reports","url":"https://investors.entergy.com/investors/financial-results-and-publications/annual-reports/default.aspx","kind":"investor-relations","publisher":"Entergy","note":"Primary investor-relations page for Entergy annual reports and financial disclosures.","accessedOn":"2026-06-02"},{"id":"companiesmarketcap-entergy-marketcap","title":"Entergy Market Capitalization","url":"https://companiesmarketcap.com/entergy/marketcap/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-cap source used for the refreshed valuation metric and rank context.","accessedOn":"2026-06-02"},{"id":"companiesmarketcap-entergy-pe","title":"Entergy P/E Ratio","url":"https://companiesmarketcap.com/entergy/pe-ratio/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-data source for Entergy's trailing price-to-earnings ratio.","accessedOn":"2026-06-02"},{"id":"companiesmarketcap-entergy-revenue","title":"Entergy Revenue","url":"https://companiesmarketcap.com/entergy/revenue/","kind":"market-data","publisher":"CompaniesMarketCap","note":"Market-data source for Entergy revenue context.","accessedOn":"2026-06-02"},{"id":"entergy-net-metering","title":"Net metering and distributed generation","url":"https://www.entergyneworleans.com/net-metering","kind":"product-page","publisher":"Entergy New Orleans","note":"Documents customer-owned generation, net metering, interconnection rules, two-way metering, and safety requirements in an Entergy service territory.","accessedOn":"2026-06-02"},{"id":"doe-der-microgrids","title":"Solar Integration: Distributed Energy Resources and Microgrids Basics","url":"https://www.energy.gov/cmei/systems/solar-integration-distributed-energy-resources-and-microgrids-basics","kind":"technical-docs","publisher":"U.S. Department of Energy","note":"Explains DER, behind-the-meter solar, microgrids, islanding, resilience, and black-start relevance.","accessedOn":"2026-06-02"},{"id":"openems-github","title":"OpenEMS - Open Source Energy Management System","url":"https://github.com/OpenEMS/openems","kind":"open-source-project","publisher":"OpenEMS","note":"Open-source energy management platform used as a plausible alternative control layer for DER and microgrid coordination.","accessedOn":"2026-06-02"},{"id":"openremote-energy","title":"Open Source IoT platform for Energy Management","url":"https://openremote.io/energy-management-open-source/","kind":"open-source-project","publisher":"OpenRemote","note":"Open-source IoT and energy-management platform relevant to local device coordination and energy hubs.","accessedOn":"2026-06-02"},{"id":"oemof-paper","title":"The Open Energy Modelling Framework (oemof) - A new approach to facilitate open science in energy system modelling","url":"https://arxiv.org/abs/1808.08070","kind":"analysis","publisher":"arXiv","note":"Open energy system modeling reference for planning decentralized generation and storage portfolios.","accessedOn":"2026-06-02"}],"summaryMarkdown":"Prepared a new Entergy registry bundle with regulated utility moat analysis, refreshed June 2026 market metrics, and distributed-energy disruption concepts centered on microgrids, DER coordination, flexibility markets, and community-owned generation."}
+2026-06-02T21:19:01.770080Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a32-d3ad-73b3-ac0b-978f6d965ce7 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+61,809
