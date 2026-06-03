@@ -1,0 +1,1566 @@
+2026-06-02T22:43:45.849280Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T22:43:45.859710Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a81-d72b-7cf1-9b06-ba1eb939ab8b
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: vulcan-materials
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "vulcan-materials",
+  "name": "Vulcan Materials",
+  "ticker": "VMC",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top250"
+  ],
+  "sectorId": "materials",
+  "industryId": "construction-materials",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/vulcan-materials/marketcap/",
+  "description": "Vulcan Materials is a U.S. producer of construction aggregates, asphalt, ready-mixed concrete, and related construction materials.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Construction Aggregates",
+    "Ready-Mixed Concrete"
+  ],
+  "seedSourceUrls": [
+    "https://ir.vulcanmaterials.com/",
+    "https://www.vulcanmaterials.com/products-services",
+    "https://companiesmarketcap.com/vulcan-materials/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top250",
+      "label": "S&P 500 · Top 250 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 226-250 in an expansion toward the two hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "road-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Road Freight & Trucking"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "agricultural-inputs",
+      "sectorId": "materials",
+      "label": "Agricultural Inputs & Crop Protection"
+    },
+    {
+      "id": "construction-materials",
+      "sectorId": "materials",
+      "label": "Construction Materials & Aggregates"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "real-estate-services",
+      "sectorId": "real-estate",
+      "label": "Real Estate Services & Brokerage"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T22:43:47.658163Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.658187Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.658625Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.658632Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.659128Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.659136Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.659638Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.659646Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.660105Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.660112Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.661149Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:47.661160Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.569303Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.569323Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.569699Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.569706Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.570082Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.570088Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.570536Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.570545Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.570939Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.570946Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.571692Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:43:48.571698Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll verify the company facts and sourceable metrics first, then return only the JSON object the registry expects.
+web search:
+web search: Vulcan Materials 2025 annual report aggregates asphalt ready-mixed concrete revenue EBITDA
+web search:
+web search: Open Source Ecology compressed earth brick press open source construction materials
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "vulcan-materials",
+      "name": "Vulcan Materials",
+      "ticker": "VMC",
+      "rankApprox": 226,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "materials",
+      "industryId": "construction-materials",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/vulcan-materials/marketcap/",
+      "description": "Vulcan Materials is a U.S. producer of construction aggregates, asphalt, ready-mixed concrete, and related construction materials.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "Vulcan Materials supplies construction aggregates, asphalt mix, ready-mixed concrete, and paving materials across U.S. infrastructure and construction markets.",
+            "The company describes aggregates as its core product family, with downstream asphalt and concrete businesses using aggregates-based materials in local construction markets."
+          ]
+        },
+        {
+          "title": "Market position",
+          "paragraphs": [
+            "The business benefits from permitted quarry reserves, local logistics density, customer proximity, and public infrastructure demand.",
+            "Those advantages make the company difficult to replicate quickly, even though individual materials such as crushed stone, asphalt, and concrete are physically standardized."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Vulcan's moat is strongest in aggregates, where quarry permitting, reserve quality, transportation radius, and local density matter more than brand alone.",
+        "The downstream asphalt and ready-mixed concrete businesses reinforce local demand for aggregate reserves but are less structurally protected than the quarry base itself."
+      ],
+      "decentralizationNarrative": [
+        "Construction materials are physically local, which creates a natural opening for distributed substitutes such as recycled aggregate loops, onsite soil-based blocks, and locally optimized concrete mixes.",
+        "The hard part is not only producing material locally; it is proving structural performance, code compliance, durability, environmental claims, and reliable fulfillment at the job-site scale."
+      ],
+      "sourceIds": [
+        "vulcan-products-services",
+        "vulcan-2025-annual-report",
+        "companiesmarketcap-vmc",
+        "stockanalysis-vmc"
+      ],
+      "technologyWaveIds": [
+        "microfactories"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250.",
+      "inputMetrics": {
+        "moat": {
+          "value": 72,
+          "rationale": "Aggregates markets are protected by permitted reserves, local logistics, and quarry density, while asphalt and ready-mixed concrete are more operationally replicable.",
+          "sourceIds": [
+            "vulcan-products-services",
+            "vulcan-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 43,
+          "rationale": "Materials can be produced and recovered locally, but construction codes, quality control, heavy equipment, permitting, and project liability constrain decentralization.",
+          "sourceIds": [
+            "vulcan-products-services",
+            "ose-ceb-press",
+            "rilem-recycled-aggregates"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 67,
+          "rationale": "Recent public financial data show positive net income and meaningful earnings scale, with aggregates economics supporting durable margins.",
+          "sourceIds": [
+            "stockanalysis-vmc",
+            "vulcan-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 31.82,
+          "rationale": "StockAnalysis reported a P/E ratio of 31.82 for VMC near the review date.",
+          "sourceIds": [
+            "stockanalysis-vmc"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 33820000000,
+          "rationale": "CompaniesMarketCap reported Vulcan Materials market capitalization at about $33.82 billion in May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-vmc"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "construction-aggregates",
+        "name": "Construction Aggregates",
+        "category": "construction materials",
+        "homepageUrl": "https://www.vulcanmaterials.com/construction-materials/products-and-services",
+        "summary": "Vulcan produces crushed stone, sand, gravel, and related aggregates used in roads, buildings, concrete, asphalt, and other construction applications.",
+        "whyItMatters": "Aggregates are bulky, locally sourced inputs that anchor construction-material supply chains and give permitted quarry operators durable regional advantages.",
+        "replacementSketch": [
+          "A credible replacement path would combine recycled construction and demolition material, local quality testing, and marketplace coordination rather than trying to replace every quarry ton at once.",
+          "Open equipment designs and shared material recipes could help small operators produce non-structural or lower-risk aggregate substitutes first, then expand as testing and certification improve."
+        ],
+        "sourceIds": [
+          "vulcan-products-services",
+          "vulcan-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "open-source-ecology-ceb-press",
+            "name": "Open Source Ecology CEB Press",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourceecology.org/portfolio/ceb-press/",
+            "summary": "Open Source Ecology documents a compressed earth block press intended to make building blocks from local soil with open fabrication knowledge.",
+            "metrics": {
+              "openness": {
+                "value": 84,
+                "rationale": "The project emphasizes open documentation, fabrication files, controller details, and replicability.",
+                "sourceIds": [
+                  "ose-ceb-press",
+                  "ose-ceb-wiki"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 77,
+                "rationale": "The machine is explicitly oriented toward local production from site-available soil rather than centralized material supply.",
+                "sourceIds": [
+                  "ose-ceb-press",
+                  "ose-ceb-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 42,
+                "rationale": "The project has working prototypes and documentation, but broad code-compliant construction use remains context dependent.",
+                "sourceIds": [
+                  "ose-ceb-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Using local soil and downloadable fabrication knowledge can reduce transport and procurement costs where the material is suitable.",
+                "sourceIds": [
+                  "ose-ceb-press",
+                  "ose-ceb-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "ose-ceb-press",
+              "ose-ceb-wiki"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "verified-local-recycled-aggregate-exchanges",
+            "name": "Verified Local Recycled Aggregate Exchanges",
+            "summary": "Regional exchanges could match demolition waste, mobile crushing capacity, testing labs, and construction buyers so recycled aggregate becomes a trusted local input rather than an informal disposal byproduct.",
+            "angleIds": [
+              "peer-to-peer-marketplace",
+              "local-materials-processing",
+              "recycling-and-reuse"
+            ],
+            "thesis": "The concept weakens quarry-centered supply by making verified recycled material easier to source, price, and certify locally.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through multi-party market coordination among demolition contractors, recyclers, labs, haulers, and buyers; Bitcoin is not central to the mechanism.",
+            "coordinationMechanism": "Sellers list material lots, processors publish capacity, labs attach test results, and buyers reserve certified tonnage for nearby projects.",
+            "verificationOrTrustModel": "Material lots would be tied to chain-of-custody records, lab tests, geotagged pickup and delivery evidence, and buyer dispute processes; repeated false reporting would reduce seller standing and payment eligibility.",
+            "failureModes": [
+              "Testing standards and local code acceptance may lag marketplace availability.",
+              "Low-value bulky material may still be uneconomic when haul distances are too long.",
+              "Fraudulent grading or contamination claims could persist without strong sampling discipline."
+            ],
+            "adoptionPath": [
+              "Start with non-structural fill, base, and lower-risk municipal projects that already tolerate recycled material.",
+              "Add standardized lab integrations and procurement records for higher-spec construction use."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "vulcan-products-services",
+              "vulcan-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "rilem-recycled-aggregates"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "The model shifts sourcing toward many local demolition and processing participants rather than a few quarry operators.",
+                "sourceIds": [
+                  "rilem-recycled-aggregates"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 61,
+                "rationale": "Marketplaces, testing records, and chain-of-custody workflows are credible, but construction-material liability raises coordination costs.",
+                "sourceIds": [
+                  "rilem-recycled-aggregates"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 58,
+                "rationale": "Recycled aggregate use is technically documented, but local standards, quality variation, and logistics limit fast scaling.",
+                "sourceIds": [
+                  "rilem-recycled-aggregates"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 47,
+                "rationale": "The strongest pressure is on lower-spec aggregate demand near demolition-heavy cities, not on high-quality quarry reserves everywhere.",
+                "sourceIds": [
+                  "vulcan-2025-annual-report",
+                  "rilem-recycled-aggregates"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "open-local-earth-block-microfactories",
+            "name": "Open Local Earth Block Microfactories",
+            "summary": "Open-source compressed earth block equipment could let small builders turn suitable local soil into building units, reducing dependence on distant material supply for some walls, low-rise structures, and community construction projects.",
+            "angleIds": [
+              "open-hardware",
+              "decentralized-manufacturing",
+              "local-materials-processing",
+              "home-microfactory"
+            ],
+            "thesis": "The concept substitutes local fabrication knowledge and soil processing for part of the purchased construction-material stack.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is open hardware and local manufacturing; Bitcoin is not necessary unless communities later add payments or cooperative financing.",
+            "coordinationMechanism": "Local fabricators build or maintain presses, builders publish soil and block test results, and project owners select certified recipes for appropriate building use cases.",
+            "verificationOrTrustModel": "Trust depends on soil testing, compression-strength testing, moisture control, machine calibration records, and inspection rather than brand reputation alone.",
+            "failureModes": [
+              "Many soils and climates will not be suitable without stabilization or additional engineering.",
+              "Building codes and lender or insurer acceptance may block adoption.",
+              "Open hardware documentation does not guarantee safe construction practice."
+            ],
+            "adoptionPath": [
+              "Use for workshops, outbuildings, community facilities, and non-critical applications in regions with appropriate soils.",
+              "Build certified local recipes, inspection workflows, and training programs before moving into broader structural use."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "vulcan-products-services"
+            ],
+            "enablerSourceIds": [
+              "ose-ceb-press",
+              "ose-ceb-wiki"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 82,
+                "rationale": "Open machine designs and site-local feedstock strongly fit decentralized manufacturing.",
+                "sourceIds": [
+                  "ose-ceb-press",
+                  "ose-ceb-wiki"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 46,
+                "rationale": "Small groups can coordinate fabrication and use, but inspection, engineering, and liability systems are not yet mature.",
+                "sourceIds": [
+                  "ose-ceb-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 45,
+                "rationale": "The hardware is documented and prototyped, but code-compliant adoption depends on local soil, engineering, and permitting.",
+                "sourceIds": [
+                  "ose-ceb-press",
+                  "ose-ceb-wiki"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 32,
+                "rationale": "This can pressure niche masonry and local material use cases but is unlikely to displace large-scale aggregate demand soon.",
+                "sourceIds": [
+                  "vulcan-products-services",
+                  "ose-ceb-press"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "ready-mixed-concrete",
+        "name": "Ready-Mixed Concrete",
+        "category": "construction materials",
+        "homepageUrl": "https://www.vulcanmaterials.com/construction-materials/products-and-services",
+        "summary": "Vulcan supplies ready-mixed concrete made from aggregates, cementitious binders, water, and admixtures for local construction projects.",
+        "whyItMatters": "Ready-mixed concrete is time-sensitive, local, specification-driven material infrastructure for buildings, roads, utilities, and public works.",
+        "replacementSketch": [
+          "The most realistic open replacement is not a single concrete competitor, but a toolchain for locally optimized mixes, recycled inputs, shared testing, and transparent performance records.",
+          "Open mix-design models and community testing data could reduce reliance on vertically integrated suppliers for some standard or low-carbon concrete applications."
+        ],
+        "sourceIds": [
+          "vulcan-products-services",
+          "vulcan-2025-annual-report"
+        ],
+        "technologyWaveIds": [
+          "microfactories"
+        ],
+        "alternatives": [
+          {
+            "slug": "boxcrete",
+            "name": "BOxCrete",
+            "kind": "open-source",
+            "homepageUrl": "https://arxiv.org/abs/2603.21525",
+            "repoUrl": "https://github.com/facebookresearch/BOxCrete",
+            "summary": "BOxCrete is an open-source AI model for concrete strength forecasting and mix optimization.",
+            "metrics": {
+              "openness": {
+                "value": 76,
+                "rationale": "The model is described as open source and made available through a public repository.",
+                "sourceIds": [
+                  "meta-boxcrete",
+                  "boxcrete-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 58,
+                "rationale": "Open mix optimization can help local producers and labs adapt recipes, though it does not itself decentralize batching assets.",
+                "sourceIds": [
+                  "meta-boxcrete",
+                  "boxcrete-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 52,
+                "rationale": "The model is recent and promising, but construction adoption requires validation against local materials, standards, and field performance.",
+                "sourceIds": [
+                  "meta-boxcrete",
+                  "boxcrete-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 61,
+                "rationale": "Better mix optimization can reduce trial-and-error and support lower-cost or lower-carbon substitutions where validated.",
+                "sourceIds": [
+                  "meta-boxcrete",
+                  "boxcrete-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "meta-boxcrete",
+              "boxcrete-paper"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-open-concrete-mix-network",
+            "name": "Federated Open Concrete Mix Network",
+            "summary": "A federated network of local labs, batch plants, engineers, and public agencies could share tested concrete mix recipes and performance data, making it easier for small producers to meet specifications with local materials.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "local-materials-processing"
+            ],
+            "thesis": "Open verified recipes could reduce the advantage of proprietary mix know-how and help local suppliers compete on performance, cost, and embodied-carbon targets.",
+            "bitcoinOrDecentralizationRole": "Federation is the core mechanism: independent labs and producers publish interoperable recipe, test, and field-performance records without one dominant platform controlling access.",
+            "coordinationMechanism": "Labs publish test results, producers publish available feedstocks, engineers select recipes, and public buyers require transparent performance histories in procurement.",
+            "verificationOrTrustModel": "Records would need signed lab reports, batch IDs, material provenance, compressive-strength results, and post-placement performance feedback; bad actors would be constrained by audit trails and exclusion from trusted registries.",
+            "failureModes": [
+              "Open recipes can fail if local aggregate, cement, admixture, temperature, or curing conditions differ from the tested context.",
+              "Engineers and public agencies may resist accepting federated records without recognized standards bodies.",
+              "Data contributors may underreport failed mixes unless incentives and audit requirements are strong."
+            ],
+            "adoptionPath": [
+              "Begin with public low-carbon concrete pilots and non-critical applications where transparent testing is already valued.",
+              "Expand into procurement templates that accept federated lab records and require field feedback."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "vulcan-products-services",
+              "vulcan-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "meta-boxcrete",
+              "boxcrete-paper"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 67,
+                "rationale": "A federated recipe and test network can distribute concrete know-how across many local producers and labs.",
+                "sourceIds": [
+                  "meta-boxcrete",
+                  "boxcrete-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 59,
+                "rationale": "The workflow maps to existing lab testing and engineering review, but requires shared schemas and procurement acceptance.",
+                "sourceIds": [
+                  "meta-boxcrete",
+                  "boxcrete-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 54,
+                "rationale": "Open optimization models exist, but field validation and standards integration remain substantial work.",
+                "sourceIds": [
+                  "meta-boxcrete",
+                  "boxcrete-paper"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 41,
+                "rationale": "This pressures mix-design know-how and some procurement channels, but does not remove the need for local batching and materials logistics.",
+                "sourceIds": [
+                  "vulcan-products-services",
+                  "meta-boxcrete"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "vulcan-products-services",
+      "title": "Products & Services",
+      "url": "https://www.vulcanmaterials.com/construction-materials/products-and-services",
+      "kind": "product-page",
+      "publisher": "Vulcan Materials",
+      "note": "Company product page describing aggregates, asphalt, ready-mixed concrete, and related construction materials.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "vulcan-2025-annual-report",
+      "title": "Vulcan Materials 2025 Annual Report",
+      "url": "https://assets.contentstack.io/v3/assets/bltfd7cf707acd5b8e3/bltf10d25eecaf70d51/69c3e9cb48987321373039d4/2025-Annual-Report-VMC.pdf",
+      "kind": "annual-report",
+      "publisher": "Vulcan Materials",
+      "note": "Annual report source for business mix, revenue categories, and company operating context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-vmc",
+      "title": "Vulcan Materials Market Capitalization",
+      "url": "https://companiesmarketcap.com/vulcan-materials/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization source used for the current company valuation metric.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-vmc",
+      "title": "Vulcan Materials Company Stock Price & Overview",
+      "url": "https://stockanalysis.com/stocks/vmc/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market data source for recent P/E ratio, revenue, net income, and stock overview.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ose-ceb-press",
+      "title": "CEB Press",
+      "url": "https://www.opensourceecology.org/portfolio/ceb-press/",
+      "kind": "open-source-project",
+      "publisher": "Open Source Ecology",
+      "note": "Open-source compressed earth block press project used as an alternative and local-materials-processing enabler.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ose-ceb-wiki",
+      "title": "Automatic Compressed Earth Brick Press",
+      "url": "https://wiki.opensourceecology.org/wiki/Automatic_Compressed_Earth_Brick_Press",
+      "kind": "technical-docs",
+      "publisher": "Open Source Ecology Wiki",
+      "note": "Technical documentation describing open hardware components, build information, and maturity caveats for the CEB press.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "rilem-recycled-aggregates",
+      "title": "Current status on the use of recycled aggregates in concrete: Where do we go from here?",
+      "url": "https://letters.rilem.net/index.php/rilem/article/view/3",
+      "kind": "analysis",
+      "publisher": "RILEM Technical Letters",
+      "note": "Open-access technical analysis supporting recycled aggregate concepts and constraints.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "meta-boxcrete",
+      "title": "AI for American-Produced Cement and Concrete",
+      "url": "https://engineering.fb.com/2026/03/30/data-center-engineering/ai-for-american-produced-cement-and-concrete/",
+      "kind": "technical-docs",
+      "publisher": "Meta Engineering",
+      "note": "Technical announcement describing an open-source model for sustainable concrete mix design.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "boxcrete-paper",
+      "title": "BOxCrete: A Bayesian Optimization Open-Source AI Model for Concrete Strength Forecasting and Mix Optimization",
+      "url": "https://arxiv.org/abs/2603.21525",
+      "kind": "analysis",
+      "publisher": "arXiv",
+      "note": "Research paper for the open-source concrete strength forecasting and mix optimization alternative.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Vulcan Materials registry bundle with two products: Construction Aggregates and Ready-Mixed Concrete. The strongest decentralized pressure points are verified recycled aggregate exchanges, open local earth-block microfactories, and federated open concrete mix optimization."
+}
+2026-06-02T22:45:09.566470Z  WARN sqlx::query: slow statement: execution time exceeded alert threshold summary="SELECT threads.id, threads.rollout_path, threads.created_at_ms …" db.statement="\n\n\nSELECT\n    threads.id,\n    threads.rollout_path,\n    threads.created_at_ms AS created_at,\n    threads.updated_at_ms AS updated_at,\n    threads.source,\n    threads.thread_source,\n    threads.agent_nickname,\n    threads.agent_role,\n    threads.agent_path,\n    threads.model_provider,\n    threads.model,\n    threads.reasoning_effort,\n    threads.cwd,\n    threads.cli_version,\n    threads.title,\n    threads.preview,\n    threads.sandbox_policy,\n    threads.approval_mode,\n    threads.tokens_used,\n    threads.first_user_message,\n    threads.archived_at,\n    threads.git_sha,\n    threads.git_branch,\n    threads.git_origin_url\nFROM threads\nWHERE threads.id = ?\n            \n" rows_affected=0 rows_returned=1 elapsed=1.032267166s elapsed_secs=1.032267166 slow_threshold=1s
+2026-06-02T22:46:23.863298Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a81-d8dc-7950-811d-4698949c1091 hook_name=legacy_notify error=No such file or directory (os error 2)
+2026-06-02T22:47:10.690714Z  WARN sqlx::query: slow statement: execution time exceeded alert threshold summary="SELECT threads.id, threads.rollout_path, threads.created_at_ms …" db.statement="\n\n\nSELECT\n    threads.id,\n    threads.rollout_path,\n    threads.created_at_ms AS created_at,\n    threads.updated_at_ms AS updated_at,\n    threads.source,\n    threads.thread_source,\n    threads.agent_nickname,\n    threads.agent_role,\n    threads.agent_path,\n    threads.model_provider,\n    threads.model,\n    threads.reasoning_effort,\n    threads.cwd,\n    threads.cli_version,\n    threads.title,\n    threads.preview,\n    threads.sandbox_policy,\n    threads.approval_mode,\n    threads.tokens_used,\n    threads.first_user_message,\n    threads.archived_at,\n    threads.git_sha,\n    threads.git_branch,\n    threads.git_origin_url\nFROM threads\nWHERE threads.id = ?\n            \n" rows_affected=0 rows_returned=1 elapsed=1.899656583s elapsed_secs=1.899656583 slow_threshold=1s
+tokens used
+27,260
+2026-06-02T22:47:32.513436Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 17806: Operation not permitted (os error 1)
+2026-06-02T22:47:32.513981Z  WARN codex_rmcp_client::stdio_server_launcher: Failed to terminate MCP process group 17807: Operation not permitted (os error 1)

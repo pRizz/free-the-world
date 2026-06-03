@@ -1,0 +1,1629 @@
+2026-06-02T22:35:34.402331Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+2026-06-02T22:35:34.639458Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T22:35:34.648990Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a7a-5a4c-7350-9db8-7ce4ce996e90
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: state-street
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "state-street",
+  "name": "State Street",
+  "ticker": "STT",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top250"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/state-street/marketcap/",
+  "description": "State Street provides investment servicing, investment management, and institutional financial services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "State Street Alpha",
+    "SPDR ETFs"
+  ],
+  "seedSourceUrls": [
+    "https://investors.statestreet.com/",
+    "https://www.ssga.com/us/en/intermediary/etfs",
+    "https://companiesmarketcap.com/state-street/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top250",
+      "label": "S&P 500 · Top 250 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 226-250 in an expansion toward the two hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "road-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Road Freight & Trucking"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "agricultural-inputs",
+      "sectorId": "materials",
+      "label": "Agricultural Inputs & Crop Protection"
+    },
+    {
+      "id": "construction-materials",
+      "sectorId": "materials",
+      "label": "Construction Materials & Aggregates"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "real-estate-services",
+      "sectorId": "real-estate",
+      "label": "Real Estate Services & Brokerage"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T22:35:38.889743Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.889769Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.890763Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.890771Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.891719Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.891726Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.894054Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.894061Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.898627Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.898646Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.900725Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:38.900732Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.071259Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.071277Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.071937Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.071947Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.072621Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.072629Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.073350Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.073356Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.074092Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.074102Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.075705Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.075713Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: State Street 2024 annual report investment servicing investment management Alpha SPDR ETFs AUM
+web search:
+web search: Apache Fineract open source platform financial services official
+web search:
+web search: State Street PE ratio 2026 stockanalysis STT
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "state-street",
+      "name": "State Street",
+      "ticker": "STT",
+      "rankApprox": 238,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/state-street/marketcap/",
+      "description": "State Street provides investment servicing, investment management, trading, data, and institutional financial infrastructure for asset owners and asset managers.",
+      "overview": [
+        {
+          "title": "Institutional financial infrastructure",
+          "paragraphs": [
+            "State Street is a custody, fund administration, asset servicing, markets, and investment management company whose core clients are institutional investors rather than retail consumers.",
+            "Its scale is visible in the 2024 annual report: State Street reported $46.6 trillion in assets under custody or administration and $4.7 trillion in assets under management at year-end."
+          ]
+        },
+        {
+          "title": "Platform and ETF businesses",
+          "paragraphs": [
+            "State Street Alpha combines front-office technology, middle-office services, data, analytics, liquidity access, and back-office servicing into a single institutional operating platform.",
+            "State Street Global Advisors operates the SPDR ETF franchise, one of the largest ETF families globally, with ETF AUM reported at $1.6 trillion at year-end 2024."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "State Street's moat is built on trust, regulatory permissions, operating history, global scale, custody and administration workflows, and deeply embedded institutional client processes. Switching away from a custodian or full front-to-back operating platform is expensive because it affects accounting, compliance, data, trading, reporting, collateral, and operational risk controls.",
+        "The SPDR ETF franchise adds brand, liquidity, distribution, and market-structure advantages. Large ETFs benefit from trading depth and ecosystem familiarity, making the biggest products difficult for smaller challengers to displace even when management fees compress."
+      ],
+      "decentralizationNarrative": [
+        "The parts of State Street most exposed to decentralization are data, analytics, portfolio tooling, index construction, reporting, and some investment-product wrappers. Open research platforms, open portfolio infrastructure, and onchain structured products can reduce dependence on closed vendor stacks for certain workflows.",
+        "The least decentralizable parts are institutional custody, regulated fund administration, fiduciary controls, and large-scale settlement operations. These require legal accountability, capital, auditability, insurance, banking relationships, and regulated market integration that open software alone cannot replace."
+      ],
+      "sourceIds": [
+        "state-street-2024-annual-report",
+        "state-street-alpha-page",
+        "spdr-etfs-page",
+        "stockanalysis-stt-market-cap",
+        "stockanalysis-stt-pe"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250; market data refreshed for publication on 2026-06-02.",
+      "inputMetrics": {
+        "moat": {
+          "value": 86,
+          "rationale": "The company combines custody scale, institutional trust, regulatory depth, platform integration, and ETF liquidity advantages, with $46.6 trillion of AUC/A and $4.7 trillion of AUM reported at year-end 2024.",
+          "sourceIds": [
+            "state-street-2024-annual-report",
+            "state-street-alpha-page"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 32,
+          "rationale": "Research, analytics, portfolio tooling, and crypto-native structured products can decentralize around the edges, but regulated custody, fund administration, and institutional servicing remain difficult to replace with open protocols.",
+          "sourceIds": [
+            "state-street-2024-annual-report",
+            "state-street-alpha-page",
+            "index-coop-protocol-docs"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 76,
+          "rationale": "State Street reported diluted EPS of $8.67 excluding notables in 2024 and operates large recurring fee businesses across investment servicing, investment management, markets, and software-enabled services.",
+          "sourceIds": [
+            "state-street-2024-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 15.6,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of about 15.6 for STT in late May 2026.",
+          "sourceIds": [
+            "stockanalysis-stt-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 42610000000,
+          "rationale": "StockAnalysis reported State Street's market capitalization at about $42.61 billion as of May 22, 2026.",
+          "sourceIds": [
+            "stockanalysis-stt-market-cap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "state-street-alpha",
+        "name": "State Street Alpha",
+        "category": "Institutional investment operations platform",
+        "homepageUrl": "https://www.statestreet.com/alpha",
+        "summary": "State Street Alpha is an institutional front-to-back investment platform combining portfolio management technology, data, analytics, middle-office services, and back-office servicing.",
+        "whyItMatters": "Alpha extends State Street from custody and administration into the operating system used by asset managers and asset owners to run investment workflows.",
+        "replacementSketch": [
+          "A partial open replacement would start with modular portfolio accounting, research, analytics, risk, and data integration tools that institutions can self-host or federate across providers.",
+          "The hard part is not charts or data ingestion; it is the legally accountable custody, audit, controls, settlement, and fund-administration layer that State Street bundles with the platform."
+        ],
+        "sourceIds": [
+          "state-street-alpha-page",
+          "state-street-alpha-data-services",
+          "state-street-2024-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/products/odp",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB provides an open-source financial research and data platform that engineers and analysts can use to build standardized market-data integrations and workflows.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenBB describes its Open Data Platform as open source and AGPL-licensed, with source code available on GitHub.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "openbb-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 54,
+                "rationale": "OpenBB can reduce dependence on proprietary terminals and centralized data workflow software, but it does not replace regulated custody or fund administration.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 70,
+                "rationale": "The project is active and suitable for research and data integration workflows, but institutional replacement would require surrounding compliance and operations infrastructure.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "openbb-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 72,
+                "rationale": "Self-hosted open tooling can lower terminal and integration costs for analysts and engineering teams where proprietary bundled services are not mandatory.",
+                "sourceIds": [
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "openbb-odp",
+              "openbb-github"
+            ]
+          },
+          {
+            "slug": "apache-fineract",
+            "name": "Apache Fineract",
+            "kind": "open-source",
+            "homepageUrl": "https://fineract.apache.org/",
+            "repoUrl": "https://github.com/apache/fineract",
+            "summary": "Apache Fineract is an open-source core banking platform for digital financial services, providing ledger and account infrastructure that can support financial-service applications.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "Apache Fineract is an Apache Software Foundation open-source project with public documentation and source code.",
+                "sourceIds": [
+                  "apache-fineract-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 45,
+                "rationale": "It can help smaller operators run financial ledgers without a proprietary core, but it is not a decentralized custody protocol or investment operations platform by itself.",
+                "sourceIds": [
+                  "apache-fineract-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 63,
+                "rationale": "The project has mature documentation and a broad digital financial services scope, but institutional capital-markets operations would require significant customization.",
+                "sourceIds": [
+                  "apache-fineract-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Open-source core infrastructure can reduce vendor lock-in and implementation cost for operators that can supply their own compliance, hosting, and integration capacity.",
+                "sourceIds": [
+                  "apache-fineract-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "apache-fineract-docs"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-investment-ops-stack",
+            "name": "Federated Investment Operations Stack",
+            "summary": "A federated investment operations stack would let asset managers run portfolio data, analytics, accounting, reporting, and workflow tools across interoperable self-hosted or service-provider nodes, while regulated custody and administration modules plug in through auditable interfaces.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept weakens the all-in-one platform bundle by making front, middle, and reporting workflows portable across vendors before custody and administration are fully displaced.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation and data portability rather than Bitcoin. Separate operators can host compatible systems, exchange signed workflow events, and avoid a single vendor becoming the system of record for every operational layer.",
+            "coordinationMechanism": "Asset managers, custodians, administrators, data vendors, and auditors coordinate through shared schemas, signed event logs, API contracts, and service-level attestations.",
+            "verificationOrTrustModel": "Workflow events are signed by responsible parties, reconciled against custody and accounting records, and reviewed by independent auditors. Cheating is constrained by reconciliation failures, immutable logs, contractual liability, and regulator-facing audit evidence.",
+            "failureModes": [
+              "Institutions may prefer accountable bundled vendors over multi-party operational complexity.",
+              "Shared standards could fragment before enough major custodians and administrators adopt them.",
+              "Open tooling does not eliminate the legal and regulatory trust placed in custodians."
+            ],
+            "adoptionPath": [
+              "Start with non-custodial analytics, research, and reporting modules that integrate with existing State Street or peer custodians.",
+              "Add federated accounting, reconciliation, and workflow event logs for smaller funds and asset managers.",
+              "Expand toward audited multi-provider operating models once standards and liability frameworks mature."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "state-street-alpha-page",
+              "state-street-alpha-data-services"
+            ],
+            "enablerSourceIds": [
+              "openbb-odp",
+              "apache-fineract-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 65,
+                "rationale": "The model distributes control across interoperable operators and self-hosted systems, though regulated custody remains centralized.",
+                "sourceIds": [
+                  "state-street-alpha-page",
+                  "openbb-odp"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 57,
+                "rationale": "Financial institutions already coordinate across custodians, administrators, auditors, and data vendors, but common open standards and liability allocation are difficult.",
+                "sourceIds": [
+                  "state-street-alpha-page",
+                  "state-street-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 52,
+                "rationale": "Open research and ledger tooling exists, but production-grade institutional operations require controls, certifications, integrations, and legal accountability.",
+                "sourceIds": [
+                  "openbb-odp",
+                  "apache-fineract-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 46,
+                "rationale": "The pressure is strongest on software and data margins, while custody and administration scale protect the incumbent core.",
+                "sourceIds": [
+                  "state-street-alpha-data-services",
+                  "state-street-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "spdr-etfs",
+        "name": "SPDR ETFs",
+        "category": "Exchange-traded funds",
+        "homepageUrl": "https://www.ssga.com/us/en/intermediary/etfs",
+        "summary": "SPDR ETFs are State Street Global Advisors' exchange-traded fund family, spanning index, active, fixed income, commodity, sector, factor, and thematic exposures.",
+        "whyItMatters": "SPDR gives State Street a large asset-management franchise with scale, brand recognition, market liquidity, and low-cost access to packaged investment exposures.",
+        "replacementSketch": [
+          "Open and decentralized alternatives are more plausible for index methodology, portfolio transparency, research, and crypto-native structured products than for regulated public-market ETF administration.",
+          "The practical replacement path is likely a hybrid: open index construction, transparent portfolio tooling, and tokenized or cooperative wrappers for narrow markets, while regulated ETFs remain the mainstream vehicle for most public securities exposure."
+        ],
+        "sourceIds": [
+          "spdr-etfs-page",
+          "state-street-investment-management-2024",
+          "index-coop-products",
+          "index-coop-protocol-docs"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "index-coop",
+            "name": "Index Coop",
+            "kind": "decentralized",
+            "homepageUrl": "https://www.indexcoop.com/products",
+            "summary": "Index Coop builds onchain structured products and index-like tokens using DeFi protocols, smart contracts, and a cooperative governance model.",
+            "metrics": {
+              "openness": {
+                "value": 66,
+                "rationale": "Index Coop says it keeps contracts open source and documents Index Protocol, though product creation is not fully permissionless for third parties.",
+                "sourceIds": [
+                  "index-coop-products",
+                  "index-coop-protocol-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "The products are onchain structured products using smart contracts and decentralized finance rails, making them meaningfully different from conventional ETF wrappers.",
+                "sourceIds": [
+                  "index-coop-products",
+                  "index-coop-protocol-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 52,
+                "rationale": "Index Coop has live products and documented protocols, but it is focused on crypto and DeFi exposures rather than broad public-equity ETF replacement.",
+                "sourceIds": [
+                  "index-coop-products",
+                  "index-coop-protocol-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 58,
+                "rationale": "Smart-contract automation can lower some administration and rebalancing costs, but gas, liquidity, custody, and regulatory limitations remain material.",
+                "sourceIds": [
+                  "index-coop-products",
+                  "index-coop-protocol-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "index-coop-products",
+              "index-coop-protocol-docs"
+            ]
+          },
+          {
+            "slug": "wealthfolio",
+            "name": "Wealthfolio",
+            "kind": "open-source",
+            "homepageUrl": "https://wealthfolio.app/",
+            "repoUrl": "https://github.com/afadil/wealthfolio",
+            "summary": "Wealthfolio is an open-source, local-first portfolio tracker for personal investment tracking, allocation analysis, and net-worth monitoring.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "Wealthfolio presents itself as private, open source, and local-first, with a public repository.",
+                "sourceIds": [
+                  "wealthfolio-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 48,
+                "rationale": "It decentralizes portfolio visibility to the user's own device but does not create fund products, custody assets, or coordinate market liquidity.",
+                "sourceIds": [
+                  "wealthfolio-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 64,
+                "rationale": "The tool is usable for personal tracking and analysis, but it is not a substitute for an ETF issuer or institutional asset manager.",
+                "sourceIds": [
+                  "wealthfolio-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 62,
+                "rationale": "Local open-source tracking can reduce dependency on proprietary portfolio dashboards for individuals and small teams.",
+                "sourceIds": [
+                  "wealthfolio-homepage"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "wealthfolio-homepage"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "onchain-index-cooperatives",
+            "name": "Onchain Index Cooperatives",
+            "summary": "Onchain index cooperatives package transparent baskets and strategies into tokens, using smart contracts for issuance, rebalancing, collateral logic, and portfolio rules rather than relying entirely on a centralized ETF sponsor.",
+            "angleIds": [
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "The concept pressures ETF economics where the exposure is natively digital or where investors value transparent, programmable, globally accessible portfolio wrappers more than the regulatory protections and liquidity depth of conventional ETFs.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central because portfolio rules, token balances, and rebalancing mechanics can be inspected onchain. Bitcoin is not central unless the product holds Bitcoin exposure; the main mechanism is smart-contract-based coordination.",
+            "coordinationMechanism": "Token holders, methodologists, liquidity providers, governance participants, auditors, and market makers coordinate through protocol rules, governance processes, smart contracts, and public transaction history.",
+            "verificationOrTrustModel": "Holdings and rebalances can be checked against onchain contracts and transaction records. Cheating is constrained by contract code, audits, public balances, and governance visibility, but offchain assets or opaque counterparties would weaken the model.",
+            "failureModes": [
+              "Smart-contract bugs, oracle failures, or governance capture can damage users.",
+              "Liquidity may remain thin compared with major ETFs.",
+              "Regulatory treatment can limit adoption by mainstream institutions and retirement accounts."
+            ],
+            "adoptionPath": [
+              "Win crypto-native index and structured-product niches where ETFs are unavailable, slow, or geographically constrained.",
+              "Add better audits, proof-of-reserves practices, liquidity incentives, and transparent methodology governance.",
+              "Move into regulated hybrid wrappers only after legal, custody, and investor-protection questions are resolved."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "spdr-etfs-page",
+              "state-street-investment-management-2024"
+            ],
+            "enablerSourceIds": [
+              "index-coop-products",
+              "index-coop-protocol-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "The structure moves issuance, balances, and portfolio mechanics onto shared smart-contract rails rather than a single sponsor's internal systems.",
+                "sourceIds": [
+                  "index-coop-protocol-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Index Coop demonstrates that onchain structured products can coordinate rebalancing and product operation, though governance and liquidity remain constraints.",
+                "sourceIds": [
+                  "index-coop-products",
+                  "index-coop-protocol-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 60,
+                "rationale": "The mechanism is already feasible for DeFi and crypto exposures but much harder for conventional equity and bond exposures that require regulated custody and market access.",
+                "sourceIds": [
+                  "index-coop-products",
+                  "spdr-etfs-page"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 41,
+                "rationale": "Pressure is meaningful in crypto-native products but limited against SPDR's broad ETF franchise, liquidity, distribution, and regulated public-market access.",
+                "sourceIds": [
+                  "state-street-investment-management-2024",
+                  "index-coop-products"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "state-street-2024-annual-report",
+      "title": "State Street 2024 Annual Report",
+      "url": "https://www.statestreet.com/sa/en/about/our-story/2024-annual-report",
+      "kind": "annual-report",
+      "publisher": "State Street",
+      "note": "Primary source for business segments, scale, AUC/A, AUM, EPS, and strategic positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "state-street-investment-management-2024",
+      "title": "State Street 2024 Annual Report: Investment Management",
+      "url": "https://www.statestreet.com/au/en/asset-manager/about/our-story/2024-annual-report/investment-management",
+      "kind": "annual-report",
+      "publisher": "State Street",
+      "note": "Documents State Street Global Advisors, SPDR ETF scale, ETF flows, and investment management positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "state-street-alpha-page",
+      "title": "State Street Alpha",
+      "url": "https://www.statestreet.com/alpha",
+      "kind": "product-page",
+      "publisher": "State Street",
+      "note": "Primary product page for the Alpha front-to-back institutional investment platform.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "state-street-alpha-data-services",
+      "title": "State Street Alpha: Data Platform and Services",
+      "url": "https://www.statestreet.com/alpha/solutions/technology-and-services",
+      "kind": "product-page",
+      "publisher": "State Street",
+      "note": "Describes Alpha's technology, data, analytics, middle-office, and back-office service components.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "spdr-etfs-page",
+      "title": "SPDR ETFs",
+      "url": "https://www.ssga.com/us/en/intermediary/etfs",
+      "kind": "product-page",
+      "publisher": "State Street Global Advisors",
+      "note": "Official product page for State Street's SPDR ETF franchise.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-stt-market-cap",
+      "title": "State Street Market Cap",
+      "url": "https://stockanalysis.com/stocks/stt/market-cap/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market data source for current STT market capitalization.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-stt-pe",
+      "title": "State Street Stock Price and Overview",
+      "url": "https://stockanalysis.com/stocks/stt/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market data source for current STT valuation and P/E ratio.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openbb-odp",
+      "title": "OpenBB Open Data Platform",
+      "url": "https://openbb.co/products/odp",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source financial data platform relevant to unbundling investment research and data workflows.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openbb-github",
+      "title": "OpenBB GitHub Organization",
+      "url": "https://github.com/openbb-finance",
+      "kind": "open-source-project",
+      "publisher": "GitHub",
+      "note": "Public source-code reference for OpenBB projects.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "apache-fineract-docs",
+      "title": "Apache Fineract Platform Documentation",
+      "url": "https://fineract.apache.org/docs/current/",
+      "kind": "technical-docs",
+      "publisher": "Apache Software Foundation",
+      "note": "Open-source core banking and ledger infrastructure relevant to financial operations alternatives.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "index-coop-products",
+      "title": "Index Coop Products",
+      "url": "https://www.indexcoop.com/products",
+      "kind": "product-page",
+      "publisher": "Index Coop",
+      "note": "Documents Index Coop's onchain structured products and open-source smart-contract posture.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "index-coop-protocol-docs",
+      "title": "Index Protocol Documentation",
+      "url": "https://docs.indexcoop.com/index-coop-community-handbook/protocols/index-protocol",
+      "kind": "technical-docs",
+      "publisher": "Index Coop",
+      "note": "Technical documentation for the EVM-based protocol supporting Index Coop products.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "wealthfolio-homepage",
+      "title": "Wealthfolio",
+      "url": "https://wealthfolio.app/",
+      "kind": "open-source-project",
+      "publisher": "Wealthfolio",
+      "note": "Open-source local-first portfolio tracker relevant to decentralized personal investment visibility.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new State Street registry bundle with two products: State Street Alpha and SPDR ETFs. The refresh uses official State Street annual report and product sources for the core business, current market data for valuation inputs, and focused open/decentralized alternatives for investment operations and ETF-like products."
+}
+2026-06-02T22:37:16.621532Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a7a-5b64-7d51-9544-1584b11129cf hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+41,641

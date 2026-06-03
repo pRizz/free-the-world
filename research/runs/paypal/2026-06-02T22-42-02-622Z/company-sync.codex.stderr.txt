@@ -1,0 +1,1683 @@
+2026-06-02T22:42:02.723407Z ERROR codex_core_skills::manager: failed to install system skills: io error while remove existing system skills dir: Directory not empty (os error 66)
+2026-06-02T22:42:03.019792Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T22:42:03.025635Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a80-456e-78d3-9c42-5b92dc5467dc
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: paypal
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "paypal",
+  "name": "PayPal",
+  "ticker": "PYPL",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top250"
+  ],
+  "sectorId": "financials",
+  "industryId": "payment-networks",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/paypal/marketcap/",
+  "description": "PayPal operates digital payments platforms for consumers and merchants, including PayPal, Venmo, and Braintree.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "PayPal",
+    "Venmo"
+  ],
+  "seedSourceUrls": [
+    "https://investor.pypl.com/",
+    "https://www.paypal.com/us/business/platforms-and-marketplaces",
+    "https://companiesmarketcap.com/paypal/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top250",
+      "label": "S&P 500 · Top 250 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 226-250 in an expansion toward the two hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "road-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Road Freight & Trucking"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "agricultural-inputs",
+      "sectorId": "materials",
+      "label": "Agricultural Inputs & Crop Protection"
+    },
+    {
+      "id": "construction-materials",
+      "sectorId": "materials",
+      "label": "Construction Materials & Aggregates"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "real-estate-services",
+      "sectorId": "real-estate",
+      "label": "Real Estate Services & Brokerage"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T22:42:06.790825Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.790848Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.791399Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.791405Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.791943Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.791960Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.792489Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.792496Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.793066Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.793076Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.794090Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:06.794097Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.675296Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.675311Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.675910Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.675918Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.676463Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.676468Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.676995Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.677002Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.677480Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.677487Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.678603Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:42:07.678611Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll verify PayPal’s current investor/product facts and suitable open/decentralized payment alternatives, then return only the JSON object as requested.
+web search:
+web search: PayPal 2025 annual report Venmo Braintree branded checkout unbranded processing 10-K 2025
+web search:
+web search: https://www.sec.gov/Archives/edgar/data/1633917/000119312526145735/d45512dars.pdf
+web search:
+web search: 'market cap is' in https://companiesmarketcap.com/paypal/marketcap/
+web search:
+web search: PayPal business platforms marketplaces Braintree official
+web search:
+web search: Fedimint official federated ecash lightning payments
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "paypal",
+      "name": "PayPal",
+      "ticker": "PYPL",
+      "rankApprox": 226,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "financials",
+      "industryId": "payment-networks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/paypal/marketcap/",
+      "description": "PayPal operates digital payments platforms for consumers and merchants, including PayPal, Venmo, Braintree, checkout, wallet, credit, and merchant services.",
+      "overview": [
+        {
+          "title": "Two-sided payments platform",
+          "paragraphs": [
+            "PayPal connects consumers and merchants through branded checkout, peer-to-peer payments, Venmo, Braintree, payment service provider processing, credit, payouts, invoicing, and related value-added services.",
+            "The company reported fiscal 2025 total payment volume of about $1.79 trillion, net revenues of $33.17 billion, GAAP operating income of $6.07 billion, and GAAP net income of $5.23 billion."
+          ]
+        },
+        {
+          "title": "Network position",
+          "paragraphs": [
+            "PayPal's moat depends on consumer and merchant acceptance, risk systems, fraud controls, dispute handling, regulatory coverage, brand trust, integrations, and the convenience of combining wallet, card, bank, and merchant workflows.",
+            "Its strongest decentralization pressure comes from open payment protocols that let merchants receive funds directly and from federated or protocol-based digital cash systems that reduce dependence on a single custodial wallet operator."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "PayPal has a durable but pressured moat. It combines brand recognition, merchant acceptance, payment-risk infrastructure, consumer balances, Venmo social payments, Braintree enterprise processing, and many years of checkout integrations.",
+        "The moat is not as structurally strong as card-network rails because PayPal still rides bank, card, ACH, and local-payment infrastructure in many flows. Its own 2025 results show scale and profitability, but branded checkout softness and intense competition from cards, wallets, bank-led systems, and merchant processors keep the moat below the strongest payment-network incumbents."
+      ],
+      "decentralizationNarrative": [
+        "The core PayPal and Venmo experiences are centralized custodial networks: account access, transaction monitoring, disputes, fraud decisions, compliance, and settlement are controlled by PayPal and its regulated partners.",
+        "Merchant checkout is more decentralizable than card network acceptance because open-source processors, Bitcoin and Lightning invoices, GNU Taler-style digital cash, and federated e-cash can move some payment acceptance away from a single platform. Consumer protection, regulatory compliance, fiat liquidity, reversibility, fraud recovery, and mainstream UX remain the major adoption constraints."
+      ],
+      "sourceIds": [
+        "paypal-fy2025-results",
+        "paypal-marketcap-cmc",
+        "paypal-enterprise-payments",
+        "paypal-venmo-help"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250; refreshed with sources accessed on 2026-06-02.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "PayPal has large payment volume, recognizable consumer brands, merchant integrations, fraud/risk infrastructure, and profitable scale, but its position is exposed to card networks, bank rails, local wallets, enterprise processors, and open payment protocols.",
+          "sourceIds": [
+            "paypal-fy2025-results",
+            "paypal-enterprise-payments",
+            "paypal-venmo-help"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 6,
+          "rationale": "Many payment functions can be implemented through open protocols, self-hosted merchant processors, Lightning, or federated e-cash, but mainstream payments still require compliance, fiat settlement, fraud controls, refunds, chargebacks, and consumer support.",
+          "sourceIds": [
+            "btcpay-github",
+            "gnu-taler-home",
+            "fedimint-home",
+            "cashu-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "PayPal reported FY 2025 GAAP net income of $5.23 billion, GAAP operating income of $6.07 billion, and GAAP operating margin of 18.3%, indicating strong profitability despite competitive pressure.",
+          "sourceIds": [
+            "paypal-fy2025-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 7.5,
+          "rationale": "Approximate ratio using CompaniesMarketCap's June 2026 market cap of $39.28 billion divided by PayPal's FY 2025 GAAP net income of $5.23 billion.",
+          "sourceIds": [
+            "paypal-marketcap-cmc",
+            "paypal-fy2025-results"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 39280000000,
+          "rationale": "CompaniesMarketCap reported PayPal's market capitalization at $39.28 billion as of June 2026.",
+          "sourceIds": [
+            "paypal-marketcap-cmc"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "paypal",
+        "name": "PayPal",
+        "category": "Digital wallet and merchant payment platform",
+        "homepageUrl": "https://www.paypal.com/us/digital-wallet",
+        "summary": "PayPal lets consumers send, receive, store, and spend money online while giving merchants checkout, processing, invoicing, payout, and enterprise payment tools.",
+        "whyItMatters": "PayPal is one of the best-known internet payment brands and a major layer between consumers, merchants, banks, card networks, and digital commerce platforms.",
+        "replacementSketch": [
+          "A partial open replacement would split PayPal into merchant-hosted payment acceptance, protocol-level settlement, federated or self-custodied wallets, and separate reputation or escrow services.",
+          "The hardest pieces to replace are not invoice generation or wallet transfer mechanics; they are fiat conversion, regulatory coverage, buyer protection, fraud handling, customer support, and broad merchant acceptance."
+        ],
+        "sourceIds": [
+          "paypal-fy2025-results",
+          "paypal-enterprise-payments",
+          "paypal-digital-wallet",
+          "btcpay-github",
+          "gnu-taler-home"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://btcpayserver.org/",
+            "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+            "summary": "BTCPay Server is a free, MIT-licensed, self-hosted Bitcoin payment processor that supports direct merchant acceptance, on-chain Bitcoin, Lightning, invoices, point-of-sale tools, and ecommerce integrations.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "The project is open source, MIT licensed, and maintained publicly on GitHub.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "Merchants can self-host, receive payments directly to their own wallets, and avoid a centralized payment processor for Bitcoin and Lightning payments.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "BTCPay has mature releases, documentation, POS and ecommerce integrations, but it still requires merchant technical setup and does not replace fiat chargeback-oriented card acceptance.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "The software has no processor fee and can use Lightning for low-cost settlement, though operators still bear hosting, liquidity, accounting, tax, and exchange-rate management costs.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "btcpay-github"
+            ]
+          },
+          {
+            "slug": "gnu-taler",
+            "name": "GNU Taler",
+            "kind": "protocol",
+            "homepageUrl": "https://www.taler.net/en/",
+            "summary": "GNU Taler is a free software payment system designed for privacy-preserving payer-side digital cash while keeping merchants identifiable for compliance and taxation.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "GNU Taler is presented as a free software payment system with protocol and implementation materials available for public use.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Taler separates wallet, merchant, bank, and exchange roles and can be operated by regulated issuers rather than a single global wallet platform, though it still depends on compliant issuers.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The protocol is technically credible but not yet a mainstream PayPal-scale merchant and consumer network.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Protocol-based digital cash could lower platform fees and privacy costs, but issuer operations, compliance, banking connections, and merchant onboarding still create costs.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "gnu-taler-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "merchant-owned-lightning-checkout",
+            "name": "Merchant-owned Lightning checkout",
+            "summary": "Merchants replace platform-controlled checkout for some transactions with self-hosted Bitcoin and Lightning invoices, using open-source tools for payment requests, point-of-sale, ecommerce plugins, and accounting exports while keeping custody of funds.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "This weakens PayPal's role as the mandatory merchant account, wallet operator, and transaction toll collector for digital goods, donations, cross-border commerce, and merchants that value final settlement more than card chargebacks.",
+            "bitcoinOrDecentralizationRole": "Bitcoin provides non-bank settlement and Lightning provides low-fee instant payment channels; BTCPay Server lets merchants run their own processor rather than routing acceptance through PayPal.",
+            "coordinationMechanism": "Merchants publish invoices through store plugins, POS tools, or payment links; buyers pay from any compatible Bitcoin or Lightning wallet; optional hosts, liquidity providers, and accounting tools compete around the open protocol.",
+            "verificationOrTrustModel": "Payment validity is checked by Bitcoin nodes, Lightning payment proofs, and BTCPay invoice state. Cheating is constrained by cryptographic settlement, but customer delivery, refunds, tax reporting, and merchant reputation still require external processes.",
+            "failureModes": [
+              "Bitcoin price volatility and tax treatment can make accounting harder for mainstream merchants.",
+              "No native card-style chargebacks or buyer protection means many consumer purchases still prefer custodial or card-backed systems.",
+              "Lightning liquidity and wallet UX must be reliable enough for nontechnical buyers."
+            ],
+            "adoptionPath": [
+              "Start with digitally native merchants, donations, creator payments, international payments, and communities already comfortable with Bitcoin.",
+              "Add hosted BTCPay providers, accounting integrations, refund tooling, stable pricing displays, and wallet UX that hides channel complexity."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "paypal-fy2025-results",
+              "paypal-enterprise-payments"
+            ],
+            "enablerSourceIds": [
+              "btcpay-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "The mechanism directly moves merchant acceptance from a centralized processor to self-hosted software and open Bitcoin/Lightning settlement.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Open invoices, Lightning wallets, and ecommerce integrations already exist, but broad liquidity, support, and buyer-protection workflows are still uneven.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "The software stack is real and mature enough for motivated merchants, while nontechnical onboarding and fiat accounting remain friction points.",
+                "sourceIds": [
+                  "btcpay-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "It pressures PayPal most in low-margin cross-border, digital, donation, and sovereignty-sensitive niches, but not yet in mainstream card-funded checkout.",
+                "sourceIds": [
+                  "paypal-fy2025-results",
+                  "btcpay-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "privacy-preserving-digital-cash-checkout",
+            "name": "Privacy-preserving digital cash checkout",
+            "summary": "A GNU Taler-like digital cash network lets consumers pay merchants with privacy-preserving tokens issued by regulated providers, preserving merchant accountability while reducing the need for PayPal to intermediate every wallet and checkout interaction.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "If digital cash issuers, wallets, and merchant processors interoperate through open protocols, PayPal's wallet-network advantage becomes less decisive because consumers can bring any compatible wallet to a merchant without joining PayPal's closed account graph.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not central to this concept; the decentralization lever is protocol-level interoperability among wallets, merchants, banks, and exchanges rather than a single consumer-payment platform.",
+            "coordinationMechanism": "Issuers mint digital cash, wallets hold and spend tokens, merchants redeem received value through payment service providers or banks, and protocol rules define settlement, privacy, and merchant identification.",
+            "verificationOrTrustModel": "Blind-signature digital cash can preserve payer privacy while redemption checks prevent double spending. Trust shifts to issuers, auditors, reserve management, and regulated redemption rather than to one consumer-wallet company.",
+            "failureModes": [
+              "Issuer concentration could recreate platform dependence under a different name.",
+              "Regulatory approval, bank participation, and merchant distribution may be slow.",
+              "Consumers may prefer familiar card chargebacks and custodial support over cash-like finality."
+            ],
+            "adoptionPath": [
+              "Launch in narrower public-interest or regional payment settings where privacy, low fees, and compliance can be tested together.",
+              "Expand through merchant plugins, wallet SDKs, bank partnerships, and clear rules for refunds and consumer recourse."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "paypal-fy2025-results",
+              "paypal-digital-wallet"
+            ],
+            "enablerSourceIds": [
+              "gnu-taler-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept separates wallet, issuer, and merchant roles and can avoid one dominant wallet operator, though regulated issuers remain centralized trust points.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The technical protocol is credible, but PayPal-scale adoption requires banks, issuers, wallets, merchants, regulators, and support processes to coordinate.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Digital cash systems can be implemented, but the hardest work is regulatory, distribution, and merchant acceptance rather than software alone.",
+                "sourceIds": [
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "A successful interoperable digital cash network would pressure PayPal's wallet take rate and transaction data advantage, but adoption is still speculative.",
+                "sourceIds": [
+                  "paypal-fy2025-results",
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "venmo",
+        "name": "Venmo",
+        "category": "Peer-to-peer social payments and consumer wallet",
+        "homepageUrl": "https://venmo.com/",
+        "summary": "Venmo is PayPal's U.S. social payment service for sending, receiving, splitting, and increasingly spending money with friends, family, and businesses.",
+        "whyItMatters": "Venmo is a consumer-facing payment network where PayPal can convert peer-to-peer activity, social identity, wallet balances, and checkout acceptance into monetized payment volume.",
+        "replacementSketch": [
+          "A decentralized replacement would look less like a single social-payment app and more like interoperable wallets that can send private payments, settle through Lightning or e-cash, and optionally attach social context through user-controlled identity layers.",
+          "The central challenge is preserving Venmo's ease of use, recovery, contact discovery, compliance posture, and instant feel without centralizing custody and transaction visibility in one operator."
+        ],
+        "sourceIds": [
+          "paypal-venmo-help",
+          "venmo-home",
+          "cashu-home",
+          "fedimint-home"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "cashu",
+            "name": "Cashu",
+            "kind": "protocol",
+            "homepageUrl": "https://cashu.space/",
+            "summary": "Cashu is a free and open-source Chaumian e-cash protocol built for Bitcoin, designed for private, instant, low-cost digital bearer payments and interoperable wallet applications.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Cashu is described as a free and open-source protocol with public specifications and libraries.",
+                "sourceIds": [
+                  "cashu-home",
+                  "cashu-protocol-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Anyone can run a mint and wallets can exchange bearer tokens, though each mint remains a trust and solvency point.",
+                "sourceIds": [
+                  "cashu-home",
+                  "cashu-protocol-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "Cashu has real wallets, protocol docs, and developer activity, but it is still early relative to Venmo's mainstream U.S. consumer distribution and support model.",
+                "sourceIds": [
+                  "cashu-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Instant bearer-token transfers and Lightning interoperability can lower transaction costs, especially for small payments, though users still depend on mint operations and liquidity.",
+                "sourceIds": [
+                  "cashu-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "cashu-home",
+              "cashu-protocol-docs"
+            ]
+          },
+          {
+            "slug": "fedimint",
+            "name": "Fedimint",
+            "kind": "hybrid",
+            "homepageUrl": "https://fedimint.org/",
+            "summary": "Fedimint is open-source federated e-cash for Bitcoin that lets communities operate federations and users transact privately through e-cash, Lightning, or on-chain Bitcoin.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Fedimint is presented as open-source federated e-cash for Bitcoin with SDKs and federation-running guidance.",
+                "sourceIds": [
+                  "fedimint-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Community guardians distribute custody and operations across a federation instead of relying on one corporate wallet operator, though each federation has its own governance risk.",
+                "sourceIds": [
+                  "fedimint-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "Fedimint has a concrete open-source model and wallets, but mainstream consumer readiness is still below Venmo's account recovery, contact graph, compliance, and merchant acceptance.",
+                "sourceIds": [
+                  "fedimint-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Federated e-cash can make small private payments cheap and instant while using Lightning or on-chain Bitcoin at the edges, but federation operations and liquidity still have costs.",
+                "sourceIds": [
+                  "fedimint-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "fedimint-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-ecash-social-wallet",
+            "name": "Federated e-cash social wallet",
+            "summary": "Local communities, creator groups, workplaces, or affinity networks run federated e-cash wallets where members can send private, instant payments with Lightning interoperability while social discovery and identity sit outside the payment ledger.",
+            "angleIds": [
+              "federation",
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "This attacks Venmo's central account graph by making the payment ledger portable and community-operated, so social payment utility can emerge without one company observing every relationship and transaction.",
+            "bitcoinOrDecentralizationRole": "Fedimint or Cashu-style e-cash uses Bitcoin and Lightning for backing, deposits, withdrawals, or cross-mint settlement while federations or mints issue privacy-preserving spendable notes.",
+            "coordinationMechanism": "Federation guardians or mints operate reserves, wallets manage notes, users exchange payments directly or through wallet apps, and Lightning gateways connect federations or mints to the wider network.",
+            "verificationOrTrustModel": "Blind signatures protect payer privacy and spent-token checks prevent double spending. Federation models distribute custody across guardians; Cashu-style mints are simpler but require mint trust and solvency monitoring.",
+            "failureModes": [
+              "Users may lose funds if a mint or federation is dishonest, compromised, insolvent, or poorly governed.",
+              "Account recovery, compliance, contact discovery, and dispute workflows are harder without a centralized operator.",
+              "Fragmented federations may fail to produce the universal reach that makes Venmo convenient."
+            ],
+            "adoptionPath": [
+              "Begin with communities that already have trust relationships and need low-cost group payments, tips, reimbursements, or creator microtransactions.",
+              "Add wallet UX for invite links, contact aliases, recovery options, reserve transparency, and Lightning interoperability across communities."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "paypal-venmo-help",
+              "venmo-home"
+            ],
+            "enablerSourceIds": [
+              "fedimint-home",
+              "cashu-home",
+              "cashu-protocol-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept replaces one corporate wallet operator with multiple community federations or mints and interoperable wallet software.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "cashu-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Federation guardians, mints, Lightning gateways, and wallets provide a plausible coordination model, but consumer governance and support are still immature.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "cashu-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The enabling protocols and wallets exist, but mainstream Venmo-like UX, compliance, recovery, and network reach remain significant implementation hurdles.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "cashu-home",
+                  "cashu-protocol-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The pressure is credible for niches needing privacy and low-cost transfers, but Venmo's convenience, brand, and U.S. social graph remain strong barriers.",
+                "sourceIds": [
+                  "paypal-venmo-help",
+                  "venmo-home",
+                  "fedimint-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "paypal-fy2025-results",
+      "title": "PayPal Reports Fourth Quarter and Full Year 2025 Results",
+      "url": "https://s205.q4cdn.com/875401827/files/doc_financials/2025/q4/PYPL-4Q-25-Earnings-Release.pdf",
+      "kind": "investor-relations",
+      "publisher": "PayPal Holdings, Inc.",
+      "note": "Primary source for FY 2025 total payment volume, revenue, operating income, net income, free cash flow, and business commentary.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "paypal-marketcap-cmc",
+      "title": "PayPal (PYPL) - Market capitalization",
+      "url": "https://companiesmarketcap.com/paypal/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market capitalization source used for the refreshed market cap metric.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "paypal-enterprise-payments",
+      "title": "Enterprise Payments | PayPal for Enterprises",
+      "url": "https://securepayments.paypal.com/us/business/enterprise",
+      "kind": "product-page",
+      "publisher": "PayPal",
+      "note": "Product source for PayPal's enterprise payment platform and merchant payment capabilities.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "paypal-digital-wallet",
+      "title": "All-In-One Payment App | Digital Wallet",
+      "url": "https://www.paypal.com/us/digital-wallet",
+      "kind": "product-page",
+      "publisher": "PayPal",
+      "note": "Product source for PayPal's consumer digital wallet and send/receive positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "paypal-venmo-help",
+      "title": "What is Venmo and how does it work?",
+      "url": "https://www.paypal.com/us/cshelp/article/what-is-venmo-and-how-does-it-work-help231",
+      "kind": "product-page",
+      "publisher": "PayPal",
+      "note": "Official PayPal help page describing Venmo as a U.S. social payment service for friends, family, and businesses.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "venmo-home",
+      "title": "Pay Friends | Payments App",
+      "url": "https://venmo.com/",
+      "kind": "product-page",
+      "publisher": "Venmo",
+      "note": "Product source for Venmo consumer payment and checkout use cases.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "btcpay-github",
+      "title": "BTCPay Server GitHub repository",
+      "url": "https://github.com/btcpayserver/btcpayserver",
+      "kind": "open-source-project",
+      "publisher": "BTCPay Server contributors",
+      "note": "Primary open-source source for BTCPay Server's license, self-hosted architecture, Bitcoin and Lightning support, and merchant payment features.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "gnu-taler-home",
+      "title": "GNU Taler",
+      "url": "https://www.taler.net/en/",
+      "kind": "technical-docs",
+      "publisher": "GNU Taler",
+      "note": "Protocol source for privacy-preserving free software digital cash and merchant payment design.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "cashu-home",
+      "title": "Cashu - Open-source Ecash",
+      "url": "https://cashu.space/",
+      "kind": "technical-docs",
+      "publisher": "Cashu",
+      "note": "Protocol source for open-source Bitcoin e-cash, Lightning interoperability, wallet applications, and private bearer-token transfers.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "cashu-protocol-docs",
+      "title": "The Cashu Protocol",
+      "url": "https://docs.cashu.space/protocol",
+      "kind": "technical-docs",
+      "publisher": "Cashu",
+      "note": "Technical source for Cashu's blind-signature protocol and token verification model.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Technical source for open-source federated Bitcoin e-cash, community custody, private payments, and Lightning/on-chain interoperability.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a publishable PayPal registry refresh with PayPal and Venmo products, current FY 2025 financial metrics, CompaniesMarketCap market cap, and open/decentralized alternatives focused on BTCPay Server, GNU Taler, Cashu, and Fedimint."
+}
+2026-06-02T22:43:55.911140Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a80-488b-7a52-886a-9bf9ac2e51b1 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+56,425

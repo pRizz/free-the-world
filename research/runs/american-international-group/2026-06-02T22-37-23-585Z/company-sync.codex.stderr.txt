@@ -1,0 +1,1626 @@
+2026-06-02T22:37:23.899635Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T22:37:23.913856Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a7c-036b-7ae3-93c6-c191de304ff2
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: american-international-group
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "american-international-group",
+  "name": "American International Group",
+  "ticker": "AIG",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top250"
+  ],
+  "sectorId": "financials",
+  "industryId": "property-casualty-insurance",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/american-international-group/marketcap/",
+  "description": "American International Group provides commercial, institutional, and consumer property and casualty insurance products worldwide.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "AIG Commercial Insurance",
+    "AIG Private Client Select"
+  ],
+  "seedSourceUrls": [
+    "https://www.aig.com/investor-relations",
+    "https://www.aig.com/business/insurance",
+    "https://companiesmarketcap.com/american-international-group/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top250",
+      "label": "S&P 500 · Top 250 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 226-250 in an expansion toward the two hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "road-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Road Freight & Trucking"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "agricultural-inputs",
+      "sectorId": "materials",
+      "label": "Agricultural Inputs & Crop Protection"
+    },
+    {
+      "id": "construction-materials",
+      "sectorId": "materials",
+      "label": "Construction Materials & Aggregates"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "real-estate-services",
+      "sectorId": "real-estate",
+      "label": "Real Estate Services & Brokerage"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T22:37:25.612136Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.612161Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.612553Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.612560Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.613149Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.613160Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.613606Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.613614Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.614008Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.614013Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.614885Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:25.614889Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.685823Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.685840Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.686237Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.686242Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.686588Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.686595Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.686926Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.686934Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.687306Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.687312Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.688101Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:37:26.688109Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll verify AIG’s current business/product facts and market data sources, then return only the JSON object the registry expects.
+web search:
+web search: AIG 2024 annual report General Insurance segments North America International underwriting income
+web search:
+web search: Etherisc open source decentralized insurance protocol documentation GitHub
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "american-international-group",
+      "name": "American International Group",
+      "ticker": "AIG",
+      "rankApprox": 226,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "financials",
+      "industryId": "property-casualty-insurance",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/american-international-group/marketcap/",
+      "description": "American International Group is a global property and casualty insurer focused on commercial, specialty, and personal insurance lines.",
+      "overview": [
+        {
+          "title": "Business mix",
+          "paragraphs": [
+            "AIG reports its general insurance operations through North America Commercial, International Commercial, and Global Personal segments, with commercial property and casualty risk at the center of the company after years of divestitures and portfolio simplification.",
+            "Its competitive position depends on underwriting discipline, broker distribution, claims handling, risk engineering, capital strength, reinsurance access, and the ability to price complex corporate and catastrophe exposures."
+          ]
+        },
+        {
+          "title": "Strategic posture",
+          "paragraphs": [
+            "AIG's 2024 reporting emphasizes a turnaround in underwriting quality, lower volatility through reinsurance, and investment in data and digital capabilities rather than broad consumer-platform growth.",
+            "The business remains structurally centralized because regulated insurance capacity, admitted-market compliance, ratings, claims reserves, and broker relationships are difficult to decentralize quickly."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "AIG's moat is strongest in complex commercial insurance where balance-sheet scale, underwriting expertise, global licenses, risk engineering, broker access, and claims credibility matter more than software distribution alone.",
+        "The moat is weaker in policy administration, risk modeling, and parametric niches where open models, smart-contract insurance frameworks, and specialized MGAs can unbundle parts of the value chain without becoming full-stack insurers."
+      ],
+      "decentralizationNarrative": [
+        "Full replacement of AIG is unlikely in the near term because large commercial insurance requires regulated capital, solvency oversight, reinsurer participation, legal claims adjustment, and trusted balance sheets.",
+        "Decentralization pressure is more credible at the edges: transparent risk pools, parametric products, open catastrophe models, on-chain reinsurance marketplaces, and cooperative risk-sharing mechanisms can make some underwriting and claims workflows less dependent on a single incumbent."
+      ],
+      "sourceIds": [
+        "aig-2024-annual-report",
+        "aig-business-casualty",
+        "stockanalysis-aig-statistics",
+        "companiesmarketcap-aig"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250; refreshed on 2026-06-02 with current public company, product, and market-data sources.",
+      "inputMetrics": {
+        "moat": {
+          "value": 8,
+          "rationale": "AIG combines global licenses, broker relationships, risk engineering, capital strength, reinsurance programs, and demonstrated underwriting improvement, all of which are hard for new entrants to replicate in complex commercial insurance.",
+          "sourceIds": [
+            "aig-2024-annual-report",
+            "aig-business-casualty"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Insurance workflows can be made more transparent or modular, but regulated underwriting capacity, claims obligations, solvency rules, and catastrophe exposure keep the core business highly centralized.",
+          "sourceIds": [
+            "aig-2024-annual-report",
+            "etherisc-docs",
+            "nayms-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 7,
+          "rationale": "AIG reported 2024 General Insurance underwriting income near $1.9 billion and a sub-92 combined ratio for the third consecutive year, indicating materially improved underwriting profitability.",
+          "sourceIds": [
+            "aig-2024-annual-report",
+            "aig-fy2024-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 13.53,
+          "rationale": "StockAnalysis listed AIG with a trailing PE ratio of 13.53 in its current statistics snapshot.",
+          "sourceIds": [
+            "stockanalysis-aig-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 40850000000,
+          "rationale": "StockAnalysis listed AIG's market capitalization at about $40.85 billion in its current market-data snapshot; market capitalization changes with share price.",
+          "sourceIds": [
+            "stockanalysis-aig-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "aig-commercial-insurance",
+        "name": "AIG Commercial Insurance",
+        "category": "Commercial property and casualty insurance",
+        "homepageUrl": "https://www.aig.com/home/risk-solutions/business",
+        "summary": "AIG Commercial Insurance provides corporate property, casualty, specialty, and risk-management coverage for businesses and institutions.",
+        "whyItMatters": "Commercial insurance is a core risk-transfer layer for large companies, infrastructure owners, and professional-service firms, so control over underwriting capacity and claims standards has broad economic importance.",
+        "replacementSketch": [
+          "The realistic replacement path is not a single open-source carrier. It is a modular stack where open risk models, transparent policy administration, parametric triggers, and cooperative or tokenized capital pools compete with pieces of AIG's workflow.",
+          "Large regulated risks would still need licensed insurers, reinsurers, and claims professionals, but open tooling could narrow the information advantage held by incumbent underwriters and brokers."
+        ],
+        "sourceIds": [
+          "aig-business-casualty",
+          "aig-2024-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "etherisc-generic-insurance-framework",
+            "name": "Etherisc Generic Insurance Framework",
+            "kind": "protocol",
+            "homepageUrl": "https://docs.etherisc.com/",
+            "summary": "Etherisc provides a decentralized insurance framework for building blockchain-based insurance products with reusable smart-contract components.",
+            "metrics": {
+              "openness": {
+                "value": 7,
+                "rationale": "Etherisc documentation describes GIF as open-source smart-contract infrastructure for insurance product and policy lifecycle functions.",
+                "sourceIds": [
+                  "etherisc-docs",
+                  "etherisc-gif-basics"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The framework is explicitly designed to model and operate insurance products on blockchain infrastructure with decentralized and transparent workflows.",
+                "sourceIds": [
+                  "etherisc-docs",
+                  "etherisc-gif-basics"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The project has documentation and reusable framework components, but it is not a full replacement for regulated commercial insurance capacity.",
+                "sourceIds": [
+                  "etherisc-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Reusable contracts and automated policy workflows can lower product-launch and administration costs in narrow insurance niches, especially parametric products.",
+                "sourceIds": [
+                  "etherisc-docs",
+                  "etherisc-gif-basics"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "etherisc-docs",
+              "etherisc-gif-basics"
+            ]
+          },
+          {
+            "slug": "open-source-risk-engine",
+            "name": "Open Source Risk Engine",
+            "kind": "open-source",
+            "homepageUrl": "https://www.opensourcerisk.org/",
+            "repoUrl": "https://github.com/OpenSourceRisk/Engine",
+            "summary": "Open Source Risk Engine is a transparent, peer-reviewed framework for pricing and risk analytics.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project is published as a public open-source repository with a stated goal of transparent peer-reviewed pricing and risk analysis.",
+                "sourceIds": [
+                  "opensource-risk-engine"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "Open risk analytics improve auditability and portability but do not themselves decentralize regulated insurance capital or claims operations.",
+                "sourceIds": [
+                  "opensource-risk-engine"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "The engine is mature enough for pricing and risk-analysis workflows, but commercial P&C insurers would still need domain-specific catastrophe, liability, and policy data integrations.",
+                "sourceIds": [
+                  "opensource-risk-engine"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open analytics can reduce dependence on proprietary model vendors and give smaller underwriters or cooperatives a transparent baseline for pricing and validation.",
+                "sourceIds": [
+                  "opensource-risk-engine"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "opensource-risk-engine"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-commercial-risk-pools",
+            "name": "Federated Commercial Risk Pools",
+            "summary": "A federation of licensed local insurers, captives, reinsurers, and specialist MGAs could use shared open risk models and standardized policy data to underwrite narrower commercial risks without relying on one global carrier.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "The concept shifts market power from a vertically integrated global carrier toward interoperable underwriting cells that share analytics, capacity, and claims evidence while remaining locally regulated.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federated governance and portable underwriting data rather than Bitcoin settlement; participants can coordinate without a single platform owner controlling model access or policy records.",
+            "coordinationMechanism": "Members publish standardized exposure data, risk-model assumptions, capacity commitments, and claims outcomes into shared registries; brokers route suitable risks to pools with transparent appetite and pricing rules.",
+            "verificationOrTrustModel": "Model versions, capacity commitments, and claims decisions are logged with auditable provenance; licensed members remain accountable for solvency and claims payment, while peer review and regulator access constrain hidden model changes or fake capacity.",
+            "failureModes": [
+              "Large or correlated catastrophe risks may still require highly rated centralized reinsurance capacity.",
+              "Participants could underprice risk if shared models are weak or if governance fails to discipline adverse selection."
+            ],
+            "adoptionPath": [
+              "Start with narrow commercial niches where exposure data is standardized and claims are relatively objective.",
+              "Add reinsurer participation, regulator-facing audit trails, and broker integrations before expanding into larger multi-line accounts."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "aig-2024-annual-report",
+              "aig-business-casualty"
+            ],
+            "enablerSourceIds": [
+              "opensource-risk-engine",
+              "oasis-risk-explorer"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Federated underwriting and shared open models directly reduce dependence on one incumbent carrier while preserving regulated accountability.",
+                "sourceIds": [
+                  "opensource-risk-engine",
+                  "oasis-risk-explorer"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Insurance pools, captives, MGAs, and reinsurance already coordinate risk capital, but interoperable open registries would require new governance and data standards.",
+                "sourceIds": [
+                  "aig-2024-annual-report",
+                  "opensource-risk-engine"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The analytics and policy-data components are plausible, but licensing, solvency, broker adoption, and claims administration remain hard.",
+                "sourceIds": [
+                  "aig-2024-annual-report",
+                  "oasis-risk-explorer"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept pressures pricing opacity and niche underwriting economics, but it would not quickly displace AIG in large complex accounts.",
+                "sourceIds": [
+                  "aig-2024-annual-report",
+                  "aig-business-casualty"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "on-chain-parametric-commercial-cover",
+            "name": "On-Chain Parametric Commercial Cover",
+            "summary": "For objective hazards such as flight delay, weather, or some catastrophe triggers, a smart-contract insurance protocol could sell parametric cover that pays automatically when trusted data sources confirm the event.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept moves some insurance products away from manual claims adjustment and centralized carrier administration toward transparent rules, programmable risk pools, and automated settlement.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is programmable market coordination and transparent settlement; Bitcoin is not central unless Lightning-style rails are later used for low-friction premium or claim payments.",
+            "coordinationMechanism": "Policyholders buy standardized cover, risk-capital providers fund pools, product builders define triggers, and oracle providers submit event data used for automatic payouts.",
+            "verificationOrTrustModel": "The system relies on multiple trusted oracles, public contract logic, capped exposure, collateralized risk pools, and dispute procedures for anomalous data; spoofing is constrained by oracle diversity and transparent event definitions but not eliminated.",
+            "failureModes": [
+              "Oracle failure, data manipulation, or poorly specified triggers can create unfair payouts or missed valid losses.",
+              "Parametric coverage may not match actual loss, limiting adoption for complex casualty and liability risks."
+            ],
+            "adoptionPath": [
+              "Begin with low-limit, objective-trigger products where automated payout is more valuable than bespoke adjustment.",
+              "Use regulated fronting carriers, reinsurers, and audited smart contracts to expand into commercial parametric products."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "aig-business-casualty",
+              "aig-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "etherisc-docs",
+              "etherisc-gif-basics",
+              "nayms-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Smart-contract risk pools and on-chain policy workflows can decentralize product administration and capital participation for narrow parametric products.",
+                "sourceIds": [
+                  "etherisc-docs",
+                  "nayms-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Existing decentralized insurance frameworks document policy, underwriting, tokenization, and settlement workflows, but real-world commercial adoption remains limited.",
+                "sourceIds": [
+                  "etherisc-docs",
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Parametric products are technically feasible when triggers are objective, but legal enforceability, capital adequacy, oracle governance, and distribution are substantial barriers.",
+                "sourceIds": [
+                  "etherisc-gif-basics",
+                  "nayms-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "This would pressure narrow specialty and parametric lines more than broad casualty, property, or multinational commercial programs.",
+                "sourceIds": [
+                  "aig-business-casualty",
+                  "aig-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "aig-private-client-select",
+        "name": "AIG Private Client Select",
+        "category": "High-net-worth personal insurance",
+        "homepageUrl": "https://www.pcs-ins.com/",
+        "summary": "Private Client Select is a high-net-worth personal insurance platform formed from AIG's private client business and Stone Point Capital.",
+        "whyItMatters": "High-net-worth personal insurance concentrates complex home, liability, collections, and catastrophe exposures that are difficult for standardized direct-to-consumer insurers to price.",
+        "replacementSketch": [
+          "Replacement pressure is most plausible through open property-risk data, local mitigation networks, parametric catastrophe layers, and cooperative risk pools for affluent homeowners in high-risk regions.",
+          "A full replacement would still need licensed underwriting capacity and claims expertise, but parts of the stack can become more transparent and locally coordinated."
+        ],
+        "sourceIds": [
+          "stone-point-private-client-select",
+          "aig-2024-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "oasis-risk-explorer",
+            "name": "Oasis Risk Explorer",
+            "kind": "open-source",
+            "homepageUrl": "https://oasislmf.github.io/RiskExplorer/",
+            "repoUrl": "https://github.com/OasisLMF/RiskExplorer",
+            "summary": "Oasis Risk Explorer is a free and open-source tool for exploring catastrophe risk modeling and parametric insurance concepts.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project describes itself as free and open source under a BSD-3-Clause license with code available on GitHub.",
+                "sourceIds": [
+                  "oasis-risk-explorer"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 5,
+                "rationale": "Open catastrophe modeling supports decentralized assessment and education, though it does not provide insurance capacity on its own.",
+                "sourceIds": [
+                  "oasis-risk-explorer"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "It is useful for modeling and learning workflows, but production high-net-worth insurance still needs underwriting, capital, compliance, and claims operations.",
+                "sourceIds": [
+                  "oasis-risk-explorer"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open modeling can reduce dependence on proprietary catastrophe-model interpretation and help smaller pools understand parametric product design.",
+                "sourceIds": [
+                  "oasis-risk-explorer"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "oasis-risk-explorer"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "community-parametric-catastrophe-pools",
+            "name": "Community Parametric Catastrophe Pools",
+            "summary": "Neighborhoods or regional homeowner groups could use open catastrophe models and parametric triggers to pool limited disaster cover for wildfire, wind, flood, or earthquake losses alongside traditional insurance.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept turns part of high-net-worth catastrophe coverage into a cooperative, transparent, trigger-based layer rather than a bespoke product controlled entirely by a specialist insurer.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through member-owned risk pools, transparent trigger rules, and auditable capital commitments; Bitcoin is not essential to the core mechanism.",
+            "coordinationMechanism": "Members contribute premiums or capital to a pool, agree on objective hazard triggers, buy excess reinsurance when available, and distribute payouts automatically when independent data confirms an event.",
+            "verificationOrTrustModel": "Hazard triggers use independent weather, seismic, flood, or satellite feeds; pool rules are published in advance, exposure limits are capped, and third-party audits review model assumptions and payout events.",
+            "failureModes": [
+              "Basis risk can leave households underpaid when real damage differs from the parametric trigger.",
+              "A local pool can be wiped out by correlated catastrophe losses unless reinsurance or strict limits are in place."
+            ],
+            "adoptionPath": [
+              "Pilot small supplemental catastrophe layers in regions where homeowners already face coverage gaps or rising premiums.",
+              "Integrate mitigation credits, local inspection data, and reinsurance support before expanding limits."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "stone-point-private-client-select",
+              "aig-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "oasis-risk-explorer",
+              "etherisc-docs"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Member-owned catastrophe pools decentralize some underwriting and payout governance while relying on transparent parametric rules.",
+                "sourceIds": [
+                  "oasis-risk-explorer",
+                  "etherisc-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Parametric modeling and smart-contract insurance tools exist, but homeowners, regulators, reinsurers, and service providers would need careful alignment.",
+                "sourceIds": [
+                  "oasis-risk-explorer",
+                  "etherisc-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Supplemental low-limit products are feasible; broad replacement of high-net-worth homeowners insurance is constrained by correlated risk and claims complexity.",
+                "sourceIds": [
+                  "oasis-risk-explorer",
+                  "stone-point-private-client-select"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept pressures catastrophe add-ons and mitigation incentives but does not replace umbrella liability, collections, or bespoke claims service.",
+                "sourceIds": [
+                  "stone-point-private-client-select",
+                  "aig-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "aig-2024-annual-report",
+      "title": "AIG 2024 Annual Report",
+      "url": "https://www.aig.com/home/investor-relations/aig-2024-annual-report",
+      "kind": "annual-report",
+      "publisher": "American International Group",
+      "note": "Primary source for AIG's segment structure, underwriting performance, reinsurance strategy, and business positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "aig-fy2024-results",
+      "title": "AIG Reports Outstanding Fourth Quarter and Full Year 2024 Results",
+      "url": "https://aig.gcs-web.com/node/56436/pdf",
+      "kind": "investor-relations",
+      "publisher": "American International Group",
+      "note": "Investor release supporting 2024 General Insurance net premiums written and underwriting-income context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "aig-business-casualty",
+      "title": "Casualty Insurance - Business Casualty Risk Solutions",
+      "url": "https://www.aig.com/home/risk-solutions/business/casualty",
+      "kind": "product-page",
+      "publisher": "American International Group",
+      "note": "Product source for AIG commercial casualty insurance and business risk-solution positioning.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stone-point-private-client-select",
+      "title": "Private Client Select Insurance Services",
+      "url": "https://www.stonepoint.com/company/private-client-select-insurance-services/",
+      "kind": "analysis",
+      "publisher": "Stone Point Capital",
+      "note": "Documents the AIG and Stone Point transaction forming Private Client Select as a high-net-worth MGA platform.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-aig",
+      "title": "American International Group Market Cap",
+      "url": "https://companiesmarketcap.com/american-international-group/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap reference URL provided in the queued manifest.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-aig-statistics",
+      "title": "American International Group Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/aig/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Current market capitalization and trailing PE ratio reference used for input metrics.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "etherisc-docs",
+      "title": "Etherisc Documentation",
+      "url": "https://docs.etherisc.com/",
+      "kind": "technical-docs",
+      "publisher": "Etherisc",
+      "note": "Documents Etherisc's decentralized insurance framework and insurance-product development tooling.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "etherisc-gif-basics",
+      "title": "Basics about the GIF Framework",
+      "url": "https://docs.etherisc.com/learn/basics-gif",
+      "kind": "technical-docs",
+      "publisher": "Etherisc",
+      "note": "Explains the Generic Insurance Framework as open-source smart-contract infrastructure for decentralized insurance products.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "nayms-docs",
+      "title": "What is Nayms?",
+      "url": "https://docs.nayms.com/",
+      "kind": "technical-docs",
+      "publisher": "Nayms",
+      "note": "Documents an Ethereum smart-contract marketplace for creating, underwriting, tokenizing, trading, and settling insurance policies on chain.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "opensource-risk-engine",
+      "title": "Open Source Risk Engine",
+      "url": "https://github.com/OpenSourceRisk/Engine",
+      "kind": "open-source-project",
+      "publisher": "Open Source Risk",
+      "note": "Open-source pricing and risk-analytics framework relevant to transparent underwriting and model validation.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "oasis-risk-explorer",
+      "title": "The Oasis Risk Explorer",
+      "url": "https://oasislmf.github.io/RiskExplorer/",
+      "kind": "open-source-project",
+      "publisher": "Oasis Loss Modelling Framework",
+      "note": "Free and open-source catastrophe-risk and parametric-insurance modeling tool relevant to insurance decentralization concepts.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new AIG registry bundle with commercial insurance and Private Client Select products, current market metrics, and decentralized insurance concepts centered on federated risk pools, parametric cover, and open catastrophe/risk modeling."
+}
+2026-06-02T22:39:31.808937Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a7c-0526-7f23-a7c2-b0a66f8630c7 hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+28,153

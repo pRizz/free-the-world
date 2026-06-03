@@ -1,0 +1,1576 @@
+2026-06-02T22:35:34.641907Z  WARN codex_core_plugins::remote::remote_installed_plugin_sync: remote installed plugin bundle sync failed error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+2026-06-02T22:35:34.663358Z  WARN codex_core_plugins::manager: failed to refresh remote installed plugins cache error=remote plugin catalog request to https://chatgpt.com/backend-api/ps/plugins/installed failed with status 400 Bad Request: {"detail":"WORKSPACE scope requires an active workspace"}
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8a7a-5a61-7612-9de7-719cea2947b1
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: ameriprise-financial
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "ameriprise-financial",
+  "name": "Ameriprise Financial",
+  "ticker": "AMP",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top250"
+  ],
+  "sectorId": "financials",
+  "industryId": "capital-markets",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/ameriprise-financial/marketcap/",
+  "description": "Ameriprise Financial provides wealth management, asset management, insurance, annuities, and financial planning services.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Ameriprise Financial Planning",
+    "Columbia Threadneedle Investments"
+  ],
+  "seedSourceUrls": [
+    "https://ir.ameriprise.com/",
+    "https://www.ameriprise.com/",
+    "https://companiesmarketcap.com/ameriprise-financial/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top250",
+      "label": "S&P 500 · Top 250 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 226-250 in an expansion toward the two hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "road-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Road Freight & Trucking"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "agricultural-inputs",
+      "sectorId": "materials",
+      "label": "Agricultural Inputs & Crop Protection"
+    },
+    {
+      "id": "construction-materials",
+      "sectorId": "materials",
+      "label": "Construction Materials & Aggregates"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "real-estate-services",
+      "sectorId": "real-estate",
+      "label": "Real Estate Services & Brokerage"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-02T22:35:39.006215Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.006248Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.006899Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.006909Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.007523Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.007529Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.008052Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.008061Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.008514Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.008521Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.010052Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:39.010064Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.030603Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.030620Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.031898Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.031911Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.033019Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.033029Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.034297Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.034305Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.035549Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.035559Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.038930Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-02T22:35:40.038939Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+codex
+I’ll verify current Ameriprise business, market data, filings, and credible open/decentralized alternatives before composing the registry JSON.
+web search:
+web search: Ameriprise Financial 2024 annual report wealth management asset management annuities insurance
+web search:
+web search: Ameriprise Financial PE ratio 2026 AMP pe ratio
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "ameriprise-financial",
+      "name": "Ameriprise Financial",
+      "ticker": "AMP",
+      "rankApprox": 240,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "financials",
+      "industryId": "capital-markets",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/ameriprise-financial/marketcap/",
+      "description": "Ameriprise Financial provides wealth management, asset management, insurance, annuities, banking, brokerage, and financial planning services.",
+      "overview": [
+        {
+          "title": "Advice-led financial services platform",
+          "paragraphs": [
+            "Ameriprise is built around a large advice and wealth management franchise, supported by asset management through Columbia Threadneedle, retirement and protection products, brokerage, and banking capabilities.",
+            "Its 2024 reporting highlighted total Ameriprise client assets above $1 trillion and assets under management, administration, and advisement of about $1.5 trillion, giving the company scale across advisor distribution, investment products, and retirement-linked insurance products."
+          ]
+        },
+        {
+          "title": "Asset management and product distribution",
+          "paragraphs": [
+            "Columbia Threadneedle is Ameriprise's global asset management group and offers equities, fixed income, multi-asset, and alternative investment products to individual and institutional clients.",
+            "The company's moat is strongest where financial planning, advisor relationships, regulated product manufacturing, asset custody, and long-term client inertia reinforce each other."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Ameriprise has a durable but not absolute moat. Its advisor network, planning process, brand, regulatory infrastructure, insurance product manufacturing, and large client asset base create switching costs and recurring fee revenue.",
+        "The moat is tempered by intense competition from RIAs, discount brokerages, robo-advisors, low-cost index products, fintech tools, and open-source personal finance workflows that can unbundle parts of planning, portfolio analysis, and investment selection."
+      ],
+      "decentralizationNarrative": [
+        "The company's core products are only partly decentralizable because regulated investment advice, insurance underwriting, brokerage, custody, and fiduciary obligations require accountable entities and compliance systems.",
+        "However, parts of the customer workflow can shift toward open planning files, transparent fee analysis, self-custodied records, open portfolio analytics, fiduciary marketplaces, and federated advisor networks that reduce reliance on a single branded distribution platform."
+      ],
+      "sourceIds": [
+        "ameriprise-2024-annual-report",
+        "ameriprise-homepage",
+        "columbia-threadneedle-homepage",
+        "companiesmarketcap-amp-marketcap",
+        "stockanalysis-amp-statistics"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250; market metrics refreshed on 2026-06-02 from public market-data pages.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Large client assets, recurring advice and asset-management fees, advisor relationships, regulated product breadth, and insurance and annuity capabilities create meaningful switching costs, though low-cost digital and independent alternatives pressure the model.",
+          "sourceIds": [
+            "ameriprise-2024-annual-report",
+            "ameriprise-homepage"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Planning, portfolio tracking, research, and fee comparison can be decentralized or made open, but regulated advice, brokerage, custody, insurance, and annuity manufacturing remain institution-heavy.",
+          "sourceIds": [
+            "ameriprise-2024-annual-report",
+            "gnucash-project",
+            "openbb-project"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Ameriprise reported 2024 GAAP net revenues of $17.264 billion and net income of $3.401 billion, plus high adjusted operating return on equity, indicating strong profitability.",
+          "sourceIds": [
+            "ameriprise-2024-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 11.1,
+          "rationale": "Public market-data pages showed Ameriprise trading at roughly an 11x trailing P/E in late May 2026; this should be treated as a moving market metric.",
+          "sourceIds": [
+            "stockanalysis-amp-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 40700000000,
+          "rationale": "CompaniesMarketCap and other public market-data sources placed Ameriprise's market capitalization around $40-41 billion near the 2026 refresh date.",
+          "sourceIds": [
+            "companiesmarketcap-amp-marketcap",
+            "stockanalysis-amp-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "ameriprise-financial-planning",
+        "name": "Ameriprise Financial Planning",
+        "category": "Wealth management and financial planning",
+        "homepageUrl": "https://www.ameriprise.com/",
+        "summary": "Ameriprise financial planning combines advisor-led planning, investment advisory services, brokerage, insurance, annuities, and related banking products for retail clients.",
+        "whyItMatters": "Advisor-led wealth management is one of Ameriprise's central profit pools and a major example of a trusted intermediary business where software, transparency, and decentralized coordination can unbundle parts of the workflow.",
+        "replacementSketch": [
+          "A lighter replacement would not need to replicate Ameriprise's regulated balance sheet or insurance manufacturing. It could start with open-source planning, portfolio, and tax-lot tooling that lets households preserve their own financial records and compare advisor recommendations.",
+          "The harder replacement path is an accountable marketplace of fiduciary advisors, open planning records, and portable client data, where reputation, credentials, fees, and advice outcomes are easier to verify across providers."
+        ],
+        "sourceIds": [
+          "ameriprise-homepage",
+          "ameriprise-2024-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "gnucash",
+            "name": "GnuCash",
+            "kind": "open-source",
+            "homepageUrl": "https://www.gnucash.org/",
+            "summary": "GnuCash is a free, open-source personal and small-business accounting application that supports double-entry bookkeeping and financial tracking.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project is free software with public source code and a long-running open-source development model.",
+                "sourceIds": [
+                  "gnucash-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "GnuCash helps users self-custody personal financial records rather than relying fully on a proprietary planning portal, but it does not provide decentralized advice or custody.",
+                "sourceIds": [
+                  "gnucash-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "The application is mature and usable for personal finance recordkeeping, though it is not a full substitute for regulated financial planning.",
+                "sourceIds": [
+                  "gnucash-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Free local accounting software can reduce dependence on paid portals and recurring planning tools for recordkeeping and basic analysis.",
+                "sourceIds": [
+                  "gnucash-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "gnucash-project"
+            ]
+          },
+          {
+            "slug": "beancount",
+            "name": "Beancount",
+            "kind": "open-source",
+            "homepageUrl": "https://beancount.github.io/",
+            "repoUrl": "https://github.com/beancount/beancount",
+            "summary": "Beancount is an open-source plain-text double-entry accounting system for personal finance and portfolio recordkeeping.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Beancount is developed in public and uses plain-text files, making financial records portable and inspectable.",
+                "sourceIds": [
+                  "beancount-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Plain-text ledgers make user data portable and auditable outside a proprietary advisor platform.",
+                "sourceIds": [
+                  "beancount-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "It is powerful for technical users but less ready for mainstream households that expect guided workflows and advisor support.",
+                "sourceIds": [
+                  "beancount-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Plain-text accounting can lower switching costs and reduce dependence on paid financial tracking systems.",
+                "sourceIds": [
+                  "beancount-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "beancount-project"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "portable-fiduciary-planning-network",
+            "name": "Portable Fiduciary Planning Network",
+            "summary": "A federated network of independent fiduciary advisors could use portable open financial plans, transparent fee schedules, and verifiable credentials so clients can move between advisors without losing their planning history.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept weakens the platform moat around advisor-client data and planning workflows by making the plan, records, and advisor reputation portable across providers.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through interoperable planning files, federated advisor directories, portable credentials, and client-controlled records rather than through Bitcoin settlement.",
+            "coordinationMechanism": "Clients publish or selectively share standardized planning data; advisors list credentials, fee models, and service scopes; independent reviewers and professional bodies can attest credentials and disciplinary history.",
+            "verificationOrTrustModel": "Credential checks, signed fee schedules, client-controlled audit logs, and third-party attestations reduce impersonation and hidden-fee risk, while regulated fiduciary obligations still handle legal accountability.",
+            "failureModes": [
+              "Advice quality is hard to score without creating misleading performance league tables.",
+              "Regulated advice, custody, and insurance recommendations still require licensed entities and jurisdiction-specific compliance."
+            ],
+            "adoptionPath": [
+              "Start with open planning templates, portable household balance sheets, and advisor fee-comparison data.",
+              "Add credential attestations, client-controlled plan exports, and referral protocols for fee-only fiduciary advisors."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "ameriprise-homepage",
+              "ameriprise-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "beancount-project",
+              "gnucash-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The mechanism moves client records and advisor discovery away from one firm, but it still depends on regulated professionals.",
+                "sourceIds": [
+                  "beancount-project",
+                  "gnucash-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Federated directories and portable records are credible, but credential, liability, and advice-quality governance are hard.",
+                "sourceIds": [
+                  "ameriprise-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software layer is feasible with existing open finance tools, while regulatory and adoption barriers are the main constraint.",
+                "sourceIds": [
+                  "beancount-project",
+                  "gnucash-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "It can pressure planning fees and data lock-in but does not replace Ameriprise's full advisor network, brokerage, annuity, or insurance capabilities.",
+                "sourceIds": [
+                  "ameriprise-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "columbia-threadneedle-investments",
+        "name": "Columbia Threadneedle Investments",
+        "category": "Asset management",
+        "homepageUrl": "https://www.columbiathreadneedle.com/en/",
+        "summary": "Columbia Threadneedle Investments is Ameriprise's global asset management group, offering actively managed equity, fixed income, multi-asset, and alternative investment strategies.",
+        "whyItMatters": "Active asset management is a high-scale business where research, distribution, brand, fund operations, and performance claims can be challenged by open research tooling, transparent indexing, and community-governed investment products.",
+        "replacementSketch": [
+          "Open alternatives can replace pieces of the asset-management stack: research terminals, portfolio analytics, factor screens, backtesting, and transparent model portfolios.",
+          "A more disruptive path would coordinate open indexes or community-governed funds where methodology, holdings, fees, and rebalancing rules are transparent and portable across custodians."
+        ],
+        "sourceIds": [
+          "columbia-threadneedle-homepage",
+          "ameriprise-2024-annual-report"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "openbb",
+            "name": "OpenBB",
+            "kind": "open-source",
+            "homepageUrl": "https://openbb.co/",
+            "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+            "summary": "OpenBB provides an open-source investment research platform and financial data tooling for analysts and investors.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenBB maintains public source code and open tooling for financial research workflows.",
+                "sourceIds": [
+                  "openbb-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It decentralizes access to research workflows and analysis tooling, though market data and execution remain dependent on external providers.",
+                "sourceIds": [
+                  "openbb-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The platform is usable for investment research and analytics, but it is not a regulated asset manager or fiduciary product.",
+                "sourceIds": [
+                  "openbb-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Open research tooling can reduce dependence on expensive terminals and proprietary asset-manager research packaging.",
+                "sourceIds": [
+                  "openbb-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "openbb-project"
+            ]
+          },
+          {
+            "slug": "portfolio-performance",
+            "name": "Portfolio Performance",
+            "kind": "open-source",
+            "homepageUrl": "https://www.portfolio-performance.info/en/",
+            "repoUrl": "https://github.com/portfolio-performance/portfolio",
+            "summary": "Portfolio Performance is an open-source desktop application for tracking and analyzing investment portfolios.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project is open-source and developed publicly, with a downloadable application for portfolio analysis.",
+                "sourceIds": [
+                  "portfolio-performance-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "It lets users analyze portfolios independently of a proprietary asset-manager or advisor portal.",
+                "sourceIds": [
+                  "portfolio-performance-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 8,
+                "rationale": "It is mature for portfolio tracking and performance analysis, though it does not manufacture funds or provide regulated advice.",
+                "sourceIds": [
+                  "portfolio-performance-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Independent portfolio analytics can help investors compare fund costs and results without relying solely on manager-provided reporting.",
+                "sourceIds": [
+                  "portfolio-performance-project"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "portfolio-performance-project"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-index-governance-protocol",
+            "name": "Open Index Governance Protocol",
+            "summary": "A transparent, community-auditable index and model-portfolio protocol could publish methodology, holdings, rebalance decisions, and fee comparisons so investors and advisors can replicate strategies across custodians.",
+            "angleIds": [
+              "decentralized-coordination",
+              "federation"
+            ],
+            "thesis": "The concept pressures active manager opacity by separating investment methodology and analytics from branded fund distribution.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is open governance and portable replication of investment rules; Bitcoin is not central unless later used for attestations or incentive payments.",
+            "coordinationMechanism": "Researchers propose methodologies, maintainers publish signed rule changes, users and advisors replicate portfolios, and custodians or brokers execute trades independently.",
+            "verificationOrTrustModel": "Public rules, historical backtests, signed rebalance files, reproducible analytics, and independent portfolio tracking constrain hidden changes and false performance claims.",
+            "failureModes": [
+              "Open methodology may be copied quickly, reducing incentives to fund high-quality research.",
+              "Users can still misapply strategies, underperform due to taxes or execution costs, or mistake model portfolios for personal advice."
+            ],
+            "adoptionPath": [
+              "Begin with open model portfolios, transparent factor screens, and reproducible performance reports.",
+              "Add federated maintainers, signed rebalance events, and advisor-facing compliance templates."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "columbia-threadneedle-homepage",
+              "ameriprise-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openbb-project",
+              "portfolio-performance-project"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "The concept decentralizes methodology and analytics while leaving custody and trade execution to existing regulated rails.",
+                "sourceIds": [
+                  "openbb-project",
+                  "portfolio-performance-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Open-source research and portfolio tools already exist, but governance and liability models for public investment methodologies remain difficult.",
+                "sourceIds": [
+                  "openbb-project",
+                  "portfolio-performance-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "Publishing reproducible models and signed rebalance files is technically feasible, while compliance and user suitability are the hard parts.",
+                "sourceIds": [
+                  "openbb-project"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "It can pressure fees, transparency, and research packaging, but does not fully replace fund operations, distribution, tax handling, or regulated portfolio management.",
+                "sourceIds": [
+                  "columbia-threadneedle-homepage",
+                  "ameriprise-2024-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "ameriprise-2024-annual-report",
+      "title": "Ameriprise Financial 2024 Annual Report",
+      "url": "https://www.ameriprise.com/microsite/2024-annual-report",
+      "kind": "annual-report",
+      "publisher": "Ameriprise Financial",
+      "note": "Primary source for 2024 revenue, net income, client assets, business segments, wealth management scale, and Columbia Threadneedle asset-management discussion.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "ameriprise-homepage",
+      "title": "Financial Planning Advice and Financial Advisors",
+      "url": "https://www.ameriprise.com/",
+      "kind": "product-page",
+      "publisher": "Ameriprise Financial",
+      "note": "Company product page describing Ameriprise's advisor-led financial planning and advice services.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "columbia-threadneedle-homepage",
+      "title": "Columbia Threadneedle Investments",
+      "url": "https://www.columbiathreadneedle.com/en/",
+      "kind": "product-page",
+      "publisher": "Columbia Threadneedle Investments",
+      "note": "Official product source for Ameriprise's global asset management brand and investment offering categories.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-amp-marketcap",
+      "title": "Ameriprise Financial Market Capitalization",
+      "url": "https://companiesmarketcap.com/ameriprise-financial/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap reference used for the current market capitalization metric and registry snapshot link.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "stockanalysis-amp-statistics",
+      "title": "Ameriprise Financial Statistics and Valuation",
+      "url": "https://stockanalysis.com/stocks/amp/statistics/",
+      "kind": "market-data",
+      "publisher": "Stock Analysis",
+      "note": "Supplemental market-data source for market capitalization and trailing P/E ratio.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "gnucash-project",
+      "title": "GnuCash",
+      "url": "https://www.gnucash.org/",
+      "kind": "open-source-project",
+      "publisher": "GnuCash Project",
+      "note": "Open-source personal and small-business accounting alternative relevant to self-custodied financial records and planning workflows.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "beancount-project",
+      "title": "Beancount",
+      "url": "https://beancount.github.io/",
+      "kind": "open-source-project",
+      "publisher": "Beancount Project",
+      "note": "Open-source plain-text accounting system relevant to portable financial ledgers and self-managed planning data.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openbb-project",
+      "title": "OpenBB",
+      "url": "https://openbb.co/",
+      "kind": "open-source-project",
+      "publisher": "OpenBB",
+      "note": "Open-source investment research platform relevant to unbundling asset-manager research and analytics workflows.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "portfolio-performance-project",
+      "title": "Portfolio Performance",
+      "url": "https://www.portfolio-performance.info/en/",
+      "kind": "open-source-project",
+      "publisher": "Portfolio Performance",
+      "note": "Open-source portfolio tracking and analytics tool relevant to independent investment performance analysis.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Ameriprise Financial bundle covering advisor-led financial planning and Columbia Threadneedle asset management, with open-source alternatives for personal finance records, portfolio analytics, and investment research. IPO details are left null because the supplied source set did not support both IPO date and IPO market cap."
+}
+2026-06-02T22:37:01.502795Z  WARN codex_core::hook_runtime: after_agent hook failed; continuing turn_id=019e8a7a-5c99-77f1-a206-27b39a5cb2ac hook_name=legacy_notify error=No such file or directory (os error 2)
+tokens used
+35,000

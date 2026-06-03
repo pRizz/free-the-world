@@ -28,7 +28,9 @@ test("market-cap disruption page renders the pie chart and coverage table", asyn
       /Pie chart showing the analyzed S&P 500 market cap split between thesis-adjusted disrupted value and residual value\./i,
     ),
   ).toBeVisible();
-  const csvLink = page.getByRole("link", { name: /Download the latest market-cap CSV/i });
+  const csvLink = page.getByRole("link", {
+    name: /Download the latest all-company market-cap CSV/i,
+  });
   await expect(csvLink).toBeVisible();
   await expect(csvLink).toHaveAttribute(
     "href",

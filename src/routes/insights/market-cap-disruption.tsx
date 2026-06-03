@@ -179,14 +179,14 @@ export default function MarketCapDisruptionPage() {
                     Raw data export
                   </p>
                   <p class="mt-2 text-sm leading-7 text-muted-foreground">
-                    The daily workflow commits the latest snapshot as a CSV so the chart can always
-                    point to a concrete, auditable table.
+                    The weekly workflow commits the latest all-published-company snapshot as a CSV
+                    so this S&P-focused chart can always point to a concrete, auditable table.
                   </p>
                   <a
                     href={withBasePath(marketCapSnapshotCsvPath)}
                     class="mt-3 inline-flex text-sm font-medium text-accent-foreground hover:underline"
                   >
-                    Download the latest market-cap CSV →
+                    Download the latest all-company market-cap CSV →
                   </a>
                 </article>
               </div>

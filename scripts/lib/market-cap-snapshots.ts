@@ -1,5 +1,6 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { access, mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
+import { pathToFileURL } from "node:url";
 import type {
   MarketCapSnapshot,
   MarketCapSnapshotRow,
@@ -8,6 +9,8 @@ import type { Company } from "../../src/lib/domain/types";
 import { rootDir } from "./content";
 
 export const marketCapSnapshotSourceName = "CompaniesMarketCap";
+export const marketCapSnapshotTargetIds = ["all", "sp500"] as const;
+export const minimumLiveMarketCapSnapshotShare = 0.9;
 export const publicMarketCapCsvPath = "/data/market-cap-snapshots-latest.csv";
 export const generatedMarketCapSnapshotFile = path.join(
   rootDir,
@@ -25,6 +28,9 @@ const reportedDatePattern = /On <strong>([^<]+)<\/strong> the market cap of/i;
 const monthlyReportedDatePattern = /As of ([A-Za-z]+\s+\d{4})/i;
 const companiesMarketCapTooltipPattern =
   /by <a href="https:\/\/companiesmarketcap\.com\/">CompaniesMarketCap<\/a>.*?tooltip-title="([^"]+)"/is;
+const sourceNoteTimestampPattern = /\b\d{2}-\d{2}-\d{4}\s+\d{2}:\d{2}\s+UTC\b/g;
+
+export type MarketCapSnapshotTargetId = (typeof marketCapSnapshotTargetIds)[number];
 
 export interface ParsedCompaniesMarketCapPage {
   marketCapDisplay: string;
@@ -37,6 +43,91 @@ export interface GenerateMarketCapSnapshotOptions {
   fetchedAt?: string;
   fetchImpl?: (input: string) => Promise<Response>;
   log?: Pick<Console, "warn" | "log">;
+}
+
+export interface MarketCapSnapshotCoverage {
+  targetCompanyCount: number;
+  rowCount: number;
+  liveCount: number;
+  fallbackCount: number;
+  missingRowCount: number;
+  liveShare: number;
+}
+
+export function parseMarketCapSnapshotTarget(value?: string): MarketCapSnapshotTargetId {
+  const normalizedValue = value?.trim() || "all";
+  if (marketCapSnapshotTargetIds.includes(normalizedValue as MarketCapSnapshotTargetId)) {
+    return normalizedValue as MarketCapSnapshotTargetId;
+  }
+
+  throw new Error(
+    `Unsupported market-cap refresh target "${normalizedValue}". Use ${marketCapSnapshotTargetIds.join(" or ")}.`,
+  );
+}
+
+export function selectMarketCapSnapshotCompanies(
+  companies: Company[],
+  target: MarketCapSnapshotTargetId,
+) {
+  return companies.filter((company) => {
+    if (!company.companiesMarketCapUrl.trim()) {
+      return false;
+    }
+
+    if (target === "all") {
+      return true;
+    }
+
+    return company.indexIds.some((indexId) => indexId.startsWith("sp500-"));
+  });
+}
+
+export function calculateMarketCapSnapshotCoverage(
+  snapshot: MarketCapSnapshot,
+  targetCompanyCount = snapshot.rows.length,
+): MarketCapSnapshotCoverage {
+  const liveCount = snapshot.rows.filter((row) => row.sourceKind === "live").length;
+  const fallbackCount = snapshot.rows.filter(
+    (row) => row.sourceKind === "published-fallback",
+  ).length;
+  const missingRowCount = Math.max(0, targetCompanyCount - snapshot.rows.length);
+
+  return {
+    targetCompanyCount,
+    rowCount: snapshot.rows.length,
+    liveCount,
+    fallbackCount,
+    missingRowCount,
+    liveShare: targetCompanyCount === 0 ? 0 : liveCount / targetCompanyCount,
+  };
+}
+
+export function assertMarketCapSnapshotCoverage(
+  snapshot: MarketCapSnapshot,
+  options: {
+    minimumLiveShare?: number;
+    targetCompanyCount: number;
+  },
+) {
+  const minimumLiveShare = options.minimumLiveShare ?? minimumLiveMarketCapSnapshotShare;
+  const coverage = calculateMarketCapSnapshotCoverage(snapshot, options.targetCompanyCount);
+
+  if (coverage.targetCompanyCount === 0) {
+    throw new Error("Market-cap refresh target did not include any companies.");
+  }
+
+  if (coverage.liveShare < minimumLiveShare) {
+    const formattedMinimum = formatPercent(minimumLiveShare);
+    const formattedActual = formatPercent(coverage.liveShare);
+    throw new Error(
+      [
+        `Market-cap refresh live coverage was ${formattedActual}, below the required ${formattedMinimum}.`,
+        `Live rows: ${coverage.liveCount}; fallback rows: ${coverage.fallbackCount}; missing rows: ${coverage.missingRowCount}; target companies: ${coverage.targetCompanyCount}.`,
+      ].join(" "),
+    );
+  }
+
+  return coverage;
 }
 
 export function formatCompactMarketCap(value: number) {
@@ -263,6 +354,38 @@ export function serializeMarketCapSnapshotCsv(snapshot: MarketCapSnapshot) {
     .join("\n")}\n`;
 }
 
+export async function readMarketCapSnapshotArtifact(
+  filePath = generatedMarketCapSnapshotFile,
+): Promise<MarketCapSnapshot | null> {
+  try {
+    await access(filePath);
+  } catch {
+    return null;
+  }
+
+  const moduleUrl = `${pathToFileURL(filePath).href}?snapshot=${Date.now()}`;
+  const module = (await import(moduleUrl)) as { marketCapSnapshot?: unknown };
+  if (!isMarketCapSnapshot(module.marketCapSnapshot)) {
+    throw new Error(`Generated market-cap snapshot module ${filePath} did not export a snapshot.`);
+  }
+
+  return module.marketCapSnapshot;
+}
+
+export function hasSubstantiveMarketCapSnapshotChange(
+  previousSnapshot: MarketCapSnapshot | null,
+  nextSnapshot: MarketCapSnapshot,
+) {
+  if (!previousSnapshot) {
+    return true;
+  }
+
+  return (
+    JSON.stringify(normalizeMarketCapSnapshotForComparison(previousSnapshot)) !==
+    JSON.stringify(normalizeMarketCapSnapshotForComparison(nextSnapshot))
+  );
+}
+
 export async function writeMarketCapSnapshotArtifacts(snapshot: MarketCapSnapshot) {
   const generatedModuleSource = serializeMarketCapSnapshotModule(snapshot);
   const csvSource = serializeMarketCapSnapshotCsv(snapshot);
@@ -321,6 +444,45 @@ function escapeCsvCell(value: string) {
   }
 
   return `"${value.replace(/"/g, '""')}"`;
+}
+
+function normalizeMarketCapSnapshotForComparison(snapshot: MarketCapSnapshot) {
+  return {
+    sourceName: snapshot.sourceName,
+    rows: snapshot.rows
+      .map((row) => ({
+        companySlug: row.companySlug,
+        companyName: row.companyName,
+        ticker: row.ticker,
+        companiesMarketCapUrl: row.companiesMarketCapUrl,
+        marketCapUsd: row.marketCapUsd,
+        marketCapDisplay: row.marketCapDisplay,
+        sourceKind: row.sourceKind,
+        sourceReportedAtLabel: row.sourceReportedAtLabel,
+        sourceNote: normalizeSourceNoteForComparison(row.sourceNote),
+      }))
+      .sort((left, right) => left.companySlug.localeCompare(right.companySlug)),
+  };
+}
+
+function normalizeSourceNoteForComparison(value: string | null) {
+  return (
+    value?.replace(sourceNoteTimestampPattern, "TIMESTAMP").replace(/\s+/g, " ").trim() ?? null
+  );
+}
+
+function formatPercent(value: number) {
+  return `${(value * 100).toFixed(1).replace(/\.0$/, "")}%`;
+}
+
+function isMarketCapSnapshot(value: unknown): value is MarketCapSnapshot {
+  return (
+    typeof value === "object" &&
+    value !== null &&
+    typeof (value as MarketCapSnapshot).generatedAt === "string" &&
+    typeof (value as MarketCapSnapshot).sourceName === "string" &&
+    Array.isArray((value as MarketCapSnapshot).rows)
+  );
 }
 
 function getErrorMessage(error: unknown) {

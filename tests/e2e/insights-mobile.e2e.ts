@@ -37,7 +37,7 @@ test("market-cap disruption page keeps the pie chart and table readable on mobil
   ).toBeVisible();
   await expect(page.getByText(/A simple pie chart for the current sample/i)).toBeVisible();
   await expect(
-    page.getByRole("link", { name: /Download the latest market-cap CSV/i }),
+    page.getByRole("link", { name: /Download the latest all-company market-cap CSV/i }),
   ).toBeVisible();
   await expect(page.getByRole("table")).toBeVisible();
   await expectNoPageLevelHorizontalOverflow(page);

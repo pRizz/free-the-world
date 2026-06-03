@@ -1,0 +1,763 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "consolidated-edison",
+      "name": "Consolidated Edison",
+      "ticker": "ED",
+      "rankApprox": 240,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "utilities",
+      "industryId": "electric-utilities",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/consolidated-edison/marketcap/",
+      "description": "Consolidated Edison is a regulated utility holding company providing electric, gas, and steam service in New York City, Westchester County, and nearby parts of New York and New Jersey.",
+      "overview": [
+        {
+          "title": "Regulated urban utility",
+          "paragraphs": [
+            "Con Edison operates mainly through Consolidated Edison Company of New York and Orange and Rockland Utilities, serving dense electric and gas territories and a major Manhattan steam system. Its core business is regulated energy delivery rather than merchant energy speculation.",
+            "The 2025 annual report describes CECONY electric service to about 3.7 million customers, gas delivery to about 1.1 million customers, and the largest steam distribution system in the United States, serving roughly 1,490 customers in parts of Manhattan."
+          ]
+        },
+        {
+          "title": "Load growth and rate-base economics",
+          "paragraphs": [
+            "The business is shaped by utility regulation, capital investment, reliability obligations, and approved recovery of prudent costs through rates. In 2025, Con Edison reported $2.023 billion of net income for common stock, with most earnings coming from CECONY.",
+            "Electric service remains the central franchise, but gas and steam still matter operationally because building heat, network reliability, decarbonization mandates, and urban infrastructure replacement all pass through the regulated planning process."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Con Edison has a very strong local infrastructure moat because electric, gas, and steam delivery networks require rights of way, regulatory franchises, specialized workforce capability, and long-lived physical assets. Customers can choose energy suppliers in some contexts, but delivery service remains tied to the local wires, pipes, meters, billing systems, and reliability obligations.",
+        "The moat is constrained by regulation: the company is generally allowed to earn on approved rate base, but pricing, service terms, cost recovery, and capital plans are heavily supervised. That makes the business durable, but not freely scalable like an unregulated platform."
+      ],
+      "decentralizationNarrative": [
+        "Con Edison's delivery monopoly is difficult to replace directly, but some demand-side functions can decentralize at the edge: household energy monitoring, open demand response, distributed solar and storage coordination, electrification planning, and microgrid operation. These do not remove the need for a grid operator, but they can reduce information asymmetry and shift more control to customers, buildings, communities, and aggregators.",
+        "The strongest decentralization pressure is not a direct open-source clone of the utility. It is a stack of interoperable devices, local energy management software, demand-response standards, distributed energy resources, and cooperative procurement that makes customers less passive and makes utility planning more contestable."
+      ],
+      "sourceIds": [
+        "coned-2025-annual-report",
+        "coned-homepage",
+        "companiesmarketcap-ed-marketcap",
+        "companiesmarketcap-ed-pe"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250; market data refreshed on June 2, 2026.",
+      "inputMetrics": {
+        "moat": {
+          "value": 88,
+          "rationale": "Dense regulated delivery networks, franchise territory, reliability duties, and long-lived electric, gas, and steam infrastructure create a high barrier to direct competition.",
+          "sourceIds": [
+            "coned-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "decentralizability": {
+          "value": 42,
+          "rationale": "The monopoly delivery grid is hard to decentralize, but edge controls, open demand response, energy monitoring, distributed generation, and community-scale coordination can decentralize parts of consumption, flexibility, and planning.",
+          "sourceIds": [
+            "coned-2025-annual-report",
+            "openadr-program-guide",
+            "openenergymonitor-github",
+            "openems-home"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "profitability": {
+          "value": 72,
+          "rationale": "Con Edison reported $2.023 billion of 2025 net income for common stock, supported primarily by regulated utility earnings, indicating durable profitability under the rate-base model.",
+          "sourceIds": [
+            "coned-2025-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "peRatio": {
+          "value": 18.6,
+          "rationale": "CompaniesMarketCap reported a trailing P/E ratio of about 18.6 as of June 2026.",
+          "sourceIds": [
+            "companiesmarketcap-ed-pe"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        },
+        "marketCap": {
+          "value": 38490000000,
+          "rationale": "CompaniesMarketCap reported Consolidated Edison's market capitalization at $38.49 billion as of June 2026.",
+          "sourceIds": [
+            "companiesmarketcap-ed-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-02"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "con-edison-electric-service",
+        "name": "Con Edison Electric Service",
+        "category": "Regulated electric utility delivery",
+        "homepageUrl": "https://www.coned.com/en",
+        "summary": "Electric delivery and related full-service supply for customers in New York City, Westchester County, and Orange and Rockland's nearby territories.",
+        "whyItMatters": "Electric delivery is the core urban infrastructure layer that powers housing, transit-adjacent commerce, data centers, building electrification, EV charging, and emergency resilience across one of the densest U.S. service territories.",
+        "replacementSketch": [
+          "A realistic open replacement is not a separate set of wires; it is an interoperable edge stack around the grid. Open energy monitors, Home Assistant-compatible dashboards, OpenEMS controllers, and OpenADR-based demand response can give households, buildings, and aggregators more independent control over load, storage, and participation in grid programs.",
+          "At community scale, solar, storage, microgrids, and transparent flexibility markets could make the regulated utility less of a unilateral planner and more of a coordinator among many verifiable local resources."
+        ],
+        "sourceIds": [
+          "coned-2025-annual-report",
+          "coned-homepage"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "con-edison-electric-service-openenergymonitor",
+            "name": "OpenEnergyMonitor",
+            "kind": "open-source",
+            "homepageUrl": "https://openenergymonitor.org/",
+            "repoUrl": "https://github.com/openenergymonitor",
+            "summary": "Open-source hardware and software for monitoring home and building energy use, including tools for collecting and visualizing electricity data.",
+            "metrics": {
+              "openness": {
+                "value": 90,
+                "rationale": "The project publishes open-source energy monitoring tools and maintains public repositories.",
+                "sourceIds": [
+                  "openenergymonitor-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 70,
+                "rationale": "Local monitoring shifts energy data visibility from the utility and proprietary vendors toward households, installers, and community operators.",
+                "sourceIds": [
+                  "openenergymonitor-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 64,
+                "rationale": "The project has an established hardware and software ecosystem, but it is a monitoring layer rather than a regulated delivery substitute.",
+                "sourceIds": [
+                  "openenergymonitor-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 63,
+                "rationale": "Open monitoring can reduce energy waste and improve customer decision-making, but savings depend on installation quality, tariffs, and downstream automation.",
+                "sourceIds": [
+                  "openenergymonitor-github",
+                  "home-assistant-energy"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "openenergymonitor-github"
+            ]
+          },
+          {
+            "slug": "con-edison-electric-service-openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "Open-source energy management software for coordinating renewable generation, storage, grid connection, and controllable loads.",
+            "metrics": {
+              "openness": {
+                "value": 88,
+                "rationale": "OpenEMS presents itself as a free and open-source energy management system with a public GitHub repository.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "Energy management at the edge helps distributed assets coordinate locally instead of relying only on centralized utility controls.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 66,
+                "rationale": "The platform is positioned for practical energy management deployments, though integration and certification still depend on hardware, market rules, and local utility programs.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 68,
+                "rationale": "Coordinating storage, generation, and flexible loads can reduce peak costs and improve self-consumption where tariffs and hardware support it.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "openems-home",
+              "openems-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-flexibility-aggregation",
+            "name": "Open Flexibility Aggregation",
+            "summary": "Buildings publish verifiable flexible load, storage, and generation capacity through interoperable demand-response standards, allowing customer-owned devices to compete as grid resources instead of remaining passive utility load.",
+            "angleIds": [
+              "microgrid-coordination",
+              "distributed-energy-generation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market structure changes when utilities procure measured flexibility from many edge devices and community operators rather than solving every reliability need through centralized capital projects and opaque bilateral vendor systems.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through interoperable control and multi-party dispatch rather than through Bitcoin. OpenADR-style messaging, local controllers, and customer-owned telemetry reduce dependence on a single proprietary demand-response platform.",
+            "coordinationMechanism": "Customers, aggregators, building managers, and microgrid operators register resources, receive dispatch events, and settle performance through program rules administered by utilities, grid operators, or community energy organizations.",
+            "verificationOrTrustModel": "Metered interval data, device telemetry, baselines, randomized audits, and penalties for non-performance constrain fake capacity claims. Open interfaces make it easier for customers and third-party verifiers to compare event instructions, device responses, and actual load changes.",
+            "failureModes": [
+              "Baseline gaming can overstate the value of demand reduction.",
+              "Cybersecurity and device interoperability requirements may exclude smaller operators.",
+              "Regulatory programs may still centralize control in incumbent utility-approved vendors."
+            ],
+            "adoptionPath": [
+              "Start with open monitoring and Home Assistant or OpenEMS-style local control in buildings with flexible loads.",
+              "Connect certified devices to OpenADR-compatible demand-response programs or aggregator pilots.",
+              "Use measured performance data to support community-scale procurement and non-wires alternatives."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "coned-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openadr-program-guide",
+              "openems-home",
+              "home-assistant-energy"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The concept shifts flexibility and some operational intelligence to customer-owned equipment and aggregators while preserving grid reliability coordination.",
+                "sourceIds": [
+                  "openadr-program-guide",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 70,
+                "rationale": "OpenADR documents a standardized approach for automated demand response, and energy management platforms can provide the local control layer.",
+                "sourceIds": [
+                  "openadr-program-guide",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 63,
+                "rationale": "The enabling technologies exist, but utility program design, certification, cybersecurity, and compensation rules determine whether open participation is practical.",
+                "sourceIds": [
+                  "openadr-program-guide",
+                  "coned-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 58,
+                "rationale": "Open flexibility can defer some traditional investments and reduce one-way utility control, but the incumbent remains the regulated delivery operator.",
+                "sourceIds": [
+                  "coned-2025-annual-report",
+                  "openadr-program-guide"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "community-microgrid-procurement",
+            "name": "Community Microgrid Procurement",
+            "summary": "Neighborhoods, campuses, and multifamily buildings combine local solar, batteries, controllable loads, and open energy management to create resilience services that can be procured, audited, and replicated outside proprietary utility programs.",
+            "angleIds": [
+              "microgrid-coordination",
+              "open-energy-hardware",
+              "cooperative-production"
+            ],
+            "thesis": "If communities can assemble standard microgrid packages from interoperable hardware and software, the utility's role shifts from sole infrastructure planner to reliability coordinator and interconnection gatekeeper.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is cooperative and technical rather than Bitcoin-native: shared governance, open controllers, published performance data, and portable procurement templates lower dependence on a single incumbent project sponsor.",
+            "coordinationMechanism": "Residents, building owners, installers, financiers, and local authorities coordinate through cooperative procurement, shared ownership contracts, and grid interconnection agreements.",
+            "verificationOrTrustModel": "Performance is verified through revenue-grade metering, battery telemetry, inverter logs, and outage-response tests. Public templates and third-party engineering review reduce vendor lock-in, but regulated interconnection remains a bottleneck.",
+            "failureModes": [
+              "Interconnection queues and protection requirements can delay projects.",
+              "Shared ownership and benefit allocation can become politically difficult.",
+              "Open software does not eliminate the need for certified hardware and professional installation."
+            ],
+            "adoptionPath": [
+              "Deploy open energy monitoring and load-control pilots in buildings with high outage or peak-cost exposure.",
+              "Bundle solar, storage, and controllable load upgrades through cooperative procurement.",
+              "Document performance and use it to negotiate non-wires alternatives or resilience compensation with the utility and regulators."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "coned-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openems-home",
+              "openenergymonitor-github",
+              "home-assistant-energy"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 80,
+                "rationale": "Community-owned generation, storage, and controls can decentralize resilience and some planning power even while remaining grid-connected.",
+                "sourceIds": [
+                  "openems-home",
+                  "openenergymonitor-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 56,
+                "rationale": "The technical pieces are credible, but governance, financing, and interconnection coordination remain difficult.",
+                "sourceIds": [
+                  "openems-home",
+                  "coned-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 52,
+                "rationale": "Microgrids and energy management systems are feasible, but replicable open community procurement in dense urban utility territory is still complex and site-specific.",
+                "sourceIds": [
+                  "coned-2025-annual-report",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 50,
+                "rationale": "The concept can pressure capital planning and resilience offerings, but it is more likely to complement the grid than replace Con Edison delivery service.",
+                "sourceIds": [
+                  "coned-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "con-edison-gas-service",
+        "name": "Con Edison Gas Service",
+        "category": "Regulated gas utility delivery",
+        "homepageUrl": "https://www.coned.com/en",
+        "summary": "Natural gas delivery service for customers in Manhattan, the Bronx, parts of Queens, most of Westchester County, and Orange and Rockland's nearby service area.",
+        "whyItMatters": "Gas service remains a major heating and building-energy layer in Con Edison's territory, so the pace of electrification, gas infrastructure replacement, safety spending, and peak-winter planning affects customer bills and the long-term role of the gas network.",
+        "replacementSketch": [
+          "The most plausible replacement path is not an open gas network. It is load reduction and fuel-switching: heat pumps, induction cooking, weatherization, thermal storage, and building-level energy management can reduce dependence on delivered gas over time.",
+          "Open monitoring and household energy tools can help customers understand gas consumption, plan appliance replacement, and coordinate neighborhood electrification campaigns, but regulated utility service remains necessary for customers still connected to the gas system."
+        ],
+        "sourceIds": [
+          "coned-2025-annual-report",
+          "rewiring-america-pace"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "con-edison-gas-service-home-assistant-energy",
+            "name": "Home Assistant Energy",
+            "kind": "open-source",
+            "homepageUrl": "https://www.home-assistant.io/integrations/energy/",
+            "repoUrl": "https://github.com/home-assistant/core",
+            "summary": "Open-source home automation and energy management that can integrate utility meters, smart plugs, solar inverters, and other devices into a local energy dashboard.",
+            "metrics": {
+              "openness": {
+                "value": 86,
+                "rationale": "Home Assistant is open source and documents open energy management integrations across many hardware sources.",
+                "sourceIds": [
+                  "home-assistant-energy"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 68,
+                "rationale": "It gives households local visibility and automation across devices, reducing reliance on utility or vendor-only dashboards.",
+                "sourceIds": [
+                  "home-assistant-energy"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 76,
+                "rationale": "Home Assistant is a mature open-source automation platform, though meter integration quality depends on installed devices and local utility data access.",
+                "sourceIds": [
+                  "home-assistant-energy"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 59,
+                "rationale": "The platform can help identify energy waste and automate efficient behavior, but gas displacement savings depend on equipment upgrades and tariffs.",
+                "sourceIds": [
+                  "home-assistant-energy",
+                  "rewiring-america-pace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "home-assistant-energy"
+            ]
+          },
+          {
+            "slug": "s0tool",
+            "name": "S0tool",
+            "kind": "open-source",
+            "homepageUrl": "https://s0tool.nl/",
+            "summary": "Open-source local meter-reading hardware and software for pulse-based utility meters, designed to feed consumption data into Home Assistant without a cloud dependency.",
+            "metrics": {
+              "openness": {
+                "value": 82,
+                "rationale": "S0tool describes itself as open source, local, and cloud-free.",
+                "sourceIds": [
+                  "s0tool-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "decentralizationFit": {
+                "value": 66,
+                "rationale": "Local meter reading gives customers independent consumption telemetry rather than relying only on utility portals.",
+                "sourceIds": [
+                  "s0tool-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "readiness": {
+                "value": 58,
+                "rationale": "It is useful for compatible pulse-output meters, but applicability depends on meter hardware, safety, and utility access rules.",
+                "sourceIds": [
+                  "s0tool-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "costLeverage": {
+                "value": 52,
+                "rationale": "Better data can guide behavior and electrification planning, but it does not itself replace gas service or appliances.",
+                "sourceIds": [
+                  "s0tool-home",
+                  "rewiring-america-pace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            },
+            "sourceIds": [
+              "s0tool-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "open-neighborhood-electrification-coops",
+            "name": "Open Neighborhood Electrification Co-ops",
+            "summary": "Buildings in the same neighborhood coordinate heat-pump adoption, weatherization, panel upgrades, and gas-appliance retirement through cooperative procurement and open energy data, reducing reliance on gas distribution over time.",
+            "angleIds": [
+              "cooperative-production",
+              "distributed-energy-generation",
+              "decentralized-coordination"
+            ],
+            "thesis": "The gas network weakens structurally if customers stop converting one appliance at a time and instead coordinate block-level demand reduction that can be measured, financed, and presented to regulators as a credible alternative to gas-main replacement.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through cooperative procurement and shared verification rather than Bitcoin. Customers pool demand, publish anonymized performance data, and reduce dependence on both incumbent gas infrastructure and closed contractor channels.",
+            "coordinationMechanism": "Residents, landlords, contractors, lenders, and local public agencies coordinate equipment bids, installation schedules, incentives, and post-installation performance tracking.",
+            "verificationOrTrustModel": "Utility bills, local meter data, equipment commissioning records, and weather-normalized consumption analysis verify reductions. Cheating is constrained by before-and-after energy data, but privacy protections and landlord-tenant split incentives remain hard.",
+            "failureModes": [
+              "Upfront costs and building-specific constraints can slow adoption.",
+              "Renters may not control appliance replacement decisions.",
+              "Poor installations can underperform and weaken trust in the program."
+            ],
+            "adoptionPath": [
+              "Use open home energy monitoring to identify buildings with high gas use and strong electrification potential.",
+              "Organize cooperative bids for heat pumps, weatherization, induction stoves, and heat-pump water heaters.",
+              "Aggregate measured reductions to support gas infrastructure deferral proposals and customer bill savings analysis."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "coned-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "rewiring-america-pace",
+              "home-assistant-energy",
+              "s0tool-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 72,
+                "rationale": "The model shifts planning and purchasing agency toward customers and neighborhoods instead of leaving gas transition pacing solely to utility capital plans.",
+                "sourceIds": [
+                  "rewiring-america-pace",
+                  "home-assistant-energy"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 58,
+                "rationale": "Cooperative procurement is plausible, and electrification technologies are documented, but organizing many buildings across ownership types is difficult.",
+                "sourceIds": [
+                  "rewiring-america-pace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 60,
+                "rationale": "Heat pumps and household electrification are practical, but dense urban retrofits, panel capacity, permitting, and contractor availability constrain speed.",
+                "sourceIds": [
+                  "rewiring-america-pace",
+                  "coned-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 62,
+                "rationale": "Measured gas load reduction can pressure gas-main replacement economics and long-term rate-base growth, though the utility remains needed during transition.",
+                "sourceIds": [
+                  "coned-2025-annual-report",
+                  "rewiring-america-pace"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          },
+          {
+            "slug": "customer-owned-thermal-flexibility",
+            "name": "Customer-Owned Thermal Flexibility",
+            "summary": "Homes and buildings combine heat pumps, thermal storage, smart thermostats, and local energy management so heating demand can shift away from peak periods and reduce both gas dependence and electric-grid stress.",
+            "angleIds": [
+              "microgrid-coordination",
+              "open-energy-hardware",
+              "distributed-energy-generation"
+            ],
+            "thesis": "Heating becomes less of a one-way fuel-delivery business and more of a controllable flexibility resource when customers can preheat, store thermal energy, and coordinate with grid signals using interoperable controls.",
+            "bitcoinOrDecentralizationRole": "The decentralization role is open control over flexible thermal assets. Customers retain local comfort and device control while responding to transparent grid signals rather than depending entirely on utility-owned infrastructure.",
+            "coordinationMechanism": "Building controllers, aggregators, and utility or market programs coordinate setpoints, storage charging, and demand-response events based on customer preferences and compensation rules.",
+            "verificationOrTrustModel": "Metered energy use, device telemetry, and event logs verify delivered flexibility. The main trust weakness is that comfort impacts and building thermal characteristics are heterogeneous and can be mis-modeled.",
+            "failureModes": [
+              "Customers may override controls during extreme weather.",
+              "Poorly insulated buildings may provide little useful flexibility.",
+              "Electrification without coordination can increase winter electric peaks."
+            ],
+            "adoptionPath": [
+              "Install local monitoring and controls alongside heat pumps or thermal storage.",
+              "Enroll flexible heating assets in open demand-response or aggregator programs.",
+              "Use measured thermal performance to refine incentives and avoid peak-driven grid upgrades."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "coned-2025-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openadr-program-guide",
+              "openems-home",
+              "rewiring-america-pace"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 69,
+                "rationale": "Customer-owned heating assets become dispatchable local resources while still respecting local control and comfort preferences.",
+                "sourceIds": [
+                  "openems-home",
+                  "openadr-program-guide"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "coordinationCredibility": {
+                "value": 55,
+                "rationale": "Demand-response standards and energy management systems support the coordination model, but thermal-load aggregation is harder than simple curtailment.",
+                "sourceIds": [
+                  "openadr-program-guide",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "implementationFeasibility": {
+                "value": 50,
+                "rationale": "The components exist, but winter peaking, building variation, and customer comfort constraints make broad deployment uncertain.",
+                "sourceIds": [
+                  "rewiring-america-pace",
+                  "coned-2025-annual-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              },
+              "incumbentPressure": {
+                "value": 54,
+                "rationale": "Thermal flexibility can reduce some gas and electric infrastructure pressure, but it depends on regulatory compensation and widespread device adoption.",
+                "sourceIds": [
+                  "coned-2025-annual-report",
+                  "openadr-program-guide"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-02"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "coned-2025-annual-report",
+      "title": "Con Edison Annual Report 2025",
+      "url": "https://investor.conedison.com/static-files/ff3d6336-8ded-443c-8810-0606be7944cd",
+      "kind": "annual-report",
+      "publisher": "Consolidated Edison, Inc.",
+      "note": "Primary source for business segments, customer counts, service territories, regulation, operating results, and 2025 net income.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "coned-homepage",
+      "title": "Con Edison - Powering New York City and Westchester",
+      "url": "https://www.coned.com/en",
+      "kind": "product-page",
+      "publisher": "Consolidated Edison Company of New York, Inc.",
+      "note": "Customer-facing company site for electric and gas service context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-ed-marketcap",
+      "title": "Consolidated Edison (ED) - Market capitalization",
+      "url": "https://companiesmarketcap.com/consolidated-edison/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap.com",
+      "note": "Market capitalization and ranking snapshot used for current valuation metric.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "companiesmarketcap-ed-pe",
+      "title": "Consolidated Edison (ED) - P/E ratio",
+      "url": "https://companiesmarketcap.com/consolidated-edison/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap.com",
+      "note": "Trailing P/E ratio source used for valuation metric.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openenergymonitor-github",
+      "title": "OpenEnergyMonitor GitHub organization",
+      "url": "https://github.com/openenergymonitor",
+      "kind": "open-source-project",
+      "publisher": "OpenEnergyMonitor",
+      "note": "Source for open-source energy monitoring alternative.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openadr-program-guide",
+      "title": "OpenADR Demand Response Program Guide",
+      "url": "https://www.openadr.org/demand-response-program-guide",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Documents standardized automated demand response program design and interoperability context.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openems-home",
+      "title": "OpenEMS - Open Energy Management System",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association e.V.",
+      "note": "Source for open-source energy management system alternative and distributed energy control enabler.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS GitHub repository",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Public repository for the OpenEMS software project.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "openems-docs",
+      "title": "OpenEMS Getting Started documentation",
+      "url": "https://openems.github.io/openems.io/openems/latest/gettingstarted.html",
+      "kind": "technical-docs",
+      "publisher": "OpenEMS",
+      "note": "Technical documentation for OpenEMS Edge and deployment workflow.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "home-assistant-energy",
+      "title": "Home energy management - Home Assistant",
+      "url": "https://www.home-assistant.io/integrations/energy/",
+      "kind": "technical-docs",
+      "publisher": "Home Assistant",
+      "note": "Documents Home Assistant's open home energy management integrations and dashboard approach.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "s0tool-home",
+      "title": "S0tool - Open Source Meter Reader for Home Assistant",
+      "url": "https://s0tool.nl/",
+      "kind": "open-source-project",
+      "publisher": "S0tool",
+      "note": "Source for open-source local pulse-meter reading alternative applicable to household utility monitoring where meters support it.",
+      "accessedOn": "2026-06-02"
+    },
+    {
+      "id": "rewiring-america-pace",
+      "title": "Pace of Progress",
+      "url": "https://www.rewiringamerica.org/research/pace-of-progress-home-electrification-transition",
+      "kind": "analysis",
+      "publisher": "Rewiring America",
+      "note": "Analysis source for household electrification, heat pumps, and the transition away from fossil-fueled home machines.",
+      "accessedOn": "2026-06-02"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Consolidated Edison registry bundle with sourced 2025 annual-report fundamentals, June 2026 market data, two utility-service products, open energy-management alternatives, and disruption concepts centered on open demand response, microgrids, cooperative electrification, and customer-owned thermal flexibility."
+}
