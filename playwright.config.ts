@@ -30,6 +30,6 @@ export default defineConfig({
     command: `bun run build && bun run scripts/serve-static.ts --port=${port}`,
     url: baseURL,
     reuseExistingServer: !process.env.CI,
-    timeout: 120_000,
+    timeout: 300_000,
   },
 });
