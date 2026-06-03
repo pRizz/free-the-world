@@ -1,8 +1,8 @@
 import { A, useLocation } from "@solidjs/router";
+import { ChevronDown } from "lucide-solid";
 import { createEffect, createSignal, type ParentProps } from "solid-js";
 import { RepositoryLink } from "~/components/repository-link";
 import { Button } from "~/components/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "~/components/ui/collapsible";
 import { siteConfig } from "~/lib/config";
 import { cn } from "~/lib/utils";
 
@@ -53,6 +53,7 @@ export function SiteShell(props: ParentProps) {
   const [isMobileNavOpen, setIsMobileNavOpen] = createSignal(false);
   const buildInfo = siteConfig.buildInfo;
   const shortCommitSha = buildInfo?.commitSha.slice(0, 7);
+  const mobileMenuId = "site-mobile-menu";
 
   createEffect(() => {
     location.pathname;
@@ -63,59 +64,67 @@ export function SiteShell(props: ParentProps) {
     <div class="min-h-screen bg-background text-foreground">
       <div class="mx-auto flex min-h-screen w-full max-w-7xl flex-col px-4 pb-10 sm:px-6 lg:px-8">
         <header class="sticky top-3 z-20 mt-3 rounded-xl border border-border bg-[color-mix(in_hsl,var(--background),transparent_10%)]/92 px-3 py-3 shadow-xl shadow-black/15 backdrop-blur sm:px-4 lg:px-5">
-          <Collapsible open={isMobileNavOpen()} onOpenChange={setIsMobileNavOpen}>
-            <div class="flex items-center justify-between gap-3">
-              <A href="/" class="min-w-0">
-                <span class="block whitespace-nowrap text-sm font-semibold tracking-[0.22em] uppercase text-title-foreground sm:text-base lg:text-lg">
-                  {siteConfig.name}
-                </span>
-              </A>
+          <div class="flex items-center justify-between gap-3">
+            <A href="/" class="min-w-0">
+              <span class="block whitespace-nowrap text-sm font-semibold tracking-[0.22em] uppercase text-title-foreground sm:text-base lg:text-lg">
+                {siteConfig.name}
+              </span>
+            </A>
 
-              <div class="hidden items-center gap-2 lg:flex">
-                <SiteNav ariaLabel="Primary" />
-                <RepositoryLink size="sm" class="shrink-0" />
-                <Button
-                  as="a"
-                  href={siteConfig.publicationUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant="secondary"
-                  size="sm"
-                  class="shrink-0"
-                >
-                  Newsletter on Substack
-                </Button>
-              </div>
-
-              <CollapsibleTrigger
-                class="w-auto shrink-0 rounded-full border border-border bg-card px-3 py-2 text-xs uppercase tracking-[0.22em] text-muted-foreground hover:border-accent-foreground hover:text-foreground lg:hidden"
-                aria-label="Toggle navigation menu"
+            <div class="hidden items-center gap-2 lg:flex">
+              <SiteNav ariaLabel="Primary" />
+              <RepositoryLink size="sm" class="shrink-0" />
+              <Button
+                as="a"
+                href={siteConfig.publicationUrl}
+                target="_blank"
+                rel="noreferrer"
+                variant="secondary"
+                size="sm"
+                class="shrink-0"
               >
-                Menu
-              </CollapsibleTrigger>
+                Newsletter on Substack
+              </Button>
             </div>
 
-            <CollapsibleContent class="lg:hidden">
-              <div class="mt-4 border-t border-border pt-4">
-                <SiteNav
-                  ariaLabel="Mobile menu"
-                  class="flex-col items-stretch gap-2"
-                  linkClass="block rounded-2xl px-4 py-3 text-left text-base"
-                />
-                <Button
-                  as="a"
-                  href={siteConfig.publicationUrl}
-                  target="_blank"
-                  rel="noreferrer"
-                  variant="secondary"
-                  class="mt-3 w-full"
-                >
-                  Newsletter on Substack
-                </Button>
-                <RepositoryLink class="mt-2 w-full" />
-              </div>
-            </CollapsibleContent>
-          </Collapsible>
+            <button
+              type="button"
+              class="flex w-auto shrink-0 items-center justify-between gap-3 rounded-full border border-border bg-card px-3 py-2 text-left text-xs font-medium tracking-[0.22em] text-muted-foreground uppercase outline-none transition hover:border-accent-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring lg:hidden"
+              aria-controls={mobileMenuId}
+              aria-expanded={isMobileNavOpen()}
+              aria-label="Toggle navigation menu"
+              onClick={() => setIsMobileNavOpen((isOpen) => !isOpen)}
+            >
+              <span>Menu</span>
+              <ChevronDown
+                class={cn(
+                  "h-4 w-4 shrink-0 transition-transform",
+                  isMobileNavOpen() ? "rotate-180" : null,
+                )}
+              />
+            </button>
+          </div>
+
+          <div id={mobileMenuId} class="lg:hidden" hidden={!isMobileNavOpen()}>
+            <div class="mt-4 border-t border-border pt-4">
+              <SiteNav
+                ariaLabel="Mobile menu"
+                class="flex-col items-stretch gap-2"
+                linkClass="block rounded-2xl px-4 py-3 text-left text-base"
+              />
+              <Button
+                as="a"
+                href={siteConfig.publicationUrl}
+                target="_blank"
+                rel="noreferrer"
+                variant="secondary"
+                class="mt-3 w-full"
+              >
+                Newsletter on Substack
+              </Button>
+              <RepositoryLink class="mt-2 w-full" />
+            </div>
+          </div>
         </header>
 
         <main class="flex-1 py-8 sm:py-10">{props.children}</main>
