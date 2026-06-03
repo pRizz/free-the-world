@@ -229,6 +229,7 @@ export function getCacheControlForArtifactPath(relativePath: string) {
 }
 
 export function getInvalidationPaths(changedPaths: string[]) {
+  const cloudFrontInvalidationPathLimit = 3_000;
   const invalidationPaths = new Set<string>();
 
   for (const relativePath of changedPaths) {
@@ -251,6 +252,10 @@ export function getInvalidationPaths(changedPaths: string[]) {
     }
 
     invalidationPaths.add(`/${relativePath}`);
+  }
+
+  if (invalidationPaths.size > cloudFrontInvalidationPathLimit) {
+    return ["/*"];
   }
 
   return Array.from(invalidationPaths).sort((left, right) => left.localeCompare(right));

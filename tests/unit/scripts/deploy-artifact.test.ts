@@ -59,6 +59,20 @@ test("getInvalidationPaths expands pretty URLs and skips immutable assets", () =
   ).toEqual(["/", "/about", "/about/", "/about/index.html", "/index.html", "/robots.txt"]);
 });
 
+test("getInvalidationPaths collapses oversized CloudFront batches to a wildcard", () => {
+  // Arrange
+  const changedPaths = Array.from(
+    { length: 1_001 },
+    (_value, index) => `companies/company-${index}/index.html`,
+  );
+
+  // Act
+  const invalidationPaths = getInvalidationPaths(changedPaths);
+
+  // Assert
+  expect(invalidationPaths).toEqual(["/*"]);
+});
+
 test("assertDeployArtifactIntegrity fails when manifest-listed files are missing", async () => {
   const artifactDir = await mkdtemp(path.join(tmpdir(), "deploy-artifact-"));
 
