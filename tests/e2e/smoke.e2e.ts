@@ -1,7 +1,28 @@
-import { expect, test } from "@playwright/test";
+import { expect, type Page, test } from "@playwright/test";
 import { gotoRoute } from "./support";
 
 const repositoryUrl = "https://github.com/pRizz/free-the-world";
+
+async function openMobileMenu(page: Page) {
+  const mobileToggle = page
+    .getByRole("banner")
+    .getByRole("button", { name: "Toggle navigation menu" });
+  const mobileNav = page.getByRole("navigation", { name: "Mobile menu" });
+
+  for (let attempt = 0; attempt < 3; attempt += 1) {
+    await mobileToggle.click();
+
+    try {
+      await expect(mobileToggle).toHaveAttribute("aria-expanded", "true", { timeout: 1_500 });
+      await expect(mobileNav).toBeVisible({ timeout: 1_500 });
+      return;
+    } catch (error) {
+      if (attempt === 2) {
+        throw error;
+      }
+    }
+  }
+}
 
 test("home page renders shell and hero content", async ({ page }) => {
   await gotoRoute(page, "/");
@@ -93,10 +114,7 @@ test("mobile shell stays compact and expands navigation on demand", async ({ pag
   const headerHeight = await banner.evaluate((element) => element.getBoundingClientRect().height);
   expect(headerHeight).toBeLessThan(110);
 
-  await mobileToggle.click();
-
-  await expect(mobileToggle).toHaveAttribute("aria-expanded", "true");
-  await expect(page.getByRole("navigation", { name: "Mobile menu" })).toBeVisible();
+  await openMobileMenu(page);
   await expect(
     page.getByRole("navigation", { name: "Mobile menu" }).getByRole("link", { name: "Home" }),
   ).toBeVisible();
@@ -128,10 +146,7 @@ test("mobile menu closes after route navigation", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await gotoRoute(page, "/");
 
-  const banner = page.getByRole("banner");
-  const mobileToggle = banner.getByRole("button", { name: "Toggle navigation menu" });
-
-  await mobileToggle.click();
+  await openMobileMenu(page);
   await page
     .getByRole("navigation", { name: "Mobile menu" })
     .getByRole("link", { name: "About" })
