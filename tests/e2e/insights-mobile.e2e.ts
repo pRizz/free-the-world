@@ -2,12 +2,53 @@ import { expect, type Page, test } from "@playwright/test";
 import { gotoRoute } from "./support";
 
 async function expectNoPageLevelHorizontalOverflow(page: Page) {
-  const maybeHasOverflow = await page.evaluate(() => {
+  const overflowReport = await page.evaluate(() => {
     const root = document.documentElement;
-    return root.scrollWidth > root.clientWidth;
+    const clientWidth = root.clientWidth;
+    const scrollWidth = root.scrollWidth;
+    const overflowingElements = Array.from(document.body.querySelectorAll("*"))
+      .flatMap((element) => {
+        if (!(element instanceof HTMLElement)) {
+          return [];
+        }
+
+        const rect = element.getBoundingClientRect();
+        const overflowsLeft = rect.left < -1;
+        const overflowsRight = rect.right > clientWidth + 1;
+
+        if (!overflowsLeft && !overflowsRight) {
+          return [];
+        }
+
+        const text = element.textContent?.replace(/\s+/g, " ").trim().slice(0, 120) ?? "";
+
+        return [
+          {
+            tag: element.tagName.toLowerCase(),
+            className: element.className,
+            text,
+            left: Math.round(rect.left),
+            right: Math.round(rect.right),
+            width: Math.round(rect.width),
+            clientWidth: element.clientWidth,
+            scrollWidth: element.scrollWidth,
+          },
+        ];
+      })
+      .slice(0, 6);
+
+    return {
+      hasOverflow: scrollWidth > clientWidth,
+      clientWidth,
+      scrollWidth,
+      overflowingElements,
+    };
   });
 
-  expect(maybeHasOverflow).toBe(false);
+  expect(
+    overflowReport.hasOverflow,
+    `Expected no page-level horizontal overflow.\n${JSON.stringify(overflowReport, null, 2)}`,
+  ).toBe(false);
 }
 
 test("insights landing page stacks cleanly on mobile", async ({ page }) => {
