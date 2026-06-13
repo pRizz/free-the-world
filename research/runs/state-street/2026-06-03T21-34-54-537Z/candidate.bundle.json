@@ -1,0 +1,454 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "state-street",
+    "name": "State Street",
+    "ticker": "STT",
+    "rankApprox": 240,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top250"
+    ],
+    "sectorId": "financials",
+    "industryId": "capital-markets",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/state-street-corporation/marketcap/",
+    "description": "State Street provides custody, fund administration, investment management, ETF, trading, data, and front-to-back operating infrastructure for institutional investors.",
+    "overview": [
+      {
+        "title": "Institutional financial infrastructure",
+        "paragraphs": [
+          "State Street is one of the core plumbing providers for global asset owners and investment managers, with year-end 2025 assets under custody and/or administration of $53.8 trillion and assets under management of $5.7 trillion.",
+          "Its business combines servicing scale, regulated custody, fund accounting, middle-office operations, trading services, and investment management, giving it a deep role in how institutional portfolios are administered and reported."
+        ]
+      },
+      {
+        "title": "Alpha and SPDR",
+        "paragraphs": [
+          "State Street Alpha packages front-, middle-, and back-office functions into an integrated platform for investment managers, including shared data, portfolio analytics, order and exposure workflows, custody, and operational services.",
+          "SPDR ETFs extend State Street Investment Management's product footprint into exchange-traded funds, where the company reports global scale, ETF AUM, and one of the largest ETF provider positions globally."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "State Street's moat is strongest where scale, trust, regulation, and operational switching costs compound. Custody, fund accounting, institutional recordkeeping, securities servicing, and ETF administration are not simple software subscriptions; clients rely on State Street for regulated workflows that touch settlement, reporting, controls, and fiduciary operations.",
+      "The moat is not absolute. Fee pressure, client consolidation, cloud-native competitors, open data tooling, and tokenized settlement experiments can reduce the advantage of closed operating stacks over time, but institutional migration cycles are long and failure tolerance is low."
+    ],
+    "decentralizationNarrative": [
+      "State Street is partially decentralizable at the workflow and analytics layer: open-source data platforms, portfolio analytics libraries, self-hosted research environments, and interoperable reporting tools can reduce dependence on a single vendor's front-office or data layer.",
+      "The regulated custody and ETF sponsor layers are harder to decentralize. Credible disruption would need robust governance, audited code, qualified custody or on-chain policy enforcement, anti-manipulation controls, and institutional-grade reporting before it could pressure State Street's core economics."
+    ],
+    "sourceIds": [
+      "state-street-2025-annual-report",
+      "state-street-alpha-page",
+      "ssga-etfs-page",
+      "companiesmarketcap-state-street-marketcap",
+      "companiesmarketcap-state-street-pe"
+    ],
+    "technologyWaveIds": [
+      "bitcoin-native-coordination"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250; refreshed on 2026-06-03 with current public State Street, SSGA, and market-data sources.",
+    "inputMetrics": {
+      "moat": {
+        "value": 82,
+        "rationale": "Large AUC/A scale, regulated custody, ETF infrastructure, and high client switching costs support a strong moat, though software and data layers face gradual modularization pressure.",
+        "sourceIds": [
+          "state-street-2025-annual-report",
+          "state-street-alpha-page",
+          "ssga-etfs-page"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "decentralizability": {
+        "value": 42,
+        "rationale": "Research, analytics, data integration, and some portfolio-management workflows can be opened or federated, but qualified custody, regulated fund administration, and ETF sponsorship remain institutionally centralized.",
+        "sourceIds": [
+          "state-street-alpha-page",
+          "openbb-odp-page",
+          "opengamma-strata-docs",
+          "enzyme-docs"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "profitability": {
+        "value": 73,
+        "rationale": "The 2025 annual report shows scaled operations, positive diluted EPS, record AUC/A, and large AUM, indicating a profitable institutional franchise despite fee and rate-cycle exposure.",
+        "sourceIds": [
+          "state-street-2025-annual-report"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "peRatio": {
+        "value": 15.9,
+        "rationale": "CompaniesMarketCap reported a trailing P/E ratio of 15.9471 for State Street as of June 2026.",
+        "sourceIds": [
+          "companiesmarketcap-state-street-pe"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "marketCap": {
+        "value": 44220000000,
+        "rationale": "CompaniesMarketCap reported State Street's market capitalization at $44.22 billion on June 2, 2026.",
+        "sourceIds": [
+          "companiesmarketcap-state-street-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-06-03"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "state-street-alpha",
+      "name": "State Street Alpha",
+      "category": "Institutional investment operations platform",
+      "homepageUrl": "https://www.statestreet.com/alpha",
+      "summary": "State Street Alpha is a front-to-back operating platform for investment managers that connects portfolio, trading, risk, data, middle-office, back-office, and custody workflows.",
+      "whyItMatters": "Alpha matters because it turns State Street's custody and servicing footprint into a software-and-operations control layer across the institutional investment lifecycle.",
+      "replacementSketch": [
+        "A credible open replacement would start by unbundling research, market data integration, portfolio analytics, and risk calculations into self-hosted tools that clients can audit and compose.",
+        "The harder custody and post-trade functions would likely remain regulated service layers at first, but open interfaces and verifiable reporting could reduce lock-in around the operating platform."
+      ],
+      "sourceIds": [
+        "state-street-alpha-page",
+        "state-street-2025-annual-report"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "state-street-alpha-openbb-open-data-platform",
+          "name": "OpenBB Open Data Platform",
+          "kind": "open-source",
+          "homepageUrl": "https://openbb.co/products/odp/",
+          "repoUrl": "https://github.com/OpenBB-finance/OpenBB",
+          "summary": "OpenBB ODP is an AGPL-licensed toolset for local financial data integration, analytics consumption, and standardized access through Python, Excel, APIs, and MCP servers.",
+          "metrics": {
+            "openness": {
+              "value": 90,
+              "rationale": "OpenBB describes ODP as open source and AGPL-licensed, with a GitHub distribution path.",
+              "sourceIds": [
+                "openbb-odp-page"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "decentralizationFit": {
+              "value": 58,
+              "rationale": "It supports local-first financial data workflows and reduces vendor lock-in, but it does not replace custody, execution, or regulated administration.",
+              "sourceIds": [
+                "openbb-odp-page"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "readiness": {
+              "value": 68,
+              "rationale": "The platform is live and usable for data and analytics integration, but institutional front-to-back replacement would require additional controls, integrations, and governance.",
+              "sourceIds": [
+                "openbb-odp-page"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "costLeverage": {
+              "value": 76,
+              "rationale": "Self-hosted, open financial data integration can reduce dependence on proprietary analytics and workflow seats, especially for research and internal reporting.",
+              "sourceIds": [
+                "openbb-odp-page"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            }
+          },
+          "sourceIds": [
+            "openbb-odp-page"
+          ]
+        },
+        {
+          "slug": "state-street-alpha-opengamma-strata",
+          "name": "OpenGamma Strata",
+          "kind": "open-source",
+          "homepageUrl": "https://strata.opengamma.io/docs/",
+          "repoUrl": "https://github.com/OpenGamma/Strata",
+          "summary": "OpenGamma Strata is an open-source market risk and analytics library covering financial product models, market data, pricing, risk measures, and reporting components.",
+          "metrics": {
+            "openness": {
+              "value": 88,
+              "rationale": "The documentation identifies Strata as an open-source market risk library and references its public API and repository.",
+              "sourceIds": [
+                "opengamma-strata-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "decentralizationFit": {
+              "value": 50,
+              "rationale": "Open pricing and risk components help decentralize analytics, but they do not provide a complete investment operations platform.",
+              "sourceIds": [
+                "opengamma-strata-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "readiness": {
+              "value": 64,
+              "rationale": "Strata is mature for analytics components such as pricing, risk calculation, market data, and reporting, while broader operational readiness depends on surrounding systems.",
+              "sourceIds": [
+                "opengamma-strata-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "costLeverage": {
+              "value": 70,
+              "rationale": "Reusable open risk analytics can reduce custom vendor dependency in portfolio, risk, and reporting workflows.",
+              "sourceIds": [
+                "opengamma-strata-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            }
+          },
+          "sourceIds": [
+            "opengamma-strata-docs"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "federated-investment-operations-graph",
+          "name": "Federated Investment Operations Graph",
+          "summary": "A federated investment operations stack could let asset managers combine self-hosted data integration, open risk analytics, and standardized reporting schemas while using regulated custodians only for the parts that legally require custody or settlement authority.",
+          "angleIds": [
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "The market structure shifts from one vendor controlling a front-to-back operating platform to interoperable modules coordinated through shared schemas, attestations, and replaceable service providers.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through federation and auditability rather than Bitcoin itself: managers keep data and analytics in environments they control, while counterparties exchange signed operational facts through agreed interfaces.",
+          "coordinationMechanism": "Investment managers, custodians, administrators, risk teams, and auditors coordinate through open data contracts, signed event logs, and permissioned interoperability standards.",
+          "verificationOrTrustModel": "Participants verify workflow events through signed records, reconciled positions, independent calculations, and audit trails; cheating is constrained by cross-party reconciliation and regulated accountability, though private-market and OTC data remain difficult.",
+          "failureModes": [
+            "Large institutions may prefer a single accountable vendor over a federated stack with distributed responsibility.",
+            "Standards fragmentation could recreate lock-in if dominant custodians define incompatible schemas.",
+            "Regulatory controls and service-level obligations may be harder to prove across multiple smaller providers."
+          ],
+          "adoptionPath": [
+            "Start with open analytics and data integration for research, risk, and internal reporting.",
+            "Add signed reconciliation records between managers, administrators, and custodians.",
+            "Expand into modular middle-office workflows where service providers compete on audited performance rather than proprietary workflow control."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "state-street-alpha-page",
+            "state-street-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "openbb-odp-page",
+            "opengamma-strata-docs"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 66,
+              "rationale": "Federation directly targets the centralized workflow-control layer while leaving legally necessary custody functions intact.",
+              "sourceIds": [
+                "state-street-alpha-page",
+                "openbb-odp-page",
+                "opengamma-strata-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "coordinationCredibility": {
+              "value": 58,
+              "rationale": "Financial institutions already coordinate via reconciliations and audit trails, but broad open standards across front-to-back operations remain difficult.",
+              "sourceIds": [
+                "state-street-alpha-page",
+                "openbb-odp-page"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "implementationFeasibility": {
+              "value": 55,
+              "rationale": "Open analytics and data tools exist today, but custody-grade controls, liability allocation, and production integrations would take sustained institutional adoption.",
+              "sourceIds": [
+                "openbb-odp-page",
+                "opengamma-strata-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "incumbentPressure": {
+              "value": 52,
+              "rationale": "The concept pressures Alpha's software and data lock-in more than State Street's regulated custody base, so disruption would be gradual and partial.",
+              "sourceIds": [
+                "state-street-alpha-page",
+                "state-street-2025-annual-report"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "spdr-etfs",
+      "name": "SPDR ETFs",
+      "category": "Exchange-traded funds",
+      "homepageUrl": "https://www.ssga.com/us/en/intermediary/etfs",
+      "summary": "SPDR ETFs are State Street Investment Management's exchange-traded fund family, providing listed fund exposure across equity, fixed-income, gold, sector, factor, and portfolio strategies.",
+      "whyItMatters": "SPDR ETFs matter because they package index and portfolio exposure into highly scalable listed products and are a major part of State Street's asset-management franchise.",
+      "replacementSketch": [
+        "Open or decentralized alternatives would not immediately replace regulated ETFs for mainstream retirement and brokerage channels, but they can pressure the economics of simple portfolio packaging.",
+        "Tokenized vaults, transparent index rules, and automated portfolio rebalancing can make some ETF-like exposures cheaper, more programmable, and easier to audit for users comfortable with on-chain risk."
+      ],
+      "sourceIds": [
+        "ssga-etfs-page",
+        "state-street-2025-annual-report"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "spdr-etfs-enzyme-finance",
+          "name": "Enzyme Finance",
+          "kind": "protocol",
+          "homepageUrl": "https://enzyme-finance.com/",
+          "summary": "Enzyme Finance is an Ethereum-based asset-management protocol for creating, managing, and investing in on-chain vaults with programmable policies and transparent transaction history.",
+          "metrics": {
+            "openness": {
+              "value": 72,
+              "rationale": "Enzyme provides public protocol documentation, on-chain operation, and audit materials, though it is not a drop-in open-source ETF sponsor.",
+              "sourceIds": [
+                "enzyme-docs",
+                "enzyme-homepage"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "decentralizationFit": {
+              "value": 82,
+              "rationale": "The protocol uses smart-contract vaults, non-custodial operation, and on-chain records to decentralize parts of asset management.",
+              "sourceIds": [
+                "enzyme-homepage",
+                "enzyme-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "readiness": {
+              "value": 54,
+              "rationale": "Enzyme is live with vaults and users, but institutional ETF replacement is constrained by asset coverage, regulation, custody expectations, and investor protections.",
+              "sourceIds": [
+                "enzyme-homepage",
+                "enzyme-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "costLeverage": {
+              "value": 63,
+              "rationale": "Programmable vaults can reduce some fund administration and distribution costs for crypto-native strategies, but gas costs, compliance, and limited asset scope cap near-term leverage.",
+              "sourceIds": [
+                "enzyme-homepage"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            }
+          },
+          "sourceIds": [
+            "enzyme-homepage",
+            "enzyme-docs"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "on-chain-index-vault-network",
+          "name": "On-Chain Index Vault Network",
+          "summary": "A network of transparent, programmable index vaults could let managers publish rules, rebalance assets, and expose holdings on-chain, competing with simple ETF packaging for crypto-native or tokenized portfolios.",
+          "angleIds": [
+            "decentralized-coordination",
+            "peer-to-peer-marketplace"
+          ],
+          "thesis": "ETF economics become less dependent on a centralized sponsor and administrator when portfolio rules, holdings, fees, and rebalances are encoded and independently inspectable.",
+          "bitcoinOrDecentralizationRole": "The key role is decentralized coordination through smart-contract vaults and open audit trails; Bitcoin is not central unless Bitcoin-native collateral or settlement rails become part of the vault asset universe.",
+          "coordinationMechanism": "Vault managers publish strategies and fees, investors subscribe directly through wallets, market makers or arbitrageurs keep exposures aligned, and protocol contracts enforce allowed assets and policy limits.",
+          "verificationOrTrustModel": "On-chain holdings, deposits, withdrawals, trades, and fee events can be independently inspected; cheating is constrained by contract-enforced investment policies, but oracle quality, smart-contract bugs, and off-chain asset bridges remain trust bottlenecks.",
+          "failureModes": [
+            "Regulated investors may be unable or unwilling to hold on-chain vault interests instead of registered ETFs.",
+            "Smart-contract exploits, oracle failures, or bridge failures could destroy trust faster than traditional ETF tracking error.",
+            "Tokenized portfolios may lack the liquidity, tax treatment, custody support, and distribution access of listed ETFs."
+          ],
+          "adoptionPath": [
+            "Begin with crypto-native index and thematic vaults where underlying assets are already on-chain.",
+            "Add audited rules, transparent fee schedules, and third-party analytics for vault comparison.",
+            "Expand only where tokenized real-world assets, custody, and securities-law treatment become institutionally credible."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "ssga-etfs-page",
+            "state-street-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "enzyme-homepage",
+            "enzyme-docs"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 78,
+              "rationale": "The concept directly replaces sponsor-controlled fund operations with programmable vaults and public transaction history for suitable assets.",
+              "sourceIds": [
+                "enzyme-homepage",
+                "enzyme-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "coordinationCredibility": {
+              "value": 60,
+              "rationale": "On-chain vault coordination is demonstrated in DeFi, but ETF-scale investor protection, market making, and compliance coordination remain unresolved.",
+              "sourceIds": [
+                "enzyme-homepage",
+                "enzyme-docs",
+                "ssga-etfs-page"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "implementationFeasibility": {
+              "value": 57,
+              "rationale": "The technical primitive exists for crypto-native vaults, but broad ETF substitution depends on regulation, tokenized asset quality, custody, and liquidity.",
+              "sourceIds": [
+                "enzyme-homepage",
+                "enzyme-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "incumbentPressure": {
+              "value": 45,
+              "rationale": "Near-term pressure is limited to crypto-native and experimental tokenized products; mainstream SPDR ETFs retain strong brokerage, regulatory, and liquidity advantages.",
+              "sourceIds": [
+                "ssga-etfs-page",
+                "state-street-2025-annual-report",
+                "enzyme-homepage"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,638 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "paypal",
+      "name": "PayPal",
+      "ticker": "PYPL",
+      "rankApprox": 226,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "financials",
+      "industryId": "payment-networks",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/paypal/marketcap/",
+      "description": "PayPal operates digital payments platforms for consumers and merchants, including PayPal, Venmo, Braintree, Xoom, Hyperwallet, Zettle, Honey, and Paidy.",
+      "overview": [
+        {
+          "title": "Business",
+          "paragraphs": [
+            "PayPal runs a global two-sided payments network connecting consumers and merchants across branded checkout, peer-to-peer transfers, merchant acquiring, payout, wallet, and value-added commerce products.",
+            "Its 2025 Form 10-K reported $1.79 trillion of total payment volume and 25.4 billion payment transactions, giving the company large transaction-scale advantages even as competition pressures checkout share and take rates."
+          ]
+        },
+        {
+          "title": "Strategic Position",
+          "paragraphs": [
+            "PayPal's moat is strongest where consumer trust, merchant integrations, risk systems, regulatory compliance, and network acceptance compound across PayPal, Venmo, and Braintree.",
+            "The same model remains meaningfully centralizable: PayPal controls account access, merchant acceptance rules, compliance decisions, custody touchpoints, dispute flows, and data-rich transaction rails."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "PayPal has a durable but pressured payments moat. Its brand, merchant integrations, fraud tooling, compliance operations, and consumer account base make it hard to replace for mainstream online commerce, and Braintree gives it a strong enterprise gateway position.",
+        "The moat is not as structurally protected as card-network moats because PayPal faces direct competition from cards, Apple Pay, Cash App, bank rails, real-time payments, stablecoins, and merchant-led checkout optimization."
+      ],
+      "decentralizationNarrative": [
+        "PayPal is a centralized operator: users and merchants depend on PayPal-controlled account systems, risk models, custodial balances, settlement policies, and platform rules.",
+        "Open payment gateways, Lightning, federated ecash, and open protocols can decentralize parts of PayPal's role by moving acceptance, custody, privacy, and settlement closer to merchants, communities, or user-run infrastructure, but mainstream fiat compliance and dispute handling remain difficult to decentralize."
+      ],
+      "sourceIds": [
+        "paypal-2025-10k",
+        "paypal-braintree",
+        "paypal-platforms",
+        "companiesmarketcap-paypal",
+        "stockanalysis-pypl"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Large payment volume, merchant integrations, compliance systems, fraud tooling, and wallet brands create a meaningful moat, but checkout competition and lower-cost rails limit pricing power.",
+          "sourceIds": [
+            "paypal-2025-10k",
+            "paypal-braintree"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "decentralizability": {
+          "value": 5,
+          "rationale": "Payment acceptance, settlement, and wallet functions can be partially replaced by open gateways, Lightning, federated ecash, and merchant-run infrastructure, but fiat onboarding, chargebacks, sanctions compliance, and consumer protections remain centralized bottlenecks.",
+          "sourceIds": [
+            "paypal-2025-10k",
+            "btcpay-docs",
+            "fedimint-how-it-works",
+            "cashu-docs"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "PayPal reported $5.233 billion of net income for fiscal 2025 on $33.2 billion of net revenue, showing strong absolute profitability and a mid-teens net margin.",
+          "sourceIds": [
+            "paypal-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "peRatio": {
+          "value": 8.31,
+          "rationale": "StockAnalysis reported a trailing P/E ratio of 8.31 for PYPL near the May 21, 2026 market data snapshot.",
+          "sourceIds": [
+            "stockanalysis-pypl"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "marketCap": {
+          "value": 39070000000,
+          "rationale": "CompaniesMarketCap reported PayPal's market capitalization at approximately $39.07 billion as of May 2026.",
+          "sourceIds": [
+            "companiesmarketcap-paypal"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-03"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "paypal-checkout-braintree",
+        "name": "PayPal Checkout and Braintree",
+        "category": "merchant payments",
+        "homepageUrl": "https://www.paypal.com/us/braintree",
+        "summary": "PayPal Checkout and Braintree give merchants a payment stack for PayPal, Venmo, cards, digital wallets, local payment methods, risk controls, and marketplace payments.",
+        "whyItMatters": "This is the core merchant-facing layer where PayPal translates consumer wallet trust, acquiring relationships, fraud systems, and checkout integrations into transaction revenue.",
+        "replacementSketch": [
+          "A credible open replacement would not clone PayPal as a single company. It would combine merchant-run payment gateways, open checkout components, Lightning settlement, optional fiat conversion partners, and auditable dispute or reputation services.",
+          "The practical adoption path starts with niche merchants that value low fees, self-custody, privacy, or censorship resistance more than chargeback-heavy card acceptance."
+        ],
+        "sourceIds": [
+          "paypal-braintree",
+          "paypal-platforms",
+          "paypal-2025-10k"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "btcpay-server",
+            "name": "BTCPay Server",
+            "kind": "open-source",
+            "homepageUrl": "https://btcpayserver.org/",
+            "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+            "summary": "BTCPay Server is a free, open-source, self-hosted Bitcoin payment processor that lets merchants accept payments without a payment-processing intermediary.",
+            "metrics": {
+              "openness": {
+                "value": 10,
+                "rationale": "The project is open source, self-hosted, and publicly developed on GitHub.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "btcpay-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "Merchants can operate their own gateway and receive Bitcoin directly, reducing dependence on a centralized payment processor.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "BTCPay is production software with documentation and integrations, but it is best suited for merchants willing to handle Bitcoin, hosting, wallet operations, and optional fiat conversion separately.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Self-hosting and direct settlement can reduce processor fees, though operating cost, volatility management, and fiat conversion can reintroduce expense.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              }
+            },
+            "sourceIds": [
+              "btcpay-docs",
+              "btcpay-github"
+            ]
+          },
+          {
+            "slug": "gnu-taler",
+            "name": "GNU Taler",
+            "kind": "open-source",
+            "homepageUrl": "https://www.taler.net/",
+            "summary": "GNU Taler is a free-software payment system focused on privacy-preserving payments, merchant tooling, wallets, exchanges, and auditable taxable commerce.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "GNU Taler is built around free software and open protocols with public documentation for wallets, merchant backends, exchanges, and banking integration.",
+                "sourceIds": [
+                  "gnu-taler-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Taler can separate wallet, merchant, exchange, auditor, and bank roles, but it still depends on regulated exchange and banking operators rather than full peer-to-peer settlement.",
+                "sourceIds": [
+                  "gnu-taler-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The project has extensive documentation and merchant components, but mainstream merchant and consumer adoption remains limited compared with PayPal-scale payment products.",
+                "sourceIds": [
+                  "gnu-taler-docs",
+                  "gnu-taler-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open software and protocol-based merchant tooling can reduce vendor lock-in, though regulated exchange operations and banking integration still carry real operating costs.",
+                "sourceIds": [
+                  "gnu-taler-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            },
+            "sourceIds": [
+              "gnu-taler-docs",
+              "gnu-taler-home"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "merchant-run-lightning-checkout",
+            "name": "Merchant-Run Lightning Checkout",
+            "summary": "Merchants run or outsource open-source Bitcoin and Lightning checkout infrastructure instead of routing every payment through a centralized processor. The merchant controls the payment gateway, settlement wallet, and refund policy while using open software for invoices, webhooks, and accounting integrations.",
+            "angleIds": [
+              "bitcoin",
+              "lightning",
+              "decentralized-coordination"
+            ],
+            "thesis": "PayPal's merchant-processing role weakens if a material set of merchants can accept instant final settlement through open gateways without surrendering account control, fee schedules, or transaction data to a single payment company.",
+            "bitcoinOrDecentralizationRole": "Bitcoin supplies final settlement and Lightning supplies low-fee instant payment routing; self-hosted gateway software lets merchants coordinate acceptance without PayPal as the central processor.",
+            "coordinationMechanism": "Merchants publish invoices through their own checkout stack, buyers pay over Lightning or on-chain Bitcoin, and optional service providers compete on hosting, liquidity, accounting, and fiat conversion rather than owning the whole network.",
+            "verificationOrTrustModel": "Payment validity is checked cryptographically by the Bitcoin and Lightning networks, and BTCPay-style invoice state reduces fake-payment risk. Weaknesses remain around refunds, shipping disputes, fiat conversion, tax treatment, and merchants that cannot tolerate Bitcoin volatility.",
+            "failureModes": [
+              "Consumers may prefer chargebacks, card rewards, familiar wallets, and fiat-denominated balances over final-settlement Bitcoin payments.",
+              "Merchants still need accounting, refunds, fraud workflows, support tooling, and fiat conversion, which can recreate centralized intermediaries around the open gateway."
+            ],
+            "adoptionPath": [
+              "Start with digital goods, donations, international merchants, privacy-sensitive buyers, and businesses with strong incentives to avoid processor lock-in.",
+              "Add hosted gateway providers, fiat-conversion plugins, accounting exports, refunds, and marketplace escrow patterns for less technical merchants."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "paypal-braintree",
+              "paypal-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "btcpay-docs",
+              "btcpay-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 9,
+                "rationale": "The model directly replaces a centralized merchant processor with merchant-controlled gateway software and open settlement rails.",
+                "sourceIds": [
+                  "btcpay-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "coordinationCredibility": {
+                "value": 7,
+                "rationale": "Invoice, webhook, wallet, and Lightning primitives are credible for merchant coordination, but consumer UX and dispute expectations remain hard.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "paypal-braintree"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "implementationFeasibility": {
+                "value": 7,
+                "rationale": "BTCPay Server already demonstrates the core implementation path, though broader commerce tooling and compliance integrations are uneven.",
+                "sourceIds": [
+                  "btcpay-docs",
+                  "btcpay-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "incumbentPressure": {
+                "value": 6,
+                "rationale": "The pressure is meaningful in niches that value self-custody and low fees, but PayPal retains advantages in fiat checkout, buyer protection, merchant acceptance, and card-wallet interoperability.",
+                "sourceIds": [
+                  "paypal-2025-10k",
+                  "btcpay-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "venmo",
+        "name": "Venmo",
+        "category": "consumer wallet and peer-to-peer payments",
+        "homepageUrl": "https://venmo.com/",
+        "summary": "Venmo is PayPal's U.S. consumer wallet for peer-to-peer transfers, social payments, merchant checkout, cards, and account-linked spending.",
+        "whyItMatters": "Venmo gives PayPal a consumer-facing payment graph and brand that reaches everyday transfers, younger users, and merchant checkout beyond the legacy PayPal button.",
+        "replacementSketch": [
+          "A decentralized Venmo replacement would emphasize wallet portability, private transfers, community custody or self-custody, and interoperable payment messages rather than a single national consumer-payments silo.",
+          "The near-term replacement is more likely to emerge as a federation of wallets and community mints than as one universal app."
+        ],
+        "sourceIds": [
+          "paypal-2025-10k",
+          "paypal-braintree",
+          "fedimint-home",
+          "cashu-docs"
+        ],
+        "technologyWaveIds": [
+          "bitcoin-native-coordination"
+        ],
+        "alternatives": [
+          {
+            "slug": "fedimint",
+            "name": "Fedimint",
+            "kind": "decentralized",
+            "homepageUrl": "https://fedimint.org/",
+            "summary": "Fedimint is open-source federated ecash for Bitcoin, designed for private community custody and interoperable Lightning payments.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Fedimint is presented as open-source infrastructure with SDKs and documentation for running federations and integrating ecash payments.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "A federation distributes custody across guardians and can connect to Lightning, reducing dependence on a single wallet company.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "fedimint-guardians"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The architecture is documented and usable by early communities, but it remains less mature than mainstream consumer payment apps.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Community custody and Lightning routing can reduce dependence on payment-app fees, though guardian operations, liquidity, and support still cost money.",
+                "sourceIds": [
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            },
+            "sourceIds": [
+              "fedimint-home",
+              "fedimint-how-it-works",
+              "fedimint-guardians"
+            ]
+          },
+          {
+            "slug": "cashu",
+            "name": "Cashu",
+            "kind": "protocol",
+            "homepageUrl": "https://cashu.space/",
+            "summary": "Cashu is a free and open-source Chaumian ecash protocol for Bitcoin that enables instant, private bearer-token payments through interoperable wallets and mints.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "Cashu is documented as a free and open-source protocol with public specifications for compatible wallets and mints.",
+                "sourceIds": [
+                  "cashu-docs",
+                  "cashu-protocol"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Anyone can run a mint and wallets can interoperate through the protocol, but individual mints remain trusted issuers.",
+                "sourceIds": [
+                  "cashu-docs",
+                  "cashu-protocol"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "Cashu has protocol specifications and applications, but mainstream consumer-payment readiness is still early relative to Venmo.",
+                "sourceIds": [
+                  "cashu-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Instant low-cost ecash transfers can reduce per-payment platform tolls, though mint operations, redemption, and liquidity management remain constraints.",
+                "sourceIds": [
+                  "cashu-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            },
+            "sourceIds": [
+              "cashu-docs",
+              "cashu-protocol"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-ecash-social-wallets",
+            "name": "Federated Ecash Social Wallets",
+            "summary": "Community-run or affinity-group wallets use Fedimint- or Cashu-style ecash to support private instant transfers while bridging to Lightning for payments outside the group. Instead of one Venmo ledger, many interoperable wallets and mints coordinate through open payment protocols.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "lightning"
+            ],
+            "thesis": "Venmo's centralized consumer-payments graph becomes less necessary if users can hold portable ecash, transact privately inside communities, and pay external recipients through Lightning without all account and transaction data living under one platform operator.",
+            "bitcoinOrDecentralizationRole": "Bitcoin backs the settlement asset, Lightning bridges federations and external merchants, and federation or open-mint designs distribute wallet operation across communities rather than one corporate ledger.",
+            "coordinationMechanism": "Guardians or mint operators issue ecash against deposits, users transfer bearer tokens or federation notes through compatible wallets, and Lightning gateways route payments across communities and merchants.",
+            "verificationOrTrustModel": "Blind signatures protect transaction privacy while mint redemption checks prevent double spending. Fedimint reduces single-operator custody risk through threshold guardians, but users still trust mint or federation operators not to mismanage reserves.",
+            "failureModes": [
+              "Mints or federation guardians can fail, collude, become insolvent, or lose operational availability.",
+              "Consumer adoption may stall if wallet UX, recovery, compliance, fraud support, and fiat on-ramps are weaker than Venmo."
+            ],
+            "adoptionPath": [
+              "Begin with Bitcoin-native communities, local groups, events, and creators that need private low-cost transfers.",
+              "Add better mobile wallets, social address books, recovery flows, Lightning gateways, and merchant acceptance to expand beyond early adopters."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "paypal-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "fedimint-how-it-works",
+              "fedimint-guardians",
+              "cashu-docs",
+              "cashu-protocol"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept replaces a single corporate wallet ledger with interoperable mints, federations, and Lightning gateways.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "cashu-docs"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Federated custody, ecash transfer, and Lightning bridging are coherent mechanisms, but social-wallet UX and trust discovery are still immature.",
+                "sourceIds": [
+                  "fedimint-how-it-works",
+                  "cashu-protocol"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The enabling protocols and documentation exist, but consumer-grade operations, compliance, support, and fiat connectivity remain substantial work.",
+                "sourceIds": [
+                  "fedimint-home",
+                  "cashu-docs"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The model can pressure Venmo in privacy-sensitive or Bitcoin-native communities, but Venmo's mainstream network effects, bank links, brand, and consumer support remain strong.",
+                "sourceIds": [
+                  "paypal-2025-10k",
+                  "fedimint-how-it-works"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "paypal-2025-10k",
+      "title": "PayPal Holdings, Inc. FY 2025 Form 10-K",
+      "url": "https://www.sec.gov/Archives/edgar/data/0001633917/000163391726000024/pypl-20251231.htm",
+      "kind": "regulatory-filing",
+      "publisher": "U.S. Securities and Exchange Commission",
+      "note": "Primary filing for PayPal's business description, brands, total payment volume, payment transactions, revenue, and net income.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "paypal-braintree",
+      "title": "Braintree Enterprise Payment Solution",
+      "url": "https://www.paypal.com/us/braintree",
+      "kind": "product-page",
+      "publisher": "PayPal",
+      "note": "Official product page describing Braintree payment acceptance across PayPal, Venmo, cards, wallets, and local payment methods.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "paypal-platforms",
+      "title": "PayPal for Platforms and Marketplaces",
+      "url": "https://www.paypal.com/us/business/platforms-and-marketplaces",
+      "kind": "product-page",
+      "publisher": "PayPal",
+      "note": "Official PayPal product page for marketplace and platform payment capabilities.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "companiesmarketcap-paypal",
+      "title": "PayPal (PYPL) Market Capitalization",
+      "url": "https://companiesmarketcap.com/paypal/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-cap source used by the manifest and company metric snapshot.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "stockanalysis-pypl",
+      "title": "PayPal Holdings (PYPL) Stock Price and Statistics",
+      "url": "https://stockanalysis.com/stocks/pypl/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Supplemental market data source for trailing P/E ratio, market cap, share price, and company profile.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "btcpay-docs",
+      "title": "BTCPay Server Documentation",
+      "url": "https://docs.btcpayserver.org/Guide/",
+      "kind": "technical-docs",
+      "publisher": "BTCPay Server",
+      "note": "Documentation for the free, open-source, self-hosted Bitcoin payment gateway alternative.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "btcpay-github",
+      "title": "BTCPay Server GitHub Repository",
+      "url": "https://github.com/btcpayserver/btcpayserver",
+      "kind": "open-source-project",
+      "publisher": "BTCPay Server",
+      "note": "Public source repository for BTCPay Server.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "gnu-taler-docs",
+      "title": "GNU Taler Documentation",
+      "url": "https://docs.taler.net/",
+      "kind": "technical-docs",
+      "publisher": "GNU Taler",
+      "note": "Documentation for GNU Taler's open payment system, merchant backend, exchange, wallet, auditor, and banking integration components.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "gnu-taler-home",
+      "title": "GNU Taler Home",
+      "url": "https://www.taler.net/",
+      "kind": "open-source-project",
+      "publisher": "GNU Taler",
+      "note": "Project source for GNU Taler's privacy-friendly online payment positioning and wallet resources.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "fedimint-home",
+      "title": "Fedimint",
+      "url": "https://fedimint.org/",
+      "kind": "open-source-project",
+      "publisher": "Fedimint",
+      "note": "Project source for Fedimint's open-source federated ecash positioning.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "fedimint-how-it-works",
+      "title": "How Fedimint Works",
+      "url": "https://fedimint.org/users/how-it-works",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Explains Fedimint user flows, ecash transfers, Lightning interoperability, and what federation guardians can and cannot see.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "fedimint-guardians",
+      "title": "How Federations Work",
+      "url": "https://fedimint.org/guardians/how-federations-work",
+      "kind": "technical-docs",
+      "publisher": "Fedimint",
+      "note": "Explains threshold multisig custody, guardian operation, ecash modules, wallet modules, and Lightning gateways.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "cashu-docs",
+      "title": "Cashu Documentation",
+      "url": "https://docs.cashu.space/",
+      "kind": "technical-docs",
+      "publisher": "Cashu",
+      "note": "Documentation for Cashu as a free and open-source Chaumian ecash protocol for Bitcoin.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "cashu-protocol",
+      "title": "The Cashu Protocol",
+      "url": "https://docs.cashu.space/protocol",
+      "kind": "technical-docs",
+      "publisher": "Cashu",
+      "note": "Protocol documentation for Cashu's open specifications and blind-signature verification model.",
+      "accessedOn": "2026-06-03"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new PayPal registry bundle with PayPal Checkout/Braintree and Venmo as the main products, using BTCPay Server, GNU Taler, Fedimint, and Cashu as aligned open or decentralized alternatives. The refresh sets IPO metadata to null because the prompt requires both IPO date and IPO market-cap support, and those were not both established from the selected sources."
+}

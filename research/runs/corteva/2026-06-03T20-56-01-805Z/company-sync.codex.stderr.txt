@@ -1,0 +1,1544 @@
+2026-06-03T20:56:05.029088Z  WARN sqlx::query: slow statement: execution time exceeded alert threshold summary="PRAGMA auto_vacuum = INCREMENTAL; …" db.statement="\n\nPRAGMA auto_vacuum = INCREMENTAL; PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON; PRAGMA synchronous = NORMAL; \n" rows_affected=0 rows_returned=1 elapsed=2.815467791s elapsed_secs=2.815467791 slow_threshold=1s
+2026-06-03T20:56:05.029434Z  WARN sqlx::pool::acquire: acquired connection, but time to acquire exceeded slow threshold acquired_after_secs=2.81656425 slow_acquire_threshold_secs=2.0
+2026-06-03T20:56:06.100413Z  WARN sqlx::query: slow statement: execution time exceeded alert threshold summary="DELETE FROM logs WHERE …" db.statement="\n\nDELETE FROM logs WHERE ts < ?\n" rows_affected=0 rows_returned=0 elapsed=1.04177425s elapsed_secs=1.04177425 slow_threshold=1s
+2026-06-03T20:56:07.571830Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/peterryszkiewicz/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+OpenAI Codex v0.135.0
+--------
+workdir: /Users/peterryszkiewicz/Repos/free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 019e8f45-a7eb-7130-8d9f-2909666d3830
+--------
+user
+You are preparing a publishable JSON refresh for the Free The World registry.
+
+Company slug: corteva
+
+Manifest:
+```json
+{
+  "schemaVersion": 1,
+  "slug": "corteva",
+  "name": "Corteva",
+  "ticker": "CTVA",
+  "regionId": "us",
+  "indexIds": [
+    "sp500-top250"
+  ],
+  "sectorId": "materials",
+  "industryId": "agricultural-inputs",
+  "companiesMarketCapUrl": "https://companiesmarketcap.com/corteva/marketcap/",
+  "description": "Corteva is a U.S. agricultural inputs company focused on seeds, crop protection, and digital agriculture products.",
+  "technologyWaveIds": [],
+  "seedProductNames": [
+    "Pioneer Seeds",
+    "Enlist"
+  ],
+  "seedSourceUrls": [
+    "https://investors.corteva.com/",
+    "https://www.corteva.com/products-and-solutions.html",
+    "https://companiesmarketcap.com/corteva/marketcap/"
+  ],
+  "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250."
+}
+```
+
+Current bundle (may be null for new companies):
+```json
+null
+```
+
+Current referenced sources:
+```json
+[]
+```
+
+Available taxonomy:
+```json
+{
+  "regions": [
+    {
+      "id": "us",
+      "label": "United States"
+    }
+  ],
+  "indices": [
+    {
+      "id": "sp500-top10",
+      "label": "S&P 500 · Top 10 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the ten largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top20",
+      "label": "S&P 500 · Top 20 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top25",
+      "label": "S&P 500 · Top 25 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top35",
+      "label": "S&P 500 · Top 35 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 26-35 in an expansion toward the thirty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top50",
+      "label": "S&P 500 · Top 50 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of the fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top75",
+      "label": "S&P 500 · Top 75 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 51-75 in an expansion toward the seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top100",
+      "label": "S&P 500 · Top 100 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 76-100 in an expansion toward the one hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top125",
+      "label": "S&P 500 · Top 125 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 101-125 in an expansion toward the one hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top150",
+      "label": "S&P 500 · Top 150 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 126-150 in an expansion toward the one hundred fifty largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top175",
+      "label": "S&P 500 · Top 175 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 151-175 in an expansion toward the one hundred seventy-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top200",
+      "label": "S&P 500 · Top 200 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 176-200 in an expansion toward the two hundred largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top225",
+      "label": "S&P 500 · Top 225 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 201-225 in an expansion toward the two hundred twenty-five largest S&P 500 constituents by market capitalization."
+    },
+    {
+      "id": "sp500-top250",
+      "label": "S&P 500 · Top 250 by market cap",
+      "regionId": "us",
+      "description": "A curated snapshot of ranks 226-250 in an expansion toward the two hundred fifty largest S&P 500 constituents by market capitalization."
+    }
+  ],
+  "sectors": [
+    {
+      "id": "information-technology",
+      "label": "Information Technology"
+    },
+    {
+      "id": "communication-services",
+      "label": "Communication Services"
+    },
+    {
+      "id": "consumer-discretionary",
+      "label": "Consumer Discretionary"
+    },
+    {
+      "id": "financials",
+      "label": "Financials"
+    },
+    {
+      "id": "consumer-staples",
+      "label": "Consumer Staples"
+    },
+    {
+      "id": "health-care",
+      "label": "Health Care"
+    },
+    {
+      "id": "energy",
+      "label": "Energy"
+    },
+    {
+      "id": "industrials",
+      "label": "Industrials"
+    },
+    {
+      "id": "materials",
+      "label": "Materials"
+    },
+    {
+      "id": "utilities",
+      "label": "Utilities"
+    },
+    {
+      "id": "real-estate",
+      "label": "Real Estate"
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "sectorId": "information-technology",
+      "label": "Semiconductors"
+    },
+    {
+      "id": "technology-hardware",
+      "sectorId": "information-technology",
+      "label": "Technology Hardware, Storage & Peripherals"
+    },
+    {
+      "id": "software-cloud",
+      "sectorId": "information-technology",
+      "label": "Software & Cloud Platforms"
+    },
+    {
+      "id": "interactive-media-services",
+      "sectorId": "communication-services",
+      "label": "Interactive Media & Services"
+    },
+    {
+      "id": "broadline-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Broadline Retail"
+    },
+    {
+      "id": "automobile-manufacturers",
+      "sectorId": "consumer-discretionary",
+      "label": "Automobile Manufacturers"
+    },
+    {
+      "id": "home-improvement-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Home Improvement Retail"
+    },
+    {
+      "id": "residential-construction",
+      "sectorId": "consumer-discretionary",
+      "label": "Residential Construction"
+    },
+    {
+      "id": "multi-sector-holdings",
+      "sectorId": "financials",
+      "label": "Multi-Sector Holdings"
+    },
+    {
+      "id": "consumer-staples-retail",
+      "sectorId": "consumer-staples",
+      "label": "Consumer Staples Distribution & Retail"
+    },
+    {
+      "id": "diversified-banks",
+      "sectorId": "financials",
+      "label": "Diversified Banks"
+    },
+    {
+      "id": "capital-markets",
+      "sectorId": "financials",
+      "label": "Capital Markets"
+    },
+    {
+      "id": "pharmaceuticals",
+      "sectorId": "health-care",
+      "label": "Pharmaceuticals"
+    },
+    {
+      "id": "managed-health-care",
+      "sectorId": "health-care",
+      "label": "Managed Health Care"
+    },
+    {
+      "id": "payment-networks",
+      "sectorId": "financials",
+      "label": "Payment Networks"
+    },
+    {
+      "id": "warehouse-clubs",
+      "sectorId": "consumer-staples",
+      "label": "Warehouse Clubs"
+    },
+    {
+      "id": "household-products",
+      "sectorId": "consumer-staples",
+      "label": "Household Products"
+    },
+    {
+      "id": "integrated-oil-gas",
+      "sectorId": "energy",
+      "label": "Integrated Oil & Gas"
+    },
+    {
+      "id": "oil-gas-refining-marketing",
+      "sectorId": "energy",
+      "label": "Oil & Gas Refining & Marketing"
+    },
+    {
+      "id": "streaming-video",
+      "sectorId": "communication-services",
+      "label": "Streaming Video"
+    },
+    {
+      "id": "pharma-medtech",
+      "sectorId": "health-care",
+      "label": "Pharma & MedTech"
+    },
+    {
+      "id": "nonalcoholic-beverages",
+      "sectorId": "consumer-staples",
+      "label": "Non-Alcoholic Beverages"
+    },
+    {
+      "id": "construction-machinery",
+      "sectorId": "industrials",
+      "label": "Construction & Farm Machinery"
+    },
+    {
+      "id": "aerospace-defense",
+      "sectorId": "industrials",
+      "label": "Aerospace & Defense"
+    },
+    {
+      "id": "electrical-equipment",
+      "sectorId": "industrials",
+      "label": "Electrical Equipment & Grid Technology"
+    },
+    {
+      "id": "communications-equipment",
+      "sectorId": "information-technology",
+      "label": "Communications Equipment"
+    },
+    {
+      "id": "wireless-telecom",
+      "sectorId": "communication-services",
+      "label": "Wireless Telecommunications"
+    },
+    {
+      "id": "tobacco",
+      "sectorId": "consumer-staples",
+      "label": "Tobacco"
+    },
+    {
+      "id": "semiconductor-equipment",
+      "sectorId": "information-technology",
+      "label": "Semiconductor Equipment"
+    },
+    {
+      "id": "industrial-gases",
+      "sectorId": "materials",
+      "label": "Industrial Gases"
+    },
+    {
+      "id": "restaurants",
+      "sectorId": "consumer-discretionary",
+      "label": "Restaurants"
+    },
+    {
+      "id": "electric-utilities",
+      "sectorId": "utilities",
+      "label": "Electric Utilities"
+    },
+    {
+      "id": "entertainment",
+      "sectorId": "communication-services",
+      "label": "Entertainment"
+    },
+    {
+      "id": "apparel-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Apparel Retail"
+    },
+    {
+      "id": "life-sciences-tools-services",
+      "sectorId": "health-care",
+      "label": "Life Sciences Tools & Services"
+    },
+    {
+      "id": "electronic-components",
+      "sectorId": "information-technology",
+      "label": "Electronic Components"
+    },
+    {
+      "id": "rail-transportation",
+      "sectorId": "industrials",
+      "label": "Rail Transportation"
+    },
+    {
+      "id": "passenger-ground-transportation",
+      "sectorId": "industrials",
+      "label": "Passenger Ground Transportation & Mobility Platforms"
+    },
+    {
+      "id": "local-commerce-delivery-platforms",
+      "sectorId": "consumer-discretionary",
+      "label": "Local Commerce & Delivery Platforms"
+    },
+    {
+      "id": "health-care-reits",
+      "sectorId": "real-estate",
+      "label": "Health Care REITs"
+    },
+    {
+      "id": "industrial-conglomerates",
+      "sectorId": "industrials",
+      "label": "Industrial Conglomerates"
+    },
+    {
+      "id": "oil-gas-exploration-production",
+      "sectorId": "energy",
+      "label": "Oil & Gas Exploration & Production"
+    },
+    {
+      "id": "industrial-reits",
+      "sectorId": "real-estate",
+      "label": "Industrial REITs"
+    },
+    {
+      "id": "travel-services",
+      "sectorId": "consumer-discretionary",
+      "label": "Travel Services"
+    },
+    {
+      "id": "cruise-lines",
+      "sectorId": "consumer-discretionary",
+      "label": "Cruise Lines"
+    },
+    {
+      "id": "property-casualty-insurance",
+      "sectorId": "financials",
+      "label": "Property & Casualty Insurance"
+    },
+    {
+      "id": "gold-mining",
+      "sectorId": "materials",
+      "label": "Gold Mining"
+    },
+    {
+      "id": "it-consulting-services",
+      "sectorId": "information-technology",
+      "label": "IT Consulting & Services"
+    },
+    {
+      "id": "industrial-machinery",
+      "sectorId": "industrials",
+      "label": "Industrial Machinery"
+    },
+    {
+      "id": "construction-engineering",
+      "sectorId": "industrials",
+      "label": "Construction & Engineering"
+    },
+    {
+      "id": "commercial-services-supplies",
+      "sectorId": "industrials",
+      "label": "Commercial Services & Supplies"
+    },
+    {
+      "id": "financial-exchanges-data",
+      "sectorId": "financials",
+      "label": "Financial Exchanges & Data"
+    },
+    {
+      "id": "consumer-finance",
+      "sectorId": "financials",
+      "label": "Consumer Finance"
+    },
+    {
+      "id": "health-care-distributors",
+      "sectorId": "health-care",
+      "label": "Health Care Distributors"
+    },
+    {
+      "id": "health-care-facilities",
+      "sectorId": "health-care",
+      "label": "Health Care Facilities"
+    },
+    {
+      "id": "cable-broadband-telecom",
+      "sectorId": "communication-services",
+      "label": "Cable, Broadband & Telecommunications"
+    },
+    {
+      "id": "oil-gas-midstream",
+      "sectorId": "energy",
+      "label": "Oil & Gas Midstream"
+    },
+    {
+      "id": "data-center-reits",
+      "sectorId": "real-estate",
+      "label": "Data Center REITs"
+    },
+    {
+      "id": "hotels-resorts-lodging",
+      "sectorId": "consumer-discretionary",
+      "label": "Hotels, Resorts & Lodging"
+    },
+    {
+      "id": "insurance-brokers",
+      "sectorId": "financials",
+      "label": "Insurance Brokers"
+    },
+    {
+      "id": "air-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Air Freight & Logistics"
+    },
+    {
+      "id": "road-freight-logistics",
+      "sectorId": "industrials",
+      "label": "Road Freight & Trucking"
+    },
+    {
+      "id": "biotechnology",
+      "sectorId": "health-care",
+      "label": "Biotechnology"
+    },
+    {
+      "id": "copper-diversified-metals",
+      "sectorId": "materials",
+      "label": "Copper & Diversified Metals"
+    },
+    {
+      "id": "agricultural-inputs",
+      "sectorId": "materials",
+      "label": "Agricultural Inputs & Crop Protection"
+    },
+    {
+      "id": "construction-materials",
+      "sectorId": "materials",
+      "label": "Construction Materials & Aggregates"
+    },
+    {
+      "id": "waste-management-services",
+      "sectorId": "industrials",
+      "label": "Waste Management & Environmental Services"
+    },
+    {
+      "id": "building-products-controls",
+      "sectorId": "industrials",
+      "label": "Building Products, Controls & Automation"
+    },
+    {
+      "id": "oil-gas-equipment-services",
+      "sectorId": "energy",
+      "label": "Oil & Gas Equipment & Services"
+    },
+    {
+      "id": "telecom-tower-reits",
+      "sectorId": "real-estate",
+      "label": "Telecom Tower REITs"
+    },
+    {
+      "id": "real-estate-services",
+      "sectorId": "real-estate",
+      "label": "Real Estate Services & Brokerage"
+    },
+    {
+      "id": "packaged-foods",
+      "sectorId": "consumer-staples",
+      "label": "Packaged Foods"
+    },
+    {
+      "id": "specialty-chemicals-coatings",
+      "sectorId": "materials",
+      "label": "Specialty Chemicals & Coatings"
+    },
+    {
+      "id": "automotive-parts-retail",
+      "sectorId": "consumer-discretionary",
+      "label": "Automotive Parts Retail"
+    },
+    {
+      "id": "commercial-vehicle-manufacturers",
+      "sectorId": "industrials",
+      "label": "Commercial Vehicle Manufacturers"
+    },
+    {
+      "id": "life-insurance",
+      "sectorId": "financials",
+      "label": "Life & Health Insurance"
+    },
+    {
+      "id": "steel",
+      "sectorId": "materials",
+      "label": "Steel"
+    },
+    {
+      "id": "retail-reits",
+      "sectorId": "real-estate",
+      "label": "Retail REITs"
+    },
+    {
+      "id": "passenger-airlines",
+      "sectorId": "industrials",
+      "label": "Passenger Airlines"
+    },
+    {
+      "id": "self-storage-reits",
+      "sectorId": "real-estate",
+      "label": "Self-Storage REITs"
+    }
+  ],
+  "technologyWaves": [
+    {
+      "id": "additive-manufacturing",
+      "label": "Additive manufacturing",
+      "summary": "3D plastic and metal printing keep collapsing the minimum viable factory into something much smaller, cheaper, and more local.",
+      "implications": [
+        "Hardware moats tied to long-tail spare parts and custom enclosures should weaken over time.",
+        "Localized production improves resilience for niche components and repair ecosystems.",
+        "Software plus design-file control can become as important as physical inventory control."
+      ]
+    },
+    {
+      "id": "printed-electronics",
+      "label": "Printed electronics and PCB tooling",
+      "summary": "PCB fabrication, chip packaging, and increasingly automated electronics assembly continue shrinking the distance between prototype and local production.",
+      "implications": [
+        "Incumbents with hardware lock-in should be evaluated against a future of much cheaper custom electronics.",
+        "Pick-and-place automation lowers the coordination cost for distributed manufacturing cells.",
+        "The most durable hardware moats may migrate toward fabs, ecosystems, and compliance rather than assembly itself."
+      ]
+    },
+    {
+      "id": "microfactories",
+      "label": "Microfactories and automated mini-home production",
+      "summary": "Small, software-defined manufacturing cells could make localized production less eccentric and more default.",
+      "implications": [
+        "Products with heavy branding but generic bill-of-materials profiles look increasingly vulnerable.",
+        "Logistics moats still matter, but their margin for arrogance should narrow.",
+        "Open-source production recipes can pressure both price and product differentiation."
+      ]
+    },
+    {
+      "id": "distributed-energy",
+      "label": "Printable solar, localized wind, and home energy stacks",
+      "summary": "Cheaper distributed generation and better local energy management create more openings for community-scale infrastructure and self-custodied resilience.",
+      "implications": [
+        "Energy-related products should be viewed through interoperability and open-control surfaces.",
+        "Battery, charging, and home automation layers are increasingly separable from single-vendor stacks.",
+        "Incumbents that depend on closed energy ecosystems may look less inevitable over time."
+      ]
+    },
+    {
+      "id": "bitcoin-native-coordination",
+      "label": "Bitcoin and Lightning as coordination rails",
+      "summary": "Proof-of-work economics, programmable payment flows, and anti-spam pricing make more digital systems capable of rewarding signal while resisting abuse.",
+      "implications": [
+        "Platforms that monetize gatekeeping could face pressure from protocol-native payment and reputation layers.",
+        "Micropayments can replace some ad-funded or subscription-heavy distribution models.",
+        "Open systems with credible anti-spam economics deserve a higher decentralizability score than legacy software assumptions suggest."
+      ]
+    }
+  ],
+  "conceptAngles": [
+    {
+      "id": "bitcoin",
+      "label": "Bitcoin",
+      "summary": "Uses Bitcoin as a base layer for ownership, settlement, or economic alignment."
+    },
+    {
+      "id": "lightning",
+      "label": "Lightning",
+      "summary": "Uses Lightning for low-fee, open, instant payments or machine-to-machine settlement."
+    },
+    {
+      "id": "proof-of-work",
+      "label": "Proof of Work",
+      "summary": "Uses proof-of-work primitives or incentives as part of verification or market design."
+    },
+    {
+      "id": "decentralized-coordination",
+      "label": "Decentralized Coordination",
+      "summary": "Shifts control from a single operator toward open, multi-party coordination."
+    },
+    {
+      "id": "peer-to-peer-marketplace",
+      "label": "Peer-to-Peer Marketplace",
+      "summary": "Lets participants buy, sell, or match directly without a dominant centralized intermediary."
+    },
+    {
+      "id": "federation",
+      "label": "Federation",
+      "summary": "Uses interoperable servers or communities rather than a single global silo."
+    },
+    {
+      "id": "decentralized-manufacturing",
+      "label": "Decentralized Manufacturing",
+      "summary": "Pushes production toward distributed local operators instead of centralized factories."
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing",
+      "summary": "Relies on additive manufacturing to lower capital barriers for hardware replication."
+    },
+    {
+      "id": "open-hardware",
+      "label": "Open Hardware",
+      "summary": "Uses openly shared hardware designs, BOMs, or fabrication knowledge."
+    },
+    {
+      "id": "cooperative-production",
+      "label": "Cooperative Production",
+      "summary": "Aligns producers or operators through shared ownership and cooperative governance."
+    },
+    {
+      "id": "distributed-energy-generation",
+      "label": "Distributed Energy Generation",
+      "summary": "Moves generation capacity toward households, neighborhoods, or smaller local operators instead of large centralized plants."
+    },
+    {
+      "id": "solar-manufacturing",
+      "label": "Solar Manufacturing",
+      "summary": "Uses open or distributed solar hardware design, assembly, or printable photovoltaic manufacturing to lower energy hardware barriers."
+    },
+    {
+      "id": "wind-manufacturing",
+      "label": "Wind Manufacturing",
+      "summary": "Uses open or distributed wind hardware design, local fabrication, or service networks to decentralize small-scale wind deployment."
+    },
+    {
+      "id": "home-microfactory",
+      "label": "Home Microfactory",
+      "summary": "Relies on compact local fabrication cells so households or small workshops can assemble, repair, or customize hardware."
+    },
+    {
+      "id": "local-materials-processing",
+      "label": "Local Materials Processing",
+      "summary": "Pushes material preparation, part finishing, or component recovery closer to end users instead of distant industrial centers."
+    },
+    {
+      "id": "open-energy-hardware",
+      "label": "Open Energy Hardware",
+      "summary": "Uses openly shared power, storage, metering, or control hardware as part of the competitive mechanism."
+    },
+    {
+      "id": "microgrid-coordination",
+      "label": "Microgrid Coordination",
+      "summary": "Coordinates generation, storage, loads, or dispatch across many smaller grid participants instead of a single utility operator."
+    },
+    {
+      "id": "recycling-and-reuse",
+      "label": "Recycling And Reuse",
+      "summary": "Competes by recovering, refurbishing, or reusing components and materials in open local loops."
+    }
+  ]
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+Return a JSON object matching this schema exactly:
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "company slug",
+      "name": "company name",
+      "ticker": "ticker",
+      "rankApprox": 0,
+      "maybeIpo": {
+        "date": "YYYY-MM-DD",
+        "dateSourceIds": ["source-id"],
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      },
+      "regionId": "taxonomy id",
+      "indexIds": ["taxonomy id"],
+      "sectorId": "taxonomy id",
+      "industryId": "taxonomy id",
+      "companiesMarketCapUrl": "https://example.com",
+      "description": "one-sentence company description",
+      "overview": [
+        {
+          "title": "section title",
+          "paragraphs": ["paragraph one", "paragraph two"]
+        }
+      ],
+      "moatNarrative": ["paragraph one", "paragraph two"],
+      "decentralizationNarrative": ["paragraph one", "paragraph two"],
+      "sourceIds": ["source-id"],
+      "technologyWaveIds": ["taxonomy id"],
+      "snapshotNote": "snapshot note",
+      "inputMetrics": {
+        "moat": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "decentralizability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "profitability": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "high",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "peRatio": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "speculative",
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "marketCap": {
+          "value": 0,
+          "rationale": "why",
+          "sourceIds": ["source-id"],
+          "confidence": "medium",
+          "lastReviewedOn": "YYYY-MM-DD"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "product slug",
+        "name": "product name",
+        "category": "category",
+        "homepageUrl": "https://example.com",
+        "summary": "summary",
+        "whyItMatters": "why it matters",
+        "replacementSketch": ["paragraph one", "paragraph two"],
+        "maybeDisruptionException": {
+          "reason": "documented reason why even one credible concept is not justified yet",
+          "sourceIds": ["source-id"],
+          "lastReviewedOn": "YYYY-MM-DD"
+        },
+        "sourceIds": ["source-id"],
+        "technologyWaveIds": ["taxonomy id"],
+        "alternatives": [
+          {
+            "slug": "alternative slug",
+            "name": "alternative name",
+            "kind": "open-source",
+            "homepageUrl": "https://example.com",
+            "repoUrl": "https://example.com/repo",
+            "summary": "summary",
+            "metrics": {
+              "openness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "readiness": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "costLeverage": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            },
+            "sourceIds": ["source-id"]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "concept slug",
+            "name": "concept name",
+            "summary": "one-paragraph summary",
+            "angleIds": ["taxonomy id"],
+            "thesis": "what this concept changes about the market structure",
+            "bitcoinOrDecentralizationRole": "how bitcoin, lightning, proof-of-work, federation, or decentralized manufacturing actually matters here",
+            "coordinationMechanism": "how buyers, sellers, operators, verifiers, or manufacturers coordinate",
+            "verificationOrTrustModel": "how the system resists cheating, collusion, or false reporting",
+            "failureModes": ["risk one", "risk two"],
+            "adoptionPath": ["step one", "step two"],
+            "confidence": "medium",
+            "problemSourceIds": ["source-id"],
+            "enablerSourceIds": ["source-id"],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "high",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "coordinationCredibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "implementationFeasibility": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              },
+              "incumbentPressure": {
+                "value": 0,
+                "rationale": "why",
+                "sourceIds": ["source-id"],
+                "confidence": "medium",
+                "lastReviewedOn": "YYYY-MM-DD"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "source-id",
+      "title": "source title",
+      "url": "https://example.com",
+      "kind": "investor-relations",
+      "publisher": "publisher name",
+      "note": "why this source matters",
+      "accessedOn": "YYYY-MM-DD"
+    }
+  ],
+  "summaryMarkdown": "optional short markdown summary"
+}
+
+Rules:
+- Use only taxonomy IDs from the provided taxonomy JSON.
+- Use source IDs consistently across the bundle and the sources array.
+- `company.maybeIpo` must be either `null` or an object with `date`, `dateSourceIds`, and `marketCap`. Never return a bare string date such as `"1980-12-12"`.
+- If you cannot support both the IPO date and the IPO market cap with sources, set `company.maybeIpo` to `null`.
+- Source `kind` must be one of `investor-relations`, `annual-report`, `product-page`, `market-data`, `regulatory-filing`, `open-source-project`, `technical-docs`, or `analysis`.
+- Do not invent source kind aliases such as `sec-filing` or `company-website`.
+- Do not include derived company metrics such as freedCapitalPotential or IPO CAGR.
+- Do not include product `companySlug`, product `alternativeSlugs`, or alternative `productSlug`; those are derived by the compiler.
+- Alternative `kind` must be one of `open-source`, `decentralized`, `cooperative`, `protocol`, or `hybrid`.
+- Alternatives should be plausible free, open, decentralized, cooperative, protocol, or hybrid replacements. Do not pad with generic proprietary incumbents or direct commercial peers that are not meaningfully aligned with that taxonomy.
+- It is better to return fewer strong alternatives than to include invalid `commercial` competitors.
+- Preserve strong existing alternatives unless you have a clear reason to improve or remove them.
+- Every product must include `1` or `2` disruption concepts unless a documented `maybeDisruptionException` is genuinely justified.
+- When the current bundle already has one strong disruption concept, preserve it by default and add a second concept only if the second mechanism is materially different from the first.
+- Use `maybeDisruptionException` only for rare, defensible cases where even one credible concept would currently be dishonest.
+- `maybeDisruptionException` and `disruptionConcepts` are mutually exclusive for a product.
+- Every disruption concept must use at least one `angleId`, at least one `problemSourceId`, at least one `enablerSourceId`, and all four concept metrics.
+- Prefer Bitcoin, Lightning, or proof-of-work angles when they are genuinely central to the mechanism. When they are not central, justify federated, peer-to-peer, cooperative, open-hardware, or decentralized-manufacturing angles explicitly instead of forcing Bitcoin in unnaturally.
+- For physical-world products, prefer materially different second concepts such as distributed energy generation, solar or wind manufacturing, home microfactories, local materials processing, recycling loops, or open energy hardware when the sources support them.
+- Ambitious concepts such as printable solar, printable wind components, or household fabrication cells are allowed when the confidence is honestly marked `speculative`, the enabling primitives are documented, and the failure modes state what still has to go right.
+- When the concept depends on verification, incentives, or marketplaces, explain how cheating, collusion, spoofing, or fake fulfillment would be constrained in `verificationOrTrustModel` and note major weaknesses in `failureModes`.
+- Keep `replacementSketch` narrative and lightweight. Put the structured original concept analysis in `disruptionConcepts`, not in `replacementSketch`.
+- Omit optional fields such as `repoUrl` when they do not apply. Do not emit `null` for optional strings.
+- Prefer preserving strong current fields when the existing bundle already has solid information and only update what is materially improved.
+- Return valid JSON and nothing else.
+
+2026-06-03T20:56:09.309107Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/peterryszkiewicz/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-06-03T20:56:09.318043Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.318050Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.318341Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.318346Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.318627Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.318631Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.318924Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.318928Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.319212Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.319218Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.319857Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:09.319861Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.293167Z  WARN codex_core_plugins::manifest: ignoring interface.defaultPrompt[0]: prompt must be at most 128 characters path=/Users/peterryszkiewicz/.codex/.tmp/plugins/plugins/ngs-analysis/.codex-plugin/plugin.json
+2026-06-03T20:56:10.308454Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.308472Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.308883Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.308893Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.309442Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.309450Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.310059Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.310065Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.310674Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.310683Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.311733Z  WARN codex_core_skills::loader: ignoring interface.icon_small: icon path with '..' must resolve under plugin assets/
+2026-06-03T20:56:10.311740Z  WARN codex_core_skills::loader: ignoring interface.icon_large: icon path with '..' must resolve under plugin assets/
+web search:
+web search: Corteva 2024 annual report net sales seed crop protection digital agriculture 2024
+web search:
+web search: Open Source Seed Initiative official open source seed varieties
+codex
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "corteva",
+      "name": "Corteva",
+      "ticker": "CTVA",
+      "rankApprox": 226,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top250"
+      ],
+      "sectorId": "materials",
+      "industryId": "agricultural-inputs",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/corteva/marketcap/",
+      "description": "Corteva is a U.S. agricultural inputs company focused on seeds, crop protection, and digital agriculture products.",
+      "overview": [
+        {
+          "title": "Business profile",
+          "paragraphs": [
+            "Corteva operates through Seed and Crop Protection segments, selling germplasm, traits, herbicides, insecticides, fungicides, biologicals, and related agronomic tools to farmers and channel partners.",
+            "Its 2024 annual report showed $16.9 billion of net sales, with Seed contributing $9.5 billion and Crop Protection contributing $7.4 billion."
+          ]
+        },
+        {
+          "title": "Strategic position",
+          "paragraphs": [
+            "The company benefits from proprietary genetics, patented crop traits, regulatory approvals, brand trust, and a distribution network that links research pipelines to farm-level adoption.",
+            "Those same strengths create decentralization tension: farmers often depend on licensed genetics, approved chemistry systems, and vendor-controlled digital agronomy stacks rather than open seed, open data, and locally governed crop-management systems."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Corteva's moat is strongest where seed genetics, trait stacks, agronomic support, and crop protection products reinforce one another. Pioneer seed brands and Enlist herbicide-tolerant systems create switching costs because farmers make planting, chemistry, and weed-control decisions together.",
+        "The moat is not absolute. Agricultural commodities are cyclical, regulatory pressure can reshape chemistry portfolios, and public breeding, open seed pledges, and farmer-controlled data infrastructure can chip away at the dependency layer around proprietary inputs."
+      ],
+      "decentralizationNarrative": [
+        "Corteva's core products are physical and science-heavy, so full decentralization is harder than in software. Replicating elite hybrid corn genetics, regulated herbicides, and multinational field-trial networks requires capital, expertise, compliance, and time.",
+        "The most credible decentralization pressure is partial: open-source seed pledges, cooperative breeding networks, farmer-owned data systems, and interoperable farm-management software can reduce lock-in around variety development, field records, and agronomic recommendations."
+      ],
+      "sourceIds": [
+        "corteva-2024-annual-report",
+        "corteva-seeds-traits",
+        "corteva-products-solutions",
+        "stockanalysis-ctva-statistics"
+      ],
+      "technologyWaveIds": [],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Proprietary genetics, trait systems, crop-protection registrations, brand trust, and farmer/channel relationships create meaningful switching costs, though commodity cycles and regulation constrain pricing power.",
+          "sourceIds": [
+            "corteva-2024-annual-report",
+            "corteva-seeds-traits",
+            "corteva-products-solutions"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "decentralizability": {
+          "value": 3,
+          "rationale": "Open seed and open farm-data systems can decentralize parts of the stack, but regulated chemistry, elite breeding pipelines, and large-scale field validation remain difficult to reproduce locally.",
+          "sourceIds": [
+            "corteva-2024-annual-report",
+            "ossi-varieties",
+            "farmos-home",
+            "openteam-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "profitability": {
+          "value": 4,
+          "rationale": "Corteva reported positive 2024 net income attributable to Corteva of $907 million on $16.9 billion of net sales, but margins were modest relative to the scale and capital intensity of the business.",
+          "sourceIds": [
+            "corteva-2024-annual-report"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "peRatio": {
+          "value": 43,
+          "rationale": "Recent market-data snapshots placed Corteva's trailing P/E around the low-40s, making this a point-in-time valuation input rather than a durable business-quality measure.",
+          "sourceIds": [
+            "stockanalysis-ctva-statistics"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-03"
+        },
+        "marketCap": {
+          "value": 52900000000,
+          "rationale": "StockAnalysis reported Corteva's market capitalization at approximately $52.9 billion in a recent 2026 market-data snapshot.",
+          "sourceIds": [
+            "stockanalysis-ctva-statistics"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-03"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "pioneer-seeds",
+        "name": "Pioneer Seeds",
+        "category": "Seeds and traits",
+        "homepageUrl": "https://www.corteva.com/us/products-and-solutions/seeds-and-traits.html",
+        "summary": "Pioneer is Corteva's flagship seed brand, covering advanced plant genetics and seed products sold to farmers across major crop markets.",
+        "whyItMatters": "Seeds sit at the root of farm economics: genetics, trait licensing, disease resistance, yield potential, and chemical compatibility influence what farmers can plant and how dependent they become on proprietary input systems.",
+        "replacementSketch": [
+          "A credible replacement path is not a single clone of Pioneer. It is a network of open and cooperative breeding programs that keep germplasm, trial results, and seed rights accessible to farmers and regional breeders.",
+          "The near-term wedge is specialty, regional, and resilient varieties where open-source seed pledges and public breeding can compete before attempting to match the full scale of commercial corn and soybean trait stacks."
+        ],
+        "sourceIds": [
+          "corteva-seeds-traits",
+          "corteva-2024-annual-report"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "open-source-seed-initiative",
+            "name": "Open Source Seed Initiative",
+            "kind": "open-source",
+            "homepageUrl": "https://osseeds.org/",
+            "summary": "OSSI maintains an open-source seed pledge and catalog of pledged varieties intended to keep seed usable for saving, sharing, breeding, and sale without downstream restrictions.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The OSSI model is explicitly organized around preserving open rights to use, save, share, breed, and sell pledged seed varieties.",
+                "sourceIds": [
+                  "ossi-varieties",
+                  "ossi-designation-agreement"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The pledge model supports distributed breeders, growers, and seed sellers rather than a single proprietary owner of the germplasm pathway.",
+                "sourceIds": [
+                  "ossi-varieties",
+                  "ossi-designation-agreement"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "readiness": {
+                "value": 4,
+                "rationale": "OSSI has real pledged varieties, but it does not match Corteva's global scale, elite hybrid trait stacks, or commercial support network.",
+                "sourceIds": [
+                  "ossi-varieties",
+                  "corteva-seeds-traits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open seed rights can lower licensing friction and enable local adaptation, though breeding, multiplication, testing, and distribution still carry real costs.",
+                "sourceIds": [
+                  "ossi-designation-agreement"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            },
+            "sourceIds": [
+              "ossi-varieties",
+              "ossi-designation-agreement"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-open-seed-breeding-network",
+            "name": "Cooperative open seed breeding network",
+            "summary": "Regional farmer-breeder cooperatives use open-source seed pledges, shared field-trial data, and public agronomy protocols to create locally adapted varieties that remain available for saving, sharing, and further breeding.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination"
+            ],
+            "thesis": "The market shifts from buying closed genetics every season toward participating in a shared breeding commons where local adaptation and seed sovereignty matter as much as national brand scale.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through governance and rights, not Bitcoin: seed users coordinate through cooperative rules, open pledges, and shared trial records that prevent a single firm from enclosing the downstream breeding path.",
+            "coordinationMechanism": "Farmers, public breeders, seed cleaners, and regional seed companies contribute trial outcomes, select promising lines, and distribute pledged seed through cooperative agreements and transparent variety records.",
+            "verificationOrTrustModel": "Variety identity is checked through documented seed lots, grower records, third-party trial plots, and pledge-based provenance; cheating is constrained by reputation, cooperative membership rules, and the practical need for repeatable field performance.",
+            "failureModes": [
+              "Open networks may not match proprietary breeding budgets or trait stacks in corn, soybean, and other high-scale row crops.",
+              "Seed quality, germination, and varietal purity require operational discipline that loosely coordinated groups may struggle to maintain."
+            ],
+            "adoptionPath": [
+              "Start with regional crops, public-breeding lines, and specialty markets where local adaptation is valuable and proprietary trait lock-in is weaker.",
+              "Build shared trial databases and seed-lot provenance systems that let growers compare performance without handing data control to a single input vendor."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "corteva-seeds-traits",
+              "corteva-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "ossi-varieties",
+              "ossi-designation-agreement"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The concept directly distributes breeding rights, seed access, and field knowledge across many growers and breeders.",
+                "sourceIds": [
+                  "ossi-designation-agreement"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "Seed pledges and cooperative breeding are credible, but scaling field trials, quality control, and distribution across regions is operationally hard.",
+                "sourceIds": [
+                  "ossi-varieties",
+                  "ossi-designation-agreement"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "The pieces exist for smaller markets, but competing with major commercial hybrid and trait platforms would require long breeding cycles and sustained funding.",
+                "sourceIds": [
+                  "ossi-varieties",
+                  "corteva-seeds-traits"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "Pressure is strongest in niches and public-interest breeding, while Corteva remains well protected in large commercial row-crop systems.",
+                "sourceIds": [
+                  "corteva-2024-annual-report",
+                  "ossi-varieties"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "enlist",
+        "name": "Enlist",
+        "category": "Crop protection and herbicide-tolerant trait system",
+        "homepageUrl": "https://www.corteva.com/us/products-and-solutions/seeds-and-traits.html",
+        "summary": "Enlist is Corteva's herbicide-tolerant crop system, linking seed traits with compatible herbicide products for weed-control programs.",
+        "whyItMatters": "Trait-and-chemistry systems shape farmer dependence because weed management, seed selection, herbicide labels, application practices, and resistance planning become bundled decisions.",
+        "replacementSketch": [
+          "The realistic replacement is not an open-source herbicide. It is a lower-lock-in crop-management stack that combines non-proprietary records, local scouting, public IPM practices, and farmer-controlled recommendations.",
+          "Open data tools can help farmers compare rotations, cover crops, mechanical control, weather, weed pressure, and chemical use without routing every decision through a vendor-owned platform."
+        ],
+        "sourceIds": [
+          "corteva-seeds-traits",
+          "corteva-products-solutions",
+          "corteva-2024-annual-report"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "openteam",
+            "name": "OpenTEAM",
+            "kind": "hybrid",
+            "homepageUrl": "https://openteam.community/",
+            "summary": "OpenTEAM is an open agricultural technology ecosystem focused on farmer-controlled data, interoperable tools, and shared knowledge for regenerative and agroecological management.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "OpenTEAM describes its work as open, interoperable, farmer-led agricultural technology and knowledge infrastructure.",
+                "sourceIds": [
+                  "openteam-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "Its emphasis on farmer control, interoperability, and shared infrastructure directly targets dependence on single-vendor agricultural technology stacks.",
+                "sourceIds": [
+                  "openteam-home",
+                  "openteam-ecosystem-overview"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "OpenTEAM has real ecosystem activity and tooling, but it is an enabling network rather than a drop-in replacement for Corteva's crop protection products.",
+                "sourceIds": [
+                  "openteam-home",
+                  "openteam-ecosystem-overview"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Interoperable data and shared tools can reduce switching costs and duplicate software spend, but they do not remove the agronomic cost of weed control itself.",
+                "sourceIds": [
+                  "openteam-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            },
+            "sourceIds": [
+              "openteam-home",
+              "openteam-ecosystem-overview"
+            ]
+          },
+          {
+            "slug": "farmos",
+            "name": "farmOS",
+            "kind": "open-source",
+            "homepageUrl": "https://farmos.org/",
+            "repoUrl": "https://github.com/farmOS/farmOS",
+            "summary": "farmOS is a free and open-source web application for farm management, planning, mapping, and record keeping.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "farmOS states that its server and related code are free and open source under the GNU General Public License, with code available on GitHub.",
+                "sourceIds": [
+                  "farmos-home",
+                  "farmos-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Self-hostable open farm records improve farmer control over operational data, though the software alone does not decentralize seed or chemistry production.",
+                "sourceIds": [
+                  "farmos-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "farmOS is a functioning farm-management platform with public documentation and code, suitable for recordkeeping workflows today.",
+                "sourceIds": [
+                  "farmos-home",
+                  "farmos-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "costLeverage": {
+                "value": 7,
+                "rationale": "Free open-source licensing and self-hosting can reduce software lock-in and subscription dependence for farm records and planning.",
+                "sourceIds": [
+                  "farmos-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              }
+            },
+            "sourceIds": [
+              "farmos-home",
+              "farmos-github"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "farmer-controlled-ipm-data-commons",
+            "name": "Farmer-controlled IPM data commons",
+            "summary": "Farmers use open farm-management software and interoperable data standards to pool weed-pressure, crop-rotation, soil, scouting, and treatment-outcome records while keeping governance outside a single seed or chemistry vendor.",
+            "angleIds": [
+              "decentralized-coordination",
+              "cooperative-production"
+            ],
+            "thesis": "The dependency point moves from proprietary trait-and-chemistry recommendations toward farmer-governed evidence about which integrated weed-management practices work under local conditions.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through data custody and governance: the system lets growers and advisors coordinate shared evidence without granting a single input company exclusive control over the recommendation layer.",
+            "coordinationMechanism": "Participating farms log field operations in open tools, share selected anonymized or cooperative-governed records, and use local advisor groups to compare outcomes across rotations, cover crops, mechanical control, and herbicide programs.",
+            "verificationOrTrustModel": "False reporting is constrained by cross-checking records against timestamps, field boundaries, chemical purchase or application records, advisor attestations, and repeated seasonal outcomes; the system still depends on human auditing and incentives for honest data.",
+            "failureModes": [
+              "Farmers may be unwilling to share sensitive yield, input, or weed-pressure data without strong governance and privacy guarantees.",
+              "Open decision-support systems may lag proprietary agronomy teams in model quality, support, and liability handling."
+            ],
+            "adoptionPath": [
+              "Begin with grower cooperatives, extension programs, and conservation groups that already collect field records and want interoperable tooling.",
+              "Add benchmarking and recommendation layers only after enough validated local data exists to support practical integrated weed-management decisions."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "corteva-seeds-traits",
+              "corteva-2024-annual-report"
+            ],
+            "enablerSourceIds": [
+              "openteam-home",
+              "farmos-home",
+              "farmos-github"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 8,
+                "rationale": "The core mechanism is farmer-controlled data and cooperative recommendation infrastructure rather than vendor-owned agronomy platforms.",
+                "sourceIds": [
+                  "openteam-home",
+                  "farmos-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "coordinationCredibility": {
+                "value": 6,
+                "rationale": "OpenTEAM and farmOS show credible enabling infrastructure, but durable data-sharing governance across competitive farms is difficult.",
+                "sourceIds": [
+                  "openteam-home",
+                  "farmos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "implementationFeasibility": {
+                "value": 6,
+                "rationale": "The software and ecosystem pieces exist, but high-quality IPM recommendations need local agronomy expertise, validation data, and trusted advisory institutions.",
+                "sourceIds": [
+                  "openteam-ecosystem-overview",
+                  "farmos-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              },
+              "incumbentPressure": {
+                "value": 5,
+                "rationale": "The concept pressures the digital recommendation and lock-in layer more than the underlying herbicide or trait business.",
+                "sourceIds": [
+                  "corteva-2024-annual-report",
+                  "openteam-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-03"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "corteva-2024-annual-report",
+      "title": "Corteva 2024 Annual Report",
+      "url": "https://investors.corteva.com/static-files/58809c7d-5745-46ad-8a9c-4606e70faefc",
+      "kind": "annual-report",
+      "publisher": "Corteva",
+      "note": "Primary financial and segment source for Corteva's Seed and Crop Protection businesses, 2024 net sales, EBITDA, and net income.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "corteva-seeds-traits",
+      "title": "Seeds & Traits",
+      "url": "https://www.corteva.com/us/products-and-solutions/seeds-and-traits.html",
+      "kind": "product-page",
+      "publisher": "Corteva",
+      "note": "Official product page describing Corteva seed and trait offerings, including Pioneer and Enlist-related seed technologies.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "corteva-products-solutions",
+      "title": "Products and Solutions",
+      "url": "https://www.corteva.com/products-and-solutions.html",
+      "kind": "product-page",
+      "publisher": "Corteva",
+      "note": "Official product navigation source for Corteva's seed, crop protection, and agricultural solution categories.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "stockanalysis-ctva-statistics",
+      "title": "Corteva Statistics & Valuation",
+      "url": "https://stockanalysis.com/stocks/ctva/statistics/",
+      "kind": "market-data",
+      "publisher": "StockAnalysis",
+      "note": "Market-data source used for current market capitalization and trailing P/E inputs.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "ossi-varieties",
+      "title": "OSSI Varieties",
+      "url": "https://osseeds.org/ossi-varieties/",
+      "kind": "analysis",
+      "publisher": "Open Source Seed Initiative",
+      "note": "Catalog source showing the existence of OSSI-pledged seed varieties.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "ossi-designation-agreement",
+      "title": "Open Source Seed Initiative Variety Designation Agreement",
+      "url": "https://osseeds.org/wp-content/uploads/2020/05/Open-Source-Seed-Initiative-Variety-Designation-Agreement-v15.pdf",
+      "kind": "technical-docs",
+      "publisher": "Open Source Seed Initiative",
+      "note": "Documents the pledge-based mechanism for keeping designated seed varieties open for downstream use and breeding.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "openteam-home",
+      "title": "OpenTEAM",
+      "url": "https://openteam.community/",
+      "kind": "analysis",
+      "publisher": "OpenTEAM",
+      "note": "Primary source for OpenTEAM's farmer-led, interoperable, open agricultural technology ecosystem.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "openteam-ecosystem-overview",
+      "title": "OpenTEAM Ecosystem Overview",
+      "url": "https://openteamag.gitlab.io/documentation/hub-resources/tech_ecosystem/",
+      "kind": "technical-docs",
+      "publisher": "OpenTEAM",
+      "note": "Technical overview describing OpenTEAM's role as convenor, facilitator, and steward for open agricultural technology infrastructure.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "farmos-home",
+      "title": "farmOS",
+      "url": "https://farmos.org/",
+      "kind": "open-source-project",
+      "publisher": "farmOS",
+      "note": "Primary project source for the free and open-source farm management, planning, mapping, and recordkeeping platform.",
+      "accessedOn": "2026-06-03"
+    },
+    {
+      "id": "farmos-github",
+      "title": "farmOS GitHub Organization",
+      "url": "https://github.com/farmOS/farmOS",
+      "kind": "open-source-project",
+      "publisher": "farmOS",
+      "note": "Repository source for farmOS code and project implementation details.",
+      "accessedOn": "2026-06-03"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new Corteva registry bundle covering Pioneer Seeds and Enlist, with OSSI, OpenTEAM, and farmOS as aligned open or decentralized alternatives. IPO details are left null because the prompt requires both IPO date and IPO market-cap support."
+}
+tokens used
+27,258

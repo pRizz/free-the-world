@@ -1,0 +1,655 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "public-service-enterprise-group",
+    "name": "Public Service Enterprise Group",
+    "ticker": "PEG",
+    "rankApprox": 226,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top250"
+    ],
+    "sectorId": "utilities",
+    "industryId": "electric-utilities",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/pseg/marketcap/",
+    "description": "Public Service Enterprise Group is a predominantly regulated energy infrastructure company centered on New Jersey electric and gas utility service through PSE&G.",
+    "overview": [
+      {
+        "title": "Regulated New Jersey Utility",
+        "paragraphs": [
+          "PSEG's core business is Public Service Electric and Gas, New Jersey's largest transmission and distribution utility, serving about 2.4 million electric customers and 1.9 million natural gas customers.",
+          "The company also owns carbon-free nuclear generation and operates around long-lived regulated infrastructure, capital investment plans, and state utility oversight."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "PSEG's moat is rooted in regulated utility territory, high fixed infrastructure costs, state-approved rate recovery, and the practical difficulty of duplicating electric and gas delivery networks.",
+      "Customer choice can affect energy supply, but last-mile delivery, interconnection, reliability obligations, and emergency service keep PSE&G structurally central across much of New Jersey."
+    ],
+    "decentralizationNarrative": [
+      "Electric service is partially decentralizable at the edge through rooftop solar, storage, demand response, open energy management, and microgrid coordination, but the wires network and reliability function remain hard to replace.",
+      "Gas delivery is less naturally aligned with open digital coordination because it depends on physical pipe networks and safety-regulated fuel distribution, though electrification and local thermal energy systems can reduce dependence over time."
+    ],
+    "sourceIds": [
+      "pseg-2025-results",
+      "pseg-2025-annual-report",
+      "nj-rate-counsel-pseg",
+      "companiesmarketcap-pseg",
+      "stockanalysis-peg"
+    ],
+    "technologyWaveIds": [
+      "distributed-energy"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 226-250.",
+    "inputMetrics": {
+      "moat": {
+        "value": 8,
+        "rationale": "Regulated utility service territory, network infrastructure, customer scale, and rate-regulated capital programs create a strong durability moat.",
+        "sourceIds": [
+          "pseg-2025-results",
+          "pseg-2025-annual-report",
+          "nj-rate-counsel-pseg"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "decentralizability": {
+        "value": 4,
+        "rationale": "Customer-side DER, demand response, storage, and microgrids can decentralize parts of the electric value chain, but regulated delivery infrastructure and gas distribution remain centralized.",
+        "sourceIds": [
+          "pseg-2025-results",
+          "openadr-home",
+          "openadr-about"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "profitability": {
+        "value": 7,
+        "rationale": "The company reported 2025 net income of about $2.26 billion on revenue of about $12.17 billion, reflecting solid regulated utility profitability.",
+        "sourceIds": [
+          "stockanalysis-peg",
+          "pseg-2025-results"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "peRatio": {
+        "value": 17.37,
+        "rationale": "StockAnalysis reported a trailing P/E ratio around 17.37 for PEG near the review date.",
+        "sourceIds": [
+          "stockanalysis-peg-statistics"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-06-03"
+      },
+      "marketCap": {
+        "value": 39190000000,
+        "rationale": "StockAnalysis reported PEG market capitalization of approximately $39.19 billion as of May 29, 2026.",
+        "sourceIds": [
+          "stockanalysis-peg-market-cap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-06-03"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "pseg-electric-service",
+      "name": "PSE&G Electric Service",
+      "category": "Regulated electric utility service",
+      "homepageUrl": "https://nj.pseg.com/",
+      "summary": "PSE&G delivers electric service across a large New Jersey service territory through regulated transmission and distribution infrastructure.",
+      "whyItMatters": "Electric delivery is the core dependency layer for homes, businesses, EV charging, heat pumps, data centers, and distributed energy resources.",
+      "replacementSketch": [
+        "A realistic replacement path is not a single competitor utility but a layered stack of customer-owned generation, batteries, open energy controls, demand response, and neighborhood microgrids that reduce reliance on centralized delivery.",
+        "The incumbent grid remains valuable for balancing, backup, and reliability, but more of the coordination layer can move toward interoperable local systems."
+      ],
+      "sourceIds": [
+        "pseg-2025-results",
+        "nj-rate-counsel-pseg",
+        "openadr-home",
+        "openems-home"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "alternatives": [
+        {
+          "slug": "pseg-electric-service-openems",
+          "name": "OpenEMS",
+          "kind": "open-source",
+          "homepageUrl": "https://openems.io/",
+          "repoUrl": "https://github.com/OpenEMS/openems",
+          "summary": "OpenEMS is an open source energy management platform for integrating batteries, solar, EV charging, and other distributed energy assets.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "The project publishes source code on GitHub and is explicitly positioned as an open source energy management system.",
+              "sourceIds": [
+                "openems-github",
+                "openems-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "It is designed around local and distributed energy assets rather than a single utility-owned control plane.",
+              "sourceIds": [
+                "openems-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "readiness": {
+              "value": 6,
+              "rationale": "The project is mature enough for real energy-management deployments, but it is not a complete replacement for regulated grid delivery.",
+              "sourceIds": [
+                "openems-home",
+                "openems-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "costLeverage": {
+              "value": 6,
+              "rationale": "Open software can lower integration and vendor-lock-in costs for DER orchestration, though hardware, interconnection, and installation remain material.",
+              "sourceIds": [
+                "openems-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          },
+          "sourceIds": [
+            "openems-home",
+            "openems-github"
+          ]
+        },
+        {
+          "slug": "pseg-electric-service-openadr",
+          "name": "OpenADR",
+          "kind": "protocol",
+          "homepageUrl": "https://www.openadr.org/",
+          "summary": "OpenADR is an open smart-grid standard for automated demand response and distributed energy resource communication.",
+          "metrics": {
+            "openness": {
+              "value": 7,
+              "rationale": "OpenADR is documented as an open, interoperable information exchange model and smart-grid standard.",
+              "sourceIds": [
+                "openadr-home",
+                "openadr-about"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "The standard coordinates flexible loads and distributed energy resources across many endpoints rather than relying only on centralized generation.",
+              "sourceIds": [
+                "openadr-home",
+                "openadr-program-guide"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "OpenADR has a formal alliance, certification ecosystem, and documented demand-response program model.",
+              "sourceIds": [
+                "openadr-home",
+                "openadr-program-guide"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "costLeverage": {
+              "value": 5,
+              "rationale": "Automated demand response can reduce peak-system costs, but savings depend on utility programs, device support, and market design.",
+              "sourceIds": [
+                "openadr-program-guide"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          },
+          "sourceIds": [
+            "openadr-home",
+            "openadr-about",
+            "openadr-program-guide"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "pseg-electric-service-federated-der-flexibility-market",
+          "name": "Federated DER Flexibility Market",
+          "summary": "Households, buildings, community batteries, EV chargers, and solar inverters could coordinate through open demand-response protocols and local energy-management software to sell verified flexibility into utility or aggregator programs.",
+          "angleIds": [
+            "decentralized-coordination",
+            "microgrid-coordination",
+            "distributed-energy-generation"
+          ],
+          "thesis": "The market structure shifts from one-way utility delivery toward a two-way coordination layer where many edge assets provide capacity, load shifting, and resilience.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through interoperable local controllers and federated aggregators; Bitcoin is not central because settlement and regulatory participation can be handled through existing energy-market rails.",
+          "coordinationMechanism": "Customers enroll DER devices through certified controllers, aggregators group capacity, and utilities or grid operators dispatch flexibility using open signals.",
+          "verificationOrTrustModel": "Smart meters, device telemetry, baseline calculations, and event logs compare committed reductions or injections against measured behavior; independent aggregators can be audited against utility meter data.",
+          "failureModes": [
+            "Baseline gaming can overstate load reductions.",
+            "Device vendors may implement standards unevenly, limiting interoperability.",
+            "Regulatory programs may cap compensation or favor incumbent aggregators."
+          ],
+          "adoptionPath": [
+            "Start with OpenADR-compatible demand-response programs for large buildings and EV charging fleets.",
+            "Extend participation to residential batteries, smart thermostats, heat pumps, and solar inverters through open local energy-management platforms."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "pseg-2025-results",
+            "nj-rate-counsel-pseg"
+          ],
+          "enablerSourceIds": [
+            "openadr-home",
+            "openems-home"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "The concept explicitly distributes grid support across many customer-owned devices and local controllers.",
+              "sourceIds": [
+                "openadr-home",
+                "openems-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "coordinationCredibility": {
+              "value": 7,
+              "rationale": "OpenADR provides a documented model for automated demand response and DER signaling, though program rules vary by jurisdiction.",
+              "sourceIds": [
+                "openadr-about",
+                "openadr-program-guide"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "The software and protocol pieces exist, but deployment depends on interconnection, metering, tariffs, and customer adoption.",
+              "sourceIds": [
+                "openadr-home",
+                "openems-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "DER flexibility can reduce peak capital needs and supply dependence, but it complements rather than fully displaces the distribution utility.",
+              "sourceIds": [
+                "pseg-2025-results",
+                "openadr-program-guide"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          }
+        },
+        {
+          "slug": "community-microgrid-resilience-coops",
+          "name": "Community Microgrid Resilience Cooperatives",
+          "summary": "Neighborhoods, campuses, and municipal facilities could pool solar, batteries, controllable loads, and backup generation into cooperative microgrids that island during outages and trade services with the larger grid when connected.",
+          "angleIds": [
+            "cooperative-production",
+            "microgrid-coordination",
+            "open-energy-hardware"
+          ],
+          "thesis": "Reliability and resilience become partially community-owned capabilities rather than services delivered only by a regulated monopoly.",
+          "bitcoinOrDecentralizationRole": "The decentralization role is governance and local operational control: cooperative asset ownership, open controllers, and transparent settlement among participants matter more than Bitcoin-native payments.",
+          "coordinationMechanism": "Members finance shared assets, local controllers dispatch generation and storage, and a cooperative operator coordinates interconnection and emergency islanding rules with the utility.",
+          "verificationOrTrustModel": "Revenue and cost allocation can be tied to revenue-grade meters, controller logs, and cooperative audits; islanding and safety functions still require certified equipment and utility-approved interconnection.",
+          "failureModes": [
+            "Interconnection approval and protection engineering can be slow and expensive.",
+            "Cooperative governance may struggle with cost allocation during outages.",
+            "Critical components such as batteries and switchgear remain capital intensive."
+          ],
+          "adoptionPath": [
+            "Deploy microgrids first for critical municipal loads, shelters, hospitals, schools, or campuses.",
+            "Expand to mixed residential and commercial districts where resilience value justifies shared ownership."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "pseg-2025-results",
+            "pseg-2025-annual-report"
+          ],
+          "enablerSourceIds": [
+            "openems-home",
+            "openadr-home"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "Community microgrids move generation, storage, and resilience decisions closer to local participants.",
+              "sourceIds": [
+                "openems-home",
+                "openadr-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "coordinationCredibility": {
+              "value": 5,
+              "rationale": "The technical coordination stack is plausible, but cooperative governance and utility interconnection make execution harder than software-only coordination.",
+              "sourceIds": [
+                "openems-home",
+                "openadr-program-guide"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "implementationFeasibility": {
+              "value": 4,
+              "rationale": "Hardware cost, permitting, safety requirements, and protection engineering keep feasibility below near-term software-enabled demand response.",
+              "sourceIds": [
+                "pseg-2025-annual-report",
+                "openems-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "incumbentPressure": {
+              "value": 4,
+              "rationale": "Microgrids pressure outage-response and peak-dependence economics, but most projects still need the incumbent grid for backup and interconnection.",
+              "sourceIds": [
+                "pseg-2025-results",
+                "openadr-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "pseg-gas-service",
+      "name": "PSE&G Gas Service",
+      "category": "Regulated natural gas utility service",
+      "homepageUrl": "https://nj.pseg.com/",
+      "summary": "PSE&G delivers regulated natural gas service to New Jersey customers through a utility gas distribution network.",
+      "whyItMatters": "Gas service is a major heating and building-energy dependency, and its infrastructure lock-in shapes household electrification, safety, and local energy resilience.",
+      "replacementSketch": [
+        "The credible replacement path is demand destruction rather than a parallel open gas network: buildings shift to heat pumps, weatherization, thermal storage, and open energy controls.",
+        "For dense areas, networked geothermal or community thermal loops could eventually substitute for parts of the gas distribution role, but adoption depends on capital planning and local coordination."
+      ],
+      "sourceIds": [
+        "pseg-2025-results",
+        "nj-rate-counsel-pseg",
+        "pseg-service-page",
+        "openenergymonitor-home"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "alternatives": [
+        {
+          "slug": "pseg-gas-service-home-assistant-energy",
+          "name": "Home Assistant Energy Management",
+          "kind": "open-source",
+          "homepageUrl": "https://www.home-assistant.io/energy/",
+          "repoUrl": "https://github.com/home-assistant/core",
+          "summary": "Home Assistant's open source energy features help households monitor and automate energy use across devices and services.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "Home Assistant is an open source project with public source code and broad device integration.",
+              "sourceIds": [
+                "homeassistant-energy",
+                "homeassistant-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "Local home automation gives households more direct control over loads, heating equipment, and energy monitoring, but it does not replace gas pipes by itself.",
+              "sourceIds": [
+                "homeassistant-energy"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "Home Assistant is widely deployed for home automation, though energy management outcomes depend on supported meters and devices.",
+              "sourceIds": [
+                "homeassistant-energy",
+                "homeassistant-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "costLeverage": {
+              "value": 5,
+              "rationale": "Open automation can reduce energy waste and improve electrification control, but equipment replacement and building upgrades dominate the cost profile.",
+              "sourceIds": [
+                "homeassistant-energy"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          },
+          "sourceIds": [
+            "homeassistant-energy",
+            "homeassistant-github"
+          ]
+        },
+        {
+          "slug": "pseg-gas-service-openenergymonitor",
+          "name": "OpenEnergyMonitor",
+          "kind": "open-source",
+          "homepageUrl": "https://openenergymonitor.org/",
+          "repoUrl": "https://github.com/openenergymonitor",
+          "summary": "OpenEnergyMonitor provides open source tools for monitoring electricity, heat, and energy performance in buildings.",
+          "metrics": {
+            "openness": {
+              "value": 8,
+              "rationale": "The project publishes open source monitoring software and hardware resources.",
+              "sourceIds": [
+                "openenergymonitor-home",
+                "openenergymonitor-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "Local measurement and heat monitoring support household and community energy decisions outside a proprietary utility interface.",
+              "sourceIds": [
+                "openenergymonitor-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "readiness": {
+              "value": 6,
+              "rationale": "The tools are practical for monitoring and optimization, but they are enabling infrastructure rather than a full utility substitute.",
+              "sourceIds": [
+                "openenergymonitor-home",
+                "openenergymonitor-github"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "costLeverage": {
+              "value": 5,
+              "rationale": "Better measurement can guide insulation, heat-pump sizing, and load shifting, but savings depend on follow-through investments.",
+              "sourceIds": [
+                "openenergymonitor-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          },
+          "sourceIds": [
+            "openenergymonitor-home",
+            "openenergymonitor-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "open-building-electrification-coordination",
+          "name": "Open Building Electrification Coordination",
+          "summary": "Households and municipalities could use open monitoring and automation tools to coordinate heat-pump retrofits, weatherization, thermal storage, and demand response, reducing gas throughput without needing a parallel gas supplier.",
+          "angleIds": [
+            "decentralized-coordination",
+            "distributed-energy-generation",
+            "open-energy-hardware"
+          ],
+          "thesis": "Gas service is pressured by coordinated electrification at the building edge, where customers replace fuel demand with controlled electric heating and efficiency upgrades.",
+          "bitcoinOrDecentralizationRole": "The decentralization mechanism is household-owned data, open controls, and community coordination; Bitcoin is not necessary because the bottleneck is building retrofit execution rather than censorship-resistant payment.",
+          "coordinationMechanism": "Residents, contractors, municipalities, and aggregators coordinate through open energy audits, device telemetry, incentive programs, and demand-response enrollment.",
+          "verificationOrTrustModel": "Before-and-after utility data, device-level monitoring, contractor documentation, and inspection records verify fuel reduction and equipment performance; false savings claims remain a risk where baselines are weak.",
+          "failureModes": [
+            "Poorly installed heat pumps can underperform and increase peak electric load.",
+            "Renters and low-income households may be excluded without financing support.",
+            "Winter peak constraints can slow electrification if grid upgrades lag."
+          ],
+          "adoptionPath": [
+            "Use open monitoring to identify high-impact gas loads and retrofit candidates.",
+            "Bundle heat pumps, weatherization, smart controls, and demand response into neighborhood-scale programs."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "pseg-2025-results",
+            "nj-rate-counsel-pseg"
+          ],
+          "enablerSourceIds": [
+            "homeassistant-energy",
+            "openenergymonitor-home",
+            "openadr-home"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 6,
+              "rationale": "The concept shifts some energy decisions and data to households and communities, but it still relies on the electric grid.",
+              "sourceIds": [
+                "homeassistant-energy",
+                "openenergymonitor-home"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "coordinationCredibility": {
+              "value": 6,
+              "rationale": "Open monitoring and automation make coordination plausible, while financing, contractor capacity, and incentive design remain key constraints.",
+              "sourceIds": [
+                "homeassistant-energy",
+                "openenergymonitor-home",
+                "openadr-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "implementationFeasibility": {
+              "value": 6,
+              "rationale": "The enabling tools and equipment categories exist today, but building-by-building retrofits are operationally difficult.",
+              "sourceIds": [
+                "homeassistant-energy",
+                "openenergymonitor-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "incumbentPressure": {
+              "value": 5,
+              "rationale": "Successful electrification directly reduces gas throughput, but the utility may retain electric delivery revenue and regulatory roles.",
+              "sourceIds": [
+                "pseg-2025-results",
+                "nj-rate-counsel-pseg"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          }
+        },
+        {
+          "slug": "community-thermal-loop-cooperatives",
+          "name": "Community Thermal Loop Cooperatives",
+          "summary": "District-scale thermal networks using shared ground loops, waste heat, or water-source heat pumps could replace some building-level gas demand with locally governed heating and cooling infrastructure.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination",
+            "local-materials-processing"
+          ],
+          "thesis": "Instead of every building depending on fossil gas delivery, neighborhoods could coordinate shared thermal infrastructure as a local utility-like cooperative.",
+          "bitcoinOrDecentralizationRole": "Decentralization matters through local ownership and metered sharing of thermal capacity; Bitcoin is not central because the trust problem is mostly physical metering, maintenance, and governance.",
+          "coordinationMechanism": "Property owners pool capital, connect buildings to a shared loop, meter thermal exchange, and elect a cooperative operator or municipal partner for maintenance.",
+          "verificationOrTrustModel": "Heat meters, maintenance logs, audited cooperative accounts, and engineering inspections verify usage and system health; disputes would center on allocation formulas and repair obligations.",
+          "failureModes": [
+            "Civil works and retrofit costs can be prohibitive.",
+            "Shared infrastructure requires strong governance and long-term maintenance discipline.",
+            "Thermal resources vary by site, density, and building compatibility."
+          ],
+          "adoptionPath": [
+            "Pilot loops in campuses, public housing, downtown districts, or new developments where trenching and governance are easier.",
+            "Use successful pilots to create repeatable cooperative financing and metering templates."
+          ],
+          "confidence": "speculative",
+          "problemSourceIds": [
+            "pseg-2025-results",
+            "nj-rate-counsel-pseg"
+          ],
+          "enablerSourceIds": [
+            "openenergymonitor-home",
+            "homeassistant-energy"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7,
+              "rationale": "Local thermal loops can move heating infrastructure from a statewide gas network toward neighborhood-scale ownership.",
+              "sourceIds": [
+                "openenergymonitor-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "coordinationCredibility": {
+              "value": 4,
+              "rationale": "The cooperative model is coherent but difficult because participants share buried infrastructure and long-lived maintenance obligations.",
+              "sourceIds": [
+                "openenergymonitor-home",
+                "nj-rate-counsel-pseg"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "implementationFeasibility": {
+              "value": 3,
+              "rationale": "Thermal loops require site-specific engineering, excavation, financing, and building retrofits, making near-term deployment selective.",
+              "sourceIds": [
+                "openenergymonitor-home"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            },
+            "incumbentPressure": {
+              "value": 4,
+              "rationale": "Where adopted, shared thermal systems can displace gas heating load, but they are unlikely to scale quickly across an existing utility territory.",
+              "sourceIds": [
+                "pseg-2025-results",
+                "nj-rate-counsel-pseg"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-03"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
