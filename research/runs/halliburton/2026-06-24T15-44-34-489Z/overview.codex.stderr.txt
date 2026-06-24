@@ -1,0 +1,224 @@
+OpenAI Codex v0.142.0
+--------
+workdir: C:\Users\prysz\Repos\free-the-world
+model: gpt-5.5
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: xhigh
+reasoning summaries: none
+session id: 019efa4d-fb44-7761-89ba-c9657378aa7d
+--------
+user
+You are preparing structured draft research for the Free The World registry.
+
+Company: Halliburton (HAL)
+Slug: halliburton
+Sector: energy
+Industry: oil-gas-equipment-services
+Snapshot note: Pending first structured sync.
+
+Known products from repo context:
+Halliburton drilling services, Completion tools
+
+Relevant technology waves:
+None mapped yet in repo context.
+
+Available repo context:
+```json
+{
+  "target": {
+    "source": "canonical",
+    "batchId": null,
+    "createdOn": null,
+    "groupLabel": null,
+    "requestNotes": null
+  },
+  "manifest": {
+    "schemaVersion": 1,
+    "slug": "halliburton",
+    "name": "Halliburton",
+    "ticker": "HAL",
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top275"
+    ],
+    "sectorId": "energy",
+    "industryId": "oil-gas-equipment-services",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/halliburton/marketcap/",
+    "description": "Halliburton provides products and services for oil and gas drilling, evaluation, completion, production, and reservoir management.",
+    "technologyWaveIds": [],
+    "seedProductNames": [
+      "Halliburton drilling services",
+      "Completion tools"
+    ],
+    "seedSourceUrls": [
+      "https://www.halliburton.com/",
+      "https://ir.halliburton.com/",
+      "https://companiesmarketcap.com/halliburton/marketcap/"
+    ],
+    "notes": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 251-275."
+  },
+  "company": null,
+  "currentBundle": null,
+  "currentSources": [],
+  "knownProducts": [
+    {
+      "name": "Halliburton drilling services"
+    },
+    {
+      "name": "Completion tools"
+    }
+  ],
+  "knownSourceUrls": [
+    "https://www.halliburton.com/",
+    "https://ir.halliburton.com/",
+    "https://companiesmarketcap.com/halliburton/marketcap/"
+  ],
+  "technologyWaves": []
+}
+```
+
+Return pure JSON only. Do not wrap it in markdown fences.
+
+JSON schema:
+{
+  "schemaVersion": 1,
+  "taskId": "company-overview",
+  "description": "one-sentence company description",
+  "overview": [
+    {
+      "title": "section title",
+      "paragraphs": ["paragraph one", "paragraph two"]
+    }
+  ],
+  "sourceSuggestions": [
+    {
+      "title": "source title",
+      "url": "https://example.com",
+      "whyItMatters": "short note"
+    }
+  ]
+}
+
+Requirements:
+- Use a professional tone with restrained satire.
+- Keep overview sections concise and publication-ready.
+- Return 5-8 source suggestions.
+
+exec
+"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content -Raw -LiteralPath .codex/skills/company-manifest-queue/SKILL.md' in C:\Users\prysz\Repos\free-the-world
+ succeeded in 1239ms:
+---
+name: company-manifest-queue
+description: Use when the user wants to draft or queue new company manifests for this repo, either for one company or a confirmed batch from an index, sector, region, or arbitrary grouping. It maps draft company data onto the repo's CompanyManifest schema and stages queue entries with `bun run company:queue` instead of writing canonical manifests directly.
+---
+
+# Company Manifest Queue
+
+Use this skill for net-new company intake. The goal is to create valid `CompanyManifest` drafts and stage them in `content/manifests/queue/`, not to publish canonical manifests directly.
+
+If the user only gives raw company names, tickers, or group phrases, route that request through `bun run company:intake --mode=prepare` instead of requiring a full manifest draft up front.
+
+## Source of Truth
+
+Before drafting anything, read these repo files:
+
+- `src/lib/domain/content-types.ts` for the `CompanyManifest` contract
+- `content/taxonomy/regions.json`
+- `content/taxonomy/indices.json`
+- `content/taxonomy/sectors.json`
+- `content/taxonomy/industries.json`
+- `content/taxonomy/technology-waves.json`
+- 2-3 examples from `content/manifests/companies/*.json`
+- `scripts/company-queue.ts` and `scripts/company-init.ts` for the intake flow
+
+Do not invent taxonomy IDs. If the repo taxonomy does not support the requested company cleanly, surface that gap instead of guessing.
+
+## Modes
+
+### Single-company intake
+
+Use when the user names one company or ticker.
+
+Collect or confirm:
+
+- company name and ticker
+- slug
+- region, index, sector, industry
+- CompaniesMarketCap URL
+- short company description
+- relevant technology wave IDs
+- optional IPO metadata
+- optional seed product names
+- optional seed source URLs
+- notes that explain why this company is entering the queue
+
+### Batch intake
+
+Use when the user wants a set of companies from an index, sector, region, theme, or arbitrary grouping.
+
+Workflow:
+
+1. If the user provided only raw names, tickers, or a group phrase, start with `bun run company:intake --mode=prepare`.
+2. Confirm or narrow the list with the user if the grouping is ambiguous and they want manual control.
+3. Draft one manifest per confirmed company.
+4. Stage them with a consistent `--batch-id` and `--group-label`.
+
+Do not queue ambiguous candidates without confirmation.
+
+## Queueing Rules
+
+- Check `content/manifests/companies/` and `content/manifests/queue/` first.
+- If a slug is already canonical or already queued, stop and tell the user unless they explicitly asked to replace it.
+- Write plain `CompanyManifest` draft JSON first.
+- Stage drafts with `bun run company:queue --manifest=...`.
+- For raw intake requests, let `company:intake` create `content/manifests/unverified/<request-id>.json`, resolve candidates, and queue only the manifests that validate cleanly.
+- When the raw intake overlaps companies that already have published research, ask whether the user wants to skip them or refresh them. Pass that choice with `--already-researched=skip|refresh`.
+- In batch mode, include `--batch-id`, `--group-label`, and `--request-notes` when useful.
+- If the user wants the whole intake flow handled end-to-end, prefer `bun run company:pipeline --manifest=... --provider=auto` instead of stopping after queueing.
+- If the user wants the raw-intake flow handled end-to-end, prefer `bun run company:intake --raw=... --mode=dry-run --provider=auto` or `--mode=publish` when they explicitly asked for publication.
+- Otherwise end by telling the user the next command: `bun run company:init --queued=<slug>`.
+- Mention the follow-up Ralph step after promotion: `bun run sync:company --company=<slug> --mode=dry-run`.
+
+After a `company:intake --mode=prepare` run, the normal inline follow-up is:
+
+- already researched: skip or refresh
+- queue/prepared only
+- research dry-run
+- publish website
+
+If the user already requested dry-run or publish in the original prompt, skip the later workflow prompt and honor the requested end state directly. If they did not specify what to do with already researched companies, ask that first.
+
+## Guardrails
+
+- Never write directly to `content/manifests/companies/` from this skill.
+- Prefer factual notes over narrative prose.
+- Keep `seedProductNames` and `seedSourceUrls` as hints, not exhaustive research.
+- If the taxonomy is missing the needed sector, industry, index, region, or wave, stop and surface the exact missing IDs instead of creating ad hoc values.
+
+
+web search:
+web search: Halliburton products services drilling evaluation completion production Halliburton official
+web search:
+web search: https://www.halliburton.com/en
+web search:
+web search: '2025 Annual Report' in https://ir.halliburton.com/financial-information/annual-reports
+web search:
+web search: https://data.sec.gov/submissions/CIK0000045012.json
+web search:
+web search: site:sec.gov Halliburton 2025 10-K 0000045012
+web search:
+web search: https://www.halliburton.com/en
+web search:
+web search: 'Achieve exceptional value' in https://www.halliburton.com/en/well-construction/drilling
+web search:
+web search: https://ir.halliburton.com/financial-information/annual-reports
+web search:
+web search: https://www.halliburton.com/en/about-us
+web search:
+web search: Halliburton CIK 45012 SEC company name
+codex
+{"schemaVersion":1,"taskId":"company-overview","description":"Halliburton is a global oilfield services and energy technology provider serving upstream operators across drilling, evaluation, completion, production, intervention, and reservoir management.","overview":[{"title":"Business Profile","paragraphs":["Founded in 1919, Halliburton sells products and services that help energy operators plan, drill, complete, produce from, intervene in, and eventually retire wells. Its practical domain is the full upstream asset life cycle, where customers often buy field execution, engineering expertise, downhole hardware, chemistry, and software as one tightly bundled package.","The company is not a consumer energy brand; it lives in the industrial layer where geology, capital budgets, safety requirements, and vendor lock-in meet for a long day at the rig site. That makes it a useful registry target for studying how proprietary energy infrastructure is packaged around specialized knowledge and operational data."]},{"title":"Product Footprint","paragraphs":["The seed products map cleanly to Halliburton's well construction and completions businesses. Drilling services include drill bits, directional drilling, drilling optimization, measurement-while-drilling, managed pressure drilling, well control, drilling fluids, cementing, and related real-time services.","Completion tools include intelligent completions, liner hangers, multilateral systems, packers, subsurface flow controls, safety valves, sand control, frac sleeves, frac plugs, perforating, wellbore service tools, completion fluids, and intervention tools. In plain terms, Halliburton helps operators get the hole drilled, keep it useful, and charge handsomely for the privilege."]},{"title":"Digital And Automation Layer","paragraphs":["Halliburton also operates a meaningful digital layer through offerings such as DecisionSpace 365 and LOGIX automation and remote operations. These products connect subsurface models, rig controls, remote operations, AI/ML workflows, digital twins, and real-time field data into proprietary operational systems.","The open-architecture and OSDU language around DecisionSpace is especially relevant for Free The World because it creates a boundary to inspect: where Halliburton uses open standards and customer-owned data, and where the commercial stack remains closed, bundled, and contractually protected."]},{"title":"Transition Exposure","paragraphs":["Although the company belongs primarily in oil and gas equipment and services, Halliburton also markets low-carbon and new-energy offerings around CCUS, geothermal, hydrogen storage and transportation, direct lithium extraction, and emissions management. These are extensions of its well planning, drilling, reservoir, monitoring, and project execution capabilities rather than a clean break from hydrocarbons.","For alternatives research, full-service open substitutes will likely be rare. Better comparison targets are narrower layers: open subsurface data standards, reservoir modeling tools, drilling analytics, industrial IoT stacks, remote monitoring systems, environmental measurement projects, and open workflows that reduce dependency on vertically bundled oilfield platforms."]}],"sourceSuggestions":[{"title":"Halliburton About Us","url":"https://www.halliburton.com/en/about-us","whyItMatters":"Primary corporate context for founding, scale, global footprint, and stated business scope."},{"title":"Halliburton Drilling","url":"https://www.halliburton.com/en/well-construction/drilling","whyItMatters":"Primary source for drilling services, drill bits, sensors, directional drilling, optimization, and managed pressure drilling."},{"title":"Halliburton Well Completions","url":"https://www.halliburton.com/en/completions/well-completions","whyItMatters":"Maps the completion-tools portfolio, including intelligent completions, flow control, safety valves, sand control, plugs, and perforating."},{"title":"Halliburton DecisionSpace 365","url":"https://www.halliburton.com/en/software/decisionspace-365-enterprise","whyItMatters":"Documents the proprietary E&P cloud software layer and its stated open architecture and OSDU positioning."},{"title":"Halliburton LOGIX Automation and Remote Operations","url":"https://www.halliburton.com/en/well-construction/automation-and-remote-operations","whyItMatters":"Useful for tracking drilling automation, remote operations, digital twins, and AI/ML claims."},{"title":"Halliburton Annual Reports and Proxies","url":"https://ir.halliburton.com/financial-information/annual-reports","whyItMatters":"Official 10-K and proxy archive for segments, risks, financials, governance, and audited business descriptions."},{"title":"Halliburton Low Carbon Solutions","url":"https://www.halliburton.com/en/low-carbon-solutions","whyItMatters":"Tracks CCUS, geothermal, hydrogen, direct lithium extraction, and emissions-management adjacency."},{"title":"CompaniesMarketCap Halliburton Market Cap","url":"https://companiesmarketcap.com/halliburton/marketcap/","whyItMatters":"External market-cap reference for relative public-company scale and index snapshot checks."}]}
+tokens used
+69,636
