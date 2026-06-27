@@ -1,0 +1,521 @@
+{
+  "schemaVersion": 1,
+  "company": {
+    "slug": "mt-bank",
+    "name": "M&T Bank",
+    "ticker": "MTB",
+    "rankApprox": 259,
+    "maybeIpo": null,
+    "regionId": "us",
+    "indexIds": [
+      "sp500-top275"
+    ],
+    "sectorId": "financials",
+    "industryId": "diversified-banks",
+    "companiesMarketCapUrl": "https://companiesmarketcap.com/mt-bank/marketcap/",
+    "description": "M&T Bank is a U.S. regional bank offering commercial banking, business banking, wealth management, mortgage, and consumer banking services.",
+    "overview": [
+      {
+        "title": "Business profile",
+        "paragraphs": [
+          "M&T Bank Corporation is a Buffalo-based bank holding company whose main bank subsidiaries are M&T Bank and Wilmington Trust, N.A.",
+          "M&T reported $213.5 billion of consolidated assets at December 31, 2025, and its banking footprint is concentrated across the Northeastern and Mid-Atlantic United States."
+        ]
+      },
+      {
+        "title": "Banking mix",
+        "paragraphs": [
+          "The company serves consumers, businesses, professional clients, governmental entities, and financial institutions through retail banking, commercial banking, wealth management, trust, and institutional services.",
+          "Its public product pages emphasize commercial deposits, financing, treasury management, merchant services, commercial cards, real estate lending, and mobile banking features such as Zelle, bill pay, mobile check deposit, digital wallets, account aggregation, card management, and alerts."
+        ]
+      }
+    ],
+    "moatNarrative": [
+      "M&T's moat comes from regulated bank charters, deposit relationships, regional branch density, commercial lending relationships, treasury-management integrations, credit underwriting, fraud controls, and customer trust in insured banking services.",
+      "The moat is strong for core banking but narrower at the software edge. Account interfaces, merchant receivables, payment workflows, open-banking APIs, and some ledger infrastructure can be modularized even when deposits, credit risk, liquidity, and compliance remain institution-centered."
+    ],
+    "decentralizationNarrative": [
+      "A full decentralized replacement for M&T is not credible in the near term because insured deposits, bank charters, lending, sanctions controls, capital requirements, and consumer protection obligations require regulated institutions.",
+      "The plausible decentralization path is selective unbundling: open-source cores for smaller institutions, open banking APIs, cooperative treasury services, federated Bitcoin custody, and Lightning payment tools can pressure M&T's software and payment surfaces without replacing its entire balance sheet."
+    ],
+    "sourceIds": [
+      "mtb-ir",
+      "mtb-2025-10k",
+      "companiesmarketcap-mtb-marketcap",
+      "companiesmarketcap-mtb-pe"
+    ],
+    "technologyWaveIds": [
+      "bitcoin-native-coordination"
+    ],
+    "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 251-275; rankApprox reflects its ninth position in the frozen intake roster.",
+    "inputMetrics": {
+      "moat": {
+        "value": 7.2,
+        "rationale": "M&T has a large regulated regional-bank franchise, $213.5 billion in 2025 consolidated assets, and sticky commercial, treasury, deposit, lending, and wealth relationships.",
+        "sourceIds": [
+          "mtb-2025-10k",
+          "mtb-commercial-banking"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-27"
+      },
+      "decentralizability": {
+        "value": 4.1,
+        "rationale": "Customer interfaces, open-banking APIs, merchant payments, federated custody, and some core-banking software can be opened or decentralized, but insured deposits, bank licensing, lending, liquidity, fraud operations, and compliance remain centralized.",
+        "sourceIds": [
+          "mtb-2025-10k",
+          "apache-fineract-github",
+          "open-bank-project",
+          "btcpay-docs",
+          "fedimint-how-it-works"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-06-27"
+      },
+      "profitability": {
+        "value": 7.6,
+        "rationale": "M&T reported 2025 net income of $2.851 billion, return on average assets of 1.35%, return on average common shareholders' equity of 10.27%, and a 3.67% net interest margin.",
+        "sourceIds": [
+          "mtb-2025-10k"
+        ],
+        "confidence": "high",
+        "lastReviewedOn": "2026-06-27"
+      },
+      "peRatio": {
+        "value": 12.5,
+        "rationale": "CompaniesMarketCap reported a trailing P/E ratio of about 12.5 for M&T Bank as of June 2026; this ratio moves with share price and trailing earnings updates.",
+        "sourceIds": [
+          "companiesmarketcap-mtb-pe"
+        ],
+        "confidence": "speculative",
+        "lastReviewedOn": "2026-06-27"
+      },
+      "marketCap": {
+        "value": 34670000000,
+        "rationale": "CompaniesMarketCap reported M&T Bank's market capitalization at about $34.67 billion in June 2026; the registry uses a rounded value because market capitalization changes continuously.",
+        "sourceIds": [
+          "companiesmarketcap-mtb-marketcap"
+        ],
+        "confidence": "medium",
+        "lastReviewedOn": "2026-06-27"
+      }
+    }
+  },
+  "products": [
+    {
+      "slug": "mt-commercial-banking",
+      "name": "M&T Commercial Banking",
+      "category": "business banking and treasury management",
+      "homepageUrl": "https://www.mtb.com/commercial/commercial-banking",
+      "summary": "M&T Commercial Banking provides enterprise and business clients with deposits, financing, treasury management, merchant services, commercial cards, investment banking, and real estate lending.",
+      "whyItMatters": "Commercial banking is one of M&T's stickiest surfaces because businesses rely on credit access, receivables, payables, fraud controls, liquidity tools, relationship managers, and integrations that are costly to replace once embedded.",
+      "replacementSketch": [
+        "A realistic replacement would not clone a regional bank. It would separate routine treasury workflows, merchant receivables, account APIs, and community business lending from a single proprietary bank stack.",
+        "Small and midsize businesses could use member-owned treasury services, open-source banking ledgers, open APIs, and protocol-based payment options while still using regulated institutions for deposits, credit, and compliance-heavy functions."
+      ],
+      "sourceIds": [
+        "mtb-commercial-banking",
+        "mtb-treasury-management",
+        "mtb-2025-10k"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "mt-commercial-banking-apache-fineract",
+          "name": "Apache Fineract",
+          "kind": "open-source",
+          "homepageUrl": "https://fineract.apache.org/",
+          "repoUrl": "https://github.com/apache/fineract",
+          "summary": "Apache Fineract is an open-source core banking platform that can provide account, savings, lending, transaction, ledger, and reporting infrastructure for financial institutions and cooperative finance providers.",
+          "metrics": {
+            "openness": {
+              "value": 9,
+              "rationale": "Apache Fineract is an Apache Software Foundation project with public source code and open project governance.",
+              "sourceIds": [
+                "apache-fineract-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "decentralizationFit": {
+              "value": 5.9,
+              "rationale": "Fineract can help smaller institutions and cooperative providers operate independent financial-service infrastructure, but it does not decentralize banking licenses, deposits, credit risk, or regulatory supervision.",
+              "sourceIds": [
+                "apache-fineract-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "readiness": {
+              "value": 6.6,
+              "rationale": "The project is mature enough to anchor real financial-services infrastructure, but production banking deployments still require security, compliance, hosting, integrations, and operations capacity.",
+              "sourceIds": [
+                "apache-fineract-github",
+                "mifos-products"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "costLeverage": {
+              "value": 7.1,
+              "rationale": "Open-source core banking can reduce proprietary license dependence and allow shared maintenance across institutions, though implementation and compliance costs remain material.",
+              "sourceIds": [
+                "apache-fineract-github",
+                "mifos-products"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            }
+          },
+          "sourceIds": [
+            "apache-fineract-github",
+            "mifos-products"
+          ]
+        },
+        {
+          "slug": "mt-commercial-banking-btcpay-server",
+          "name": "BTCPay Server",
+          "kind": "open-source",
+          "homepageUrl": "https://btcpayserver.org/",
+          "repoUrl": "https://github.com/btcpayserver/btcpayserver",
+          "summary": "BTCPay Server is a free, open-source, self-hosted Bitcoin payment gateway that lets merchants accept Bitcoin and Lightning payments directly.",
+          "metrics": {
+            "openness": {
+              "value": 9.4,
+              "rationale": "BTCPay Server is documented as free, open-source, and self-hosted, with public source code.",
+              "sourceIds": [
+                "btcpay-docs",
+                "btcpay-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "decentralizationFit": {
+              "value": 8.4,
+              "rationale": "Merchants can run their own payment gateway and receive Bitcoin payments without a bank-owned merchant processor controlling the payment account.",
+              "sourceIds": [
+                "btcpay-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "readiness": {
+              "value": 7,
+              "rationale": "BTCPay has mature documentation, invoices, point-of-sale workflows, refunds, integrations, and Lightning support, but it does not replace commercial credit, treasury controls, or fiat banking.",
+              "sourceIds": [
+                "btcpay-docs",
+                "btcpay-github"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "costLeverage": {
+              "value": 7.6,
+              "rationale": "Self-hosted direct settlement can reduce processor dependence and some payment fees, while liquidity, volatility, tax, accounting, and support costs remain.",
+              "sourceIds": [
+                "btcpay-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            }
+          },
+          "sourceIds": [
+            "btcpay-docs",
+            "btcpay-github"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "mt-commercial-banking-open-treasury-cooperative",
+          "name": "Open Treasury Cooperative",
+          "summary": "Small and midsize businesses could form or join a cooperative treasury stack that combines open-source banking ledgers, open banking APIs, self-hosted Bitcoin invoicing, and member-governed service providers to reduce dependence on one regional bank for routine receivables, disbursements, account visibility, and simple credit workflows.",
+          "angleIds": [
+            "cooperative-production",
+            "decentralized-coordination",
+            "federation",
+            "bitcoin",
+            "lightning"
+          ],
+          "thesis": "Commercial banking becomes less vertically bundled when businesses can coordinate around shared treasury software, portable APIs, and protocol payment rails while sourcing regulated deposits and credit from multiple banks, credit unions, or cooperative lenders.",
+          "bitcoinOrDecentralizationRole": "Bitcoin and Lightning matter for merchant invoices, cross-border payments, final settlement, and fee pressure on card or bank-controlled payment flows. Federation and cooperative governance matter because treasury software, integrations, and operating rules are controlled by participating businesses rather than a single incumbent bank.",
+          "coordinationMechanism": "Businesses join a cooperative service provider; participating financial institutions hold regulated accounts; Apache Fineract-style ledgers manage account and lending workflows; Open Bank Project-style APIs expose balances and payments; BTCPay Server-style tools let merchants accept Bitcoin directly when counterparties choose that rail.",
+          "verificationOrTrustModel": "Regulated account balances reconcile against bank statements and audit logs, while Bitcoin payments can be checked through wallet records, invoices, payment proofs, and on-chain settlement when applicable. Open-source code review, role-based permissions, member governance, external audits, and bank reconciliation constrain fake fulfillment, false balances, and operator abuse.",
+          "failureModes": [
+            "Commercial customers may reject a cooperative stack if fraud guarantees, ERP integrations, uptime, cash-management depth, or support lag incumbent banks.",
+            "Compliance, sanctions screening, chargeback handling, tax reporting, and credit underwriting can recentralize around a few specialist vendors.",
+            "Bitcoin and Lightning settlement can introduce volatility, accounting friction, liquidity constraints, and user-support burdens that many businesses do not want."
+          ],
+          "adoptionPath": [
+            "Start with small-business receivables, invoice tracking, account visibility, and noncritical treasury dashboards around existing bank accounts.",
+            "Add open-source lending or deposit ledgers for a community-bank, credit-union, or cooperative pilot with auditable controls.",
+            "Introduce optional BTCPay Server or Lightning invoice acceptance for merchants that want direct settlement, then expand API portability so members can switch underlying banks without rebuilding workflows."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "mtb-commercial-banking",
+            "mtb-treasury-management",
+            "mtb-2025-10k"
+          ],
+          "enablerSourceIds": [
+            "apache-fineract-github",
+            "open-bank-project",
+            "btcpay-docs"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 6.9,
+              "rationale": "The concept distributes software ownership, treasury workflows, and payment options across members and participating institutions, though regulated bank accounts and credit remain centralized at licensed entities.",
+              "sourceIds": [
+                "apache-fineract-github",
+                "open-bank-project",
+                "btcpay-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "coordinationCredibility": {
+              "value": 6.1,
+              "rationale": "Open-source banking cores, open banking APIs, and self-hosted Bitcoin payment processors are documented coordination primitives, but cooperative treasury operations require strong governance, compliance, and service management.",
+              "sourceIds": [
+                "apache-fineract-github",
+                "open-bank-project",
+                "btcpay-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "implementationFeasibility": {
+              "value": 5.5,
+              "rationale": "A narrow small-business treasury pilot is feasible, but replacing the full breadth of M&T's commercial banking, credit, risk, liquidity, and relationship services is not near term.",
+              "sourceIds": [
+                "mtb-treasury-management",
+                "apache-fineract-github",
+                "open-bank-project"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "incumbentPressure": {
+              "value": 5.4,
+              "rationale": "Pressure would be highest in receivables, payables, account visibility, merchant payment acceptance, and smaller business relationships, not in large corporate lending or regulated balance-sheet capacity.",
+              "sourceIds": [
+                "mtb-commercial-banking",
+                "mtb-treasury-management",
+                "btcpay-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "slug": "mt-mobile-banking",
+      "name": "M&T Mobile Banking",
+      "category": "digital banking and mobile payments",
+      "homepageUrl": "https://www.mtb.com/personal/online-and-mobile/mobile-banking",
+      "summary": "M&T Mobile Banking gives customers mobile access to account management, Zelle transfers, bill pay, mobile check deposit, digital wallet support, account aggregation, card management, eStatements, and alerts.",
+      "whyItMatters": "The mobile app is M&T's daily customer interface for balances, payments, deposits, card controls, fraud alerts, and digital account engagement, making it a key retention layer even when the underlying bank balance sheet remains regulated.",
+      "replacementSketch": [
+        "A credible open replacement would be a layered wallet rather than a direct clone: regulated deposits where users need insured fiat banking, open APIs for account portability, and self-custodial or federated Bitcoin payment tools for peer-to-peer and small merchant payments.",
+        "The near-term disruption is strongest around transfers, digital wallet features, and app control. Mobile check deposit, insured balances, bank statements, fraud recovery, and fiat bill pay still require regulated institutions or highly trusted service operators."
+      ],
+      "sourceIds": [
+        "mtb-mobile-banking"
+      ],
+      "technologyWaveIds": [
+        "bitcoin-native-coordination"
+      ],
+      "alternatives": [
+        {
+          "slug": "mt-mobile-banking-mifos-x",
+          "name": "Mifos X",
+          "kind": "open-source",
+          "homepageUrl": "https://mifos.org/",
+          "summary": "Mifos X and related Mifos digital public goods provide open-source core banking, account management, payment orchestration, and mobile banking building blocks for financial-service providers.",
+          "metrics": {
+            "openness": {
+              "value": 8.8,
+              "rationale": "Mifos describes its financial-services building blocks and mobile apps as open-source digital public goods.",
+              "sourceIds": [
+                "mifos-products",
+                "mifos-docs"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "decentralizationFit": {
+              "value": 6.2,
+              "rationale": "Mifos can help many smaller institutions, cooperatives, governments, or microfinance providers run their own financial-service software, though each deployment remains institutionally operated.",
+              "sourceIds": [
+                "mifos-products",
+                "mifos-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "readiness": {
+              "value": 6.4,
+              "rationale": "Mifos documents core banking, payment orchestration, and mobile banking components, but a bank-grade consumer app still requires deployment, compliance, support, security, and regulated account operations.",
+              "sourceIds": [
+                "mifos-products",
+                "mifos-docs"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "costLeverage": {
+              "value": 7.2,
+              "rationale": "Open-source financial infrastructure can reduce vendor lock-in and license-cost barriers for smaller or mission-driven financial providers.",
+              "sourceIds": [
+                "mifos-products"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            }
+          },
+          "sourceIds": [
+            "mifos-products",
+            "mifos-docs"
+          ]
+        },
+        {
+          "slug": "mt-mobile-banking-fedimint",
+          "name": "Fedimint",
+          "kind": "decentralized",
+          "homepageUrl": "https://fedimint.org/",
+          "repoUrl": "https://github.com/fedimint/fedimint",
+          "summary": "Fedimint is an open-source federated e-cash system for Bitcoin that lets communities coordinate custody, private e-cash transfers, and Lightning interoperability.",
+          "metrics": {
+            "openness": {
+              "value": 8.8,
+              "rationale": "Fedimint publishes open documentation and links to public source code for its federated e-cash protocol.",
+              "sourceIds": [
+                "fedimint-home",
+                "fedimint-how-it-works"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "decentralizationFit": {
+              "value": 8,
+              "rationale": "Fedimint distributes custody across federation guardians and supports Lightning payments, reducing reliance on a single bank or wallet custodian for some mobile payment use cases.",
+              "sourceIds": [
+                "fedimint-home",
+                "fedimint-how-it-works"
+              ],
+              "confidence": "high",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "readiness": {
+              "value": 4.8,
+              "rationale": "Fedimint is credible infrastructure for community custody and private transfers, but it remains much less mature than a regulated bank mobile app with fiat deposits, support, compliance, and fraud recovery.",
+              "sourceIds": [
+                "fedimint-home",
+                "fedimint-how-it-works"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "costLeverage": {
+              "value": 6.4,
+              "rationale": "Federated custody and Lightning interoperability can lower some payment and custody costs, but fiat on-ramps, compliance, guardian operations, and user support still carry significant cost.",
+              "sourceIds": [
+                "fedimint-how-it-works"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            }
+          },
+          "sourceIds": [
+            "fedimint-home",
+            "fedimint-how-it-works"
+          ]
+        }
+      ],
+      "disruptionConcepts": [
+        {
+          "slug": "mt-mobile-banking-federated-lightning-wallet",
+          "name": "Federated Lightning Wallet Layer",
+          "summary": "A community bank, credit union, employer group, or local cooperative could offer a mobile wallet that pairs regulated fiat account access with Fedimint-style community custody and Lightning payment interoperability, letting users keep insured bank services while moving small payments outside a single bank-controlled app.",
+          "angleIds": [
+            "bitcoin",
+            "lightning",
+            "federation",
+            "decentralized-coordination"
+          ],
+          "thesis": "The mobile banking app shifts from a proprietary bank-owned interface into a wallet layer where users can mix regulated bank balances, open APIs, community custody, and Bitcoin-native payments.",
+          "bitcoinOrDecentralizationRole": "Bitcoin supplies the asset and settlement base for community custody, Lightning supplies interoperable low-fee payments, and federation distributes custody and operating power across guardians rather than a single mobile banking operator.",
+          "coordinationMechanism": "Users join a federation associated with a trusted community or institution; guardians collectively hold Bitcoin; Lightning gateways bridge external payments; the mobile app can use open banking interfaces for fiat account visibility and a Fedimint payment layer for Bitcoin-native transfers.",
+          "verificationOrTrustModel": "Fedimint constrains unilateral custody abuse through multi-guardian custody and e-cash accounting, while Lightning invoices provide payment-level proofs and bank balances reconcile through regulated account statements. The model still depends on guardian honesty thresholds, software security, clear disclosures, and user ability to exit.",
+          "failureModes": [
+            "Federation guardians can collude, lose keys, fail operationally, or be pressured by regulators or local politics.",
+            "Users may confuse insured bank deposits with federated Bitcoin e-cash balances unless disclosures and wallet design are unusually clear.",
+            "Fiat bill pay, mobile check deposit, card disputes, fraud recovery, and payroll remain difficult to reproduce outside regulated banking systems."
+          ],
+          "adoptionPath": [
+            "Start with a community or credit-union pilot for small peer-to-peer payments and merchant rewards while keeping insured deposits at the regulated institution.",
+            "Add Lightning gateway support and open-banking account views so users can see fiat balances and Bitcoin-native balances in one wallet.",
+            "Expand to local merchants, payroll advances, or cooperative benefit programs once support, compliance, and accounting controls are proven."
+          ],
+          "confidence": "medium",
+          "problemSourceIds": [
+            "mtb-mobile-banking"
+          ],
+          "enablerSourceIds": [
+            "fedimint-home",
+            "fedimint-how-it-works",
+            "mifos-products"
+          ],
+          "metrics": {
+            "decentralizationFit": {
+              "value": 7.7,
+              "rationale": "The concept moves small-payment custody and routing away from one bank app toward federated guardians and interoperable Bitcoin/Lightning rails.",
+              "sourceIds": [
+                "fedimint-home",
+                "fedimint-how-it-works"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "coordinationCredibility": {
+              "value": 6.2,
+              "rationale": "Fedimint documents community guardians, e-cash, and Lightning interoperability, but combining those primitives with fiat banking UX remains a complex coordination problem.",
+              "sourceIds": [
+                "fedimint-how-it-works",
+                "mtb-mobile-banking"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "implementationFeasibility": {
+              "value": 5.4,
+              "rationale": "The payment primitives exist, but bank-grade mobile UX, compliance, support, recovery, disclosures, and fiat integration make a broad consumer replacement difficult.",
+              "sourceIds": [
+                "mtb-mobile-banking",
+                "fedimint-home",
+                "fedimint-how-it-works"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            },
+            "incumbentPressure": {
+              "value": 5.8,
+              "rationale": "The concept pressures P2P transfers, digital wallet engagement, and small merchant payments more than it replaces mobile check deposit, insured balances, cards, bank statements, or regulated bill pay.",
+              "sourceIds": [
+                "mtb-mobile-banking",
+                "fedimint-how-it-works"
+              ],
+              "confidence": "medium",
+              "lastReviewedOn": "2026-06-27"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
