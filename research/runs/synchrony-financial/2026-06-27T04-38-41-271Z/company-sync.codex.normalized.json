@@ -1,0 +1,545 @@
+{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "synchrony-financial",
+      "name": "Synchrony Financial",
+      "ticker": "SYF",
+      "rankApprox": 288,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top300"
+      ],
+      "sectorId": "financials",
+      "industryId": "consumer-finance",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/synchrony/marketcap/",
+      "description": "Synchrony Financial provides private-label, dual, co-branded and general-purpose credit cards, installment lending, promotional financing, and consumer banking products in the United States.",
+      "overview": [
+        {
+          "title": "Business Profile",
+          "paragraphs": [
+            "Synchrony is a U.S. consumer finance company whose products include private-label, dual, co-branded and general-purpose credit cards, short- and long-term installment loans, and deposit products through Synchrony Bank.",
+            "The company reaches consumers through merchant and provider partners across home and auto, digital commerce, diversified retail, health and wellness, and lifestyle categories."
+          ]
+        },
+        {
+          "title": "Scale",
+          "paragraphs": [
+            "In 2025 Synchrony financed $182.3 billion of purchase volume and ended the year with $103.8 billion of loan receivables and 70.7 million active accounts.",
+            "Its largest competitive assets are partner distribution, embedded checkout and point-of-sale workflows, underwriting data, servicing infrastructure, and a deposit-funded bank balance sheet."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "Synchrony's moat is strongest where credit underwriting, compliance, deposit funding, retail integration, and partner relationships reinforce one another. The company reports long-running relationships with major partners, a large active-account base, and more than $100 billion of receivables, which are difficult for a new entrant to replicate quickly.",
+        "The moat is not absolute. Retail credit economics remain exposed to credit losses, regulation, funding costs, merchant bargaining power, and the possibility that checkout payments, loyalty, and loan servicing become more modular over time."
+      ],
+      "decentralizationNarrative": [
+        "Synchrony is only partly decentralizable because consumer credit requires capital, risk controls, KYC, servicing, collections, and regulatory compliance. Those constraints favor bank-scale operators and make a simple protocol replacement unrealistic.",
+        "The more plausible decentralization path is unbundling: open payment APIs, open-source lending cores, local credit unions, merchant cooperatives, and provider-owned financing pools could replace parts of the private-label card stack without replacing every bank function at once."
+      ],
+      "sourceIds": [
+        "synchrony-2025-10k",
+        "synchrony-financing-solutions",
+        "carecredit-home",
+        "companiesmarketcap-syf-marketcap",
+        "companiesmarketcap-syf-pe"
+      ],
+      "technologyWaveIds": [],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 276-300; market data refreshed with June 2026 CompaniesMarketCap values.",
+      "inputMetrics": {
+        "moat": {
+          "value": 7,
+          "rationale": "Synchrony combines large receivables, 70.7 million active accounts, embedded partner distribution, bank funding, and regulatory infrastructure, but partner concentration, consumer credit cycles, and regulation keep the moat below network-level payment incumbents.",
+          "sourceIds": [
+            "synchrony-2025-10k",
+            "synchrony-financing-solutions"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "decentralizability": {
+          "value": 4,
+          "rationale": "Checkout, loyalty, payment initiation, and loan servicing can be modularized with open systems, but consumer-credit capital, compliance, underwriting, fraud control, and collections remain centralized constraints.",
+          "sourceIds": [
+            "synchrony-2025-10k",
+            "apache-fineract",
+            "open-payments"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "profitability": {
+          "value": 8,
+          "rationale": "Synchrony reported 2025 net earnings of $3.552 billion, net interest income of $18.466 billion, and continued positive risk-adjusted returns despite elevated credit-loss provisioning.",
+          "sourceIds": [
+            "synchrony-2025-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "peRatio": {
+          "value": 7.82,
+          "rationale": "CompaniesMarketCap listed Synchrony's June 2026 trailing P/E ratio at 7.82.",
+          "sourceIds": [
+            "companiesmarketcap-syf-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "marketCap": {
+          "value": 26450000000,
+          "rationale": "CompaniesMarketCap listed Synchrony's June 2026 market capitalization at approximately $26.45 billion, with a reported Jun. 25, 2026 end-of-day figure near $26.41 billion.",
+          "sourceIds": [
+            "companiesmarketcap-syf-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "synchrony-credit-cards",
+        "name": "Synchrony credit cards",
+        "category": "Private-label credit and consumer financing",
+        "homepageUrl": "https://www.synchrony.com/business/financing-solutions",
+        "summary": "Synchrony offers retail credit cards, network cards, co-branded card programs, Pay Later loans, and secured installment loans for merchant partners and their customers.",
+        "whyItMatters": "Private-label credit cards sit at the intersection of retail loyalty, checkout conversion, consumer borrowing, merchant economics, and bank underwriting.",
+        "replacementSketch": [
+          "A realistic replacement would not be a single open-source credit card issuer. It would split the bundle into open checkout payment rails, merchant-funded discounts, cooperative or credit-union underwriting, and open loan-servicing software.",
+          "Merchants could keep financing as a sales tool while making payment initiation, offer comparison, account portability, and servicing less dependent on one proprietary issuer."
+        ],
+        "sourceIds": [
+          "synchrony-2025-10k",
+          "synchrony-financing-solutions"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "synchrony-credit-cards-apache-fineract",
+            "name": "Apache Fineract",
+            "kind": "open-source",
+            "homepageUrl": "https://fineract.apache.org/",
+            "repoUrl": "https://github.com/apache/fineract",
+            "summary": "Open-source core banking software for digital financial services, including client management, loan and savings portfolio management, accounting, reporting, and open APIs.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "The project is Apache-governed, publishes source releases, links to a public repository, and is licensed under the Apache License.",
+                "sourceIds": [
+                  "apache-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Fineract can let many institutions operate their own lending cores, but it is still institutional financial software rather than a decentralized credit protocol.",
+                "sourceIds": [
+                  "apache-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "readiness": {
+                "value": 7,
+                "rationale": "The project lists current stable releases and describes cloud-ready, scalable financial-services deployment, though credit-card-grade integration still requires significant implementation and compliance work.",
+                "sourceIds": [
+                  "apache-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source core banking can reduce software licensing and vendor-lock-in costs, but it does not remove funding, risk, servicing, or regulatory costs.",
+                "sourceIds": [
+                  "apache-fineract"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              }
+            },
+            "sourceIds": [
+              "apache-fineract"
+            ]
+          },
+          {
+            "slug": "synchrony-credit-cards-gnu-taler",
+            "name": "GNU Taler",
+            "kind": "open-source",
+            "homepageUrl": "https://www.taler.net/en/",
+            "summary": "A free-software payment system for privacy-friendly online and point-of-sale transactions, with wallet, merchant, exchange, and integration documentation.",
+            "metrics": {
+              "openness": {
+                "value": 9,
+                "rationale": "GNU Taler identifies itself as free software, provides public developer resources, and documents wallet, merchant, exchange, and bank-integration components.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Taler supports community-operated payment infrastructure, but exchanges and compliance functions still introduce operated trust points.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "readiness": {
+                "value": 5,
+                "rationale": "The project has wallet, merchant, point-of-sale, and plugin documentation, but merchant acceptance and consumer ubiquity remain far below card networks.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "costLeverage": {
+                "value": 6,
+                "rationale": "Open payment software could lower payment-rail dependency for some merchants, but it does not itself provide revolving credit, underwriting, or receivables funding.",
+                "sourceIds": [
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            },
+            "sourceIds": [
+              "gnu-taler"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "federated-merchant-credit-rails",
+            "name": "Federated merchant credit rails",
+            "summary": "Merchant groups, local banks, credit unions, and fintech service providers could coordinate through open payment APIs and open-source loan cores to offer portable retail financing without relying on one national private-label issuer for every checkout, offer, ledger, and servicing function.",
+            "angleIds": [
+              "federation",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept attacks the bundled private-label card model by separating payment initiation, merchant promotion, loan origination, servicing, and receivables funding into interoperable modules.",
+            "bitcoinOrDecentralizationRole": "Decentralization matters through federation rather than a mandatory Bitcoin rail: many regulated lenders and merchant groups can run compatible systems, publish comparable offers, and route payments through open APIs instead of a single issuer-controlled stack.",
+            "coordinationMechanism": "Merchants publish financing offers and invoices, local lenders or credit unions fund approved credit, open payment APIs move authorized payments, and open-source lending cores service balances and repayments.",
+            "verificationOrTrustModel": "KYC and lending compliance remain with regulated lenders; signed point-of-sale receipts, merchant invoices, loan ledgers, repayment records, and audited servicing systems constrain fake purchases, duplicate funding, and accounting manipulation.",
+            "failureModes": [
+              "Capital, licensing, credit-bureau access, and collections still favor regulated bank-scale operators.",
+              "Merchant discount economics and fraud controls may not match established private-label card programs.",
+              "Consumers may not adopt portable financing if approval, rewards, disputes, and chargeback protections are weaker than card products."
+            ],
+            "adoptionPath": [
+              "Start with regional merchant associations or vertical buying groups that already share suppliers and customers.",
+              "Use credit unions or community banks as regulated lenders while Fineract-like systems handle servicing and reporting.",
+              "Add Open Payments-style APIs and merchant settlement standards so offers can travel across POS, ecommerce, and account-to-account payment flows."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "synchrony-2025-10k",
+              "synchrony-financing-solutions"
+            ],
+            "enablerSourceIds": [
+              "apache-fineract",
+              "open-payments",
+              "gnu-taler"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "The model distributes operations across merchants and lenders but keeps regulated credit functions institutional.",
+                "sourceIds": [
+                  "apache-fineract",
+                  "open-payments",
+                  "synchrony-financing-solutions"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "The pieces exist in open payment and open lending infrastructure, but aligning merchants, lenders, compliance, fraud controls, and consumer UX is difficult.",
+                "sourceIds": [
+                  "apache-fineract",
+                  "open-payments",
+                  "gnu-taler"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "A limited vertical rollout is feasible, but broad credit-card replacement would require underwriting, servicing, dispute, risk, and regulatory maturity.",
+                "sourceIds": [
+                  "synchrony-2025-10k",
+                  "apache-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept pressures smaller merchant programs first; Synchrony's national scale, receivables funding, and partner relationships remain major defenses.",
+                "sourceIds": [
+                  "synchrony-2025-10k",
+                  "synchrony-financing-solutions"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "carecredit",
+        "name": "CareCredit",
+        "category": "Healthcare credit and promotional financing",
+        "homepageUrl": "https://www.carecredit.com/",
+        "summary": "CareCredit is Synchrony's health and wellness credit card, offering promotional financing for medical, dental, vision, veterinary, cosmetic, and related expenses across a large provider network.",
+        "whyItMatters": "CareCredit finances out-of-pocket health and wellness expenses where patients often face time-sensitive care decisions, uneven insurance coverage, and limited ability to comparison-shop financing terms.",
+        "replacementSketch": [
+          "A lighter-weight replacement would combine provider-sponsored payment plans, nonprofit or cooperative assistance pools, and open loan-servicing software instead of routing every patient through a proprietary medical credit card.",
+          "The goal would be transparent terms, local accountability, and lower-cost servicing while preserving provider payment certainty and patient repayment discipline."
+        ],
+        "sourceIds": [
+          "carecredit-home",
+          "synchrony-2025-10k",
+          "cfpb-medical-credit-report"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "carecredit-mifos-x",
+            "name": "Mifos X",
+            "kind": "open-source",
+            "homepageUrl": "https://mifos.org/",
+            "summary": "Open-source financial-inclusion platform and web app for configurable financial-service products, client management, accounting, workflows, and community-led financial services.",
+            "metrics": {
+              "openness": {
+                "value": 8,
+                "rationale": "Mifos describes Mifos X as a free and open-source platform supported by a global community and open distributed development model.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "decentralizationFit": {
+                "value": 6,
+                "rationale": "Mifos can support many local financial-service providers and community deployments, though each deployment still needs institutional governance and compliance.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "readiness": {
+                "value": 6,
+                "rationale": "Mifos X is presented as a deployable platform for financial institutions, but a patient-financing deployment would still need underwriting, privacy, provider, and regulatory customization.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "costLeverage": {
+                "value": 8,
+                "rationale": "Open-source financial-service software can lower platform costs for local lenders or nonprofits, while medical-credit capital and compliance costs remain outside the software layer.",
+                "sourceIds": [
+                  "mifos-x"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              }
+            },
+            "sourceIds": [
+              "mifos-x"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-patient-financing-pools",
+            "name": "Cooperative patient financing pools",
+            "summary": "Providers, credit unions, employers, charities, and local mutual-aid groups could pool capital for transparent patient payment plans, using open-source loan servicing and interoperable payment APIs to reduce dependence on proprietary medical credit-card programs.",
+            "angleIds": [
+              "cooperative-production",
+              "decentralized-coordination",
+              "peer-to-peer-marketplace"
+            ],
+            "thesis": "The concept changes medical financing from a national card-issuer relationship into locally governed credit and assistance pools that can compete on transparency, hardship terms, and provider accountability.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not central here; decentralization matters through cooperative governance, local funding pools, auditable ledgers, and interoperable payment rails that let multiple providers and funders participate without surrendering the whole workflow to one issuer.",
+            "coordinationMechanism": "Providers submit care invoices, patients request financing or assistance, local lenders and donors fund approved plans, and open-source servicing software records balances, subsidies, payments, and delinquencies.",
+            "verificationOrTrustModel": "Provider attestations, invoice hashes, service codes, patient consent, lender KYC, repayment receipts, and periodic cooperative audits constrain fake treatment claims, duplicate funding, inflated invoices, and insider favoritism.",
+            "failureModes": [
+              "Pools may be underfunded during local health shocks or recessions.",
+              "Providers could inflate prices or steer patients toward financing unless governance and audit rules are strong.",
+              "Medical privacy, lending compliance, collections, and interstate provider networks add operational complexity."
+            ],
+            "adoptionPath": [
+              "Begin with dental, veterinary, vision, or community-clinic networks where procedures and invoice data are easier to standardize.",
+              "Use Mifos or Fineract-style systems for low-interest payment plans, hardship grants, and repayment accounting.",
+              "Add employer, union, charity, or municipal capital once default data and patient outcome reporting are credible."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "carecredit-home",
+              "cfpb-medical-credit-report",
+              "synchrony-2025-10k"
+            ],
+            "enablerSourceIds": [
+              "mifos-x",
+              "apache-fineract",
+              "open-payments"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 7,
+                "rationale": "Patient financing can be meaningfully distributed across local providers, funders, and community governance, even though regulated lending remains necessary.",
+                "sourceIds": [
+                  "mifos-x",
+                  "apache-fineract",
+                  "cfpb-medical-credit-report"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "coordinationCredibility": {
+                "value": 5,
+                "rationale": "Provider invoices, patient accounts, and open loan-servicing tools provide a credible coordination base, but multi-party governance and adverse-selection controls are hard.",
+                "sourceIds": [
+                  "carecredit-home",
+                  "mifos-x",
+                  "apache-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "implementationFeasibility": {
+                "value": 5,
+                "rationale": "Small provider networks could pilot cooperative plans, but scaling requires privacy compliance, credit policy, capital commitments, collections, and provider pricing discipline.",
+                "sourceIds": [
+                  "cfpb-medical-credit-report",
+                  "mifos-x",
+                  "apache-fineract"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "incumbentPressure": {
+                "value": 4,
+                "rationale": "The concept could pressure high-cost or reputation-sensitive healthcare financing niches, but CareCredit's provider reach and instant-credit workflow remain strong advantages.",
+                "sourceIds": [
+                  "carecredit-home",
+                  "synchrony-2025-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "synchrony-2025-10k",
+      "title": "Synchrony Financial 2025 Form 10-K",
+      "url": "https://investors.synchrony.com/filings-regulatory/sec-filings/all-sec-filings/content/0001601712-26-000006/syf-20251231.htm",
+      "kind": "annual-report",
+      "publisher": "Synchrony Financial",
+      "note": "Primary source for Synchrony's business description, sales platforms, 2025 purchase volume, receivables, active accounts, deposits, net interest income, and net earnings.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "synchrony-financing-solutions",
+      "title": "Business Financing Options - Synchrony",
+      "url": "https://www.synchrony.com/business/financing-solutions",
+      "kind": "product-page",
+      "publisher": "Synchrony",
+      "note": "Product source for retail credit cards, network cards, Pay Later loans, secured installment loans, and merchant-partner positioning.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "carecredit-home",
+      "title": "Health and Wellness Credit Card - CareCredit",
+      "url": "https://www.carecredit.com/",
+      "kind": "product-page",
+      "publisher": "CareCredit",
+      "note": "Product source for CareCredit financing, provider-location scale, eligible care categories, and promotional financing positioning.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "companiesmarketcap-syf-marketcap",
+      "title": "Synchrony Financial (SYF) - Market Capitalization",
+      "url": "https://companiesmarketcap.com/synchrony/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for Synchrony's June 2026 market capitalization and share-price context.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "companiesmarketcap-syf-pe",
+      "title": "Synchrony Financial (SYF) - P/E Ratio",
+      "url": "https://companiesmarketcap.com/synchrony/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for Synchrony's June 2026 trailing price-to-earnings ratio.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "apache-fineract",
+      "title": "Apache Fineract",
+      "url": "https://fineract.apache.org/",
+      "kind": "open-source-project",
+      "publisher": "Apache Software Foundation",
+      "note": "Open-source core banking and loan-servicing enabler for decentralized or cooperative consumer-finance implementations.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "gnu-taler",
+      "title": "GNU Taler",
+      "url": "https://www.taler.net/en/",
+      "kind": "open-source-project",
+      "publisher": "GNUnet e.V. and Taler Systems SA",
+      "note": "Free-software payment-system source used as an open checkout and merchant-payment alternative/enabler.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "open-payments",
+      "title": "Open Payments",
+      "url": "https://openpayments.dev/",
+      "kind": "technical-docs",
+      "publisher": "Open Payments",
+      "note": "Technical-docs source for an open API standard for interoperable payment setup and completion.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "mifos-x",
+      "title": "Mifos X Platform and Web App",
+      "url": "https://mifos.org/",
+      "kind": "open-source-project",
+      "publisher": "Mifos Initiative",
+      "note": "Open-source financial-inclusion platform source used for cooperative and community patient-financing alternatives.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "cfpb-medical-credit-report",
+      "title": "Medical Credit Cards and Financing Plans",
+      "url": "https://www.consumerfinance.gov/data-research/research-reports/medical-credit-cards-and-financing-plans/",
+      "kind": "analysis",
+      "publisher": "Consumer Financial Protection Bureau",
+      "note": "Analysis source documenting consumer risks and market structure concerns around medical credit cards and healthcare installment financing.",
+      "accessedOn": "2026-06-27"
+    }
+  ],
+  "summaryMarkdown": "New Synchrony Financial bundle with retail credit-card and CareCredit product coverage, open-source financial-service/payment alternatives, and two source-backed decentralization concepts."
+}
