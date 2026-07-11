@@ -7,6 +7,7 @@ import type {
   CompanyManifest,
   CompanySyncPayload,
   ImplementationPromptsPayload,
+  RalphProviderConfig,
   RalphProviderId,
   RalphProviderPreference,
   RalphProvidersFile,

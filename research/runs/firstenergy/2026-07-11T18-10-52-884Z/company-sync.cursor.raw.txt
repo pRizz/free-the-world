@@ -1,0 +1,766 @@
+I’ll assemble a publishable `firstenergy` bundle by mirroring the repo’s current company JSON patterns and grounding all metrics/concepts in real sources. First I’m pulling a few existing electric-utility bundles to match field conventions exactly.I found prior `firstenergy` research artifacts in the repo, so I’m now extracting the latest candidate bundle and matching it against current utility-company conventions before returning the final JSON.I’ve got a complete normalized `firstenergy` JSON in prior research output; I’m doing a quick consistency pass now (source ID integrity and schema-shape sanity) before returning it verbatim.{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "firstenergy",
+      "name": "FirstEnergy",
+      "ticker": "FE",
+      "rankApprox": 288,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top300"
+      ],
+      "sectorId": "utilities",
+      "industryId": "electric-utilities",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/firstenergy/marketcap/",
+      "description": "FirstEnergy is a regulated electric utility serving customers across Ohio, Pennsylvania, New Jersey, West Virginia, Maryland, and New York.",
+      "overview": [
+        {
+          "title": "Regulated Utility Footprint",
+          "paragraphs": [
+            "FirstEnergy reports more than six million customers across the Midwest and Mid-Atlantic through regulated distribution and transmission utility operations.",
+            "Its electric utility footprint includes Ohio, Pennsylvania, New Jersey, West Virginia, Maryland, and New York, with a business model centered on regulated wires infrastructure and cost recovery."
+          ]
+        },
+        {
+          "title": "Financial Snapshot",
+          "paragraphs": [
+            "For 2025, FirstEnergy reported about $15.09 billion of total revenue, $1.271 billion of net income, and $1.020 billion of earnings attributable to FirstEnergy Corp.",
+            "CompaniesMarketCap listed FirstEnergy around $27.92 billion market capitalization and about 18.9 trailing P/E in June 2026."
+          ]
+        },
+        {
+          "title": "Grid Investment And Pressure",
+          "paragraphs": [
+            "FirstEnergy's Energize365 program targets approximately $26 billion of grid investment from 2024 to 2028, including smart meters, automation, and DER readiness.",
+            "Its Form 10-K also notes that distributed generation growth can bypass parts of traditional utility infrastructure and pressure demand growth assumptions."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "FirstEnergy's moat is primarily regulated infrastructure: local distribution franchises, transmission assets, customer billing relationships, and rate-base recovery through utility commissions.",
+        "The moat remains strong but constrained by regulatory decisions, affordability pressure, and required approval for major capital programs."
+      ],
+      "decentralizationNarrative": [
+        "Full displacement of regulated distribution utilities is difficult because poles, wires, substations, safety compliance, and outage responsibilities are local monopoly functions.",
+        "The most credible decentralization path is at the grid edge through DER orchestration, open demand-response signaling, community microgrids, and cooperative/local ownership structures."
+      ],
+      "sourceIds": [
+        "firstenergy-2025-form-10k",
+        "firstenergy-investor-home",
+        "firstenergy-energize365",
+        "firstenergy-marketcap",
+        "firstenergy-pe-ratio"
+      ],
+      "technologyWaveIds": [
+        "distributed-energy"
+      ],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 276-300; rankApprox uses the cohort midpoint pending canonical rank pinning.",
+      "inputMetrics": {
+        "moat": {
+          "value": 78,
+          "rationale": "Regulated service territories, transmission and distribution infrastructure, and tariff-based utility economics support a durable moat despite commission oversight risk.",
+          "sourceIds": [
+            "firstenergy-2025-form-10k",
+            "firstenergy-investor-home"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "decentralizability": {
+          "value": 39,
+          "rationale": "Wires operations are centralized, but DER integration, open flexibility signals, and microgrid governance can decentralize part of generation and resilience value.",
+          "sourceIds": [
+            "firstenergy-2025-form-10k",
+            "firstenergy-energize365",
+            "openadr-home",
+            "openems-home"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "profitability": {
+          "value": 62,
+          "rationale": "2025 earnings indicate stable utility profitability with heavy capital intensity typical of regulated electric infrastructure.",
+          "sourceIds": [
+            "firstenergy-2025-form-10k"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "peRatio": {
+          "value": 18.9,
+          "rationale": "CompaniesMarketCap reported FE trailing P/E around 18.9 in June 2026; this should be treated as point-in-time market data.",
+          "sourceIds": [
+            "firstenergy-pe-ratio"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-06-27"
+        },
+        "marketCap": {
+          "value": 27920000000,
+          "rationale": "CompaniesMarketCap reported FirstEnergy market capitalization at approximately $27.92 billion in June 2026.",
+          "sourceIds": [
+            "firstenergy-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-06-27"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "ohio-edison",
+        "name": "Ohio Edison",
+        "category": "Regulated electric distribution utility",
+        "homepageUrl": "https://www.firstenergycorp.com/content/customer/ohio_edison.html",
+        "summary": "Ohio Edison is FirstEnergy's Ohio utility brand providing regulated distribution service, billing, outage handling, and customer interconnection pathways.",
+        "whyItMatters": "Ohio Edison is a core local interface for reliability, customer economics, and grid-edge participation, so any decentralization pressure must work through or around this utility boundary.",
+        "replacementSketch": [
+          "A practical path begins with customer-owned solar, batteries, controllable loads, and open energy-management orchestration layered behind the meter.",
+          "Community governance, aggregation, and open demand-response participation can shift part of planning leverage and resilience value toward local operators."
+        ],
+        "sourceIds": [
+          "firstenergy-ohio-edison",
+          "firstenergy-2025-form-10k",
+          "firstenergy-energize365"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "ohio-edison-openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS is an open-source energy-management stack for coordinating storage, renewables, flexible loads, and grid-edge control.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "OpenEMS publishes source code and positions itself as free and open-source energy management software.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "It directly supports decentralized DER orchestration at the site and community edge.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "readiness": {
+                "value": 68,
+                "rationale": "The project is active and deployable, but real utility-compatible deployments still require integration and local compliance work.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open control software reduces vendor lock-in and can improve DER utilization, though hardware and permitting remain major costs.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            },
+            "sourceIds": [
+              "openems-home",
+              "openems-github"
+            ]
+          },
+          {
+            "slug": "member-owned-electric-cooperatives",
+            "name": "Member-Owned Electric Cooperatives",
+            "kind": "cooperative",
+            "homepageUrl": "https://www.electric.coop/electric-cooperative-fact-sheet",
+            "summary": "Electric cooperatives are community-owned utility structures that shift governance and accountability toward members.",
+            "metrics": {
+              "openness": {
+                "value": 56,
+                "rationale": "Cooperatives are governance-open rather than open-source; transparency depends on bylaws and local process quality.",
+                "sourceIds": [
+                  "nreca-coop-facts"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "The ownership model decentralizes control relative to investor-owned utility governance.",
+                "sourceIds": [
+                  "nreca-coop-facts",
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "readiness": {
+                "value": 82,
+                "rationale": "Cooperatives already operate at scale in the U.S., though conversion of incumbent territories is difficult.",
+                "sourceIds": [
+                  "nreca-coop-facts"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "costLeverage": {
+                "value": 54,
+                "rationale": "Member governance can redirect value locally, but acquiring or replicating wires infrastructure is capital intensive.",
+                "sourceIds": [
+                  "nreca-coop-facts",
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            },
+            "sourceIds": [
+              "nreca-coop-facts"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "ohio-edison-open-flexibility-market",
+            "name": "Open Flexibility Market for Ohio Edison Territory",
+            "summary": "An open DER flexibility market could let households, commercial sites, EV chargers, and batteries respond to standardized events and deliver verified local peak reduction.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "microgrid-coordination"
+            ],
+            "thesis": "Capacity and reliability value shifts from utility-only planning toward verified participation from many customer-owned assets.",
+            "bitcoinOrDecentralizationRole": "Decentralization comes from open protocol participation and multi-aggregator coordination; Bitcoin is not central because utility-grade metering and regulated settlement are the immediate trust rails.",
+            "coordinationMechanism": "Utilities, aggregators, and site operators exchange OpenADR-style signals and settle against measured load reduction or dispatch performance.",
+            "verificationOrTrustModel": "Interval meter data, telemetry, signed event logs, baseline methods, and nonperformance penalties reduce spoofing and fake flexibility claims.",
+            "failureModes": [
+              "Baseline methodology can be gamed when load patterns are volatile.",
+              "Regulatory design can limit third-party aggregation competition.",
+              "Cybersecurity or interoperability failures can undermine dispatch reliability."
+            ],
+            "adoptionPath": [
+              "Start with commercial loads, EV fleets, and battery sites that can automate response.",
+              "Expand to residential participation as smart-meter and consent workflows mature.",
+              "Integrate verified flexibility into local planning to defer selected infrastructure spend."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "firstenergy-2025-form-10k",
+              "firstenergy-energize365"
+            ],
+            "enablerSourceIds": [
+              "openadr-home",
+              "openems-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 76,
+                "rationale": "The concept distributes grid-balancing contribution across many customer-owned resources.",
+                "sourceIds": [
+                  "openadr-home",
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "coordinationCredibility": {
+                "value": 72,
+                "rationale": "OpenADR provides an established standard for automated demand-response signaling and coordination.",
+                "sourceIds": [
+                  "openadr-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "implementationFeasibility": {
+                "value": 67,
+                "rationale": "The technical stack is viable now, but roll-out depends on tariffs, enrollment, and regulator-approved participation rules.",
+                "sourceIds": [
+                  "openadr-home",
+                  "firstenergy-energize365"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "incumbentPressure": {
+                "value": 58,
+                "rationale": "Flexibility can defer some grid spend but does not replace distribution utility infrastructure.",
+                "sourceIds": [
+                  "firstenergy-2025-form-10k",
+                  "firstenergy-energize365"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            }
+          },
+          {
+            "slug": "ohio-edison-community-microgrid-cooperative",
+            "name": "Community Microgrid Cooperative",
+            "summary": "Neighborhood or municipal cooperatives could own local solar, storage, and controls for resilience while keeping utility interconnection and backup service.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "cooperative-production",
+              "open-energy-hardware"
+            ],
+            "thesis": "Resilience and part of generation economics move from centralized utility planning toward locally governed assets.",
+            "bitcoinOrDecentralizationRole": "The key mechanism is local ownership and open controls rather than Bitcoin; governance and transparent operations are the primary decentralization levers.",
+            "coordinationMechanism": "Members finance assets, define governance and dispatch priorities, and operate shared DER through open EMS tooling.",
+            "verificationOrTrustModel": "Revenue-grade meters, inverter telemetry, utility interconnection requirements, and cooperative audits constrain false reporting.",
+            "failureModes": [
+              "Interconnection and protection engineering can make projects expensive or slow.",
+              "Financing and governance complexity can exceed community capacity.",
+              "Weak bylaws can allow local capture and unfair allocation of benefits."
+            ],
+            "adoptionPath": [
+              "Prioritize hospitals, campuses, and municipal facilities with high resilience value.",
+              "Deploy shared solar plus storage with open EMS controls for dispatch transparency.",
+              "Scale through cooperative or municipal district models where policy allows."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "firstenergy-2025-form-10k"
+            ],
+            "enablerSourceIds": [
+              "openems-home",
+              "nreca-coop-facts"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 83,
+                "rationale": "The concept directly increases local ownership and local control of distributed energy capacity.",
+                "sourceIds": [
+                  "openems-home",
+                  "nreca-coop-facts"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "coordinationCredibility": {
+                "value": 63,
+                "rationale": "Cooperative governance is proven, and open EMS exists, but cross-stakeholder execution in incumbent territories remains difficult.",
+                "sourceIds": [
+                  "nreca-coop-facts",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "implementationFeasibility": {
+                "value": 50,
+                "rationale": "Technical components exist, but financing, permitting, and utility approval constraints limit broad deployment speed.",
+                "sourceIds": [
+                  "firstenergy-2025-form-10k",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "incumbentPressure": {
+                "value": 62,
+                "rationale": "Community microgrids can reduce outage dependence and some peak demand growth but still rely on wider utility infrastructure.",
+                "sourceIds": [
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slug": "jersey-central-power-light",
+        "name": "Jersey Central Power & Light",
+        "category": "Regulated electric distribution utility",
+        "homepageUrl": "https://www.firstenergycorp.com/our_electric_companies_home/jersey_central_powerlight.html",
+        "summary": "Jersey Central Power & Light is FirstEnergy's New Jersey utility serving about 1.2 million customers with regulated distribution and transmission service.",
+        "whyItMatters": "JCP&L is a dense-load utility interface where resilience, coastal weather exposure, DER growth, and regulatory design converge.",
+        "replacementSketch": [
+          "A realistic replacement path layers customer-owned DER, storage, and flexibility participation on top of existing utility interconnection.",
+          "With supportive regulation, local cooperative and municipal coordination can move more resilience and planning power to communities."
+        ],
+        "sourceIds": [
+          "firstenergy-electric-companies",
+          "firstenergy-2025-form-10k",
+          "firstenergy-energize365"
+        ],
+        "technologyWaveIds": [
+          "distributed-energy"
+        ],
+        "alternatives": [
+          {
+            "slug": "jersey-central-power-light-openems",
+            "name": "OpenEMS",
+            "kind": "open-source",
+            "homepageUrl": "https://openems.io/",
+            "repoUrl": "https://github.com/OpenEMS/openems",
+            "summary": "OpenEMS provides open-source orchestration for batteries, renewables, controllable load, and site-level grid interaction.",
+            "metrics": {
+              "openness": {
+                "value": 92,
+                "rationale": "Public codebase and open-source project framing support high openness.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "decentralizationFit": {
+                "value": 78,
+                "rationale": "It is explicitly designed for distributed, edge-managed energy coordination.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "readiness": {
+                "value": 68,
+                "rationale": "Deployable today with active ecosystem participation, but high-quality utility-grade integration remains nontrivial.",
+                "sourceIds": [
+                  "openems-home",
+                  "openems-github"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "costLeverage": {
+                "value": 70,
+                "rationale": "Open control logic can reduce lock-in and improve DER economics, but hardware and compliance costs remain significant.",
+                "sourceIds": [
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            },
+            "sourceIds": [
+              "openems-home",
+              "openems-github"
+            ]
+          },
+          {
+            "slug": "jersey-central-power-light-member-owned-electric-cooperatives",
+            "name": "Member-Owned Electric Cooperatives",
+            "kind": "cooperative",
+            "homepageUrl": "https://www.electric.coop/electric-cooperative-fact-sheet",
+            "summary": "Electric cooperatives offer a member-governed utility alternative that can increase local accountability.",
+            "metrics": {
+              "openness": {
+                "value": 56,
+                "rationale": "Governance openness exists, but transparency quality depends on local governance design.",
+                "sourceIds": [
+                  "nreca-coop-facts"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "decentralizationFit": {
+                "value": 74,
+                "rationale": "Member ownership decentralizes utility governance compared with investor-owned control structures.",
+                "sourceIds": [
+                  "nreca-coop-facts",
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "readiness": {
+                "value": 82,
+                "rationale": "Cooperatives are operationally proven, though conversion from an incumbent investor-owned territory is hard.",
+                "sourceIds": [
+                  "nreca-coop-facts"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "costLeverage": {
+                "value": 54,
+                "rationale": "Potential value recapture exists, but infrastructure transition costs are substantial.",
+                "sourceIds": [
+                  "nreca-coop-facts",
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            },
+            "sourceIds": [
+              "nreca-coop-facts"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "jcpl-open-flexibility-market",
+            "name": "Open Flexibility Market for JCP&L Territory",
+            "summary": "An open flexibility market could coordinate batteries, EV charging, and building controls in JCP&L territory using standardized demand-response signals.",
+            "angleIds": [
+              "decentralized-coordination",
+              "peer-to-peer-marketplace",
+              "microgrid-coordination"
+            ],
+            "thesis": "A verified flexibility layer makes part of local capacity and reliability contestable by customer assets instead of utility-only infrastructure decisions.",
+            "bitcoinOrDecentralizationRole": "Decentralization is central via open participation and device interoperability; Bitcoin is not central because settlement and verification can use utility-grade meters and regulated program rules.",
+            "coordinationMechanism": "Aggregators enroll sites, exchange OpenADR-style events, and settle incentives based on measured response performance.",
+            "verificationOrTrustModel": "Meter interval data, telemetry, event logs, baseline checks, and penalties for nonperformance constrain fake dispatch claims.",
+            "failureModes": [
+              "Poor baseline design can over-credit normal load variation.",
+              "Interoperability failures across devices and meter systems can limit program reliability.",
+              "Regulatory constraints may favor utility-run programs over open aggregator competition."
+            ],
+            "adoptionPath": [
+              "Launch with commercial and municipal loads plus EV charging depots.",
+              "Expand into residential aggregation where smart-meter and customer-consent tooling is mature.",
+              "Integrate measured flexibility into local resource and resilience planning."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "firstenergy-2025-form-10k",
+              "firstenergy-energize365"
+            ],
+            "enablerSourceIds": [
+              "openadr-home",
+              "openems-home"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 77,
+                "rationale": "The concept distributes grid-service delivery across many independent customer assets.",
+                "sourceIds": [
+                  "openadr-home",
+                  "openems-home"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "coordinationCredibility": {
+                "value": 73,
+                "rationale": "OpenADR and open EMS tooling provide credible technical primitives for standardized event coordination.",
+                "sourceIds": [
+                  "openadr-home",
+                  "openems-home"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "implementationFeasibility": {
+                "value": 66,
+                "rationale": "Technology is available, but enrollment, tariffs, cyber posture, and regulatory design remain practical gates.",
+                "sourceIds": [
+                  "openadr-home",
+                  "firstenergy-energize365"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "incumbentPressure": {
+                "value": 59,
+                "rationale": "Verified flexibility can reduce selected peak-driven investments but does not replace the underlying utility network role.",
+                "sourceIds": [
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            }
+          },
+          {
+            "slug": "jcpl-community-resilience-microgrids",
+            "name": "Community Resilience Microgrids",
+            "summary": "Municipal and campus-level microgrids in New Jersey could pair local solar and storage with islanding capability while remaining interconnected to JCP&L.",
+            "angleIds": [
+              "distributed-energy-generation",
+              "microgrid-coordination",
+              "cooperative-production",
+              "open-energy-hardware"
+            ],
+            "thesis": "Resilience spending and part of generation value migrate from centralized restoration dependence toward locally owned assets and governance.",
+            "bitcoinOrDecentralizationRole": "The decentralization mechanism is local ownership plus open controls, not Bitcoin; practical coordination depends on transparent operations and regulatory compatibility.",
+            "coordinationMechanism": "Local stakeholders finance and govern assets while open EMS scheduling coordinates dispatch against utility interconnection constraints.",
+            "verificationOrTrustModel": "Revenue-grade metering, protection engineering, interconnection studies, and municipal/cooperative audits constrain spoofing and unsafe operation.",
+            "failureModes": [
+              "Interconnection and protection requirements can make small projects uneconomic.",
+              "Resilience value can be difficult to monetize outside critical facilities.",
+              "Local governance can stall or become captured without robust accountability."
+            ],
+            "adoptionPath": [
+              "Target high-criticality sites such as hospitals, schools, shelters, and municipal campuses.",
+              "Demonstrate reliable normal-grid and islanded operation with open control stacks.",
+              "Scale through district-level cooperative or municipal resilience programs where policy permits."
+            ],
+            "confidence": "speculative",
+            "problemSourceIds": [
+              "firstenergy-2025-form-10k"
+            ],
+            "enablerSourceIds": [
+              "openems-home",
+              "nreca-coop-facts"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 84,
+                "rationale": "Community microgrids materially shift local resilience and dispatch control toward local operators.",
+                "sourceIds": [
+                  "openems-home",
+                  "nreca-coop-facts"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "coordinationCredibility": {
+                "value": 62,
+                "rationale": "Governance and technical building blocks exist, but multi-party operational execution is complex.",
+                "sourceIds": [
+                  "nreca-coop-facts",
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "implementationFeasibility": {
+                "value": 49,
+                "rationale": "Hardware and software exist, but permitting, capital, and utility coordination make broad roll-out difficult.",
+                "sourceIds": [
+                  "openems-home",
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              },
+              "incumbentPressure": {
+                "value": 63,
+                "rationale": "Microgrids can reduce restoration dependence and some incremental investment needs while leaving the incumbent network role intact.",
+                "sourceIds": [
+                  "firstenergy-2025-form-10k"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-06-27"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "firstenergy-investor-home",
+      "title": "FirstEnergy Investor Relations Homepage",
+      "url": "https://investors.firstenergycorp.com/investor-relations-homepage/default.aspx",
+      "kind": "investor-relations",
+      "publisher": "FirstEnergy Corp.",
+      "note": "Confirms utility footprint, customer scale, and service-territory framing.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "firstenergy-2025-form-10k",
+      "title": "FirstEnergy 2025 Form 10-K Annual Report",
+      "url": "https://companiesmarketcap.com/firstenergy/sec-reports-10k/0001031296-26-000046/",
+      "kind": "regulatory-filing",
+      "publisher": "FirstEnergy Corp. / SEC via CompaniesMarketCap",
+      "note": "Primary source for financials, utility business model, risks, and distributed-generation exposure.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "firstenergy-marketcap",
+      "title": "FirstEnergy Market Capitalization",
+      "url": "https://companiesmarketcap.com/firstenergy/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time market capitalization reference for FE.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "firstenergy-pe-ratio",
+      "title": "FirstEnergy P/E Ratio",
+      "url": "https://companiesmarketcap.com/firstenergy/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Point-in-time trailing P/E reference for FE.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "firstenergy-electric-companies",
+      "title": "FirstEnergy Our Electric Companies",
+      "url": "https://www.firstenergycorp.com/our_electric_companies_home.html",
+      "kind": "product-page",
+      "publisher": "FirstEnergy Corp.",
+      "note": "Lists FirstEnergy electric operating-company brands, including JCP&L and Ohio Edison.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "firstenergy-ohio-edison",
+      "title": "Ohio Edison Customer Homepage",
+      "url": "https://www.firstenergycorp.com/content/customer/ohio_edison.html",
+      "kind": "product-page",
+      "publisher": "FirstEnergy Corp.",
+      "note": "Product surface for Ohio Edison customer-facing utility service functions.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "firstenergy-energize365",
+      "title": "FirstEnergy Energize365",
+      "url": "https://www.firstenergycorp.com/about/grid-investments.html",
+      "kind": "investor-relations",
+      "publisher": "FirstEnergy Corp.",
+      "note": "Source for the 2024-2028 grid investment plan and DER readiness framing.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "openems-home",
+      "title": "OpenEMS Homepage",
+      "url": "https://openems.io/",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS Association e.V.",
+      "note": "Describes OpenEMS as a free and open-source energy-management system for DER coordination.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "openems-github",
+      "title": "OpenEMS GitHub Repository",
+      "url": "https://github.com/OpenEMS/openems",
+      "kind": "open-source-project",
+      "publisher": "OpenEMS",
+      "note": "Repository source for code transparency and project activity signals.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "openadr-home",
+      "title": "OpenADR Alliance Homepage",
+      "url": "https://www.openadr.org/",
+      "kind": "technical-docs",
+      "publisher": "OpenADR Alliance",
+      "note": "Technical source for open automated demand-response and DER signaling standards.",
+      "accessedOn": "2026-06-27"
+    },
+    {
+      "id": "nreca-coop-facts",
+      "title": "Electric Co-op Facts & Figures",
+      "url": "https://www.electric.coop/electric-cooperative-fact-sheet",
+      "kind": "analysis",
+      "publisher": "National Rural Electric Cooperative Association",
+      "note": "Background on cooperative utility ownership and governance at scale.",
+      "accessedOn": "2026-06-27"
+    }
+  ],
+  "summaryMarkdown": "FirstEnergy refresh adds a regulated electric-utility profile plus two core product surfaces (Ohio Edison and JCP&L), with open/pro-cooperative alternatives and two decentralization concepts per product: open flexibility markets and community microgrid cooperation."
+}

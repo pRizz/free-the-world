@@ -1,0 +1,316 @@
+I’ll quickly inspect how existing company bundles are structured in this repo, then I’ll return a fully populated JSON payload for `vici-properties` that follows your schema and taxonomy constraints exactly.I found a close analog (`realty-income`) and now I’m checking a gaming/hospitality company bundle to align tone, product framing, and metric scale for `vici-properties`.I’ve confirmed there are no existing VICI source records, so I’ll pull a minimal set of primary sources (VICI IR + market data) and then build the bundle using the same narrative/metric conventions as other REIT profiles.{
+  "schemaVersion": 1,
+  "bundle": {
+    "schemaVersion": 1,
+    "company": {
+      "slug": "vici-properties",
+      "name": "VICI Properties",
+      "ticker": "VICI",
+      "rankApprox": 282,
+      "maybeIpo": null,
+      "regionId": "us",
+      "indexIds": [
+        "sp500-top300"
+      ],
+      "sectorId": "real-estate",
+      "industryId": "gaming-reits",
+      "companiesMarketCapUrl": "https://companiesmarketcap.com/vici-properties/marketcap/",
+      "description": "VICI Properties is a REIT that owns gaming, hospitality, and entertainment real estate leased to experiential operators.",
+      "overview": [
+        {
+          "title": "Experiential real estate landlord",
+          "paragraphs": [
+            "VICI Properties owns one of the largest portfolios of gaming, hospitality, wellness, entertainment, and leisure real estate in North America, including Caesars Palace Las Vegas, MGM Grand, and The Venetian Resort Las Vegas.",
+            "The company describes a portfolio of 101 experiential assets, including 61 gaming properties and 40 other experiential properties, with more than 130 million square feet, roughly 66,000 hotel rooms, and more than 700 restaurants, bars, nightclubs, and sportsbooks."
+          ]
+        },
+        {
+          "title": "Triple-net lease platform",
+          "paragraphs": [
+            "VICI's business model is built around long-term triple-net leases with major experiential operators, shifting property-level taxes, insurance, maintenance, and operating responsibilities to tenants while preserving VICI's real-estate ownership and rent stream.",
+            "Its investor materials emphasize 100% triple-net leases, 100% occupancy, public-tenant transparency, parent guarantees, master-lease protections, CPI-linked rent escalation, and a roughly 39.7-year weighted average lease term including renewal options as of May 2026."
+          ]
+        }
+      ],
+      "moatNarrative": [
+        "VICI's moat is primarily physical, contractual, and regulatory. Trophy casino-resort real estate is expensive to assemble, gaming jurisdictions impose licensing and reporting requirements, and the company's master leases attach long-duration rent streams to properties that tenants cannot easily replace.",
+        "The portfolio also benefits from scale and tenant concentration in large public operators: rent collection, parent guarantees, lease escalators, and major Las Vegas Strip frontage make the cash flows more durable than ordinary commodity real estate, even though tenant credit and tourism cycles still matter."
+      ],
+      "decentralizationNarrative": [
+        "VICI is not a natural software-style decentralization target because its core asset is scarce, licensed, capital-intensive real estate. Open protocols cannot cheaply reproduce the Venetian, MGM Grand, or Caesars Palace sites.",
+        "The credible decentralization pressure is narrower: local investment cooperatives, community-owned commercial property models, tribal or municipal venue ownership, and transparent property marketplaces can keep more ownership and upside local for smaller experiential assets, but they are unlikely to displace VICI's highest-value casino-resort portfolio directly."
+      ],
+      "sourceIds": [
+        "vici-homepage",
+        "vici-investor-presentation-2026",
+        "vici-q1-2026-results",
+        "vici-q1-2026-10q",
+        "companiesmarketcap-vici-marketcap",
+        "companiesmarketcap-vici-pe",
+        "neic-homepage"
+      ],
+      "technologyWaveIds": [],
+      "snapshotNote": "Queued from the May 25, 2026 S&P 500 market-cap snapshot ranks 276-300.",
+      "inputMetrics": {
+        "moat": {
+          "value": 84,
+          "rationale": "High-replacement-cost experiential assets, gaming regulation, long master leases, CPI-linked escalation, 100% occupancy, parent guarantees, and triple-net lease economics create a strong real-estate moat.",
+          "sourceIds": [
+            "vici-investor-presentation-2026",
+            "vici-q1-2026-10q"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-07-11"
+        },
+        "decentralizability": {
+          "value": 24,
+          "rationale": "Local cooperative ownership can pressure smaller commercial and experiential projects, but VICI's core value is tied to scarce land, licensed casino resorts, long-term leases, tenant credit, and large-scale capital access.",
+          "sourceIds": [
+            "vici-homepage",
+            "vici-investor-presentation-2026",
+            "neic-homepage"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-07-11"
+        },
+        "profitability": {
+          "value": 78,
+          "rationale": "VICI reported Q1 2026 total revenue of about $1.019 billion, net income attributable to common stockholders of about $872.4 million, AFFO of about $650.9 million, and adjusted EBITDA attributable to common stockholders of about $838.2 million.",
+          "sourceIds": [
+            "vici-q1-2026-results"
+          ],
+          "confidence": "high",
+          "lastReviewedOn": "2026-07-11"
+        },
+        "peRatio": {
+          "value": 9.22,
+          "rationale": "CompaniesMarketCap reported VICI's trailing P/E ratio at about 9.22 as of June 2026.",
+          "sourceIds": [
+            "companiesmarketcap-vici-pe"
+          ],
+          "confidence": "speculative",
+          "lastReviewedOn": "2026-07-11"
+        },
+        "marketCap": {
+          "value": 29290000000,
+          "rationale": "CompaniesMarketCap reported VICI Properties at approximately $29.29 billion in market capitalization in June 2026.",
+          "sourceIds": [
+            "companiesmarketcap-vici-marketcap"
+          ],
+          "confidence": "medium",
+          "lastReviewedOn": "2026-07-11"
+        }
+      }
+    },
+    "products": [
+      {
+        "slug": "gaming-real-estate-portfolio",
+        "name": "Gaming real estate portfolio",
+        "category": "Gaming and experiential real estate",
+        "homepageUrl": "https://viciproperties.com/",
+        "summary": "VICI owns casino, resort, hospitality, entertainment, wellness, leisure, and related experiential real estate that is leased to operators under long-term agreements.",
+        "whyItMatters": "Control of destination gaming real estate shapes the economics of casino operators, host communities, and tourism districts because the real estate is scarce, regulated, operationally specialized, and difficult to relocate.",
+        "replacementSketch": [
+          "A realistic replacement is not an open-source clone of a Las Vegas Strip landlord. The better path is cooperative or community-owned commercial real estate that lets local investors, operators, tribes, municipalities, and venue users share ownership of smaller experiential properties.",
+          "That model can pressure VICI at the edges by making regional entertainment, hospitality, and leisure projects less dependent on centralized sale-leaseback capital, while still leaving trophy casino-resort assets mostly protected by scale, regulation, and irreplaceable locations."
+        ],
+        "sourceIds": [
+          "vici-homepage",
+          "vici-investor-presentation-2026",
+          "vici-q1-2026-10q",
+          "neic-homepage"
+        ],
+        "technologyWaveIds": [],
+        "alternatives": [
+          {
+            "slug": "northeast-investment-cooperative",
+            "name": "NorthEast Investment Cooperative",
+            "kind": "cooperative",
+            "homepageUrl": "https://www.neic.coop/",
+            "summary": "NorthEast Investment Cooperative is a Minnesota cooperative that lets residents collectively invest in buying, rehabilitating, and managing commercial and residential property in Northeast Minneapolis.",
+            "metrics": {
+              "openness": {
+                "value": 56,
+                "rationale": "NEIC is not open-source software, but its one-member-one-vote cooperative structure and community-investment model are more participatory than conventional REIT ownership.",
+                "sourceIds": [
+                  "neic-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-07-11"
+              },
+              "decentralizationFit": {
+                "value": 64,
+                "rationale": "The model distributes ownership, risk, and governance among local members, though it remains tied to conventional legal entities, securities rules, and local property markets.",
+                "sourceIds": [
+                  "neic-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-07-11"
+              },
+              "readiness": {
+                "value": 52,
+                "rationale": "NEIC is an operating commercial-property cooperative with real properties, but it is small and local rather than a scaled replacement for casino-resort REIT capital.",
+                "sourceIds": [
+                  "neic-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-07-11"
+              },
+              "costLeverage": {
+                "value": 43,
+                "rationale": "Patient community capital can make underutilized properties financeable and keep local upside in the community, but it does not remove land, construction, licensing, or tenant-credit costs.",
+                "sourceIds": [
+                  "neic-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-07-11"
+              }
+            },
+            "sourceIds": [
+              "neic-homepage"
+            ]
+          }
+        ],
+        "disruptionConcepts": [
+          {
+            "slug": "cooperative-experiential-real-estate-network",
+            "name": "Cooperative experiential real estate network",
+            "summary": "A network of local real-estate investment cooperatives could finance and own smaller entertainment, hospitality, leisure, and community venue properties using member capital, standard lease templates, transparent disclosures, and local governance.",
+            "angleIds": [
+              "cooperative-production",
+              "peer-to-peer-marketplace",
+              "decentralized-coordination"
+            ],
+            "thesis": "The concept changes market structure by moving some experiential real-estate ownership from centralized REIT balance sheets toward local member-owners and operators, especially for regional properties that do not require Las Vegas-scale capital or gaming-license complexity.",
+            "bitcoinOrDecentralizationRole": "Bitcoin is not central here. The decentralization role is shared local ownership, one-member-one-vote governance, direct matching between properties and community capital, and transparent performance reporting across many local entities.",
+            "coordinationMechanism": "Property sponsors publish acquisition targets, tenant commitments, lease terms, governance rules, and financing needs; local members buy cooperative shares; operators lease or co-own venues under standardized agreements; performance data helps other cooperatives decide what to replicate.",
+            "verificationOrTrustModel": "Public property records, escrowed funds, signed leases, audited cooperative financials, rent-payment records, tenant licenses, and third-party property inspections constrain fake listings, misreported occupancy, and undisclosed related-party deals, though they cannot eliminate tenant default or project-execution risk.",
+            "failureModes": [
+              "Large casino resorts require licensing, security, specialized operations, and capital far beyond most local cooperatives.",
+              "Weak disclosures, low liquidity, governance capture, or tenant failure could turn community ownership into a slow and risky financing vehicle."
+            ],
+            "adoptionPath": [
+              "Start with smaller entertainment, restaurant, arts, bowling, lodging, or mixed-use venue properties where local demand and tenant identity are visible.",
+              "Use audited results and standardized documents to replicate successful cooperatives across regions, then partner with tribal, municipal, or operator groups on larger experiential projects."
+            ],
+            "confidence": "medium",
+            "problemSourceIds": [
+              "vici-homepage",
+              "vici-investor-presentation-2026"
+            ],
+            "enablerSourceIds": [
+              "neic-homepage"
+            ],
+            "metrics": {
+              "decentralizationFit": {
+                "value": 66,
+                "rationale": "Local cooperative ownership and peer discovery distribute control meaningfully, but property law, securities compliance, and professional operations keep the model partly centralized.",
+                "sourceIds": [
+                  "neic-homepage"
+                ],
+                "confidence": "high",
+                "lastReviewedOn": "2026-07-11"
+              },
+              "coordinationCredibility": {
+                "value": 54,
+                "rationale": "The NEIC example shows that local members can pool capital for commercial property, but coordination becomes harder as assets become larger, more regulated, and more specialized.",
+                "sourceIds": [
+                  "neic-homepage",
+                  "vici-investor-presentation-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-07-11"
+              },
+              "implementationFeasibility": {
+                "value": 43,
+                "rationale": "Small and midsize venue cooperatives are feasible, but acquiring or developing casino-resort real estate requires licensing, operator relationships, balance-sheet capacity, and institutional underwriting.",
+                "sourceIds": [
+                  "neic-homepage",
+                  "vici-q1-2026-10q"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-07-11"
+              },
+              "incumbentPressure": {
+                "value": 31,
+                "rationale": "The concept can pressure VICI's future opportunity set in smaller regional experiential assets, but it is unlikely to threaten VICI's existing trophy casino-resort leases in the near term.",
+                "sourceIds": [
+                  "vici-homepage",
+                  "vici-investor-presentation-2026"
+                ],
+                "confidence": "medium",
+                "lastReviewedOn": "2026-07-11"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "sources": [
+    {
+      "id": "vici-homepage",
+      "title": "VICI Properties Homepage",
+      "url": "https://viciproperties.com/",
+      "kind": "product-page",
+      "publisher": "VICI Properties",
+      "note": "Provides current company and portfolio description, including asset counts, square footage, hotel rooms, and major property examples.",
+      "accessedOn": "2026-07-11"
+    },
+    {
+      "id": "vici-investor-presentation-2026",
+      "title": "VICI Investor Presentation",
+      "url": "https://investors.viciproperties.com/static-files/a1c8b115-9553-4658-8283-0f54022ea9ff",
+      "kind": "investor-relations",
+      "publisher": "VICI Properties",
+      "note": "Documents VICI's triple-net lease model, annual revenue scale, rent escalation, occupancy, lease protections, tenant base, and portfolio economics.",
+      "accessedOn": "2026-07-11"
+    },
+    {
+      "id": "vici-q1-2026-results",
+      "title": "VICI Properties Inc. Announces First Quarter 2026 Results",
+      "url": "https://investors.viciproperties.com/news-releases/news-release-details/vici-properties-inc-announces-first-quarter-2026-results",
+      "kind": "investor-relations",
+      "publisher": "VICI Properties",
+      "note": "Provides Q1 2026 revenue, net income, AFFO, adjusted EBITDA, and per-share profitability data.",
+      "accessedOn": "2026-07-11"
+    },
+    {
+      "id": "vici-q1-2026-10q",
+      "title": "VICI Properties Form 10-Q for the Quarter Ended March 31, 2026",
+      "url": "https://investors.viciproperties.com/static-files/57aef8b9-78c3-4ebd-ac91-987a6a8fad72",
+      "kind": "regulatory-filing",
+      "publisher": "VICI Properties",
+      "note": "Quarterly regulatory filing used for lease structure, financial statement, share count, and asset-base context.",
+      "accessedOn": "2026-07-11"
+    },
+    {
+      "id": "companiesmarketcap-vici-marketcap",
+      "title": "VICI Properties (VICI) Market Capitalization",
+      "url": "https://companiesmarketcap.com/vici-properties/marketcap/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for VICI's June 2026 market capitalization and public-market ranking.",
+      "accessedOn": "2026-07-11"
+    },
+    {
+      "id": "companiesmarketcap-vici-pe",
+      "title": "VICI Properties (VICI) P/E Ratio",
+      "url": "https://companiesmarketcap.com/vici-properties/pe-ratio/",
+      "kind": "market-data",
+      "publisher": "CompaniesMarketCap",
+      "note": "Market-data source for VICI's trailing price-to-earnings ratio as of June 2026.",
+      "accessedOn": "2026-07-11"
+    },
+    {
+      "id": "neic-homepage",
+      "title": "NorthEast Investment Cooperative",
+      "url": "https://www.neic.coop/",
+      "kind": "product-page",
+      "publisher": "NorthEast Investment Cooperative",
+      "note": "Example of a cooperative commercial-property investment model where residents collectively buy, rehabilitate, and manage local property.",
+      "accessedOn": "2026-07-11"
+    }
+  ],
+  "summaryMarkdown": "Prepared a new VICI Properties bundle with one gaming real estate portfolio product, one cooperative real-estate alternative, and one decentralization concept focused on locally owned experiential property."
+}
