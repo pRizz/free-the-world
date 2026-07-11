@@ -64,6 +64,7 @@ interface GetRoleResponse {
   Role?: {
     Arn: string;
     AssumeRolePolicyDocument?: unknown;
+    MaxSessionDuration?: number;
     RoleName: string;
   };
 }
@@ -286,14 +287,28 @@ if (allPlansAreNoOps(oidcPlan, managedPolicyPlan, rolePlan, attachmentPlan)) {
       status: "passed",
       step: "role",
     });
-  } else if (rolePlan.action === "update-trust") {
-    await applyUpdateRoleTrustPolicy(desiredTrustPolicy);
-    appliedChanges.push(`Updated the trust policy on IAM role ${desiredRoleArn}.`);
-    await run.addBreadcrumb({
-      detail: `Updated the trust policy on ${desiredRoleArn}.`,
-      status: "passed",
-      step: "role",
-    });
+  } else if (rolePlan.action === "update") {
+    if (rolePlan.updateTrustPolicy) {
+      await applyUpdateRoleTrustPolicy(desiredTrustPolicy);
+      appliedChanges.push(`Updated the trust policy on IAM role ${desiredRoleArn}.`);
+      await run.addBreadcrumb({
+        detail: `Updated the trust policy on ${desiredRoleArn}.`,
+        status: "passed",
+        step: "role",
+      });
+    }
+
+    if (rolePlan.updateSessionDuration) {
+      applyUpdateRoleSessionDuration();
+      appliedChanges.push(
+        `Updated IAM role ${desiredRoleArn} max session duration to ${deploymentConfig.awsDeployRoleSessionDurationSeconds} seconds.`,
+      );
+      await run.addBreadcrumb({
+        detail: `Updated ${desiredRoleArn} max session duration to ${deploymentConfig.awsDeployRoleSessionDurationSeconds} seconds.`,
+        status: "passed",
+        step: "role",
+      });
+    }
   }
 
   if (attachmentPlan.action === "attach") {
@@ -339,10 +354,23 @@ verificationResults.push(
   },
   {
     detail: finalRoleState
-      ? `IAM role ${desiredRoleArn} is present.`
+      ? `IAM role ${desiredRoleArn} is present with max session duration ${finalRoleState.maxSessionDuration ?? "unknown"} seconds.`
       : "Deploy IAM role is missing after the run.",
     name: "deploy role",
     status: finalRoleState ? "passed" : mode === "check" ? "skipped" : "failed",
+  },
+  {
+    detail:
+      finalRoleState?.maxSessionDuration === deploymentConfig.awsDeployRoleSessionDurationSeconds
+        ? `IAM role ${desiredRoleArn} allows ${deploymentConfig.awsDeployRoleSessionDurationSeconds}-second deployment sessions.`
+        : `IAM role ${desiredRoleArn} max session duration is ${finalRoleState?.maxSessionDuration ?? "unknown"} seconds; expected ${deploymentConfig.awsDeployRoleSessionDurationSeconds}.`,
+    name: "role session duration",
+    status:
+      finalRoleState?.maxSessionDuration === deploymentConfig.awsDeployRoleSessionDurationSeconds
+        ? "passed"
+        : mode === "check"
+          ? "skipped"
+          : "failed",
   },
   {
     detail: finalRoleState?.attachedPolicyArns.includes(desiredPolicyArn)
@@ -674,6 +702,7 @@ function loadRoleState(roleArn: string) {
         .filter((policyArn): policyArn is string => Boolean(policyArn))
         .sort() ?? [],
     assumeRolePolicyDocument: response.Role?.AssumeRolePolicyDocument ?? null,
+    maxSessionDuration: response.Role?.MaxSessionDuration ?? null,
     roleName: response.Role?.RoleName ?? deploymentConfig.awsDeployRoleName,
   };
 }
@@ -688,17 +717,22 @@ function planRole(
     };
   }
 
-  if (
-    normalizePolicyDocument(currentState.assumeRolePolicyDocument) ===
-    normalizePolicyDocument(desiredTrustPolicy)
-  ) {
+  const updateTrustPolicy =
+    normalizePolicyDocument(currentState.assumeRolePolicyDocument) !==
+    normalizePolicyDocument(desiredTrustPolicy);
+  const updateSessionDuration =
+    currentState.maxSessionDuration !== deploymentConfig.awsDeployRoleSessionDurationSeconds;
+
+  if (!updateTrustPolicy && !updateSessionDuration) {
     return {
       action: "none" as const,
     };
   }
 
   return {
-    action: "update-trust" as const,
+    action: "update" as const,
+    updateSessionDuration,
+    updateTrustPolicy,
   };
 }
 
@@ -713,6 +747,8 @@ async function applyCreateRole(trustPolicy: ReturnType<typeof buildGithubOidcTru
       `file://${filePath}`,
       "--description",
       "GitHub Actions deployment role for Free The World",
+      "--max-session-duration",
+      String(deploymentConfig.awsDeployRoleSessionDurationSeconds),
       "--output",
       "json",
     ]);
@@ -732,6 +768,17 @@ async function applyUpdateRoleTrustPolicy(
       `file://${filePath}`,
     ]);
   });
+}
+
+function applyUpdateRoleSessionDuration() {
+  runCommand("aws", [
+    "iam",
+    "update-role",
+    "--role-name",
+    deploymentConfig.awsDeployRoleName,
+    "--max-session-duration",
+    String(deploymentConfig.awsDeployRoleSessionDurationSeconds),
+  ]);
 }
 
 function planRoleAttachment(

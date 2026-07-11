@@ -35,6 +35,7 @@ export const deploymentConfig = {
   awsStackName: "free-the-world-site",
   awsDeployPolicyName: "free-the-world-github-deploy",
   awsDeployRoleName: "free-the-world-github-deploy",
+  awsDeployRoleSessionDurationSeconds: 7200,
   awsGithubOidcAudience: "sts.amazonaws.com",
   awsGithubOidcProviderUrl: "https://token.actions.githubusercontent.com",
   primaryCanonicalDomain,
