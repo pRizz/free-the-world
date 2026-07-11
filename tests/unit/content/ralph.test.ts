@@ -13,6 +13,7 @@ import {
   extractJsonPayload,
   findCodexSessionFile,
   isBundleStale,
+  mergeProviderConfigs,
   normalizeCompanySyncPayload,
   resolveProviderExecutionPlan,
   resolveProviders,
@@ -736,6 +737,59 @@ test("example provider config defaults auto mode to Cursor before Codex and Clau
   expect(providerConfig.defaultProviderOrder).toEqual(["cursor", "codex", "claude"]);
   expect(providerConfig.providers.cursor.command).toBe("agent");
   expect(providerConfig.providers.cursor.args).toContain("grok-4.5-xhigh");
+});
+
+test("mergeProviderConfigs keeps example providers while applying local overrides", () => {
+  const exampleConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["cursor", "codex", "claude"],
+    providers: {
+      cursor: {
+        command: "agent",
+        args: ["-p", "--model", "grok-4.5-xhigh"],
+      },
+      codex: {
+        command: "codex",
+        args: ["exec"],
+      },
+      claude: {
+        command: "claude",
+        args: ["-p"],
+      },
+    },
+  };
+
+  const merged = mergeProviderConfigs(exampleConfig, {
+    defaultProviderOrder: ["codex", "claude"],
+    providers: {
+      codex: {
+        command: "codex",
+        args: ["exec", "-c", "search=false"],
+        timeoutMs: 240000,
+      },
+    },
+  });
+
+  expect(merged.defaultProviderOrder).toEqual(["codex", "claude"]);
+  expect(merged.providers.cursor.command).toBe("agent");
+  expect(merged.providers.codex.args).toEqual(["exec", "-c", "search=false"]);
+  expect(merged.providers.codex.timeoutMs).toBe(240000);
+  expect(resolveProviders("cursor", merged)).toEqual(["cursor"]);
+});
+
+test("resolveProviders explains when a requested provider is missing from config", () => {
+  const providerConfig = {
+    schemaVersion: 1 as const,
+    defaultProviderOrder: ["codex"] as const,
+    providers: {
+      codex: {
+        command: "bash",
+        args: ["-lc", "cat"],
+      },
+    },
+  } as unknown as RalphProvidersFile;
+
+  expect(() => resolveProviders("cursor", providerConfig)).toThrow(/not configured/i);
 });
 
 test("resolveProviderExecutionPlan injects codex last-message capture before stdin prompt", async () => {

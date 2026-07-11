@@ -228,7 +228,7 @@ Generate low-level loop artifacts for every seeded company:
 bun run loop
 ```
 
-Provider defaults live in `config/ralph.providers.example.json`; `auto` tries Cursor Agent first (default model `grok-4.5-xhigh`), then Codex, then Claude. Authenticate Cursor via `agent login` or `CURSOR_API_KEY`. Machine-local overrides belong in `.codex/ralph.providers.local.json`.
+Provider defaults live in `config/ralph.providers.example.json`; `auto` tries Cursor Agent first (default model `grok-4.5-xhigh`), then Codex, then Claude. Authenticate Cursor via `agent login` or `CURSOR_API_KEY`. Machine-local overrides in `.codex/ralph.providers.local.json` merge on top of the example (provider entries and optional `defaultProviderOrder`), so older local files still pick up newly added backends like Cursor.
 Claude provider entries can also set `env` overrides; the default profile now disables nonessential traffic and official marketplace autoinstall so Ralph runs are less exposed to local Claude plugin state.
 
 ## Theme

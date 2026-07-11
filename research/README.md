@@ -37,6 +37,6 @@ Provider execution uses JSON config files instead of shell-string templates:
 - `config/ralph.providers.example.json`
 - `.codex/ralph.providers.local.json`
 
-With `--provider=auto`, Ralph prefers the Cursor Agent CLI (`agent`, default model `grok-4.5-xhigh`) when installed, then Codex, then Claude. Use `agent login` or `CURSOR_API_KEY` for Cursor auth; local binary/model overrides go in `.codex/ralph.providers.local.json`.
+With `--provider=auto`, Ralph prefers the Cursor Agent CLI (`agent`, default model `grok-4.5-xhigh`) when installed, then Codex, then Claude. Use `agent login` or `CURSOR_API_KEY` for Cursor auth; `.codex/ralph.providers.local.json` merges over the example config (so new providers such as Cursor remain available even when the local file is older).
 
 The sync pipeline expects pure JSON responses, validates them against the content compiler, and only publishes canonical JSON content when validation passes.

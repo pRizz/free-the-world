@@ -264,27 +264,67 @@ function tailPreview(value: string, maxLength = 240) {
   return compact.slice(-maxLength);
 }
 
-export async function loadProviderConfig(): Promise<RalphProvidersFile> {
-  for (const providerConfigFile of [localProviderConfigFile, exampleProviderConfigFile]) {
-    try {
-      await access(providerConfigFile, fsConstants.F_OK);
-      const rawText = await readFile(providerConfigFile, "utf8");
-      return JSON.parse(rawText) as RalphProvidersFile;
-    } catch {}
+export type RalphProvidersFilePartial = {
+  schemaVersion?: 1;
+  defaultProviderOrder?: RalphProviderId[];
+  providers?: Partial<Record<RalphProviderId, RalphProviderConfig>>;
+};
+
+/** Merge example defaults with optional local overrides (providers + order). */
+export function mergeProviderConfigs(
+  exampleConfig: RalphProvidersFile,
+  maybeLocalConfig: RalphProvidersFilePartial | null,
+): RalphProvidersFile {
+  if (!maybeLocalConfig) {
+    return exampleConfig;
   }
 
-  throw new Error(
-    [
-      "No Ralph provider config found.",
-      `Fix: copy ${path.relative(rootDir, exampleProviderConfigFile)} to ${path.relative(rootDir, localProviderConfigFile)} for local overrides, or add a provider config at one of those paths.`,
-    ].join("\n"),
-  );
+  return {
+    schemaVersion: 1,
+    defaultProviderOrder:
+      maybeLocalConfig.defaultProviderOrder ?? exampleConfig.defaultProviderOrder,
+    providers: {
+      ...exampleConfig.providers,
+      ...(maybeLocalConfig.providers ?? {}),
+    },
+  };
+}
+
+async function readProviderConfigFile(filePath: string): Promise<RalphProvidersFilePartial | null> {
+  try {
+    await access(filePath, fsConstants.F_OK);
+    const rawText = await readFile(filePath, "utf8");
+    return JSON.parse(rawText) as RalphProvidersFilePartial;
+  } catch {
+    return null;
+  }
+}
+
+export async function loadProviderConfig(): Promise<RalphProvidersFile> {
+  const maybeExampleConfig = await readProviderConfigFile(exampleProviderConfigFile);
+  const maybeLocalConfig = await readProviderConfigFile(localProviderConfigFile);
+
+  if (!maybeExampleConfig && !maybeLocalConfig) {
+    throw new Error(
+      [
+        "No Ralph provider config found.",
+        `Fix: copy ${path.relative(rootDir, exampleProviderConfigFile)} to ${path.relative(rootDir, localProviderConfigFile)} for local overrides, or add a provider config at one of those paths.`,
+      ].join("\n"),
+    );
+  }
+
+  if (!maybeExampleConfig) {
+    return maybeLocalConfig as RalphProvidersFile;
+  }
+
+  return mergeProviderConfigs(maybeExampleConfig as RalphProvidersFile, maybeLocalConfig);
 }
 
 export function detectProviderAvailability(providerConfig: RalphProvidersFile) {
   const availability = {} as Record<RalphProviderId, boolean>;
   for (const provider of Object.keys(providerConfig.providers) as RalphProviderId[]) {
-    availability[provider] = commandExists(providerConfig.providers[provider].command);
+    const maybeProvider = providerConfig.providers[provider];
+    availability[provider] = Boolean(maybeProvider && commandExists(maybeProvider.command));
   }
   return availability;
 }
@@ -294,10 +334,14 @@ function formatProviderAvailabilitySummary(
   availability: Record<RalphProviderId, boolean>,
 ) {
   return providerConfig.defaultProviderOrder
-    .map(
-      (provider) =>
-        `${provider}=${providerConfig.providers[provider].command} (available=${availability[provider]})`,
-    )
+    .map((provider) => {
+      const maybeProvider = providerConfig.providers[provider];
+      if (!maybeProvider) {
+        return `${provider}=(unconfigured) (available=false)`;
+      }
+
+      return `${provider}=${maybeProvider.command} (available=${Boolean(availability[provider])})`;
+    })
     .join(", ");
 }
 
@@ -342,11 +386,22 @@ export function resolveProviders(
     return providerConfig.defaultProviderOrder;
   }
 
+  const maybeRequestedProvider = providerConfig.providers[providerPreference];
+  if (!maybeRequestedProvider) {
+    throw new Error(
+      [
+        `Requested provider ${providerPreference} is not configured.`,
+        `Configured providers: ${Object.keys(providerConfig.providers).sort().join(", ") || "(none)"}.`,
+        `Fix: add a ${providerPreference} entry under providers, or use --provider=auto. ${configGuidance}`,
+      ].join("\n"),
+    );
+  }
+
   if (!availability[providerPreference]) {
     throw new Error(
       [
         `Requested provider ${providerPreference} is not available.`,
-        `Configured command: ${providerConfig.providers[providerPreference].command}.`,
+        `Configured command: ${maybeRequestedProvider.command}.`,
         `Fix: install that command or point ${providerPreference} to an installed binary. ${configGuidance}`,
       ].join("\n"),
     );
@@ -399,6 +454,16 @@ export function resolveProviderExecutionPlan(
   providerConfig: RalphProvidersFile,
 ): ProviderExecutionPlan {
   const config = providerConfig.providers[provider];
+  if (!config) {
+    throw new Error(
+      [
+        `Provider ${provider} is not configured.`,
+        `Configured providers: ${Object.keys(providerConfig.providers).sort().join(", ") || "(none)"}.`,
+        `Fix: add a ${provider} entry under providers in ${path.relative(rootDir, exampleProviderConfigFile)} or ${path.relative(rootDir, localProviderConfigFile)}.`,
+      ].join("\n"),
+    );
+  }
+
   const templatedVariables = {
     ...variables,
     lastMessageFile: path.join(
