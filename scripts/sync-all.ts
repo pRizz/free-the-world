@@ -27,7 +27,7 @@ const args = parseArgs(process.argv.slice(2));
 
 if (args.help === "true") {
   console.log(
-    "Usage: bun run sync:all [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--target=published|all|stale] [--company=<slug[,slug]>] [--no-commit=true]",
+    "Usage: bun run sync:all [--provider=auto|cursor|codex|claude|both] [--mode=dry-run|publish] [--target=published|all|stale] [--company=<slug[,slug]>] [--no-commit=true]",
   );
   process.exit(0);
 }

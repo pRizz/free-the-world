@@ -36,7 +36,7 @@ export const researchTaskIds = [
 ] as const;
 
 export type ResearchTaskId = (typeof researchTaskIds)[number];
-export type RalphProviderId = "claude" | "codex";
+export type RalphProviderId = "cursor" | "claude" | "codex";
 export type RalphProviderPreference = RalphProviderId | "auto" | "both";
 export type RalphSyncMode = "dry-run" | "publish";
 export const syncBatchTargetIds = ["published", "all", "stale"] as const;

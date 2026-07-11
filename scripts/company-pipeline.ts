@@ -6,7 +6,7 @@ import { parseLoopConcurrencyLimit } from "./lib/ralph-loop-runner";
 const args = parseArgs(process.argv.slice(2));
 
 const usage =
-  "Usage: bun run company:pipeline [--manifest=<path[,path]>] [--queued=<slug[,slug]>] [--company=<slug[,slug]>] [--batch-id=<id>] [--group-label=<label>] [--request-notes=<text>] [--loop-tasks=<task[,task]>|all] [--skip-loop=true] [--skip-sync=true] [--execute-loop=false] [--concurrency=<n>] [--provider=auto|codex|claude|both] [--mode=dry-run|publish] [--no-commit=true|false]";
+  "Usage: bun run company:pipeline [--manifest=<path[,path]>] [--queued=<slug[,slug]>] [--company=<slug[,slug]>] [--batch-id=<id>] [--group-label=<label>] [--request-notes=<text>] [--loop-tasks=<task[,task]>|all] [--skip-loop=true] [--skip-sync=true] [--execute-loop=false] [--concurrency=<n>] [--provider=auto|cursor|codex|claude|both] [--mode=dry-run|publish] [--no-commit=true|false]";
 
 if (args.help === "true") {
   console.log(usage);

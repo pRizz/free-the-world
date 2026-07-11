@@ -282,10 +282,23 @@ export async function loadProviderConfig(): Promise<RalphProvidersFile> {
 }
 
 export function detectProviderAvailability(providerConfig: RalphProvidersFile) {
-  return {
-    claude: commandExists(providerConfig.providers.claude.command),
-    codex: commandExists(providerConfig.providers.codex.command),
-  } satisfies Record<RalphProviderId, boolean>;
+  const availability = {} as Record<RalphProviderId, boolean>;
+  for (const provider of Object.keys(providerConfig.providers) as RalphProviderId[]) {
+    availability[provider] = commandExists(providerConfig.providers[provider].command);
+  }
+  return availability;
+}
+
+function formatProviderAvailabilitySummary(
+  providerConfig: RalphProvidersFile,
+  availability: Record<RalphProviderId, boolean>,
+) {
+  return providerConfig.defaultProviderOrder
+    .map(
+      (provider) =>
+        `${provider}=${providerConfig.providers[provider].command} (available=${availability[provider]})`,
+    )
+    .join(", ");
 }
 
 export function resolveProviders(
@@ -297,13 +310,14 @@ export function resolveProviders(
     (provider) => availability[provider],
   );
   const configGuidance = `Check ${path.relative(rootDir, exampleProviderConfigFile)} and ${path.relative(rootDir, localProviderConfigFile)}.`;
+  const availabilitySummary = formatProviderAvailabilitySummary(providerConfig, availability);
 
   if (providerPreference === "auto") {
     if (orderedProviders.length === 0) {
       throw new Error(
         [
           "No configured Ralph providers are available.",
-          `Configured commands: codex=${providerConfig.providers.codex.command} (available=${availability.codex}), claude=${providerConfig.providers.claude.command} (available=${availability.claude}).`,
+          `Configured commands: ${availabilitySummary}.`,
           `Fix: install one of the configured provider commands or update the provider config. ${configGuidance}`,
         ].join("\n"),
       );
@@ -313,10 +327,13 @@ export function resolveProviders(
   }
 
   if (providerPreference === "both") {
-    if (!availability.codex || !availability.claude) {
+    const missingProviders = providerConfig.defaultProviderOrder.filter(
+      (provider) => !availability[provider],
+    );
+    if (missingProviders.length > 0) {
       throw new Error(
         [
-          `Provider preference "both" requires both providers to be available. codex=${availability.codex}, claude=${availability.claude}.`,
+          `Provider preference "both" requires all providers in defaultProviderOrder to be available. Missing: ${missingProviders.join(", ")}. ${availabilitySummary}.`,
           `Fix: install the missing provider command(s) or update the provider config. ${configGuidance}`,
         ].join("\n"),
       );
@@ -415,6 +432,10 @@ export function resolveProviderExecutionPlan(
     if (!resolveOptionValue(args, "--output-format")) {
       args = [...args, "--output-format", "json"];
     }
+  }
+
+  if (provider === "cursor" && !resolveOptionValue(args, "--output-format")) {
+    args = [...args, "--output-format", "json"];
   }
 
   return {
@@ -2013,13 +2034,13 @@ async function resolveProviderOutput(
   metadata?: ProviderOutputMetadata;
 }> {
   const resolvedText = await resolveProviderOutputText(stdoutBuffer, maybeOutputFile);
-  if (provider === "claude") {
-    const maybeClaudeResult = extractClaudeCliResult(resolvedText.rawOutput, maybeOutputFormat);
-    if (maybeClaudeResult) {
+  if (provider === "claude" || provider === "cursor") {
+    const maybeCliResult = extractCliJsonResult(resolvedText.rawOutput, maybeOutputFormat);
+    if (maybeCliResult) {
       return {
-        rawOutput: maybeClaudeResult.rawOutput,
+        rawOutput: maybeCliResult.rawOutput,
         outputSource: resolvedText.outputSource,
-        metadata: maybeClaudeResult.metadata,
+        metadata: maybeCliResult.metadata,
       };
     }
   }
@@ -2144,7 +2165,8 @@ export function extractClaudeDebugDiagnostics(
   };
 }
 
-export function extractClaudeCliResult(rawOutput: string, maybeOutputFormat: string | null = null) {
+/** Unwrap Claude/Cursor CLI `--output-format json` envelopes (`type: "result"`). */
+export function extractCliJsonResult(rawOutput: string, maybeOutputFormat: string | null = null) {
   if (maybeOutputFormat && maybeOutputFormat !== "json") {
     return null;
   }
@@ -2177,6 +2199,9 @@ export function extractClaudeCliResult(rawOutput: string, maybeOutputFormat: str
     } satisfies ProviderOutputMetadata,
   };
 }
+
+/** @deprecated Use extractCliJsonResult. Kept for call-site compatibility during rename. */
+export const extractClaudeCliResult = extractCliJsonResult;
 
 export function extractCodexSessionId(stderr: string) {
   const maybeMatch = stderr.match(/session id:\s*([0-9a-f-]+)/i);

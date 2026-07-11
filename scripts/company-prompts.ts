@@ -26,7 +26,7 @@ import {
 const args = parseArgs(process.argv.slice(2));
 
 const usage =
-  "Usage: bun run company:prompts [--company=<slug[,slug]>|--all=true] [--provider=auto|codex|claude|both] [--mode=dry-run|publish]";
+  "Usage: bun run company:prompts [--company=<slug[,slug]>|--all=true] [--provider=auto|cursor|codex|claude|both] [--mode=dry-run|publish]";
 
 if (args.help === "true") {
   console.log(usage);

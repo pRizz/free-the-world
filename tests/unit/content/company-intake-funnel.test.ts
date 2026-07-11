@@ -643,8 +643,13 @@ async function writeFakeIntakeProvider(
 
   await writeJson(path.join(dotCodexDir, "ralph.providers.local.json"), {
     schemaVersion: 1,
-    defaultProviderOrder: ["claude", "codex"],
+    defaultProviderOrder: ["claude", "codex", "cursor"],
     providers: {
+      cursor: {
+        command: "definitely-missing-cursor-command-for-ftw",
+        args: [],
+        timeoutMs: 5000,
+      },
       claude: {
         command: scriptFile,
         args: [payloadFile],

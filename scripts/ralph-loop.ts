@@ -14,7 +14,7 @@ const args = parseArgs(process.argv.slice(2));
 
 if (args.help === "true") {
   console.log(
-    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--batch-id=<id>] [--provider=auto|codex|claude|both] [--execute=true] [--concurrency=<n>]",
+    "Usage: bun run loop [--company=<slug>[,<slug>]] [--task=<task-id>[,<task-id>]] [--batch-id=<id>] [--provider=auto|cursor|codex|claude|both] [--execute=true] [--concurrency=<n>]",
   );
   process.exit(0);
 }

@@ -13,7 +13,7 @@ import { parseLoopConcurrencyLimit } from "./lib/ralph-loop-runner";
 const args = parseArgs(process.argv.slice(2));
 
 const usage =
-  "Usage: bun run company:intake [--raw=<text> | --items-file=<path> | --request=<id>] [--mode=prepare|dry-run|publish] [--batch-id=<id>] [--group-label=<label>] [--already-researched=skip|refresh] [--request-notes=<text>] [--loop-tasks=<task[,task]>|all] [--concurrency=<n>] [--provider=auto|codex|claude|both] [--no-commit=true|false]";
+  "Usage: bun run company:intake [--raw=<text> | --items-file=<path> | --request=<id>] [--mode=prepare|dry-run|publish] [--batch-id=<id>] [--group-label=<label>] [--already-researched=skip|refresh] [--request-notes=<text>] [--loop-tasks=<task[,task]>|all] [--concurrency=<n>] [--provider=auto|cursor|codex|claude|both] [--no-commit=true|false]";
 
 if (args.help === "true") {
   console.log(usage);

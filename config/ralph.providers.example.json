@@ -1,7 +1,23 @@
 {
   "schemaVersion": 1,
-  "defaultProviderOrder": ["codex", "claude"],
+  "defaultProviderOrder": ["cursor", "codex", "claude"],
   "providers": {
+    "cursor": {
+      "command": "agent",
+      "args": [
+        "-p",
+        "--output-format",
+        "json",
+        "--model",
+        "grok-4.5-xhigh",
+        "--workspace",
+        "{{rootDir}}",
+        "--trust",
+        "--mode",
+        "ask"
+      ],
+      "timeoutMs": 600000
+    },
     "codex": {
       "command": "codex",
       "args": ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-o", "{{lastMessageFile}}", "-"],

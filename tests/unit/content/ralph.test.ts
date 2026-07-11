@@ -8,6 +8,7 @@ import {
   executeProvider,
   extractClaudeCliResult,
   extractClaudeDebugDiagnostics,
+  extractCliJsonResult,
   extractCodexSessionId,
   extractJsonPayload,
   findCodexSessionFile,
@@ -21,6 +22,11 @@ import type {
   CompanySyncPayload,
   RalphProvidersFile,
 } from "../../../src/lib/domain/content-types";
+
+const missingCursorProvider = {
+  command: "definitely-missing-cursor-command-for-ftw",
+  args: [] as string[],
+};
 
 test("extractJsonPayload parses raw JSON and fenced JSON", () => {
   expect(extractJsonPayload('{"ok":true}')).toEqual({ ok: true });
@@ -608,9 +614,9 @@ test("dedupeCompanySyncPayloadSlugs prefixes colliding slugs", () => {
   );
 });
 
-test("extractClaudeCliResult unwraps Claude JSON output metadata", () => {
+test("extractCliJsonResult unwraps Claude and Cursor JSON output metadata", () => {
   expect(
-    extractClaudeCliResult(
+    extractCliJsonResult(
       JSON.stringify({
         type: "result",
         result: '{"ok":true}',
@@ -632,7 +638,32 @@ test("extractClaudeCliResult unwraps Claude JSON output metadata", () => {
       stopReason: null,
     },
   });
-  expect(extractClaudeCliResult("Hello!", "text")).toBeNull();
+  expect(
+    extractCliJsonResult(
+      JSON.stringify({
+        type: "result",
+        subtype: "success",
+        is_error: false,
+        result: '{"provider":"cursor"}',
+        session_id: "cursor-session",
+        duration_ms: 100,
+      }),
+      "json",
+    ),
+  ).toEqual({
+    rawOutput: '{"provider":"cursor"}',
+    metadata: {
+      sessionId: "cursor-session",
+      durationMs: 100,
+      totalCostUsd: undefined,
+      numTurns: undefined,
+      stopReason: undefined,
+    },
+  });
+  expect(extractCliJsonResult("Hello!", "text")).toBeNull();
+  expect(extractClaudeCliResult('{"type":"result","result":"alias"}', "json")?.rawOutput).toBe(
+    "alias",
+  );
 });
 
 test("extractCodexSessionId parses the session id from provider stderr", () => {
@@ -675,8 +706,9 @@ test("findCodexSessionFile resolves nested session logs under CODEX_HOME", async
 test("resolveProviders honors provider availability and auto fallback order", () => {
   const providerConfig: RalphProvidersFile = {
     schemaVersion: 1,
-    defaultProviderOrder: ["codex", "claude"],
+    defaultProviderOrder: ["cursor", "codex", "claude"],
     providers: {
+      cursor: missingCursorProvider,
       codex: {
         command: "definitely-missing-command-for-ftw",
         args: [],
@@ -689,25 +721,30 @@ test("resolveProviders honors provider availability and auto fallback order", ()
   };
 
   expect(resolveProviders("auto", providerConfig)).toEqual(["claude"]);
-  expect(() => resolveProviders("both", providerConfig)).toThrow(/requires both providers/i);
+  expect(() => resolveProviders("both", providerConfig)).toThrow(
+    /requires all providers in defaultProviderOrder/i,
+  );
 });
 
-test("example provider config defaults auto mode to Codex before Claude", async () => {
+test("example provider config defaults auto mode to Cursor before Codex and Claude", async () => {
   const rawConfig = await readFile(
     new URL("../../../config/ralph.providers.example.json", import.meta.url),
     "utf8",
   );
   const providerConfig = JSON.parse(rawConfig) as RalphProvidersFile;
 
-  expect(providerConfig.defaultProviderOrder).toEqual(["codex", "claude"]);
+  expect(providerConfig.defaultProviderOrder).toEqual(["cursor", "codex", "claude"]);
+  expect(providerConfig.providers.cursor.command).toBe("agent");
+  expect(providerConfig.providers.cursor.args).toContain("grok-4.5-xhigh");
 });
 
 test("resolveProviderExecutionPlan injects codex last-message capture before stdin prompt", async () => {
   const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-provider-"));
   const providerConfig: RalphProvidersFile = {
     schemaVersion: 1,
-    defaultProviderOrder: ["codex", "claude"],
+    defaultProviderOrder: ["cursor", "codex", "claude"],
     providers: {
+      cursor: missingCursorProvider,
       codex: {
         command: "codex",
         args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
@@ -736,12 +773,61 @@ test("resolveProviderExecutionPlan injects codex last-message capture before std
   expect(plan.maybeOutputFile).toBe(path.join(runDir, "company-sync.codex.last-message.txt"));
 });
 
+test("resolveProviderExecutionPlan injects cursor json output format when missing", async () => {
+  const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-cursor-provider-"));
+  const providerConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["cursor", "codex", "claude"],
+    providers: {
+      cursor: {
+        command: "agent",
+        args: [
+          "-p",
+          "--model",
+          "grok-4.5-xhigh",
+          "--workspace",
+          "{{rootDir}}",
+          "--trust",
+          "--mode",
+          "ask",
+        ],
+      },
+      codex: {
+        command: "codex",
+        args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
+      },
+      claude: {
+        command: "claude",
+        args: ["-p"],
+      },
+    },
+  };
+
+  const plan = resolveProviderExecutionPlan(
+    "cursor",
+    {
+      rootDir: "/repo/root",
+      companySlug: "fixtureco",
+      taskId: "company-overview",
+      runDir,
+    },
+    providerConfig,
+  );
+
+  expect(plan.command).toBe("agent");
+  expect(plan.args).toContain("--output-format");
+  expect(plan.outputFormat).toBe("json");
+  expect(plan.args).toContain("grok-4.5-xhigh");
+  expect(plan.args).toContain("/repo/root");
+});
+
 test("resolveProviderExecutionPlan injects claude debug-file and default json output", async () => {
   const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-claude-provider-"));
   const providerConfig: RalphProvidersFile = {
     schemaVersion: 1,
-    defaultProviderOrder: ["claude", "codex"],
+    defaultProviderOrder: ["claude", "codex", "cursor"],
     providers: {
+      cursor: missingCursorProvider,
       claude: {
         command: "claude",
         args: ["-p", "--permission-mode", "dontAsk"],
@@ -807,8 +893,9 @@ test("executeProvider unwraps Claude JSON output envelopes", async () => {
   const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-claude-json-"));
   const providerConfig: RalphProvidersFile = {
     schemaVersion: 1,
-    defaultProviderOrder: ["claude", "codex"],
+    defaultProviderOrder: ["claude", "codex", "cursor"],
     providers: {
+      cursor: missingCursorProvider,
       claude: {
         command: "bash",
         args: [
@@ -848,12 +935,62 @@ test("executeProvider unwraps Claude JSON output envelopes", async () => {
   });
 });
 
+test("executeProvider unwraps Cursor JSON output envelopes", async () => {
+  const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-cursor-json-"));
+  const providerConfig: RalphProvidersFile = {
+    schemaVersion: 1,
+    defaultProviderOrder: ["cursor", "codex", "claude"],
+    providers: {
+      cursor: {
+        command: "bash",
+        args: [
+          "-lc",
+          'cat >/dev/null; printf \'%s\' \'{"type":"result","subtype":"success","is_error":false,"result":"{\\"ok\\":true}","session_id":"cursor-123","duration_ms":99}\'',
+          "--output-format",
+          "json",
+        ],
+      },
+      codex: {
+        command: "codex",
+        args: ["exec", "-s", "read-only", "-C", "{{rootDir}}", "-"],
+      },
+      claude: {
+        command: "claude",
+        args: ["-p"],
+      },
+    },
+  };
+
+  const execution = await executeProvider(
+    "cursor",
+    "ignored",
+    {
+      rootDir: "/repo/root",
+      companySlug: "fixtureco",
+      taskId: "company-overview",
+      runDir,
+    },
+    providerConfig,
+  );
+
+  expect(execution.exitCode).toBe(0);
+  expect(execution.rawOutput).toBe('{"ok":true}');
+  expect(execution.metadata).toEqual({
+    sessionId: "cursor-123",
+    durationMs: 99,
+    totalCostUsd: undefined,
+    numTurns: undefined,
+    stopReason: undefined,
+  });
+});
+
 test("executeProvider applies provider-specific environment overrides", async () => {
   const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-claude-env-"));
   const providerConfig: RalphProvidersFile = {
     schemaVersion: 1,
-    defaultProviderOrder: ["claude", "codex"],
+    defaultProviderOrder: ["claude", "codex", "cursor"],
     providers: {
+      cursor: missingCursorProvider,
       claude: {
         command: "bash",
         args: ["-c", 'cat >/dev/null; printf "%s" "$CLAUDE_TEST_FLAG"'],
@@ -888,8 +1025,9 @@ test("executeProvider terminates long-running commands after the configured time
   const runDir = await mkdtemp(path.join(tmpdir(), "ftw-ralph-timeout-"));
   const providerConfig: RalphProvidersFile = {
     schemaVersion: 1,
-    defaultProviderOrder: ["claude", "codex"],
+    defaultProviderOrder: ["claude", "codex", "cursor"],
     providers: {
+      cursor: missingCursorProvider,
       claude: {
         command: "bash",
         args: ["-lc", "sleep 5"],
